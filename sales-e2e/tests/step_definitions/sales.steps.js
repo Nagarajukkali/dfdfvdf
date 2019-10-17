@@ -1,7 +1,6 @@
 const { Given, Then } = require('cucumber');
 const { testData } = require('../../resources/resource')
-const PaymentPage = require('../pages/click-to-pay-home.page');
-const ReceiptPage = require('../pages/click-to-pay-receipt.page');
+const EaHomePage = require('../pages/energy-australia-home.page');
 const { ClientFunction } = require('testcafe');
 const {dateFormat} = require('../../libs/utility');
 
@@ -11,7 +10,7 @@ let cardName;
 const replace = { replace: true };
 
 Given('I have opened the website link in a browser', async t => {
-  await t.navigateTo(PaymentPage.pageUrl);
+  await t.navigateTo(EaHomePage.pageUrl);
 });
 
 Given('I have opened the link provided in the sms in a browser', async t => {
