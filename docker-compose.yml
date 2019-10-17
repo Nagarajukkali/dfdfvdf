@@ -1,0 +1,21 @@
+version: "3.7"
+volumes:
+  # Volume to store and reuse dependencies
+  npm-cache:
+services:
+  frontend:
+    build: .
+    ports:
+      - 3000:3000
+      - 4302:4302
+    # Binds the local directory to the container's src directory so that watching files functions correctly
+    # This will not work in windows last I checked
+    volumes:
+      - .:/src
+      - npm-cache:/src/node_modules/ # Ignore the node_modules directory to prevent permission locking
+    # command needs to run as docker exec style
+    command: ["npm run docker"]
+  backend:
+    image: nexus3.ealan.shinesolutions.com:9085/docker-hosted/ea/mammock
+    ports:
+      - 8080:3000
