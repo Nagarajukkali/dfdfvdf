@@ -13,16 +13,23 @@ Given('user have opened the website link in a browser', async t => {
   await t.navigateTo(EaHomePage.pageUrl);
 });
 
-And(/^user has navigated to '(.*)' plans page$/, async function(t, customerType) {
-  console.log(customerType.toString());
-  if(customerType.toString()==='Residential'){
+And(/^user has navigated to '(.*)' plans page$/, async function(t, [customerType]) {
+  if(customerType==='Residential'){
     await t.click(EaHomePage.elements.redidentialComparePlansButton);
   }
 });
 
-When(/^user clicks on the verify modal window on '(.*)' page$/, async function(t, customerType) {
-  if(customerType.toString()==='Residential'){
+When(/^user clicks on the verify modal window on '(.*)' page$/, async function(t, [customerType]) {
+  if(customerType==='Residential'){
     await t.click(EaHomePage.elements.residentialModalWindow);
+  }
+});
+
+And(/^user click on '(.*)' from the modal$/, async function(t, [modalWindowValue]) {
+  if (modalWindowValue==='verify account') {
+    await t.click(EaHomePage.elements.modalVerifyAccountOption);
+  } else if (modalValue==='Bill upload') {
+    await t.click(EaHomePage.elements.modalBillUploadOption);
   }
 });
 
