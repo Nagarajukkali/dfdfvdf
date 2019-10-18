@@ -1,4 +1,4 @@
-const { Given, Then } = require('cucumber');
+const { Given, When, Then } = require('cucumber');
 const { testData } = require('../../resources/resource')
 const EaHomePage = require('../pages/energy-australia-home.page');
 const { ClientFunction } = require('testcafe');
@@ -9,12 +9,21 @@ let accountNumber;
 let cardName;
 const replace = { replace: true };
 
-Given('I have opened the website link in a browser', async t => {
+Given('user have opened the website link in a browser', async t => {
   await t.navigateTo(EaHomePage.pageUrl);
 });
 
-Given('I have opened the link provided in the sms in a browser', async t => {
-  await t.navigateTo(PaymentPage.smsUrl);
+And(/^user has navigated to '(.*)' plans page$/, async function(t, customerType) {
+  console.log(customerType.toString());
+  if(customerType.toString()==='Residential'){
+    await t.click(EaHomePage.elements.redidentialComparePlansButton);
+  }
+});
+
+When(/^user clicks on the verify modal window on '(.*)' page$/, async function(t, customerType) {
+  if(customerType.toString()==='Residential'){
+    await t.click(EaHomePage.elements.residentialModalWindow);
+  }
 });
 
 Then(/^I enter valid account number and '(.*)' in Payment details section$/, async function(t, amountToPay) {

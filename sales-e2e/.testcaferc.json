@@ -4,17 +4,14 @@
     "tests/**/*.feature"
   ],
   "browsers": [
-    "chrome:headless"
+    "chrome"
   ],
-  "concurrency": 4,
+  "concurrency": 1,
   "reporter": [{
       "name": "spec"
     }, {
-      "name": "html",
-      "output": "results/report/ctpe2e-report.html"
-    }, {
-      "name": "xunit",
-      "output": "results/report/ctpe2e-report.xml"
+      "name": "cucumber-json",
+      "output": "results/report/report.json"
     }
   ],
   "screenshotPath": "results/screenshots",
@@ -23,6 +20,7 @@
   "pageLoadTimeout": 5000,
   "skip-js-errors": true,
   "color": true,
+  "proxy": "proxy.ealan.shinesolutions.com:3128",
   "proxyBypass": [
     "localhost:4302"
   ],

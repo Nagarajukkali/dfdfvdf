@@ -4,7 +4,8 @@ const Selector = require('testcafe').Selector;
 const eaHomePage = {
   pageUrl: config.eaHomePageUrl,
   elements: {
-    redidentialComparePlansButton: Selector('#ctp-account'),
+    redidentialComparePlansButton: Selector('div:nth-child(1) > div > a > span.quick-link-item-title'),
+    residentialModalWindow: Selector('.tablet-desktop-only #hs-refine-modal-cta'),
   },
 };
 

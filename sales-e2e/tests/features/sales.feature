@@ -1,8 +1,10 @@
 @sales
 Feature: Residential customer end to end journey
-  @smoke
+  @avi
   Scenario: Verify a residential customer is able to submit quote via quote tool
-    Given I have opened the website link in a browser
+    Given user have opened the website link in a browser
+    And user has navigated to 'Residential' plans page
+    When user clicks on the verify modal window on 'Residential' page
     #And I enter valid account number and '<amountToPay>' in Payment details section
     #And I enter valid '<creditCard>' information in Payment method section
     #When I click 'Pay now' button
