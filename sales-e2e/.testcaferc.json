@@ -6,14 +6,12 @@
   "browsers": [
     "chrome"
   ],
-  "concurrency": 1,
-  "reporter": [{
-      "name": "spec"
-    }, {
-      "name": "cucumber-json",
-      "output": "results/report/report.json"
-    }
-  ],
+  "concurrency": 2,
+  "reporter": [{
+          "name": "cucumber-json",
+          "output": "results/report/report.json"
+        }
+      ],
   "screenshotPath": "results/screenshots",
   "screenshotPathPattern": "${USERAGENT}/test-${TEST_INDEX}/${DATE}_${TIME}.png",
   "takeScreenshotsOnFails": true,
