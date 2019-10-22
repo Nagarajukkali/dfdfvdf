@@ -1,6 +1,6 @@
 @sales
 Feature: Residential customer end to end journey
-  @avi
+  @smoke
   Scenario: Verify a residential customer is able to submit quote via quote tool
     Given user have opened the website link in a browser
     And user has navigated to 'Residential' plans page
