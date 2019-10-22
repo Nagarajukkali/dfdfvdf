@@ -4,7 +4,7 @@
     "tests/**/*.feature"
   ],
   "browsers": [
-    "chrome"
+    "chrome:headless"
   ],
   "concurrency": 2,
   "reporter": [{
@@ -16,7 +16,7 @@
   "screenshotPathPattern": "${USERAGENT}/test-${TEST_INDEX}/${DATE}_${TIME}.png",
   "skip-uncaught-errors": false,
   "pageLoadTimeout": 5000,
-  "skip-js-errors": false,
+  "skipJsErrors": false,
   "color": true,
   "proxy": "proxy.ealan.shinesolutions.com:3128",
   "proxyBypass": [

@@ -1,4 +1,4 @@
-@sales
+@quotetool
 Feature: Residential customer end to end journey
   @smoke
   Scenario: Verify a residential customer is able to submit quote via quote tool

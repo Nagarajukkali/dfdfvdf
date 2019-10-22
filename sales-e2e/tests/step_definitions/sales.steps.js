@@ -2,11 +2,7 @@ const { Given, When, Then, Before } = require('cucumber');
 const { testData } = require('../../resources/resource')
 const EaHomePage = require('../pages/energy-australia-home.page');
 const { ClientFunction } = require('testcafe');
-const {dateFormat} = require('../../libs/utility');
 
-let amount;
-let accountNumber;
-let cardName;
 const replace = { replace: true };
 
 Given('user have opened the website link in a browser', async t => {
