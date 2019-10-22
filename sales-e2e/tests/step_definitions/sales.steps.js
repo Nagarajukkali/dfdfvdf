@@ -1,18 +1,16 @@
-const { Given, When, Then, Before } = require('cucumber');
-const { testData } = require('../../resources/resource')
+const { Given, When, Then } = require('cucumber');
 const EaHomePage = require('../pages/energy-australia-home.page');
 const { ClientFunction } = require('testcafe');
 
 const replace = { replace: true };
 
 Given('user have opened the website link in a browser', async t => {
-  await t.maximizeWindow();
   await t.navigateTo(EaHomePage.pageUrl);
 });
 
 Given(/^user has navigated to '(.*)' plans page$/, async function(t, [customerType]) {
   if(customerType==='Residential'){
-    await t.click(EaHomePage.elements.redidentialComparePlansButton);
+    await t.click(EaHomePage.elements.residentialComparePlansButton);
   }
 });
 
@@ -22,10 +20,10 @@ When(/^user clicks on the verify modal window on '(.*)' page$/, async function(t
   }
 });
 
-When(/^user click on '(.*)' from the modal$/, async function(t, [modalWindowValue]) {
+When(/^user clicks on '(.*)' from the modal$/, async function(t, [modalWindowValue]) {
   if (modalWindowValue==='verify account') {
     await t.click(EaHomePage.elements.modalVerifyAccountOption);
-  } else if (modalValue==='Bill upload') {
+  } else if (modalWindowValue==='Bill upload') {
     await t.click(EaHomePage.elements.modalBillUploadOption);
   }
 });
@@ -79,22 +77,22 @@ When(/^user clicks on Next button after account number$/, async t => {
 When(/^User selects ID type '(.*)' and enters '(.*)'$/, async function(t, [idType, idValue]){
   switch(idType){
     case 'dob':
-        await t.click(EaHomePage.elements.idTypeDropDownVerifyAccount);
-        await t.click(EaHomePage.elements.idTypeDOBVerifyAccount);
-        await t.typeText(EaHomePage.elements.idTypeDOBValueVerifyAccount, idValue, replace);
-        break;
+       verifyAccount(t, idValue, replace, EaHomePage.elements.idTypeDOBVerifyAccount, EaHomePage.elements.idTypeDOBValueVerifyAccount);
+       break;
     case 'dl':
-        await t.click(EaHomePage.elements.idTypeDropDownVerifyAccount);
-        await t.click(EaHomePage.elements.idTypeDlVerifyAccount);
-        await t.typeText(EaHomePage.elements.idTypeDlValueVerifyAccount, idValue, replace);
+        verifyAccount(t,idValue, replace, EaHomePage.elements.idTypeDlVerifyAccount, EaHomePage.elements.idTypeDlValueVerifyAccount);
         break;
     case 'pin':
-        await t.click(EaHomePage.elements.idTypeDropDownVerifyAccount);
-        await t.click(EaHomePage.elements.idTypePinVerifyAccount);
-        await t.typeText(EaHomePage.elements.idTypeDlValueVerifyAccount, idValue, replace);
+        verifyAccount(t,idValue, replace, EaHomePage.elements.idTypePinVerifyAccount, EaHomePage.elements.idTypeDlValueVerifyAccount);
         break;
   }
 });
+
+async function verifyAccount(t,idValue, replace, itemToClick, inputField) {
+  await t.click(EaHomePage.elements.idTypeDropDownVerifyAccount);
+  await t.click(itemToClick);
+  await t.typeText(inputField, idValue, replace);
+}
 
 Then(/^Usage data is displayed for '(.*)'$/, async function(t,[fuelType]){
   switch (fuelType) {

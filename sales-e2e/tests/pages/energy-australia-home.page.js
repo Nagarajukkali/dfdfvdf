@@ -4,7 +4,7 @@ const Selector = require('testcafe').Selector;
 const eaHomePage = {
   pageUrl: config.eaHomePageUrl,
   elements: {
-    redidentialComparePlansButton: Selector('div:nth-child(1) > div > a > span.quick-link-item-title'),
+    residentialComparePlansButton: Selector('.icon-GasElectricity'),
     residentialModalWindow: Selector('.tablet-desktop-only #hs-refine-modal-cta'),
     modalVerifyAccountOption: Selector('#hs-verify-account-cta button'),
     modalBillUploadOption: Selector('#hs-bill-upload-cta a'),
@@ -21,7 +21,7 @@ const eaHomePage = {
     idTypePinVerifyAccount: Selector('#edit-identification-selector-pin'),
     usageData_ele: Selector('#hs-electricity-usage-description:first-of-type+div'),
     usageData_gas: Selector('#hs-gas-usage-description:first-of-type+div'),
-    getCostEstimatesChangeButton: Selector('#refineModal button.ea-modal__primary-action.ea-button.ea-button--primary'),
+    getCostEstimatesChangeButton: Selector('#refineModal .ea-button--primary'),
     changeLinkVerifyAccount: Selector('.tablet-desktop-only .hs-refine-modal-cta__text>span')
   },
 };

@@ -1,11 +1,11 @@
-@sales
+@quotetool
 Feature: Residential customer end to end journey
   @smoke
   Scenario: Verify a residential customer is able to submit quote via quote tool
     Given user have opened the website link in a browser
     And user has navigated to 'Residential' plans page
     When user clicks on the verify modal window on 'Residential' page
-    And user click on 'verify account' from the modal
+    And user clicks on 'verify account' from the modal
     Then user verifies if the verify account window is displayed as per the 'Dual' fueltype for 'Residential' customer
     When user provides 'Electricity' account number '2702159138'
     And user provides 'Gas' account number '5134624952'
