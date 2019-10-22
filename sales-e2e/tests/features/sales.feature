@@ -1,6 +1,6 @@
 @sales
 Feature: Residential customer end to end journey
-  @avi
+  @smoke
   Scenario: Verify a residential customer is able to submit quote via quote tool
     Given user have opened the website link in a browser
     And user has navigated to 'Residential' plans page
@@ -15,6 +15,6 @@ Feature: Residential customer end to end journey
     And user clicks on Next button after account number
     Then Usage data is displayed for 'Dual'
     When user click show estimates on modal window
-    #Then User lands on plans page after verify account journey
+    Then User lands on plans page after verify account journey
 
 

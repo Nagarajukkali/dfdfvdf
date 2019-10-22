@@ -15,6 +15,6 @@ Feature: Residential customer end to end journey
     And user clicks on Next button after account number
     Then Usage data is displayed for 'Dual'
     When user click show estimates on modal window
-    #Then User lands on plans page after verify account journey
+    Then User lands on plans page after verify account journey
 
 

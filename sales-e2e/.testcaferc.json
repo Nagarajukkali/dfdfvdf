@@ -14,9 +14,9 @@
       ],
   "screenshotPath": "results/screenshots",
   "screenshotPathPattern": "${USERAGENT}/test-${TEST_INDEX}/${DATE}_${TIME}.png",
-  "takeScreenshotsOnFails": true,
+  "skip-uncaught-errors": false,
   "pageLoadTimeout": 5000,
-  "skip-js-errors": true,
+  "skip-js-errors": false,
   "color": true,
   "proxy": "proxy.ealan.shinesolutions.com:3128",
   "proxyBypass": [

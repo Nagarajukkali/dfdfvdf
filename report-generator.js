@@ -8,15 +8,14 @@ report.generate({
   jsonDir: 'sales-e2e/results/report',
   reportPath: 'sales-e2e/results/html-reports',
   openReportInBrowser: true,
-  disableLog: false,
+  disableLog:true,
   displayDuration: true,
   durationInMS: true,
   customData: {
     title: 'Run info',
     data: [
       { label: 'Project', value: `Energy Australia` },
-      { label: 'Release', value: `test` },
-      { label: 'Report Generation Time', value: `${reportGenerationTime}` },
+      { label: 'Release', value: `test` }
     ],
   },
 });

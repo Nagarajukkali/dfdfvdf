@@ -11,7 +11,7 @@
     "e2e": "ng e2e",
     "format": "prettier --write \"src/**/*.{ts,tsx,scss,html}\"",
     "test-ci": "ng test --watch=false --code-coverage",
-    "e2e:all": "rm -rf sales-e2e/results && cd sales-e2e && gherkin-testcafe --tags $npm_package_config_e2e_tags && npm run report",
+    "e2e:all": "rm -rf sales-e2e/results && cd sales-e2e && gherkin-testcafe --tags $npm_package_config_e2e_tags; npm run report",
     "e2e:remote": "rm -rf ctp-e2e/results && cd ctp-e2e && gherkin-testcafe --tags $npm_package_config_e2e_tags remote --qr-code",
     "e2e:windows-all": "rd /s /q \"ctp-e2e/results\" && cd ctp-e2e && node ../../node_modules/gherkin-testcafe/main.js --tags $npm_package_config_e2e_tags",
     "e2e:windows-remote": "rd /s /q \"ctp-e2e/results\" && cd ctp-e2e && node ../../node_modules/gherkin-testcafe/main.js --tags $npm_package_config_e2e_tags remote --qr-code",
@@ -19,7 +19,7 @@
   },
   "config": {
     "env": "non-prod",
-    "e2e_tags": "@avi"
+    "e2e_tags": "~@"
   },
   "private": true,
   "dependencies": {
@@ -80,8 +80,8 @@
     "protractor": "~5.4.0",
     "testcafe": "1.5.0",
     "testcafe-browser-provider-android": "0.0.33",
-    "testcafe-reporter-html": "^4.0.0",
     "testcafe-reporter-json": "2.2.0",
+    "multiple-cucumber-html-reporter":"1.13.1",
     "ts-node": "^8.0.2",
     "tslint": "^5.12.1",
     "tslint-config-prettier": "^1.17.0",
