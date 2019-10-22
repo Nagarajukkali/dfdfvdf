@@ -1,0 +1,26 @@
+{
+  "src": [
+    "tests/**/*.js",
+    "tests/**/*.feature"
+  ],
+  "browsers": [
+    "chrome:headless"
+  ],
+  "concurrency": 2,
+  "reporter": [{
+          "name": "cucumber-json",
+          "output": "results/report/report.json"
+        }
+      ],
+  "screenshotPath": "results/screenshots",
+  "screenshotPathPattern": "${USERAGENT}/test-${TEST_INDEX}/${DATE}_${TIME}.png",
+  "skip-uncaught-errors": false,
+  "pageLoadTimeout": 5000,
+  "skipJsErrors": false,
+  "color": true,
+  "proxy": "proxy.ealan.shinesolutions.com:3128",
+  "proxyBypass": [
+    "localhost:4302"
+  ],
+  "speed": 1
+}
