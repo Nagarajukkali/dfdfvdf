@@ -1,8 +1,7 @@
 module.exports = {
 config: {
     env: 'non-prod',
-    clickToPaySMSUrl: 'https://latte.nonprod.digital.energyaustralia.com.au/pay?Ref1=5517477175&Amount=123',
-    clickToPayWebsiteUrl: 'https://latte.nonprod.digital.energyaustralia.com.au/pay',
+    eaHomePageUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au?live=disabled',
   },
   testData: {
     mastercard: {
