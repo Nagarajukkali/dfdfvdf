@@ -1,6 +1,5 @@
 {
-  "name": "click-to-pay",
-  "version": "0.0.0",
+  "name": "quote-tool",
   "scripts": {
     "docker": "npm install; npm start",
     "ng": "ng",
