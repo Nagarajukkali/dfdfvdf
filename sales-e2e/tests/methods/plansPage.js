@@ -15,9 +15,29 @@ export function plansPageFunction() {
     async function verifyVerifyAccountChangeButton(t){
       await helper.isElementDisplayed(t,EaHomePage.elements.changeLinkVerifyAccount);
     }
+
+    async function selectPlan(t, planName, customerType){
+      if (customerType==='Residential') {
+        if (planName==='Basic') {
+            await helper.click(t,EaHomePage.elements.basicPlan);
+        } else if (planName==='No Frills') {
+            await helper.click(t,EaHomePage.elements.noFrillsPlan);
+        } else if (planName==='Total') {
+            await helper.click(t,EaHomePage.elements.totalPlan);
+        } else if (planName==='Total Plan Plus') {
+            await helper.click(t,EaHomePage.elements.totalPlusPlan);
+        }else{
+          console.log("Please provide valid plan name");
+        }
+      } else {
+        console.log("Please provide valid customer type");
+      }
+    }
+
     return {
         clickPlansPageModal, 
-        verifyVerifyAccountChangeButton,      
+        verifyVerifyAccountChangeButton,
+        selectPlan,      
       };
 }
 
@@ -86,7 +106,7 @@ export function verifyAccount() {
     async function provideIdentityDetails(t, idType, idValue){
         switch(idType){
             case 'dob':
-               await verifyAccount1(t, idValue,EaHomePage.elements.idTypeDOBValueVerifyAccount);
+               await provideIdValue(t, idValue,EaHomePage.elements.idTypeDOBValueVerifyAccount);
                break;
             case 'dl':
                 await selectIdType(t, EaHomePage.elements.idTypeDlVerifyAccount);
@@ -114,6 +134,10 @@ export function verifyAccount() {
           }
     }
 
+    async function verifyFamilyViolenceMessage(t, value){
+      await helper.assertText(t, EaHomePage.elements.familyViolenceMessage, value);
+    }
+
     async function showCostEstimates(t){
         await helper.click(t, EaHomePage.elements.getCostEstimatesChangeButton);
     }
@@ -133,7 +157,7 @@ export function verifyAccount() {
         provideIdentityDetails,
         verifyUsageData,
         showCostEstimates,
-
+        verifyFamilyViolenceMessage,
 
       };
 }

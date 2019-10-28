@@ -13,7 +13,12 @@ export function testFuncs() {
             console.log(error);
         }
     }
-    
+
+    async function scrollToElement(t, element) {
+        isElementDisplayed(t, element);
+        await t.scrollTo(element);
+      }
+
     async function isElementDisplayed(t, element) {
         await t.expect((element).exists).ok;
       }
@@ -60,5 +65,6 @@ export function testFuncs() {
         clearAndText,
         getInputText,
         getElementText,
+        scrollToElement,
       };
 }

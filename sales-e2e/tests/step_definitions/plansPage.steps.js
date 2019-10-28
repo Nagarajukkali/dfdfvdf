@@ -14,3 +14,7 @@ Then(/^User lands on plans page after verify account journey$/, async t =>{
   await plansPageFunction().verifyVerifyAccountChangeButton(t);
 });
 
+When(/^user selects '(.*)' from '(.*)' plans page$/, async function(t, [planName,customerType]){
+  await plansPageFunction().selectPlan(t, planName, customerType);
+});
+

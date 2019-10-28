@@ -28,3 +28,7 @@ Then(/^user verifies if the verify account window is displayed as per the '(.*)'
 When(/^user click show estimates on modal window$/, async t =>{
     await verifyAccount().showCostEstimates(t);
 });
+
+Then(/^user is displayed with '(.*)' to redirect to the dedicated team for assistance$/,async function(t,[message]){
+    await verifyAccount().verifyFamilyViolenceMessage(t,message);
+})
