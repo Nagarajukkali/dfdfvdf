@@ -16,6 +16,8 @@ Feature: Residential customer end to end journey
     Then Usage data is displayed for 'fuelType'
     When user click show estimates on modal window
     Then User lands on plans page after verify account journey
+    
+
 
     Examples:
     | customer_type | modal_option   | fuelType | elecAccountNumber | gasAccountNumber | postcode | idType | idNumber  |
