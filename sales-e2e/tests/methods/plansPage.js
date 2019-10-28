@@ -15,9 +15,29 @@ export function plansPageFunction() {
     async function verifyVerifyAccountChangeButton(t){
       await helper.isElementDisplayed(t,EaHomePage.elements.changeLinkVerifyAccount);
     }
+
+    async function selectPlan(t, planName, customerType){
+      if (customerType==='Residential') {
+        if (planName==='Basic') {
+            await helper.click(t,EaHomePage.elements.basicPlan);
+        } else if (planName==='No Frills') {
+            await helper.click(t,EaHomePage.elements.noFrillsPlan);
+        } else if (planName==='Total') {
+            await helper.click(t,EaHomePage.elements.totalPlan);
+        } else if (planName==='Total Plan Plus') {
+            await helper.click(t,EaHomePage.elements.totalPlusPlan);
+        }else{
+          console.log("Please provide valid plan name");
+        }
+      } else {
+        console.log("Please provide valid customer type");
+      }
+    }
+
     return {
         clickPlansPageModal, 
-        verifyVerifyAccountChangeButton,      
+        verifyVerifyAccountChangeButton,
+        selectPlan,      
       };
 }
 

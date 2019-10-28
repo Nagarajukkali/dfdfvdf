@@ -6,6 +6,7 @@ const eaHomePage = {
   elements: {
     residentialComparePlansButton: Selector('.icon-GasElectricity'),
     residentialModalWindow: Selector('.tablet-desktop-only #hs-refine-modal-cta'),
+    creditCardDisclaimer: Selector('.hs-plan-card-fees'),
     modalVerifyAccountOption: Selector('#hs-verify-account-cta button'),
     modalBillUploadOption: Selector('#hs-bill-upload-cta a'),
     elecAccountNo:Selector('#electricity-account-number'),
@@ -21,8 +22,9 @@ const eaHomePage = {
     idTypePinVerifyAccount: Selector('#edit-identification-selector-pin'),
     usageData_ele: Selector('#hs-electricity-usage-description:first-of-type+div'),
     usageData_gas: Selector('#hs-gas-usage-description:first-of-type+div'),
-    getCostEstimatesChangeButton: Selector('#refineModal .ea-button--primary'),
-    changeLinkVerifyAccount: Selector('.tablet-desktop-only .hs-refine-modal-cta__text>span')
+    getCostEstimatesChangeButton: Selector('#refineModal div.ea-modal__footer.ng-tns-c19-0>.ea-modal__primary-action'),
+    changeLinkVerifyAccount: Selector('.tablet-desktop-only .hs-refine-modal-cta__text>span'),
+    totalPlan: Selector('#plan-select-button-TOPH'),
   },
 };
 
