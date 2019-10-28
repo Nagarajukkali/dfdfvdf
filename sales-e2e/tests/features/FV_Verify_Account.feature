@@ -1,5 +1,5 @@
 @quotetool
-Feature: Residential customer end to end journey
+Feature: Family violence scenarios for Verify Account journey
 @smoke
   Scenario Outline: Verify family violence message is displayed to the end user which has flag as true
     Given user have opened the website link in a browser
