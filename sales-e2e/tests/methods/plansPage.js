@@ -106,7 +106,7 @@ export function verifyAccount() {
     async function provideIdentityDetails(t, idType, idValue){
         switch(idType){
             case 'dob':
-               await verifyAccount1(t, idValue,EaHomePage.elements.idTypeDOBValueVerifyAccount);
+               await provideIdValue(t, idValue,EaHomePage.elements.idTypeDOBValueVerifyAccount);
                break;
             case 'dl':
                 await selectIdType(t, EaHomePage.elements.idTypeDlVerifyAccount);
@@ -134,6 +134,10 @@ export function verifyAccount() {
           }
     }
 
+    async function verifyFamilyViolenceMessage(t, value){
+      await helper.assertText(t, EaHomePage.elements.familyViolenceMessage, value);
+    }
+
     async function showCostEstimates(t){
         await helper.click(t, EaHomePage.elements.getCostEstimatesChangeButton);
     }
@@ -153,7 +157,7 @@ export function verifyAccount() {
         provideIdentityDetails,
         verifyUsageData,
         showCostEstimates,
-
+        verifyFamilyViolenceMessage,
 
       };
 }

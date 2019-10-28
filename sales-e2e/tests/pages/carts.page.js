@@ -1,13 +1,13 @@
 const Selector = require('testcafe').Selector;
 
-const qualifierPage = {
+const cartsPage = {
   elements: {
     cartsPageContinueButton: Selector('.cart-button-wrapper__text'),
 
 },
 };
 
-module.exports = qualifierPage;
+module.exports = cartsPage;
 
 
 
