@@ -55,6 +55,10 @@ export function testFuncs() {
         return await element.innerText;
     }
 
+    async function isElementVisible(t, element) {
+        return await element.visible;
+    }
+
 
       return {
         click,
@@ -66,5 +70,6 @@ export function testFuncs() {
         getInputText,
         getElementText,
         scrollToElement,
+        isElementVisible,
       };
 }

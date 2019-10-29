@@ -158,6 +158,7 @@ export function verifyAccount() {
         verifyUsageData,
         showCostEstimates,
         verifyFamilyViolenceMessage,
-
+        selectIdType,
+        provideIdValue,
       };
 }
