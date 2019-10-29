@@ -6,10 +6,10 @@ const helper  = testFuncs();
 export function qualifierPageFunction() {
 
   async function selectCustomerStatus(t, customerType,accountNumber,accDetail,idType,idValue) {
-    if(customerType==='New'){
+    if(customerType.toUpperCase()==='NEW'){
         await helper.click(t,eaQualifierPage.elements.newCustomerBtn);
       }
-      else if(customerType==='Existing'){
+      else if(customerType.toUpperCase()==='EXISTING'){
           await helper.click(t,eaQualifierPage.elements.existingCustomerBtn);
           await helper.clearAndText(t, eaQualifierPage.elements.accountNumber, accountNumber);
           await helper.clearAndText(t, eaQualifierPage.elements.accountDetail, accDetail);
@@ -40,10 +40,10 @@ export function qualifierPageFunction() {
     }
 
     async function provideMovingtype(t, movingType) {
-        if(movingType==='Non Moving'){
+        if(movingType.toUpperCase()==='NON MOVING'){
             await helper.click(t,eaQualifierPage.elements.nonMoving);
           }
-          else if(movingType==='Moving'){
+          else if(movingType.toUpperCase()==='MOVING'){
               await helper.click(t,eaQualifierPage.elements.moving);
           }
           else{
@@ -68,11 +68,35 @@ export function qualifierPageFunction() {
         }
       }
     }
+    async function selectPropertyType(t,propertyType){
+      if(propertyType.toUpperCase()==='OWNER'){
+        await helper.click(t,eaQualifierPage.elements.owner);
+      }
+      else if(propertyType.toUpperCase()==='RENTER'){
+        await helper.click(t,eaQualifierPage.elements.renter);
+      }
+      else{
+        console.log('Property type is not selected');
+      }
+    }
+    async function selectSolarOption(t,solarOpt){
+      if(solarOpt.toUpperCase()==='YES'){
+        await helper.click(t,eaQualifierPage.elements.solarYes);
+      }
+      else if(solarOpt.toUpperCase()==='NO'){
+        await helper.click(t,eaQualifierPage.elements.solarNo);
+      }
+      else{
+        console.log('Solar option is not selected');
+      }
+    }
     return {
         selectCustomerStatus,
         provideMovingtype,
         provideAddress,
         selectDateFromCalendar,
         verifyFamilyViolenceMessage,
+        selectPropertyType,
+        selectSolarOption,
       };
 }

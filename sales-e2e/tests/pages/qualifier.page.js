@@ -21,6 +21,10 @@ const eaQualifierPage = {
     serviceAddressList:Selector('#address-auto+ ul>li a'),
     calendarTable:Selector('#switchDate table.datepicker-day-grid tbody').nth(1),
     familyViolenceMessage:Selector('#VerifyID > .wg-alert-error'),
+    owner:Selector('#ownerOrTenant0 > button'),
+    renter:Selector('#ownerOrTenant1 > button'),
+    solarNo:Selector('#hasSolarPanels1 > button'),
+    solarYes:Selector('#hasSolarPanels0 > button'),
   },
 };
 
