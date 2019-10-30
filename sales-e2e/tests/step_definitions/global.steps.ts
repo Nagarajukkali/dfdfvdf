@@ -5,7 +5,6 @@ const helper  = testFuncs();
 
 Given(/^user have opened the website link in a browser$/, async t => {
   await t.navigateTo(eaHomePage.pageUrl);
-  await t.maximizeWindow();
 });
 
 Given(/^user has navigated to '(.*)' plans page$/, async function(t, [customerType]) {

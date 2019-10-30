@@ -2,7 +2,7 @@ import { Before, After } from 'cucumber';
 
 
 Before( async t => {
-
+  await t.maximizeWindow();
 });
 
 After( async t => {
