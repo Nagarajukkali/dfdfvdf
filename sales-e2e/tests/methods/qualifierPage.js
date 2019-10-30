@@ -57,14 +57,14 @@ export function qualifierPageFunction() {
     }
 
     async function selectDateFromCalendar(t){
-      table=eaQualifierPage.elements.calendarTable;
-      rowCount=table.childElementCount;
-      for(i=0;i<rows;i++){
-        rows=table.child(i);
-        colCount=rows.childElementCount;
-        cols=eaQualifierPage.elements.calendarTable.child(i).child(j);
-        for(j=1;j<cols;j++){
-          await helper.click(t,cols.filter(button.btn-day.active));s
+      let table=eaQualifierPage.elements.calendarTable;
+      let rowCount=table.childElementCount;
+      for(let i=0;i<rowCount;i++){
+        let rows=table.child(i);
+        let colCount=rows.childElementCount;
+        for(let j=1;j<colCount;j++){
+          let cols=rows.child(j);
+          await helper.click(t,cols.filter('button.btn-day.active'));
         }
       }
     }

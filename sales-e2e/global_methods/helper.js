@@ -1,6 +1,7 @@
 import { Selector } from 'testcafe';
 import { ClientFunction } from 'testcafe';
 const replace = { replace: true };
+const faker=require('faker');
 
 export function testFuncs() {
 
@@ -27,15 +28,15 @@ export function testFuncs() {
         let actualFieldValue = element.innerText;
         await t.expect(actualFieldValue).contains(expectedFieldValue);
     }
- 
+
     async function assertTextOnPage(t, text) {
         const actualPageContent= await Selector('html').textContent;
         await t.expect(actualPageContent).contains(text);
     }
-    
+
     async function assertPageURL(t, urlContent) {
         const getPageUrl = ClientFunction(() => window.location.href);
-        await t.expect(getPageUrl()).contains(urlContent); 
+        await t.expect(getPageUrl()).contains(urlContent);
     }
 
     async function clearAndText(t, element, value) {
@@ -58,6 +59,9 @@ export function testFuncs() {
     async function isElementVisible(t, element) {
         return await element.visible;
     }
+    async function generateRandomNumber(max){
+        return faker.random.number(max);
+    }
 
 
       return {
@@ -71,5 +75,6 @@ export function testFuncs() {
         getElementText,
         scrollToElement,
         isElementVisible,
+        generateRandomNumber,
       };
 }
