@@ -1,5 +1,5 @@
 import {qualifierPageFunction} from '../methods/qualifierPage';
-const { When,Then } = require('cucumber');
+import {When, Then } from 'cucumber';
 
 When(/^user selects '(.*)' and provides '(.*)' '(.*)' and '(.*)' and '(.*)'$/, async function(t, [customer,accNumber,accountDetail,idType,idValue]) {
       await qualifierPageFunction().selectCustomerStatus(t,customer,accNumber,accountDetail,idType,idValue);

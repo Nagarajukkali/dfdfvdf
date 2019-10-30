@@ -1,8 +1,8 @@
-const { Before,After } = require('cucumber');
-const { ClientFunction } = require('testcafe');
-var fs = require('fs');
+import { Before, After } from 'cucumber';
+
+
 Before( async t => {
-  await t.maximizeWindow();
+
 });
 
 After( async t => {

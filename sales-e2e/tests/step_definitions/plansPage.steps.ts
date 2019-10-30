@@ -1,6 +1,6 @@
 import {plansPageFunction } from '../methods/plansPage';
 import {selectionOptionModalWindow } from '../methods/plansPage';
-const { When, Then } = require('cucumber');
+import {When, Then } from 'cucumber';
 
 When(/^user clicks on the verify modal window on '(.*)' page$/, async function(t, [customerType]) {
       await plansPageFunction().clickPlansPageModal(t,customerType);

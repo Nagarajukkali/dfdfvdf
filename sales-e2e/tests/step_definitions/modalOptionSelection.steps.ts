@@ -1,5 +1,5 @@
 import {verifyAccount} from '../methods/plansPage';
-const { When, Then } = require('cucumber');
+import { When, Then } from 'cucumber';
 
 When(/^user provides '(.*)' account number '(.*)'$/, async function(t, [fuel, accountNumber]){
     await verifyAccount().provideAccountDetails(t,fuel, accountNumber);

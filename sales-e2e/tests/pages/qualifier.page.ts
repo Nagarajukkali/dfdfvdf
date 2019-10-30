@@ -1,4 +1,4 @@
-const Selector = require('testcafe').Selector;
+let Selector = require('testcafe').Selector;
 
 const eaQualifierPage = {
   elements: {
@@ -20,6 +20,7 @@ const eaQualifierPage = {
     serviceAddress:Selector('#address-auto'),
     serviceAddressList:Selector('#address-auto+ ul>li a'),
     calendarTable:Selector('#switchDate table.datepicker-day-grid tbody').nth(1),
+    calendarSelection:Selector('button.btn-day.active'),
     familyViolenceMessage:Selector('#VerifyID > .wg-alert-error'),
     owner:Selector('#ownerOrTenant0 > button'),
     renter:Selector('#ownerOrTenant1 > button'),

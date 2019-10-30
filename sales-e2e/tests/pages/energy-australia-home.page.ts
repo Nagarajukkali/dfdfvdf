@@ -1,5 +1,5 @@
 const { config } = require('../../resources/resource');
-const Selector = require('testcafe').Selector;
+import {Selector } from 'testcafe';
 
 const eaHomePage = {
   pageUrl: config.eaHomePageUrl,

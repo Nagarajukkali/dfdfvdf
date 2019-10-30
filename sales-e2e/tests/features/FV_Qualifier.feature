@@ -9,7 +9,7 @@ Feature: Family violence scenarios for Quote tool journey
     And user selects '<customer>' and provides '<accountNumber>' '<postcode>' and '<idType>' and '<idNumber>'
     Then user is displayed with '<message>' to redirect to the dedicated team for assistance on qualifier
     Examples:
-    | customer_type | accountNumber | postcode | idType | idNumber | planName | customer |message |  
+    | customer_type | accountNumber | postcode | idType | idNumber | planName | customer |message |
     | Residential   | 1020538159    | 3351     | dob    | 01011980 | Total    | Existing |We are currently unable to retrieve your information. Please call 133 466 (Monday – Friday, 8am – 8pm AEDT) |
 
 
@@ -28,9 +28,12 @@ Feature: Family violence scenarios for Quote tool journey
     Then Usage data is displayed for 'fuelType'
     When user click show estimates on modal window
     Then User lands on plans page after verify account journey
+    When user selects '<planName>' from '<customer_type>' plans page
+    And user moves on to fill the qualifier
+    And user selects '<customer>' and provides '<elec_accountNumber>' '<postcode>' and '<idType>' and '<idNumber>'
 
     Examples:
-    | customer_type | modal_option   | fuelType | elec_accountNumber | gas_accountNumber | postcode | idType | idNumber  |
-    | Residential   | verify account | Dual     | 7733720000         | 9923340000        | 2028     | dl     | 356142016 |
+    | customer | customer_type | modal_option   | fuelType | elec_accountNumber | gas_accountNumber | postcode | idType | idNumber  |
+    | Existing | Residential   | verify account | Dual     | 7733720000         | 9923340000        | 2028     | dl     | 356142016 |
 
 
