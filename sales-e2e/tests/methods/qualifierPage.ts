@@ -1,6 +1,6 @@
 const eaQualifierPage = require('../pages/qualifier.page');
 import {testFuncs } from '../../global_methods/helper';
-import {verifyAccount} from '../methods/plansPage';
+import {verifyAccount} from './plansPage';
 const helper  = testFuncs();
 
 export function qualifierPageFunction() {
@@ -64,7 +64,7 @@ export function qualifierPageFunction() {
         let colCount=rows.childElementCount;
         for(let j=1;j<colCount;j++){
           let cols=rows.child(j);
-          await helper.click(t,cols.filter('button.btn-day.active'));
+          await helper.click(t,cols.filter(eaQualifierPage.elements.calendarSelection));
         }
       }
     }

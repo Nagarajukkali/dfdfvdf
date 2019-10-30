@@ -1,3 +1,5 @@
+import {t} from 'testcafe';
+
 const eaCheckoutDetailssPage = require('../pages/checkoutDetails.page');
 import {testFuncs } from '../../global_methods/helper';
 const helper  = testFuncs();
@@ -6,7 +8,7 @@ export function checkoutDetailsPageFunction(){
 
     async function provideDetailsInAboutMeSection(customerType,firstName,lastName){
         await helper.scrollToElement(t,eaCheckoutDetailssPage.elements.myDetailsHeaderText);
-        if(helper.getElementText(t,eaCheckoutDetailssPage.elements.titleDropdown).includes('Please select')){
+        if((await helper.getElementText(t, eaCheckoutDetailssPage.elements.titleDropdown)).includes('Please select')){
             await helper.click(t,eaCheckoutDetailssPage.elements.titleDrop);
             await helper.click(t,eaCheckoutDetailssPage.elements.titleTag);
         }
@@ -64,9 +66,38 @@ export function checkoutDetailsPageFunction(){
     async function checkoutExistingCustomerPassportIdentification(){
         let passportNo=helper.generateRandomNumber(999999);
         await helper.click(t,eaCheckoutDetailssPage.elements.idDrop);
-
+    }
+    async function checkoutExistingCustomerDriverLicenseIdentification(){
 
     }
+    async function checkoutExistingCustomerMedicareIdentification(){
+
+    }
+    async function checkoutNewCustomerIdentification(idType){
+    switch (idType) {
+      case "Passport":
+        checkoutNewCustomerPassportIdentification();
+        break;
+      case "Driver Licence":
+        checkoutNewCustomerDriverLicenseIdentification();
+        break;
+      case "medicare":
+        checkoutNewCustomerMedicareIdentification();
+        break;
+      default:
+        //ReusableComponents.errorOutAndStopExecution();
+    }
+  }
+  async function checkoutNewCustomerPassportIdentification(){
+    let passportNo=helper.generateRandomNumber(999999);
+    await helper.click(t,eaCheckoutDetailssPage.elements.idDrop);
+  }
+  async function checkoutNewCustomerDriverLicenseIdentification(){
+
+  }
+  async function checkoutNewCustomerMedicareIdentification(){
+
+  }
 
     return{
         provideDetailsInAboutMeSection,

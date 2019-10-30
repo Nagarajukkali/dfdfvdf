@@ -4,9 +4,9 @@ const helper  = testFuncs();
 
 export function cartsPageFunction() {
     async function clickContinueCartsPage(t) {
-        await helper.click(t,cartsPage.elements.cartsPageContinueButton); 
+        await helper.click(t, cartsPage.elements.cartsPageContinueButton);
     }
     return {
-        clickContinueCartsPage,     
+        clickContinueCartsPage,
       };
 }
