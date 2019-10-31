@@ -21,21 +21,21 @@ export function testFuncs() {
 
     async function isElementDisplayed(t, element) {
         await t.expect((element).exists).ok;
-      }
+    }
 
     async function assertText(t, element, expectedFieldValue) {
         let actualFieldValue = element.innerText;
         await t.expect(actualFieldValue).contains(expectedFieldValue);
     }
- 
+
     async function assertTextOnPage(t, text) {
         const actualPageContent= await Selector('html').textContent;
         await t.expect(actualPageContent).contains(text);
     }
-    
+
     async function assertPageURL(t, urlContent) {
         const getPageUrl = ClientFunction(() => window.location.href);
-        await t.expect(getPageUrl()).contains(urlContent); 
+        await t.expect(getPageUrl()).contains(urlContent);
     }
 
     async function clearAndText(t, element, value) {
@@ -57,6 +57,14 @@ export function testFuncs() {
 
     async function isElementVisible(t, element) {
         return await element.visible;
+    }
+
+    async function isElectricity(t, element) {
+
+    }
+
+    async function isGas(t, element) {
+  
     }
 
 
