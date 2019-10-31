@@ -59,16 +59,16 @@ export function testFuncs() {
     async function isElementVisible(t, element) {
         return await element.visible;
     }
-    async function generateRandomNumber(max){
+    async function generateRandomNumber(max) {
         return faker.random.number(max);
     }
 
-    async function isElectricity(t, element) {
-
+    async function isElectricity(fuelType) {
+        return fuelType.toLowerCase() === 'electricity' || fuelType.toLowerCase() === 'dual' || fuelType.toLowerCase() === 'both';
     }
 
-    async function isGas(t, element) {
-  
+    async function isGas(fuelType) {
+        return fuelType.toLowerCase() === 'gas' || fuelType.toLowerCase() === 'dual' || fuelType.toLowerCase() === 'both';
     }
 
 

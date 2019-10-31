@@ -37,13 +37,13 @@ export function checkoutReviewPage() {
     }
 
     async function validatePresenceOfFuelAccordion(fuelType) {
-        if(ReusableComponents.isElectricity(fuelType)) {
-          assertTrue("Validating presence of Electricity LS accordion", isElementPresent(Review_LifeSupportPage.lifeSupportElec));
-          assertTrue("Validating presence of Register device button for Electricity.", isElementPresent(Review_LifeSupportPage.btnRegisterDeviceElec));
+        if(await helper.isElectricity(fuelType)) {
+          helper.isElementPresent(eaCheckoutReviewPage.elements.lifeSupportElec);
+          helper.isElementPresent(eaCheckoutReviewPage.elements.btnRegisterDeviceElec);
         }
-        if(ReusableComponents.isGas(fuelType)) {
-          assertTrue("Validating presence of Gas LS accordion", isElementPresent(Review_LifeSupportPage.lifeSupportGas));
-          assertTrue("Validating presence of Register device button for Gas.", isElementPresent(Review_LifeSupportPage.btnRegisterDeviceGas));
+        if(await helper.isGas(fuelType)) {
+          helper.isElementPresent(eaCheckoutReviewPage.elements.lifeSupportGas);
+          helper.isElementPresent(eaCheckoutReviewPage.elements.btnRegisterDeviceGas);
         }
     }
 }
