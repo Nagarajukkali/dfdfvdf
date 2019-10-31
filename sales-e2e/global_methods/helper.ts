@@ -1,6 +1,7 @@
 import { Selector } from 'testcafe';
 import { ClientFunction } from 'testcafe';
 const replace = { replace: true };
+const faker=require('faker');
 
 export function testFuncs() {
 
@@ -58,6 +59,9 @@ export function testFuncs() {
     async function isElementVisible(t, element) {
         return await element.visible;
     }
+    async function generateRandomNumber(max){
+        return faker.random.number(max);
+    }
 
     async function isElectricity(t, element) {
 
@@ -79,5 +83,6 @@ export function testFuncs() {
         getElementText,
         scrollToElement,
         isElementVisible,
+        generateRandomNumber,
       };
 }

@@ -15,7 +15,7 @@ Feature: Family violence scenarios for Verify Account journey
     Then user is displayed with '<message>' to redirect to the dedicated team for assistance
 
     Examples:
-    | customer_type | modal_option  | fuelType | elecAccountNumber |postcode | idType | idNumber | message |  
+    | customer_type | modal_option  | fuelType | elecAccountNumber |postcode | idType | idNumber | message |
     | Residential   | verify account| Dual     | 1020538159        |3351     | dob    | 01011980 | We are currently unable to retrieve your information. Please call 133 466 (Monday – Friday, 8am – 8pm AEDT) |
 
 
