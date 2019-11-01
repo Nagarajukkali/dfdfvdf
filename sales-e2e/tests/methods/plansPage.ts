@@ -35,9 +35,9 @@ export function plansPageFunction() {
     }
 
     return {
-        clickPlansPageModal, 
+        clickPlansPageModal,
         verifyVerifyAccountChangeButton,
-        selectPlan,      
+        selectPlan,
       };
 }
 
@@ -50,7 +50,7 @@ export function selectionOptionModalWindow() {
           }
     }
     return {
-        selectOptionsModalWindow,       
+        selectOptionsModalWindow,
       };
 }
 
@@ -78,10 +78,10 @@ export function verifyAccount() {
     async function provideAccountDetails(t,fuel,accountNumber){
         switch(fuel){
             case 'Electricity':
-              await helper.clearAndText(t,EaHomePage.elements.elecAccountNo, accountNumber);
+              await helper.clearAndEnterText(t,EaHomePage.elements.elecAccountNo, accountNumber);
               break;
             case 'Gas':
-              await helper.clearAndText(t,EaHomePage.elements.gasAccountNo, accountNumber);
+              await helper.clearAndEnterText(t,EaHomePage.elements.gasAccountNo, accountNumber);
               break;
             default:
               console.log('Couldnot provide account details as the page didnot load properly');
@@ -91,10 +91,10 @@ export function verifyAccount() {
     async function provideAccountInformation(t, accountInformation, customerType ){
         switch(customerType){
             case 'Residential':
-                await helper.clearAndText(t,EaHomePage.elements.postcodeVerifyAccount, accountInformation);
+                await helper.clearAndEnterText(t,EaHomePage.elements.postcodeVerifyAccount, accountInformation);
               break;
             case 'Business':
-                await helper.clearAndText(t,EaHomePage.elements.gascAccountNo, accountInformation);
+                await helper.clearAndEnterText(t,EaHomePage.elements.gascAccountNo, accountInformation);
               break;
           }
     }
@@ -147,7 +147,7 @@ export function verifyAccount() {
         await helper.click(t, itemToClick);
       }
     async function provideIdValue(t,idValue, inputField) {
-        await helper.clearAndText(t,inputField, idValue);
+        await helper.clearAndEnterText(t,inputField, idValue);
     }
     return {
         verifyAccountIsDisplayed,

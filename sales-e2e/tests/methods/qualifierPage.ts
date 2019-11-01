@@ -11,8 +11,8 @@ export function qualifierPageFunction() {
       }
       else if(customerType.toUpperCase()==='EXISTING'){
           await helper.click(t,eaQualifierPage.elements.existingCustomerBtn);
-          await helper.clearAndText(t, eaQualifierPage.elements.accountNumber, accountNumber);
-          await helper.clearAndText(t, eaQualifierPage.elements.accountDetail, accDetail);
+          await helper.clearAndEnterText(t, eaQualifierPage.elements.accountNumber, accountNumber);
+          await helper.clearAndEnterText(t, eaQualifierPage.elements.accountDetail, accDetail);
           await helper.isElementVisible(t, eaQualifierPage.elements.accountDetailValidate);
           await helper.click(t, eaQualifierPage.elements.verifyAccountSubmit);
           switch(idType){
@@ -52,7 +52,7 @@ export function qualifierPageFunction() {
     }
 
     async function provideAddress(t, address) {
-        await helper.clearAndText(t,eaQualifierPage.elements.serviceAddress,address);
+        await helper.clearAndEnterText(t,eaQualifierPage.elements.serviceAddress,address);
         await helper.click(t,eaQualifierPage.elements.serviceAddressList.withText(address));
     }
 

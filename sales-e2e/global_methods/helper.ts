@@ -1,7 +1,7 @@
 import { Selector } from 'testcafe';
 import { ClientFunction } from 'testcafe';
 const replace = { replace: true };
-const faker=require('faker');
+//const faker=require('faker');
 
 export function testFuncs() {
 
@@ -39,7 +39,7 @@ export function testFuncs() {
         await t.expect(getPageUrl()).contains(urlContent);
     }
 
-    async function clearAndText(t, element, value) {
+    async function clearAndEnterText(t, element, value) {
         try{
             isElementDisplayed(t, element);
             await t.typeText(element, value, replace);
@@ -59,8 +59,8 @@ export function testFuncs() {
     async function isElementVisible(t, element) {
         return await element.visible;
     }
-    async function generateRandomNumber(max){
-        return faker.random.number(max);
+    async function getRandomNumber(range) {
+      return parseInt(String(Math.random() * range)) % range + 1;
     }
 
 
@@ -70,11 +70,15 @@ export function testFuncs() {
         assertText,
         assertTextOnPage,
         assertPageURL,
-        clearAndText,
+        clearAndEnterText,
         getInputText,
         getElementText,
         scrollToElement,
         isElementVisible,
-        generateRandomNumber,
+        getRandomNumber,
       };
+}
+
+class test {
+
 }

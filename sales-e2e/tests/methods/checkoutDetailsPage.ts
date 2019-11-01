@@ -13,16 +13,16 @@ export function checkoutDetailsPageFunction(){
             await helper.click(t,eaCheckoutDetailssPage.elements.titleTag);
         }
         if(firstName!=undefined){
-            await helper.clearAndText(t,eaCheckoutDetailssPage.elements.firstName,firstName);
+            await helper.clearAndEnterText(t,eaCheckoutDetailssPage.elements.firstName,firstName);
         }
         else{
-            await helper.clearAndText(t,eaCheckoutDetailssPage.elements.firstName,'test');
+            await helper.clearAndEnterText(t,eaCheckoutDetailssPage.elements.firstName,'test');
         }
         if(lastName!=undefined){
-            await helper.clearAndText(t,eaCheckoutDetailssPage.elements.lastName,lastName);
+            await helper.clearAndEnterText(t,eaCheckoutDetailssPage.elements.lastName,lastName);
         }
         else{
-            await helper.clearAndText(t,eaCheckoutDetailssPage.elements.lastName,'test');
+            await helper.clearAndEnterText(t,eaCheckoutDetailssPage.elements.lastName,'test');
         }
         if(customerType.toUpperCase()==='RESI' || customerType.toUpperCase()==='CAMPAIGN'){
             enterDOB();
@@ -30,13 +30,13 @@ export function checkoutDetailsPageFunction(){
 
     }
     async function enterDOB(){
-        await helper.clearAndText(t,eaCheckoutDetailssPage.elements.dobDay,'01');
-        await helper.clearAndText(t,eaCheckoutDetailssPage.elements.dobMonth,'01');
-        await helper.clearAndText(t,eaCheckoutDetailssPage.elements.dobYear,'1980');
+        await helper.clearAndEnterText(t,eaCheckoutDetailssPage.elements.dobDay,'01');
+        await helper.clearAndEnterText(t,eaCheckoutDetailssPage.elements.dobMonth,'01');
+        await helper.clearAndEnterText(t,eaCheckoutDetailssPage.elements.dobYear,'1980');
     }
     async function provideContactDetails(){
-        await helper.clearAndText(t,eaCheckoutDetailssPage.elements.email,'test@energyaustralia.com.au');
-        await helper.clearAndText(t,eaCheckoutDetailssPage.elements.phone,'0345678901');
+        await helper.clearAndEnterText(t,eaCheckoutDetailssPage.elements.email,'test@energyaustralia.com.au');
+        await helper.clearAndEnterText(t,eaCheckoutDetailssPage.elements.phone,'0345678901');
     }
     async function checkoutIdentification(idType,customerType){
         if(customerType.toUpperCase()==='EXISTING'){
@@ -64,14 +64,22 @@ export function checkoutDetailsPageFunction(){
     }
 
     async function checkoutExistingCustomerPassportIdentification(){
-        let passportNo=helper.generateRandomNumber(999999);
+        let passportNo=helper.getRandomNumber(999999);
         await helper.click(t,eaCheckoutDetailssPage.elements.idDrop);
+        await helper.click(t,eaCheckoutDetailssPage.elements.idValuePassport);
+        await helper.clearAndEnterText(t,eaCheckoutDetailssPage.elements.idNumbder,passportNo);
     }
     async function checkoutExistingCustomerDriverLicenseIdentification(){
-
+      let dlNo=helper.getRandomNumber(999999);
+      await helper.click(t,eaCheckoutDetailssPage.elements.idDrop);
+      await helper.click(t,eaCheckoutDetailssPage.elements.idValueDriverLicense);
+      await helper.clearAndEnterText(t,eaCheckoutDetailssPage.elements.idNumbder,dlNo);
     }
     async function checkoutExistingCustomerMedicareIdentification(){
-
+      let medicareNo=helper.getRandomNumber(999999);
+      await helper.click(t,eaCheckoutDetailssPage.elements.idDrop);
+      await helper.click(t,eaCheckoutDetailssPage.elements.idValueMedicare);
+      await helper.clearAndEnterText(t,eaCheckoutDetailssPage.elements.idNumbder,medicareNo);
     }
     async function checkoutNewCustomerIdentification(idType){
     switch (idType) {
@@ -89,7 +97,7 @@ export function checkoutDetailsPageFunction(){
     }
   }
   async function checkoutNewCustomerPassportIdentification(){
-    let passportNo=helper.generateRandomNumber(999999);
+    //let passportNo=helper.getRandomNumber();
     await helper.click(t,eaCheckoutDetailssPage.elements.idDrop);
   }
   async function checkoutNewCustomerDriverLicenseIdentification(){

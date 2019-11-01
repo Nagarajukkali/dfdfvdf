@@ -14,7 +14,11 @@ const eaCheckoutDetailsPage = {
     email:Selector('#contactDetails #email'),
     phone:Selector('#contactDetails #phone'),
     idDrop:Selector('#id_type sui-select'),
+    idValueDriverLicense:Selector('[id=\'id_type\'] [class*=\'sui-dropdown\'] sui-option:nth-of-type(1)'),
     idValuePassport:Selector('[id=\'id_type\'] [class*=\'sui-dropdown\'] sui-option:nth-of-type(2)'),
+    idValueMedicare:Selector('[id=\'id_type\'] [class*=\'sui-dropdown\'] sui-option:nth-of-type(3)'),
+    idNumbder:Selector('id_number'),
+    idCountry:Selector('#id_country+input'),
   },
 };
 
