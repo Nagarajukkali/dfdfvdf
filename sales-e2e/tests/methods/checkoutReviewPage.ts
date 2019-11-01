@@ -3,13 +3,13 @@ import {testFuncs } from '../../global_methods/helper';
 const helper  = testFuncs();
 
 export function checkoutReviewPage() {
-    async function verifyLifeSupportSection() {
-        await helper.isElementDisplayed(eaCheckoutReviewPage.elements.lifeSupportHeader);
-        await helper.isElementDisplayed(eaCheckoutReviewPage.elements.lifeSupportDisclaimer);
+    async function verifyLifeSupportSection(t) {
+        await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.lifeSupportHeader);
+        await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.lifeSupportDisclaimer);
     }
 
-    async function verifyLifeSupportQuestion(fuelType) {
-        await helper.isElementDisplayed(eaCheckoutReviewPage.elements.lifeSupportQuestionSection);
+    async function verifyLifeSupportQuestion(t, fuelType) {
+        await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.lifeSupportQuestionSection);
         switch (fuelType) {
             case helper.fuelType.DUEL:
                 await helper.assertText(t, eaCheckoutReviewPage.elements.lifeSupportQuestion, "Is anyone at this property on life support?");
