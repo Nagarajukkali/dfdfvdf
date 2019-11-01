@@ -1,6 +1,7 @@
 import { Selector } from 'testcafe';
 import { ClientFunction } from 'testcafe';
 const replace = { replace: true };
+const faker=require('faker');
 
 export function testFuncs() {
 
@@ -21,7 +22,7 @@ export function testFuncs() {
 
     async function isElementDisplayed(t, element) {
         await t.expect((element).exists).ok;
-      }
+    }
 
     async function assertText(t, element, expectedFieldValue) {
         let actualFieldValue = element.innerText;
@@ -62,6 +63,17 @@ export function testFuncs() {
     async function clickElementFromList(t, element, value) {
         await t.click(element.withText(value));
     }
+    async function generateRandomNumber(max) {
+        return faker.random.number(max);
+    }
+
+    async function isElectricity(fuelType) {
+        return fuelType.toLowerCase() === 'electricity' || fuelType.toLowerCase() === 'dual' || fuelType.toLowerCase() === 'both';
+    }
+
+    async function isGas(fuelType) {
+        return fuelType.toLowerCase() === 'gas' || fuelType.toLowerCase() === 'dual' || fuelType.toLowerCase() === 'both';
+    }
 
   const waitForLoadingIconToClose = ClientFunction(() => {
     return new Promise(resolve => {
@@ -89,5 +101,6 @@ export function testFuncs() {
         isElementVisible,
         clickElementFromList,
         waitForLoadingIconToClose,
+        generateRandomNumber,
       };
 }
