@@ -1,4 +1,6 @@
 import {qualifierPageFunction} from '../methods/qualifierPage';
+import {testFuncs } from '../../global_methods/helper';
+const helper  = testFuncs();
 import {When, Then } from 'cucumber';
 
 When(/^user selects '(.*)' and provides '(.*)' '(.*)' and '(.*)' and '(.*)'$/, async function(t, [customer,accNumber,accountDetail,idType,idValue]) {
@@ -10,8 +12,8 @@ Then(/^user is displayed with '(.*)' to redirect to the dedicated team for assis
   });
 
 When(/^user provides all details on qualifier page$/, async function(t,[],dataTable){
-  await t.wait(10000);
   let data = dataTable.hashes();
+  await helper.waitForLoadingIconToClose();
   await qualifierPageFunction().provideMovingType(t, data[0].movingType);
   await qualifierPageFunction().provideAddress(t, data[0].connectionAddress);
   await qualifierPageFunction().selectDateFromCalendar(t);

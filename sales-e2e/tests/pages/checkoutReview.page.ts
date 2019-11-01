@@ -1,4 +1,4 @@
-const Selector = require('testcafe').Selector;
+import {Selector } from 'testcafe';
 
 const eaCheckoutReviewPage = {
     elements: {

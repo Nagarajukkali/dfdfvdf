@@ -1,5 +1,3 @@
-import {t} from 'testcafe';
-
 const eaCheckoutDetailsPage = require('../pages/checkoutDetails.page');
 const eaCheckoutReviewPage = require('../pages/checkoutReview.page');
 import {testFuncs } from '../../global_methods/helper';
@@ -7,8 +5,7 @@ const helper  = testFuncs();
 
 export function checkoutDetailsPageFunction(){
 
-    async function provideDetailsInAboutMeSection(customerType,firstName,lastName){
-        await helper.scrollToElement(t,eaCheckoutDetailsPage.elements.myDetailsHeaderText);
+    async function provideDetailsInAboutMeSection(t,customerType,firstName,lastName){
         if((await helper.getElementText(t, eaCheckoutDetailsPage.elements.titleDropdown)).includes('Please select')){
             await helper.click(t,eaCheckoutDetailsPage.elements.titleDrop);
             await helper.click(t,eaCheckoutDetailsPage.elements.titleTag);
@@ -25,92 +22,97 @@ export function checkoutDetailsPageFunction(){
         else{
             await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.lastName,'test');
         }
-        if(customerType.toUpperCase()==='RESI' || customerType.toUpperCase()==='CAMPAIGN'){
-            enterDOB();
+        if(customerType==='Residential' || customerType==='Campaign'){
+            await enterDOB(t);
         }
 
     }
-    async function enterDOB(){
+
+    async function enterDOB(t){
         await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobDay,'01');
         await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobMonth,'01');
         await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobYear,'1980');
     }
-    async function provideContactDetails(){
+
+    async function provideContactDetails(t){
         await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.email,'test@energyaustralia.com.au');
         await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.phone,'0345678901');
     }
-    async function checkoutIdentification(idType,customerType){
-        if(customerType.toUpperCase()==='EXISTING'){
-            checkoutExistingCustomerIdentification(idType);
+    async function checkoutIdentification(t,idType,customerType){
+        if(customerType==='Existing'){
+            await checkoutExistingCustomerIdentification(t,idType);
         }
-        else if(customerType.toUpperCase()==='NEW'){
-            checkoutNewCustomerIdentification(idType);
+        else if(customerType==='New'){
+            await checkoutNewCustomerIdentification(t,idType);
         }
     }
 
-    async function checkoutExistingCustomerIdentification(idType){
+    async function checkoutExistingCustomerIdentification(t,idType){
         switch (idType) {
             case 'Passport':
-              checkoutExistingCustomerPassportIdentification();
+              await checkoutExistingCustomerPassportIdentification(t);
               break;
             case 'Driver Licence':
-              checkoutExistingCustomerDriverLicenseIdentification();
+              await checkoutExistingCustomerDriverLicenseIdentification(t);
               break;
             case 'medicare':
-              checkoutExistingCustomerMedicareIdentification();
+              await checkoutExistingCustomerMedicareIdentification(t);
               break;
             default:
               //ReusableComponents.errorOutAndStopExecution();
       }
     }
 
-    async function checkoutExistingCustomerPassportIdentification(){
+    async function checkoutExistingCustomerPassportIdentification(t){
         let passportNo=helper.getRandomNumber(999999);
         await helper.click(t,eaCheckoutDetailsPage.elements.idDrop);
         await helper.click(t,eaCheckoutDetailsPage.elements.idValuePassport);
         await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,passportNo);
+
     }
-    async function checkoutExistingCustomerDriverLicenseIdentification(){
+
+    async function checkoutExistingCustomerDriverLicenseIdentification(t){
       let dlNo=helper.getRandomNumber(999999);
       await helper.click(t,eaCheckoutDetailsPage.elements.idDrop);
       await helper.click(t,eaCheckoutDetailsPage.elements.idValueDriverLicense);
       await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,dlNo);
     }
-    async function checkoutExistingCustomerMedicareIdentification(){
+    async function checkoutExistingCustomerMedicareIdentification(t){
       let medicareNo=helper.getRandomNumber(999999);
       await helper.click(t,eaCheckoutDetailsPage.elements.idDrop);
       await helper.click(t,eaCheckoutDetailsPage.elements.idValueMedicare);
       await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,medicareNo);
     }
-    async function checkoutNewCustomerIdentification(idType){
+    async function checkoutNewCustomerIdentification(t,idType){
     switch (idType) {
       case "Passport":
-        checkoutNewCustomerPassportIdentification();
+        await checkoutNewCustomerPassportIdentification(t);
         break;
       case "Driver Licence":
-        checkoutNewCustomerDriverLicenseIdentification();
+        await checkoutNewCustomerDriverLicenseIdentification(t);
         break;
       case "medicare":
-        checkoutNewCustomerMedicareIdentification();
+        await checkoutNewCustomerMedicareIdentification(t);
         break;
       default:
         //ReusableComponents.errorOutAndStopExecution();
     }
   }
-  async function checkoutNewCustomerPassportIdentification(){
+
+  async function checkoutNewCustomerPassportIdentification(t){
     let passportNo=helper.getRandomNumber(999999);
     await helper.click(t,eaCheckoutDetailsPage.elements.idDrop);
     await helper.click(t,eaCheckoutDetailsPage.elements.idValuePassport);
     await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,passportNo);
     await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idCountry,'Australia');
   }
-  async function checkoutNewCustomerDriverLicenseIdentification(){
+  async function checkoutNewCustomerDriverLicenseIdentification(t){
     let dlNo=helper.getRandomNumber(999999);
     await helper.click(t,eaCheckoutDetailsPage.elements.idDrop);
     await helper.click(t,eaCheckoutDetailsPage.elements.idValueDriverLicense);
     await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,dlNo);
   }
-  async function checkoutNewCustomerMedicareIdentification(){
+  async function checkoutNewCustomerMedicareIdentification(t){
     let medicareNo=helper.getRandomNumber(999999);
     await helper.click(t,eaCheckoutDetailsPage.elements.idDrop);
     await helper.click(t,eaCheckoutDetailsPage.elements.idValueMedicare);
@@ -121,7 +123,7 @@ export function checkoutDetailsPageFunction(){
     await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidYYYY,'2024');
 
   }
-  async function clickOnReviewYourOrderBtn(){
+  async function clickOnReviewYourOrderBtn(t){
       await helper.waitForLoadingIconToClose();
       await helper.click(t,eaCheckoutDetailsPage.elements.reviewYourOrderBtn);
       await helper.isElementVisible(t,eaCheckoutReviewPage.elements.reviewYourOfferTxt);
