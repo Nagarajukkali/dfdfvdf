@@ -6,7 +6,7 @@ export function testFuncs() {
 
     async function click(t, buttonName) {
         try{
-            isElementDisplayed(t, buttonName);
+            await isElementDisplayed(t, buttonName);
             await t.click(buttonName);
         }
         catch(error){
@@ -15,7 +15,7 @@ export function testFuncs() {
     }
 
     async function scrollToElement(t, element) {
-        isElementDisplayed(t, element);
+        await isElementDisplayed(t, element);
         await t.scrollTo(element);
       }
 
@@ -27,20 +27,20 @@ export function testFuncs() {
         let actualFieldValue = element.innerText;
         await t.expect(actualFieldValue).contains(expectedFieldValue);
     }
- 
+
     async function assertTextOnPage(t, text) {
         const actualPageContent= await Selector('html').textContent;
         await t.expect(actualPageContent).contains(text);
     }
-    
+
     async function assertPageURL(t, urlContent) {
         const getPageUrl = ClientFunction(() => window.location.href);
-        await t.expect(getPageUrl()).contains(urlContent); 
+        await t.expect(getPageUrl()).contains(urlContent);
     }
 
     async function clearAndText(t, element, value) {
         try{
-            isElementDisplayed(t, element);
+            await isElementDisplayed(t, element);
             await t.typeText(element, value, replace);
         }
         catch(error){
@@ -52,12 +52,28 @@ export function testFuncs() {
     }
 
     async function getElementText(t, element) {
-        return await element.innerText;
+        return element.innerText;
     }
 
     async function isElementVisible(t, element) {
-        return await element.visible;
+        return element.visible;
     }
+
+    async function clickElementFromList(t, element, value) {
+        await t.click(element.withText(value));
+    }
+
+  const waitForLoadingIconToClose = ClientFunction(() => {
+    return new Promise(resolve => {
+      let interval = setInterval(() => {
+        if (document.querySelector('.processing'))
+          return;
+
+        clearInterval(interval);
+        resolve();
+      }, 100);
+    });
+  });
 
 
       return {
@@ -71,5 +87,7 @@ export function testFuncs() {
         getElementText,
         scrollToElement,
         isElementVisible,
+        clickElementFromList,
+        waitForLoadingIconToClose,
       };
 }
