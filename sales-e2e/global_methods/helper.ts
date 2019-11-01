@@ -9,6 +9,7 @@ export function testFuncs() {
         try{
             await isElementDisplayed(t, buttonName);
             await t.click(buttonName);
+            t.switchToIf
         }
         catch(error){
             console.log(error);

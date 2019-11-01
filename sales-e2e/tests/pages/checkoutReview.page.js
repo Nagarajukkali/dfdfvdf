@@ -13,7 +13,8 @@ const eaCheckoutReviewPage = {
       lifeSupportElec: Selector('#ele-life-support'),
       lifeSupportGas: Selector('#gas-life-support'),
       btnRegisterDeviceElec: Selector('[id*=\'ele-life-support-register\'] button'),
-      btnRegisterDeviceGas: Selector('[id*=\'gas-life-support-register\'] button')
+      btnRegisterDeviceGas: Selector('[id*=\'gas-life-support-register\'] button'),
+      reviewYourOfferTxt:Selector('.review-order.ng-star-inserted>h2'),
     }
 }
 

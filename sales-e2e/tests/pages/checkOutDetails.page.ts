@@ -17,8 +17,14 @@ const eaCheckoutDetailsPage = {
     idValueDriverLicense:Selector('[id=\'id_type\'] [class*=\'sui-dropdown\'] sui-option:nth-of-type(1)'),
     idValuePassport:Selector('[id=\'id_type\'] [class*=\'sui-dropdown\'] sui-option:nth-of-type(2)'),
     idValueMedicare:Selector('[id=\'id_type\'] [class*=\'sui-dropdown\'] sui-option:nth-of-type(3)'),
-    idNumbder:Selector('id_number'),
+    idNumber:Selector('id_number'),
     idCountry:Selector('#id_country+input'),
+    medicareColor:Selector('.card-option--green span.card-option__label__text'),
+    idMedicareNumber:Selector('#id_number-medicare'),
+    idMedicareRef:Selector('#id_reference'),
+    idMedicareValidMM:Selector('#id_validTo-month'),
+    idMedicareValidYYYY:Selector('#id_validTo-year'),
+    reviewYourOrderBtn:Selector('#reviewYourOrderButton'),
   },
 };
 
