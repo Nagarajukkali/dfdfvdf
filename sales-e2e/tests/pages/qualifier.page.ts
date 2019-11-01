@@ -1,4 +1,4 @@
-let Selector = require('testcafe').Selector;
+import {Selector } from 'testcafe';
 
 const eaQualifierPage = {
   elements: {

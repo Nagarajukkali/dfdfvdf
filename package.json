@@ -18,7 +18,7 @@
   },
   "config": {
     "env": "non-prod",
-    "e2e_tags": "@smoke"
+    "e2e_tags": "@avi"
   },
   "private": true,
   "dependencies": {

@@ -11,8 +11,7 @@ Feature: Family violence scenarios for Quote tool journey
     Examples:
     | customer_type | accountNumber | postcode | idType | idNumber | planName | customer |message |
     | Residential   | 1020538159    | 3351     | dob    | 01011980 | Total    | Existing |We are currently unable to retrieve your information. Please call 133 466 (Monday – Friday, 8am – 8pm AEDT) |
-
-@smoke
+@avi
   Scenario Outline: Verify a residential customer is able to submit quote via quote tool
     Given user have opened the website link in a browser
     And user has navigated to '<customer_type>' plans page
@@ -22,7 +21,9 @@ Feature: Family violence scenarios for Quote tool journey
     And user provides all details on qualifier page
       | connectionAddress               | movingType|propertyType|solarOption|
       | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |No         |
-
+    And user provides all details for existing customer on checkout details page
+      |customerType|firstName|lastName|
+      | Residential|test     |test    |
     Examples:
     | customer | customer_type | elec_accountNumber | postcode | idType | idNumber  |planName|
     | Existing | Residential   | 2702159138         | 2516     | dob    | 12101958  |Total   |
