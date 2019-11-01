@@ -1,4 +1,4 @@
-
+@quotetool
 Feature: Family violence scenarios for Verify Account journey
 @smoke
   Scenario Outline: Verify family violence message is displayed to the end user which has flag as true
@@ -18,7 +18,7 @@ Feature: Family violence scenarios for Verify Account journey
     | customer_type | modal_option  | fuelType | elecAccountNumber |postcode | idType | idNumber | message |
     | Residential   | verify account| Dual     | 1020538159        |3351     | dob    | 01011980 | We are currently unable to retrieve your information. Please call 133 466 (Monday – Friday, 8am – 8pm AEDT) |
 
-
+@smoke
   Scenario Outline: Verify a residential customer is able to submit quote via quote tool
     Given user have opened the website link in a browser
     And user has navigated to '<customer_type>' plans page
@@ -36,6 +36,9 @@ Feature: Family violence scenarios for Verify Account journey
     Then User lands on plans page after verify account journey
     When user selects '<planName>' from '<customer_type>' plans page
     And user moves on to fill the qualifier
+    And user provides all details on qualifier page
+      | connectionAddress               | movingType|propertyType|solarOption|
+      | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |No         |
 
     Examples:
     | customer_type | modal_option   | fuelType | elecAccountNumber | gasAccountNumber | postcode | idType | idNumber  | planName   |

@@ -39,11 +39,11 @@ export function qualifierPageFunction() {
       await helper.assertText(t, eaQualifierPage.elements.familyViolenceMessage, value);
     }
 
-    async function provideMovingtype(t, movingType) {
-        if(movingType.toUpperCase()==='NON MOVING'){
+    async function provideMovingType(t, movingType) {
+        if(movingType==='Non-Moving'){
             await helper.click(t,eaQualifierPage.elements.nonMoving);
           }
-          else if(movingType.toUpperCase()==='MOVING'){
+          else if(movingType==='Moving'){
               await helper.click(t,eaQualifierPage.elements.moving);
           }
           else{
@@ -53,26 +53,39 @@ export function qualifierPageFunction() {
 
     async function provideAddress(t, address) {
         await helper.clearAndEnterText(t,eaQualifierPage.elements.serviceAddress,address);
-        await helper.click(t,eaQualifierPage.elements.serviceAddressList.withText(address));
+        await helper.isElementVisible(t,eaQualifierPage.elements.serviceAddressList);
+        await helper.clickElementFromList(t,eaQualifierPage.elements.serviceAddressList,address);
+        await helper.isElementVisible(t, eaQualifierPage.elements.addressLoadingIcon);
+        await helper.waitForLoadingIconToClose();
+        await helper.click(t, eaQualifierPage.elements.addressContinue);
     }
 
     async function selectDateFromCalendar(t){
-      let table=eaQualifierPage.elements.calendarTable;
-      let rowCount=table.childElementCount;
+      let table = eaQualifierPage.elements.calendarTable;
+      let tableElement=await table();
+      const  rowCount=tableElement.childElementCount;
+      let flag=false;
       for(let i=0;i<rowCount;i++){
         let rows=table.child(i);
-        let colCount=rows.childElementCount;
+        let row=await rows();
+        let colCount=row.childElementCount;
         for(let j=1;j<colCount;j++){
           let cols=rows.child(j);
-          await helper.click(t,cols.filter(eaQualifierPage.elements.calendarSelection));
+          let dateBtn=cols.child(0);
+          if(await dateBtn.hasClass('active')){
+            await helper.click(t,cols);
+            flag=true;
+            break;
+          }
         }
+        if(flag) break;
       }
     }
     async function selectPropertyType(t,propertyType){
-      if(propertyType.toUpperCase()==='OWNER'){
+      if(propertyType ==='Owner'){
         await helper.click(t,eaQualifierPage.elements.owner);
       }
-      else if(propertyType.toUpperCase()==='RENTER'){
+      else if(propertyType ==='Renter'){
         await helper.click(t,eaQualifierPage.elements.renter);
       }
       else{
@@ -80,10 +93,10 @@ export function qualifierPageFunction() {
       }
     }
     async function selectSolarOption(t,solarOpt){
-      if(solarOpt.toUpperCase()==='YES'){
+      if(solarOpt==='Yes'){
         await helper.click(t,eaQualifierPage.elements.solarYes);
       }
-      else if(solarOpt.toUpperCase()==='NO'){
+      else if(solarOpt==='No'){
         await helper.click(t,eaQualifierPage.elements.solarNo);
       }
       else{
@@ -92,7 +105,7 @@ export function qualifierPageFunction() {
     }
     return {
         selectCustomerStatus,
-        provideMovingtype,
+        provideMovingType,
         provideAddress,
         selectDateFromCalendar,
         verifyFamilyViolenceMessage,

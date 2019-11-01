@@ -7,7 +7,7 @@ export function testFuncs() {
 
     async function click(t, buttonName) {
         try{
-            isElementDisplayed(t, buttonName);
+            await isElementDisplayed(t, buttonName);
             await t.click(buttonName);
         }
         catch(error){
@@ -16,13 +16,13 @@ export function testFuncs() {
     }
 
     async function scrollToElement(t, element) {
-        isElementDisplayed(t, element);
+        await isElementDisplayed(t, element);
         await t.scrollTo(element);
       }
 
     async function isElementDisplayed(t, element) {
         await t.expect((element).exists).ok;
-      }
+    }
 
     async function assertText(t, element, expectedFieldValue) {
         let actualFieldValue = element.innerText;
@@ -41,7 +41,7 @@ export function testFuncs() {
 
     async function clearAndEnterText(t, element, value) {
         try{
-            isElementDisplayed(t, element);
+            await isElementDisplayed(t, element);
             await t.typeText(element, value, replace);
         }
         catch(error){
@@ -53,15 +53,39 @@ export function testFuncs() {
     }
 
     async function getElementText(t, element) {
-        return await element.innerText;
+        return element.innerText;
     }
 
     async function isElementVisible(t, element) {
-        return await element.visible;
+        return element.visible;
     }
     async function getRandomNumber(range) {
       return parseInt(String(Math.random() * range)) % range + 1;
     }
+
+    async function clickElementFromList(t, element, value) {
+        await t.click(element.withText(value));
+    }
+
+    async function isElectricity(fuelType) {
+        return fuelType.toLowerCase() === 'electricity' || fuelType.toLowerCase() === 'dual' || fuelType.toLowerCase() === 'both';
+    }
+
+    async function isGas(fuelType) {
+        return fuelType.toLowerCase() === 'gas' || fuelType.toLowerCase() === 'dual' || fuelType.toLowerCase() === 'both';
+    }
+
+  const waitForLoadingIconToClose = ClientFunction(() => {
+    return new Promise(resolve => {
+      let interval = setInterval(() => {
+        if (document.querySelector('.processing'))
+          return;
+
+        clearInterval(interval);
+        resolve();
+      }, 100);
+    });
+  });
 
 
       return {
@@ -76,6 +100,8 @@ export function testFuncs() {
         scrollToElement,
         isElementVisible,
         getRandomNumber,
+        clickElementFromList,
+        waitForLoadingIconToClose,
       };
 }
 
