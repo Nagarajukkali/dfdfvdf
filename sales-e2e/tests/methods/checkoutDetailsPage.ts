@@ -1,6 +1,6 @@
 const eaCheckoutDetailsPage = require('../pages/checkoutDetails.page');
 const eaCheckoutReviewPage = require('../pages/checkoutReview.page');
-import {testFuncs } from '../../global_methods/helper';
+import {BusinessType, CustomerStatus, CustomerType, testFuncs} from '../../global_methods/helper';
 const helper  = testFuncs();
 
 export function checkoutDetailsPageFunction(){
@@ -10,22 +10,27 @@ export function checkoutDetailsPageFunction(){
             await helper.click(t,eaCheckoutDetailsPage.elements.titleDrop);
             await helper.click(t,eaCheckoutDetailsPage.elements.titleTag);
         }
-        if(firstName!=undefined){
-            await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.firstName,firstName);
-        }
-        else{
-            await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.firstName,'test');
-        }
-        if(lastName!=undefined){
-            await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.lastName,lastName);
-        }
-        else{
-            await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.lastName,'test');
-        }
-        if(customerType==='Residential' || customerType==='Campaign'){
+        await enterFirstName(t,firstName);
+        await enterLastName(t,lastName);
+        if(customerType===CustomerType.RESIDENTIAL || customerType==='Campaign'){
             await enterDOB(t);
         }
-
+    }
+    async function enterFirstName(t,firstName){
+      if(firstName!=undefined){
+        await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.firstName,firstName);
+      }
+      else{
+        await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.firstName,'test');
+      }
+    }
+    async function enterLastName(t,lastName){
+        if(lastName!=undefined){
+          await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.lastName,lastName);
+        }
+        else{
+          await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.lastName,'test');
+        }
     }
 
     async function enterDOB(t){
@@ -39,10 +44,10 @@ export function checkoutDetailsPageFunction(){
         await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.phone,'0345678901');
     }
     async function checkoutIdentification(t,idType,customerType){
-        if(customerType==='Existing'){
+        if(customerType===CustomerStatus.EXISTING){
             await checkoutExistingCustomerIdentification(t,idType);
         }
-        else if(customerType==='New'){
+        else if(customerType===CustomerStatus.NEW){
             await checkoutNewCustomerIdentification(t,idType);
         }
     }
@@ -55,7 +60,7 @@ export function checkoutDetailsPageFunction(){
             case 'Driver Licence':
               await checkoutExistingCustomerDriverLicenseIdentification(t);
               break;
-            case 'medicare':
+            case 'Medicare':
               await checkoutExistingCustomerMedicareIdentification(t);
               break;
             default:
@@ -93,7 +98,7 @@ export function checkoutDetailsPageFunction(){
       case "Driver Licence":
         await checkoutNewCustomerDriverLicenseIdentification(t);
         break;
-      case "medicare":
+      case "Medicare":
         await checkoutNewCustomerMedicareIdentification(t);
         break;
       default:
@@ -141,9 +146,26 @@ export function checkoutDetailsPageFunction(){
       await helper.click(t, eaCheckoutReviewPage.elements.gasAccessNo);
     }
   }
+  async function provideBusinessDetails(t,businessType){
+      let businessId=helper.getRandomNumber(999999);
+      if(businessType===BusinessType.ABN){
+        await helper.click(t,eaCheckoutDetailsPage.elements.ABN);
+      }
+      else if(businessType===BusinessType.ACN){
+        await helper.click(t,eaCheckoutDetailsPage.elements.ACN);
+      }
+      await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.number_ABNACN,businessId);
+      await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.company,'NA');
+      await helper.click(t,eaCheckoutDetailsPage.elements.businessType);
+      await helper.click(t,eaCheckoutDetailsPage.elements.businessTypeOption);
+      await helper.click(t,eaCheckoutDetailsPage.elements.anzsicCode);
+      await helper.click(t,eaCheckoutDetailsPage.elements.anzsicCodeOption);
+  }
 
     return{
         provideDetailsInAboutMeSection,
+        enterFirstName,
+        enterLastName,
         enterDOB,
         provideContactDetails,
         checkoutIdentification,
@@ -157,5 +179,6 @@ export function checkoutDetailsPageFunction(){
         checkoutNewCustomerMedicareIdentification,
         clickOnReviewYourOrderBtn,
         accessRestriction,
+        provideBusinessDetails,
     };
 }

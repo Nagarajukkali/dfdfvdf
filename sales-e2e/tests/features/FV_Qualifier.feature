@@ -9,8 +9,8 @@ Feature: Family violence scenarios for Quote tool journey
     And user selects '<customer>' and provides '<accountNumber>' '<postcode>' and '<idType>' and '<idNumber>'
     Then user is displayed with '<message>' to redirect to the dedicated team for assistance on qualifier
     Examples:
-    | customer_type | accountNumber | postcode | idType | idNumber | planName | customer |message |
-    | Residential   | 1020538159    | 3351     | dob    | 01011980 | Total    | Existing |We are currently unable to retrieve your information. Please call 133 466 (Monday – Friday, 8am – 8pm AEDT) |
+    | customer_type | accountNumber | postcode | idType | idNumber | planName  | customer |message |
+    | Residential   | 1020538159    | 3351     | dob    | 01011980 | Total Plan| Existing |We are currently unable to retrieve your information. Please call 133 466 (Monday – Friday, 8am – 8pm AEDT) |
 @avi
   Scenario Outline: Verify a residential customer is able to submit quote via quote tool
     Given user have opened the website link in a browser
@@ -25,7 +25,7 @@ Feature: Family violence scenarios for Quote tool journey
       |customerType|firstName|lastName|identificationType|
       | Residential|test     |test    |Driver Licence    |
     Examples:
-    | customer | customer_type | elec_accountNumber | postcode | idType | idNumber  |planName|
-    | Existing | Residential   | 2702159138         | 2516     | dob    | 12101958  |Total   |
+    | customer | customer_type | elec_accountNumber | postcode | idType | idNumber  |planName  |
+    | Existing | Residential   | 2702159138         | 2516     | dob    | 12101958  |Total Plan|
 
 

@@ -27,6 +27,14 @@ const eaCheckoutDetailsPage = {
     electricityAccessNo:Selector('#option-accessissuesele-false .wg-radio-option-text'),
     gasAccessNo: Selector('#option-accessissuesgas-false .wg-radio-option-text'),
     reviewYourOrderBtn:Selector('#reviewYourOrderButton'),
+    ABN:Selector('#option-bus-abnacn-type-abn>span.wg-radio-option-text'),
+    ACN:Selector('#option-bus-abnacn-type-acn>span.wg-radio-option-text'),
+    number_ABNACN:Selector('#busABNACNNumber'),
+    company:Selector('#busCompanyName'),
+    businessType:Selector('#businessType sui-select'),
+    businessTypeOption:Selector('#businessType sui-option:nth-of-type(6)'),
+    anzsicCode:Selector('#anzsic sui-select'),
+    anzsicCodeOption:Selector('#anzsic sui-option:nth-of-type(6)'),
   },
 };
 
