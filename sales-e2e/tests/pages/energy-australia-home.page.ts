@@ -26,6 +26,14 @@ const eaHomePage = {
     familyViolenceMessage: Selector('.ea-message.error:last-of-type'),
     changeLinkVerifyAccount: Selector('.tablet-desktop-only .hs-refine-modal-cta__text>span'),
     totalPlan: Selector('#plan-select-button-TOPH'),
+    basicBusiness:Selector('#plan-select-button-BSOT'),
+    noFrillBusiness:Selector('#plan-select-button-BCPP'),
+    totalPlanBusiness:Selector('#plan-select-button-TOPB'),
+    totalPlanPlusBusiness:Selector('#plan-select-button-SWSRB'),
+    fuelSelectorOption:Selector('#fuel-selector-active-option'),
+    fuelSelectorOptionDual:Selector('#edit-fuel-selector-both'),
+    fuelSelectorOptionEle:Selector('#edit-fuel-selector-ele'),
+    fuelSelectorOptionGas:Selector('#edit-fuel-selector-gas'),
   },
 };
 

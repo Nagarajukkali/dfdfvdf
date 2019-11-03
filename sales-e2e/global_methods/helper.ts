@@ -1,7 +1,48 @@
 import { Selector } from 'testcafe';
 import { ClientFunction } from 'testcafe';
 const replace = { replace: true };
-//const faker=require('faker');
+
+  export enum FuelType{
+    ELECTRICITY="Electricity",
+    GAS="Gas",
+    DUAL="Dual"
+  }
+  export enum CustomerStatus{
+    NEW="New",
+    EXISTING="Existing"
+  }
+  export enum CustomerType{
+    RESIDENTIAL='Residential',
+    BUSINESS='Business'
+  }
+  export enum Moving{
+    MOVING='Moving',
+    NONMOVING='Non-Moving'
+  }
+  export enum Property{
+    OWNER='Owner',
+    RENTER='Renter'
+  }
+  export enum Solar{
+    YES='Yes',
+    NO='No'
+  }
+  export enum BusinessType{
+    ABN='ABN',
+    ACN='ACN'
+  }
+  export enum PlanType{
+    BASICHOME="Basic",
+    NOFRILLS="No Frills",
+    TOTALPLAN="Total Plan",
+    TOTALPLANPLUS="Total Plan Plus",
+    BASICBUSINESS="Basic Business"
+  }
+  export enum IdType{
+    DOB="dob",
+    DL="dl",
+    PIN="pin"
+  }
 
 export function testFuncs() {
 
@@ -60,7 +101,7 @@ export function testFuncs() {
     async function isElementVisible(t, element) {
         return element.visible;
     }
-    async function getRandomNumber(range) {
+    function getRandomNumber(range) {
       return parseInt(String(Math.random() * range)) % range + 1;
     }
 
