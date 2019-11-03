@@ -60,8 +60,9 @@ export function testFuncs() {
     async function isElementVisible(t, element) {
         return element.visible;
     }
-    async function getRandomNumber(range) {
-      return parseInt(String(Math.random() * range)) % range + 1;
+
+    function getRandomNumber(range) {
+      return (parseInt(String(Math.random() * range)) % range + 1).toString();
     }
 
     async function clickElementFromList(t, element, value) {

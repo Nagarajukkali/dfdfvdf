@@ -72,9 +72,11 @@ export function checkoutDetailsPageFunction(){
     }
 
     async function checkoutExistingCustomerDriverLicenseIdentification(t){
+      //console.log(getRandomInt(999999));
       let dlNo=helper.getRandomNumber(999999);
       await helper.click(t,eaCheckoutDetailsPage.elements.idDrop);
       await helper.click(t,eaCheckoutDetailsPage.elements.idValueDriverLicense);
+      await helper.click(t,eaCheckoutDetailsPage.elements.idNumber);
       await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,dlNo);
     }
     async function checkoutExistingCustomerMedicareIdentification(t){
@@ -107,11 +109,12 @@ export function checkoutDetailsPageFunction(){
     await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idCountry,'Australia');
   }
   async function checkoutNewCustomerDriverLicenseIdentification(t){
-    let dlNo=helper.getRandomNumber(999999);
+    //let dlNo=helper.getRandomNumber(999999);
     await helper.click(t,eaCheckoutDetailsPage.elements.idDrop);
     await helper.click(t,eaCheckoutDetailsPage.elements.idValueDriverLicense);
-    await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,dlNo);
+    await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,Promise.resolve((Math.floor(100000 + Math.random() * 900000)).toString()));
   }
+
   async function checkoutNewCustomerMedicareIdentification(t){
     let medicareNo=helper.getRandomNumber(999999);
     await helper.click(t,eaCheckoutDetailsPage.elements.idDrop);
@@ -123,10 +126,20 @@ export function checkoutDetailsPageFunction(){
     await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidYYYY,'2024');
 
   }
+
   async function clickOnReviewYourOrderBtn(t){
-      await helper.waitForLoadingIconToClose();
-      await helper.click(t,eaCheckoutDetailsPage.elements.reviewYourOrderBtn);
-      await helper.isElementVisible(t,eaCheckoutReviewPage.elements.reviewYourOfferTxt);
+    await helper.waitForLoadingIconToClose();
+    await helper.click(t,eaCheckoutDetailsPage.elements.reviewYourOrderBtn);
+    await helper.isElementVisible(t,eaCheckoutReviewPage.elements.reviewYourOfferTxt);
+  }
+
+  async function accessRestriction(t,electricityAccess,gasAccess){
+      if(electricityAccess==='No') {
+        await helper.click(t, eaCheckoutDetailsPage.elements.electricityAccessNo);
+      }
+    if(gasAccess==='No') {
+      await helper.click(t, eaCheckoutReviewPage.elements.gasAccessNo);
+    }
   }
 
     return{
@@ -143,5 +156,6 @@ export function checkoutDetailsPageFunction(){
         checkoutNewCustomerDriverLicenseIdentification,
         checkoutNewCustomerMedicareIdentification,
         clickOnReviewYourOrderBtn,
+        accessRestriction,
     };
 }

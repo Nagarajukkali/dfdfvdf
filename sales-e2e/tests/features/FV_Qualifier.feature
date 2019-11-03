@@ -22,8 +22,8 @@ Feature: Family violence scenarios for Quote tool journey
       | connectionAddress               | movingType|propertyType|solarOption|
       | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |No         |
     And user provides all details for existing customer on checkout details page
-      |customerType|firstName|lastName|
-      | Residential|test     |test    |
+      |customerType|firstName|lastName|identificationType|
+      | Residential|test     |test    |Driver Licence    |
     Examples:
     | customer | customer_type | elec_accountNumber | postcode | idType | idNumber  |planName|
     | Existing | Residential   | 2702159138         | 2516     | dob    | 12101958  |Total   |
