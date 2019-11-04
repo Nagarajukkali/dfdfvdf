@@ -10,5 +10,8 @@ Given(/^user have opened the website link in a browser$/, async t => {
 Given(/^user has navigated to '(.*)' plans page$/, async function(t, [customerType]) {
   if(customerType==='Residential'){
     await helper.click(t, eaHomePage.elements.residentialComparePlansButton);
+  }else if (customerType==='Business'){
+    await helper.click(t, eaHomePage.elements.businessLink);
+    await helper.click(t, eaHomePage.elements.smallBusinessButton);
   }
 });
