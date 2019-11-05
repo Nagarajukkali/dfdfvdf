@@ -1,6 +1,6 @@
 const eaCheckoutDetailsPage = require('../pages/checkoutDetails.page');
 const eaCheckoutReviewPage = require('../pages/checkoutReview.page');
-import {BusinessType, CustomerStatus, CustomerType, testFuncs} from '../../global_methods/helper';
+import {BusinessType, CustomerStatus, CustomerType, State, testFuncs} from '../../global_methods/helper';
 const helper  = testFuncs();
 
 export function checkoutDetailsPageFunction(){
@@ -41,7 +41,7 @@ export function checkoutDetailsPageFunction(){
 
     async function provideContactDetails(t){
         await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.email,'test@energyaustralia.com.au');
-        await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.phone,'0345678901');
+        await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.phone,"0354556789");
     }
     async function checkoutIdentification(t,idType,customerType){
         if(customerType===CustomerStatus.EXISTING){
@@ -129,7 +129,6 @@ export function checkoutDetailsPageFunction(){
     await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareRef,'1');
     await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidMM,'01');
     await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidYYYY,'2024');
-
   }
 
   async function clickOnReviewYourOrderBtn(t){
@@ -145,6 +144,13 @@ export function checkoutDetailsPageFunction(){
     if(gasAccess==='No') {
       await helper.click(t, eaCheckoutReviewPage.elements.gasAccessNo);
     }
+  }
+  async function propertyRenovationNo(t,state){
+      if(state===State.VIC){
+        await helper.click(t,eaCheckoutDetailsPage.elements.prevHomeImproveNo);
+        await helper.click(t,eaCheckoutDetailsPage.elements.planHomeImproveNo);
+        await helper.click(t,eaCheckoutDetailsPage.elements.renovationNo);
+      }
   }
   async function provideBusinessDetails(t,businessType){
       let businessId=helper.getRandomNumber(999999);

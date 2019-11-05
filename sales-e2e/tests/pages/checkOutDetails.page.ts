@@ -35,6 +35,9 @@ const eaCheckoutDetailsPage = {
     businessTypeOption:Selector('#businessType sui-option:nth-of-type(6)'),
     anzsicCode:Selector('#anzsic sui-select'),
     anzsicCodeOption:Selector('#anzsic sui-option:nth-of-type(6)'),
+    prevHomeImproveNo:Selector('#option-prev-home-improve-false'),
+    planHomeImproveNo:Selector('#option-plan-home-improve-false'),
+    renovationNo:Selector('#option-prev-or-planned-home-improve-disconnect-false'),
   },
 };
 

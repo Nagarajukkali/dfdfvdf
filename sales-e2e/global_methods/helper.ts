@@ -43,6 +43,13 @@ const replace = { replace: true };
     DL="dl",
     PIN="pin"
   }
+  export enum State{
+    VIC="VIC",
+    SA="SA",
+    NSW="NSW",
+    QLD="QLD",
+    ACT="ACT"
+  }
 
 export function testFuncs() {
 
@@ -103,7 +110,6 @@ export function testFuncs() {
 
   function getRandomNumber(range) {
     return (parseInt(String(Math.random() * range)) % range + 1).toString();
-
   }
     async function clickElementFromList(t, element, value) {
       await t.click(element.withText(value));

@@ -1,6 +1,6 @@
 import { Given } from 'cucumber';
 const eaHomePage = require('../pages/energy-australia-home.page');
-import {testFuncs } from '../../global_methods/helper';
+import {CustomerType, testFuncs} from '../../global_methods/helper';
 const helper  = testFuncs();
 
 Given(/^user have opened the website link in a browser$/, async t => {
@@ -8,7 +8,7 @@ Given(/^user have opened the website link in a browser$/, async t => {
 });
 
 Given(/^user has navigated to '(.*)' plans page$/, async function(t, [customerType]) {
-  if(customerType==='Residential'){
+  if(customerType===CustomerType.RESIDENTIAL){
     await helper.click(t, eaHomePage.elements.residentialComparePlansButton);
   }
 });
