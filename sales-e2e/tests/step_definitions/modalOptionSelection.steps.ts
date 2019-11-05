@@ -1,5 +1,6 @@
 import {verifyAccount} from '../methods/plansPage';
 import { When, Then } from 'cucumber';
+import {qualifierPageFunction} from '../methods/qualifierPage';
 
 When(/^user provides '(.*)' account number '(.*)'$/, async function(t, [fuel, accountNumber]){
     await verifyAccount().provideAccountDetails(t,fuel, accountNumber);
@@ -29,6 +30,7 @@ When(/^user click show estimates on modal window$/, async t =>{
     await verifyAccount().showCostEstimates(t);
 });
 
-Then(/^user is displayed with '(.*)' to redirect to the dedicated team for assistance$/,async function(t,[message]){
-    await verifyAccount().verifyFamilyViolenceMessage(t,message);
+Then(/^user is displayed with message to redirect to the dedicated team for assistance$/,async function(t,[message],dataTable){
+  let data = dataTable.hashes();
+  await verifyAccount().verifyFamilyViolenceMessage(t,data[0].message);
 })

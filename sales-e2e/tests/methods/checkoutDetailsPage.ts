@@ -40,8 +40,9 @@ export function checkoutDetailsPageFunction(){
     }
 
     async function provideContactDetails(t){
+        let phoneNumber="03"+helper.getRandomNumber(99999999);
         await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.email,'test@energyaustralia.com.au');
-        await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.phone,"0354556789");
+        await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.phone,phoneNumber);
     }
     async function checkoutIdentification(t,idType,customerType){
         if(customerType===CustomerStatus.EXISTING){
@@ -137,13 +138,13 @@ export function checkoutDetailsPageFunction(){
     await helper.isElementVisible(t,eaCheckoutReviewPage.elements.reviewYourOfferTxt);
   }
 
-  async function accessRestriction(t,electricityAccess,gasAccess){
-      if(electricityAccess==='No') {
+  async function accessRestriction(t,electricityAccess:String,gasAccess){
+      if(electricityAccess==='No' && electricityAccess.trim().length!=0) {
         await helper.click(t, eaCheckoutDetailsPage.elements.electricityAccessNo);
       }
-    if(gasAccess==='No') {
-      await helper.click(t, eaCheckoutReviewPage.elements.gasAccessNo);
-    }
+      if(gasAccess==='No' && gasAccess.trim().length!=0) {
+        await helper.click(t, eaCheckoutDetailsPage.elements.gasAccessNo);
+      }
   }
   async function propertyRenovationNo(t,state){
       if(state===State.VIC){

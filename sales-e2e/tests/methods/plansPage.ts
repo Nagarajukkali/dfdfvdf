@@ -4,8 +4,8 @@ const helper  = testFuncs();
 
 export function plansPageFunction() {
     async function clickPlansPageModal(t, customerType) {
-        if(customerType===CustomerType.RESIDENTIAL){
-            await helper.click(t,EaHomePage.elements.residentialModalWindow);
+        if(customerType===CustomerType.RESIDENTIAL || customerType===CustomerType.BUSINESS){
+            await helper.click(t,EaHomePage.elements.ModalWindow);
           }
           else {
               console.log('Modal window could not be opened due to page error')
@@ -114,16 +114,15 @@ export function verifyAccount() {
             switch (fuelType) {
               case FuelType.DUAL:
                 await helper.isElementDisplayed(t,EaHomePage.elements.elecAccountNo);
-                await helper.isElementDisplayed(t,EaHomePage.elements.gascAccountNo);
+                await helper.isElementDisplayed(t,EaHomePage.elements.gasAccountNo);
                 break;
               case FuelType.ELECTRICITY:
                   await helper.isElementDisplayed(t,EaHomePage.elements.elecAccountNo);
                 break;
               case FuelType.GAS:
-                  await helper.isElementDisplayed(t,EaHomePage.elements.gascAccountNo);
+                  await helper.isElementDisplayed(t,EaHomePage.elements.gasAccountNo);
                 break;
             }
-            await helper.isElementDisplayed(t,EaHomePage.elements.postcodeVerifyAccount);
             await helper.isElementDisplayed(t,EaHomePage.elements.nextAccountNumber);
             await helper.isElementDisplayed(t,EaHomePage.elements.backAccountNumber);
           }
@@ -148,7 +147,7 @@ export function verifyAccount() {
                 await helper.clearAndEnterText(t,EaHomePage.elements.postcodeVerifyAccount, accountInformation);
               break;
             case CustomerType.BUSINESS:
-                await helper.clearAndEnterText(t,EaHomePage.elements.gascAccountNo, accountInformation);
+                await helper.clearAndEnterText(t,EaHomePage.elements.businessInformation, accountInformation);
               break;
           }
     }

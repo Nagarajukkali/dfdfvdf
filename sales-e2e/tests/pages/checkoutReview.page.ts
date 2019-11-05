@@ -15,6 +15,7 @@ const eaCheckoutReviewPage = {
       btnRegisterDeviceElec: Selector('[id*=\'ele-life-support-register\'] button'),
       btnRegisterDeviceGas: Selector('[id*=\'gas-life-support-register\'] button'),
       reviewYourOfferTxt:Selector('.review-order.ng-star-inserted>h2'),
+      agreeAndConfirm: Selector('#reviewAgreeConfirmButton > span'),
     }
 }
 

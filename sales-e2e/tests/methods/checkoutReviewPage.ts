@@ -1,5 +1,5 @@
 const eaCheckoutReviewPage = require('../pages/checkoutReview.page')
-import {testFuncs } from '../../global_methods/helper';
+import {FuelType,testFuncs } from '../../global_methods/helper';
 const helper  = testFuncs();
 
 export function checkoutReviewPage() {
@@ -7,18 +7,17 @@ export function checkoutReviewPage() {
     await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.lifeSupportHeader);
     await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.lifeSupportDisclaimer);
   }
-}
 
-   /* async function verifyLifeSupportQuestion(t, fuelType) {
+    async function verifyLifeSupportQuestion(t, fuelType) {
         await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.lifeSupportQuestionSection);
         switch (fuelType) {
-            case helper.fuelType.DUEL:
+            case FuelType.DUAL:
                 await helper.assertText(t, eaCheckoutReviewPage.elements.lifeSupportQuestion, "Is anyone at this property on life support?");
                 break;
-            case helper.fuelType.ELEC:
+            case fuelType.ELEC:
                 await helper.assertText(t, eaCheckoutReviewPage.elements.lifeSupportQuestion, "Is anyone at this property on life support for electricity?");
                 break;
-            case helper.fuelType.GAS:
+            case fuelType.GAS:
                 await helper.assertText(t, eaCheckoutReviewPage.elements.lifeSupportQuestion, "Is anyone at this property on life support for gas?");
                 break;
         }
@@ -26,25 +25,36 @@ export function checkoutReviewPage() {
         await t.expect(eaCheckoutReviewPage.elements.lifeSupportQuestionNo.hasClass("ea-state-active"));
     }
 
-    async function answerLifeSupportQuestion(option) {
-        if(option==="yes")
-          await helper.click(eaCheckoutReviewPage.elements.rbLifeSupportYes);
-        else if(option==="no")
-          await helper.click(eaCheckoutReviewPage.elements.rbLifeSupportNo);
+    async function answerLifeSupportQuestion(t,option) {
+        if(option==="Yes")
+          await helper.click(t,eaCheckoutReviewPage.elements.rbLifeSupportYes);
+        else if(option==="No")
+          await helper.click(t,eaCheckoutReviewPage.elements.rbLifeSupportNo);
         else {
           console.log("Invalid option selected.");
-          fail(String.format("Expected Life Support answer to be 'yes' or 'no', not '%s'.", option));
+          /*fail(String.format("Expected Life Support answer to be 'yes' or 'no', not '%s'.", option));*/
         }
     }
 
-    async function validatePresenceOfFuelAccordion(fuelType) {
+    async function submitQuote(t){
+        await helper.click(t, eaCheckoutReviewPage.elements.agreeAndConfirm);
+    }
+
+    async function validatePresenceOfFuelAccordion(t,fuelType) {
         if(await helper.isElectricity(fuelType)) {
-          helper.isElementPresent(eaCheckoutReviewPage.elements.lifeSupportElec);
-          helper.isElementPresent(eaCheckoutReviewPage.elements.btnRegisterDeviceElec);
+          await helper.isElementDisplayed(t,eaCheckoutReviewPage.elements.lifeSupportElec);
+          await helper.isElementDisplayed(t,eaCheckoutReviewPage.elements.btnRegisterDeviceElec);
         }
         if(await helper.isGas(fuelType)) {
-          helper.isElementPresent(eaCheckoutReviewPage.elements.lifeSupportGas);
-          helper.isElementPresent(eaCheckoutReviewPage.elements.btnRegisterDeviceGas);
+          await helper.isElementDisplayed(t,eaCheckoutReviewPage.elements.lifeSupportGas);
+          await helper.isElementDisplayed(t,eaCheckoutReviewPage.elements.btnRegisterDeviceGas);
         }
     }
-}*/
+
+  return{
+    validatePresenceOfFuelAccordion,
+    answerLifeSupportQuestion,
+    verifyLifeSupportQuestion,
+    submitQuote,
+  };
+}

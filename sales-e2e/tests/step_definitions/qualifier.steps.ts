@@ -7,8 +7,9 @@ When(/^user selects '(.*)' and provides '(.*)' '(.*)' and '(.*)' and '(.*)'$/, a
       await qualifierPageFunction().selectCustomerStatus(t,customer,accNumber,accountDetail,idType,idValue);
 });
 
-Then(/^user is displayed with '(.*)' to redirect to the dedicated team for assistance on qualifier$/,async function(t,[message]){
-      await qualifierPageFunction().verifyFamilyViolenceMessage(t,message);
+Then(/^user is displayed with message to redirect to the dedicated team for assistance on qualifier$/,async function(t,[],dataTable){
+      let data = dataTable.hashes();
+      await qualifierPageFunction().verifyFamilyViolenceMessage(t,data[0].message);
   });
 
 When(/^user provides all details on qualifier page$/, async function(t,[],dataTable){

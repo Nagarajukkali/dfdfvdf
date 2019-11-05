@@ -34,7 +34,7 @@ const replace = { replace: true };
   export enum PlanType{
     BASICHOME="Basic",
     NOFRILLS="No Frills",
-    TOTALPLAN="Total Plan",
+    TOTALPLAN="Total",
     TOTALPLANPLUS="Total Plan Plus",
     BASICBUSINESS="Basic Business"
   }
@@ -90,6 +90,8 @@ export function testFuncs() {
   async function clearAndEnterText(t, element, value) {
     try {
       await isElementDisplayed(t, element);
+      await t.selectText(element)
+        .pressKey('delete');
       await t.typeText(element, value, replace);
     } catch (error) {
       console.log(error);
@@ -150,6 +152,8 @@ export function testFuncs() {
       getRandomNumber,
       clickElementFromList,
       waitForLoadingIconToClose,
+      isElectricity,
+      isGas,
     };
   }
 
