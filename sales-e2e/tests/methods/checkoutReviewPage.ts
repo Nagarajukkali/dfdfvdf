@@ -118,7 +118,7 @@ export function checkoutReviewPage() {
 
   async function validatePresenceOfOtherTextfield(t, fuelType) {
     if(fuelType === FuelType.ELECTRICITY || fuelType === FuelType.DUAL) {
-      await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsElec));
+      await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsElec);
     }
     if(fuelType === FuelType.GAS || fuelType === FuelType.DUAL) {
       await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsGas);
