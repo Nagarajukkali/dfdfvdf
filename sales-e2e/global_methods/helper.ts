@@ -2,53 +2,71 @@ import { Selector } from 'testcafe';
 import { ClientFunction } from 'testcafe';
 const replace = { replace: true };
 
-  export enum FuelType{
-    ELECTRICITY="Electricity",
-    GAS="Gas",
-    DUAL="Dual"
+  export enum FuelType {
+    ELECTRICITY = 'Electricity',
+    GAS= 'Gas',
+    DUAL= 'Dual'
   }
-  export enum CustomerStatus{
-    NEW="New",
-    EXISTING="Existing"
+  export enum CustomerStatus {
+    NEW= 'New',
+    EXISTING= 'Existing'
   }
-  export enum CustomerType{
-    RESIDENTIAL='Residential',
-    BUSINESS='Business'
+  export enum CustomerType {
+    RESIDENTIAL= 'Residential',
+    BUSINESS= 'Business'
   }
-  export enum Moving{
-    MOVING='Moving',
-    NONMOVING='Non-Moving'
+  export enum Moving {
+    MOVING= 'Moving',
+    NONMOVING= 'Non-Moving'
   }
-  export enum Property{
-    OWNER='Owner',
-    RENTER='Renter'
+  export enum Property {
+    OWNER= 'Owner',
+    RENTER= 'Renter'
   }
-  export enum Solar{
-    YES='Yes',
-    NO='No'
+  export enum Solar {
+    YES= 'Yes',
+    NO= 'No'
   }
-  export enum BusinessType{
-    ABN='ABN',
-    ACN='ACN'
+  export enum BusinessType {
+    ABN= 'ABN',
+    ACN= 'ACN'
   }
-  export enum PlanType{
-    BASICHOME="Basic",
-    NOFRILLS="No Frills",
-    TOTALPLAN="Total",
-    TOTALPLANPLUS="Total Plan Plus",
-    BASICBUSINESS="Basic Business"
+  export enum PlanType {
+    BASICHOME= 'Basic',
+    NOFRILLS= 'No Frills',
+    TOTALPLAN= 'Total',
+    TOTALPLANPLUS= 'Total Plan Plus',
+    BASICBUSINESS= 'Basic Business'
   }
-  export enum IdType{
-    DOB="dob",
-    DL="dl",
-    PIN="pin"
+  export enum IdType {
+    DOB= 'dob',
+    DL= 'dl',
+    PIN= 'pin'
   }
-  export enum State{
-    VIC="VIC",
-    SA="SA",
-    NSW="NSW",
-    QLD="QLD",
-    ACT="ACT"
+  export enum State {
+    VIC= 'VIC',
+    SA= 'SA',
+    NSW= 'NSW',
+    QLD= 'QLD',
+    ACT= 'ACT'
+  }
+
+  export enum LSDevices {
+    ELE_LSCNSPE = 'Crigler Najjar Syndrome Phototherapy Equipment',
+    ELE_LSCPAPR = 'Chronic Positive Airways Pressure Respirator',
+    ELE_LSIPDM = 'Intermittent Peritoneal Dialysis Machine',
+    ELE_LSKDM = 'Kidney Dialysis Machine',
+    ELE_LSOC = 'Oxygen Concentrator',
+    ELE_LSVFLS = 'Ventilator For Life Support',
+    ELE_OTHER = 'Other',
+    GAS_GLSMRHAC = 'Medically Required Heating and/or Air Conditioning',
+    GAS_GLSMRHW = 'Medically Required Hot Water',
+    GAS_OTHER = 'Other'
+  }
+
+  export enum SelectionType {
+    CHECK = 'Check',
+    UNCHECK = 'Uncheck'
   }
 
 export function testFuncs() {
@@ -57,7 +75,6 @@ export function testFuncs() {
     try {
       await isElementDisplayed(t, buttonName);
       await t.click(buttonName);
-      t.switchToIf
     } catch (error) {
       console.log(error);
     }
@@ -73,7 +90,7 @@ export function testFuncs() {
   }
 
   async function assertText(t, element, expectedFieldValue) {
-    let actualFieldValue = element.innerText;
+    const actualFieldValue = element.innerText;
     await t.expect(actualFieldValue).contains(expectedFieldValue);
   }
 
@@ -111,31 +128,37 @@ export function testFuncs() {
   }
 
   function getRandomNumber(range) {
+    // tslint:disable-next-line:radix
     return (parseInt(String(Math.random() * range)) % range + 1).toString();
   }
-    async function clickElementFromList(t, element, value) {
-      await t.click(element.withText(value));
-    }
+  async function clickElementFromList(t, element, value) {
+    await t.click(element.withText(value));
+  }
 
-    async function isElectricity(fuelType) {
-      return fuelType.toLowerCase() === 'electricity' || fuelType.toLowerCase() === 'dual' || fuelType.toLowerCase() === 'both';
-    }
+  async function isElectricity(fuelType) {
+    return fuelType.toLowerCase() === 'electricity' || fuelType.toLowerCase() === 'dual' || fuelType.toLowerCase() === 'both';
+  }
 
-    async function isGas(fuelType) {
-      return fuelType.toLowerCase() === 'gas' || fuelType.toLowerCase() === 'dual' || fuelType.toLowerCase() === 'both';
-    }
+  async function isGas(fuelType) {
+    return fuelType.toLowerCase() === 'gas' || fuelType.toLowerCase() === 'dual' || fuelType.toLowerCase() === 'both';
+  }
 
-    const waitForLoadingIconToClose = ClientFunction(() => {
-      return new Promise(resolve => {
-        let interval = setInterval(() => {
-          if (document.querySelector('.processing'))
-            return;
+  const waitForLoadingIconToClose = ClientFunction(() => {
+    return new Promise(resolve => {
+      const interval = setInterval(() => {
+        if (document.querySelector('.processing')) {
+          return;
+        }
 
-          clearInterval(interval);
-          resolve();
-        }, 100);
-      });
+        clearInterval(interval);
+        resolve();
+      }, 100);
     });
+  });
+
+  async function getElementAttribute(t, element, attribute) {
+    return element.getAttribute(attribute);
+  }
 
 
     return {
@@ -154,7 +177,8 @@ export function testFuncs() {
       waitForLoadingIconToClose,
       isElectricity,
       isGas,
+      getElementAttribute
     };
-  }
+}
 
 
