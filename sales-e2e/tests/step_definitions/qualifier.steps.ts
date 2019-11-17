@@ -15,7 +15,7 @@ Then(/^user is displayed with message to redirect to the dedicated team for assi
 When(/^user provides all details on qualifier page$/, async function(t,[],dataTable){
   let data = dataTable.hashes();
   await helper.waitForLoadingIconToClose();
-  await qualifierPageFunction().provideMovingType(t, data[0].movingType);
+  await qualifierPageFunction().provideMovingType(t, data[0].movingType)
   await qualifierPageFunction().provideAddress(t, data[0].connectionAddress);
   await qualifierPageFunction().selectDateFromCalendar(t);
   await qualifierPageFunction().selectPropertyType(t, data[0].propertyType);
