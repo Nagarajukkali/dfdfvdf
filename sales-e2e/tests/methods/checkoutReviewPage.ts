@@ -3,10 +3,10 @@ import {FuelType, LSDevices, SelectionType, testFuncs} from '../../global_method
 const helper  = testFuncs();
 
 export function checkoutReviewPage() {
-  async function verifyLifeSupportSection(t) {
-    await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.lifeSupportHeader);
-    await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.lifeSupportDisclaimer);
-  }
+    async function verifyLifeSupportSection(t) {
+      await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.lifeSupportHeader);
+      await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.lifeSupportDisclaimer);
+    }
 
   async function verifyLifeSupportQuestion(t, fuelType) {
       await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.lifeSupportQuestionSection);
