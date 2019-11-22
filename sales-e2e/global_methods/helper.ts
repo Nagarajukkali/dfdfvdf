@@ -136,11 +136,11 @@ export function testFuncs() {
   }
 
   async function isElectricity(fuelType) {
-    return fuelType.toLowerCase() === 'electricity' || fuelType.toLowerCase() === 'dual' || fuelType.toLowerCase() === 'both';
+    return fuelType === FuelType.ELECTRICITY || fuelType === FuelType.DUAL;
   }
 
   async function isGas(fuelType) {
-    return fuelType.toLowerCase() === 'gas' || fuelType.toLowerCase() === 'dual' || fuelType.toLowerCase() === 'both';
+    return fuelType === FuelType.GAS || fuelType === FuelType.DUAL;
   }
 
   const waitForLoadingIconToClose = ClientFunction(() => {
@@ -160,6 +160,20 @@ export function testFuncs() {
     return element.getAttribute(attribute);
   }
 
+  async function generateRandomText(length) {
+    let result = '';
+    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let charactersLength = characters.length;
+    for (let i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
+
+  async function isElementAbsent(t, element) {
+    await t.expect((element).exists).notOk();
+  }
+
 
     return {
       click,
@@ -177,7 +191,9 @@ export function testFuncs() {
       waitForLoadingIconToClose,
       isElectricity,
       isGas,
-      getElementAttribute
+      getElementAttribute,
+      generateRandomText,
+      isElementAbsent
     };
 }
 

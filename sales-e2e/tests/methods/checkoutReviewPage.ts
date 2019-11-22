@@ -41,27 +41,27 @@ export function checkoutReviewPage() {
   }
 
   async function validatePresenceOfFuelAccordion(t,fuelType) {
-      if(fuelType === FuelType.ELECTRICITY || fuelType === FuelType.DUAL) {
+      if(await helper.isElectricity(fuelType)) {
         await helper.isElementDisplayed(t,eaCheckoutReviewPage.elements.lifeSupportElec);
         await helper.isElementDisplayed(t,eaCheckoutReviewPage.elements.btnRegisterDeviceElec);
       }
-      if(fuelType === FuelType.GAS || fuelType === FuelType.DUAL) {
+      if(await helper.isGas(fuelType)) {
         await helper.isElementDisplayed(t,eaCheckoutReviewPage.elements.lifeSupportGas);
         await helper.isElementDisplayed(t,eaCheckoutReviewPage.elements.btnRegisterDeviceGas);
       }
   }
 
   async function clickOnRegisterDeviceBtn(t, fuelType) {
-    if(fuelType === FuelType.ELECTRICITY || fuelType === FuelType.DUAL) {
+    if(await helper.isElectricity(fuelType)) {
       await helper.click(t, eaCheckoutReviewPage.elements.btnRegisterDeviceElec);
     }
-    if(fuelType === FuelType.GAS || fuelType === FuelType.DUAL) {
+    if(await helper.isGas(fuelType)) {
       await helper.click(t, eaCheckoutReviewPage.elements.btnRegisterDeviceGas);
     }
   }
 
   async function validateLifeSupportDeviceList(t, fuelType) {
-    if(fuelType === FuelType.ELECTRICITY || fuelType === FuelType.DUAL) {
+    if(await helper.isElectricity(fuelType)) {
       await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.cbEleDevice_LSCNSPE);
       await helper.assertText(t, eaCheckoutReviewPage.elements.cbEleDevice_LSCNSPE, LSDevices.ELE_LSCNSPE);
 
@@ -83,7 +83,7 @@ export function checkoutReviewPage() {
       await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.cbEleDevice_OTHER);
       await helper.assertText(t, eaCheckoutReviewPage.elements.cbEleDevice_OTHER, LSDevices.ELE_OTHER);
     }
-    if(fuelType === FuelType.GAS || fuelType === FuelType.DUAL) {
+    if(await helper.isGas(fuelType)) {
       await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.cbGasDevice_GLSMRHAC);
       await helper.assertText(t, eaCheckoutReviewPage.elements.cbGasDevice_GLSMRHAC, LSDevices.GAS_GLSMRHAC);
 
@@ -96,7 +96,7 @@ export function checkoutReviewPage() {
   }
 
   async function clickOtherCheckbox(t, selection, fuelType) {
-    if(fuelType === FuelType.ELECTRICITY || fuelType === FuelType.DUAL) {
+    if(await helper.isElectricity(fuelType)) {
       if(selection === SelectionType.CHECK) {
         while (!((await helper.getElementAttribute(t, eaCheckoutReviewPage.elements.cbEleDevice_OTHER, "class")).includes("ea-state-checked")))
           await helper.click(t, eaCheckoutReviewPage.elements.cbEleDevice_OTHER);
@@ -105,7 +105,7 @@ export function checkoutReviewPage() {
           await helper.click(t, eaCheckoutReviewPage.elements.cbEleDevice_OTHER);
       }
     }
-    if(fuelType === FuelType.GAS || fuelType === FuelType.DUAL) {
+    if(await helper.isGas(fuelType)) {
       if(selection === SelectionType.CHECK) {
         while (!((await helper.getElementAttribute(t, eaCheckoutReviewPage.elements.cbGasDevice_OTHER, "class")).includes("ea-state-checked")))
           await helper.click(t, eaCheckoutReviewPage.elements.cbGasDevice_OTHER);
@@ -117,12 +117,169 @@ export function checkoutReviewPage() {
   }
 
   async function validatePresenceOfOtherTextfield(t, fuelType) {
-    if(fuelType === FuelType.ELECTRICITY || fuelType === FuelType.DUAL) {
+    if(await helper.isElectricity(fuelType)) {
       await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsElec);
     }
-    if(fuelType === FuelType.GAS || fuelType === FuelType.DUAL) {
+    if(await helper.isGas(fuelType)) {
       await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsGas);
     }
+  }
+
+  async function validateOtherFieldPlaceholder(t, expectedPlaceholder, fuelType) {
+    if(await helper.isElectricity(fuelType)) {
+      await t.expect(helper.getElementAttribute(t, eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsElec, "placeholder")).contains(expectedPlaceholder);
+    }
+    if(await helper.isGas(fuelType)) {
+      await t.expect(helper.getElementAttribute(t, eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsGas, "placeholder")).contains(expectedPlaceholder);
+    }
+  }
+
+  async function validateMaxLengthForOtherEquipmentsTextfield(t, expectedMaxLength, fuelType) {
+    let randomText = await helper.generateRandomText(expectedMaxLength + 1);
+    if(await helper.isElectricity(fuelType)) {
+      await t.typeText(eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsElec, randomText);
+      /*for(let i=0 ; i < randomText.length ; i++) {
+        sendkeys(Review_LifeSupportPage.tfOtherEquipmentDetailsElec, String.valueOf(randomText.charAt(i)));
+      }*/
+      await t.expect(eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsElec.length).eql(expectedMaxLength);
+    }
+    if(await helper.isGas(fuelType)) {
+      await t.typeText(eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsGas, randomText);
+      /*for(let i=0 ; i < randomText.length ; i++) {
+        sendkeys(Review_LifeSupportPage.tfOtherEquipmentDetailsGas, String.valueOf(randomText.charAt(i)));
+      }*/
+      await t.expect(eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsGas.length).eql(expectedMaxLength);
+    }
+  }
+
+  async function validateAbsenceOfOtherTextarea(t, fuelType) {
+    if(await helper.isElectricity(fuelType)) {
+      await helper.isElementAbsent(t, eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsElec);
+    }
+    if(await helper.isGas(fuelType)) {
+      await helper.isElementAbsent(t, eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsGas);
+    }
+  }
+
+  async function validateReappearenceOfTextfieldWithPrefilledData(t, fuelType) {
+    if(await helper.isElectricity(fuelType)) {
+      await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsElec);
+      await t.expect(eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsElec.length).notEql(0);
+    }
+    if(await helper.isGas(fuelType)) {
+      await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsGas);
+      await t.expect(eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsGas.length).notEql(0);
+    }
+  }
+
+  async function validateTheSelectedOptionAndAbsenceOfFuelAccordions(t, expectedSelection, fuelType) {
+    let classValue;
+    if(expectedSelection === "yes") {
+      classValue = await helper.getElementAttribute(t, eaCheckoutReviewPage.elements.rbLifeSupportYes, "class");
+    }
+    else {
+      classValue = await helper.getElementAttribute(t, eaCheckoutReviewPage.elements.rbLifeSupportNo, "class");
+    }
+    await classValue.include("ea-state-active").ok();
+
+    if(await helper.isElectricity(fuelType))
+      await helper.isElementAbsent(t, eaCheckoutReviewPage.elements.lifeSupportElec);
+    if(await helper.isGas(fuelType))
+      await helper.isElementAbsent(t, eaCheckoutReviewPage.elements.lifeSupportGas);
+  }
+
+  async function validatePresenceOfGenericLSError(t, expectedError) {
+    await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.lblGenericError);
+    await helper.assertText(t, eaCheckoutReviewPage.elements.lblGenericError, expectedError);
+  }
+
+  async function validatePresenceOfErrorMessageUnderneathOtherTextarea(t, expectedError, fuelType) {
+    if(await helper.isElectricity(fuelType)) {
+      await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.lblElecOtherFieldError);
+      await helper.assertText(t, eaCheckoutReviewPage.elements.lblElecOtherFieldError, expectedError);
+    }
+    if(await helper.isGas(fuelType)) {
+      await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.lblGasOtherFieldError);
+      await helper.assertText(t, eaCheckoutReviewPage.elements.lblGasOtherFieldError, expectedError);
+    }
+  }
+
+  async function selectLSDevice(t, webElement) {
+    let tryCount = 0;
+    do{
+      await helper.click(t, webElement);
+      tryCount++;
+      if(tryCount > 5)
+        break;
+    }while (!((await helper.getElementAttribute(t, webElement, "class")).includes("ea-state-checked")));
+  }
+
+  async function selectLSEquipment(t, equipmentName, fuelType) {
+    if(await helper.isElectricity(fuelType)) {
+      switch (equipmentName) {
+        case LSDevices.ELE_LSCNSPE:
+          await selectLSDevice(t, eaCheckoutReviewPage.elements.cbEleDevice_LSCNSPE);
+          break;
+        case LSDevices.ELE_LSCPAPR:
+          await selectLSDevice(t, eaCheckoutReviewPage.elements.cbEleDevice_LSCPAPR);
+          break;
+        case LSDevices.ELE_LSIPDM:
+          await selectLSDevice(t, eaCheckoutReviewPage.elements.cbEleDevice_LSIPDM);
+          break;
+        case LSDevices.ELE_LSKDM:
+          await selectLSDevice(t, eaCheckoutReviewPage.elements.cbEleDevice_LSKDM);
+          break;
+        case LSDevices.ELE_LSOC:
+          await selectLSDevice(t, eaCheckoutReviewPage.elements.cbEleDevice_LSOC);
+          break;
+        case LSDevices.ELE_LSVFLS:
+          await selectLSDevice(t, eaCheckoutReviewPage.elements.cbEleDevice_LSVFLS);
+          break;
+        case LSDevices.ELE_OTHER:
+          await selectLSDevice(t, eaCheckoutReviewPage.elements.cbEleDevice_OTHER);
+          await helper.clearAndEnterText(t, eaCheckoutReviewPage.elements.cbEleDevice_OTHER, "Sample Other electricity device.");
+          /*break;
+        default:
+          LOG.info("Invalid Electricity Equipment.");*/
+      }
+    }
+    if(await helper.isGas(fuelType)) {
+      switch (equipmentName) {
+        case "Medically Required Heating and/or Air Conditioning":
+          await selectLSDevice(t, eaCheckoutReviewPage.elements.cbGasDevice_GLSMRHAC);
+          break;
+        case "Medically Required Hot Water":
+          await selectLSDevice(t, eaCheckoutReviewPage.elements.cbGasDevice_GLSMRHW);
+          break;
+        case "Other":
+          await selectLSDevice(t, eaCheckoutReviewPage.elements.cbGasDevice_OTHER);
+          await helper.clearAndEnterText(t, eaCheckoutReviewPage.elements.cbGasDevice_OTHER, "Sample Other gas device.");
+          /*break;
+        default:
+          LOG.info("Invalid Gas Equipment.");*/
+      }
+    }
+  }
+
+  async function validateAbsenceOfFuelAccordion(t, fuelType) {
+    if(await helper.isElectricity(fuelType))
+      await helper.isElementAbsent(t, eaCheckoutReviewPage.elements.lifeSupportElec);
+    if(await helper.isGas(fuelType))
+      await helper.isElementAbsent(t, eaCheckoutReviewPage.elements.lifeSupportGas);
+  }
+
+  async function clickCancelCTA(t, fuelType) {
+    if(await helper.isElectricity(fuelType))
+      await helper.click(t, eaCheckoutReviewPage.elements.btnCancelElec);
+    if(await helper.isGas(fuelType))
+      await helper.click(t, eaCheckoutReviewPage.elements.btnCancelGas);
+  }
+
+  async function validatePresenceOfRegisterDeviceCTA(t, fuelType) {
+    if(await helper.isElectricity(fuelType))
+      await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.btnRegisterDeviceElec);
+    if(await helper.isGas(fuelType))
+      await helper.isElementDisplayed(t, eaCheckoutReviewPage.elements.btnRegisterDeviceGas);
   }
 
   return{
@@ -132,6 +289,17 @@ export function checkoutReviewPage() {
     submitQuote,
     clickOnRegisterDeviceBtn,
     validateLifeSupportDeviceList,
-    clickOtherCheckbox
+    clickOtherCheckbox,
+    validatePresenceOfOtherTextfield,
+    validateOtherFieldPlaceholder,
+    validateMaxLengthForOtherEquipmentsTextfield,
+    validateAbsenceOfOtherTextarea,
+    validateReappearenceOfTextfieldWithPrefilledData,
+    validateTheSelectedOptionAndAbsenceOfFuelAccordions,
+    validatePresenceOfGenericLSError,
+    validatePresenceOfErrorMessageUnderneathOtherTextarea,
+    selectLSEquipment,
+    validateAbsenceOfFuelAccordion,
+    validatePresenceOfRegisterDeviceCTA
   };
 }

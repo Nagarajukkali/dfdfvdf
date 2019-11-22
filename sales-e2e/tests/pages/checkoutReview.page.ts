@@ -27,8 +27,12 @@ const eaCheckoutReviewPage = {
       cbGasDevice_GLSMRHW: Selector('[for*=\'GAS-GLSMRHW\']'),
       cbGasDevice_OTHER: Selector('[for*=\'GAS-OTHER\']'),
       tfOtherEquipmentDetailsElec: Selector('#ele-otherEquipmentDetails'),
-      tfOtherEquipmentDetailsGas: Selector('#gas-otherEquipmentDetails')
-
+      tfOtherEquipmentDetailsGas: Selector('#gas-otherEquipmentDetails'),
+      lblGenericError: Selector('div.generic-error'),
+      lblElecOtherFieldError: Selector("[id='ele-life-support'] div.ea-field-errors"),
+      lblGasOtherFieldError: Selector("[id='gas-life-support'] div.ea-field-errors"),
+      btnCancelElec: Selector("div#ele-life-support-cancel button[aria-label*='cancel']"),
+      btnCancelGas: Selector("div#gas-life-support-cancel button[aria-label*='cancel']")
     }
 }
 
