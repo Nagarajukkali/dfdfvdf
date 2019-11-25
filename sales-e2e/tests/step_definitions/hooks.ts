@@ -68,23 +68,4 @@ async function getDateTime() {
   return dateTime;
 }
 
-if(System.getProperty("os.name").toLowerCase().contains("win")){
-  File src= ((TakesScreenshot)getWebDriver()).getScreenshotAs(OutputType.FILE);
-  try {
-    // now copy the  screenshot to desired location using copyFile //method
-    if (getWebDriver() instanceof ChromeDriver) {
-      FileUtils.copyFile(src, new File("./src/test/resources/Screenshot/" + "/" + "Chrome" + "/" + datestamp + "/"
-        + "/" + testid + "/" + "/" + res + "_" + fileName + ".jpg"));
-    } else if (getWebDriver() instanceof FirefoxDriver) {
-      FileUtils.copyFile(src, new File("./src/test/resources/Screenshot/" + "/" + "Firefox" + "/" + datestamp
-        + "/" + "/" + testid + "/" + "/" + res + fileName + ".jpg"));
-    } else {
-      FileUtils.copyFile(src, new File("./src/test/resources/Screenshot/" + "/" + "IE" + "/" + datestamp + "/"
-        + "/" + testid + "/" + "/" + res + "_" + fileName + ".jpg"));
-    }
-    Thread.sleep(100);
-  }catch (IOException | InterruptedException e)  {
-    System.out.println(e.getMessage());
-  }
-}*/
 

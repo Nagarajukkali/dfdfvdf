@@ -1,6 +1,6 @@
 const eaCheckoutDetailsPage = require('../pages/checkoutDetails.page');
 const eaCheckoutReviewPage = require('../pages/checkoutReview.page');
-import {BusinessType, CustomerStatus, CustomerType, testFuncs} from '../../global_methods/helper';
+import {BusinessType, CustomerStatus, CustomerType, State, testFuncs} from '../../global_methods/helper';
 const helper  = testFuncs();
 
 export function checkoutDetailsPageFunction(){
@@ -130,7 +130,6 @@ export function checkoutDetailsPageFunction(){
     await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareRef,'1');
     await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidMM,'01');
     await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidYYYY,'2024');
-
   }
 
   async function clickOnReviewYourOrderBtn(t){
@@ -145,6 +144,13 @@ export function checkoutDetailsPageFunction(){
       }
       if(gasAccess==='No' && gasAccess.trim().length!=0) {
         await helper.click(t, eaCheckoutDetailsPage.elements.gasAccessNo);
+      }
+  }
+  async function propertyRenovationNo(t,state){
+      if(state===State.VIC){
+        await helper.click(t,eaCheckoutDetailsPage.elements.prevHomeImproveNo);
+        await helper.click(t,eaCheckoutDetailsPage.elements.planHomeImproveNo);
+        await helper.click(t,eaCheckoutDetailsPage.elements.renovationNo);
       }
   }
   async function provideBusinessDetails(t,businessType){
