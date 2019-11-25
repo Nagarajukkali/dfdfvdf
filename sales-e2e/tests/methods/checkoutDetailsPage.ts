@@ -10,10 +10,16 @@ export function checkoutDetailsPageFunction(){
             await helper.click(t,eaCheckoutDetailsPage.elements.titleDrop);
             await helper.click(t,eaCheckoutDetailsPage.elements.titleTag);
         }
+        else{
+          console.log('Please select a valid title');
+        }
         await enterFirstName(t,firstName);
         await enterLastName(t,lastName);
         if(customerType===CustomerType.RESIDENTIAL || customerType==='Campaign'){
             await enterDOB(t);
+        }
+        else{
+          console.log('Please proceed to fill all questions');
         }
     }
     async function enterFirstName(t,firstName){
@@ -50,6 +56,8 @@ export function checkoutDetailsPageFunction(){
         }
         else if(customerType===CustomerStatus.NEW){
             await checkoutNewCustomerIdentification(t,idType);
+        }else {
+          console.log('Please select a valid customer');
         }
     }
 
@@ -65,7 +73,7 @@ export function checkoutDetailsPageFunction(){
               await checkoutExistingCustomerMedicareIdentification(t);
               break;
             default:
-              //ReusableComponents.errorOutAndStopExecution();
+              console.log('Please select a valid identification type');
       }
     }
 
@@ -78,7 +86,6 @@ export function checkoutDetailsPageFunction(){
     }
 
     async function checkoutExistingCustomerDriverLicenseIdentification(t){
-      //console.log(getRandomInt(999999));
       let dlNo=helper.getRandomNumber(999999);
       await helper.click(t,eaCheckoutDetailsPage.elements.idDrop);
       await helper.click(t,eaCheckoutDetailsPage.elements.idValueDriverLicense);
@@ -103,7 +110,7 @@ export function checkoutDetailsPageFunction(){
         await checkoutNewCustomerMedicareIdentification(t);
         break;
       default:
-        //ReusableComponents.errorOutAndStopExecution();
+        console.log('Please select a valid ID type');
     }
   }
 
@@ -115,7 +122,6 @@ export function checkoutDetailsPageFunction(){
     await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idCountry,'Australia');
   }
   async function checkoutNewCustomerDriverLicenseIdentification(t){
-    //let dlNo=helper.getRandomNumber(999999);
     await helper.click(t,eaCheckoutDetailsPage.elements.idDrop);
     await helper.click(t,eaCheckoutDetailsPage.elements.idValueDriverLicense);
     await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,Promise.resolve((Math.floor(100000 + Math.random() * 900000)).toString()));
@@ -141,9 +147,13 @@ export function checkoutDetailsPageFunction(){
   async function accessRestriction(t,electricityAccess:String,gasAccess){
       if(electricityAccess==='No' && electricityAccess.trim().length!=0) {
         await helper.click(t, eaCheckoutDetailsPage.elements.electricityAccessNo);
+      }else{
+        console.log('Access restriction is not present for the premise');
       }
       if(gasAccess==='No' && gasAccess.trim().length!=0) {
         await helper.click(t, eaCheckoutDetailsPage.elements.gasAccessNo);
+      }else {
+        console.log('Access restriction is not present for the premise');
       }
   }
   async function propertyRenovationNo(t,state){
@@ -151,6 +161,9 @@ export function checkoutDetailsPageFunction(){
         await helper.click(t,eaCheckoutDetailsPage.elements.prevHomeImproveNo);
         await helper.click(t,eaCheckoutDetailsPage.elements.planHomeImproveNo);
         await helper.click(t,eaCheckoutDetailsPage.elements.renovationNo);
+      }
+      else {
+        console.log('Property renovation is not required for this state');
       }
   }
   async function provideBusinessDetails(t,businessType){
@@ -160,6 +173,8 @@ export function checkoutDetailsPageFunction(){
       }
       else if(businessType===BusinessType.ACN){
         await helper.click(t,eaCheckoutDetailsPage.elements.ACN);
+      }else {
+        console.log('ABN/ACN is not valid');
       }
       await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.number_ABNACN,businessId);
       await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.company,'NA');

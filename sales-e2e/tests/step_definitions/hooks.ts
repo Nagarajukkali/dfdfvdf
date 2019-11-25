@@ -1,27 +1,26 @@
-import { Before, After } from 'cucumber';
+import {Before, After, Then, Given} from 'cucumber';
+const {defineSupportCode} = require('cucumber');
 import {testFuncs} from '../../global_methods/helper';
 import {ClientFunction} from 'testcafe';
 let log4js = require('log4js');
 const helper  = testFuncs();
 const USERAGENT = ClientFunction(() => navigator.userAgent);
 let logger = log4js.getLogger();
+const eaHomePage = require('../pages/energy-australia-home.page');
 logger.level = 'debug';
-let scenarioName=null;
+let screenshotFolder=null;
 
 Before(  async t => {
   await helper.maximizeWindow(t);
 });
 
-  Before(function(scenario, done) {
-    console.log('BeforeScenario: ' + scenario.getName());
-    done();
-  });
+Given(/^user have opened the website link in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
+  screenshotFolder=folderName;
+  await t.navigateTo(eaHomePage.pageUrl);
+});
 
 After( async t => {
-  //let scenario= getScenarioName();
-  await t.takeScreenshot(`../${await fetchBrowser()}/${await getDateTime()}.png`);
-  // await t.takeScreenshot(`../'+${USERAGENT()}+'/test-${TEST_INDEX}/${DATE}_${TIME}.png`);
-  //await t.takeScreenshot('../results/screenshots/${USERAGENT}/test-${TEST_INDEX}/${DATE}_${TIME}.png');
+  await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/${await getDateTime()}.png`);
   logger.debug('Execution completed');
 });
 

@@ -37,7 +37,10 @@ const replace = { replace: true };
     NOFRILLS= 'No Frills',
     TOTALPLAN= 'Total',
     TOTALPLANPLUS= 'Total Plan Plus',
-    BASICBUSINESS= 'Basic Business'
+    BASICBUSINESS= 'Basic Business',
+    NOFRILLSBUSINESS='',
+    TOTALBUSINESS='Total Business',
+    TOTALPLANPLUSBUSINESS='',
   }
   export enum IdType {
     DOB= 'dob',

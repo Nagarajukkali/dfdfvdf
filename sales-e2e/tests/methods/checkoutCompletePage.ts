@@ -12,7 +12,7 @@ export function checkoutCompletePage() {
         console.log('New customer');
         break;
       default:
-      //ReusableComponents.errorOutAndStopExecution();
+        console.log('Please select a valid customer');
     }
   }
   return{

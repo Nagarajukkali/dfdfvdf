@@ -1,11 +1,8 @@
 import { Given } from 'cucumber';
-const eaHomePage = require('../pages/energy-australia-home.page');
 import {CustomerType, testFuncs} from '../../global_methods/helper';
 const helper  = testFuncs();
+const eaHomePage = require('../pages/energy-australia-home.page');
 
-Given(/^user have opened the website link in a browser$/, async t => {
-  await t.navigateTo(eaHomePage.pageUrl);
-});
 
 Given(/^user has navigated to '(.*)' plans page$/, async function(t, [customerType]) {
   if(customerType===CustomerType.RESIDENTIAL){
