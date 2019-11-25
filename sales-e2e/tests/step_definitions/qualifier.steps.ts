@@ -3,8 +3,8 @@ import {testFuncs } from '../../global_methods/helper';
 const helper  = testFuncs();
 import {When, Then } from 'cucumber';
 
-When(/^user selects '(.*)' and provides '(.*)' '(.*)' and '(.*)' and '(.*)'$/, async function(t, [customer,accNumber,accountDetail,idType,idValue]) {
-      await qualifierPageFunction().selectCustomerStatus(t,customer,accNumber,accountDetail,idType,idValue);
+When(/^user selects '(.*)' and provides '(.*)' '(.*)' '(.*)' and '(.*)' and '(.*)' for '(.*)' customer$/, async function (t, [customer,accNumber,accountDetail,accountIdentityType,idType,idValue,customerType]) {
+  await qualifierPageFunction().selectCustomerStatus(t, customer,accNumber,accountDetail,accountIdentityType,idType,idValue,customerType);
 });
 
 Then(/^user is displayed with message to redirect to the dedicated team for assistance on qualifier$/,async function(t,[],dataTable){

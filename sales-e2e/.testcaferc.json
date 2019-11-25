@@ -4,16 +4,17 @@
     "tests/**/*.feature"
   ],
   "browsers": [
-    "chrome:headless"
+    "chrome"
   ],
-  "concurrency": 2,
+  "concurrency": 1,
   "reporter": [{
           "name": "cucumber-json",
           "output": "results/report/report.json"
         }
       ],
   "screenshotPath": "results/screenshots",
-  "screenshotPathPattern": "${USERAGENT}/test-${TEST_INDEX}/${DATE}_${TIME}.png",
+  "fullPage": true,
+
   "skip-uncaught-errors": false,
   "pageLoadTimeout": 5000,
   "skipJsErrors": false,

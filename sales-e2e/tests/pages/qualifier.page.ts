@@ -6,6 +6,9 @@ const eaQualifierPage = {
     existingCustomerBtn:Selector('#isNewEA1 label'),
     accountNumber:Selector('#accNo'),
     accountDetail:Selector('#accPC'),
+    existingCustomerAbn:Selector('#option-bus-abnacn-type-abn > span.wg-radio-option-text.ng-binding'),
+    existingCustomerAcn:Selector('#option-bus-abnacn-type-acn > span.wg-radio-option-text.ng-binding'),
+    abnAcnField:Selector('#abnacn'),
     accountDetailValidate:Selector('#signInResi1 .wg-valid-success'),
     verifyAccountSubmit:Selector('#verifyAccountBtn'),
     idTypeDropDown: Selector('#idtype div.sui-select'),
@@ -26,7 +29,7 @@ const eaQualifierPage = {
     owner:Selector('#ownerOrTenant0 > button'),
     renter:Selector('#ownerOrTenant1 > button'),
     solarNo:Selector('#hasSolarPanels1 > button'),
-    solarYes:Selector('#hasSolarPanels0 > button'),
+    solarYes:Selector('#hasSolarPanels0 > button')
   },
 };
 

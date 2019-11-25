@@ -40,7 +40,7 @@ export function plansPageFunction() {
         await selectResiPlan(t,planName);
       }
       else if(customerType===CustomerType.BUSINESS){
-        await selectBSMEPlan(t,PlanType);
+        await selectBSMEPlan(t,planName);
       }
       else {
         console.log("Please provide valid customer type");
@@ -67,17 +67,18 @@ export function plansPageFunction() {
     }
 
   async function selectBSMEPlan(t,planName){
+      console.log(planName);
     switch(planName){
       case PlanType.BASICBUSINESS:
         await helper.click(t,EaHomePage.elements.basicBusiness);
         break;
-      case PlanType.NOFRILLS:
+      case PlanType.NOFRILLSBUSINESS:
         await helper.click(t,EaHomePage.elements.noFrillBusiness);
         break;
-      case PlanType.TOTALPLAN:
+      case PlanType.TOTALBUSINESS:
         await helper.click(t,EaHomePage.elements.totalPlanBusiness);
         break;
-      case PlanType.TOTALPLANPLUS:
+      case PlanType.TOTALPLANPLUSBUSINESS:
         await helper.click(t,EaHomePage.elements.totalPlanPlusBusiness);
         break;
       default:

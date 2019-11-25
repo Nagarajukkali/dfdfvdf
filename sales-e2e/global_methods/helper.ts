@@ -36,7 +36,10 @@ const replace = { replace: true };
     NOFRILLS="No Frills",
     TOTALPLAN="Total",
     TOTALPLANPLUS="Total Plan Plus",
-    BASICBUSINESS="Basic Business"
+    BASICBUSINESS="Basic Business",
+    NOFRILLSBUSINESS="No Frills Business",
+    TOTALBUSINESS="Total Business",
+    TOTALPLANPLUSBUSINESS="Total Plan Plus Business",
   }
   export enum IdType{
     DOB="dob",
@@ -54,6 +57,16 @@ export function testFuncs() {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  async function maximizeWindow(t){
+    await t.maximizeWindow();
+  }
+
+  async function sizeOfElement(t, element) {
+    let val=await element.count
+      .then(result=>result);
+    return val;
   }
 
   async function scrollToElement(t, element) {
@@ -148,6 +161,8 @@ export function testFuncs() {
       waitForLoadingIconToClose,
       isElectricity,
       isGas,
+      sizeOfElement,
+      maximizeWindow,
     };
   }
 

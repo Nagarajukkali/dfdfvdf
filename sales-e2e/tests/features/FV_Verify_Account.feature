@@ -36,8 +36,8 @@ Feature: Family violence scenarios for Verify Account journey
       | We are currently unable to retrieve your information. Please call 133 466 (Monday – Friday, 8am – 8pm AEDT) |
 
     Examples:
-      | customer_type | modal_option  | fuelType | elecAccountNumber |accountVerification | idType | idNumber |
-      | Business      | verify account| Dual     | 1973600000        |8666392000          | dob    | 01011980 |
+      | customer_type | modal_option  | fuelType | elecAccountNumber |accountVerification | idType | idNumber  |
+      | Business      | verify account| Dual     | 9600344079        |383989431           | pin    | 288599840 |
 
   @smoke
   Scenario Outline: Verify a residential customer is able to submit quote via quote tool

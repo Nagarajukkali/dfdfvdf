@@ -1,38 +1,61 @@
 const eaQualifierPage = require('../pages/qualifier.page');
 import {CustomerStatus, Moving, Property, Solar, testFuncs} from '../../global_methods/helper';
-import {verifyAccount} from './plansPage';
 const helper  = testFuncs();
 
 export function qualifierPageFunction() {
 
-  async function selectCustomerStatus(t, customerStatus,accountNumber,accDetail,idType,idValue) {
+  async function selectCustomerStatus(t, customerStatus,accountNumber,accDetail,accountIdentityType,idType,idValue,customerType) {
     if(customerStatus===CustomerStatus.NEW){
         await helper.click(t,eaQualifierPage.elements.newCustomerBtn);
       }
     else if(customerStatus===CustomerStatus.EXISTING){
         await helper.click(t,eaQualifierPage.elements.existingCustomerBtn);
         await helper.clearAndEnterText(t, eaQualifierPage.elements.accountNumber, accountNumber);
-        await helper.clearAndEnterText(t, eaQualifierPage.elements.accountDetail, accDetail);
-        await helper.isElementVisible(t, eaQualifierPage.elements.accountDetailValidate);
+          if(customerType==='Business' && accountIdentityType==='ABN'){
+            await helper.click(t,eaQualifierPage.elements.existingCustomerAbn);
+            await helper.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, accDetail);
+            await t.wait(2000);
+          }else if(customerType==='Business' && accountIdentityType==='ACN'){
+            await helper.click(t,eaQualifierPage.elements.existingCustomerAcn);
+            await helper.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, accDetail);
+            await t.wait(2000);
+          }else{
+            await helper.clearAndEnterText(t, eaQualifierPage.elements.accountDetail, accDetail);
+            await helper.isElementVisible(t, eaQualifierPage.elements.accountDetailValidate);
+          }
         await helper.click(t, eaQualifierPage.elements.verifyAccountSubmit);
         switch(idType){
           case 'dob':
-             await verifyAccount().provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDOBValue);
+             await provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDOBValue);
              break;
           case 'dl':
-              await verifyAccount().selectIdType(t, eaQualifierPage.elements.idTypeDl);
-              await verifyAccount().provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
+              await selectIdTypeQualifier(t, eaQualifierPage.elements.idTypeDl);
+              await provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
               break;
           case 'pin':
-              await verifyAccount().selectIdType(t, eaQualifierPage.elements.idTypePin);
-              await verifyAccount().provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDl);
+              await selectIdTypeQualifier(t, eaQualifierPage.elements.idTypePin);
+              await provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
               break;
         }
+        await helper.waitForLoadingIconToClose();
+        await t.wait(3000);
         await helper.click(t, eaQualifierPage.elements.verifyIdentitySubmit);
     }
     else{
       console.log('customer status option is not selected.');
     }
+    }
+    async function selectIdTypeQualifier(t, itemToClick) {
+      /*let val=await eaQualifierPage.elements.idTypeDropDown.count
+        .then(result=>result);*/
+      let val =await helper.sizeOfElement(t, eaQualifierPage.elements.idTypeDropDown);
+      if(val!==1) {
+        await helper.click(t, eaQualifierPage.elements.idTypeDropDownVerifyAccount);
+        await helper.click(t, itemToClick);
+      }
+    }
+    async function provideIdValue(t,idValue, inputField) {
+      await helper.clearAndEnterText(t,inputField, idValue);
     }
 
   async function verifyFamilyViolenceMessage(t, value){
