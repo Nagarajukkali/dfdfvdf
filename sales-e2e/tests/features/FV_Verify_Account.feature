@@ -1,6 +1,6 @@
 @quotetool
 Feature: Family violence scenarios for Verify Account journey
-  @smoke
+
   Scenario Outline: Verify family violence message is displayed to the end user which has flag as true for Residential Customer
     Given user have opened the website link in a browser
     And user has navigated to '<customer_type>' plans page
@@ -19,7 +19,6 @@ Feature: Family violence scenarios for Verify Account journey
     | customer_type | modal_option  | fuelType | elecAccountNumber |accountVerification | idType | idNumber |
     | Residential   | verify account| Dual     | 1020538159        |3351     | dob    | 01011980            |
 
-  @smoke
   Scenario Outline: Verify family violence message is displayed to the end user which has flag as true for Business Customer
     Given user have opened the website link in a browser
     And user has navigated to '<customer_type>' plans page
@@ -39,7 +38,6 @@ Feature: Family violence scenarios for Verify Account journey
       | customer_type | modal_option  | fuelType | elecAccountNumber |accountVerification | idType | idNumber  |
       | Business      | verify account| Dual     | 9600344079        |383989431           | pin    | 288599840 |
 
-  @smoke
   Scenario Outline: Verify a residential customer is able to submit quote via quote tool
     Given user have opened the website link in a browser
     And user has navigated to '<customer_type>' plans page

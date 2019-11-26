@@ -1,58 +1,65 @@
 const eaQualifierPage = require('../pages/qualifier.page');
-import {CustomerStatus, Moving, Property, Solar, testFuncs} from '../../global_methods/helper';
+import {BusinessType, CustomerStatus, Moving, Property, Solar, testFuncs} from '../../global_methods/helper';
 const helper  = testFuncs();
 
 export function qualifierPageFunction() {
 
-  async function selectCustomerStatus(t, customerStatus,accountNumber,accDetail,accountIdentityType,idType,idValue,customerType) {
+  async function selectCustomerStatus(t, customerStatus) {
     if(customerStatus===CustomerStatus.NEW){
         await helper.click(t,eaQualifierPage.elements.newCustomerBtn);
       }
     else if(customerStatus===CustomerStatus.EXISTING){
         await helper.click(t,eaQualifierPage.elements.existingCustomerBtn);
-        await helper.clearAndEnterText(t, eaQualifierPage.elements.accountNumber, accountNumber);
-          if(customerType==='Business' && accountIdentityType==='ABN'){
-            await helper.click(t,eaQualifierPage.elements.existingCustomerAbn);
-            await helper.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, accDetail);
-            await t.wait(2000);
-          }else if(customerType==='Business' && accountIdentityType==='ACN'){
-            await helper.click(t,eaQualifierPage.elements.existingCustomerAcn);
-            await helper.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, accDetail);
-            await t.wait(2000);
-          }else{
-            await helper.clearAndEnterText(t, eaQualifierPage.elements.accountDetail, accDetail);
-            await helper.isElementVisible(t, eaQualifierPage.elements.accountDetailValidate);
-          }
-        await helper.click(t, eaQualifierPage.elements.verifyAccountSubmit);
-        switch(idType){
-          case 'dob':
-             await provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDOBValue);
-             break;
-          case 'dl':
-              await selectIdTypeQualifier(t, eaQualifierPage.elements.idTypeDl);
-              await provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
-              break;
-          case 'pin':
-              await selectIdTypeQualifier(t, eaQualifierPage.elements.idTypePin);
-              await provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
-              break;
-        }
-        await helper.waitForLoadingIconToClose();
-        await t.wait(3000);
-        await helper.click(t, eaQualifierPage.elements.verifyIdentitySubmit);
     }
     else{
       console.log('customer status option is not selected.');
     }
     }
+    async function verifyAccount(t,accountNumber,accountIdentityType,postcodeOrABNACN){
+      await helper.clearAndEnterText(t, eaQualifierPage.elements.accountNumber, accountNumber);
+      switch(accountIdentityType){
+        case BusinessType.ABN:
+          await helper.click(t,eaQualifierPage.elements.existingCustomerAbn);
+          await helper.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, postcodeOrABNACN);
+          await t.wait(2000);
+        case BusinessType.ACN:
+          await helper.click(t,eaQualifierPage.elements.existingCustomerAcn);
+          await helper.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, postcodeOrABNACN);
+          await t.wait(2000);
+        case 'Postcode':
+          await helper.clearAndEnterText(t, eaQualifierPage.elements.accountDetail, postcodeOrABNACN);
+          await helper.isElementVisible(t, eaQualifierPage.elements.accountDetailValidate);
+        default:
+          console.log('account identity type is not valid');
+      }
+      await helper.click(t, eaQualifierPage.elements.verifyAccountSubmit);
+    }
     async function selectIdTypeQualifier(t, itemToClick) {
-      /*let val=await eaQualifierPage.elements.idTypeDropDown.count
-        .then(result=>result);*/
       let val =await helper.sizeOfElement(t, eaQualifierPage.elements.idTypeDropDown);
       if(val!==1) {
         await helper.click(t, eaQualifierPage.elements.idTypeDropDownVerifyAccount);
         await helper.click(t, itemToClick);
       }
+    }
+    async function verifyIdentity(t,idType,idValue){
+      switch(idType){
+        case 'dob':
+          await provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDOBValue);
+          break;
+        case 'dl':
+          await selectIdTypeQualifier(t, eaQualifierPage.elements.idTypeDl);
+          await provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
+          break;
+        case 'pin':
+          await selectIdTypeQualifier(t, eaQualifierPage.elements.idTypePin);
+          await provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
+          break;
+        default:
+          console.log('Invalid id type');
+      }
+      await helper.waitForLoadingIconToClose();
+      await t.wait(3000);
+      await helper.click(t, eaQualifierPage.elements.verifyIdentitySubmit);
     }
     async function provideIdValue(t,idValue, inputField) {
       await helper.clearAndEnterText(t,inputField, idValue);
@@ -128,6 +135,8 @@ export function qualifierPageFunction() {
   }
   return {
       selectCustomerStatus,
+      verifyAccount,
+      verifyIdentity,
       provideMovingType,
       provideAddress,
       selectDateFromCalendar,
