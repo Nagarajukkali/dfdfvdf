@@ -10,7 +10,7 @@ export class checkoutCompleteMethod {
         console.log('New customer');
         break;
       default:
-        console.log('Please select a valid customer');
+        console.error('Please select a valid customer');
     }
   }
 }

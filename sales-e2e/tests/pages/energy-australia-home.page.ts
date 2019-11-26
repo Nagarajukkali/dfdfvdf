@@ -5,8 +5,8 @@ const eaHomePage={
   pageUrl: config.eaHomePageUrl,
   elements: {
     residentialComparePlansButton: Selector('.icon-GasElectricity'),
-    businessLink:Selector('[class*=\'menu-item--collapsed\'] a[href^=\'/business\']'),
-    smallBusinessButton:Selector('a[class*=\'ea-button--primary\'][href*=\'/small\']'),
+    businessLink:Selector("[class*='menu-item--collapsed'] a[href^='/business']"),
+    smallBusinessButton:Selector("a[class*='ea-button--primary'][href*='/small']"),
     ModalWindow: Selector('.tablet-desktop-only #hs-refine-modal-cta'),
     creditCardDisclaimer: Selector('.hs-plan-card-fees'),
     modalVerifyAccountOption: Selector('#hs-verify-account-cta button'),

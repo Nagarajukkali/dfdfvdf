@@ -9,7 +9,7 @@ export class plansMethod{
             await testFunction.click(t,EaHomePage.elements.ModalWindow);
           }
           else {
-              console.log('Modal window could not be opened due to page error')
+              console.error('Modal window could not be opened due to page error')
           }
     }
 
@@ -32,7 +32,7 @@ export class plansMethod{
           await testFunction.click(t,EaHomePage.elements.fuelSelectorOptionGas);
           break;
         default:
-          console.log("Invalid fuel type is selected");
+          console.error("Invalid fuel type is selected");
       }
     }
 
@@ -44,7 +44,7 @@ export class plansMethod{
         await this.selectBSMEPlan(t,planName);
       }
       else {
-        console.log("Please provide valid customer type");
+        console.error("Please provide valid customer type");
       }
     }
 
@@ -63,12 +63,11 @@ export class plansMethod{
         await testFunction.click(t,EaHomePage.elements.totalPlusPlan);
         break;
       default:
-        console.log("Invalid plan is selected");
+        console.error("Invalid plan is selected");
     }
   }
 
   public static async selectBSMEPlan(t,planName){
-      console.log(planName);
     switch(planName){
       case PlanType.BASIC_BUSINESS:
         await testFunction.click(t,EaHomePage.elements.basicBusiness);
@@ -83,7 +82,7 @@ export class plansMethod{
         await testFunction.click(t,EaHomePage.elements.totalPlanPlusBusiness);
         break;
       default:
-        console.log("Invalid plan is selected");
+        console.error("Invalid plan is selected");
     }
   }
 }
@@ -127,7 +126,7 @@ export class verifyAccountMethod {
               await testFunction.clearAndEnterText(t,EaHomePage.elements.gasAccountNo, accountNumber);
               break;
             default:
-              console.log('Couldnot provide account details as the page didnot load properly');
+              console.error('Couldnot provide account details as the page didnot load properly');
           }
     }
 

@@ -5,7 +5,7 @@ const eaCheckoutDetailsPage={
     myDetailsHeaderText:Selector('#myDetailsTitle'),
     titleDropdown:Selector('#title sui-select>div'),
     titleDrop:Selector('#title div.sui-select>span'),
-    titleTag:Selector('div[title*=\'Please select\'] sui-option').nth(0),
+    titleTag:Selector("div[title*='Please select'] sui-option").nth(0),
     firstName:Selector('#firstname'),
     lastName:Selector('#lastname'),
     dobDay:Selector('#dob-day'),

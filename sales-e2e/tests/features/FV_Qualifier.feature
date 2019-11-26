@@ -29,7 +29,7 @@ Feature: Safety flag scenarios for Quote tool journey
       | BUS      | 9600344079    | 383989431             | pin    | 288599840 | Total Business  | Existing |ACN                  | SF_Business_Qualifier |
 
   @smoke
-  Scenario Outline: Verify a residential customer is able to submit quote via quote tool
+  Scenario Outline: Verify a residential customer is able to submit quote via quote tool when safety flag is set to false
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
     When user selects '<planName>' from '<customer_type>' plans page

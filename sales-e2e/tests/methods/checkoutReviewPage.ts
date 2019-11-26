@@ -28,12 +28,11 @@ export class checkoutReviewMethod {
 
   public static async answerLifeSupportQuestion(t,option) {
       if(option==="Yes")
-        await testFunction.click(t,eaCheckoutReviewPage.elements.rbLifeSupportYes);
+        await testFunction.click(t,eaCheckoutReviewPage.elements.lifeSupportQuestionYes);
       else if(option==="No")
-        await testFunction.click(t,eaCheckoutReviewPage.elements.rbLifeSupportNo);
+        await testFunction.click(t,eaCheckoutReviewPage.elements.lifeSupportQuestionNo);
       else {
-        console.log("Invalid option selected.");
-        /*fail(String.format("Expected Life Support answer to be 'yes' or 'no', not '%s'.", option));*/
+        console.error("Invalid option selected.");
       }
   }
 
@@ -176,10 +175,10 @@ export class checkoutReviewMethod {
   public static async validateTheSelectedOptionAndAbsenceOfFuelAccordions(t, expectedSelection, fuelType) {
     let classValue;
     if(expectedSelection ==="yes") {
-      classValue=await testFunction.getElementAttribute(t, eaCheckoutReviewPage.elements.rbLifeSupportYes, "class");
+      classValue=await testFunction.getElementAttribute(t, eaCheckoutReviewPage.elements.lifeSupportQuestionYes, "class");
     }
     else {
-      classValue=await testFunction.getElementAttribute(t, eaCheckoutReviewPage.elements.rbLifeSupportNo, "class");
+      classValue=await testFunction.getElementAttribute(t, eaCheckoutReviewPage.elements.lifeSupportQuestionNo, "class");
     }
     await classValue.include("ea-state-active").ok();
 

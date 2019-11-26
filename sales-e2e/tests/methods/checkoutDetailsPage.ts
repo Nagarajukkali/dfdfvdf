@@ -11,7 +11,7 @@ export class checkoutDetailsMethod{
             await testFunction.click(t,eaCheckoutDetailsPage.elements.titleTag);
         }
         else{
-          console.log('Please select a valid title');
+          console.error('Please select a valid title');
         }
         await this.enterFirstName(t,firstName);
         await this.enterLastName(t,lastName);
@@ -19,7 +19,7 @@ export class checkoutDetailsMethod{
             await this.enterDOB(t);
         }
         else{
-          console.log('Please proceed to fill all questions');
+          console.error('Please proceed to fill all questions');
         }
     }
     public static async enterFirstName(t,firstName){
@@ -49,7 +49,7 @@ export class checkoutDetailsMethod{
         else if(customerStatus===CustomerStatus.NEW){
             await this.checkoutNewCustomerIdentification(t,idType);
         }else {
-          console.log('Please select a valid customer');
+          console.error('Please select a valid customer');
         }
     }
 
@@ -65,7 +65,7 @@ export class checkoutDetailsMethod{
               await this.checkoutExistingCustomerMedicareIdentification(t);
               break;
             default:
-              console.log('Please select a valid identification type');
+              console.error('Please select a valid identification type');
       }
     }
 
@@ -102,7 +102,7 @@ export class checkoutDetailsMethod{
         await this.checkoutNewCustomerMedicareIdentification(t);
         break;
       default:
-        console.log('Please select a valid ID type');
+        console.error('Please select a valid ID type');
     }
   }
 
@@ -132,12 +132,12 @@ export class checkoutDetailsMethod{
       if(electricityAccess==='No') {
         await testFunction.click(t, eaCheckoutDetailsPage.elements.electricityAccessNo);
       }else{
-        console.log('Access restriction is not present for the premise');
+        console.error('Access restriction is not present for the premise');
       }
       if(gasAccess==='No') {
         await testFunction.click(t, eaCheckoutDetailsPage.elements.gasAccessNo);
       }else {
-        console.log('Access restriction is not present for the premise');
+        console.error('Access restriction is not present for the premise');
       }
   }
   public static async propertyRenovationNo(t,state){
@@ -147,7 +147,7 @@ export class checkoutDetailsMethod{
         await testFunction.click(t,eaCheckoutDetailsPage.elements.renovationNo);
       }
       else {
-        console.log('Property renovation is not required for this state');
+        console.error('Property renovation is not required for this state');
       }
   }
   public static async provideBusinessDetails(t,businessType){
@@ -158,7 +158,7 @@ export class checkoutDetailsMethod{
       else if(businessType===BusinessType.ACN){
         await testFunction.click(t,eaCheckoutDetailsPage.elements.ACN);
       }else {
-        console.log('ABN/ACN is not valid');
+        console.error('ABN/ACN is not valid');
       }
       await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.number_ABNACN,businessId);
       await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.company,'NA');

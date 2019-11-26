@@ -1,5 +1,7 @@
+import {CustomerType} from '@ea/ea-commons-models';
+
 const eaQualifierPage=require('../pages/qualifier.page');
-import {CustomerStatus, IdType, Moving, Property, Solar, testFunction} from '../../global_methods/helper';
+import {BusinessType, CustomerStatus, IdType, Moving, Property, Solar, testFunction} from '../../global_methods/helper';
 
 export class qualifierMethod{
 
@@ -10,11 +12,11 @@ export class qualifierMethod{
     else if(customerStatus===CustomerStatus.EXISTING){
         await testFunction.click(t,eaQualifierPage.elements.existingCustomerBtn);
         await testFunction.clearAndEnterText(t, eaQualifierPage.elements.accountNumber, accountNumber);
-          if(customerType==='Business' && accountIdentityType==='ABN'){
+          if(customerType===CustomerType.BUSINESS && accountIdentityType===BusinessType.ABN){
             await testFunction.click(t,eaQualifierPage.elements.existingCustomerAbn);
             await testFunction.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, accDetail);
             await t.wait(2000);
-          }else if(customerType==='Business' && accountIdentityType==='ACN'){
+          }else if(customerType===CustomerType.BUSINESS && accountIdentityType===BusinessType.ACN){
             await testFunction.click(t,eaQualifierPage.elements.existingCustomerAcn);
             await testFunction.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, accDetail);
             await t.wait(2000);
@@ -41,7 +43,7 @@ export class qualifierMethod{
         await testFunction.click(t, eaQualifierPage.elements.verifyIdentitySubmit);
     }
     else{
-      console.log('customer status option is not selected.');
+      console.error('customer status option is not selected.');
     }
     }
     public static async selectIdTypeQualifier(t, itemToClick) {
@@ -69,7 +71,7 @@ export class qualifierMethod{
           await testFunction.click(t,eaQualifierPage.elements.moving);
       }
       else{
-        console.log('moving option is not selected.');
+        console.error('moving option is not selected.');
       }
   }
 
@@ -111,7 +113,7 @@ export class qualifierMethod{
       await testFunction.click(t,eaQualifierPage.elements.renter);
     }
     else{
-      console.log('Property type is not selected');
+      console.error('Property type is not selected');
     }
   }
   public static async selectSolarOption(t,solarOpt){
@@ -122,7 +124,7 @@ export class qualifierMethod{
       await testFunction.click(t,eaQualifierPage.elements.solarNo);
     }
     else{
-      console.log('Solar option is not selected');
+      console.error('Solar option is not selected');
     }
   }
 }
