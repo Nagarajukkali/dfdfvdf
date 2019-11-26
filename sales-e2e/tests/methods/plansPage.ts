@@ -1,218 +1,196 @@
-const EaHomePage = require('../pages/energy-australia-home.page');
-import {CustomerType, FuelType, IdType, PlanType, testFuncs} from '../../global_methods/helper';
-const helper  = testFuncs();
+import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
+import {CustomerType} from '@ea/ea-commons-models';
+const EaHomePage=require('../pages/energy-australia-home.page');
+import {IdType, PlanType, testFunction} from '../../global_methods/helper';
 
-export function plansPageFunction() {
-    async function clickPlansPageModal(t, customerType) {
+export class plansMethod{
+    public static async clickPlansPageModal(t, customerType) {
         if(customerType===CustomerType.RESIDENTIAL || customerType===CustomerType.BUSINESS){
-            await helper.click(t,EaHomePage.elements.ModalWindow);
+            await testFunction.click(t,EaHomePage.elements.ModalWindow);
           }
           else {
               console.log('Modal window could not be opened due to page error')
           }
     }
 
-    async function verifyVerifyAccountChangeButton(t){
-      await helper.isElementDisplayed(t,EaHomePage.elements.changeLinkVerifyAccount);
+    public static async verifyVerifyAccountChangeButton(t){
+      await testFunction.isElementDisplayed(t,EaHomePage.elements.changeLinkVerifyAccount);
     }
 
-    async function selectFuel(t,fuelType){
+    public static async selectFuel(t,fuelType){
       switch(fuelType){
-        case FuelType.DUAL:
-          await helper.click(t,EaHomePage.elements.fuelSelectorOption);
-          await helper.click(t,EaHomePage.elements.fuelSelectorOptionDual);
+        case FUEL_TYPE_OPTIONS.BOTH:
+          await testFunction.click(t,EaHomePage.elements.fuelSelectorOption);
+          await testFunction.click(t,EaHomePage.elements.fuelSelectorOptionDual);
           break;
-        case FuelType.ELECTRICITY:
-          await helper.click(t,EaHomePage.elements.fuelSelectorOption);
-          await helper.click(t,EaHomePage.elements.fuelSelectorOptionEle);
+        case FUEL_TYPE_OPTIONS.ELE:
+          await testFunction.click(t,EaHomePage.elements.fuelSelectorOption);
+          await testFunction.click(t,EaHomePage.elements.fuelSelectorOptionEle);
           break;
-        case FuelType.GAS:
-          await helper.click(t,EaHomePage.elements.fuelSelectorOption);
-          await helper.click(t,EaHomePage.elements.fuelSelectorOptionGas);
+        case FUEL_TYPE_OPTIONS.GAS:
+          await testFunction.click(t,EaHomePage.elements.fuelSelectorOption);
+          await testFunction.click(t,EaHomePage.elements.fuelSelectorOptionGas);
           break;
         default:
           console.log("Invalid fuel type is selected");
       }
     }
 
-    async function selectPlan(t, planName, customerType){
+    public static async selectPlan(t, planName, customerType){
       if (customerType===CustomerType.RESIDENTIAL) {
-        await selectResiPlan(t,planName);
+        await this.selectResiPlan(t,planName);
       }
       else if(customerType===CustomerType.BUSINESS){
-        await selectBSMEPlan(t,planName);
+        await this.selectBSMEPlan(t,planName);
       }
       else {
         console.log("Please provide valid customer type");
       }
     }
 
-    async function selectResiPlan(t,planName){
-      switch(planName){
-        case PlanType.BASICHOME:
-          await helper.click(t,EaHomePage.elements.basicPlan);
-          break;
-        case PlanType.NOFRILLS:
-          await helper.click(t,EaHomePage.elements.noFrillsPlan);
-          break;
-        case PlanType.TOTALPLAN:
-          await helper.click(t,EaHomePage.elements.totalPlan);
-          break;
-        case PlanType.TOTALPLANPLUS:
-          await helper.click(t,EaHomePage.elements.totalPlusPlan);
-          break;
-        default:
-          console.log("Invalid plan is selected");
-      }
-    }
-
-  async function selectBSMEPlan(t,planName){
-      console.log(planName);
+  public static async selectResiPlan(t: any, planName: any) {
     switch(planName){
-      case PlanType.BASICBUSINESS:
-        await helper.click(t,EaHomePage.elements.basicBusiness);
+      case PlanType.BASIC_HOME:
+        await testFunction.click(t,EaHomePage.elements.basicPlan);
         break;
-      case PlanType.NOFRILLSBUSINESS:
-        await helper.click(t,EaHomePage.elements.noFrillBusiness);
+      case PlanType.NO_FRILLS:
+        await testFunction.click(t,EaHomePage.elements.noFrillsPlan);
         break;
-      case PlanType.TOTALBUSINESS:
-        await helper.click(t,EaHomePage.elements.totalPlanBusiness);
+      case PlanType.TOTAL_PLAN:
+        await testFunction.click(t,EaHomePage.elements.totalPlan);
         break;
-      case PlanType.TOTALPLANPLUSBUSINESS:
-        await helper.click(t,EaHomePage.elements.totalPlanPlusBusiness);
+      case PlanType.TOTAL_PLAN_PLUS:
+        await testFunction.click(t,EaHomePage.elements.totalPlusPlan);
         break;
       default:
         console.log("Invalid plan is selected");
     }
   }
 
-    return {
-        clickPlansPageModal,
-        verifyVerifyAccountChangeButton,
-        selectFuel,
-        selectPlan,
-        selectResiPlan,
-        selectBSMEPlan,
-      };
+  public static async selectBSMEPlan(t,planName){
+      console.log(planName);
+    switch(planName){
+      case PlanType.BASIC_BUSINESS:
+        await testFunction.click(t,EaHomePage.elements.basicBusiness);
+        break;
+      case PlanType.NO_FRILLS_BUSINESS:
+        await testFunction.click(t,EaHomePage.elements.noFrillBusiness);
+        break;
+      case PlanType.TOTAL_BUSINESS:
+        await testFunction.click(t,EaHomePage.elements.totalPlanBusiness);
+        break;
+      case PlanType.TOTAL_PLAN_PLUS_BUSINESS:
+        await testFunction.click(t,EaHomePage.elements.totalPlanPlusBusiness);
+        break;
+      default:
+        console.log("Invalid plan is selected");
+    }
+  }
 }
 
-export function selectionOptionModalWindow() {
-    async function selectOptionsModalWindow(t, modalWindowValue) {
+export class selectionOptionModalWindowMethod {
+    public static async selectOptionsModalWindow(t, modalWindowValue) {
         if (modalWindowValue==='verify account') {
-            await helper.click(t,EaHomePage.elements.modalVerifyAccountOption);
+            await testFunction.click(t,EaHomePage.elements.modalVerifyAccountOption);
           } else if (modalWindowValue==='Bill upload') {
-            await helper.click(t,EaHomePage.elements.modalBillUploadOption);
+            await testFunction.click(t,EaHomePage.elements.modalBillUploadOption);
           }
     }
-    return {
-        selectOptionsModalWindow,
-      };
 }
 
-export function verifyAccount() {
-    async function verifyAccountIsDisplayed(t, fuelType, customerType) {
+export class verifyAccountMethod {
+    public static async verifyAccountIsDisplayed(t, fuelType, customerType) {
         if (customerType===CustomerType.RESIDENTIAL) {
             switch (fuelType) {
-              case FuelType.DUAL:
-                await helper.isElementDisplayed(t,EaHomePage.elements.elecAccountNo);
-                await helper.isElementDisplayed(t,EaHomePage.elements.gasAccountNo);
+              case FUEL_TYPE_OPTIONS.BOTH:
+                await testFunction.isElementDisplayed(t,EaHomePage.elements.elecAccountNo);
+                await testFunction.isElementDisplayed(t,EaHomePage.elements.gasAccountNo);
                 break;
-              case FuelType.ELECTRICITY:
-                  await helper.isElementDisplayed(t,EaHomePage.elements.elecAccountNo);
+              case FUEL_TYPE_OPTIONS.ELE:
+                  await testFunction.isElementDisplayed(t,EaHomePage.elements.elecAccountNo);
                 break;
-              case FuelType.GAS:
-                  await helper.isElementDisplayed(t,EaHomePage.elements.gasAccountNo);
+              case FUEL_TYPE_OPTIONS.GAS:
+                  await testFunction.isElementDisplayed(t,EaHomePage.elements.gasAccountNo);
                 break;
             }
-            await helper.isElementDisplayed(t,EaHomePage.elements.nextAccountNumber);
-            await helper.isElementDisplayed(t,EaHomePage.elements.backAccountNumber);
+            await testFunction.isElementDisplayed(t,EaHomePage.elements.nextAccountNumber);
+            await testFunction.isElementDisplayed(t,EaHomePage.elements.backAccountNumber);
           }
-    }
+  }
 
-    async function provideAccountDetails(t,fuel,accountNumber){
+    public static async provideAccountDetails(t,fuel,accountNumber){
         switch(fuel){
-            case FuelType.ELECTRICITY:
-              await helper.clearAndEnterText(t,EaHomePage.elements.elecAccountNo, accountNumber);
+            case FUEL_TYPE_OPTIONS.ELE:
+              await testFunction.clearAndEnterText(t,EaHomePage.elements.elecAccountNo, accountNumber);
               break;
-            case FuelType.GAS:
-              await helper.clearAndEnterText(t,EaHomePage.elements.gasAccountNo, accountNumber);
+            case FUEL_TYPE_OPTIONS.GAS:
+              await testFunction.clearAndEnterText(t,EaHomePage.elements.gasAccountNo, accountNumber);
               break;
             default:
               console.log('Couldnot provide account details as the page didnot load properly');
           }
     }
 
-    async function provideAccountInformation(t, accountInformation, customerType ){
+    public static async provideAccountInformation(t, accountInformation, customerType ){
         switch(customerType){
             case CustomerType.RESIDENTIAL:
-                await helper.clearAndEnterText(t,EaHomePage.elements.postcodeVerifyAccount, accountInformation);
+                await testFunction.clearAndEnterText(t,EaHomePage.elements.postcodeVerifyAccount, accountInformation);
               break;
             case CustomerType.BUSINESS:
-                await helper.clearAndEnterText(t,EaHomePage.elements.businessInformation, accountInformation);
+                await testFunction.clearAndEnterText(t,EaHomePage.elements.businessInformation, accountInformation);
               break;
           }
     }
 
-    async function verifyAccountDetails(t){
-        await helper.click(t, EaHomePage.elements.nextAccountNumber);
+    public static async verifyAccountDetails(t){
+        await testFunction.click(t, EaHomePage.elements.nextAccountNumber);
     }
 
-    async function provideIdentityDetails(t, idType, idValue){
+    public static async provideIdentityDetails(t, idType, idValue){
         switch(idType){
             case IdType.DOB:
-               await provideIdValue(t, idValue,EaHomePage.elements.idTypeDOBValueVerifyAccount);
+               await this.provideIdValue(t, idValue,EaHomePage.elements.idTypeDOBValueVerifyAccount);
                break;
             case IdType.DL:
-                await selectIdType(t, EaHomePage.elements.idTypeDlVerifyAccount);
-                await provideIdValue(t, idValue,EaHomePage.elements.idTypeDlValueVerifyAccount);
+                await this.selectIdType(t, EaHomePage.elements.idTypeDlVerifyAccount);
+                await this.provideIdValue(t, idValue,EaHomePage.elements.idTypeDlValueVerifyAccount);
                 break;
             case IdType.PIN:
-                await selectIdType(t, EaHomePage.elements.idTypePinVerifyAccount);
-                await provideIdValue(t, idValue,EaHomePage.elements.idTypeDlValueVerifyAccount);
+                await this.selectIdType(t, EaHomePage.elements.idTypePinVerifyAccount);
+                await this.provideIdValue(t, idValue,EaHomePage.elements.idTypeDlValueVerifyAccount);
                 break;
           }
     }
 
-    async function verifyUsageData(t, fuelType){
+    public static async verifyUsageData(t, fuelType){
         switch (fuelType) {
-            case FuelType.DUAL:
-                await helper.isElementDisplayed(t,EaHomePage.elements.usageData_ele);
-                await helper.isElementDisplayed(t,EaHomePage.elements.usageData_gas);
+            case FUEL_TYPE_OPTIONS.BOTH:
+                await testFunction.isElementDisplayed(t,EaHomePage.elements.usageData_ele);
+                await testFunction.isElementDisplayed(t,EaHomePage.elements.usageData_gas);
               break;
-            case FuelType.ELECTRICITY:
-                await helper.isElementDisplayed(t,EaHomePage.elements.usageData_ele);
+            case FUEL_TYPE_OPTIONS.ELE:
+                await testFunction.isElementDisplayed(t,EaHomePage.elements.usageData_ele);
               break;
-            case FuelType.GAS:
-                await helper.isElementDisplayed(t,EaHomePage.elements.usageData_gas);
+            case FUEL_TYPE_OPTIONS.GAS:
+                await testFunction.isElementDisplayed(t,EaHomePage.elements.usageData_gas);
               break;
           }
     }
 
-    async function verifyFamilyViolenceMessage(t, value){
-      await helper.assertText(t, EaHomePage.elements.familyViolenceMessage, value);
+    public static async verifyFamilyViolenceMessage(t, value){
+      await testFunction.assertText(t, EaHomePage.elements.familyViolenceMessage, value);
     }
 
-    async function showCostEstimates(t){
-        await helper.click(t, EaHomePage.elements.getCostEstimatesChangeButton);
+    public static async showCostEstimates(t){
+        await testFunction.click(t, EaHomePage.elements.getCostEstimatesChangeButton);
     }
 
-    async function selectIdType(t, itemToClick) {
-        await helper.click(t, EaHomePage.elements.idTypeDropDownVerifyAccount);
-        await helper.click(t, itemToClick);
+    public static async selectIdType(t, itemToClick) {
+        await testFunction.click(t, EaHomePage.elements.idTypeDropDownVerifyAccount);
+        await testFunction.click(t, itemToClick);
       }
-    async function provideIdValue(t,idValue, inputField) {
-        await helper.clearAndEnterText(t,inputField, idValue);
+
+    public static async provideIdValue(t,idValue, inputField) {
+        await testFunction.clearAndEnterText(t,inputField, idValue);
     }
-    return {
-        verifyAccountIsDisplayed,
-        provideAccountDetails,
-        provideAccountInformation,
-        verifyAccountDetails,
-        provideIdentityDetails,
-        verifyUsageData,
-        showCostEstimates,
-        verifyFamilyViolenceMessage,
-        selectIdType,
-        provideIdValue,
-      };
 }

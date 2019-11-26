@@ -1,13 +1,13 @@
 @quotetool
-Feature: Family violence scenarios for Verify Account journey
+Feature: Safety Flag scenarios for Verify Account journey
   @smoke
-  Scenario Outline: Verify family violence message is displayed to the end user which has flag as true for Residential Customer
-    Given user have opened the website link in a browser and creates '<folderName>' to save evidences
+  Scenario Outline: Verify Safety Flag message is displayed to the end user which has flag as true for Residential Customer
+    Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
     When user clicks on the verify modal window on '<customer_type>' page
     And user clicks on '<modal_option>' from the modal
-    Then user verifies if the verify account window is displayed as per the '<fuelType>' fueltype for '<customer_type>' customer
-    When user provides 'Electricity' account number '<elecAccountNumber>'
+    And user verifies if the verify account window is displayed as per the '<fuelType>' fueltype for '<customer_type>' customer
+    And user provides 'Electricity' account number '<elecAccountNumber>'
     And user provides '<accountVerification>' for '<customer_type>' customer
     And user clicks on Next button after account number
     And User selects ID type '<idType>' and enters '<idNumber>'
@@ -17,16 +17,16 @@ Feature: Family violence scenarios for Verify Account journey
     | We are currently unable to retrieve your information. Please call 133 466 (Monday – Friday, 8am – 8pm AEDT) |
     Examples:
     | customer_type | modal_option  | fuelType | elecAccountNumber |accountVerification | idType | idNumber |folderName|
-    | Residential   | verify account| Dual     | 1020538159        |3351     | dob    | 01011980            |FV_Residential_VerifyAccount|
+    | Residential   | verify account| Dual     | 1020538159        |3351     | dob    | 01011980            |SF_Residential_VerifyAccount|
 
   @smoke
-  Scenario Outline: Verify family violence message is displayed to the end user which has flag as true for Business Customer
-    Given user have opened the website link in a browser and creates '<folderName>' to save evidences
+  Scenario Outline: Verify Safety Flag message is displayed to the end user which has flag as true for Business Customer
+    Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
     When user clicks on the verify modal window on '<customer_type>' page
     And user clicks on '<modal_option>' from the modal
-    Then user verifies if the verify account window is displayed as per the '<fuelType>' fueltype for '<customer_type>' customer
-    When user provides 'Electricity' account number '<elecAccountNumber>'
+    And user verifies if the verify account window is displayed as per the '<fuelType>' fueltype for '<customer_type>' customer
+    And user provides 'Electricity' account number '<elecAccountNumber>'
     And user provides '<accountVerification>' for '<customer_type>' customer
     And user clicks on Next button after account number
     And User selects ID type '<idType>' and enters '<idNumber>'
@@ -37,27 +37,27 @@ Feature: Family violence scenarios for Verify Account journey
 
     Examples:
       | customer_type | modal_option  | fuelType | elecAccountNumber |accountVerification | idType | idNumber  |folderName|
-      | Business      | verify account| Dual     | 9600344079        |383989431           | pin    | 288599840 |FV_Business_VerifyAccount|
+      | Business      | verify account| Dual     | 9600344079        |383989431           | pin    | 288599840 |SF_Business_VerifyAccount|
 
   @smoke
   Scenario Outline: Verify a residential customer is able to submit quote via quote tool
-    Given user have opened the website link in a browser and creates '<folderName>' to save evidences
+    Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
     When user clicks on the verify modal window on '<customer_type>' page
     And user clicks on '<modal_option>' from the modal
-    Then user verifies if the verify account window is displayed as per the '<fuelType>' fueltype for '<customer_type>' customer
-    When user provides 'Electricity' account number '<elecAccountNumber>'
+    And user verifies if the verify account window is displayed as per the '<fuelType>' fueltype for '<customer_type>' customer
+    And user provides 'Electricity' account number '<elecAccountNumber>'
     And user provides 'Gas' account number '<gasAccountNumber>'
     And user provides '<postcode>' for '<customer_type>' customer
     And user clicks on Next button after account number
     And User selects ID type '<idType>' and enters '<idNumber>'
     And user clicks on Next button after account number
-    Then Usage data is displayed for '<fuelType>'
-    When user click show estimates on modal window
-    Then User lands on plans page after verify account journey
-    When user selects '<planName>' from '<customer_type>' plans page
+    And Usage data is displayed for '<fuelType>'
+    And user click show estimates on modal window
+    And User lands on plans page after verify account journey
+    And user selects '<planName>' from '<customer_type>' plans page
     And user moves on to fill the qualifier
-    And user provides all details on qualifier page
+    Then user provides all details on qualifier page
       | connectionAddress               | movingType|propertyType|solarOption|
       | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |No         |
     And user provides all details for existing customer on checkout details page

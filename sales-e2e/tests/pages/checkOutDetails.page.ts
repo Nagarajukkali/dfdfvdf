@@ -1,6 +1,6 @@
 import {Selector } from 'testcafe';
 
-const eaCheckoutDetailsPage = {
+const eaCheckoutDetailsPage={
   elements: {
     myDetailsHeaderText:Selector('#myDetailsTitle'),
     titleDropdown:Selector('#title sui-select>div'),
@@ -41,4 +41,4 @@ const eaCheckoutDetailsPage = {
   },
 };
 
-module.exports = eaCheckoutDetailsPage;
+module.exports=eaCheckoutDetailsPage;

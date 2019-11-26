@@ -1,6 +1,6 @@
 import {Selector } from 'testcafe';
 
-const eaCheckoutReviewPage = {
+const eaCheckoutReviewPage={
     elements: {
       lifeSupportHeader: Selector('div[class*=life-support] h4'),
       lifeSupportDisclaimer: Selector('[class*=life-support-disclaimer]'),
@@ -36,4 +36,4 @@ const eaCheckoutReviewPage = {
     }
 }
 
-module.exports = eaCheckoutReviewPage;
+module.exports=eaCheckoutReviewPage;

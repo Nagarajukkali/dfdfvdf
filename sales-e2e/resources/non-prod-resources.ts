@@ -1,4 +1,4 @@
-module.exports = {
+module.exports={
 config: {
     env: 'non-prod',
     eaHomePageUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au',

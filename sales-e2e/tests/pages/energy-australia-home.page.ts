@@ -1,7 +1,7 @@
-const { config } = require('../../resources/resource');
+const { config }=require('../../resources/resource');
 import {Selector } from 'testcafe';
 
-const eaHomePage = {
+const eaHomePage={
   pageUrl: config.eaHomePageUrl,
   elements: {
     residentialComparePlansButton: Selector('.icon-GasElectricity'),
@@ -40,4 +40,4 @@ const eaHomePage = {
   },
 };
 
-module.exports = eaHomePage;
+module.exports=eaHomePage;

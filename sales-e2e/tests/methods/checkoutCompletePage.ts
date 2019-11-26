@@ -1,9 +1,7 @@
-const eaCheckoutCompletePage = require('../pages/checkoutComplete.page')
-import {CustomerStatus,testFuncs} from '../../global_methods/helper';
-const helper  = testFuncs();
+import {CustomerStatus} from '../../global_methods/helper';
 
-export function checkoutCompletePage() {
-  async function verifyWelcomePackMessage(t,customer) {
+export class checkoutCompleteMethod {
+  public static async verifyWelcomePackMessage(t,customer) {
     switch (customer) {
       case CustomerStatus.EXISTING:
         console.log('Existing customer');
@@ -15,7 +13,4 @@ export function checkoutCompletePage() {
         console.log('Please select a valid customer');
     }
   }
-  return{
-    verifyWelcomePackMessage,
-  };
 }

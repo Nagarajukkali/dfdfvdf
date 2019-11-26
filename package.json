@@ -31,6 +31,7 @@
     "@angular/platform-browser": "^7.2.4",
     "@angular/platform-browser-dynamic": "^7.2.4",
     "@angular/router": "^7.2.4",
+    "@ea/ea-commons-models": "^0.1.1",
     "@ea/ea-ui": "^1.13.5",
     "@ea/ng-self-service": "1.2.76",
     "@ngrx/effects": "^7.2.0",

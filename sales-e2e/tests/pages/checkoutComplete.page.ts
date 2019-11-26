@@ -1,9 +1,9 @@
 import {Selector } from 'testcafe';
 
-const eaCheckoutCompletePage = {
+const eaCheckoutCompletePage={
   elements: {
 
   }
 }
 
-module.exports = eaCheckoutCompletePage;
+module.exports=eaCheckoutCompletePage;

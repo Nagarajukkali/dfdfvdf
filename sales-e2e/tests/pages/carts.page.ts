@@ -1,13 +1,13 @@
 import {Selector } from 'testcafe';
 
-const cartsPage = {
+const cartsPage={
   elements: {
     cartsPageContinueButton: Selector('.cart-button-wrapper__text'),
 
   },
 };
 
-module.exports = cartsPage;
+module.exports=cartsPage;
 
 
 

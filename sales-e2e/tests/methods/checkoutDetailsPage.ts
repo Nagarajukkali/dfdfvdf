@@ -1,206 +1,170 @@
-const eaCheckoutDetailsPage = require('../pages/checkoutDetails.page');
-const eaCheckoutReviewPage = require('../pages/checkoutReview.page');
-import {BusinessType, CustomerStatus, CustomerType, State, testFuncs} from '../../global_methods/helper';
-const helper  = testFuncs();
+const eaCheckoutDetailsPage=require('../pages/checkoutDetails.page');
+const eaCheckoutReviewPage=require('../pages/checkoutReview.page');
+import {BusinessType, CustomerStatus, testFunction} from '../../global_methods/helper';
+import {AustralianState, CustomerType} from '@ea/ea-commons-models';
 
-export function checkoutDetailsPageFunction(){
+export class checkoutDetailsMethod{
 
-    async function provideDetailsInAboutMeSection(t,customerType,firstName,lastName){
-        if((await helper.getElementText(t, eaCheckoutDetailsPage.elements.titleDropdown)).includes('Please select')){
-            await helper.click(t,eaCheckoutDetailsPage.elements.titleDrop);
-            await helper.click(t,eaCheckoutDetailsPage.elements.titleTag);
+    public static async provideDetailsInAboutMeSection(t,journey,firstName,lastName){
+        if((await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.titleDropdown)).includes('Please select')){
+            await testFunction.click(t,eaCheckoutDetailsPage.elements.titleDrop);
+            await testFunction.click(t,eaCheckoutDetailsPage.elements.titleTag);
         }
         else{
           console.log('Please select a valid title');
         }
-        await enterFirstName(t,firstName);
-        await enterLastName(t,lastName);
-        if(customerType===CustomerType.RESIDENTIAL || customerType==='Campaign'){
-            await enterDOB(t);
+        await this.enterFirstName(t,firstName);
+        await this.enterLastName(t,lastName);
+        if(journey===CustomerType.RESIDENTIAL || journey==='Campaign'){
+            await this.enterDOB(t);
         }
         else{
           console.log('Please proceed to fill all questions');
         }
     }
-    async function enterFirstName(t,firstName){
-      if(firstName!=undefined){
-        await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.firstName,firstName);
-      }
-      else{
-        await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.firstName,'test');
-      }
+    public static async enterFirstName(t,firstName){
+        firstName = firstName ? firstName : "test";
+        await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.firstName, firstName);
     }
-    async function enterLastName(t,lastName){
-        if(lastName!=undefined){
-          await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.lastName,lastName);
-        }
-        else{
-          await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.lastName,'test');
-        }
+    public static async enterLastName(t,lastName){
+      lastName = lastName ? lastName : "test";
+      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.lastName, lastName);
     }
 
-    async function enterDOB(t){
-        await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobDay,'01');
-        await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobMonth,'01');
-        await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobYear,'1980');
+    public static async enterDOB(t){
+        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobDay,'01');
+        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobMonth,'01');
+        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobYear,'1980');
     }
 
-    async function provideContactDetails(t){
-        let phoneNumber="03"+helper.getRandomNumber(99999999);
-        await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.email,'test@energyaustralia.com.au');
-        await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.phone,phoneNumber);
+    public static async provideContactDetails(t){
+        let phoneNumber="03"+testFunction.getRandomNumber(99999999);
+        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.email,'test@energyaustralia.com.au');
+        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.phone,phoneNumber);
     }
-    async function checkoutIdentification(t,idType,customerType){
-        if(customerType===CustomerStatus.EXISTING){
-            await checkoutExistingCustomerIdentification(t,idType);
+    public static async checkoutIdentification(t,idType,customerStatus){
+        if(customerStatus===CustomerStatus.EXISTING){
+            await this.checkoutExistingCustomerIdentification(t,idType);
         }
-        else if(customerType===CustomerStatus.NEW){
-            await checkoutNewCustomerIdentification(t,idType);
+        else if(customerStatus===CustomerStatus.NEW){
+            await this.checkoutNewCustomerIdentification(t,idType);
         }else {
           console.log('Please select a valid customer');
         }
     }
 
-    async function checkoutExistingCustomerIdentification(t,idType){
+    public static async checkoutExistingCustomerIdentification(t,idType){
         switch (idType) {
             case 'Passport':
-              await checkoutExistingCustomerPassportIdentification(t);
+              await this.checkoutExistingCustomerPassportIdentification(t);
               break;
             case 'Driver Licence':
-              await checkoutExistingCustomerDriverLicenseIdentification(t);
+              await this.checkoutDriverLicenseIdentification(t);
               break;
             case 'Medicare':
-              await checkoutExistingCustomerMedicareIdentification(t);
+              await this.checkoutExistingCustomerMedicareIdentification(t);
               break;
             default:
               console.log('Please select a valid identification type');
       }
     }
 
-    async function checkoutExistingCustomerPassportIdentification(t){
-        let passportNo=helper.getRandomNumber(999999);
-        await helper.click(t,eaCheckoutDetailsPage.elements.idDrop);
-        await helper.click(t,eaCheckoutDetailsPage.elements.idValuePassport);
-        await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,passportNo);
+    public static async checkoutExistingCustomerPassportIdentification(t){
+        let passportNo=testFunction.getRandomNumber(999999);
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.idDrop);
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.idValuePassport);
+        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,passportNo);
 
     }
 
-    async function checkoutExistingCustomerDriverLicenseIdentification(t){
-      let dlNo=helper.getRandomNumber(999999);
-      await helper.click(t,eaCheckoutDetailsPage.elements.idDrop);
-      await helper.click(t,eaCheckoutDetailsPage.elements.idValueDriverLicense);
-      await helper.click(t,eaCheckoutDetailsPage.elements.idNumber);
-      await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,dlNo);
+    public static async checkoutDriverLicenseIdentification(t){
+      let dlNo=testFunction.getRandomNumber(999999);
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.idDrop);
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.idValueDriverLicense);
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.idNumber);
+      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,dlNo);
     }
-    async function checkoutExistingCustomerMedicareIdentification(t){
-      let medicareNo=helper.getRandomNumber(999999);
-      await helper.click(t,eaCheckoutDetailsPage.elements.idDrop);
-      await helper.click(t,eaCheckoutDetailsPage.elements.idValueMedicare);
-      await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,medicareNo);
+    public static async checkoutExistingCustomerMedicareIdentification(t){
+      let medicareNo=testFunction.getRandomNumber(999999);
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.idDrop);
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.idValueMedicare);
+      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,medicareNo);
     }
-    async function checkoutNewCustomerIdentification(t,idType){
+    public static async checkoutNewCustomerIdentification(t,idType){
     switch (idType) {
       case "Passport":
-        await checkoutNewCustomerPassportIdentification(t);
+        await this.checkoutNewCustomerPassportIdentification(t);
         break;
       case "Driver Licence":
-        await checkoutNewCustomerDriverLicenseIdentification(t);
+        await this.checkoutDriverLicenseIdentification(t);
         break;
       case "Medicare":
-        await checkoutNewCustomerMedicareIdentification(t);
+        await this.checkoutNewCustomerMedicareIdentification(t);
         break;
       default:
         console.log('Please select a valid ID type');
     }
   }
 
-  async function checkoutNewCustomerPassportIdentification(t){
-    let passportNo=helper.getRandomNumber(999999);
-    await helper.click(t,eaCheckoutDetailsPage.elements.idDrop);
-    await helper.click(t,eaCheckoutDetailsPage.elements.idValuePassport);
-    await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,passportNo);
-    await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idCountry,'Australia');
-  }
-  async function checkoutNewCustomerDriverLicenseIdentification(t){
-    await helper.click(t,eaCheckoutDetailsPage.elements.idDrop);
-    await helper.click(t,eaCheckoutDetailsPage.elements.idValueDriverLicense);
-    await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,Promise.resolve((Math.floor(100000 + Math.random() * 900000)).toString()));
+  public static async checkoutNewCustomerPassportIdentification(t){
+    await this.checkoutExistingCustomerPassportIdentification(t);
+    await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idCountry,'Australia');
   }
 
-  async function checkoutNewCustomerMedicareIdentification(t){
-    let medicareNo=helper.getRandomNumber(999999);
-    await helper.click(t,eaCheckoutDetailsPage.elements.idDrop);
-    await helper.click(t,eaCheckoutDetailsPage.elements.idValueMedicare);
-    await helper.click(t,eaCheckoutDetailsPage.elements.medicareColor);
-    await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareNumber,medicareNo);
-    await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareRef,'1');
-    await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidMM,'01');
-    await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidYYYY,'2024');
+  public static async checkoutNewCustomerMedicareIdentification(t){
+    let medicareNo=testFunction.getRandomNumber(999999);
+    await testFunction.click(t,eaCheckoutDetailsPage.elements.idDrop);
+    await testFunction.click(t,eaCheckoutDetailsPage.elements.idValueMedicare);
+    await testFunction.click(t,eaCheckoutDetailsPage.elements.medicareColor);
+    await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareNumber,medicareNo);
+    await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareRef,'1');
+    await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidMM,'01');
+    await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidYYYY,'2024');
   }
 
-  async function clickOnReviewYourOrderBtn(t){
-    await helper.waitForLoadingIconToClose();
-    await helper.click(t,eaCheckoutDetailsPage.elements.reviewYourOrderBtn);
-    await helper.isElementVisible(t,eaCheckoutReviewPage.elements.reviewYourOfferTxt);
+  public static async clickOnReviewYourOrderBtn(t){
+    await testFunction.waitForLoadingIconToClose();
+    await testFunction.click(t,eaCheckoutDetailsPage.elements.reviewYourOrderBtn);
+    await testFunction.isElementVisible(t,eaCheckoutReviewPage.elements.reviewYourOfferTxt);
   }
 
-  async function accessRestriction(t,electricityAccess:String,gasAccess){
-      if(electricityAccess==='No' && electricityAccess.trim().length!=0) {
-        await helper.click(t, eaCheckoutDetailsPage.elements.electricityAccessNo);
+  public static async accessRestriction(t,electricityAccess:String,gasAccess){
+      if(electricityAccess==='No') {
+        await testFunction.click(t, eaCheckoutDetailsPage.elements.electricityAccessNo);
       }else{
         console.log('Access restriction is not present for the premise');
       }
-      if(gasAccess==='No' && gasAccess.trim().length!=0) {
-        await helper.click(t, eaCheckoutDetailsPage.elements.gasAccessNo);
+      if(gasAccess==='No') {
+        await testFunction.click(t, eaCheckoutDetailsPage.elements.gasAccessNo);
       }else {
         console.log('Access restriction is not present for the premise');
       }
   }
-  async function propertyRenovationNo(t,state){
-      if(state===State.VIC){
-        await helper.click(t,eaCheckoutDetailsPage.elements.prevHomeImproveNo);
-        await helper.click(t,eaCheckoutDetailsPage.elements.planHomeImproveNo);
-        await helper.click(t,eaCheckoutDetailsPage.elements.renovationNo);
+  public static async propertyRenovationNo(t,state){
+      if(state===AustralianState.VIC){
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.prevHomeImproveNo);
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.planHomeImproveNo);
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.renovationNo);
       }
       else {
         console.log('Property renovation is not required for this state');
       }
   }
-  async function provideBusinessDetails(t,businessType){
-      let businessId=helper.getRandomNumber(999999);
+  public static async provideBusinessDetails(t,businessType){
+      let businessId=testFunction.getRandomNumber(999999);
       if(businessType===BusinessType.ABN){
-        await helper.click(t,eaCheckoutDetailsPage.elements.ABN);
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.ABN);
       }
       else if(businessType===BusinessType.ACN){
-        await helper.click(t,eaCheckoutDetailsPage.elements.ACN);
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.ACN);
       }else {
         console.log('ABN/ACN is not valid');
       }
-      await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.number_ABNACN,businessId);
-      await helper.clearAndEnterText(t,eaCheckoutDetailsPage.elements.company,'NA');
-      await helper.click(t,eaCheckoutDetailsPage.elements.businessType);
-      await helper.click(t,eaCheckoutDetailsPage.elements.businessTypeOption);
-      await helper.click(t,eaCheckoutDetailsPage.elements.anzsicCode);
-      await helper.click(t,eaCheckoutDetailsPage.elements.anzsicCodeOption);
+      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.number_ABNACN,businessId);
+      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.company,'NA');
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.businessType);
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.businessTypeOption);
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCode);
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCodeOption);
   }
-
-    return{
-        provideDetailsInAboutMeSection,
-        enterFirstName,
-        enterLastName,
-        enterDOB,
-        provideContactDetails,
-        checkoutIdentification,
-        checkoutExistingCustomerIdentification,
-        checkoutExistingCustomerPassportIdentification,
-        checkoutExistingCustomerDriverLicenseIdentification,
-        checkoutExistingCustomerMedicareIdentification,
-        checkoutNewCustomerIdentification,
-        checkoutNewCustomerPassportIdentification,
-        checkoutNewCustomerDriverLicenseIdentification,
-        checkoutNewCustomerMedicareIdentification,
-        clickOnReviewYourOrderBtn,
-        accessRestriction,
-        provideBusinessDetails,
-    };
 }

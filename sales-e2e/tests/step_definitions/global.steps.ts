@@ -1,14 +1,14 @@
 import { Given } from 'cucumber';
-import {CustomerType, testFuncs} from '../../global_methods/helper';
-const helper  = testFuncs();
-const eaHomePage = require('../pages/energy-australia-home.page');
+import {testFunction} from '../../global_methods/helper';
+import {CustomerType} from '@ea/ea-commons-models';
+const eaHomePage=require('../pages/energy-australia-home.page');
 
 
 Given(/^user has navigated to '(.*)' plans page$/, async function(t, [customerType]) {
   if(customerType===CustomerType.RESIDENTIAL){
-    await helper.click(t, eaHomePage.elements.residentialComparePlansButton);
-  }else if (customerType==='Business'){
-    await helper.click(t, eaHomePage.elements.businessLink);
-    await helper.click(t, eaHomePage.elements.smallBusinessButton);
+    await testFunction.click(t, eaHomePage.elements.residentialComparePlansButton);
+  }else if (customerType===CustomerType.BUSINESS){
+    await testFunction.click(t, eaHomePage.elements.businessLink);
+    await testFunction.click(t, eaHomePage.elements.smallBusinessButton);
   }
 });
