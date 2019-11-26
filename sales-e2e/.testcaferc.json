@@ -1,6 +1,6 @@
 {
   "src": [
-    "tests/**/*.js",
+    "tests/**/*.ts",
     "tests/**/*.feature"
   ],
   "browsers": [
@@ -13,7 +13,8 @@
         }
       ],
   "screenshotPath": "results/screenshots",
-  "screenshotPathPattern": "${USERAGENT}/test-${TEST_INDEX}/${DATE}_${TIME}.png",
+  "fullPage": true,
+
   "skip-uncaught-errors": false,
   "pageLoadTimeout": 5000,
   "skipJsErrors": false,

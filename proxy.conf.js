@@ -1,4 +1,4 @@
-module.exports = {
+module.exports={
   [`/espresso`]: {
     secure: false,
     logLevel: 'debug',

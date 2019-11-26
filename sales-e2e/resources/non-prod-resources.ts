@@ -1,8 +1,7 @@
-module.exports = {
-  config: {
-    env: 'local',
-    clickToPayWebsiteUrl: 'https://localhost:4302/click-to-pay',
-    clickToPaySMSUrl: 'https://localhost:4302/click-to-pay?Ref1=1618033988&Amount=123',
+module.exports={
+config: {
+    env: 'non-prod',
+    eaHomePageUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au',
   },
   testData: {
     mastercard: {
@@ -21,11 +20,10 @@ module.exports = {
       cvv: '888',
     },
     smsParameters: {
-      accountNumber: '7167 7840 78',
+      accountNumber: '5517 4771 75',
       amount: '123',
     },
     emailAddress: 'Prasanya.gopinathan@energyaustralia.com.au',
-    accountNumber: '9123456789',
+    accountNumber: '5396750000',
   },
 };
-

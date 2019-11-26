@@ -1,0 +1,195 @@
+import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
+import {CustomerType} from '@ea/ea-commons-models';
+const EaHomePage=require('../pages/energy-australia-home.page');
+import {IdType, PlanType, testFunction} from '../../global_methods/helper';
+
+export class plansMethod{
+    public static async clickPlansPageModal(t, customerType) {
+        if(customerType===CustomerType.RESIDENTIAL || customerType===CustomerType.BUSINESS){
+            await testFunction.click(t,EaHomePage.elements.ModalWindow);
+          }
+          else {
+              console.error('Modal window could not be opened due to page error')
+          }
+    }
+
+    public static async verifyVerifyAccountChangeButton(t){
+      await testFunction.isElementDisplayed(t,EaHomePage.elements.changeLinkVerifyAccount);
+    }
+
+    public static async selectFuel(t,fuelType){
+      switch(fuelType){
+        case FUEL_TYPE_OPTIONS.BOTH:
+          await testFunction.click(t,EaHomePage.elements.fuelSelectorOption);
+          await testFunction.click(t,EaHomePage.elements.fuelSelectorOptionDual);
+          break;
+        case FUEL_TYPE_OPTIONS.ELE:
+          await testFunction.click(t,EaHomePage.elements.fuelSelectorOption);
+          await testFunction.click(t,EaHomePage.elements.fuelSelectorOptionEle);
+          break;
+        case FUEL_TYPE_OPTIONS.GAS:
+          await testFunction.click(t,EaHomePage.elements.fuelSelectorOption);
+          await testFunction.click(t,EaHomePage.elements.fuelSelectorOptionGas);
+          break;
+        default:
+          console.error("Invalid fuel type is selected");
+      }
+    }
+
+    public static async selectPlan(t, planName, customerType){
+      if (customerType===CustomerType.RESIDENTIAL) {
+        await this.selectResiPlan(t,planName);
+      }
+      else if(customerType===CustomerType.BUSINESS){
+        await this.selectBSMEPlan(t,planName);
+      }
+      else {
+        console.error("Please provide valid customer type");
+      }
+    }
+
+  public static async selectResiPlan(t: any, planName: any) {
+    switch(planName){
+      case PlanType.BASIC_HOME:
+        await testFunction.click(t,EaHomePage.elements.basicPlan);
+        break;
+      case PlanType.NO_FRILLS:
+        await testFunction.click(t,EaHomePage.elements.noFrillsPlan);
+        break;
+      case PlanType.TOTAL_PLAN:
+        await testFunction.click(t,EaHomePage.elements.totalPlan);
+        break;
+      case PlanType.TOTAL_PLAN_PLUS:
+        await testFunction.click(t,EaHomePage.elements.totalPlusPlan);
+        break;
+      default:
+        console.error("Invalid plan is selected");
+    }
+  }
+
+  public static async selectBSMEPlan(t,planName){
+    switch(planName){
+      case PlanType.BASIC_BUSINESS:
+        await testFunction.click(t,EaHomePage.elements.basicBusiness);
+        break;
+      case PlanType.NO_FRILLS_BUSINESS:
+        await testFunction.click(t,EaHomePage.elements.noFrillBusiness);
+        break;
+      case PlanType.TOTAL_BUSINESS:
+        await testFunction.click(t,EaHomePage.elements.totalPlanBusiness);
+        break;
+      case PlanType.TOTAL_PLAN_PLUS_BUSINESS:
+        await testFunction.click(t,EaHomePage.elements.totalPlanPlusBusiness);
+        break;
+      default:
+        console.error("Invalid plan is selected");
+    }
+  }
+}
+
+export class selectionOptionModalWindowMethod {
+    public static async selectOptionsModalWindow(t, modalWindowValue) {
+        if (modalWindowValue==='verify account') {
+            await testFunction.click(t,EaHomePage.elements.modalVerifyAccountOption);
+          } else if (modalWindowValue==='Bill upload') {
+            await testFunction.click(t,EaHomePage.elements.modalBillUploadOption);
+          }
+    }
+}
+
+export class verifyAccountMethod {
+    public static async verifyAccountIsDisplayed(t, fuelType, customerType) {
+        if (customerType===CustomerType.RESIDENTIAL) {
+            switch (fuelType) {
+              case FUEL_TYPE_OPTIONS.BOTH:
+                await testFunction.isElementDisplayed(t,EaHomePage.elements.elecAccountNo);
+                await testFunction.isElementDisplayed(t,EaHomePage.elements.gasAccountNo);
+                break;
+              case FUEL_TYPE_OPTIONS.ELE:
+                  await testFunction.isElementDisplayed(t,EaHomePage.elements.elecAccountNo);
+                break;
+              case FUEL_TYPE_OPTIONS.GAS:
+                  await testFunction.isElementDisplayed(t,EaHomePage.elements.gasAccountNo);
+                break;
+            }
+            await testFunction.isElementDisplayed(t,EaHomePage.elements.nextAccountNumber);
+            await testFunction.isElementDisplayed(t,EaHomePage.elements.backAccountNumber);
+          }
+  }
+
+    public static async provideAccountDetails(t,fuel,accountNumber){
+        switch(fuel){
+            case FUEL_TYPE_OPTIONS.ELE:
+              await testFunction.clearAndEnterText(t,EaHomePage.elements.elecAccountNo, accountNumber);
+              break;
+            case FUEL_TYPE_OPTIONS.GAS:
+              await testFunction.clearAndEnterText(t,EaHomePage.elements.gasAccountNo, accountNumber);
+              break;
+            default:
+              console.error('Couldnot provide account details as the page didnot load properly');
+          }
+    }
+
+    public static async provideAccountInformation(t, accountInformation, customerType ){
+        switch(customerType){
+            case CustomerType.RESIDENTIAL:
+                await testFunction.clearAndEnterText(t,EaHomePage.elements.postcodeVerifyAccount, accountInformation);
+              break;
+            case CustomerType.BUSINESS:
+                await testFunction.clearAndEnterText(t,EaHomePage.elements.businessInformation, accountInformation);
+              break;
+          }
+    }
+
+    public static async verifyAccountDetails(t){
+        await testFunction.click(t, EaHomePage.elements.nextAccountNumber);
+    }
+
+    public static async provideIdentityDetails(t, idType, idValue){
+        switch(idType){
+            case IdType.DOB:
+               await this.provideIdValue(t, idValue,EaHomePage.elements.idTypeDOBValueVerifyAccount);
+               break;
+            case IdType.DL:
+                await this.selectIdType(t, EaHomePage.elements.idTypeDlVerifyAccount);
+                await this.provideIdValue(t, idValue,EaHomePage.elements.idTypeDlValueVerifyAccount);
+                break;
+            case IdType.PIN:
+                await this.selectIdType(t, EaHomePage.elements.idTypePinVerifyAccount);
+                await this.provideIdValue(t, idValue,EaHomePage.elements.idTypeDlValueVerifyAccount);
+                break;
+          }
+    }
+
+    public static async verifyUsageData(t, fuelType){
+        switch (fuelType) {
+            case FUEL_TYPE_OPTIONS.BOTH:
+                await testFunction.isElementDisplayed(t,EaHomePage.elements.usageData_ele);
+                await testFunction.isElementDisplayed(t,EaHomePage.elements.usageData_gas);
+              break;
+            case FUEL_TYPE_OPTIONS.ELE:
+                await testFunction.isElementDisplayed(t,EaHomePage.elements.usageData_ele);
+              break;
+            case FUEL_TYPE_OPTIONS.GAS:
+                await testFunction.isElementDisplayed(t,EaHomePage.elements.usageData_gas);
+              break;
+          }
+    }
+
+    public static async verifyFamilyViolenceMessage(t, value){
+      await testFunction.assertText(t, EaHomePage.elements.familyViolenceMessage, value);
+    }
+
+    public static async showCostEstimates(t){
+        await testFunction.click(t, EaHomePage.elements.getCostEstimatesChangeButton);
+    }
+
+    public static async selectIdType(t, itemToClick) {
+        await testFunction.click(t, EaHomePage.elements.idTypeDropDownVerifyAccount);
+        await testFunction.click(t, itemToClick);
+      }
+
+    public static async provideIdValue(t,idValue, inputField) {
+        await testFunction.clearAndEnterText(t,inputField, idValue);
+    }
+}

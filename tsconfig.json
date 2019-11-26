@@ -19,5 +19,8 @@
       "es2018",
       "dom"
     ]
-  }
+  },
+  "include": [
+    "sales-e2e/tests/methods/cartsPage.ts"
+]
 }
