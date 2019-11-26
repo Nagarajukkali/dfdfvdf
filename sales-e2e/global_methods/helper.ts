@@ -1,124 +1,113 @@
 import { Selector } from 'testcafe';
 import { ClientFunction } from 'testcafe';
 import { error } from 'console';
-const replace = { replace: true };
+import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 
-  export enum FuelType {
-    ELECTRICITY = 'Electricity',
-    GAS= 'Gas',
-    DUAL= 'Dual'
-  }
+const replace={ replace: true };
+
   export enum CustomerStatus {
-    NEW= 'New',
-    EXISTING= 'Existing'
-  }
-  export enum CustomerType {
-    RESIDENTIAL= 'Residential',
-    BUSINESS= 'Business'
+    NEW='New',
+    EXISTING='Existing'
   }
   export enum Moving {
-    MOVING= 'Moving',
-    NONMOVING= 'Non-Moving'
+    MOVING='Moving',
+    NONMOVING='Non-Moving'
   }
   export enum Property {
-    OWNER= 'Owner',
-    RENTER= 'Renter'
+    OWNER='Owner',
+    RENTER='Renter'
   }
   export enum Solar {
-    YES= 'Yes',
-    NO= 'No'
+    YES='Yes',
+    NO='No'
   }
   export enum BusinessType {
-    ABN= 'ABN',
-    ACN= 'ACN'
+    ABN='ABN',
+    ACN='ACN'
   }
 
   export enum PlanType {
-    BASICHOME= 'Basic',
-    NOFRILLS= 'No Frills',
-    TOTALPLAN= 'Total',
-    TOTALPLANPLUS= 'Total Plan Plus',
-    BASICBUSINESS= 'Basic Business'
+    BASIC_HOME='Basic',
+    NO_FRILLS='No Frills',
+    TOTAL_PLAN='Total Plan',
+    TOTAL_PLAN_PLUS='Total Plan Plus',
+    BASIC_BUSINESS='Basic Business',
+    NO_FRILLS_BUSINESS='No Frills Business',
+    TOTAL_BUSINESS='Total Business',
+    TOTAL_PLAN_PLUS_BUSINESS='Total Plan Plus Business',
   }
   export enum IdType {
-    DOB= 'dob',
-    DL= 'dl',
-    PIN= 'pin'
-  }
-  export enum State {
-    VIC= 'VIC',
-    SA= 'SA',
-    NSW= 'NSW',
-    QLD= 'QLD',
-    ACT= 'ACT'
+    DOB='dob',
+    DL='dl',
+    PIN='pin'
   }
 
   export enum LSDevices {
-    ELE_LSCNSPE = 'Crigler Najjar Syndrome Phototherapy Equipment',
-    ELE_LSCPAPR = 'Chronic Positive Airways Pressure Respirator',
-    ELE_LSIPDM = 'Intermittent Peritoneal Dialysis Machine',
-    ELE_LSKDM = 'Kidney Dialysis Machine',
-    ELE_LSOC = 'Oxygen Concentrator',
-    ELE_LSVFLS = 'Ventilator For Life Support',
-    ELE_OTHER = 'Other',
-    GAS_GLSMRHAC = 'Medically Required Heating and/or Air Conditioning',
-    GAS_GLSMRHW = 'Medically Required Hot Water',
-    GAS_OTHER = 'Other'
+    ELE_LSCNSPE='Crigler Najjar Syndrome Phototherapy Equipment',
+    ELE_LSCPAPR='Chronic Positive Airways Pressure Respirator',
+    ELE_LSIPDM='Intermittent Peritoneal Dialysis Machine',
+    ELE_LSKDM='Kidney Dialysis Machine',
+    ELE_LSOC='Oxygen Concentrator',
+    ELE_LSVFLS='Ventilator For Life Support',
+    ELE_OTHER='Other',
+    GAS_GLSMRHAC='Medically Required Heating and/or Air Conditioning',
+    GAS_GLSMRHW='Medically Required Hot Water',
+    GAS_OTHER='Other'
   }
 
   export enum SelectionType {
-    CHECK = 'Check',
-    UNCHECK = 'Uncheck'
+    CHECK='Check',
+    UNCHECK='Uncheck'
   }
 
-export function testFuncs() {
+export class testFunction {
 
-  async function click(t, buttonName) {
+  public static async click(t, element) {
     try {
-      await isElementDisplayed(t, buttonName);
-      await t.click(buttonName);
+      await this.isElementDisplayed(t, element);
+      await t.click(element);
     } catch (error) {
       console.log(error);
     }
   }
 
-  async function maximizeWindow(t) {
+  public static async isElementDisplayed(t: any, element: any) {
+    await t.expect((element).exists).ok;
+  }
+
+  public static async maximizeWindow(t) {
     await t.maximizeWindow();
   }
 
-  async function sizeOfElement(t, element) {
-    let val = await element.count
+  public static async sizeOfElement(t, element) {
+    let val=await element.count
       .then(result => result);
     return val;
   }
 
-  async function scrollToElement(t, element) {
-    await isElementDisplayed(t, element);
+  public static async scrollToElement(t, element) {
+    await this.isElementDisplayed(t, element);
     await t.scrollTo(element);
   }
 
-  async function isElementDisplayed(t, element) {
-    await t.expect((element).exists).ok;
-  }
-
-  async function assertText(t, element, expectedFieldValue) {
-    const actualFieldValue = element.innerText;
+  public static async assertText(t, element, expectedFieldValue) {
+    const actualFieldValue=element.innerText;
     await t.expect(actualFieldValue).contains(expectedFieldValue);
   }
 
-  async function assertTextOnPage(t, text) {
-    const actualPageContent = await Selector('html').textContent;
+  public static async assertTextOnPage(t, text) {
+    const actualPageContent=await Selector('html').textContent;
     await t.expect(actualPageContent).contains(text);
   }
 
-  async function assertPageURL(t, urlContent) {
-    const getPageUrl = ClientFunction(() => window.location.href);
+  public static async assertPageURL(t, urlContent) {
+    const getPageUrl=ClientFunction(() => window.location.href);
     await t.expect(getPageUrl()).contains(urlContent);
   }
 
-  async function clearAndEnterText(t, element, value) {
+  public static async clearAndEnterText(t, element, value) {
     try {
-      await isElementDisplayed(t, element);
+      await this.isElementDisplayed(t, element);
       await t.selectText(element)
         .pressKey('delete');
       await t.typeText(element, value, replace);
@@ -127,89 +116,68 @@ export function testFuncs() {
     }
   }
 
-  async function getInputText(t, element) {
+  public static async getInputText(t, element) {
     return await element.value;
   }
 
-  async function getElementText(t, element) {
+  public static getElementText(t, element) {
     return element.innerText;
   }
 
-  async function isElementVisible(t, element) {
+  public static isElementVisible(t, element) {
     return element.visible;
   }
 
-  function getRandomNumber(range) {
+  public static getRandomNumber(range) {
     // tslint:disable-next-line:radix
     return (parseInt(String(Math.random() * range)) % range + 1).toString();
   }
 
-  async function clickElementFromList(t, element, value) {
+  public static async clickElementFromList(t, element, value) {
     await t.click(element.withText(value));
   }
 
-  async function isElectricity(fuelType) {
-    return fuelType === FuelType.ELECTRICITY || fuelType === FuelType.DUAL;
+  public static isElectricity(fuelType) {
+    return fuelType ===FUEL_TYPE_OPTIONS.ELE || fuelType ===FUEL_TYPE_OPTIONS.BOTH;
   }
 
-  async function isGas(fuelType) {
-    return fuelType === FuelType.GAS || fuelType === FuelType.DUAL;
+  public static isGas(fuelType) {
+    return fuelType ===FUEL_TYPE_OPTIONS.GAS || FUEL_TYPE_OPTIONS.BOTH;
   }
 
-  const waitForLoadingIconToClose = ClientFunction(() => {
-    return new Promise(resolve => {
-      const interval = setInterval(() => {
-        if (document.querySelector('.processing')) {
-          return;
-        }
-
-        clearInterval(interval);
-        resolve();
-      }, 100);
+  public static waitForLoadingIconToClose(){
+    const waitForLoading=ClientFunction(() => {
+      return new Promise(resolve => {
+        const interval=setInterval(() => {
+          if (document.querySelector('.processing')) {
+            return;
+          }
+          clearInterval(interval);
+          resolve();
+        }, 100);
+      });
     });
-  });
+    return waitForLoading;
+  }
 
-  async function getElementAttribute(t, element, attribute) {
+  public static getElementAttribute(t, element, attribute) {
     return element.getAttribute(attribute);
   }
 
-  async function generateRandomText(length) {
-    let result = '';
-    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let charactersLength = characters.length;
-    for (let i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  public static generateRandomText(length) {
+    let result='';
+    let characters='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let charactersLength=characters.length;
+    for (let i=0; i < length; i++) {
+      result +=characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;
   }
 
-  async function isElementAbsent(t, element) {
+  public static async isElementAbsent(t, element) {
     await t.expect((element).exists).notOk();
   }
 
-
-  return {
-    click,
-    isElementDisplayed,
-    assertText,
-    assertTextOnPage,
-    assertPageURL,
-    clearAndEnterText,
-    getInputText,
-    getElementText,
-    scrollToElement,
-    isElementVisible,
-    getRandomNumber,
-    clickElementFromList,
-    waitForLoadingIconToClose,
-    isElectricity,
-    isGas,
-    sizeOfElement,
-    maximizeWindow,
-    getElementAttribute,
-    generateRandomText,
-    isElementAbsent,
-  };
 }
 
 

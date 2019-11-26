@@ -1,6 +1,6 @@
 import {Selector } from 'testcafe';
 
-const eaQualifierPage = {
+const eaQualifierPage={
   elements: {
     newCustomerBtn:Selector('#isNewEA0 label'),
     existingCustomerBtn:Selector('#isNewEA1 label'),
@@ -33,4 +33,4 @@ const eaQualifierPage = {
   },
 };
 
-module.exports = eaQualifierPage;
+module.exports=eaQualifierPage;

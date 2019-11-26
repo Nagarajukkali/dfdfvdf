@@ -18,7 +18,7 @@
   },
   "config": {
     "env": "non-prod",
-    "e2e_tags": "@avi"
+    "e2e_tags": "~@"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +31,7 @@
     "@angular/platform-browser": "^7.2.4",
     "@angular/platform-browser-dynamic": "^7.2.4",
     "@angular/router": "^7.2.4",
+    "@ea/ea-commons-models": "^0.1.1",
     "@ea/ea-ui": "^1.13.5",
     "@ea/ng-self-service": "1.2.76",
     "@ngrx/effects": "^7.2.0",
@@ -39,6 +40,7 @@
     "@types/jquery": "^3.3.31",
     "awesome-typescript-loader": "^5.2.1",
     "core-js": "^2.6.4",
+    "cucumber-helper": "0.0.6",
     "dayjs": "^1.8.12",
     "lodash": "4.17.15",
     "log4js": "4.0.0",

@@ -1,97 +1,100 @@
-const eaQualifierPage = require('../pages/qualifier.page');
-import {BusinessType, CustomerStatus, Moving, Property, Solar, testFuncs} from '../../global_methods/helper';
-const helper  = testFuncs();
+const eaQualifierPage=require('../pages/qualifier.page');
+import {BusinessType, CustomerStatus, IdType, Moving, Property, Solar, testFunction} from '../../global_methods/helper';
 
-export function qualifierPageFunction() {
+export class qualifierMethod{
 
-  async function selectCustomerStatus(t, customerStatus) {
+  public static async selectCustomerStatus(t, customerStatus) {
     if(customerStatus===CustomerStatus.NEW){
-        await helper.click(t,eaQualifierPage.elements.newCustomerBtn);
+        await testFunction.click(t,eaQualifierPage.elements.newCustomerBtn);
       }
     else if(customerStatus===CustomerStatus.EXISTING){
-        await helper.click(t,eaQualifierPage.elements.existingCustomerBtn);
     }
     else{
-      console.log('customer status option is not selected.');
+      console.error('customer status option is not selected.');
     }
     }
-    async function verifyAccount(t,accountNumber,accountIdentityType,postcodeOrABNACN){
-      await helper.clearAndEnterText(t, eaQualifierPage.elements.accountNumber, accountNumber);
+
+    public static async verifyAccount(t,accountNumber,accountIdentityType,postcodeOrABNACN){
+      await testFunction.clearAndEnterText(t, eaQualifierPage.elements.accountNumber, accountNumber);
       switch(accountIdentityType){
         case BusinessType.ABN:
-          await helper.click(t,eaQualifierPage.elements.existingCustomerAbn);
-          await helper.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, postcodeOrABNACN);
+          await testFunction.click(t,eaQualifierPage.elements.existingCustomerAbn);
+          await testFunction.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, postcodeOrABNACN);
           await t.wait(2000);
         case BusinessType.ACN:
-          await helper.click(t,eaQualifierPage.elements.existingCustomerAcn);
-          await helper.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, postcodeOrABNACN);
+          await testFunction.click(t,eaQualifierPage.elements.existingCustomerAcn);
+          await testFunction.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, postcodeOrABNACN);
           await t.wait(2000);
         case 'Postcode':
-          await helper.clearAndEnterText(t, eaQualifierPage.elements.accountDetail, postcodeOrABNACN);
-          await helper.isElementVisible(t, eaQualifierPage.elements.accountDetailValidate);
+          await testFunction.clearAndEnterText(t, eaQualifierPage.elements.accountDetail, postcodeOrABNACN);
+          await testFunction.isElementVisible(t, eaQualifierPage.elements.accountDetailValidate);
         default:
           console.log('account identity type is not valid');
       }
-      await helper.click(t, eaQualifierPage.elements.verifyAccountSubmit);
+      await testFunction.click(t, eaQualifierPage.elements.verifyAccountSubmit);
     }
-    async function selectIdTypeQualifier(t, itemToClick) {
-      let val =await helper.sizeOfElement(t, eaQualifierPage.elements.idTypeDropDown);
+
+    public static async selectIdTypeQualifier(t, itemToClick) {
+      /*let val=await eaQualifierPage.elements.idTypeDropDown.count
+        .then(result=>result);*/
+      let val =await testFunction.sizeOfElement(t, eaQualifierPage.elements.idTypeDropDown);
       if(val!==1) {
-        await helper.click(t, eaQualifierPage.elements.idTypeDropDownVerifyAccount);
-        await helper.click(t, itemToClick);
+        await testFunction.click(t, eaQualifierPage.elements.idTypeDropDownVerifyAccount);
+        await testFunction.click(t, itemToClick);
       }
     }
-    async function verifyIdentity(t,idType,idValue){
+    public static async verifyIdentity(t,idType,idValue){
       switch(idType){
         case 'dob':
-          await provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDOBValue);
+          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDOBValue);
           break;
         case 'dl':
-          await selectIdTypeQualifier(t, eaQualifierPage.elements.idTypeDl);
-          await provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
+          await this.selectIdTypeQualifier(t, eaQualifierPage.elements.idTypeDl);
+          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
           break;
         case 'pin':
-          await selectIdTypeQualifier(t, eaQualifierPage.elements.idTypePin);
-          await provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
+          await this.selectIdTypeQualifier(t, eaQualifierPage.elements.idTypePin);
+          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
           break;
         default:
           console.log('Invalid id type');
       }
-      await helper.waitForLoadingIconToClose();
+      await testFunction.waitForLoadingIconToClose();
       await t.wait(3000);
-      await helper.click(t, eaQualifierPage.elements.verifyIdentitySubmit);
-    }
-    async function provideIdValue(t,idValue, inputField) {
-      await helper.clearAndEnterText(t,inputField, idValue);
+      await testFunction.click(t, eaQualifierPage.elements.verifyIdentitySubmit);
     }
 
-  async function verifyFamilyViolenceMessage(t, value){
-    await helper.assertText(t, eaQualifierPage.elements.familyViolenceMessage, value);
+    public static async provideIdValue(t,idValue, inputField) {
+      await testFunction.clearAndEnterText(t,inputField, idValue);
+    }
+
+  public static async verifyFamilyViolenceMessage(t, value){
+    await testFunction.assertText(t, eaQualifierPage.elements.familyViolenceMessage, value);
   }
 
-  async function provideMovingType(t, movingType) {
+  public static async provideMovingType(t, movingType) {
     if(movingType===Moving.NONMOVING){
-        await helper.click(t,eaQualifierPage.elements.nonMoving);
+        await testFunction.click(t,eaQualifierPage.elements.nonMoving);
       }
       else if(movingType===Moving.MOVING){
-          await helper.click(t,eaQualifierPage.elements.moving);
+          await testFunction.click(t,eaQualifierPage.elements.moving);
       }
       else{
-        console.log('moving option is not selected.');
+        console.error('moving option is not selected.');
       }
   }
 
-  async function provideAddress(t, address) {
-      await helper.clearAndEnterText(t,eaQualifierPage.elements.serviceAddress,address);
-      await helper.isElementVisible(t,eaQualifierPage.elements.serviceAddressList);
-      await helper.clickElementFromList(t,eaQualifierPage.elements.serviceAddressList,address);
-      await helper.isElementVisible(t, eaQualifierPage.elements.addressLoadingIcon);
-      await helper.waitForLoadingIconToClose();
-      await helper.click(t, eaQualifierPage.elements.addressContinue);
+  public static async provideAddress(t, address) {
+      await testFunction.clearAndEnterText(t,eaQualifierPage.elements.serviceAddress,address);
+      await testFunction.isElementVisible(t,eaQualifierPage.elements.serviceAddressList);
+      await testFunction.clickElementFromList(t,eaQualifierPage.elements.serviceAddressList,address);
+      await testFunction.isElementVisible(t, eaQualifierPage.elements.addressLoadingIcon);
+      await testFunction.waitForLoadingIconToClose();
+      await testFunction.click(t, eaQualifierPage.elements.addressContinue);
   }
 
-  async function selectDateFromCalendar(t){
-    let table = eaQualifierPage.elements.calendarTable;
+  public static async selectDateFromCalendar(t){
+    let table=eaQualifierPage.elements.calendarTable;
     let tableElement=await table();
     const  rowCount=tableElement.childElementCount;
     let flag=false;
@@ -103,7 +106,7 @@ export function qualifierPageFunction() {
         let cols=rows.child(j);
         let dateBtn=cols.child(0);
         if(await dateBtn.hasClass('active')){
-          await helper.click(t,cols);
+          await testFunction.click(t,cols);
           flag=true;
           break;
         }
@@ -111,37 +114,27 @@ export function qualifierPageFunction() {
       if(flag) break;
     }
   }
-  async function selectPropertyType(t,propertyType){
+  public static async selectPropertyType(t,propertyType){
     if(propertyType ===Property.OWNER){
-      await helper.click(t,eaQualifierPage.elements.owner);
+      await testFunction.click(t,eaQualifierPage.elements.owner);
     }
     else if(propertyType ===Property.RENTER){
-      await helper.click(t,eaQualifierPage.elements.renter);
+      await testFunction.click(t,eaQualifierPage.elements.renter);
     }
     else{
-      console.log('Property type is not selected');
+      console.error('Property type is not selected');
     }
   }
-  async function selectSolarOption(t,solarOpt){
+  public static async selectSolarOption(t,solarOpt){
     if(solarOpt===Solar.YES){
-      await helper.click(t,eaQualifierPage.elements.solarYes);
+      await testFunction.click(t,eaQualifierPage.elements.solarYes);
     }
     else if(solarOpt===Solar.NO){
-      await helper.click(t,eaQualifierPage.elements.solarNo);
+      await testFunction.click(t,eaQualifierPage.elements.solarNo);
     }
     else{
-      console.log('Solar option is not selected');
+      console.error('Solar option is not selected');
     }
   }
-  return {
-      selectCustomerStatus,
-      verifyAccount,
-      verifyIdentity,
-      provideMovingType,
-      provideAddress,
-      selectDateFromCalendar,
-      verifyFamilyViolenceMessage,
-      selectPropertyType,
-      selectSolarOption,
-    };
+
 }

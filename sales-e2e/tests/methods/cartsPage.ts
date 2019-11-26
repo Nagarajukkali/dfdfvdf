@@ -1,12 +1,8 @@
-const cartsPage = require('../pages/carts.page');
-import {testFuncs } from '../../global_methods/helper';
-const helper  = testFuncs();
+const cartsPage=require('../pages/carts.page');
+import {testFunction } from '../../global_methods/helper';
 
-export function cartsPageFunction() {
-    async function clickContinueCartsPage(t) {
-        await helper.click(t, cartsPage.elements.cartsPageContinueButton);
+export class cartsMethod {
+    public static async clickContinueCartsPage(t) {
+        await testFunction.click(t, cartsPage.elements.cartsPageContinueButton);
     }
-    return {
-        clickContinueCartsPage,
-      };
 }

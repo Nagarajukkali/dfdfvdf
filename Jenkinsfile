@@ -1,10 +1,10 @@
 @Library('ea-jenkins-shared@master')
 
-steps = new au.com.energyaustralia.jenkins.JenkinsPipelineSteps()
+steps=new au.com.energyaustralia.jenkins.JenkinsPipelineSteps()
 
-final String GITLAB_PROJECT_ID = '227'
-final String SONARQUBE_PROJECT_KEY = 'click-to-pay'
-final String MAIN_BRANCH = 'develop'
+final String GITLAB_PROJECT_ID='227'
+final String SONARQUBE_PROJECT_KEY='click-to-pay'
+final String MAIN_BRANCH='develop'
 
 properties([
 	[$class: 'GitLabConnectionProperty', gitLabConnection: 'EALAN Gitlab'],
@@ -31,7 +31,7 @@ node('java_build_slave_frontend') {
 		}
 
 		stage("OSSDepCheck") {
-            def targetPath = "package.json,package-lock.json"
+            def targetPath="package.json,package-lock.json"
             steps.vulnerabilityScan(targetPath, "/home/jenkins/owasp")
         }
 
@@ -46,9 +46,9 @@ node('java_build_slave_frontend') {
 			archiveArtifacts 'dist/**'
 		}
 
-		def currResult = currentBuild.result ?: 'SUCCESS'
-		boolean isSuccess = (currResult == 'SUCCESS')
-		if (isSuccess && env.BRANCH_NAME == 'develop') {
+		def currResult=currentBuild.result ?: 'SUCCESS'
+		boolean isSuccess=(currResult =='SUCCESS')
+		if (isSuccess && env.BRANCH_NAME =='develop') {
 			stage ('Deploy to Espresso') {
 				deployToEspresso('click-to-pay')
 			}

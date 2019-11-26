@@ -1,4 +1,4 @@
-module.exports = {
+module.exports={
   config: {
     env: 'local',
     clickToPayWebsiteUrl: 'https://localhost:4302/click-to-pay',
