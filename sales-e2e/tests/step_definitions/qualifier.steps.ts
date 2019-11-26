@@ -28,20 +28,16 @@ When(/^user provides all details on qualifier page for '(.*)' customer$/, async 
   await testFunction.waitForLoadingIconToClose();
   if(customerStatus===CustomerStatus.NEW){
     await qualifierMethod.selectCustomerStatus(t,customerStatus);
-    await qualifierMethod.provideMovingType(t, data[0].movingType);
-    await qualifierMethod.provideAddress(t, data[0].connectionAddress);
-    await qualifierMethod.selectDateFromCalendar(t);
-    await qualifierMethod.selectPropertyType(t, data[0].propertyType);
-    await qualifierMethod.selectSolarOption(t, data[0].solarOption);
+
   }
   else if(customerStatus===CustomerStatus.EXISTING){
     await qualifierMethod.selectCustomerStatus(t,customerStatus);
     await qualifierMethod.verifyAccount(t,data[0].accountNumber,data[0].accountIdentityType,data[0].postcodeOrABNACN);
-    await qualifierMethod.provideMovingType(t, data[0].movingType);
-    await qualifierMethod.provideAddress(t, data[0].connectionAddress);
-    await qualifierMethod.selectDateFromCalendar(t);
-    await qualifierMethod.selectPropertyType(t, data[0].propertyType);
-    await qualifierMethod.selectSolarOption(t, data[0].solarOption);
   }
+  await qualifierMethod.provideMovingType(t, data[0].movingType);
+  await qualifierMethod.provideAddress(t, data[0].connectionAddress);
+  await qualifierMethod.selectDateFromCalendar(t);
+  await qualifierMethod.selectPropertyType(t, data[0].propertyType);
+  await qualifierMethod.selectSolarOption(t, data[0].solarOption);
 
 });
