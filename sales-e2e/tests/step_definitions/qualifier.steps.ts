@@ -1,5 +1,5 @@
 import {qualifierMethod} from '../methods/qualifierPage';
-import {testFunction } from '../../global_methods/helper';
+import {testFunction, Moving} from '../../global_methods/helper';
 import {When, Then } from 'cucumber';
 const eaQualifierPage=require('../pages/qualifier.page');
 
@@ -26,7 +26,7 @@ When(/^user provides all other details on qualifier page for Existing customer$/
   let data = dataTable.hashes();
   let movingType = data[0].movingType;
   await qualifierMethod.provideMovingType(t, movingType);
-  if(movingType === 'Moving'){
+  if(movingType === Moving.MOVING){
     await qualifierMethod.provideAddress(t, data[0].connectionAddress);
     await qualifierMethod.selectDateFromCalendar(t);
   }
