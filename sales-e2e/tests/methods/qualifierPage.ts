@@ -4,10 +4,12 @@ import {BusinessType, CustomerStatus, IdType, Moving, Property, Solar, testFunct
 export class qualifierMethod{
 
   public static async selectCustomerStatus(t, customerStatus) {
+    console.log("pass");
     if(customerStatus===CustomerStatus.NEW){
         await testFunction.click(t,eaQualifierPage.elements.newCustomerBtn);
       }
     else if(customerStatus===CustomerStatus.EXISTING){
+      await testFunction.click(t,eaQualifierPage.elements.existingCustomerBtn);
     }
     else{
       console.error('customer status option is not selected.');
