@@ -1,6 +1,7 @@
 import {qualifierMethod} from '../methods/qualifierPage';
 import {testFunction } from '../../global_methods/helper';
 import {When, Then } from 'cucumber';
+const eaQualifierPage=require('../pages/qualifier.page');
 
 When(/^user selects '(.*)' and provides '(.*)' '(.*)' '(.*)' and '(.*)' and '(.*)' for '(.*)' customer$/, async function (t, [customer,accNumber,accountDetail,accountIdentityType,idType,idValue,customerType]) {
   await qualifierMethod.selectCustomerStatus(t, customer,accNumber,accountDetail,accountIdentityType,idType,idValue,customerType);
@@ -17,6 +18,19 @@ When(/^user provides all details on qualifier page$/, async function(t,[],dataTa
   await qualifierMethod.provideMovingType(t, data[0].movingType)
   await qualifierMethod.provideAddress(t, data[0].connectionAddress);
   await qualifierMethod.selectDateFromCalendar(t);
+  await qualifierMethod.selectPropertyType(t, data[0].propertyType);
+  await qualifierMethod.selectSolarOption(t, data[0].solarOption);
+});
+
+When(/^user provides all other details on qualifier page for Existing customer$/, async function (t,[],dataTable) {
+  let data = dataTable.hashes();
+  let movingType = data[0].movingType;
+  await qualifierMethod.provideMovingType(t, movingType);
+  if(movingType === 'Moving'){
+    await qualifierMethod.provideAddress(t, data[0].connectionAddress);
+    await qualifierMethod.selectDateFromCalendar(t);
+  }
+  await testFunction.click(t, eaQualifierPage.elements.addressContinue);
   await qualifierMethod.selectPropertyType(t, data[0].propertyType);
   await qualifierMethod.selectSolarOption(t, data[0].solarOption);
 });

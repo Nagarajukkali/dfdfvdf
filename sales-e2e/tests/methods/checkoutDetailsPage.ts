@@ -167,4 +167,8 @@ export class checkoutDetailsMethod{
       await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCode);
       await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCodeOption);
   }
+
+  public static async addAAHDetails(t) {
+  
+  }
 }

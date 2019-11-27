@@ -1,4 +1,4 @@
-import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
+import {AustralianState, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 import {CustomerType} from '@ea/ea-commons-models';
 const EaHomePage=require('../pages/energy-australia-home.page');
 import {IdType, PlanType, testFunction} from '../../global_methods/helper';
@@ -18,22 +18,25 @@ export class plansMethod{
     }
 
     public static async selectFuel(t,fuelType){
-      switch(fuelType){
-        case FUEL_TYPE_OPTIONS.BOTH.value:
-          await testFunction.click(t,EaHomePage.elements.fuelSelectorOption);
-          await testFunction.click(t,EaHomePage.elements.fuelSelectorOptionDual);
-          break;
-        case FUEL_TYPE_OPTIONS.ELE.value:
-          await testFunction.click(t,EaHomePage.elements.fuelSelectorOption);
-          await testFunction.click(t,EaHomePage.elements.fuelSelectorOptionEle);
-          break;
-        case FUEL_TYPE_OPTIONS.GAS.value:
-          await testFunction.click(t,EaHomePage.elements.fuelSelectorOption);
-          await testFunction.click(t,EaHomePage.elements.fuelSelectorOptionGas);
-          break;
-        default:
-          console.error("Invalid fuel type is selected");
-      }
+      if(testFunction.getElementText(t, EaHomePage.elements.selectedState.innerText) !== AustralianState.QLD) {
+        switch(fuelType){
+          case FUEL_TYPE_OPTIONS.BOTH.value:
+            await testFunction.click(t,EaHomePage.elements.fuelSelectorOption);
+            await testFunction.click(t,EaHomePage.elements.fuelSelectorOptionDual);
+            break;
+          case FUEL_TYPE_OPTIONS.ELE.value:
+            await testFunction.click(t,EaHomePage.elements.fuelSelectorOption);
+            await testFunction.click(t,EaHomePage.elements.fuelSelectorOptionEle);
+            break;
+          case FUEL_TYPE_OPTIONS.GAS.value:
+            await testFunction.click(t,EaHomePage.elements.fuelSelectorOption);
+            await testFunction.click(t,EaHomePage.elements.fuelSelectorOptionGas);
+            break;
+          default:
+            console.error("Invalid fuel type is selected");
+        }
+      } else
+        console.log("Fuel selector is not available for QLD.")
     }
 
     public static async selectPlan(t, planName, customerType){

@@ -38,6 +38,7 @@ const eaCheckoutDetailsPage={
     prevHomeImproveNo:Selector('#option-prev-home-improve-false'),
     planHomeImproveNo:Selector('#option-plan-home-improve-false'),
     renovationNo:Selector('#option-prev-or-planned-home-improve-disconnect-false'),
+    addAAH: Selector("#additional-account-holder__add")
   },
 };
 

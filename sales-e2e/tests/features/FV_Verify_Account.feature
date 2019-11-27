@@ -1,6 +1,6 @@
 @quotetool
 Feature: Safety Flag scenarios for Verify Account journey
-  @smoke @test
+  @smoke
   Scenario Outline: Verify Safety Flag message is displayed to the end user which has flag as true for Residential Customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
