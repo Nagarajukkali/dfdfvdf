@@ -19,15 +19,15 @@ export class plansMethod{
 
     public static async selectFuel(t,fuelType){
       switch(fuelType){
-        case FUEL_TYPE_OPTIONS.BOTH:
+        case FUEL_TYPE_OPTIONS.BOTH.value:
           await testFunction.click(t,EaHomePage.elements.fuelSelectorOption);
           await testFunction.click(t,EaHomePage.elements.fuelSelectorOptionDual);
           break;
-        case FUEL_TYPE_OPTIONS.ELE:
+        case FUEL_TYPE_OPTIONS.ELE.value:
           await testFunction.click(t,EaHomePage.elements.fuelSelectorOption);
           await testFunction.click(t,EaHomePage.elements.fuelSelectorOptionEle);
           break;
-        case FUEL_TYPE_OPTIONS.GAS:
+        case FUEL_TYPE_OPTIONS.GAS.value:
           await testFunction.click(t,EaHomePage.elements.fuelSelectorOption);
           await testFunction.click(t,EaHomePage.elements.fuelSelectorOptionGas);
           break;
@@ -101,14 +101,14 @@ export class verifyAccountMethod {
     public static async verifyAccountIsDisplayed(t, fuelType, customerType) {
         if (customerType===CustomerType.RESIDENTIAL) {
             switch (fuelType) {
-              case FUEL_TYPE_OPTIONS.BOTH:
+              case FUEL_TYPE_OPTIONS.BOTH.value:
                 await testFunction.isElementDisplayed(t,EaHomePage.elements.elecAccountNo);
                 await testFunction.isElementDisplayed(t,EaHomePage.elements.gasAccountNo);
                 break;
-              case FUEL_TYPE_OPTIONS.ELE:
+              case FUEL_TYPE_OPTIONS.ELE.value:
                   await testFunction.isElementDisplayed(t,EaHomePage.elements.elecAccountNo);
                 break;
-              case FUEL_TYPE_OPTIONS.GAS:
+              case FUEL_TYPE_OPTIONS.GAS.value:
                   await testFunction.isElementDisplayed(t,EaHomePage.elements.gasAccountNo);
                 break;
             }
@@ -119,10 +119,10 @@ export class verifyAccountMethod {
 
     public static async provideAccountDetails(t,fuel,accountNumber){
         switch(fuel){
-            case FUEL_TYPE_OPTIONS.ELE:
+            case FUEL_TYPE_OPTIONS.ELE.value:
               await testFunction.clearAndEnterText(t,EaHomePage.elements.elecAccountNo, accountNumber);
               break;
-            case FUEL_TYPE_OPTIONS.GAS:
+            case FUEL_TYPE_OPTIONS.GAS.value:
               await testFunction.clearAndEnterText(t,EaHomePage.elements.gasAccountNo, accountNumber);
               break;
             default:
@@ -163,14 +163,14 @@ export class verifyAccountMethod {
 
     public static async verifyUsageData(t, fuelType){
         switch (fuelType) {
-            case FUEL_TYPE_OPTIONS.BOTH:
+            case FUEL_TYPE_OPTIONS.BOTH.value:
                 await testFunction.isElementDisplayed(t,EaHomePage.elements.usageData_ele);
                 await testFunction.isElementDisplayed(t,EaHomePage.elements.usageData_gas);
               break;
-            case FUEL_TYPE_OPTIONS.ELE:
+            case FUEL_TYPE_OPTIONS.ELE.value:
                 await testFunction.isElementDisplayed(t,EaHomePage.elements.usageData_ele);
               break;
-            case FUEL_TYPE_OPTIONS.GAS:
+            case FUEL_TYPE_OPTIONS.GAS.value:
                 await testFunction.isElementDisplayed(t,EaHomePage.elements.usageData_gas);
               break;
           }
