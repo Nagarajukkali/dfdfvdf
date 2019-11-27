@@ -28,9 +28,11 @@ When(/^user provides all other details on qualifier page for Existing customer$/
   await qualifierMethod.provideMovingType(t, movingType);
   if(movingType === Moving.MOVING){
     await qualifierMethod.provideAddress(t, data[0].connectionAddress);
+    await testFunction.click(t, eaQualifierPage.elements.addressContinue);
     await qualifierMethod.selectDateFromCalendar(t);
+  } else if (movingType === Moving.NONMOVING) {
+    await testFunction.click(t, eaQualifierPage.elements.addressContinue);
   }
-  await testFunction.click(t, eaQualifierPage.elements.addressContinue);
   await qualifierMethod.selectPropertyType(t, data[0].propertyType);
   await qualifierMethod.selectSolarOption(t, data[0].solarOption);
 });
