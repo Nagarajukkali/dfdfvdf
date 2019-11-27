@@ -59,6 +59,11 @@ const replace={ replace: true };
     UNCHECK='Uncheck'
   }
 
+  export enum directDebitType {
+    BANK_ACCOUNT = 'Bank',
+    CREDIT_CARD = 'CC'
+  }
+
 export class testFunction {
 
   public static async click(t, element) {

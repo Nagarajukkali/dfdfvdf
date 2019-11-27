@@ -44,7 +44,18 @@ const eaCheckoutDetailsPage={
     aahEmail: Selector("aah_email"),
     aahPermissionLvl1: Selector("#select-1"),
     aahPermissionLvl2: Selector("#select-2"),
-    aahPermissionLvl3: Selector("#select-3")
+    aahPermissionLvl3: Selector("#select-3"),
+    addDirectDebit: Selector("#direct-debit__add"),
+    tfBankAccountName: Selector("#bankAccountName"),
+    tfBsb: Selector("#bsb"),
+    tfBankAccountNumber: Selector("#bankAccountNumber"),
+    cbBankAccountAgreeTermsAndCond: Selector("#baAgree"),
+    useCC: Selector("div[class*='direct-debit-form'] div[class='side-right']"),
+    tfCCName: Selector("#creditCardName"),
+    tfCCNumber: Selector("#creditCardNumber"),
+    tfCCExpiryMonth: Selector("#creditCardExpiry-month"),
+    tfCCExpiryYear: Selector("#creditCardExpiry-month"),
+    cbCCAgreeTermsAndCond: Selector("#ccAgree")
   },
 };
 
