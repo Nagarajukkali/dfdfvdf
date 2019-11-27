@@ -4,10 +4,9 @@
     "tests/**/*.feature"
   ],
   "browsers": [
-    //"chrome:headless"
-    "chrome"
+    "chrome:headless"
   ],
-  "concurrency": 1,
+  "concurrency": 2,
   "reporter": [{
           "name": "cucumber-json",
           "output": "results/report/report.json"
