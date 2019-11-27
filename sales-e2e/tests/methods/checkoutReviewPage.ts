@@ -12,13 +12,13 @@ export class checkoutReviewMethod {
   public static async verifyLifeSupportQuestion(t, fuelType) {
       await testFunction.isElementDisplayed(t, eaCheckoutReviewPage.elements.lifeSupportQuestionSection);
       switch (fuelType) {
-          case FUEL_TYPE_OPTIONS.BOTH:
+          case FUEL_TYPE_OPTIONS.BOTH.value:
               await testFunction.assertText(t, eaCheckoutReviewPage.elements.lifeSupportQuestion, "Is anyone at this property on life support?");
               break;
-          case FUEL_TYPE_OPTIONS.ELE:
+          case FUEL_TYPE_OPTIONS.ELE.value:
               await testFunction.assertText(t, eaCheckoutReviewPage.elements.lifeSupportQuestion, "Is anyone at this property on life support for electricity?");
               break;
-          case FUEL_TYPE_OPTIONS.GAS:
+          case FUEL_TYPE_OPTIONS.GAS.value:
               await testFunction.assertText(t, eaCheckoutReviewPage.elements.lifeSupportQuestion, "Is anyone at this property on life support for gas?");
               break;
       }
