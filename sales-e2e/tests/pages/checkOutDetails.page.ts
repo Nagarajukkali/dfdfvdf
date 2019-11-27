@@ -38,7 +38,13 @@ const eaCheckoutDetailsPage={
     prevHomeImproveNo:Selector('#option-prev-home-improve-false'),
     planHomeImproveNo:Selector('#option-plan-home-improve-false'),
     renovationNo:Selector('#option-prev-or-planned-home-improve-disconnect-false'),
-    addAAH: Selector("#additional-account-holder__add")
+    addAAH: Selector("#additional-account-holder__add"),
+    aahFirstName: Selector("#aah_firstname"),
+    aahLastName: Selector("aah_lastname"),
+    aahEmail: Selector("aah_email"),
+    aahPermissionLvl1: Selector("#select-1"),
+    aahPermissionLvl2: Selector("#select-2"),
+    aahPermissionLvl3: Selector("#select-3")
   },
 };
 

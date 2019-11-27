@@ -169,6 +169,13 @@ export class checkoutDetailsMethod{
   }
 
   public static async addAAHDetails(t) {
-  
+    let fName = "FNAME" + testFunction.generateRandomText(5);
+    let lName = "LNAME" + testFunction.generateRandomText(5);
+    let email = testFunction.generateRandomText(5) + "@test.com";
+    await testFunction.click(t, eaCheckoutDetailsPage.elements.addAAH);
+    await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.aahFirstName, fName);
+    await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.aahLastName, lName);
+    await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.aahEmail, email);
+    await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl2);
   }
 }
