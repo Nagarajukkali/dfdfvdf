@@ -1,5 +1,5 @@
 Feature: This feature is to test the verify account scenarios for existing residential customers
-  @test
+
   Scenario Outline: Non moving residential customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
@@ -26,7 +26,7 @@ Feature: This feature is to test the verify account scenarios for existing resid
     Examples:
       |folderName                               |customer_type |fuelType |planName    |
       |E2E_VerifyAccount_Residential_NonMoving  |RES           |BOTH     |Total Plan  |
-
+  
   Scenario Outline: Moving residential customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
@@ -40,7 +40,16 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user provides all other details on qualifier page for Existing customer
       |movingType |connectionAddress                          |propertyType |solarOption  |
       |Moving     |271 Heatherhill Road, FRANKSTON  VIC  3199 |Renter       |No           |
+    And user provides all details on checkout details page for Residential customer
+      |journey    |customerStatus| firstName| lastName|idType        |
+      |RES        |Existing      | test     |test     |Passport      |
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices        |
+      |Yes              |BOTH    |Chronic Positive Airways Pressure Respirator  |Medically Required Hot Water |
+    And user submits the quote
+    Then user lands on checkout complete page
 
     Examples:
       |folderName                               |customer_type |fuelType |planName    |
-      |E2E_VerifyAccount_Residential_Moving  |RES           |BOTH     |Basic       |
+      |E2E_VerifyAccount_Residential_Moving     |RES           |BOTH     |Basic       |
