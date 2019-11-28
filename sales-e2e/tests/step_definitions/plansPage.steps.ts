@@ -35,3 +35,16 @@ When(/^user verifies the account through verify account journey for residential 
   await verifyAccountMethod.verifyAccountDetails(t);
   await verifyAccountMethod.showCostEstimates(t);
 });
+When(/^user verifies the account through verify account journey for business customer$/, async function (t,[],dataTable) {
+  let data = dataTable.hashes();
+  await selectionOptionModalWindowMethod.selectOptionsModalWindow(t, data[0].modal_option);
+  if(data[0].elecAccountNumber)
+    await verifyAccountMethod.provideAccountDetails(t,"ELE", data[0].elecAccountNumber);
+  if(data[0].gasAccountNumber)
+    await verifyAccountMethod.provideAccountDetails(t, "GAS", data[0].gasAccountNumber);
+  await verifyAccountMethod.provideAccountInformation(t, data[0].ABNOrACN, data[0].customer_type);
+  await verifyAccountMethod.verifyAccountDetails(t);
+  await verifyAccountMethod.provideIdentityDetails(t, data[0].idType, data[0].idNumber);
+  await verifyAccountMethod.verifyAccountDetails(t);
+  await verifyAccountMethod.showCostEstimates(t);
+});
