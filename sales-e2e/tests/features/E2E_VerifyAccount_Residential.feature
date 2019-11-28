@@ -21,6 +21,7 @@ Feature: This feature is to test the verify account scenarios for existing resid
       |lifeSupportOption|fuelType|EleclifeSupportDevices                    |GaslifeSupportDevices  |
       |Yes              |BOTH    |Intermittent Peritoneal Dialysis Machine  |Gas Other              |
     And user submits the quote
+    Then user lands on checkout complete page
 
     Examples:
       |folderName                               |customer_type |fuelType |planName    |
