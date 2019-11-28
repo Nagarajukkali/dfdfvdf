@@ -143,11 +143,11 @@ export class testFunction {
   }
 
   public static isElectricity(fuelType) {
-    return fuelType ===FUEL_TYPE_OPTIONS.ELE || fuelType ===FUEL_TYPE_OPTIONS.BOTH;
+    return fuelType === FUEL_TYPE_OPTIONS.ELE.value || fuelType === FUEL_TYPE_OPTIONS.BOTH.value;
   }
 
   public static isGas(fuelType) {
-    return fuelType ===FUEL_TYPE_OPTIONS.GAS || FUEL_TYPE_OPTIONS.BOTH;
+    return fuelType === FUEL_TYPE_OPTIONS.GAS.value || fuelType === FUEL_TYPE_OPTIONS.BOTH.value;
   }
 
   public static waitForLoadingIconToClose(){
