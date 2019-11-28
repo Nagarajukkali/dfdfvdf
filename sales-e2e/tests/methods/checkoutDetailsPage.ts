@@ -44,7 +44,7 @@ export class checkoutDetailsMethod{
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.email,'test@energyaustralia.com.au');
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.phone,phoneNumber);
     }
-    public static async checkoutIdentification(t,idType,customerStatus){
+    public static async checkoutIdentification(t,customerStatus,idType){
         if(customerStatus===CustomerStatus.EXISTING){
             await this.checkoutExistingCustomerIdentification(t,idType);
         }
@@ -60,8 +60,8 @@ export class checkoutDetailsMethod{
             case 'Passport':
               await this.checkoutExistingCustomerPassportIdentification(t);
               break;
-            case 'Driver Licence':
-              await this.checkoutDriverLicenseIdentification(t);
+            case 'Driver License':
+              await this.checkoutExistingCustomerDriverLicenseIdentification(t);
               break;
             case 'Medicare':
               await this.checkoutExistingCustomerMedicareIdentification(t);
@@ -76,16 +76,16 @@ export class checkoutDetailsMethod{
         await testFunction.click(t,eaCheckoutDetailsPage.elements.idDrop);
         await testFunction.click(t,eaCheckoutDetailsPage.elements.idValuePassport);
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,passportNo);
-
     }
 
-    public static async checkoutDriverLicenseIdentification(t){
+    public static async checkoutExistingCustomerDriverLicenseIdentification(t){
       let dlNo=testFunction.getRandomNumber(999999);
       await testFunction.click(t,eaCheckoutDetailsPage.elements.idDrop);
       await testFunction.click(t,eaCheckoutDetailsPage.elements.idValueDriverLicense);
       await testFunction.click(t,eaCheckoutDetailsPage.elements.idNumber);
       await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,dlNo);
     }
+
     public static async checkoutExistingCustomerMedicareIdentification(t){
       let medicareNo=testFunction.getRandomNumber(999999);
       await testFunction.click(t,eaCheckoutDetailsPage.elements.idDrop);
@@ -97,8 +97,8 @@ export class checkoutDetailsMethod{
       case "Passport":
         await this.checkoutNewCustomerPassportIdentification(t);
         break;
-      case "Driver Licence":
-        await this.checkoutDriverLicenseIdentification(t);
+      case "Driver License":
+        await this.checkoutNewCustomerDriverLicenseIdentification(t);
         break;
       case "Medicare":
         await this.checkoutNewCustomerMedicareIdentification(t);
@@ -108,8 +108,19 @@ export class checkoutDetailsMethod{
     }
   }
 
+  public static async checkoutNewCustomerDriverLicenseIdentification(t){
+    let dlNo=testFunction.getRandomNumber(999999);
+    await testFunction.click(t,eaCheckoutDetailsPage.elements.idDrop);
+    await testFunction.click(t,eaCheckoutDetailsPage.elements.idValueDriverLicense);
+    await testFunction.click(t,eaCheckoutDetailsPage.elements.idLicenseNumber);
+    await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idLicenseNumber,dlNo);
+  }
+
   public static async checkoutNewCustomerPassportIdentification(t){
-    await this.checkoutExistingCustomerPassportIdentification(t);
+    let passportNo=testFunction.getRandomNumber(999999);
+    await testFunction.click(t,eaCheckoutDetailsPage.elements.idDrop);
+    await testFunction.click(t,eaCheckoutDetailsPage.elements.idValuePassport);
+    await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idPassportNumber,passportNo);
     await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idCountry,'Australia');
   }
 
@@ -126,6 +137,7 @@ export class checkoutDetailsMethod{
 
   public static async clickOnReviewYourOrderBtn(t){
     await testFunction.waitForLoadingIconToClose();
+    await t.wait(5000);
     await testFunction.click(t,eaCheckoutDetailsPage.elements.reviewYourOrderBtn);
     await testFunction.isElementVisible(t,eaCheckoutReviewPage.elements.reviewYourOfferTxt);
   }

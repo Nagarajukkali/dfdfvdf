@@ -18,6 +18,8 @@ const eaCheckoutDetailsPage={
     idValuePassport:Selector('#id_type .sui-dropdown sui-option:nth-of-type(2)'),
     idValueMedicare:Selector('#id_type .sui-dropdown sui-option:nth-of-type(3)'),
     idNumber:Selector('#id_number'),
+    idLicenseNumber:Selector('#id_number-licence'),
+    idPassportNumber:Selector('#id_number-passport'),
     idCountry:Selector('#id_country+input'),
     medicareColor:Selector('.card-option--green span.card-option__label__text'),
     idMedicareNumber:Selector('#id_number-medicare'),

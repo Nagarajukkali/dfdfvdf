@@ -237,26 +237,26 @@ export class checkoutReviewMethod {
           break;
         case LSDevices.ELE_OTHER:
           await this.selectLSDevice(t, eaCheckoutReviewPage.elements.cbEleDevice_OTHER);
-          await testFunction.clearAndEnterText(t, eaCheckoutReviewPage.elements.cbEleDevice_OTHER, "Sample Other electricity device.");
+          await testFunction.clearAndEnterText(t, eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsElec, "Sample Other electricity device.");
           break;
         default:
-          console.info("Invalid Electricity Equipment.");
+          console.log("Invalid Electricity Equipment.");
       }
     }
     if(await testFunction.isGas(fuelType)) {
       switch (equipmentName) {
-        case "Medically Required Heating and/or Air Conditioning":
+        case LSDevices.GAS_GLSMRHAC:
           await this.selectLSDevice(t, eaCheckoutReviewPage.elements.cbGasDevice_GLSMRHAC);
           break;
-        case "Medically Required Hot Water":
+        case LSDevices.GAS_GLSMRHW:
           await this.selectLSDevice(t, eaCheckoutReviewPage.elements.cbGasDevice_GLSMRHW);
           break;
-        case "Other":
+        case LSDevices.GAS_OTHER:
           await this.selectLSDevice(t, eaCheckoutReviewPage.elements.cbGasDevice_OTHER);
-          await testFunction.clearAndEnterText(t, eaCheckoutReviewPage.elements.cbGasDevice_OTHER, "Sample Other gas device.");
+          await testFunction.clearAndEnterText(t, eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsGas, "Sample Other gas device.");
           break;
         default:
-          console.error("Invalid Gas Equipment.");
+          console.log("Invalid Gas Equipment.");
       }
     }
   }
