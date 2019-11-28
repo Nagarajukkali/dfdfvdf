@@ -13,6 +13,14 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user provides all other details on qualifier page for Existing customer
       |movingType |propertyType |solarOption  |
       |Non-Moving |Owner        |No           |
+    And user provides all details on checkout details page for Residential customer
+      |journey    |customerStatus|firstName|lastName |idType        |
+      |RES        |Existing      |test     |test     |Driver License|
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType|EleclifeSupportDevices                    |GaslifeSupportDevices  |
+      |Yes              |BOTH    |Intermittent Peritoneal Dialysis Machine  |Gas Other              |
+    And user submits the quote
 
     Examples:
       |folderName                               |customer_type |fuelType |planName    |
