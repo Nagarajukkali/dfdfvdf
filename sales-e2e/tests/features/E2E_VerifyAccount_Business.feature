@@ -7,7 +7,7 @@ Feature: This feature is to test the verify account scenarios for existing busin
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for business customer
       |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |ABNOrACN |idType |idNumber |
-      |RES          |verify account |5650256936       |5891300788       |3038     |dob    |17091932 |
+      |BUS          |verify account |5650256936       |5891300788       |3038     |dob    |17091932 |
     And user selects '<planName>' from '<customer_type>' plans page
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
@@ -15,7 +15,7 @@ Feature: This feature is to test the verify account scenarios for existing busin
       |Non-Moving |Owner        |No           |
     And user provides all details on checkout details page for business customer
       |journey    |customerStatus|firstName|lastName |idType        |
-      |RES        |Existing      |test     |test     |Driver License|
+      |BUS        |Existing      |test     |test     |Driver License|
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                    |GaslifeSupportDevices  |
@@ -34,7 +34,7 @@ Feature: This feature is to test the verify account scenarios for existing busin
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for business customer
       |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |postcode |idType |idNumber |
-      |RES          |verify account |5650256936       |5891300788       |3038     |dob    |17091932 |
+      |BUS          |verify account |5650256936       |5891300788       |3038     |dob    |17091932 |
     And user selects '<planName>' from '<customer_type>' plans page
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
@@ -42,7 +42,7 @@ Feature: This feature is to test the verify account scenarios for existing busin
       |Moving     |271 Heatherhill Road, FRANKSTON  VIC  3199 |Renter       |No           |
     And user provides all details on checkout details page for business customer
       |journey    |customerStatus| firstName| lastName|idType        |
-      |RES        |Existing      | test     |test     |Passport      |
+      |BUS        |Existing      | test     |test     |Passport      |
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices        |
