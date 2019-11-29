@@ -1,5 +1,5 @@
 import {qualifierMethod} from '../methods/qualifierPage';
-import {CustomerStatus, testFunction} from '../../global_methods/helper';
+import {CustomerStatus, Moving, testFunction} from '../../global_methods/helper';
 import {When, Then } from 'cucumber';
 
 
@@ -29,13 +29,12 @@ When(/^user provides all details on qualifier page for New customer$/, async fun
   let movingType=data[0].movingType;
   await testFunction.waitForLoadingIconToClose();
   await qualifierMethod.selectCustomerStatus(t,data[0].customerStatus);
-  if(movingType==='Moving'){
-    await qualifierMethod.provideMovingType(t, data[0].movingType);
+  await qualifierMethod.provideMovingType(t, data[0].movingType);
+  if(movingType===Moving.MOVING){
     await qualifierMethod.provideAddress(t, data[0].connectionAddress);
     await qualifierMethod.selectDateFromCalendar(t);
   }
   else{
-    await qualifierMethod.provideMovingType(t, data[0].movingType);
     await qualifierMethod.provideAddress(t, data[0].connectionAddress);
   }
   await qualifierMethod.selectPropertyType(t, data[0].propertyType);

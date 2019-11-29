@@ -58,7 +58,7 @@ export class checkoutDetailsMethod{
             case 'Passport':
               await this.checkoutExistingCustomerPassportIdentification(t);
               break;
-            case 'Driver Licence':
+            case 'Driver License':
               await this.checkoutExistingCustomerDriverLicenseIdentification(t);
               break;
             case 'Medicare':
