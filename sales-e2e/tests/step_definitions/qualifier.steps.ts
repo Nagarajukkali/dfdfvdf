@@ -33,12 +33,11 @@ When(/^user provides all details on qualifier page for New customer$/, async fun
   await qualifierMethod.selectCustomerStatus(t,data[0].customerStatus);
   await qualifierMethod.provideMovingType(t, data[0].movingType);
   if(movingType==='Moving'){
-    await qualifierMethod.provideMovingType(t, data[0].movingType);
     await qualifierMethod.provideAddress(t, data[0].connectionAddress);
     await qualifierMethod.selectDateFromCalendar(t);
   }
   else{
-    await qualifierMethod.clickOnContinueAddress(t);
+    await qualifierMethod.provideAddress(t, data[0].connectionAddress);
   }
   if(customerType===CustomerType.RESIDENTIAL){
     await qualifierMethod.selectPropertyType(t, data[0].propertyType);

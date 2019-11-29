@@ -7,7 +7,7 @@ Scenario Outline: Submit a quote for new business moving customer
   When user selects '<planName>' from 'BUS' plans page
   And user moves on to fill the qualifier
   And user provides all details on qualifier page for New customer
-  |customerType| customerStatus| connectionAddress                         | movingType|propertyType|solarOption|
+  |customerType| customerStatus| connectionAddress                         |movingType|propertyType|solarOption|
   |BUS         |New            | 36 Gregory Street West, WENDOUREE VIC 3355|Moving     |            |No         |
   And user provides all details on checkout details page
   |customerType|journey    |customerStatus| firstName| lastName|businessType|
@@ -30,9 +30,9 @@ Scenario Outline: Submit a quote for new business non moving customer
   And user provides all details on qualifier page for New customer
     | customerStatus| connectionAddress               | movingType|propertyType|solarOption|
     |New            | 5 Wilkies Street, BULLI NSW 2516|Non-Moving |Renter      |No         |
-  And user provides all details on checkout details page for Residential customer
-    |journey    |customerStatus| firstName| lastName|idType        |
-    |RES        |New           | test     |test     |Driver License|
+  And user provides all details on checkout details page
+    |customerType|journey    |customerStatus| firstName| lastName|businessType|
+    |BUS         |BUS        |New           | test     |test     |ABN         |
   And user clicks on 'Review your order' button and navigates to review page
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices                             |
