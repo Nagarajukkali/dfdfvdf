@@ -1,7 +1,7 @@
 import {qualifierMethod} from '../methods/qualifierPage';
-import {CustomerStatus, Moving, testFunction} from '../../global_methods/helper';
+import {testFunction, Moving} from '../../global_methods/helper';
 import {When, Then } from 'cucumber';
-
+const eaQualifierPage=require('../pages/qualifier.page');
 
 When(/^user selects '(.*)' and provides '(.*)' '(.*)' '(.*)' and '(.*)' and '(.*)' for '(.*)' customer$/, async function (t, [customerStatus,accNumber,accountDetail,accountIdentityType,idType,idValue,customerType]) {
   await qualifierMethod.selectCustomerStatus(t, customerStatus);
@@ -24,13 +24,28 @@ When(/^user provides all details on qualifier page$/, async function(t,[],dataTa
   await qualifierMethod.selectSolarOption(t, data[0].solarOption);
 });
 
+When(/^user provides all other details on qualifier page for Existing customer$/, async function (t,[],dataTable) {
+  let data = dataTable.hashes();
+  let movingType = data[0].movingType;
+  await testFunction.waitForLoadingIconToClose();
+  await qualifierMethod.provideMovingType(t, movingType);
+  if(movingType === Moving.MOVING){
+    await qualifierMethod.provideAddress(t, data[0].connectionAddress);
+    await qualifierMethod.selectDateFromCalendar(t);
+  } else if (movingType === Moving.NONMOVING) {
+    await testFunction.click(t, eaQualifierPage.elements.addressContinue);
+  }
+  await qualifierMethod.selectPropertyType(t, data[0].propertyType);
+  await qualifierMethod.selectSolarOption(t, data[0].solarOption);
+});
+
 When(/^user provides all details on qualifier page for New customer$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
   let movingType=data[0].movingType;
   await testFunction.waitForLoadingIconToClose();
   await qualifierMethod.selectCustomerStatus(t,data[0].customerStatus);
   await qualifierMethod.provideMovingType(t, data[0].movingType);
-  if(movingType===Moving.MOVING){
+  if(movingType === Moving.MOVING){
     await qualifierMethod.provideAddress(t, data[0].connectionAddress);
     await qualifierMethod.selectDateFromCalendar(t);
   }
@@ -48,5 +63,4 @@ When(/^user verifies his account on qualifier$/, async function (t,[],dataTable)
   await qualifierMethod.selectCustomerStatus(t,data[0].customerStatus);
   await qualifierMethod.verifyAccount(t,data[0].accountNumber,data[0].accountIdentityType,data[0].postcodeOrABNACN);
   await qualifierMethod.verifyIdentity(t,data[0].idType,data[0].idValue);
-
 });

@@ -1,6 +1,7 @@
-import {plansMethod } from '../methods/plansPage';
+import {plansMethod, verifyAccountMethod} from '../methods/plansPage';
 import {selectionOptionModalWindowMethod } from '../methods/plansPage';
 import {When, Then } from 'cucumber';
+import {Given} from 'cucumber'
 
 When(/^user clicks on the verify modal window on '(.*)' page$/, async function(t, [customerType]) {
       await plansMethod.clickPlansPageModal(t,customerType);
@@ -18,3 +19,19 @@ When(/^user selects '(.*)' from '(.*)' plans page$/, async function(t, [planName
   await plansMethod.selectPlan(t, planName, customerType);
 });
 
+Given(/^User have selected fuel as "([^"]*)"$/, async function (t, [fuelType]) {
+  await plansMethod.selectFuel(t, fuelType);
+});
+When(/^user verifies the account through verify account journey for residential customer$/, async function (t,[],dataTable) {
+  let data = dataTable.hashes();
+  await selectionOptionModalWindowMethod.selectOptionsModalWindow(t, data[0].modal_option);
+  if(data[0].elecAccountNumber)
+    await verifyAccountMethod.provideAccountDetails(t,"ELE", data[0].elecAccountNumber);
+  if(data[0].gasAccountNumber)
+    await verifyAccountMethod.provideAccountDetails(t, "GAS", data[0].gasAccountNumber);
+  await verifyAccountMethod.provideAccountInformation(t, data[0].postcode, data[0].customer_type);
+  await verifyAccountMethod.verifyAccountDetails(t);
+  await verifyAccountMethod.provideIdentityDetails(t, data[0].idType, data[0].idNumber);
+  await verifyAccountMethod.verifyAccountDetails(t);
+  await verifyAccountMethod.showCostEstimates(t);
+});
