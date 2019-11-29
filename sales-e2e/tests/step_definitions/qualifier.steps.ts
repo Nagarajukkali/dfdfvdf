@@ -1,5 +1,5 @@
 import {qualifierMethod} from '../methods/qualifierPage';
-import {CustomerStatus, testFunction} from '../../global_methods/helper';
+import { testFunction} from '../../global_methods/helper';
 import {When, Then } from 'cucumber';
 import {CustomerType} from '@ea/ea-commons-models';
 
@@ -27,7 +27,7 @@ When(/^user provides all details on qualifier page$/, async function(t,[],dataTa
 
 When(/^user provides all details on qualifier page for New customer$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
-  let customerType=dataTable.customerType;
+  let customerType=data[0].customerType;
   let movingType=data[0].movingType;
   await testFunction.waitForLoadingIconToClose();
   await qualifierMethod.selectCustomerStatus(t,data[0].customerStatus);

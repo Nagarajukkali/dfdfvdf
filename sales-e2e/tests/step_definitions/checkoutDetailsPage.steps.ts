@@ -26,13 +26,11 @@ When(/^user provides all details on checkout details page$/, async function (t,[
   if(customerType===CustomerType.BUSINESS){
     await checkoutDetailsMethod.provideBusinessDetails(t,data[0].businessType);
   }
-
 });
+
 When(/^user clicks on 'Review your order' button and navigates to review page$/, async function (t) {
   await checkoutDetailsMethod.clickOnReviewYourOrderBtn(t);
 });
-When(/^user selects answer for property renovation question for '(.*)'$/, async function (t,state) {
-  if(state===AustralianState.VIC){
-    await checkoutDetailsMethod.accessRestriction(t,'No','No');
-  }
+When(/^user selects answer for property renovation question for '(.*)'$/, async function (t,[state]) {
+  await checkoutDetailsMethod.propertyRenovationNo(t,state);
 });
