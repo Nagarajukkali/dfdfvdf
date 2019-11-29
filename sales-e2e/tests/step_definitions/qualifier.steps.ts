@@ -3,7 +3,6 @@ import {testFunction, Moving} from '../../global_methods/helper';
 import {When, Then } from 'cucumber';
 const eaQualifierPage=require('../pages/qualifier.page');
 
-
 When(/^user selects '(.*)' and provides '(.*)' '(.*)' '(.*)' and '(.*)' and '(.*)' for '(.*)' customer$/, async function (t, [customerStatus,accNumber,accountDetail,accountIdentityType,idType,idValue,customerType]) {
   await qualifierMethod.selectCustomerStatus(t, customerStatus);
   await qualifierMethod.verifyAccount(t,accNumber,accountIdentityType,accountDetail);
