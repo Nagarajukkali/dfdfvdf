@@ -1,60 +1,68 @@
-import {CustomerType} from '@ea/ea-commons-models';
-
 const eaQualifierPage=require('../pages/qualifier.page');
 import {BusinessType, CustomerStatus, IdType, Moving, Property, Solar, testFunction} from '../../global_methods/helper';
 
 export class qualifierMethod{
 
-  public static async selectCustomerStatus(t, customerStatus,accountNumber,accDetail,accountIdentityType,idType,idValue,customerType) {
+  public static async selectCustomerStatus(t, customerStatus) {
+    console.log("pass");
     if(customerStatus===CustomerStatus.NEW){
         await testFunction.click(t,eaQualifierPage.elements.newCustomerBtn);
       }
     else if(customerStatus===CustomerStatus.EXISTING){
-        await testFunction.click(t,eaQualifierPage.elements.existingCustomerBtn);
-        await testFunction.clearAndEnterText(t, eaQualifierPage.elements.accountNumber, accountNumber);
-          if(customerType===CustomerType.BUSINESS && accountIdentityType===BusinessType.ABN){
-            await testFunction.click(t,eaQualifierPage.elements.existingCustomerAbn);
-            await testFunction.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, accDetail);
-            await t.wait(2000);
-          }else if(customerType===CustomerType.BUSINESS && accountIdentityType===BusinessType.ACN){
-            await testFunction.click(t,eaQualifierPage.elements.existingCustomerAcn);
-            await testFunction.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, accDetail);
-            await t.wait(2000);
-          }else{
-            await testFunction.clearAndEnterText(t, eaQualifierPage.elements.accountDetail, accDetail);
-            await testFunction.isElementVisible(t, eaQualifierPage.elements.accountDetailValidate);
-          }
-        await testFunction.click(t, eaQualifierPage.elements.verifyAccountSubmit);
-        switch(idType){
-          case IdType.DOB:
-             await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDOBValue);
-             break;
-          case IdType.DL:
-              await this.selectIdTypeQualifier(t, eaQualifierPage.elements.idTypeDl);
-              await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
-              break;
-          case IdType.PIN:
-              await this.selectIdTypeQualifier(t, eaQualifierPage.elements.idTypePin);
-              await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
-              break;
-        }
-        await testFunction.waitForLoadingIconToClose();
-        await t.wait(3000);
-        await testFunction.click(t, eaQualifierPage.elements.verifyIdentitySubmit);
+      await testFunction.click(t,eaQualifierPage.elements.existingCustomerBtn);
     }
     else{
       console.error('customer status option is not selected.');
     }
     }
+
+    public static async verifyAccount(t,accountNumber,accountIdentityType,postcodeOrABNACN){
+      await testFunction.clearAndEnterText(t, eaQualifierPage.elements.accountNumber, accountNumber);
+      switch(accountIdentityType){
+        case BusinessType.ABN:
+          await testFunction.click(t,eaQualifierPage.elements.existingCustomerAbn);
+          await testFunction.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, postcodeOrABNACN);
+          await t.wait(2000);
+        case BusinessType.ACN:
+          await testFunction.click(t,eaQualifierPage.elements.existingCustomerAcn);
+          await testFunction.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, postcodeOrABNACN);
+          await t.wait(2000);
+        case 'Postcode':
+          await testFunction.clearAndEnterText(t, eaQualifierPage.elements.accountDetail, postcodeOrABNACN);
+          await testFunction.isElementVisible(t, eaQualifierPage.elements.accountDetailValidate);
+        default:
+          console.log('account identity type is not valid');
+      }
+      await testFunction.click(t, eaQualifierPage.elements.verifyAccountSubmit);
+    }
     public static async selectIdTypeQualifier(t, itemToClick) {
-      /*let val=await eaQualifierPage.elements.idTypeDropDown.count
-        .then(result=>result);*/
       let val =await testFunction.sizeOfElement(t, eaQualifierPage.elements.idTypeDropDown);
       if(val!==1) {
         await testFunction.click(t, eaQualifierPage.elements.idTypeDropDownVerifyAccount);
         await testFunction.click(t, itemToClick);
       }
     }
+    public static async verifyIdentity(t,idType,idValue){
+      switch(idType){
+        case 'dob':
+          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDOBValue);
+          break;
+        case 'dl':
+          await this.selectIdTypeQualifier(t, eaQualifierPage.elements.idTypeDl);
+          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
+          break;
+        case 'pin':
+          await this.selectIdTypeQualifier(t, eaQualifierPage.elements.idTypePin);
+          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
+          break;
+        default:
+          console.log('Invalid id type');
+      }
+      await testFunction.waitForLoadingIconToClose();
+      await t.wait(3000);
+      await testFunction.click(t, eaQualifierPage.elements.verifyIdentitySubmit);
+    }
+
     public static async provideIdValue(t,idValue, inputField) {
       await testFunction.clearAndEnterText(t,inputField, idValue);
     }
@@ -127,4 +135,5 @@ export class qualifierMethod{
       console.error('Solar option is not selected');
     }
   }
+
 }

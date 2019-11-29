@@ -25,6 +25,7 @@ const replace={ replace: true };
     ABN='ABN',
     ACN='ACN'
   }
+
   export enum PlanType {
     BASIC_HOME='Basic',
     NO_FRILLS='No Frills',
@@ -48,10 +49,10 @@ const replace={ replace: true };
     ELE_LSKDM='Kidney Dialysis Machine',
     ELE_LSOC='Oxygen Concentrator',
     ELE_LSVFLS='Ventilator For Life Support',
-    ELE_OTHER='Other',
+    ELE_OTHER='Ele Other',
     GAS_GLSMRHAC='Medically Required Heating and/or Air Conditioning',
     GAS_GLSMRHW='Medically Required Hot Water',
-    GAS_OTHER='Other'
+    GAS_OTHER='Gas Other'
   }
 
   export enum SelectionType {
@@ -137,11 +138,11 @@ export class testFunction {
   }
 
   public static isElectricity(fuelType) {
-    return fuelType ===FUEL_TYPE_OPTIONS.ELE || fuelType ===FUEL_TYPE_OPTIONS.BOTH;
+    return fuelType === FUEL_TYPE_OPTIONS.ELE.value || fuelType === FUEL_TYPE_OPTIONS.BOTH.value;
   }
 
   public static isGas(fuelType) {
-    return fuelType ===FUEL_TYPE_OPTIONS.GAS || FUEL_TYPE_OPTIONS.BOTH;
+    return fuelType === FUEL_TYPE_OPTIONS.GAS.value || fuelType === FUEL_TYPE_OPTIONS.BOTH.value;
   }
 
   public static waitForLoadingIconToClose(){
