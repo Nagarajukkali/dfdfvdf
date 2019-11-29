@@ -46,7 +46,7 @@ When(/^user provides all details on qualifier page for New customer$/, async fun
   await testFunction.waitForLoadingIconToClose();
   await qualifierMethod.selectCustomerStatus(t,data[0].customerStatus);
   await qualifierMethod.provideMovingType(t, data[0].movingType);
-  if(movingType === Moving.MOVING){
+  if(movingType===Moving.MOVING){
     await qualifierMethod.provideAddress(t, data[0].connectionAddress);
     await qualifierMethod.selectDateFromCalendar(t);
   }
@@ -55,7 +55,6 @@ When(/^user provides all details on qualifier page for New customer$/, async fun
   }
   await qualifierMethod.selectPropertyType(t, data[0].propertyType);
   await qualifierMethod.selectSolarOption(t, data[0].solarOption);
-
 });
 
 When(/^user verifies his account on qualifier$/, async function (t,[],dataTable) {

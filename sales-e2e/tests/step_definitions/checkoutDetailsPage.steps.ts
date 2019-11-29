@@ -2,7 +2,7 @@ import {CustomerStatus} from '../../global_methods/helper';
 import {When, Then } from 'cucumber';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 import {testFunction } from '../../global_methods/helper';
-import {CustomerType} from '@ea/ea-commons-models';
+import {AustralianState, CustomerType} from '@ea/ea-commons-models';
 
 When(/^user provides all details for existing customer on checkout details page$/, async function(t,[],dataTable){
   let data=dataTable.hashes();
@@ -14,13 +14,25 @@ When(/^user provides all details for existing customer on checkout details page$
   await checkoutDetailsMethod.clickOnReviewYourOrderBtn(t);
 });
 
-When(/^user provides all details on checkout details page for Residential customer$/, async function (t,[],dataTable) {
+When(/^user provides all details on checkout details page$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
+  let customerType=data[0].customerType;
   await testFunction.waitForLoadingIconToClose();
   await checkoutDetailsMethod.provideDetailsInAboutMeSection(t,data[0].journey,data[0].firstName,data[0].lastName);
   await checkoutDetailsMethod.provideContactDetails(t);
-  await checkoutDetailsMethod.checkoutIdentification(t,data[0].customerStatus,data[0].idType)
+  if(customerType===CustomerType.RESIDENTIAL){
+    await checkoutDetailsMethod.checkoutIdentification(t,data[0].customerStatus,data[0].idType);
+  }
+  if(customerType===CustomerType.BUSINESS){
+    await checkoutDetailsMethod.provideBusinessDetails(t,data[0].businessType);
+  }
+
 });
 When(/^user clicks on 'Review your order' button and navigates to review page$/, async function (t) {
   await checkoutDetailsMethod.clickOnReviewYourOrderBtn(t);
+});
+When(/^user selects answer for property renovation question for '(.*)'$/, async function (t,state) {
+  if(state===AustralianState.VIC){
+    await checkoutDetailsMethod.accessRestriction(t,'No','No');
+  }
 });

@@ -12,16 +12,10 @@ export class checkoutDetailsMethod{
             await testFunction.click(t,eaCheckoutDetailsPage.elements.titleDrop);
             await testFunction.click(t,eaCheckoutDetailsPage.elements.titleTag);
         }
-        else{
-          console.error('Please select a valid title');
-        }
         await this.enterFirstName(t,firstName);
         await this.enterLastName(t,lastName);
         if(journey===CustomerType.RESIDENTIAL || journey==='Campaign'){
             await this.enterDOB(t);
-        }
-        else{
-          console.error('Please proceed to fill all questions');
         }
     }
     public static async enterFirstName(t,firstName){
@@ -165,7 +159,7 @@ export class checkoutDetailsMethod{
       }
   }
   public static async provideBusinessDetails(t,businessType){
-      let businessId=testFunction.getRandomNumber(999999);
+      let businessId=testFunction.getRandomNumber(99999999999);
       if(businessType===BusinessType.ABN){
         await testFunction.click(t,eaCheckoutDetailsPage.elements.ABN);
       }
@@ -178,6 +172,7 @@ export class checkoutDetailsMethod{
       await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.company,'NA');
       await testFunction.click(t,eaCheckoutDetailsPage.elements.businessType);
       await testFunction.click(t,eaCheckoutDetailsPage.elements.businessTypeOption);
+      await t.wait(3000);
       await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCode);
       await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCodeOption);
   }
