@@ -1,6 +1,8 @@
+import {forEachComment} from 'tslint';
+
 const eaCheckoutDetailsPage=require('../pages/checkoutDetails.page');
 const eaCheckoutReviewPage=require('../pages/checkoutReview.page');
-import {BusinessType, CustomerStatus, testFunction} from '../../global_methods/helper';
+import {BusinessType, CustomerStatus, directDebitType, testFunction} from '../../global_methods/helper';
 import {AustralianState, CustomerType} from '@ea/ea-commons-models';
 
 export class checkoutDetailsMethod{
@@ -55,7 +57,7 @@ export class checkoutDetailsMethod{
             case 'Passport':
               await this.checkoutExistingCustomerPassportIdentification(t);
               break;
-            case 'Driver Licence':
+            case 'Driver License':
               await this.checkoutExistingCustomerDriverLicenseIdentification(t);
               break;
             case 'Medicare':
@@ -168,5 +170,33 @@ export class checkoutDetailsMethod{
       await t.wait(3000);
       await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCode);
       await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCodeOption);
+  }
+
+  public static async addAAHDetails(t) {
+    let fName = "FNAME" + testFunction.generateRandomText(5);
+    let lName = "LNAME" + testFunction.generateRandomText(5);
+    let email = testFunction.generateRandomText(5) + "@test.com";
+    await testFunction.click(t, eaCheckoutDetailsPage.elements.addAAH);
+    await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.aahFirstName, fName);
+    await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.aahLastName, lName);
+    await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.aahEmail, email);
+    await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl2);
+  }
+
+  public static async addDirectDebit(t, DDType) {
+    await testFunction.click(t, eaCheckoutDetailsPage.elements.addDirectDebit);
+    if(DDType === directDebitType.BANK_ACCOUNT) {
+      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfBankAccountName, "AccountName_" + testFunction.generateRandomText(5));
+      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfBsb, testFunction.getRandomNumber(999999));
+      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfBankAccountNumber, testFunction.getRandomNumber(9999999999));
+      await testFunction.click(t, eaCheckoutDetailsPage.elements.cbBankAccountAgreeTermsAndCond);
+    } else if(DDType === directDebitType.CREDIT_CARD) {
+      await testFunction.click(t, eaCheckoutDetailsPage.elements.useCC);
+      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCName, "CCName_" + testFunction.generateRandomText(5));
+      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCNumber, "4111111111111111");
+      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCExpiryMonth, "01");
+      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCExpiryYear, "30");
+      await testFunction.click(t, eaCheckoutDetailsPage.elements.cbCCAgreeTermsAndCond);
+    }
   }
 }

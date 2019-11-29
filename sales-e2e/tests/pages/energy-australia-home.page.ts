@@ -4,6 +4,7 @@ import {Selector } from 'testcafe';
 const eaHomePage={
   pageUrl: config.eaHomePageUrl,
   elements: {
+    selectedState: Selector("#navbar div[class*='state-value']"),
     residentialComparePlansButton: Selector('.icon-GasElectricity'),
     businessLink:Selector("[class*='menu-item--collapsed'] a[href^='/business']"),
     smallBusinessButton:Selector("a[class*='ea-button--primary'][href*='/small']"),

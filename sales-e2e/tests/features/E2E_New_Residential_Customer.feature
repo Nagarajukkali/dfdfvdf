@@ -1,6 +1,5 @@
 @E2E
 Feature:E2E scenario for new residential moving and non moving customer
-  @test
 Scenario Outline: Submit a quote for new residential moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page
@@ -18,6 +17,7 @@ Scenario Outline: Submit a quote for new residential moving customer
     |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
     |Yes              |BOTH    |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
   And user submits the quote
+  Then user lands on checkout complete page
   Examples:
   |planName|folderName             |state|
   |Total Plan  |E2E_New_Resi_Moving|NSW  |
@@ -38,6 +38,7 @@ Scenario Outline: Submit a quote for new residential non moving customer
     |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices                             |
     |Yes              |BOTH    |Ele Other             |Medically Required Heating and/or Air Conditioning|
   And user submits the quote
+  Then user lands on checkout complete page
   Examples:
     |planName|folderName                |
     |Total Plan  |E2E_New_Resi_NonMoving|

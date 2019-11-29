@@ -1,6 +1,6 @@
 @E2E
 Feature:E2E scenario for new business moving and non moving customer
-
+  @test
 Scenario Outline: Submit a quote for new business moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'BUS' plans page
@@ -18,6 +18,7 @@ Scenario Outline: Submit a quote for new business moving customer
   |lifeSupportOption|fuelType|EleclifeSupportDevices |GaslifeSupportDevices                             |
   |Yes              |BOTH    |Kidney Dialysis Machine|Medically Required Heating and/or Air Conditioning|
   And user submits the quote
+  Then user lands on checkout complete page
   Examples:
   |planName      |folderName        |state|
   |Basic Business|E2E_New_Bus_Moving|VIC  |
@@ -38,6 +39,7 @@ Scenario Outline: Submit a quote for new business non moving customer
     |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices                             |
     |Yes              |BOTH    |Ele Other             |Medically Required Heating and/or Air Conditioning|
   And user submits the quote
+  Then user lands on checkout complete page
   Examples:
     |planName      |folderName            |
     |Basic Business|E2E_New_Resi_NonMoving|
