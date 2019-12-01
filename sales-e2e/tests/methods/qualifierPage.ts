@@ -23,13 +23,16 @@ export class qualifierMethod{
           await testFunction.click(t,eaQualifierPage.elements.existingCustomerAbn);
           await testFunction.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, postcodeOrABNACN);
           await t.wait(2000);
+          break;
         case BusinessType.ACN:
           await testFunction.click(t,eaQualifierPage.elements.existingCustomerAcn);
           await testFunction.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, postcodeOrABNACN);
           await t.wait(2000);
+          break;
         case 'Postcode':
           await testFunction.clearAndEnterText(t, eaQualifierPage.elements.accountDetail, postcodeOrABNACN);
           await testFunction.isElementVisible(t, eaQualifierPage.elements.accountDetailValidate);
+          break;
         default:
           console.log('account identity type is not valid');
       }

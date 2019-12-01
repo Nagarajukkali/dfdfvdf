@@ -16,8 +16,9 @@ Then(/^user submits the quote$/, async function(t){
 When(/^user provides life support details on review page$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
   let fuelType=data[0].fuelType;
-  if(data[0].lifeSupportOption==='Yes'){
-    await checkoutReviewMethod.answerLifeSupportQuestion(t,data[0].lifeSupportOption);
+  let lifeSupportOption=data[0].lifeSupportOption;
+  await checkoutReviewMethod.answerLifeSupportQuestion(t,data[0].lifeSupportOption);
+  if(lifeSupportOption==='Yes'){
     await checkoutReviewMethod.clickOnRegisterDeviceBtn(t,fuelType);
     if(testFunction.isElectricity(fuelType)){
       await checkoutReviewMethod.selectLSEquipment(t,data[0].EleclifeSupportDevices,fuelType);

@@ -10,8 +10,8 @@ Scenario Outline: Submit a quote for existing residential moving customer
     |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
     |Existing      |8372937428   |Postcode           |3024            |dob   |09121968|
   And user provides all other details on qualifier page for Existing customer
-    |movingType |connectionAddress               |propertyType |solarOption|
-    |Moving     |5 Wilkies Street, BULLI NSW 2516|Renter       |No         |
+    |customerType|movingType |connectionAddress               |propertyType |solarOption|
+    |RES         |Moving     |5 Wilkies Street, BULLI NSW 2516|Renter       |No         |
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|idType        |
     |RES         |RES        |Existing      | test     |test     |Driver License|
@@ -36,8 +36,8 @@ Scenario Outline: Submit a quote for new residential non moving customer
     |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
     |Existing      |5134624952   |Postcode           |2516            |dob   |12101958|
   And user provides all other details on qualifier page for Existing customer
-    |movingType |propertyType |solarOption  |
-    |Non-Moving |Owner        |No           |
+    |customerType|movingType |propertyType |solarOption  |
+    |RES         |Non-Moving |Owner        |No           |
   And user provides all details on checkout details page
     |customerType |journey    |customerStatus| firstName| lastName|idType        |
     |RES          |RES        |Existing      | test     |test     |Driver License|

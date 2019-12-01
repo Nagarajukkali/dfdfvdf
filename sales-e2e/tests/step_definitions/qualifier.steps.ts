@@ -28,6 +28,7 @@ When(/^user provides all details on qualifier page$/, async function(t,[],dataTa
 When(/^user provides all other details on qualifier page for Existing customer$/, async function (t,[],dataTable) {
   let data = dataTable.hashes();
   let movingType = data[0].movingType;
+  let customerType=data[0].customerType;
   await testFunction.waitForLoadingIconToClose();
   await qualifierMethod.provideMovingType(t, movingType);
   if(movingType === Moving.MOVING){
@@ -36,7 +37,9 @@ When(/^user provides all other details on qualifier page for Existing customer$/
   } else if (movingType === Moving.NONMOVING) {
     await testFunction.click(t, eaQualifierPage.elements.addressContinue);
   }
-  await qualifierMethod.selectPropertyType(t, data[0].propertyType);
+  if(customerType===CustomerType.RESIDENTIAL){
+    await qualifierMethod.selectPropertyType(t, data[0].propertyType);
+  }
   await qualifierMethod.selectSolarOption(t, data[0].solarOption);
 });
 
