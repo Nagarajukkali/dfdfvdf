@@ -66,5 +66,6 @@ When(/^user verifies his account on qualifier$/, async function (t,[],dataTable)
   await testFunction.waitForLoadingIconToClose();
   await qualifierMethod.selectCustomerStatus(t,data[0].customerStatus);
   await qualifierMethod.verifyAccount(t,data[0].accountNumber,data[0].accountIdentityType,data[0].postcodeOrABNACN);
+  await testFunction.waitForLoadingIconToClose();
   await qualifierMethod.verifyIdentity(t,data[0].idType,data[0].idValue);
 });

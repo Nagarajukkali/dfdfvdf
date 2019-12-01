@@ -27,3 +27,7 @@ When(/^user provides life support details on review page$/, async function (t,[]
     }
   }
 });
+Then(/^Life support section is displayed on Review page as per selected "([^"]*)" and verified "([^"]*)"$/, async function (t,[fuelType,accountType]) {
+  await checkoutReviewMethod.verifyLifeSupportSection(t);
+  await checkoutReviewMethod.verifyExistingLifeSupportDetails(t,fuelType,accountType);
+});

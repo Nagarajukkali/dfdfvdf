@@ -29,6 +29,8 @@ const eaHomePage={
     getCostEstimatesChangeButton: Selector('#refineModal div.ea-modal__footer.ng-tns-c19-0>.ea-modal__primary-action'),
     familyViolenceMessage: Selector('.ea-message.error:last-of-type'),
     changeLinkVerifyAccount: Selector('.tablet-desktop-only .hs-refine-modal-cta__text>span'),
+    basicPlan:Selector('#plan-select-button-RSOT'),
+    noFrillsPlan:Selector('#plan-select-button-RCPP'),
     totalPlan: Selector('#plan-select-button-TOPH'),
     basicBusiness:Selector('#plan-select-button-BSOT'),
     noFrillBusiness:Selector('#plan-select-button-BCPP'),
