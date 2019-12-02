@@ -67,7 +67,7 @@ async function getDateTime() {
   let hour: string = String(now.getHours());
   let minute: string = String(now.getMinutes());
   let second: string = String(now.getSeconds());
-  if (month.toString().length == 1) {
+  if (month.toString().length === 1) {
     month = '0' + month;
   }
   if (day.toString().length === 1) {
