@@ -92,6 +92,10 @@ export class qualifierMethod{
       await testFunction.click(t, eaQualifierPage.elements.addressContinue);
   }
 
+  public static async clickOnContinueAddress(t){
+    await testFunction.click(t, eaQualifierPage.elements.addressContinue);
+  }
+
   public static async selectDateFromCalendar(t){
     let table=eaQualifierPage.elements.calendarTable;
     let tableElement=await table();
