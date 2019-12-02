@@ -1,3 +1,4 @@
+@test
 Feature: This feature is to test the verify account scenarios for existing business customers
 
   Scenario Outline: Non moving business customer
@@ -13,9 +14,9 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user provides all other details on qualifier page for Existing customer
       |movingType |propertyType |solarOption  |
       |Non-Moving |Owner        |No           |
-    And user provides all details on checkout details page for business customer
-      |journey    |customerStatus|firstName|lastName |idType        |
-      |BUS        |Existing      |test     |test     |Driver License|
+    And user provides all details on checkout details page
+      |customerType|journey    |customerStatus|firstName|lastName|idType        |
+      |BUS         |BUS        |Existing      |test     |test    |Driver License|
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                    |GaslifeSupportDevices  |
@@ -40,9 +41,9 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user provides all other details on qualifier page for Existing customer
       |movingType |connectionAddress                          |propertyType |solarOption  |
       |Moving     |271 Heatherhill Road, FRANKSTON  VIC  3199 |Renter       |No           |
-    And user provides all details on checkout details page for business customer
-      |journey    |customerStatus| firstName| lastName|idType        |
-      |BUS        |Existing      | test     |test     |Passport      |
+    And user provides all details on checkout details page
+      |customerType|journey    |customerStatus|firstName|lastName|idType   |
+      |BUS         |BUS        |Existing      |test     |test    |Passport |
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices        |

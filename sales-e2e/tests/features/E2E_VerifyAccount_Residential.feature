@@ -1,3 +1,4 @@
+@test
 Feature: This feature is to test the verify account scenarios for existing residential customers
 
   Scenario Outline: Non moving residential customer
@@ -26,7 +27,7 @@ Feature: This feature is to test the verify account scenarios for existing resid
     Examples:
       |folderName                               |customer_type |fuelType |planName    |
       |E2E_VerifyAccount_Residential_NonMoving  |RES           |BOTH     |Total Plan  |
-  @test
+
   Scenario Outline: Moving residential customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
