@@ -1,4 +1,3 @@
-@test
 Feature: This feature is to test the verify account scenarios for existing residential customers
 
   Scenario Outline: Non moving residential customer
@@ -12,8 +11,8 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user selects '<planName>' from '<customer_type>' plans page
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
-      |movingType |propertyType |solarOption  |
-      |Non-Moving |Owner        |No           |
+      |customerType|movingType |propertyType |solarOption  |
+      |RES         |Non-Moving |Owner        |No           |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus|firstName|lastName|idType        |
       |RES         |RES        |Existing      |test     |test    |Driver License|
@@ -39,11 +38,13 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user selects '<planName>' from '<customer_type>' plans page
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
-      |movingType |connectionAddress                          |propertyType |solarOption  |
-      |Moving     |271 Heatherhill Road, FRANKSTON VIC 3199 |Renter       |No           |
+      |customerType|movingType |connectionAddress                          |propertyType |solarOption  |
+      |RES         |Moving     |271 Heatherhill Road, FRANKSTON VIC 3199   |Renter       |No           |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus|firstName|lastName|idType    |
       |RES         |RES        |Existing      |test     |test    |Passport  |
+    And user selects answer for property renovation question for '<state>'
+    And user chooses "<optDisconnection>" for disconnection
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices        |
@@ -52,5 +53,5 @@ Feature: This feature is to test the verify account scenarios for existing resid
     Then user lands on checkout complete page
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName    |
-      |E2E_VerifyAccount_Residential_Moving     |RES           |BOTH     |Basic       |
+      |folderName                               |customer_type |fuelType |planName    |optDisconnection |state  |
+      |E2E_VerifyAccount_Residential_Moving     |RES           |BOTH     |Basic       |No               |VIC    |
