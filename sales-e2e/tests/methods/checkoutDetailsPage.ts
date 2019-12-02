@@ -35,9 +35,7 @@ export class checkoutDetailsMethod{
 
     public static async provideContactDetails(t){
         let phoneNumber="03"+testFunction.getRandomNumber(99999999);
-        if(phoneNumber.length!==10){
-          phoneNumber=phoneNumber+"0";
-        }
+        phoneNumber=phoneNumber.padEnd(10,"0");
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.email,'test@energyaustralia.com.au');
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.phone,phoneNumber);
     }
@@ -140,10 +138,12 @@ export class checkoutDetailsMethod{
   }
 
   public static async accessRestriction(t,electricityAccess:String,gasAccess){
-      if(electricityAccess==='No')
+      if(electricityAccess==='No'){
         await testFunction.click(t, eaCheckoutDetailsPage.elements.electricityAccessNo);
-      if(gasAccess==='No')
+      }
+      if(gasAccess==='No'){
         await testFunction.click(t, eaCheckoutDetailsPage.elements.gasAccessNo);
+      }
   }
   public static async propertyRenovationNo(t,state){
       if(state===AustralianState.VIC){
