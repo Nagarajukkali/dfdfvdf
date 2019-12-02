@@ -57,7 +57,12 @@ const eaCheckoutDetailsPage={
     tfCCNumber: Selector("#creditCardNumber"),
     tfCCExpiryMonth: Selector("#creditCardExpiry-month"),
     tfCCExpiryYear: Selector("#creditCardExpiry-month"),
-    cbCCAgreeTermsAndCond: Selector("#ccAgree")
+    cbCCAgreeTermsAndCond: Selector("#ccAgree"),
+    eleDisconnectionYes:Selector("#option-disconnecting-true"),
+    eleDisconnectionNo:Selector("#option-disconnecting-false"),
+    eleAccessRestrictionNo:Selector("#option-accessissuesele-false"),
+    gasAccessRestrictionNo:Selector("#option-accessissuesgas-false"),
+    disconnectionCalendarError:Selector("#electricity-disconnection-calendar-error"),
   },
 };
 

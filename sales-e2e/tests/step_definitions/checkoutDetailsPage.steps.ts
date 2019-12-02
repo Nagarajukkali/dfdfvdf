@@ -34,3 +34,6 @@ When(/^user clicks on 'Review your order' button and navigates to review page$/,
 When(/^user selects answer for property renovation question for '(.*)'$/, async function (t,[state]) {
   await checkoutDetailsMethod.propertyRenovationNo(t,state);
 });
+When(/^user chooses "([^"]*)" for disconnection$/, async function (t,[disconnectionOption]) {
+  await checkoutDetailsMethod.disconnectionDetails(t,disconnectionOption);
+});

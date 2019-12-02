@@ -199,4 +199,34 @@ export class checkoutDetailsMethod{
       await testFunction.click(t, eaCheckoutDetailsPage.elements.cbCCAgreeTermsAndCond);
     }
   }
+
+  public static async disconnectionDetails(t,disconnectionOption){
+      if(disconnectionOption==='Yes') {
+        if(!(await testFunction.isElementVisible(t, eaCheckoutDetailsPage.elements.disconnectionCalendarError))){
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.eleDisconnectionYes);
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.eleAccessRestrictionNo);
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.gasAccessRestrictionNo);
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.renovationNo);
+        }
+        else if(await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.disconnectionCalendarError)) {
+          let errorMsg = await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.disconnectionCalendarError);
+          if (errorMsg.includes("Electricity Account")) {
+            await testFunction.click(t, eaCheckoutDetailsPage.elements.eleDisconnectionYes);
+            await testFunction.click(t, eaCheckoutDetailsPage.elements.gasAccessRestrictionNo);
+          } else if (errorMsg.includes("Gas Account")) {
+            await testFunction.click(t, eaCheckoutDetailsPage.elements.eleDisconnectionYes);
+            await testFunction.click(t, eaCheckoutDetailsPage.elements.eleAccessRestrictionNo);
+          }
+      }
+        else{
+          console.error("disconnection has some issues");
+        }
+      }
+      else if(disconnectionOption==='No'){
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.eleDisconnectionNo);
+      }
+      else{
+        console.error("Disconnection is not chosen")
+      }
+  }
 }
