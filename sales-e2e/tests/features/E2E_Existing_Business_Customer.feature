@@ -4,7 +4,7 @@ Feature:E2E scenario for existing business moving and non moving customer
   Scenario Outline: Submit a quote for existing business moving customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
-    When user selects '<planName>' from 'BUS' plans page
+    When user selects '<planName>'
     And user moves on to fill the qualifier
     And user verifies account on qualifier
       |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
@@ -29,7 +29,7 @@ Feature:E2E scenario for existing business moving and non moving customer
   Scenario Outline: Submit a quote for existing business non moving customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
-    When user selects '<planName>' from 'BUS' plans page
+    When user selects '<planName>'
     And user moves on to fill the qualifier
     And user verifies account on qualifier
       |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |

@@ -154,11 +154,13 @@ export class checkoutDetailsMethod{
   public static async provideBusinessDetails(t,businessType){
       if(businessType===BusinessType.ABN){
         let ABN=testFunction.getRandomNumber(99999999999);
+        ABN = ABN.padEnd(11, "0");
         await testFunction.click(t,eaCheckoutDetailsPage.elements.ABN);
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.number_ABNACN,ABN);
       }
       else if(businessType===BusinessType.ACN){
         let ACN=testFunction.getRandomNumber(999999999);
+        ACN = ACN.padEnd(9, "0");
         await testFunction.click(t,eaCheckoutDetailsPage.elements.ACN);
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.number_ABNACN,ACN);
       }else {

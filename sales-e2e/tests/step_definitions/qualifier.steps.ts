@@ -60,8 +60,8 @@ When(/^user provides all details on qualifier page for New customer$/, async fun
   if(customerType===CustomerType.RESIDENTIAL){
     await qualifierMethod.selectPropertyType(t, data[0].propertyType);
   }
+  await qualifierMethod.selectPropertyType(t, data[0].propertyType);
   await qualifierMethod.selectSolarOption(t, data[0].solarOption);
-
 });
 
 When(/^user verifies account on qualifier$/, async function (t,[],dataTable) {
