@@ -24,7 +24,7 @@ Given(/^user has opened the website link in a browser and creates '(.*)' to save
 
 After( async t => {
   let format;
-  await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/${await this.getDateTime()}.png`);
+  await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/${await getDateTime()}.png`);
   logger.debug('Execution completed');
 });
 
@@ -44,7 +44,7 @@ async function fetchBrowser() {
     }
     return browser;
 }
-async function getDateTime(unixTimestampMilliseconds: number, format = ISO_DATE_FORMAT) {
+/*async function getDateTime(unixTimestampMilliseconds: number, format = ISO_DATE_FORMAT) {
     let formattedDate: string;
     if (!unixTimestampMilliseconds || unixTimestampMilliseconds < FIRST_JAN_1900_UNIX_TIMESTAMP) {
       const error = `Invalid unix timestamp: ${unixTimestampMilliseconds}`;
@@ -58,6 +58,30 @@ async function getDateTime(unixTimestampMilliseconds: number, format = ISO_DATE_
       throw Error(error);
     }
     return formattedDate;
+}*/
+async function getDateTime() {
+  let now = new Date();
+  let year = now.getFullYear();
+  let month: string = String(now.getMonth() + 1);
+  let day: string = String(now.getDate());
+  let hour: string = String(now.getHours());
+  let minute: string = String(now.getMinutes());
+  let second: string = String(now.getSeconds());
+  if (month.toString().length == 1) {
+    month = '0' + month;
+  }
+  if (day.toString().length == 1) {
+    day = '0' + day;
+  }
+  if (hour.toString().length == 1) {
+    hour = '0' + hour;
+  }
+  if (minute.toString().length == 1) {
+    minute = '0' + minute;
+  }
+  if (second.toString().length == 1) {
+    second = '0' + second;
+  }
+  let dateTime = year + '_' + month + '_' + day + '_' + hour + '_' + minute + '_' + second;
+  return dateTime;
 }
-
-
