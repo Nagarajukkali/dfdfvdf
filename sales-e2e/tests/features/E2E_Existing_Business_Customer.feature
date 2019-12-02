@@ -6,12 +6,12 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user has navigated to 'BUS' plans page
     When user selects '<planName>' from 'BUS' plans page
     And user moves on to fill the qualifier
-    And user verifies his account on qualifier
+    And user verifies account on qualifier
       |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
       |Existing      |2823184513   |ABN                |36580235200     |dob   |01011980|
     And user provides all other details on qualifier page for Existing customer
-      |customerType|movingType |connectionAddress                         |propertyType |solarOption|
-      |BUS         |Moving     |36 Gregory Street West, WENDOUREE VIC 3355|             |No         |
+      |customerType|movingType |connectionAddress                         |solarOption|
+      |BUS         |Moving     |36 Gregory Street West, WENDOUREE VIC 3355|No         |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|businessType|
       |BUS         |BUS        |Existing      | test     |test     |ABN         |
@@ -31,12 +31,12 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user has navigated to 'BUS' plans page
     When user selects '<planName>' from 'BUS' plans page
     And user moves on to fill the qualifier
-    And user verifies his account on qualifier
+    And user verifies account on qualifier
       |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
       |Existing      |4719568937   |ABN                |63824650000     |dob   |01011980|
     And user provides all other details on qualifier page for Existing customer
-      |customerType|movingType |propertyType |solarOption|
-      |BUS         |Non-Moving |             |No         |
+      |customerType|movingType |solarOption|
+      |BUS         |Non-Moving |No         |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|businessType|
       |BUS         |BUS        |Existing      | test     |test     |ABN         |
@@ -46,7 +46,7 @@ Feature:E2E scenario for existing business moving and non moving customer
       |lifeSupportOption|fuelType|EleclifeSupportDevices                      |GaslifeSupportDevices       |
       |No               |ELE     |Chronic Positive Airways Pressure Respirator|                            |
     And user submits the quote
-    #Then user lands on checkout complete page
+    Then user lands on checkout complete page
     Examples:
       |planName         |folderName              |fuelType|accountType|
       |Basic Business   |E2E_Existing_Resi_Moving|BOTH    |GAS        |

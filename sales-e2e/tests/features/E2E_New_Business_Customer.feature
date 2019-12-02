@@ -7,15 +7,15 @@ Scenario Outline: Submit a quote for new business moving customer
   When user selects '<planName>' from 'BUS' plans page
   And user moves on to fill the qualifier
   And user provides all details on qualifier page for New customer
-    |customerType| customerStatus| connectionAddress                         |movingType|propertyType|solarOption|
-    |BUS         |New            | 36 Gregory Street West, WENDOUREE VIC 3355|Moving    |            |No         |
+    |customerType| customerStatus| connectionAddress                         |movingType|solarOption|
+    |BUS         |New            | 36 Gregory Street West, WENDOUREE VIC 3355|Moving    |No         |
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|businessType|
     |BUS         |BUS        |New           | test     |test     |ABN         |
   And user selects answer for property renovation question for '<state>'
   And user opts for AAH and DD
-    |optAAHOption|optDDOption|DDType|
-    |No          |Yes        |Bank  |
+    |optAAHOption|optDDOption|directDebitType|
+    |No          |Yes        |Bank           |
   And user clicks on 'Review your order' button and navigates to review page
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices |GaslifeSupportDevices                             |
@@ -32,14 +32,14 @@ Scenario Outline: Submit a quote for new business non moving customer
   When user selects '<planName>' from 'BUS' plans page
   And user moves on to fill the qualifier
   And user provides all details on qualifier page for New customer
-    |customerType| customerStatus| connectionAddress                         |movingType|propertyType|solarOption|
-    |BUS         |New            | 36 Gregory Street West, WENDOUREE VIC 3355|Non-Moving|            |No         |
+    |customerType| customerStatus| connectionAddress                         |movingType|solarOption|
+    |BUS         |New            | 36 Gregory Street West, WENDOUREE VIC 3355|Non-Moving|No         |
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|businessType|
     |BUS         |BUS        |New           | test     |test     |ACN         |
   And user opts for AAH and DD
-    |optAAHOption|optDDOption|DDType|
-    |Yes         |No         |      |
+    |optAAHOption|optDDOption|directDebitType|
+    |Yes         |No         |               |
   And user clicks on 'Review your order' button and navigates to review page
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices                             |

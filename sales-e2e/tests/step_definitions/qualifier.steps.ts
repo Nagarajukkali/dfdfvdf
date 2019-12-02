@@ -64,7 +64,7 @@ When(/^user provides all details on qualifier page for New customer$/, async fun
 
 });
 
-When(/^user verifies his account on qualifier$/, async function (t,[],dataTable) {
+When(/^user verifies account on qualifier$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
   await testFunction.waitForLoadingIconToClose();
   await qualifierMethod.selectCustomerStatus(t,data[0].customerStatus);
