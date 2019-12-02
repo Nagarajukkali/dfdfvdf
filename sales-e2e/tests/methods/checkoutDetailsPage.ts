@@ -35,6 +35,9 @@ export class checkoutDetailsMethod{
 
     public static async provideContactDetails(t){
         let phoneNumber="03"+testFunction.getRandomNumber(99999999);
+        if(phoneNumber.length!==10){
+          phoneNumber=phoneNumber+"0";
+        }
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.email,'test@energyaustralia.com.au');
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.phone,phoneNumber);
     }
@@ -137,38 +140,30 @@ export class checkoutDetailsMethod{
   }
 
   public static async accessRestriction(t,electricityAccess:String,gasAccess){
-      if(electricityAccess==='No') {
+      if(electricityAccess==='No')
         await testFunction.click(t, eaCheckoutDetailsPage.elements.electricityAccessNo);
-      }else{
-        console.error('Access restriction is not present for the premise');
-      }
-      if(gasAccess==='No') {
+      if(gasAccess==='No')
         await testFunction.click(t, eaCheckoutDetailsPage.elements.gasAccessNo);
-      }else {
-        console.error('Access restriction is not present for the premise');
-      }
   }
   public static async propertyRenovationNo(t,state){
       if(state===AustralianState.VIC){
         await testFunction.click(t,eaCheckoutDetailsPage.elements.prevHomeImproveNo);
         await testFunction.click(t,eaCheckoutDetailsPage.elements.planHomeImproveNo);
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.renovationNo);
-      }
-      else {
-        console.error('Property renovation is not required for this state');
       }
   }
   public static async provideBusinessDetails(t,businessType){
-      let businessId=testFunction.getRandomNumber(99999999999);
       if(businessType===BusinessType.ABN){
+        let ABN=testFunction.getRandomNumber(99999999999);
         await testFunction.click(t,eaCheckoutDetailsPage.elements.ABN);
+        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.number_ABNACN,ABN);
       }
       else if(businessType===BusinessType.ACN){
+        let ACN=testFunction.getRandomNumber(999999999);
         await testFunction.click(t,eaCheckoutDetailsPage.elements.ACN);
+        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.number_ABNACN,ACN);
       }else {
         console.error('ABN/ACN is not valid');
       }
-      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.number_ABNACN,businessId);
       await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.company,'NA');
       await testFunction.click(t,eaCheckoutDetailsPage.elements.businessType);
       await testFunction.click(t,eaCheckoutDetailsPage.elements.businessTypeOption);

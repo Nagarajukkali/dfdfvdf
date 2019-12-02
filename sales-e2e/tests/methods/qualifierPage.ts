@@ -35,10 +35,7 @@ export class qualifierMethod{
       }
       await testFunction.click(t, eaQualifierPage.elements.verifyAccountSubmit);
     }
-
     public static async selectIdTypeQualifier(t, itemToClick) {
-      /*let val=await eaQualifierPage.elements.idTypeDropDown.count
-        .then(result=>result);*/
       let val =await testFunction.sizeOfElement(t, eaQualifierPage.elements.idTypeDropDown);
       if(val!==1) {
         await testFunction.click(t, eaQualifierPage.elements.idTypeDropDownVerifyAccount);
