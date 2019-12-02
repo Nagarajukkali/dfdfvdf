@@ -13,6 +13,9 @@ Scenario Outline: Submit a quote for new business moving customer
     |customerType|journey    |customerStatus| firstName| lastName|businessType|
     |BUS         |BUS        |New           | test     |test     |ABN         |
   And user selects answer for property renovation question for '<state>'
+  And user opts for AAH and DD
+    |optAAHOption|optDDOption|DDType|
+    |No          |Yes        |Bank  |
   And user clicks on 'Review your order' button and navigates to review page
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices |GaslifeSupportDevices                             |
@@ -34,6 +37,9 @@ Scenario Outline: Submit a quote for new business non moving customer
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|businessType|
     |BUS         |BUS        |New           | test     |test     |ACN         |
+  And user opts for AAH and DD
+    |optAAHOption|optDDOption|DDType|
+    |Yes         |No         |      |
   And user clicks on 'Review your order' button and navigates to review page
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices                             |

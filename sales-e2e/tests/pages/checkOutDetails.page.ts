@@ -51,7 +51,7 @@ const eaCheckoutDetailsPage={
     tfBankAccountName: Selector("#bankAccountName"),
     tfBsb: Selector("#bsb"),
     tfBankAccountNumber: Selector("#bankAccountNumber"),
-    cbBankAccountAgreeTermsAndCond: Selector("#baAgree"),
+    cbBankAccountAgreeTermsAndCond: Selector("#baAgree span"),
     useCC: Selector("div[class*='direct-debit-form'] div[class='side-right']"),
     tfCCName: Selector("#creditCardName"),
     tfCCNumber: Selector("#creditCardNumber"),

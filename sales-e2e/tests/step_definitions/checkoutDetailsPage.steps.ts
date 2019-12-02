@@ -37,3 +37,15 @@ When(/^user selects answer for property renovation question for '(.*)'$/, async 
 When(/^user chooses "([^"]*)" for disconnection$/, async function (t,[disconnectionOption]) {
   await checkoutDetailsMethod.disconnectionDetails(t,disconnectionOption);
 });
+
+When(/^user opts for AAH and DD$/, async function (t,[],dataTable) {
+  let data=dataTable.hashes();
+  let optAAHOption=data[0].optAAHOption;
+  let optDDOption=data[0].optDDOption;
+  if(optAAHOption==='Yes'){
+    await checkoutDetailsMethod.addAAHDetails(t);
+  }
+  if(optDDOption==='Yes'){
+    await checkoutDetailsMethod.addDirectDebit(t,data[0].DDType);
+  }
+});

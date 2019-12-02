@@ -13,6 +13,9 @@ Scenario Outline: Submit a quote for new residential moving customer
     |customerType|journey    |customerStatus| firstName| lastName|idType        |
     |RES         |RES        |New           | test     |test     |Driver License|
   And user selects answer for property renovation question for '<state>'
+  And user opts for AAH and DD
+    |optAAHOption|optDDOption|DDType|
+    |Yes         |No         |      |
   And user clicks on 'Review your order' button and navigates to review page
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
@@ -34,6 +37,9 @@ Scenario Outline: Submit a quote for new residential non moving customer
   And user provides all details on checkout details page
     |customerType |journey    |customerStatus| firstName| lastName|idType        |
     |RES          |RES        |New           | test     |test     |Driver License|
+  And user opts for AAH and DD
+    |optAAHOption|optDDOption|DDType|
+    |No          |Yes        |CC    |
   And user clicks on 'Review your order' button and navigates to review page
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices                             |
