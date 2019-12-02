@@ -24,7 +24,6 @@ Feature: This feature is to test the verify account scenarios for existing busin
       |folderName                               |customer_type |fuelType |planName        |
       |E2E_VerifyAccount_Business_NonMoving     |BUS           |BOTH     |Basic Business  |
 
-  @test1
   Scenario Outline: Moving business customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page

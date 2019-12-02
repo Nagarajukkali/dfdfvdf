@@ -62,25 +62,25 @@ async function fetchBrowser() {
 async function getDateTime() {
   let now = new Date();
   let year = now.getFullYear();
-  let month: string = String(now.getMonth() + 1);
-  let day: string = String(now.getDate());
-  let hour: string = String(now.getHours());
-  let minute: string = String(now.getMinutes());
-  let second: string = String(now.getSeconds());
-  if (month.toString().length === 1) {
-    month = '0' + month;
+  let month = String(now.getMonth() + 1);
+  let day = String(now.getDate());
+  let hour = String(now.getHours());
+  let minute = String(now.getMinutes());
+  let second = String(now.getSeconds());
+  if (month.length === 1) {
+    month = `0${month}`;
   }
-  if (day.toString().length === 1) {
-    day = '0' + day;
+  if (day.length === 1) {
+    day = `0${day}`;
   }
-  if (hour.toString().length === 1) {
-    hour = '0' + hour;
+  if (hour.length === 1) {
+    hour = `0${hour}`;
   }
-  if (minute.toString().length === 1) {
-    minute = '0' + minute;
+  if (minute.length === 1) {
+    minute = `0${minute}`;
   }
-  if (second.toString().length === 1) {
-    second = '0' + second;
+  if (second.length === 1) {
+    second = `0${second}`;
   }
-  return year + '_' + month + '_' + day + '_' + hour + '_' + minute + '_' + second;
+  return `${year}_${month}_${day}_${hour}_${minute}_${second}`;
 }
