@@ -28,6 +28,7 @@ When(/^user provides all details on qualifier page$/, async function(t,[],dataTa
 When(/^user provides all other details on qualifier page for Existing customer$/, async function (t,[],dataTable) {
   let data = dataTable.hashes();
   let movingType = data[0].movingType;
+  let customerType=data[0].customerType;
   await testFunction.waitForLoadingIconToClose();
   await qualifierMethod.provideMovingType(t, movingType);
   if(movingType === Moving.MOVING){
@@ -36,7 +37,9 @@ When(/^user provides all other details on qualifier page for Existing customer$/
   } else if (movingType === Moving.NONMOVING) {
     await testFunction.click(t, eaQualifierPage.elements.addressContinue);
   }
-  await qualifierMethod.selectPropertyType(t, data[0].propertyType);
+  if(customerType===CustomerType.RESIDENTIAL){
+    await qualifierMethod.selectPropertyType(t, data[0].propertyType);
+  }
   await qualifierMethod.selectSolarOption(t, data[0].solarOption);
 });
 
@@ -61,10 +64,11 @@ When(/^user provides all details on qualifier page for New customer$/, async fun
 
 });
 
-When(/^user verifies his account on qualifier$/, async function (t,[],dataTable) {
+When(/^user verifies account on qualifier$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
   await testFunction.waitForLoadingIconToClose();
   await qualifierMethod.selectCustomerStatus(t,data[0].customerStatus);
   await qualifierMethod.verifyAccount(t,data[0].accountNumber,data[0].accountIdentityType,data[0].postcodeOrABNACN);
+  await testFunction.waitForLoadingIconToClose();
   await qualifierMethod.verifyIdentity(t,data[0].idType,data[0].idValue);
 });

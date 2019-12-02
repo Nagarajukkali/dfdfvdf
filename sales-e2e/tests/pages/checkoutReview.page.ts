@@ -30,7 +30,13 @@ const eaCheckoutReviewPage={
       lblElecOtherFieldError: Selector("[id='ele-life-support'] div.ea-field-errors"),
       lblGasOtherFieldError: Selector("[id='gas-life-support'] div.ea-field-errors"),
       btnCancelElec: Selector("div#ele-life-support-cancel button[aria-label*='cancel']"),
-      btnCancelGas: Selector("div#gas-life-support-cancel button[aria-label*='cancel']")
+      btnCancelGas: Selector("div#gas-life-support-cancel button[aria-label*='cancel']"),
+      existingEleLifeSupportSection:Selector("#record-ele-life-support"),
+      existingGasLifeSupportSection:Selector("#record-gas-life-support"),
+      eleTextOnLifeSupportSection:Selector("#record-ele-life-support-fuel-text"),
+      gasTextOnLifeSupportSection:Selector("#record-gas-life-support-fuel-text"),
+      eleLifesupportStatus:Selector("#record-ele-life-support-status-text"),
+      gasLifesupportStatus:Selector("#record-gas-life-support-status-text"),
     }
 }
 

@@ -9,6 +9,87 @@ export class checkoutReviewMethod {
       await testFunction.isElementDisplayed(t, eaCheckoutReviewPage.elements.lifeSupportDisclaimer);
     }
 
+  public static async verifyExistingLifeSupportDetails(t,fuelType,accountType){
+    switch (fuelType) {
+    case FUEL_TYPE_OPTIONS.BOTH.value:
+      this.verifyExistingLSDetailsForBothFuelSelected(t,accountType);
+      break;
+    case FUEL_TYPE_OPTIONS.ELE.value:
+      this.verifyExistingLSDetailsForEleSelected(t,accountType);
+      break;
+    case FUEL_TYPE_OPTIONS.GAS.value:
+      this.verifyExistingLSDetailsForGasSelected(t,accountType);
+      break;
+    default:
+      console.error("Invalid fueltype or accountype selected");
+    }
+  }
+
+  public static async verifyExistingLSDetailsForBothFuelSelected(t,verifiedAccount){
+  switch (verifiedAccount) {
+  case FUEL_TYPE_OPTIONS.BOTH.value:
+    this.verifyDisplayOfExistingLSSectionForBothAccountVerified(t);
+    break;
+  case FUEL_TYPE_OPTIONS.ELE.value:
+    this.verifyDisplayOfExistingLSSectionForEleAccountVerified(t);
+    this.verifyLifeSupportQuestion(t,"Gas");
+    break;
+  case FUEL_TYPE_OPTIONS.GAS.value:
+    this.verifyDisplayOfExistingLSSectionForGasAccountVerified(t);
+    this.verifyLifeSupportQuestion(t,"Electricity");
+    break;
+  default:
+    console.error("Invalid account is selected");
+  }
+}
+
+  public static async verifyExistingLSDetailsForEleSelected(t,verifiedAccount){
+    if(verifiedAccount.equalsIgnoreCase("Both") || verifiedAccount.equalsIgnoreCase("Electricity")){
+      this.verifyDisplayOfExistingLSSectionForEleAccountVerified(t);
+    }
+    else if(verifiedAccount.equalsIgnoreCase("Gas")){
+      this.verifyLifeSupportQuestionForSingleFuel(t);
+    }
+    else{
+      console.error("Invalid account type");
+    }
+  }
+
+  public static async verifyExistingLSDetailsForGasSelected(t,verifiedAccount){
+    if(verifiedAccount.equalsIgnoreCase("Both") || verifiedAccount.equalsIgnoreCase("Gas")){
+      this.verifyDisplayOfExistingLSSectionForGasAccountVerified(t);
+    }
+    else if(verifiedAccount.equalsIgnoreCase("Electricity")){
+      this.verifyLifeSupportQuestionForSingleFuel(t);
+    }
+    else{
+      console.error("Invalid account is selected");
+    }
+  }
+
+  public static async verifyDisplayOfExistingLSSectionForBothAccountVerified(t){
+    await testFunction.isElementDisplayed(t,eaCheckoutReviewPage.elements.existingEleLifeSupportSection);
+    await testFunction.assertText(t,eaCheckoutReviewPage.elements.eleTextOnLifeSupportSection,"Electricity");
+    await testFunction.assertText(t,eaCheckoutReviewPage.elements.eleLifesupportStatus,"Registered");
+    await testFunction.isElementDisplayed(t,eaCheckoutReviewPage.elements.existingGasLifeSupportSection);
+    await testFunction.assertText(t,eaCheckoutReviewPage.elements.gasTextOnLifeSupportSection,"Gas");
+    await testFunction.assertText(t,eaCheckoutReviewPage.elements.gasLifesupportStatus,"Registered");
+  }
+
+  public static async verifyDisplayOfExistingLSSectionForEleAccountVerified(t){
+    await testFunction.isElementDisplayed(t,eaCheckoutReviewPage.elements.existingEleLifeSupportSection);
+    await testFunction.assertText(t,eaCheckoutReviewPage.elements.eleTextOnLifeSupportSection,"Electricity");
+    await testFunction.assertText(t,eaCheckoutReviewPage.elements.eleLifesupportStatus,"Registered");
+  }
+
+  public static async verifyDisplayOfExistingLSSectionForGasAccountVerified(t){
+    await testFunction.isElementDisplayed(t,eaCheckoutReviewPage.elements.existingGasLifeSupportSection);
+    await testFunction.assertText(t,eaCheckoutReviewPage.elements.gasTextOnLifeSupportSection,"Gas");
+    await testFunction.assertText(t,eaCheckoutReviewPage.elements.gasLifesupportStatus,"Registered");
+  }
+
+
+
   public static async verifyLifeSupportQuestion(t, fuelType) {
       await testFunction.isElementDisplayed(t, eaCheckoutReviewPage.elements.lifeSupportQuestionSection);
       switch (fuelType) {
@@ -24,6 +105,13 @@ export class checkoutReviewMethod {
       }
       await t.expect(eaCheckoutReviewPage.elements.lifeSupportQuestionYes.hasClass("ea-state-active"));
       await t.expect(eaCheckoutReviewPage.elements.lifeSupportQuestionNo.hasClass("ea-state-active"));
+  }
+
+  public static async verifyLifeSupportQuestionForSingleFuel(t) {
+    await testFunction.isElementDisplayed(t, eaCheckoutReviewPage.elements.lifeSupportQuestionSection);
+    await testFunction.assertText(t, eaCheckoutReviewPage.elements.lifeSupportQuestion, "Is anyone at this property on life support?");
+    await t.expect(eaCheckoutReviewPage.elements.lifeSupportQuestionYes.hasClass("ea-state-active"));
+    await t.expect(eaCheckoutReviewPage.elements.lifeSupportQuestionNo.hasClass("ea-state-active"));
   }
 
   public static async answerLifeSupportQuestion(t,option) {

@@ -51,13 +51,18 @@ const eaCheckoutDetailsPage={
     tfBankAccountName: Selector("#bankAccountName"),
     tfBsb: Selector("#bsb"),
     tfBankAccountNumber: Selector("#bankAccountNumber"),
-    cbBankAccountAgreeTermsAndCond: Selector("#baAgree"),
+    cbBankAccountAgreeTermsAndCond: Selector("#baAgree span"),
     useCC: Selector("div[class*='direct-debit-form'] div[class='side-right']"),
     tfCCName: Selector("#creditCardName"),
     tfCCNumber: Selector("#creditCardNumber"),
     tfCCExpiryMonth: Selector("#creditCardExpiry-month"),
     tfCCExpiryYear: Selector("#creditCardExpiry-month"),
-    cbCCAgreeTermsAndCond: Selector("#ccAgree")
+    cbCCAgreeTermsAndCond: Selector("#ccAgree"),
+    rdbEleDisconnectionYes:Selector("#option-disconnecting-true"),
+    rdbEleDisconnectionNo:Selector("#option-disconnecting-false"),
+    rdbEleAccessRestrictionNo:Selector("#option-accessissuesele-false"),
+    rdbGasAccessRestrictionNo:Selector("#option-accessissuesgas-false"),
+    disconnectionCalendarError:Selector("#electricity-disconnection-calendar-error"),
   },
 };
 

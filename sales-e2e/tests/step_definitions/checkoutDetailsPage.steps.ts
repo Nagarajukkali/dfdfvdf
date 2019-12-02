@@ -34,3 +34,18 @@ When(/^user clicks on 'Review your order' button and navigates to review page$/,
 When(/^user selects answer for property renovation question for '(.*)'$/, async function (t,[state]) {
   await checkoutDetailsMethod.propertyRenovationNo(t,state);
 });
+When(/^user chooses "([^"]*)" for disconnection$/, async function (t,[disconnectionOption]) {
+  await checkoutDetailsMethod.disconnectionDetails(t,disconnectionOption);
+});
+
+When(/^user opts for AAH and DD$/, async function (t,[],dataTable) {
+  let data=dataTable.hashes();
+  let optAAHOption=data[0].optAAHOption;
+  let optDDOption=data[0].optDDOption;
+  if(optAAHOption==='Yes'){
+    await checkoutDetailsMethod.addAAHDetails(t);
+  }
+  if(optDDOption==='Yes'){
+    await checkoutDetailsMethod.addDirectDebit(t,data[0].directDebitType);
+  }
+});
