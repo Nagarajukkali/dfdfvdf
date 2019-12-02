@@ -55,7 +55,7 @@ Feature: Safety Flag scenarios for Verify Account journey
     And Usage data is displayed for '<fuelType>'
     And user click show estimates on modal window
     And User lands on plans page after verify account journey
-    And user selects '<planName>' from '<customer_type>' plans page
+    And user selects '<planName>'
     And user moves on to fill the qualifier
     Then user provides all details on qualifier page
       | connectionAddress               | movingType|propertyType|solarOption|

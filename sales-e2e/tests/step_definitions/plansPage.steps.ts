@@ -15,8 +15,8 @@ Then(/^User lands on plans page after verify account journey$/, async t =>{
   await plansMethod.verifyVerifyAccountChangeButton(t);
 });
 
-When(/^user selects '(.*)' from '(.*)' plans page$/, async function(t, [planName,customerType]){
-  await plansMethod.selectPlan(t, planName, customerType);
+When(/^user selects '(.*)'$/, async function(t, [planName]){
+  await plansMethod.selectPlan(t, planName);
 });
 
 Given(/^User have selected fuel as "([^"]*)"$/, async function (t, [fuelType]) {

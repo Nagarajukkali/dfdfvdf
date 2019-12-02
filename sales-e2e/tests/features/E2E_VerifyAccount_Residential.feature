@@ -8,7 +8,7 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user verifies the account through verify account journey for residential customer
       |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |postcode |idType |idNumber |
       |RES          |verify account |5650256936       |5891300788       |3038     |dob    |17091932 |
-    And user selects '<planName>' from '<customer_type>' plans page
+    And user selects '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
       |customerType|movingType |propertyType |solarOption  |
@@ -35,7 +35,7 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user verifies the account through verify account journey for residential customer
       |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |postcode |idType |idNumber |
       |RES          |verify account |5650256936       |5891300788       |3038     |dob    |17091932 |
-    And user selects '<planName>' from '<customer_type>' plans page
+    And user selects '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
       |customerType|movingType |connectionAddress                          |propertyType |solarOption  |

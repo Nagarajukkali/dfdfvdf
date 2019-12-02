@@ -8,7 +8,7 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user verifies the account through verify account journey for business customer
       |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |ABNOrACN       |idType |idNumber   |
       |BUS          |verify account |9637077680       |2026246137       |26045708600    |pin    |OT4123S56  |
-    And user selects '<planName>' from '<customer_type>' plans page
+    And user selects '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
       |customerType|movingType |propertyType |solarOption  |
@@ -33,7 +33,7 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user verifies the account through verify account journey for business customer
       |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |ABNOrACN     |idType |idNumber   |
       |BUS          |verify account |9637077680       |2026246137       |26045708600  |pin    |OT4123S56  |
-    And user selects '<planName>' from '<customer_type>' plans page
+    And user selects '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
       |customerType|movingType |connectionAddress                          |propertyType |solarOption  |
