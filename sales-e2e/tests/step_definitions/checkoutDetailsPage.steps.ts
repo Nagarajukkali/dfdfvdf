@@ -49,3 +49,7 @@ When(/^user opts for AAH and DD$/, async function (t,[],dataTable) {
     await checkoutDetailsMethod.addDirectDebit(t,data[0].DDType);
   }
 });
+When(/^user selects plans on checkout details page$/, async function (t,[],dataTable) {
+  let data=dataTable.hashes();
+  await checkoutDetailsMethod.selectPlan(t,data[0].elePlan,data[0].gasPlan);
+});

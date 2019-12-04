@@ -1,5 +1,5 @@
 import {qualifierMethod} from '../methods/qualifierPage';
-import {testFunction, Moving} from '../../global_methods/helper';
+import {testFunction, Moving, CustomerStatus} from '../../global_methods/helper';
 import {When, Then } from 'cucumber';
 import {CustomerType} from '@ea/ea-commons-models';
 const eaQualifierPage=require('../pages/qualifier.page');
@@ -43,12 +43,11 @@ When(/^user provides all other details on qualifier page for Existing customer$/
   await qualifierMethod.selectSolarOption(t, data[0].solarOption);
 });
 
-When(/^user provides all details on qualifier page for New customer$/, async function (t,[],dataTable) {
+When(/^user provides all other details on qualifier page$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
   let customerType=data[0].customerType;
   let movingType=data[0].movingType;
   await testFunction.waitForLoadingIconToClose();
-  await qualifierMethod.selectCustomerStatus(t,data[0].customerStatus);
   await qualifierMethod.provideMovingType(t, data[0].movingType);
   if(movingType === Moving.MOVING){
     await qualifierMethod.provideAddress(t, data[0].connectionAddress);
@@ -67,8 +66,10 @@ When(/^user provides all details on qualifier page for New customer$/, async fun
 When(/^user verifies his account on qualifier$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
   await testFunction.waitForLoadingIconToClose();
-  await qualifierMethod.selectCustomerStatus(t,data[0].customerStatus);
   await qualifierMethod.verifyAccount(t,data[0].accountNumber,data[0].accountIdentityType,data[0].postcodeOrABNACN);
   await testFunction.waitForLoadingIconToClose();
   await qualifierMethod.verifyIdentity(t,data[0].idType,data[0].idValue);
+});
+When(/^user selects '(.*)' on qualifier$/, async function (t,[customerStatus]) {
+  await qualifierMethod.selectCustomerStatus(t,customerStatus);
 });

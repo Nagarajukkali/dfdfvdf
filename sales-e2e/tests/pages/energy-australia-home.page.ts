@@ -40,6 +40,7 @@ const eaHomePage={
     fuelSelectorOptionDual:Selector('#edit-fuel-selector-both'),
     fuelSelectorOptionEle:Selector('#edit-fuel-selector-ele'),
     fuelSelectorOptionGas:Selector('#edit-fuel-selector-gas'),
+    linkMoveHouse:Selector(".icon-moving"),
   },
 };
 

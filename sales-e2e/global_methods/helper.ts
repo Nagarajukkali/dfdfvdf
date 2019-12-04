@@ -183,6 +183,32 @@ export class testFunction {
     await t.expect((element).exists).notOk();
   }
 
+  public static async selectDateFromCalendar(t,element){
+    let table=element;
+    let tableElement=await element();
+    const  rowCount=tableElement.childElementCount;
+    let flag=false;
+    for(let i=0;i<rowCount;i++){
+      let rows=table.child(i);
+      let row=await rows();
+      let colCount=row.childElementCount;
+      for(let j=1;j<colCount;j++){
+        let cols=rows.child(j);
+        let dateBtn=cols.child(0);
+        if(await dateBtn.hasClass('active')){
+          let cols1=rows.child(j+1);
+          let dateBtn1=cols.child(0);
+          if(await dateBtn1.hasClass('active')){
+            await testFunction.click(t,cols1);
+            flag=true;
+            break;
+          }
+        }
+      }
+      if(flag) break;
+    }
+  }
+
 }
 
 

@@ -1,8 +1,6 @@
-import {forEachComment} from 'tslint';
-
 const eaCheckoutDetailsPage=require('../pages/checkoutDetails.page');
 const eaCheckoutReviewPage=require('../pages/checkoutReview.page');
-import {BusinessType, CustomerStatus, directDebitType, testFunction} from '../../global_methods/helper';
+import {BusinessType, CustomerStatus, directDebitType, PlanType, testFunction} from '../../global_methods/helper';
 import {AustralianState, CustomerType} from '@ea/ea-commons-models';
 
 export class checkoutDetailsMethod{
@@ -228,5 +226,74 @@ export class checkoutDetailsMethod{
       else{
         console.error("Disconnection is not chosen")
       }
+  }
+
+  public static async selectPlan(t,elePlan,gasPlan){
+      if(elePlan){
+        await this.selectElePlan(t,elePlan);
+      }
+    if(gasPlan){
+      await this.selectGasPlan(t,gasPlan);
+    }
+  }
+  public static async selectElePlan(t,elePlan:String){
+    switch(elePlan){
+      case PlanType.BASIC_HOME:
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.basicElePlan);
+        break;
+      case PlanType.NO_FRILLS:
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.noFrillsElePlan);
+        break;
+      case PlanType.TOTAL_PLAN:
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.totalElePlan);
+        break;
+      case PlanType.TOTAL_PLAN_PLUS:
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.totalPlanPlusEle);
+        break;
+      case PlanType.BASIC_BUSINESS:
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.basicEleBusiness);
+        break;
+      case PlanType.NO_FRILLS_BUSINESS:
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.noFrillEleBusiness);
+        break;
+      case PlanType.TOTAL_BUSINESS:
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.totalElePlanBusiness);
+        break;
+      case PlanType.TOTAL_PLAN_PLUS_BUSINESS:
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.totalPlanPlusEleBusiness);
+        break;
+      default:
+        console.error("Invalid plan type");
+    }
+  }
+  public static async selectGasPlan(t,gasPlan:String){
+    switch(gasPlan){
+      case PlanType.BASIC_HOME:
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.totalGasPlan);
+        break;
+      case PlanType.NO_FRILLS:
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.noFrillsGasPlan);
+        break;
+      case PlanType.TOTAL_PLAN:
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.totalGasPlan);
+        break;
+      case PlanType.TOTAL_PLAN_PLUS:
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.totalPlanPlusGas);
+        break;
+      case PlanType.BASIC_BUSINESS:
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.basicGasBusiness);
+        break;
+      case PlanType.NO_FRILLS_BUSINESS:
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.noFrillGasBusiness);
+        break;
+      case PlanType.TOTAL_BUSINESS:
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.totalGasPlanBusiness);
+        break;
+      case PlanType.TOTAL_PLAN_PLUS_BUSINESS:
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.totalPlanPlusGasBusiness);
+        break;
+      default:
+        console.error("Invalid plan type");
+    }
   }
 }
