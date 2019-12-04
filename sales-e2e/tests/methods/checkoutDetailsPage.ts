@@ -33,9 +33,7 @@ export class checkoutDetailsMethod{
 
     public static async provideContactDetails(t){
         let phoneNumber="03"+testFunction.getRandomNumber(99999999);
-        if(phoneNumber.length!==10){
-          phoneNumber=phoneNumber+"0";
-        }
+        phoneNumber=phoneNumber.padEnd(10,"0");
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.email,'test@energyaustralia.com.au');
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.phone,phoneNumber);
     }
@@ -138,10 +136,12 @@ export class checkoutDetailsMethod{
   }
 
   public static async accessRestriction(t,electricityAccess:String,gasAccess){
-      if(electricityAccess==='No')
+      if(electricityAccess==='No'){
         await testFunction.click(t, eaCheckoutDetailsPage.elements.electricityAccessNo);
-      if(gasAccess==='No')
+      }
+      if(gasAccess==='No'){
         await testFunction.click(t, eaCheckoutDetailsPage.elements.gasAccessNo);
+      }
   }
   public static async propertyRenovationNo(t,state){
       if(state===AustralianState.VIC){
@@ -152,11 +152,13 @@ export class checkoutDetailsMethod{
   public static async provideBusinessDetails(t,businessType){
       if(businessType===BusinessType.ABN){
         let ABN=testFunction.getRandomNumber(99999999999);
+        ABN = ABN.padEnd(11, "0");
         await testFunction.click(t,eaCheckoutDetailsPage.elements.ABN);
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.number_ABNACN,ABN);
       }
       else if(businessType===BusinessType.ACN){
         let ACN=testFunction.getRandomNumber(999999999);
+        ACN = ACN.padEnd(9, "0");
         await testFunction.click(t,eaCheckoutDetailsPage.elements.ACN);
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.number_ABNACN,ACN);
       }else {
@@ -201,19 +203,19 @@ export class checkoutDetailsMethod{
   public static async disconnectionDetails(t,disconnectionOption){
       if(disconnectionOption==='Yes') {
         if(!(await testFunction.isElementVisible(t, eaCheckoutDetailsPage.elements.disconnectionCalendarError))){
-          await testFunction.click(t,eaCheckoutDetailsPage.elements.eleDisconnectionYes);
-          await testFunction.click(t,eaCheckoutDetailsPage.elements.eleAccessRestrictionNo);
-          await testFunction.click(t,eaCheckoutDetailsPage.elements.gasAccessRestrictionNo);
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.rdbEleDisconnectionYes);
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.rdbEleAccessRestrictionNo);
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.rdbGasAccessRestrictionNo);
           await testFunction.click(t,eaCheckoutDetailsPage.elements.renovationNo);
         }
         else if(await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.disconnectionCalendarError)) {
           let errorMsg = await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.disconnectionCalendarError);
           if (errorMsg.includes("Electricity Account")) {
-            await testFunction.click(t, eaCheckoutDetailsPage.elements.eleDisconnectionYes);
-            await testFunction.click(t, eaCheckoutDetailsPage.elements.gasAccessRestrictionNo);
+            await testFunction.click(t, eaCheckoutDetailsPage.elements.rdbEleDisconnectionYes);
+            await testFunction.click(t, eaCheckoutDetailsPage.elements.rdbGasAccessRestrictionNo);
           } else if (errorMsg.includes("Gas Account")) {
-            await testFunction.click(t, eaCheckoutDetailsPage.elements.eleDisconnectionYes);
-            await testFunction.click(t, eaCheckoutDetailsPage.elements.eleAccessRestrictionNo);
+            await testFunction.click(t, eaCheckoutDetailsPage.elements.rdbEleDisconnectionYes);
+            await testFunction.click(t, eaCheckoutDetailsPage.elements.rdbEleAccessRestrictionNo);
           }
       }
         else{
@@ -221,7 +223,7 @@ export class checkoutDetailsMethod{
         }
       }
       else if(disconnectionOption==='No'){
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.eleDisconnectionNo);
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.rdbEleDisconnectionNo);
       }
       else{
         console.error("Disconnection is not chosen")

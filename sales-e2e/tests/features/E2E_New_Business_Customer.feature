@@ -4,7 +4,7 @@ Feature:E2E scenario for new business moving and non moving customer
 Scenario Outline: Submit a quote for new business moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'BUS' plans page
-  When user selects '<planName>' from 'BUS' plans page
+  When user selects '<planName>'
   And user moves on to fill the qualifier
   And user selects '<customerStatus>' on qualifier
   And user provides all other details on qualifier page
@@ -15,8 +15,8 @@ Scenario Outline: Submit a quote for new business moving customer
     |BUS         |BUS        | test     |test     |ABN         |
   And user selects answer for property renovation question for '<state>'
   And user opts for AAH and DD
-    |optAAHOption|optDDOption|DDType|
-    |No          |Yes        |Bank  |
+    |optAAHOption|optDDOption|directDebitType|
+    |No          |Yes        |Bank           |
   And user clicks on 'Review your order' button and navigates to review page
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices |GaslifeSupportDevices                             |
@@ -30,7 +30,7 @@ Scenario Outline: Submit a quote for new business moving customer
 Scenario Outline: Submit a quote for new business non moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'BUS' plans page
-  When user selects '<planName>' from 'BUS' plans page
+  When user selects '<planName>'
   And user moves on to fill the qualifier
   And user selects '<customerStatus>' on qualifier
   And user provides all other details on qualifier page
@@ -40,8 +40,8 @@ Scenario Outline: Submit a quote for new business non moving customer
     |customerType|journey    |customerStatus| firstName| lastName|businessType|
     |BUS         |BUS        |New           | test     |test     |ACN         |
   And user opts for AAH and DD
-    |optAAHOption|optDDOption|DDType|
-    |Yes         |No         |      |
+    |optAAHOption|optDDOption|directDebitType|
+    |Yes         |No         |               |
   And user clicks on 'Review your order' button and navigates to review page
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices                             |

@@ -39,55 +39,37 @@ export class plansMethod{
         console.log("Fuel selector is not available for QLD.")
     }
 
-    public static async selectPlan(t, planName, customerType){
-      if (customerType===CustomerType.RESIDENTIAL) {
-        await this.selectResiPlan(t,planName);
-      }
-      else if(customerType===CustomerType.BUSINESS){
-        await this.selectBSMEPlan(t,planName);
-      }
-      else {
-        console.error("Please provide valid customer type");
+    public static async selectPlan(t: any, planName: any) {
+      switch(planName){
+        case PlanType.BASIC_HOME:
+          await testFunction.click(t,EaHomePage.elements.basicPlan);
+          break;
+        case PlanType.NO_FRILLS:
+          await testFunction.click(t,EaHomePage.elements.noFrillsPlan);
+          break;
+        case PlanType.TOTAL_PLAN:
+          await testFunction.click(t,EaHomePage.elements.totalPlan);
+          break;
+        case PlanType.TOTAL_PLAN_PLUS:
+          await testFunction.click(t,EaHomePage.elements.totalPlusPlan);
+          break;
+        case PlanType.BASIC_BUSINESS:
+          await testFunction.click(t,EaHomePage.elements.basicBusiness);
+          break;
+        case PlanType.NO_FRILLS_BUSINESS:
+          await testFunction.click(t,EaHomePage.elements.noFrillBusiness);
+          break;
+        case PlanType.TOTAL_BUSINESS:
+          await testFunction.click(t,EaHomePage.elements.totalPlanBusiness);
+          break;
+        case PlanType.TOTAL_PLAN_PLUS_BUSINESS:
+          await testFunction.click(t,EaHomePage.elements.totalPlanPlusBusiness);
+          break;
+        default:
+          console.error("Invalid plan is selected");
       }
     }
 
-  public static async selectResiPlan(t: any, planName: any) {
-    switch(planName){
-      case PlanType.BASIC_HOME:
-        await testFunction.click(t,EaHomePage.elements.basicPlan);
-        break;
-      case PlanType.NO_FRILLS:
-        await testFunction.click(t,EaHomePage.elements.noFrillsPlan);
-        break;
-      case PlanType.TOTAL_PLAN:
-        await testFunction.click(t,EaHomePage.elements.totalPlan);
-        break;
-      case PlanType.TOTAL_PLAN_PLUS:
-        await testFunction.click(t,EaHomePage.elements.totalPlusPlan);
-        break;
-      default:
-        console.error("Invalid plan is selected");
-    }
-  }
-
-  public static async selectBSMEPlan(t,planName){
-    switch(planName){
-      case PlanType.BASIC_BUSINESS:
-        await testFunction.click(t,EaHomePage.elements.basicBusiness);
-        break;
-      case PlanType.NO_FRILLS_BUSINESS:
-        await testFunction.click(t,EaHomePage.elements.noFrillBusiness);
-        break;
-      case PlanType.TOTAL_BUSINESS:
-        await testFunction.click(t,EaHomePage.elements.totalPlanBusiness);
-        break;
-      case PlanType.TOTAL_PLAN_PLUS_BUSINESS:
-        await testFunction.click(t,EaHomePage.elements.totalPlanPlusBusiness);
-        break;
-      default:
-        console.error("Invalid plan is selected");
-    }
-  }
 }
 
 export class selectionOptionModalWindowMethod {

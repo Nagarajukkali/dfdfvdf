@@ -113,9 +113,7 @@ export class testFunction {
   public static async clearAndEnterText(t, element, value) {
     try {
       await this.isElementDisplayed(t, element);
-      await t.selectText(element)
-        .pressKey('delete');
-      await t.typeText(element, value, replace);
+      await t.typeText(element, value, {replace: true, paste: true});
     } catch (error) {
       console.log(error);
     }

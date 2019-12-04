@@ -11,13 +11,13 @@ export class checkoutReviewMethod {
 
   public static async verifyExistingLifeSupportDetails(t,fuelType,accountType){
     switch (fuelType) {
-    case "Both":
+    case FUEL_TYPE_OPTIONS.BOTH.value:
       this.verifyExistingLSDetailsForBothFuelSelected(t,accountType);
       break;
-    case "Electricity":
+    case FUEL_TYPE_OPTIONS.ELE.value:
       this.verifyExistingLSDetailsForEleSelected(t,accountType);
       break;
-    case "Gas":
+    case FUEL_TYPE_OPTIONS.GAS.value:
       this.verifyExistingLSDetailsForGasSelected(t,accountType);
       break;
     default:
@@ -27,14 +27,14 @@ export class checkoutReviewMethod {
 
   public static async verifyExistingLSDetailsForBothFuelSelected(t,verifiedAccount){
   switch (verifiedAccount) {
-  case "Both":
+  case FUEL_TYPE_OPTIONS.BOTH.value:
     this.verifyDisplayOfExistingLSSectionForBothAccountVerified(t);
     break;
-  case "Electricity":
+  case FUEL_TYPE_OPTIONS.ELE.value:
     this.verifyDisplayOfExistingLSSectionForEleAccountVerified(t);
     this.verifyLifeSupportQuestion(t,"Gas");
     break;
-  case "Gas":
+  case FUEL_TYPE_OPTIONS.GAS.value:
     this.verifyDisplayOfExistingLSSectionForGasAccountVerified(t);
     this.verifyLifeSupportQuestion(t,"Electricity");
     break;

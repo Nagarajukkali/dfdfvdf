@@ -46,7 +46,7 @@ When(/^user opts for AAH and DD$/, async function (t,[],dataTable) {
     await checkoutDetailsMethod.addAAHDetails(t);
   }
   if(optDDOption==='Yes'){
-    await checkoutDetailsMethod.addDirectDebit(t,data[0].DDType);
+    await checkoutDetailsMethod.addDirectDebit(t,data[0].directDebitType);
   }
 });
 When(/^user selects plans on checkout details page$/, async function (t,[],dataTable) {
