@@ -1,19 +1,19 @@
 @E2E
 Feature:E2E scenario for existing residential moving and non moving customer
-@test
+
 Scenario Outline: Submit a quote for existing residential customer through move house
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   When user has navigated to move house page
   And user enters '<movingAddress>' in address field and selects any available moving date
-  And user verifies his account on qualifier
+  And user verifies account on qualifier
     |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
     |Existing      |8372937428   |Postcode           |3024            |dob   |09121968|
-  And user provides all other details on qualifier page for Existing customer
-    |customerType|movingType |connectionAddress               |propertyType |solarOption|
-    |RES         |Moving     |5 Wilkies Street, BULLI NSW 2516|Renter       |No         |
+  And user provides all other details on qualifier page
+    |customerType|movingType|connectionAddress               |propertyType |solarOption|
+    |RES         |NA        |5 Wilkies Street, BULLI NSW 2516|Renter       |No         |
   And user selects plans on checkout details page
-    |elePlan        |gasPlan        |
-    |Total Plan Plus|Total Plan Plus|
+    |elePlan        |gasPlan   |
+    |Total Plan Plus|Total Plan|
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|idType        |
     |RES         |RES        |Existing      | test     |test     |Driver License|
@@ -26,6 +26,7 @@ Scenario Outline: Submit a quote for existing residential customer through move 
   And user submits the quote
   Then user lands on checkout complete page
   Examples:
-    |planName|folderName              |state|optDisconnection|movingAddress                   |
-    |Basic   |E2E_Existing_Resi_Moving|NSW  |Yes             |5 Wilkies Street, BULLI NSW 2516|
+    |folderName              |state|optDisconnection|movingAddress                   |
+    |E2E_Existing_Resi_Moving|NSW  |Yes             |5 Wilkies Street, BULLI NSW 2516|
+
 

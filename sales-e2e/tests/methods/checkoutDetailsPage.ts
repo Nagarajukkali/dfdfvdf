@@ -15,27 +15,32 @@ export class checkoutDetailsMethod{
         if(journey===CustomerType.RESIDENTIAL || journey==='Campaign'){
             await this.enterDOB(t);
         }
+        console.log("Details has been provided in about me section");
     }
     public static async enterFirstName(t,firstName){
         firstName = firstName ? firstName : "test";
         await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.firstName, firstName);
+        console.log("First name entered");
     }
     public static async enterLastName(t,lastName){
       lastName = lastName ? lastName : "test";
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.lastName, lastName);
+      console.log("Last name entered");
     }
 
     public static async enterDOB(t){
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobDay,'01');
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobMonth,'01');
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobYear,'1980');
+        console.log("DOB entered");
     }
 
     public static async provideContactDetails(t){
         let phoneNumber="03"+testFunction.getRandomNumber(99999999);
         phoneNumber=phoneNumber.padEnd(10,"0");
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.email,'test@energyaustralia.com.au');
-        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.phone,phoneNumber);
+        await testFunction.enterText(t,eaCheckoutDetailsPage.elements.phone,phoneNumber);
+        console.log("Contact details provided");
     }
     public static async checkoutIdentification(t,customerStatus,idType){
         if(customerStatus===CustomerStatus.EXISTING){
@@ -69,6 +74,7 @@ export class checkoutDetailsMethod{
         await testFunction.click(t,eaCheckoutDetailsPage.elements.idDrop);
         await testFunction.click(t,eaCheckoutDetailsPage.elements.idValuePassport);
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,passportNo);
+        console.log("Existing customer passport details provided");
     }
 
     public static async checkoutExistingCustomerDriverLicenseIdentification(t){
@@ -77,6 +83,7 @@ export class checkoutDetailsMethod{
       await testFunction.click(t,eaCheckoutDetailsPage.elements.idValueDriverLicense);
       await testFunction.click(t,eaCheckoutDetailsPage.elements.idNumber);
       await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,dlNo);
+      console.log("Existing customer dl details provided");
     }
 
     public static async checkoutExistingCustomerMedicareIdentification(t){
@@ -84,6 +91,7 @@ export class checkoutDetailsMethod{
       await testFunction.click(t,eaCheckoutDetailsPage.elements.idDrop);
       await testFunction.click(t,eaCheckoutDetailsPage.elements.idValueMedicare);
       await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,medicareNo);
+      console.log("Existing customer medicare details provided");
     }
     public static async checkoutNewCustomerIdentification(t,idType){
     switch (idType) {
@@ -107,6 +115,7 @@ export class checkoutDetailsMethod{
     await testFunction.click(t,eaCheckoutDetailsPage.elements.idValueDriverLicense);
     await testFunction.click(t,eaCheckoutDetailsPage.elements.idLicenseNumber);
     await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idLicenseNumber,dlNo);
+    console.log("New customer dl details provided");
   }
 
   public static async checkoutNewCustomerPassportIdentification(t){
@@ -115,6 +124,7 @@ export class checkoutDetailsMethod{
     await testFunction.click(t,eaCheckoutDetailsPage.elements.idValuePassport);
     await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idPassportNumber,passportNo);
     await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idCountry,'Australia');
+    console.log("New customer passport details provided");
   }
 
   public static async checkoutNewCustomerMedicareIdentification(t){
@@ -126,6 +136,7 @@ export class checkoutDetailsMethod{
     await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareRef,'1');
     await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidMM,'01');
     await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidYYYY,'2024');
+    console.log("New customer medicare details provided");
   }
 
   public static async clickOnReviewYourOrderBtn(t){
@@ -133,6 +144,7 @@ export class checkoutDetailsMethod{
     await t.wait(5000);
     await testFunction.click(t,eaCheckoutDetailsPage.elements.reviewYourOrderBtn);
     await testFunction.isElementVisible(t,eaCheckoutReviewPage.elements.reviewYourOfferTxt);
+    console.log("Navigated to review page");
   }
 
   public static async accessRestriction(t,electricityAccess:String,gasAccess){
@@ -142,11 +154,13 @@ export class checkoutDetailsMethod{
       if(gasAccess==='No'){
         await testFunction.click(t, eaCheckoutDetailsPage.elements.gasAccessNo);
       }
+      console.log("Access restriction option is selected");
   }
   public static async propertyRenovationNo(t,state){
       if(state===AustralianState.VIC){
         await testFunction.click(t,eaCheckoutDetailsPage.elements.prevHomeImproveNo);
         await testFunction.click(t,eaCheckoutDetailsPage.elements.planHomeImproveNo);
+        console.log("Property renovation option is selected");
       }
   }
   public static async provideBusinessDetails(t,businessType){
@@ -170,6 +184,7 @@ export class checkoutDetailsMethod{
       await t.wait(3000);
       await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCode);
       await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCodeOption);
+      console.log("Business details are provided");
   }
 
   public static async addAAHDetails(t) {
@@ -181,6 +196,7 @@ export class checkoutDetailsMethod{
     await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.aahLastName, lName);
     await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.aahEmail, email);
     await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl2);
+    console.log("AAH details provided");
   }
 
   public static async addDirectDebit(t, DDType) {
@@ -190,6 +206,7 @@ export class checkoutDetailsMethod{
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfBsb, testFunction.getRandomNumber(999999));
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfBankAccountNumber, testFunction.getRandomNumber(9999999999));
       await testFunction.click(t, eaCheckoutDetailsPage.elements.cbBankAccountAgreeTermsAndCond);
+      console.log("Bank details provided");
     } else if(DDType === directDebitType.CREDIT_CARD) {
       await testFunction.click(t, eaCheckoutDetailsPage.elements.useCC);
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCName, "CCName_" + testFunction.generateRandomText(5));
@@ -197,7 +214,9 @@ export class checkoutDetailsMethod{
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCExpiryMonth, "01");
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCExpiryYear, "30");
       await testFunction.click(t, eaCheckoutDetailsPage.elements.cbCCAgreeTermsAndCond);
+      console.log("CC details provided");
     }
+
   }
 
   public static async disconnectionDetails(t,disconnectionOption){
@@ -231,12 +250,13 @@ export class checkoutDetailsMethod{
   }
 
   public static async selectPlan(t,elePlan,gasPlan){
+      await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.plansExpand);
       if(elePlan){
         await this.selectElePlan(t,elePlan);
       }
-    if(gasPlan){
-      await this.selectGasPlan(t,gasPlan);
-    }
+      if(gasPlan){
+        await this.selectGasPlan(t,gasPlan);
+      }
   }
   public static async selectElePlan(t,elePlan:String){
     switch(elePlan){
@@ -271,7 +291,7 @@ export class checkoutDetailsMethod{
   public static async selectGasPlan(t,gasPlan:String){
     switch(gasPlan){
       case PlanType.BASIC_HOME:
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.totalGasPlan);
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.basicGasPlan);
         break;
       case PlanType.NO_FRILLS:
         await testFunction.click(t,eaCheckoutDetailsPage.elements.noFrillsGasPlan);

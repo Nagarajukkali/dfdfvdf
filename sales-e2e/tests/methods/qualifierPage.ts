@@ -14,6 +14,7 @@ export class qualifierMethod{
     else{
       console.error('customer status option is not selected.');
     }
+    console.log(customerStatus+" is selected");
     }
 
     public static async verifyAccount(t,accountNumber,accountIdentityType,postcodeOrABNACN){
@@ -37,6 +38,8 @@ export class qualifierMethod{
           console.log('account identity type is not valid');
       }
       await testFunction.click(t, eaQualifierPage.elements.verifyAccountSubmit);
+      await testFunction.waitForElementPropertyToBeChanged(t,eaQualifierPage.elements.verifyAccountSubmit,'wg-processing',"false");
+      console.log("account is verified")
     }
     public static async selectIdTypeQualifier(t, itemToClick) {
       let val =await testFunction.sizeOfElement(t, eaQualifierPage.elements.idTypeDropDown);
@@ -64,10 +67,11 @@ export class qualifierMethod{
       await testFunction.waitForLoadingIconToClose();
       await t.wait(3000);
       await testFunction.click(t, eaQualifierPage.elements.verifyIdentitySubmit);
+      console.log("Existing customer ID details are verified");
     }
 
     public static async provideIdValue(t,idValue, inputField) {
-      await testFunction.clearAndEnterText(t,inputField, idValue);
+      await testFunction.enterText(t,inputField, idValue);
     }
 
   public static async verifyFamilyViolenceMessage(t, value){
@@ -84,6 +88,7 @@ export class qualifierMethod{
       else{
         console.error('moving option is not selected.');
       }
+      console.log(movingType+" is selected");
   }
 
   public static async provideAddress(t, address) {
@@ -93,6 +98,7 @@ export class qualifierMethod{
       await testFunction.isElementVisible(t, eaQualifierPage.elements.addressLoadingIcon);
       await testFunction.waitForLoadingIconToClose();
       await testFunction.click(t, eaQualifierPage.elements.addressContinue);
+      console.log(address+" is provided");
   }
 
   public static async clickOnContinueAddress(t){
@@ -100,25 +106,7 @@ export class qualifierMethod{
   }
 
   public static async selectDateFromCalendar(t){
-    let table=eaQualifierPage.elements.calendarTable;
-    let tableElement=await table();
-    const  rowCount=tableElement.childElementCount;
-    let flag=false;
-    for(let i=0;i<rowCount;i++){
-      let rows=table.child(i);
-      let row=await rows();
-      let colCount=row.childElementCount;
-      for(let j=1;j<colCount;j++){
-        let cols=rows.child(j);
-        let dateBtn=cols.child(0);
-        if(await dateBtn.hasClass('active')){
-          await testFunction.click(t,cols);
-          flag=true;
-          break;
-        }
-      }
-      if(flag) break;
-    }
+    await testFunction.selectDateFromCalendar(t,eaQualifierPage.elements.calendarTable);
   }
   public static async selectPropertyType(t,propertyType){
     if(propertyType ===Property.OWNER){

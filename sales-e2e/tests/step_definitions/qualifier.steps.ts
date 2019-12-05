@@ -53,21 +53,18 @@ When(/^user provides all other details on qualifier page$/, async function (t,[]
     await qualifierMethod.provideAddress(t, data[0].connectionAddress);
     await qualifierMethod.selectDateFromCalendar(t);
   }
-  else{
+  if(movingType===Moving.NONMOVING){
     await qualifierMethod.provideAddress(t, data[0].connectionAddress);
   }
   if(customerType===CustomerType.RESIDENTIAL){
     await qualifierMethod.selectPropertyType(t, data[0].propertyType);
   }
-  await qualifierMethod.selectPropertyType(t, data[0].propertyType);
   await qualifierMethod.selectSolarOption(t, data[0].solarOption);
 });
 
 When(/^user verifies account on qualifier$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
-  await testFunction.waitForLoadingIconToClose();
   await qualifierMethod.verifyAccount(t,data[0].accountNumber,data[0].accountIdentityType,data[0].postcodeOrABNACN);
-  await testFunction.waitForLoadingIconToClose();
   await qualifierMethod.verifyIdentity(t,data[0].idType,data[0].idValue);
 });
 When(/^user selects '(.*)' on qualifier$/, async function (t,[customerStatus]) {

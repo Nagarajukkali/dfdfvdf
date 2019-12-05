@@ -119,6 +119,17 @@ export class testFunction {
     }
   }
 
+  public static async enterText(t, element, value) {
+    try {
+      await this.isElementDisplayed(t, element);
+      await t.selectText(element)
+        .pressKey('delete');
+      await t.typeText(element, value, replace);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   public static async getInputText(t, element) {
     return await element.value;
   }
@@ -181,6 +192,32 @@ export class testFunction {
     await t.expect((element).exists).notOk();
   }
 
+  public static async waitForElementToBeInvisible(t,element,value,expectedText?){
+    for(let i=0;i<10;i++){
+      let strVal=await testFunction.getElementAttribute(t,element,value);
+      if(strVal.includes(expectedText)){
+        await t.wait(2000);
+      }
+      else{
+        break;
+      }
+    }
+  }
+  public static async waitForElementPropertyToBeChanged(t,element,value,expectedText?){
+    let strVal;
+    for(let i=0;i<10;i++){
+      if(testFunction.isElementVisible(t,element)){
+        strVal=await testFunction.getElementAttribute(t,element,value);
+        if(strVal.includes(expectedText)){
+          break;
+        }
+        else{
+          await t.wait(2000);
+        }
+      }
+      }
+  }
+
   public static async selectDateFromCalendar(t,element){
     let table=element;
     let tableElement=await element();
@@ -193,14 +230,11 @@ export class testFunction {
       for(let j=1;j<colCount;j++){
         let cols=rows.child(j);
         let dateBtn=cols.child(0);
-        if(await dateBtn.hasClass('active')){
-          let cols1=rows.child(j+1);
-          let dateBtn1=cols.child(0);
-          if(await dateBtn1.hasClass('active')){
-            await testFunction.click(t,cols1);
-            flag=true;
-            break;
-          }
+        let backgroundColor=await dateBtn.getStyleProperty("background-color").then(result=>result);
+        if(backgroundColor.includes("rgba(110, 178, 20, 0.45)")){
+          await testFunction.click(t,cols);
+          flag=true;
+          break;
         }
       }
       if(flag) break;
