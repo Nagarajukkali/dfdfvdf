@@ -9,9 +9,11 @@ When(/^user logs in to my account using '(.*)' and '(.*)'$/, async function(t, [
   await testFunction.click(t, eaMyAccount.elements.btnSignIn);
 });
 When(/^user clicks on view and change plan accordion$/, async function (t, []) {
+  await testFunction.waitForLoadingIconToClose_MA();
   await testFunction.click(t, eaMyAccount.elements.eleViewAndChangePlan);
 });
 When(/^user clicks on compare and switch plan button$/, async function (t, []) {
+  await testFunction.waitForLoadingIconToClose_MA();
   await testFunction.click(t, eaMyAccount.elements.btnCompareAndSwitchPlans);
 });
 When(/^user selects No for solar question and confirm$/, async function (t, []) {

@@ -181,6 +181,21 @@ export class testFunction {
     await t.expect((element).exists).notOk();
   }
 
+  public static waitForLoadingIconToClose_MA(){
+    const waitForLoading=ClientFunction(() => {
+      return new Promise(resolve => {
+        const interval=setInterval(() => {
+          if (document.querySelector("[class*='spinner']")) {
+            return;
+          }
+          clearInterval(interval);
+          resolve();
+        }, 100);
+      });
+    });
+    return waitForLoading;
+  }
+
 }
 
 
