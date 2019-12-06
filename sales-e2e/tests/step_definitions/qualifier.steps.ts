@@ -34,7 +34,7 @@ When(/^user provides all other details on qualifier page for Existing customer$/
   if(movingType === Moving.MOVING){
     await qualifierMethod.provideAddress(t, data[0].connectionAddress);
     await qualifierMethod.selectDateFromCalendar(t);
-  } else if (movingType === Moving.NONMOVING) {
+  } else if (movingType === Moving.NON_MOVING) {
     await testFunction.click(t, eaQualifierPage.elements.addressContinue);
   }
   if(customerType===CustomerType.RESIDENTIAL){
@@ -53,7 +53,7 @@ When(/^user provides all other details on qualifier page$/, async function (t,[]
     await qualifierMethod.provideAddress(t, data[0].connectionAddress);
     await qualifierMethod.selectDateFromCalendar(t);
   }
-  if(movingType===Moving.NONMOVING){
+  if(movingType===Moving.NON_MOVING){
     await qualifierMethod.provideAddress(t, data[0].connectionAddress);
   }
   if(customerType===CustomerType.RESIDENTIAL){

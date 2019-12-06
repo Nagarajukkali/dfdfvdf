@@ -14,7 +14,7 @@ export class qualifierMethod{
     else{
       console.error('customer status option is not selected.');
     }
-    console.log(customerStatus+" is selected");
+    console.log(`${customerStatus} is selected`);
     }
 
     public static async verifyAccount(t,accountNumber,accountIdentityType,postcodeOrABNACN){
@@ -79,7 +79,7 @@ export class qualifierMethod{
   }
 
   public static async provideMovingType(t, movingType) {
-    if(movingType===Moving.NONMOVING){
+    if(movingType===Moving.NON_MOVING){
         await testFunction.click(t,eaQualifierPage.elements.nonMoving);
       }
       else if(movingType===Moving.MOVING){
@@ -88,7 +88,7 @@ export class qualifierMethod{
       else{
         console.error('moving option is not selected.');
       }
-      console.log(movingType+" is selected");
+      console.log(`${movingType} is selected`);
   }
 
   public static async provideAddress(t, address) {
@@ -98,7 +98,7 @@ export class qualifierMethod{
       await testFunction.isElementVisible(t, eaQualifierPage.elements.addressLoadingIcon);
       await testFunction.waitForLoadingIconToClose();
       await testFunction.click(t, eaQualifierPage.elements.addressContinue);
-      console.log(address+" is provided");
+      console.log(`${address} is provided`);
   }
 
   public static async clickOnContinueAddress(t){

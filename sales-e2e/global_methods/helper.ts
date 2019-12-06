@@ -11,7 +11,7 @@ const replace={ replace: true };
   }
   export enum Moving {
     MOVING='Moving',
-    NONMOVING='Non-Moving'
+    NON_MOVING='Non-Moving'
   }
   export enum Property {
     OWNER='Owner',
@@ -194,7 +194,7 @@ export class testFunction {
 
   public static async waitForElementToBeInvisible(t,element,value,expectedText?){
     for(let i=0;i<10;i++){
-      let strVal=await testFunction.getElementAttribute(t,element,value);
+      const strVal=await testFunction.getElementAttribute(t,element,value);
       if(strVal.includes(expectedText)){
         await t.wait(2000);
       }
@@ -204,10 +204,9 @@ export class testFunction {
     }
   }
   public static async waitForElementPropertyToBeChanged(t,element,value,expectedText?){
-    let strVal;
     for(let i=0;i<10;i++){
       if(testFunction.isElementVisible(t,element)){
-        strVal=await testFunction.getElementAttribute(t,element,value);
+        const strVal=await testFunction.getElementAttribute(t,element,value);
         if(strVal.includes(expectedText)){
           break;
         }
@@ -219,18 +218,18 @@ export class testFunction {
   }
 
   public static async selectDateFromCalendar(t,element){
-    let table=element;
-    let tableElement=await element();
+    const table=element;
+    const tableElement=await element();
     const  rowCount=tableElement.childElementCount;
     let flag=false;
     for(let i=0;i<rowCount;i++){
-      let rows=table.child(i);
-      let row=await rows();
-      let colCount=row.childElementCount;
+      const rows=table.child(i);
+      const row=await rows();
+      const colCount=row.childElementCount;
       for(let j=1;j<colCount;j++){
-        let cols=rows.child(j);
-        let dateBtn=cols.child(0);
-        let backgroundColor=await dateBtn.getStyleProperty("background-color").then(result=>result);
+        const cols=rows.child(j);
+        const dateBtn=cols.child(0);
+        const backgroundColor=await dateBtn.getStyleProperty("background-color").then(result=>result);
         if(backgroundColor.includes("rgba(110, 178, 20, 0.45)")){
           await testFunction.click(t,cols);
           flag=true;
