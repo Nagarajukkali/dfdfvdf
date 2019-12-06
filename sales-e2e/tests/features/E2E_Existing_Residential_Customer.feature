@@ -1,11 +1,12 @@
 @E2E
 Feature:E2E scenario for existing residential moving and non moving customer
-
+  @test
 Scenario Outline: Submit a quote for existing residential moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page
   When user selects '<planName>'
   And user moves on to fill the qualifier
+    And user selects '<customerStatus>' on qualifier
   And user verifies account on qualifier
     |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
     |Existing      |8372937428   |Postcode           |3024            |dob   |09121968|
@@ -24,14 +25,15 @@ Scenario Outline: Submit a quote for existing residential moving customer
   And user submits the quote
   Then user lands on checkout complete page
   Examples:
-    |planName|folderName              |state|optDisconnection|
-    |Basic   |E2E_Existing_Resi_Moving|NSW  |Yes             |
+  |customerStatus|planName|folderName              |state|optDisconnection|
+  |Existing      |Basic   |E2E_Existing_Resi_Moving|NSW  |Yes             |
 
 Scenario Outline: Submit a quote for new residential non moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page
   When user selects '<planName>'
   And user moves on to fill the qualifier
+  And user selects '<customerStatus>' on qualifier
   And user verifies account on qualifier
     |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
     |Existing      |5134624952   |Postcode           |2516            |dob   |12101958|
@@ -49,5 +51,5 @@ Scenario Outline: Submit a quote for new residential non moving customer
   And user submits the quote
   Then user lands on checkout complete page
   Examples:
-    |planName |folderName                 |fuelType|accountType|
-    |No Frills|E2E_Existing_Resi_NonMoving|BOTH    |GAS        |
+    |customerStatus|planName |folderName                 |fuelType|accountType|
+    |Existing      |No Frills|E2E_Existing_Resi_NonMoving|BOTH    |GAS        |
