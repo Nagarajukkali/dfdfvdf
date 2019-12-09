@@ -6,9 +6,10 @@ Scenario Outline: Submit a quote for new residential moving customer
   And user has navigated to 'RES' plans page
   When user selects '<planName>'
   And user moves on to fill the qualifier
-  And user provides all details on qualifier page for New customer
-    |customerType| customerStatus| connectionAddress               | movingType|propertyType|solarOption|
-    |RES         |New            | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |No         |
+  And user selects '<customerStatus>' on qualifier
+  And user provides all other details on qualifier page
+    |customerType| connectionAddress               | movingType|propertyType|solarOption|
+    |RES         | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |No         |
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|idType        |
     |RES         |RES        |New           | test     |test     |Driver License|
@@ -23,17 +24,18 @@ Scenario Outline: Submit a quote for new residential moving customer
   And user submits the quote
   Then user lands on checkout complete page
   Examples:
-    |planName|folderName             |state|
-    |Total Plan  |E2E_New_Resi_Moving|NSW  |
+    |customerStatus|planName|folderName             |state|
+    |New           |Total Plan  |E2E_New_Resi_Moving|NSW  |
 
 Scenario Outline: Submit a quote for new residential non moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page
   When user selects '<planName>'
   And user moves on to fill the qualifier
-  And user provides all details on qualifier page for New customer
-    |customerType| customerStatus| connectionAddress               | movingType|propertyType|solarOption|
-    |RES         |New            | 5 Wilkies Street, BULLI NSW 2516|Non-Moving |Renter      |No         |
+  And user selects '<customerStatus>' on qualifier
+  And user provides all other details on qualifier page
+    |customerType| connectionAddress               | movingType|propertyType|solarOption|
+    |RES         | 5 Wilkies Street, BULLI NSW 2516|Non-Moving |Renter      |No         |
   And user provides all details on checkout details page
     |customerType |journey    |customerStatus| firstName| lastName|idType        |
     |RES          |RES        |New           | test     |test     |Driver License|
@@ -47,5 +49,5 @@ Scenario Outline: Submit a quote for new residential non moving customer
   And user submits the quote
   Then user lands on checkout complete page
   Examples:
-    |planName|folderName                |
-    |Total Plan  |E2E_New_Resi_NonMoving|
+    |customerStatus|planName|folderName                |
+    |New           |Total Plan  |E2E_New_Resi_NonMoving|

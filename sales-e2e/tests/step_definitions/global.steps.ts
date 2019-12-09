@@ -17,3 +17,7 @@ Given(/^user has navigated to '(.*)' plans page$/, async function(t, [customerTy
 Given(/^user navigates to my account login page$/, async function (t, []) {
   await t.navigateTo(eaMyAccount.pageUrl);
 });
+
+Given(/^user has navigated to move house page$/, async function (t) {
+    await testFunction.click(t,eaHomePage.elements.linkMoveHouse);
+});

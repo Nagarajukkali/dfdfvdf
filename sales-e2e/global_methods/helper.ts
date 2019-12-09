@@ -11,7 +11,7 @@ const replace={ replace: true };
   }
   export enum Moving {
     MOVING='Moving',
-    NONMOVING='Non-Moving'
+    NON_MOVING='Non-Moving'
   }
   export enum Property {
     OWNER='Owner',
@@ -119,6 +119,17 @@ export class testFunction {
     }
   }
 
+  public static async enterText(t, element, value) {
+    try {
+      await this.isElementDisplayed(t, element);
+      await t.selectText(element)
+        .pressKey('delete');
+      await t.typeText(element, value, replace);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   public static async getInputText(t, element) {
     return await element.value;
   }
@@ -181,10 +192,10 @@ export class testFunction {
     await t.expect((element).exists).notOk();
   }
 
-  public static waitForLoadingIconToClose_MA(){
-    const waitForLoading=ClientFunction(() => {
+  public static waitForLoadingIconToClose_MA() {
+    const waitForLoading = ClientFunction(() => {
       return new Promise(resolve => {
-        const interval=setInterval(() => {
+        const interval = setInterval(() => {
           if (document.querySelector("[class*='spinner']")) {
             return;
           }
@@ -194,6 +205,54 @@ export class testFunction {
       });
     });
     return waitForLoading;
+  }
+
+  public static async waitForElementToBeInvisible(t,element,value,expectedText){
+    for(let i=0;i<10;i++){
+      const strVal=await testFunction.getElementAttribute(t,element,value);
+      if(strVal.includes(expectedText)){
+        await t.wait(2000);
+      }
+      else{
+        break;
+      }
+    }
+  }
+  public static async waitForElementPropertyToBeChanged(t,element,value,expectedText?){
+    for(let i=0;i<10;i++){
+      if(testFunction.isElementVisible(t,element)){
+        const strVal=await testFunction.getElementAttribute(t,element,value);
+        if(strVal.includes(expectedText)){
+          break;
+        }
+        else{
+          await t.wait(2000);
+        }
+      }
+      }
+  }
+
+  public static async selectDateFromCalendar(t,element){
+    const table=element;
+    const tableElement=await element();
+    const  rowCount=tableElement.childElementCount;
+    let flag=false;
+    for(let i=0;i<rowCount;i++){
+      const rows=table.child(i);
+      const row=await rows();
+      const colCount=row.childElementCount;
+      for(let j=1;j<colCount;j++){
+        const cols=rows.child(j);
+        const dateBtn=cols.child(0);
+        const backgroundColor=await dateBtn.getStyleProperty("background-color").then(result=>result);
+        if(backgroundColor.includes("rgba(110, 178, 20, 0.45)")){
+          await testFunction.click(t,cols);
+          flag=true;
+          break;
+        }
+      }
+      if(flag) break;
+    }
   }
 
 }
