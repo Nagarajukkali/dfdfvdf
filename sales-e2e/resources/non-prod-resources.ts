@@ -2,6 +2,7 @@ module.exports={
 config: {
     env: 'non-prod',
     eaHomePageUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au?live=disabled',
+    eaNewConnectionPageUrl:'https://preprod.nonprod.digital.energyaustralia.com.au/new-connections/app/start#/connection-details',
   },
   testData: {
     mastercard: {

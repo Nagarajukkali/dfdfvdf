@@ -22,6 +22,11 @@ Given(/^user has opened the website link in a browser and creates '(.*)' to save
   await t.navigateTo(eaHomePage.pageUrl);
 });
 
+Given(/^user has opened the new connection website link in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
+  screenshotFolder=folderName;
+  await t.navigateTo(eaHomePage.newConnectionPageUrl);
+});
+
 After( async t => {
   let format;
   await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/${await getDateTime()}.png`);

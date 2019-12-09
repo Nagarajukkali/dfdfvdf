@@ -1,6 +1,6 @@
 @E2E
 Feature:E2E scenario for existing residential moving and non moving customer
-  @test
+
 Scenario Outline: Submit a quote for existing residential moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page

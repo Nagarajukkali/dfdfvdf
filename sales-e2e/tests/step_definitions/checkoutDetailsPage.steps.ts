@@ -53,3 +53,8 @@ When(/^user selects plans on checkout details page$/, async function (t,[],dataT
   let data=dataTable.hashes();
   await checkoutDetailsMethod.selectPlan(t,data[0].elePlan,data[0].gasPlan);
 });
+When(/^user provides dob and id details$/, async function (t,[],dataTable) {
+  let data=dataTable.hashes();
+  await checkoutDetailsMethod.enterDOB(t);
+  await checkoutDetailsMethod.checkoutIdentification(t,data[0].customerStatus,data[0].idType)
+});
