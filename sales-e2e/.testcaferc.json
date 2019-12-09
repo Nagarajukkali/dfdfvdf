@@ -4,9 +4,9 @@
     "tests/**/*.feature"
   ],
   "browsers": [
-    "chrome:headless"
+    "chrome"
   ],
-  "concurrency": 2,
+  "concurrency": 1,
   "reporter": [{
           "name": "cucumber-json",
           "output": "results/report/report.json"
@@ -17,7 +17,7 @@
 
   "skip-uncaught-errors": false,
   "pageLoadTimeout": 5000,
-  "skipJsErrors": false,
+  "skipJsErrors": true,
   "color": true,
   "proxy": "proxy.ealan.shinesolutions.com:3128",
   "proxyBypass": [
