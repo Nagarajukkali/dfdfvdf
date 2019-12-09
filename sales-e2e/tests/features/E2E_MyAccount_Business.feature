@@ -1,6 +1,6 @@
+@E2E
 Feature: This feature is to test the My account scenarios for business customers
 
-  @test
   Scenario Outline: Verify the BSME Plan switch journey from My Account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
@@ -8,6 +8,18 @@ Feature: This feature is to test the My account scenarios for business customers
     And user clicks on view and change plan accordion
     And user clicks on compare and switch plan button
     And user selects No for solar question and confirm
+    And user selects plans on checkout details page
+      |elePlan         |gasPlan        |
+      |Total Business  |Basic Business |
+    And user provides identification details
+      |customerType |customerStatus |idType   |
+      |BUS          |Existing       |Medicare |
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption  |fuelType |EleclifeSupportDevices  |GaslifeSupportDevices |
+      |Yes                |BOTH     |Oxygen Concentratort    |Gas Other             |
+    And user submits the quote
+    Then user lands on checkout complete page
 
     Examples:
       |folderName                   |customer_type |fuelType |planName        |username             |password                         |
