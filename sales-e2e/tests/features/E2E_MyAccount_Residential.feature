@@ -5,7 +5,7 @@ Feature: This feature is to test the My account scenarios for residential custom
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
     When user logs in to my account using '<username>' and '<password>'
-    And user clicks on view and change plan accordion
+    And user clicks on view and change plan accordion for 'ELE'
     And user clicks on compare and switch plan button
     And user selects No for solar question and confirm
     And user selects plans on checkout details page

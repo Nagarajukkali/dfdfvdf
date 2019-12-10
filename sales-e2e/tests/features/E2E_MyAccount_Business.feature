@@ -5,7 +5,7 @@ Feature: This feature is to test the My account scenarios for business customers
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
     When user logs in to my account using '<username>' and '<password>'
-    And user clicks on view and change plan accordion
+    And user clicks on view and change plan accordion for 'ELE'
     And user clicks on compare and switch plan button
     And user selects No for solar question and confirm
     And user selects plans on checkout details page
@@ -17,7 +17,7 @@ Feature: This feature is to test the My account scenarios for business customers
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption  |fuelType |EleclifeSupportDevices  |GaslifeSupportDevices |
-      |Yes                |BOTH     |Oxygen Concentratort    |Gas Other             |
+      |Yes                |BOTH     |Oxygen Concentrator    |Gas Other             |
     And user submits the quote
     Then user lands on checkout complete page
 
