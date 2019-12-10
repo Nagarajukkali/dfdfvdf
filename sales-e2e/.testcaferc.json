@@ -17,7 +17,7 @@
 
   "skip-uncaught-errors": false,
   "pageLoadTimeout": 5000,
-  "skipJsErrors": false,
+  "skipJsErrors": true,
   "color": true,
   "proxy": "proxy.ealan.shinesolutions.com:3128",
   "proxyBypass": [
