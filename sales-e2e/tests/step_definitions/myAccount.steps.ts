@@ -1,13 +1,13 @@
 import {When} from "cucumber";
 import {testFunction} from '../../global_methods/helper';
 const eaMyAccount = require('../pages/myAccount.page');
-import {Crypto} from '../methods/Crypto';
 import {CustomerType} from '@ea/ea-commons-models';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
+const cryptoJS = require('crypto-js');
 
 When(/^user logs in to my account using '(.*)' and '(.*)'$/, async function(t, [username, password]) {
   await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfUsername, username);
-  await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfPassword, Crypto.decrypt(password));
+  await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfPassword, cryptoJS.AES.decrypt(password, username).toString(cryptoJS.enc.Utf8));
   await testFunction.click(t, eaMyAccount.elements.btnSignIn);
 });
 When(/^user clicks on view and change plan accordion$/, async function (t, []) {

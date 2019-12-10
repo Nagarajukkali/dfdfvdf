@@ -22,5 +22,5 @@ Feature: This feature is to test the My account scenarios for business customers
     Then user lands on checkout complete page
 
     Examples:
-      |folderName                   |customer_type |fuelType |planName        |username             |password                         |
-      |E2E_MyAccount_Residential_PS |BUS           |BOTH     |Basic Business  |e2e_bsme_ps@test.com |94-111-125-126-90-107-125-125-59 |
+      |folderName                   |customer_type |fuelType |planName        |username             |password                                     |
+      |E2E_MyAccount_Residential_PS |BUS           |BOTH     |Basic Business  |e2e_bsme_ps@test.com |U2FsdGVkX1+0r7zXQlO8CPFbEq3ETA40fGWjpN+WtGM= |
