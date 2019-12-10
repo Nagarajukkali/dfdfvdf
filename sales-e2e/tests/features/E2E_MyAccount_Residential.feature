@@ -22,5 +22,5 @@ Feature: This feature is to test the My account scenarios for residential custom
     Then user lands on checkout complete page
 
     Examples:
-      |folderName                   |customer_type |fuelType |planName        |username                               |password                                     |
-      |E2E_MyAccount_Residential_PS |BUS           |BOTH     |Basic Business  |Prateek.Chauhan@energyaustralia.com.au |U2FsdGVkX1+0r7zXQlO8CPFbEq3ETA40fGWjpN+WtGM= |
+      |folderName                   |username                               |password                                     |
+      |E2E_MyAccount_Residential_PS |Prateek.Chauhan@energyaustralia.com.au |U2FsdGVkX1+0r7zXQlO8CPFbEq3ETA40fGWjpN+WtGM= |
