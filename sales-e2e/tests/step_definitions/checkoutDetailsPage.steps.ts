@@ -58,3 +58,6 @@ When(/^user provides dob and id details$/, async function (t,[],dataTable) {
   await checkoutDetailsMethod.enterDOB(t);
   await checkoutDetailsMethod.checkoutIdentification(t,data[0].customerStatus,data[0].idType)
 });
+When(/^user provides business details$/, async function (t,[],dataTable) {
+  await checkoutDetailsMethod.provideBusinessDetails(t,'ABN')
+});

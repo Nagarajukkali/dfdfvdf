@@ -1,7 +1,7 @@
 import { newConnectionMethod } from '../methods/newConnection';
 import { When } from 'cucumber';
 import {cartsMethod} from '../methods/cartsPage';
-import {AustralianState, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
+import {AustralianState, CustomerType, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 
 When(/^user selects '(.*)' for new connection$/, async function(t,[fuelType]) {
     await newConnectionMethod.selectFuel(t, fuelType);
@@ -21,8 +21,12 @@ When(/^user provides connection details$/, async function (t,[],dataTable) {
 });
 When(/^user provides property details for electricity connection$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
+  let customerType=data[0].customerType;
   await newConnectionMethod.selectOptionForPoleInstallation(t,data[0].optionForPoleInstallation);
   await newConnectionMethod.selectOptionForOffPeakLoad(t,data[0].optionForOffPeakLoad);
+  if(customerType===CustomerType.BUSINESS){
+    await newConnectionMethod.selectOptionForAMPS(t,data[0].optionForAMPS);
+  }
   await newConnectionMethod.proceedToStep3(t);
 });
 When(/^user provides property contacts$/, async function (t,[],dataTable) {

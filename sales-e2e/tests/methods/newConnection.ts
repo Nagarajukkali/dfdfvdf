@@ -18,7 +18,7 @@ export class newConnectionMethod{
     if (customerType===CustomerType.RESIDENTIAL) {
       await testFunction.click(t,eaNewConnectionPage.elements.btnSelectResidential);
     }
-    else if (customerType.equalsIgnoreCase("BSME")) {
+    else if (customerType===CustomerType.BUSINESS) {
       await testFunction.click(t,eaNewConnectionPage.elements.btnSelectCommercial);
     }
   }
