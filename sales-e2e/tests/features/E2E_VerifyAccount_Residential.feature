@@ -1,3 +1,4 @@
+@E2E
 Feature: This feature is to test the verify account scenarios for existing residential customers
 
   Scenario Outline: Non moving residential customer
