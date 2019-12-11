@@ -27,7 +27,7 @@ export class newConnectionMethod{
     if (premiseType==='Single') {
       await testFunction.click(t,eaNewConnectionPage.elements.btnSelectSinglePremise);
     }
-    else if (premiseType.equalsIgnoreCase("Unit Development")) {
+    else if (premiseType==='Unit Development') {
       await testFunction.click(t,eaNewConnectionPage.elements.btnSelectUnitDevpremise);
     }
   }
