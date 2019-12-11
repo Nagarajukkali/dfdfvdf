@@ -180,7 +180,7 @@ export class testFunction {
 
   public static generateRandomText(length) {
     let result='';
-    let characters='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let characters='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
     let charactersLength=characters.length;
     for (let i=0; i < length; i++) {
       result +=characters.charAt(Math.floor(Math.random() * charactersLength));

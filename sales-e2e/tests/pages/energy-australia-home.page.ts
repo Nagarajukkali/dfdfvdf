@@ -3,6 +3,7 @@ import {Selector } from 'testcafe';
 
 const eaHomePage={
   pageUrl: config.eaHomePageUrl,
+  newConnectionPageUrl: config.eaNewConnectionPageUrl,
   elements: {
     selectedState: Selector("#navbar div[class*='state-value']"),
     residentialComparePlansButton: Selector('.icon-GasElectricity'),
