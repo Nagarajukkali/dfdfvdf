@@ -3,14 +3,11 @@ import { When } from 'cucumber';
 import {cartsMethod} from '../methods/cartsPage';
 import {AustralianState, CustomerType, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 
-When(/^user selects '(.*)' for new connection$/, async function(t,[fuelType]) {
-    await newConnectionMethod.selectFuel(t, fuelType);
-});
-
 When(/^user provides connection details$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
   let fuelType=data[0].fuelType;
   let state=data[0].state;
+  await newConnectionMethod.selectFuel(t, fuelType);
   await newConnectionMethod.selectProperty(t,data[0].customerType);
   await newConnectionMethod.selectPremise(t,data[0].premiseType);
   await newConnectionMethod.enterPropertyDetails(t,data[0].state,data[0].postcode);
