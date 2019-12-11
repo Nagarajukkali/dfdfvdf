@@ -192,7 +192,22 @@ export class testFunction {
     await t.expect((element).exists).notOk();
   }
 
-  public static async waitForElementToBeInvisible(t,element,value,expectedText?){
+  public static waitForLoadingIconToClose_MA() {
+    const waitForLoading = ClientFunction(() => {
+      return new Promise(resolve => {
+        const interval = setInterval(() => {
+          if (document.querySelector("[class*='spinner']")) {
+            return;
+          }
+          clearInterval(interval);
+          resolve();
+        }, 100);
+      });
+    });
+    return waitForLoading;
+  }
+
+  public static async waitForElementToBeInvisible(t,element,value,expectedText){
     for(let i=0;i<10;i++){
       const strVal=await testFunction.getElementAttribute(t,element,value);
       if(strVal.includes(expectedText)){
