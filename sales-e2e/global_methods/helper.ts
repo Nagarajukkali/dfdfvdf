@@ -192,10 +192,10 @@ export class testFunction {
     await t.expect((element).exists).notOk();
   }
 
-  public static waitForLoadingIconToClose_MA() {
-    const waitForLoading = ClientFunction(() => {
+  public static async waitForLoadingIconToClose_MA(t) {
+    const waitForLoading=ClientFunction(() => {
       return new Promise(resolve => {
-        const interval = setInterval(() => {
+        const interval=setInterval(() => {
           if (document.querySelector("[class*='spinner']")) {
             return;
           }
