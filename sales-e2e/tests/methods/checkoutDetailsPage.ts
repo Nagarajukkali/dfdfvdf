@@ -29,10 +29,10 @@ export class checkoutDetailsMethod{
     }
 
     public static async enterDOB(t){
-        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobDay,'01');
-        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobMonth,'01');
-        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobYear,'1980');
-        console.log("DOB entered");
+      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobDay,'01');
+      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobMonth,'01');
+      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobYear,'1980');
+      console.log("DOB entered");
     }
 
     public static async provideContactDetails(t){
