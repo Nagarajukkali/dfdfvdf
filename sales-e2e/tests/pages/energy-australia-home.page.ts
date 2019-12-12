@@ -4,6 +4,7 @@ import {Selector } from 'testcafe';
 const eaHomePage={
   pageUrl: config.eaHomePageUrl,
   newConnectionPageUrl: config.eaNewConnectionPageUrl,
+  campaignPageUrl: config.eaCampaignUrl,
   elements: {
     selectedState: Selector("#navbar div[class*='state-value']"),
     residentialComparePlansButton: Selector('.icon-GasElectricity'),
@@ -43,6 +44,9 @@ const eaHomePage={
     fuelSelectorOptionEle:Selector('#edit-fuel-selector-ele'),
     fuelSelectorOptionGas:Selector('#edit-fuel-selector-gas'),
     linkMoveHouse:Selector(".icon-moving"),
+    postcodeOnCampaignPage:Selector("#campaign-postcode-input"),
+    btnCampaignSearch:Selector("[id^='campaign-search-submit']"),
+    selectCampaignPlans:Selector("#action__submit"),
   },
 };
 
