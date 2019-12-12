@@ -178,3 +178,14 @@ export class verifyAccountMethod {
         await testFunction.clearAndEnterText(t,inputField, idValue);
     }
 }
+
+export class campaignMethod{
+  public static async enterPostcodeOnCampaign(t,postcode){
+    await testFunction.clearAndEnterText(t,EaHomePage.elements.postcodeOnCampaignPage,postcode);
+    await testFunction.click(t,EaHomePage.elements.btnCampaignSearch);
+  }
+
+  public static  async addPlanOnCampaign(t){
+    await testFunction.click(t,EaHomePage.elements.selectCampaignPlans);
+  }
+}

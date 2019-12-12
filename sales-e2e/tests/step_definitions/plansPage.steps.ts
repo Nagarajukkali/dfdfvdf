@@ -1,4 +1,4 @@
-import {plansMethod, verifyAccountMethod} from '../methods/plansPage';
+import {plansMethod, verifyAccountMethod,campaignMethod} from '../methods/plansPage';
 import {selectionOptionModalWindowMethod } from '../methods/plansPage';
 import {When, Then } from 'cucumber';
 import {Given} from 'cucumber'
@@ -47,4 +47,10 @@ When(/^user verifies the account through verify account journey for business cus
   await verifyAccountMethod.provideIdentityDetails(t, data[0].idType, data[0].idNumber);
   await verifyAccountMethod.verifyAccountDetails(t);
   await verifyAccountMethod.showCostEstimates(t);
+});
+When(/^user provides postcode and clicks on show me plan link$/, async function (t,[postcode]) {
+  await campaignMethod.enterPostcodeOnCampaign(t,postcode);
+});
+When(/^user clicks on Add plan button$/, async function (t) {
+  await campaignMethod.addPlanOnCampaign(t)
 });
