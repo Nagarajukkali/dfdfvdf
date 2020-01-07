@@ -61,3 +61,6 @@ When(/^user provides dob and id details$/, async function (t,[],dataTable) {
 When(/^user provides business details$/, async function (t,[],dataTable) {
   await checkoutDetailsMethod.provideBusinessDetails(t,'ABN')
 });
+When(/^user selects carbon neutral option$/, async function (t) {
+  await checkoutDetailsMethod.selectCarbonNeutralOption(t);
+});

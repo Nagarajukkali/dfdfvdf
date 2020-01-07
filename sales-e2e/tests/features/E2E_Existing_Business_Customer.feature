@@ -6,6 +6,7 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user has navigated to 'BUS' plans page
     When user selects '<planName>'
     And user moves on to fill the qualifier
+    And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
       |Existing      |2823184513   |ABN                |36580235200     |dob   |01011980|
@@ -23,14 +24,15 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user submits the quote
     Then user lands on checkout complete page
     Examples:
-      |planName         |folderName              |state|
-      |Basic Business   |E2E_Existing_Resi_Moving|VIC  |
+      |customerStatus|planName         |folderName              |state|
+      |Existing      |Basic Business   |E2E_Existing_Resi_Moving|VIC  |
 
   Scenario Outline: Submit a quote for existing business non moving customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
     When user selects '<planName>'
     And user moves on to fill the qualifier
+    And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
       |Existing      |4719568937   |ABN                |63824650000     |dob   |01011980|
@@ -48,7 +50,7 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user submits the quote
     Then user lands on checkout complete page
     Examples:
-      |planName         |folderName              |fuelType|accountType|
-      |Basic Business   |E2E_Existing_Resi_Moving|BOTH    |GAS        |
+      |customerStatus|planName         |folderName              |fuelType|accountType|
+      |Existing      |Basic Business   |E2E_Existing_Resi_Moving|BOTH    |GAS        |
 
 

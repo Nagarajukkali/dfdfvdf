@@ -50,4 +50,4 @@ Scenario Outline: Submit a quote for new business non moving customer
   Then user lands on checkout complete page
   Examples:
   |customerStatus|planName      |folderName            |
-  |NEW           |Basic Business|E2E_New_Resi_NonMoving|
+  |New           |Basic Business|E2E_New_Resi_NonMoving|

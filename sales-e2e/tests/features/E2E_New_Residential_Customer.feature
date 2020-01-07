@@ -10,6 +10,7 @@ Scenario Outline: Submit a quote for new residential moving customer
   And user provides all other details on qualifier page
     |customerType| connectionAddress               | movingType|propertyType|solarOption|
     |RES         | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |No         |
+  And user selects carbon neutral option
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|idType        |
     |RES         |RES        |New           | test     |test     |Driver License|
@@ -36,6 +37,7 @@ Scenario Outline: Submit a quote for new residential non moving customer
   And user provides all other details on qualifier page
     |customerType| connectionAddress               | movingType|propertyType|solarOption|
     |RES         | 5 Wilkies Street, BULLI NSW 2516|Non-Moving |Renter      |No         |
+  And user selects carbon neutral option
   And user provides all details on checkout details page
     |customerType |journey    |customerStatus| firstName| lastName|idType        |
     |RES          |RES        |New           | test     |test     |Driver License|

@@ -83,12 +83,13 @@ export class qualifierMethod{
         await testFunction.click(t,eaQualifierPage.elements.nonMoving);
       }
       else if(movingType===Moving.MOVING){
+        console.log("inside moving")
           await testFunction.click(t,eaQualifierPage.elements.moving);
       }
       else{
         console.error('moving option is not selected.');
       }
-      console.log(`${movingType} is selected`);
+    console.log(`${movingType} is selected`);
   }
 
   public static async provideAddress(t, address) {

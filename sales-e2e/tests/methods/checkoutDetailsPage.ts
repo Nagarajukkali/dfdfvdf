@@ -318,4 +318,7 @@ export class checkoutDetailsMethod{
         console.error("Invalid plan type");
     }
   }
+  public static async selectCarbonNeutralOption(t){
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.chkboxCarbonNeutral);
+  }
 }
