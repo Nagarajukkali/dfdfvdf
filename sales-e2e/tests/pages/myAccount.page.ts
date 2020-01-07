@@ -11,8 +11,16 @@ const eaMyAccount={
     gasViewAndChangePlan: Selector("a[href*='view']").nth(1),
     btnCompareAndSwitchPlans: Selector("[class*='header-action'] button"),
     btnSolarNo: Selector("[class*='qualifier-question'] label[for*='edit-solar-panels-field-1']"),
-    btnQualifierConfirm: Selector("[primaryactiontext*='Confirm'] [class*='ea-button--primary']")
-
+    btnQualifierConfirm: Selector("[primaryactiontext*='Confirm'] [class*='ea-button--primary']"),
+    eleMoveHome: Selector("a[href*='movers']").nth(0),
+    gasMoveHome: Selector("a[href*='movers']").nth(1),
+    serviceAddress: Selector(".form-control"),
+    serviceAddressList: Selector(".form-control+ ul>li a"),
+    moveHouseCalendarAvailableDates: Selector(".uib-day button:not([disabled])"),
+    btnSolarNo_MA: Selector("#mover-solar-button-no"),
+    btnLetsGetMoving: Selector("#mover-lets-get-moving-button"),
+    rbHomeImprovement_No: Selector("#option-prev-or-planned-home-improve-false"),
+    oneUXSpinner: Selector("[class*='spinner']").with({visibilityCheck: true})
   },
 };
 
