@@ -4,8 +4,8 @@ Feature:E2E scenario for existing residential moving and non moving customer
 Scenario Outline: Submit a quote for electricity new connection for residential customer
   Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
   When user provides connection details
-    |fuelType|customerType|premiseType|state|postcode|
-    |ELE     |RES         |Single     |VIC  |3008    |
+    |fuelType|customerType|premiseType|state   |postcode|
+    |ELE     |RES         |Single     |Victoria|3008    |
   And user provides property details for electricity connection
     |customerType|optionForPoleInstallation|optionForOffPeakLoad|
     |RES         |No                       |No                  |
