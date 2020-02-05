@@ -1,4 +1,4 @@
-const eaCheckoutDetailsPage=require('../pages/checkoutDetails.page');
+const eaCheckoutDetailsPage=require('../pages/checkOutDetails.page');
 const eaCheckoutReviewPage=require('../pages/checkoutReview.page');
 import {BusinessType, CustomerStatus, directDebitType, PlanType, testFunction} from '../../global_methods/helper';
 import {AustralianState, CustomerType} from '@ea/ea-commons-models';
