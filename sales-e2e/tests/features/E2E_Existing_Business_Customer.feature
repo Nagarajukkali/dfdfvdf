@@ -1,4 +1,4 @@
-@E2E
+@E2E1
 Feature:E2E scenario for existing business moving and non moving customer
 
   Scenario Outline: Submit a quote for existing business moving customer
