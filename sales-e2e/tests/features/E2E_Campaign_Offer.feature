@@ -1,4 +1,4 @@
-@E2E
+@E2E1
 Feature:E2E scenario for offer campaign
 
 Scenario Outline: Submit a quote for offer campaign
