@@ -103,22 +103,25 @@ export class newConnectionMethod{
     await testFunction.click(t,eaNewConnectionPage.elements.inputSameAsApplicant);
     await testFunction.clearAndEnterText(t,eaNewConnectionPage.elements.txtDOB,"01011980");
     await this.selectId(t,idType,state);
-    await testFunction.click(t,eaNewConnectionPage.elements.inputSameasSiteAddress);
+    await testFunction.click(t,eaNewConnectionPage.elements.inputSameAsSiteAddress);
   }
 
 
   public static async selectId(t,idType,state){
     await testFunction.click(t,eaNewConnectionPage.elements.applicantIdTypeActive);
     switch(idType){
-      case "Driver's License":
+      case "Driver's Licence":
         await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idTypeDl);
         await testFunction.click(t,eaNewConnectionPage.elements.idTypeDl);
+        break;
       case "Medicare":
         await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idTypeMedicare);
         await testFunction.click(t,eaNewConnectionPage.elements.idTypeMedicare);
+        break;
       case "Passport":
         await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idTypePassport);
         await testFunction.click(t,eaNewConnectionPage.elements.idTypePassport);
+        break;
     }
     await testFunction.clearAndEnterText(t,eaNewConnectionPage.elements.txtIdNo,testFunction.getRandomNumber(99999));
     await testFunction.click(t,eaNewConnectionPage.elements.applicantIdStateActive);
