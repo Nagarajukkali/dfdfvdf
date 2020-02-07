@@ -9,7 +9,7 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
-      |Existing      |2823184513   |ABN                |36580235200     |dob   |01011980|
+      |Existing      |8541728674   |ABN                |13756067200     |dob   |01011980|
     And user provides all other details on qualifier page for Existing customer
       |customerType|movingType |connectionAddress                         |solarOption|
       |BUS         |Moving     |36 Gregory Street West, WENDOUREE VIC 3355|No         |

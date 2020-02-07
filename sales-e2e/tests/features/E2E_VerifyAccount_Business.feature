@@ -8,7 +8,7 @@ Feature: This feature is to test the verify account scenarios for existing busin
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for business customer
       |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |ABNOrACN     |idType |idNumber  |
-      |BUS          |verify account |9637077680       |2026246137       |101111344    |dob    |01011980  |
+      |BUS          |verify account |2870412120       |3231348465       |78538656400  |dob    |01011980  |
     And user selects '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
@@ -32,7 +32,7 @@ Feature: This feature is to test the verify account scenarios for existing busin
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for business customer
       |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |ABNOrACN   |idType |idNumber  |
-      |BUS          |verify account |9637077680       |2026246137       |101111344  |dob    |01011980  |
+      |BUS          |verify account |5802060000       |7745301000       |30179084300|dob    |01011980  |
     And user selects '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
