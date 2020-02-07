@@ -1,5 +1,5 @@
 @E2E
-Feature:E2E scenario for existing residential moving and non moving customer
+Feature:E2E scenario for existing residential moving customer through move house
 
 Scenario Outline: Submit a quote for existing residential customer through move house
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -7,7 +7,7 @@ Scenario Outline: Submit a quote for existing residential customer through move 
   And user enters '<movingAddress>' in address field and selects any available moving date
   And user verifies account on qualifier
     |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
-    |Existing      |8372937428   |Postcode           |3024            |dob   |09121968|
+    |Existing      |8372937428   |Postcode           |3024            |dob   |01011980|
   And user provides all other details on qualifier page
     |customerType|movingType|connectionAddress               |propertyType |solarOption|
     |RES         |NA        |5 Wilkies Street, BULLI NSW 2516|Renter       |No         |

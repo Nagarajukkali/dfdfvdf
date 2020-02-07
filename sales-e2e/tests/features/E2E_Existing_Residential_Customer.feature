@@ -32,7 +32,7 @@ Scenario Outline: Submit a quote for existing residential moving customer
   |customerStatus|planName|folderName              |state|optDisconnection|
   |Existing      |Basic   |E2E_Existing_Resi_Moving|NSW  |Yes             |
 
-Scenario Outline: Submit a quote for existing residential non moving customer
+Scenario Outline: Submit a quote for existing residential non moving customer with LS, select dual fuel and verify gas account
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page
   When user selects '<planName>'

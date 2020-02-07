@@ -1,5 +1,5 @@
 @E2E
-Feature:E2E scenario for existing residential moving and non moving customer
+Feature:E2E scenario for new connection
 
 Scenario Outline: Submit a quote for electricity new connection for residential customer
   Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences

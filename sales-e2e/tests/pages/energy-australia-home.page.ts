@@ -32,7 +32,7 @@ const eaHomePage={
     familyViolenceMessage: Selector('.ea-message.error:last-of-type'),
     changeLinkVerifyAccount: Selector('.tablet-desktop-only .hs-refine-modal-cta__text>span'),
     basicPlan: Selector("[id*='plan-select-button-RSOT']"),
-    noFrills: Selector("[id*='plan-select-button-RCPP']"),
+    noFrillsPlan: Selector("[id*='plan-select-button-RCPP']"),
     totalPlan: Selector("[id*='plan-select-button-TOPH']"),
     totalPlanPlus: Selector("[id*='plan-select-button-SWSRH']"),
     basicBusiness:Selector('#plan-select-button-BSOT'),
