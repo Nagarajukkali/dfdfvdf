@@ -27,6 +27,6 @@ Scenario Outline: Submit a quote for existing residential customer through move 
   Then user lands on checkout complete page
   Examples:
     |folderName              |state|optDisconnection|movingAddress                   |
-    |E2E_Existing_Resi_Moving|NSW  |Yes             |5 Wilkies Street, BULLI NSW 2516|
+    |E2E_Existing_Resi_Moving|NSW  |No              |5 Wilkies Street, BULLI NSW 2516|
 
 

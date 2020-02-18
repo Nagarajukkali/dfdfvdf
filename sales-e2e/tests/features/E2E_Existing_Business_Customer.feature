@@ -35,7 +35,7 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
-      |Existing      |4719568937   |ABN                |63824650000     |dob   |01011980|
+      |Existing      |6261447599   |ABN                |63824650000     |dob   |01011980|
     And user provides all other details on qualifier page for Existing customer
       |customerType|movingType |solarOption|
       |BUS         |Non-Moving |No         |
