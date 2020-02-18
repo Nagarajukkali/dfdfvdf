@@ -166,6 +166,7 @@ export class verifyAccountMethod {
     }
 
     public static async showCostEstimates(t){
+        await testFunction.isElementDisplayed(t,EaHomePage.elements.getCostEstimatesChangeButton);
         await testFunction.click(t, EaHomePage.elements.getCostEstimatesChangeButton);
     }
 

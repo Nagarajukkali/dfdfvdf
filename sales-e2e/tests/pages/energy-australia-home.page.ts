@@ -8,6 +8,7 @@ const eaHomePage={
   elements: {
     selectedState: Selector("#navbar div[class*='state-value']"),
     residentialComparePlansButton: Selector('.icon-GasElectricity'),
+    plansCardFee:Selector("div.hs-plan-card-fees"),
     businessLink:Selector("[class*='menu-item--collapsed'] a[href^='/business']"),
     smallBusinessButton:Selector("a[class*='ea-button--primary'][href*='/small']"),
     ModalWindow: Selector('.tablet-desktop-only #hs-refine-modal-cta'),

@@ -10,7 +10,7 @@ Scenario Outline: Submit a quote for electricity new connection for residential 
     |customerType|optionForPoleInstallation|optionForOffPeakLoad|
     |RES         |No                       |No                  |
   And user provides property contacts
-    |idType          |state|
+
     |Driver's Licence|VIC  |
   And user submit the request
   And user clicks on proceed to quote

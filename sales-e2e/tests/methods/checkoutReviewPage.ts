@@ -32,11 +32,11 @@ export class checkoutReviewMethod {
     break;
   case FUEL_TYPE_OPTIONS.ELE.value:
     this.verifyDisplayOfExistingLSSectionForEleAccountVerified(t);
-    this.verifyLifeSupportQuestion(t,"Gas");
+    this.verifyLifeSupportQuestion(t,"GAS");
     break;
   case FUEL_TYPE_OPTIONS.GAS.value:
     this.verifyDisplayOfExistingLSSectionForGasAccountVerified(t);
-    this.verifyLifeSupportQuestion(t,"Electricity");
+    this.verifyLifeSupportQuestion(t,"ELE");
     break;
   default:
     console.error("Invalid account is selected");
@@ -44,10 +44,10 @@ export class checkoutReviewMethod {
 }
 
   public static async verifyExistingLSDetailsForEleSelected(t,verifiedAccount){
-    if(verifiedAccount.equalsIgnoreCase("Both") || verifiedAccount.equalsIgnoreCase("Electricity")){
+    if(verifiedAccount.equalsIgnoreCase("BOTH") || verifiedAccount.equalsIgnoreCase("ELE")){
       this.verifyDisplayOfExistingLSSectionForEleAccountVerified(t);
     }
-    else if(verifiedAccount.equalsIgnoreCase("Gas")){
+    else if(verifiedAccount.equalsIgnoreCase("GAS")){
       this.verifyLifeSupportQuestionForSingleFuel(t);
     }
     else{
@@ -91,7 +91,7 @@ export class checkoutReviewMethod {
 
 
   public static async verifyLifeSupportQuestion(t, fuelType) {
-      await testFunction.isElementDisplayed(t, eaCheckoutReviewPage.elements.lifeSupportQuestionSection);
+      await testFunction.isElementDisplayed(t, eaCheckoutReviewPage.elements.lifeSupportQuestion);
       switch (fuelType) {
           case FUEL_TYPE_OPTIONS.BOTH.value:
               await testFunction.assertText(t, eaCheckoutReviewPage.elements.lifeSupportQuestion, "Is anyone at this property on life support?");
@@ -103,8 +103,8 @@ export class checkoutReviewMethod {
               await testFunction.assertText(t, eaCheckoutReviewPage.elements.lifeSupportQuestion, "Is anyone at this property on life support for gas?");
               break;
       }
-      await t.expect(eaCheckoutReviewPage.elements.lifeSupportQuestionYes.hasClass("ea-state-active"));
-      await t.expect(eaCheckoutReviewPage.elements.lifeSupportQuestionNo.hasClass("ea-state-active"));
+      t.expect(eaCheckoutReviewPage.elements.lifeSupportQuestionYes.hasClass("ea-state-active"));
+      t.expect(eaCheckoutReviewPage.elements.lifeSupportQuestionNo.hasClass("ea-state-active"));
   }
 
   public static async verifyLifeSupportQuestionForSingleFuel(t) {
