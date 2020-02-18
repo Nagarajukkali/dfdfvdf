@@ -53,7 +53,7 @@ Scenario Outline: Submit a quote for existing residential non moving customer wi
     |lifeSupportOption|fuelType|EleclifeSupportDevices                  |GaslifeSupportDevices       |
     |Yes              |ELE     |Intermittent Peritoneal Dialysis Machine|                            |
   And user submits the quote
-  Then user lands on checkout complete page
+  And user lands on checkout complete page
   Examples:
     |customerStatus|planName |folderName                 |fuelType|accountType|
     |Existing      |No Frills|E2E_Existing_Resi_NonMoving|BOTH    |GAS        |

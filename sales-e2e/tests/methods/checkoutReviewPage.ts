@@ -44,10 +44,10 @@ export class checkoutReviewMethod {
 }
 
   public static async verifyExistingLSDetailsForEleSelected(t,verifiedAccount){
-    if(verifiedAccount.equalsIgnoreCase("BOTH") || verifiedAccount.equalsIgnoreCase("ELE")){
+    if(verifiedAccount===FUEL_TYPE_OPTIONS.BOTH.value || verifiedAccount===FUEL_TYPE_OPTIONS.ELE.value){
       this.verifyDisplayOfExistingLSSectionForEleAccountVerified(t);
     }
-    else if(verifiedAccount.equalsIgnoreCase("GAS")){
+    else if(verifiedAccount===FUEL_TYPE_OPTIONS.GAS.value){
       this.verifyLifeSupportQuestionForSingleFuel(t);
     }
     else{
@@ -56,10 +56,10 @@ export class checkoutReviewMethod {
   }
 
   public static async verifyExistingLSDetailsForGasSelected(t,verifiedAccount){
-    if(verifiedAccount.equalsIgnoreCase("Both") || verifiedAccount.equalsIgnoreCase("Gas")){
+    if(verifiedAccount===FUEL_TYPE_OPTIONS.BOTH.value || verifiedAccount===FUEL_TYPE_OPTIONS.GAS.value){
       this.verifyDisplayOfExistingLSSectionForGasAccountVerified(t);
     }
-    else if(verifiedAccount.equalsIgnoreCase("Electricity")){
+    else if(verifiedAccount===FUEL_TYPE_OPTIONS.ELE.value){
       this.verifyLifeSupportQuestionForSingleFuel(t);
     }
     else{

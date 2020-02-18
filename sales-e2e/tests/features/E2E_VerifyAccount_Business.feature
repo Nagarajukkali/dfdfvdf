@@ -20,7 +20,7 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user clicks on 'Review your order' button and navigates to review page
     Then Life support section is displayed on Review page as per selected "<fuelType>" and verified "<accountType>"
     And user submits the quote
-    Then user lands on checkout complete page
+    And user lands on checkout complete page
 
     Examples:
       |folderName                               |customer_type |fuelType |planName        |accountType|

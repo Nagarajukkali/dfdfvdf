@@ -48,7 +48,7 @@ Feature:E2E scenario for existing business moving and non moving customer
       |lifeSupportOption|fuelType|EleclifeSupportDevices                      |GaslifeSupportDevices       |
       |No               |ELE     |Chronic Positive Airways Pressure Respirator|                            |
     And user submits the quote
-    Then user lands on checkout complete page
+    And user lands on checkout complete page
     Examples:
       |customerStatus|planName         |folderName              |fuelType|accountType|
       |Existing      |Basic Business   |E2E_Existing_Resi_Moving|BOTH    |ELE        |
