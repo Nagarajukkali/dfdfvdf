@@ -6,7 +6,7 @@
   "browsers": [
     "chrome:headless"
   ],
-  "concurrency": 2,
+  "concurrency": 3,
   "reporter": [{
           "name": "cucumber-json",
           "output": "results/report/report.json"
@@ -14,9 +14,10 @@
       ],
   "screenshotPath": "results/screenshots",
   "fullPage": true,
-
+  "debugMode": false,
   "skip-uncaught-errors": false,
   "pageLoadTimeout": 5000,
+  "selectorTimeout": 5000,
   "skipJsErrors": true,
   "color": true,
   "proxy": "proxy.ealan.shinesolutions.com:3128",

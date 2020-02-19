@@ -195,6 +195,7 @@ export class checkoutDetailsMethod{
     await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.aahFirstName, fName);
     await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.aahLastName, lName);
     await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.aahEmail, email);
+    await t.wait(2000);
     await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl2);
     console.log("AAH details provided");
   }

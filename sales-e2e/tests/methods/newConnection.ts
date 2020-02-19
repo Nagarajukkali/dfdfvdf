@@ -48,7 +48,6 @@ export class newConnectionMethod{
 
   public static async proceedToStep2(t) {
     await testFunction.click(t,eaNewConnectionPage.elements.btnProceedToStep2);
-    await testFunction.isElementDisplayed(t,eaNewConnectionPage.elements.inputInstallingPoleNo);
   }
 
   public static async selectOptionForPoleInstallation(t,option) {

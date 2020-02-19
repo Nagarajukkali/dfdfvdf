@@ -8,9 +8,11 @@ const eaMyAccount = require('../pages/myAccount.page');
 Given(/^user has navigated to '(.*)' plans page$/, async function(t, [customerType]) {
   if(customerType===CustomerType.RESIDENTIAL){
     await testFunction.click(t, eaHomePage.elements.residentialComparePlansButton);
+    await testFunction.isElementDisplayed(t,eaHomePage.elements.plansCardFee);
   }else if (customerType===CustomerType.BUSINESS){
     await testFunction.click(t, eaHomePage.elements.businessLink);
     await testFunction.click(t, eaHomePage.elements.smallBusinessButton);
+    await testFunction.isElementDisplayed(t,eaHomePage.elements.plansCardFee);
   }
 });
 

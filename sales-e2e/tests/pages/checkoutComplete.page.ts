@@ -3,6 +3,7 @@ import {Selector } from 'testcafe';
 const eaCheckoutCompletePage={
   elements: {
     lblWelcomeText: Selector("[id*='WelText']"),
+    lblWhatHappensNowText:Selector("#whatHappensNow"),
     lifeSupportSubmitDisclaimer: Selector("#life-support-submit-disclaimer"),
     linkDownloadForm: Selector("#life-support-submit-disclaimer a[href*='.pdf']"),
     elecLifeSupport: Selector("#record-ele-life-support"),

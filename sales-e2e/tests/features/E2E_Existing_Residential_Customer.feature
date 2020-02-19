@@ -9,7 +9,7 @@ Scenario Outline: Submit a quote for existing residential moving customer
   And user selects '<customerStatus>' on qualifier
   And user verifies account on qualifier
     |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
-    |Existing      |8372937428   |Postcode           |3024            |dob   |09121968|
+    |Existing      |8372937428   |Postcode           |3024            |dob   |01011980|
   And user provides all other details on qualifier page for Existing customer
     |customerType|movingType |connectionAddress               |propertyType |solarOption|
     |RES         |Moving     |5 Wilkies Street, BULLI NSW 2516|Renter       |No         |
@@ -30,9 +30,9 @@ Scenario Outline: Submit a quote for existing residential moving customer
   Then user lands on checkout complete page
   Examples:
   |customerStatus|planName|folderName              |state|optDisconnection|
-  |Existing      |Basic   |E2E_Existing_Resi_Moving|NSW  |Yes             |
+  |Existing      |Basic   |E2E_Existing_Resi_Moving|NSW  |No              |
 
-Scenario Outline: Submit a quote for existing residential non moving customer
+Scenario Outline: Submit a quote for existing residential non moving customer with LS, select dual fuel and verify gas account
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page
   When user selects '<planName>'
@@ -40,7 +40,7 @@ Scenario Outline: Submit a quote for existing residential non moving customer
   And user selects '<customerStatus>' on qualifier
   And user verifies account on qualifier
     |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
-    |Existing      |5134624952   |Postcode           |2516            |dob   |12101958|
+    |Existing      |5134624952   |Postcode           |2516            |dob   |01011980|
   And user provides all other details on qualifier page for Existing customer
     |customerType|movingType |propertyType |solarOption  |
     |RES         |Non-Moving |Owner        |No           |
@@ -53,7 +53,7 @@ Scenario Outline: Submit a quote for existing residential non moving customer
     |lifeSupportOption|fuelType|EleclifeSupportDevices                  |GaslifeSupportDevices       |
     |Yes              |ELE     |Intermittent Peritoneal Dialysis Machine|                            |
   And user submits the quote
-  Then user lands on checkout complete page
+  And user lands on checkout complete page
   Examples:
     |customerStatus|planName |folderName                 |fuelType|accountType|
     |Existing      |No Frills|E2E_Existing_Resi_NonMoving|BOTH    |GAS        |

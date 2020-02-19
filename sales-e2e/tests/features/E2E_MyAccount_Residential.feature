@@ -1,4 +1,4 @@
-@E2E
+#@E2E
 Feature: This feature is to test the My account scenarios for residential customers
 
   Scenario Outline: Verify the RESI Plan switch journey from My Account
@@ -25,7 +25,7 @@ Feature: This feature is to test the My account scenarios for residential custom
       |folderName                   |username                               |password                                     |
       |E2E_MyAccount_Residential_PS |Prateek.Chauhan@energyaustralia.com.au |U2FsdGVkX1+0r7zXQlO8CPFbEq3ETA40fGWjpN+WtGM= |
 
-    
+
   Scenario Outline: Verify the RESI Move home journey from My Account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page

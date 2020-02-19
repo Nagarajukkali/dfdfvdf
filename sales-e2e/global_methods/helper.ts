@@ -1,8 +1,6 @@
 import { Selector } from 'testcafe';
 import { ClientFunction } from 'testcafe';
-import { error } from 'console';
 import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
-
 const replace={ replace: true };
 
   export enum CustomerStatus {
@@ -77,7 +75,7 @@ export class testFunction {
   }
 
   public static async isElementDisplayed(t: any, element: any) {
-    await t.expect((element).exists).ok;
+    await t.expect((element).exists).ok({ timeout: 30000 });
   }
 
   public static async maximizeWindow(t) {
@@ -95,14 +93,15 @@ export class testFunction {
     await t.scrollTo(element);
   }
 
-  public static async assertText(t, element, expectedFieldValue) {
-    const actualFieldValue=element.innerText;
+  public static async assertText(t, element, expectedFieldValue: string) {
+    const actualFieldValue: string = await this.getElementText(t,element);
     await t.expect(actualFieldValue).contains(expectedFieldValue);
   }
 
   public static async assertTextOnPage(t, text) {
     const actualPageContent=await Selector('html').textContent;
     await t.expect(actualPageContent).contains(text);
+
   }
 
   public static async assertPageURL(t, urlContent) {
@@ -143,7 +142,6 @@ export class testFunction {
   }
 
   public static getRandomNumber(range) {
-    // tslint:disable-next-line:radix
     return (parseInt(String(Math.random() * range)) % range + 1).toString();
   }
 
@@ -232,6 +230,9 @@ export class testFunction {
       }
   }
 
+  public static async waitForElementToBeDisappeared(t,element){
+    await t.expect(element.exists).notOk({ timeout: 30000 });
+  }
   public static async selectDateFromCalendar(t,element){
     const table=element;
     const tableElement=await element();

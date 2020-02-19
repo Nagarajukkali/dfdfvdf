@@ -4,7 +4,6 @@ import {BusinessType, CustomerStatus, IdType, Moving, Property, Solar, testFunct
 export class qualifierMethod{
 
   public static async selectCustomerStatus(t, customerStatus) {
-    console.log("pass");
     if(customerStatus===CustomerStatus.NEW){
         await testFunction.click(t,eaQualifierPage.elements.newCustomerBtn);
       }
