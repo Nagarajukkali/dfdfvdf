@@ -142,7 +142,6 @@ export class testFunction {
   }
 
   public static getRandomNumber(range) {
-    // tslint:disable-next-line:radix
     return (parseInt(String(Math.random() * range)) % range + 1).toString();
   }
 

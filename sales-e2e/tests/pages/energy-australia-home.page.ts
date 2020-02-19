@@ -20,6 +20,7 @@ const eaHomePage={
     postcodeVerifyAccount:Selector('#account-postcode'),
     businessInformation:Selector('#account-abnAcn'),
     nextAccountNumber:Selector('#refineModal .ea-modal__primary-action'),
+    eaSpinner:Selector(".ea-spinner.ng-star-inserted"),
     backAccountNumber:Selector('#refineModal .ea-modal__secondary-action'),
     idTypeDropDownVerifyAccount: Selector('#identification-selector-active-option'),
     idTypeDOBVerifyAccount: Selector('#edit-identification-selector-dob'),
