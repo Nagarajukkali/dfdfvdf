@@ -128,6 +128,7 @@ export class verifyAccountMethod {
 
     public static async verifyAccountDetails(t){
         await testFunction.click(t, EaHomePage.elements.nextAccountNumber);
+        await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
     }
 
     public static async provideIdentityDetails(t, idType, idValue){
@@ -166,6 +167,7 @@ export class verifyAccountMethod {
     }
 
     public static async showCostEstimates(t){
+        await testFunction.isElementDisplayed(t,EaHomePage.elements.getCostEstimatesChangeButton);
         await testFunction.click(t, EaHomePage.elements.getCostEstimatesChangeButton);
     }
 

@@ -9,7 +9,7 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
-      |Existing      |2823184513   |ABN                |36580235200     |dob   |01011980|
+      |Existing      |8541728674   |ABN                |13756067200     |dob   |01011980|
     And user provides all other details on qualifier page for Existing customer
       |customerType|movingType |connectionAddress                         |solarOption|
       |BUS         |Moving     |36 Gregory Street West, WENDOUREE VIC 3355|No         |
@@ -27,7 +27,7 @@ Feature:E2E scenario for existing business moving and non moving customer
       |customerStatus|planName         |folderName              |state|
       |Existing      |Basic Business   |E2E_Existing_Resi_Moving|VIC  |
 
-  Scenario Outline: Submit a quote for existing business non moving customer
+  Scenario Outline: Submit a quote for existing business non moving customer with LS, select dual fuel and verify electricity account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
     When user selects '<planName>'
@@ -35,7 +35,7 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
-      |Existing      |4719568937   |ABN                |63824650000     |dob   |01011980|
+      |Existing      |6261447599   |ABN                |63824650000     |dob   |01011980|
     And user provides all other details on qualifier page for Existing customer
       |customerType|movingType |solarOption|
       |BUS         |Non-Moving |No         |
@@ -48,9 +48,9 @@ Feature:E2E scenario for existing business moving and non moving customer
       |lifeSupportOption|fuelType|EleclifeSupportDevices                      |GaslifeSupportDevices       |
       |No               |ELE     |Chronic Positive Airways Pressure Respirator|                            |
     And user submits the quote
-    Then user lands on checkout complete page
+    And user lands on checkout complete page
     Examples:
       |customerStatus|planName         |folderName              |fuelType|accountType|
-      |Existing      |Basic Business   |E2E_Existing_Resi_Moving|BOTH    |GAS        |
+      |Existing      |Basic Business   |E2E_Existing_Resi_Moving|BOTH    |ELE        |
 
 

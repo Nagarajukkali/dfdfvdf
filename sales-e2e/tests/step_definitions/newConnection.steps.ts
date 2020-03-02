@@ -42,6 +42,7 @@ When(/^user clicks on proceed to quote$/, async function (t) {
 });
 When(/^user provides property details for gas connection$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
+  await t.wait(2000);
   await newConnectionMethod.selectOptionForServiceLineInstallation(t,data[0].optionForServiceLineInstallation);
   await newConnectionMethod.selectOptionForSiteClear(t,data[0].optionForSiteClearance);
   await newConnectionMethod.selectOptionForSiteMarked(t,data[0].optionForSiteMarking);

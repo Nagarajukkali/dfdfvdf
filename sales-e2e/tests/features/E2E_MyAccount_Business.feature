@@ -1,4 +1,4 @@
-@E2E
+#@E2E
 Feature: This feature is to test the My account scenarios for business customers
 
   Scenario Outline: Verify the BSME Plan switch journey from My Account

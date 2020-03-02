@@ -1,14 +1,14 @@
 @E2E
 Feature: This feature is to test the verify account scenarios for existing business customers
 
-  Scenario Outline: Non moving business customer
+  Scenario Outline: Non moving business customer with life support for both accounts
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
     And User have selected fuel as "<fuelType>"
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for business customer
       |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |ABNOrACN     |idType |idNumber  |
-      |BUS          |verify account |9637077680       |2026246137       |101111344    |dob    |01011980  |
+      |BUS          |verify account |2870412120       |3231348465       |78538656400  |dob    |01011980  |
     And user selects '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
@@ -18,12 +18,13 @@ Feature: This feature is to test the verify account scenarios for existing busin
       |customerType|journey    |customerStatus|firstName|lastName|businessType |
       |BUS         |BUS        |Existing      |test     |test    |ABN          |
     And user clicks on 'Review your order' button and navigates to review page
+    Then Life support section is displayed on Review page as per selected "<fuelType>" and verified "<accountType>"
     And user submits the quote
-    Then user lands on checkout complete page
+    And user lands on checkout complete page
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName        |
-      |E2E_VerifyAccount_Business_NonMoving     |BUS           |BOTH     |Basic Business  |
+      |folderName                               |customer_type |fuelType |planName        |accountType|
+      |E2E_VerifyAccount_Business_NonMoving     |BUS           |BOTH     |Basic Business  |BOTH       |
 
   Scenario Outline: Moving business customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -32,7 +33,7 @@ Feature: This feature is to test the verify account scenarios for existing busin
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for business customer
       |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |ABNOrACN   |idType |idNumber  |
-      |BUS          |verify account |9637077680       |2026246137       |101111344  |dob    |01011980  |
+      |BUS          |verify account |5802060000       |7745301000       |30179084300|dob    |01011980  |
     And user selects '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
