@@ -2,7 +2,7 @@ module.exports={
 config: {
     env: 'non-prod',
     eaHomePageUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au?live=disabled',
-    eaNewConnectionPageUrl:'https://mocha.nonprod.digital.energyaustralia.com.au/new-connections-v2020-ui/index.html',
+    eaNewConnectionPageUrl:'https://preprod.nonprod.digital.energyaustralia.com.au/new-connections-ui/#/connection',
     eaCampaignUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au/offer?live=disabled',
     eaMyAccountUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au/myaccount/index.html'
   },

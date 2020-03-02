@@ -87,7 +87,7 @@ export class newConnectionMethod{
   }
 
   public static async proceedToStep4(t) {
-    await testFunction.click(t,eaNewConnectionPage.elements.btnProceedToStep4);
+    await testFunction.click(t,eaNewConnectionPage.elements.btnNext);
     await testFunction.isElementDisplayed(t,eaNewConnectionPage.elements.plumberTitleActive);
   }
 
@@ -129,30 +129,40 @@ export class newConnectionMethod{
       case "VIC":
         await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idStateVIC);
         await testFunction.click(t,eaNewConnectionPage.elements.idStateVIC);
+        break;
       case "NSW":
         await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idStateNSW);
         await testFunction.click(t,eaNewConnectionPage.elements.idStateNSW);
+        break;
       case "SA":
         await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idStateSA);
         await testFunction.click(t,eaNewConnectionPage.elements.idStateSA);
+        break;
       case "QLD":
         await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idStateQLD);
         await testFunction.click(t,eaNewConnectionPage.elements.idStateQLD);
       case "TAS":
         await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idStateTAS);
         await testFunction.click(t,eaNewConnectionPage.elements.idStateTAS);
+        break;
       case "ACT":
         await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idStateACT);
         await testFunction.click(t,eaNewConnectionPage.elements.idStateACT);
+        break;
       case "WA":
         await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idStateWA);
         await testFunction.click(t,eaNewConnectionPage.elements.idStateWA);
+        break;
       case "NT":
         await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idStateNT);
         await testFunction.click(t,eaNewConnectionPage.elements.idStateNT);
+        break;
       case "International":
         await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idStateInternational);
         await testFunction.click(t,eaNewConnectionPage.elements.idStateInternational);
+        break;
+      default:
+        console.error("State is invalid");
     }
 
   }
