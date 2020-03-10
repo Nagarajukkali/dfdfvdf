@@ -47,7 +47,8 @@ export class newConnectionMethod{
   }
 
   public static async proceedToStep2(t) {
-    await testFunction.click(t,eaNewConnectionPage.elements.btnProceedToStep2);
+    await testFunction.click(t,eaNewConnectionPage.elements.btnNext);
+    await testFunction.isElementDisplayed(t,eaNewConnectionPage.elements.inputInstallingPoleNo);
   }
 
   public static async selectOptionForPoleInstallation(t,option) {
@@ -81,12 +82,12 @@ export class newConnectionMethod{
   }
 
   public static async proceedToStep3(t) {
-    await testFunction.click(t,eaNewConnectionPage.elements.btnProceedToStep3);
+    await testFunction.click(t,eaNewConnectionPage.elements.btnNext);
     await testFunction.isElementDisplayed(t,eaNewConnectionPage.elements.applicantTitleActive);
   }
 
   public static async proceedToStep4(t) {
-    await testFunction.click(t,eaNewConnectionPage.elements.btnProceedToStep4);
+    await testFunction.click(t,eaNewConnectionPage.elements.btnNext);
     await testFunction.isElementDisplayed(t,eaNewConnectionPage.elements.plumberTitleActive);
   }
 
@@ -100,21 +101,70 @@ export class newConnectionMethod{
     await testFunction.clearAndEnterText(t,eaNewConnectionPage.elements.txtMobileNo,("03"+testFunction.getRandomNumber(99999999)).padEnd(10,"0"));
     await testFunction.clearAndEnterText(t,eaNewConnectionPage.elements.txtEmail,testFunction.generateRandomText(5)+"@gmail.com");
     await testFunction.click(t,eaNewConnectionPage.elements.inputSameAsApplicant);
-    await testFunction.clearAndEnterText(t,eaNewConnectionPage.elements.txtDOB_dd,"01");
-    await testFunction.clearAndEnterText(t,eaNewConnectionPage.elements.txtDOB_mm,"01");
-    await testFunction.clearAndEnterText(t,eaNewConnectionPage.elements.txtDOB_yyyy,"1980");
+    await testFunction.clearAndEnterText(t,eaNewConnectionPage.elements.txtDOB,"01011980");
     await this.selectId(t,idType,state);
-    await testFunction.click(t,eaNewConnectionPage.elements.inputSameasSiteAddress);
+    await testFunction.click(t,eaNewConnectionPage.elements.inputSameAsSiteAddress);
   }
+
 
   public static async selectId(t,idType,state){
     await testFunction.click(t,eaNewConnectionPage.elements.applicantIdTypeActive);
-    await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idType);
-    await testFunction.click(t,eaNewConnectionPage.elements.idType.withText(idType));
+    switch(idType){
+      case "Driver's Licence":
+        await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idTypeDl);
+        await testFunction.click(t,eaNewConnectionPage.elements.idTypeDl);
+        break;
+      case "Medicare":
+        await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idTypeMedicare);
+        await testFunction.click(t,eaNewConnectionPage.elements.idTypeMedicare);
+        break;
+      case "Passport":
+        await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idTypePassport);
+        await testFunction.click(t,eaNewConnectionPage.elements.idTypePassport);
+        break;
+    }
     await testFunction.clearAndEnterText(t,eaNewConnectionPage.elements.txtIdNo,testFunction.getRandomNumber(99999));
     await testFunction.click(t,eaNewConnectionPage.elements.applicantIdStateActive);
-    await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idState);
-    await testFunction.click(t,eaNewConnectionPage.elements.idState.withText(state));
+    switch(state){
+      case "VIC":
+        await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idStateVIC);
+        await testFunction.click(t,eaNewConnectionPage.elements.idStateVIC);
+        break;
+      case "NSW":
+        await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idStateNSW);
+        await testFunction.click(t,eaNewConnectionPage.elements.idStateNSW);
+        break;
+      case "SA":
+        await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idStateSA);
+        await testFunction.click(t,eaNewConnectionPage.elements.idStateSA);
+        break;
+      case "QLD":
+        await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idStateQLD);
+        await testFunction.click(t,eaNewConnectionPage.elements.idStateQLD);
+      case "TAS":
+        await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idStateTAS);
+        await testFunction.click(t,eaNewConnectionPage.elements.idStateTAS);
+        break;
+      case "ACT":
+        await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idStateACT);
+        await testFunction.click(t,eaNewConnectionPage.elements.idStateACT);
+        break;
+      case "WA":
+        await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idStateWA);
+        await testFunction.click(t,eaNewConnectionPage.elements.idStateWA);
+        break;
+      case "NT":
+        await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idStateNT);
+        await testFunction.click(t,eaNewConnectionPage.elements.idStateNT);
+        break;
+      case "International":
+        await testFunction.isElementVisible(t,eaNewConnectionPage.elements.idStateInternational);
+        await testFunction.click(t,eaNewConnectionPage.elements.idStateInternational);
+        break;
+      default:
+        console.error("State is invalid");
+    }
+
   }
 
   public static async plumberDetails(t) {

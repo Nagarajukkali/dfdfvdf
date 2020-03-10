@@ -11,7 +11,7 @@ When(/^user provides connection details$/, async function (t,[],dataTable) {
   await newConnectionMethod.selectProperty(t,data[0].customerType);
   await newConnectionMethod.selectPremise(t,data[0].premiseType);
   await newConnectionMethod.enterPropertyDetails(t,data[0].state,data[0].postcode);
-  if(fuelType===FUEL_TYPE_OPTIONS.GAS.value && state===AustralianState.VIC){
+  if(fuelType===FUEL_TYPE_OPTIONS.GAS.value && state==="Victoria"){
     await newConnectionMethod.selectConnectionType(t,data[0].connectionType);
   }
   await newConnectionMethod.proceedToStep2(t);
@@ -46,7 +46,6 @@ When(/^user provides property details for gas connection$/, async function (t,[]
   await newConnectionMethod.selectOptionForServiceLineInstallation(t,data[0].optionForServiceLineInstallation);
   await newConnectionMethod.selectOptionForSiteClear(t,data[0].optionForSiteClearance);
   await newConnectionMethod.selectOptionForSiteMarked(t,data[0].optionForSiteMarking);
-  await newConnectionMethod.proceedToStep3(t);
 });
 When(/^user selects appliances$/, async function (t) {
   await newConnectionMethod.selectAppliancesFromList(t);

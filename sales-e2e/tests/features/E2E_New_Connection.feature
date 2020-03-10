@@ -4,8 +4,8 @@ Feature:E2E scenario for new connection
 Scenario Outline: Submit a quote for electricity new connection for residential customer
   Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
   When user provides connection details
-    |fuelType|customerType|premiseType|state|postcode|
-    |ELE     |RES         |Single     |VIC  |3008    |
+    |fuelType|customerType|premiseType|state   |postcode|
+    |ELE     |RES         |Single     |Victoria|3008    |
   And user provides property details for electricity connection
     |customerType|optionForPoleInstallation|optionForOffPeakLoad|
     |RES         |No                       |No                  |
@@ -33,8 +33,8 @@ Scenario Outline: Submit a quote for electricity new connection for residential 
   Scenario Outline: Submit a quote for gas new connection for residential customer
     Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
     When user provides connection details
-      |fuelType|customerType|premiseType|state|postcode|connectionType    |
-      |GAS     |RES         |Single     |VIC  |3008    |Meter Installation|
+      |fuelType|customerType|premiseType|state   |postcode|connectionType    |
+      |GAS     |RES         |Single     |Victoria|3008    |Meter Installation|
     And user provides property details for gas connection
       |optionForServiceLineInstallation|optionForSiteClearance|optionForSiteMarking|
       |Yes                             |Yes                   |Yes                 |
@@ -59,12 +59,12 @@ Scenario Outline: Submit a quote for electricity new connection for residential 
     Examples:
       |fuelType|folderName          |
       |GAS     |E2E_Existing_Resi_NC|
-
+ 
   Scenario Outline: Submit a quote for electricity new connection for business customer
     Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
     When user provides connection details
-      |fuelType|customerType|premiseType|state|postcode|
-      |ELE     |BUS         |Single     |VIC  |3008    |
+      |fuelType|customerType|premiseType|state   |postcode|
+      |ELE     |BUS         |Single     |Victoria|3008    |
     And user provides property details for electricity connection
       |customerType|optionForPoleInstallation|optionForOffPeakLoad|optionForAMPS|
       |BUS         |No                       |No                  |Below        |
