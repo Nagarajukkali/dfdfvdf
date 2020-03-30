@@ -30,7 +30,7 @@ const eaHomePage={
     idTypePinVerifyAccount: Selector('#edit-identification-selector-pin'),
     usageData_ele: Selector('#hs-electricity-usage-description:first-of-type+div'),
     usageData_gas: Selector('#hs-gas-usage-description:first-of-type+div'),
-    getCostEstimatesChangeButton: Selector('#refineModal div.ea-modal__footer.ng-tns-c19-0>.ea-modal__primary-action'),
+    getCostEstimatesChangeButton: Selector('#modal-heading-wrapper-refineModal~div.ea-modal__footer>.ea-modal__primary-action'),
     familyViolenceMessage: Selector('.ea-message.error:last-of-type'),
     changeLinkVerifyAccount: Selector('.tablet-desktop-only .hs-refine-modal-cta__text>span'),
     basicPlan: Selector("[id*='plan-select-button-RSOT']"),
