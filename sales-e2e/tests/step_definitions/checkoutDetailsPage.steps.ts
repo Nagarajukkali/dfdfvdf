@@ -1,8 +1,7 @@
-import {CustomerStatus} from '../../global_methods/helper';
 import {When, Then } from 'cucumber';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 import {testFunction } from '../../global_methods/helper';
-import {AustralianState, CustomerType} from '@ea/ea-commons-models';
+import { CustomerType} from '@ea/ea-commons-models';
 
 When(/^user provides all details for existing customer on checkout details page$/, async function(t,[],dataTable){
   let data=dataTable.hashes();

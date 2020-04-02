@@ -3,7 +3,10 @@ const eaCheckoutReviewPage=require('../pages/checkoutReview.page');
 import {BusinessType, CustomerStatus, directDebitType, PlanType, testFunction} from '../../global_methods/helper';
 import {AustralianState, CustomerType} from '@ea/ea-commons-models';
 
+
 export class checkoutDetailsMethod{
+
+  public static emailAddress;
 
     public static async provideDetailsInAboutMeSection(t,journey,firstName,lastName){
         if((await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.titleDropdown)).includes('Please select')){
@@ -37,8 +40,9 @@ export class checkoutDetailsMethod{
 
     public static async provideContactDetails(t){
         let phoneNumber="03"+testFunction.getRandomNumber(99999999);
+      checkoutDetailsMethod.emailAddress=testFunction.generateRandomText(10)+'@energyaustralia.com.au';
         phoneNumber=phoneNumber.padEnd(10,"0");
-        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.email,'test@energyaustralia.com.au');
+        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.email,checkoutDetailsMethod.emailAddress);
         await testFunction.enterText(t,eaCheckoutDetailsPage.elements.phone,phoneNumber);
         console.log("Contact details provided");
     }

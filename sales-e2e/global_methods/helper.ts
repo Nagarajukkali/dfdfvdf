@@ -176,6 +176,13 @@ export class testFunction {
     return element.getAttribute(attribute);
   }
 
+
+
+  public static async selectValueFromList(t,element,option){
+    const listItem=element.find('option');
+    await t.click(element).click(listItem.withText(option));
+  }
+
   public static generateRandomText(length) {
     let result='';
     let characters='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';

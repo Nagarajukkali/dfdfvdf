@@ -24,9 +24,15 @@ Scenario Outline: Submit a quote for new residential moving customer
     |Yes              |BOTH    |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
   And user submits the quote
   Then user lands on checkout complete page
+  When user has opened the qt2 Reporting website link in a browser
+  And user logs in to qt2 reporting using '<username>' and '<password>'
+  And user search quote on the basis of 'Email'
+  Then submitted quote is displayed
+  And user validates all the details related to submitted quote
   Examples:
-    |customerStatus|planName|folderName             |state|
-    |New           |Total Plan  |E2E_New_Resi_Moving|NSW  |
+    |customerStatus|planName|folderName             |state|username|password                                    |
+    |New           |Total Plan  |E2E_New_Resi_Moving|NSW  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+
 
 Scenario Outline: Submit a quote for new residential non moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences

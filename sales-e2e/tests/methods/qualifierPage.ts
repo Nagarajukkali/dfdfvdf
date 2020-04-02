@@ -1,5 +1,5 @@
 const eaQualifierPage=require('../pages/qualifier.page');
-import {BusinessType, CustomerStatus, IdType, Moving, Property, Solar, testFunction} from '../../global_methods/helper';
+import {BusinessType, CustomerStatus, Moving, Property, Solar, testFunction} from '../../global_methods/helper';
 
 export class qualifierMethod{
 
@@ -97,6 +97,7 @@ export class qualifierMethod{
       await testFunction.clickElementFromList(t,eaQualifierPage.elements.serviceAddressList,address);
       await testFunction.isElementVisible(t, eaQualifierPage.elements.addressLoadingIcon);
       await testFunction.waitForLoadingIconToClose();
+      await t.wait(3000);
       await testFunction.click(t, eaQualifierPage.elements.addressContinue);
       console.log(`${address} is provided`);
   }

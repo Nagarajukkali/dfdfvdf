@@ -1,5 +1,5 @@
 import {qualifierMethod} from '../methods/qualifierPage';
-import {testFunction, Moving, CustomerStatus} from '../../global_methods/helper';
+import {testFunction, Moving} from '../../global_methods/helper';
 import {When, Then } from 'cucumber';
 import {CustomerType} from '@ea/ea-commons-models';
 const eaQualifierPage=require('../pages/qualifier.page');
