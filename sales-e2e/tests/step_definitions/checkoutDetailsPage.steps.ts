@@ -1,4 +1,4 @@
-import {When, Then } from 'cucumber';
+import {When} from 'cucumber';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 import {testFunction } from '../../global_methods/helper';
 import { CustomerType} from '@ea/ea-commons-models';

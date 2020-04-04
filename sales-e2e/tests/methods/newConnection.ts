@@ -1,7 +1,7 @@
 import {CustomerType, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 
 const eaNewConnectionPage=require('../pages/newConnection.page');
-import {BusinessType, CustomerStatus, IdType, Moving, Property, Solar, testFunction} from '../../global_methods/helper';
+import {testFunction} from '../../global_methods/helper';
 
 export class newConnectionMethod{
 
