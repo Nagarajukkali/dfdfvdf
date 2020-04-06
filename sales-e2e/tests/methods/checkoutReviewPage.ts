@@ -1,9 +1,12 @@
 import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 const eaCheckoutReviewPage=require('../pages/checkoutReview.page')
 import {LSDevices, SelectionType, testFunction} from '../../global_methods/helper';
+import {plansMethod} from './plansPage';
+import {checkoutDetailsMethod} from './checkoutDetailsPage';
 
 
 export class checkoutReviewMethod {
+
     public static async verifyLifeSupportSection(t) {
       await testFunction.isElementDisplayed(t, eaCheckoutReviewPage.elements.lifeSupportHeader);
       await testFunction.isElementDisplayed(t, eaCheckoutReviewPage.elements.lifeSupportDisclaimer);
@@ -123,6 +126,33 @@ export class checkoutReviewMethod {
         console.error("Invalid option selected.");
       }
   }
+
+  public static async getDiscount(t,fuelType){
+      if(testFunction.isElectricity(fuelType)){
+        let elePlanName=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtElePlanName);
+        console.log(elePlanName);
+        await testFunction.click(t,eaCheckoutReviewPage.elements.imgReviewSectionEle);
+        let eleDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtEleDiscount);
+        console.log(eleDiscount);
+        if(elePlanName.includes('Total Plan')){
+          let eleSourceCode=elePlanName.split(" ")[0]+'_'+eleDiscount.split(" ")[1]+'GD';
+          checkoutDetailsMethod.map.set('ele source code',eleSourceCode);
+        }
+      }
+      if(testFunction.isGas(fuelType)){
+        let gasPlanName=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasPlanName);
+        console.log(gasPlanName);
+        await testFunction.click(t,eaCheckoutReviewPage.elements.imgReviewSectionGas);
+        let gasDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasDiscount);
+        console.log(gasDiscount)
+        if(gasPlanName.includes('Total Plan')){;
+          let gasSourceCode=gasPlanName.split(" ")[0]+'_'+gasDiscount.split(" ")[1]+'GD';
+          checkoutDetailsMethod.map.set('gas source code',gasSourceCode);
+        }
+      }
+      return checkoutDetailsMethod.map;
+  }
+
 
   public static async submitQuote(t){
       await testFunction.click(t, eaCheckoutReviewPage.elements.agreeAndConfirm);

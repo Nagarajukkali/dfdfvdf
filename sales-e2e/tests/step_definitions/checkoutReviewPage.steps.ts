@@ -17,6 +17,7 @@ When(/^user provides life support details on review page$/, async function (t,[]
   let fuelType=data[0].fuelType;
   let lifeSupportOption=data[0].lifeSupportOption;
   await checkoutReviewMethod.answerLifeSupportQuestion(t,lifeSupportOption);
+  await checkoutReviewMethod.getDiscount(t,fuelType);
   if(lifeSupportOption==='Yes'){
     await checkoutReviewMethod.clickOnRegisterDeviceBtn(t,fuelType);
     if(testFunction.isElectricity(fuelType)){

@@ -23,10 +23,22 @@ Feature: This feature is to test the verify account scenarios for existing resid
       |Yes              |BOTH    |Intermittent Peritoneal Dialysis Machine  |Gas Other              |
     And user submits the quote
     Then user lands on checkout complete page
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'ELE' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-EN |          |N                             |N                             |Y                      |OTHER                   |EMAIL        |
+    And user validates all the details for 'GAS' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-GN |          |N                             |N                             |Y                      |                        |EMAIL        |
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName    |
-      |E2E_VerifyAccount_Residential_NonMoving  |RES           |BOTH     |Total Plan  |
+      |folderName                               |customer_type |fuelType |planName    |username|password                                    |
+      |E2E_VerifyAccount_Residential_NonMoving  |RES           |BOTH     |Total Plan  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
   Scenario Outline: Moving residential customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -52,7 +64,19 @@ Feature: This feature is to test the verify account scenarios for existing resid
       |Yes              |BOTH    |Chronic Positive Airways Pressure Respirator  |Medically Required Hot Water |
     And user submits the quote
     Then user lands on checkout complete page
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'ELE' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-EN |          |N                             |N                             |Y                      |OTHER                   |EMAIL        |
+    And user validates all the details for 'GAS' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-GN |          |N                             |N                             |Y                      |                        |EMAIL        |
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName    |optDisconnection |state  |
-      |E2E_VerifyAccount_Residential_Moving     |RES           |BOTH     |Basic       |No               |VIC    |
+      |folderName                               |customer_type |fuelType |planName    |optDisconnection |state  |username|password                                    |
+      |E2E_VerifyAccount_Residential_Moving     |RES           |BOTH     |Basic       |No               |VIC    |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|

@@ -2,11 +2,13 @@ const eaCheckoutDetailsPage=require('../pages/checkOutDetails.page');
 const eaCheckoutReviewPage=require('../pages/checkoutReview.page');
 import {BusinessType, CustomerStatus, directDebitType, PlanType, testFunction} from '../../global_methods/helper';
 import {AustralianState, CustomerType} from '@ea/ea-commons-models';
+const fileUtils=require('../../libs/FileUtils.js');
+const Hashes=require('jshashes');
 
 
 export class checkoutDetailsMethod{
 
-  public static emailAddress;
+    public static map=new Map();
 
     public static async provideDetailsInAboutMeSection(t,journey,firstName,lastName){
         if((await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.titleDropdown)).includes('Please select')){
@@ -38,13 +40,31 @@ export class checkoutDetailsMethod{
       console.log("DOB entered");
     }
 
+   public static getScenarioId(t){
+     let MD5 = new Hashes.MD5;
+     let scenarioId=MD5.hex(t.testRun.test.testFile.currentFixture.name+' '+t.testRun.test.name);
+     return scenarioId;
+   }
+
+   public static getEmailWithScenario(t,email){
+      let scenarioId=this.getScenarioId(t);
+      this.map.set(scenarioId,email);
+      return this.map;
+   }
+
     public static async provideContactDetails(t){
         let phoneNumber="03"+testFunction.getRandomNumber(99999999);
-      checkoutDetailsMethod.emailAddress=testFunction.generateRandomText(10)+'@energyaustralia.com.au';
+        let emailAddress=testFunction.generateRandomText(10)+'@energyaustralia.com.au';
+        //let emailAddress=this.setEmailDetails(t).get(this.getScenarioId(t));
         phoneNumber=phoneNumber.padEnd(10,"0");
-        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.email,checkoutDetailsMethod.emailAddress);
+        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.email,emailAddress);
+        let MD5 = new Hashes.MD5;
+        let scenarioId=MD5.hex(t.testRun.test.testFile.currentFixture.name+' '+t.testRun.test.name);
+        console.log(emailAddress);
+        this.map.set(scenarioId,emailAddress);
         await testFunction.enterText(t,eaCheckoutDetailsPage.elements.phone,phoneNumber);
         console.log("Contact details provided");
+        return emailAddress;
     }
     public static async checkoutIdentification(t,customerStatus,idType){
         if(customerStatus===CustomerStatus.EXISTING){

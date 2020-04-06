@@ -23,9 +23,22 @@ Scenario Outline: Submit a quote for new business moving customer
     |Yes              |BOTH    |Kidney Dialysis Machine|Medically Required Heating and/or Air Conditioning|
   And user submits the quote
   Then user lands on checkout complete page
+  When user has opened the qt2 Reporting website link in a browser
+  And user logs in to qt2 reporting using '<username>' and '<password>'
+  And user search quote on the basis of 'Email'
+  Then submitted quote is displayed
+  And user validates all the details for 'ELE' submitted quote
+  And user validates below mandatory fields
+    |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+    |ELE     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-EN |          |N                             |N                             |Y                      |OTHER                   |EMAIL        |
+  And user validates all the details for 'GAS' submitted quote
+  And user validates below mandatory fields
+    |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+    |GAS     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-GN |          |N                             |N                             |Y                      |                        |EMAIL        |
+
   Examples:
-    |customerStatus|planName      |folderName        |state|
-    |New           |Basic Business|E2E_New_Bus_Moving|VIC  |
+    |customerStatus|planName      |folderName        |state|username|password                                    |
+    |New           |Basic Business|E2E_New_Bus_Moving|VIC  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
 Scenario Outline: Submit a quote for new business non moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -48,6 +61,19 @@ Scenario Outline: Submit a quote for new business non moving customer
     |Yes              |BOTH    |Ele Other             |Medically Required Heating and/or Air Conditioning|
   And user submits the quote
   Then user lands on checkout complete page
+  When user has opened the qt2 Reporting website link in a browser
+  And user logs in to qt2 reporting using '<username>' and '<password>'
+  And user search quote on the basis of 'Email'
+  Then submitted quote is displayed
+  And user validates all the details for 'ELE' submitted quote
+  And user validates below mandatory fields
+    |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+    |ELE     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-EN |          |N                             |N                             |Y                      |OTHER                   |EMAIL        |
+  And user validates all the details for 'GAS' submitted quote
+  And user validates below mandatory fields
+    |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+    |GAS     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-GN |          |N                             |N                             |Y                      |                        |EMAIL        |
+
   Examples:
-  |customerStatus|planName      |folderName            |
-  |New           |Basic Business|E2E_New_Resi_NonMoving|
+  |customerStatus|planName      |folderName            |username|password                                    |
+  |New           |Basic Business|E2E_New_Resi_NonMoving|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|

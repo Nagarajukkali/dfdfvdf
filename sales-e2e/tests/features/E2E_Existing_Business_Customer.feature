@@ -23,9 +23,22 @@ Feature:E2E scenario for existing business moving and non moving customer
       |Yes              |BOTH    |Ventilator For Life Support|Gas Other            |
     And user submits the quote
     Then user lands on checkout complete page
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'ELE' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-EN |          |N                             |N                             |Y                      |OTHER                   |EMAIL        |
+    And user validates all the details for 'GAS' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-GN |          |N                             |N                             |Y                      |                        |EMAIL        |
+
     Examples:
-      |customerStatus|planName         |folderName              |state|
-      |Existing      |Basic Business   |E2E_Existing_Resi_Moving|VIC  |
+      |customerStatus|planName         |folderName              |state|username|password                                    |
+      |Existing      |Basic Business   |E2E_Existing_Resi_Moving|VIC  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
   Scenario Outline: Submit a quote for existing business non moving customer with LS, select dual fuel and verify electricity account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -49,8 +62,21 @@ Feature:E2E scenario for existing business moving and non moving customer
       |No               |ELE     |Chronic Positive Airways Pressure Respirator|                            |
     And user submits the quote
     And user lands on checkout complete page
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'ELE' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-EN |          |N                             |N                             |Y                      |OTHER                   |EMAIL        |
+    And user validates all the details for 'GAS' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-GN |          |N                             |N                             |Y                      |                        |EMAIL        |
+
     Examples:
-      |customerStatus|planName         |folderName              |fuelType|accountType|
-      |Existing      |Basic Business   |E2E_Existing_Resi_Moving|BOTH    |ELE        |
+      |customerStatus|planName         |folderName              |fuelType|accountType|username|password                                    |
+      |Existing      |Basic Business   |E2E_Existing_Resi_Moving|BOTH    |ELE        |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
 

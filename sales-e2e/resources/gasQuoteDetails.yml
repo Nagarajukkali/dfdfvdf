@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2004044185
+    quoteId: BB2004064273
     sourceCode: Total_16%GD_50
-    actualQuoteDate: 2020-04-04
+    actualQuoteDate: 2020-04-06
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,13 +15,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0379492410
+      phoneNumber: 0373602629
     
-    emailId: ZmRrYtNRko@energyaustralia.com.au
+    emailId: CiXZrKtYQw@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 384822
+      id: 501930
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -52,11 +52,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-04-07
+    proposedStart: 2020-04-08
     offerType: ENE
     plan: TOPH-GN
     priceTag: GNAGA_NR2001
-    serviceOrderDate: 2020-04-07
+    serviceOrderDate: 2020-04-08
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5240924834

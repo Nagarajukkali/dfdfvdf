@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2004064270
-    sourceCode: Total_16%GD
+    quoteId: BB2004064324
+    sourceCode: Total_16%GD_50
     actualQuoteDate: 2020-04-06
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -15,13 +15,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0366592202
+      phoneNumber: 0371998600
     
-    emailId: cqcMWLCrzy@energyaustralia.com.au
+    emailId: bLPNAcDKYW@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 821770
+      id: 342444
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -52,9 +52,12 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    offerType: PS
+    proposedStart: 2020-04-08
+    offerType: ENE
     plan: TOPH-EN
     priceTag: ENIEA_NR1907
+    serviceOrderDate: 2020-04-08
+    serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 4311150544
     
@@ -64,9 +67,8 @@ saleDetail :
       customerWithLifeSupport: Y
     
     lifeSupportEquipment: 
-      lifeSupportEquipmentType: OTHER
+      lifeSupportEquipmentType: LSCNSPE
     
-    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
   
   offerDetail: 
     fuelType: G
@@ -83,5 +85,6 @@ saleDetail :
     priceTagMeteringCharge: M25161DN_IH
     proposedNTC: N70
     proposedMC: IHUBMC
+    reEnergisationJSCCharge: 0
   
 

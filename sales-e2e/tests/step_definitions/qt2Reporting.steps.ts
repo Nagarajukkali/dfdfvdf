@@ -4,6 +4,7 @@ import {Then} from 'cucumber'
 const fileUtils=require('../../libs/FileUtils.js');
 import {plansMethod} from '../methods//plansPage';
 import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
+import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 
 When(/^user logs in to qt2 reporting using '(.*)' and '(.*)'$/, async function(t, [username, password]) {
   await qt2Reporting.loginToqt2Reporting(t,username,password);
@@ -30,7 +31,7 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
   let renovationsInProgressOrPlanned=data[0].renovationsInProgressOrPlanned;
   let customerWithLifeSupport=data[0].customerWithLifeSupport
   let billRouteType=data[0].billRouteType;
-  let jsonObj=fileUtils.convertYmlTOJSONObj(fuelType);
+  let jsonObj=fileUtils.convertYmlTOJSONObj(t,fuelType);
   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.quoteStatus,quoteStatus);
   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.customerType,customerType);
   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.offerType,offerType);
@@ -39,20 +40,20 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
     let NMI=data[0].NMI;
     await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.nmiMirnInformation.NMI,NMI);
     if(jsonObj.saleDetail.offerDetail.offerType==='ENE'){
-      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,plansMethod.eleSourceCode+'_50');
+      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code')+'_50');
     }
     else{
-      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,plansMethod.eleSourceCode);
+      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code'));
     }
   }
   if(fuelType===FUEL_TYPE_OPTIONS.GAS.value){
     let MIRN=data[0].MIRN;
     await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.nmiMirnInformation.MIRN,MIRN);
     if(jsonObj.saleDetail.offerDetail.offerType==='ENE'){
-      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,plansMethod.gasSourceCode+'_50');
+      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code')+'_50');
     }
     else{
-      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,plansMethod.gasSourceCode);
+      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code'));
     }
   }
   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsSinceDeenergisation,renovationsSinceDeenergisation);
