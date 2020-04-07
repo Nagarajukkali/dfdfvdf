@@ -27,13 +27,13 @@ export class qt2Reporting {
     }
 
     public static async validateQuoteDetails(t,fuelType){
-      if(fuelType===FUEL_TYPE_OPTIONS.ELE.value){
+      if(await testFunction.isElectricity(fuelType)){
         let eleQuoteDetails=await this.getEleQuoteDetails(t);
         fileUtils.createYamlFile(t,eleQuoteDetails,fuelType);
         let jsonObj=fileUtils.convertYmlTOJSONObj(t,fuelType);
         this.verifyJSONData(jsonObj.saleDetail);
       }
-      if(fuelType===FUEL_TYPE_OPTIONS.GAS.value){
+      if(await testFunction.isGas(fuelType)){
         let gasQuoteDetails=await this.getGasQuoteDetails(t);
         fileUtils.createYamlFile(t,gasQuoteDetails,fuelType);
         let jsonObj=fileUtils.convertYmlTOJSONObj(t,fuelType);
