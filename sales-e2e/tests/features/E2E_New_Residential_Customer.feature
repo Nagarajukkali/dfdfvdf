@@ -1,6 +1,6 @@
 @E2E
 Feature:E2E scenario for new residential moving and non moving customer
-  @test
+
 Scenario Outline: Submit a quote for new residential moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page
@@ -22,6 +22,7 @@ Scenario Outline: Submit a quote for new residential moving customer
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
     |Yes              |BOTH    |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
+  And user verifies selected plan details for '<fuelType>'
   And user submits the quote
   Then user lands on checkout complete page
   When user has opened the qt2 Reporting website link in a browser
@@ -38,10 +39,10 @@ Scenario Outline: Submit a quote for new residential moving customer
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
   Examples:
-    |customerStatus|planName  |folderName             |state|username|password                                    |
-    |New           |Total Plan|E2E_New_Resi_Moving|NSW  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+    |customerStatus|fuelType|planName  |folderName             |state|username|password                                    |
+    |New           |BOTH    |Total Plan|E2E_New_Resi_Moving|NSW  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @test
+
 Scenario Outline: Submit a quote for new residential non moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page
@@ -62,6 +63,7 @@ Scenario Outline: Submit a quote for new residential non moving customer
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices                             |
     |Yes              |BOTH    |Ele Other             |Medically Required Heating and/or Air Conditioning|
+  And user verifies selected plan details for '<fuelType>'
   And user submits the quote
   Then user lands on checkout complete page
   When user has opened the qt2 Reporting website link in a browser
@@ -78,5 +80,5 @@ Scenario Outline: Submit a quote for new residential non moving customer
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-GV |5330733757|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
 
   Examples:
-    |customerStatus|planName|folderName                |username|password                                    |
-    |New           |Total Plan  |E2E_New_Resi_NonMoving|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+    |customerStatus|fuelType|planName|folderName                |username|password                                    |
+    |New           |BOTH    |Total Plan  |E2E_New_Resi_NonMoving|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|

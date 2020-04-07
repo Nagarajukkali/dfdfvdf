@@ -1,6 +1,6 @@
 @E2E
 Feature:E2E scenario for existing residential moving customer through move house
-  @test1
+
 Scenario Outline: Submit a quote for existing residential customer through move house
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   When user has navigated to move house page
@@ -23,6 +23,7 @@ Scenario Outline: Submit a quote for existing residential customer through move 
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices|
     |Yes              |BOTH    |Ele Other             |Gas Other            |
+  And user verifies selected plan details for '<fuelType>'
   And user submits the quote
   Then user lands on checkout complete page
   When user has opened the qt2 Reporting website link in a browser
@@ -39,7 +40,7 @@ Scenario Outline: Submit a quote for existing residential customer through move 
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
   Examples:
-    |folderName              |state|optDisconnection|movingAddress                   |username|password                                    |
-    |E2E_Existing_Resi_Moving|NSW  |No              |5 Wilkies Street, BULLI NSW 2516|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+    |folderName              |fuelType|state|optDisconnection|movingAddress                   |username|password                                    |
+    |E2E_Existing_Resi_Moving|BOTH    |NSW  |No              |5 Wilkies Street, BULLI NSW 2516|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
 

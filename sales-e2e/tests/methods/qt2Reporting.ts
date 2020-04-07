@@ -90,6 +90,7 @@ export class qt2Reporting {
     }
 
     public static async validateMandatoryField(t,actualValue,expectedValue){
+      console.log(actualValue+' is going to match with '+expectedValue);
       await testFunction.assertTextValue(t,actualValue.toString(),expectedValue.toString());
     }
 
