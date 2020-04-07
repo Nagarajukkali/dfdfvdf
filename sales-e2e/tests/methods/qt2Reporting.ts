@@ -19,10 +19,7 @@ export class qt2Reporting {
       await testFunction.isElementDisplayed(t,eaQt2Reporting.elements.listQt2Lookup);
       await testFunction.selectValueFromList(t,eaQt2Reporting.elements.listQt2Lookup,option);
       await testFunction.enterText(t,eaQt2Reporting.elements.txtEmail,checkoutDetailsMethod.map.get(checkoutDetailsMethod.getScenarioId(t)));
-
-      //await testFunction.enterText(t,eaQt2Reporting.elements.txtEmail,'fkBTOrrRNX@energyaustralia.com.au');
       await testFunction.click(t,eaQt2Reporting.elements.btnFind);
-      await t.wait(5000);
     }
 
     public static async verifySubmittedQuote(t){
@@ -71,9 +68,7 @@ export class qt2Reporting {
       await testFunction.click(t,eaQt2Reporting.elements.listQt2Lookup);
       await testFunction.click(t,eaQt2Reporting.elements.listQt2LookupEmail);
       await testFunction.enterText(t,eaQt2Reporting.elements.txtEmail,checkoutDetailsMethod.map.get(checkoutDetailsMethod.getScenarioId(t)));
-      //await testFunction.enterText(t,eaQt2Reporting.elements.txtEmail,'fkBTOrrRNX@energyaustralia.com.au');
       await testFunction.click(t,eaQt2Reporting.elements.btnFind);
-      await t.wait(5000);
     }
 
 
@@ -90,7 +85,6 @@ export class qt2Reporting {
     }
 
     public static async validateMandatoryField(t,actualValue,expectedValue){
-      console.log(actualValue+' is going to match with '+expectedValue);
       await testFunction.assertTextValue(t,actualValue.toString(),expectedValue.toString());
     }
 

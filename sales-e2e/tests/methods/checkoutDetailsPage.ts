@@ -55,12 +55,10 @@ export class checkoutDetailsMethod{
     public static async provideContactDetails(t){
         let phoneNumber="03"+testFunction.getRandomNumber(99999999);
         let emailAddress=testFunction.generateRandomText(10)+'@energyaustralia.com.au';
-        //let emailAddress=this.setEmailDetails(t).get(this.getScenarioId(t));
         phoneNumber=phoneNumber.padEnd(10,"0");
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.email,emailAddress);
         let MD5 = new Hashes.MD5;
         let scenarioId=MD5.hex(t.testRun.test.testFile.currentFixture.name+' '+t.testRun.test.name);
-        console.log(emailAddress);
         this.map.set(scenarioId,emailAddress);
         await testFunction.enterText(t,eaCheckoutDetailsPage.elements.phone,phoneNumber);
         console.log("Contact details provided");
