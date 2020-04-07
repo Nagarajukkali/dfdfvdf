@@ -5,9 +5,6 @@ import {IdType, PlanType, testFunction} from '../../global_methods/helper';
 
 export class plansMethod{
 
-  public static eleSourceCode;
-  public static gasSourceCode;
-
     public static async clickPlansPageModal(t, customerType) {
         if(customerType===CustomerType.RESIDENTIAL || customerType===CustomerType.BUSINESS){
             await testFunction.click(t,EaHomePage.elements.ModalWindow);
@@ -47,43 +44,27 @@ export class plansMethod{
       switch(planName){
         case PlanType.BASIC_HOME:
           await testFunction.click(t,EaHomePage.elements.basicPlan);
-          this.eleSourceCode='Basic';
-          this.gasSourceCode='Basic';
           break;
         case PlanType.NO_FRILLS:
           await testFunction.click(t,EaHomePage.elements.noFrillsPlan);
-          this.eleSourceCode='NOFRILLS';
-          this.gasSourceCode='NOFRILLS';
           break;
         case PlanType.TOTAL_PLAN:
           await testFunction.click(t,EaHomePage.elements.totalPlan);
-          this.eleSourceCode='Total_'+(await testFunction.getElementText(t,EaHomePage.elements.totalPlanEleDiscount)).trim()+'GD';
-          this.gasSourceCode='Total_'+(await testFunction.getElementText(t,EaHomePage.elements.totalPlanGasDiscount)).trim()+'GD';
           break;
         case PlanType.TOTAL_PLAN_PLUS:
-          await testFunction.click(t,EaHomePage.elements.totalPlusPlan);
-          this.eleSourceCode='Total_Plus_'+(await testFunction.getElementText(t,EaHomePage.elements.totalPlanPlusEleDiscount)).trim()+'GD';
-          this.gasSourceCode='Total_Plus_'+(await testFunction.getElementText(t,EaHomePage.elements.totalPlanPlusGasDiscount)).trim()+'GD';
+          await testFunction.click(t,EaHomePage.elements.totalPlanPlus);
           break;
         case PlanType.BASIC_BUSINESS:
           await testFunction.click(t,EaHomePage.elements.basicBusiness);
-          this.eleSourceCode='Basic';
-          this.gasSourceCode='Basic';
           break;
         case PlanType.NO_FRILLS_BUSINESS:
           await testFunction.click(t,EaHomePage.elements.noFrillBusiness);
-          this.eleSourceCode='NOFRILLS';
-          this.gasSourceCode='NOFRILLS';
           break;
         case PlanType.TOTAL_BUSINESS:
           await testFunction.click(t,EaHomePage.elements.totalPlanBusiness);
-          this.eleSourceCode='Total_'+(await testFunction.getElementText(t,EaHomePage.elements.totalPlanBusinessEleDiscount)).trim()+'GD';
-          this.gasSourceCode='Total_'+(await testFunction.getElementText(t,EaHomePage.elements.totalPlanBusinessGasDiscount)).trim()+'GD';
           break;
         case PlanType.TOTAL_PLAN_PLUS_BUSINESS:
           await testFunction.click(t,EaHomePage.elements.totalPlanPlusBusiness);
-          this.eleSourceCode='Total_Plus_'+(await testFunction.getElementText(t,EaHomePage.elements.totalPlanPlusBusinessEleDiscount)).trim()+'GD';
-          this.gasSourceCode='Total_Plus_'+(await testFunction.getElementText(t,EaHomePage.elements.totalPlanPlusBusinessGasDiscount)).trim()+'GD';
           break;
         default:
           console.error("Invalid plan is selected");

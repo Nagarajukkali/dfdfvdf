@@ -28,16 +28,16 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |TOPH-EN |          |N                             |N                             |Y                      |OTHER                   |EMAIL        |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |PS       |SWSRB-EV|6305402728|N                             |N                             |Y                      |OTHER                   |EMAIL        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |TOPH-GN |          |N                             |N                             |Y                      |                        |EMAIL        |
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |PS       |SWSRB-GV|5323580662|N                             |N                             |Y                      |                        |EMAIL        |
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName        |accountType|username|password                                    |
-      |E2E_VerifyAccount_Business_NonMoving     |BUS           |BOTH     |Basic Business  |BOTH       |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
-
+      |folderName                               |customer_type |fuelType |planName                |accountType|username|password                                    |
+      |E2E_VerifyAccount_Business_NonMoving     |BUS           |BOTH     |Total Plan Plus Business|BOTH       |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+  @test
   Scenario Outline: Moving business customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
@@ -68,11 +68,11 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-EN |          |N                             |N                             |Y                      |OTHER                   |EMAIL        |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-EV |6203822385|N                             |N                             |Y                      |LSCPAPR                 |EMAIL        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-GN |          |N                             |N                             |Y                      |                        |EMAIL        |
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GV |5330956738|N                             |N                             |Y                      |GLSMRHW                 |EMAIL        |
 
     Examples:
       |folderName                               |customer_type |fuelType |planName        |state  |username|password                                    |

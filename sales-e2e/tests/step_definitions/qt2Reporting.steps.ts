@@ -39,21 +39,21 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
   if(fuelType===FUEL_TYPE_OPTIONS.ELE.value){
     let NMI=data[0].NMI;
     await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.nmiMirnInformation.NMI,NMI);
-    if(jsonObj.saleDetail.offerDetail.offerType==='ENE'){
-      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code')+'_50');
+    if(jsonObj.saleDetail.offerDetail.offerType==='ENE' && jsonObj.saleDetail.saleDetailHeader.customerType==='RESIDENTIAL'){
+      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
     }
     else{
-      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code'));
+      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t)));
     }
   }
   if(fuelType===FUEL_TYPE_OPTIONS.GAS.value){
     let MIRN=data[0].MIRN;
     await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.nmiMirnInformation.MIRN,MIRN);
-    if(jsonObj.saleDetail.offerDetail.offerType==='ENE'){
-      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code')+'_50');
+    if(jsonObj.saleDetail.offerDetail.offerType==='ENE' && jsonObj.saleDetail.saleDetailHeader.customerType==='RESIDENTIAL'){
+      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
     }
     else{
-      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code'));
+      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t)));
     }
   }
   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsSinceDeenergisation,renovationsSinceDeenergisation);
@@ -64,12 +64,17 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
     await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.lifeSupportEquipment.lifeSupportEquipmentType,lifeSupportEquipmentType);
   }
   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.billDeliveryDetail.billRouteType,billRouteType);
-  await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.personDetail.personIdDetail.primaryIdFlag,'Y');
-  await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.personDetail.personIdDetail.idValidationInformation.consentForIdValidation,'Y');
-  await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.creditAssessmentDecision,'Accept');
-  await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.creditAssessmentReasonCode,'Accept');
-  if(jsonObj.saleDetail.offerDetail.energySafeVicQuestions.customerWithLifeSupport==='Y'){
-
+  if(customerType==='RESIDENTIAL'){
+    await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.personDetail.personIdDetail.primaryIdFlag,'Y');
   }
+  if(customerType==='BUSINESS'){
+    await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.personDetail.personAccountRelationship,'CUSCON');
+    await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.businessDetail.businessNameDetail.nameType,'PRIM');
+  }
+  if(jsonObj.saleDetail.offerDetail.offerType==='COR' && customerType==='RESIDENTIAL'){
+    await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.personDetail.personIdDetail.idValidationInformation.consentForIdValidation,'Y');
+    await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.creditAssessmentReasonCode,'Accept');
+  }
+  await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.creditAssessmentDecision,'Accept');
 
 });

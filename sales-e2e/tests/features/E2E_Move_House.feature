@@ -1,6 +1,6 @@
 @E2E
 Feature:E2E scenario for existing residential moving customer through move house
-
+  @test1
 Scenario Outline: Submit a quote for existing residential customer through move house
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   When user has navigated to move house page
@@ -32,11 +32,11 @@ Scenario Outline: Submit a quote for existing residential customer through move 
   And user validates all the details for 'ELE' submitted quote
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-    |ELE     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-EN |          |N                             |N                             |Y                      |OTHER                   |EMAIL        |
+    |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSRH-EN |4311150544|N                             |N                             |Y                      |OTHER                   |EMAIL        |
   And user validates all the details for 'GAS' submitted quote
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-    |GAS     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-GN |          |N                             |N                             |Y                      |                        |EMAIL        |
+    |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
   Examples:
     |folderName              |state|optDisconnection|movingAddress                   |username|password                                    |

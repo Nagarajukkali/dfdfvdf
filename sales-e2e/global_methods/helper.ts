@@ -25,7 +25,7 @@ const replace={ replace: true };
   }
 
   export enum PlanType {
-    BASIC_HOME='Basic',
+    BASIC_HOME='Basic Home',
     NO_FRILLS='No Frills',
     TOTAL_PLAN='Total Plan',
     TOTAL_PLAN_PLUS='Total Plan Plus',

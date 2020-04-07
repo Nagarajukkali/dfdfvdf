@@ -203,11 +203,16 @@ export class checkoutDetailsMethod{
         console.error('ABN/ACN is not valid');
       }
       await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.company,'NA');
-      await testFunction.click(t,eaCheckoutDetailsPage.elements.businessType);
-      await testFunction.click(t,eaCheckoutDetailsPage.elements.businessTypeOption);
-      await t.wait(3000);
-      await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCode);
-      await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCodeOption);
+      if((await testFunction.getElementText(t,eaCheckoutDetailsPage.elements.businessType)).includes('Please select')){
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.businessType);
+        await t.wait(2000);
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.businessTypeOption);
+        await t.wait(2000);
+      }
+      if((await testFunction.getElementText(t,eaCheckoutDetailsPage.elements.anzsicCode)).includes('Please select')){
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCode);
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCodeOption);
+      }
       console.log("Business details are provided");
   }
 

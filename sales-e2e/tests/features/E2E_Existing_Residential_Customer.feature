@@ -1,6 +1,6 @@
 @E2E
 Feature:E2E scenario for existing residential moving and non moving customer
-
+  @test
 Scenario Outline: Submit a quote for existing residential moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page
@@ -35,15 +35,15 @@ Scenario Outline: Submit a quote for existing residential moving customer
   And user validates all the details for 'ELE' submitted quote
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-    |ELE     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-EN |          |N                             |N                             |Y                      |OTHER                   |EMAIL        |
+    |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RSOT-EN |4311150544|N                             |N                             |Y                      |OTHER                   |EMAIL        |
   And user validates all the details for 'GAS' submitted quote
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-    |GAS     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-GN |          |N                             |N                             |Y                      |                        |EMAIL        |
+    |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RSOT-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
   Examples:
-  |customerStatus|planName|folderName              |state|optDisconnection|username|password                                    |
-  |Existing      |Basic   |E2E_Existing_Resi_Moving|NSW  |No              |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+  |customerStatus|planName  |folderName              |state|optDisconnection|username|password                                    |
+  |Existing      |Basic Home|E2E_Existing_Resi_Moving|NSW  |No              |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
 Scenario Outline: Submit a quote for existing residential non moving customer with LS, select dual fuel and verify gas account
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -74,11 +74,11 @@ Scenario Outline: Submit a quote for existing residential non moving customer wi
   And user validates all the details for 'ELE' submitted quote
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-    |ELE     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-EN |          |N                             |N                             |Y                      |OTHER                   |EMAIL        |
+    |ELE     |VERBALLYACCEPTED|RESIDENTIAL |         |RCPP-EN |          |N                             |N                             |Y                      |OTHER                   |EMAIL        |
   And user validates all the details for 'GAS' submitted quote
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-    |GAS     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-GN |          |N                             |N                             |Y                      |                        |EMAIL        |
+    |GAS     |VERBALLYACCEPTED|RESIDENTIAL |         |RCPP-GN |          |N                             |N                             |Y                      |GLSMRHW                 |EMAIL        |
 
   Examples:
     |customerStatus|planName |folderName                 |fuelType|accountType|username|password                                    |

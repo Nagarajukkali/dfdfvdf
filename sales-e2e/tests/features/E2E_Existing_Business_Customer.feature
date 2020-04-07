@@ -1,6 +1,6 @@
 @E2E
 Feature:E2E scenario for existing business moving and non moving customer
-
+  @test
   Scenario Outline: Submit a quote for existing business moving customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
@@ -30,11 +30,11 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-EN |          |N                             |N                             |Y                      |OTHER                   |EMAIL        |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |BSOT-EV |6203822385|N                             |N                             |Y                      |LSVFLS                  |EMAIL        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-GN |          |N                             |N                             |Y                      |                        |EMAIL        |
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |BSOT-GV |5330956738|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
       |customerStatus|planName         |folderName              |state|username|password                                    |
@@ -69,14 +69,14 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-EN |          |N                             |N                             |Y                      |OTHER                   |EMAIL        |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |PS       |TOPH-EV |6203822385|N                             |N                             |Y                      |OTHER                   |EMAIL        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |         |TOPH-GN |          |N                             |N                             |Y                      |                        |EMAIL        |
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |PS       |TOPH-GV |5330956738|N                             |N                             |Y                      |                        |EMAIL        |
 
     Examples:
       |customerStatus|planName         |folderName              |fuelType|accountType|username|password                                    |
-      |Existing      |Basic Business   |E2E_Existing_Resi_Moving|BOTH    |ELE        |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |Existing      |Total Business   |E2E_Existing_Resi_Moving|BOTH    |ELE        |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
 

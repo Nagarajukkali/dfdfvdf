@@ -1,7 +1,6 @@
 import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 const eaCheckoutReviewPage=require('../pages/checkoutReview.page')
-import {LSDevices, SelectionType, testFunction} from '../../global_methods/helper';
-import {plansMethod} from './plansPage';
+import {LSDevices, PlanType, SelectionType, testFunction} from '../../global_methods/helper';
 import {checkoutDetailsMethod} from './checkoutDetailsPage';
 
 
@@ -128,31 +127,50 @@ export class checkoutReviewMethod {
   }
 
   public static async getDiscount(t,fuelType){
+      let eleSourceCode;
+      let gasSourceCode;
+      let eleDiscount;
+      let gasDiscount;
       if(testFunction.isElectricity(fuelType)){
         let elePlanName=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtElePlanName);
-        console.log(elePlanName);
         await testFunction.click(t,eaCheckoutReviewPage.elements.imgReviewSectionEle);
-        let eleDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtEleDiscount);
-        console.log(eleDiscount);
-        if(elePlanName.includes('Total Plan')){
-          let eleSourceCode=elePlanName.split(" ")[0]+'_'+eleDiscount.split(" ")[1]+'GD';
-          checkoutDetailsMethod.map.set('ele source code',eleSourceCode);
+        if(elePlanName===PlanType.TOTAL_PLAN || elePlanName==='Total Plan - Business'){
+          eleDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtEleDiscount);
+          eleSourceCode=elePlanName.split(" ")[0]+'_'+eleDiscount.split(" ")[1]+'GD';
         }
+        else if(elePlanName===PlanType.TOTAL_PLAN_PLUS || elePlanName==='Total Plan Plus - Business'){
+          eleDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtEleDiscount);
+          eleSourceCode=elePlanName.split(" ")[0]+'_Plus_'+eleDiscount.split(" ")[1]+'GD';
+        }
+        else if(elePlanName===PlanType.NO_FRILLS || elePlanName===PlanType.NO_FRILLS_BUSINESS){
+          eleSourceCode='NOFRILLS';
+        }
+        else if(elePlanName===PlanType.BASIC_BUSINESS || elePlanName===PlanType.BASIC_HOME){
+          eleSourceCode='Basic';
+        }
+        checkoutDetailsMethod.map.set('ele source code_'+checkoutDetailsMethod.getScenarioId(t),eleSourceCode);
       }
       if(testFunction.isGas(fuelType)){
         let gasPlanName=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasPlanName);
-        console.log(gasPlanName);
         await testFunction.click(t,eaCheckoutReviewPage.elements.imgReviewSectionGas);
-        let gasDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasDiscount);
-        console.log(gasDiscount)
-        if(gasPlanName.includes('Total Plan')){;
-          let gasSourceCode=gasPlanName.split(" ")[0]+'_'+gasDiscount.split(" ")[1]+'GD';
-          checkoutDetailsMethod.map.set('gas source code',gasSourceCode);
+        if(gasPlanName===PlanType.TOTAL_PLAN || gasPlanName==='Total Plan - Business'){
+          gasDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasDiscount);
+          gasSourceCode=gasPlanName.split(" ")[0]+'_'+gasDiscount.split(" ")[1]+'GD';
         }
+        else if(gasPlanName===PlanType.TOTAL_PLAN_PLUS || gasPlanName==='Total Plan Plus - Business'){
+          gasDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasDiscount);
+          gasSourceCode=gasPlanName.split(" ")[0]+'_Plus_'+gasDiscount.split(" ")[1]+'GD';
+        }
+        else if(gasPlanName===PlanType.NO_FRILLS || gasPlanName===PlanType.NO_FRILLS_BUSINESS){
+          gasSourceCode='NOFRILLS';
+        }
+        else if(gasPlanName===PlanType.BASIC_BUSINESS || gasPlanName===PlanType.BASIC_HOME){
+          gasSourceCode='Basic';
+        }
+        checkoutDetailsMethod.map.set('gas source code_'+checkoutDetailsMethod.getScenarioId(t),gasSourceCode);
       }
       return checkoutDetailsMethod.map;
   }
-
 
   public static async submitQuote(t){
       await testFunction.click(t, eaCheckoutReviewPage.elements.agreeAndConfirm);
@@ -358,7 +376,7 @@ export class checkoutReviewMethod {
           await testFunction.clearAndEnterText(t, eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsElec, "Sample Other electricity device.");
           break;
         default:
-          console.log("Invalid Electricity Equipment.");
+          console.error("Invalid Electricity Equipment.");
       }
     }
     if(await testFunction.isGas(fuelType)) {
@@ -374,7 +392,7 @@ export class checkoutReviewMethod {
           await testFunction.clearAndEnterText(t, eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsGas, "Sample Other gas device.");
           break;
         default:
-          console.log("Invalid Gas Equipment.");
+          console.error("Invalid Gas Equipment.");
       }
     }
   }

@@ -4,15 +4,13 @@ import {checkoutDetailsMethod} from "../tests/methods/checkoutDetailsPage";
 const YAML = require('yamljs');
 const fs   = require('fs');
 
-const n=new Date().getTime().toString();
-
 export function getFilePath(t,fuelType){
   let path;
   let scenarioId=checkoutDetailsMethod.getScenarioId(t);
   if(fuelType===FUEL_TYPE_OPTIONS.ELE.value)
-    path= 'resources/eleQuoteDetails_'+scenarioId+'.yml';
+    path= 'resources/quoteDetails/eleQuoteDetails_'+scenarioId+'.yml';
   if(fuelType===FUEL_TYPE_OPTIONS.GAS.value){
-    path= 'resources/gasQuoteDetails_'+scenarioId+'.yml';
+    path= 'resources/quoteDetails/gasQuoteDetails_'+scenarioId+'.yml';
   }
   return path;
 }
