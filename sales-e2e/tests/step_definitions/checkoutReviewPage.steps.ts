@@ -1,7 +1,6 @@
 import {checkoutReviewMethod} from '../methods/checkoutReviewPage';
 import {testFunction } from '../../global_methods/helper';
 import {When, Then } from 'cucumber';
-import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 
 When(/^user provides life support details$/, async function(t,[],dataTable){
   let data=dataTable.hashes();

@@ -11,6 +11,7 @@ When(/^user logs in to my account using '(.*)' and '(.*)'$/, async function(t, [
   await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfPassword, cryptoJS.AES.decrypt(password, username).toString(cryptoJS.enc.Utf8));
   await testFunction.click(t, eaMyAccount.elements.btnSignIn);
 });
+
 When(/^user clicks on view and change plan accordion for '(.*)'$/, async function (t, [fuelType]) {
   await testFunction.waitForLoadingIconToClose_MA(t);
   if(fuelType === FUEL_TYPE_OPTIONS.ELE.value) {
