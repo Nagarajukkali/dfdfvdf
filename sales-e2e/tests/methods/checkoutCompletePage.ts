@@ -1,4 +1,4 @@
-import {CustomerStatus, testFunction} from '../../global_methods/helper';
+import { testFunction} from '../../global_methods/helper';
 const eaCheckoutCompletePage = require('../pages/checkoutComplete.page')
 
 export class checkoutCompleteMethod {

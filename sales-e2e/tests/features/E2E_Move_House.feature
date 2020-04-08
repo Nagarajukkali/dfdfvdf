@@ -23,10 +23,24 @@ Scenario Outline: Submit a quote for existing residential customer through move 
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices|
     |Yes              |BOTH    |Ele Other             |Gas Other            |
+  And user verifies selected plan details for '<fuelType>'
   And user submits the quote
   Then user lands on checkout complete page
+  When user has opened the qt2 Reporting website link in a browser
+  And user logs in to qt2 reporting using '<username>' and '<password>'
+  And user search quote on the basis of 'Email'
+  Then submitted quote is displayed
+  And user validates all the details for 'ELE' submitted quote
+  And user validates below mandatory fields
+    |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+    |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSRH-EN |4311150544|N                             |N                             |Y                      |OTHER                   |EMAIL        |
+  And user validates all the details for 'GAS' submitted quote
+  And user validates below mandatory fields
+    |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+    |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
+
   Examples:
-    |folderName              |state|optDisconnection|movingAddress                   |
-    |E2E_Existing_Resi_Moving|NSW  |No              |5 Wilkies Street, BULLI NSW 2516|
+    |folderName              |fuelType|state|optDisconnection|movingAddress                   |username|password                                    |
+    |E2E_Existing_Resi_Moving|BOTH    |NSW  |No              |5 Wilkies Street, BULLI NSW 2516|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
 

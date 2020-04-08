@@ -1,6 +1,5 @@
 import {verifyAccountMethod} from '../methods/plansPage';
 import { When, Then } from 'cucumber';
-import {qualifierMethod } from '../methods/qualifierPage';
 
 When(/^user provides '(.*)' account number '(.*)'$/, async function(t, [fuel, accountNumber]){
     await verifyAccountMethod.provideAccountDetails(t,fuel, accountNumber);

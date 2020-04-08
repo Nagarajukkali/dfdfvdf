@@ -1,16 +1,12 @@
 import {Before, After, Then, Given} from 'cucumber';
-const {defineSupportCode}=require('cucumber');
 import {testFunction} from '../../global_methods/helper';
 import {ClientFunction} from 'testcafe';
+const fileUtils=require('../../libs/FileUtils.js');
 let log4js=require('log4js');
 const USERAGENT=ClientFunction(() => navigator.userAgent);
 let logger=log4js.getLogger();
 const eaHomePage=require('../pages/energy-australia-home.page');
 logger.level='debug';
-import * as _dayjs from "dayjs";
-const dayjs = _dayjs;
-export const ISO_DATE_FORMAT = "YYYY-MM-DD";
-const FIRST_JAN_1900_UNIX_TIMESTAMP = -2208988800000;
 let screenshotFolder=null;
 
 Before(  async t => {
@@ -21,6 +17,8 @@ Given(/^user has opened the website link in a browser and creates '(.*)' to save
   screenshotFolder=folderName;
   await t.navigateTo(eaHomePage.pageUrl);
 });
+
+
 
 Given(/^user has opened the new connection website link in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
   screenshotFolder=folderName;

@@ -25,7 +25,7 @@ const replace={ replace: true };
   }
 
   export enum PlanType {
-    BASIC_HOME='Basic',
+    BASIC_HOME='Basic Home',
     NO_FRILLS='No Frills',
     TOTAL_PLAN='Total Plan',
     TOTAL_PLAN_PLUS='Total Plan Plus',
@@ -101,7 +101,10 @@ export class testFunction {
   public static async assertTextOnPage(t, text) {
     const actualPageContent=await Selector('html').textContent;
     await t.expect(actualPageContent).contains(text);
+  }
 
+  public static async assertTextValue(t,actualText,expectedText){
+    await t.expect(actualText).eql(expectedText);
   }
 
   public static async assertPageURL(t, urlContent) {
@@ -176,6 +179,15 @@ export class testFunction {
     return element.getAttribute(attribute);
   }
 
+  public static async navigateTo(t,url){
+    await t.navigateTo(url);
+  }
+
+  public static async selectValueFromList(t,element,option){
+    const listItem=element.find('option');
+    await t.click(element).click(listItem.withText(option));
+  }
+
   public static generateRandomText(length) {
     let result='';
     let characters='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
@@ -229,6 +241,7 @@ export class testFunction {
       }
       }
   }
+
 
   public static async waitForElementToBeDisappeared(t,element){
     await t.expect(element.exists).notOk({ timeout: 30000 });

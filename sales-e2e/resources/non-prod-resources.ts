@@ -4,7 +4,9 @@ config: {
     eaHomePageUrl: 'https://mocha.nonprod.digital.energyaustralia.com.au?live=disabled',
     eaNewConnectionPageUrl:'https://mocha.nonprod.digital.energyaustralia.com.au/new-connections-ui/#/connection',
     eaCampaignUrl: 'https://mocha.nonprod.digital.energyaustralia.com.au/offer?live=disabled',
-    eaMyAccountUrl: 'https://mocha.nonprod.digital.energyaustralia.com.au/myaccount/index.html'
+    eaMyAccountUrl: 'https://mocha.nonprod.digital.energyaustralia.com.au/myaccount/index.html',
+    qt2ReportingURL:'https://mocha.nonprod.digital.energyaustralia.com.au/qt2reporting/login',
+    qt2ReportingHomePageURL:'https://mocha.nonprod.digital.energyaustralia.com.au/qt2reporting/app/reporting'
   },
   testData: {
     mastercard: {

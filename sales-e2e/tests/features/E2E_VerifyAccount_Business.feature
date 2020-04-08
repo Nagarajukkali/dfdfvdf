@@ -19,12 +19,25 @@ Feature: This feature is to test the verify account scenarios for existing busin
       |BUS         |BUS        |Existing      |test     |test    |ABN          |
     And user clicks on 'Review your order' button and navigates to review page
     Then Life support section is displayed on Review page as per selected "<fuelType>" and verified "<accountType>"
+    And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     And user lands on checkout complete page
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'ELE' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |PS       |SWSRB-EV|6305402728|N                             |N                             |Y                      |LSVFLS                  |EMAIL        |
+    And user validates all the details for 'GAS' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |PS       |SWSRB-GV|5323580662|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName        |accountType|
-      |E2E_VerifyAccount_Business_NonMoving     |BUS           |BOTH     |Basic Business  |BOTH       |
+      |folderName                               |customer_type |fuelType |planName                |accountType|username|password                                    |
+      |E2E_VerifyAccount_Business_NonMoving     |BUS           |BOTH     |Total Plan Plus Business|BOTH       |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
   Scenario Outline: Moving business customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -47,9 +60,22 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices        |
       |Yes              |BOTH    |Chronic Positive Airways Pressure Respirator  |Medically Required Hot Water |
+    And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     Then user lands on checkout complete page
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'ELE' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-EV |6203822385|N                             |N                             |Y                      |LSCPAPR                 |EMAIL        |
+    And user validates all the details for 'GAS' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GV |5330956738|N                             |N                             |Y                      |GLSMRHW                 |EMAIL        |
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName        |state  |
-      |E2E_VerifyAccount_Business_Moving        |BUS           |BOTH     |Total Business  |VIC    |
+      |folderName                               |customer_type |fuelType |planName        |state  |username|password                                    |
+      |E2E_VerifyAccount_Business_Moving        |BUS           |BOTH     |Total Business  |VIC    |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|

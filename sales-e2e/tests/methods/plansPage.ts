@@ -4,6 +4,7 @@ const EaHomePage=require('../pages/energy-australia-home.page');
 import {IdType, PlanType, testFunction} from '../../global_methods/helper';
 
 export class plansMethod{
+
     public static async clickPlansPageModal(t, customerType) {
         if(customerType===CustomerType.RESIDENTIAL || customerType===CustomerType.BUSINESS){
             await testFunction.click(t,EaHomePage.elements.ModalWindow);
@@ -51,7 +52,7 @@ export class plansMethod{
           await testFunction.click(t,EaHomePage.elements.totalPlan);
           break;
         case PlanType.TOTAL_PLAN_PLUS:
-          await testFunction.click(t,EaHomePage.elements.totalPlusPlan);
+          await testFunction.click(t,EaHomePage.elements.totalPlanPlus);
           break;
         case PlanType.BASIC_BUSINESS:
           await testFunction.click(t,EaHomePage.elements.basicBusiness);
