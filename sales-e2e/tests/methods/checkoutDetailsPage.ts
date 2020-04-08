@@ -38,7 +38,7 @@ export class checkoutDetailsMethod{
     public static async provideContactDetails(t){
         let phoneNumber="03"+testFunction.getRandomNumber(99999999);
         phoneNumber=phoneNumber.padEnd(10,"0");
-        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.email,'test@energyaustralia.com.au');
+        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.email,'test_crm@energyaustralia.com.au');
         await testFunction.enterText(t,eaCheckoutDetailsPage.elements.phone,phoneNumber);
         console.log("Contact details provided");
     }

@@ -1,10 +1,10 @@
 module.exports={
 config: {
     env: 'non-prod',
-    eaHomePageUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au?live=disabled',
-    eaNewConnectionPageUrl:'https://preprod.nonprod.digital.energyaustralia.com.au/new-connections-ui/#/connection',
-    eaCampaignUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au/offer?live=disabled',
-    eaMyAccountUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au/myaccount/index.html'
+    eaHomePageUrl: 'https://mocha.nonprod.digital.energyaustralia.com.au?live=disabled',
+    eaNewConnectionPageUrl:'https://mocha.nonprod.digital.energyaustralia.com.au/new-connections-ui/#/connection',
+    eaCampaignUrl: 'https://mocha.nonprod.digital.energyaustralia.com.au/offer?live=disabled',
+    eaMyAccountUrl: 'https://mocha.nonprod.digital.energyaustralia.com.au/myaccount/index.html'
   },
   testData: {
     mastercard: {
@@ -26,7 +26,7 @@ config: {
       accountNumber: '5517 4771 75',
       amount: '123',
     },
-    emailAddress: 'Prasanya.gopinathan@energyaustralia.com.au',
+    emailAddress: 'Prateek.Chauhan@energyaustralia.com.au',
     accountNumber: '5396750000',
   },
 };
