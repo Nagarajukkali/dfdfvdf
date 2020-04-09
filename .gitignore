@@ -42,5 +42,3 @@ Thumbs.db
 #Report files
 /sales-e2e/results
 
-#Quote yml files
-/sales-e2e/resources/quoteDetails/*.yml
