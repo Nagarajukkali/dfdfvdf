@@ -21,11 +21,26 @@ Scenario Outline: Submit a quote for new business moving customer
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices |GaslifeSupportDevices                             |
     |Yes              |BOTH    |Kidney Dialysis Machine|Medically Required Heating and/or Air Conditioning|
+  And user verifies selected plan details for '<fuelType>'
   And user submits the quote
   Then user lands on checkout complete page
+  When user has opened the qt2 Reporting website link in a browser
+  And user logs in to qt2 reporting using '<username>' and '<password>'
+  And user search quote on the basis of 'Email'
+  Then submitted quote is displayed
+  And user validates all the details for 'ELE' submitted quote
+  And user validates below mandatory fields
+    |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+    |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |BSOT-EV |6203822385|N                             |N                             |Y                      |LSKDM                   |EMAIL        |
+  And user validates all the details for 'GAS' submitted quote
+  And user validates below mandatory fields
+    |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+    |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |BSOT-GV |5330956738|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
+
   Examples:
-    |customerStatus|planName      |folderName        |state|
-    |New           |Basic Business|E2E_New_Bus_Moving|VIC  |
+    |customerStatus|fuelType|planName      |folderName        |state|username|password                                    |
+    |New           |BOTH    |Basic Business|E2E_New_Bus_Moving|VIC  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+
 
 Scenario Outline: Submit a quote for new business non moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -34,8 +49,8 @@ Scenario Outline: Submit a quote for new business non moving customer
   And user moves on to fill the qualifier
   And user selects '<customerStatus>' on qualifier
   And user provides all other details on qualifier page
-    |customerType| connectionAddress                        |movingType|propertyType|solarOption|
-    |BUS         |36 Gregory Street West, WENDOUREE VIC 3355|Non-Moving|            |No         |
+    |customerType| connectionAddress                |movingType|propertyType|solarOption|
+    |BUS         |68 Mercer Street, GEELONG VIC 3220|Non-Moving|            |No         |
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|businessType|
     |BUS         |BUS        |New           | test     |test     |ACN         |
@@ -46,8 +61,22 @@ Scenario Outline: Submit a quote for new business non moving customer
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices                             |
     |Yes              |BOTH    |Ele Other             |Medically Required Heating and/or Air Conditioning|
+  And user verifies selected plan details for '<fuelType>'
   And user submits the quote
   Then user lands on checkout complete page
+  When user has opened the qt2 Reporting website link in a browser
+  And user logs in to qt2 reporting using '<username>' and '<password>'
+  And user search quote on the basis of 'Email'
+  Then submitted quote is displayed
+  And user validates all the details for 'ELE' submitted quote
+  And user validates below mandatory fields
+    |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+    |ELE     |VERBALLYACCEPTED|BUSINESS    |COR      |TOPB-EV |6203142753|N                             |N                             |Y                      |OTHER                   |EMAIL        |
+  And user validates all the details for 'GAS' submitted quote
+  And user validates below mandatory fields
+    |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+    |GAS     |VERBALLYACCEPTED|BUSINESS    |COR      |TOPB-GV |5330726895|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
+
   Examples:
-  |customerStatus|planName      |folderName            |
-  |New           |Basic Business|E2E_New_Resi_NonMoving|
+  |customerStatus|fuelType|planName      |folderName            |username|password                                    |
+  |New           |BOTH    |Total Business|E2E_New_Resi_NonMoving|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|

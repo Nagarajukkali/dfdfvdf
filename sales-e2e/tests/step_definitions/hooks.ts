@@ -1,6 +1,7 @@
 import {Before, After, Then, Given} from 'cucumber';
 import {testFunction} from '../../global_methods/helper';
 import {ClientFunction} from 'testcafe';
+const fileUtils=require('../../libs/FileUtils.js');
 let log4js=require('log4js');
 const USERAGENT=ClientFunction(() => navigator.userAgent);
 let logger=log4js.getLogger();

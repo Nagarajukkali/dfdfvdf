@@ -1,6 +1,7 @@
 import {checkoutReviewMethod} from '../methods/checkoutReviewPage';
 import {testFunction } from '../../global_methods/helper';
 import {When, Then } from 'cucumber';
+import {fuelTypeText} from '@ea/ea-commons-models';
 
 When(/^user provides life support details$/, async function(t,[],dataTable){
   let data=dataTable.hashes();
@@ -30,4 +31,7 @@ When(/^user provides life support details on review page$/, async function (t,[]
 Then(/^Life support section is displayed on Review page as per selected "([^"]*)" and verified "([^"]*)"$/, async function (t,[fuelType,accountType]) {
   await checkoutReviewMethod.verifyLifeSupportSection(t);
   await checkoutReviewMethod.verifyExistingLifeSupportDetails(t,fuelType,accountType);
+});
+Then(/^user verifies selected plan details for '(.*)'$/, async  function(t,[fuelType]) {
+  await checkoutReviewMethod.getDiscount(t,fuelType);
 });

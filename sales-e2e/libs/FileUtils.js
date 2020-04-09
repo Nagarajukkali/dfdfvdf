@@ -1,20 +1,22 @@
 import {FUEL_TYPE_OPTIONS} from "@ea/ea-commons-models";
+import {checkoutDetailsMethod} from "../tests/methods/checkoutDetailsPage";
 
 const YAML = require('yamljs');
 const fs   = require('fs');
 
-export function getFilePath(fuelType){
+export function getFilePath(t,fuelType){
   let path;
+  let scenarioId=checkoutDetailsMethod.getScenarioId(t);
   if(fuelType===FUEL_TYPE_OPTIONS.ELE.value)
-    path= 'resources/eleQuoteDetails.yml';
+    path= 'resources/quoteDetails/eleQuoteDetails_'+scenarioId+'.yml';
   if(fuelType===FUEL_TYPE_OPTIONS.GAS.value){
-    path= 'resources/gasQuoteDetails.yml';
+    path= 'resources/quoteDetails/gasQuoteDetails_'+scenarioId+'.yml';
   }
   return path;
 }
 
-export function createYamlFile(ymlData,fuelType){
-  const path = getFilePath(fuelType);
+export function createYamlFile(t,ymlData,fuelType){
+  const path = getFilePath(t,fuelType);
   fs.writeFileSync(path,ymlData,'utf8');
 }
 
@@ -24,11 +26,17 @@ export function YAMLtoJSON(yamlStr) {
     return jsonStr;
   }
 
-export function convertYmlTOJSONObj(fuelType){
-    const path=getFilePath(fuelType);
+export function convertYmlTOJSONObj(t,fuelType){
+    const path=getFilePath(t,fuelType);
     const doc=fs.readFileSync(path,'utf8');
     const strVal=YAMLtoJSON(doc);
     const JSONObj=JSON.parse(strVal);
     return JSONObj;
   }
+
+
+
+
+
+
 

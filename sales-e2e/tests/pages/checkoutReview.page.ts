@@ -37,6 +37,12 @@ const eaCheckoutReviewPage={
       gasTextOnLifeSupportSection:Selector("#record-gas-life-support-fuel-text"),
       eleLifesupportStatus:Selector("#record-ele-life-support-status-text"),
       gasLifesupportStatus:Selector("#record-gas-life-support-status-text"),
+      imgReviewSectionEle:Selector("#reviewSectionEle button[id*='eui-accordion-header']>img"),
+      imgReviewSectionGas:Selector("#reviewSectionGas button[id*='eui-accordion-header']>img"),
+      txtEleDiscount:Selector("#reviewSectionEle div.review-plan__plan-rates div[id*='charge-before-discount']+div"),
+      txtGasDiscount:Selector("#reviewSectionGas div.review-plan__plan-rates div[id*='charge-before-discount']+div"),
+      txtElePlanName:Selector('#reviewSectionEle div.review-plan__title--planName'),
+      txtGasPlanName:Selector('#reviewSectionGas div.review-plan__title--planName'),
     }
 }
 

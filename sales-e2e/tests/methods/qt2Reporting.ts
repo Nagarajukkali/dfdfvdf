@@ -6,6 +6,7 @@ import * as assert from 'assert';
 const fileUtils=require('../../libs/FileUtils.js');
 const cryptoJS = require('crypto-js');
 
+
 export class qt2Reporting {
 
     public static async loginToqt2Reporting(t,username,password) {
@@ -17,10 +18,8 @@ export class qt2Reporting {
     public static async searchEleQuote(t,option){
       await testFunction.isElementDisplayed(t,eaQt2Reporting.elements.listQt2Lookup);
       await testFunction.selectValueFromList(t,eaQt2Reporting.elements.listQt2Lookup,option);
-      await testFunction.enterText(t,eaQt2Reporting.elements.txtEmail,checkoutDetailsMethod.emailAddress);
-      //await testFunction.enterText(t,eaQt2Reporting.elements.txtEmail,'fkBTOrrRNX@energyaustralia.com.au');
+      await testFunction.enterText(t,eaQt2Reporting.elements.txtEmail,checkoutDetailsMethod.map.get(checkoutDetailsMethod.getScenarioId(t)));
       await testFunction.click(t,eaQt2Reporting.elements.btnFind);
-      await t.wait(5000);
     }
 
     public static async verifySubmittedQuote(t){
@@ -30,14 +29,14 @@ export class qt2Reporting {
     public static async validateQuoteDetails(t,fuelType){
       if(await testFunction.isElectricity(fuelType)){
         let eleQuoteDetails=await this.getEleQuoteDetails(t);
-        fileUtils.createYamlFile(eleQuoteDetails,fuelType);
-        let jsonObj=fileUtils.convertYmlTOJSONObj(fuelType);
+        fileUtils.createYamlFile(t,eleQuoteDetails,fuelType);
+        let jsonObj=fileUtils.convertYmlTOJSONObj(t,fuelType);
         this.verifyJSONData(jsonObj.saleDetail);
       }
       if(await testFunction.isGas(fuelType)){
         let gasQuoteDetails=await this.getGasQuoteDetails(t);
-        fileUtils.createYamlFile(gasQuoteDetails,fuelType);
-        let jsonObj=fileUtils.convertYmlTOJSONObj(fuelType);
+        fileUtils.createYamlFile(t,gasQuoteDetails,fuelType);
+        let jsonObj=fileUtils.convertYmlTOJSONObj(t,fuelType);
         this.verifyJSONData(jsonObj.saleDetail);
       }
     }
@@ -68,10 +67,8 @@ export class qt2Reporting {
       await testFunction.isElementDisplayed(t,eaQt2Reporting.elements.listQt2Lookup);
       await testFunction.click(t,eaQt2Reporting.elements.listQt2Lookup);
       await testFunction.click(t,eaQt2Reporting.elements.listQt2LookupEmail);
-      await testFunction.enterText(t,eaQt2Reporting.elements.txtEmail,checkoutDetailsMethod.emailAddress);
-      //await testFunction.enterText(t,eaQt2Reporting.elements.txtEmail,'fkBTOrrRNX@energyaustralia.com.au');
+      await testFunction.enterText(t,eaQt2Reporting.elements.txtEmail,checkoutDetailsMethod.map.get(checkoutDetailsMethod.getScenarioId(t)));
       await testFunction.click(t,eaQt2Reporting.elements.btnFind);
-      await t.wait(5000);
     }
 
 
