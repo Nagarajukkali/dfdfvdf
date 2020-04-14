@@ -18,9 +18,6 @@ Scenario Outline: Submit a quote for new residential moving customer
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |Yes         |No         |               |
-  And user selects billing preference option
-    |option         |otherAddress                                 |
-    |Other address  |271 Heatherhill Road, FRANKSTON  VIC  3199   |
   And user clicks on 'Review your order' button and navigates to review page
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
