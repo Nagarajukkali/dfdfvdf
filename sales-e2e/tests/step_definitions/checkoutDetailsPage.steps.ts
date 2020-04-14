@@ -69,3 +69,13 @@ When(/^user provides business details$/, async function (t,[],dataTable) {
 When(/^user selects carbon neutral option$/, async function (t) {
   await checkoutDetailsMethod.selectCarbonNeutralOption(t);
 });
+When(/^user selects billing preference option$/, async function (t, [], dataTable) {
+  /*
+  Example:
+  And user selects billing preference option
+    |option         |otherAddress                                 |
+    |Other address  |271 Heatherhill Road, FRANKSTON  VIC  3199   |
+   */
+  let data = dataTable.hashes();
+  await checkoutDetailsMethod.selectBillingPreference(t, data[0].option, data[0].otherAddress);
+});

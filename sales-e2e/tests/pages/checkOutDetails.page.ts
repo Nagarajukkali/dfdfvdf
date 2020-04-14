@@ -86,6 +86,11 @@ const eaCheckoutDetailsPage={
     txtMySelection:Selector("#connDetailsTitle"),
     plansExpand:Selector(".hs-checkout-plans-selection>.hs-checkout-plans-expanded"),
     chkboxCarbonNeutral:Selector("#carbonNeutralOptIn span"),
+    rbBillPrefEmail: Selector("[for*='bill-delivery-method__email-option-value']"),
+    rbBillPrefConnectionAddress: Selector("[for*='bill-delivery-method__connection-address-option-value']"),
+    rbBillPrefOtherAddress: Selector("[value*='otherAddress'] [class*='wg-radio-option-text']"),
+    tfBillPrefOtherAddress: Selector("#bill-delivery-other-address-auto"),
+    serviceAddressList: Selector("[ng-form*='bill-delivery-other-address'] a")
   },
 };
 
