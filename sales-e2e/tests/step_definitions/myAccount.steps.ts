@@ -39,7 +39,7 @@ When(/^user provides identification details$/, async function (t, [], dataTable)
   let customerType=data[0].customerType;
   await testFunction.waitForLoadingIconToClose();
   if(customerType === CustomerType.RESIDENTIAL){
-    await checkoutDetailsMethod.checkoutIdentification(t,data[0].customerStatus,data[0].idType);
+    await checkoutDetailsMethod.checkoutIdentification(t,data[0].customerStatus,data[0].idType, "");
   }
   if(customerType === CustomerType.BUSINESS){
     await checkoutDetailsMethod.provideBusinessDetails(t,data[0].businessType);

@@ -12,8 +12,8 @@ Scenario Outline: Submit a quote for new residential moving customer
     |RES         | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |No         |
   And user selects carbon neutral option
   And user provides all details on checkout details page
-    |customerType|journey    |customerStatus| firstName| lastName|idType        |
-    |RES         |RES        |New           | test     |test     |Driver License|
+    |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
+    |RES         |RES        |New           | test     |test     |Driver License|             |
   And user selects answer for property renovation question for '<state>'
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
