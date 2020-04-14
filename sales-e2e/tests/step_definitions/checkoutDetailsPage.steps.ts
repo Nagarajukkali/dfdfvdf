@@ -65,3 +65,7 @@ When(/^user provides business details$/, async function (t,[],dataTable) {
 When(/^user selects carbon neutral option$/, async function (t) {
   await checkoutDetailsMethod.selectCarbonNeutralOption(t);
 });
+When(/^user selects billing preference option$/, async function (t, [], dataTable) {
+  let data = dataTable.hashes();
+  await checkoutDetailsMethod.selectBillingPreference(t, data[0].option, data[0].otherAddress);
+});
