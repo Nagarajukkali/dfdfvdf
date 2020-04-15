@@ -24,7 +24,7 @@ Feature: Sanity E2E scenarios for ST & ST+1 for 1View Project
     And user verifies selected plan details for 'BOTH'
     And user submits the quote
     Then user lands on checkout complete page
-    
+
   Scenario: QTCRM0003 - Submit a quote for a simple PS sale for ACT residential customer having Passport ID
     Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM0003' to save evidences
     And user has navigated to 'RES' plans page
