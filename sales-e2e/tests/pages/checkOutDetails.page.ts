@@ -21,11 +21,15 @@ const eaCheckoutDetailsPage={
     idLicenseNumber:Selector('#id_number-licence'),
     idPassportNumber:Selector('#id_number-passport'),
     idCountry:Selector('#id_country+input'),
-    medicareColor:Selector('.card-option--green span.card-option__label__text'),
+    medicareColorGreen:Selector('.card-option--green span.card-option__label__text'),
+    medicareColorBlue:Selector('.card-option--blue span.card-option__label__text'),
+    medicareColorYellow:Selector('.card-option--yellow span.card-option__label__text'),
     idMedicareNumber:Selector('#id_number-medicare'),
     idMedicareRef:Selector('#id_reference'),
+    idMedicareValidDD:Selector('#id_validTo-day'),
     idMedicareValidMM:Selector('#id_validTo-month'),
     idMedicareValidYYYY:Selector('#id_validTo-year'),
+    idMedicareValidYY:Selector('#id_validTo-year+input'),
     electricityAccessNo:Selector('#option-accessissuesele-false'),
     gasAccessNo: Selector('#option-accessissuesgas-false'),
     reviewYourOrderBtn:Selector('#reviewYourOrderButton'),
@@ -82,6 +86,11 @@ const eaCheckoutDetailsPage={
     txtMySelection:Selector("#connDetailsTitle"),
     plansExpand:Selector(".hs-checkout-plans-selection>.hs-checkout-plans-expanded"),
     chkboxCarbonNeutral:Selector("#carbonNeutralOptIn span"),
+    rbBillPrefEmail: Selector("[for*='bill-delivery-method__email-option-value']"),
+    rbBillPrefConnectionAddress: Selector("[for*='bill-delivery-method__connection-address-option-value']"),
+    rbBillPrefOtherAddress: Selector("[value*='otherAddress'] [class*='wg-radio-option-text']"),
+    tfBillPrefOtherAddress: Selector("#bill-delivery-other-address-auto"),
+    serviceAddressList: Selector("[ng-form*='bill-delivery-other-address'] a")
   },
 };
 

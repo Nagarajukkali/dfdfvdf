@@ -64,12 +64,15 @@ export class checkoutDetailsMethod{
         console.log("Contact details provided");
         return emailAddress;
     }
-    public static async checkoutIdentification(t,customerStatus,idType){
+    public static async checkoutIdentification(t,customerStatus,idType, medicareType){
         if(customerStatus===CustomerStatus.EXISTING){
             await this.checkoutExistingCustomerIdentification(t,idType);
         }
         else if(customerStatus===CustomerStatus.NEW){
-            await this.checkoutNewCustomerIdentification(t,idType);
+          if(idType === "Medicare")
+            await this.checkoutNewCustomerIdentification(t,idType, medicareType);
+          else
+            await this.checkoutNewCustomerIdentification(t,idType, "");
         }else {
           console.error('Please select a valid customer');
         }
@@ -115,7 +118,7 @@ export class checkoutDetailsMethod{
       await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,medicareNo);
       console.log("Existing customer medicare details provided");
     }
-    public static async checkoutNewCustomerIdentification(t,idType){
+    public static async checkoutNewCustomerIdentification(t,idType, medicareType){
     switch (idType) {
       case "Passport":
         await this.checkoutNewCustomerPassportIdentification(t);
@@ -124,7 +127,7 @@ export class checkoutDetailsMethod{
         await this.checkoutNewCustomerDriverLicenseIdentification(t);
         break;
       case "Medicare":
-        await this.checkoutNewCustomerMedicareIdentification(t);
+        await this.checkoutNewCustomerMedicareIdentification(t, medicareType);
         break;
       default:
         console.error('Please select a valid ID type');
@@ -149,15 +152,27 @@ export class checkoutDetailsMethod{
     console.log("New customer passport details provided");
   }
 
-  public static async checkoutNewCustomerMedicareIdentification(t){
-    let medicareNo=testFunction.getRandomNumber(999999);
+  public static async checkoutNewCustomerMedicareIdentification(t, medicareType){
+    let medicareNo = testFunction.getRandomNumber(9999999999);
     await testFunction.click(t,eaCheckoutDetailsPage.elements.idDrop);
     await testFunction.click(t,eaCheckoutDetailsPage.elements.idValueMedicare);
-    await testFunction.click(t,eaCheckoutDetailsPage.elements.medicareColor);
+    if(medicareType.toLowerCase() === "green") {
+      await testFunction.click(t, eaCheckoutDetailsPage.elements.medicareColorGreen);
+      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.idMedicareValidMM, '01');
+      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.idMedicareValidYYYY, '2025');
+    } else {
+      if(medicareType.toLowerCase() === "blue") {
+        await testFunction.click(t, eaCheckoutDetailsPage.elements.medicareColorBlue);
+      }else if(medicareType.toLowerCase() === "yellow") {
+        await testFunction.click(t, eaCheckoutDetailsPage.elements.medicareColorYellow);
+      }
+      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidDD,'01');
+      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidMM,'01');
+      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidYY,'25');
+    }
     await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareNumber,medicareNo);
     await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareRef,'1');
-    await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidMM,'01');
-    await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidYYYY,'2024');
+
     console.log("New customer medicare details provided");
   }
 
@@ -349,5 +364,25 @@ export class checkoutDetailsMethod{
   }
   public static async selectCarbonNeutralOption(t){
       await testFunction.click(t,eaCheckoutDetailsPage.elements.chkboxCarbonNeutral);
+  }
+
+  public static async selectBillingPreference(t: any, option: string, otherAddress: string) {
+    switch (option) {
+      case "Email":
+        await testFunction.click(t, eaCheckoutDetailsPage.elements.rbBillPrefEmail);
+        break;
+      case "Connection address":
+        await testFunction.click(t, eaCheckoutDetailsPage.elements.rbBillPrefConnectionAddress);
+        break;
+      case "Other address":
+        await testFunction.click(t, eaCheckoutDetailsPage.elements.rbBillPrefOtherAddress);
+        await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfBillPrefOtherAddress, otherAddress);
+        t.wait(3000);
+        await testFunction.click(t, eaCheckoutDetailsPage.elements.serviceAddressList);
+        t.wait(2000);
+        break;
+      default:
+        console.error("Invalid bill pref selected.");
+    }
   }
 }

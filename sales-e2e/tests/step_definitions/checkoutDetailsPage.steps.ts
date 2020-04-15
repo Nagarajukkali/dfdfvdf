@@ -22,7 +22,11 @@ When(/^user provides all details on checkout details page$/, async function (t,[
   let emailAddress=await checkoutDetailsMethod.provideContactDetails(t);
   await checkoutDetailsMethod.getEmailWithScenario(t,emailAddress);
   if(customerType===CustomerType.RESIDENTIAL){
-    await checkoutDetailsMethod.checkoutIdentification(t,data[0].customerStatus,data[0].idType);
+    if(data[0].idType === "Medicare") {
+      await checkoutDetailsMethod.checkoutIdentification(t,data[0].customerStatus,data[0].idType, data[0].medicareType);
+    } else {
+      await checkoutDetailsMethod.checkoutIdentification(t,data[0].customerStatus,data[0].idType, "");
+    }
   }
   if(customerType===CustomerType.BUSINESS){
     await checkoutDetailsMethod.provideBusinessDetails(t,data[0].businessType);
@@ -57,11 +61,21 @@ When(/^user selects plans on checkout details page$/, async function (t,[],dataT
 When(/^user provides dob and id details$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
   await checkoutDetailsMethod.enterDOB(t);
-  await checkoutDetailsMethod.checkoutIdentification(t,data[0].customerStatus,data[0].idType)
+  await checkoutDetailsMethod.checkoutIdentification(t,data[0].customerStatus,data[0].idType, "")
 });
 When(/^user provides business details$/, async function (t,[],dataTable) {
   await checkoutDetailsMethod.provideBusinessDetails(t,'ABN')
 });
 When(/^user selects carbon neutral option$/, async function (t) {
   await checkoutDetailsMethod.selectCarbonNeutralOption(t);
+});
+When(/^user selects billing preference option$/, async function (t, [], dataTable) {
+  /*
+  Example:
+  And user selects billing preference option
+    |option         |otherAddress                                 |
+    |Other address  |271 Heatherhill Road, FRANKSTON  VIC  3199   |
+   */
+  let data = dataTable.hashes();
+  await checkoutDetailsMethod.selectBillingPreference(t, data[0].option, data[0].otherAddress);
 });
