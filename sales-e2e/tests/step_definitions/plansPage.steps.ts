@@ -19,7 +19,7 @@ When(/^user selects '(.*)'$/, async function(t, [planName]){
   await plansMethod.selectPlan(t, planName);
 });
 
-Given(/^User have selected fuel as "([^"]*)"$/, async function (t, [fuelType]) {
+Given(/^user have selected fuel as "([^"]*)"$/, async function (t, [fuelType]) {
   await plansMethod.selectFuel(t, fuelType);
 });
 When(/^user verifies the account through verify account journey for residential customer$/, async function (t,[],dataTable) {

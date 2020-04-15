@@ -29,7 +29,7 @@ Feature: Sanity E2E scenarios for ST & ST+1 for 1View Project
   Scenario: QTCRM0002 - Submit a quote for a simple COR sale for NSW residential customer
     Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM0002' to save evidences
     And user has navigated to 'RES' plans page
-    And User have selected fuel as "ELE"
+    And user have selected fuel as "ELE"
     When user selects 'Total Plan'
     And user moves on to fill the qualifier
     And user selects 'New' on qualifier
