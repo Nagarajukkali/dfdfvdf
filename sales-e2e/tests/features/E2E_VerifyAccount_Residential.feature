@@ -4,7 +4,7 @@ Feature: This feature is to test the verify account scenarios for existing resid
   Scenario Outline: Non moving residential customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
-    And User have selected fuel as "<fuelType>"
+    And user have selected fuel as "<fuelType>"
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for residential customer
       |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |postcode |idType |idNumber |
@@ -44,7 +44,7 @@ Feature: This feature is to test the verify account scenarios for existing resid
   Scenario Outline: Moving residential customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
-    And User have selected fuel as "<fuelType>"
+    And user have selected fuel as "<fuelType>"
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for residential customer
       |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |postcode |idType |idNumber |
