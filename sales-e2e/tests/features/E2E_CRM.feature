@@ -265,7 +265,6 @@ Feature: Sanity E2E scenarios for ST & ST+1 for 1View Project
     And user submits the quote
     Then user lands on checkout complete page
 
-  @test
   Scenario: QTCRM011 - Submit a quote with AAH Access level 2
     Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM011' to save evidences
     And user has navigated to 'BUS' plans page
