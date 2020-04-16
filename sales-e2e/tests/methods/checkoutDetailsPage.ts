@@ -377,9 +377,9 @@ export class checkoutDetailsMethod{
       case "Other address":
         await testFunction.click(t, eaCheckoutDetailsPage.elements.rbBillPrefOtherAddress);
         await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfBillPrefOtherAddress, otherAddress);
-        t.wait(3000);
+        await t.wait(3000);
         await testFunction.click(t, eaCheckoutDetailsPage.elements.serviceAddressList);
-        t.wait(2000);
+        await t.wait(2000);
         break;
       default:
         console.error("Invalid bill pref selected.");
