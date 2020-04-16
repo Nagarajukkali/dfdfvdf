@@ -235,8 +235,7 @@ Feature: Sanity E2E scenarios for ST & ST+1 for 1View Project
     And user submits the quote
     Then user lands on checkout complete page
 
-  @test
-  Scenario: QTCRM010 - Submit a quote with Bank as direct debit payment method
+  Scenario: QTCRM010 - Submit a quote with AAH Access level 1
     Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM010' to save evidences
     And user has navigated to 'RES' plans page
     And user have selected fuel as "ELE"
@@ -266,3 +265,31 @@ Feature: Sanity E2E scenarios for ST & ST+1 for 1View Project
     And user submits the quote
     Then user lands on checkout complete page
 
+  @test
+  Scenario: QTCRM011 - Submit a quote with AAH Access level 2
+    Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM011' to save evidences
+    And user has navigated to 'BUS' plans page
+    And user have selected fuel as "DUAL"
+    When user selects 'Basic Business'
+    And user moves on to fill the qualifier
+    And user selects 'New' on qualifier
+    And user provides all other details on qualifier page
+      |customerType|customerStatus |connectionAddress                         |movingType |propertyType|solarOption|
+      |BUS         |New            |213-215 Angas Street, ADELAIDE SA 5000    |Non-Moving |            |No         |
+    And user provides all details on checkout details page
+      |customerType|journey    |firstName    |lastName  |businessType|
+      |BUS         |BUS        |QTCRMEleven  |test      |ABN         |
+    And user opts for AAH and DD
+      |optAAHOption|aahAccessLevel|optDDOption|directDebitType|
+      |Yes         |Level 2       |No         |               |
+    And user selects answer for property renovation question for 'SA'
+    And user selects billing preference option
+      |option         |otherAddress                                 |
+      |Other address  |271 Heatherhill Road, FRANKSTON  VIC  3199   |
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType |EleclifeSupportDevices  |GaslifeSupportDevices |
+      |No               |         |                        |                      |
+    And user verifies selected plan details for 'BOTH'
+    And user submits the quote
+    Then user lands on checkout complete page
