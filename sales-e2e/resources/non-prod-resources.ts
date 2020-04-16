@@ -1,12 +1,12 @@
 module.exports={
 config: {
     env: 'non-prod',
-    eaHomePageUrl: 'https://mocha.nonprod.digital.energyaustralia.com.au?live=disabled',
-    eaNewConnectionPageUrl:'https://mocha.nonprod.digital.energyaustralia.com.au/new-connections-ui/#/connection',
-    eaCampaignUrl: 'https://mocha.nonprod.digital.energyaustralia.com.au/offer?live=disabled',
-    eaMyAccountUrl: 'https://mocha.nonprod.digital.energyaustralia.com.au/myaccount/index.html',
-    qt2ReportingURL:'https://mocha.nonprod.digital.energyaustralia.com.au/qt2reporting/login',
-    qt2ReportingHomePageURL:'https://mocha.nonprod.digital.energyaustralia.com.au/qt2reporting/app/reporting'
+    eaHomePageUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au?live=disabled',
+    eaNewConnectionPageUrl:'https://preprod.nonprod.digital.energyaustralia.com.au/new-connections-ui/#/connection',
+    eaCampaignUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au/offer?live=disabled',
+    eaMyAccountUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au/myaccount/index.html',
+    qt2ReportingURL:'https://preprod.nonprod.digital.energyaustralia.com.au/qt2reporting/login',
+    qt2ReportingHomePageURL:'https://preprod.nonprod.digital.energyaustralia.com.au/qt2reporting/app/reporting'
   },
   testData: {
     mastercard: {
