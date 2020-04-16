@@ -248,13 +248,13 @@ Feature: Sanity E2E scenarios for ST & ST+1 for 1View Project
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                          |movingType  |propertyType   |solarOption  |
-      |RES          |74 Nautilus Drive, COOLOOLA COVE QLD 4580  |Non-Moving  |Owner          |No           |
+      |RES          |74 Nautilus Drive, COOLOOLA COVE QLD 4580  |Moving      |Owner          |No           |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus  |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |Existing        |QTCRMTen   |test     |Passport       |             |
     And user opts for AAH and DD
-      |optAAHOption|optDDOption|directDebitType|
-      |No          |Yes        |Bank           |
+      |optAAHOption|aahAccessLevel|optDDOption|directDebitType|
+      |Yes         |Level 1       |No         |               |
     And user selects billing preference option
       |option         |otherAddress                                 |
       |Email          |                                             |
@@ -265,3 +265,4 @@ Feature: Sanity E2E scenarios for ST & ST+1 for 1View Project
     And user verifies selected plan details for 'ELE'
     And user submits the quote
     Then user lands on checkout complete page
+

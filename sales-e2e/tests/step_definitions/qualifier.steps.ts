@@ -51,6 +51,9 @@ When(/^user provides all other details on qualifier page$/, async function (t,[]
   await qualifierMethod.provideMovingType(t, data[0].movingType);
   if(movingType === Moving.MOVING){
     await qualifierMethod.provideAddress(t, data[0].connectionAddress);
+    if(data[0].connectionAddress.toLowerCase().includes("qld")) {
+      await testFunction.click(t,eaQualifierPage.elements.isElecInNewAddressQLD_Yes);
+    }
     await qualifierMethod.selectDateFromCalendar(t);
   }
   if(movingType===Moving.NON_MOVING){
