@@ -152,3 +152,28 @@ Feature: Sanity E2E scenarios for ST & ST+1 for 1View Project
     And user verifies selected plan details for 'GAS'
     And user submits the quote
     Then user lands on checkout complete page
+
+  Scenario: QTCRM007 - Submit a quote for a simple energisation sale for a new victorian business customer
+    Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM007' to save evidences
+    And user has navigated to 'BUS' plans page
+    And user have selected fuel as "GAS"
+    When user selects 'Total Business'
+    And user moves on to fill the qualifier
+    And user selects 'New' on qualifier
+    And user provides all other details on qualifier page
+      |customerType|customerStatus |connectionAddress                         |movingType|propertyType|solarOption|
+      |BUS         |New            |12 Atherton Road, OAKLEIGH VIC 3166       |Moving    |            |No         |
+    And user provides all details on checkout details page
+      |customerType|journey    |firstName    |lastName  |businessType|
+      |BUS         |BUS        |QTCRMSeven   |test      |ABN         |
+    And user selects answer for property renovation question for 'VIC'
+    And user selects billing preference option
+      |option         |otherAddress                                 |
+      |Email          |                                             |
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType |EleclifeSupportDevices  |GaslifeSupportDevices |
+      |No               |         |                        |                      |
+    And user verifies selected plan details for 'GAS'
+    And user submits the quote
+    Then user lands on checkout complete page
