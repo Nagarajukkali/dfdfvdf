@@ -79,3 +79,13 @@ When(/^user selects billing preference option$/, async function (t, [], dataTabl
   let data = dataTable.hashes();
   await checkoutDetailsMethod.selectBillingPreference(t, data[0].option, data[0].otherAddress);
 });
+When(/^user selects final bill option$/, async function (t, [], dataTable) {
+  /*
+  Example:
+  And user selects final bill option
+    |option         |otherAddress                                 |
+    |Other address  |271 Heatherhill Road, FRANKSTON  VIC  3199   |
+   */
+  let data = dataTable.hashes();
+  await checkoutDetailsMethod.selectBillingPreference(t, data[0].option, data[0].otherAddress, true);
+});
