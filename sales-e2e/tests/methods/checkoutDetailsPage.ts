@@ -366,20 +366,36 @@ export class checkoutDetailsMethod{
       await testFunction.click(t,eaCheckoutDetailsPage.elements.chkboxCarbonNeutral);
   }
 
-  public static async selectBillingPreference(t: any, option: string, otherAddress: string) {
+  public static async selectBillingPreference(t: any, option: string, otherAddress: string, finalBill: boolean = false) {
     switch (option) {
       case "Email":
-        await testFunction.click(t, eaCheckoutDetailsPage.elements.rbBillPrefEmail);
+        if(finalBill) {
+          await testFunction.click(t, eaCheckoutDetailsPage.elements.rbFinalBillPrefEmail);
+        }else {
+          await testFunction.click(t, eaCheckoutDetailsPage.elements.rbBillPrefEmail);
+        }
         break;
       case "Connection address":
-        await testFunction.click(t, eaCheckoutDetailsPage.elements.rbBillPrefConnectionAddress);
+        if(finalBill) {
+          await testFunction.click(t, eaCheckoutDetailsPage.elements.rbFinalBillPrefConnectionAddress);
+        }else {
+          await testFunction.click(t, eaCheckoutDetailsPage.elements.rbBillPrefConnectionAddress);
+        }
         break;
       case "Other address":
-        await testFunction.click(t, eaCheckoutDetailsPage.elements.rbBillPrefOtherAddress);
-        await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfBillPrefOtherAddress, otherAddress);
-        await t.wait(3000);
-        await testFunction.click(t, eaCheckoutDetailsPage.elements.serviceAddressList);
-        await t.wait(2000);
+        if(finalBill) {
+          await testFunction.click(t, eaCheckoutDetailsPage.elements.rbFinalBillPrefOtherAddress);
+          await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfFinalBillPrefOtherAddress, otherAddress);
+          await t.wait(3000);
+          await testFunction.click(t, eaCheckoutDetailsPage.elements.finalBillServiceAddressList);
+          await t.wait(2000);
+        }else {
+          await testFunction.click(t, eaCheckoutDetailsPage.elements.rbBillPrefOtherAddress);
+          await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfBillPrefOtherAddress, otherAddress);
+          await t.wait(3000);
+          await testFunction.click(t, eaCheckoutDetailsPage.elements.serviceAddressList);
+          await t.wait(2000);
+        }
         break;
       default:
         console.error("Invalid bill pref selected.");
