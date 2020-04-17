@@ -54,7 +54,7 @@ export class checkoutDetailsMethod{
 
     public static async provideContactDetails(t){
         let phoneNumber="03"+testFunction.getRandomNumber(99999999);
-        let emailAddress=testFunction.generateRandomText(10)+'_crm@energyaustralia.com.au';
+        let emailAddress=testFunction.generateRandomText(10)+'@energyaustralia.com.au';
         phoneNumber=phoneNumber.padEnd(10,"0");
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.email,emailAddress);
         let MD5 = new Hashes.MD5;
