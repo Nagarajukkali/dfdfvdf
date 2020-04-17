@@ -229,7 +229,7 @@ export class checkoutDetailsMethod{
       console.log("Business details are provided");
   }
 
-  public static async addAAHDetails(t, accessLevel: string = "") {
+  public static async addAAHDetails(t, accessLevel: string = "Level 2") {
     let fName = "FNAME" + testFunction.generateRandomText(5);
     let lName = "LNAME" + testFunction.generateRandomText(5);
     let email = testFunction.generateRandomText(5) + "@test.com";
@@ -249,7 +249,7 @@ export class checkoutDetailsMethod{
         await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl3);
         break;
       default:
-        await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl2);
+        console.error("Invalid access level selected.");
     }
     console.log("AAH details provided");
   }
