@@ -90,7 +90,12 @@ const eaCheckoutDetailsPage={
     rbBillPrefConnectionAddress: Selector("[for*='bill-delivery-method__connection-address-option-value']"),
     rbBillPrefOtherAddress: Selector("[value*='otherAddress'] [class*='wg-radio-option-text']"),
     tfBillPrefOtherAddress: Selector("#bill-delivery-other-address-auto"),
-    serviceAddressList: Selector("[ng-form*='bill-delivery-other-address'] a")
+    serviceAddressList: Selector("[ng-form*='bill-delivery-other-address'] a"),
+    rbFinalBillPrefEmail: Selector("[for*='final-bill-method__email-option-value']"),
+    rbFinalBillPrefConnectionAddress: Selector("#final-bill-method__connection-address-option-value"),
+    rbFinalBillPrefOtherAddress: Selector("#final-bill-method__other-address-option [class*='wg-radio-option-text']"),
+    tfFinalBillPrefOtherAddress: Selector("#final-bill-other-address-auto"),
+    finalBillServiceAddressList: Selector("[ng-form*='final-bill-other-address'] a")
   },
 };
 
