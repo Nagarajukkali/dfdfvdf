@@ -323,9 +323,8 @@ Feature: Sanity E2E scenarios for ST & ST+1 for 1View Project
     And user submits the quote
     Then user lands on checkout complete page
 
-    @test
     Scenario: QTCRM013 - Submit a quote with Disconnection and final bill to email
-      Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM012' to save evidences
+      Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM013' to save evidences
       And user has navigated to 'RES' plans page
       And user have selected fuel as "BOTH"
       When user clicks on the verify modal window on 'RES' page
@@ -341,6 +340,9 @@ Feature: Sanity E2E scenarios for ST & ST+1 for 1View Project
         |customerType |journey    |customerStatus|firstName      |lastName |idType          |
         |RES          |RES        |Existing      |QTCRMThirteen  |test     |Driver License  |
       And user selects billing preference option
+        |option  |otherAddress                                 |
+        |Email   |                                             |
+      And user selects final bill option
         |option  |otherAddress                                 |
         |Email   |                                             |
       And user selects answer for property renovation question for 'NSW'
