@@ -28,7 +28,7 @@ config: {
       accountNumber: '5517 4771 75',
       amount: '123',
     },
-    emailAddress: 'Prasanya.gopinathan@energyaustralia.com.au',
+    emailAddress: 'Prateek.Chauhan@energyaustralia.com.au',
     accountNumber: '5396750000',
   },
 };

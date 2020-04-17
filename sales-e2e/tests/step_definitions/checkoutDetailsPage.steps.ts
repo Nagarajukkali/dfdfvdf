@@ -48,7 +48,11 @@ When(/^user opts for AAH and DD$/, async function (t,[],dataTable) {
   let optAAHOption=data[0].optAAHOption;
   let optDDOption=data[0].optDDOption;
   if(optAAHOption==='Yes'){
-    await checkoutDetailsMethod.addAAHDetails(t);
+    if(data[0].aahAccessLevel) {
+      await checkoutDetailsMethod.addAAHDetails(t, data[0].aahAccessLevel);
+    } else {
+      await checkoutDetailsMethod.addAAHDetails(t);
+    }
   }
   if(optDDOption==='Yes'){
     await checkoutDetailsMethod.addDirectDebit(t,data[0].directDebitType);
