@@ -229,7 +229,7 @@ export class checkoutDetailsMethod{
       console.log("Business details are provided");
   }
 
-  public static async addAAHDetails(t) {
+  public static async addAAHDetails(t, accessLevel: string = "") {
     let fName = "FNAME" + testFunction.generateRandomText(5);
     let lName = "LNAME" + testFunction.generateRandomText(5);
     let email = testFunction.generateRandomText(5) + "@test.com";
@@ -238,7 +238,19 @@ export class checkoutDetailsMethod{
     await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.aahLastName, lName);
     await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.aahEmail, email);
     await t.wait(2000);
-    await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl2);
+    switch (accessLevel) {
+      case "Level 1":
+        await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl1);
+        break;
+      case "Level 2":
+        await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl2);
+        break;
+      case "Level 3":
+        await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl3);
+        break;
+      default:
+        await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl2);
+    }
     console.log("AAH details provided");
   }
 
@@ -246,7 +258,7 @@ export class checkoutDetailsMethod{
     await testFunction.click(t, eaCheckoutDetailsPage.elements.addDirectDebit);
     if(DDType === directDebitType.BANK_ACCOUNT) {
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfBankAccountName, "AccountName_" + testFunction.generateRandomText(5));
-      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfBsb, testFunction.getRandomNumber(999999));
+      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfBsb, "123456");
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfBankAccountNumber, testFunction.getRandomNumber(9999999999));
       await t.wait(3000);
       await testFunction.click(t, eaCheckoutDetailsPage.elements.cbBankAccountAgreeTermsAndCond);

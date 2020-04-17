@@ -29,7 +29,10 @@ const eaQualifierPage={
     owner:Selector('#ownerOrTenant0 > button'),
     renter:Selector('#ownerOrTenant1 > button'),
     solarNo:Selector('#hasSolarPanels1 > button'),
-    solarYes:Selector('#hasSolarPanels0 > button')
+    solarYes:Selector('#hasSolarPanels0 > button'),
+    isElecInNewAddressQLD_Yes: Selector('#moveElecOn0'),
+    isElecInNewAddressQLD_No: Selector('#moveElecOn1'),
+    isElecInNewAddressQLD_NotSure: Selector('#moveElecOn2'),
   },
 };
 
