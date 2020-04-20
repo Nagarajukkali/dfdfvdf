@@ -276,33 +276,28 @@ export class checkoutDetailsMethod{
   }
 
   public static async disconnectionDetails(t,disconnectionOption){
-      if(disconnectionOption==='Yes') {
-        if(!(await testFunction.isElementVisible(t, eaCheckoutDetailsPage.elements.disconnectionCalendarError))){
-          await testFunction.click(t,eaCheckoutDetailsPage.elements.rdbEleDisconnectionYes);
-          await testFunction.click(t,eaCheckoutDetailsPage.elements.rdbEleAccessRestrictionNo);
-          await testFunction.click(t,eaCheckoutDetailsPage.elements.rdbGasAccessRestrictionNo);
-          await testFunction.click(t,eaCheckoutDetailsPage.elements.renovationNo);
-        }
-        else if(await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.disconnectionCalendarError)) {
-          let errorMsg = await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.disconnectionCalendarError);
-          if (errorMsg.includes("Electricity Account")) {
-            await testFunction.click(t, eaCheckoutDetailsPage.elements.rdbEleDisconnectionYes);
-            await testFunction.click(t, eaCheckoutDetailsPage.elements.rdbGasAccessRestrictionNo);
-          } else if (errorMsg.includes("Gas Account")) {
-            await testFunction.click(t, eaCheckoutDetailsPage.elements.rdbEleDisconnectionYes);
-            await testFunction.click(t, eaCheckoutDetailsPage.elements.rdbEleAccessRestrictionNo);
-          }
+    const eleDisconnectionError = await testFunction.sizeOfElement(t, eaCheckoutDetailsPage.elements.eleDisconnectionError);
+    const gasDisconnectionError = await testFunction.sizeOfElement(t, eaCheckoutDetailsPage.elements.gasDisconnectionError);
+    const gasDisconnectionCalendar = await testFunction.sizeOfElement(t, eaCheckoutDetailsPage.elements.gasDisconnectionCalendar);
+    const eleDisconnectionCalendar = await testFunction.sizeOfElement(t, eaCheckoutDetailsPage.elements.eleDisconnectionCalendar);
+    const renovationQuestionNo = await testFunction.sizeOfElement(t, eaCheckoutDetailsPage.elements.renovationNo);
+
+    if (disconnectionOption === "Yes") {
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.rbDisconnectionYes);
+      if(eleDisconnectionError === 0 && eleDisconnectionCalendar!==0){
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.rdbEleAccessRestrictionNo);
       }
-        else{
-          console.error("disconnection has some issues");
-        }
+      if(gasDisconnectionError === 0 && gasDisconnectionCalendar!==0){
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.rdbGasAccessRestrictionNo);
       }
-      else if(disconnectionOption==='No'){
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.rdbEleDisconnectionNo);
+      if (renovationQuestionNo !== 0) {
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.renovationNo);
       }
-      else{
-        console.error("Disconnection is not chosen")
-      }
+    } else if (disconnectionOption === "No") {
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.rbDisconnectionNo);
+    } else {
+      console.error("Disconnection is not chosen");
+    }
   }
 
   public static async selectPlan(t,elePlan,gasPlan){

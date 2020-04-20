@@ -293,7 +293,100 @@ Feature: Sanity E2E scenarios for ST & ST+1 for 1View Project
     And user submits the quote
     Then user lands on checkout complete page
 
-@test
+  Scenario: QTCRM012 - Submit a quote with AAH Access level 3
+    Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM012' to save evidences
+    And user has navigated to 'BUS' plans page
+    When user have selected fuel as "ELE"
+    And user clicks on the verify modal window on 'BUS' page
+    And user verifies the account through verify account journey for business customer
+      |customer_type|modal_option   |elecAccountNumber|ABNOrACN     |idType |idNumber  |
+      |BUS          |verify account |1536689555       |803123232    |pin    |222222    |
+    And user selects 'Total Business'
+    And user moves on to fill the qualifier
+    And user provides all other details on qualifier page for Existing customer
+      |customerType|movingType |solarOption  |
+      |BUS         |Non-Moving |No           |
+    And user provides all details on checkout details page
+      |customerType|journey    |customerStatus|firstName    |lastName|businessType |
+      |BUS         |BUS        |Existing      |QTCRMTwelve  |test    |ACN          |
+    And user opts for AAH and DD
+      |optAAHOption|aahAccessLevel|optDDOption|directDebitType|
+      |Yes         |Level 3       |No         |               |
+    And user selects billing preference option
+      |option               |otherAddress                                 |
+      |Connection address   |                                             |
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType |EleclifeSupportDevices  |GaslifeSupportDevices |
+      |No               |         |                        |                      |
+    And user verifies selected plan details for 'ELE'
+    And user submits the quote
+    Then user lands on checkout complete page
+
+  Scenario: QTCRM013 - Submit a quote with Disconnection and final bill to email
+    Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM013' to save evidences
+    And user has navigated to 'RES' plans page
+    And user have selected fuel as "BOTH"
+    When user clicks on the verify modal window on 'RES' page
+    And user verifies the account through verify account journey for residential customer
+      |customer_type  |modal_option   |elecAccountNumber  |gasAccountNumber |postcode |idType |idNumber   |
+      |RES            |verify account |5792801518         |7741645136       |2577     |dl     |234376869  |
+    And user selects 'Basic Home'
+    And user moves on to fill the qualifier
+    And user provides all other details on qualifier page for Existing customer
+      |customerType |movingType |connectionAddress                          |propertyType |solarOption  |
+      |RES          |Moving     |6 Reeyana Place, MOSS VALE NSW 2577        |Renter       |No           |
+    And user provides all details on checkout details page
+      |customerType |journey    |customerStatus|firstName      |lastName |idType          |
+      |RES          |RES        |Existing      |QTCRMThirteen  |test     |Driver License  |
+    And user selects billing preference option
+      |option  |otherAddress                                 |
+      |Email   |                                             |
+    And user selects final bill option
+      |option  |otherAddress                                 |
+      |Email   |                                             |
+    And user selects answer for property renovation question for 'NSW'
+    And user chooses "Yes" for disconnection
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType |EleclifeSupportDevices  |GaslifeSupportDevices |
+      |No               |         |                        |                      |
+    And user verifies selected plan details for 'BOTH'
+    And user submits the quote
+    Then user lands on checkout complete page
+
+  Scenario: QTCRM014 - Submit a quote with Disconnection and final bill to email
+    Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM014' to save evidences
+    And user has navigated to 'RES' plans page
+    And user have selected fuel as "ELE"
+    When user clicks on the verify modal window on 'RES' page
+    And user verifies the account through verify account journey for residential customer
+      |customer_type  |modal_option   |elecAccountNumber  |postcode |idType |idNumber   |
+      |RES            |verify account |8371207137         |2603     |dob    |01011980   |
+    And user selects 'Total Plan Plus'
+    And user moves on to fill the qualifier
+    And user provides all other details on qualifier page for Existing customer
+      |customerType |movingType |connectionAddress                          |propertyType |solarOption  |
+      |RES          |Moving     |32 Dominion Circuit, FORREST ACT 2603      |Owner        |No           |
+    And user provides all details on checkout details page
+      |customerType |journey    |customerStatus|firstName      |lastName |idType    |
+      |RES          |RES        |Existing      |QTCRMFourteen  |test     |Medicare  |
+    And user selects billing preference option
+      |option         |otherAddress                                 |
+      |Other address  |271 Heatherhill Road, FRANKSTON  VIC  3199   |
+    And user selects final bill option
+      |option               |otherAddress                                 |
+      |Connection address   |                                             |
+    And user selects answer for property renovation question for 'ACT'
+    And user chooses "Yes" for disconnection
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType |EleclifeSupportDevices  |GaslifeSupportDevices |
+      |No               |         |                        |                      |
+    And user verifies selected plan details for 'ELE'
+    And user submits the quote
+    Then user lands on checkout complete page
+
   Scenario: QTCRM015 - Submit a quote with Concession Card
     Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM015' to save evidences
     And user has navigated to 'RES' plans page
