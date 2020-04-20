@@ -292,3 +292,31 @@ Feature: Sanity E2E scenarios for ST & ST+1 for 1View Project
     And user verifies selected plan details for 'BOTH'
     And user submits the quote
     Then user lands on checkout complete page
+
+
+  Scenario: QTCRM015 - Submit a quote with Concession Card
+    Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM015' to save evidences
+    And user has navigated to 'RES' plans page
+    And user have selected fuel as "ELE"
+    When user clicks on the verify modal window on 'RES' page
+    And user verifies the account through verify account journey for residential customer
+      |customer_type|modal_option   |gasAccountNumber |postcode |idType |idNumber   |
+      |RES          |verify account |3205365714       |4069     |dl     |820386230  |
+    When user selects 'No Frills'
+    And user moves on to fill the qualifier
+    And user provides all other details on qualifier page
+      |customerType |connectionAddress                          |movingType  |propertyType   |solarOption  |
+      |RES          |339 Pullenvale Road, PULLENVALE QLD 4069   |Non-Moving  |Renter         |Yes          |
+    And user provides all details on checkout details page
+      |customerType |journey    |customerStatus  |firstName     |lastName |idType         |medicareType |
+      |RES          |RES        |Existing        |QTCRMFifteen  |test     |Passport       |             |
+    And user selects billing preference option
+      |option             |otherAddress                                 |
+      |Connection address |                                             |
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType |EleclifeSupportDevices  |GaslifeSupportDevices |
+      |No               |         |                        |                      |
+    And user verifies selected plan details for 'ELE'
+    And user submits the quote
+    Then user lands on checkout complete page
