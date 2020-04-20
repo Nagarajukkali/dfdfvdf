@@ -413,4 +413,12 @@ export class checkoutDetailsMethod{
         console.error("Invalid bill pref selected.");
     }
   }
+
+  public static async addConcessionCardDetails(t) {
+    await testFunction.click(t, eaCheckoutDetailsPage.elements.addConcession);
+    await testFunction.click(t, eaCheckoutDetailsPage.elements.concessionCardTypeDropDown);
+    await testFunction.click(t, eaCheckoutDetailsPage.elements.concessionCardTypeOption);
+    await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfConcessionCardNumber, "V123456");
+    await testFunction.click(t, eaCheckoutDetailsPage.elements.cbConcessionAgreeTerms);
+  }
 }

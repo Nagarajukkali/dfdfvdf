@@ -93,3 +93,6 @@ When(/^user selects final bill option$/, async function (t, [], dataTable) {
   let data = dataTable.hashes();
   await checkoutDetailsMethod.selectBillingPreference(t, data[0].option, data[0].otherAddress, true);
 });
+When(/^user opts for concession card$/, async function (t) {
+  await checkoutDetailsMethod.addConcessionCardDetails(t);
+});
