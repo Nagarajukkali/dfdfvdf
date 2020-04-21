@@ -1,3 +1,4 @@
+const eaCheckoutDetailsPage=require('../pages/checkOutDetails.page');
 import {When} from 'cucumber';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 import {testFunction } from '../../global_methods/helper';
@@ -92,4 +93,10 @@ When(/^user selects final bill option$/, async function (t, [], dataTable) {
    */
   let data = dataTable.hashes();
   await checkoutDetailsMethod.selectBillingPreference(t, data[0].option, data[0].otherAddress, true);
+});
+When(/^user opts for concession card$/, async function (t) {
+  await checkoutDetailsMethod.addConcessionCardDetails(t);
+});
+When(/^user opts in for Carbon Neutral$/, async function (t) {
+  await testFunction.click(t, eaCheckoutDetailsPage.elements.cbOptInCarbonNeutral);
 });

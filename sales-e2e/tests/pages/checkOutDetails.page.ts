@@ -98,7 +98,13 @@ const eaCheckoutDetailsPage={
     rbFinalBillPrefConnectionAddress: Selector("#final-bill-method__connection-address-option-value"),
     rbFinalBillPrefOtherAddress: Selector("#final-bill-method__other-address-option [class*='wg-radio-option-text']"),
     tfFinalBillPrefOtherAddress: Selector("#final-bill-other-address-auto"),
-    finalBillServiceAddressList: Selector("[ng-form*='final-bill-other-address'] a")
+    finalBillServiceAddressList: Selector("[ng-form*='final-bill-other-address'] a"),
+    addConcession: Selector("#concession-card__add"),
+    concessionCardTypeDropDown: Selector("#concession_cardtype sui-select"),
+    concessionCardTypeOption: Selector("#concession_cardtype sui-select sui-option"),
+    tfConcessionCardNumber: Selector("#concession_cardnumber"),
+    cbConcessionAgreeTerms: Selector("#concession_agreeTerms [class*='checkmark icon-tickboxUnchecked']"),
+    cbOptInCarbonNeutral: Selector("#carbonNeutralOptIn div[role='button']")
   },
 };
 
