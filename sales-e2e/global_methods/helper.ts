@@ -63,6 +63,13 @@ const replace={ replace: true };
     CREDIT_CARD = 'CC'
   }
 
+  export enum cdeResponses {
+    ACCEPT = "ACCEPT",
+    DECLINE = "DECLINE",
+    RETRY = "RETRY",
+    ACCEPT_WITH_CONDITION = "ACCEPT_WC"
+  }
+
 export class testFunction {
 
   public static async click(t, element) {
