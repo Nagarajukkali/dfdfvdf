@@ -1,6 +1,6 @@
 const eaCheckoutDetailsPage=require('../pages/checkOutDetails.page');
 const eaCheckoutReviewPage=require('../pages/checkoutReview.page');
-import {BusinessType, CustomerStatus, directDebitType, PlanType, testFunction} from '../../global_methods/helper';
+import {BusinessType, CustomerStatus, directDebitType, PlanType, testFunction, cdeResponses} from '../../global_methods/helper';
 import {AustralianState, CustomerType} from '@ea/ea-commons-models';
 const fileUtils=require('../../libs/FileUtils.js');
 const Hashes=require('jshashes');
@@ -102,12 +102,12 @@ export class checkoutDetailsMethod{
         console.log("Existing customer passport details provided");
     }
 
-    public static async checkoutExistingCustomerDriverLicenseIdentification(t){
-      let dlNo=testFunction.getRandomNumber(999999);
+    public static async checkoutExistingCustomerDriverLicenseIdentification(t, licenseNumber?: string){
+      licenseNumber = licenseNumber ? licenseNumber : testFunction.getRandomNumber(999999);
       await testFunction.click(t,eaCheckoutDetailsPage.elements.idDrop);
       await testFunction.click(t,eaCheckoutDetailsPage.elements.idValueDriverLicense);
       await testFunction.click(t,eaCheckoutDetailsPage.elements.idNumber);
-      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,dlNo);
+      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,licenseNumber);
       console.log("Existing customer dl details provided");
     }
 
@@ -134,12 +134,12 @@ export class checkoutDetailsMethod{
     }
   }
 
-  public static async checkoutNewCustomerDriverLicenseIdentification(t){
-    let dlNo=testFunction.getRandomNumber(999999);
+  public static async checkoutNewCustomerDriverLicenseIdentification(t, licenseNumber?: string){
+    licenseNumber = licenseNumber ? licenseNumber : testFunction.getRandomNumber(999999);
     await testFunction.click(t,eaCheckoutDetailsPage.elements.idDrop);
     await testFunction.click(t,eaCheckoutDetailsPage.elements.idValueDriverLicense);
     await testFunction.click(t,eaCheckoutDetailsPage.elements.idLicenseNumber);
-    await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idLicenseNumber,dlNo);
+    await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idLicenseNumber,licenseNumber);
     console.log("New customer dl details provided");
   }
 
@@ -415,5 +415,48 @@ export class checkoutDetailsMethod{
     await testFunction.click(t, eaCheckoutDetailsPage.elements.concessionCardTypeOption);
     await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfConcessionCardNumber, "V123456");
     await testFunction.click(t, eaCheckoutDetailsPage.elements.cbConcessionAgreeTerms);
+  }
+
+  public static async enterDetailsToMockCDE(t, cdeResponse: string, customerType: string) {
+    await this.enterFirstName(t, "test");
+    await this.enterLastName(t, "test");
+    await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.email, "test@test.com");
+    cdeResponse = cdeResponse.toLowerCase();
+    this.enterLicenseNumber(t, customerType, cdeResponse);
+  }
+
+  public static async enterLicenseNumber(t, customerType, cdeResponse) {
+    switch (cdeResponse) {
+      case "accept":
+        if(customerType === CustomerStatus.NEW) {
+          await this.checkoutNewCustomerDriverLicenseIdentification(t, cdeResponses.ACCEPT);
+        } else {
+          await this.checkoutExistingCustomerDriverLicenseIdentification(t, cdeResponses.ACCEPT);
+        }
+        break;
+      case "decline":
+        if(customerType === CustomerStatus.NEW) {
+          await this.checkoutNewCustomerDriverLicenseIdentification(t, cdeResponses.DECLINE);
+        } else {
+          await this.checkoutExistingCustomerDriverLicenseIdentification(t, cdeResponses.DECLINE);
+        }
+        break;
+      case "retry":
+        if(customerType === CustomerStatus.NEW) {
+          await this.checkoutNewCustomerDriverLicenseIdentification(t, cdeResponses.RETRY);
+        } else {
+          await this.checkoutExistingCustomerDriverLicenseIdentification(t, cdeResponses.RETRY);
+        }
+        break;
+      case "accept with condition":
+        if(customerType === CustomerStatus.NEW) {
+          await this.checkoutNewCustomerDriverLicenseIdentification(t, cdeResponses.ACCEPT_WITH_CONDITION);
+        } else {
+          await this.checkoutExistingCustomerDriverLicenseIdentification(t, cdeResponses.ACCEPT_WITH_CONDITION);
+        }
+        break;
+      default:
+        console.error("Invalid cde response passed.");
+    }
   }
 }

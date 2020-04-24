@@ -100,3 +100,6 @@ When(/^user opts for concession card$/, async function (t) {
 When(/^user opts in for Carbon Neutral$/, async function (t) {
   await testFunction.click(t, eaCheckoutDetailsPage.elements.cbOptInCarbonNeutral);
 });
+When(/^user fill the details to reproduce "([^"]*)" CDE response for "([^"]*)" customer$/, async function (t, [cdeResponse, customerType]) {
+  await checkoutDetailsMethod.enterDetailsToMockCDE(t, cdeResponse, customerType);
+});

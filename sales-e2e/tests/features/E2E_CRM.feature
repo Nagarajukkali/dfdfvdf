@@ -525,7 +525,7 @@ Feature: Sanity E2E scenarios for ST & ST+1 for 1View Project
     And user submits the quote
     Then user lands on checkout complete page
 
-  Scenario: QTCRM020 - Submit a quote with CDE response as 'Accept'
+  Scenario: QTCRM020 & QTCRM025 - Submit a quote with CDE response as 'Accept' and FRMP as UNKNOWN
     Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM020' to save evidences
     And user has navigated to 'RES' plans page
     And user have selected fuel as "ELE"
@@ -547,5 +547,105 @@ Feature: Sanity E2E scenarios for ST & ST+1 for 1View Project
       |lifeSupportOption|fuelType |EleclifeSupportDevices  |GaslifeSupportDevices |
       |No               |         |                        |                      |
     And user verifies selected plan details for 'ELE'
+    And user submits the quote
+    Then user lands on checkout complete page
+
+  Scenario: QTCRM021 - Submit a quote with CDE response as 'Accept with Condition'
+    Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM021' to save evidences
+    And user has navigated to 'RES' plans page
+    And user have selected fuel as "GAS"
+    When user selects 'No Frills'
+    And user moves on to fill the qualifier
+    And user selects 'New' on qualifier
+    And user provides all other details on qualifier page
+      |customerType |connectionAddress                        |movingType  |propertyType   |solarOption  |
+      |RES          |1 King Street, ALBERTON SA 5014          |Moving      |Renter         |Yes          |
+    And user provides all details on checkout details page
+      |customerType |journey    |customerStatus  |firstName       |lastName       |idType         |medicareType |
+      |RES          |RES        |New             |QTCRMTwentyone  |test           |Driver License |             |
+    And user selects answer for property renovation question for 'SA'
+    And user selects billing preference option
+      |option               |otherAddress                                 |
+      |Email                |                                             |
+    And user fill the details to reproduce "Accept with Condition" CDE response for "New" customer
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType |EleclifeSupportDevices  |GaslifeSupportDevices |
+      |No               |         |                        |                      |
+    And user verifies selected plan details for 'GAS'
+    And user submits the quote
+    Then user lands on checkout complete page
+
+  Scenario: QTCRM022 - Submit a quote with CDE response as 'Retry'
+    Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM022' to save evidences
+      And user has navigated to 'RES' plans page
+      When user selects 'Basic Home'
+      And user moves on to fill the qualifier
+      And user selects 'New' on qualifier
+      And user provides all other details on qualifier page
+        |customerType |connectionAddress                        |movingType  |propertyType   |solarOption  |
+        |RES          |42 Brownlow Drive, POINT COOK VIC 3030   |Moving      |Owner          |No           |
+      And user provides all details on checkout details page
+        |customerType |journey    |customerStatus  |firstName       |lastName |idType         |medicareType |
+        |RES          |RES        |New             |QTCRMTwentyTwo  |test     |Driver License |             |
+      And user selects answer for property renovation question for 'VIC'
+      And user selects billing preference option
+        |option         |otherAddress                                 |
+        |Email          |                                             |
+      And user fill the details to reproduce "Retry" CDE response for "New" customer
+      And user clicks on 'Review your order' button and navigates to review page
+      And user provides life support details on review page
+        |lifeSupportOption|fuelType |EleclifeSupportDevices  |GaslifeSupportDevices |
+        |No               |         |                        |                      |
+      And user verifies selected plan details for 'BOTH'
+      And user submits the quote
+      Then user lands on checkout complete page
+
+  Scenario: QTCRM023 - Submit a quote with CDE response as 'Decline'
+    Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM023' to save evidences
+    And user has navigated to 'RES' plans page
+    And user have selected fuel as "ELE"
+    When user selects 'Total Plan'
+    And user moves on to fill the qualifier
+    And user selects 'New' on qualifier
+    And user provides all other details on qualifier page
+      |customerType |connectionAddress                          |movingType  |propertyType   |solarOption  |
+      |RES          |50 Argyle Place, MILLERS POINT NSW 2000    |Moving      |Owner          |No           |
+    And user provides all details on checkout details page
+      |customerType |journey    |customerStatus  |firstName         |lastName |idType         |medicareType |
+      |RES          |RES        |New             |QTCRMTwentyThree  |test     |Driver License |             |
+    And user selects billing preference option
+      |option         |otherAddress                                 |
+      |Email          |                                             |
+    And user fill the details to reproduce "Decline" CDE response for "New" customer
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType |EleclifeSupportDevices  |GaslifeSupportDevices |
+      |No               |         |                        |                      |
+    And user verifies selected plan details for 'ELE'
+    And user submits the quote
+    Then user lands on checkout complete page
+
+  Scenario: QTCRM024 & QTCRM026 - Submit a quote with NMI and MIRN null in the request and FRMP & FRO is null
+    Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM024' to save evidences
+    And user has navigated to 'RES' plans page
+    And user have selected fuel as "BOTH"
+    When user selects 'No Frills'
+    And user moves on to fill the qualifier
+    And user selects 'New' on qualifier
+    And user provides all other details on qualifier page
+      |customerType |connectionAddress                          |movingType  |propertyType   |solarOption  |
+      |RES          |19 Kings Court, ADELAIDE SA 5000           |Moving      |Owner          |No           |
+    And user provides all details on checkout details page
+      |customerType |journey    |customerStatus  |firstName         |lastName |idType         |medicareType |
+      |RES          |RES        |New             |QTCRMTwentyFour   |test     |Driver License |             |
+    And user selects billing preference option
+      |option         |otherAddress                                 |
+      |Email          |                                             |
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType |EleclifeSupportDevices  |GaslifeSupportDevices |
+      |No               |         |                        |                      |
+    And user verifies selected plan details for 'BOTH'
     And user submits the quote
     Then user lands on checkout complete page
