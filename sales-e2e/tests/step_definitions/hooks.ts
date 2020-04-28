@@ -5,9 +5,11 @@ const fileUtils=require('../../libs/FileUtils.js');
 let log4js=require('log4js');
 const USERAGENT=ClientFunction(() => navigator.userAgent);
 let logger=log4js.getLogger();
+const fs = require('fs');
+const path = require('path');
 const eaHomePage=require('../pages/energy-australia-home.page');
 logger.level='debug';
-let screenshotFolder=null;
+export let screenshotFolder=null;
 
 Before(  async t => {
   await testFunction.maximizeWindow(t);
@@ -15,6 +17,9 @@ Before(  async t => {
 
 Given(/^user has opened the website link in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
   screenshotFolder=folderName;
+  let screenshotFolderPath="screenshots/Chrome/"+screenshotFolder;
+  fileUtils.deleteFiles(screenshotFolderPath);
+  fileUtils.deleteFiles(screenshotFolderPath+"/thumbnails");
   await t.navigateTo(eaHomePage.pageUrl);
 });
 
@@ -38,7 +43,7 @@ After( async t => {
   logger.debug('Execution completed');
 });
 
-async function fetchBrowser() {
+export async function fetchBrowser() {
   const useragent=await USERAGENT().then(result => result);
   let browser;
     if (useragent.indexOf("Firefox") > -1) {
@@ -69,7 +74,7 @@ async function fetchBrowser() {
     }
     return formattedDate;
 }*/
-async function getDateTime() {
+export async function getDateTime() {
   let now = new Date();
   let year = now.getFullYear();
   let month = String(now.getMonth() + 1);

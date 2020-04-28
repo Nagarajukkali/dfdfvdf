@@ -3,6 +3,7 @@ import {checkoutDetailsMethod} from "../tests/methods/checkoutDetailsPage";
 
 const YAML = require('yamljs');
 const fs   = require('fs');
+const path = require('path');
 
 export function getFilePath(t,fuelType){
   let path;
@@ -32,6 +33,17 @@ export function convertYmlTOJSONObj(t,fuelType){
     const strVal=YAMLtoJSON(doc);
     const JSONObj=JSON.parse(strVal);
     return JSONObj;
+  }
+
+  export function deleteFiles(filePath) {
+    fs.readdir(filePath, (err, files) => {
+      if (err) throw err;
+      for (const file of files) {
+        fs.unlink(path.join(filePath, file), err => {
+          if (err) throw err;
+        });
+      }
+    });
   }
 
 

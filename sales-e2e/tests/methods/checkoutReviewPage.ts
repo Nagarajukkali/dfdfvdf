@@ -2,6 +2,7 @@ import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 const eaCheckoutReviewPage=require('../pages/checkoutReview.page')
 import {LSDevices, PlanType, SelectionType, testFunction} from '../../global_methods/helper';
 import {checkoutDetailsMethod} from './checkoutDetailsPage';
+import {fetchBrowser, getDateTime, screenshotFolder} from '../step_definitions/hooks';
 
 
 export class checkoutReviewMethod {
@@ -149,6 +150,7 @@ export class checkoutReviewMethod {
           eleSourceCode='Basic';
         }
         checkoutDetailsMethod.map.set('ele source code_'+checkoutDetailsMethod.getScenarioId(t),eleSourceCode);
+        await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/checkout_review_page_${await getDateTime()}.png`);
       }
       if(testFunction.isGas(fuelType)){
         let gasPlanName=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasPlanName);
@@ -168,6 +170,7 @@ export class checkoutReviewMethod {
           gasSourceCode='Basic';
         }
         checkoutDetailsMethod.map.set('gas source code_'+checkoutDetailsMethod.getScenarioId(t),gasSourceCode);
+        await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/checkout_review_page_${await getDateTime()}.png`);
       }
       return checkoutDetailsMethod.map;
   }

@@ -18,7 +18,7 @@
   },
   "config": {
     "env": "non-prod",
-    "e2e_tags": "@E2E"
+    "e2e_tags": "@50CreditExtension"
   },
   "private": true,
   "dependencies": {

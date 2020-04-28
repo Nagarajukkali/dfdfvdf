@@ -42,3 +42,6 @@ Thumbs.db
 #Report files
 /sales-e2e/results
 
+#Screenshots
+/sales-e2e/screenshots/Chrome
+

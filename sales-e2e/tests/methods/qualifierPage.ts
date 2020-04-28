@@ -1,3 +1,5 @@
+import {fetchBrowser, getDateTime, screenshotFolder} from '../step_definitions/hooks';
+
 const eaQualifierPage=require('../pages/qualifier.page');
 import {BusinessType, CustomerStatus, Moving, Property, Solar, testFunction} from '../../global_methods/helper';
 
@@ -98,6 +100,7 @@ export class qualifierMethod{
       await testFunction.isElementVisible(t, eaQualifierPage.elements.addressLoadingIcon);
       await testFunction.waitForLoadingIconToClose();
       await t.wait(3000);
+      await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/qualifier_page_${await getDateTime()}.png`);
       await testFunction.click(t, eaQualifierPage.elements.addressContinue);
       console.log(`${address} is provided`);
   }
@@ -107,6 +110,7 @@ export class qualifierMethod{
   }
 
   public static async selectDateFromCalendar(t){
+    await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/qualifier_page_${await getDateTime()}.png`);
     await testFunction.selectDateFromCalendar(t,eaQualifierPage.elements.calendarTable);
   }
   public static async selectPropertyType(t,propertyType){

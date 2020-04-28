@@ -37,9 +37,11 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.offerType,offerType);
   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.plan,planCode);
   if(fuelType===FUEL_TYPE_OPTIONS.ELE.value){
-    let NMI=data[0].NMI;
-    await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.nmiMirnInformation.NMI,NMI);
-    if(jsonObj.saleDetail.offerDetail.offerType==='ENE' && jsonObj.saleDetail.saleDetailHeader.customerType==='RESIDENTIAL'){
+    if(!t.testRun.test.name.includes('FRMP/FRO as UNKNOWN')){
+      let NMI=data[0].NMI;
+      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.nmiMirnInformation.NMI,NMI);
+    }
+    if((jsonObj.saleDetail.offerDetail.offerType==='ENE' || jsonObj.saleDetail.offerDetail.offerType==='COR') && jsonObj.saleDetail.saleDetailHeader.customerType==='RESIDENTIAL' && jsonObj.saleDetail.premiseDetail.state!=='ACT'){
       await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
     }
     else{
@@ -47,9 +49,11 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
     }
   }
   if(fuelType===FUEL_TYPE_OPTIONS.GAS.value){
-    let MIRN=data[0].MIRN;
-    await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.nmiMirnInformation.MIRN,MIRN);
-    if(jsonObj.saleDetail.offerDetail.offerType==='ENE' && jsonObj.saleDetail.saleDetailHeader.customerType==='RESIDENTIAL'){
+    if(!t.testRun.test.name.includes('FRMP/FRO as UNKNOWN')){
+      let MIRN=data[0].MIRN;
+      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.nmiMirnInformation.MIRN,MIRN);
+    }
+    if((jsonObj.saleDetail.offerDetail.offerType==='ENE' || jsonObj.saleDetail.offerDetail.offerType==='COR') && jsonObj.saleDetail.saleDetailHeader.customerType==='RESIDENTIAL' && jsonObj.saleDetail.premiseDetail.state!=='ACT'){
       await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
     }
     else{

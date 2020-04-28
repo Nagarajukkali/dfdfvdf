@@ -1,3 +1,5 @@
+import {fetchBrowser, getDateTime, screenshotFolder} from './hooks';
+
 const eaCheckoutDetailsPage=require('../pages/checkOutDetails.page');
 import {When} from 'cucumber';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
@@ -22,6 +24,7 @@ When(/^user provides all details on checkout details page$/, async function (t,[
   await checkoutDetailsMethod.provideDetailsInAboutMeSection(t,data[0].journey,data[0].firstName,data[0].lastName);
   let emailAddress=await checkoutDetailsMethod.provideContactDetails(t);
   await checkoutDetailsMethod.getEmailWithScenario(t,emailAddress);
+  await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/checkout_details_page_${await getDateTime()}.png`);
   if(customerType===CustomerType.RESIDENTIAL){
     if(data[0].idType === "Medicare") {
       await checkoutDetailsMethod.checkoutIdentification(t,data[0].customerStatus,data[0].idType, data[0].medicareType);
@@ -32,9 +35,11 @@ When(/^user provides all details on checkout details page$/, async function (t,[
   if(customerType===CustomerType.BUSINESS){
     await checkoutDetailsMethod.provideBusinessDetails(t,data[0].businessType);
   }
+  await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/checkout_details_page_${await getDateTime()}.png`);
 });
 
 When(/^user clicks on 'Review your order' button and navigates to review page$/, async function (t) {
+  await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/checkout_details_page_${await getDateTime()}.png`);
   await checkoutDetailsMethod.clickOnReviewYourOrderBtn(t);
 });
 When(/^user selects answer for property renovation question for '(.*)'$/, async function (t,[state]) {
@@ -54,9 +59,11 @@ When(/^user opts for AAH and DD$/, async function (t,[],dataTable) {
     } else {
       await checkoutDetailsMethod.addAAHDetails(t);
     }
+    await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/checkout_details_page_${await getDateTime()}.png`);
   }
   if(optDDOption==='Yes'){
     await checkoutDetailsMethod.addDirectDebit(t,data[0].directDebitType);
+    await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/checkout_details_page_${await getDateTime()}.png`);
   }
 });
 When(/^user selects plans on checkout details page$/, async function (t,[],dataTable) {
