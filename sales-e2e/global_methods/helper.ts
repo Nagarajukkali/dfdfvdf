@@ -1,6 +1,6 @@
 import { Selector } from 'testcafe';
 import { ClientFunction } from 'testcafe';
-import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
+import {FUEL_TYPE_OPTIONS, AustralianState} from '@ea/ea-commons-models';
 const replace={ replace: true };
 
   export enum CustomerStatus {
@@ -273,6 +273,23 @@ export class testFunction {
         }
       }
       if(flag) break;
+    }
+  }
+
+  public static getPostcode(state: string) {
+    switch (state) {
+      case AustralianState.VIC:
+        return "3000";
+      case AustralianState.NSW:
+        return "2000";
+      case AustralianState.ACT:
+        return "2600";
+      case AustralianState.SA:
+        return "5000";
+      case AustralianState.QLD:
+        return "4500";
+      default:
+        return "Invalid State selection!";
     }
   }
 

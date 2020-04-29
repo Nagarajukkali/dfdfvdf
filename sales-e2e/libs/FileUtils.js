@@ -1,8 +1,10 @@
-import {FUEL_TYPE_OPTIONS} from "@ea/ea-commons-models";
+import {CustomerType, FUEL_TYPE_OPTIONS} from "@ea/ea-commons-models";
 import {checkoutDetailsMethod} from "../tests/methods/checkoutDetailsPage";
 
 const YAML = require('yamljs');
 const fs   = require('fs');
+
+
 
 export function getFilePath(t,fuelType){
   let path;
@@ -33,6 +35,16 @@ export function convertYmlTOJSONObj(t,fuelType){
     const JSONObj=JSON.parse(strVal);
     return JSONObj;
   }
+
+export function getJSONfile(campaignName){
+  campaignName = campaignName.toLowerCase();
+  let JSONObj;
+  const resiFilePath='resources/Campaign_' + campaignName + '.json';
+  const doc = fs.readFileSync(resiFilePath,'utf8');
+  JSONObj = JSON.parse(doc);
+  return JSONObj;
+}
+
 
 
 

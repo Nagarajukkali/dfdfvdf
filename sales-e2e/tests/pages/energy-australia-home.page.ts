@@ -57,7 +57,47 @@ const eaHomePage={
     postcodeOnCampaignPage:Selector("#campaign-postcode-input"),
     btnCampaignSearch:Selector("[id^='campaign-search-submit']"),
     selectCampaignPlans:Selector("#action__submit"),
+    eleTotalPlanRateSummary:Selector("[id*='plan-rate-summary-title-TOPH-E']"),
+    gasTotalPlanRateSummary:Selector("[id*='plan-rate-summary-title-TOPH-G']"),
+    totalPlanRateSummary:Selector("[id*='plan-rate-summary-title-TOPH']"),
+    eleTotalPlanDiscount:Selector("[id*=plan-rate-summary-TOPH-E] span.hs-plan-rate-summary__title-amount"),
+    gasTotalPlanDiscount:Selector("[id*=plan-rate-summary-TOPH-G] span.hs-plan-rate-summary__title-amount"),
+    planCostEstimate: Selector("[class*='hs-plan-estimate__value']"),
+    eleDiscount: Selector("[id*='plan-rate-summary'][id*='-E'] [class*='title-amount']"),
+    gasDiscount: Selector("[id*='plan-rate-summary'][id*='-G'] [class*='title-amount']"),
   },
+  campaignElements:{
+    elePlanHeadingTitle:Selector("[id*='plan-heading-title'][id*='-E']"),
+    gasPlanHeadingTitle:Selector("[id*='plan-heading-title'][id*='-G']"),
+    elePlanHeadingFuel:Selector("[id*='plan-heading-fuel'][id*='-E']"),
+    gasPlanHeadingFuel:Selector("[id*='plan-heading-fuel'][id*='-G']"),
+    elePlanHeadingDescription:Selector("[id*='plan-heading-description'][id*='-E']"),
+    gasPlanHeadingDescription:Selector("[id*='plan-heading-description'][id*='-G']"),
+    eleCarbonNeutralTotalPlanFeatureTitle:Selector("[id*='plan-feature-TOPH-E'] div.hs-plan-feature__item-title").withText("Carbon"),
+    isQLD: Selector("#condiDisclaimer").withText("QLD"),
+    eleFeatureSectionTitle: Selector("[id*='plan-feature-title'][id*='-E']"),
+    gasFeatureSectionTitle: Selector("[id*='plan-feature-title'][id*='-G']"),
+
+    eleFeature50CreditTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("$50"),
+    eleFeature50CreditDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("$50").sibling(),
+    eleFeatureCNTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral"),
+    eleFeatureCNDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral").sibling(),
+    eleFeaturePeaceOfMindTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Peace of mind"),
+    eleFeaturePeaceOfMindDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Peace of mind").sibling(),
+    eleFeatureDiscountOffTotalBillTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Discount off"),
+    eleFeatureDiscountOffTotalBillDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Discount off").sibling(),
+    eleFeatureNoStandardConnectionFeeTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("No standard"),
+    eleFeatureNoStandardConnectionFeeDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("No standard").sibling(),
+
+    gasFeature50CreditTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("$50"),
+    gasFeature50CreditDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("$50").sibling(),
+    gasFeatureCNTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral"),
+    gasFeatureCNDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral").sibling(),
+    gasFeaturePeaceOfMindTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Peace of mind"),
+    gasFeaturePeaceOfMindDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Peace of mind").sibling(),
+    gasFeatureDiscountOffTotalBillTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Discount off"),
+    gasFeatureDiscountOffTotalBillDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Discount off").sibling()
+  }
 };
 
 module.exports=eaHomePage;
