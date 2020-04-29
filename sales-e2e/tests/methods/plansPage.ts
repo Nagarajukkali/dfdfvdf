@@ -71,6 +71,70 @@ export class plansMethod{
       }
     }
 
+  public static async validateThePlansAreLoaded(t) {
+    await testFunction.isElementDisplayed(t, EaHomePage.elements.planCostEstimate);
+  }
+
+  public static async validatePlanHeading(t, data: any) {
+    await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingTitle, data.planName);
+    await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingFuel, "Electricity");
+    await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingDescription, data.planDescription);
+    if(await testFunction.sizeOfElement(t, EaHomePage.campaignElements.isQLD) == 0) {
+      await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingTitle, data.planName);
+      await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingFuel, "Gas");
+      await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingDescription, data.planDescription);
+    }
+  }
+
+  public static async validateFeatures(t: any, dataTable, data: any) {
+    if(dataTable[0].fuelType === "ELE") {
+      if(dataTable[0].Feature_50Credit === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeature50CreditTitle, data.electricity.feature.preSelect.Credit50.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeature50CreditDescription, data.electricity.feature.preSelect.Credit50.description);
+      }
+      if(dataTable[0].Feature_carbonNeutral === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNTitle, data.electricity.feature.preSelect.carbonNeutral.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNDescription, data.electricity.feature.preSelect.carbonNeutral.description);
+      }
+      if(dataTable[0].Feature_peaceOfMind === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeaturePeaceOfMindTitle, data.electricity.feature.preSelect.peaceOfMind.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeaturePeaceOfMindDescription, data.electricity.feature.preSelect.peaceOfMind.description);
+      }
+      if(dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillDescription, data.electricity.feature.preSelect.discountOffTotalEnergyBill.description);
+      }
+      if(dataTable[0].Feature_noStandardConnectionFee === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureNoStandardConnectionFeeTitle, data.electricity.feature.preSelect.noStandardConnectionFee.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureNoStandardConnectionFeeDescription, data.electricity.feature.preSelect.noStandardConnectionFee.description);
+      }
+    } else if(dataTable[0].fuelType === "GAS") {
+      if(dataTable[0].Feature_50Credit === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature50CreditTitle, data.gas.feature.preSelect.Credit50.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature50CreditDescription, data.gas.feature.preSelect.Credit50.description);
+      }
+      if(dataTable[0].Feature_carbonNeutral === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNTitle, data.gas.feature.preSelect.carbonNeutral.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNDescription, data.gas.feature.preSelect.carbonNeutral.description);
+      }
+      if(dataTable[0].Feature_peaceOfMind === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindTitle, data.gas.feature.preSelect.peaceOfMind.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindDescription, data.gas.feature.preSelect.peaceOfMind.description);
+      }
+      if(dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
+      }
+    }
+  }
+
+  public static async validateDiscount(t, fuelType, discount) {
+    if(await testFunction.isElectricity(fuelType)) {
+      await testFunction.assertText(t, EaHomePage.elements.eleDiscount, discount);
+    } else if(await testFunction.isElectricity(fuelType)) {
+      await testFunction.assertText(t, EaHomePage.elements.gasDiscount, discount);
+    }
+  }
 }
 
 export class selectionOptionModalWindowMethod {
@@ -183,9 +247,13 @@ export class verifyAccountMethod {
 }
 
 export class campaignMethod{
-  public static async enterPostcodeOnCampaign(t,postcode){
-    await testFunction.clearAndEnterText(t,EaHomePage.elements.postcodeOnCampaignPage,postcode);
-    await testFunction.click(t,EaHomePage.elements.btnCampaignSearch);
+  public static async enterPostcodeOnCampaign(t, state, postcode?: String){
+    if(postcode == undefined) {
+      state = state.toUpperCase();
+      postcode = testFunction.getPostcode(state)
+    }
+    await testFunction.clearAndEnterText(t, EaHomePage.elements.postcodeOnCampaignPage, postcode);
+    await testFunction.click(t, EaHomePage.elements.btnCampaignSearch);
   }
 
   public static  async addPlanOnCampaign(t){

@@ -1,7 +1,9 @@
 import {plansMethod, verifyAccountMethod,campaignMethod} from '../methods/plansPage';
 import {selectionOptionModalWindowMethod } from '../methods/plansPage';
+const fileUtils=require('../../libs/FileUtils.js');
 import {When, Then } from 'cucumber';
 import {Given} from 'cucumber'
+import {testFunction} from '../../global_methods/helper';
 
 When(/^user clicks on the verify modal window on '(.*)' page$/, async function(t, [customerType]) {
       await plansMethod.clickPlansPageModal(t,customerType);
@@ -48,9 +50,45 @@ When(/^user verifies the account through verify account journey for business cus
   await verifyAccountMethod.verifyAccountDetails(t);
   await verifyAccountMethod.showCostEstimates(t);
 });
-When(/^user provides postcode and clicks on show me plan link$/, async function (t,[postcode]) {
-  await campaignMethod.enterPostcodeOnCampaign(t,postcode);
-});
+
 When(/^user clicks on Add plan button$/, async function (t) {
   await campaignMethod.addPlanOnCampaign(t)
+});
+
+Then(/^user verifies details of "([^"]*)" customer on plans page for "([^"]*)"$/, async function (t,[customerType,state]) {
+  let JSONObj=fileUtils.getJSONfile(customerType);
+  console.log(JSONObj.TotalPlan.planHeading);
+});
+
+When(/^user provides postcode for "([^"]*)" and proceed to view the plans$/, async function (t, [state]) {
+  await campaignMethod.enterPostcodeOnCampaign(t, state);
+});
+Then(/^user is presented with the plans$/, async function (t) {
+  await plansMethod.validateThePlansAreLoaded(t);
+});
+Then(/^user validates the data on plans page for "([^"]*)"$/, async function (t, [campaignName], dataTable) {
+  /*
+  Example:
+
+  And user validates the data on plans page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
+      |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |
+
+  And user validates the data on plans page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
+      |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |
+   */
+  dataTable = dataTable.hashes();
+  let data = await fileUtils.getJSONfile(campaignName);
+  await plansMethod.validatePlanHeading(t, data);
+  await plansMethod.validateFeatures(t, dataTable, data);
+});
+Then(/^user validates "([^"]*)" discount to be "([^"]*)" percent$/, async function (t, [fuelType, expectedDiscount]) {
+  /*
+  Example:     And user validates "ELE" discount to be "16" percent
+   */
+  await plansMethod.validateDiscount(t, fuelType, expectedDiscount);
+});
+When(/^user provides "([^"]*)" for postcode and proceed to view the plans$/, async function (t, [postcode]) {
+  await campaignMethod.enterPostcodeOnCampaign(t, "", postcode);
 });

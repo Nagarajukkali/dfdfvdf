@@ -1,7 +1,8 @@
 import {Before, After, Then, Given} from 'cucumber';
 import {testFunction} from '../../global_methods/helper';
 import {ClientFunction} from 'testcafe';
-const fileUtils=require('../../libs/FileUtils.js');
+import {CustomerType} from '@ea/ea-commons-models';
+import * as fs from 'fs';
 let log4js=require('log4js');
 const USERAGENT=ClientFunction(() => navigator.userAgent);
 let logger=log4js.getLogger();
@@ -25,7 +26,7 @@ Given(/^user has opened the new connection website link in a browser and creates
   await t.navigateTo(eaHomePage.newConnectionPageUrl);
 });
 
-Given(/^user has opened the '(.*)' link in a browser and creates '(.*)' to save evidences$/, async function (t,[campaign,folderName]) {
+Given(/^user has opened the '(.*)' link in a browser and creates '(.*)' to save evidences$/, async function (t,[campaign,customerType,folderName]) {
   screenshotFolder=folderName;
   if(campaign==='Offer'){
     await t.navigateTo(eaHomePage.campaignPageUrl);
