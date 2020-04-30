@@ -10,5 +10,11 @@ When(/^user moves on to fill the qualifier$/, async function(t) {
   });
 
 Then(/^user validates plan details on cart page for "([^"]*)"$/, async function (t, [campaignName], dataTable) {
-  
+  dataTable = dataTable.hashes();
+  let json = await fileUtils.getJSONfile(campaignName);
+  await cartsMethod.validatePlanName(t, json, dataTable);
+
+
+  //await plansMethod.validatePlanHeading(t, json);
+  //await plansMethod.validateFeatures(t, dataTable, json);
 });
