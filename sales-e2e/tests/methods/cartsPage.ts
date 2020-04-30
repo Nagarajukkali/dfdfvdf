@@ -17,8 +17,10 @@ export class cartsMethod {
     }
   }
 
-  public static async validateFeatures(t: any, dataTable, json: any) {
+  public static async validateFeatures(t: any, dataTable, json: any, numOfExpectedFeatures) {
+    console.log("Validating plan features on cart page.");
     if(await testFunction.isElectricity(dataTable[0].fuelType)) {
+      await t.expect(await testFunction.sizeOfElement(t, cartsPage.elements.eleFeatures)).eql(numOfExpectedFeatures);
       if(dataTable[0].Feature_50Credit === "Y") {
         await testFunction.assertText(t, cartsPage.elements.eleFeature50Credit, json.electricity.feature.postSelect.Credit50);
       }
@@ -33,6 +35,7 @@ export class cartsMethod {
       }
     }
     if(await testFunction.isGas(dataTable[0].fuelType)) {
+      await t.expect(await testFunction.sizeOfElement(t, cartsPage.elements.gasFeatures)).eql(numOfExpectedFeatures);
       if(dataTable[0].Feature_50Credit === "Y") {
         await testFunction.assertText(t, cartsPage.elements.gasFeature50Credit, json.gas.feature.postSelect.Credit50);
       }
