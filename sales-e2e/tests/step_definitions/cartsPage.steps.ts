@@ -13,7 +13,7 @@ Then(/^user validates plan details on cart page for "([^"]*)"$/, async function 
   dataTable = dataTable.hashes();
   let json = await fileUtils.getJSONfile(campaignName);
   await cartsMethod.validatePlanName(t, json, dataTable);
-
+  await cartsMethod.validateFeatures(t, dataTable, json);
 
   //await plansMethod.validatePlanHeading(t, json);
   //await plansMethod.validateFeatures(t, dataTable, json);

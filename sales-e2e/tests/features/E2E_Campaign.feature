@@ -16,8 +16,8 @@ Feature:E2E scenario for offer campaign
       |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      |fuelType |state  |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
-      |BOTH     |NSW    |Y                 |Y                       |Y                    |Y                                    |N                                |
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
+      |ELE      |Y                 |Y                       |N                    |Y                                    |N                                |
 
     Examples:
       |customerStatus|fuelType|campaign  |folderName         |state|username|password                                    |
