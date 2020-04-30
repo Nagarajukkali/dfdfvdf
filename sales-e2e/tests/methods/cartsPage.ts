@@ -32,5 +32,19 @@ export class cartsMethod {
         await testFunction.assertText(t, cartsPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill);
       }
     }
+    if(await testFunction.isGas(dataTable[0].fuelType)) {
+      if(dataTable[0].Feature_50Credit === "Y") {
+        await testFunction.assertText(t, cartsPage.elements.gasFeature50Credit, json.gas.feature.postSelect.Credit50);
+      }
+      if(dataTable[0].Feature_carbonNeutral === "Y") {
+        await testFunction.assertText(t, cartsPage.elements.gasFeatureCN, json.gas.feature.postSelect.carbonNeutral);
+      }
+      if(dataTable[0].Feature_peaceOfMind === "Y") {
+        await testFunction.assertText(t, cartsPage.elements.gasFeaturePeaceOfMind, json.gas.feature.postSelect.peaceOfMind);
+      }
+      if(dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
+        await testFunction.assertText(t, cartsPage.elements.gasFeatureDiscountOffTotal, json.gas.feature.postSelect.discountOffTotalEnergyBill);
+      }
+    }
   }
 }
