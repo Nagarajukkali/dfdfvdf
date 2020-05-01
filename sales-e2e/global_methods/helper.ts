@@ -293,6 +293,17 @@ export class testFunction {
     }
   }
 
+  public static async getExpectedFeatureCount(dataRow: string[][]) {
+    const dataArr = dataRow;
+    let numOfExpectedFeatures = 0;
+    for(let i = 0 ; i<dataArr[0].length ; i++) {
+      if(dataArr[0][i] === "Y") {
+        numOfExpectedFeatures++;
+      }
+    }
+    return numOfExpectedFeatures;
+  }
+
 }
 
 
