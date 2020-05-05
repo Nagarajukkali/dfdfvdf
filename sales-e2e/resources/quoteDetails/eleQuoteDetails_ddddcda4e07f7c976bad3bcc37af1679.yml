@@ -1,0 +1,89 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2005056191
+    sourceCode: Total_6%GD_50
+    actualQuoteDate: 2020-05-05
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0331710337
+    
+    emailId: lvvxXZZgUd@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: MEDICARE
+      id: 4552306010
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationMedicareDetail: 
+          medicareFirstName: test
+          medicareMiddleName/: 
+          medicareLastName: test
+          medicareReferenceNumber: 1
+          medicareExpiryDate: 2025-01-01
+          medicareCardColour: Green
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 9
+    streetName: Vynland
+    streetType: DR
+    suburb: FLAGSTAFF HILL
+    state: SA
+    country: AUS
+    postCode: 5159
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    offerType: COR
+    plan: TOPH-ES
+    priceTag: ESSAA_NR1907
+    nmiMirnInformation: 
+      NMI: 2001253567
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: OTHER
+    
+    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    priceTagMeteringCharge: M51591D1E_VE
+    proposedNTC: RSR
+    proposedMC: VECTORMC
+  
+

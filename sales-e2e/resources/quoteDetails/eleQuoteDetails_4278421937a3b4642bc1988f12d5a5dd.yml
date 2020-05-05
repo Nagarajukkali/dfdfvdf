@@ -1,0 +1,76 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2005015933
+    sourceCode: Total_9%GD_50
+    actualQuoteDate: 2020-05-01
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 5033131000
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0337098355
+    
+    emailId: THCjXeFnOp@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 99286
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 25
+    streetName: Churchill
+    streetType: R
+    suburb: MORWELL
+    state: VIC
+    country: AUS
+    postCode: 3840
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-05-04
+    offerType: ENE
+    plan: TOPH-EV
+    priceTag: EVTRA_NR2001
+    serviceOrderDate: 2020-05-04
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation/: 
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: OTHER
+    
+    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+  
+

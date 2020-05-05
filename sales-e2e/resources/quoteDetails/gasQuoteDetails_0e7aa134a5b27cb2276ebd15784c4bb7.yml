@@ -1,0 +1,72 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2005019768
+    sourceCode: Total_Plus_28%GD
+    actualQuoteDate: 2020-05-01
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 1941430000
+    title: Mr
+    firstName: testExNonMVICTEA
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0317075218
+    
+    emailId: JBdxZbkMqQ@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 312001
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: OWNER
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 10
+    streetName: Keswick
+    streetType: CR
+    suburb: BAYSWATER NORTH
+    state: VIC
+    country: AUS
+    postCode: 3153
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: G
+    offerType: PS
+    plan: SWSRH-GV
+    priceTag: GVR2A_NR2001
+    nmiMirnInformation: 
+      MIRN: 5310602455
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: OTHER
+    
+    lifeSupportOtherEquipmentDetails: Sample Other gas device.
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+

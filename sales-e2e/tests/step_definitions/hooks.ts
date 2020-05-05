@@ -19,22 +19,57 @@ Given(/^user has opened the website link in a browser and creates '(.*)' to save
   screenshotFolder=folderName;
   let screenshotFolderPath="screenshots/Chrome/"+screenshotFolder;
   fileUtils.deleteFiles(screenshotFolderPath);
-  fileUtils.deleteFiles(screenshotFolderPath+"/thumbnails");
   await t.navigateTo(eaHomePage.pageUrl);
 });
 
 
 
 Given(/^user has opened the new connection website link in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
-  screenshotFolder=folderName;
+  let screenshotFolderPath="screenshots/Chrome/"+screenshotFolder;
+  fileUtils.deleteFiles(screenshotFolderPath);
   await t.navigateTo(eaHomePage.newConnectionPageUrl);
+
 });
 
 Given(/^user has opened the '(.*)' link in a browser and creates '(.*)' to save evidences$/, async function (t,[campaign,folderName]) {
   screenshotFolder=folderName;
-  if(campaign==='Offer'){
-    await t.navigateTo(eaHomePage.campaignPageUrl);
+  let screenshotFolderPath="screenshots/Chrome/"+screenshotFolder;
+  fileUtils.deleteFiles(screenshotFolderPath);
+  switch (campaign) {
+    case "offer":
+      await t.navigateTo(eaHomePage.campaignPageUrl+"offer?live=disabled");
+      break;
+    case "elec-tpp":
+      await t.navigateTo(eaHomePage.campaignPageUrl+"elec-tpp?live=disabled");
+      break;
+    case "gas-tpp":
+      await t.navigateTo(eaHomePage.campaignPageUrl+"gas-tpp?live=disabled");
+      break;
+    case "elec-tp":
+      await t.navigateTo(eaHomePage.campaignPageUrl+"elec-tp?live=disabled");
+      break;
+    case "gas-tp":
+      await t.navigateTo(eaHomePage.campaignPageUrl+"gas-tp?live=disabled");
+      break;
+    case "total":
+      await t.navigateTo(eaHomePage.campaignPageUrl+"total?live=disabled");
+      break;
+    case "total-plan-plus":
+      await t.navigateTo(eaHomePage.campaignPageUrl+"total-plan-plus?live=disabled");
+      break;
+    case "comeback":
+      await t.navigateTo(eaHomePage.campaignPageUrl+"comeback?live=disabled");
+      break;
+    case "eacorporateOffer":
+      await t.navigateTo(eaHomePage.campaignPageUrl+"eacorporateoffer?live=disabled");
+      break;
+    case "familyandfriends":
+      await t.navigateTo(eaHomePage.campaignPageUrl+"familyandfriends?live=disabled");
+      break;
+    default:
+      console.error("Invalid campaign type.");
   }
+
 });
 
 After( async t => {

@@ -1,0 +1,69 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2005019762
+    sourceCode: Basic
+    actualQuoteDate: 2020-05-01
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 7455561072
+    title: Mr
+    firstName: testExNonMQLDEA
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0336167189
+    
+    emailId: AVKBIinsvU@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 246764
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: OWNER
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 16
+    streetName: Barcrest
+    streetType: CT
+    suburb: CRESTMEAD
+    state: QLD
+    country: AUS
+    postCode: 4132
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    offerType: PS
+    plan: GRT-EQ
+    priceTag: EQEXA_G11
+    nmiMirnInformation: 
+      NMI: QB09795804
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    priceTagMeteringCharge: M41321DRR_AS
+    proposedNTC: 8470
+    proposedMC: ACTIVMC
+  
+

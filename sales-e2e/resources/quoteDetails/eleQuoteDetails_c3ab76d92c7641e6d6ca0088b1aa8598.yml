@@ -1,0 +1,88 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2004309706
+    sourceCode: Total_9%GD
+    actualQuoteDate: 2020-04-30
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: Mr
+    firstName: testMovACTEA
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0325130486
+    
+    emailId: GtONNjmzMY@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 355041
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: testMovACTEA
+          dlMiddleName/: 
+          dlLastName: test
+          licenseStateOfIssue: ACT
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 16
+    streetName: Mulley
+    streetType: S
+    suburb: HOLDER
+    state: ACT
+    country: AUS
+    postCode: 2611
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-05-04
+    offerType: ENE
+    plan: TOPH-EA
+    priceTag: EAACA_NR1907
+    serviceOrderDate: 2020-05-04
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 7001042270
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: LSCNSPE
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: 501
+    reEnergisationJSCCharge: 78.37
+  
+

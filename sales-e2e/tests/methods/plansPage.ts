@@ -45,6 +45,9 @@ export class plansMethod{
         case PlanType.BASIC_HOME:
           await testFunction.click(t,EaHomePage.elements.basicPlan);
           break;
+        case PlanType.BASIC_HOME_QLD:
+          await testFunction.click(t,EaHomePage.elements.basicPlanQLD);
+          break;
         case PlanType.NO_FRILLS:
           await testFunction.click(t,EaHomePage.elements.noFrillsPlan);
           break;
@@ -56,6 +59,9 @@ export class plansMethod{
           break;
         case PlanType.BASIC_BUSINESS:
           await testFunction.click(t,EaHomePage.elements.basicBusiness);
+          break;
+        case PlanType.BASIC_BUSINESS_QLD:
+          await testFunction.click(t,EaHomePage.elements.basicBusinessQLD);
           break;
         case PlanType.NO_FRILLS_BUSINESS:
           await testFunction.click(t,EaHomePage.elements.noFrillBusiness);
@@ -184,6 +190,13 @@ export class verifyAccountMethod {
 
 export class campaignMethod{
   public static async enterPostcodeOnCampaign(t,postcode){
+    await testFunction.clearAndEnterText(t,EaHomePage.elements.postcodeOnCampaignPage,postcode);
+    await testFunction.click(t,EaHomePage.elements.btnCampaignSearch);
+  }
+
+  public static async enterOfferCodeAndPostcodeOnCampaign(t,offerCode,postcode){
+    await testFunction.clearAndEnterText(t,EaHomePage.elements.txtOfferCode,offerCode);
+    await t.wait(3000);
     await testFunction.clearAndEnterText(t,EaHomePage.elements.postcodeOnCampaignPage,postcode);
     await testFunction.click(t,EaHomePage.elements.btnCampaignSearch);
   }

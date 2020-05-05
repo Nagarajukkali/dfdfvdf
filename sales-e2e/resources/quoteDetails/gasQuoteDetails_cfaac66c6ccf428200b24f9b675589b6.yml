@@ -1,0 +1,80 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2004309738
+    sourceCode: Total_15%GD
+    actualQuoteDate: 2020-04-30
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: Mr
+    firstName: testNonMSAEA
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0369198519
+    
+    emailId: ckwDmgcobq@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 45639
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: testNonMSAEA
+          dlMiddleName/: 
+          dlLastName: test
+          licenseStateOfIssue: SA
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 3
+    streetName: Mowbray
+    streetType: CR
+    suburb: FAIRVIEW PARK
+    state: SA
+    country: AUS
+    postCode: 5126
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: G
+    offerType: PS
+    plan: TOPH-GS
+    priceTag: GSADA_NR2001
+    nmiMirnInformation: 
+      MIRN: 5510166114
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: GLSMRHAC
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+

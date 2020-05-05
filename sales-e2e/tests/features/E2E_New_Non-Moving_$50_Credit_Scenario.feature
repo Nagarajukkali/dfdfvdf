@@ -1,7 +1,8 @@
 @E2E
 Feature:E2E scenario for new residential non moving customer for $50 credit extension
 # New customer non-moving with FRMP/FRO as NON_EA
-@50CreditExtension
+  #Done
+
   Scenario Outline: Submit a quote for new residential non moving customer for VIC with FRMP/FRO as NON_EA
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page
@@ -14,14 +15,14 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
   And user selects carbon neutral option
   And user provides all details on checkout details page
     |customerType |journey    |customerStatus| firstName| lastName|idType        |
-    |RES          |RES        |New           | test     |test     |Driver License|
+    |RES          |RES        |New           | test     |test   |Driver License|
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |No          |Yes        |CC             |
   And user clicks on 'Review your order' button and navigates to review page
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices                             |
-    |Yes              |BOTH    |Ele Other             |Medically Required Heating and/or Air Conditioning|
+    |No               |BOTH    |Ele Other             |Medically Required Heating and/or Air Conditioning|
   And user verifies selected plan details for '<fuelType>'
   And user submits the quote
   Then user lands on checkout complete page
@@ -32,17 +33,17 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
   And user validates all the details for 'ELE' submitted quote
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-    |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RSOT-EV |6001456296|N                             |N                             |Y                      |OTHER                   |EMAIL        |
+    |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RSOT-EV |6001456296|N                             |N                             |N                      |                        |EMAIL        |
   And user validates all the details for 'GAS' submitted quote
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-    |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RSOT-GV |5330396438|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
+    |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RSOT-GV |5330396438|N                             |N                             |N                      |                        |EMAIL        |
 
   Examples:
     |customerStatus|fuelType|planName  |folderName                           |username|password                                    |
     |New           |BOTH    |Basic Home|E2E_New_Resi_NonMoving_$50_VIC_NON_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @50CreditExtension
+    #done
   Scenario Outline: Submit a quote for new residential non moving customer for NSW with FRMP/FRO as NON_EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -55,7 +56,7 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType        |
-      |RES          |RES        |New           | test     |test     |Driver License|
+      |RES          |RES        |New           | testNonMNSWNONEA|test     |Driver License|
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |No          |No         |CC             |
@@ -80,10 +81,10 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RCPP-GN |5240787742|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName|folderName                               |username|password                                    |
+      |customerStatus|fuelType|planName |folderName                            |username|password                                    |
       |New           |BOTH    |No Frills|E2E_New_Resi_NonMoving_$50_NSW_NON_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @50CreditExtension
+    #Done - issue
   Scenario Outline: Submit a quote for new residential non moving customer for QLD with FRMP/FRO as NON_EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -121,7 +122,8 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
       |New           |ELE     |Total Plan  |E2E_New_Resi_NonMoving_$50_QLD_NON_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
     #Negative Scenario
-  @50CreditExtension
+
+    #done
   Scenario Outline: Submit a quote for new residential non moving customer for SA with FRMP/FRO as NON_EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -134,7 +136,7 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType        |
-      |RES          |RES        |New           | test     |test     |Driver License|
+      |RES          |RES        |New           | testNonMSANONEA|test     |Driver License|
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |No          |No         |CC             |
@@ -156,14 +158,14 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RSOT-GS |5510730594|N                             |N                             |N                      |                        |EMAIL        |
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RSOT-GS |5510730594|                              |                             |N                      |                        |EMAIL        |
 
     Examples:
       |customerStatus|fuelType|planName|folderName                              |username|password                                    |
       |New           |BOTH    |Basic Home|E2E_New_Resi_NonMoving_$50_SA_NON_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
     #Negative Scenario
-  @50CreditExtension
+  #done
   Scenario Outline: Submit a quote for new residential non moving customer for ACT with FRMP/FRO as NON_EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -176,7 +178,7 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
-      |RES         |RES        |New           | test     |test     |Driver License|             |
+      |RES         |RES        |New           | testNonMACTNONEA|test     |Driver License|             |
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |Yes         |No         |               |
@@ -194,18 +196,19 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-EA |7001183574|N                             |N                             |Y                      |LSCNSPE                 |EMAIL        |
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-EA |7001183574|N                             |N                             |Y                      |LSCNSPE                 |EMAIL        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GA |5265774405|N                             |N                             |Y                      |OTHER                   |EMAIL        |
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-GA |5265774405|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
       |customerStatus|fuelType|planName  |folderName                           |username|password                                    |
       |New           |BOTH    |Total Plan|E2E_New_Resi_NonMoving_$50_ACT_NON_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
     # New customer non-moving with FRMP/FRO as EA - Negative Scenario
-  @50CreditExtension
+  #Defect @50CreditExtensionNonMoving
+
   Scenario Outline: Submit a quote for new residential non moving customer for VIC with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -218,7 +221,7 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType        |
-      |RES          |RES        |New           | test     |test     |Driver License|
+      |RES          |RES        |New           | testNonMVICEA|test     |Driver License|
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |No          |Yes        |CC             |
@@ -246,7 +249,7 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
       |customerStatus|fuelType|planName|folderName                              |username|password                                    |
       |New           |BOTH    |Total Plan  |E2E_New_Resi_NonMoving_$50_VIC_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @50CreditExtension
+  #defect @50CreditExtensionNonMoving
   Scenario Outline: Submit a quote for new residential non moving customer for NSW with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -259,7 +262,86 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType        |
-      |RES          |RES        |New           | test     |test     |Driver License|
+      |RES          |RES        |New           | testNonMNSWEA     |test     |Driver License|
+    And user opts for AAH and DD
+      |optAAHOption|optDDOption|directDebitType|
+      |No          |No         |CC             |
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices                             |
+      |No              |BOTH    |Ele Other             |Medically Required Heating and/or Air Conditioning|
+    And user verifies selected plan details for '<fuelType>'
+    And user submits the quote
+    Then user lands on checkout complete page
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'ELE' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |RSOT-EN |4102403140|                              |                               |N                     |                        |EMAIL        |
+    And user validates all the details for 'GAS' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |RSOT-GN |5240616472|                              |                               |N                     |                        |EMAIL        |
+
+    Examples:
+      |customerStatus|fuelType|planName  |folderName                       |username|password                                    |
+      |New           |BOTH    |Basic Home|E2E_New_Resi_NonMoving_$50_NSW_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+
+    #done
+  Scenario Outline: Submit a quote for new residential non moving customer for QLD with FRMP/FRO as EA
+    Given user has opened the website link in a browser and creates '<folderName>' to save evidences
+    And user has navigated to 'RES' plans page
+    When user selects '<planName>'
+    And user moves on to fill the qualifier
+    And user selects '<customerStatus>' on qualifier
+    And user provides all other details on qualifier page
+      |customerType|connectionAddress                       | movingType|propertyType|solarOption|
+      |RES         |21 Halyard Court, DECEPTION BAY QLD 4508|Non-Moving |Renter      |No         |
+    And user selects carbon neutral option
+    And user provides all details on checkout details page
+      |customerType |journey    |customerStatus| firstName| lastName|idType        |
+      |RES          |RES        |New           | testNonMQLDEA     |test     |Driver License|
+    And user opts for AAH and DD
+      |optAAHOption|optDDOption|directDebitType|
+      |No          |No         |CC             |
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices                             |
+      |No              |ELE     |Ele Other             |Medically Required Heating and/or Air Conditioning|
+    And user verifies selected plan details for '<fuelType>'
+    And user submits the quote
+    Then user lands on checkout complete page
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'ELE' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |RCPP-EQ |QB10025146|                              |                             |N                       |                        |EMAIL        |
+
+    Examples:
+      |customerStatus|fuelType|planName|folderName                           |username|password                                    |
+      |New           |ELE     |No Frills|E2E_New_Resi_NonMoving_$50_QLD_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+
+#Negative Scenario
+    #done
+  Scenario Outline: Submit a quote for new residential non moving customer for SA with FRMP/FRO as EA
+    Given user has opened the website link in a browser and creates '<folderName>' to save evidences
+    And user has navigated to 'RES' plans page
+    When user selects '<planName>'
+    And user moves on to fill the qualifier
+    And user selects '<customerStatus>' on qualifier
+    And user provides all other details on qualifier page
+      |customerType|connectionAddress                        | movingType|propertyType|solarOption|
+      |RES         |3 Mowbray Crescent, FAIRVIEW PARK SA 5126|Non-Moving |Renter      |No         |
+    And user selects carbon neutral option
+    And user provides all details on checkout details page
+      |customerType |journey    |customerStatus| firstName| lastName|idType        |
+      |RES          |RES        |New           | testNonMSAEA     |test     |Driver License|
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |No          |No         |CC             |
@@ -277,90 +359,11 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |RSOT-EN |4102403140|N                             |N                             |Y                      |OTHER                   |EMAIL        |
-    And user validates all the details for 'GAS' submitted quote
-    And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |RSOT-GN |5240616472|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
-
-    Examples:
-      |customerStatus|fuelType|planName  |folderName                           |username|password                                    |
-      |New           |BOTH    |Basic Home|E2E_New_Resi_NonMoving_$50_NSW_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
-
-  @50CreditExtension
-  Scenario Outline: Submit a quote for new residential non moving customer for QLD with FRMP/FRO as EA
-    Given user has opened the website link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to 'RES' plans page
-    When user selects '<planName>'
-    And user moves on to fill the qualifier
-    And user selects '<customerStatus>' on qualifier
-    And user provides all other details on qualifier page
-      |customerType|connectionAddress                       | movingType|propertyType|solarOption|
-      |RES         |21 Halyard Court, DECEPTION BAY QLD 4508|Non-Moving |Renter      |No         |
-    And user selects carbon neutral option
-    And user provides all details on checkout details page
-      |customerType |journey    |customerStatus| firstName| lastName|idType        |
-      |RES          |RES        |New           | test     |test     |Driver License|
-    And user opts for AAH and DD
-      |optAAHOption|optDDOption|directDebitType|
-      |No          |No         |CC             |
-    And user clicks on 'Review your order' button and navigates to review page
-    And user provides life support details on review page
-      |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices                             |
-      |Yes              |ELE     |Ele Other             |Medically Required Heating and/or Air Conditioning|
-    And user verifies selected plan details for '<fuelType>'
-    And user submits the quote
-    Then user lands on checkout complete page
-    When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
-    And user search quote on the basis of 'Email'
-    Then submitted quote is displayed
-    And user validates all the details for 'ELE' submitted quote
-    And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |RCPP-EQ |QB10025146|N                             |N                             |Y                      |OTHER                   |EMAIL        |
-
-    Examples:
-      |customerStatus|fuelType|planName|folderName                           |username|password                                    |
-      |New           |ELE     |No Frills|E2E_New_Resi_NonMoving_$50_QLD_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
-
-#Negative Scenario
-  @50CreditExtension
-  Scenario Outline: Submit a quote for new residential non moving customer for SA with FRMP/FRO as EA
-    Given user has opened the website link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to 'RES' plans page
-    When user selects '<planName>'
-    And user moves on to fill the qualifier
-    And user selects '<customerStatus>' on qualifier
-    And user provides all other details on qualifier page
-      |customerType|connectionAddress                        | movingType|propertyType|solarOption|
-      |RES         |3 Mowbray Crescent, FAIRVIEW PARK SA 5126|Non-Moving |Renter      |No         |
-    And user selects carbon neutral option
-    And user provides all details on checkout details page
-      |customerType |journey    |customerStatus| firstName| lastName|idType        |
-      |RES          |RES        |New           | test     |test     |Driver License|
-    And user opts for AAH and DD
-      |optAAHOption|optDDOption|directDebitType|
-      |No          |No         |CC             |
-    And user clicks on 'Review your order' button and navigates to review page
-    And user provides life support details on review page
-      |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices                             |
-      |Yes              |ELE     |Ele Other             |Medically Required Heating and/or Air Conditioning|
-    And user verifies selected plan details for '<fuelType>'
-    And user submits the quote
-    Then user lands on checkout complete page
-    When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
-    And user search quote on the basis of 'Email'
-    Then submitted quote is displayed
-    And user validates all the details for 'ELE' submitted quote
-    And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |TOPH-ES |2001177655|N                             |N                             |Y                      |OTHER                   |EMAIL        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |TOPH-GS |5510166114|N                             |N                             |N                      |                        |EMAIL        |
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |TOPH-GS |5510166114|N                             |N                             |N                      |GLSMRHAC                |EMAIL        |
 
     Examples:
       |customerStatus|fuelType|planName|folderName                          |username|password                                    |
@@ -408,7 +411,7 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
       |customerStatus|fuelType|planName|folderName                                |username|password                                    |
       |New           |BOTH    |No Frills|E2E_New_Resi_NonMoving_$50_VIC_UNKNOWN|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
- #need to find test data
+ #data updated
   Scenario Outline: Submit a quote for new residential non moving customer for NSW with FRMP/FRO as UNKNOWN
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -416,8 +419,8 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType|connectionAddress                | movingType|propertyType|solarOption|
-      |RES         |5 Pine Court, BLUE HAVEN NSW 2262|Non-Moving |Renter      |No         |
+      |customerType|connectionAddress                     | movingType|propertyType|solarOption|
+      |RES         |71b Waterview Street, WOY WOY NSW 2256|Non-Moving |Renter      |No         |
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType        |
@@ -439,11 +442,11 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-EN |4102403140|N                             |N                             |Y                      |OTHER                   |EMAIL        |
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-EN |          |N                             |N                             |Y                      |OTHER                   |EMAIL        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-GN |5240616472|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-GN |          |N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
 
     Examples:
       |customerStatus|fuelType|planName|folderName                                |username|password                                    |

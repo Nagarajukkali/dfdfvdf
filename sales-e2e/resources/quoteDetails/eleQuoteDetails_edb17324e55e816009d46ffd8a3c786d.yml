@@ -1,0 +1,82 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2005015906
+    sourceCode: Total_6%GD
+    actualQuoteDate: 2020-05-01
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 2932573475
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0383137261
+    
+    emailId: VxsNgOffJc@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 99226
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 10
+    streetName: Austral
+    streetType: S
+    suburb: SALISBURY EAST
+    state: SA
+    country: AUS
+    postCode: 5109
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-05-04
+    offerType: ENE
+    plan: TOPH-ES
+    priceTag: ESSAA_NR1907
+    serviceOrderDate: 2020-05-04
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 2001476634
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: OTHER
+    
+    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    priceTagMeteringCharge: M510914RSP_ME
+    proposedNTC: MRSRI
+    proposedMC: MYMC
+    reEnergisationJSCCharge: 0
+  
+

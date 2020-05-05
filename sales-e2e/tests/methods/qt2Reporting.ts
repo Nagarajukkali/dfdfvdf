@@ -3,7 +3,6 @@ const eaQt2Reporting=require('../pages/eaQt2Reporting.page');
 import {testFunction } from '../../global_methods/helper';
 import {checkoutDetailsMethod} from './checkoutDetailsPage';
 import * as assert from 'assert';
-import {fetchBrowser, getDateTime, screenshotFolder} from '../step_definitions/hooks';
 const fileUtils=require('../../libs/FileUtils.js');
 const cryptoJS = require('crypto-js');
 
@@ -20,7 +19,7 @@ export class qt2Reporting {
       await testFunction.isElementDisplayed(t,eaQt2Reporting.elements.listQt2Lookup);
       await testFunction.selectValueFromList(t,eaQt2Reporting.elements.listQt2Lookup,option);
       await testFunction.enterText(t,eaQt2Reporting.elements.txtEmail,checkoutDetailsMethod.map.get(checkoutDetailsMethod.getScenarioId(t)));
-      await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/qt2_reporting_app_${await getDateTime()}.png`);
+      await testFunction.takeScreenshot(t,'QT2_reporting');
       await testFunction.click(t,eaQt2Reporting.elements.btnFind);
     }
 
@@ -30,17 +29,17 @@ export class qt2Reporting {
 
     public static async validateQuoteDetails(t,fuelType){
       if(await testFunction.isElectricity(fuelType)){
-        await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/qt2_reporting_app_search${await getDateTime()}.png`);
+        await testFunction.takeScreenshot(t,'QT2_reporting_search');
         let eleQuoteDetails=await this.getEleQuoteDetails(t);
-        await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/qt2_reporting_app_search_ele_${await getDateTime()}.png`);
+        await testFunction.takeScreenshot(t,'QT2_reporting_search_ele');
         fileUtils.createYamlFile(t,eleQuoteDetails,fuelType);
         let jsonObj=fileUtils.convertYmlTOJSONObj(t,fuelType);
         //this.verifyJSONData(jsonObj.saleDetail);
       }
       if(await testFunction.isGas(fuelType)){
-        await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/qt2_reporting_app_search${await getDateTime()}.png`);
+        await testFunction.takeScreenshot(t,'QT2_reporting_search');
         let gasQuoteDetails=await this.getGasQuoteDetails(t);
-        await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/qt2_reporting_app_search_gas_${await getDateTime()}.png`);
+        await testFunction.takeScreenshot(t,'QT2_reporting_search_gas');
         fileUtils.createYamlFile(t,gasQuoteDetails,fuelType);
         let jsonObj=fileUtils.convertYmlTOJSONObj(t,fuelType);
         //this.verifyJSONData(jsonObj.saleDetail);
@@ -91,6 +90,7 @@ export class qt2Reporting {
     }
 
     public static async validateMandatoryField(t,actualValue,expectedValue){
+      console.log(actualValue+": "+expectedValue);
       await testFunction.assertTextValue(t,actualValue.toString(),expectedValue.toString());
     }
 

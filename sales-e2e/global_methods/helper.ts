@@ -1,7 +1,10 @@
 import { Selector } from 'testcafe';
 import { ClientFunction } from 'testcafe';
 import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
+import {fetchBrowser, getDateTime, screenshotFolder} from '../tests/step_definitions/hooks';
 const replace={ replace: true };
+const { config }=require('../resources/resource');
+const screenshot=config.screenshot
 
   export enum CustomerStatus {
     NEW='New',
@@ -26,10 +29,12 @@ const replace={ replace: true };
 
   export enum PlanType {
     BASIC_HOME='Basic Home',
+    BASIC_HOME_QLD='Basic Home QLD',
     NO_FRILLS='No Frills',
     TOTAL_PLAN='Total Plan',
     TOTAL_PLAN_PLUS='Total Plan Plus',
     BASIC_BUSINESS='Basic Business',
+    BASIC_BUSINESS_QLD='Basic Business QLD',
     NO_FRILLS_BUSINESS='No Frills Business',
     TOTAL_BUSINESS='Total Business',
     TOTAL_PLAN_PLUS_BUSINESS='Total Plan Plus Business',
@@ -273,6 +278,12 @@ export class testFunction {
         }
       }
       if(flag) break;
+    }
+  }
+
+  public static async takeScreenshot(t,fileName){
+    if(screenshot==='Yes'){
+      await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/`+fileName+`_${await getDateTime()}.png`);
     }
   }
 

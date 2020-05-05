@@ -18,7 +18,7 @@
   },
   "config": {
     "env": "non-prod",
-    "e2e_tags": "@50CreditExtension"
+    "e2e_tags": "@$50CampaignTesting"
   },
   "private": true,
   "dependencies": {

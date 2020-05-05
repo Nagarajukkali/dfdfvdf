@@ -112,7 +112,7 @@ export class checkoutDetailsMethod{
     }
 
     public static async checkoutExistingCustomerMedicareIdentification(t){
-      let medicareNo=testFunction.getRandomNumber(999999);
+      let medicareNo=testFunction.getRandomNumber(999999).padEnd(10,"0");
       await testFunction.click(t,eaCheckoutDetailsPage.elements.idDrop);
       await testFunction.click(t,eaCheckoutDetailsPage.elements.idValueMedicare);
       await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idNumber,medicareNo);
@@ -153,7 +153,7 @@ export class checkoutDetailsMethod{
   }
 
   public static async checkoutNewCustomerMedicareIdentification(t, medicareType){
-    let medicareNo = testFunction.getRandomNumber(9999999999);
+    let medicareNo = testFunction.getRandomNumber(9999999999).padEnd(10,"0");
     await testFunction.click(t,eaCheckoutDetailsPage.elements.idDrop);
     await testFunction.click(t,eaCheckoutDetailsPage.elements.idValueMedicare);
     if(medicareType.toLowerCase() === "green") {

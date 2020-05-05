@@ -2,7 +2,6 @@ import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 const eaCheckoutReviewPage=require('../pages/checkoutReview.page')
 import {LSDevices, PlanType, SelectionType, testFunction} from '../../global_methods/helper';
 import {checkoutDetailsMethod} from './checkoutDetailsPage';
-import {fetchBrowser, getDateTime, screenshotFolder} from '../step_definitions/hooks';
 
 
 export class checkoutReviewMethod {
@@ -135,9 +134,17 @@ export class checkoutReviewMethod {
       if(testFunction.isElectricity(fuelType)){
         let elePlanName=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtElePlanName);
         await testFunction.click(t,eaCheckoutReviewPage.elements.imgReviewSectionEle);
-        if(elePlanName===PlanType.TOTAL_PLAN || elePlanName==='Total Plan - Business'){
+        if(elePlanName===PlanType.TOTAL_PLAN || elePlanName==='Total Plan - Business' || elePlanName==='Family and Friends'){
           eleDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtEleDiscount);
-          eleSourceCode=elePlanName.split(" ")[0]+'_'+eleDiscount.split(" ")[1]+'GD';
+          if(t.testRun.test.name.includes('EACorporateOffer')){
+            eleSourceCode='Alliance_'+eleDiscount.split(" ")[1]+'GD';
+          }
+          else if(t.testRun.test.name.includes('familyandfriends')){
+            eleSourceCode='Total_'+eleDiscount.split(" ")[1]+'GD';
+          }
+          else{
+            eleSourceCode=elePlanName.split(" ")[0]+'_'+eleDiscount.split(" ")[1]+'GD';
+          }
         }
         else if(elePlanName===PlanType.TOTAL_PLAN_PLUS || elePlanName==='Total Plan Plus - Business'){
           eleDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtEleDiscount);
@@ -150,14 +157,19 @@ export class checkoutReviewMethod {
           eleSourceCode='Basic';
         }
         checkoutDetailsMethod.map.set('ele source code_'+checkoutDetailsMethod.getScenarioId(t),eleSourceCode);
-        await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/checkout_review_page_${await getDateTime()}.png`);
+        await testFunction.takeScreenshot(t,'Checkout_Review_Page');
       }
       if(testFunction.isGas(fuelType)){
         let gasPlanName=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasPlanName);
         await testFunction.click(t,eaCheckoutReviewPage.elements.imgReviewSectionGas);
         if(gasPlanName===PlanType.TOTAL_PLAN || gasPlanName==='Total Plan - Business'){
           gasDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasDiscount);
-          gasSourceCode=gasPlanName.split(" ")[0]+'_'+gasDiscount.split(" ")[1]+'GD';
+          if(t.testRun.test.name.includes('EACorporateOffer')){
+            gasSourceCode='Alliance_'+gasDiscount.split(" ")[1]+'GD';
+          }
+          else{
+            gasSourceCode=gasPlanName.split(" ")[0]+'_'+gasDiscount.split(" ")[1]+'GD';
+          }
         }
         else if(gasPlanName===PlanType.TOTAL_PLAN_PLUS || gasPlanName==='Total Plan Plus - Business'){
           gasDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasDiscount);
@@ -170,7 +182,7 @@ export class checkoutReviewMethod {
           gasSourceCode='Basic';
         }
         checkoutDetailsMethod.map.set('gas source code_'+checkoutDetailsMethod.getScenarioId(t),gasSourceCode);
-        await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/checkout_review_page_${await getDateTime()}.png`);
+        await testFunction.takeScreenshot(t,'Checkout_Review_Page');
       }
       return checkoutDetailsMethod.map;
   }

@@ -1,4 +1,4 @@
-import {fetchBrowser, getDateTime, screenshotFolder} from '../step_definitions/hooks';
+
 
 const eaQualifierPage=require('../pages/qualifier.page');
 import {BusinessType, CustomerStatus, Moving, Property, Solar, testFunction} from '../../global_methods/helper';
@@ -38,6 +38,7 @@ export class qualifierMethod{
         default:
           console.log('account identity type is not valid');
       }
+      await testFunction.takeScreenshot(t,'Qualifier_Page');
       await testFunction.click(t, eaQualifierPage.elements.verifyAccountSubmit);
       await testFunction.waitForElementPropertyToBeChanged(t,eaQualifierPage.elements.verifyAccountSubmit,'wg-processing',"false");
       console.log("account is verified")
@@ -67,6 +68,7 @@ export class qualifierMethod{
       }
       await testFunction.waitForLoadingIconToClose();
       await t.wait(3000);
+      await testFunction.takeScreenshot(t,'Qualifier_Page');
       await testFunction.click(t, eaQualifierPage.elements.verifyIdentitySubmit);
       console.log("Existing customer ID details are verified");
     }
@@ -100,7 +102,10 @@ export class qualifierMethod{
       await testFunction.isElementVisible(t, eaQualifierPage.elements.addressLoadingIcon);
       await testFunction.waitForLoadingIconToClose();
       await t.wait(3000);
-      await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/qualifier_page_${await getDateTime()}.png`);
+      if(await testFunction.sizeOfElement(t,eaQualifierPage.elements.planSelectionPopup)>0){
+        await testFunction.click(t,eaQualifierPage.elements.planSelectionPopup);
+      }
+    await testFunction.takeScreenshot(t,'Qualifier_Page');
       await testFunction.click(t, eaQualifierPage.elements.addressContinue);
       console.log(`${address} is provided`);
   }
@@ -110,7 +115,7 @@ export class qualifierMethod{
   }
 
   public static async selectDateFromCalendar(t){
-    await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/qualifier_page_${await getDateTime()}.png`);
+    await testFunction.takeScreenshot(t,'Qualifier_Page');
     await testFunction.selectDateFromCalendar(t,eaQualifierPage.elements.calendarTable);
   }
   public static async selectPropertyType(t,propertyType){

@@ -1,0 +1,79 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2005056182
+    sourceCode: Total_27%GD_50
+    actualQuoteDate: 2020-05-05
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0398879292
+    
+    emailId: MAoEwHrjpn@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: MEDICARE
+      id: 2454008054
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationMedicareDetail: 
+          medicareFirstName: test
+          medicareMiddleName/: 
+          medicareLastName: test
+          medicareReferenceNumber: 1
+          medicareExpiryDate: 2025-01-01
+          medicareCardColour: Green
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 14
+    streetName: Westley
+    streetType: AV
+    suburb: BRIGHTON
+    state: VIC
+    country: AUS
+    postCode: 3186
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: G
+    offerType: COR
+    plan: TOPH-GV
+    priceTag: GVA2A_NR2001
+    nmiMirnInformation: 
+      MIRN: 5310310428
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: N
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+

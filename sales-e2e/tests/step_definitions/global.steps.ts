@@ -4,19 +4,18 @@ import {CustomerType} from '@ea/ea-commons-models';
 const eaHomePage=require('../pages/energy-australia-home.page');
 const eaMyAccount = require('../pages/myAccount.page');
 const eaQt2Reporting = require('../pages/eaQt2Reporting.page');
-import {fetchBrowser,screenshotFolder,getDateTime} from '../step_definitions/hooks';
 
 
 Given(/^user has navigated to '(.*)' plans page$/, async function(t, [customerType]) {
   if(customerType===CustomerType.RESIDENTIAL){
     await testFunction.click(t, eaHomePage.elements.residentialComparePlansButton);
-    await testFunction.isElementDisplayed(t,eaHomePage.elements.plansCardFee);
   }else if (customerType===CustomerType.BUSINESS){
     await testFunction.click(t, eaHomePage.elements.businessLink);
     await testFunction.click(t, eaHomePage.elements.smallBusinessButton);
-    await testFunction.isElementDisplayed(t,eaHomePage.elements.plansCardFee);
   }
-  await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/plans_page_${await getDateTime()}.png`);
+  await testFunction.isElementDisplayed(t,eaHomePage.elements.plansCardFee);
+  await testFunction.isElementDisplayed(t,eaHomePage.elements.planEstimateValue);
+  await testFunction.takeScreenshot(t,'Plans_Page');
 });
 
 Given(/^user navigates to my account login page$/, async function (t, []) {

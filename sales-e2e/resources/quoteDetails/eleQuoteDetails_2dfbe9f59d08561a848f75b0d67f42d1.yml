@@ -1,0 +1,88 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2005056159
+    sourceCode: Total_Plus_10%GD_50
+    actualQuoteDate: 2020-05-05
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0360814959
+    
+    emailId: PJRdHDZvIl@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: MEDICARE
+      id: 5025773790
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationMedicareDetail: 
+          medicareFirstName: test
+          medicareMiddleName/: 
+          medicareLastName: test
+          medicareReferenceNumber: 1
+          medicareExpiryDate: 2025-01-01
+          medicareCardColour: Green
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    flatNo: 1
+    flatType: U
+    addressClass: ST
+    streetNo: 11
+    streetName: Newry
+    streetType: S
+    suburb: FITZROY NORTH
+    state: VIC
+    country: AUS
+    postCode: 3068
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-05-07
+    offerType: ENE
+    plan: SWSRH-EV
+    priceTag: EVCIA_NR2001
+    serviceOrderDate: 2020-05-07
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation/: 
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: LSCNSPE
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+  
+

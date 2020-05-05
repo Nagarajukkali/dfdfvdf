@@ -1,0 +1,93 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2005056178
+    sourceCode: Total_Plus_7%GD
+    actualQuoteDate: 2020-05-05
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0346347490
+    
+    emailId: ssOcEsEBvL@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: MEDICARE
+      id: 9733142144
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationMedicareDetail: 
+          medicareFirstName: test
+          medicareMiddleName/: 
+          medicareLastName: test
+          medicareReferenceNumber: 1
+          medicareExpiryDate: 2025-01-01
+          medicareCardColour: Yellow
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 9
+    streetName: Gooronga
+    streetType: DR
+    suburb: CRAIGMORE
+    state: SA
+    country: AUS
+    postCode: 5114
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-05-06
+    offerType: ENE
+    plan: SWSRH-ES
+    priceTag: ESSAA_NR1907
+    serviceOrderDate: 2020-05-06
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 2001576302
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: LSCNSPE
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    priceTagMeteringCharge: M511414RSP_ME
+    proposedNTC: MRSRI
+    proposedMC: METROMC
+    reEnergisationJSCCode: NOCHARGE
+    reEnergisationJSCCharge: 0.0
+  
+

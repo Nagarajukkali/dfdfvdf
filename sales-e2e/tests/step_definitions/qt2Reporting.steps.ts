@@ -39,29 +39,55 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
   if(fuelType===FUEL_TYPE_OPTIONS.ELE.value){
     if(!t.testRun.test.name.includes('FRMP/FRO as UNKNOWN')){
       let NMI=data[0].NMI;
-      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.nmiMirnInformation.NMI,NMI);
+      if(NMI.length!==0){
+        await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.nmiMirnInformation.NMI,NMI);
+      }
     }
-    if((jsonObj.saleDetail.offerDetail.offerType==='ENE' || jsonObj.saleDetail.offerDetail.offerType==='COR') && jsonObj.saleDetail.saleDetailHeader.customerType==='RESIDENTIAL' && jsonObj.saleDetail.premiseDetail.state!=='ACT'){
+    if((jsonObj.saleDetail.offerDetail.offerType==='ENE' || jsonObj.saleDetail.offerDetail.offerType==='COR') && jsonObj.saleDetail.saleDetailHeader.customerType==='RESIDENTIAL' && jsonObj.saleDetail.premiseDetail.state!=='ACT' && jsonObj.saleDetail.premiseDetail.state!=='SA' && !planCode.includes('SWSRH') && !t.testRun.test.name.includes('elec-totalP') && !t.testRun.test.name.includes('familyandfriends') && !t.testRun.test.name.includes('EACorporateOffer')){
       await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
     }
     else{
-      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t)));
+      if(t.testRun.test.name.includes('gas-tpp') || t.testRun.test.name.includes('gas-totalP') || t.testRun.test.name.includes('comeback')){
+        await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
+      }
+      else{
+        await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t)));
+      }
     }
   }
   if(fuelType===FUEL_TYPE_OPTIONS.GAS.value){
     if(!t.testRun.test.name.includes('FRMP/FRO as UNKNOWN')){
       let MIRN=data[0].MIRN;
-      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.nmiMirnInformation.MIRN,MIRN);
+      if(MIRN.length!==0){
+        await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.nmiMirnInformation.MIRN,MIRN);
+      }
     }
-    if((jsonObj.saleDetail.offerDetail.offerType==='ENE' || jsonObj.saleDetail.offerDetail.offerType==='COR') && jsonObj.saleDetail.saleDetailHeader.customerType==='RESIDENTIAL' && jsonObj.saleDetail.premiseDetail.state!=='ACT'){
+    if((jsonObj.saleDetail.offerDetail.offerType==='ENE' || jsonObj.saleDetail.offerDetail.offerType==='COR') && jsonObj.saleDetail.saleDetailHeader.customerType==='RESIDENTIAL' && jsonObj.saleDetail.premiseDetail.state!=='ACT' && jsonObj.saleDetail.premiseDetail.state!=='SA' && !planCode.includes('SWSRH') && !t.testRun.test.name.includes('gas-totalP')){
       await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
     }
     else{
-      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t)));
+      if((t.testRun.test.name.includes('elec-tpp') || t.testRun.test.name.includes('elec-totalP'))){
+        await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
+      }
+      else{
+        await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t)));
+      }
     }
   }
-  await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsSinceDeenergisation,renovationsSinceDeenergisation);
-  await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsInProgressOrPlanned,renovationsInProgressOrPlanned);
+  // Campaign testing
+  // if((t.testRun.test.name.includes('elec-tpp') || t.testRun.test.name.includes('elec-totalP')) && fuelType===FUEL_TYPE_OPTIONS.GAS.value){
+  //   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
+  // }
+  // if((t.testRun.test.name.includes('gas-tpp') || t.testRun.test.name.includes('gas-totalP')) && fuelType===FUEL_TYPE_OPTIONS.ELE.value){
+  //   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
+  // }
+  // if(t.testRun.test.name.includes('comeback') && fuelType===FUEL_TYPE_OPTIONS.ELE.value){
+  //   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
+  // }
+  if(renovationsSinceDeenergisation.length!==0){
+    await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsSinceDeenergisation,renovationsSinceDeenergisation);
+    await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsInProgressOrPlanned,renovationsInProgressOrPlanned);
+  }
   if(customerWithLifeSupport==='Y'){
     await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.energySafeVicQuestions.customerWithLifeSupport,'Y');
     let lifeSupportEquipmentType=data[0].lifeSupportEquipmentType;

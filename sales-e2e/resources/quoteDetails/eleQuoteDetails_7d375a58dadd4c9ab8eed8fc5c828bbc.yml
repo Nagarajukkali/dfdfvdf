@@ -1,0 +1,86 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2005056155
+    sourceCode: Total_Plus_17%GD_50
+    actualQuoteDate: 2020-05-05
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0318832970
+    
+    emailId: twAhVuHbMd@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: MEDICARE
+      id: 9757081520
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationMedicareDetail: 
+          medicareFirstName: test
+          medicareMiddleName/: 
+          medicareLastName: test
+          medicareReferenceNumber: 1
+          medicareExpiryDate: 2025-01-01
+          medicareCardColour: Blue
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 89
+    streetName: Winten
+    streetType: DR
+    suburb: GLENDENNING
+    state: NSW
+    country: AUS
+    postCode: 2761
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    offerType: COR
+    plan: SWSRH-EN
+    priceTag: ENIEA_NR1907
+    nmiMirnInformation: 
+      NMI: 4310215226
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: OTHER
+    
+    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+  
+

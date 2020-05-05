@@ -1,0 +1,80 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2004309702
+    sourceCode: Basic
+    actualQuoteDate: 2020-04-30
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: Mr
+    firstName: testMovSAEA
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0338022886
+    
+    emailId: SFNPlbiSHY@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 601602
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: testMovSAEA
+          dlMiddleName/: 
+          dlLastName: test
+          licenseStateOfIssue: SA
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 1
+    streetName: Halton
+    streetType: CT
+    suburb: SEAFORD MEADOWS
+    state: SA
+    country: AUS
+    postCode: 5169
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-05-01
+    offerType: ENE
+    plan: RSOT-ES
+    priceTag: ESSAA_SR0
+    serviceOrderDate: 2020-05-01
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 2002266069
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: RCFE
+    reEnergisationJSCCharge: 45.5
+  
+

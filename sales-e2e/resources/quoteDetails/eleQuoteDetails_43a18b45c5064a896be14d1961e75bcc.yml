@@ -1,0 +1,80 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2004309693
+    sourceCode: NOFRILLS
+    actualQuoteDate: 2020-04-30
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: Mr
+    firstName: testMovSANONEA
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0342221250
+    
+    emailId: OYtLbSJhuy@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 60848
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: testMovSANONEA
+          dlMiddleName/: 
+          dlLastName: test
+          licenseStateOfIssue: SA
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 8
+    streetName: King
+    streetType: S
+    suburb: MILE END
+    state: SA
+    country: AUS
+    postCode: 5031
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-05-01
+    offerType: ENE
+    plan: RCPP-ES
+    priceTag: ESSAA_ZR1907
+    serviceOrderDate: 2020-05-01
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 2001273008
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: RCFE
+    reEnergisationJSCCharge: 45.5
+  
+

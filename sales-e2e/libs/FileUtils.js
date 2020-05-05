@@ -35,16 +35,20 @@ export function convertYmlTOJSONObj(t,fuelType){
     return JSONObj;
   }
 
-  export function deleteFiles(filePath) {
-    fs.readdir(filePath, (err, files) => {
-      if (err) throw err;
-      for (const file of files) {
-        fs.unlink(path.join(filePath, file), err => {
-          if (err) throw err;
-        });
+export function deleteFiles(path) {
+  if( fs.existsSync(path) ) {
+    fs.readdirSync(path).forEach(function(file,index){
+      let curPath = path + "/" + file;
+      if(fs.lstatSync(curPath).isDirectory()) { // recurse
+        deleteFiles(curPath);
+      } else { // delete file
+        fs.unlinkSync(curPath);
       }
     });
+    fs.rmdirSync(path);
   }
+};
+
 
 
 

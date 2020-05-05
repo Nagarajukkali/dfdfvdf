@@ -34,6 +34,7 @@ const eaHomePage={
     familyViolenceMessage: Selector('.ea-message.error:last-of-type'),
     changeLinkVerifyAccount: Selector('.tablet-desktop-only .hs-refine-modal-cta__text>span'),
     basicPlan: Selector("[id*='plan-select-button-RSOT']"),
+    basicPlanQLD: Selector("[id*='plan-select-button-GRT']"),
     noFrillsPlan: Selector("[id*='plan-select-button-RCPP']"),
     totalPlan: Selector("[id*='plan-select-button-TOPH']"),
     totalPlanEleDiscount:Selector("#plan-rate-summary-TOPH-0 span.hs-plan-rate-summary__title-amount"),
@@ -42,6 +43,7 @@ const eaHomePage={
     totalPlanPlusEleDiscount:Selector("#plan-rate-summary-SWSRH-0 span.hs-plan-rate-summary__title-amount"),
     totalPlanPlusGasDiscount:Selector("#plan-rate-summary-SWSRH-1 span.hs-plan-rate-summary__title-amount"),
     basicBusiness:Selector("[id*='plan-select-button-BSOT']"),
+    basicBusinessQLD:Selector("[id*='plan-select-button-BGRT']"),
     noFrillBusiness:Selector("[id*='plan-select-button-BCPP']"),
     totalPlanBusiness:Selector("[id*='plan-select-button-TOPB']"),
     totalPlanBusinessEleDiscount:Selector("#plan-rate-summary-TOPB-0 span.hs-plan-rate-summary__title-amount"),
@@ -55,8 +57,10 @@ const eaHomePage={
     fuelSelectorOptionGas:Selector('#edit-fuel-selector-gas'),
     linkMoveHouse:Selector(".icon-moving"),
     postcodeOnCampaignPage:Selector("#campaign-postcode-input"),
+    txtOfferCode:Selector("#campaign-unique-code-input"),
     btnCampaignSearch:Selector("[id^='campaign-search-submit']"),
     selectCampaignPlans:Selector("#action__submit"),
+    planEstimateValue:Selector('[id*=plan-estimate-TOP] div.hs-plan-estimate__value'),
   },
 };
 
