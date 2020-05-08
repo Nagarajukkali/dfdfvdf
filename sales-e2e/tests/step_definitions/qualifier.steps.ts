@@ -29,10 +29,15 @@ When(/^user provides all other details on qualifier page for Existing customer$/
   let data = dataTable.hashes();
   let movingType = data[0].movingType;
   let customerType=data[0].customerType;
+  let state=data[0].state;
   await testFunction.waitForLoadingIconToClose();
   await qualifierMethod.provideMovingType(t, movingType);
   if(movingType === Moving.MOVING){
     await qualifierMethod.provideAddress(t, data[0].connectionAddress);
+    if(state==='QLD'){
+      await testFunction.click(t,eaQualifierPage.elements.moveElecQLDQuestion);
+    }
+    await testFunction.takeScreenshot(t,"qualifier_page_calendar");
     await qualifierMethod.selectDateFromCalendar(t);
   } else if (movingType === Moving.NON_MOVING) {
     await testFunction.click(t, eaQualifierPage.elements.addressContinue);
@@ -71,5 +76,6 @@ When(/^user verifies account on qualifier$/, async function (t,[],dataTable) {
   await qualifierMethod.verifyIdentity(t,data[0].idType,data[0].idValue);
 });
 When(/^user selects '(.*)' on qualifier$/, async function (t,[customerStatus]) {
+  await testFunction.takeScreenshot(t,'qualifier_page');
   await qualifierMethod.selectCustomerStatus(t,customerStatus);
 });

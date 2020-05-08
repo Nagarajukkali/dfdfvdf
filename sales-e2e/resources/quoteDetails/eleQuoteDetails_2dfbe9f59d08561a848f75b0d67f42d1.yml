@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2005056159
+    quoteId: BB2005066343
     sourceCode: Total_Plus_10%GD_50
-    actualQuoteDate: 2020-05-05
+    actualQuoteDate: 2020-05-06
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -10,28 +10,26 @@ saleDetail :
   
   personDetail: 
     title: Mr
-    firstName: test
+    firstName: CAMPVICGASTPP
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0360814959
+      phoneNumber: 0358415020
     
-    emailId: PJRdHDZvIl@energyaustralia.com.au
+    emailId: DsQfLxFjJa@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: MEDICARE
-      id: 5025773790
+      idType: DL
+      id: 156332
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
-        idValidationMedicareDetail: 
-          medicareFirstName: test
-          medicareMiddleName/: 
-          medicareLastName: test
-          medicareReferenceNumber: 1
-          medicareExpiryDate: 2025-01-01
-          medicareCardColour: Green
+        idValidationDriversLicenseDetail: 
+          dlFirstName: CAMPVICGASTPP
+          dlMiddleName/: 
+          dlLastName: test
+          licenseStateOfIssue: VIC
         
       
     
@@ -40,8 +38,6 @@ saleDetail :
     seqNo: 2
   
   premiseDetail: 
-    flatNo: 1
-    flatType: U
     addressClass: ST
     streetNo: 11
     streetName: Newry
@@ -56,13 +52,15 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-05-07
+    proposedStart: 2020-05-08
     offerType: ENE
     plan: SWSRH-EV
-    priceTag: EVCIA_NR2001
-    serviceOrderDate: 2020-05-07
+    priceTag: EVCI5_NR2001
+    serviceOrderDate: 2020-05-08
     serviceOrderTime: BUSHRS
-    nmiMirnInformation/: 
+    nmiMirnInformation: 
+      NMI: 6102512907
+    
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
       renovationsInProgressOrPlanned: N
@@ -84,5 +82,7 @@ saleDetail :
   creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
+    reEnergisationJSCCode: RCTBH
+    reEnergisationJSCCharge: 37.99
   
 

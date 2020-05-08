@@ -34,8 +34,8 @@ Scenario Outline: Submit a quote for offer campaign
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
   Examples:
-    |customerStatus|fuelType|campaign  |folderName         |state|username|password                                    |
-    |New           |BOTH    |Offer     |E2E_New_Resi_Moving|NSW  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+    |customerStatus|fuelType|campaign  |folderName             |state|username|password                                    |
+    |New           |BOTH    |offer     |E2E_New_Resi_Camp_OFFER|NSW  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
 
 

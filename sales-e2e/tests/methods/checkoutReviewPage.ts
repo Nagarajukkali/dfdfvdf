@@ -157,7 +157,6 @@ export class checkoutReviewMethod {
           eleSourceCode='Basic';
         }
         checkoutDetailsMethod.map.set('ele source code_'+checkoutDetailsMethod.getScenarioId(t),eleSourceCode);
-        await testFunction.takeScreenshot(t,'Checkout_Review_Page');
       }
       if(testFunction.isGas(fuelType)){
         let gasPlanName=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasPlanName);
@@ -182,7 +181,6 @@ export class checkoutReviewMethod {
           gasSourceCode='Basic';
         }
         checkoutDetailsMethod.map.set('gas source code_'+checkoutDetailsMethod.getScenarioId(t),gasSourceCode);
-        await testFunction.takeScreenshot(t,'Checkout_Review_Page');
       }
       return checkoutDetailsMethod.map;
   }

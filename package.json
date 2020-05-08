@@ -11,14 +11,15 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,scss,html}\"",
     "test-ci": "ng test --watch=false --code-coverage",
     "e2e:all": "rm -rf sales-e2e/results && cd sales-e2e && gherkin-testcafe --tags $npm_package_config_e2e_tags; npm run report",
-    "e2e:remote": "rm -rf ctp-e2e/results && cd ctp-e2e && gherkin-testcafe --tags $npm_package_config_e2e_tags remote --qr-code",
-    "e2e:windows-all": "rd /s /q \"ctp-e2e/results\" && cd ctp-e2e && node ../../node_modules/gherkin-testcafe/main.js --tags $npm_package_config_e2e_tags",
-    "e2e:windows-remote": "rd /s /q \"ctp-e2e/results\" && cd ctp-e2e && node ../../node_modules/gherkin-testcafe/main.js --tags $npm_package_config_e2e_tags remote --qr-code",
+    "e2e:remote": "rm -rf sales-e2e/results && cd sales-e2e && gherkin-testcafe --tags $npm_package_config_e2e_tags remote --qr-code",
+    "e2e:live": "rm -rf sales-e2e/results && cd sales-e2e && gherkin-testcafe --tags $npm_package_config_e2e_tags -L",
+    "e2e:windows-all": "rd /s /q \"sales-e2e/results\" && cd sales-e2e && node ../../node_modules/gherkin-testcafe/main.js --tags $npm_package_config_e2e_tags",
+    "e2e:windows-remote": "rd /s /q \"sales-e2e/results\" && cd sales-e2e && node ../../node_modules/gherkin-testcafe/main.js --tags $npm_package_config_e2e_tags remote --qr-code",
     "report": "node report-generator.js"
   },
   "config": {
     "env": "non-prod",
-    "e2e_tags": "@$50CampaignTesting"
+    "e2e_tags": "@E2E"
   },
   "private": true,
   "dependencies": {

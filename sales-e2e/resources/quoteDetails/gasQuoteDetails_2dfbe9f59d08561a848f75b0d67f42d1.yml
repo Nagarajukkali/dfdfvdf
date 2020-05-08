@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2005066308
-    sourceCode: Total_6%GD
+    quoteId: BB2005066344
+    sourceCode: Total_Plus_28%GD
     actualQuoteDate: 2020-05-06
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -9,21 +9,29 @@ saleDetail :
     customerClass: RESI
   
   personDetail: 
-    personId: 2932573475
     title: Mr
-    firstName: testExMOVSAEA
+    firstName: CAMPVICGASTPP
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0371010150
+      phoneNumber: 0358415020
     
-    emailId: gxWvrApfEm@energyaustralia.com.au
+    emailId: DsQfLxFjJa@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 285005
+      id: 156332
       primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: CAMPVICGASTPP
+          dlMiddleName/: 
+          dlLastName: test
+          licenseStateOfIssue: VIC
+        
+      
     
     authLevel: Y
     personPremiseRelationship: TENANT
@@ -31,27 +39,27 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 10
-    streetName: Austral
+    streetNo: 11
+    streetName: Newry
     streetType: S
-    suburb: SALISBURY EAST
-    state: SA
+    suburb: FITZROY NORTH
+    state: VIC
     country: AUS
-    postCode: 5109
+    postCode: 3068
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
   
   offerDetail: 
-    fuelType: E
-    proposedStart: 2020-05-07
+    fuelType: G
+    proposedStart: 2020-05-08
     offerType: ENE
-    plan: TOPH-ES
-    priceTag: ESSAA_NR1907
-    serviceOrderDate: 2020-05-07
+    plan: SWSRH-GV
+    priceTag: GVT2A_NR2001
+    serviceOrderDate: 2020-05-08
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 2001476634
+      MIRN: 5321198839
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -61,10 +69,10 @@ saleDetail :
     lifeSupportEquipment: 
       lifeSupportEquipmentType: OTHER
     
-    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
+    lifeSupportOtherEquipmentDetails: Sample Other gas device.
   
   offerDetail: 
-    fuelType: G
+    fuelType: E
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -72,11 +80,5 @@ saleDetail :
     billRouteType: EMAIL
   
   creditAssessmentDecision: Accept
-  meteringDetail: 
-    meterExchangeFlag: N
-    priceTagMeteringCharge: M510914RSP_ME
-    proposedNTC: MRSRI
-    proposedMC: MYMC
-    reEnergisationJSCCharge: 0
-  
+  creditAssessmentReasonCode: Accept
 

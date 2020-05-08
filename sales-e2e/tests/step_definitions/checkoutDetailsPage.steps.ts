@@ -23,7 +23,6 @@ When(/^user provides all details on checkout details page$/, async function (t,[
   await checkoutDetailsMethod.provideDetailsInAboutMeSection(t,data[0].journey,data[0].firstName,data[0].lastName);
   let emailAddress=await checkoutDetailsMethod.provideContactDetails(t);
   await checkoutDetailsMethod.getEmailWithScenario(t,emailAddress);
-  await testFunction.takeScreenshot(t,'Checkout_Details_Page');
   if(customerType===CustomerType.RESIDENTIAL){
     if(data[0].idType === "Medicare") {
       await checkoutDetailsMethod.checkoutIdentification(t,data[0].customerStatus,data[0].idType, data[0].medicareType);
@@ -34,11 +33,10 @@ When(/^user provides all details on checkout details page$/, async function (t,[
   if(customerType===CustomerType.BUSINESS){
     await checkoutDetailsMethod.provideBusinessDetails(t,data[0].businessType);
   }
-  await testFunction.takeScreenshot(t,'Checkout_Details_Page');
 });
 
 When(/^user clicks on 'Review your order' button and navigates to review page$/, async function (t) {
-  await testFunction.takeScreenshot(t,'Checkout_Details_Page');
+  await testFunction.takeScreenshot(t,'checkout_details_page');
   await checkoutDetailsMethod.clickOnReviewYourOrderBtn(t);
 });
 When(/^user selects answer for property renovation question for '(.*)'$/, async function (t,[state]) {
@@ -58,11 +56,9 @@ When(/^user opts for AAH and DD$/, async function (t,[],dataTable) {
     } else {
       await checkoutDetailsMethod.addAAHDetails(t);
     }
-    await testFunction.takeScreenshot(t,'Checkout_Details_Page');
   }
   if(optDDOption==='Yes'){
     await checkoutDetailsMethod.addDirectDebit(t,data[0].directDebitType);
-    await testFunction.takeScreenshot(t,'Checkout_Details_Page');
   }
 });
 When(/^user selects plans on checkout details page$/, async function (t,[],dataTable) {

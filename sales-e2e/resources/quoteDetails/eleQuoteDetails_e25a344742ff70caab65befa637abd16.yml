@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2005066308
-    sourceCode: Total_6%GD
+    quoteId: BB2005066305
+    sourceCode: Basic_50
     actualQuoteDate: 2020-05-06
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -9,20 +9,20 @@ saleDetail :
     customerClass: RESI
   
   personDetail: 
-    personId: 2932573475
+    personId: 4515455451
     title: Mr
-    firstName: testExMOVSAEA
+    firstName: testExMOVNSWEA
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0371010150
+      phoneNumber: 0324789250
     
-    emailId: gxWvrApfEm@energyaustralia.com.au
+    emailId: ieizAXtZKw@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 285005
+      idType: PASSPORT
+      id: 485175
       primaryIdFlag: Y
     
     authLevel: Y
@@ -31,13 +31,13 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 10
-    streetName: Austral
+    streetNo: 16
+    streetName: Sandra
     streetType: S
-    suburb: SALISBURY EAST
-    state: SA
+    suburb: FENNELL BAY
+    state: NSW
     country: AUS
-    postCode: 5109
+    postCode: 2283
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
@@ -46,22 +46,13 @@ saleDetail :
     fuelType: E
     proposedStart: 2020-05-07
     offerType: ENE
-    plan: TOPH-ES
-    priceTag: ESSAA_NR1907
+    plan: RSOT-EN
+    priceTag: ENEAT_RS4
     serviceOrderDate: 2020-05-07
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 2001476634
+      NMI: 4102174688
     
-    energySafeVicQuestions: 
-      renovationsSinceDeenergisation: N
-      renovationsInProgressOrPlanned: N
-      customerWithLifeSupport: Y
-    
-    lifeSupportEquipment: 
-      lifeSupportEquipmentType: OTHER
-    
-    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
   
   offerDetail: 
     fuelType: G
@@ -74,9 +65,9 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    priceTagMeteringCharge: M510914RSP_ME
-    proposedNTC: MRSRI
-    proposedMC: MYMC
+    priceTagMeteringCharge: M228314C_IH
+    proposedNTC: EA025
+    proposedMC: IHUBMC
     reEnergisationJSCCharge: 0
   
 

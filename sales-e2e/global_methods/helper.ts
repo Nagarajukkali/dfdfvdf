@@ -161,7 +161,7 @@ export class testFunction {
   }
 
   public static async clickElementFromList(t, element, value) {
-    await t.click(element.withText(value));
+    await t.click(element.withExactText(value));
   }
 
   public static isElectricity(fuelType) {
@@ -283,7 +283,7 @@ export class testFunction {
 
   public static async takeScreenshot(t,fileName){
     if(screenshot==='Yes'){
-      await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/`+fileName+`_${await getDateTime()}.png`);
+      await t.takeScreenshot({path:`../${await fetchBrowser()}/${await screenshotFolder}/`+fileName+`_${await getDateTime()}.png`,fullPage:true});
     }
   }
 

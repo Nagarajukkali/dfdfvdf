@@ -15,7 +15,7 @@ Given(/^user has navigated to '(.*)' plans page$/, async function(t, [customerTy
   }
   await testFunction.isElementDisplayed(t,eaHomePage.elements.plansCardFee);
   await testFunction.isElementDisplayed(t,eaHomePage.elements.planEstimateValue);
-  await testFunction.takeScreenshot(t,'Plans_Page');
+  await testFunction.takeScreenshot(t,'plans_page');
 });
 
 Given(/^user navigates to my account login page$/, async function (t, []) {
@@ -28,4 +28,5 @@ Given(/^user has opened the qt2 Reporting website link in a browser$/, async fun
 
 Given(/^user has navigated to move house page$/, async function (t) {
     await testFunction.click(t,eaHomePage.elements.linkMoveHouse);
+    await testFunction.takeScreenshot(t,"move_house");
 });

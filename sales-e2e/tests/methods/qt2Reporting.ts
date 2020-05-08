@@ -19,7 +19,6 @@ export class qt2Reporting {
       await testFunction.isElementDisplayed(t,eaQt2Reporting.elements.listQt2Lookup);
       await testFunction.selectValueFromList(t,eaQt2Reporting.elements.listQt2Lookup,option);
       await testFunction.enterText(t,eaQt2Reporting.elements.txtEmail,checkoutDetailsMethod.map.get(checkoutDetailsMethod.getScenarioId(t)));
-      await testFunction.takeScreenshot(t,'QT2_reporting');
       await testFunction.click(t,eaQt2Reporting.elements.btnFind);
     }
 
@@ -29,17 +28,13 @@ export class qt2Reporting {
 
     public static async validateQuoteDetails(t,fuelType){
       if(await testFunction.isElectricity(fuelType)){
-        await testFunction.takeScreenshot(t,'QT2_reporting_search');
         let eleQuoteDetails=await this.getEleQuoteDetails(t);
-        await testFunction.takeScreenshot(t,'QT2_reporting_search_ele');
         fileUtils.createYamlFile(t,eleQuoteDetails,fuelType);
         let jsonObj=fileUtils.convertYmlTOJSONObj(t,fuelType);
         //this.verifyJSONData(jsonObj.saleDetail);
       }
       if(await testFunction.isGas(fuelType)){
-        await testFunction.takeScreenshot(t,'QT2_reporting_search');
         let gasQuoteDetails=await this.getGasQuoteDetails(t);
-        await testFunction.takeScreenshot(t,'QT2_reporting_search_gas');
         fileUtils.createYamlFile(t,gasQuoteDetails,fuelType);
         let jsonObj=fileUtils.convertYmlTOJSONObj(t,fuelType);
         //this.verifyJSONData(jsonObj.saleDetail);

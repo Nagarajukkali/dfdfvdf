@@ -5,6 +5,7 @@ const fileUtils=require('../../libs/FileUtils.js');
 import {plansMethod} from '../methods//plansPage';
 import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
+import {testFunction} from '../../global_methods/helper';
 
 When(/^user logs in to qt2 reporting using '(.*)' and '(.*)'$/, async function(t, [username, password]) {
   await qt2Reporting.loginToqt2Reporting(t,username,password);
@@ -15,10 +16,12 @@ When(/^user search quote on the basis of '(.*)'$/, async function (t,[option]) {
 });
 Then(/^submitted quote is displayed$/, async function (t) {
   await qt2Reporting.verifySubmittedQuote(t);
+  await testFunction.takeScreenshot(t,"qt2_reporting_app");
 });
 
 Then(/^user validates all the details for '(.*)' submitted quote$/, async function (t,[fuelType]) {
   await qt2Reporting.validateQuoteDetails(t,fuelType);
+  await testFunction.takeScreenshot(t,"qt2_reporting_app");
 });
 Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();

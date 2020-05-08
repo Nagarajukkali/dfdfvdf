@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2005066308
-    sourceCode: Total_6%GD
+    quoteId: BB2005066267
+    sourceCode: Total_9%GD_50
     actualQuoteDate: 2020-05-06
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -9,21 +9,29 @@ saleDetail :
     customerClass: RESI
   
   personDetail: 
-    personId: 2932573475
     title: Mr
-    firstName: testExMOVSAEA
+    firstName: CAMPVICTOTAL
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0371010150
+      phoneNumber: 0319793031
     
-    emailId: gxWvrApfEm@energyaustralia.com.au
+    emailId: dYnzDrgOEL@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 285005
+      idType: PASSPORT
+      id: 451447
       primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationPassportDetail: 
+          passportFirstName: CAMPVICTOTAL
+          passportMiddleName/: 
+          passportLastName: test
+          passportCountry: AUS
+        
+      
     
     authLevel: Y
     personPremiseRelationship: TENANT
@@ -31,27 +39,27 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 10
-    streetName: Austral
-    streetType: S
-    suburb: SALISBURY EAST
-    state: SA
+    streetNo: 72
+    streetName: Featherbrook
+    streetType: DR
+    suburb: POINT COOK
+    state: VIC
     country: AUS
-    postCode: 5109
+    postCode: 3030
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-05-07
+    proposedStart: 2020-05-08
     offerType: ENE
-    plan: TOPH-ES
-    priceTag: ESSAA_NR1907
-    serviceOrderDate: 2020-05-07
+    plan: TOPH-EV
+    priceTag: EVPO5_NR2001
+    serviceOrderDate: 2020-05-08
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 2001476634
+      NMI: 6203805728
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -59,9 +67,8 @@ saleDetail :
       customerWithLifeSupport: Y
     
     lifeSupportEquipment: 
-      lifeSupportEquipmentType: OTHER
+      lifeSupportEquipmentType: LSCNSPE
     
-    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
   
   offerDetail: 
     fuelType: G
@@ -72,11 +79,10 @@ saleDetail :
     billRouteType: EMAIL
   
   creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    priceTagMeteringCharge: M510914RSP_ME
-    proposedNTC: MRSRI
-    proposedMC: MYMC
-    reEnergisationJSCCharge: 0
+    reEnergisationJSCCode: RCTBH
+    reEnergisationJSCCharge: 56.05
   
 

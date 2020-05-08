@@ -1,28 +1,28 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2004309740
-    sourceCode: Total_27%GD_50
-    actualQuoteDate: 2020-04-30
+    quoteId: BB2005066315
+    sourceCode: Total_Plus_28%GD
+    actualQuoteDate: 2020-05-06
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    personId: 5033131000
+    personId: 6666843000
     title: Mr
-    firstName: test
+    firstName: testExMOVVICEA
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0312038025
+      phoneNumber: 0339743904
     
-    emailId: gOgYuNRIad@energyaustralia.com.au
+    emailId: wakPvZrkZX@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 932738
+      idType: PASSPORT
+      id: 26655
       primaryIdFlag: Y
     
     authLevel: Y
@@ -31,27 +31,27 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 25
-    streetName: Churchill
-    streetType: R
-    suburb: MORWELL
+    streetNo: 42
+    streetName: Roe
+    streetType: S
+    suburb: BENALLA
     state: VIC
     country: AUS
-    postCode: 3840
+    postCode: 3672
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-05-01
+    proposedStart: 2020-05-07
     offerType: ENE
-    plan: TOPH-GV
-    priceTag: GVR5A_NR2001
-    serviceOrderDate: 2020-05-01
+    plan: SWSRH-GV
+    priceTag: GVR4A_NR2001
+    serviceOrderDate: 2020-05-07
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      MIRN: 5321936769
+      MIRN: 5321734101
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -59,9 +59,8 @@ saleDetail :
       customerWithLifeSupport: Y
     
     lifeSupportEquipment: 
-      lifeSupportEquipmentType: OTHER
+      lifeSupportEquipmentType: GLSMRHW
     
-    lifeSupportOtherEquipmentDetails: Sample Other gas device.
   
   offerDetail: 
     fuelType: E

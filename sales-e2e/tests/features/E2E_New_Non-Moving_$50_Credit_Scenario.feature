@@ -208,7 +208,7 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
 
     # New customer non-moving with FRMP/FRO as EA - Negative Scenario
   #Defect @50CreditExtensionNonMoving
-
+  #retest passed
   Scenario Outline: Submit a quote for new residential non moving customer for VIC with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -250,6 +250,7 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
       |New           |BOTH    |Total Plan  |E2E_New_Resi_NonMoving_$50_VIC_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
   #defect @50CreditExtensionNonMoving
+  #retest passed
   Scenario Outline: Submit a quote for new residential non moving customer for NSW with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page

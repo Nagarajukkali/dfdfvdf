@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2005066308
-    sourceCode: Total_6%GD
+    quoteId: BB2005066269
+    sourceCode: Total_14%GD_50
     actualQuoteDate: 2020-05-06
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -9,21 +9,31 @@ saleDetail :
     customerClass: RESI
   
   personDetail: 
-    personId: 2932573475
     title: Mr
-    firstName: testExMOVSAEA
+    firstName: CAMPQLDTOTAL
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0371010150
+      phoneNumber: 0344114662
     
-    emailId: gxWvrApfEm@energyaustralia.com.au
+    emailId: LUTlqDhqdS@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 285005
+      idType: MEDICARE
+      id: 4102049371
       primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationMedicareDetail: 
+          medicareFirstName: CAMPQLDTOTAL
+          medicareMiddleName/: 
+          medicareLastName: test
+          medicareReferenceNumber: 1
+          medicareExpiryDate: 2025-01-01
+          medicareCardColour: Yellow
+        
+      
     
     authLevel: Y
     personPremiseRelationship: TENANT
@@ -31,27 +41,24 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 10
-    streetName: Austral
+    streetNo: 27
+    streetName: Cooinda
     streetType: S
-    suburb: SALISBURY EAST
-    state: SA
+    suburb: SLACKS CREEK
+    state: QLD
     country: AUS
-    postCode: 5109
+    postCode: 4127
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-05-07
-    offerType: ENE
-    plan: TOPH-ES
-    priceTag: ESSAA_NR1907
-    serviceOrderDate: 2020-05-07
-    serviceOrderTime: BUSHRS
+    offerType: COR
+    plan: TOPH-EQ
+    priceTag: EQEX2_NR1907
     nmiMirnInformation: 
-      NMI: 2001476634
+      NMI: QB00224057
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -72,11 +79,8 @@ saleDetail :
     billRouteType: EMAIL
   
   creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    priceTagMeteringCharge: M510914RSP_ME
-    proposedNTC: MRSRI
-    proposedMC: MYMC
-    reEnergisationJSCCharge: 0
   
 

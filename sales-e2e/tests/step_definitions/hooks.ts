@@ -25,6 +25,7 @@ Given(/^user has opened the website link in a browser and creates '(.*)' to save
 
 
 Given(/^user has opened the new connection website link in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
+  screenshotFolder=folderName;
   let screenshotFolderPath="screenshots/Chrome/"+screenshotFolder;
   fileUtils.deleteFiles(screenshotFolderPath);
   await t.navigateTo(eaHomePage.newConnectionPageUrl);
@@ -74,7 +75,7 @@ Given(/^user has opened the '(.*)' link in a browser and creates '(.*)' to save 
 
 After( async t => {
   let format;
-  await t.takeScreenshot(`../${await fetchBrowser()}/${await screenshotFolder}/${await getDateTime()}.png`);
+  await t.takeScreenshot({path:`../${await fetchBrowser()}/${await screenshotFolder}/${await getDateTime()}.png`,fullPage:true});
   logger.debug('Execution completed');
 });
 

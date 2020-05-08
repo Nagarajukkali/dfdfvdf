@@ -192,6 +192,7 @@ export class campaignMethod{
   public static async enterPostcodeOnCampaign(t,postcode){
     await testFunction.clearAndEnterText(t,EaHomePage.elements.postcodeOnCampaignPage,postcode);
     await testFunction.click(t,EaHomePage.elements.btnCampaignSearch);
+    await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
   }
 
   public static async enterOfferCodeAndPostcodeOnCampaign(t,offerCode,postcode){
@@ -199,6 +200,7 @@ export class campaignMethod{
     await t.wait(3000);
     await testFunction.clearAndEnterText(t,EaHomePage.elements.postcodeOnCampaignPage,postcode);
     await testFunction.click(t,EaHomePage.elements.btnCampaignSearch);
+    await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
   }
 
   public static  async addPlanOnCampaign(t){

@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2005056154
+    quoteId: BB2005066234
     sourceCode: Total_Plus_28%GD_50
-    actualQuoteDate: 2020-05-05
+    actualQuoteDate: 2020-05-06
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -10,23 +10,23 @@ saleDetail :
   
   personDetail: 
     title: Mr
-    firstName: test
+    firstName: CAMPVICELECTPP
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0399135407
+      phoneNumber: 0367318733
     
-    emailId: BVcKnyDkQL@energyaustralia.com.au
+    emailId: OHNXtUiBAE@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: MEDICARE
-      id: 7076361865
+      id: 3912032622
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationMedicareDetail: 
-          medicareFirstName: test
+          medicareFirstName: CAMPVICELECTPP
           medicareMiddleName/: 
           medicareLastName: test
           medicareReferenceNumber: 1
