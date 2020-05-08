@@ -1,10 +1,10 @@
 import {When} from "cucumber";
 import {qt2Reporting} from '../methods/qt2Reporting';
 import {Then} from 'cucumber'
-const fileUtils=require('../../libs/FileUtils.js');
-import {plansMethod} from '../methods//plansPage';
 import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
+import {FileUtils} from '../../libs/FileUtils'
+
 
 When(/^user logs in to qt2 reporting using '(.*)' and '(.*)'$/, async function(t, [username, password]) {
   await qt2Reporting.loginToqt2Reporting(t,username,password);
@@ -31,7 +31,7 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
   let renovationsInProgressOrPlanned=data[0].renovationsInProgressOrPlanned;
   let customerWithLifeSupport=data[0].customerWithLifeSupport
   let billRouteType=data[0].billRouteType;
-  let jsonObj=fileUtils.convertYmlTOJSONObj(t,fuelType);
+  let jsonObj=await FileUtils.convertYmlTOJSONObj(t,fuelType);
   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.quoteStatus,quoteStatus);
   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.customerType,customerType);
   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.offerType,offerType);

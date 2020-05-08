@@ -3,7 +3,7 @@ const eaQt2Reporting=require('../pages/eaQt2Reporting.page');
 import {testFunction } from '../../global_methods/helper';
 import {checkoutDetailsMethod} from './checkoutDetailsPage';
 import * as assert from 'assert';
-const fileUtils=require('../../libs/FileUtils.js');
+import {FileUtils} from '../../libs/FileUtils'
 const cryptoJS = require('crypto-js');
 
 
@@ -29,14 +29,14 @@ export class qt2Reporting {
     public static async validateQuoteDetails(t,fuelType){
       if(await testFunction.isElectricity(fuelType)){
         let eleQuoteDetails=await this.getEleQuoteDetails(t);
-        fileUtils.createYamlFile(t,eleQuoteDetails,fuelType);
-        let jsonObj=fileUtils.convertYmlTOJSONObj(t,fuelType);
+        await FileUtils.createYamlFile(t,eleQuoteDetails,fuelType);
+        let jsonObj = await FileUtils.convertYmlTOJSONObj(t,fuelType);
         this.verifyJSONData(jsonObj.saleDetail);
       }
       if(await testFunction.isGas(fuelType)){
         let gasQuoteDetails=await this.getGasQuoteDetails(t);
-        fileUtils.createYamlFile(t,gasQuoteDetails,fuelType);
-        let jsonObj=fileUtils.convertYmlTOJSONObj(t,fuelType);
+        await FileUtils.createYamlFile(t,gasQuoteDetails,fuelType);
+        let jsonObj = await FileUtils.convertYmlTOJSONObj(t,fuelType);
         this.verifyJSONData(jsonObj.saleDetail);
       }
     }

@@ -43,6 +43,21 @@ const eaCheckoutReviewPage={
       txtGasDiscount:Selector("#reviewSectionGas div.review-plan__plan-rates div[id*='charge-before-discount']+div"),
       txtElePlanName:Selector('#reviewSectionEle div.review-plan__title--planName'),
       txtGasPlanName:Selector('#reviewSectionGas div.review-plan__title--planName'),
+      elePlanName: Selector("[id*='heading-'][id*='-E'] div[class*='planName']"),
+      gasPlanName: Selector("[id*='heading-'][id*='-G'] div[class*='planName']"),
+      eleDiscount: Selector("[id*='review-plan-'][id*='-E'] div[class*='hs-plan-supply__description']").withText("After"),
+      gasDiscount: Selector("[id*='review-plan-'][id*='-G'] div[class*='hs-plan-supply__description']").withText("After"),
+      eleFeatures: Selector("[id*='review-plan-'][id*='-E'] [id*='benefit-text']"),
+      eleFeature50Credit: Selector("[id*='review-plan-'][id*='-E'] [id*='benefit-text']").withText("$50"),
+      eleFeatureCN: Selector("[id*='review-plan-'][id*='-E'] [id*='benefit-text']").withText("Carbon neutral"),
+      eleFeatureDiscountOffTotal: Selector("[id*='review-plan-'][id*='-E'] [id*='benefit-text']").withText("Discount off total energy bill"),
+      eleFeaturePeaceOfMind: Selector("[id*='review-plan-'][id*='-E'] [id*='benefit-text']").withText("Peace of mind"),
+      eleFeatureNoStandardConnectionFee: Selector("[id*='review-plan-'][id*='-E'] [id*='benefit-text']").withText("No standard connection fees"),
+      gasFeatures: Selector("[id*='review-plan-'][id*='-G'] [id*='benefit-text']"),
+      gasFeature50Credit: Selector("[id*='review-plan-'][id*='-G'] [id*='benefit-text']").withText("$50"),
+      gasFeatureCN: Selector("[id*='review-plan-'][id*='-G'] [id*='benefit-text']").withText("Carbon neutral"),
+      gasFeatureDiscountOffTotal: Selector("[id*='review-plan-'][id*='-G'] [id*='benefit-text']").withText("Discount off total energy bill"),
+      gasFeaturePeaceOfMind: Selector("[id*='review-plan-'][id*='-G'] [id*='benefit-text']").withText("Peace of mind"),
     }
 }
 

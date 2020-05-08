@@ -1,6 +1,6 @@
 import {plansMethod, verifyAccountMethod,campaignMethod} from '../methods/plansPage';
 import {selectionOptionModalWindowMethod } from '../methods/plansPage';
-const fileUtils=require('../../libs/FileUtils.js');
+import {FileUtils} from '../../libs/FileUtils'
 import {When, Then } from 'cucumber';
 import {Given} from 'cucumber'
 import {testFunction} from '../../global_methods/helper';
@@ -56,7 +56,7 @@ When(/^user clicks on Add plan button$/, async function (t) {
 });
 
 Then(/^user verifies details of "([^"]*)" customer on plans page for "([^"]*)"$/, async function (t,[customerType,state]) {
-  let JSONObj=fileUtils.getJSONfile(customerType);
+  let JSONObj=await FileUtils.getJSONfile(customerType);
   console.log(JSONObj.TotalPlan.planHeading);
 });
 
@@ -79,7 +79,7 @@ Then(/^user validates the data on plans page for "([^"]*)"$/, async function (t,
       |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |
    */
   dataTable = dataTable.hashes();
-  let data = await fileUtils.getJSONfile(campaignName);
+  let data = await FileUtils.getJSONfile(campaignName);
   await plansMethod.validatePlanHeading(t, data);
   await plansMethod.validateFeatures(t, dataTable, data);
 });
