@@ -2,7 +2,6 @@ const eaCheckoutDetailsPage=require('../pages/checkOutDetails.page');
 const eaCheckoutReviewPage=require('../pages/checkoutReview.page');
 import {BusinessType, CustomerStatus, directDebitType, PlanType, testFunction, cdeResponses} from '../../global_methods/helper';
 import {AustralianState, CustomerType} from '@ea/ea-commons-models';
-const fileUtils=require('../../libs/FileUtils.js');
 const Hashes=require('jshashes');
 
 

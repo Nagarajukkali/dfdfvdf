@@ -1,7 +1,7 @@
 @E2E
 Feature:E2E scenario for new connection
 
-Scenario Outline: Submit a quote for electricity new connection for residential customer
+  Scenario Outline: Submit a quote for electricity new connection for residential customer
   Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
   When user provides connection details
     |fuelType|customerType|premiseType|state   |postcode|
@@ -59,7 +59,7 @@ Scenario Outline: Submit a quote for electricity new connection for residential 
     Examples:
       |fuelType|folderName          |
       |GAS     |E2E_Existing_Resi_NC|
- 
+
   Scenario Outline: Submit a quote for electricity new connection for business customer
     Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
     When user provides connection details
