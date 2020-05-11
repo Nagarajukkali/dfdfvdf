@@ -1,7 +1,7 @@
-@E2E
+@E2E @$50CampaignTesting
 Feature:E2E scenario for $50 campaign testing
  #Elec - TPP
-  @$50CampaignTesting
+  #CAMPNSWELECTPP
 Scenario Outline: Submit a quote for elec-tpp campaign for NSW
   Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
   When user provides "2000" and clicks on show me plan link
@@ -12,7 +12,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
     |RES         | 2 Cavey Street, MARRICKVILLE NSW 2204|Moving    |Renter      |No         |
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName     | lastName|idType  |medicareType|
-    |RES         |RES        |New           | CAMPNSWELECTPP|test     |Medicare|blue        |
+    |RES         |RES        |New           | test|test     |Medicare|blue        |
   And user selects answer for property renovation question for '<state>'
   And user clicks on 'Review your order' button and navigates to review page
   And user provides life support details on review page
@@ -39,7 +39,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
     |customerStatus|fuelType|campaign  |folderName                          |state|username|password                                    |
     |New           |BOTH    |elec-tpp  |E2E_New_Resi_Moving_$50_NSW_ELEC_TPP|NSW  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @$50CampaignTesting
+  #CAMPVICELECTPP
   Scenario Outline: Submit a quote for elec-tpp campaign for VIC
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
@@ -51,7 +51,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType  |medicareType|
-      |RES          |RES        |New           | CAMPVICELECTPP|test     |Medicare|green       |
+      |RES          |RES        |New           | test|test     |Medicare|green       |
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |No          |Yes        |CC             |
@@ -80,7 +80,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |customerStatus|campaign|fuelType|folderName                             |username|password                                    |
       |New           |elec-tpp|BOTH    |E2E_New_Resi_NonMoving_$50_VIC_ELEC_TPP|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @$50CampaignTesting
+  #CAMPSAELECTPP
   Scenario Outline: Submit a quote for elec-tpp campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" and clicks on show me plan link
@@ -91,7 +91,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |RES         | 9 Gooronga Drive, CRAIGMORE SA 5114|Moving    |Renter      |No         |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType  |medicareType|
-      |RES         |RES        |New           | CAMPSAELECTPP     |test     |Medicare|yellow      |
+      |RES         |RES        |New           | test     |test     |Medicare|yellow      |
     And user selects answer for property renovation question for '<state>'
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
@@ -119,7 +119,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |New           |BOTH    |elec-tpp  |E2E_New_Resi_Moving_$50_SA_ELEC_TPP|SA  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
   #Gas-TPP
-  @$50CampaignTesting
+  #CAMPNSWGASTPP
   Scenario Outline: Submit a quote for gas-tpp campaign for NSW
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" and clicks on show me plan link
@@ -131,7 +131,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType  |medicareType|
-      |RES          |RES        |New           | CAMPNSWGASTPP|test     |Medicare|blue        |
+      |RES          |RES        |New           | test|test     |Medicare|blue        |
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |No          |Yes        |CC             |
@@ -160,7 +160,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |customerStatus|campaign|fuelType|folderName                            |username|password                                    |
       |New           |gas-tpp |BOTH    |E2E_New_Resi_NonMoving_$50_NSW_GAS_TPP|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @$50CampaignTesting
+ #CAMPVICGASTPP
   Scenario Outline: Submit a quote for gas-tpp campaign for VIC
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
@@ -171,7 +171,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |RES         | 11 Newry Street, FITZROY NORTH VIC 3068|Moving    |Renter      |No         |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName    | lastName|idType        |
-      |RES         |RES        |New           | CAMPVICGASTPP|test     |Driver License|
+      |RES         |RES        |New           | test|test     |Driver License|
     And user selects answer for property renovation question for '<state>'
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
@@ -198,7 +198,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |customerStatus|fuelType|campaign  |folderName                          |state|username|password                                    |
       |New           |BOTH    |gas-tpp   |E2E_New_Resi_Moving_$50_VIC_GAS_TPP|VIC  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @$50CampaignTesting
+  #CAMPSAGASTPP
   Scenario Outline: Submit a quote for gas-tpp campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" and clicks on show me plan link
@@ -210,7 +210,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType  |medicareType|
-      |RES          |RES        |New           | CAMPSAGASTPP     |test     |Medicare|yellow      |
+      |RES          |RES        |New           | test     |test     |Medicare|yellow      |
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |No          |Yes        |CC             |
@@ -240,7 +240,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |New           |gas-tpp |BOTH    |E2E_New_Resi_NonMoving_$50_SA_GAS_TPP|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
     #Elec-TP
-  @$50CampaignTesting
+ #CAMPNSWELECTP
   Scenario Outline: Submit a quote for elec-totalP campaign for NSW
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" and clicks on show me plan link
@@ -251,7 +251,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |RES         | 43 Coronation Avenue, CRONULLA NSW 2230|Moving    |Renter      |No         |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType  |medicareType|
-      |RES         |RES        |New           | CAMPNSWELECTP|test     |Medicare|blue        |
+      |RES         |RES        |New           | test|test     |Medicare|blue        |
     And user selects answer for property renovation question for '<state>'
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
@@ -278,7 +278,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |customerStatus|fuelType|campaign  |folderName                         |state|username|password                                    |
       |New           |BOTH    |elec-tp   |E2E_New_Resi_Moving_$50_NSW_ELEC_TP|NSW  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @$50CampaignTesting
+ #CAMPVICELECTP
   Scenario Outline: Submit a quote for elec-totalP campaign for VIC
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
@@ -290,7 +290,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType  |medicareType|
-      |RES          |RES        |New           | CAMPVICELECTP|test     |Medicare|green       |
+      |RES          |RES        |New           | test|test     |Medicare|green       |
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |No          |Yes        |CC             |
@@ -319,7 +319,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |customerStatus|campaign|fuelType|folderName                            |username|password                                    |
       |New           |elec-tp |BOTH    |E2E_New_Resi_NonMoving_$50_VIC_ELEC_TP|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @$50CampaignTesting
+  #CAMPSAELECTP
   Scenario Outline: Submit a quote for elec-totalP campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" and clicks on show me plan link
@@ -330,7 +330,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |RES         | 6 Edgar Street, BEDFORD PARK SA 5042|Moving    |Renter      |No         |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType  |medicareType|
-      |RES         |RES        |New           | CAMPSAELECTP     |test     |Medicare|yellow      |
+      |RES         |RES        |New           | test     |test     |Medicare|yellow      |
     And user selects answer for property renovation question for '<state>'
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
@@ -358,7 +358,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |New           |BOTH    |elec-tp   |E2E_New_Resi_Moving_$50_SA_ELEC_TP|SA  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
 #Gas-TP
-  @$50CampaignTesting
+  #CAMPNSWGASTP
   Scenario Outline: Submit a quote for gas-totalP campaign for NSW
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" and clicks on show me plan link
@@ -370,7 +370,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType  |medicareType|
-      |RES          |RES        |New           | CAMPNSWGASTP     |test     |Medicare|blue        |
+      |RES          |RES        |New           | test     |test     |Medicare|blue        |
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |No          |Yes        |CC             |
@@ -399,7 +399,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |customerStatus|campaign|fuelType|folderName                           |username|password                                    |
       |New           |gas-tp  |BOTH    |E2E_New_Resi_NonMoving_$50_NSW_GAS_TP|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @$50CampaignTesting
+  #CAMPVICGASTP
   Scenario Outline: Submit a quote for gas-totalP campaign for VIC
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
@@ -410,7 +410,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |RES         | 26 Cameron Street, PORTLAND VIC 3305|Moving    |Renter      |No         |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType  |medicareType|
-      |RES          |RES        |New           | CAMPVICGASTP     |test     |Medicare|blue        |
+      |RES          |RES        |New           | test     |test     |Medicare|blue        |
     And user selects answer for property renovation question for '<state>'
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
@@ -437,7 +437,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |customerStatus|fuelType|campaign  |folderName                        |state|username|password                                    |
       |New           |BOTH    |gas-tp    |E2E_New_Resi_Moving_$50_VIC_GAS_TP|VIC  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @$50CampaignTesting
+  #CAMPSAGASTP
   Scenario Outline: Submit a quote for gas-totalP campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" and clicks on show me plan link
@@ -449,7 +449,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType  |medicareType|
-      |RES          |RES        |New           | CAMPSAGASTP     |test     |Medicare|green        |
+      |RES          |RES        |New           | test     |test     |Medicare|green        |
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |No          |Yes        |CC             |
@@ -479,7 +479,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |New           |gas-tp  |BOTH    |E2E_New_Resi_NonMoving_$50_SA_GAS_TP|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
     #Total-Plan
-  @$50CampaignTesting
+ #CAMPNSWTOTAL
   Scenario Outline: Submit a quote for total-plan campaign for NSW
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" and clicks on show me plan link
@@ -491,7 +491,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName   | lastName|idType        |
-      |RES         |RES        |New           | CAMPNSWTOTAL|test     |Driver License|
+      |RES         |RES        |New           | test|test     |Driver License|
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |No          |Yes        |CC             |
@@ -520,7 +520,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |customerStatus|campaign|fuelType|folderName                               |username|password                                    |
       |New           |total   |BOTH    |E2E_New_Resi_NonMoving_$50_NSW_Total|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @$50CampaignTesting
+  #CAMPVICTOTAL
   Scenario Outline: Submit a quote for total-plan campaign for VIC
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
@@ -531,7 +531,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |RES         | 72 Featherbrook Drive, POINT COOK VIC 3030|Moving    |Renter      |No         |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName   | lastName|idType  |
-      |RES         |RES        |New           | CAMPVICTOTAL|test     |Passport|
+      |RES         |RES        |New           | test|test     |Passport|
     And user selects answer for property renovation question for '<state>'
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
@@ -558,7 +558,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |customerStatus|campaign|fuelType|campaign  |folderName                             |state|username|password                                    |
       |New           |total   |BOTH    |Offer     |E2E_New_Resi_Moving_$50_VIC_Total|VIC  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @$50CampaignTesting
+  #CAMPQLDTOTAL
   Scenario Outline: Submit a quote for total-plan for QLD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4000" and clicks on show me plan link
@@ -571,7 +571,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType  |medicareType|
-      |RES          |RES        |New           | CAMPQLDTOTAL|test     |Medicare|yellow      |
+      |RES          |RES        |New           | test|test     |Medicare|yellow      |
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |No          |No         |CC             |
@@ -597,7 +597,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |New           |total   |ELE     |E2E_New_Resi_NonMoving_$50_QLD_Total|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
 #total-plan-plus - Negative Scenario
-  @$50CampaignTesting
+  #CAMPQLDTPP
   Scenario Outline: Submit a quote for total-plan-plus for QLD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4000" and clicks on show me plan link
@@ -610,7 +610,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType  |medicareType|
-      |RES          |RES        |New           | CAMPQLDTPP|test     |Medicare|yellow      |
+      |RES          |RES        |New           | test|test     |Medicare|yellow      |
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |No          |No         |CC             |
@@ -635,7 +635,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |customerStatus|campaign|fuelType|folderName                            |username|password                                    |
       |New           |total-plan-plus|ELE     |E2E_New_Resi_NonMoving_$50_QLD_Total_Plus|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 #comeback
-  @$50CampaignTesting
+  #CAMPQLDCOMEBACK
   Scenario Outline: Submit a quote for comeback for QLD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4000" and clicks on show me plan link
@@ -648,7 +648,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType  |medicareType|
-      |RES          |RES        |New           | CAMPQLDCOMEBACK|test     |Medicare|yellow      |
+      |RES          |RES        |New           | test|test     |Medicare|yellow      |
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |No          |No         |CC             |
@@ -674,7 +674,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |New           |comeback|ELE     |E2E_New_Resi_NonMoving_$50_QLD_COMEBACK|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
   #familyandfriends - negative scenario
-  @$50CampaignTesting
+ #CAMPQLDFnF
   Scenario Outline: Submit a quote for familyandfriends for QLD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "test111111" and "4000" and clicks on show me plan link
@@ -687,7 +687,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType  |medicareType|
-      |RES          |RES        |New           | CAMPQLDFnF|test     |Medicare|blue      |
+      |RES          |RES        |New           | test|test     |Medicare|blue      |
     And user selects answer for property renovation question for '<state>'
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
@@ -714,7 +714,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
       |New           |familyandfriends|ELE     |E2E_New_Resi_Moving_$50_QLD_FnF|QLD  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
     #EACorporateOffer - negative scenario
-  @$50CampaignTesting
+  #CAMPQLDEACORP
   Scenario Outline: Submit a quote for EACorporateOffer for QLD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "reward" and "4000" and clicks on show me plan link
@@ -727,7 +727,7 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType  |medicareType|
-      |RES          |RES        |New           | CAMPQLDEACORP|test     |Medicare|blue      |
+      |RES          |RES        |New           | test|test     |Medicare|blue      |
     And user selects answer for property renovation question for '<state>'
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|

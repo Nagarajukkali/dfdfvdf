@@ -1,6 +1,7 @@
 import {checkoutReviewMethod} from '../methods/checkoutReviewPage';
 import {testFunction } from '../../global_methods/helper';
 import {When, Then } from 'cucumber';
+import {FileUtils} from '../../libs/FileUtils'
 
 When(/^user provides life support details$/, async function(t,[],dataTable){
   let data=dataTable.hashes();
@@ -34,4 +35,11 @@ Then(/^Life support section is displayed on Review page as per selected "([^"]*)
 });
 Then(/^user verifies selected plan details for '(.*)'$/, async  function(t,[fuelType]) {
   await checkoutReviewMethod.getDiscount(t,fuelType);
+});
+Then(/^user validates plan details on review page for "([^"]*)"$/, async function (t, [campaignName], dataTable) {
+  let numOfExpectedFeatures = await testFunction.getExpectedFeatureCount(dataTable.rows());
+  dataTable = dataTable.hashes();
+  let json = await FileUtils.getJSONfile(campaignName);
+  await checkoutReviewMethod.validatePlanName(t, json, dataTable);
+  await checkoutReviewMethod.validateFeatures(t, dataTable, json, numOfExpectedFeatures);
 });

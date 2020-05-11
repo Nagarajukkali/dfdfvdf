@@ -1,6 +1,6 @@
 import { Selector } from 'testcafe';
 import { ClientFunction } from 'testcafe';
-import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
+import {FUEL_TYPE_OPTIONS, AustralianState} from '@ea/ea-commons-models';
 import {fetchBrowser, getDateTime, screenshotFolder} from '../tests/step_definitions/hooks';
 const replace={ replace: true };
 const { config }=require('../resources/resource');
@@ -285,6 +285,34 @@ export class testFunction {
     if(screenshot==='Y'){
       await t.takeScreenshot({path:`../${await fetchBrowser()}/${await screenshotFolder}/`+fileName+`_${await getDateTime()}.png`,fullPage:true});
     }
+  }
+
+  public static getPostcode(state: string) {
+    switch (state) {
+      case AustralianState.VIC:
+        return "3000";
+      case AustralianState.NSW:
+        return "2000";
+      case AustralianState.ACT:
+        return "2600";
+      case AustralianState.SA:
+        return "5000";
+      case AustralianState.QLD:
+        return "4500";
+      default:
+        return "Invalid State selection!";
+    }
+  }
+
+  public static async getExpectedFeatureCount(dataRow: string[][]) {
+    const dataArr = dataRow;
+    let numOfExpectedFeatures = 0;
+    for(let i = 0 ; i<dataArr[0].length ; i++) {
+      if(dataArr[0][i] === "Y") {
+        numOfExpectedFeatures++;
+      }
+    }
+    return numOfExpectedFeatures;
   }
 
 }

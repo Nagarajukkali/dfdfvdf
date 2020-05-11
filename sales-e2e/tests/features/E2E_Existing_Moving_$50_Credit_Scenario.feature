@@ -278,7 +278,7 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
       |E2E_VerifyAccount_Residential_Moving     |RES           |BOTH     |Total Plan Plus|No               |VIC    |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
  #testExMOVVICMoveHouse
-  Scenario Outline: Submit a quote for existing residential customer through move house
+  Scenario Outline: Submit a quote for existing residential customer through move house when both fuel plans are total plan
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     When user has navigated to move house page
     And user enters '<movingAddress>' in address field and selects any available moving date

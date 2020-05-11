@@ -1,12 +1,10 @@
 import {Before, After, Then, Given} from 'cucumber';
 import {testFunction} from '../../global_methods/helper';
 import {ClientFunction} from 'testcafe';
-const fileUtils=require('../../libs/FileUtils.js');
+import {FileUtils} from '../../libs/FileUtils'
 let log4js=require('log4js');
 const USERAGENT=ClientFunction(() => navigator.userAgent);
 let logger=log4js.getLogger();
-const fs = require('fs');
-const path = require('path');
 const eaHomePage=require('../pages/energy-australia-home.page');
 logger.level='debug';
 export let screenshotFolder=null;
@@ -18,7 +16,7 @@ Before(  async t => {
 Given(/^user has opened the website link in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
   screenshotFolder=folderName;
   let screenshotFolderPath="screenshots/Chrome/"+screenshotFolder;
-  fileUtils.deleteFiles(screenshotFolderPath);
+  await FileUtils.deleteFiles(screenshotFolderPath);
   await t.navigateTo(eaHomePage.pageUrl);
 });
 
@@ -27,7 +25,7 @@ Given(/^user has opened the website link in a browser and creates '(.*)' to save
 Given(/^user has opened the new connection website link in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
   screenshotFolder=folderName;
   let screenshotFolderPath="screenshots/Chrome/"+screenshotFolder;
-  fileUtils.deleteFiles(screenshotFolderPath);
+  await FileUtils.deleteFiles(screenshotFolderPath);
   await t.navigateTo(eaHomePage.newConnectionPageUrl);
 
 });
@@ -35,7 +33,8 @@ Given(/^user has opened the new connection website link in a browser and creates
 Given(/^user has opened the '(.*)' link in a browser and creates '(.*)' to save evidences$/, async function (t,[campaign,folderName]) {
   screenshotFolder=folderName;
   let screenshotFolderPath="screenshots/Chrome/"+screenshotFolder;
-  fileUtils.deleteFiles(screenshotFolderPath);
+  console.log(screenshotFolderPath);
+  await FileUtils.deleteFiles(screenshotFolderPath);
   switch (campaign) {
     case "offer":
       await t.navigateTo(eaHomePage.campaignPageUrl+"offer?live=disabled");

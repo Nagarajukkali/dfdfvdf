@@ -431,4 +431,49 @@ export class checkoutReviewMethod {
       await testFunction.isElementDisplayed(t, eaCheckoutReviewPage.elements.btnRegisterDeviceGas);
   }
 
+  public static async validatePlanName(t: any, json: any, dataTable) {
+    if(await testFunction.isElectricity(dataTable[0].fuelType)) {
+      await testFunction.assertText(t, eaCheckoutReviewPage.elements.elePlanName, json.planName);
+    }
+    if(await testFunction.isGas(dataTable[0].fuelType)) {
+      await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasPlanName, json.planName)
+    }
+  }
+
+  public static async validateFeatures(t: any, dataTable, json: any, numOfExpectedFeatures) {
+    console.log("Validating plan features on review page.");
+    if(await testFunction.isElectricity(dataTable[0].fuelType)) {
+      await t.expect(await testFunction.sizeOfElement(t, eaCheckoutReviewPage.elements.eleFeatures)).eql(numOfExpectedFeatures);
+      if(dataTable[0].Feature_50Credit === "Y") {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeature50Credit, json.electricity.feature.postSelect.Credit50);
+      }
+      if(dataTable[0].Feature_carbonNeutral === "Y") {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureCN, json.electricity.feature.postSelect.carbonNeutral);
+      }
+      if(dataTable[0].Feature_peaceOfMind === "Y") {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeaturePeaceOfMind, json.electricity.feature.postSelect.peaceOfMind);
+      }
+      if(dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill);
+      }
+      if(dataTable[0].Feature_noStandardConnectionFee === "Y") {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureNoStandardConnectionFee, json.electricity.feature.postSelect.noStandardConnectionFee);
+      }
+    }
+    if(await testFunction.isGas(dataTable[0].fuelType)) {
+      await t.expect(await testFunction.sizeOfElement(t, eaCheckoutReviewPage.elements.gasFeatures)).eql(numOfExpectedFeatures);
+      if(dataTable[0].Feature_50Credit === "Y") {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasFeature50Credit, json.gas.feature.postSelect.Credit50);
+      }
+      if(dataTable[0].Feature_carbonNeutral === "Y") {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasFeatureCN, json.gas.feature.postSelect.carbonNeutral);
+      }
+      if(dataTable[0].Feature_peaceOfMind === "Y") {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasFeaturePeaceOfMind, json.gas.feature.postSelect.peaceOfMind);
+      }
+      if(dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasFeatureDiscountOffTotal, json.gas.feature.postSelect.discountOffTotalEnergyBill);
+      }
+    }
+  }
 }

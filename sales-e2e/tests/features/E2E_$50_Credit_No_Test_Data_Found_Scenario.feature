@@ -1,4 +1,4 @@
-@E2E
+
 Feature:E2E scenario for new residential non moving customer for $50 credit extension
 
  #need to find test data

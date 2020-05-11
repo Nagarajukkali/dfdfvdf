@@ -1,0 +1,135 @@
+{
+  "planName": "Total Plan",
+  "planDescription": "Great discount on your total energy bill guaranteed - every time.",
+
+  "electricity": {
+    "feature": {
+      "preSelect": {
+        "Credit50": {
+          "heading": "$50 Sign Up Credit",
+          "description": "Get a $50 credit per new energy account on your first bill when you sign up.+"
+        },
+        "carbonNeutral": {
+          "heading": "Carbon neutral option",
+          "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
+        },
+        "peaceOfMind": {
+          "heading": "Peace of mind",
+          "description": "Your usage rates and daily supply charges won't change for 12 months."
+        },
+        "discountOffTotalEnergyBill": {
+          "heading": "Discount off total energy bill",
+          "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
+        },
+        "noStandardConnectionFee": {
+          "heading": "No standard connection fees",
+          "description": "Move with us and we'll waive connection and special meter reads during business hours."
+        }
+      },
+      "postSelect": {
+        "Credit50": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
+        "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
+        "peaceOfMind": "Peace of mind. Your usage rates and daily supply charges won't change for 12 months.",
+        "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
+        "noStandardConnectionFee": "No standard connection fees. Move with us and we'll waive connection and special meter reads during business hours."
+      }
+    }
+  },
+
+  "gas": {
+    "feature": {
+      "preSelect": {
+        "Credit50": {
+          "heading": "$50 Sign Up Credit",
+          "description": "Get a $50 credit per new energy account on your first bill when you sign up.+"
+        },
+        "carbonNeutral": {
+          "heading": "Carbon neutral option",
+          "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
+        },
+        "peaceOfMind": {
+          "heading": "Peace of mind",
+          "description": "Your usage rates and daily supply charges won't change for 12 months."
+        },
+        "discountOffTotalEnergyBill": {
+          "heading": "Discount off total energy bill",
+          "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
+        }
+      },
+      "postSelect": {
+        "Credit50": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
+        "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
+        "peaceOfMind": "Peace of mind. Your usage rates and daily supply charges won't change for 12 months.",
+        "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges."
+      }
+    }
+  },
+
+  "disclaimers": {
+    "referencePriceComparison": {
+      "heading": "",
+      "description": ""
+    },
+    "goNeutral": {
+      "heading": "",
+      "description": ""
+    },
+    "solarBuyBack": {
+      "heading": "",
+      "VIC": {
+        "description": ""
+      },
+      "NonVIC": {
+        "description": ""
+      }
+    },
+    "noStandardConnectionFee": {
+      "heading": "",
+      "description": ""
+    },
+    "Credit50": {
+      "VIC": {
+        "heading": "",
+        "description": ""
+      },
+      "NSW": {
+        "heading": "",
+        "description": ""
+      },
+      "ACT": {
+        "heading": "",
+        "description": ""
+      },
+      "QLD": {
+        "heading": "",
+        "description": ""
+      },
+      "SA": {
+        "heading": "",
+        "description": ""
+      }
+    },
+    "totalPlan": {
+      "VIC": {
+        "heading": "",
+        "description": ""
+      },
+      "NSW": {
+        "heading": "",
+        "description": ""
+      },
+      "ACT": {
+        "heading": "",
+        "description": ""
+      },
+      "QLD": {
+        "heading": "",
+        "description": ""
+      },
+      "SA": {
+        "heading": "",
+        "description": ""
+      }
+    }
+  }
+}
