@@ -1,6 +1,6 @@
-@E2E
+@E2E @ExistingCustomerTesting
 Feature:E2E scenario for existing residential moving customer for $50 credit extension
-  @50CreditExtensionMovingExisting
+
   #testExMOVVICEA
 Scenario Outline: Submit a quote for existing residential moving customer for VIC with FRMP/FRO as EA
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -18,7 +18,7 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
   And user selects carbon neutral option
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName     | lastName|idType        |
-    |RES         |RES        |Existing      | testExMOVVICEA|test     |Driver License|
+    |RES         |RES        |Existing      | test|test     |Driver License|
   And user selects answer for property renovation question for '<state>'
   And user chooses "<optDisconnection>" for disconnection
   And user opts for AAH and DD
@@ -47,7 +47,8 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
   Examples:
   |fuelType|planName  |folderName                         |state|optDisconnection|username|password                                    |
   |BOTH    |Total Plan|E2E_Existing_Resi_Moving_$50_VIC_EA|VIC  |No              |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
-  @50CreditExtensionMovingExisting
+
+  #testExMOVNSWEA
   Scenario Outline: Submit a quote for existing residential moving customer for NSW with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -63,7 +64,7 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType  |
-      |RES         |RES        |Existing      | testExMOVNSWEA|test     |Passport|
+      |RES         |RES        |Existing      | test|test     |Passport|
     And user selects answer for property renovation question for '<state>'
     And user chooses "<optDisconnection>" for disconnection
     And user opts for AAH and DD
@@ -92,7 +93,7 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
     Examples:
       |customerStatus|fuelType|planName  |folderName                         |state|optDisconnection|username|password                                    |
       |Existing      |BOTH    |Basic Home|E2E_Existing_Resi_Moving_$50_NSW_EA|NSW  |No              |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
-  @50CreditExtensionMovingExisting
+
     #testExMOVQLDEA
   Scenario Outline: Submit a quote for existing residential moving customer for QLD with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -110,7 +111,7 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |
-      |RES         |RES        |Existing      | testExMOVQLDEA|test     |Driver License|
+      |RES         |RES        |Existing      | test|test     |Driver License|
     And user selects answer for property renovation question for '<state>'
     And user chooses "<optDisconnection>" for disconnection
     And user opts for AAH and DD
@@ -135,8 +136,9 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
     Examples:
       |fuelType|planName  |folderName                         |state|optDisconnection|username|password                                    |
       |ELE     |No Frills|E2E_Existing_Resi_Moving_$50_QLD_EA |QLD  |No              |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
-  @50CreditExtensionMovingExisting
+
     #Negative Scenario
+  #testExMOVSAEA
   Scenario Outline: Submit a quote for existing residential moving customer for SA with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -152,7 +154,7 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |
-      |RES         |RES        |Existing      | testExMOVSAEA|test     |Driver License|
+      |RES         |RES        |Existing      | test|test     |Driver License|
     And user selects answer for property renovation question for '<state>'
     And user chooses "<optDisconnection>" for disconnection
     And user opts for AAH and DD
@@ -181,8 +183,9 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
     Examples:
       |customerStatus|fuelType|planName  |folderName                        |state|optDisconnection|username|password                                    |
       |Existing      |BOTH    |Total Plan|E2E_Existing_Resi_Moving_$50_SA_EA|SA   |No              |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
-  @50CreditExtensionMovingExisting
+
     #Negative Scenario
+  #testExMOVACTEA
   Scenario Outline: Submit a quote for existing residential moving customer for ACT with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -199,7 +202,7 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |
-      |RES         |RES        |Existing      | testExMOVACTEA     |test     |Driver License|
+      |RES         |RES        |Existing      | test     |test     |Driver License|
     And user selects answer for property renovation question for '<state>'
     And user chooses "<optDisconnection>" for disconnection
     And user opts for AAH and DD
@@ -229,8 +232,9 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
       |fuelType|planName  |folderName                         |state|optDisconnection|username|password                                    |
       |BOTH    |Basic Home|E2E_Existing_Resi_Moving_$50_ACT_EA|ACT  |No              |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @50CreditExtensionMovingExisting
+
     #Negative Scenario
+  #testExMOVVICEA
   Scenario Outline: Submit a quote for existing residential moving customer for VIC with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
@@ -246,7 +250,7 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
       |RES         |Moving     |42 Roe Street, BENALLA VIC 3672|Renter       |No           |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus|firstName|lastName|idType    |
-      |RES         |RES        |Existing      |testExMOVVICEA|test    |Passport  |
+      |RES         |RES        |Existing      |test|test    |Passport  |
     And user selects answer for property renovation question for '<state>'
     And user chooses "<optDisconnection>" for disconnection
     And user clicks on 'Review your order' button and navigates to review page
@@ -273,7 +277,7 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
       |folderName                               |customer_type |fuelType |planName       |optDisconnection |state  |username|password                                    |
       |E2E_VerifyAccount_Residential_Moving     |RES           |BOTH     |Total Plan Plus|No               |VIC    |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @50CreditExtensionMovingExisting
+ #testExMOVVICMoveHouse
   Scenario Outline: Submit a quote for existing residential customer through move house
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     When user has navigated to move house page
@@ -289,7 +293,7 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
       |Total Plan|Total Plan|
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |
-      |RES         |RES        |Existing      | testExMOVVICMoveHouse|test     |Driver License|
+      |RES         |RES        |Existing      | test|test     |Driver License|
     And user selects answer for property renovation question for '<state>'
     And user chooses "<optDisconnection>" for disconnection
     And user clicks on 'Review your order' button and navigates to review page
@@ -316,8 +320,8 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
       |folderName                        |fuelType|state|optDisconnection|movingAddress                             |username|password                                    |
       |E2E_Existing_Resi_Moving_MoveHouse|BOTH    |VIC  |No              |21 Carmichael Drive, WYNDHAM VALE VIC 3024|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @50CreditExtensionMovingExisting
-  Scenario Outline: Submit a quote for existing residential customer through move house
+  #testExMOVNSWMoveHouse
+  Scenario Outline: Submit a quote for existing residential customer through move house when ele and gas plans are selected as Total Plan Plus and Total Plan respectively
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     When user has navigated to move house page
     And user enters '<movingAddress>' in address field and selects any available moving date
@@ -332,7 +336,7 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
       |Total Plan Plus|Total Plan|
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |
-      |RES         |RES        |Existing      | testExMOVNSWMoveHouse|test     |Driver License|
+      |RES         |RES        |Existing      | test|test     |Driver License|
     And user selects answer for property renovation question for '<state>'
     And user chooses "<optDisconnection>" for disconnection
     And user clicks on 'Review your order' button and navigates to review page

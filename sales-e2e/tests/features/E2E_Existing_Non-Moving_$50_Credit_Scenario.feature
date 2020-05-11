@@ -1,6 +1,6 @@
-@E2E
+@E2E @ExistingCustomerTesting
 Feature:E2E scenario for existing residential non moving customer for $50 credit extension
-  @50CreditExtensionNonMovingExisting
+#testExNonMVICEA
   Scenario Outline: Submit a quote for existing residential non moving customer for VIC with FRMP/FRO as EA
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page
@@ -16,7 +16,7 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
     |RES         |Non-Moving |Owner        |No           |
   And user provides all details on checkout details page
     |customerType |journey    |customerStatus| firstName      | lastName|idType        |
-    |RES          |RES        |Existing      | testExNonMVICEA|test     |Driver License|
+    |RES          |RES        |Existing      | test|test     |Driver License|
   And user clicks on 'Review your order' button and navigates to review page
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices                  |GaslifeSupportDevices       |
@@ -40,7 +40,7 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
   Examples:
     |planName |folderName                            |fuelType|username|password                                    |
     |No Frills|E2E_Existing_Resi_NonMoving_$50_VIC_EA|BOTH    |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
-  @50CreditExtensionNonMovingExisting
+#testExNonMNSWEA
   Scenario Outline: Submit a quote for existing residential non moving customer for NSW with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -55,7 +55,7 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
       |RES         |Non-Moving |Owner        |No           |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName      | lastName|idType        |
-      |RES          |RES        |Existing      | testExNonMNSWEA|test     |Driver License|
+      |RES          |RES        |Existing      | test|test     |Driver License|
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                  |GaslifeSupportDevices       |
@@ -79,7 +79,7 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
     Examples:
       |customerStatus|planName  |folderName                            |fuelType  |username|password                                    |
       |Existing      |Total Plan|E2E_Existing_Resi_NonMoving_$50_NSW_EA|BOTH      |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
-  @50CreditExtensionNonMovingExisting
+#testExNonMQLDEA
   Scenario Outline: Submit a quote for existing residential non moving customer for QLD with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -95,7 +95,7 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
       |RES         |Non-Moving |Owner        |No           |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType        |
-      |RES          |RES        |Existing      | testExNonMQLDEA|test     |Driver License|
+      |RES          |RES        |Existing      | test|test     |Driver License|
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                  |GaslifeSupportDevices       |
@@ -115,7 +115,8 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
     Examples:
     |planName   |folderName                             |fuelType|username|password                                    |
     |Basic Home QLD|E2E_Existing_Resi_NonMoving_$50_QLD_EA|ELE     |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
-  @50CreditExtensionNonMovingExisting
+
+    #testExNonMSAEA
   Scenario Outline: Submit a quote for existing residential non moving customer for SA with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -130,7 +131,7 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
       |RES         |Non-Moving |Owner        |No           |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType        |
-      |RES          |RES        |Existing      | testExNonMSAEA|test     |Driver License|
+      |RES          |RES        |Existing      | test|test     |Driver License|
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                  |GaslifeSupportDevices       |
@@ -154,8 +155,9 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
     Examples:
       |customerStatus|planName |folderName                           |fuelType|username|password                                   |
       |Existing      |No Frills|E2E_Existing_Resi_NonMoving_$50_SA_EA|BOTH    |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
-  @50CreditExtensionNonMovingExisting
-  Scenario Outline: Submit a quote for existing residential non moving customer for ACT with FRMP/FRO as EA
+
+    #testExNonMACTEA
+  Scenario Outline: Submit a quote for existing residential non moving customer for ACT with FRMP as NON_EA and FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
     And user have selected fuel as "<fuelType>"
@@ -170,7 +172,7 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
       |RES         |Non-Moving |Owner        |No           |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType        |
-      |RES          |RES        |Existing      | testExNonMACTEA|test     |Driver License|
+      |RES          |RES        |Existing      | test|test     |Driver License|
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                  |GaslifeSupportDevices       |
@@ -185,7 +187,7 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |TOPH-EA |7001143726|                              |                              |N                      |                        |EMAIL        |
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-EA |7001143726|                              |                              |N                      |                        |EMAIL        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
@@ -194,7 +196,8 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
     Examples:
       |planName |folderName                             |fuelType|username|password                                    |
       |Total Plan|E2E_Existing_Resi_NonMoving_$50_ACT_EA|BOTH    |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
-  @50CreditExtensionNonMovingExisting
+
+    #testExNonMVICTEA
   Scenario Outline: Submit a quote for existing residential non moving customer for VIC with FRMP/FRO as EA and plan selected as Total Plan Plus
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
@@ -210,7 +213,7 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
       |RES         |Non-Moving |Owner        |No           |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus|firstName       |lastName|idType        |
-      |RES         |RES        |Existing      |testExNonMVICTEA|test    |Driver License|
+      |RES         |RES        |Existing      |test|test    |Driver License|
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                    |GaslifeSupportDevices  |

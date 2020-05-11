@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2004309738
+    quoteId: BB2005116790
     sourceCode: Total_15%GD
-    actualQuoteDate: 2020-04-30
+    actualQuoteDate: 2020-05-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -10,23 +10,23 @@ saleDetail :
   
   personDetail: 
     title: Mr
-    firstName: testNonMSAEA
+    firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0369198519
+      phoneNumber: 0384428661
     
-    emailId: ckwDmgcobq@energyaustralia.com.au
+    emailId: MRCLUcJcQK@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 45639
+      id: 268309
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
-          dlFirstName: testNonMSAEA
+          dlFirstName: test
           dlMiddleName/: 
           dlLastName: test
           licenseStateOfIssue: SA

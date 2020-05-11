@@ -282,7 +282,7 @@ export class testFunction {
   }
 
   public static async takeScreenshot(t,fileName){
-    if(screenshot==='Yes'){
+    if(screenshot==='Y'){
       await t.takeScreenshot({path:`../${await fetchBrowser()}/${await screenshotFolder}/`+fileName+`_${await getDateTime()}.png`,fullPage:true});
     }
   }

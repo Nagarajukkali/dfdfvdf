@@ -7,7 +7,7 @@ config: {
     eaMyAccountUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au/myaccount/index.html',
     qt2ReportingURL:'https://preprod.nonprod.digital.energyaustralia.com.au/qt2reporting/login',
     qt2ReportingHomePageURL:'https://preprod.nonprod.digital.energyaustralia.com.au/qt2reporting/app/reporting',
-    screenshot:'Yes'
+    screenshot:'N'
   },
   testData: {
     mastercard: {

@@ -1,7 +1,7 @@
-@E2E
+@E2E @NewCustomerTesting
 Feature:E2E scenario for new residential moving customer for $50 credit extension
   # New customer moving with FRMP/FRO as NON_EA
-  @50CreditExtensionMoving
+  #testMovVICNONEA
 Scenario Outline: Submit a quote for new residential moving customer for VIC with FRMP/FRO as NON_EA
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page
@@ -14,7 +14,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
   And user selects carbon neutral option
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
-    |RES         |RES        |New           | testMovVICNONEA|test     |Driver License|             |
+    |RES         |RES        |New           | test|test     |Driver License|             |
   And user selects answer for property renovation question for '<state>'
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
@@ -43,7 +43,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     |customerStatus|fuelType|planName  |folderName                        |state|username|password                                    |
     |New           |BOTH    |Total Plan|E2E_New_Resi_Moving_$50_VIC_NON_EA|VIC  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @50CreditExtensionMoving
+  #testMovNSWNONEA
   Scenario Outline: Submit a quote for new residential moving customer for NSW with FRMP/FRO as NON_EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -56,7 +56,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
-      |RES         |RES        |New           | testMovNSWNONEA|test     |Driver License|             |
+      |RES         |RES        |New           | test|test     |Driver License|             |
     And user selects answer for property renovation question for '<state>'
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
@@ -85,7 +85,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |customerStatus|fuelType|planName  |folderName                        |state|username|password                                    |
       |New           |BOTH    |Basic Home|E2E_New_Resi_Moving_$50_NSW_NON_EA|NSW  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @50CreditExtensionMoving
+  #testMovQLDNONEA
   Scenario Outline: Submit a quote for new residential moving customer for QLD with FRMP/FRO as NON_EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -98,7 +98,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
-      |RES         |RES        |New           | testMovQLDNONEA     |test     |Driver License|             |
+      |RES         |RES        |New           | test     |test     |Driver License|             |
     And user selects answer for property renovation question for '<state>'
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
@@ -124,7 +124,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |New           |ELE     |No Frills|E2E_New_Resi_Moving_$50_QLD_NON_EA|QLD  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
 #Negative Scenario
-  @50CreditExtensionMoving
+  #testMovSANONEA
   Scenario Outline: Submit a quote for new residential moving customer for SA with FRMP/FRO as NON_EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -137,7 +137,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
-      |RES         |RES        |New           | testMovSANONEA|test     |Driver License|             |
+      |RES         |RES        |New           | test|test     |Driver License|             |
     And user selects answer for property renovation question for '<state>'
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
@@ -168,7 +168,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
 
 
     # New customer moving with FRMP/FRO as EA
-  @50CreditExtensionMoving
+ #testMovVICEA
   Scenario Outline: Submit a quote for new residential moving customer for VIC with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -181,7 +181,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
-      |RES         |RES        |New           | testMovVICEA     |test     |Driver License|             |
+      |RES         |RES        |New           | test     |test     |Driver License|             |
     And user selects answer for property renovation question for '<state>'
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
@@ -210,7 +210,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |customerStatus|fuelType|planName  |folderName                    |state|username|password                                    |
       |New           |BOTH    |Basic Home|E2E_New_Resi_Moving_$50_VIC_EA|VIC  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @50CreditExtensionMoving
+  #testMovNSWEA
   Scenario Outline: Submit a quote for new residential moving customer for NSW with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -223,7 +223,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
-      |RES         |RES        |New           | testMovNSWEA     |test     |Driver License|             |
+      |RES         |RES        |New           | test     |test     |Driver License|             |
     And user selects answer for property renovation question for '<state>'
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
@@ -252,7 +252,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |customerStatus|fuelType|planName  |folderName                    |state|username|password                                    |
       |New           |BOTH    |No Frills|E2E_New_Resi_Moving_$50_NSW_EA|NSW  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  @50CreditExtensionMoving
+ #testMovQLDEA
   Scenario Outline: Submit a quote for new residential moving customer for QLD with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -265,7 +265,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
-      |RES         |RES        |New           | testMovQLDEA     |test     |Driver License|             |
+      |RES         |RES        |New           | test     |test     |Driver License|             |
     And user selects answer for property renovation question for '<state>'
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
@@ -291,7 +291,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |New           |ELE     |Total Plan|E2E_New_Resi_Moving_$50_QLD_EA|QLD  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
 #Negative Scenario
-  @50CreditExtensionMoving
+  #testMovSAEA
   Scenario Outline: Submit a quote for new residential moving customer for SA with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -304,7 +304,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
-      |RES         |RES        |New           | testMovSAEA     |test     |Driver License|             |
+      |RES         |RES        |New           | test     |test     |Driver License|             |
     And user selects answer for property renovation question for '<state>'
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
@@ -334,7 +334,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |New           |BOTH    |Basic Home|E2E_New_Resi_Moving_$50_SA_EA|SA   |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
     #Negative Scenario
-  @50CreditExtensionMoving
+  #testMovACTEA
   Scenario Outline: Submit a quote for new residential moving customer for ACT with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -347,7 +347,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
-      |RES         |RES        |New           | testMovACTEA     |test     |Driver License|             |
+      |RES         |RES        |New           | test     |test     |Driver License|             |
     And user selects answer for property renovation question for '<state>'
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
@@ -377,49 +377,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |New           |BOTH    |Total Plan|E2E_New_Resi_Moving_$50_ACT_EA|ACT  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
    # New customer moving with FRMP/FRO as UNKNOWN
-  #need to update
-  Scenario Outline: Submit a quote for new residential moving customer for VIC with FRMP/FRO as UNKNOWN
-    Given user has opened the website link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to 'RES' plans page
-    When user selects '<planName>'
-    And user moves on to fill the qualifier
-    And user selects '<customerStatus>' on qualifier
-    And user provides all other details on qualifier page
-      |customerType| connectionAddress                            | movingType|propertyType|solarOption|
-      |RES         | 46 Broadoak Street, SPRINGVALE SOUTH VIC 3172|Moving     |Renter      |No         |
-    And user selects carbon neutral option
-    And user provides all details on checkout details page
-      |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
-      |RES         |RES        |New           | test     |test     |Driver License|             |
-    And user selects answer for property renovation question for '<state>'
-    And user opts for AAH and DD
-      |optAAHOption|optDDOption|directDebitType|
-      |Yes         |No         |               |
-    And user clicks on 'Review your order' button and navigates to review page
-    And user provides life support details on review page
-      |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
-      |Yes              |BOTH    |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
-    And user verifies selected plan details for '<fuelType>'
-    And user submits the quote
-    Then user lands on checkout complete page
-    When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
-    And user search quote on the basis of 'Email'
-    Then submitted quote is displayed
-    And user validates all the details for 'ELE' submitted quote
-    And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-EV |6407440346|N                             |N                             |Y                      |LSCNSPE                 |EMAIL        |
-    And user validates all the details for 'GAS' submitted quote
-    And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-GV |5310228431|N                             |N                             |Y                      |OTHER                   |EMAIL        |
-
-    Examples:
-      |customerStatus|fuelType|planName  |folderName                         |state|username|password                                    |
-      |New           |BOTH    |No Frills|E2E_New_Resi_Moving_$50_VIC_UNKNOWN|VIC  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
-
-  @50CreditExtensionMoving
+  #testMovNSWUNKNOWN
   Scenario Outline: Submit a quote for new residential moving customer for NSW with FRMP/FRO as UNKNOWN
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -432,7 +390,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
-      |RES         |RES        |New           | testMovNSWUNKNOWN     |test     |Driver License|             |
+      |RES         |RES        |New           | test     |test     |Driver License|             |
     And user selects answer for property renovation question for '<state>'
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
@@ -461,46 +419,8 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |customerStatus|fuelType|planName  |folderName                         |state|username|password                                    |
       |New           |BOTH    |Total Plan|E2E_New_Resi_Moving_$50_NSW_UNKNOWN|NSW  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-    #need to find test data
-  Scenario Outline: Submit a quote for new residential moving customer for QLD with FRMP/FRO as UNKNOWN
-    Given user has opened the website link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to 'RES' plans page
-    When user selects '<planName>'
-    And user moves on to fill the qualifier
-    And user selects '<customerStatus>' on qualifier
-    And user provides all other details on qualifier page
-      |customerType| connectionAddress                   | movingType|propertyType|solarOption|
-      |RES         | 20 King Street, BOWEN HILLS QLD 4006|Moving     |Renter      |No         |
-    And user selects carbon neutral option
-    And user provides all details on checkout details page
-      |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
-      |RES         |RES        |New           | testMovQLDUNKNOWN     |test     |Driver License|             |
-    And user selects answer for property renovation question for '<state>'
-    And user opts for AAH and DD
-      |optAAHOption|optDDOption|directDebitType|
-      |No         |No         |               |
-    And user clicks on 'Review your order' button and navigates to review page
-    And user provides life support details on review page
-      |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
-      |No               |ELE     |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
-    And user verifies selected plan details for '<fuelType>'
-    And user submits the quote
-    Then user lands on checkout complete page
-    When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
-    And user search quote on the basis of 'Email'
-    Then submitted quote is displayed
-    And user validates all the details for 'ELE' submitted quote
-    And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RSOT-EQ |          |                              |                              |N                      |                        |EMAIL        |
-
-    Examples:
-      |customerStatus|fuelType|planName      |folderName                          |state|username|password                                   |
-      |New           |ELE     |Basic Home QLD|E2E_New_Resi_Moving_$50_QLD_UNKNOWN|QLD  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
-
 #Negative scenario
-  @50CreditExtensionMoving
+ #testMovSAUNKNOWN
   Scenario Outline: Submit a quote for new residential moving customer for SA with FRMP/FRO as UNKNOWN
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -513,7 +433,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
-      |RES         |RES        |New           | testMovSAUNKNOWN     |test     |Driver License|             |
+      |RES         |RES        |New           | test     |test     |Driver License|             |
     And user selects answer for property renovation question for '<state>'
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
@@ -541,6 +461,4 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     Examples:
       |customerStatus|fuelType|planName  |folderName                        |state|username|password                                    |
       |New           |BOTH    |Total Plan|E2E_New_Resi_Moving_$50_SA_UNKNOWN|SA   |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
-
-
 

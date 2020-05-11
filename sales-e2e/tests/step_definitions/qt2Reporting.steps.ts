@@ -23,91 +23,220 @@ Then(/^user validates all the details for '(.*)' submitted quote$/, async functi
   await qt2Reporting.validateQuoteDetails(t,fuelType);
   await testFunction.takeScreenshot(t,"qt2_reporting_app");
 });
+
+
+// Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) {
+//   let data=dataTable.hashes();
+//   let fuelType=data[0].fuelType;
+//   let quoteStatus=data[0].quoteStatus;
+//   let customerType=data[0].customerType;
+//   let offerType=data[0].offerType;
+//   let planCode=data[0].planCode;
+//   let renovationsSinceDeenergisation=data[0].renovationsSinceDeenergisation;
+//   let renovationsInProgressOrPlanned=data[0].renovationsInProgressOrPlanned;
+//   let customerWithLifeSupport=data[0].customerWithLifeSupport
+//   let billRouteType=data[0].billRouteType;
+//   let jsonObj=fileUtils.convertYmlTOJSONObj(t,fuelType);
+//   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.quoteStatus,quoteStatus);
+//   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.customerType,customerType);
+//   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.offerType,offerType);
+//   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.plan,planCode);
+//   if(fuelType===FUEL_TYPE_OPTIONS.ELE.value){
+//       let NMI=data[0].NMI;
+//       if(NMI.length!==0){
+//         await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.nmiMirnInformation.NMI,NMI);
+//       }
+//     if((jsonObj.saleDetail.offerDetail.offerType==='ENE' || jsonObj.saleDetail.offerDetail.offerType==='COR') && jsonObj.saleDetail.saleDetailHeader.customerType==='RESIDENTIAL' && jsonObj.saleDetail.premiseDetail.state!=='ACT' && jsonObj.saleDetail.premiseDetail.state!=='SA' && !planCode.includes('SWSRH') && !t.testRun.test.name.includes('elec-totalP') && !t.testRun.test.name.includes('familyandfriends') && !t.testRun.test.name.includes('EACorporateOffer')){
+//       await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
+//     }
+//     else{
+//       if(t.testRun.test.name.includes('gas-tpp') || t.testRun.test.name.includes('gas-totalP') || t.testRun.test.name.includes('comeback')){
+//         await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
+//       }
+//       else{
+//         await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t)));
+//       }
+//     }
+//   }
+//   if(fuelType===FUEL_TYPE_OPTIONS.GAS.value){
+//       let MIRN=data[0].MIRN;
+//       if(MIRN.length!==0){
+//         await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.nmiMirnInformation.MIRN,MIRN);
+//       }
+//     if((jsonObj.saleDetail.offerDetail.offerType==='ENE' || jsonObj.saleDetail.offerDetail.offerType==='COR') && jsonObj.saleDetail.saleDetailHeader.customerType==='RESIDENTIAL' && jsonObj.saleDetail.premiseDetail.state!=='ACT' && jsonObj.saleDetail.premiseDetail.state!=='SA' && !planCode.includes('SWSRH') && !t.testRun.test.name.includes('gas-totalP')){
+//       await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
+//     }
+//     else{
+//       if((t.testRun.test.name.includes('elec-tpp') || t.testRun.test.name.includes('elec-totalP'))){
+//         await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
+//       }
+//       else{
+//         await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t)));
+//       }
+//     }
+//   }
+//   // Campaign testing
+//   // if((t.testRun.test.name.includes('elec-tpp') || t.testRun.test.name.includes('elec-totalP')) && fuelType===FUEL_TYPE_OPTIONS.GAS.value){
+//   //   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
+//   // }
+//   // if((t.testRun.test.name.includes('gas-tpp') || t.testRun.test.name.includes('gas-totalP')) && fuelType===FUEL_TYPE_OPTIONS.ELE.value){
+//   //   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
+//   // }
+//   // if(t.testRun.test.name.includes('comeback') && fuelType===FUEL_TYPE_OPTIONS.ELE.value){
+//   //   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
+//   // }
+//   if(renovationsSinceDeenergisation.length!==0){
+//     await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsSinceDeenergisation,renovationsSinceDeenergisation);
+//     await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsInProgressOrPlanned,renovationsInProgressOrPlanned);
+//   }
+//   if(customerWithLifeSupport==='Y'){
+//     await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.energySafeVicQuestions.customerWithLifeSupport,'Y');
+//     let lifeSupportEquipmentType=data[0].lifeSupportEquipmentType;
+//     await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.lifeSupportEquipment.lifeSupportEquipmentType,lifeSupportEquipmentType);
+//   }
+//   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.billDeliveryDetail.billRouteType,billRouteType);
+//   if(customerType==='RESIDENTIAL'){
+//     await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.personDetail.personIdDetail.primaryIdFlag,'Y');
+//   }
+//   if(customerType==='BUSINESS'){
+//     await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.personDetail.personAccountRelationship,'CUSCON');
+//     await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.businessDetail.businessNameDetail.nameType,'PRIM');
+//   }
+//   if(jsonObj.saleDetail.offerDetail.offerType==='COR' && customerType==='RESIDENTIAL'){
+//     await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.personDetail.personIdDetail.idValidationInformation.consentForIdValidation,'Y');
+//     await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.creditAssessmentReasonCode,'Accept');
+//   }
+//   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.creditAssessmentDecision,'Accept');
+//
+// });
+
+
+// Refactor
+
 Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) {
+  //Expected Data
   let data=dataTable.hashes();
-  let fuelType=data[0].fuelType;
-  let quoteStatus=data[0].quoteStatus;
-  let customerType=data[0].customerType;
-  let offerType=data[0].offerType;
-  let planCode=data[0].planCode;
-  let renovationsSinceDeenergisation=data[0].renovationsSinceDeenergisation;
-  let renovationsInProgressOrPlanned=data[0].renovationsInProgressOrPlanned;
-  let customerWithLifeSupport=data[0].customerWithLifeSupport
-  let billRouteType=data[0].billRouteType;
-  let jsonObj=fileUtils.convertYmlTOJSONObj(t,fuelType);
-  await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.quoteStatus,quoteStatus);
-  await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.customerType,customerType);
-  await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.offerType,offerType);
-  await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.plan,planCode);
-  if(fuelType===FUEL_TYPE_OPTIONS.ELE.value){
-    if(!t.testRun.test.name.includes('FRMP/FRO as UNKNOWN')){
-      let NMI=data[0].NMI;
-      if(NMI.length!==0){
-        await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.nmiMirnInformation.NMI,NMI);
-      }
+  let expectedFuelType=data[0].fuelType;
+  let expectedQuoteStatus=data[0].quoteStatus;
+  let expectedCustomerType=data[0].customerType;
+  let expectedOfferType=data[0].offerType;
+  let expectedPlanCode=data[0].planCode;
+  let expectedRenovationsSinceDeEnergisation=data[0].renovationsSinceDeenergisation;
+  let expectedRenovationsInProgressOrPlanned=data[0].renovationsInProgressOrPlanned;
+  let expectedCustomerWithLifeSupport=data[0].customerWithLifeSupport
+  let expectedBillRouteType=data[0].billRouteType;
+  //Actual Data
+  let jsonObj=fileUtils.convertYmlTOJSONObj(t,expectedFuelType);
+  let actualQuoteStatus=jsonObj.saleDetail.saleDetailHeader.quoteStatus;
+  let actualCustomerType=jsonObj.saleDetail.saleDetailHeader.customerType;
+  let actualOfferType=jsonObj.saleDetail.offerDetail.offerType;
+  let actualPlanCode=jsonObj.saleDetail.offerDetail.plan;
+  let actualState=jsonObj.saleDetail.premiseDetail.state;
+  let actualBillRouteType=jsonObj.saleDetail.billDeliveryDetail.billRouteType;
+  //Comparison
+  await qt2Reporting.validateMandatoryField(t,actualQuoteStatus,expectedQuoteStatus);
+  await qt2Reporting.validateMandatoryField(t,actualCustomerType,expectedCustomerType);
+  await qt2Reporting.validateMandatoryField(t,actualOfferType,expectedOfferType);
+  await qt2Reporting.validateMandatoryField(t,actualPlanCode,expectedPlanCode);
+
+  if(expectedFuelType===FUEL_TYPE_OPTIONS.ELE.value){
+    let expectedNMI=data[0].NMI;
+    if(expectedNMI.length!==0){
+      let actualNMI=jsonObj.saleDetail.offerDetail.nmiMirnInformation.NMI
+      await qt2Reporting.validateMandatoryField(t,actualNMI,expectedNMI);
     }
-    if((jsonObj.saleDetail.offerDetail.offerType==='ENE' || jsonObj.saleDetail.offerDetail.offerType==='COR') && jsonObj.saleDetail.saleDetailHeader.customerType==='RESIDENTIAL' && jsonObj.saleDetail.premiseDetail.state!=='ACT' && jsonObj.saleDetail.premiseDetail.state!=='SA' && !planCode.includes('SWSRH') && !t.testRun.test.name.includes('elec-totalP') && !t.testRun.test.name.includes('familyandfriends') && !t.testRun.test.name.includes('EACorporateOffer')){
-      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
+    //conditions for $50 extensions
+    let isOfferType=(actualOfferType==='ENE' || actualOfferType==='COR');
+    let isCustomerType=(actualCustomerType==='RESIDENTIAL');
+    let isState=(actualState!=='ACT' && actualState!=='SA');
+    let isPlanCode=(!expectedPlanCode.includes('SWSRH'));
+    let isNegativeTestName=((!t.testRun.test.name.includes('elec-totalP') && !t.testRun.test.name.includes('familyandfriends')
+                            && !t.testRun.test.name.includes('EACorporateOffer')));
+    let isPositiveTestName=(t.testRun.test.name.includes('gas-totalP') || t.testRun.test.name.includes('comeback'));
+    let isPlanCodeWithTestName=(!isPlanCode && t.testRun.test.name.includes('gas-tpp'));
+    let actualEleSourceCode=jsonObj.saleDetail.saleDetailHeader.sourceCode;
+    let expectedEleSourceCode=checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t));
+    if(isOfferType && isCustomerType && isState && (isPlanCode || isPlanCodeWithTestName) && (isPositiveTestName || isNegativeTestName)){
+      await qt2Reporting.validateMandatoryField(t,actualEleSourceCode,expectedEleSourceCode+'_50');
     }
     else{
-      if(t.testRun.test.name.includes('gas-tpp') || t.testRun.test.name.includes('gas-totalP') || t.testRun.test.name.includes('comeback')){
-        await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
-      }
-      else{
-        await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t)));
-      }
+      //let isTestName=(t.testRun.test.name.includes('gas-tpp') || t.testRun.test.name.includes('gas-totalP') || t.testRun.test.name.includes('comeback'));
+      // if(t.testRun.test.name.includes('gas-tpp')){
+      //   await qt2Reporting.validateMandatoryField(t,actualEleSourceCode,expectedEleSourceCode+'_50');
+      // }
+      //else{
+        await qt2Reporting.validateMandatoryField(t,actualEleSourceCode,expectedEleSourceCode);
+      //}
     }
   }
-  if(fuelType===FUEL_TYPE_OPTIONS.GAS.value){
-    if(!t.testRun.test.name.includes('FRMP/FRO as UNKNOWN')){
-      let MIRN=data[0].MIRN;
-      if(MIRN.length!==0){
-        await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.nmiMirnInformation.MIRN,MIRN);
-      }
+  if(expectedFuelType===FUEL_TYPE_OPTIONS.GAS.value){
+    let expectedMIRN=data[0].MIRN;
+    if(expectedMIRN.length!==0){
+      let actualMIRN=jsonObj.saleDetail.offerDetail.nmiMirnInformation.MIRN
+      await qt2Reporting.validateMandatoryField(t,actualMIRN,expectedMIRN);
     }
-    if((jsonObj.saleDetail.offerDetail.offerType==='ENE' || jsonObj.saleDetail.offerDetail.offerType==='COR') && jsonObj.saleDetail.saleDetailHeader.customerType==='RESIDENTIAL' && jsonObj.saleDetail.premiseDetail.state!=='ACT' && jsonObj.saleDetail.premiseDetail.state!=='SA' && !planCode.includes('SWSRH') && !t.testRun.test.name.includes('gas-totalP')){
-      await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
+    //conditions for $50 extensions
+    let isOfferType=(actualOfferType==='ENE' || actualOfferType==='COR');
+    let isCustomerType=(actualCustomerType==='RESIDENTIAL');
+    let isState=(actualState!=='ACT' && actualState!=='SA');
+    let isPlanCode=(!expectedPlanCode.includes('SWSRH'));
+    let isNegativeTestName=(!t.testRun.test.name.includes('gas-totalP'));
+    let isPositiveTestName=(t.testRun.test.name.includes('elec-totalP'));
+    let isPlanCodeWithTestName=(!isPlanCode && t.testRun.test.name.includes('elec-tpp'));
+    let actualGasSourceCode=jsonObj.saleDetail.saleDetailHeader.sourceCode;
+    let expectedGasSourceCode=checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t));
+
+    if(isOfferType && isCustomerType && isState && (isPlanCode || isPlanCodeWithTestName) && (isPositiveTestName || isNegativeTestName)){
+      await qt2Reporting.validateMandatoryField(t,actualGasSourceCode,expectedGasSourceCode+'_50');
     }
     else{
-      if((t.testRun.test.name.includes('elec-tpp') || t.testRun.test.name.includes('elec-totalP'))){
-        await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
-      }
-      else{
-        await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t)));
-      }
+      // if(t.testRun.test.name.includes('elec-tpp')){
+      //   await qt2Reporting.validateMandatoryField(t,actualGasSourceCode,expectedGasSourceCode+'_50');
+      // }
+      //else{
+        await qt2Reporting.validateMandatoryField(t,actualGasSourceCode,expectedGasSourceCode);
+      //}
     }
   }
-  // Campaign testing
-  // if((t.testRun.test.name.includes('elec-tpp') || t.testRun.test.name.includes('elec-totalP')) && fuelType===FUEL_TYPE_OPTIONS.GAS.value){
-  //   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
-  // }
-  // if((t.testRun.test.name.includes('gas-tpp') || t.testRun.test.name.includes('gas-totalP')) && fuelType===FUEL_TYPE_OPTIONS.ELE.value){
-  //   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
-  // }
-  // if(t.testRun.test.name.includes('comeback') && fuelType===FUEL_TYPE_OPTIONS.ELE.value){
-  //   await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.saleDetailHeader.sourceCode,checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t))+'_50');
-  // }
-  if(renovationsSinceDeenergisation.length!==0){
-    await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsSinceDeenergisation,renovationsSinceDeenergisation);
-    await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsInProgressOrPlanned,renovationsInProgressOrPlanned);
+
+  if(expectedRenovationsSinceDeEnergisation.length!==0){
+    let actualRenovationsSinceDeEnergisation=jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsSinceDeenergisation;
+    let actualRenovationsInProgressOrPlanned=jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsInProgressOrPlanned;
+    await qt2Reporting.validateMandatoryField(t,actualRenovationsSinceDeEnergisation,expectedRenovationsSinceDeEnergisation);
+    await qt2Reporting.validateMandatoryField(t,actualRenovationsInProgressOrPlanned,expectedRenovationsInProgressOrPlanned);
   }
-  if(customerWithLifeSupport==='Y'){
-    await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.energySafeVicQuestions.customerWithLifeSupport,'Y');
-    let lifeSupportEquipmentType=data[0].lifeSupportEquipmentType;
-    await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.offerDetail.lifeSupportEquipment.lifeSupportEquipmentType,lifeSupportEquipmentType);
+  if(expectedCustomerWithLifeSupport==='Y'){
+    let actualCustomerWithLifeSupport=jsonObj.saleDetail.offerDetail.energySafeVicQuestions.customerWithLifeSupport;
+    await qt2Reporting.validateMandatoryField(t,actualCustomerWithLifeSupport,expectedCustomerWithLifeSupport);
+    let expectedLifeSupportEquipmentType=data[0].lifeSupportEquipmentType;
+    let actualLifeSupportEquipmentType=jsonObj.saleDetail.offerDetail.lifeSupportEquipment.lifeSupportEquipmentType;
+    await qt2Reporting.validateMandatoryField(t,actualLifeSupportEquipmentType,expectedLifeSupportEquipmentType);
   }
-  await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.billDeliveryDetail.billRouteType,billRouteType);
-  if(customerType==='RESIDENTIAL'){
-    await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.personDetail.personIdDetail.primaryIdFlag,'Y');
+  await qt2Reporting.validateMandatoryField(t,actualBillRouteType,expectedBillRouteType);
+  if(expectedCustomerType==='RESIDENTIAL'){
+    let expectedPrimaryIdFlag='Y'
+    let actualPrimaryIdFlag=jsonObj.saleDetail.personDetail.personIdDetail.primaryIdFlag
+    await qt2Reporting.validateMandatoryField(t,actualPrimaryIdFlag,expectedPrimaryIdFlag);
   }
-  if(customerType==='BUSINESS'){
-    await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.personDetail.personAccountRelationship,'CUSCON');
-    await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.businessDetail.businessNameDetail.nameType,'PRIM');
+  if(expectedCustomerType==='BUSINESS'){
+    let expectedPersonAccountRelationship='CUSCON';
+    let actualPersonAccountRelationship=jsonObj.saleDetail.personDetail.personAccountRelationship;
+    let expectedBusinessNameType='PRIM';
+    let actualBusinessNameType=jsonObj.saleDetail.businessDetail.businessNameDetail.nameType;
+    await qt2Reporting.validateMandatoryField(t,actualPersonAccountRelationship,expectedPersonAccountRelationship);
+    await qt2Reporting.validateMandatoryField(t,actualBusinessNameType,expectedBusinessNameType);
   }
-  if(jsonObj.saleDetail.offerDetail.offerType==='COR' && customerType==='RESIDENTIAL'){
-    await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.personDetail.personIdDetail.idValidationInformation.consentForIdValidation,'Y');
-    await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.creditAssessmentReasonCode,'Accept');
+  if(expectedOfferType==='COR' && expectedCustomerType==='RESIDENTIAL'){
+    let expectedConsentForIdValidation='Y';
+    let actualConsentForIdValidation=jsonObj.saleDetail.personDetail.personIdDetail.idValidationInformation.consentForIdValidation;
+    let expectedCreditAssessmentReasonCode='Accept';
+    let actualCreditAssessmentReasonCode=jsonObj.saleDetail.creditAssessmentReasonCode;
+    await qt2Reporting.validateMandatoryField(t,actualConsentForIdValidation,expectedConsentForIdValidation);
+    await qt2Reporting.validateMandatoryField(t,actualCreditAssessmentReasonCode,expectedCreditAssessmentReasonCode);
   }
-  await qt2Reporting.validateMandatoryField(t,jsonObj.saleDetail.creditAssessmentDecision,'Accept');
+  let expectedCreditAssessmentDecision='Accept'
+  let actualCreditAssessmentDecision=jsonObj.saleDetail.creditAssessmentDecision
+  await qt2Reporting.validateMandatoryField(t,actualCreditAssessmentDecision,expectedCreditAssessmentDecision);
 
 });
+

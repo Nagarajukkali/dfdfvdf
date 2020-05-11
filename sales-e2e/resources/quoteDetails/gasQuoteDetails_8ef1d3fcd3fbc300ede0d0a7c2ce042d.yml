@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2004299625
+    quoteId: BB2005116776
     sourceCode: Basic_50
-    actualQuoteDate: 2020-04-29
+    actualQuoteDate: 2020-05-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -10,25 +10,25 @@ saleDetail :
   
   personDetail: 
     title: Mr
-    firstName: tester
-    lastName: tester
+    firstName: test
+    lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0396035331
+      phoneNumber: 0324264242
     
-    emailId: chgdLjfYto@energyaustralia.com.au
+    emailId: jImkZeaNsi@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 97658
+      id: 651628
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
-          dlFirstName: tester
+          dlFirstName: test
           dlMiddleName/: 
-          dlLastName: tester
+          dlLastName: test
           licenseStateOfIssue: VIC
         
       
