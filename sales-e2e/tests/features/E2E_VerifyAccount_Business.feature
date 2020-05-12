@@ -1,7 +1,7 @@
 @E2E
 Feature: This feature is to test the verify account scenarios for existing business customers
 
-  Scenario Outline: Submit a quote for existing non moving business customer with life support for both accounts
+  Scenario Outline: Submit a quote for existing non moving business customer with life support for both accounts through verify account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
     And user have selected fuel as "<fuelType>"
@@ -39,7 +39,7 @@ Feature: This feature is to test the verify account scenarios for existing busin
       |folderName                               |customer_type |fuelType |planName                |accountType|username|password                                    |
       |E2E_VerifyAccount_Business_NonMoving     |BUS           |BOTH     |Total Plan Plus Business|BOTH       |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-  Scenario Outline: Submit a quote for existing moving business customer
+  Scenario Outline: Submit a quote for existing moving business customer through verify account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
     And user have selected fuel as "<fuelType>"

@@ -38,8 +38,8 @@ Feature:E2E scenario for existing business moving and non moving customer
       |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |BSOT-GV |5330956738|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName         |folderName              |state|username|password                                    |
-      |Existing      |BOTH    |Basic Business   |E2E_Existing_Resi_Moving|VIC  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName         |folderName             |state|username|password                                    |
+      |Existing      |BOTH    |Basic Business   |E2E_Existing_Bus_Moving|VIC  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
   Scenario Outline: Submit a quote for existing business non moving customer with LS, select dual fuel and verify electricity account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -79,6 +79,6 @@ Feature:E2E scenario for existing business moving and non moving customer
 
     Examples:
       |customerStatus|planName         |folderName              |fuelType|accountType|username|password                                    |
-      |Existing      |Total Business   |E2E_Existing_Resi_Moving|BOTH    |ELE        |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |Existing      |Total Business   |E2E_Existing_Bus_NonMoving|BOTH    |ELE        |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
 

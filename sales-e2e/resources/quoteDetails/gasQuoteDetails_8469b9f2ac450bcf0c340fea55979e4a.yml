@@ -1,6 +1,6 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2005127071
+    quoteId: BB2005127231
     sourceCode: Total_23%GD
     actualQuoteDate: 2020-05-12
     quoteStatus: VERBALLYACCEPTED
@@ -15,9 +15,9 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0362404473
+      phoneNumber: 0344709691
     
-    emailId: gjjBekGgbu@energyaustralia.com.au
+    emailId: yBcwxLKCJL@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
@@ -30,15 +30,15 @@ saleDetail :
     
     businessIdDetail: 
       businessIdType: ACN
-      businessId: 944258530
+      businessId: 153528680
     
     anzsic: FINANCE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0362404473
+      businessPhoneNumber: 0344709691
     
-    businessEmailId: gjjBekGgbu@energyaustralia.com.au
+    businessEmailId: yBcwxLKCJL@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
