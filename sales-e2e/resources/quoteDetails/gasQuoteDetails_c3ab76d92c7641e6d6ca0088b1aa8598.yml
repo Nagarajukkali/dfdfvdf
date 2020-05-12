@@ -1,6 +1,6 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2005127074
+    quoteId: BB2005127122
     sourceCode: Total_9%GD
     actualQuoteDate: 2020-05-12
     quoteStatus: VERBALLYACCEPTED
@@ -15,13 +15,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0330273660
+      phoneNumber: 0355564291
     
-    emailId: snZySaAqAf@energyaustralia.com.au
+    emailId: xeDSAFDKay@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 301842
+      id: 997984
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y

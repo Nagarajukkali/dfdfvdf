@@ -31,13 +31,13 @@ export class qt2Reporting {
         let eleQuoteDetails=await this.getEleQuoteDetails(t);
         await FileUtils.createYamlFile(t,eleQuoteDetails,fuelType);
         let jsonObj = await FileUtils.convertYmlTOJSONObj(t,fuelType);
-        //this.verifyJSONData(jsonObj.saleDetail);
+        this.verifyJSONData(jsonObj.saleDetail);
       }
       if(await testFunction.isGas(fuelType)){
         let gasQuoteDetails=await this.getGasQuoteDetails(t);
         await FileUtils.createYamlFile(t,gasQuoteDetails,fuelType);
         let jsonObj = await FileUtils.convertYmlTOJSONObj(t,fuelType);
-        //this.verifyJSONData(jsonObj.saleDetail);
+        this.verifyJSONData(jsonObj.saleDetail);
       }
     }
 
@@ -78,8 +78,10 @@ export class qt2Reporting {
         let quoteDatas = Object.keys(jsonObj[quoteDetail]);
         quoteDatas.forEach(function(quoteData) {
           let value = jsonObj[quoteDetail][quoteData];
-          //console.log(quoteDetail+': '+quoteData+' = '+value);
-          assert.ok(value.toString().length!==0);
+          if(!quoteData.toString().includes('nmiMirnInformation')){
+            //console.log(quoteDetail+': '+quoteData+' = '+value);
+            assert.ok(value.toString().length!==0);
+          }
         });
       });
     }
