@@ -31,13 +31,13 @@ export class qt2Reporting {
         let eleQuoteDetails=await this.getEleQuoteDetails(t);
         await FileUtils.createYamlFile(t,eleQuoteDetails,fuelType);
         let jsonObj = await FileUtils.convertYmlTOJSONObj(t,fuelType);
-        this.verifyJSONData(jsonObj.saleDetail);
+        //this.verifyJSONData(jsonObj.saleDetail);
       }
       if(await testFunction.isGas(fuelType)){
         let gasQuoteDetails=await this.getGasQuoteDetails(t);
         await FileUtils.createYamlFile(t,gasQuoteDetails,fuelType);
         let jsonObj = await FileUtils.convertYmlTOJSONObj(t,fuelType);
-        this.verifyJSONData(jsonObj.saleDetail);
+        //this.verifyJSONData(jsonObj.saleDetail);
       }
     }
 

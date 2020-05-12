@@ -41,7 +41,6 @@ Scenario Outline: Submit a quote for new business moving customer
     |customerStatus|fuelType|planName      |folderName        |state|username|password                                    |
     |New           |BOTH    |Basic Business|E2E_New_Bus_Moving|VIC  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
-
 Scenario Outline: Submit a quote for new business non moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'BUS' plans page

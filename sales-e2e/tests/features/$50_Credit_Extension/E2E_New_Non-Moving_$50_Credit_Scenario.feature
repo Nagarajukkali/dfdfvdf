@@ -1,4 +1,4 @@
-@E2E @NewCustomerTesting
+@NewCustomerTesting @CreditExtensionTesting
 Feature:E2E scenario for new residential non moving customer for $50 credit extension
 # New customer non-moving with FRMP/FRO as NON_EA
   #testNonMVICNONEA

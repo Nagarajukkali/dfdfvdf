@@ -11,6 +11,7 @@ export let screenshotFolder=null;
 
 Before(  async t => {
   await testFunction.maximizeWindow(t);
+  logger.info(`  Test: ${t.testRun.test.name}`);
 });
 
 Given(/^user has opened the website link in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
@@ -33,7 +34,6 @@ Given(/^user has opened the new connection website link in a browser and creates
 Given(/^user has opened the '(.*)' link in a browser and creates '(.*)' to save evidences$/, async function (t,[campaign,folderName]) {
   screenshotFolder=folderName;
   let screenshotFolderPath="screenshots/Chrome/"+screenshotFolder;
-  console.log(screenshotFolderPath);
   await FileUtils.deleteFiles(screenshotFolderPath);
   switch (campaign) {
     case "offer":
@@ -75,7 +75,7 @@ Given(/^user has opened the '(.*)' link in a browser and creates '(.*)' to save 
 After( async t => {
   let format;
   await t.takeScreenshot({path:`../${await fetchBrowser()}/${await screenshotFolder}/${await getDateTime()}.png`,fullPage:true});
-  logger.debug('Execution completed');
+  logger.info(`  Execution Completed: ${t.testRun.test.name}`);
 });
 
 export async function fetchBrowser() {

@@ -1,4 +1,4 @@
-@E2E @ExistingCustomerTesting
+@ExistingCustomerTesting @CreditExtensionTesting
 Feature:E2E scenario for existing residential non moving customer for $50 credit extension
 #testExNonMVICEA
   Scenario Outline: Submit a quote for existing residential non moving customer for VIC with FRMP/FRO as EA
@@ -79,6 +79,7 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
     Examples:
       |customerStatus|planName  |folderName                            |fuelType  |username|password                                    |
       |Existing      |Total Plan|E2E_Existing_Resi_NonMoving_$50_NSW_EA|BOTH      |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+
 #testExNonMQLDEA
   Scenario Outline: Submit a quote for existing residential non moving customer for QLD with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences

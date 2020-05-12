@@ -1,4 +1,4 @@
-@E2E @$50CampaignTesting
+@$50CampaignTesting @CreditExtensionTesting
 Feature:E2E scenario for $50 campaign testing
  #Elec - TPP
   #CAMPNSWELECTPP

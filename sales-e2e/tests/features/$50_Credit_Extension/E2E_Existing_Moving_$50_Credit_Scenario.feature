@@ -1,4 +1,4 @@
-@E2E @ExistingCustomerTesting
+@ExistingCustomerTesting @CreditExtensionTesting
 Feature:E2E scenario for existing residential moving customer for $50 credit extension
 
   #testExMOVVICEA
