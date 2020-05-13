@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2005137305
-    sourceCode: Total_9%GD_50
+    quoteId: BB2005137309
+    sourceCode: Total_Plus_10%GD
     actualQuoteDate: 2020-05-13
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -9,54 +9,46 @@ saleDetail :
     customerClass: RESI
   
   personDetail: 
+    personId: 1941430000
     title: Mr
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0330742468
+      phoneNumber: 0357651914
     
-    emailId: wIBcabmSso@energyaustralia.com.au
+    emailId: ftZDSWNnYr@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 504507
+      id: 857115
       primaryIdFlag: Y
-      idValidationInformation: 
-        consentForIdValidation: Y
-        idValidationDriversLicenseDetail: 
-          dlFirstName: test
-          dlMiddleName/: 
-          dlLastName: test
-          licenseStateOfIssue: VIC
-        
-      
     
     authLevel: Y
-    personPremiseRelationship: TENANT
+    personPremiseRelationship: OWNER
     seqNo: 2
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 42
-    streetName: Brownlow
-    streetType: DR
-    suburb: POINT COOK
+    streetNo: 10
+    streetName: Keswick
+    streetType: CR
+    suburb: BAYSWATER NORTH
     state: VIC
     country: AUS
-    postCode: 3030
+    postCode: 3153
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
   
   offerDetail: 
     fuelType: E
-    offerType: COR
-    plan: TOPH-EV
-    priceTag: EVPOA_NR2001
+    offerType: PS
+    plan: SWSRH-EV
+    priceTag: EVTRA_NR2001
     nmiMirnInformation: 
-      NMI: 6203778288
+      NMI: 6305325960
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -64,9 +56,8 @@ saleDetail :
       customerWithLifeSupport: Y
     
     lifeSupportEquipment: 
-      lifeSupportEquipmentType: OTHER
+      lifeSupportEquipmentType: LSIPDM
     
-    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
   
   offerDetail: 
     fuelType: G
@@ -77,7 +68,6 @@ saleDetail :
     billRouteType: EMAIL
   
   creditAssessmentDecision: Accept
-  creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
   

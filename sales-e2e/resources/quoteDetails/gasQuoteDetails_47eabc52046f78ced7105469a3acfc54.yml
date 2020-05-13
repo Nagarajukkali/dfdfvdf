@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2004084635
-    sourceCode: Total_27%GD
-    actualQuoteDate: 2020-04-08
+    quoteId: BB2005137306
+    sourceCode: Total_27%GD_50
+    actualQuoteDate: 2020-05-13
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,13 +15,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0392890127
+      phoneNumber: 0330742468
     
-    emailId: teeJyEturg@energyaustralia.com.au
+    emailId: wIBcabmSso@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 791007
+      id: 504507
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
