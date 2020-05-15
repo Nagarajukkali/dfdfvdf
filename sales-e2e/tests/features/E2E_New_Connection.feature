@@ -87,7 +87,7 @@ Scenario Outline: Submit a quote for electricity new connection for residential 
     And user submits the quote
     Then user lands on checkout complete page
     Examples:
-      |folderName             |
+      |folderName        |
       |E2E_New_BUS_NC_ELE|
 
 

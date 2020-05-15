@@ -205,12 +205,12 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
     And user clicks on Add plan button
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType|connectionAddress                        | movingType|propertyType|solarOption|
-      |RES         |8 Seavista Grove, CHRISTIES BEACH SA 5165|Non-Moving |Renter      |No         |
+      |customerType|connectionAddress                    | movingType|propertyType|solarOption|
+      |RES         |14 Black Road, FLAGSTAFF HILL SA 5159|Non-Moving |Renter      |No         |
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType  |medicareType|
-      |RES          |RES        |New           | test     |test     |Medicare|yellow      |
+      |RES          |RES        |New           | CAMPSAGASTPP|test     |Medicare|yellow      |
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |No          |Yes        |CC             |
@@ -229,11 +229,11 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |SWSRH-ES|2001320830|N                             |N                             |Y                      |OTHER                   |EMAIL        |
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |SWSRH-ES|2001253769|N                             |N                             |Y                      |OTHER                   |EMAIL        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |SWSRH-GS|5510317386|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |SWSRH-GS|5510401451|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
 
     Examples:
       |customerStatus|campaign|fuelType|folderName                           |username|password                                    |
