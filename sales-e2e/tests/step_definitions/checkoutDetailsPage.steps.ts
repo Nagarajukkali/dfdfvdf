@@ -1,3 +1,4 @@
+
 const eaCheckoutDetailsPage=require('../pages/checkOutDetails.page');
 import {When} from 'cucumber';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
@@ -35,6 +36,7 @@ When(/^user provides all details on checkout details page$/, async function (t,[
 });
 
 When(/^user clicks on 'Review your order' button and navigates to review page$/, async function (t) {
+  await testFunction.takeScreenshot(t,'checkout_details_page');
   await checkoutDetailsMethod.clickOnReviewYourOrderBtn(t);
 });
 When(/^user selects answer for property renovation question for '(.*)'$/, async function (t,[state]) {

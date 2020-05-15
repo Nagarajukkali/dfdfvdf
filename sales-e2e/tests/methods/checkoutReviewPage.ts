@@ -134,9 +134,17 @@ export class checkoutReviewMethod {
       if(testFunction.isElectricity(fuelType)){
         let elePlanName=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtElePlanName);
         await testFunction.click(t,eaCheckoutReviewPage.elements.imgReviewSectionEle);
-        if(elePlanName===PlanType.TOTAL_PLAN || elePlanName==='Total Plan - Business'){
+        if(elePlanName===PlanType.TOTAL_PLAN || elePlanName==='Total Plan - Business' || elePlanName==='Family and Friends'){
           eleDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtEleDiscount);
-          eleSourceCode=elePlanName.split(" ")[0]+'_'+eleDiscount.split(" ")[1]+'GD';
+          if(t.testRun.test.name.includes('EACorporateOffer')){
+            eleSourceCode='Alliance_'+eleDiscount.split(" ")[1]+'GD';
+          }
+          else if(t.testRun.test.name.includes('familyandfriends')){
+            eleSourceCode='Total_'+eleDiscount.split(" ")[1]+'GD';
+          }
+          else{
+            eleSourceCode=elePlanName.split(" ")[0]+'_'+eleDiscount.split(" ")[1]+'GD';
+          }
         }
         else if(elePlanName===PlanType.TOTAL_PLAN_PLUS || elePlanName==='Total Plan Plus - Business'){
           eleDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtEleDiscount);
@@ -155,7 +163,12 @@ export class checkoutReviewMethod {
         await testFunction.click(t,eaCheckoutReviewPage.elements.imgReviewSectionGas);
         if(gasPlanName===PlanType.TOTAL_PLAN || gasPlanName==='Total Plan - Business'){
           gasDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasDiscount);
-          gasSourceCode=gasPlanName.split(" ")[0]+'_'+gasDiscount.split(" ")[1]+'GD';
+          if(t.testRun.test.name.includes('EACorporateOffer')){
+            gasSourceCode='Alliance_'+gasDiscount.split(" ")[1]+'GD';
+          }
+          else{
+            gasSourceCode=gasPlanName.split(" ")[0]+'_'+gasDiscount.split(" ")[1]+'GD';
+          }
         }
         else if(gasPlanName===PlanType.TOTAL_PLAN_PLUS || gasPlanName==='Total Plan Plus - Business'){
           gasDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasDiscount);

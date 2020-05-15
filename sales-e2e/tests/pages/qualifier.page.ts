@@ -33,6 +33,10 @@ const eaQualifierPage={
     isElecInNewAddressQLD_Yes: Selector('#moveElecOn0'),
     isElecInNewAddressQLD_No: Selector('#moveElecOn1'),
     isElecInNewAddressQLD_NotSure: Selector('#moveElecOn2'),
+    linkDetailsNotHandy:Selector('#signInDetailsNotHandy'),
+    moveElecQLDQuestion:Selector(".move-elec-on__button"),
+    btnQualifierClose:Selector("#btn-icon-close"),
+    planSelectionPopup:Selector('#modal-heading-wrapper-CHANGE_PLAN_SELECTION_MODAL~div button.ea-modal__secondary-action-link'),
   },
 };
 

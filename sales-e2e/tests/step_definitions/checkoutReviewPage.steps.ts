@@ -10,6 +10,7 @@ When(/^user provides life support details$/, async function(t,[],dataTable){
 });
 
 Then(/^user submits the quote$/, async function(t){
+  await testFunction.takeScreenshot(t,'checkout_review_page');
   await checkoutReviewMethod.submitQuote(t);
 });
 

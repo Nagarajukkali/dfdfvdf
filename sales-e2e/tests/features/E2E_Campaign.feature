@@ -1,4 +1,4 @@
-@test
+#@E2E
 Feature:E2E scenario for offer campaign
 
   Scenario Outline: Validate complete data for offer campaign for NSW

@@ -1,0 +1,77 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2005116732
+    sourceCode: NOFRILLS
+    actualQuoteDate: 2020-05-11
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 8853231135
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0358053730
+    
+    emailId: lUvTbcTDXD@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 932815
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: OWNER
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 18
+    streetName: Vennachar
+    streetType: DR
+    suburb: HALLETT COVE
+    state: SA
+    country: AUS
+    postCode: 5158
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    offerType: PS
+    plan: RCPP-ES
+    priceTag: ESSAA_ZR1907
+    nmiMirnInformation: 
+      NMI: 2001308560
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: LSIPDM
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    priceTagMeteringCharge: M51581DRR_AS
+    proposedNTC: RSR
+    proposedMC: ACTIVMC
+  
+

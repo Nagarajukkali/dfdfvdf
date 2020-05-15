@@ -1,0 +1,71 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2005116717
+    sourceCode: Basic
+    actualQuoteDate: 2020-05-11
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 1897294448
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0340418951
+    
+    emailId: DkADlkpHaj@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 877012
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 1
+    streetName: Moroak
+    streetType: S
+    suburb: HAWKER
+    state: ACT
+    country: AUS
+    postCode: 2614
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-05-13
+    offerType: ENE
+    plan: RSOT-EA
+    priceTag: EAAC1_GRA
+    serviceOrderDate: 2020-05-13
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 7001053295
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: 501
+    reEnergisationJSCCharge: 78.37
+  
+

@@ -1,0 +1,71 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2005116733
+    sourceCode: NOFRILLS
+    actualQuoteDate: 2020-05-11
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 8853231135
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0358053730
+    
+    emailId: lUvTbcTDXD@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 932815
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: OWNER
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 18
+    streetName: Vennachar
+    streetType: DR
+    suburb: HALLETT COVE
+    state: SA
+    country: AUS
+    postCode: 5158
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: G
+    offerType: PS
+    plan: RCPP-GS
+    priceTag: GSADA_ZR2001
+    nmiMirnInformation: 
+      MIRN: 5510350927
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: GLSMRHW
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+

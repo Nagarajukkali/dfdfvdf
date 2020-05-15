@@ -1,0 +1,79 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2005116721
+    sourceCode: Total_Plus_10%GD
+    actualQuoteDate: 2020-05-11
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 6666843000
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0353228595
+    
+    emailId: RBkPzcqKFU@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: PASSPORT
+      id: 915675
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 42
+    streetName: Roe
+    streetType: S
+    suburb: BENALLA
+    state: VIC
+    country: AUS
+    postCode: 3672
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-05-12
+    offerType: ENE
+    plan: SWSRH-EV
+    priceTag: EVTR5_NR2001
+    serviceOrderDate: 2020-05-12
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 6305584637
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: LSCPAPR
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: 020600
+    reEnergisationJSCCharge: 20.04
+  
+

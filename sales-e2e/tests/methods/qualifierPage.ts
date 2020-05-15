@@ -1,3 +1,4 @@
+import {cartsMethod} from './cartsPage';
 const eaQualifierPage=require('../pages/qualifier.page');
 import {BusinessType, CustomerStatus, Moving, Property, Solar, testFunction} from '../../global_methods/helper';
 
@@ -14,6 +15,13 @@ export class qualifierMethod{
       console.error('customer status option is not selected.');
     }
     console.log(`${customerStatus} is selected`);
+    }
+
+    public static async openQualifier(t){
+    if(await testFunction.sizeOfElement(t,eaQualifierPage.elements.btnQualifierClose)>0){
+      await testFunction.click(t,eaQualifierPage.elements.btnQualifierClose);
+    }
+    await cartsMethod.clickContinueCartsPage(t);
     }
 
     public static async verifyAccount(t,accountNumber,accountIdentityType,postcodeOrABNACN){
@@ -36,6 +44,7 @@ export class qualifierMethod{
         default:
           console.log('account identity type is not valid');
       }
+      await testFunction.takeScreenshot(t,"qualifier_page");
       await testFunction.click(t, eaQualifierPage.elements.verifyAccountSubmit);
       await testFunction.waitForElementPropertyToBeChanged(t,eaQualifierPage.elements.verifyAccountSubmit,'wg-processing',"false");
       console.log("account is verified")
@@ -65,6 +74,7 @@ export class qualifierMethod{
       }
       await testFunction.waitForLoadingIconToClose();
       await t.wait(3000);
+      await testFunction.takeScreenshot(t,"qualifier_page");
       await testFunction.click(t, eaQualifierPage.elements.verifyIdentitySubmit);
       console.log("Existing customer ID details are verified");
     }
@@ -98,6 +108,9 @@ export class qualifierMethod{
       await testFunction.isElementVisible(t, eaQualifierPage.elements.addressLoadingIcon);
       await testFunction.waitForLoadingIconToClose();
       await t.wait(3000);
+      if(await testFunction.sizeOfElement(t,eaQualifierPage.elements.planSelectionPopup)>0){
+        await testFunction.click(t,eaQualifierPage.elements.planSelectionPopup);
+      }
       await testFunction.click(t, eaQualifierPage.elements.addressContinue);
       console.log(`${address} is provided`);
   }

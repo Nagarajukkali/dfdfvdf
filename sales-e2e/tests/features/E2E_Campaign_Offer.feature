@@ -3,7 +3,7 @@ Feature:E2E scenario for offer campaign
 
 Scenario Outline: Submit a quote for offer campaign
   Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-  When user provides postcode and clicks on show me plan link
+  When user provides "2000" and clicks on show me plan link
   And user clicks on Add plan button
   And user selects '<customerStatus>' on qualifier
   And user provides all other details on qualifier page
@@ -34,8 +34,8 @@ Scenario Outline: Submit a quote for offer campaign
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
   Examples:
-    |customerStatus|fuelType|campaign  |folderName         |state|username|password                                    |
-    |New           |BOTH    |Offer     |E2E_New_Resi_Moving|NSW  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+    |customerStatus|fuelType|campaign  |folderName             |state|username|password                                    |
+    |New           |BOTH    |offer     |E2E_New_Resi_Camp_OFFER|NSW  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
 
 

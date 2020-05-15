@@ -1,10 +1,11 @@
 import { cartsMethod } from '../methods/cartsPage';
 import { When } from 'cucumber';
-import {Then} from 'cucumber'
 import {testFunction} from '../../global_methods/helper';
+import {Then} from 'cucumber'
 import {FileUtils} from '../../libs/FileUtils'
 
 When(/^user moves on to fill the qualifier$/, async function(t) {
+    await testFunction.takeScreenshot(t,"cart_page");
     await cartsMethod.clickContinueCartsPage(t);
   });
 

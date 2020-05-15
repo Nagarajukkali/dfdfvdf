@@ -18,6 +18,7 @@ Then(/^User lands on plans page after verify account journey$/, async t =>{
 });
 
 When(/^user selects '(.*)'$/, async function(t, [planName]){
+  await testFunction.takeScreenshot(t,'plans_page');
   await plansMethod.selectPlan(t, planName);
 });
 
@@ -27,28 +28,45 @@ Given(/^user have selected fuel as "([^"]*)"$/, async function (t, [fuelType]) {
 When(/^user verifies the account through verify account journey for residential customer$/, async function (t,[],dataTable) {
   let data = dataTable.hashes();
   await selectionOptionModalWindowMethod.selectOptionsModalWindow(t, data[0].modal_option);
+  await testFunction.takeScreenshot(t,'verify_account_modal');
   if(data[0].elecAccountNumber)
     await verifyAccountMethod.provideAccountDetails(t,"ELE", data[0].elecAccountNumber);
   if(data[0].gasAccountNumber)
     await verifyAccountMethod.provideAccountDetails(t, "GAS", data[0].gasAccountNumber);
   await verifyAccountMethod.provideAccountInformation(t, data[0].postcode, data[0].customer_type);
+  await testFunction.takeScreenshot(t,'verify_account_modal');
   await verifyAccountMethod.verifyAccountDetails(t);
   await verifyAccountMethod.provideIdentityDetails(t, data[0].idType, data[0].idNumber);
+  await testFunction.takeScreenshot(t,'verify_account_modal');
   await verifyAccountMethod.verifyAccountDetails(t);
+  await testFunction.takeScreenshot(t,'verify_account_modal');
   await verifyAccountMethod.showCostEstimates(t);
 });
 When(/^user verifies the account through verify account journey for business customer$/, async function (t,[],dataTable) {
   let data = dataTable.hashes();
   await selectionOptionModalWindowMethod.selectOptionsModalWindow(t, data[0].modal_option);
+  await testFunction.takeScreenshot(t,'verify_account_modal');
   if(data[0].elecAccountNumber)
     await verifyAccountMethod.provideAccountDetails(t,"ELE", data[0].elecAccountNumber);
   if(data[0].gasAccountNumber)
     await verifyAccountMethod.provideAccountDetails(t, "GAS", data[0].gasAccountNumber);
   await verifyAccountMethod.provideAccountInformation(t, data[0].ABNOrACN, data[0].customer_type);
+  await testFunction.takeScreenshot(t,'verify_account_modal');
   await verifyAccountMethod.verifyAccountDetails(t);
   await verifyAccountMethod.provideIdentityDetails(t, data[0].idType, data[0].idNumber);
+  await testFunction.takeScreenshot(t,'verify_account_modal');
   await verifyAccountMethod.verifyAccountDetails(t);
+  await testFunction.takeScreenshot(t,'verify_account_modal');
   await verifyAccountMethod.showCostEstimates(t);
+});
+
+When(/^user provides "([^"]*)" and clicks on show me plan link$/, async function (t,[postcode]) {
+  await campaignMethod.enterPostcodeOnCampaign(t,postcode);
+  await testFunction.takeScreenshot(t,'campaign_page');
+});
+When(/^user provides "([^"]*)" and "([^"]*)" and clicks on show me plan link$/, async function (t,[offerCode,postcode]) {
+  await campaignMethod.enterOfferCodeAndPostcodeOnCampaign(t,offerCode,postcode);
+  await testFunction.takeScreenshot(t,'campaign_page');
 });
 
 When(/^user clicks on Add plan button$/, async function (t) {
@@ -90,5 +108,5 @@ Then(/^user validates "([^"]*)" discount to be "([^"]*)" percent$/, async functi
   await plansMethod.validateDiscount(t, fuelType, expectedDiscount);
 });
 When(/^user provides "([^"]*)" for postcode and proceed to view the plans$/, async function (t, [postcode]) {
-  await campaignMethod.enterPostcodeOnCampaign(t, "", postcode);
+  await campaignMethod.enterPostcodeOnCampaign(t, postcode);
 });

@@ -79,4 +79,4 @@ Scenario Outline: Submit a quote for new business non moving customer
 
   Examples:
   |customerStatus|fuelType|planName      |folderName            |username|password                                    |
-  |New           |BOTH    |Total Business|E2E_New_Resi_NonMoving|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+  |New           |BOTH    |Total Business|E2E_New_Bus_NonMoving|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|

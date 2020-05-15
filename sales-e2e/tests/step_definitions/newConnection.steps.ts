@@ -1,6 +1,7 @@
 import { newConnectionMethod } from '../methods/newConnection';
 import { When } from 'cucumber';
 import { CustomerType, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
+import {testFunction} from '../../global_methods/helper';
 
 When(/^user provides connection details$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
@@ -13,6 +14,7 @@ When(/^user provides connection details$/, async function (t,[],dataTable) {
   if(fuelType===FUEL_TYPE_OPTIONS.GAS.value && state==="Victoria"){
     await newConnectionMethod.selectConnectionType(t,data[0].connectionType);
   }
+  await testFunction.takeScreenshot(t,"new_connections");
   await newConnectionMethod.proceedToStep2(t);
 });
 When(/^user provides property details for electricity connection$/, async function (t,[],dataTable) {
@@ -23,6 +25,7 @@ When(/^user provides property details for electricity connection$/, async functi
   if(customerType===CustomerType.BUSINESS){
     await newConnectionMethod.selectOptionForAMPS(t,data[0].optionForAMPS);
   }
+  await testFunction.takeScreenshot(t,"new_connections");
   await newConnectionMethod.proceedToStep3(t);
 });
 When(/^user provides property contacts$/, async function (t,[],dataTable) {
@@ -37,6 +40,7 @@ When(/^user submit the request$/, async function (t) {
   await newConnectionMethod.acceptTnCAndSubmit(t);
 });
 When(/^user clicks on proceed to quote$/, async function (t) {
+  await testFunction.takeScreenshot(t,"new_connections");
   await newConnectionMethod.navigateToQuoteTool(t);
 });
 When(/^user provides property details for gas connection$/, async function (t,[],dataTable) {
@@ -48,5 +52,6 @@ When(/^user provides property details for gas connection$/, async function (t,[]
 });
 When(/^user selects appliances$/, async function (t) {
   await newConnectionMethod.selectAppliancesFromList(t);
+  await testFunction.takeScreenshot(t,"new_connections");
   await newConnectionMethod.proceedToStep4(t);
 });

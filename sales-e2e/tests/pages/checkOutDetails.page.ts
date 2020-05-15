@@ -88,7 +88,7 @@ const eaCheckoutDetailsPage={
     totalPlanPlusGasBusiness:Selector("[id*='plan-select-button-SWSRB-G']"),
     txtMySelection:Selector("#connDetailsTitle"),
     plansExpand:Selector(".hs-checkout-plans-selection>.hs-checkout-plans-expanded"),
-    chkboxCarbonNeutral:Selector("#carbonNeutralOptIn span"),
+    chkboxCarbonNeutral:Selector("[name='carbonNeutralOptIn'] label"),
     rbBillPrefEmail: Selector("[for*='bill-delivery-method__email-option-value']"),
     rbBillPrefConnectionAddress: Selector("[for*='bill-delivery-method__connection-address-option-value']"),
     rbBillPrefOtherAddress: Selector("[value*='otherAddress'] [class*='wg-radio-option-text']"),

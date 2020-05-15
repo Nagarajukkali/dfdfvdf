@@ -3,6 +3,7 @@ import {checkoutDetailsMethod} from "../tests/methods/checkoutDetailsPage";
 
 const YAML = require('yamljs');
 const fs   = require('fs');
+//const path = require('path');
 
 
 export class FileUtils {
@@ -44,7 +45,23 @@ export class FileUtils {
     JSONObj = JSON.parse(doc);
     return JSONObj;
   }
+
+  public static deleteFiles(path) {
+    if( fs.existsSync(path) ) {
+      fs.readdirSync(path).forEach(function(file,index){
+        let curPath = path + "/" + file;
+        if(fs.lstatSync(curPath).isDirectory()) { // recurse
+          FileUtils.deleteFiles(curPath);
+        } else { // delete file
+          fs.unlinkSync(curPath);
+        }
+      });
+      fs.rmdirSync(path);
+    }
+  }
+
 }
+
 
 
 

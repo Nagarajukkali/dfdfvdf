@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2004094730
-    sourceCode: Total_9%GD
-    actualQuoteDate: 2020-04-09
+    quoteId: BB2005137305
+    sourceCode: Total_9%GD_50
+    actualQuoteDate: 2020-05-13
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,14 +15,14 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0363019666
+      phoneNumber: 0330742468
     
-    emailId: LbeEsDVrwz@energyaustralia.com.au
+    emailId: wIBcabmSso@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 201411
-      primaryIdFlag: N
+      id: 504507
+      primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 

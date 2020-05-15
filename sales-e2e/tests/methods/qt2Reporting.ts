@@ -78,13 +78,16 @@ export class qt2Reporting {
         let quoteDatas = Object.keys(jsonObj[quoteDetail]);
         quoteDatas.forEach(function(quoteData) {
           let value = jsonObj[quoteDetail][quoteData];
-          //console.log(quoteDetail+': '+quoteData+' = '+value);
-          assert.ok(value.toString().length!==0);
+          if(!quoteData.toString().includes('nmiMirnInformation')){
+            //console.log(quoteDetail+': '+quoteData+' = '+value);
+            assert.ok(value.toString().length!==0);
+          }
         });
       });
     }
 
     public static async validateMandatoryField(t,actualValue,expectedValue){
+      console.log(actualValue+": "+expectedValue);
       await testFunction.assertTextValue(t,actualValue.toString(),expectedValue.toString());
     }
 
