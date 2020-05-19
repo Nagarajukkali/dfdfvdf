@@ -214,7 +214,8 @@ export class checkoutDetailsMethod{
       }else {
         console.error('ABN/ACN is not valid');
       }
-      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.company,'NA');
+      let businessName=this.getBusinessName(t.testRun.test.name);
+      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.company,businessName);
       if((await testFunction.getElementText(t,eaCheckoutDetailsPage.elements.businessType)).includes('Please select')){
         await testFunction.click(t,eaCheckoutDetailsPage.elements.businessType);
         await t.wait(2000);
@@ -226,6 +227,28 @@ export class checkoutDetailsMethod{
         await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCodeOption);
       }
       console.log("Business details are provided");
+  }
+
+  public static getBusinessName(scenarioName){
+    let businessName;
+    let testName=scenarioName.toLowerCase();
+    switch (true) {
+      case testName.includes("accept with condition"):
+        businessName="AcceptCond";
+        break;
+      case testName.includes("accept"):
+        businessName="accept";
+        break;
+      case testName.includes("decline"):
+        businessName="decline";
+        break;
+      case testName.includes("error"):
+        businessName="error";
+        break;
+      default:
+        businessName="NA";
+    }
+    return businessName;
   }
 
   public static async addAAHDetails(t, accessLevel: string = "Level 2") {

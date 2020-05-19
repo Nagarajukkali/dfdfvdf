@@ -476,4 +476,20 @@ export class checkoutReviewMethod {
       }
     }
   }
+  public static async verifyIDVPopup(t){
+      await testFunction.isElementDisplayed(t,eaCheckoutReviewPage.elements.identificationPopup);
+  }
+  public static async confirmIdentification(t){
+    await testFunction.click(t,eaCheckoutReviewPage.elements.identificationConfirmButton);
+  }
+
+  public static async provideIdDetails(t){
+      await testFunction.enterText(t,eaCheckoutReviewPage.elements.idFirstName,'test');
+      await testFunction.enterText(t,eaCheckoutReviewPage.elements.idLastName,'test');
+      await testFunction.enterText(t,eaCheckoutReviewPage.elements.idDOBDay,'01011980');
+      let licenceNumber=testFunction.getRandomNumber(999999);
+      await testFunction.enterText(t,eaCheckoutReviewPage.elements.idnumberLicence,licenceNumber);
+      await t.wait(3000);
+      await testFunction.isElementDisplayed(t,eaCheckoutReviewPage.elements.identificationConfirmButton);
+  }
 }

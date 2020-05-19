@@ -91,6 +91,28 @@ export class qt2Reporting {
       await testFunction.assertTextValue(t,actualValue.toString(),expectedValue.toString());
     }
 
+    public static getCreditAssessmentValue(scenarioName){
+      let creditAssessmentValue;
+      let testName=scenarioName.toLowerCase();
+      switch (true) {
+        case testName.includes("accept with condition"):
+          creditAssessmentValue="Accept With Condition";
+          break;
+        case testName.includes("accept"):
+          creditAssessmentValue="Accept";
+          break;
+        case testName.includes("decline"):
+          creditAssessmentValue="Decline";
+          break;
+        case testName.includes("error"):
+          creditAssessmentValue="Error";
+          break;
+        default:
+          creditAssessmentValue="Accept";
+      }
+      return creditAssessmentValue;
+    }
+
 
 
 

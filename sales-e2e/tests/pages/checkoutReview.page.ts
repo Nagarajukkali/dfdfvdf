@@ -58,6 +58,14 @@ const eaCheckoutReviewPage={
       gasFeatureCN: Selector("[id*='review-plan-'][id*='-G'] [id*='benefit-text']").withText("Carbon neutral"),
       gasFeatureDiscountOffTotal: Selector("[id*='review-plan-'][id*='-G'] [id*='benefit-text']").withText("Discount off total energy bill"),
       gasFeaturePeaceOfMind: Selector("[id*='review-plan-'][id*='-G'] [id*='benefit-text']").withText("Peace of mind"),
+      identificationPopup:Selector("[id*='rtca-confirm']"),
+      identificationConfirmButton:Selector("[id*='reviewSubmitConfirm']"),
+      idFirstName:Selector("#id_firstName"),
+      idLastName:Selector("#id_lastName"),
+      idDOBDay:Selector("#id_dateOfBirth-day"),
+      idDOBMonth:Selector("#id_dateOfBirth-month"),
+      idDOBYear:Selector("#id_dateOfBirth-year"),
+      idnumberLicence:Selector("#id_number-licence"),
     }
 }
 

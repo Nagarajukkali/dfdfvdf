@@ -43,3 +43,14 @@ Then(/^user validates plan details on review page for "([^"]*)"$/, async functio
   await checkoutReviewMethod.validatePlanName(t, json, dataTable);
   await checkoutReviewMethod.validateFeatures(t, dataTable, json, numOfExpectedFeatures);
 });
+Then(/^identification verification pop up is displayed$/, async function (t) {
+  await checkoutReviewMethod.verifyIDVPopup(t);
+  await testFunction.takeScreenshot(t,'IDV_Popup');
+});
+When(/^user clicks on identification confirmation button$/, async function (t) {
+  await checkoutReviewMethod.confirmIdentification(t);
+});
+When(/^user enters identification details on identification popup$/, async function (t) {
+  await checkoutReviewMethod.provideIdDetails(t);
+  await testFunction.takeScreenshot(t,'IDV_Popup');
+});
