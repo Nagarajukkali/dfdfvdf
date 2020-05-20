@@ -128,15 +128,15 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
     await qt2Reporting.validateMandatoryField(t,actualPersonAccountRelationship,expectedPersonAccountRelationship);
     await qt2Reporting.validateMandatoryField(t,actualBusinessNameType,expectedBusinessNameType);
   }
-  if(expectedOfferType==='COR' && expectedCustomerType==='RESIDENTIAL' && t.testRun.test.name.includes('new')){
+  if((expectedOfferType==='COR' || expectedOfferType==='ENE') && expectedCustomerType==='RESIDENTIAL' && t.testRun.test.name.includes('new')){
     let expectedConsentForIdValidation='Y';
     let actualConsentForIdValidation=jsonObj.saleDetail.personDetail.personIdDetail.idValidationInformation.consentForIdValidation;
-    let expectedCreditAssessmentReasonCode='Accept';
+    let expectedCreditAssessmentReasonCode=qt2Reporting.getCreditAssessmentValue(t.testRun.test.name.toString());
     let actualCreditAssessmentReasonCode=jsonObj.saleDetail.creditAssessmentReasonCode;
     await qt2Reporting.validateMandatoryField(t,actualConsentForIdValidation,expectedConsentForIdValidation);
     await qt2Reporting.validateMandatoryField(t,actualCreditAssessmentReasonCode,expectedCreditAssessmentReasonCode);
   }
-  let expectedCreditAssessmentDecision='Accept'
+  let expectedCreditAssessmentDecision=qt2Reporting.getCreditAssessmentValue(t.testRun.test.name.toString());
   let actualCreditAssessmentDecision=jsonObj.saleDetail.creditAssessmentDecision
   await qt2Reporting.validateMandatoryField(t,actualCreditAssessmentDecision,expectedCreditAssessmentDecision);
 

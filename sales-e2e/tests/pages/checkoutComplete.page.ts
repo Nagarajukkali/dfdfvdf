@@ -17,6 +17,9 @@ const eaCheckoutCompletePage={
     listElecDevices: Selector("#record-ele-life-support-devices"),
     listGasDevices: Selector("#record-gas-life-support-devices"),
     btnDownloadPDF:Selector("#pdfDownload"),
+    resiNewWelText:Selector("#resiNewCusWelText"),
+    applicationDeclineText:Selector(".rtca-declined-container h1"),
+    applicationDeclineDisclaimer:Selector(".rtca-declined-container p"),
   }
 }
 

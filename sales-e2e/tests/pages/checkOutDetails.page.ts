@@ -104,7 +104,8 @@ const eaCheckoutDetailsPage={
     concessionCardTypeOption: Selector("#concession_cardtype sui-select sui-option"),
     tfConcessionCardNumber: Selector("#concession_cardnumber"),
     cbConcessionAgreeTerms: Selector("#concession_agreeTerms [class*='checkmark icon-tickboxUnchecked']"),
-    cbOptInCarbonNeutral: Selector("#carbonNeutralOptIn")
+    cbOptInCarbonNeutral: Selector("#carbonNeutralOptIn"),
+    eaSpinner:Selector(".ea-spinner.ng-star-inserted"),
   },
 };
 

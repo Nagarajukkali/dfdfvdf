@@ -1,0 +1,86 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2005197730
+    sourceCode: Total_5%GD
+    actualQuoteDate: 2020-05-19
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0363706726
+    
+    emailId: UkZLRqfvlI@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: LTDPARTNERSHIP
+    businessNameDetail: 
+      businessName: error
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ACN
+      businessId: 535959021
+    
+    anzsic: FINANCE
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0363706726
+    
+    businessEmailId: UkZLRqfvlI@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 68
+    streetName: Mercer
+    streetType: S
+    suburb: GEELONG
+    state: VIC
+    country: AUS
+    postCode: 3220
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    offerType: COR
+    plan: TOPB-EV
+    priceTag: EVPOA_NB2001
+    nmiMirnInformation: 
+      NMI: 6203142753
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: OTHER
+    
+    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Error
+  meteringDetail: 
+    meterExchangeFlag: N
+  
+

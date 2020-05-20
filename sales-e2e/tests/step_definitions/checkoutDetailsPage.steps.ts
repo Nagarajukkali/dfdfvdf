@@ -20,6 +20,7 @@ When(/^user provides all details on checkout details page$/, async function (t,[
   let data=dataTable.hashes();
   let customerType=data[0].customerType;
   await testFunction.waitForLoadingIconToClose();
+  await testFunction.waitForElementToBeDisappeared(t,eaCheckoutDetailsPage.elements.eaSpinner);
   await checkoutDetailsMethod.provideDetailsInAboutMeSection(t,data[0].journey,data[0].firstName,data[0].lastName);
   let emailAddress=await checkoutDetailsMethod.provideContactDetails(t);
   await checkoutDetailsMethod.getEmailWithScenario(t,emailAddress);

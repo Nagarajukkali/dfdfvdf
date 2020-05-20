@@ -10,3 +10,7 @@ Then(/^user lands on checkout complete page$/, async function(t){
 Then(/^user downloads a pdf copy of plan details$/, async function (t) {
   await checkoutCompleteMethod.downloadPDF(t);
 });
+
+Then(/^Your application has been declined is displayed$/, async function (t) {
+  await checkoutCompleteMethod.verifyApplicationDeclineMsg(t);
+});
