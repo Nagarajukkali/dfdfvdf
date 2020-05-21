@@ -266,7 +266,6 @@ export class testFunction {
     while((await this.sizeOfElement(t,element))===0){
       await t.wait(1000);
       i++;
-      console.log(i);
       if(i===60){
         break;
       }
