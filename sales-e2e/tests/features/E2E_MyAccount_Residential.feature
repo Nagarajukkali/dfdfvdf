@@ -1,6 +1,6 @@
 @E2E
 Feature: This feature is to test the My account scenarios for residential customers
-
+@test
   Scenario Outline: Verify the RESI Plan switch journey from My Account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
@@ -19,7 +19,8 @@ Feature: This feature is to test the My account scenarios for residential custom
       |Yes         |No         |Bank           |
     And user clicks on 'Review your order' button and navigates to review page
     Then Life support section is displayed on Review page as per selected "BOTH" and verified "BOTH"
-    When user submits the quote
+    When user selects carbon neutral option
+    And user submits the quote
     Then user lands on checkout complete page
 
     Examples:
@@ -50,6 +51,7 @@ Feature: This feature is to test the My account scenarios for residential custom
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices   |GaslifeSupportDevices         |
       |Yes              |BOTH    |Kidney Dialysis Machine  |Medically Required Hot Water  |
+    When user selects carbon neutral option
     And user submits the quote
     Then user lands on checkout complete page
 
@@ -70,6 +72,7 @@ Feature: This feature is to test the My account scenarios for residential custom
     And user provides life support details on review page
       |lifeSupportOption|fuelType|GaslifeSupportDevices                                |
       |Yes              |GAS     |Medically Required Heating and/or Air Conditioning   |
+    When user selects carbon neutral option
     And user submits the quote
     Then user lands on checkout complete page
 
