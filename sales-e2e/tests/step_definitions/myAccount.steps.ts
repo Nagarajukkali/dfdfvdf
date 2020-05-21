@@ -10,10 +10,13 @@ When(/^user logs in to my account using '(.*)' and '(.*)'$/, async function(t, [
   await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfUsername, username);
   await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfPassword, cryptoJS.AES.decrypt(password, username).toString(cryptoJS.enc.Utf8));
   await testFunction.click(t, eaMyAccount.elements.btnSignIn);
+  await testFunction.waitForElementToBeAppeared(t,eaMyAccount.elements.eaSpinner);
+  await testFunction.waitForElementToBeDisappeared(t,eaMyAccount.elements.eaSpinner);
+  await testFunction.takeScreenshot(t,"my_account_dashboard");
 });
 
 When(/^user clicks on view and change plan accordion for '(.*)'$/, async function (t, [fuelType]) {
-  await testFunction.waitForLoadingIconToClose_MA(t);
+  //await testFunction.waitForLoadingIconToClose_MA(t);
   if(fuelType === FUEL_TYPE_OPTIONS.ELE.value) {
     await testFunction.click(t, eaMyAccount.elements.eleViewAndChangePlan);
     isSolar = true;
@@ -21,9 +24,11 @@ When(/^user clicks on view and change plan accordion for '(.*)'$/, async functio
     await testFunction.click(t, eaMyAccount.elements.gasViewAndChangePlan);
     isSolar = false;
   }
+  await testFunction.waitForElementToBeDisappeared(t,eaMyAccount.elements.eaSpinner);
+  await testFunction.takeScreenshot(t,"my_account_view_and_change_plan");
 });
 When(/^user clicks on compare and switch plan button$/, async function (t, []) {
-  await testFunction.waitForLoadingIconToClose_MA(t);
+  //await testFunction.waitForLoadingIconToClose_MA(t);
   await testFunction.click(t, eaMyAccount.elements.btnCompareAndSwitchPlans);
 });
 When(/^user selects No for solar question and confirm$/, async function (t, []) {
@@ -66,8 +71,13 @@ When(/^user selects No for solar question on moving service page$/, async functi
   await testFunction.click(t, eaMyAccount.elements.btnSolarNo_MA);
 });
 When(/^user clicks on lets get moving button$/, async function (t, []) {
+  await testFunction.takeScreenshot(t,"my_account_move_home_Page");
   await testFunction.click(t, eaMyAccount.elements.btnLetsGetMoving);
 });
 When(/^user answers No for home improvements question$/, async function (t, []) {
   await testFunction.click(t, eaMyAccount.elements.rbHomeImprovement_No);
+});
+When(/^user clicks on compare plans button$/, async function (t) {
+  await testFunction.click(t,eaMyAccount.elements.btnUpSellComparePlan);
+
 });

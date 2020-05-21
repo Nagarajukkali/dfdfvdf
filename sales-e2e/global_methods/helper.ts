@@ -256,7 +256,21 @@ export class testFunction {
 
 
   public static async waitForElementToBeDisappeared(t,element){
-    await t.expect(element.exists).notOk({ timeout: 30000 });
+    if(await this.sizeOfElement(t,element)>0){
+      await t.expect(element.exists).notOk({ timeout: 30000 });
+    }
+  }
+
+  public static async waitForElementToBeAppeared(t,element){
+    let i=0;
+    while((await this.sizeOfElement(t,element))===0){
+      await t.wait(1000);
+      i++;
+      console.log(i);
+      if(i===60){
+        break;
+      }
+    }
   }
   public static async selectDateFromCalendar(t,element){
     const table=element;

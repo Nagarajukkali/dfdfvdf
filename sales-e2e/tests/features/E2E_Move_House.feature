@@ -40,7 +40,7 @@ Scenario Outline: Submit a quote for existing residential customer through move 
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
   Examples:
-    |folderName              |fuelType|state|optDisconnection|movingAddress                   |username|password                                    |
-    |E2E_Existing_Resi_Moving|BOTH    |NSW  |No              |5 Wilkies Street, BULLI NSW 2516|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+    |folderName                 |fuelType|state|optDisconnection|movingAddress                   |username|password                                    |
+    |E2E_Existing_Resi_MoveHouse|BOTH    |NSW  |No              |5 Wilkies Street, BULLI NSW 2516|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
 
