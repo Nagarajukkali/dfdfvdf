@@ -1,4 +1,4 @@
-#@E2E
+@E2E
 Feature: This feature is to test the My account scenarios for residential customers
 
   Scenario Outline: Verify the RESI Plan switch journey from My Account
