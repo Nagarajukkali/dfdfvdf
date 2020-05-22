@@ -9,7 +9,7 @@ export class billUploadMethod {
     console.log(process.cwd());
     await t.setFilesToUpload(
       eaBillUpload.elements.billUploadInput,
-      `../../resources/Bills/${billName.toLowerCase()}`
+      `${process.cwd()}/resources/Bills/${billName.toLowerCase()}`
     );
     await testFunction.waitForElementToBeDisappeared(t,eaBillUpload.elements.eaSpinner);
   }
