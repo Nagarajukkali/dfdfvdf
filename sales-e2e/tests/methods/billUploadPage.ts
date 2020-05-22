@@ -8,8 +8,8 @@ export class billUploadMethod {
   public static async uploadBill(t,billName){
     console.log(process.cwd());
     await t.setFilesToUpload(
-      eaBillUpload.elements.billUploadInput,process.cwd()+'/resources/Bills/'+billName.toLowerCase()
-      //`../../resources/Bills/${billName.toLowerCase()}`
+      eaBillUpload.elements.billUploadInput,
+      `../../resources/Bills/${billName.toLowerCase()}`
     );
     await testFunction.waitForElementToBeDisappeared(t,eaBillUpload.elements.eaSpinner);
   }
