@@ -59,7 +59,7 @@ Scenario Outline: Submit a quote for electricity new connection for residential 
     Examples:
       |folderName              |
       |E2E_New_Resi_NC_GAS|
-  @regression
+
   Scenario Outline: Submit a quote for electricity new connection for business customer
     Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
     When user provides connection details

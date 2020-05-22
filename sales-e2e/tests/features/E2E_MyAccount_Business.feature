@@ -1,4 +1,4 @@
-#@E2E
+@E2E
 Feature: This feature is to test the My account scenarios for business customers
 
   Scenario Outline: Verify the BSME Plan switch journey from My Account
@@ -11,16 +11,18 @@ Feature: This feature is to test the My account scenarios for business customers
     And user selects plans on checkout details page
       |elePlan         |gasPlan        |
       |Total Business  |Basic Business |
-    And user provides identification details
-      |customerType |customerStatus |idType   |
-      |BUS          |Existing       |Medicare |
+    And user provides business details for My Account journey
+    And user opts for AAH and DD
+      |optAAHOption|optDDOption|directDebitType|
+      |No          |Yes        |CC             |
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
-      |lifeSupportOption  |fuelType |EleclifeSupportDevices  |GaslifeSupportDevices |
+      |lifeSupportOption  |fuelType |EleclifeSupportDevices  |GaslifeSupportDevices|
       |Yes                |BOTH     |Oxygen Concentrator    |Gas Other             |
     And user submits the quote
     Then user lands on checkout complete page
 
     Examples:
-      |folderName                   |username             |password                                     |
-      |E2E_MyAccount_Residential_PS |e2e_bsme_ps@test.com |U2FsdGVkX1+0r7zXQlO8CPFbEq3ETA40fGWjpN+WtGM= |
+      |folderName                |username             |password                                     |
+      |E2E_MyAccount_Business_PS |e2e_bsme_ps@test.com |U2FsdGVkX1+ftH+UunfGSZtCIUBjus/t531HwywA6fY= |
+

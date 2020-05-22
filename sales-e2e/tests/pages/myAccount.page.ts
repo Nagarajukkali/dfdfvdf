@@ -6,7 +6,7 @@ const eaMyAccount={
   elements: {
     tfUsername: Selector("#username"),
     tfPassword: Selector("#password"),
-    btnSignIn: Selector("form[name*='loginForm'] button[type*='submit']"),
+    btnSignIn: Selector("[name='remember-me']~.ea-button.ea-button--primary"),
     eleViewAndChangePlan: Selector("a[href*='view']").nth(0),
     gasViewAndChangePlan: Selector("a[href*='view']").nth(1),
     btnCompareAndSwitchPlans: Selector("[class*='header-action'] button"),
@@ -20,7 +20,9 @@ const eaMyAccount={
     btnSolarNo_MA: Selector("#mover-solar-button-no"),
     btnLetsGetMoving: Selector("#mover-lets-get-moving-button"),
     rbHomeImprovement_No: Selector("#option-prev-or-planned-home-improve-false"),
-    oneUXSpinner: Selector("[class*='spinner']").with({visibilityCheck: true})
+    oneUXSpinner: Selector("[class*='spinner']").with({visibilityCheck: true}),
+    eaSpinner:Selector(".ea-spinner.ng-star-inserted"),
+    btnUpSellComparePlan:Selector(".up-sell div.cta>button"),
   },
 };
 

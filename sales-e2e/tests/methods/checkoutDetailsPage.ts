@@ -229,6 +229,15 @@ export class checkoutDetailsMethod{
       console.log("Business details are provided");
   }
 
+  public static async provideBusinessDetails_MA(t){
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.businessType);
+      await t.wait(2000);
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.businessTypeOption);
+      await t.wait(2000);
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCode);
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCodeOption);
+  }
+
   public static getBusinessName(scenarioName){
     let businessName;
     let testName=scenarioName.toLowerCase();
