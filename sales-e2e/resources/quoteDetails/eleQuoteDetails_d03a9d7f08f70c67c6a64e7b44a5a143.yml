@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2005218169
+    quoteId: BB2005228266
     sourceCode: Total_9%GD_50
-    actualQuoteDate: 2020-05-21
+    actualQuoteDate: 2020-05-22
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,13 +15,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0338934890
+      phoneNumber: 0395864001
     
-    emailId: CqymDDZksi@energyaustralia.com.au
+    emailId: EAiPafkHkg@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 223610
+      id: 970636
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -34,18 +34,18 @@ saleDetail :
       
     
     authLevel: Y
-    personPremiseRelationship: TENANT
+    personPremiseRelationship: OWNER
     seqNo: 2
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 42
-    streetName: Brownlow
-    streetType: DR
-    suburb: POINT COOK
+    streetNo: 16
+    streetName: CULCAIRN
+    streetType: CT
+    suburb: NARRE WARREN SOUTH
     state: VIC
     country: AUS
-    postCode: 3030
+    postCode: 3805
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
@@ -54,9 +54,9 @@ saleDetail :
     fuelType: E
     offerType: COR
     plan: TOPH-EV
-    priceTag: EVPOA_NR2001
+    priceTag: EVTRA_NR2001
     nmiMirnInformation: 
-      NMI: 6203778288
+      NMI: 6305515608
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N

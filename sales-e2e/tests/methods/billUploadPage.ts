@@ -8,7 +8,7 @@ export class billUploadMethod {
   public static async uploadBill(t,billName){
     await t.setFilesToUpload(
       eaBillUpload.elements.billUploadInput,
-      `/Users/ravipandey/Desktop/Savages Testcafe E2E Test/sales-e2e/sales-e2e/resources/Bills/${billName.toLowerCase()}`
+      `${process.cwd()}/resources/Bills/${billName.toLowerCase()}`
     );
     await testFunction.waitForElementToBeDisappeared(t,eaBillUpload.elements.eaSpinner);
   }

@@ -8,9 +8,9 @@ Feature: This feature is to test the Bill Uploader scenarios
     And user selects the recommended plan
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
-    And user provides all other details on qualifier page
-      |customerType|connectionAddress                     | movingType|propertyType|solarOption|
-      |RES         |42 Brownlow Drive, POINT COOK VIC 3030|Non-Moving |Renter      |No         |
+    And user provides all other details on qualifier page for Existing customer
+      |customerType|movingType |propertyType |solarOption  |
+      |RES         |Non-Moving |Owner        |No           |
     And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType        |
@@ -32,9 +32,9 @@ Feature: This feature is to test the Bill Uploader scenarios
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-EV |6203778288|N                             |N                             |Y                      |OTHER                   |EMAIL        |
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-EV |6305515608|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
       |billName|customerStatus|fuelType|folderName              |username|password                                    |
-      |test.pdf|New           |ELE     |E2E_New_Resi_Bill_Upload|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |Bill.pdf|New           |ELE     |E2E_New_Resi_Bill_Upload|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
 
