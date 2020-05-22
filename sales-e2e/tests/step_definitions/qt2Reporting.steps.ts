@@ -68,7 +68,7 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
     let isPlanCodeWithStateAndTestName=(((!isPlanCode && t.testRun.test.name.includes('gas-tpp')) || isPositiveTestName) && actualState==='SA');
     let actualEleSourceCode=jsonObj.saleDetail.saleDetailHeader.sourceCode;
     let expectedEleSourceCode=checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t));
-    if(isOfferType && isCustomerType && (isState || isPlanCodeWithStateAndTestName) && (isPlanCode || isPlanCodeWithTestName) && (isPositiveTestName || isNegativeTestName)){
+    if((isOfferType || (!isOfferType && t.testRun.test.name.includes('gas-tpp'))) && isCustomerType && (isState || isPlanCodeWithStateAndTestName) && (isPlanCode || isPlanCodeWithTestName) && (isPositiveTestName || isNegativeTestName)){
       await qt2Reporting.validateMandatoryField(t,actualEleSourceCode,expectedEleSourceCode+'_50');
     }
     else{
@@ -93,7 +93,7 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
     let actualGasSourceCode=jsonObj.saleDetail.saleDetailHeader.sourceCode;
     let expectedGasSourceCode=checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t));
 
-    if(isOfferType && isCustomerType && (isState || isPlanCodeWithStateAndTestName) && (isPlanCode || isPlanCodeWithTestName) && (isPositiveTestName || isNegativeTestName)){
+    if((isOfferType || (!isOfferType && t.testRun.test.name.includes('elec-tpp'))) && isCustomerType && (isState || isPlanCodeWithStateAndTestName) && (isPlanCode || isPlanCodeWithTestName) && (isPositiveTestName || isNegativeTestName)){
       await qt2Reporting.validateMandatoryField(t,actualGasSourceCode,expectedGasSourceCode+'_50');
     }
     else{

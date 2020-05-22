@@ -752,3 +752,135 @@ Scenario Outline: Submit a quote for elec-tpp campaign for NSW
     Examples:
       |customerStatus|campaign|fuelType|folderName                        |state|username|password                                    |
       |New           |eacorporateOffer|ELE     |E2E_New_Resi_Moving_$50_QLD_EACorp|QLD  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+
+    #ElecTppVICPS
+  Scenario Outline: Submit a quote for elec-tpp campaign for VIC
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "3000" and clicks on show me plan link
+    And user clicks on Add plan button
+    And user selects '<customerStatus>' on qualifier
+
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |8513751442   |Postcode           |3163            |dob   |01011980|
+    And user provides all other details on qualifier page for Existing customer
+      |customerType|movingType |propertyType |solarOption  |
+      |RES         |Non-Moving |Owner        |No           |
+
+    And user provides all details on checkout details page
+      |customerType|journey    |customerStatus|firstName     |lastName |idType  |medicareType|
+      |RES         |RES        |Existing           |test  |test     |Medicare|blue        |
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
+      |Yes              |BOTH    |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
+    And user verifies selected plan details for '<fuelType>'
+    And user submits the quote
+    Then user lands on checkout complete page
+    And user downloads a pdf copy of plan details
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'ELE' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS      |SWSRH-EV|6407348771|N                             |N                             |Y                      |LSCNSPE                 |EMAIL        |
+    And user validates all the details for 'GAS' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS      |SWSRH-GV|5310611153|N                             |N                             |Y                      |OTHER                   |EMAIL        |
+
+    Examples:
+      |customerStatus|fuelType|campaign  |folderName                          |state|username|password                                    |
+      |Existing      |BOTH    |elec-tpp  |E2E_New_Resi_Moving_$50_NSW_ELEC_TPP|VIC  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+
+
+  #GasTppNSWPS
+  Scenario Outline: Submit a quote for gas-tpp campaign for NSW
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "2000" and clicks on show me plan link
+    And user clicks on Add plan button
+    And user selects '<customerStatus>' on qualifier
+
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |1063404416   |Postcode           |2322            |dob   |01011980|
+    And user provides all other details on qualifier page for Existing customer
+      |customerType|movingType |propertyType |solarOption  |
+      |RES         |Non-Moving |Owner        |No           |
+
+    And user selects carbon neutral option
+    And user provides all details on checkout details page
+      |customerType |journey    |customerStatus| firstName| lastName|idType  |medicareType|
+      |RES          |RES        |Existing           | test|test     |Medicare|blue        |
+    And user opts for AAH and DD
+      |optAAHOption|optDDOption|directDebitType|
+      |No          |Yes        |CC             |
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices                             |
+      |Yes              |BOTH    |Ele Other             |Medically Required Heating and/or Air Conditioning|
+    And user verifies selected plan details for '<fuelType>'
+    And user submits the quote
+    Then user lands on checkout complete page
+    And user downloads a pdf copy of plan details
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'ELE' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS      |SWSRH-EN|4102236498|N                             |N                             |Y                      |OTHER                   |EMAIL        |
+    And user validates all the details for 'GAS' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS      |SWSRH-GN|5240811020|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
+
+    Examples:
+      |customerStatus|campaign|fuelType|folderName                            |username|password                                    |
+      |Existing           |gas-tpp |BOTH    |E2E_New_Resi_NonMoving_$50_NSW_GAS_TPP|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+
+
+    #ElecTppSAPS
+  Scenario Outline: Submit a quote for elec-tpp campaign for SA
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "5000" and clicks on show me plan link
+    And user clicks on Add plan button
+    And user selects '<customerStatus>' on qualifier
+
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |8321102099   |Postcode           |5158            |dob   |01011980|
+    And user provides all other details on qualifier page for Existing customer
+      |customerType|movingType |propertyType |solarOption  |
+      |RES         |Non-Moving |Owner        |No           |
+
+    And user provides all details on checkout details page
+      |customerType|journey    |customerStatus| firstName     | lastName|idType  |medicareType|
+      |RES         |RES        |Existing           | test   |test     |Medicare|yellow      |
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
+      |Yes              |BOTH    |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
+    And user verifies selected plan details for '<fuelType>'
+    And user submits the quote
+    Then user lands on checkout complete page
+    And user downloads a pdf copy of plan details
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'ELE' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS      |SWSRH-ES|2001308560|N                             |N                             |Y                      |LSCNSPE                 |EMAIL        |
+    And user validates all the details for 'GAS' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS      |SWSRH-GS|5510350927|N                             |N                             |Y                      |OTHER                   |EMAIL        |
+
+    Examples:
+      |customerStatus|fuelType|campaign  |folderName                         |state|username|password                                    |
+      |Existing           |BOTH    |elec-tpp  |E2E_New_Resi_Moving_$50_SA_ELEC_TPP|SA  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
