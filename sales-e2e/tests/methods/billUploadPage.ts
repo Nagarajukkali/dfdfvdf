@@ -6,7 +6,6 @@ export class billUploadMethod {
     await testFunction.click(t,eaBillUpload.elements.btnUploadBill);
   }
   public static async uploadBill(t,billName){
-    console.log(process.cwd());
     let filePath=process.cwd().includes("jenkins")?`${process.cwd()}/sales-e2e/resources/Bills/${billName.toLowerCase()}`:`${process.cwd()}/resources/Bills/${billName.toLowerCase()}`;
     await t.setFilesToUpload(
       eaBillUpload.elements.billUploadInput,filePath

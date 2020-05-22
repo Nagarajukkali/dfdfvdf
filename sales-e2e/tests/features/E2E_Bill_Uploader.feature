@@ -1,6 +1,6 @@
-@E2E
+#@E2E
 Feature: This feature is to test the Bill Uploader scenarios
-@test
+
   Scenario Outline: Submit a quote for a bill uploader journey
     Given user has opened the bill uploader website link in a browser and creates '<folderName>' to save evidences
     When user clicks on upload bill button
