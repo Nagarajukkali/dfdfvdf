@@ -4,7 +4,7 @@
     "tests/**/*.feature"
   ],
   "browsers": [
-    "chrome"
+    "chrome:headless"
   ],
   "concurrency": 1,
   "reporter": [{
