@@ -7,7 +7,7 @@ export class billUploadMethod {
   }
   public static async uploadBill(t,billName){
     console.log(process.cwd());
-    let filePath=process.cwd().includes("jenkins")?`${process.cwd()}/sales-e2e/resources/Bills/${billName.toLowerCase()}`:`${process.cwd()}/resources/Bills/${billName.toLowerCase()}`;
+    let filePath=process.cwd().includes("jenkins")?`/home/jenkins/workspace/Quotetool_Level_4-E2E-CRM/sales-e2e/resources/Bills/${billName.toLowerCase()}`:`${process.cwd()}/resources/Bills/${billName.toLowerCase()}`;
     await t.setFilesToUpload(
       eaBillUpload.elements.billUploadInput,filePath
     );
