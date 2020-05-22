@@ -7,9 +7,9 @@ export class billUploadMethod {
   }
   public static async uploadBill(t,billName){
     console.log(process.cwd());
+    let filePath=process.cwd().includes("jenkins")?`${process.cwd()}/sales-e2e/resources/Bills/${billName.toLowerCase()}`:`${process.cwd()}/resources/Bills/${billName.toLowerCase()}`;
     await t.setFilesToUpload(
-      eaBillUpload.elements.billUploadInput,
-      `${process.cwd()}/resources/Bills/${billName.toLowerCase()}`
+      eaBillUpload.elements.billUploadInput,filePath
     );
     await testFunction.waitForElementToBeDisappeared(t,eaBillUpload.elements.eaSpinner);
   }
