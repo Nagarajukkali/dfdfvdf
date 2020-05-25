@@ -21,7 +21,12 @@ Given(/^user has opened the website link in a browser and creates '(.*)' to save
   await t.navigateTo(eaHomePage.pageUrl);
 });
 
-
+Given(/^user has opened the bill uploader website link in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
+  screenshotFolder=folderName;
+  let screenshotFolderPath="screenshots/Chrome/"+screenshotFolder;
+  await FileUtils.deleteFiles(screenshotFolderPath);
+  await t.navigateTo(eaHomePage.billUploaderUrl);
+});
 
 Given(/^user has opened the new connection website link in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
   screenshotFolder=folderName;
