@@ -1,0 +1,84 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2005218033
+    sourceCode: Total_15%GD
+    actualQuoteDate: 2020-05-21
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0316834391
+    
+    emailId: guOgSmSmeQ@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: LTDPARTNERSHIP
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 14892011437
+    
+    anzsic: FINANCE
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0316834391
+    
+    businessEmailId: guOgSmSmeQ@energyaustralia.com.au
+  
+  premiseDetail: 
+    flatNo: 8
+    flatType: U
+    addressClass: ST
+    streetNo: 73-79
+    streetName: John
+    streetType: S
+    suburb: CABRAMATTA
+    state: NSW
+    country: AUS
+    postCode: 2166
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-05-25
+    offerType: ENE
+    plan: TOPB-EN
+    priceTag: ENIEA_NB1907
+    serviceOrderDate: 2020-05-25
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 4310026002
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: MIMR
+    reEnergisationJSCCharge: 37.8
+  
+
