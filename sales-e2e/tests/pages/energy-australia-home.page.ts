@@ -70,6 +70,7 @@ const eaHomePage={
     planCostEstimate: Selector("[class*='hs-plan-estimate__value']"),
     eleDiscount: Selector("[id*='plan-rate-summary'][id*='-E'] [class*='title-amount']"),
     gasDiscount: Selector("[id*='plan-rate-summary'][id*='-G'] [class*='title-amount']"),
+    safetyFlagMsgOnVAModal:Selector("#refineModal eui-message span"),
   },
   campaignElements:{
     elePlanHeadingTitle:Selector("[id*='plan-heading-title'][id*='-E']"),

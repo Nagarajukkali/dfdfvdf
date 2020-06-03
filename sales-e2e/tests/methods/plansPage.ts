@@ -250,6 +250,11 @@ export class verifyAccountMethod {
     public static async provideIdValue(t,idValue, inputField) {
         await testFunction.clearAndEnterText(t,inputField, idValue);
     }
+
+  public static  async validateErrorMessageForBlockerAccounts(t){
+    let expectedErrorMessage = "We are currently unable to retrieve your information. Please call 133 466 (Monday – Friday, 8am – 8pm AEST)";
+    await testFunction.assertText(t,EaHomePage.elements.safetyFlagMsgOnVAModal,expectedErrorMessage);
+  }
 }
 
 export class campaignMethod{
@@ -278,4 +283,6 @@ export class campaignMethod{
   public static  async addPlanOnCampaign(t){
     await testFunction.click(t,EaHomePage.elements.selectCampaignPlans);
   }
+
+
 }
