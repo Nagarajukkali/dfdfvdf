@@ -1,184 +1,260 @@
-@safetyflag
-Feature: This feature is to test the behaviour of existing customer accounts which are marked for Safety Flag through verify account
+
+Feature: This feature is to test the behaviour of existing customer accounts which are marked for Safety Flag through qualifier
 
 # Following scenarios are considering both Elec and Gas having same Main Person
   #1
   Scenario Outline: Verify the blocker scenario for dual fuel resi account when SF 'Y' on main person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to '<customer_type>' plans page
-    And user have selected fuel as "<fuelType>"
-    When user clicks on the verify modal window on '<customer_type>' page
-    And user provides below details for account verification on verify account modal window
-      |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |postcode |idType |idNumber |
-      |RES          |verify account |0159048044       |2171186191       |2216     |dob    |01011980 |
-    Then Relevant error message is presented for customers marked with safety flag on verify account modal
+    And user has navigated to 'RES' plans page
+    When user selects '<planName>'
+    And user moves on to fill the qualifier
+    And user selects 'Existing' on qualifier
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |0159048044   |Postcode           |2216            |dob   |01011980|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
+    When user navigates back to account verification section and clears all the previously provided details
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |2171186191   |Postcode           |2216            |dob   |01011980|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
 
   Examples:
-    |folderName             |customer_type |fuelType |
-    |Resi_Safety_Flag_Main_Y|RES           |BOTH     |
+    |folderName                       |planName|
+    |Resi_Safety_Flag_Qualifier_Main_Y|Total Plan|
+
 #2
 
   Scenario Outline: Verify the blocker scenario for dual fuel bsme account when SF 'Y' on main person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to '<customer_type>' plans page
-    And user have selected fuel as "<fuelType>"
-    When user clicks on the verify modal window on '<customer_type>' page
-    And user provides below details for account verification on verify account modal window
-      |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |ABNOrACN        |idType |idNumber |
-      |BUS          |verify account |7195146334       |3550989991       |19924798800     |dob    |01011980 |
-    Then Relevant error message is presented for customers marked with safety flag on verify account modal
+    And user has navigated to 'BUS' plans page
+    When user selects '<planName>'
+    And user moves on to fill the qualifier
+    And user selects 'Existing' on qualifier
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |7195146334   |ABN                |19924798800     |dob   |01011980|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
+    When user navigates back to account verification section and clears all the previously provided details
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |3550989991   |ABN                |19924798800     |dob   |01011980|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
 
     Examples:
-      |folderName            |customer_type |fuelType |
-      |Bus_Safety_Flag_Main_Y|BUS           |BOTH     |
+      |folderName                      |planName      |
+      |Bus_Safety_Flag_Qualifier_Main_Y|Total Business|
   #3
   Scenario Outline: Verify the blocker scenario for dual fuel resi account when SF 'P' on main person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to '<customer_type>' plans page
-    And user have selected fuel as "<fuelType>"
-    When user clicks on the verify modal window on '<customer_type>' page
-    And user provides below details for account verification on verify account modal window
-      |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |postcode |idType |idNumber |
-      |RES          |verify account |5419576252       |2171999821       |3690     |dob    |01011980 |
-    Then Relevant error message is presented for customers marked with safety flag on verify account modal
+    And user has navigated to 'RES' plans page
+    When user selects '<planName>'
+    And user moves on to fill the qualifier
+    And user selects 'Existing' on qualifier
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |5419576252   |Postcode           |3690            |dob   |01011980|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
+    When user navigates back to account verification section and clears all the previously provided details
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |2171999821   |Postcode           |3690            |dob   |01011980|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
 
     Examples:
-      |folderName             |customer_type |fuelType |
-      |Resi_Safety_Flag_Main_P|RES           |BOTH     |
+      |folderName                       |planName|
+      |Resi_Safety_Flag_Qualifier_Main_P|Total Plan|
   #4
   Scenario Outline: Verify the blocker scenario for dual fuel bsme account when SF 'P' on main person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to '<customer_type>' plans page
-    And user have selected fuel as "<fuelType>"
-    When user clicks on the verify modal window on '<customer_type>' page
-    And user provides below details for account verification on verify account modal window
-      |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |ABNOrACN        |idType |idNumber |
-      |BUS          |verify account |5082667531       |3647287605       |11723776900     |dob    |01011980 |
-    Then Relevant error message is presented for customers marked with safety flag on verify account modal
+    And user has navigated to 'BUS' plans page
+    When user selects '<planName>'
+    And user moves on to fill the qualifier
+    And user selects 'Existing' on qualifier
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |5082667531   |ABN                |11723776900     |dob   |01011980|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
+    When user navigates back to account verification section and clears all the previously provided details
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |3647287605   |ABN                |11723776900     |dob   |01011980|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
 
     Examples:
-      |folderName            |customer_type |fuelType |
-      |Bus_Safety_Flag_Main_P|BUS           |BOTH     |
+      |folderName                      |planName|
+      |Bus_Safety_Flag_Qualifier_Main_P|Total Business|
 
     #5
   Scenario Outline: Verify the blocker scenario for dual fuel resi account when SF 'Y' on financial responsible person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to '<customer_type>' plans page
-    And user have selected fuel as "<fuelType>"
-    When user clicks on the verify modal window on '<customer_type>' page
-    And user provides below details for account verification on verify account modal window
-      |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |postcode |idType |idNumber |
-      |RES          |verify account |7755334016       |6376907157       |3056     |dob    |01011980 |
-    Then Relevant error message is presented for customers marked with safety flag on verify account modal
+    And user has navigated to 'RES' plans page
+    When user selects '<planName>'
+    And user moves on to fill the qualifier
+    And user selects 'Existing' on qualifier
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |7755334016   |Postcode           |3056            |dob   |01011980|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
+    When user navigates back to account verification section and clears all the previously provided details
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |6376907157   |Postcode           |3056            |dob   |01011980|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
 
     Examples:
-      |folderName           |customer_type |fuelType |
-      |Resi_Safety_Flag_FR_Y|RES           |BOTH     |
+      |folderName                     |planName|
+      |Resi_Safety_Flag_Qualifier_FR_Y|Total Plan|
 
     #6
   Scenario Outline: Verify the blocker scenario for dual fuel bsme account when SF 'P' on financial responsible person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to '<customer_type>' plans page
-    And user have selected fuel as "<fuelType>"
-    When user clicks on the verify modal window on '<customer_type>' page
-    And user provides below details for account verification on verify account modal window
-      |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |ABNOrACN       |idType |idNumber |
-      |BUS          |verify account |6415738140       |0154814897       |18743496000    |dob    |01011980 |
-    Then Relevant error message is presented for customers marked with safety flag on verify account modal
+    And user has navigated to 'BUS' plans page
+    When user selects '<planName>'
+    And user moves on to fill the qualifier
+    And user selects 'Existing' on qualifier
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |6415738140   |ABN                |18743496000     |dob   |01011980|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
+    When user navigates back to account verification section and clears all the previously provided details
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |0154814897   |ABN                |18743496000     |dob   |01011980|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
 
     Examples:
-      |folderName          |customer_type |fuelType |
-      |Bus_Safety_Flag_FR_P|BUS           |BOTH     |
+      |folderName                    |planName|
+      |Bus_Safety_Flag_Qualifier_FR_P|Total Business|
 
      #7
+  @test
   Scenario Outline: Verify the blocker scenario for dual fuel resi account when SF 'P' on customer contact person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to '<customer_type>' plans page
-    And user have selected fuel as "<fuelType>"
-    When user clicks on the verify modal window on '<customer_type>' page
-    And user provides below details for account verification on verify account modal window
-      |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |postcode |idType |idNumber |
-      |RES          |verify account |2682860548       |0003528068       |2763     |dl     |997273028|
-    Then Relevant error message is presented for customers marked with safety flag on verify account modal
+    And user has navigated to 'RES' plans page
+    When user selects '<planName>'
+    And user moves on to fill the qualifier
+    And user selects 'Existing' on qualifier
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |2682860548   |Postcode           |2763            |dob   |01011980|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
+    When user navigates back to account verification section and clears all the previously provided details
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |0003528068   |Postcode           |2763            |dob   |01011980|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
 
     Examples:
-      |folderName           |customer_type |fuelType |
-      |Resi_Safety_Flag_CC_P|RES           |BOTH     |
+      |folderName                     |planName|
+      |Resi_Safety_Flag_Qualifier_CC_P|Total Plan|
 
     #8
   Scenario Outline: Verify the blocker scenario for dual fuel bsme account when SF 'Y' on customer contact person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to '<customer_type>' plans page
-    And user have selected fuel as "<fuelType>"
-    When user clicks on the verify modal window on '<customer_type>' page
-    And user provides below details for account verification on verify account modal window
-      |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |ABNOrACN        |idType |idNumber |
-      |BUS          |verify account |2216351963       |0313731866       |30561555500     |pin    |215415753|
-    Then Relevant error message is presented for customers marked with safety flag on verify account modal
+    And user has navigated to 'BUS' plans page
+    When user selects '<planName>'
+    And user moves on to fill the qualifier
+    And user selects 'Existing' on qualifier
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |2216351963   |ABN                |30561555500     |pin   |215415753|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
+    When user navigates back to account verification section and clears all the previously provided details
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |0313731866   |ABN                |30561555500     |pin   |215415753|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
 
     Examples:
-      |folderName              |customer_type |fuelType |
-      |Bus_Safety_Flag_CC_Y|BUS           |BOTH     |
+      |folderName                    |planName|
+      |Bus_Safety_Flag_Qualifier_CC_Y|Total Business|
 
     #9
   Scenario Outline: Verify the blocker scenario for dual fuel resi account when SF 'Y' on executor
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to '<customer_type>' plans page
-    And user have selected fuel as "<fuelType>"
-    When user clicks on the verify modal window on '<customer_type>' page
-    And user provides below details for account verification on verify account modal window
-      |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |postcode |idType |idNumber |
-      |RES          |verify account |3112210333       |5800846491       |2125     |dob    |01011980|
-    Then Relevant error message is presented for customers marked with safety flag on verify account modal
+    And user has navigated to 'RES' plans page
+    When user selects '<planName>'
+    And user moves on to fill the qualifier
+    And user selects 'Existing' on qualifier
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |3112210333   |Postcode           |2125            |dob   |01011980|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
+    When user navigates back to account verification section and clears all the previously provided details
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |5800846491   |Postcode           |2125            |dob   |01011980|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
 
     Examples:
-      |folderName                 |customer_type |fuelType |
-      |Resi_Safety_Flag_exec_Y|RES           |BOTH     |
+      |folderName                       |planName|
+      |Resi_Safety_Flag_Qualifier_exec_Y|Total Plan|
 
     #10
   Scenario Outline: Verify the blocker scenario for dual fuel bsme account when SF 'P' on trustee
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to '<customer_type>' plans page
-    And user have selected fuel as "<fuelType>"
-    When user clicks on the verify modal window on '<customer_type>' page
-    And user provides below details for account verification on verify account modal window
-      |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |ABNOrACN        |idType |idNumber |
-      |BUS          |verify account |5487290321       |0493002682       |21153342200     |dob    |01011980 |
-    Then Relevant error message is presented for customers marked with safety flag on verify account modal
+    And user has navigated to 'BUS' plans page
+    When user selects '<planName>'
+    And user moves on to fill the qualifier
+    And user selects 'Existing' on qualifier
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |5487290321   |ABN                |21153342200     |dob   |01011980|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
+    When user navigates back to account verification section and clears all the previously provided details
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |0493002682   |ABN                |21153342200     |dob   |01011980|
+    Then Relevant error message is presented for customers marked with safety flag on qualifier
 
     Examples:
-      |folderName                   |customer_type |fuelType |
-      |Bus_Safety_Flag_trustee_P|BUS           |BOTH     |
+      |folderName                         |planName|
+      |Bus_Safety_Flag_Qualifier_trustee_P|Total Business|
 
      #11
+  @test
   Scenario Outline: Verify the non blocker scenario for dual fuel resi account when SF 'U' on main person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to '<customer_type>' plans page
-    And user have selected fuel as "<fuelType>"
-    When user clicks on the verify modal window on '<customer_type>' page
-    And user provides below details for account verification on verify account modal window
-      |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |postcode |idType |idNumber|
-      |RES          |verify account |2740619832       |9153365221       |3150     |dob    |01011980|
-    Then user can able to proceed further through verify account
+    And user has navigated to 'RES' plans page
+    When user selects '<planName>'
+    And user moves on to fill the qualifier
+    And user selects 'Existing' on qualifier
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |2740619832   |Postcode           |3150            |dob   |01011980|
+    Then user can able to proceed further through qualifier
+    When user navigates back to account verification section from moving question and clears all the previously provided details
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |9153365221   |Postcode           |3150            |dob   |01011980|
+    Then user can able to proceed further through qualifier
 
     Examples:
-      |folderName                 |customer_type |fuelType |
-      |Resi_Safety_Flag_Main_U|RES           |BOTH     |
+      |folderName                       |planName|
+      |Resi_Safety_Flag_Qualifier_Main_U|Total Plan|
 
     #12
+  @test
   Scenario Outline: Verify the non blocker scenario for dual fuel bsme account when SF 'U' on main person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to '<customer_type>' plans page
-    And user have selected fuel as "<fuelType>"
-    When user clicks on the verify modal window on '<customer_type>' page
-    And user provides below details for account verification on verify account modal window
-      |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |ABNOrACN        |idType |idNumber |
-      |BUS          |verify account |7809132000       |2585632000       |20349240900     |dob    |01011980 |
-    Then user can able to proceed further through verify account
+    And user has navigated to 'BUS' plans page
+    When user selects '<planName>'
+    And user moves on to fill the qualifier
+    And user selects 'Existing' on qualifier
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |7809132000   |ABN                |20349240900     |dob   |01011980|
+    Then user can able to proceed further through qualifier
+    When user navigates back to account verification section from moving question and clears all the previously provided details
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |2585632000   |ABN                |20349240900     |dob   |01011980|
+    Then user can able to proceed further through qualifier
 
     Examples:
-      |folderName                |customer_type |fuelType |
-      |Bus_Safety_Flag_Main_U|BUS           |BOTH     |
+      |folderName                      |planName|
+      |Bus_Safety_Flag_Qualifier_Main_U|Total Business|
 
   #Following scenarios are considering both Elec and Gas having different main person
   #1
@@ -200,7 +276,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                     |customer_type |fuelType |
-      |Resi_Safety_Flag_Main_Gas_Y|RES           |BOTH     |
+      |Resi_Safety_Flag_Qualifier_Main_Gas_Y|RES           |BOTH     |
 
     #2
   Scenario Outline: Verify the blocker scenario for dual fuel bsme account when SF 'P' on elec customer contact person
@@ -225,7 +301,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                   |customer_type |fuelType |
-      |Bus_Safety_Flag_CC_Elec_P|BUS           |BOTH     |
+      |Bus_Safety_Flag_Qualifier_CC_Elec_P|BUS           |BOTH     |
 
     #3
   Scenario Outline: Verify the blocker scenario for dual fuel resi account when SF 'P' on gas partner
@@ -251,7 +327,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                        |customer_type |fuelType |
-      |Resi_Safety_Flag_Partner_Gas_P|RES           |BOTH     |
+      |Resi_Safety_Flag_Qualifier_Partner_Gas_P|RES           |BOTH     |
 
     #4
   Scenario Outline: Verify the blocker scenario for dual fuel resi account when SF 'U' on any person
@@ -278,7 +354,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                      |customer_type |fuelType |
-      |Resi_Safety_Flag_AnyPerson_U|RES           |BOTH     |
+      |Resi_Safety_Flag_Qualifier_AnyPerson_U|RES           |BOTH     |
 
     #Following scenarios for single fuel accounts
     #1
@@ -294,7 +370,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                            |customer_type |fuelType|
-      |Resi_Safety_Flag_Single_Main_Ele_Y|RES           |ELE     |
+      |Resi_Safety_Flag_Qualifier_Single_Main_Ele_Y|RES           |ELE     |
 
     #2
   Scenario Outline: Verify the blocker scenario for single fuel bsme account when SF 'P' on elec associate person
@@ -309,7 +385,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                                |customer_type |fuelType|
-      |Bus_Safety_Flag_Single_Associate_Ele_P|BUS           |ELE     |
+      |Bus_Safety_Flag_Qualifier_Single_Associate_Ele_P|BUS           |ELE     |
 
     #3
   Scenario Outline: Verify the blocker scenario for single fuel resi account when SF 'P' on gas spouse
@@ -324,7 +400,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                              |customer_type |fuelType|
-      |Resi_Safety_Flag_Single_Spouse_Gas_P|RES           |GAS     |
+      |Resi_Safety_Flag_Qualifier_Single_Spouse_Gas_P|RES           |GAS     |
 
      #4
   Scenario Outline: Verify the blocker scenario for single fuel bsme account when SF 'Y' on gas main person
@@ -339,7 +415,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                           |customer_type |fuelType|
-      |Bus_Safety_Flag_Single_Main_Gas_Y|BUS           |GAS     |
+      |Bus_Safety_Flag_Qualifier_Single_Main_Gas_Y|BUS           |GAS     |
 
     #5
   Scenario Outline: Verify the blocker scenario for single fuel resi account when SF 'U' on elec any person
@@ -354,7 +430,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                            |customer_type |fuelType|
-      |Resi_Safety_Flag_Single_AnyP_Ele_U|RES           |ELE     |
+      |Resi_Safety_Flag_Qualifier_Single_AnyP_Ele_U|RES           |ELE     |
 
     #6
   Scenario Outline: Verify the blocker scenario for single fuel bsme account when SF 'U' on gas any person
@@ -369,7 +445,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                           |customer_type |fuelType|
-      |Bus_Safety_Flag_Single_AnyP_Gas_U|BUS           |GAS     |
+      |Bus_Safety_Flag_Qualifier_Single_AnyP_Gas_U|BUS           |GAS     |
 
     #Following scenarios for accounts having different levle of access on different level of persons
   #1
@@ -385,7 +461,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                            |customer_type |fuelType |
-      |Resi_Safety_Flag_At_Differnt_Level|RES           |BOTH     |
+      |Resi_Safety_Flag_Qualifier_At_Differnt_Level|RES           |BOTH     |
 
   #2
   Scenario Outline: Verify the blocker scenario for dual fuel bsme account when SF 'U', 'P' and 'Y' on financial responsible person, main person and customer contact person respectively
@@ -400,7 +476,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                           |customer_type |fuelType |
-      |Bus_Safety_Flag_At_Differnt_Level|BUS           |BOTH     |
+      |Bus_Safety_Flag_Qualifier_At_Differnt_Level|BUS           |BOTH     |
 
 
 

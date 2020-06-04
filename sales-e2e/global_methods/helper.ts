@@ -133,6 +133,17 @@ export class testFunction {
     }
   }
 
+  public static async clearTextField(t,element){
+    await this.isElementDisplayed(t,element);
+    await t.click(element).pressKey('ctrl+a delete');
+  }
+
+  public static async isElementExists(t,element){
+    let count=await this.sizeOfElement(t,element);
+    if(count>0)
+      return true;
+  }
+
   public static async enterText(t, element, value) {
     try {
       await this.isElementDisplayed(t, element);

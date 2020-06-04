@@ -113,8 +113,11 @@ When(/^user provides "([^"]*)" for postcode and proceed to view the plans$/, asy
 });
 When(/^user provides below details for account verification on verify account modal window$/, async function (t,[],dataTable) {
   let data = dataTable.hashes();
-  await selectionOptionModalWindowMethod.selectOptionsModalWindow(t, data[0].modal_option);
-  await testFunction.takeScreenshot(t,'verify_account_modal');
+  let modalWindowOption=data[0].modal_option
+  if(modalWindowOption.length!==0){
+    await selectionOptionModalWindowMethod.selectOptionsModalWindow(t, data[0].modal_option);
+    await testFunction.takeScreenshot(t,'verify_account_modal');
+  }
   if(data[0].elecAccountNumber)
     await verifyAccountMethod.provideAccountDetails(t,"ELE", data[0].elecAccountNumber);
   if(data[0].gasAccountNumber)
@@ -129,6 +132,15 @@ When(/^user provides below details for account verification on verify account mo
   await testFunction.takeScreenshot(t,'verify_account_modal');
   await verifyAccountMethod.verifyAccountDetails(t);
 });
-Then(/^Relevant error message is presented for customers marked with safety flag$/, async function (t) {
+Then(/^Relevant error message is presented for customers marked with safety flag on verify account modal$/, async function (t) {
   await verifyAccountMethod.validateErrorMessageForBlockerAccounts(t);
+});
+Then(/^user can able to proceed further through verify account$/, async function (t) {
+  await verifyAccountMethod.verifySuccessfulAccountVerification(t)
+});
+When(/^user navigates back to verify identity section$/, async function (t) {
+  await verifyAccountMethod.navigateBackToVerifyIdentity(t);
+});
+When(/^user navigates back to verify account section and clears all the previously provided details$/, async function (t) {
+  await verifyAccountMethod.navigateBackToVerifyAccount(t);
 });

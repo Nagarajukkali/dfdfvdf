@@ -38,6 +38,8 @@ export class plansMethod{
         }
       } else
         console.log("Fuel selector is not available for QLD.")
+
+      await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
     }
 
     public static async selectPlan(t: any, planName: any) {
@@ -139,6 +141,15 @@ export class plansMethod{
       await testFunction.assertText(t, EaHomePage.elements.eleDiscount, discount);
     } else if(await testFunction.isElectricity(fuelType)) {
       await testFunction.assertText(t, EaHomePage.elements.gasDiscount, discount);
+    }
+  }
+
+  public static  async verifySuccessfulAccountVerification(t,journeyType){
+    if(journeyType==='verify_account'){
+      await testFunction.isElementDisplayed(t,EaHomePage.elements.getCostEstimatesChangeButton);
+    }
+    if(journeyType==='qualifier'){
+      //need to add
     }
   }
 }
@@ -255,6 +266,35 @@ export class verifyAccountMethod {
     let expectedErrorMessage = "We are currently unable to retrieve your information. Please call 133 466 (Monday – Friday, 8am – 8pm AEST)";
     await testFunction.assertText(t,EaHomePage.elements.safetyFlagMsgOnVAModal,expectedErrorMessage);
   }
+
+  public static async verifySuccessfulAccountVerification(t) {
+    await testFunction.isElementDisplayed(t,EaHomePage.elements.getCostEstimatesChangeButton);
+  }
+
+  public static async navigateBackToVerifyIdentity(t){
+      await testFunction.isElementDisplayed(t,EaHomePage.elements.btnBackOnVerifyAccountModal);
+      await testFunction.click(t,EaHomePage.elements.btnBackOnVerifyAccountModal);
+      // if(await testFunction.isElementExists(t,EaHomePage.elements.idTypeDlValueVerifyAccount))
+      //   await testFunction.clearTextField(t,EaHomePage.elements.idTypeDlValueVerifyAccount);
+      // if(await testFunction.isElementExists(t,EaHomePage.elements.idTypeDOBValueVerifyAccount))
+      //   await testFunction.clearTextField(t,EaHomePage.elements.idTypeDOBValueVerifyAccount);
+
+  }
+
+  public static async navigateBackToVerifyAccount(t){
+    await testFunction.isElementDisplayed(t,EaHomePage.elements.btnBackOnVerifyAccountModal);
+    await testFunction.click(t,EaHomePage.elements.btnBackOnVerifyAccountModal);
+    if(await testFunction.isElementExists(t,EaHomePage.elements.elecAccountNo))
+      await testFunction.clearTextField(t,EaHomePage.elements.elecAccountNo);
+    if(await testFunction.isElementExists(t,EaHomePage.elements.gasAccountNo))
+      await testFunction.clearTextField(t,EaHomePage.elements.gasAccountNo);
+    if(await testFunction.isElementExists(t,EaHomePage.elements.postcodeVerifyAccount))
+      await testFunction.clearTextField(t,EaHomePage.elements.postcodeVerifyAccount);
+    if(await testFunction.isElementExists(t,EaHomePage.elements.businessInformation))
+      await testFunction.clearTextField(t,EaHomePage.elements.businessInformation);
+  }
+
+
 }
 
 export class campaignMethod{
@@ -283,6 +323,8 @@ export class campaignMethod{
   public static  async addPlanOnCampaign(t){
     await testFunction.click(t,EaHomePage.elements.selectCampaignPlans);
   }
+
+
 
 
 }

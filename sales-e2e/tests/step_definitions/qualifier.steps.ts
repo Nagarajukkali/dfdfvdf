@@ -79,3 +79,15 @@ When(/^user selects '(.*)' on qualifier$/, async function (t,[customerStatus]) {
   await testFunction.takeScreenshot(t,'qualifier_page');
   await qualifierMethod.selectCustomerStatus(t,customerStatus);
 });
+Then(/^Relevant error message is presented for customers marked with safety flag on qualifier$/, async function (t) {
+  await qualifierMethod.validateErrorMessageForBlockerAccounts(t);
+});
+When(/^user navigates back to account verification section and clears all the previously provided details$/, async function (t) {
+  await qualifierMethod.navigateBackToAccountVerification(t);
+});
+Then(/^user can able to proceed further through qualifier$/, async function (t) {
+  await qualifierMethod.verifySuccessfulAccountVerification(t);
+});
+When(/^user navigates back to account verification section from moving question and clears all the previously provided details$/, async function (t) {
+  await qualifierMethod.navigateBackFromMovingQuestion(t);
+});

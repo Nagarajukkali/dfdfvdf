@@ -51,7 +51,7 @@ export class qualifierMethod{
     }
     public static async selectIdTypeQualifier(t, itemToClick) {
       let val =await testFunction.sizeOfElement(t, eaQualifierPage.elements.idTypeDropDown);
-      if(val!==1) {
+      if(val>0) {
         await testFunction.click(t, eaQualifierPage.elements.idTypeDropDownVerifyAccount);
         await testFunction.click(t, itemToClick);
       }
@@ -80,6 +80,7 @@ export class qualifierMethod{
     }
 
     public static async provideIdValue(t,idValue, inputField) {
+      await testFunction.clearTextField(t,inputField);
       await testFunction.enterText(t,inputField, idValue);
     }
 
@@ -143,6 +144,36 @@ export class qualifierMethod{
     else{
       console.error('Solar option is not selected');
     }
+  }
+
+  public static  async validateErrorMessageForBlockerAccounts(t){
+    await testFunction.waitForElementToBeAppeared(t,eaQualifierPage.elements.safetyFlagMsgOnQualifier);
+    let expectedErrorMessage = "We are currently unable to retrieve your information. Please call 133 466 (Monday – Friday, 8am – 8pm AEST)";
+    await testFunction.assertText(t,eaQualifierPage.elements.safetyFlagMsgOnQualifier,expectedErrorMessage);
+  }
+
+  public static  async navigateBackToAccountVerification(t){
+    await testFunction.click(t,eaQualifierPage.elements.btnBackOnQualifier);
+    await testFunction.clearTextField(t,eaQualifierPage.elements.accountNumber);
+    if(await testFunction.isElementVisible(t,eaQualifierPage.elements.accountDetail))
+      await testFunction.clearTextField(t,eaQualifierPage.elements.accountDetail);
+    if(await testFunction.isElementVisible(t,eaQualifierPage.elements.abnAcnField))
+      await testFunction.clearTextField(t,eaQualifierPage.elements.abnAcnField);
+  }
+
+  public static  async navigateBackFromMovingQuestion(t){
+    await testFunction.click(t,eaQualifierPage.elements.btnBackOnQualifier);
+    await testFunction.click(t,eaQualifierPage.elements.existingCustomerBtn);
+    await testFunction.clearTextField(t,eaQualifierPage.elements.accountNumber);
+    if(await testFunction.isElementVisible(t,eaQualifierPage.elements.abnAcnField))
+      await testFunction.clearTextField(t,eaQualifierPage.elements.abnAcnField);
+    if(await testFunction.isElementVisible(t,eaQualifierPage.elements.accountDetail))
+      await testFunction.clearTextField(t,eaQualifierPage.elements.accountDetail);
+  }
+
+  public static async verifySuccessfulAccountVerification(t) {
+    await testFunction.waitForElementToBeAppeared(t,eaQualifierPage.elements.nonMoving);
+    await testFunction.isElementDisplayed(t,eaQualifierPage.elements.nonMoving);
   }
 
 

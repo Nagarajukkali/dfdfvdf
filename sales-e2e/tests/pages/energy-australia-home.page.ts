@@ -71,6 +71,7 @@ const eaHomePage={
     eleDiscount: Selector("[id*='plan-rate-summary'][id*='-E'] [class*='title-amount']"),
     gasDiscount: Selector("[id*='plan-rate-summary'][id*='-G'] [class*='title-amount']"),
     safetyFlagMsgOnVAModal:Selector("#refineModal eui-message span"),
+    btnBackOnVerifyAccountModal:Selector("div.ea-modal__footer button.ea-modal__secondary-action"),
   },
   campaignElements:{
     elePlanHeadingTitle:Selector("[id*='plan-heading-title'][id*='-E']"),

@@ -38,6 +38,7 @@ const eaQualifierPage={
     btnQualifierClose:Selector("#btn-icon-close"),
     planSelectionPopup:Selector('#modal-heading-wrapper-CHANGE_PLAN_SELECTION_MODAL~div button.ea-modal__secondary-action-link'),
     safetyFlagMsgOnQualifier:Selector("#signIn div.wg-alert"),
+    btnBackOnQualifier:Selector("#btn-icon-chevronLeft"),
 
   },
 };
