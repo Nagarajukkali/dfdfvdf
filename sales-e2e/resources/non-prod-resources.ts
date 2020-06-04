@@ -8,7 +8,7 @@ config: {
     eaBillUploaderUrl:'https://preprod.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/compare-electricity-and-gas-plans/upload-your-electricity-bill',
     qt2ReportingURL:'https://preprod.nonprod.digital.energyaustralia.com.au/qt2reporting/login',
     qt2ReportingHomePageURL:'https://preprod.nonprod.digital.energyaustralia.com.au/qt2reporting/app/reporting',
-    screenshot:'Y'
+    screenshot:'N'
   },
   testData: {
     mastercard: {
