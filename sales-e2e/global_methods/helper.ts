@@ -42,7 +42,8 @@ const screenshot=config.screenshot
   export enum IdType {
     DOB='dob',
     DL='dl',
-    PIN='pin'
+    PIN='pin',
+    MEDICARE='medicare'
   }
 
   export enum LSDevices {

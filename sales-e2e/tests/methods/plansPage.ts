@@ -220,12 +220,16 @@ export class verifyAccountMethod {
                break;
             case IdType.DL:
                 await this.selectIdType(t, EaHomePage.elements.idTypeDlVerifyAccount);
-                await this.provideIdValue(t, idValue,EaHomePage.elements.idTypeDlValueVerifyAccount);
+                await this.provideIdValue(t, idValue,EaHomePage.elements.idTypeValueVerifyAccount);
                 break;
             case IdType.PIN:
                 await this.selectIdType(t, EaHomePage.elements.idTypePinVerifyAccount);
-                await this.provideIdValue(t, idValue,EaHomePage.elements.idTypeDlValueVerifyAccount);
+                await this.provideIdValue(t, idValue,EaHomePage.elements.idTypeValueVerifyAccount);
                 break;
+          case IdType.MEDICARE:
+            await this.selectIdType(t, EaHomePage.elements.idTypeMedicareVerifyAccount);
+            await this.provideIdValue(t, idValue,EaHomePage.elements.idTypeValueVerifyAccount);
+            break;
           }
     }
 

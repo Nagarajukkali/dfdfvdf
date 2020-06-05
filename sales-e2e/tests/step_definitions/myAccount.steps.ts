@@ -7,6 +7,7 @@ const cryptoJS = require('crypto-js');
 let isSolar: boolean = true;
 
 When(/^user logs in to my account using '(.*)' and '(.*)'$/, async function(t, [username, password]) {
+  //console.log(cryptoJS.AES.encrypt('Testing123','bsmenorestriction1@test.com',cryptoJS.enc.Utf8).toString());
   await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfUsername, username);
   await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfPassword, cryptoJS.AES.decrypt(password, username).toString(cryptoJS.enc.Utf8));
   await testFunction.click(t, eaMyAccount.elements.btnSignIn);

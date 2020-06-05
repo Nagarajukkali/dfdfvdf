@@ -1,6 +1,6 @@
 import {cartsMethod} from './cartsPage';
 const eaQualifierPage=require('../pages/qualifier.page');
-import {BusinessType, CustomerStatus, Moving, Property, Solar, testFunction} from '../../global_methods/helper';
+import {BusinessType, CustomerStatus, IdType, Moving, Property, Solar, testFunction} from '../../global_methods/helper';
 
 export class qualifierMethod{
 
@@ -50,23 +50,33 @@ export class qualifierMethod{
       console.log("account is verified")
     }
     public static async selectIdTypeQualifier(t, itemToClick) {
+    if(await testFunction.isElementExists(t,eaQualifierPage.elements.idTypeDropDown)){
       let val =await testFunction.sizeOfElement(t, eaQualifierPage.elements.idTypeDropDown);
-      if(val>0) {
-        await testFunction.click(t, eaQualifierPage.elements.idTypeDropDownVerifyAccount);
-        await testFunction.click(t, itemToClick);
+      if(val>1) {
+        await testFunction.click(t, eaQualifierPage.elements.idTypeSelectedOption);
+        await testFunction.click(t,eaQualifierPage.elements.idTypeDropDown.withText(itemToClick))
+        // await testFunction.click(t, itemToClick);
       }
+    }
     }
     public static async verifyIdentity(t,idType,idValue){
       switch(idType){
-        case 'dob':
+        case IdType.DOB:
+          await testFunction.clearTextField(t,eaQualifierPage.elements.idTypeDOBValue);
+          await testFunction.clearTextField(t,eaQualifierPage.elements.idTypeDOBMonthValue);
+          await testFunction.clearTextField(t,eaQualifierPage.elements.idTypeDOBYearValue);
           await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDOBValue);
           break;
-        case 'dl':
-          await this.selectIdTypeQualifier(t, eaQualifierPage.elements.idTypeDl);
+        case IdType.DL:
+          await this.selectIdTypeQualifier(t, 'Drivers licence');
           await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
           break;
-        case 'pin':
-          await this.selectIdTypeQualifier(t, eaQualifierPage.elements.idTypePin);
+        case IdType.PIN:
+          await this.selectIdTypeQualifier(t, 'Pin');
+          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
+          break;
+        case IdType.MEDICARE:
+          await this.selectIdTypeQualifier(t, 'Medicare');
           await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
           break;
         default:
@@ -80,7 +90,6 @@ export class qualifierMethod{
     }
 
     public static async provideIdValue(t,idValue, inputField) {
-      await testFunction.clearTextField(t,inputField);
       await testFunction.enterText(t,inputField, idValue);
     }
 
