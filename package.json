@@ -19,7 +19,7 @@
   },
   "config": {
     "env": "non-prod",
-    "e2e_tags": "@E2E"
+    "e2e_tags": "@safetyflag"
   },
   "private": true,
   "dependencies": {

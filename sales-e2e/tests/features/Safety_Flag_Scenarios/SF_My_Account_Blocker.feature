@@ -1,8 +1,8 @@
-@safetyflag
 Feature: This feature is to test the behaviour of existing customer accounts which are marked for Safety Flag as U/P through My Account
 
 # Following scenarios are considering when account has partial restriction
   #1
+  @safetyflag
   Scenario Outline: Verify the plan switch scenario for dual fuel resi account when SF 'P' on main person through My Account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
@@ -25,6 +25,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |MyAccount_Resi_Safety_Flag_PS_P |resipartialrestriction1@test.com |U2FsdGVkX1+zgEObraigzcY3oiKno5DPe6oX/2dUosk= |
 
     #2
+  @safetyflag
   Scenario Outline: Verify the move house scenario for dual fuel resi account when SF 'P' on main person through My Account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
@@ -52,6 +53,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |MyAccount_Resi_Safety_Flag_MoveHome_P |9 Rodier Street, BALLARAT EAST VIC 3350  |resipartialrestriction1@test.com |U2FsdGVkX1+zgEObraigzcY3oiKno5DPe6oX/2dUosk= |No              |
 
     #3
+  @safetyflag
   Scenario Outline: Verify the plan switch scenario for dual fuel bsme account when SF 'P' on main person through My Account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
@@ -76,6 +78,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     # Following scenarios are considering when account has no restriction
     #4
+  @safetyflag
   Scenario Outline: Verify the plan switch scenario for dual fuel resi account when SF 'U' on main person through My Account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
@@ -86,6 +89,9 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
     And user selects plans on checkout details page
       |elePlan        |gasPlan   |
       |Total Plan Plus|Total Plan|
+    And user provides identification details
+      |customerType|customerStatus|idType        |
+      |RES         |Existing      |Driver License|
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices   |GaslifeSupportDevices         |
@@ -103,12 +109,12 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
     When user logs in to my account using '<username>' and '<password>'
-    And user clicks on view and change plan accordion for 'GAS'
+    And user clicks on view and change plan accordion for 'ELE'
     And user clicks on compare and switch plan button
     And user selects No for solar question and confirm
     And user selects plans on checkout details page
-      |elePlan         |gasPlan        |
-      |Total Business  |Basic Business |
+      |elePlan         |
+      |Total Business  |
     And user provides business details for My Account journey
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page

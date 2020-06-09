@@ -269,7 +269,7 @@ export class testFunction {
 
   public static async waitForElementToBeDisappeared(t,element){
     if(await this.sizeOfElement(t,element)>0){
-      await t.expect(element.exists).notOk({ timeout: 30000 });
+      await t.expect(element.exists).notOk({ timeout: 60000 });
     }
   }
 
