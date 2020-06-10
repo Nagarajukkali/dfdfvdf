@@ -22,10 +22,10 @@ When(/^user provides life support details on review page$/, async function (t,[]
   if(lifeSupportOption==='Yes'){
     await checkoutReviewMethod.clickOnRegisterDeviceBtn(t,fuelType);
     if(testFunction.isElectricity(fuelType)){
-      await checkoutReviewMethod.selectLSEquipment(t,data[0].EleclifeSupportDevices,fuelType);
+      await checkoutReviewMethod.selectElecLSEquipment(t,data[0].EleclifeSupportDevices,fuelType);
     }
     if(testFunction.isGas(fuelType)){
-      await checkoutReviewMethod.selectLSEquipment(t,data[0].GaslifeSupportDevices,fuelType);
+      await checkoutReviewMethod.selectGasLSEquipment(t,data[0].GaslifeSupportDevices,fuelType);
     }
   }
 });
