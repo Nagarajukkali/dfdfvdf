@@ -1,13 +1,13 @@
 module.exports={
 config: {
     env: 'non-prod',
-    eaHomePageUrl: 'https://espresso.nonprod.digital.energyaustralia.com.au?live=disabled',
-    eaNewConnectionPageUrl:'https://espresso.nonprod.digital.energyaustralia.com.au/new-connections-ui/#/connection',
-    eaCampaignUrl: 'https://espresso.nonprod.digital.energyaustralia.com.au/',
-    eaMyAccountUrl: 'https://espresso.nonprod.digital.energyaustralia.com.au/myaccount/index.html',
-    eaBillUploaderUrl:'https://espresso.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/compare-electricity-and-gas-plans/upload-your-electricity-bill',
-    qt2ReportingURL:'https://espresso.nonprod.digital.energyaustralia.com.au/qt2reporting/login',
-    qt2ReportingHomePageURL:'https://espresso.nonprod.digital.energyaustralia.com.au/qt2reporting/app/reporting',
+    eaHomePageUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au?live=disabled',
+    eaNewConnectionPageUrl:'https://preprod.nonprod.digital.energyaustralia.com.au/new-connections-ui/#/connection',
+    eaCampaignUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au/',
+    eaMyAccountUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au/myaccount/index.html',
+    eaBillUploaderUrl:'https://preprod.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/compare-electricity-and-gas-plans/upload-your-electricity-bill',
+    qt2ReportingURL:'https://preprod.nonprod.digital.energyaustralia.com.au/qt2reporting/login',
+    qt2ReportingHomePageURL:'https://preprod.nonprod.digital.energyaustralia.com.au/qt2reporting/app/reporting',
     screenshot:'N'
   },
   testData: {
