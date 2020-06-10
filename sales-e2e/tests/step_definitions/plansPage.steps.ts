@@ -134,9 +134,11 @@ When(/^user provides below details for account verification on verify account mo
 });
 Then(/^Relevant error message is presented for customers marked with safety flag on verify account modal$/, async function (t) {
   await verifyAccountMethod.validateErrorMessageForBlockerAccounts(t);
+  await testFunction.takeScreenshot(t,'verify_account_modal');
 });
 Then(/^user can able to proceed further through verify account$/, async function (t) {
   await verifyAccountMethod.verifySuccessfulAccountVerification(t)
+  await testFunction.takeScreenshot(t,'verify_account_modal');
 });
 When(/^user navigates back to verify identity section$/, async function (t) {
   await verifyAccountMethod.navigateBackToVerifyIdentity(t);
