@@ -1,0 +1,82 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2005218037
+    sourceCode: Total_14%GD
+    actualQuoteDate: 2020-05-21
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0387177008
+    
+    emailId: TVQozXLQeL@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: LTDPARTNERSHIP
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 33628497252
+    
+    anzsic: FINANCE
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0387177008
+    
+    businessEmailId: TVQozXLQeL@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 90
+    streetName: Coach
+    streetType: R
+    suburb: MORAYFIELD
+    state: QLD
+    country: AUS
+    postCode: 4506
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-05-25
+    offerType: ENE
+    plan: TOPB-EQ
+    priceTag: EQEXA_NB1907
+    serviceOrderDate: 2020-05-25
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: QB11474971
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: RNNR
+    reEnergisationJSCCharge: 0.0
+  
+

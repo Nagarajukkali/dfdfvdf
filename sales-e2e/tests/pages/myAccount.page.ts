@@ -23,6 +23,7 @@ const eaMyAccount={
     oneUXSpinner: Selector("[class*='spinner']").with({visibilityCheck: true}),
     eaSpinner:Selector(".ea-spinner.ng-star-inserted"),
     btnUpSellComparePlan:Selector(".up-sell div.cta>button"),
+    moveHeader:Selector("[src*='accounts-movers-add']>h1"),
   },
 };
 

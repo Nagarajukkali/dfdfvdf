@@ -58,7 +58,8 @@ When(/^user clicks on move home link for '(.*)'$/, async function (t, [fuelType]
   } else if(fuelType === FUEL_TYPE_OPTIONS.GAS.value) {
     await testFunction.click(t, eaMyAccount.elements.gasMoveHome);
   }
-  await testFunction.waitForElementToBeAppeared(t,eaMyAccount.elements.serviceAddress);
+  await testFunction.isElementDisplayed(t,eaMyAccount.elements.moveHeader);
+  await t.wait(10000);
   await testFunction.takeScreenshot(t,"my_account_move_home");
 });
 When(/^user enters service address as '(.*)'$/, async function (t, [address]) {

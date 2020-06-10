@@ -177,7 +177,7 @@ export class checkoutDetailsMethod{
 
   public static async clickOnReviewYourOrderBtn(t){
     await testFunction.waitForLoadingIconToClose();
-    await t.wait(5000);
+    await t.wait(7000);
     await testFunction.click(t,eaCheckoutDetailsPage.elements.reviewYourOrderBtn);
     await testFunction.isElementVisible(t,eaCheckoutReviewPage.elements.reviewYourOfferTxt);
     console.log("Navigated to review page");
@@ -203,12 +203,14 @@ export class checkoutDetailsMethod{
       if(businessType===BusinessType.ABN){
         let ABN=testFunction.getRandomNumber(99999999999);
         ABN = ABN.padEnd(11, "0");
+        await t.wait(2000);
         await testFunction.click(t,eaCheckoutDetailsPage.elements.ABN);
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.number_ABNACN,ABN);
       }
       else if(businessType===BusinessType.ACN){
         let ACN=testFunction.getRandomNumber(999999999);
         ACN = ACN.padEnd(9, "0");
+        await t.wait(2000);
         await testFunction.click(t,eaCheckoutDetailsPage.elements.ACN);
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.number_ABNACN,ACN);
       }else {
@@ -218,9 +220,9 @@ export class checkoutDetailsMethod{
       await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.company,businessName);
       if((await testFunction.getElementText(t,eaCheckoutDetailsPage.elements.businessType)).includes('Please select')){
         await testFunction.click(t,eaCheckoutDetailsPage.elements.businessType);
-        await t.wait(2000);
+        await t.wait(3000);
         await testFunction.click(t,eaCheckoutDetailsPage.elements.businessTypeOption);
-        await t.wait(2000);
+        await t.wait(3000);
       }
       if((await testFunction.getElementText(t,eaCheckoutDetailsPage.elements.anzsicCode)).includes('Please select')){
         await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCode);

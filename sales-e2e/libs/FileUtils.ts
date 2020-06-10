@@ -40,7 +40,7 @@ export class FileUtils {
   public static async getJSONfile(campaignName){
     campaignName = campaignName.toLowerCase();
     let JSONObj;
-    const resiFilePath='resources/Campaign_' + campaignName + '.json';
+    const resiFilePath='resources/campaignData/' + campaignName + '.json';
     const doc = fs.readFileSync(resiFilePath,'utf8');
     JSONObj = JSON.parse(doc);
     return JSONObj;

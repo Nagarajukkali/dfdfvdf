@@ -363,8 +363,7 @@ export class checkoutReviewMethod {
     }while (!((await testFunction.getElementAttribute(t, webElement, "class")).includes("ea-state-checked")));
   }
 
-  public static async selectLSEquipment(t, equipmentName, fuelType) {
-    if(await testFunction.isElectricity(fuelType)) {
+  public static async selectElecLSEquipment(t, equipmentName, fuelType) {
       switch (equipmentName) {
         case LSDevices.ELE_LSCNSPE:
           await this.selectLSDevice(t, eaCheckoutReviewPage.elements.cbEleDevice_LSCNSPE);
@@ -391,8 +390,9 @@ export class checkoutReviewMethod {
         default:
           console.error("Invalid Electricity Equipment.");
       }
-    }
-    if(await testFunction.isGas(fuelType)) {
+  }
+
+  public static async selectGasLSEquipment(t, equipmentName, fuelType) {
       switch (equipmentName) {
         case LSDevices.GAS_GLSMRHAC:
           await this.selectLSDevice(t, eaCheckoutReviewPage.elements.cbGasDevice_GLSMRHAC);
@@ -407,7 +407,6 @@ export class checkoutReviewMethod {
         default:
           console.error("Invalid Gas Equipment.");
       }
-    }
   }
 
   public static async validateAbsenceOfFuelAccordion(t, fuelType) {

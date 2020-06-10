@@ -1,0 +1,77 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2005218039
+    sourceCode: Total_20%GD
+    actualQuoteDate: 2020-05-21
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0370812546
+    
+    emailId: xZPZXutmTa@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: LTDPARTNERSHIP
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 13026821532
+    
+    anzsic: FINANCE
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0370812546
+    
+    businessEmailId: xZPZXutmTa@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 25
+    streetName: Oberon
+    streetType: CL
+    suburb: HARRISON
+    state: ACT
+    country: AUS
+    postCode: 2914
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2020-05-25
+    offerType: ENE
+    plan: TOPB-GA
+    priceTag: GACTA_NB2001
+    serviceOrderDate: 2020-05-25
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5265774561
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+
