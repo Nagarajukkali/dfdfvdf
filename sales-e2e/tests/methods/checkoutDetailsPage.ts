@@ -177,7 +177,7 @@ export class checkoutDetailsMethod{
 
   public static async clickOnReviewYourOrderBtn(t){
     await testFunction.waitForLoadingIconToClose();
-    await t.wait(5000);
+    await t.wait(7000);
     await testFunction.click(t,eaCheckoutDetailsPage.elements.reviewYourOrderBtn);
     await testFunction.isElementVisible(t,eaCheckoutReviewPage.elements.reviewYourOfferTxt);
     console.log("Navigated to review page");
