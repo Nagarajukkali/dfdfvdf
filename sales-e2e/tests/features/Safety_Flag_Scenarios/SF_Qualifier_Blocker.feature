@@ -1,8 +1,9 @@
-@safetyflag
+
 Feature: This feature is to test the behaviour of existing customer accounts which are marked for Safety Flag through qualifier
 
 # Following scenarios are considering both Elec and Gas having same Main Person
   #1
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for dual fuel resi account when SF 'Y' on main person through campaign
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" and clicks on show me plan link
@@ -23,7 +24,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
     |Resi_Safety_Flag_Qualifier_Main_Y_Campaign|offer|
 
 #2
-
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for dual fuel bsme account when SF 'Y' on main person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
@@ -65,6 +66,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |folderName                                  |billName|
       |Resi_Safety_Flag_Qualifier_Main_P_billUpload|Bill.pdf|
   #4
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for dual fuel bsme account when SF 'P' on main person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
@@ -86,6 +88,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |Bus_Safety_Flag_Qualifier_Main_P|Total Business|
 
     #5
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for dual fuel resi account when SF 'Y' on financial responsible person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -107,6 +110,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |Resi_Safety_Flag_Qualifier_FR_Y|Total Plan|
 
     #6
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for dual fuel bsme account when SF 'P' on financial responsible person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
@@ -128,6 +132,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |Bus_Safety_Flag_Qualifier_FR_P|Total Business|
 
      #7
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for dual fuel resi account when SF 'P' on customer contact person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -149,6 +154,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |Resi_Safety_Flag_Qualifier_CC_P|Total Plan|
 
     #8
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for dual fuel bsme account when SF 'Y' on customer contact person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
@@ -170,6 +176,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |Bus_Safety_Flag_Qualifier_CC_Y|Total Business|
 
     #9
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for dual fuel resi account when SF 'Y' on executor
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -191,6 +198,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |Resi_Safety_Flag_Qualifier_exec_Y|Total Plan|
 
     #10
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for dual fuel bsme account when SF 'P' on trustee
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
@@ -212,6 +220,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |Bus_Safety_Flag_Qualifier_trustee_P|Total Business|
 
      #11
+  @safetyflag
   Scenario Outline: Verify the non blocker scenario for dual fuel resi account when SF 'U' on main person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -233,6 +242,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |Resi_Safety_Flag_Qualifier_Main_U|Total Plan|
 
     #12
+  @safetyflag
   Scenario Outline: Verify the non blocker scenario for dual fuel bsme account when SF 'U' on main person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
@@ -255,7 +265,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
   #Following scenarios are considering both Elec and Gas having different main person
   #1
-
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for dual fuel resi account when SF 'Y' on gas main person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -277,6 +287,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |Resi_Safety_Flag_Qualifier_Main_Gas_Y|Total Plan|
 
     #2
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for dual fuel bsme account when SF 'P' on elec customer contact person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
@@ -298,6 +309,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |Bus_Safety_Flag_Qualifier_CC_Elec_P|Total Business|
 
     #3
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for dual fuel resi account when SF 'P' on gas partner
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -319,6 +331,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |Resi_Safety_Flag_Qualifier_Partner_Gas_P|Total Plan|
 
     #4
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for dual fuel resi account when SF 'U' on any person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -341,7 +354,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     #Following scenarios for single fuel accounts
     #1
-
+#Blocked
   Scenario Outline: Verify the blocker scenario for single fuel resi account when SF 'Y' on elec main person through move house
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     When user has navigated to move house page
@@ -356,6 +369,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |Resi_Safety_Flag_Qualifier_Single_Main_Ele_Y_MoveHouse|5 Wilkies Street, BULLI NSW 2516|
 
     #2
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for single fuel bsme account when SF 'P' on elec associate person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
@@ -372,6 +386,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |Bus_Safety_Flag_Qualifier_Single_Associate_Ele_P|Basic Business|
 
     #3
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for single fuel resi account when SF 'P' on gas spouse
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -388,6 +403,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |Resi_Safety_Flag_Qualifier_Single_Spouse_Gas_P|Total Plan|
 
      #4
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for single fuel bsme account when SF 'Y' on gas main person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
@@ -404,6 +420,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |Bus_Safety_Flag_Qualifier_Single_Main_Gas_Y|Total Business|
 
     #5
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for single fuel resi account when SF 'U' on elec any person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -420,6 +437,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |Resi_Safety_Flag_Qualifier_Single_AnyP_Ele_U|Total Plan|
 
     #6
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for single fuel bsme account when SF 'U' on gas any person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
@@ -435,8 +453,9 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |folderName                                 |planName|
       |Bus_Safety_Flag_Qualifier_Single_AnyP_Gas_U|Total Business|
 
-    #Following scenarios for accounts having different levle of access on different level of persons
+    #Following scenarios for accounts having different level of access on different level of persons
   #1
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for dual fuel resi account when SF 'U', 'P' and 'Y' on main person, customer contact person and financial responsible person respectively
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -458,6 +477,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
       |Resi_Safety_Flag_Qualifier_At_Differnt_Level|Total Plan|
 
   #2
+  @safetyflag
   Scenario Outline: Verify the blocker scenario for dual fuel bsme account when SF 'U', 'P' and 'Y' on financial responsible person, main person and customer contact person respectively
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
