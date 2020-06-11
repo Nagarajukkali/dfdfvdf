@@ -230,6 +230,10 @@ export class verifyAccountMethod {
             await this.selectIdType(t, EaHomePage.elements.idTypeMedicareVerifyAccount);
             await this.provideIdValue(t, idValue,EaHomePage.elements.idTypeValueVerifyAccount);
             break;
+          case IdType.PASSPORT:
+            await this.selectIdType(t, EaHomePage.elements.idTypePassportVerifyAccount);
+            await this.provideIdValue(t, idValue,EaHomePage.elements.idTypeValueVerifyAccount);
+            break;
           }
     }
 

@@ -30,6 +30,7 @@ const eaHomePage={
     idTypeValueVerifyAccount: Selector('#identification-value'),
     idTypePinVerifyAccount: Selector('#edit-identification-selector-pin'),
     idTypeMedicareVerifyAccount: Selector('#edit-identification-selector-medicare'),
+    idTypePassportVerifyAccount: Selector('#edit-identification-selector-passport'),
     usageData_ele: Selector('#hs-electricity-usage-description:first-of-type+div'),
     usageData_gas: Selector('#hs-gas-usage-description:first-of-type+div'),
     getCostEstimatesChangeButton: Selector('#modal-heading-wrapper-refineModal~div.ea-modal__footer>.ea-modal__primary-action'),

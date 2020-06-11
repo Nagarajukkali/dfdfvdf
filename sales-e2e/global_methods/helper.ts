@@ -43,7 +43,8 @@ const screenshot=config.screenshot
     DOB='dob',
     DL='dl',
     PIN='pin',
-    MEDICARE='medicare'
+    MEDICARE='medicare',
+    PASSPORT='passport'
   }
 
   export enum LSDevices {

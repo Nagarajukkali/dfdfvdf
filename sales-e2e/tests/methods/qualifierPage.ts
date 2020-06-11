@@ -69,15 +69,19 @@ export class qualifierMethod{
           break;
         case IdType.DL:
           await this.selectIdTypeQualifier(t, 'Drivers licence');
-          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
+          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeValue);
           break;
         case IdType.PIN:
           await this.selectIdTypeQualifier(t, 'Pin');
-          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
+          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeValue);
           break;
         case IdType.MEDICARE:
           await this.selectIdTypeQualifier(t, 'Medicare');
-          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
+          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeValue);
+          break;
+        case IdType.PASSPORT:
+          await this.selectIdTypeQualifier(t, 'Passport');
+          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeValue);
           break;
         default:
           console.log('Invalid id type');

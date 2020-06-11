@@ -18,7 +18,7 @@ const eaQualifierPage={
     idTypeDOBMonthValue: Selector('#dob-month'),
     idTypeDOBYearValue: Selector('#dob-year'),
     idTypeDl: Selector('#idtype sui-option:nth-child(2)'),
-    idTypeDlValue: Selector('#idno'),
+    idTypeValue: Selector('#idno'),
     idTypePin: Selector('#idtype sui-option:nth-child(3)'),
     verifyIdentitySubmit:Selector('#verifyingID'),
     nonMoving: Selector('#moveHouse1'),
