@@ -144,14 +144,6 @@ export class plansMethod{
     }
   }
 
-  public static  async verifySuccessfulAccountVerification(t,journeyType){
-    if(journeyType==='verify_account'){
-      await testFunction.isElementDisplayed(t,EaHomePage.elements.getCostEstimatesChangeButton);
-    }
-    if(journeyType==='qualifier'){
-      //need to add
-    }
-  }
 }
 
 export class selectionOptionModalWindowMethod {
