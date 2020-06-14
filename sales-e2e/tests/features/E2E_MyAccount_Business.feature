@@ -12,9 +12,6 @@ Feature: This feature is to test the My account scenarios for business customers
       |elePlan         |gasPlan        |
       |Total Business  |Basic Business |
     And user provides business details for My Account journey
-    And user opts for AAH and DD
-      |optAAHOption|optDDOption|directDebitType|
-      |No          |Yes        |CC             |
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption  |fuelType |EleclifeSupportDevices  |GaslifeSupportDevices|

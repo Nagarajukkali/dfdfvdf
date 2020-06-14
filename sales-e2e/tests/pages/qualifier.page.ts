@@ -11,11 +11,14 @@ const eaQualifierPage={
     abnAcnField:Selector('#abnacn'),
     accountDetailValidate:Selector('#signInResi1 .wg-valid-success'),
     verifyAccountSubmit:Selector('#verifyAccountBtn'),
-    idTypeDropDown: Selector('#idtype div.sui-select'),
+    idTypeSelectedOption:Selector("#idtype div.sui-select"),
+    idTypeDropDown: Selector('div.sui-dropdown sui-option'),
     idTypeDOB: Selector('#idtype sui-option:nth-child(1)'),
     idTypeDOBValue: Selector('#dob-day'),
+    idTypeDOBMonthValue: Selector('#dob-month'),
+    idTypeDOBYearValue: Selector('#dob-year'),
     idTypeDl: Selector('#idtype sui-option:nth-child(2)'),
-    idTypeDlValue: Selector('#idno'),
+    idTypeValue: Selector('#idno'),
     idTypePin: Selector('#idtype sui-option:nth-child(3)'),
     verifyIdentitySubmit:Selector('#verifyingID'),
     nonMoving: Selector('#moveHouse1'),
@@ -37,6 +40,9 @@ const eaQualifierPage={
     moveElecQLDQuestion:Selector(".move-elec-on__button"),
     btnQualifierClose:Selector("#btn-icon-close"),
     planSelectionPopup:Selector('#modal-heading-wrapper-CHANGE_PLAN_SELECTION_MODAL~div button.ea-modal__secondary-action-link'),
+    safetyFlagMsgOnQualifier:Selector("#signIn div.wg-alert"),
+    btnBackOnQualifier:Selector("#btn-icon-chevronLeft"),
+
   },
 };
 

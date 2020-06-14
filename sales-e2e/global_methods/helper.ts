@@ -42,7 +42,9 @@ const screenshot=config.screenshot
   export enum IdType {
     DOB='dob',
     DL='dl',
-    PIN='pin'
+    PIN='pin',
+    MEDICARE='medicare',
+    PASSPORT='passport'
   }
 
   export enum LSDevices {
@@ -131,6 +133,17 @@ export class testFunction {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  public static async clearTextField(t,element){
+    await this.isElementDisplayed(t,element);
+    await t.click(element).pressKey('ctrl+a delete');
+  }
+
+  public static async isElementExists(t,element){
+    let count=await this.sizeOfElement(t,element);
+    if(count>0)
+      return true;
   }
 
   public static async enterText(t, element, value) {
@@ -257,7 +270,7 @@ export class testFunction {
 
   public static async waitForElementToBeDisappeared(t,element){
     if(await this.sizeOfElement(t,element)>0){
-      await t.expect(element.exists).notOk({ timeout: 30000 });
+      await t.expect(element.exists).notOk({ timeout: 60000 });
     }
   }
 

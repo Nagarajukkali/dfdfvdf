@@ -1,6 +1,6 @@
 import {cartsMethod} from './cartsPage';
 const eaQualifierPage=require('../pages/qualifier.page');
-import {BusinessType, CustomerStatus, Moving, Property, Solar, testFunction} from '../../global_methods/helper';
+import {BusinessType, CustomerStatus, IdType, Moving, Property, Solar, testFunction} from '../../global_methods/helper';
 
 export class qualifierMethod{
 
@@ -50,24 +50,38 @@ export class qualifierMethod{
       console.log("account is verified")
     }
     public static async selectIdTypeQualifier(t, itemToClick) {
+    if(await testFunction.isElementExists(t,eaQualifierPage.elements.idTypeDropDown)){
       let val =await testFunction.sizeOfElement(t, eaQualifierPage.elements.idTypeDropDown);
-      if(val!==1) {
-        await testFunction.click(t, eaQualifierPage.elements.idTypeDropDownVerifyAccount);
-        await testFunction.click(t, itemToClick);
+      if(val>1) {
+        await testFunction.click(t, eaQualifierPage.elements.idTypeSelectedOption);
+        await testFunction.click(t,eaQualifierPage.elements.idTypeDropDown.withText(itemToClick))
+        // await testFunction.click(t, itemToClick);
       }
+    }
     }
     public static async verifyIdentity(t,idType,idValue){
       switch(idType){
-        case 'dob':
+        case IdType.DOB:
+          await testFunction.clearTextField(t,eaQualifierPage.elements.idTypeDOBValue);
+          await testFunction.clearTextField(t,eaQualifierPage.elements.idTypeDOBMonthValue);
+          await testFunction.clearTextField(t,eaQualifierPage.elements.idTypeDOBYearValue);
           await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDOBValue);
           break;
-        case 'dl':
-          await this.selectIdTypeQualifier(t, eaQualifierPage.elements.idTypeDl);
-          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
+        case IdType.DL:
+          await this.selectIdTypeQualifier(t, 'Drivers licence');
+          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeValue);
           break;
-        case 'pin':
-          await this.selectIdTypeQualifier(t, eaQualifierPage.elements.idTypePin);
-          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDlValue);
+        case IdType.PIN:
+          await this.selectIdTypeQualifier(t, 'Pin');
+          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeValue);
+          break;
+        case IdType.MEDICARE:
+          await this.selectIdTypeQualifier(t, 'Medicare');
+          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeValue);
+          break;
+        case IdType.PASSPORT:
+          await this.selectIdTypeQualifier(t, 'Passport');
+          await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeValue);
           break;
         default:
           console.log('Invalid id type');
@@ -143,6 +157,36 @@ export class qualifierMethod{
     else{
       console.error('Solar option is not selected');
     }
+  }
+
+  public static  async validateErrorMessageForBlockerAccounts(t){
+    await testFunction.waitForElementToBeAppeared(t,eaQualifierPage.elements.safetyFlagMsgOnQualifier);
+    let expectedErrorMessage = "We are currently unable to retrieve your information. Please call 133 466 (Monday – Friday, 8am – 8pm AEST)";
+    await testFunction.assertText(t,eaQualifierPage.elements.safetyFlagMsgOnQualifier,expectedErrorMessage);
+  }
+
+  public static  async navigateBackToAccountVerification(t){
+    await testFunction.click(t,eaQualifierPage.elements.btnBackOnQualifier);
+    await testFunction.clearTextField(t,eaQualifierPage.elements.accountNumber);
+    if(await testFunction.isElementVisible(t,eaQualifierPage.elements.accountDetail))
+      await testFunction.clearTextField(t,eaQualifierPage.elements.accountDetail);
+    if(await testFunction.isElementVisible(t,eaQualifierPage.elements.abnAcnField))
+      await testFunction.clearTextField(t,eaQualifierPage.elements.abnAcnField);
+  }
+
+  public static  async navigateBackFromMovingQuestion(t){
+    await testFunction.click(t,eaQualifierPage.elements.btnBackOnQualifier);
+    await testFunction.click(t,eaQualifierPage.elements.existingCustomerBtn);
+    await testFunction.clearTextField(t,eaQualifierPage.elements.accountNumber);
+    if(await testFunction.isElementVisible(t,eaQualifierPage.elements.abnAcnField))
+      await testFunction.clearTextField(t,eaQualifierPage.elements.abnAcnField);
+    if(await testFunction.isElementVisible(t,eaQualifierPage.elements.accountDetail))
+      await testFunction.clearTextField(t,eaQualifierPage.elements.accountDetail);
+  }
+
+  public static async verifySuccessfulAccountVerification(t) {
+    await testFunction.waitForElementToBeAppeared(t,eaQualifierPage.elements.nonMoving);
+    await testFunction.isElementDisplayed(t,eaQualifierPage.elements.nonMoving);
   }
 
 

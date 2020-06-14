@@ -4,6 +4,7 @@ import {FileUtils} from '../../libs/FileUtils'
 import {When, Then } from 'cucumber';
 import {Given} from 'cucumber'
 import {testFunction} from '../../global_methods/helper';
+import {CustomerType} from '@ea/ea-commons-models';
 
 When(/^user clicks on the verify modal window on '(.*)' page$/, async function(t, [customerType]) {
       await plansMethod.clickPlansPageModal(t,customerType);
@@ -109,4 +110,39 @@ Then(/^user validates "([^"]*)" discount to be "([^"]*)" percent$/, async functi
 });
 When(/^user provides "([^"]*)" for postcode and proceed to view the plans$/, async function (t, [postcode]) {
   await campaignMethod.enterPostcodeOnCampaign(t, postcode);
+});
+When(/^user provides below details for account verification on verify account modal window$/, async function (t,[],dataTable) {
+  let data = dataTable.hashes();
+  let modalWindowOption=data[0].modal_option
+  if(modalWindowOption.length!==0){
+    await selectionOptionModalWindowMethod.selectOptionsModalWindow(t, data[0].modal_option);
+    await testFunction.takeScreenshot(t,'verify_account_modal');
+  }
+  if(data[0].elecAccountNumber)
+    await verifyAccountMethod.provideAccountDetails(t,"ELE", data[0].elecAccountNumber);
+  if(data[0].gasAccountNumber)
+    await verifyAccountMethod.provideAccountDetails(t, "GAS", data[0].gasAccountNumber);
+  if(data[0].customer_type===CustomerType.RESIDENTIAL)
+    await verifyAccountMethod.provideAccountInformation(t, data[0].postcode, data[0].customer_type);
+  if(data[0].customer_type===CustomerType.BUSINESS)
+    await verifyAccountMethod.provideAccountInformation(t, data[0].ABNOrACN, data[0].customer_type);
+  await testFunction.takeScreenshot(t,'verify_account_modal');
+  await verifyAccountMethod.verifyAccountDetails(t);
+  await verifyAccountMethod.provideIdentityDetails(t, data[0].idType, data[0].idNumber);
+  await testFunction.takeScreenshot(t,'verify_account_modal');
+  await verifyAccountMethod.verifyAccountDetails(t);
+});
+Then(/^Relevant error message is presented for customers marked with safety flag on verify account modal$/, async function (t) {
+  await verifyAccountMethod.validateErrorMessageForBlockerAccounts(t);
+  await testFunction.takeScreenshot(t,'verify_account_modal');
+});
+Then(/^user can able to proceed further through verify account$/, async function (t) {
+  await verifyAccountMethod.verifySuccessfulAccountVerification(t)
+  await testFunction.takeScreenshot(t,'verify_account_modal');
+});
+When(/^user navigates back to verify identity section$/, async function (t) {
+  await verifyAccountMethod.navigateBackToVerifyIdentity(t);
+});
+When(/^user navigates back to verify account section and clears all the previously provided details$/, async function (t) {
+  await verifyAccountMethod.navigateBackToVerifyAccount(t);
 });

@@ -38,6 +38,8 @@ export class plansMethod{
         }
       } else
         console.log("Fuel selector is not available for QLD.")
+
+      await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
     }
 
     public static async selectPlan(t: any, planName: any) {
@@ -141,6 +143,7 @@ export class plansMethod{
       await testFunction.assertText(t, EaHomePage.elements.gasDiscount, discount);
     }
   }
+
 }
 
 export class selectionOptionModalWindowMethod {
@@ -209,12 +212,20 @@ export class verifyAccountMethod {
                break;
             case IdType.DL:
                 await this.selectIdType(t, EaHomePage.elements.idTypeDlVerifyAccount);
-                await this.provideIdValue(t, idValue,EaHomePage.elements.idTypeDlValueVerifyAccount);
+                await this.provideIdValue(t, idValue,EaHomePage.elements.idTypeValueVerifyAccount);
                 break;
             case IdType.PIN:
                 await this.selectIdType(t, EaHomePage.elements.idTypePinVerifyAccount);
-                await this.provideIdValue(t, idValue,EaHomePage.elements.idTypeDlValueVerifyAccount);
+                await this.provideIdValue(t, idValue,EaHomePage.elements.idTypeValueVerifyAccount);
                 break;
+          case IdType.MEDICARE:
+            await this.selectIdType(t, EaHomePage.elements.idTypeMedicareVerifyAccount);
+            await this.provideIdValue(t, idValue,EaHomePage.elements.idTypeValueVerifyAccount);
+            break;
+          case IdType.PASSPORT:
+            await this.selectIdType(t, EaHomePage.elements.idTypePassportVerifyAccount);
+            await this.provideIdValue(t, idValue,EaHomePage.elements.idTypeValueVerifyAccount);
+            break;
           }
     }
 
@@ -250,6 +261,40 @@ export class verifyAccountMethod {
     public static async provideIdValue(t,idValue, inputField) {
         await testFunction.clearAndEnterText(t,inputField, idValue);
     }
+
+  public static  async validateErrorMessageForBlockerAccounts(t){
+    let expectedErrorMessage = "We are currently unable to retrieve your information. Please call 133 466 (Monday – Friday, 8am – 8pm AEST)";
+    await testFunction.assertText(t,EaHomePage.elements.safetyFlagMsgOnVAModal,expectedErrorMessage);
+  }
+
+  public static async verifySuccessfulAccountVerification(t) {
+    await testFunction.isElementDisplayed(t,EaHomePage.elements.getCostEstimatesChangeButton);
+  }
+
+  public static async navigateBackToVerifyIdentity(t){
+      await testFunction.isElementDisplayed(t,EaHomePage.elements.btnBackOnVerifyAccountModal);
+      await testFunction.click(t,EaHomePage.elements.btnBackOnVerifyAccountModal);
+      // if(await testFunction.isElementExists(t,EaHomePage.elements.idTypeDlValueVerifyAccount))
+      //   await testFunction.clearTextField(t,EaHomePage.elements.idTypeDlValueVerifyAccount);
+      // if(await testFunction.isElementExists(t,EaHomePage.elements.idTypeDOBValueVerifyAccount))
+      //   await testFunction.clearTextField(t,EaHomePage.elements.idTypeDOBValueVerifyAccount);
+
+  }
+
+  public static async navigateBackToVerifyAccount(t){
+    await testFunction.isElementDisplayed(t,EaHomePage.elements.btnBackOnVerifyAccountModal);
+    await testFunction.click(t,EaHomePage.elements.btnBackOnVerifyAccountModal);
+    if(await testFunction.isElementExists(t,EaHomePage.elements.elecAccountNo))
+      await testFunction.clearTextField(t,EaHomePage.elements.elecAccountNo);
+    if(await testFunction.isElementExists(t,EaHomePage.elements.gasAccountNo))
+      await testFunction.clearTextField(t,EaHomePage.elements.gasAccountNo);
+    if(await testFunction.isElementExists(t,EaHomePage.elements.postcodeVerifyAccount))
+      await testFunction.clearTextField(t,EaHomePage.elements.postcodeVerifyAccount);
+    if(await testFunction.isElementExists(t,EaHomePage.elements.businessInformation))
+      await testFunction.clearTextField(t,EaHomePage.elements.businessInformation);
+  }
+
+
 }
 
 export class campaignMethod{
@@ -278,4 +323,8 @@ export class campaignMethod{
   public static  async addPlanOnCampaign(t){
     await testFunction.click(t,EaHomePage.elements.selectCampaignPlans);
   }
+
+
+
+
 }
