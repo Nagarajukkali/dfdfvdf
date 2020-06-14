@@ -17,7 +17,6 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
     |folderName             |customer_type |fuelType |
     |Resi_Safety_Flag_Main_Y|RES           |BOTH     |
 #2
-
   Scenario Outline: Verify the blocker scenario for dual fuel bsme account when SF 'Y' on main person
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page

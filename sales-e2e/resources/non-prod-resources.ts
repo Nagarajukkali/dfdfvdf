@@ -1,11 +1,11 @@
 module.exports={
 config: {
     env: 'non-prod',
-    eaHomePageUrl: 'https://chai.nonprod.digital.energyaustralia.com.au?live=disabled',
+    eaHomePageUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au?live=disabled',
     eaNewConnectionPageUrl:'https://preprod.nonprod.digital.energyaustralia.com.au/new-connections-ui/#/connection',
-    eaCampaignUrl: 'https://chai.nonprod.digital.energyaustralia.com.au/',
-    eaMyAccountUrl: 'https://chai.nonprod.digital.energyaustralia.com.au/myaccount/index.html',
-    eaBillUploaderUrl:'https://chai.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/compare-electricity-and-gas-plans/upload-your-electricity-bill',
+    eaCampaignUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au/',
+    eaMyAccountUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au/myaccount/index.html',
+    eaBillUploaderUrl:'https://preprod.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/compare-electricity-and-gas-plans/upload-your-electricity-bill',
     qt2ReportingURL:'https://preprod.nonprod.digital.energyaustralia.com.au/qt2reporting/login',
     qt2ReportingHomePageURL:'https://preprod.nonprod.digital.energyaustralia.com.au/qt2reporting/app/reporting',
     screenshot:'N'
