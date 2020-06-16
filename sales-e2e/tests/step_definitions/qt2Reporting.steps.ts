@@ -7,8 +7,8 @@ import {testFunction} from '../../global_methods/helper';
 import {FileUtils} from '../../libs/FileUtils'
 
 
-When(/^user logs in to qt2 reporting using '(.*)' and '(.*)'$/, async function(t, [username, password]) {
-  await qt2Reporting.loginToqt2Reporting(t,username,password);
+When(/^user logs in to qt2 reporting$/, async function(t) {
+  await qt2Reporting.loginToqt2Reporting(t);
 });
 
 When(/^user search quote on the basis of '(.*)'$/, async function (t,[option]) {
