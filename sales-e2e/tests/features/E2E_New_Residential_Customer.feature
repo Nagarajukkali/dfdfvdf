@@ -39,8 +39,8 @@ Scenario Outline: Submit a quote for new residential moving customer
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
   Examples:
-    |customerStatus|fuelType|planName  |folderName         |state|username|password                                    |
-    |New           |BOTH    |Total Plan|E2E_New_Resi_Moving|NSW  |abhar   |U2FsdGVkX1+ofbMmTfeufCoLeZbhDgsePj0GzAmmyv0=|
+    |customerStatus|fuelType|planName  |folderName         |state|
+    |New           |BOTH    |Total Plan|E2E_New_Resi_Moving|NSW  |
 
 
 Scenario Outline: Submit a quote for new residential non moving customer
@@ -80,6 +80,6 @@ Scenario Outline: Submit a quote for new residential non moving customer
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-GV |5330733757|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
 
   Examples:
-    |customerStatus|fuelType|planName|folderName                |username|password                                    |
-    |New           |BOTH    |Total Plan  |E2E_New_Resi_NonMoving|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+    |customerStatus|fuelType|planName|folderName                |
+    |New           |BOTH    |Total Plan  |E2E_New_Resi_NonMoving|
 

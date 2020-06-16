@@ -38,8 +38,8 @@ Feature: This feature is to test the verify account scenarios for existing resid
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |SWSRH-GV|5310602455|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName       |username|password                                    |
-      |E2E_VerifyAccount_Residential_NonMoving  |RES           |BOTH     |Total Plan Plus|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |folderName                               |customer_type |fuelType |planName       |
+      |E2E_VerifyAccount_Residential_NonMoving  |RES           |BOTH     |Total Plan Plus|
 
   Scenario Outline: Submit a quote for existing moving residential customer through verify account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -80,5 +80,5 @@ Feature: This feature is to test the verify account scenarios for existing resid
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-GV |5321574765|N                             |N                             |Y                      |GLSMRHW                 |EMAIL        |
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName    |optDisconnection |state  |username|password                                    |
-      |E2E_VerifyAccount_Residential_Moving     |RES           |BOTH     |No Frills   |No               |VIC    |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |folderName                               |customer_type |fuelType |planName    |optDisconnection |state  |
+      |E2E_VerifyAccount_Residential_Moving     |RES           |BOTH     |No Frills   |No               |VIC    |

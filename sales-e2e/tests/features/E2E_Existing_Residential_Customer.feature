@@ -43,8 +43,8 @@ Scenario Outline: Submit a quote for existing residential moving customer
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RSOT-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
   Examples:
-  |customerStatus|fuelType|planName  |folderName              |state|optDisconnection|username|password                                    |
-  |Existing      |BOTH    |Basic Home|E2E_Existing_Resi_Moving|NSW  |No              |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+  |customerStatus|fuelType|planName  |folderName              |state|optDisconnection|
+  |Existing      |BOTH    |Basic Home|E2E_Existing_Resi_Moving|NSW  |No              |
 
 Scenario Outline: Submit a quote for existing residential non moving customer with LS, select dual fuel and verify gas account
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -83,5 +83,5 @@ Scenario Outline: Submit a quote for existing residential non moving customer wi
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |RCPP-GN |5240924834|N                             |N                             |Y                      |GLSMRHW                 |EMAIL        |
 
   Examples:
-    |customerStatus|planName |folderName                 |fuelType|accountType|username|password                                    |
-    |Existing      |No Frills|E2E_Existing_Resi_NonMoving|BOTH    |GAS        |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+    |customerStatus|planName |folderName                 |fuelType|accountType|
+    |Existing      |No Frills|E2E_Existing_Resi_NonMoving|BOTH    |GAS        |

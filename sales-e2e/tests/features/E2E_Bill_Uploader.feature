@@ -35,6 +35,6 @@ Feature: This feature is to test the Bill Uploader scenarios
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-EV |6305515608|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |billName|customerStatus|fuelType|folderName              |username|password                                    |
-      |Bill.pdf|New           |ELE     |E2E_New_Resi_Bill_Upload|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |billName|customerStatus|fuelType|folderName              |
+      |Bill.pdf|New           |ELE     |E2E_New_Resi_Bill_Upload|
 
