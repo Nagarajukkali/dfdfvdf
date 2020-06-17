@@ -41,8 +41,8 @@ Feature:E2E scenario for offer campaign
       |GAS      |Y                 |Y                       |N                    |Y                                    |N                                |
 
     Examples:
-      |customerStatus |campaign  |state  |eleDiscount |gasDiscount  |username |password                                    |
-      |New            |Offer     |NSW    |16          |16           |abhar    |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus |campaign  |state  |eleDiscount |gasDiscount  |
+      |New            |Offer     |NSW    |16          |16           |
 
   Scenario Outline: Validate complete data for offer campaign for ACT
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_Offer_ACT' to save evidences
@@ -83,8 +83,8 @@ Feature:E2E scenario for offer campaign
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |
 
     Examples:
-      |customerStatus |campaign  |state  |eleDiscount |gasDiscount  |username |password                                    |
-      |New            |Offer     |ACT    |9           |9            |abhar    |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus |campaign  |state  |eleDiscount |gasDiscount  |
+      |New            |Offer     |ACT    |9           |9            |
 
   Scenario Outline: Validate complete data for offer campaign for VIC
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_Offer_VIC' to save evidences
@@ -125,8 +125,8 @@ Feature:E2E scenario for offer campaign
       |GAS      |Y                 |N                       |N                    |Y                                    |N                                |
 
     Examples:
-      |customerStatus |campaign  |state  |eleDiscount |gasDiscount  |username |password                                    |
-      |New            |Offer     |VIC    |9           |27           |abhar    |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus |campaign  |state  |eleDiscount |gasDiscount  |
+      |New            |Offer     |VIC    |9           |27           |
 
   Scenario Outline: Validate complete data for offer campaign for QLD
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_Offer_QLD' to save evidences
@@ -158,8 +158,8 @@ Feature:E2E scenario for offer campaign
       |ELE      |N                 |N                       |N                    |N                                    |Y                                |
 
     Examples:
-      |customerStatus |campaign  |state  |eleDiscount |username |password                                    |
-      |New            |Offer     |QLD    |14          |abhar    |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus |campaign  |state  |eleDiscount |
+      |New            |Offer     |QLD    |14          |
 
   Scenario Outline: Validate complete data for offer campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_Offer_SA' to save evidences
@@ -201,5 +201,5 @@ Feature:E2E scenario for offer campaign
       |GAS      |N                 |Y                       |Y                    |Y                                    |N                                |
 
     Examples:
-      |customerStatus |campaign  |state  |eleDiscount |gasDiscount  |username |password                                    |
-      |New            |Offer     |SA     |6           |15           |abhar    |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus |campaign  |state  |eleDiscount |gasDiscount  |
+      |New            |Offer     |SA     |6           |15           |

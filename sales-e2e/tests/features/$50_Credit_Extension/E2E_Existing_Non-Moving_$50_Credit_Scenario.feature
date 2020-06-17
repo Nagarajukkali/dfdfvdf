@@ -38,8 +38,8 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |RCPP-GV |5310611153|N                             |N                             |N                      |                        |EMAIL        |
 
   Examples:
-    |planName |folderName                            |fuelType|username|password                                    |
-    |No Frills|E2E_Existing_Resi_NonMoving_$50_VIC_EA|BOTH    |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+    |planName |folderName                            |fuelType|
+    |No Frills|E2E_Existing_Resi_NonMoving_$50_VIC_EA|BOTH    |
 #testExNonMNSWEA
   Scenario Outline: Submit a quote for existing residential non moving customer for NSW with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -77,8 +77,8 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |TOPH-GN |5240811020|N                             |N                             |Y                      |GLSMRHW                 |EMAIL        |
 
     Examples:
-      |customerStatus|planName  |folderName                            |fuelType  |username|password                                    |
-      |Existing      |Total Plan|E2E_Existing_Resi_NonMoving_$50_NSW_EA|BOTH      |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|planName  |folderName                            |fuelType  |
+      |Existing      |Total Plan|E2E_Existing_Resi_NonMoving_$50_NSW_EA|BOTH      |
 
 #testExNonMQLDEA
   Scenario Outline: Submit a quote for existing residential non moving customer for QLD with FRMP/FRO as EA
@@ -114,8 +114,8 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |GRT-EQ  |QB09795804|                             |                              |N                      |                  |EMAIL        |
 
     Examples:
-    |planName   |folderName                             |fuelType|username|password                                    |
-    |Basic Home QLD|E2E_Existing_Resi_NonMoving_$50_QLD_EA|ELE     |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+    |planName   |folderName                             |fuelType|
+    |Basic Home QLD|E2E_Existing_Resi_NonMoving_$50_QLD_EA|ELE     |
 
     #testExNonMSAEA
   Scenario Outline: Submit a quote for existing residential non moving customer for SA with FRMP/FRO as EA
@@ -155,7 +155,7 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
 
     Examples:
       |customerStatus|planName |folderName                           |fuelType|username|password                                   |
-      |Existing      |No Frills|E2E_Existing_Resi_NonMoving_$50_SA_EA|BOTH    |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |Existing      |No Frills|E2E_Existing_Resi_NonMoving_$50_SA_EA|BOTH    |
 
     #testExNonMACTEA
   Scenario Outline: Submit a quote for existing residential non moving customer for ACT with FRMP as NON_EA and FRO as EA
@@ -195,8 +195,8 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |TOPH-GA |5260069937|                              |                              |N                      |                        |EMAIL        |
 
     Examples:
-      |planName |folderName                             |fuelType|username|password                                    |
-      |Total Plan|E2E_Existing_Resi_NonMoving_$50_ACT_EA|BOTH    |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |planName |folderName                             |fuelType|
+      |Total Plan|E2E_Existing_Resi_NonMoving_$50_ACT_EA|BOTH    |
 
     #testExNonMVICTEA
   Scenario Outline: Submit a quote for existing residential non moving customer for VIC with FRMP/FRO as EA and plan selected as Total Plan Plus
@@ -236,5 +236,5 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |SWSRH-GV|5310602455|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName       |username|password                                    |
-      |E2E_VerifyAccount_Residential_NonMoving  |RES           |BOTH     |Total Plan Plus|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |folderName                               |customer_type |fuelType |planName       |
+      |E2E_VerifyAccount_Residential_NonMoving  |RES           |BOTH     |Total Plan Plus|

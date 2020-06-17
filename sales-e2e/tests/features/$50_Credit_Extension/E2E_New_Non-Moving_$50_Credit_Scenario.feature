@@ -39,8 +39,8 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RSOT-GV |5330396438|N                             |N                             |N                      |                        |EMAIL        |
 
   Examples:
-    |customerStatus|fuelType|planName  |folderName                           |username|password                                    |
-    |New           |BOTH    |Basic Home|E2E_New_Resi_NonMoving_$50_VIC_NON_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+    |customerStatus|fuelType|planName  |folderName                           |
+    |New           |BOTH    |Basic Home|E2E_New_Resi_NonMoving_$50_VIC_NON_EA|
 
     #testNonMNSWNONEA
   Scenario Outline: Submit a quote for new residential non moving customer for NSW with FRMP/FRO as NON_EA
@@ -80,8 +80,8 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RCPP-GN |5240787742|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName |folderName                            |username|password                                    |
-      |New           |BOTH    |No Frills|E2E_New_Resi_NonMoving_$50_NSW_NON_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName |folderName                            |
+      |New           |BOTH    |No Frills|E2E_New_Resi_NonMoving_$50_NSW_NON_EA|
 
     #testNonMQLDNONEA
   Scenario Outline: Submit a quote for new residential non moving customer for QLD with FRMP/FRO as NON_EA
@@ -117,8 +117,8 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-EQ |QB11474971|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName|folderName                               |username|password                                    |
-      |New           |ELE     |Total Plan  |E2E_New_Resi_NonMoving_$50_QLD_NON_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName|folderName                               |
+      |New           |ELE     |Total Plan  |E2E_New_Resi_NonMoving_$50_QLD_NON_EA|
 
     #Negative Scenario
 
@@ -160,8 +160,8 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RSOT-GS |5510730594|                              |                             |N                      |                        |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName|folderName                              |username|password                                    |
-      |New           |BOTH    |Basic Home|E2E_New_Resi_NonMoving_$50_SA_NON_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName|folderName                              |
+      |New           |BOTH    |Basic Home|E2E_New_Resi_NonMoving_$50_SA_NON_EA|
 
     #Negative Scenario
   #testNonMACTNONEA
@@ -202,8 +202,8 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-GA |5265774405|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName  |folderName                           |username|password                                    |
-      |New           |BOTH    |Total Plan|E2E_New_Resi_NonMoving_$50_ACT_NON_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName  |folderName                           |
+      |New           |BOTH    |Total Plan|E2E_New_Resi_NonMoving_$50_ACT_NON_EA|
 
     # New customer non-moving with FRMP/FRO as EA - Negative Scenario
   #Defect @50CreditExtensionNonMoving
@@ -246,8 +246,8 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |TOPH-GV |5330248740|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName|folderName                              |username|password                                    |
-      |New           |BOTH    |Total Plan  |E2E_New_Resi_NonMoving_$50_VIC_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName|folderName                              |
+      |New           |BOTH    |Total Plan  |E2E_New_Resi_NonMoving_$50_VIC_EA|
 
   #defect @50CreditExtensionNonMoving
   #retest passed
@@ -289,8 +289,8 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |RSOT-GN |5240616472|                              |                               |N                     |                        |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName  |folderName                       |username|password                                    |
-      |New           |BOTH    |Basic Home|E2E_New_Resi_NonMoving_$50_NSW_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName  |folderName                       |
+      |New           |BOTH    |Basic Home|E2E_New_Resi_NonMoving_$50_NSW_EA|
 
     #testNonMQLDEA
   Scenario Outline: Submit a quote for new residential non moving customer for QLD with FRMP/FRO as EA
@@ -326,8 +326,8 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |RCPP-EQ |QB10025146|                              |                             |N                       |                        |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName|folderName                           |username|password                                    |
-      |New           |ELE     |No Frills|E2E_New_Resi_NonMoving_$50_QLD_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName|folderName                           |
+      |New           |ELE     |No Frills|E2E_New_Resi_NonMoving_$50_QLD_EA|
 
 #Negative Scenario
     #testNonMSAEA
@@ -368,8 +368,8 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |TOPH-GS |5510166114|N                             |N                             |N                      |GLSMRHAC                |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName|folderName                          |username|password                                    |
-      |New           |BOTH    |Total Plan  |E2E_New_Resi_NonMoving_$50_SA_EA|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName|folderName                          |
+      |New           |BOTH    |Total Plan  |E2E_New_Resi_NonMoving_$50_SA_EA|
 
     # New customer non-moving with FRMP/FRO as UNKNOWN
   #testNonMNSWUNKNOWN
@@ -410,6 +410,6 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-GN |          |N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName|folderName                                |username|password                                    |
-      |New           |BOTH    |Total Plan  |E2E_New_Resi_NonMoving_$50_NSW_UNKNOWN|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName|folderName                                |
+      |New           |BOTH    |Total Plan  |E2E_New_Resi_NonMoving_$50_NSW_UNKNOWN|
 
