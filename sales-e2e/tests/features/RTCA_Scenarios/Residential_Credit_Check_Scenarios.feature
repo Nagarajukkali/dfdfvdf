@@ -28,7 +28,7 @@ Scenario Outline: Verify if a residential customer is displayed with accept with
   When user clicks on identification confirmation button
   Then user lands on checkout complete page
   When user has opened the qt2 Reporting website link in a browser
-  And user logs in to qt2 reporting using '<username>' and '<password>'
+  And user logs in to qt2 reporting
   And user search quote on the basis of 'Email'
   Then submitted quote is displayed
   And user validates all the details for 'ELE' submitted quote
@@ -41,8 +41,8 @@ Scenario Outline: Verify if a residential customer is displayed with accept with
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
   Examples:
-    |customerStatus|fuelType|planName  |folderName                    |state|username|password                                    |
-    |New           |BOTH    |Total Plan|E2E_New_Resi_Moving_AcceptCond|NSW  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+    |customerStatus|fuelType|planName  |folderName                    |state|
+    |New           |BOTH    |Total Plan|E2E_New_Resi_Moving_AcceptCond|NSW  |
 
 
 Scenario Outline: Verify if a residential customer is displayed with application decline when the user is blocked with faulty credit check
@@ -69,7 +69,7 @@ Scenario Outline: Verify if a residential customer is displayed with application
   And user submits the quote
   Then Your application has been declined is displayed
   When user has opened the qt2 Reporting website link in a browser
-  And user logs in to qt2 reporting using '<username>' and '<password>'
+  And user logs in to qt2 reporting
   And user search quote on the basis of 'Email'
   Then submitted quote is displayed
   And user validates all the details for 'ELE' submitted quote
@@ -82,8 +82,8 @@ Scenario Outline: Verify if a residential customer is displayed with application
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-GV |5330733757|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
 
   Examples:
-    |customerStatus|fuelType|planName|folderName                        |username|password                                    |
-    |New           |BOTH    |Total Plan  |E2E_New_Resi_NonMoving_decline|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+    |customerStatus|fuelType|planName|folderName                        |
+    |New           |BOTH    |Total Plan  |E2E_New_Resi_NonMoving_decline|
 
 
   Scenario Outline: verify if a residential customer is displayed with accept message when CDE returns accept
@@ -111,7 +111,7 @@ Scenario Outline: Verify if a residential customer is displayed with application
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -124,8 +124,8 @@ Scenario Outline: Verify if a residential customer is displayed with application
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName  |folderName                 |state|username|password                                    |
-      |New           |BOTH    |Total Plan|E2E_New_Resi_Moving_Decline|NSW  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName  |folderName                 |state|
+      |New           |BOTH    |Total Plan|E2E_New_Resi_Moving_Decline|NSW  |
 
   Scenario Outline: verify quote is submitted when CDE returns error due to connectivity
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -151,7 +151,7 @@ Scenario Outline: Verify if a residential customer is displayed with application
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -164,5 +164,5 @@ Scenario Outline: Verify if a residential customer is displayed with application
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-GV |5330733757|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName|folderName                      |username|password                                    |
-      |New           |BOTH    |Total Plan  |E2E_New_Resi_NonMoving_Error|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName|folderName                      |
+      |New           |BOTH    |Total Plan  |E2E_New_Resi_NonMoving_Error|

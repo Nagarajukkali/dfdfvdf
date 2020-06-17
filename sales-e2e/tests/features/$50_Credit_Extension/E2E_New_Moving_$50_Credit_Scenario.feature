@@ -27,7 +27,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
   And user submits the quote
   Then user lands on checkout complete page
   When user has opened the qt2 Reporting website link in a browser
-  And user logs in to qt2 reporting using '<username>' and '<password>'
+  And user logs in to qt2 reporting
   And user search quote on the basis of 'Email'
   Then submitted quote is displayed
   And user validates all the details for 'ELE' submitted quote
@@ -40,8 +40,8 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GV |5320087624|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
   Examples:
-    |customerStatus|fuelType|planName  |folderName                        |state|username|password                                    |
-    |New           |BOTH    |Total Plan|E2E_New_Resi_Moving_$50_VIC_NON_EA|VIC  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+    |customerStatus|fuelType|planName  |folderName                        |state|
+    |New           |BOTH    |Total Plan|E2E_New_Resi_Moving_$50_VIC_NON_EA|VIC  |
 
   #testMovNSWNONEA
   Scenario Outline: Submit a quote for new residential moving customer for NSW with FRMP/FRO as NON_EA
@@ -69,7 +69,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -82,8 +82,8 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RSOT-GN |5240792558|                              |                              |N                      |                        |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName  |folderName                        |state|username|password                                    |
-      |New           |BOTH    |Basic Home|E2E_New_Resi_Moving_$50_NSW_NON_EA|NSW  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName  |folderName                        |state|
+      |New           |BOTH    |Basic Home|E2E_New_Resi_Moving_$50_NSW_NON_EA|NSW  |
 
   #testMovQLDNONEA
   Scenario Outline: Submit a quote for new residential moving customer for QLD with FRMP/FRO as NON_EA
@@ -111,7 +111,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -120,8 +120,8 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-EQ |QB00092461|N                             |N                             |Y                      |LSCNSPE                 |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName |folderName                        |state|username|password                                    |
-      |New           |ELE     |No Frills|E2E_New_Resi_Moving_$50_QLD_NON_EA|QLD  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName |folderName                        |state|
+      |New           |ELE     |No Frills|E2E_New_Resi_Moving_$50_QLD_NON_EA|QLD  |
 
 #Negative Scenario
   #testMovSANONEA
@@ -150,7 +150,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -163,8 +163,8 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-GS |5510490297|                              |                              |N                      |                        |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName  |folderName                       |state|username|password                                    |
-      |New           |BOTH    |No Frills|E2E_New_Resi_Moving_$50_SA_NON_EA|SA   |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName  |folderName                       |state|
+      |New           |BOTH    |No Frills|E2E_New_Resi_Moving_$50_SA_NON_EA|SA   |
 
 
     # New customer moving with FRMP/FRO as EA
@@ -194,7 +194,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -207,8 +207,8 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RSOT-GV |5310228431|N                             |N                             |N                       |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName  |folderName                    |state|username|password                                    |
-      |New           |BOTH    |Basic Home|E2E_New_Resi_Moving_$50_VIC_EA|VIC  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName  |folderName                    |state|
+      |New           |BOTH    |Basic Home|E2E_New_Resi_Moving_$50_VIC_EA|VIC  |
 
   #testMovNSWEA
   Scenario Outline: Submit a quote for new residential moving customer for NSW with FRMP/FRO as EA
@@ -236,7 +236,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -249,8 +249,8 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-GN |5240007525|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName  |folderName                    |state|username|password                                    |
-      |New           |BOTH    |No Frills|E2E_New_Resi_Moving_$50_NSW_EA|NSW  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName  |folderName                    |state|
+      |New           |BOTH    |No Frills|E2E_New_Resi_Moving_$50_NSW_EA|NSW  |
 
  #testMovQLDEA
   Scenario Outline: Submit a quote for new residential moving customer for QLD with FRMP/FRO as EA
@@ -278,7 +278,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -287,8 +287,8 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-EQ |QB10025146|N                             |N                             |Y                      |LSCNSPE                 |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName |folderName                    |state|username|password                                    |
-      |New           |ELE     |Total Plan|E2E_New_Resi_Moving_$50_QLD_EA|QLD  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName |folderName                    |state|
+      |New           |ELE     |Total Plan|E2E_New_Resi_Moving_$50_QLD_EA|QLD  |
 
 #Negative Scenario
   #testMovSAEA
@@ -317,7 +317,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -330,8 +330,8 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RSOT-GS |5510676256|                              |                              |N                      |                        |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName  |folderName                   |state|username|password                                    |
-      |New           |BOTH    |Basic Home|E2E_New_Resi_Moving_$50_SA_EA|SA   |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName  |folderName                   |state|
+      |New           |BOTH    |Basic Home|E2E_New_Resi_Moving_$50_SA_EA|SA   |
 
     #Negative Scenario
   #testMovACTEA
@@ -360,7 +360,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -373,8 +373,8 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GA |5261509487|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName  |folderName                    |state|username|password                                    |
-      |New           |BOTH    |Total Plan|E2E_New_Resi_Moving_$50_ACT_EA|ACT  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName  |folderName                    |state|
+      |New           |BOTH    |Total Plan|E2E_New_Resi_Moving_$50_ACT_EA|ACT  |
 
    # New customer moving with FRMP/FRO as UNKNOWN
   #testMovNSWUNKNOWN
@@ -403,7 +403,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -416,8 +416,8 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |          |                              |                              |N                      |                        |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName  |folderName                         |state|username|password                                    |
-      |New           |BOTH    |Total Plan|E2E_New_Resi_Moving_$50_NSW_UNKNOWN|NSW  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName  |folderName                         |state|
+      |New           |BOTH    |Total Plan|E2E_New_Resi_Moving_$50_NSW_UNKNOWN|NSW  |
 
 #Negative scenario
  #testMovSAUNKNOWN
@@ -446,7 +446,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -459,6 +459,6 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GS |          |N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName  |folderName                        |state|username|password                                    |
-      |New           |BOTH    |Total Plan|E2E_New_Resi_Moving_$50_SA_UNKNOWN|SA   |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName  |folderName                        |state|
+      |New           |BOTH    |Total Plan|E2E_New_Resi_Moving_$50_SA_UNKNOWN|SA   |
 

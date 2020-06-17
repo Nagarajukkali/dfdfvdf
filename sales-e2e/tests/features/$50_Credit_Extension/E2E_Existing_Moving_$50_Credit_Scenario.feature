@@ -32,7 +32,7 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
   And user submits the quote
   Then user lands on checkout complete page
   When user has opened the qt2 Reporting website link in a browser
-  And user logs in to qt2 reporting using '<username>' and '<password>'
+  And user logs in to qt2 reporting
   And user search quote on the basis of 'Email'
   Then submitted quote is displayed
   And user validates all the details for 'ELE' submitted quote
@@ -45,8 +45,8 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GV |          |N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
   Examples:
-  |fuelType|planName  |folderName                         |state|optDisconnection|username|password                                    |
-  |BOTH    |Total Plan|E2E_Existing_Resi_Moving_$50_VIC_EA|VIC  |No              |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+  |fuelType|planName  |folderName                         |state|optDisconnection|
+  |BOTH    |Total Plan|E2E_Existing_Resi_Moving_$50_VIC_EA|VIC  |No              |
 
   #testExMOVNSWEA
   Scenario Outline: Submit a quote for existing residential moving customer for NSW with FRMP/FRO as EA
@@ -78,7 +78,7 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -91,8 +91,8 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RSOT-GN |5240479855|                              |                              |N                     |                   |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName  |folderName                         |state|optDisconnection|username|password                                    |
-      |Existing      |BOTH    |Basic Home|E2E_Existing_Resi_Moving_$50_NSW_EA|NSW  |No              |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName  |folderName                         |state|optDisconnection|
+      |Existing      |BOTH    |Basic Home|E2E_Existing_Resi_Moving_$50_NSW_EA|NSW  |No              |
 
     #testExMOVQLDEA
   Scenario Outline: Submit a quote for existing residential moving customer for QLD with FRMP/FRO as EA
@@ -125,7 +125,7 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -134,8 +134,8 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-EQ |          |N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |fuelType|planName  |folderName                         |state|optDisconnection|username|password                                    |
-      |ELE     |No Frills|E2E_Existing_Resi_Moving_$50_QLD_EA |QLD  |No              |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |fuelType|planName  |folderName                         |state|optDisconnection|
+      |ELE     |No Frills|E2E_Existing_Resi_Moving_$50_QLD_EA |QLD  |No              |
 
     #Negative Scenario
   #testExMOVSAEA
@@ -168,7 +168,7 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -181,8 +181,8 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GS |5510125399|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName  |folderName                        |state|optDisconnection|username|password                                    |
-      |Existing      |BOTH    |Total Plan|E2E_Existing_Resi_Moving_$50_SA_EA|SA   |No              |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName  |folderName                        |state|optDisconnection|
+      |Existing      |BOTH    |Total Plan|E2E_Existing_Resi_Moving_$50_SA_EA|SA   |No              |
 
     #Negative Scenario
   #testExMOVACTEA
@@ -216,7 +216,7 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -229,8 +229,8 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RSOT-GA |5260052565|                              |                              |N                      |                   |EMAIL        |
 
     Examples:
-      |fuelType|planName  |folderName                         |state|optDisconnection|username|password                                    |
-      |BOTH    |Basic Home|E2E_Existing_Resi_Moving_$50_ACT_EA|ACT  |No              |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |fuelType|planName  |folderName                         |state|optDisconnection|
+      |BOTH    |Basic Home|E2E_Existing_Resi_Moving_$50_ACT_EA|ACT  |No              |
 
 
     #Negative Scenario
@@ -261,7 +261,7 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -274,8 +274,8 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSRH-GV|5321734101|N                             |N                             |Y                      |GLSMRHW                 |EMAIL        |
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName       |optDisconnection |state  |username|password                                    |
-      |E2E_VerifyAccount_Residential_Moving     |RES           |BOTH     |Total Plan Plus|No               |VIC    |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |folderName                               |customer_type |fuelType |planName       |optDisconnection |state  |
+      |E2E_VerifyAccount_Residential_Moving     |RES           |BOTH     |Total Plan Plus|No               |VIC    |
 
  #testExMOVVICMoveHouse
   Scenario Outline: Submit a quote for existing residential customer through move house when both fuel plans are total plan
@@ -304,7 +304,7 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -317,8 +317,8 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GV |5330641914|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |folderName                        |fuelType|state|optDisconnection|movingAddress                             |username|password                                    |
-      |E2E_Existing_Resi_Moving_MoveHouse|BOTH    |VIC  |No              |21 Carmichael Drive, WYNDHAM VALE VIC 3024|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |folderName                        |fuelType|state|optDisconnection|movingAddress                             |
+      |E2E_Existing_Resi_Moving_MoveHouse|BOTH    |VIC  |No              |21 Carmichael Drive, WYNDHAM VALE VIC 3024|
 
   #testExMOVNSWMoveHouse
   Scenario Outline: Submit a quote for existing residential customer through move house when ele and gas plans are selected as Total Plan Plus and Total Plan respectively
@@ -347,7 +347,7 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -360,5 +360,5 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |folderName                                   |fuelType|state|optDisconnection|movingAddress                   |username|password                                    |
-      |E2E_Existing_Resi_Moving_Movehouse_Total_Plus|BOTH    |NSW  |No              |5 Wilkies Street, BULLI NSW 2516|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |folderName                                   |fuelType|state|optDisconnection|movingAddress                   |
+      |E2E_Existing_Resi_Moving_Movehouse_Total_Plus|BOTH    |NSW  |No              |5 Wilkies Street, BULLI NSW 2516|

@@ -26,7 +26,7 @@ Scenario Outline: Submit a quote for new residential moving customer
   And user submits the quote
   Then user lands on checkout complete page
   When user has opened the qt2 Reporting website link in a browser
-  And user logs in to qt2 reporting using '<username>' and '<password>'
+  And user logs in to qt2 reporting
   And user search quote on the basis of 'Email'
   Then submitted quote is displayed
   And user validates all the details for 'ELE' submitted quote
@@ -39,8 +39,8 @@ Scenario Outline: Submit a quote for new residential moving customer
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
   Examples:
-    |customerStatus|fuelType|planName  |folderName             |state|username|password                                    |
-    |New           |BOTH    |Total Plan|E2E_New_Resi_Moving|NSW  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+    |customerStatus|fuelType|planName  |folderName         |state|
+    |New           |BOTH    |Total Plan|E2E_New_Resi_Moving|NSW  |
 
 
 Scenario Outline: Submit a quote for new residential non moving customer
@@ -67,7 +67,7 @@ Scenario Outline: Submit a quote for new residential non moving customer
   And user submits the quote
   Then user lands on checkout complete page
   When user has opened the qt2 Reporting website link in a browser
-  And user logs in to qt2 reporting using '<username>' and '<password>'
+  And user logs in to qt2 reporting
   And user search quote on the basis of 'Email'
   Then submitted quote is displayed
   And user validates all the details for 'ELE' submitted quote
@@ -80,5 +80,6 @@ Scenario Outline: Submit a quote for new residential non moving customer
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-GV |5330733757|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
 
   Examples:
-    |customerStatus|fuelType|planName|folderName                |username|password                                    |
-    |New           |BOTH    |Total Plan  |E2E_New_Resi_NonMoving|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+    |customerStatus|fuelType|planName|folderName                |
+    |New           |BOTH    |Total Plan  |E2E_New_Resi_NonMoving|
+

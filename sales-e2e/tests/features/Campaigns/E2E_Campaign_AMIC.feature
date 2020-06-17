@@ -43,7 +43,7 @@ Feature:E2E scenario for AMIC campaign
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -56,8 +56,8 @@ Feature:E2E scenario for AMIC campaign
       |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GN |5240554353|                              |                              |N                      |                        |EMAIL        |
 
     Examples:
-      |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |username |password                                    |
-      |New            |BOTH     |amic      |NSW    |18          |20           |abhar    |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |
+      |New            |BOTH     |amic      |NSW    |18          |20           |
 
 
   Scenario Outline: Validate complete data for AMIC campaign for NSW Endeavour
@@ -102,7 +102,7 @@ Feature:E2E scenario for AMIC campaign
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -115,8 +115,8 @@ Feature:E2E scenario for AMIC campaign
       |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GN |          |                              |                              |N                      |                        |EMAIL        |
 
     Examples:
-      |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |username |password                                    |
-      |New            |BOTH     |amic      |NSW    |15          |20           |abhar    |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |
+      |New            |BOTH     |amic      |NSW    |15          |20           |
 
   Scenario Outline: Validate complete data for AMIC campaign for VIC
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_AMIC_VIC' to save evidences
@@ -160,7 +160,7 @@ Feature:E2E scenario for AMIC campaign
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -173,8 +173,8 @@ Feature:E2E scenario for AMIC campaign
       |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GV |5330396438|N                             |N                             |N                      |                        |EMAIL        |
 
     Examples:
-      |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |username |password                                    |
-      |New            |BOTH     |amic      |VIC    |6           |24           |abhar    |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |
+      |New            |BOTH     |amic      |VIC    |6           |24           |
 
 
   Scenario Outline: Validate complete data for AMIC campaign for SA
@@ -219,7 +219,7 @@ Feature:E2E scenario for AMIC campaign
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -232,8 +232,8 @@ Feature:E2E scenario for AMIC campaign
       |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GS |5510730594|                              |                              |N                      |                        |EMAIL        |
 
     Examples:
-      |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |username |password                                    |
-      |New            |BOTH     |amic      |SA     |6           |15           |abhar    |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |
+      |New            |BOTH     |amic      |SA     |6           |15           |
 
 
   Scenario Outline: Validate complete data for AMIC campaign for QLD
@@ -269,7 +269,7 @@ Feature:E2E scenario for AMIC campaign
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -278,8 +278,8 @@ Feature:E2E scenario for AMIC campaign
       |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-EQ |QB11474971|                              |                              |N                      |                        |EMAIL        |
 
     Examples:
-      |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |username |password                                    |
-      |New            |ELE      |amic      |QLD    |14          |15           |abhar    |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |
+      |New            |ELE      |amic      |QLD    |14          |15           |
 
 
   Scenario Outline: Validate complete data for AMIC campaign for ACT
@@ -324,7 +324,7 @@ Feature:E2E scenario for AMIC campaign
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -337,5 +337,5 @@ Feature:E2E scenario for AMIC campaign
       |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GA |5265774561|                              |                              |N                      |                        |EMAIL        |
 
     Examples:
-      |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |username |password                                    |
-      |New            |BOTH     |amic      |ACT    |11          |20           |abhar    |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |
+      |New            |BOTH     |amic      |ACT    |11          |20           |

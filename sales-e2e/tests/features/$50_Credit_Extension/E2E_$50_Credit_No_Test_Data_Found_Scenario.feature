@@ -26,7 +26,7 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -35,8 +35,8 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RSOT-EQ |QB10025146|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName|folderName                                |username|password                                    |
-      |New           |ELE     |Basic Home  |E2E_New_Resi_NonMoving_$50_QLD_UNKNOWN|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName|folderName                                |
+      |New           |ELE     |Basic Home  |E2E_New_Resi_NonMoving_$50_QLD_UNKNOWN|
 
  #need to find test data
   #Negative Scenario
@@ -64,7 +64,7 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -77,8 +77,8 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RCPP-GS |          |N                             |N                             |N                      |                        |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName|folderName                               |username|password                                    |
-      |New           |BOTH    |No Frills|E2E_New_Resi_NonMoving_$50_SA_UNKNOWN|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName|folderName                            |
+      |New           |BOTH    |No Frills|E2E_New_Resi_NonMoving_$50_SA_UNKNOWN|
 
 #need to find test data
   Scenario Outline: Submit a quote for new residential non moving customer for VIC with FRMP/FRO as UNKNOWN
@@ -105,7 +105,7 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -118,8 +118,8 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RCPP-GV |5330248740|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName|folderName                                |username|password                                    |
-      |New           |BOTH    |No Frills|E2E_New_Resi_NonMoving_$50_VIC_UNKNOWN|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName|folderName                             |
+      |New           |BOTH    |No Frills|E2E_New_Resi_NonMoving_$50_VIC_UNKNOWN|
 
     #need to find test data
   Scenario Outline: Submit a quote for new residential non moving customer for QLD with FRMP/FRO as UNKNOWN
@@ -146,7 +146,7 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -155,8 +155,8 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RSOT-EQ |QB10025146|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName|folderName                                |username|password                                    |
-      |New           |ELE     |Basic Home  |E2E_New_Resi_NonMoving_$50_QLD_UNKNOWN|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName|folderName                                |
+      |New           |ELE     |Basic Home  |E2E_New_Resi_NonMoving_$50_QLD_UNKNOWN|
 
  #need to find test data
   #Negative Scenario
@@ -184,7 +184,7 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -197,5 +197,5 @@ Feature:E2E scenario for new residential non moving customer for $50 credit exte
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RCPP-GS |          |N                             |N                             |N                      |                        |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName|folderName                               |username|password                                    |
-      |New           |BOTH    |No Frills|E2E_New_Resi_NonMoving_$50_SA_UNKNOWN|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName|folderName                            |
+      |New           |BOTH    |No Frills|E2E_New_Resi_NonMoving_$50_SA_UNKNOWN|

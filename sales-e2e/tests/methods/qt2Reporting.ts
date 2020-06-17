@@ -1,15 +1,17 @@
-import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 const eaQt2Reporting=require('../pages/eaQt2Reporting.page');
 import {testFunction } from '../../global_methods/helper';
 import {checkoutDetailsMethod} from './checkoutDetailsPage';
 import * as assert from 'assert';
 import {FileUtils} from '../../libs/FileUtils'
 const cryptoJS = require('crypto-js');
+const { config }=require('../../resources/resource');
 
 
 export class qt2Reporting {
 
-    public static async loginToqt2Reporting(t,username,password) {
+    public static async loginToqt2Reporting(t) {
+      let username=config.qt2ReportingCreds.username;
+      let password=config.qt2ReportingCreds.password;
       await testFunction.clearAndEnterText(t, eaQt2Reporting.elements.txtUsername, username);
       await testFunction.clearAndEnterText(t, eaQt2Reporting.elements.txtPassword, cryptoJS.AES.decrypt(password,username).toString(cryptoJS.enc.Utf8));
       await testFunction.click(t, eaQt2Reporting.elements.btnSubmit);

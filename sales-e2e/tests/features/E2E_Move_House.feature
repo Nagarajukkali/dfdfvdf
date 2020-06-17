@@ -27,7 +27,7 @@ Scenario Outline: Submit a quote for existing residential customer through move 
   And user submits the quote
   Then user lands on checkout complete page
   When user has opened the qt2 Reporting website link in a browser
-  And user logs in to qt2 reporting using '<username>' and '<password>'
+  And user logs in to qt2 reporting
   And user search quote on the basis of 'Email'
   Then submitted quote is displayed
   And user validates all the details for 'ELE' submitted quote
@@ -40,7 +40,7 @@ Scenario Outline: Submit a quote for existing residential customer through move 
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
   Examples:
-    |folderName                 |fuelType|state|optDisconnection|movingAddress                   |username|password                                    |
-    |E2E_Existing_Resi_MoveHouse|BOTH    |NSW  |No              |5 Wilkies Street, BULLI NSW 2516|abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+    |folderName                 |fuelType|state|optDisconnection|movingAddress                   |
+    |E2E_Existing_Resi_MoveHouse|BOTH    |NSW  |No              |5 Wilkies Street, BULLI NSW 2516|
 
 

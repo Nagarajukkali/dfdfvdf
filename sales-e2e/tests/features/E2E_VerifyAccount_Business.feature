@@ -23,7 +23,7 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user submits the quote
     And user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -36,8 +36,8 @@ Feature: This feature is to test the verify account scenarios for existing busin
       |GAS     |VERBALLYACCEPTED|BUSINESS    |PS       |SWSRB-GV|5323580662|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName                |accountType|username|password                                    |
-      |E2E_VerifyAccount_Business_NonMoving     |BUS           |BOTH     |Total Plan Plus Business|BOTH       |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |folderName                               |customer_type |fuelType |planName                |accountType|
+      |E2E_VerifyAccount_Business_NonMoving     |BUS           |BOTH     |Total Plan Plus Business|BOTH       |
 
   Scenario Outline: Submit a quote for existing moving business customer through verify account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -64,7 +64,7 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -77,5 +77,5 @@ Feature: This feature is to test the verify account scenarios for existing busin
       |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GV |5330956738|N                             |N                             |Y                      |GLSMRHW                 |EMAIL        |
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName        |state  |username|password                                    |
-      |E2E_VerifyAccount_Business_Moving        |BUS           |BOTH     |Total Business  |VIC    |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |folderName                               |customer_type |fuelType |planName        |state  |
+      |E2E_VerifyAccount_Business_Moving        |BUS           |BOTH     |Total Business  |VIC    |

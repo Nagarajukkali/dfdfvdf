@@ -25,7 +25,7 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -38,8 +38,8 @@ Feature:E2E scenario for existing business moving and non moving customer
       |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |BSOT-GV |5330956738|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName         |folderName             |state|username|password                                    |
-      |Existing      |BOTH    |Basic Business   |E2E_Existing_Bus_Moving|VIC  |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|fuelType|planName         |folderName             |state|
+      |Existing      |BOTH    |Basic Business   |E2E_Existing_Bus_Moving|VIC  |
 
   Scenario Outline: Submit a quote for existing business non moving customer with LS, select dual fuel and verify electricity account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -65,7 +65,7 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user submits the quote
     And user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting using '<username>' and '<password>'
+    And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
@@ -78,7 +78,7 @@ Feature:E2E scenario for existing business moving and non moving customer
       |GAS     |VERBALLYACCEPTED|BUSINESS    |PS       |TOPB-GV |5330956738|N                             |N                             |N                      |                        |EMAIL        |
 
     Examples:
-      |customerStatus|planName         |folderName              |fuelType|accountType|username|password                                    |
-      |Existing      |Total Business   |E2E_Existing_Bus_NonMoving|BOTH    |ELE        |abhar   |U2FsdGVkX1/CgD/zs39CmMNBuuIWC13OQnlQ58nm3+Y=|
+      |customerStatus|planName         |folderName              |fuelType|accountType|
+      |Existing      |Total Business   |E2E_Existing_Bus_NonMoving|BOTH  |ELE        |
 
 
