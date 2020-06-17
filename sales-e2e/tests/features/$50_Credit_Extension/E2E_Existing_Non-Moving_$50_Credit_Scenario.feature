@@ -154,7 +154,7 @@ Feature:E2E scenario for existing residential non moving customer for $50 credit
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |RCPP-GS |5510350927|N                             |N                             |Y                      |GLSMRHW                 |EMAIL        |
 
     Examples:
-      |customerStatus|planName |folderName                           |fuelType|username|password                                   |
+      |customerStatus|planName |folderName                           |fuelType|
       |Existing      |No Frills|E2E_Existing_Resi_NonMoving_$50_SA_EA|BOTH    |
 
     #testExNonMACTEA
