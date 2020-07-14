@@ -20,6 +20,7 @@ Given(/^user has navigated to '(.*)' plans page$/, async function(t, [customerTy
 
 Given(/^user navigates to my account login page$/, async function (t, []) {
   await t.navigateTo(eaMyAccount.pageUrl);
+  console.log("User lands on my account login page");
 });
 
 Given(/^user has opened the qt2 Reporting website link in a browser$/, async function(t, [folderName]) {

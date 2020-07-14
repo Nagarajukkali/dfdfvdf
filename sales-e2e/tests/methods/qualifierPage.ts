@@ -129,6 +129,16 @@ export class qualifierMethod{
       console.log(`${address} is provided`);
   }
 
+  public static async enterAddress(t, address) {
+    await testFunction.clearAndEnterText(t,eaQualifierPage.elements.serviceAddress,address);
+    await testFunction.isElementVisible(t,eaQualifierPage.elements.serviceAddressList);
+    await testFunction.clickElementFromList(t,eaQualifierPage.elements.serviceAddressList,address);
+    await testFunction.isElementVisible(t, eaQualifierPage.elements.addressLoadingIcon);
+    await testFunction.waitForLoadingIconToClose();
+    await t.wait(3000);
+    console.log(`${address} is provided`);
+  }
+
   public static async clickOnContinueAddress(t){
     await testFunction.click(t, eaQualifierPage.elements.addressContinue);
   }
@@ -187,6 +197,38 @@ export class qualifierMethod{
   public static async verifySuccessfulAccountVerification(t) {
     await testFunction.waitForElementToBeAppeared(t,eaQualifierPage.elements.nonMoving);
     await testFunction.isElementDisplayed(t,eaQualifierPage.elements.nonMoving);
+  }
+
+  public static async verifyLookupOnQualifier(t,addressType){
+    let headingOnModal,errorMessage;
+    switch (addressType) {
+      case "ELE_NOT_SERVICED":
+        errorMessage="we only supply gas, so we've removed the electricity plan from your quote.";
+        await testFunction.assertText(t,eaQualifierPage.elements.txtAddressNotServiced,errorMessage);
+        break;
+      case "GAS_NOT_SERVICED":
+        errorMessage="we only supply electricity, so we've removed the gas plan from your quote.";
+        await testFunction.assertText(t,eaQualifierPage.elements.txtAddressNotServiced,errorMessage);
+        break;
+      case "ADDRESS_NOT_SERVICED":
+        errorMessage="Unfortunately we don't supply energy to this address. For more information please call us on";
+        await testFunction.assertText(t,eaQualifierPage.elements.txtAddressNotServiced,errorMessage);
+        break;
+      case "PLAN_NOT_AVAILABLE":
+        headingOnModal="Plan Unavailable";
+        await testFunction.assertText(t,eaQualifierPage.elements.headingOnChangePlanSelectionModal,headingOnModal);
+        break;
+      case "INVALID_CUSTOMER_TYPE":
+        headingOnModal="Meter detected";
+        await testFunction.assertText(t,eaQualifierPage.elements.headingOnChangePlanSelectionModal,headingOnModal);
+        break;
+      case "INVALID_METER_TYPE":
+        let invalidMeterTypeMessage="We’re unable to sign you up online for Electricity because of the meter type detected at this address."
+        await testFunction.assertText(t,eaQualifierPage.elements.txtInvalidMeterType,invalidMeterTypeMessage);
+        break;
+      default:
+        throw Error("Invalid Error Code");
+    }
   }
 
 

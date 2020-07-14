@@ -13,17 +13,26 @@ Scenario Outline: Submit a quote for new business moving customer
   And user provides all details on checkout details page
     |customerType|journey    | firstName| lastName|businessType|
     |BUS         |BUS        | test     |test     |ABN         |
+  And user validates details on checkout details page
+    |sourceSystem   |journey    |fuelType   |
+    |<sourceSystem> |<journey>  |<fuelType> |
   And user selects answer for property renovation question for '<state>'
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |No          |Yes        |Bank           |
   And user clicks on 'Review your order' button and navigates to review page
+  And user validates details on checkout review page
+    |sourceSystem   |journey    |fuelType   |AAH  |DD   |
+    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices |GaslifeSupportDevices                             |
     |Yes              |BOTH    |Kidney Dialysis Machine|Medically Required Heating and/or Air Conditioning|
   And user verifies selected plan details for '<fuelType>'
   And user submits the quote
   Then user lands on checkout complete page
+  And user validates details on checkout complete page
+    |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
+    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |BSME         |New            |
   When user has opened the qt2 Reporting website link in a browser
   And user logs in to qt2 reporting
   And user search quote on the basis of 'Email'
@@ -38,9 +47,8 @@ Scenario Outline: Submit a quote for new business moving customer
     |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |BSOT-GV |5330956738|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
 
   Examples:
-    |customerStatus|fuelType|planName      |folderName        |state|
-    |New           |BOTH    |Basic Business|E2E_New_Bus_Moving|VIC  |
-
+    |customerStatus|fuelType|planName      |folderName        |state|sourceSystem  |journey  |AAH  |DD  |
+    |New           |BOTH    |Basic Business|E2E_New_Bus_Moving|VIC  |Quote Tool    |Move Home|No   |Yes |
 
 Scenario Outline: Submit a quote for new business non moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -54,16 +62,25 @@ Scenario Outline: Submit a quote for new business non moving customer
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|businessType|
     |BUS         |BUS        |New           | test     |test     |ACN         |
+  And user validates details on checkout details page
+    |sourceSystem   |journey    |fuelType   |
+    |<sourceSystem> |<journey>  |<fuelType> |
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |Yes         |No         |               |
   And user clicks on 'Review your order' button and navigates to review page
+  And user validates details on checkout review page
+    |sourceSystem   |journey    |fuelType   |AAH  |DD   |
+    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices                             |
     |Yes              |BOTH    |Ele Other             |Medically Required Heating and/or Air Conditioning|
   And user verifies selected plan details for '<fuelType>'
   And user submits the quote
   Then user lands on checkout complete page
+  And user validates details on checkout complete page
+    |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
+    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |BSME         |New            |
   When user has opened the qt2 Reporting website link in a browser
   And user logs in to qt2 reporting
   And user search quote on the basis of 'Email'
@@ -78,5 +95,5 @@ Scenario Outline: Submit a quote for new business non moving customer
     |GAS     |VERBALLYACCEPTED|BUSINESS    |COR      |TOPB-GV |5330726895|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
 
   Examples:
-  |customerStatus|fuelType|planName      |folderName           |
-  |New           |BOTH    |Total Business|E2E_New_Bus_NonMoving|
+  |customerStatus|fuelType|planName      |folderName           |sourceSystem  |journey      |AAH  |DD  |
+  |New           |BOTH    |Total Business|E2E_New_Bus_NonMoving|Quote Tool    |Plan Switch  |Yes  |No  |

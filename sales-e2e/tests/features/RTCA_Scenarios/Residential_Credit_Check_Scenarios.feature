@@ -1,4 +1,4 @@
-@CDECheck
+@CDECheck @plansystemrefactor
 Feature:E2E scenario of RTCA validation for new residential customer
 
 Scenario Outline: Verify if a residential customer is displayed with accept with condition pop up when wrong ID is provided
@@ -10,7 +10,6 @@ Scenario Outline: Verify if a residential customer is displayed with accept with
   And user provides all other details on qualifier page
     |customerType| connectionAddress               | movingType|propertyType|solarOption|
     |RES         | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |No         |
-  And user selects carbon neutral option
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus|firstName | lastName|idType        |medicareType |
     |RES         |RES        |New           |AcceptCond|test     |Driver License|             |
@@ -22,6 +21,7 @@ Scenario Outline: Verify if a residential customer is displayed with accept with
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
     |Yes              |BOTH    |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
+  And user selects carbon neutral option
   And user verifies selected plan details for '<fuelType>'
   And user submits the quote
   Then identification verification pop up is displayed
@@ -44,7 +44,6 @@ Scenario Outline: Verify if a residential customer is displayed with accept with
     |customerStatus|fuelType|planName  |folderName                    |state|
     |New           |BOTH    |Total Plan|E2E_New_Resi_Moving_AcceptCond|NSW  |
 
-
 Scenario Outline: Verify if a residential customer is displayed with application decline when the user is blocked with faulty credit check
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page
@@ -54,7 +53,6 @@ Scenario Outline: Verify if a residential customer is displayed with application
   And user provides all other details on qualifier page
     |customerType|connectionAddress                     | movingType|propertyType|solarOption|
     |RES         |42 Brownlow Drive, POINT COOK VIC 3030|Non-Moving |Renter      |No         |
-  And user selects carbon neutral option
   And user provides all details on checkout details page
     |customerType |journey    |customerStatus| firstName| lastName|idType        |
     |RES          |RES        |New           | decline  |test     |Driver License|
@@ -95,7 +93,6 @@ Scenario Outline: Verify if a residential customer is displayed with application
     And user provides all other details on qualifier page
       |customerType| connectionAddress               | movingType|propertyType|solarOption|
       |RES         | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |No         |
-    And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus|firstName | lastName|idType        |medicareType |
       |RES         |RES        |New           |accept    |test     |Driver License|             |
@@ -124,8 +121,8 @@ Scenario Outline: Verify if a residential customer is displayed with application
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName  |folderName                 |state|
-      |New           |BOTH    |Total Plan|E2E_New_Resi_Moving_Decline|NSW  |
+      |customerStatus|fuelType|planName  |folderName                |state|
+      |New           |BOTH    |Total Plan|E2E_New_Resi_Moving_Accept|NSW  |
 
   Scenario Outline: verify quote is submitted when CDE returns error due to connectivity
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -136,7 +133,6 @@ Scenario Outline: Verify if a residential customer is displayed with application
     And user provides all other details on qualifier page
       |customerType|connectionAddress                     | movingType|propertyType|solarOption|
       |RES         |42 Brownlow Drive, POINT COOK VIC 3030|Non-Moving |Renter      |No         |
-    And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType        |
       |RES          |RES        |New           | error    |test     |Driver License|

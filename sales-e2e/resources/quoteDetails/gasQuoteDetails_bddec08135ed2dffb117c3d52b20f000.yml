@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2005116781
+    quoteId: BB2007020827
     sourceCode: Basic
-    actualQuoteDate: 2020-05-11
+    actualQuoteDate: 2020-07-02
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,13 +15,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0325891301
+      phoneNumber: 0348628990
     
-    emailId: QOmPAIkfIe@energyaustralia.com.au
+    emailId: MfufyHPZDj@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 309
+      id: 287460
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y

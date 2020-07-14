@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2005116777
+    quoteId: BB2007020823
     sourceCode: NOFRILLS_50
-    actualQuoteDate: 2020-05-11
+    actualQuoteDate: 2020-07-02
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,13 +15,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0376509430
+      phoneNumber: 0387078281
     
-    emailId: HvpOnEVKoV@energyaustralia.com.au
+    emailId: ViOFmEZJDC@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 94157
+      id: 635344
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y

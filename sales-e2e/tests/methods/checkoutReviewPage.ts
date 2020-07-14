@@ -1,4 +1,5 @@
 import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
+const eaCheckoutDetailsPage=require('../pages/checkOutDetails.page');
 const eaCheckoutReviewPage=require('../pages/checkoutReview.page')
 import {LSDevices, PlanType, SelectionType, testFunction} from '../../global_methods/helper';
 import {checkoutDetailsMethod} from './checkoutDetailsPage';
@@ -133,7 +134,6 @@ export class checkoutReviewMethod {
       let gasDiscount;
       if(testFunction.isElectricity(fuelType)){
         let elePlanName=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtElePlanName);
-        await testFunction.click(t,eaCheckoutReviewPage.elements.imgReviewSectionEle);
         if(elePlanName===PlanType.TOTAL_PLAN || elePlanName==='Total Plan - Business' || elePlanName==='Family and Friends'){
           eleDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtEleDiscount);
           if(t.testRun.test.name.includes('EACorporateOffer')){
@@ -160,7 +160,6 @@ export class checkoutReviewMethod {
       }
       if(testFunction.isGas(fuelType)){
         let gasPlanName=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasPlanName);
-        await testFunction.click(t,eaCheckoutReviewPage.elements.imgReviewSectionGas);
         if(gasPlanName===PlanType.TOTAL_PLAN || gasPlanName==='Total Plan - Business'){
           gasDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasDiscount);
           if(t.testRun.test.name.includes('EACorporateOffer')){
@@ -490,5 +489,172 @@ export class checkoutReviewMethod {
       await testFunction.enterText(t,eaCheckoutReviewPage.elements.idnumberLicence,licenceNumber);
       await t.wait(3000);
       await testFunction.isElementDisplayed(t,eaCheckoutReviewPage.elements.identificationConfirmButton);
+  }
+
+  public static async validateProgressbarAndSubheading(t) {
+    let numOfCompletedIndicator = await testFunction.sizeOfElement(t, eaCheckoutDetailsPage.elements.progressBarProgressIndicatorCompleted);
+    await t.expect(numOfCompletedIndicator).eql(1);
+    await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.progressBar);
+    let subHeading = await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.txtSubheading);
+    await testFunction.assertTextValue(t, subHeading, "Review your details");
+    console.log("Progress bar And Subheading validation completed on review page.");
+  }
+
+  public static async validateConnectionDetails(t, journey, fuelType) {
+    journey = journey.toLowerCase();
+
+    await testFunction.isElementDisplayed(t, eaCheckoutReviewPage.elements.connectionDetails.main);
+    await testFunction.assertText(t, eaCheckoutReviewPage.elements.connectionDetails.heading, "Connection details");
+
+    await testFunction.isElementDisplayed(t, eaCheckoutReviewPage.elements.connectionDetails.connectionAddress.main);
+    await testFunction.assertText(t, eaCheckoutReviewPage.elements.connectionDetails.connectionAddress.heading, "Connection address");
+
+    if(journey === "move home") {
+      await testFunction.isElementDisplayed(t, eaCheckoutReviewPage.elements.connectionDetails.connectionDate.main);
+      await testFunction.assertText(t, eaCheckoutReviewPage.elements.connectionDetails.connectionDate.heading, "Connection date");
+      await testFunction.isElementDisplayed(t, eaCheckoutReviewPage.elements.connectionDetails.connectionDate.data);
+    }
+
+    if(await testFunction.isElectricity(fuelType)) {
+      await testFunction.isElementDisplayed(t, eaCheckoutReviewPage.elements.connectionDetails.distributor.main);
+      await testFunction.assertText(t, eaCheckoutReviewPage.elements.connectionDetails.distributor.heading, "Electricity distributor");
+      await testFunction.isElementDisplayed(t, eaCheckoutReviewPage.elements.connectionDetails.distributor.data);
+
+      await testFunction.isElementDisplayed(t, eaCheckoutReviewPage.elements.connectionDetails.customerType.main);
+      await testFunction.assertText(t, eaCheckoutReviewPage.elements.connectionDetails.customerType.heading, "Customer type");
+      await testFunction.isElementDisplayed(t, eaCheckoutReviewPage.elements.connectionDetails.customerType.data);
+    }
+    console.log("Validation completed for Connection details section on review page.");
+  }
+
+  public static async validateAccountHoldersSection(t, sourceSystem, journey, aah) {
+    sourceSystem = sourceSystem.toLowerCase();
+    journey = journey.toLowerCase();
+    aah = aah.toLowerCase();
+
+    if(sourceSystem === "my account" && (journey === "plan switch" || journey === "best offer")) {
+      await testFunction.isElementAbsent(t, eaCheckoutReviewPage.elements.accountHolders.main);
+    } else {
+      await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.accountHolders.main);
+
+      await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.accountHolders.primaryAccountHolder.main);
+      await testFunction.assertText(t, eaCheckoutReviewPage.elements.accountHolders.primaryAccountHolder.heading, "Primary account holder");
+      await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.accountHolders.primaryAccountHolder.data);
+
+      if(aah === "yes") {
+        await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.accountHolders.additionalAccountHolder.main);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.accountHolders.additionalAccountHolder.heading, "Additional account holder");
+        await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.accountHolders.additionalAccountHolder.data);
+      } else {
+        await testFunction.isElementAbsent(t, eaCheckoutReviewPage.elements.accountHolders.additionalAccountHolder.main);
+      }
+
+      console.log("Validation completed for account holder section on checkout review page.");
+    }
+  }
+
+  public static async validateBillingAndPaymentPrefSection(t, sourceSystem, journey, dd) {
+    sourceSystem = sourceSystem.toLowerCase();
+    journey = journey.toLowerCase();
+    dd = dd.toLowerCase();
+
+    await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.billingAndPaymentPref.main);
+    await testFunction.assertText(t, eaCheckoutReviewPage.elements.billingAndPaymentPref.heading, "Billing and payment preferences");
+
+    if(sourceSystem === "my account" && (journey === "plan switch" || journey === "best offer")) {
+      await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.billingAndPaymentPref.billPaymentMethod_MA.main);
+      await testFunction.assertText(t, eaCheckoutReviewPage.elements.billingAndPaymentPref.billPaymentMethod_MA.heading, "Bill Payment method");
+      if(dd === "yes") {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.billingAndPaymentPref.billPaymentMethod_MA.data, "Direct Debit");
+      } else {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.billingAndPaymentPref.billPaymentMethod_MA.data, "Manually");
+      }
+    }
+
+    if(sourceSystem != "my account" && dd === "yes") {
+      await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.billingAndPaymentPref.billPaymentMethod_QT.main);
+      await testFunction.assertText(t, eaCheckoutReviewPage.elements.billingAndPaymentPref.billPaymentMethod_QT.heading, "Bill Payment method");
+      await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.billingAndPaymentPref.billPaymentMethod_QT.data);
+    }
+    await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.billingAndPaymentPref.billsDeliveredTo.main);
+    await testFunction.assertText(t, eaCheckoutReviewPage.elements.billingAndPaymentPref.billsDeliveredTo.heading, "Bills delivered to");
+    await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.billingAndPaymentPref.billsDeliveredTo.data);
+
+    console.log("Validation completed for billing and payment preference section on checkout review page.");
+  }
+
+  public static async validateFeesAndChargesSection(t) {
+    await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.feesAndCharges.main);
+    await testFunction.assertText(t, eaCheckoutReviewPage.elements.feesAndCharges.heading, "Fees and charges");
+    await t.expect(await testFunction.sizeOfElement(t, eaCheckoutReviewPage.elements.feesAndCharges.feeItems)).gt(1);
+
+    let expectedText = " Pleasenote for all payment options, excluding direct debit or Centrepay, a merchant service fee (incl. GST) may apply to credit card payments - 0.36% for paying bills by Visa and Mastercard and 1.5% for paying bills by American Express. The best way to avoid these fees is to set up direct debit via My Account.";
+    let actualText = await testFunction.getElementText(t, eaCheckoutReviewPage.elements.feesAndCharges.disclaimer);
+    actualText = actualText.replace(" ", "");
+    expectedText = expectedText.replace(" ", "");
+    await testFunction.assertTextValue(t, actualText, expectedText);
+
+    console.log("Validation completed for fees and charges section on checkout review page.");
+  }
+
+  public static async validateCarbonNeutralSection(t) {
+    let isBusiness = (await testFunction.getElementText(t, eaCheckoutReviewPage.elements.txtPlanTitle)).includes("Business");
+    if(!isBusiness) {
+      await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.carbonNeutral.main);
+      await t.expect(await testFunction.getElementText(t, eaCheckoutReviewPage.elements.carbonNeutral.heading)).contains("Opt in for carbon neutral");
+    }
+    console.log("Validation completed for Carbon Neutral section on checkout review page.");
+  }
+
+  public static async validateNavigationButtons(t) {
+    await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.btnBack);
+    await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.btnAgreeAndConfirm);
+    await testFunction.assertText(t, eaCheckoutReviewPage.elements.btnBack, "Back");
+    await testFunction.assertText(t, eaCheckoutReviewPage.elements.btnAgreeAndConfirm, "Agree and confirm");
+    console.log("Validation completed for buttons (back and Submit) on review page.");
+  }
+
+  public static async missingCustomerIdentificationDetails(t){
+    let idValue=testFunction.getRandomNumber(999999);
+    let indexForIdType=testFunction.getRandomInt(0,2);
+    if(indexForIdType!==0){
+      await testFunction.click(t,eaCheckoutReviewPage.elements.idTypeActiveOption);
+      await testFunction.click(t,eaCheckoutReviewPage.elements.listIdType.nth(indexForIdType));
+    }
+    await testFunction.clearAndEnterText(t,eaCheckoutReviewPage.elements.idValue,idValue);
+  }
+
+  public static async provideMissingCustomerContactPersonDetails(t){
+    let indexForTitle=testFunction.getRandomInt(0,4);
+    await testFunction.click(t,eaCheckoutReviewPage.elements.titleActiveOption);
+    await testFunction.click(t,eaCheckoutReviewPage.elements.listTitle.nth(indexForTitle));
+    await testFunction.clearAndEnterText(t,eaCheckoutReviewPage.elements.inputFirstName,'test');
+    await testFunction.clearAndEnterText(t,eaCheckoutReviewPage.elements.inputLastName,'test');
+  }
+
+  public static async provideMissingABNACNDetails(t){
+    let indexForABNACN=testFunction.getRandomInt(0,1);
+    if(indexForABNACN===0){
+      let ABN=testFunction.getRandomNumber(99999999999);
+      ABN = ABN.padEnd(11, "0");
+      await testFunction.click(t,eaCheckoutReviewPage.elements.abn);
+      await testFunction.clearAndEnterText(t,eaCheckoutReviewPage.elements.abnAcnValue,ABN);
+    }
+    else{
+      let ACN=testFunction.getRandomNumber(999999999);
+      ACN = ACN.padEnd(9, "0");
+      await t.wait(2000);
+      await testFunction.click(t,eaCheckoutReviewPage.elements.acn);
+      await testFunction.clearAndEnterText(t,eaCheckoutReviewPage.elements.abnAcnValue,ACN);
+    }
+  }
+
+  public static async enterBusinessDetails(t){
+    let indexForBusinessType=testFunction.getRandomInt(0,9);
+    let indexForAnZsicCode=testFunction.getRandomInt(0,17);
+    await testFunction.click(t,eaCheckoutReviewPage.elements.businessTypeActiveOption);
+    await testFunction.click(t,eaCheckoutReviewPage.elements.listBusinessType.nth(indexForBusinessType));
+    await testFunction.click(t,eaCheckoutReviewPage.elements.anzsicCode);
+    await testFunction.click(t,eaCheckoutReviewPage.elements.listAnzsicCode.nth(indexForAnZsicCode));
   }
 }

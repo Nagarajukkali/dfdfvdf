@@ -10,21 +10,30 @@ Scenario Outline: Submit a quote for new residential moving customer
   And user provides all other details on qualifier page
     |customerType| connectionAddress               | movingType|propertyType|solarOption|
     |RES         | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |No         |
-  And user selects carbon neutral option
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
     |RES         |RES        |New           | test     |test     |Driver License|             |
+  And user validates details on checkout details page
+    |sourceSystem   |journey    |fuelType   |
+    |<sourceSystem> |<journey>  |<fuelType> |
   And user selects answer for property renovation question for '<state>'
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |Yes         |No         |               |
   And user clicks on 'Review your order' button and navigates to review page
+  And user validates details on checkout review page
+    |sourceSystem   |journey    |fuelType   |AAH  |DD   |
+    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
     |Yes              |BOTH    |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
+  And user selects carbon neutral option
   And user verifies selected plan details for '<fuelType>'
   And user submits the quote
   Then user lands on checkout complete page
+  And user validates details on checkout complete page
+    |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
+    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |RESI         |New            |
   When user has opened the qt2 Reporting website link in a browser
   And user logs in to qt2 reporting
   And user search quote on the basis of 'Email'
@@ -39,9 +48,8 @@ Scenario Outline: Submit a quote for new residential moving customer
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
   Examples:
-    |customerStatus|fuelType|planName  |folderName         |state|
-    |New           |BOTH    |Total Plan|E2E_New_Resi_Moving|NSW  |
-
+    |customerStatus|fuelType|planName  |folderName         |state|sourceSystem   |journey   |AAH  |DD   |
+    |New           |BOTH    |Total Plan|E2E_New_Resi_Moving|NSW  |Quote Tool     |Move Home |Yes  |No   |
 
 Scenario Outline: Submit a quote for new residential non moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -52,7 +60,9 @@ Scenario Outline: Submit a quote for new residential non moving customer
   And user provides all other details on qualifier page
     |customerType|connectionAddress                     | movingType|propertyType|solarOption|
     |RES         |42 Brownlow Drive, POINT COOK VIC 3030|Non-Moving |Renter      |No         |
-  And user selects carbon neutral option
+  And user validates details on checkout details page
+    |sourceSystem   |journey    |fuelType   |
+    |<sourceSystem> |<journey>  |<fuelType> |
   And user provides all details on checkout details page
     |customerType |journey    |customerStatus| firstName| lastName|idType        |
     |RES          |RES        |New           | test     |test     |Driver License|
@@ -60,12 +70,19 @@ Scenario Outline: Submit a quote for new residential non moving customer
     |optAAHOption|optDDOption|directDebitType|
     |No          |Yes        |CC             |
   And user clicks on 'Review your order' button and navigates to review page
+  And user validates details on checkout review page
+    |sourceSystem   |journey    |fuelType   |AAH  |DD   |
+    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices                             |
     |Yes              |BOTH    |Ele Other             |Medically Required Heating and/or Air Conditioning|
+  And user selects carbon neutral option
   And user verifies selected plan details for '<fuelType>'
   And user submits the quote
   Then user lands on checkout complete page
+  And user validates details on checkout complete page
+    |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
+    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |RESI         |New            |
   When user has opened the qt2 Reporting website link in a browser
   And user logs in to qt2 reporting
   And user search quote on the basis of 'Email'
@@ -80,6 +97,6 @@ Scenario Outline: Submit a quote for new residential non moving customer
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-GV |5330733757|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
 
   Examples:
-    |customerStatus|fuelType|planName|folderName                |
-    |New           |BOTH    |Total Plan  |E2E_New_Resi_NonMoving|
+    |customerStatus|fuelType|planName     |folderName                |sourceSystem   |journey     |AAH  |DD   |
+    |New           |BOTH    |Total Plan   |E2E_New_Resi_NonMoving    |Quote Tool     |Plan Switch |No   |Yes  |
 

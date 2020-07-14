@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2005127100
+    quoteId: BB2007020813
     sourceCode: Total_16%GD_50
-    actualQuoteDate: 2020-05-12
+    actualQuoteDate: 2020-07-02
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,13 +15,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0373936085
+      phoneNumber: 0355382490
     
-    emailId: aZvaTksLuh@energyaustralia.com.au
+    emailId: dxKRJlocbR@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 200294
+      id: 195848
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -52,11 +52,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-05-13
+    proposedStart: 2020-07-03
     offerType: ENE
     plan: TOPH-EN
-    priceTag: ENEAA_NR1907
-    serviceOrderDate: 2020-05-13
+    priceTag: ENEAA_NR2007
+    serviceOrderDate: 2020-07-03
     serviceOrderTime: BUSHRS
     nmiMirnInformation/: 
   
@@ -72,5 +72,6 @@ saleDetail :
   creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
+    reEnergisationJSCCharge: 11.13
   
 

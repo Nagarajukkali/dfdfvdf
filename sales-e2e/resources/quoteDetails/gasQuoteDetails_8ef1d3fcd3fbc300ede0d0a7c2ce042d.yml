@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2005116776
+    quoteId: BB2007020822
     sourceCode: Basic_50
-    actualQuoteDate: 2020-05-11
+    actualQuoteDate: 2020-07-02
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,13 +15,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0324264242
+      phoneNumber: 0350417682
     
-    emailId: jImkZeaNsi@energyaustralia.com.au
+    emailId: fxKmiLkwRz@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 651628
+      id: 457268
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y

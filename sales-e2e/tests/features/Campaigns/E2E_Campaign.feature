@@ -28,11 +28,11 @@ Feature:E2E scenario for offer campaign
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |
     And user selects answer for property renovation question for '<state>'
-    And user opts in for Carbon Neutral
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption|fuelType |EleclifeSupportDevices    |GaslifeSupportDevices  |
       |No               |         |                          |                       |
+    And user opts in for Carbon Neutral
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
       |ELE      |Y                 |Y                       |N                    |Y                                    |N                                |
@@ -188,11 +188,11 @@ Feature:E2E scenario for offer campaign
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |
     And user selects answer for property renovation question for '<state>'
-    And user opts in for Carbon Neutral
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption|fuelType |EleclifeSupportDevices    |GaslifeSupportDevices  |
       |No               |         |                          |                       |
+    And user opts in for Carbon Neutral
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
       |ELE      |N                 |Y                       |Y                    |Y                                    |N                                |

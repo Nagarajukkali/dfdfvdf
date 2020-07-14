@@ -2,6 +2,9 @@ import {AustralianState, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 import {CustomerType} from '@ea/ea-commons-models';
 const EaHomePage=require('../pages/energy-australia-home.page');
 import {IdType, PlanType, testFunction} from '../../global_methods/helper';
+const eaQualifierPage=require('../pages/qualifier.page');
+import {cartsMethod} from './cartsPage';
+import {qualifierMethod} from './qualifierPage';
 
 export class plansMethod{
 
@@ -141,6 +144,101 @@ export class plansMethod{
       await testFunction.assertText(t, EaHomePage.elements.eleDiscount, discount);
     } else if(await testFunction.isElectricity(fuelType)) {
       await testFunction.assertText(t, EaHomePage.elements.gasDiscount, discount);
+    }
+  }
+
+  public static async enterNMIorMIRNorPostcode(t,NMIorMIRNorPostcodeValue,NMIorMIRNorPostcode){
+      if(NMIorMIRNorPostcode==='NMI'){
+        await testFunction.clearAndEnterText(t,EaHomePage.elements.inputNMI,NMIorMIRNorPostcodeValue);
+      }
+      if(NMIorMIRNorPostcode==='MIRN'){
+        await testFunction.clearAndEnterText(t,EaHomePage.elements.inputMIRN,NMIorMIRNorPostcodeValue);
+      }
+      if(NMIorMIRNorPostcode==='POSTCODE'){
+        await testFunction.clearAndEnterText(t,EaHomePage.elements.inputPostcode,NMIorMIRNorPostcodeValue);
+      }
+
+    }
+
+  public static async verifyNMIorMIRNLookup(t,NMIorMIRNType){
+      let errorMessage;
+    switch (NMIorMIRNType) {
+      case "STATE_NOT_SERVICED":
+        errorMessage="Unfortunately we don't supply energy to postcode 6000. For more information please call us on";
+        await testFunction.waitForElementToBeAppeared(t,EaHomePage.elements.txtStateNotServicedMsg);
+        await testFunction.assertText(t,EaHomePage.elements.txtStateNotServicedMsg,errorMessage);
+        break;
+      case "POSTCODE_NOT_SERVICED":
+        errorMessage="Unfortunately we don't supply energy to postcode 4600. For more information please call us on";
+        await testFunction.waitForElementToBeAppeared(t,EaHomePage.elements.txtPostcodeNotServicedMsg);
+        await testFunction.assertText(t,EaHomePage.elements.txtPostcodeNotServicedMsg,errorMessage);
+        break;
+      case "NMI_BLOCKED":
+        errorMessage="We’re unable to sign you up online for Electricity because of the meter type detected at this address. For more information please call us on";
+        await testFunction.waitForElementToBeAppeared(t,EaHomePage.elements.txtBlockedNMIMsg);
+        await testFunction.assertText(t,EaHomePage.elements.txtBlockedNMIMsg,errorMessage);
+        await testFunction.assertText(t,EaHomePage.elements.basicResiPlanHeadingFuel,'Gas');
+        break;
+      case "NMI_NOT_FOUND":
+        errorMessage="Unfortunately we don't recognise NMI . You can enter your postcode instead to get the rates for your area, or give us a call us on";
+        await testFunction.waitForElementToBeAppeared(t,EaHomePage.elements.txtNMINotFoundMsg);
+        await testFunction.assertText(t,EaHomePage.elements.txtNMINotFoundMsg,errorMessage);
+        break;
+      case "MIRN_NOT_FOUND":
+        errorMessage="Unfortunately we don't recognise MIRN . You can enter your postcode instead to get the rates for your area, or give us a call us on";
+        await testFunction.waitForElementToBeAppeared(t,EaHomePage.elements.txtMIRNNotFoundMsg);
+        await testFunction.assertText(t,EaHomePage.elements.txtMIRNNotFoundMsg,errorMessage);
+        break;
+      case "INVALID_CUSTOMER_TYPE":
+        errorMessage="Meter detected";
+        await testFunction.waitForElementToBeAppeared(t,EaHomePage.elements.changeCustomerModal);
+        await testFunction.isElementDisplayed(t,EaHomePage.elements.changeCustomerModal);
+        await testFunction.assertText(t,EaHomePage.elements.headingOnChangePlanSelectionModal,errorMessage);
+        break;
+      case "CAMPAIGN_NOT_SERVICED":
+        errorMessage="This offer is not available in";
+        await testFunction.waitForElementToBeAppeared(t,EaHomePage.elements.txtCampaignNotServicedMsg);
+        await testFunction.assertText(t,EaHomePage.elements.txtCampaignNotServicedMsg,errorMessage);
+        break;
+      case "ADDRESS_NOT_SERVICED":
+        errorMessage="We’re unable to sign you up online because of the meter type detected at this address. For more information please call us on";
+        await testFunction.waitForElementToBeAppeared(t,EaHomePage.elements.txtAddressNotServicedMsg);
+        await testFunction.assertText(t,EaHomePage.elements.txtAddressNotServicedMsg,errorMessage);
+        break;
+      case "GAS_NOT_SERVICED":
+        errorMessage="we only supply electricity.";
+        await testFunction.waitForElementToBeAppeared(t,EaHomePage.elements.txtAddressNotServicedMsg);
+        await testFunction.assertText(t,EaHomePage.elements.txtAddressNotServicedMsg,errorMessage);
+        await testFunction.assertText(t,EaHomePage.elements.basicResiPlanHeadingFuel,'Electricity');
+        break;
+      case "ELE_NOT_SERVICED":
+        errorMessage="we only supply gas.";
+        await testFunction.waitForElementToBeAppeared(t,EaHomePage.elements.txtAddressNotServicedMsg);
+        await testFunction.assertText(t,EaHomePage.elements.txtAddressNotServicedMsg,errorMessage);
+        await testFunction.assertText(t,EaHomePage.elements.basicResiPlanHeadingFuel,'Electricity');
+        break;
+      case "SYSTEM_ERROR":
+        errorMessage="We're sorry, there has been an unexpected error and we're unable to process your request online. Please contact our team on 1800 596 517 and they'd be happy to assist.";
+        await testFunction.assertText(t,EaHomePage.elements.txtSystemErrorMsg,errorMessage);
+        break;
+      case "SUCCESS":
+        await testFunction.waitForElementToBeAppeared(t,EaHomePage.elements.eaSpinner);
+        await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
+        let NMI=await EaHomePage.elements.inputNMI.textContent;
+        let MIRN=await EaHomePage.elements.inputMIRN.textContent;
+        await testFunction.assertText(t,EaHomePage.elements.txtElectricityBasedOn,'Electricity based on NMI '+NMI);
+        await testFunction.assertText(t,EaHomePage.elements.txtGasBasedOn,'Gas based on MIRN '+MIRN);
+        await testFunction.takeScreenshot(t,'plans_page');
+        await this.selectPlan(t,'Total Plan');
+        await cartsMethod.clickContinueCartsPage(t);
+        await qualifierMethod.selectCustomerStatus(t,'New');
+        await qualifierMethod.provideMovingType(t,'Non-Moving');
+        await testFunction.takeScreenshot(t,'plans_page');
+        await testFunction.click(t,eaQualifierPage.elements.addressContinue);
+        await testFunction.isElementDisplayed(t,eaQualifierPage.elements.owner);
+        break;
+      default:
+        throw Error("Invalid Error Code");
     }
   }
 

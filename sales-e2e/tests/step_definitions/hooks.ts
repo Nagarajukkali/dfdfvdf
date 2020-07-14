@@ -74,6 +74,9 @@ Given(/^user has opened the '(.*)' link in a browser and creates '(.*)' to save 
     case "amic":
       await t.navigateTo(eaHomePage.campaignPageUrl+"amic?live=disabled");
       break;
+    case "ticketek":
+      await t.navigateTo(eaHomePage.campaignPageUrl+"ticketek?live=disabled");
+      break;
     default:
       console.error("Invalid campaign type.");
   }

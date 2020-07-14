@@ -146,3 +146,11 @@ When(/^user navigates back to verify identity section$/, async function (t) {
 When(/^user navigates back to verify account section and clears all the previously provided details$/, async function (t) {
   await verifyAccountMethod.navigateBackToVerifyAccount(t);
 });
+Given(/^user enters '(.*)' in '(.*)' field$/, async function (t,[NMIIorMIRNorPostcodeValue,NMIorMIRNorPostcode]) {
+  await plansMethod.enterNMIorMIRNorPostcode(t,NMIIorMIRNorPostcodeValue,NMIorMIRNorPostcode);
+});
+Then(/^plans page load according to the type of '(.*)'$/, async function (t,[NMIorMIRNType]) {
+  await plansMethod.verifyNMIorMIRNLookup(t,NMIorMIRNType);
+  await testFunction.takeScreenshot(t,'plans_page');
+
+});
