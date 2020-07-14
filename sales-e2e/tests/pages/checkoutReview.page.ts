@@ -10,9 +10,10 @@ const eaCheckoutReviewPage={
       lifeSupportQuestionNo: Selector('[for*=edit-life-support-required-no]'),
       lifeSupportElec: Selector('#ele-life-support'),
       lifeSupportGas: Selector('#gas-life-support'),
+      lifeSupportWhyWeCollect: Selector('#life-support-why-we-collect'),
       btnRegisterDeviceElec: Selector("[id*='ele-life-support-register'] button"),
       btnRegisterDeviceGas: Selector("[id*='gas-life-support-register'] button"),
-      reviewYourOfferTxt:Selector('.review-order.ng-star-inserted>h2'),
+      reviewYourOfferTxt:Selector('#checkout-progress-bar-subheading h3'),
       agreeAndConfirm: Selector('#reviewAgreeConfirmButton > span'),
       cbEleDevice_LSCNSPE: Selector("[for*='ELE-LSCNSPE']"),
       cbEleDevice_LSCPAPR: Selector("[for*='ELE-LSCPAPR']"),
@@ -39,10 +40,11 @@ const eaCheckoutReviewPage={
       gasLifesupportStatus:Selector("#record-gas-life-support-status-text"),
       imgReviewSectionEle:Selector("#reviewSectionEle button[id*='eui-accordion-header']>img"),
       imgReviewSectionGas:Selector("#reviewSectionGas button[id*='eui-accordion-header']>img"),
+      txtPlanTitle: Selector("div.review-plan__plan-title--name"),
       txtEleDiscount:Selector("#reviewSectionEle div.review-plan__plan-rates div[id*='charge-before-discount']+div"),
       txtGasDiscount:Selector("#reviewSectionGas div.review-plan__plan-rates div[id*='charge-before-discount']+div"),
-      txtElePlanName:Selector('#reviewSectionEle div.review-plan__title--planName'),
-      txtGasPlanName:Selector('#reviewSectionGas div.review-plan__title--planName'),
+      txtElePlanName:Selector('#reviewSectionEle div.review-plan__plan-title--name'),
+      txtGasPlanName:Selector('#reviewSectionGas div.review-plan__plan-title--name'),
       elePlanName: Selector("[id*='heading-'][id*='-E'] div[class*='planName']"),
       gasPlanName: Selector("[id*='heading-'][id*='-G'] div[class*='planName']"),
       eleDiscount: Selector("[id*='review-plan-'][id*='-E'] div[class*='hs-plan-supply__description']").withText("After"),
@@ -66,6 +68,93 @@ const eaCheckoutReviewPage={
       idDOBMonth:Selector("#id_dateOfBirth-month"),
       idDOBYear:Selector("#id_dateOfBirth-year"),
       idnumberLicence:Selector("#id_number-licence"),
+      connectionDetails: {
+        main: Selector("#connectionInfo"),
+        heading: Selector("#connectionInfo h4"),
+        connectionAddress: {
+          main: Selector("#connection-address"),
+          heading: Selector("#connection-address h5"),
+          data: Selector("#connection-address div")
+        },
+        connectionDate: {
+          main: Selector("#connection-date"),
+          heading: Selector("#connection-date h5"),
+          data: Selector("#connection-date div")
+        },
+        distributor: {
+          main: Selector("#electricity-distributor"),
+          heading: Selector("#electricity-distributor h5"),
+          data: Selector("#electricity-distributor div")
+        },
+        customerType: {
+          main: Selector("#customer-type"),
+          heading: Selector("#customer-type h5"),
+          data: Selector("#customer-type div")
+        }
+      },
+      accountHolders: {
+        main: Selector("#primarySecondaryAH"),
+        heading: Selector("#primarySecondaryAH h4"),
+        primaryAccountHolder: {
+          main: Selector("#primarySecondaryAH section"),
+          heading: Selector("#primarySecondaryAH section h5"),
+          data: Selector("#primarySecondaryAH section div")
+        },
+        additionalAccountHolder: {
+          main: Selector("#secondaryAH"),
+          heading: Selector("#secondaryAH h5"),
+          data: Selector("#secondaryAH div")
+        }
+      },
+      billingAndPaymentPref: {
+        main: Selector("#billingPref"),
+        heading: Selector("#billingPref h4"),
+        billPaymentMethod_QT: {
+          main: Selector("#billingPref div[id*='billingPrefDebitType']"),
+          heading: Selector("#billingPref div[id*='billingPrefDebitType'] h4"),
+          data: Selector("#billingPref div[id*='billingPrefDebitType'] div")
+        },
+        billPaymentMethod_MA: {
+          main: Selector("#billingPaymentMethodFromMyAccount"),
+          heading: Selector("#billingPaymentMethodFromMyAccount h4"),
+          data: Selector("#billingPaymentMethodFromMyAccount div")
+        },
+        billsDeliveredTo: {
+          main: Selector("#billDeliveryDetail"),
+          heading: Selector("#billDeliveryDetail h4"),
+          data: Selector("#billDeliveryDetail div")
+        }
+      },
+      feesAndCharges: {
+        main: Selector("div.fees-charges"),
+        heading: Selector("div.fees-charges h4"),
+        feeItems: Selector("div.fees-charges div.review-section"),
+        disclaimer: Selector("#merchant-fees .fees-charges__disclaimer")
+      },
+      carbonNeutral: {
+        main: Selector("div.carbon-neutral"),
+        heading: Selector("div.carbon-neutral h4")
+      },
+      btnBack: Selector("#reviewAgreeConfirmButton-back"),
+      btnAgreeAndConfirm: Selector("#reviewAgreeConfirmButton"),
+      idTypeActiveOption:Selector("#id-type-active-option"),
+      listIdType:Selector("#id-type-active-option").parent().nextSibling().child(),
+      idTypeDriverLicence:Selector("#edit-id-type-dl"),
+      idTypePassport:Selector("#edit-id-type-passport"),
+      idTypeMedicare:Selector("#edit-id-type-medicare"),
+      idValue:Selector("#identification-value"),
+      titleActiveOption:Selector("#title-active-option"),
+      listTitle:Selector("#title-active-option").parent().nextSibling().child(),
+      inputFirstName:Selector("#first-name"),
+      inputLastName:Selector("#last-name"),
+      abn:Selector("#edit-business-identifier-type-abn__label"),
+      acn:Selector("#edit-business-identifier-type-acn__label"),
+      abnAcnValue:Selector("#business-identifier"),
+      inputBusinessName:Selector("#business-name"),
+      businessTypeActiveOption:Selector("#business-type-active-option"),
+      listBusinessType:Selector("#business-type-active-option").parent().nextSibling().child(),
+      anzsicCode:Selector("#anzsic-code-active-option"),
+      listAnzsicCode:Selector("#anzsic-code-active-option").parent().nextSibling().child(),
     }
 }
 

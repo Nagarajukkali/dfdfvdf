@@ -40,6 +40,11 @@ When(/^user clicks on 'Review your order' button and navigates to review page$/,
   await testFunction.takeScreenshot(t,'checkout_details_page');
   await checkoutDetailsMethod.clickOnReviewYourOrderBtn(t);
 });
+When(/^user clicks on 'Next' button and navigates to review page$/, async function (t) {
+  await testFunction.takeScreenshot(t,'checkout_details_page');
+  await checkoutDetailsMethod.clickOnNextBtn(t);
+});
+
 When(/^user selects answer for property renovation question for '(.*)'$/, async function (t,[state]) {
   await checkoutDetailsMethod.propertyRenovationNo(t,state);
 });
@@ -64,7 +69,8 @@ When(/^user opts for AAH and DD$/, async function (t,[],dataTable) {
 });
 When(/^user selects plans on checkout details page$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
-  await checkoutDetailsMethod.selectPlan(t,data[0].elePlan,data[0].gasPlan);
+  await checkoutDetailsMethod.selectPlan(t,data[0].fuelType, data[0].planName);
+  console.log("Plan Selected successfully.");
 });
 When(/^user provides dob and id details$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();

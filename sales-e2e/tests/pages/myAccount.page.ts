@@ -7,8 +7,8 @@ const eaMyAccount={
     tfUsername: Selector("#username"),
     tfPassword: Selector("#password"),
     btnSignIn: Selector("[name='remember-me']~.ea-button.ea-button--primary"),
-    eleViewAndChangePlan: Selector("a[href*='view']").nth(0),
-    gasViewAndChangePlan: Selector("a[href*='view']").nth(1),
+    eleViewAndChangePlan: Selector("a[href*='view-plan']").nth(0),
+    gasViewAndChangePlan: Selector("a[href*='view-plan']").nth(1),
     btnCompareAndSwitchPlans: Selector("[class*='header-action'] button"),
     btnSolarNo: Selector("[class*='qualifier-question'] label[for*='edit-solar-panels-field-1']"),
     btnQualifierConfirm: Selector("[primaryactiontext*='Confirm'] [class*='ea-button--primary']"),
@@ -24,6 +24,8 @@ const eaMyAccount={
     eaSpinner:Selector(".ea-spinner.ng-star-inserted"),
     btnUpSellComparePlan:Selector(".up-sell div.cta>button"),
     moveHeader:Selector("[src*='accounts-movers-add']>h1"),
+    btnModalSkip: Selector("button.skip-button"),
+    chkBoxGas: Selector("#mover-fuel-button-gas div.checkbox-image"),
   },
 };
 

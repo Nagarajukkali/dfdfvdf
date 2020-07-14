@@ -1,0 +1,82 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2007081078
+    sourceCode: Total_Plus_17%GD
+    actualQuoteDate: 2020-07-08
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 8224680000
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0336692096
+    
+    emailId: ouwKiAoTTe@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 430658
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 5
+    streetName: Wilkies
+    streetType: S
+    suburb: BULLI
+    state: NSW
+    country: AUS
+    postCode: 2516
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-07-10
+    offerType: ENE
+    plan: SWSRH-EN
+    priceTag: ENIEA_NR2007
+    serviceOrderDate: 2020-07-10
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 4311150544
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: OTHER
+    
+    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    priceTagMeteringCharge: M25161DN_IH
+    proposedNTC: N70
+    proposedMC: IHUBMC
+    reEnergisationJSCCharge: 0
+  
+

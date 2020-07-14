@@ -2,6 +2,7 @@ import {checkoutReviewMethod} from '../methods/checkoutReviewPage';
 import {testFunction } from '../../global_methods/helper';
 import {When, Then } from 'cucumber';
 import {FileUtils} from '../../libs/FileUtils'
+import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 
 When(/^user provides life support details$/, async function(t,[],dataTable){
   let data=dataTable.hashes();
@@ -53,4 +54,40 @@ When(/^user clicks on identification confirmation button$/, async function (t) {
 When(/^user enters identification details on identification popup$/, async function (t) {
   await checkoutReviewMethod.provideIdDetails(t);
   await testFunction.takeScreenshot(t,'IDV_Popup');
+});
+When(/^user validates details on checkout review page$/, async function (t,[],dataTable) {
+  /*
+  |sourceSystem |journey    |fuelType |AAH  |DD |
+   */
+  let params = dataTable.hashes();
+  let sourceSystem = params[0].sourceSystem;
+  let journey = params[0].journey;
+  let fuelType = params[0].fuelType;
+  let aah = params[0].AAH;
+  let dd = params[0].DD;
+
+  await checkoutDetailsMethod.validateHeader(t, sourceSystem, journey);
+  await checkoutReviewMethod.validateProgressbarAndSubheading(t);
+  await checkoutReviewMethod.validateConnectionDetails(t, journey, fuelType);
+  await checkoutReviewMethod.validateAccountHoldersSection(t, sourceSystem, journey, aah);
+  await checkoutReviewMethod.validateBillingAndPaymentPrefSection(t, sourceSystem, journey, dd);
+  await checkoutReviewMethod.validateFeesAndChargesSection(t);
+  await checkoutReviewMethod.validateCarbonNeutralSection(t);
+  await checkoutReviewMethod.validateNavigationButtons(t);
+  console.log("Checkout Review page validated successfully");
+});
+
+When(/^user provides missing identification details on review page$/, async function (t,[idType]) {
+  await checkoutReviewMethod.missingCustomerIdentificationDetails(t);
+});
+
+When(/^user provides business details on review page$/, async function (t,[],dataTable) {
+  let data = dataTable.hashes();
+  let isCustomerContactPersonMissing = data[0].isCustomerContactPersonMissing;
+  let isABNACNMissing = data[0].isABNACNMissing;
+  if(isCustomerContactPersonMissing === "Yes")
+    await checkoutReviewMethod.provideMissingCustomerContactPersonDetails(t);
+  if(isABNACNMissing === "Yes")
+    await checkoutReviewMethod.provideMissingABNACNDetails(t)
+  await checkoutReviewMethod.enterBusinessDetails(t);
 });

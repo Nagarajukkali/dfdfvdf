@@ -42,6 +42,9 @@ const eaQualifierPage={
     planSelectionPopup:Selector('#modal-heading-wrapper-CHANGE_PLAN_SELECTION_MODAL~div button.ea-modal__secondary-action-link'),
     safetyFlagMsgOnQualifier:Selector("#signIn div.wg-alert"),
     btnBackOnQualifier:Selector("#btn-icon-chevronLeft"),
+    headingOnChangePlanSelectionModal:Selector("#modal-heading-CHANGE_PLAN_SELECTION_MODAL"),
+    txtInvalidMeterType:Selector("#-error-NMI_BLOCKED"),
+    txtAddressNotServiced:Selector("#-error-ADDRESS_NOT_SERVICED"),
 
   },
 };

@@ -1,0 +1,80 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2006231957
+    sourceCode: NOFRILLS_50
+    actualQuoteDate: 2020-06-23
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0334422038
+    
+    emailId: UMGUIKrYfl@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 177420
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlMiddleName/: 
+          dlLastName: test
+          licenseStateOfIssue: NSW
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 14
+    streetName: Waterside
+    streetType: CR
+    suburb: EARLWOOD
+    state: NSW
+    country: AUS
+    postCode: 2206
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: G
+    offerType: COR
+    plan: RCPP-GN
+    priceTag: GNAGA_ZR2001
+    nmiMirnInformation: 
+      MIRN: 5240787742
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: GLSMRHAC
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+

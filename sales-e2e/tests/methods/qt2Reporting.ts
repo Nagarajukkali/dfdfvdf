@@ -44,7 +44,13 @@ export class qt2Reporting {
     }
 
     public static async getEleQuoteDetails(t){
-      await testFunction.click(t,eaQt2Reporting.elements.linkQuoteId.nth(0));
+      let fuelType=await testFunction.getElementText(t,eaQt2Reporting.elements.fuelType);
+      if(fuelType==='ELECTRICITY'){
+        await testFunction.click(t,eaQt2Reporting.elements.linkQuoteId.nth(0));
+      }
+      else{
+        await testFunction.click(t,eaQt2Reporting.elements.linkQuoteId.nth(1));
+      }
       let eleQuoteDetails=testFunction.getElementText(t,eaQt2Reporting.elements.txtQuoteDetails);
       return eleQuoteDetails;
     }
@@ -55,7 +61,13 @@ export class qt2Reporting {
       }
       let quoteCount=await testFunction.sizeOfElement(t,eaQt2Reporting.elements.linkQuoteId);
       if(quoteCount===2){
-        await testFunction.click(t,eaQt2Reporting.elements.linkQuoteId.nth(1));
+        let fuelType=await testFunction.getElementText(t,eaQt2Reporting.elements.fuelType);
+        if(fuelType==='GAS'){
+          await testFunction.click(t,eaQt2Reporting.elements.linkQuoteId.nth(0));
+        }
+        else{
+          await testFunction.click(t,eaQt2Reporting.elements.linkQuoteId.nth(1));
+        }
       }
       else{
         await testFunction.click(t,eaQt2Reporting.elements.linkQuoteId.nth(0));

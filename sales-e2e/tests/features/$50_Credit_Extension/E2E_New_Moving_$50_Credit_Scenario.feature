@@ -11,7 +11,6 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
   And user provides all other details on qualifier page
     |customerType| connectionAddress                        | movingType|propertyType|solarOption|
     |RES         | 42 Brownlow Drive, DIAMOND CREEK VIC 3089|Moving     |Renter      |No         |
-  And user selects carbon neutral option
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
     |RES         |RES        |New           | test|test     |Driver License|             |
@@ -23,6 +22,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
     |Yes              |BOTH    |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
+  And user selects carbon neutral option
   And user verifies selected plan details for '<fuelType>'
   And user submits the quote
   Then user lands on checkout complete page
@@ -53,7 +53,6 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user provides all other details on qualifier page
       |customerType| connectionAddress                  | movingType|propertyType|solarOption|
       |RES         | 8 Wenden Avenue, NEWINGTON NSW 2127|Moving     |Renter      |No         |
-    And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
       |RES         |RES        |New           | test|test     |Driver License|             |
@@ -65,6 +64,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
       |No               |        |                                              |                     |
+    And user selects carbon neutral option
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     Then user lands on checkout complete page
@@ -95,7 +95,6 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user provides all other details on qualifier page
       |customerType| connectionAddress                       | movingType|propertyType|solarOption|
       |RES         | 18 Surman Street West, BIRKDALE QLD 4159|Moving     |Renter      |No         |
-    And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
       |RES         |RES        |New           | test     |test     |Driver License|             |
@@ -107,6 +106,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
       |Yes              |ELE     |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
+    And user selects carbon neutral option
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     Then user lands on checkout complete page
@@ -134,7 +134,6 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user provides all other details on qualifier page
       |customerType| connectionAddress              | movingType|propertyType|solarOption|
       |RES         | 8 King Street, MILE END SA 5031|Moving     |Renter      |No         |
-    And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
       |RES         |RES        |New           | test|test     |Driver License|             |
@@ -146,6 +145,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
       |No               |        |                                              |                     |
+    And user selects carbon neutral option
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     Then user lands on checkout complete page
@@ -169,6 +169,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
 
     # New customer moving with FRMP/FRO as EA
  #testMovVICEA
+  @plansystemrefactor
   Scenario Outline: Submit a quote for new residential moving customer for VIC with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -178,7 +179,6 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user provides all other details on qualifier page
       |customerType| connectionAddress                            | movingType|propertyType|solarOption|
       |RES         | 46 Broadoak Street, SPRINGVALE SOUTH VIC 3172|Moving     |Renter      |No         |
-    And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
       |RES         |RES        |New           | test     |test     |Driver License|             |
@@ -190,6 +190,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
       |No               |        |                                              |                     |
+    And user selects carbon neutral option
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     Then user lands on checkout complete page
@@ -211,6 +212,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |New           |BOTH    |Basic Home|E2E_New_Resi_Moving_$50_VIC_EA|VIC  |
 
   #testMovNSWEA
+  @plansystemrefactor
   Scenario Outline: Submit a quote for new residential moving customer for NSW with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -220,7 +222,6 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user provides all other details on qualifier page
       |customerType| connectionAddress                   | movingType|propertyType|solarOption|
       |RES         | 13 Rushton Drive, KANAHOOKA NSW 2530|Moving     |Renter      |No         |
-    And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
       |RES         |RES        |New           | test     |test     |Driver License|             |
@@ -232,6 +233,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
       |Yes              |BOTH    |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
+    And user selects carbon neutral option
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     Then user lands on checkout complete page
@@ -253,6 +255,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
       |New           |BOTH    |No Frills|E2E_New_Resi_Moving_$50_NSW_EA|NSW  |
 
  #testMovQLDEA
+  @plansystemrefactor
   Scenario Outline: Submit a quote for new residential moving customer for QLD with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -262,7 +265,6 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user provides all other details on qualifier page
       |customerType| connectionAddress                       | movingType|propertyType|solarOption|
       |RES         | 21 Halyard Court, DECEPTION BAY QLD 4508|Moving     |Renter      |No         |
-    And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
       |RES         |RES        |New           | test     |test     |Driver License|             |
@@ -292,6 +294,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
 
 #Negative Scenario
   #testMovSAEA
+  @plansystemrefactor
   Scenario Outline: Submit a quote for new residential moving customer for SA with FRMP/FRO as EA
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -301,7 +304,6 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user provides all other details on qualifier page
       |customerType| connectionAddress                      | movingType|propertyType|solarOption|
       |RES         | 1 Halton Court, SEAFORD MEADOWS SA 5169|Moving     |Renter      |No         |
-    And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
       |RES         |RES        |New           | test     |test     |Driver License|             |
@@ -313,6 +315,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
       |No               |        |                                              |                     |
+    And user selects carbon neutral option
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     Then user lands on checkout complete page
@@ -344,7 +347,6 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user provides all other details on qualifier page
       |customerType| connectionAddress                  | movingType|propertyType|solarOption|
       |RES         | 16 Mulley Street, HOLDER ACT 2611|Moving     |Renter      |No         |
-    And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
       |RES         |RES        |New           | test     |test     |Driver License|             |
@@ -356,6 +358,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
       |Yes              |BOTH    |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
+    And user selects carbon neutral option
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     Then user lands on checkout complete page
@@ -378,6 +381,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
 
    # New customer moving with FRMP/FRO as UNKNOWN
   #testMovNSWUNKNOWN
+  @plansystemrefactor
   Scenario Outline: Submit a quote for new residential moving customer for NSW with FRMP/FRO as UNKNOWN
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -387,7 +391,6 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user provides all other details on qualifier page
       |customerType| connectionAddress              | movingType|propertyType|solarOption|
       |RES         | 20 King Street, SYDNEY NSW 2000|Moving     |Renter      |No         |
-    And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
       |RES         |RES        |New           | test     |test     |Driver License|             |
@@ -399,6 +402,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
       |No               |        |                                              |                     |
+    And user selects carbon neutral option
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     Then user lands on checkout complete page
@@ -421,6 +425,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
 
 #Negative scenario
  #testMovSAUNKNOWN
+  @plansystemrefactor
   Scenario Outline: Submit a quote for new residential moving customer for SA with FRMP/FRO as UNKNOWN
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -430,7 +435,6 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user provides all other details on qualifier page
       |customerType| connectionAddress               | movingType|propertyType|solarOption|
       |RES         | 19 Kings Court, ADELAIDE SA 5000|Moving     |Renter      |No         |
-    And user selects carbon neutral option
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
       |RES         |RES        |New           | test     |test     |Driver License|             |
@@ -442,6 +446,7 @@ Scenario Outline: Submit a quote for new residential moving customer for VIC wit
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
       |Yes              |BOTH    |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
+    And user selects carbon neutral option
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     Then user lands on checkout complete page

@@ -93,3 +93,14 @@ Then(/^user can able to proceed further through qualifier$/, async function (t) 
 When(/^user navigates back to account verification section from moving question and clears all the previously provided details$/, async function (t) {
   await qualifierMethod.navigateBackFromMovingQuestion(t);
 });
+When(/^user selects '(.*)' for moving question on qualifier$/, async function (t,[movingType]) {
+  await qualifierMethod.provideMovingType(t,movingType);
+
+});
+When(/^user enters the address '(.*)' on qualifier$/, async function (t,[address]) {
+  await qualifierMethod.enterAddress(t,address);
+});
+Then(/^relevant popup displays for provided '(.*)'$/, async function (t,[addressType]) {
+  await  qualifierMethod.verifyLookupOnQualifier(t,addressType);
+  await testFunction.takeScreenshot(t,'qualifier_page');
+});

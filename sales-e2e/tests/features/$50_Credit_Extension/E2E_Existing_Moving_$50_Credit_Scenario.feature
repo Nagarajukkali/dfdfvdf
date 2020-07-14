@@ -289,8 +289,11 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
       |customerType|movingType|connectionAddress                         |propertyType |solarOption|
       |RES         |NA        |21 Carmichael Drive, WYNDHAM VALE VIC 3024|Renter       |No         |
     And user selects plans on checkout details page
-      |elePlan   |gasPlan   |
-      |Total Plan|Total Plan|
+      |fuelType |planName   |
+      |ELE      |Total Plan |
+    And user selects plans on checkout details page
+      |fuelType |planName   |
+      |GAS      |Total Plan |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |
       |RES         |RES        |Existing      | test|test     |Driver License|
@@ -332,8 +335,11 @@ Scenario Outline: Submit a quote for existing residential moving customer for VI
       |customerType|movingType|connectionAddress               |propertyType |solarOption|
       |RES         |NA        |5 Wilkies Street, BULLI NSW 2516|Renter       |No         |
     And user selects plans on checkout details page
-      |elePlan        |gasPlan   |
-      |Total Plan Plus|Total Plan|
+      |fuelType |planName       |
+      |ELE      |Total Plan Plus|
+    And user selects plans on checkout details page
+      |fuelType |planName   |
+      |GAS      |Total Plan |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |
       |RES         |RES        |Existing      | test|test     |Driver License|

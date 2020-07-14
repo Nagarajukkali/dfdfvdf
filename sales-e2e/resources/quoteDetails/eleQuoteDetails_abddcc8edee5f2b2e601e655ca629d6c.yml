@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2005137311
+    quoteId: BB2007132619
     sourceCode: NOFRILLS_50
-    actualQuoteDate: 2020-05-13
+    actualQuoteDate: 2020-07-13
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0374515003
+      phoneNumber: 0368196622
     
-    emailId: lPSHeKdjiH@energyaustralia.com.au
+    emailId: BaPaUZOzYg@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: PASSPORT
-      id: 61928
+      id: 113014
       primaryIdFlag: Y
     
     authLevel: Y
@@ -44,11 +44,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-05-15
+    proposedStart: 2020-07-15
     offerType: ENE
     plan: RCPP-EV
     priceTag: EVUNA_ZR2001
-    serviceOrderDate: 2020-05-15
+    serviceOrderDate: 2020-07-15
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 6407557087
@@ -74,6 +74,6 @@ saleDetail :
   meteringDetail: 
     meterExchangeFlag: N
     reEnergisationJSCCode: RECFIB
-    reEnergisationJSCCharge: 49.56
+    reEnergisationJSCCharge: 48.29
   
 

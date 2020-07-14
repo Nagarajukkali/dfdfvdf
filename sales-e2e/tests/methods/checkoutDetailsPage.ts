@@ -183,6 +183,12 @@ export class checkoutDetailsMethod{
     console.log("Navigated to review page");
   }
 
+  public static async clickOnNextBtn(t){
+    await testFunction.click(t,eaCheckoutDetailsPage.elements.btnNext);
+    await testFunction.isElementVisible(t,eaCheckoutReviewPage.elements.reviewYourOfferTxt);
+    console.log("Navigated to review page");
+  }
+
   public static async accessRestriction(t,electricityAccess:String,gasAccess){
       if(electricityAccess==='No'){
         await testFunction.click(t, eaCheckoutDetailsPage.elements.electricityAccessNo);
@@ -333,75 +339,96 @@ export class checkoutDetailsMethod{
     }
   }
 
-  public static async selectPlan(t,elePlan,gasPlan){
-      await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.plansExpand);
-      if(elePlan){
-        await this.selectElePlan(t,elePlan);
-      }
-      if(gasPlan){
-        await this.selectGasPlan(t,gasPlan);
-      }
+  public static async selectPlan(t, fuelType, planName){
+    await testFunction.isElectricity(fuelType) ? await this.selectElePlan(t, planName) : await this.selectGasPlan(t, planName);
   }
   public static async selectElePlan(t,elePlan:String){
+    let element = null;
     switch(elePlan){
       case PlanType.BASIC_HOME:
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.basicElePlan);
+        element = eaCheckoutDetailsPage.elements.basicElePlan;
         break;
       case PlanType.NO_FRILLS:
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.noFrillsElePlan);
+        element = eaCheckoutDetailsPage.elements.noFrillsElePlan;
         break;
       case PlanType.TOTAL_PLAN:
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.totalElePlan);
+        element = eaCheckoutDetailsPage.elements.totalElePlan;
         break;
       case PlanType.TOTAL_PLAN_PLUS:
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.totalPlanPlusEle);
+        element = eaCheckoutDetailsPage.elements.totalPlanPlusEle;
         break;
       case PlanType.BASIC_BUSINESS:
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.basicEleBusiness);
+        element = eaCheckoutDetailsPage.elements.basicEleBusiness;
         break;
       case PlanType.NO_FRILLS_BUSINESS:
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.noFrillEleBusiness);
+        element = eaCheckoutDetailsPage.elements.noFrillEleBusiness;
         break;
       case PlanType.TOTAL_BUSINESS:
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.totalElePlanBusiness);
+        element = eaCheckoutDetailsPage.elements.totalElePlanBusiness;
         break;
       case PlanType.TOTAL_PLAN_PLUS_BUSINESS:
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.totalPlanPlusEleBusiness);
+        element = eaCheckoutDetailsPage.elements.totalPlanPlusEleBusiness;
         break;
       default:
         console.error("Invalid plan type");
+        throw Error("Invalid plan type");
+    }
+    await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.progressBar);
+    let pageUrl = await testFunction.getPageURL();
+    console.log(pageUrl);
+    if(!pageUrl.includes("ref=move") && !pageUrl.includes("ref=nc") && !pageUrl.includes("ref=upsell")) {
+      await testFunction.assertText(t, element, "Switch to this plan");
+      await testFunction.click(t, element);
+      await testFunction.assertText(t, element, "Selected");
+    } else {
+      await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.plansExpand);
+      await testFunction.click(t, element);
     }
   }
   public static async selectGasPlan(t,gasPlan:String){
+    let element = null;
     switch(gasPlan){
       case PlanType.BASIC_HOME:
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.basicGasPlan);
+        element = eaCheckoutDetailsPage.elements.basicGasPlan;
         break;
       case PlanType.NO_FRILLS:
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.noFrillsGasPlan);
+        element = eaCheckoutDetailsPage.elements.noFrillsGasPlan;
         break;
       case PlanType.TOTAL_PLAN:
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.totalGasPlan);
+        element = eaCheckoutDetailsPage.elements.totalGasPlan;
         break;
       case PlanType.TOTAL_PLAN_PLUS:
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.totalPlanPlusGas);
+        element = eaCheckoutDetailsPage.elements.totalPlanPlusGas;
         break;
       case PlanType.BASIC_BUSINESS:
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.basicGasBusiness);
+        element = eaCheckoutDetailsPage.elements.basicGasBusiness;
         break;
       case PlanType.NO_FRILLS_BUSINESS:
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.noFrillGasBusiness);
+        element = eaCheckoutDetailsPage.elements.noFrillGasBusiness;
         break;
       case PlanType.TOTAL_BUSINESS:
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.totalGasPlanBusiness);
+        element = eaCheckoutDetailsPage.elements.totalGasPlanBusiness;
         break;
       case PlanType.TOTAL_PLAN_PLUS_BUSINESS:
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.totalPlanPlusGasBusiness);
+        element = eaCheckoutDetailsPage.elements.totalPlanPlusGasBusiness;
         break;
       default:
         console.error("Invalid plan type");
+        throw Error("Invalid plan type");
+    }
+    await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.progressBar);
+    let pageUrl = await testFunction.getPageURL();
+    console.log(pageUrl);
+    if(!pageUrl.includes("ref=move") && !pageUrl.includes("ref=nc") && !pageUrl.includes("ref=upsell")) {
+      await testFunction.assertText(t, element, "Switch to this plan");
+      await testFunction.click(t, element);
+      await testFunction.assertText(t, element, "Selected");
+    } else {
+      await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.plansExpand);
+      await testFunction.click(t, element);
     }
   }
+
   public static async selectCarbonNeutralOption(t){
       await testFunction.click(t,eaCheckoutDetailsPage.elements.chkboxCarbonNeutral);
   }
@@ -490,6 +517,138 @@ export class checkoutDetailsMethod{
         break;
       default:
         console.error("Invalid cde response passed.");
+    }
+  }
+
+  public static async validateHeader(t, sourceSystem, journey) {
+      journey = journey.toLowerCase();
+    if(sourceSystem === "My Account") {
+      await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.pageTitleBlock);
+      await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.btnCloseText);
+      let pageTitle = await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.txtPageTitle);
+      await testFunction.assertTextValue(t, await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.btnCloseText), "Close");
+
+      switch (journey) {
+        case "plan switch" || "best offer":
+          await testFunction.assertTextValue(t, pageTitle, "Compare and switch plans");
+          break;
+        case "move home":
+          await testFunction.assertTextValue(t, pageTitle, "Move my service");
+          break;
+        case "upsell":
+          await testFunction.assertTextValue(t, pageTitle, "Choose your plan");
+          break;
+        default:
+          throw Error("Invalid journey.");
+      }
+    }else {
+      let numOfElements = await testFunction.sizeOfElement(t, eaCheckoutDetailsPage.elements.pageTitleBlock);
+      if(numOfElements == 0) {
+        await testFunction.isElementAbsent(t, eaCheckoutDetailsPage.elements.pageTitleBlock);
+      } else {
+        await t.expect(await testFunction.isElementVisible(t, eaCheckoutDetailsPage.elements.pageTitleBlock)).eql(false);
+      }
+
+    }
+    console.log("Header validation completed.");
+  }
+
+  public static async validateProgressbarAndSubheading(t, sourceSystem, journey, fuelType) {
+    journey = journey.toLowerCase();
+    let numOfCompletedIndicator = await testFunction.sizeOfElement(t, eaCheckoutDetailsPage.elements.progressBarProgressIndicatorCompleted);
+    await t.expect(numOfCompletedIndicator).eql(0);
+    await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.progressBar);
+    let subHeading = await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.txtSubheading);
+    let expected;
+    if(sourceSystem === "My Account") {
+      switch (journey) {
+        case "plan switch" || "best offer":
+          expected = await testFunction.isElectricity(fuelType) ? "Select a new electricity plan" : "Select a new gas plan";
+          await testFunction.assertTextValue(t, subHeading, expected);
+          break;
+        case "move home":
+          await testFunction.assertTextValue(t, subHeading, "Select your plans");
+          break;
+        case "upsell":
+          await testFunction.assertTextValue(t, subHeading, "Add new plan");
+          break;
+        default:
+          throw Error("Invalid journey.");
+      }
+    }else {
+      let pageUrl = await testFunction.getPageURL();
+      console.log(pageUrl);
+      if(pageUrl.includes("ref=move") || pageUrl.includes("ref=nc")) {
+        await testFunction.assertTextValue(t, subHeading, "Select your plans");
+      }else {
+        await testFunction.assertTextValue(t, subHeading, "Details");
+      }
+    }
+    console.log("Progress bar And Subheading validation completed.");
+  }
+
+  public static async validateContactPrefSection(t) {
+    await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.contactPreference.disclaimer);
+    let expectedDisclaimerText = "We are committed to providing you with the very best energy solution and service, and may contact you about this offer to see how we can assist. If you do not wish to be contacted click here.";
+    let actualDisclaimerText = await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.contactPreference.disclaimer);
+    await testFunction.assertTextValue(t, actualDisclaimerText, expectedDisclaimerText);
+
+    await testFunction.click(t, eaCheckoutDetailsPage.elements.contactPreference.linkClickHere);
+
+    let expectedModalHeading = "Contact preference";
+    let actualModalHeading = await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.contactPreference.modalHeading);
+    await testFunction.assertTextValue(t, actualModalHeading, expectedModalHeading);
+
+    let expectedModalText = "I agree that EnergyAustralia may contact me about this quote.";
+    let actualModalText = await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.contactPreference.lblModalText);
+    await testFunction.assertTextValue(t, actualModalText, expectedModalText);
+
+    await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.contactPreference.btnSubmit);
+    await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.contactPreference.btnClose);
+
+    await testFunction.click(t, eaCheckoutDetailsPage.elements.contactPreference.btnSubmit);
+    console.log("Validation completed for Contact Preferences section.");
+  }
+
+  public static async validateRefineBar(t, fuelType, sourceSystem) {
+    if(sourceSystem === "My Account") {
+      await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.refineBar.main);
+      await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.refineBar.refinePeriod);
+      if (await testFunction.isElectricity(fuelType)) {
+        await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.refineBar.eleUsage);
+        await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.refineBar.greenEnergy);
+      }
+      if (await testFunction.isGas(fuelType)) {
+        await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.refineBar.gasUsage);
+      }
+      console.log("Validation completed for refine bar.");
+    } else {
+      console.log("Refine bar validation on checkout details page is not applicable for non my account journeys.");
+    }
+  }
+
+  public static async validateDisclaimer(t, sourceSystem, element, expectedText) {
+    if(sourceSystem === "My Account") {
+      await testFunction.isElementDisplayed(t, element);
+      let actualText = await testFunction.getElementText(t, element);
+      actualText = actualText.replace(" ", "");
+      expectedText = expectedText.replace(" ", "");
+      await testFunction.assertTextValue(t, actualText, expectedText);
+    }
+    console.log("Disclaimer validated successfully.");
+  }
+
+  public static async validateNavigationButtons(t, sourceSystem, journey) {
+      console.log(sourceSystem);
+      console.log(journey);
+    if(sourceSystem.toLowerCase() === "my account" && journey.toLowerCase() !== "move home" && journey.toLowerCase() !== "upsell") {
+      await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.btnBack);
+      await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.btnNext);
+      await testFunction.isElementAbsent(t, eaCheckoutDetailsPage.elements.reviewYourOrderBtn);
+    } else {
+      await testFunction.isElementAbsent(t, eaCheckoutDetailsPage.elements.btnBack);
+      await testFunction.isElementAbsent(t, eaCheckoutDetailsPage.elements.btnNext);
+      await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.reviewYourOrderBtn);
     }
   }
 }

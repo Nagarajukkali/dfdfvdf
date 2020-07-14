@@ -17,11 +17,20 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus|firstName|lastName|businessType |
       |BUS         |BUS        |Existing      |test     |test    |ABN          |
+    And user validates details on checkout details page
+      |sourceSystem   |journey    |fuelType   |
+      |<sourceSystem> |<journey>  |<fuelType> |
     And user clicks on 'Review your order' button and navigates to review page
+    And user validates details on checkout review page
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
     Then Life support section is displayed on Review page as per selected "<fuelType>" and verified "<accountType>"
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     And user lands on checkout complete page
+    And user validates details on checkout complete page
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |BSME         |Existing       |
     When user has opened the qt2 Reporting website link in a browser
     And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
@@ -36,8 +45,8 @@ Feature: This feature is to test the verify account scenarios for existing busin
       |GAS     |VERBALLYACCEPTED|BUSINESS    |PS       |SWSRB-GV|5323580662|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName                |accountType|
-      |E2E_VerifyAccount_Business_NonMoving     |BUS           |BOTH     |Total Plan Plus Business|BOTH       |
+      |folderName                               |customer_type |fuelType |planName                |accountType|sourceSystem   |journey      |AAH  |DD   |
+      |E2E_VerifyAccount_Business_NonMoving     |BUS           |BOTH     |Total Plan Plus Business|BOTH       |Quote Tool     |Plan Switch  |No   |No   |
 
   Scenario Outline: Submit a quote for existing moving business customer through verify account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -55,14 +64,23 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus|firstName|lastName|businessType   |
       |BUS         |BUS        |Existing      |test     |test    |ABN            |
+    And user validates details on checkout details page
+      |sourceSystem   |journey    |fuelType   |
+      |<sourceSystem> |<journey>  |<fuelType> |
     And user selects answer for property renovation question for '<state>'
     And user clicks on 'Review your order' button and navigates to review page
+    And user validates details on checkout review page
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices        |
       |Yes              |BOTH    |Chronic Positive Airways Pressure Respirator  |Medically Required Hot Water |
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     Then user lands on checkout complete page
+    And user validates details on checkout complete page
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |BSME         |Existing       |
     When user has opened the qt2 Reporting website link in a browser
     And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
@@ -77,5 +95,5 @@ Feature: This feature is to test the verify account scenarios for existing busin
       |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GV |5330956738|N                             |N                             |Y                      |GLSMRHW                 |EMAIL        |
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName        |state  |
-      |E2E_VerifyAccount_Business_Moving        |BUS           |BOTH     |Total Business  |VIC    |
+      |folderName                               |customer_type |fuelType |planName        |state  |sourceSystem   |journey      |AAH  |DD   |
+      |E2E_VerifyAccount_Business_Moving        |BUS           |BOTH     |Total Business  |VIC    |Quote Tool     |Move Home    |No   |No   |

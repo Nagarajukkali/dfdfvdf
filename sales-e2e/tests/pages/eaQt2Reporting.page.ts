@@ -13,6 +13,7 @@ const eaQt2Reporting={
     txtEmail:Selector('#email'),
     btnFind:Selector('#findByQuoteID'),
     linkQuoteId:Selector('a[href*=\'/qt2reporting/app/xml?quoteId=\']'),
+    fuelType:Selector('a[href*=\'/qt2reporting/app/xml?quoteId=\']').parent().nextSibling(),
     txtQuoteDetails:Selector('html>body>pre')
   },
 };

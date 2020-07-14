@@ -78,13 +78,13 @@ const screenshot=config.screenshot
   }
 
 export class testFunction {
-
   public static async click(t, element) {
     try {
       await this.isElementDisplayed(t, element);
       await t.click(element);
     } catch (error) {
       console.log(error);
+      throw Error("Unable to click on the element: " + element);
     }
   }
 
@@ -121,9 +121,10 @@ export class testFunction {
     await t.expect(actualText).eql(expectedText);
   }
 
-  public static async assertPageURL(t, urlContent) {
-    const getPageUrl=ClientFunction(() => window.location.href);
-    await t.expect(getPageUrl()).contains(urlContent);
+  public static async getPageURL() {
+    const getURL = ClientFunction(() => window.location.href);
+    const url = await getURL();
+    return url;
   }
 
   public static async clearAndEnterText(t, element, value) {
@@ -341,6 +342,11 @@ export class testFunction {
     return numOfExpectedFeatures;
   }
 
+  public static getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 }
 
 
