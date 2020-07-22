@@ -21,8 +21,8 @@ Scenario Outline: Submit a quote for offer campaign for '<folderName>'
   And user selects answer for property renovation question for '<state>'
   And user clicks on 'Review your order' button and navigates to review page
   And user validates details on checkout review page
-    |sourceSystem   |journey    |fuelType   |AAH  |DD   |
-    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
+    |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
     |Yes              |BOTH    |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
@@ -30,8 +30,8 @@ Scenario Outline: Submit a quote for offer campaign for '<folderName>'
   And user submits the quote
   Then user lands on checkout complete page
   And user validates details on checkout complete page
-    |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
-    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |RESI         |               |
+    |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
   When user has opened the qt2 Reporting website link in a browser
   And user logs in to qt2 reporting
   And user search quote on the basis of 'Email'
@@ -46,9 +46,9 @@ Scenario Outline: Submit a quote for offer campaign for '<folderName>'
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
   Examples:
-    |customerStatus|fuelType|campaign  |folderName                                    |state|sourceSystem  |journey  |AAH  |DD  |
-    |New           |BOTH    |offer     |E2E_New_Resi_Camp_OFFER_WithoutAAH_WithoutDD  |NSW  |Quote Tool    |Move Home|No   |No  |
-    |New           |BOTH    |offer     |E2E_New_Resi_Camp_OFFER_WithAAH_WithDD        |NSW  |Quote Tool    |Move Home|Yes  |Yes |
+    |customerStatus|fuelType|campaign  |folderName                                    |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
+    |New           |BOTH    |offer     |E2E_New_Resi_Camp_OFFER_WithoutAAH_WithoutDD  |NSW  |Quote Tool    |Move Home|No   |No  |RES          |New            |
+    |New           |BOTH    |offer     |E2E_New_Resi_Camp_OFFER_WithAAH_WithDD        |NSW  |Quote Tool    |Move Home|Yes  |Yes |RES          |New            |
 
 
 

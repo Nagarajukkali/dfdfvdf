@@ -22,8 +22,8 @@ Feature: This feature is to test the Bill Uploader scenarios
       |<AAH>       |<DD>       |CC             |
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices|
       |Yes              |ELE     |Ele Other             |
@@ -32,8 +32,8 @@ Feature: This feature is to test the Bill Uploader scenarios
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |RESI         |New            |
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     When user has opened the qt2 Reporting website link in a browser
     And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
@@ -44,6 +44,6 @@ Feature: This feature is to test the Bill Uploader scenarios
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-EV |6305515608|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |billName|customerStatus|fuelType|folderName              |sourceSystem   |journey      |AAH  |DD  |
-      |Bill.pdf|New           |ELE     |E2E_New_Resi_Bill_Upload_01|Quote Tool     |Plan Switch  |No   |Yes |
-      |Bill.pdf|New           |ELE     |E2E_New_Resi_Bill_Upload_02|Quote Tool     |Plan Switch  |Yes  |No  |
+      |billName|customerStatus|fuelType|folderName                  |sourceSystem   |journey      |AAH  |DD  |customerType |newOrExisting  |
+      |Bill.pdf|New           |ELE     |E2E_New_Resi_Bill_Upload_01 |Quote Tool     |Plan Switch  |No   |Yes |RES          |New            |
+      |Bill.pdf|New           |ELE     |E2E_New_Resi_Bill_Upload_02 |Quote Tool     |Plan Switch  |Yes  |No  |RES          |New            |

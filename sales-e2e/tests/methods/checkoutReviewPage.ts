@@ -1,6 +1,7 @@
 import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 const eaCheckoutDetailsPage=require('../pages/checkOutDetails.page');
 const eaCheckoutReviewPage=require('../pages/checkoutReview.page')
+const EaHomePage=require('../pages/energy-australia-home.page');
 import {LSDevices, PlanType, SelectionType, testFunction} from '../../global_methods/helper';
 import {checkoutDetailsMethod} from './checkoutDetailsPage';
 
@@ -656,5 +657,33 @@ export class checkoutReviewMethod {
     await testFunction.click(t,eaCheckoutReviewPage.elements.listBusinessType.nth(indexForBusinessType));
     await testFunction.click(t,eaCheckoutReviewPage.elements.anzsicCode);
     await testFunction.click(t,eaCheckoutReviewPage.elements.listAnzsicCode.nth(indexForAnZsicCode));
+  }
+
+  public static async validateGeneralStateDisclaimer(t, customerType, isNewCustomer, isMoving) {
+    if(await testFunction.isResidential(customerType)) {
+      //Residential customers
+      await testFunction.assertText(t, EaHomePage.elements.disclaimer.generalStateDisclaimerP1, "When you choose us, you’ll be with a trusted power provider who supplies energy to 1.7 million Australian customers.");
+      await testFunction.assertText(t, EaHomePage.elements.disclaimer.generalStateDisclaimerP2, "We are focusing on helping customers reduce their energy usage via tips in our blog on energy rating and how to be more energy efficient.");
+      await testFunction.assertText(t, EaHomePage.elements.disclaimer.generalStateDisclaimerP3, "Compare energy plans from the options above and find our best electricity deals (www.energyaustralia.com.au/offer). Making an energy switch has never been so easy.");
+    } else if(await testFunction.isBusiness(customerType)){
+      let expectedText;
+      if(isNewCustomer && isMoving) {
+        //New -  Moving - Business customer
+        expectedText = "Find a great deal for your business here at EnergyAustralia, and move with confidence. Easily compare plans, rates and benefits then book your move online for instant email confirmation.";
+      }else if(isNewCustomer && !isMoving) {
+        //New - Non moving - Business customer
+        expectedText = "Find a better deal for your business here at EnergyAustralia. Easily compare plans, rates and benefits then switch online for instant email confirmation.";
+      }else if(!isNewCustomer && isMoving) {
+        //Existing - Moving - Business customer
+        expectedText = "Find a great deal for your business here at EnergyAustralia, and move with confidence. Easily compare plans, rates and benefits then book your move online for instant email confirmation.";
+      }else if(!isNewCustomer && !isMoving) {
+        //Existing - Non moving - Business customer
+        expectedText = "Find a great deal for your business here at EnergyAustralia. Easily compare plans, rates and benefits then switch online for instant email confirmation.";
+      }else {
+        throw Error("Invalid combination");
+      }
+      await testFunction.assertText(t, EaHomePage.elements.disclaimer.generalStateDisclaimerOld, expectedText);
+    }
+    console.log("General state disclaimer validated successfully on review page.");
   }
 }

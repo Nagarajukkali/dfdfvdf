@@ -4,6 +4,7 @@ Feature:E2E scenario for existing business moving and non moving customer
   Scenario Outline: Submit a quote for existing business moving customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
+    Then user validates details on plans page for 'BUS'
     When user selects '<planName>'
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
@@ -26,13 +27,13 @@ Feature:E2E scenario for existing business moving and non moving customer
       |Yes              |BOTH    |Ventilator For Life Support|Gas Other            |
     And user verifies selected plan details for '<fuelType>'
     And user validates details on checkout review page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |BSME         |Existing       |
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     When user has opened the qt2 Reporting website link in a browser
     And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
@@ -47,12 +48,13 @@ Feature:E2E scenario for existing business moving and non moving customer
       |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |BSOT-GV |5330956738|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|planName         |folderName             |state|sourceSystem  |journey  |AAH  |DD |
-      |Existing      |BOTH    |Basic Business   |E2E_Existing_Bus_Moving|VIC  |Quote Tool    |Move Home|No   |No |
+      |customerStatus|fuelType|planName         |folderName             |state|sourceSystem  |journey  |AAH  |DD |customerType |newOrExisting  |
+      |Existing      |BOTH    |Basic Business   |E2E_Existing_Bus_Moving|VIC  |Quote Tool    |Move Home|No   |No |BUS          |Existing       |
 
   Scenario Outline: Submit a quote for existing business non moving customer with LS, select dual fuel and verify electricity account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
+    Then user validates details on plans page for 'BUS'
     When user selects '<planName>'
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
@@ -75,13 +77,13 @@ Feature:E2E scenario for existing business moving and non moving customer
       |No               |ELE     |                                            |                            |
     And user verifies selected plan details for '<fuelType>'
     And user validates details on checkout review page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     And user submits the quote
     And user lands on checkout complete page
     And user validates details on checkout complete page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |BSME         |Existing       |
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     When user has opened the qt2 Reporting website link in a browser
     And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
@@ -96,7 +98,7 @@ Feature:E2E scenario for existing business moving and non moving customer
       |GAS     |VERBALLYACCEPTED|BUSINESS    |PS       |TOPB-GV |5330956738|N                             |N                             |N                      |                        |EMAIL        |
 
     Examples:
-      |customerStatus|planName         |folderName                |fuelType|accountType|sourceSystem  |journey    |AAH  |DD |
-      |Existing      |Total Business   |E2E_Existing_Bus_NonMoving|BOTH    |ELE        |Quote Tool    |Plan Switch|No   |No |
+      |customerStatus|planName         |folderName                |fuelType|accountType|sourceSystem  |journey    |AAH  |DD |customerType |newOrExisting  |
+      |Existing      |Total Business   |E2E_Existing_Bus_NonMoving|BOTH    |ELE        |Quote Tool    |Plan Switch|No   |No |BUS          |Existing       |
 
 

@@ -3,6 +3,7 @@ import {testFunction } from '../../global_methods/helper';
 import {When, Then } from 'cucumber';
 import {FileUtils} from '../../libs/FileUtils'
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
+import {plansMethod} from '../methods/plansPage';
 
 When(/^user provides life support details$/, async function(t,[],dataTable){
   let data=dataTable.hashes();
@@ -65,6 +66,9 @@ When(/^user validates details on checkout review page$/, async function (t,[],da
   let fuelType = params[0].fuelType;
   let aah = params[0].AAH;
   let dd = params[0].DD;
+  let customerType = params[0].customerType;
+  let isNewCustomer = params[0].newOrExisting.toLowerCase() === "new";
+  let isMoving = journey.toLowerCase() === "move home";
 
   await checkoutDetailsMethod.validateHeader(t, sourceSystem, journey);
   await checkoutReviewMethod.validateProgressbarAndSubheading(t);
@@ -74,6 +78,7 @@ When(/^user validates details on checkout review page$/, async function (t,[],da
   await checkoutReviewMethod.validateFeesAndChargesSection(t);
   await checkoutReviewMethod.validateCarbonNeutralSection(t);
   await checkoutReviewMethod.validateNavigationButtons(t);
+  await checkoutReviewMethod.validateGeneralStateDisclaimer(t, customerType, isNewCustomer, isMoving);
   console.log("Checkout Review page validated successfully");
 });
 

@@ -154,3 +154,6 @@ Then(/^plans page load according to the type of '(.*)'$/, async function (t,[NMI
   await testFunction.takeScreenshot(t,'plans_page');
 
 });
+Then(/^user validates details on plans page for '(.*)'$/, async function (t, [customerType]) {
+  await plansMethod.validateGeneralStateDisclaimer(t, customerType);
+});

@@ -1,13 +1,12 @@
 module.exports={
 config: {
-    env: 'non-prod',
-    eaHomePageUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au?live=disabled',
-    eaNewConnectionPageUrl:'https://preprod.nonprod.digital.energyaustralia.com.au/new-connections-ui/#/connection',
-    eaCampaignUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au/',
-    eaMyAccountUrl: 'https://preprod.nonprod.digital.energyaustralia.com.au/myaccount/index.html',
-    eaBillUploaderUrl:'https://preprod.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/compare-electricity-and-gas-plans/upload-your-electricity-bill',
-    qt2ReportingURL:'https://preprod.nonprod.digital.energyaustralia.com.au/qt2reporting/login',
-    qt2ReportingHomePageURL:'https://preprod.nonprod.digital.energyaustralia.com.au/qt2reporting/app/reporting',
+    eaHomePageUrl: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au?live=disabled`,
+    eaNewConnectionPageUrl:`https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/new-connections-ui/#/connection`,
+    eaCampaignUrl: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/`,
+    eaMyAccountUrl: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/myaccount/index.html`,
+    eaBillUploaderUrl:`https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/compare-electricity-and-gas-plans/upload-your-electricity-bill`,
+    qt2ReportingURL:`https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/qt2reporting/login`,
+    qt2ReportingHomePageURL:`https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/qt2reporting/app/reporting`,
     screenshot:'N',
     qt2ReportingCreds:{
       username:'abhar',

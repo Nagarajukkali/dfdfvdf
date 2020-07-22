@@ -1,4 +1,4 @@
-@E2E1
+@E2E
 Feature:E2E scenario for existing residential moving customer through move house
 
 Scenario Outline: Submit a quote for existing residential customer through move house for '<folderName>'
@@ -30,8 +30,8 @@ Scenario Outline: Submit a quote for existing residential customer through move 
   And user chooses "<optDisconnection>" for disconnection
   And user clicks on 'Review your order' button and navigates to review page
   And user validates details on checkout review page
-    |sourceSystem   |journey    |fuelType   |AAH  |DD   |
-    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
+    |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices|
     |Yes              |BOTH    |Ele Other             |Gas Other            |
@@ -39,8 +39,8 @@ Scenario Outline: Submit a quote for existing residential customer through move 
   And user submits the quote
   Then user lands on checkout complete page
   And user validates details on checkout complete page
-    |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
-    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |RESI         |Existing       |
+    |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
   When user has opened the qt2 Reporting website link in a browser
   And user logs in to qt2 reporting
   And user search quote on the basis of 'Email'
@@ -55,8 +55,8 @@ Scenario Outline: Submit a quote for existing residential customer through move 
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
   Examples:
-    |folderName                     |fuelType|state|optDisconnection|movingAddress                   |sourceSystem  |journey  |AAH  |DD   |
-    |E2E_Existing_Resi_MoveHouse_01 |BOTH    |NSW  |No              |5 Wilkies Street, BULLI NSW 2516|Quote Tool    |Move Home|No   |No   |
-    |E2E_Existing_Resi_MoveHouse_02 |BOTH    |NSW  |No              |5 Wilkies Street, BULLI NSW 2516|Quote Tool    |Move Home|Yes  |Yes  |
+    |folderName                     |fuelType|state|optDisconnection|movingAddress                   |sourceSystem  |journey  |AAH  |DD   |customerType |newOrExisting  |
+    |E2E_Existing_Resi_MoveHouse_01 |BOTH    |NSW  |No              |5 Wilkies Street, BULLI NSW 2516|Quote Tool    |Move Home|No   |No   |RES          |Existing       |
+    |E2E_Existing_Resi_MoveHouse_02 |BOTH    |NSW  |No              |5 Wilkies Street, BULLI NSW 2516|Quote Tool    |Move Home|Yes  |Yes  |RES          |Existing       |
 
 

@@ -1,6 +1,6 @@
 import { Selector } from 'testcafe';
 import { ClientFunction } from 'testcafe';
-import {FUEL_TYPE_OPTIONS, AustralianState} from '@ea/ea-commons-models';
+import {FUEL_TYPE_OPTIONS, AustralianState, CustomerType} from '@ea/ea-commons-models';
 import {fetchBrowser, getDateTime, screenshotFolder} from '../tests/step_definitions/hooks';
 const replace={ replace: true };
 const { config }=require('../resources/resource');
@@ -346,6 +346,14 @@ export class testFunction {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  public static isResidential(customerType) {
+    return customerType === CustomerType.RESIDENTIAL;
+  }
+
+  public static isBusiness(customerType) {
+    return customerType === CustomerType.BUSINESS;
   }
 }
 

@@ -4,6 +4,7 @@ Feature:E2E scenario for existing residential moving and non moving customer
 Scenario Outline: Submit a quote for existing residential moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page
+  Then user validates details on plans page for 'RES'
   When user selects '<planName>'
   And user moves on to fill the qualifier
   And user selects '<customerStatus>' on qualifier
@@ -26,8 +27,8 @@ Scenario Outline: Submit a quote for existing residential moving customer
     |No          |Yes        |Bank           |
   And user clicks on 'Review your order' button and navigates to review page
   And user validates details on checkout review page
-    |sourceSystem   |journey    |fuelType   |AAH  |DD   |
-    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
+    |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
   And user selects carbon neutral option
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices|
@@ -36,8 +37,8 @@ Scenario Outline: Submit a quote for existing residential moving customer
   And user submits the quote
   Then user lands on checkout complete page
   And user validates details on checkout complete page
-    |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
-    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |RESI         |Existing       |
+    |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
   When user has opened the qt2 Reporting website link in a browser
   And user logs in to qt2 reporting
   And user search quote on the basis of 'Email'
@@ -52,12 +53,13 @@ Scenario Outline: Submit a quote for existing residential moving customer
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RSOT-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
   Examples:
-  |customerStatus|fuelType|planName  |folderName              |state|optDisconnection|sourceSystem  |journey  |AAH  |DD   |
-  |Existing      |BOTH    |Basic Home|E2E_Existing_Resi_Moving|NSW  |No              |Quote Tool    |Move Home|No   |Yes  |
+  |customerStatus|fuelType|planName  |folderName              |state|optDisconnection|sourceSystem  |journey  |AAH  |DD   |customerType |newOrExisting  |
+  |Existing      |BOTH    |Basic Home|E2E_Existing_Resi_Moving|NSW  |No              |Quote Tool    |Move Home|No   |Yes  |RES          |Existing       |
 
 Scenario Outline: Submit a quote for existing residential non moving customer with LS, select dual fuel and verify gas account
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page
+  Then user validates details on plans page for 'RES'
   When user selects '<planName>'
   And user moves on to fill the qualifier
   And user selects '<customerStatus>' on qualifier
@@ -80,13 +82,13 @@ Scenario Outline: Submit a quote for existing residential non moving customer wi
     |Yes              |ELE     |Intermittent Peritoneal Dialysis Machine|                            |
   And user verifies selected plan details for '<fuelType>'
   And user validates details on checkout review page
-    |sourceSystem   |journey    |fuelType   |AAH  |DD   |
-    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
+    |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
   And user submits the quote
   And user lands on checkout complete page
   And user validates details on checkout complete page
-    |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
-    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |RESI         |Existing       |
+    |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
   When user has opened the qt2 Reporting website link in a browser
   And user logs in to qt2 reporting
   And user search quote on the basis of 'Email'
@@ -101,5 +103,5 @@ Scenario Outline: Submit a quote for existing residential non moving customer wi
     |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |RCPP-GN |5240924834|N                             |N                             |Y                      |GLSMRHW                 |EMAIL        |
 
   Examples:
-    |customerStatus|planName |folderName                 |fuelType|accountType|sourceSystem  |journey     |AAH  |DD   |
-    |Existing      |No Frills|E2E_Existing_Resi_NonMoving|BOTH    |GAS        |Quote Tool    |Plan Switch |No   |No   |
+    |customerStatus|planName |folderName                 |fuelType|accountType|sourceSystem  |journey     |AAH  |DD   |customerType |newOrExisting  |
+    |Existing      |No Frills|E2E_Existing_Resi_NonMoving|BOTH    |GAS        |Quote Tool    |Plan Switch |No   |No   |RES          |Existing       |

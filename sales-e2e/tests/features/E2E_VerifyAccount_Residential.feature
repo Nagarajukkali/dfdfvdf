@@ -4,6 +4,7 @@ Feature: This feature is to test the verify account scenarios for existing resid
   Scenario Outline: Submit a quote for existing non moving residential customer through verify account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
+    Then user validates details on plans page for '<customer_type>'
     And user have selected fuel as "<fuelType>"
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for residential customer
@@ -22,8 +23,8 @@ Feature: This feature is to test the verify account scenarios for existing resid
       |<sourceSystem> |<journey>  |<fuelType> |
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                    |GaslifeSupportDevices  |
       |Yes              |BOTH    |Intermittent Peritoneal Dialysis Machine  |Gas Other              |
@@ -31,8 +32,8 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |RESI         |Existing       |
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     When user has opened the qt2 Reporting website link in a browser
     And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
@@ -47,12 +48,13 @@ Feature: This feature is to test the verify account scenarios for existing resid
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |SWSRH-GV|5310602455|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName       |sourceSystem   |journey      |AAH  |DD   |
-      |E2E_VerifyAccount_Residential_NonMoving  |RES           |BOTH     |Total Plan Plus|Quote Tool     |Plan Switch  |No   |No   |
+      |folderName                               |customer_type |fuelType |planName       |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
+      |E2E_VerifyAccount_Residential_NonMoving  |RES           |BOTH     |Total Plan Plus|Quote Tool     |Plan Switch  |No   |No   |RES          |Existing       |
 
   Scenario Outline: Submit a quote for existing moving residential customer through verify account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
+    Then user validates details on plans page for '<customer_type>'
     And user have selected fuel as "<fuelType>"
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for residential customer
@@ -73,8 +75,8 @@ Feature: This feature is to test the verify account scenarios for existing resid
       |<sourceSystem> |<journey>  |<fuelType> |
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices        |
       |Yes              |BOTH    |Chronic Positive Airways Pressure Respirator  |Medically Required Hot Water |
@@ -82,8 +84,8 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |RESI         |Existing       |
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     When user has opened the qt2 Reporting website link in a browser
     And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
@@ -98,5 +100,5 @@ Feature: This feature is to test the verify account scenarios for existing resid
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-GV |5321574765|N                             |N                             |Y                      |GLSMRHW                 |EMAIL        |
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName    |optDisconnection |state  |sourceSystem   |journey      |AAH  |DD   |
-      |E2E_VerifyAccount_Residential_Moving     |RES           |BOTH     |No Frills   |No               |VIC    |Quote Tool     |Move Home    |No   |No   |
+      |folderName                               |customer_type |fuelType |planName    |optDisconnection |state  |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
+      |E2E_VerifyAccount_Residential_Moving     |RES           |BOTH     |No Frills   |No               |VIC    |Quote Tool     |Move Home    |No   |No   |RES          |Existing       |
