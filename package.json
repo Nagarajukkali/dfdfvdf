@@ -19,7 +19,7 @@
   },
   "config": {
     "env": "mocha",
-    "e2e_tags": "@test"
+    "e2e_tags": "@E2E"
   },
   "private": true,
   "dependencies": {
