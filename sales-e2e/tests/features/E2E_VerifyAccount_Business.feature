@@ -4,6 +4,7 @@ Feature: This feature is to test the verify account scenarios for existing busin
   Scenario Outline: Submit a quote for existing non moving business customer with life support for both accounts through verify account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
+    Then user validates details on plans page for '<customer_type>'
     And user have selected fuel as "<fuelType>"
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for business customer
@@ -22,15 +23,15 @@ Feature: This feature is to test the verify account scenarios for existing busin
       |<sourceSystem> |<journey>  |<fuelType> |
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     Then Life support section is displayed on Review page as per selected "<fuelType>" and verified "<accountType>"
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     And user lands on checkout complete page
     And user validates details on checkout complete page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |BSME         |Existing       |
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     When user has opened the qt2 Reporting website link in a browser
     And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
@@ -45,12 +46,13 @@ Feature: This feature is to test the verify account scenarios for existing busin
       |GAS     |VERBALLYACCEPTED|BUSINESS    |PS       |SWSRB-GV|5323580662|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName                |accountType|sourceSystem   |journey      |AAH  |DD   |
-      |E2E_VerifyAccount_Business_NonMoving     |BUS           |BOTH     |Total Plan Plus Business|BOTH       |Quote Tool     |Plan Switch  |No   |No   |
+      |folderName                               |customer_type |fuelType |planName                |accountType|sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
+      |E2E_VerifyAccount_Business_NonMoving     |BUS           |BOTH     |Total Plan Plus Business|BOTH       |Quote Tool     |Plan Switch  |No   |No   |BUS          |Existing       |
 
   Scenario Outline: Submit a quote for existing moving business customer through verify account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
+    Then user validates details on plans page for '<customer_type>'
     And user have selected fuel as "<fuelType>"
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for business customer
@@ -70,8 +72,8 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user selects answer for property renovation question for '<state>'
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices        |
       |Yes              |BOTH    |Chronic Positive Airways Pressure Respirator  |Medically Required Hot Water |
@@ -79,8 +81,8 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |BSME         |Existing       |
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     When user has opened the qt2 Reporting website link in a browser
     And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
@@ -95,5 +97,5 @@ Feature: This feature is to test the verify account scenarios for existing busin
       |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GV |5330956738|N                             |N                             |Y                      |GLSMRHW                 |EMAIL        |
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName        |state  |sourceSystem   |journey      |AAH  |DD   |
-      |E2E_VerifyAccount_Business_Moving        |BUS           |BOTH     |Total Business  |VIC    |Quote Tool     |Move Home    |No   |No   |
+      |folderName                               |customer_type |fuelType |planName        |state  |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
+      |E2E_VerifyAccount_Business_Moving        |BUS           |BOTH     |Total Business  |VIC    |Quote Tool     |Move Home    |No   |No   |BUS          |Existing       |

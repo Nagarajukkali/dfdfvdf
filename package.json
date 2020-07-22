@@ -18,8 +18,8 @@
     "report": "node report-generator.js"
   },
   "config": {
-    "env": "non-prod",
-    "e2e_tags": "@E2E"
+    "env": "mocha",
+    "e2e_tags": "@test"
   },
   "private": true,
   "dependencies": {

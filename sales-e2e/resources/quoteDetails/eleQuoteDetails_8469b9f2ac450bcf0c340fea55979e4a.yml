@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2007132608
+    quoteId: BB2007152877
     sourceCode: Total_5%GD
-    actualQuoteDate: 2020-07-13
+    actualQuoteDate: 2020-07-15
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,9 +15,9 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0367841239
+      phoneNumber: 0322469558
     
-    emailId: zQYLKfElcX@energyaustralia.com.au
+    emailId: uMrHwDtbsL@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
@@ -30,15 +30,15 @@ saleDetail :
     
     businessIdDetail: 
       businessIdType: ACN
-      businessId: 138513776
+      businessId: 485188469
     
     anzsic: FINANCE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0367841239
+      businessPhoneNumber: 0322469558
     
-    businessEmailId: zQYLKfElcX@energyaustralia.com.au
+    businessEmailId: uMrHwDtbsL@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST

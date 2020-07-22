@@ -6,7 +6,7 @@
   "browsers": [
     "chrome:headless"
   ],
-  "concurrency": 5,
+  "concurrency":8,
   "reporter": [{
           "name": "cucumber-json",
           "output": "results/report/report.json"

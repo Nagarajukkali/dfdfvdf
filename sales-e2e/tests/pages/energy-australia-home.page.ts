@@ -92,6 +92,12 @@ const eaHomePage={
     headingOnChangePlanSelectionModal:Selector("#modal-heading-CHANGE_PLAN_SELECTION_MODAL"),
     basicResiPlanHeadingFuel:Selector("[id*='plan-heading-fuel-BASE_RSOT-']").nth(1),
     basicBsmePlanHeadingFuel:Selector("[id*='plan-heading-fuel-BASE_BSOT-']").nth(1),
+    disclaimer: {
+      generalStateDisclaimerOld: Selector("#general-state-disclaimer"),
+      generalStateDisclaimerP1: Selector("#general-state-disclaimer p").nth(0),
+      generalStateDisclaimerP2: Selector("#general-state-disclaimer p").nth(1),
+      generalStateDisclaimerP3: Selector("#general-state-disclaimer p").nth(2)
+    }
 
   },
   campaignElements:{

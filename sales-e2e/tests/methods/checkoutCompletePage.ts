@@ -30,7 +30,7 @@ export class checkoutCompleteMethod {
       await testFunction.assertText(t, eaCheckoutDetailsPage.elements.txtSubheading, "Thanks");
     }
 
-    if(customerType === 'RESI') {
+    if(await testFunction.isResidential(customerType)) {
       if(journey === "move home") {
         await testFunction.assertText(t, eaCheckoutDetailsPage.elements.txtSubheading, ", we’re moving with you.");
       }else if(sourceSystem === "my account") {
@@ -47,7 +47,7 @@ export class checkoutCompleteMethod {
       } else if((newOrExisting === "new" && journey !== "move home") || journey === "new connection") {
           await testFunction.assertText(t, eaCheckoutDetailsPage.elements.txtSubheading, "Welcome to EnergyAustralia, ");
       }
-    }else if(customerType === "BSME") {
+    }else if(await testFunction.isBusiness(customerType)) {
       if(newOrExisting === "new") {
         await testFunction.assertText(t, eaCheckoutDetailsPage.elements.txtSubheading, "and welcome to EnergyAustralia");
       } else {

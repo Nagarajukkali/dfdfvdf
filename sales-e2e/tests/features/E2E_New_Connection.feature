@@ -1,7 +1,7 @@
 @E2E
 Feature:E2E scenario for new connection
 
-Scenario Outline: Submit a quote for electricity new connection for residential customer
+  Scenario Outline: Submit a quote for electricity new connection for residential customer
   Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
   When user provides connection details
     |fuelType   |customerType|premiseType|state   |postcode|
@@ -25,20 +25,20 @@ Scenario Outline: Submit a quote for electricity new connection for residential 
     |New           |Driver License|
   And user clicks on 'Review your order' button and navigates to review page
   And user validates details on checkout review page
-    |sourceSystem   |journey    |fuelType   |AAH  |DD   |
-    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
+    |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
   And user provides life support details on review page
     |lifeSupportOption|fuelType   |EleclifeSupportDevices|
     |Yes              |<fuelType> |Ele Other             |
   And user submits the quote
   Then user lands on checkout complete page
   And user validates details on checkout complete page
-    |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
-    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |RESI         |New            |
+    |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
 
   Examples:
-    |folderName         |fuelType |sourceSystem   |journey      |AAH  |DD   |
-    |E2E_New_Resi_NC_ELE|ELE      |New Connection |Plan Switch  |No   |No   |
+    |folderName         |fuelType |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
+    |E2E_New_Resi_NC_ELE|ELE      |New Connection |Plan Switch  |No   |No   |RES          |New            |
 
   Scenario Outline: Submit a quote for gas new connection for residential customer
     Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
@@ -65,20 +65,20 @@ Scenario Outline: Submit a quote for electricity new connection for residential 
       |New           |Driver License|
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     And user provides life support details on review page
       |lifeSupportOption|fuelType   |GaslifeSupportDevices|
       |No               |<fuelType> |Gas Other            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |RESI         |New            |
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
 
     Examples:
-      |folderName         |fuelType |sourceSystem   |journey      |AAH  |DD   |
-      |E2E_New_Resi_NC_GAS|GAS      |New Connection |Plan Switch  |No   |No   |
+      |folderName         |fuelType |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
+      |E2E_New_Resi_NC_GAS|GAS      |New Connection |Plan Switch  |No   |No   |RES          |New            |
 
   Scenario Outline: Submit a quote for electricity new connection for business customer
     Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
@@ -105,19 +105,19 @@ Scenario Outline: Submit a quote for electricity new connection for residential 
     And user provides business details
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     And user provides life support details on review page
       |lifeSupportOption|fuelType   |EleclifeSupportDevices                  |
       |Yes              |<fuelType> |Intermittent Peritoneal Dialysis Machine|
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |BSME         |New            |
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     Examples:
-      |folderName        |fuelType |sourceSystem   |journey      |AAH  |DD   |
-      |E2E_New_BUS_NC_ELE|ELE      |New Connection |Plan Switch  |No   |No   |
+      |folderName        |fuelType |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
+      |E2E_New_BUS_NC_ELE|ELE      |New Connection |Plan Switch  |No   |No   |BUS          |New            |
 
 
 

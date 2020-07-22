@@ -226,9 +226,9 @@ export class checkoutDetailsMethod{
       await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.company,businessName);
       if((await testFunction.getElementText(t,eaCheckoutDetailsPage.elements.businessType)).includes('Please select')){
         await testFunction.click(t,eaCheckoutDetailsPage.elements.businessType);
-        await t.wait(3000);
+        await t.wait(4000);
         await testFunction.click(t,eaCheckoutDetailsPage.elements.businessTypeOption);
-        await t.wait(3000);
+        await t.wait(4000);
       }
       if((await testFunction.getElementText(t,eaCheckoutDetailsPage.elements.anzsicCode)).includes('Please select')){
         await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCode);

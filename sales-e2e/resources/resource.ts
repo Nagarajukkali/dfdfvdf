@@ -1,2 +1,2 @@
-const resources=require(`./${process.env.npm_package_config_env}-resources`);
+const resources=require(`./non-prod-resources`);
 module.exports=resources;
