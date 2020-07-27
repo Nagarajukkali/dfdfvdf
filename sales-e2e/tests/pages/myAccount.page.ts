@@ -26,6 +26,10 @@ const eaMyAccount={
     moveHeader:Selector("[src*='accounts-movers-add']>h1"),
     btnModalSkip: Selector("button.skip-button"),
     chkBoxGas: Selector("#mover-fuel-button-gas div.checkbox-image"),
+    benefitPeriod:Selector("#benefit-period div.field-body"),
+    exitFees:Selector("#exit-fees div.field-body"),
+    discounts:Selector("#discounts div.field-body div"),
+    btnRetry:Selector("button[type='submit']"),
   },
 };
 

@@ -77,7 +77,7 @@ const eaCheckoutDetailsPage={
     basicEleBusiness:Selector("[id*='plan-select-button-BSOT-E']"),
     noFrillEleBusiness:Selector("[id*='plan-select-button-BCPP-E']"),
     totalElePlanBusiness:Selector("[id*='plan-select-button-TOPB-E']"),
-    totalPlanPlusEleBusiness:Selector("[id*=plan-select-button-SWSRB-E']"),
+    totalPlanPlusEleBusiness:Selector("[id*='plan-select-button-SWSRB-E']"),
     basicGasPlan:Selector("[id*='plan-select-button-RSOT-G']"),
     noFrillsGasPlan:Selector("[id*='plan-select-button-RCPP-G']"),
     totalGasPlan: Selector("[id*='plan-select-button-TOPH-G']"),
@@ -107,7 +107,6 @@ const eaCheckoutDetailsPage={
     cbOptInCarbonNeutral: Selector("#carbonNeutralOptIn"),
     eaSpinner:Selector(".ea-spinner.ng-star-inserted"),
     linkNeedHelp:Selector("#ea-fab-toggle-button"),
-
     pageTitleBlock: Selector("[data-block-plugin-id*='page_title_block']"),
     txtPageTitle: Selector("[data-block-plugin-id*='page_title_block'] .page-title"),
     btnCloseText: Selector("[data-block-plugin-id*='page_title_block'] .page-header__link-text"),
@@ -130,11 +129,30 @@ const eaCheckoutDetailsPage={
       eleUsage: Selector("#refine-ele-usage"),
       greenEnergy: Selector("#refine-green")
     },
+    currentPlan:{
+      planTable:Selector("[id*='plan-table-current-plan-']"),
+      planDetailsSection:Selector("[id*='plan-table-current-plan-'] [id*='plan-details-']"),
+      planDetailsTitle:Selector("[id*='plan-table-current-plan']>div[id*='plan-details-title']"),
+      planHeadingTitle:Selector("[id*='plan-table-current-plan']>div[id*='plan-heading'] #plan-heading-title-CURRENT_ELE"),
+      planHeadingFuel:Selector("[id*='plan-table-current-plan']>div[id*='plan-heading'] #plan-heading-fuel-CURRENT_ELE"),
+      planEstimate:Selector("[id*='plan-table-current-plan']>div[id*='plan-estimate']"),
+      planGSTDisclaimer:Selector("[id*='plan-table-current-plan']>div[id*='plan-gst-disclaimer']"),
+      discounts:Selector("[id*='plan-table-current-plan']>div[id*='plan-details-discounts']"),
+      //benefitPeriod:Selector("[id*='plan-table-current-plan']>div[id*='plan-details-benefit-period']"),
+      exitFees:Selector("[id*='plan-table-current-plan']>div[id*='plan-details-exit-fees']"),
+      customerType:Selector("[id*='plan-table-current-plan']>div[id*='plan-details-customer-tariff-type']"),
+      planEleRateAccordion:Selector("[id*='plan-table-current-plan']>div[id*='plan-ELE-rate-accordion-heading']"),
+      disclaimer:Selector("[id*='plan-table-current-plan']>div[id*='current-plan-disclaimer']"),
+      sliderRight:Selector("div.hs-plan-slider__button__bg-right"),
+      sliderLeft:Selector("div.hs-plan-slider__button__bg-left"),
+    },
+
     btnSelectPlan: Selector("[id*='plan-select-button'] .hs-plan-table__plan-button-text-desktop"),
     txtFeesDisclaimer: Selector(".hs-plan-fees__card"),
     txtPaperBillFeeDisclaimer: Selector("#hs-plan-fees-paper-bill"),
     btnNext:Selector("#select-plans-next"),
     btnBack:Selector("#select-plans-back")
+
   },
 };
 

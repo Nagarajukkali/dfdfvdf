@@ -3,35 +3,20 @@ import {testFunction} from '../../global_methods/helper';
 const eaMyAccount = require('../pages/myAccount.page');
 const eaCheckoutDetailsPage = require('../pages/checkOutDetails.page');
 import {CustomerType, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
+import {myAccountMethod} from '../methods/myAccountPage';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
-const cryptoJS = require('crypto-js');
-let isSolar: boolean = true;
 
 When(/^user logs in to my account using '(.*)' and '(.*)'$/, async function(t, [username, password]) {
-  await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfUsername, username);
-  console.log(cryptoJS.AES.encrypt("TestPass1", username).toString());
-  await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfPassword, cryptoJS.AES.decrypt(password, username).toString(cryptoJS.enc.Utf8));
-  await testFunction.click(t, eaMyAccount.elements.btnSignIn);
-  await testFunction.waitForElementToBeAppeared(t,eaMyAccount.elements.eaSpinner);
-  await testFunction.waitForElementToBeDisappeared(t,eaMyAccount.elements.eaSpinner);
-  await testFunction.takeScreenshot(t,"my_account_dashboard");
-  console.log("User lands on my account dashboard.");
+  await myAccountMethod.loginToMyAccount(t,username,password);
 });
 
 When(/^user clicks on view and change plan accordion for '(.*)'$/, async function (t, [fuelType]) {
-  if(fuelType === FUEL_TYPE_OPTIONS.ELE.value) {
-    await testFunction.click(t, eaMyAccount.elements.eleViewAndChangePlan);
-    isSolar = true;
-  } else if(fuelType === FUEL_TYPE_OPTIONS.GAS.value) {
-    await testFunction.click(t, eaMyAccount.elements.gasViewAndChangePlan);
-    isSolar = false;
-  }
-  await testFunction.waitForElementToBeDisappeared(t,eaMyAccount.elements.eaSpinner);
-  await testFunction.takeScreenshot(t,"my_account_view_and_change_plan");
-  console.log("User lands on 'View or change plan' page.");
+ await myAccountMethod.navigateToViewAndChangePlan(t,fuelType);
 });
-When(/^user clicks on compare and switch plan button$/, async function (t, []) {
-  //await testFunction.waitForLoadingIconToClose_MA(t);
+When(/^user clicks on compare and switch plan button$/, async function (t) {
+  if(t.testRun.test.name.includes('current plan'))
+    await myAccountMethod.getPlanDetailsFromViewPlan(t);
+  console.log(myAccountMethod.map);
   await testFunction.click(t, eaMyAccount.elements.btnCompareAndSwitchPlans);
   console.log("User clicks on 'Compare and switch plan' button.")
 });
@@ -56,15 +41,7 @@ When(/^user provides identification details$/, async function (t, [], dataTable)
   }
 });
 When(/^user clicks on move home link for '(.*)'$/, async function (t, [fuelType]) {
-  await testFunction.waitForLoadingIconToClose_MA(t);
-  if(fuelType === FUEL_TYPE_OPTIONS.ELE.value) {
-    await testFunction.click(t, eaMyAccount.elements.eleMoveHome);
-  } else if(fuelType === FUEL_TYPE_OPTIONS.GAS.value) {
-    await testFunction.click(t, eaMyAccount.elements.gasMoveHome);
-  }
-  await testFunction.isElementDisplayed(t,eaMyAccount.elements.moveHeader);
-  await t.wait(10000);
-  await testFunction.takeScreenshot(t,"my_account_move_home");
+  await myAccountMethod.navigateToMoveHome(t,fuelType);
 });
 When(/^user enters service address as '(.*)'$/, async function (t, [address]) {
   await testFunction.clearAndEnterText(t, eaMyAccount.elements.serviceAddress, address);
@@ -99,9 +76,11 @@ When(/^user validates details on checkout details page$/, async function (t,[],d
   let params = dataTable.hashes();
   await checkoutDetailsMethod.validateHeader(t, params[0].sourceSystem, params[0].journey);
   await checkoutDetailsMethod.validateProgressbarAndSubheading(t, params[0].sourceSystem, params[0].journey, params[0].fuelType);
+  await checkoutDetailsMethod.validateCurrentPlanDetails(t);
   await checkoutDetailsMethod.validateContactPrefSection(t);
   await checkoutDetailsMethod.validateRefineBar(t, params[0].fuelType, params[0].sourceSystem);
   await checkoutDetailsMethod.validateDisclaimer(t, params[0].sourceSystem, eaCheckoutDetailsPage.elements.txtFeesDisclaimer, "Please note for all payment options, excluding direct debit or Centrepay, a merchant service fee may apply to credit card payments - 0.36% for paying bills by Visa or Mastercard® and 1.5% for paying bills by American Express®. The best way to avoid these fees is to set up direct debit via My Account.");
   await checkoutDetailsMethod.validateNavigationButtons(t, params[0].sourceSystem, params[0].journey);
   console.log("Checkout Details page validated successfully.");
 });
+

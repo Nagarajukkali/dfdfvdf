@@ -165,3 +165,99 @@ Feature: This feature is to test the My account scenarios for residential custom
     Examples:
       |folderName                                 |username                    |password                                     |fuelType   |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
       |E2E_MyAccount_Residential_ELE_PS_MissingID |MissingID_RESI@test.com     |U2FsdGVkX19pydLDPzviWcrNZ6PzbXoPRKv4Bjmqyug= |ELE        |My Account     |Plan switch  |Yes  |Yes  |RES          |Existing       |
+
+  @currentplan
+  Scenario Outline: Verify the RESI Electricity Plan switch journey with current plan having guaranteed discount from My Account
+    Given user has opened the website link in a browser and creates '<folderName>' to save evidences
+    And user navigates to my account login page
+    When user logs in to my account using '<username>' and '<password>'
+    And user clicks on view and change plan accordion for '<fuelType>'
+    And user clicks on compare and switch plan button
+    And user selects No for solar question and confirm
+    And user validates details on checkout details page
+      |sourceSystem   |journey    |fuelType   |
+      |<sourceSystem> |<journey>  |<fuelType> |
+    And user selects plans on checkout details page
+      |fuelType   |planName   |
+      |<fuelType> |Total Plan |
+    And user clicks on 'Next' button and navigates to review page
+    And user validates details on checkout review page
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
+    And user provides life support details on review page
+      |lifeSupportOption  |fuelType   |EleclifeSupportDevices       |
+      |Yes                |<fuelType> |Ventilator For Life Support  |
+    And user selects carbon neutral option
+    And user submits the quote
+    Then user lands on checkout complete page
+    And user validates details on checkout complete page
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |RESI         |Existing       |
+
+    Examples:
+      |folderName                                |username      |password                                     |fuelType   |sourceSystem   |journey      |AAH  |DD   |
+      |E2E_MyAccount_Resi_ELE_PS_Current_Plan_GD |cp1@test.com  |U2FsdGVkX19YPkVS1ABCAhv2r+1CGiV9MnvSGz52Qvw= |ELE        |My Account     |Plan switch  |No   |No   |
+
+  @currentplan
+  Scenario Outline: Verify the RESI Electricity Plan switch journey with current plan having pay on time discount from My Account
+    Given user has opened the website link in a browser and creates '<folderName>' to save evidences
+    And user navigates to my account login page
+    When user logs in to my account using '<username>' and '<password>'
+    And user clicks on view and change plan accordion for '<fuelType>'
+    And user clicks on compare and switch plan button
+    And user selects No for solar question and confirm
+    And user validates details on checkout details page
+      |sourceSystem   |journey    |fuelType   |
+      |<sourceSystem> |<journey>  |<fuelType> |
+    And user selects plans on checkout details page
+      |fuelType   |planName   |
+      |<fuelType> |Total Plan |
+    And user clicks on 'Next' button and navigates to review page
+    And user validates details on checkout review page
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
+    And user provides life support details on review page
+      |lifeSupportOption  |fuelType   |EleclifeSupportDevices       |
+      |Yes                |<fuelType> |Ventilator For Life Support  |
+    And user selects carbon neutral option
+    And user submits the quote
+    Then user lands on checkout complete page
+    And user validates details on checkout complete page
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |RESI         |Existing       |
+
+    Examples:
+      |folderName                                 |username              |password                                    |fuelType   |sourceSystem   |journey      |AAH  |DD   |
+      |E2E_MyAccount_Resi_ELE_PS_Current_Plan_PDD |currentplan03@test.com|U2FsdGVkX19pZVkiZ60o0iAFhXdDJs0/oxVAuNlMfyY=|ELE        |My Account     |Plan switch  |No   |No   |
+
+    @currentplan
+  Scenario Outline: Verify the RESI Electricity Plan switch journey with current plan having no discount from My Account
+    Given user has opened the website link in a browser and creates '<folderName>' to save evidences
+    And user navigates to my account login page
+    When user logs in to my account using '<username>' and '<password>'
+    And user clicks on view and change plan accordion for '<fuelType>'
+    And user clicks on compare and switch plan button
+    And user selects No for solar question and confirm
+    And user validates details on checkout details page
+      |sourceSystem   |journey    |fuelType   |
+      |<sourceSystem> |<journey>  |<fuelType> |
+    And user selects plans on checkout details page
+      |fuelType   |planName   |
+      |<fuelType> |Total Plan |
+    And user clicks on 'Next' button and navigates to review page
+    And user validates details on checkout review page
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |
+    And user provides life support details on review page
+      |lifeSupportOption  |fuelType   |EleclifeSupportDevices       |
+      |Yes                |<fuelType> |Ventilator For Life Support  |
+    And user selects carbon neutral option
+    And user submits the quote
+    Then user lands on checkout complete page
+    And user validates details on checkout complete page
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |RESI         |Existing       |
+
+    Examples:
+      |folderName                                |username                   |password                                    |fuelType   |sourceSystem   |journey      |AAH  |DD   |
+      |E2E_MyAccount_Resi_ELE_PS_Current_Plan_GD |nofrillsnodiscount@test.com|U2FsdGVkX1+VJgjPu6egPMpn4may0nOjl253Oh2CJmw=|ELE        |My Account     |Plan switch  |No   |Yes  |
