@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2007131395
+    quoteId: BB2007170637
     sourceCode: Total_5%GD
-    actualQuoteDate: 2020-07-13
+    actualQuoteDate: 2020-07-17
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,9 +15,9 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0392890200
+      phoneNumber: 0341139672
     
-    emailId: hrjRrnVWKd@energyaustralia.com.au
+    emailId: VwwQkqmjpL@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
@@ -30,15 +30,15 @@ saleDetail :
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 71445173877
+      businessId: 98983197844
     
     anzsic: FINANCE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0392890200
+      businessPhoneNumber: 0341139672
     
-    businessEmailId: hrjRrnVWKd@energyaustralia.com.au
+    businessEmailId: VwwQkqmjpL@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -55,11 +55,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-07-15
+    proposedStart: 2020-07-21
     offerType: ENE
     plan: TOPB-EV
     priceTag: EVPO5_NB2001
-    serviceOrderDate: 2020-07-15
+    serviceOrderDate: 2020-07-21
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 6203822385

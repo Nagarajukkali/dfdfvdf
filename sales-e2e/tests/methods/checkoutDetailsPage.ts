@@ -3,7 +3,7 @@ const eaCheckoutReviewPage=require('../pages/checkoutReview.page');
 import {BusinessType, CustomerStatus, directDebitType, PlanType, testFunction, cdeResponses} from '../../global_methods/helper';
 import {AustralianState, CustomerType} from '@ea/ea-commons-models';
 const Hashes=require('jshashes');
-
+import {myAccountMethod} from '../methods/myAccountPage';
 
 export class checkoutDetailsMethod{
 
@@ -48,7 +48,6 @@ export class checkoutDetailsMethod{
    public static getEmailWithScenario(t,email){
       let scenarioId=this.getScenarioId(t);
       this.map.set(scenarioId,email);
-      return this.map;
    }
 
     public static async provideContactDetails(t){
@@ -651,4 +650,40 @@ export class checkoutDetailsMethod{
       await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.reviewYourOrderBtn);
     }
   }
+
+  public static async validateCurrentPlanDetails(t){
+    if(myAccountMethod.map.get('isCurrentPlanDisplayed_'+checkoutDetailsMethod.getScenarioId(t))){
+      await testFunction.waitForElementToBeDisappeared(t,eaCheckoutDetailsPage.elements.eaSpinner);
+      let itemsCount=await testFunction.sizeOfElement(t,eaCheckoutDetailsPage.elements.currentPlan.planDetailsSection);
+      await testFunction.assertTextValue(t,itemsCount,4);
+      await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.planHeadingTitle);
+      await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.planHeadingTitle,'Your Current Plan');
+      await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.planHeadingFuel,'Electricity');
+      await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.planDetailsTitle);
+      await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.planEstimate);
+      await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.planEstimate,myAccountMethod.map.get('estimatePeriod_'+checkoutDetailsMethod.getScenarioId(t)));
+      await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.planGSTDisclaimer);
+      await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.discounts);
+      await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.discounts,myAccountMethod.map.get('discount_'+checkoutDetailsMethod.getScenarioId(t)));
+      await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.exitFees);
+      await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.exitFees,myAccountMethod.map.get('exitFees_'+checkoutDetailsMethod.getScenarioId(t)));
+      let pageUrl = await testFunction.getPageURL();
+      if(pageUrl.includes('customerType=BUS')){
+        await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.customerType,'Small business flat tariff');
+      }
+      else{
+        await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.customerType,'Residential flat tariff');
+      }
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.currentPlan.planEleRateAccordion);
+      await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.disclaimer);
+      let expectedDisclaimer="Not all features or benefits of your plan are displayed. For further information on your plan details, rates, fees and charges, tariff type, benefits, including discounts please refer to your welcome pack or bill."
+      await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.disclaimer,expectedDisclaimer);
+      console.log("Validated Current Plan section.");
+    }
+    else{
+      await testFunction.isElementAbsent(t,eaCheckoutDetailsPage.elements.currentPlan.planTable);
+      console.log("Current plan table is not available.")
+    }
+  }
+
 }
