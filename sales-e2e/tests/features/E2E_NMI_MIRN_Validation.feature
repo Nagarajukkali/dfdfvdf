@@ -1,6 +1,6 @@
-@E2E @NMIMIRNAddressValidation
+ @NMIMIRNAddressValidation
 Feature: This feature is to test the NMI, MIRN and address validation
-
+  @E2E
   Scenario Outline: verify the behaviour of plans page on entering '<NMIorMIRNorPostcodeType>'
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customerType>' plans page
@@ -33,7 +33,7 @@ Feature: This feature is to test the NMI, MIRN and address validation
       |Valid_NMI                         |RES         |SUCCESS                |6407557087              |NMI                |
       |Valid_MIRN                        |RES         |SUCCESS                |5321574765              |MIRN               |
 
-
+  @E2E
   Scenario Outline: verify the behaviour of lookup call when we provide '<addressType>' address on qualifier
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customerType>' plans page
@@ -60,6 +60,7 @@ Feature: This feature is to test the NMI, MIRN and address validation
     |Address_INVALID_METER_TYPE       |RES         |Total Plan    |New           |Non-Moving|23-29 Bourke Street, MELBOURNE VIC 3000 |INVALID_METER_TYPE   |
     #Address where selected plan is not available
     |Address_PLAN_NOT_AVAILABLE       |RES         |Total Plan    |New           |Non-Moving|12 Abattoir Lane, AVOCA VIC 3467        |PLAN_NOT_AVAILABLE   |
+
 
   Scenario Outline: verify the behaviour of campaign page on entering '<NMIorMIRNorPostcodeType>' where we don't offer that campaign
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences

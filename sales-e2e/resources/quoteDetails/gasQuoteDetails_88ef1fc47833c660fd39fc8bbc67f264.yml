@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2007142771
+    quoteId: BB2007271690
     sourceCode: Total_Plus_24%GD
-    actualQuoteDate: 2020-07-14
+    actualQuoteDate: 2020-07-27
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,9 +15,9 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0360562016
+      phoneNumber: 0341730567
     
-    emailId: rYUqIuYgZW@energyaustralia.com.au
+    emailId: cJgaXxXlby@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
@@ -30,15 +30,15 @@ saleDetail :
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 40152901820
+      businessId: 11030711681
     
     anzsic: FINANCE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0360562016
+      businessPhoneNumber: 0341730567
     
-    businessEmailId: rYUqIuYgZW@energyaustralia.com.au
+    businessEmailId: cJgaXxXlby@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -69,7 +69,7 @@ saleDetail :
     lifeSupportEquipment: 
       lifeSupportEquipmentType: OTHER
     
-    lifeSupportOtherEquipmentDetails: gas ls test device
+    lifeSupportOtherEquipmentDetails: Gas LS test device
   
   offerDetail: 
     fuelType: E

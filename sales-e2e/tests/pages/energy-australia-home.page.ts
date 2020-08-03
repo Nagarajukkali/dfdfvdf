@@ -90,8 +90,10 @@ const eaHomePage={
     txtElectricityBasedOn:Selector("div.hs-plan-rates-heading__description p").nth(0),
     txtGasBasedOn:Selector("div.hs-plan-rates-heading__description p").nth(1),
     headingOnChangePlanSelectionModal:Selector("#modal-heading-CHANGE_PLAN_SELECTION_MODAL"),
-    basicResiPlanHeadingFuel:Selector("[id*='plan-heading-fuel-BASE_RSOT-']").nth(1),
-    basicBsmePlanHeadingFuel:Selector("[id*='plan-heading-fuel-BASE_BSOT-']").nth(1),
+    //basicResiPlanHeadingFuel:Selector("[id*='plan-heading-fuel-BASE_RSOT-']").nth(1),
+    basicResiPlanHeadingFuel:Selector("[id*='plan-heading-fuel-BASE_RSOT-']"),
+    //basicBsmePlanHeadingFuel:Selector("[id*='plan-heading-fuel-BASE_BSOT-']").nth(1),
+    basicBsmePlanHeadingFuel:Selector("[id*='plan-heading-fuel-BASE_BSOT-']"),
     disclaimer: {
       generalStateDisclaimerOld: Selector("#general-state-disclaimer"),
       generalStateDisclaimerP1: Selector("#general-state-disclaimer p").nth(0),
