@@ -223,15 +223,18 @@ export class checkoutDetailsMethod{
       }
       let businessName=this.getBusinessName(t.testRun.test.name);
       await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.company,businessName);
+      await t.wait(2000);
+      let indexForBusinessType=testFunction.getRandomInt(0,9);
+      let indexForAnZsicCode=testFunction.getRandomInt(0,17);
       if((await testFunction.getElementText(t,eaCheckoutDetailsPage.elements.businessType)).includes('Please select')){
         await testFunction.click(t,eaCheckoutDetailsPage.elements.businessType);
-        await t.wait(4000);
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.businessTypeOption);
-        await t.wait(4000);
+        await t.wait(2000);
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.businessTypeOption.nth(indexForBusinessType));
+        await t.wait(2000);
       }
       if((await testFunction.getElementText(t,eaCheckoutDetailsPage.elements.anzsicCode)).includes('Please select')){
         await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCode);
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCodeOption);
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.anzsicCodeOption.nth(indexForAnZsicCode));
       }
       console.log("Business details are provided");
   }

@@ -49,6 +49,7 @@ Feature: This feature is to test the verify account scenarios for existing busin
       |folderName                               |customer_type |fuelType |planName                |accountType|sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
       |E2E_VerifyAccount_Business_NonMoving     |BUS           |BOTH     |Total Plan Plus Business|BOTH       |Quote Tool     |Plan Switch  |No   |No   |BUS          |Existing       |
 
+
   Scenario Outline: Submit a quote for existing moving business customer through verify account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page

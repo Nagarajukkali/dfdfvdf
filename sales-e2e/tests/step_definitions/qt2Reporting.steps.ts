@@ -56,24 +56,39 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
       let actualNMI=jsonObj.saleDetail.offerDetail.nmiMirnInformation.NMI
       await qt2Reporting.validateMandatoryField(t,actualNMI,expectedNMI);
     }
-    //conditions for $50 extensions
-    let isOfferType=(actualOfferType==='ENE' || actualOfferType==='COR');
+    // //conditions for $50 extensions
+    // let isOfferType=(actualOfferType==='ENE' || actualOfferType==='COR');
+    // let isCustomerType=(actualCustomerType==='RESIDENTIAL');
+    // let isState=(actualState!=='ACT' && actualState!=='SA');
+    // let isPlanCode=(!expectedPlanCode.includes('SWSRH'));
+    // let isNegativeTestName=((!t.testRun.test.name.includes('elec-totalP') && !t.testRun.test.name.includes('familyandfriends')
+    //                         && !t.testRun.test.name.includes('EACorporateOffer')));
+    // let isPositiveTestName=(t.testRun.test.name.includes('gas-totalP'));
+    // let isPlanCodeWithTestName=(!isPlanCode && (t.testRun.test.name.includes('gas-tpp') || t.testRun.test.name.includes('comeback')));
+    // let isPlanCodeWithStateAndTestName=(((!isPlanCode && t.testRun.test.name.includes('gas-tpp')) || isPositiveTestName) && actualState==='SA');
+    // let actualEleSourceCode=jsonObj.saleDetail.saleDetailHeader.sourceCode;
+    // let expectedEleSourceCode=checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t));
+    // if((isOfferType || (!isOfferType && t.testRun.test.name.includes('gas-tpp'))) && isCustomerType && (isState || isPlanCodeWithStateAndTestName) && (isPlanCode || isPlanCodeWithTestName) && (isPositiveTestName || isNegativeTestName)){
+    //   await qt2Reporting.validateMandatoryField(t,actualEleSourceCode,expectedEleSourceCode+'_50');
+    // }
+    // else{
+    //     await qt2Reporting.validateMandatoryField(t,actualEleSourceCode,expectedEleSourceCode);
+    // }
+
+    //updated conditions for $50 extensions
     let isCustomerType=(actualCustomerType==='RESIDENTIAL');
-    let isState=(actualState!=='ACT' && actualState!=='SA');
-    let isPlanCode=(!expectedPlanCode.includes('SWSRH'));
-    let isNegativeTestName=((!t.testRun.test.name.includes('elec-totalP') && !t.testRun.test.name.includes('familyandfriends')
-                            && !t.testRun.test.name.includes('EACorporateOffer')));
-    let isPositiveTestName=(t.testRun.test.name.includes('gas-totalP'));
-    let isPlanCodeWithTestName=(!isPlanCode && (t.testRun.test.name.includes('gas-tpp') || t.testRun.test.name.includes('comeback')));
-    let isPlanCodeWithStateAndTestName=(((!isPlanCode && t.testRun.test.name.includes('gas-tpp')) || isPositiveTestName) && actualState==='SA');
+    let isState=(actualState==='VIC');
+    let isPositiveTestName=(t.testRun.test.name.includes('comeback'));
     let actualEleSourceCode=jsonObj.saleDetail.saleDetailHeader.sourceCode;
     let expectedEleSourceCode=checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t));
-    if((isOfferType || (!isOfferType && t.testRun.test.name.includes('gas-tpp'))) && isCustomerType && (isState || isPlanCodeWithStateAndTestName) && (isPlanCode || isPlanCodeWithTestName) && (isPositiveTestName || isNegativeTestName)){
+    if(isCustomerType && isState && isPositiveTestName){
       await qt2Reporting.validateMandatoryField(t,actualEleSourceCode,expectedEleSourceCode+'_50');
     }
     else{
-        await qt2Reporting.validateMandatoryField(t,actualEleSourceCode,expectedEleSourceCode);
+      await qt2Reporting.validateMandatoryField(t,actualEleSourceCode,expectedEleSourceCode);
     }
+
+
   }
   if(expectedFuelType===FUEL_TYPE_OPTIONS.GAS.value){
     let expectedMIRN=data[0].MIRN;
@@ -81,23 +96,36 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
       let actualMIRN=jsonObj.saleDetail.offerDetail.nmiMirnInformation.MIRN
       await qt2Reporting.validateMandatoryField(t,actualMIRN,expectedMIRN);
     }
-    //conditions for $50 extensions
-    let isOfferType=(actualOfferType==='ENE' || actualOfferType==='COR');
+    // //conditions for $50 extensions
+    // let isOfferType=(actualOfferType==='ENE' || actualOfferType==='COR');
+    // let isCustomerType=(actualCustomerType==='RESIDENTIAL');
+    // let isState=(actualState!=='ACT' && actualState!=='SA');
+    // let isPlanCode=(!expectedPlanCode.includes('SWSRH'));
+    // let isNegativeTestName=(!t.testRun.test.name.includes('gas-totalP'));
+    // let isPositiveTestName=(t.testRun.test.name.includes('elec-totalP'));
+    // let isPlanCodeWithTestName=(!isPlanCode && t.testRun.test.name.includes('elec-tpp'));
+    // let isPlanCodeWithStateAndTestName=(((!isPlanCode && t.testRun.test.name.includes('elec-tpp')) || isPositiveTestName) && actualState==='SA')
+    // let actualGasSourceCode=jsonObj.saleDetail.saleDetailHeader.sourceCode;
+    // let expectedGasSourceCode=checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t));
+    //
+    // if((isOfferType || (!isOfferType && t.testRun.test.name.includes('elec-tpp'))) && isCustomerType && (isState || isPlanCodeWithStateAndTestName) && (isPlanCode || isPlanCodeWithTestName) && (isPositiveTestName || isNegativeTestName)){
+    //   await qt2Reporting.validateMandatoryField(t,actualGasSourceCode,expectedGasSourceCode+'_50');
+    // }
+    // else{
+    //     await qt2Reporting.validateMandatoryField(t,actualGasSourceCode,expectedGasSourceCode);
+    // }
+
+    //updated conditions for $50 extensions
     let isCustomerType=(actualCustomerType==='RESIDENTIAL');
-    let isState=(actualState!=='ACT' && actualState!=='SA');
-    let isPlanCode=(!expectedPlanCode.includes('SWSRH'));
-    let isNegativeTestName=(!t.testRun.test.name.includes('gas-totalP'));
-    let isPositiveTestName=(t.testRun.test.name.includes('elec-totalP'));
-    let isPlanCodeWithTestName=(!isPlanCode && t.testRun.test.name.includes('elec-tpp'));
-    let isPlanCodeWithStateAndTestName=(((!isPlanCode && t.testRun.test.name.includes('elec-tpp')) || isPositiveTestName) && actualState==='SA')
+    let isState=(actualState==='VIC');
+    let isPositiveTestName=(t.testRun.test.name.includes('comeback'));
     let actualGasSourceCode=jsonObj.saleDetail.saleDetailHeader.sourceCode;
     let expectedGasSourceCode=checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t));
-
-    if((isOfferType || (!isOfferType && t.testRun.test.name.includes('elec-tpp'))) && isCustomerType && (isState || isPlanCodeWithStateAndTestName) && (isPlanCode || isPlanCodeWithTestName) && (isPositiveTestName || isNegativeTestName)){
+    if(isCustomerType && isState && isPositiveTestName){
       await qt2Reporting.validateMandatoryField(t,actualGasSourceCode,expectedGasSourceCode+'_50');
     }
     else{
-        await qt2Reporting.validateMandatoryField(t,actualGasSourceCode,expectedGasSourceCode);
+      await qt2Reporting.validateMandatoryField(t,actualGasSourceCode,expectedGasSourceCode);
     }
   }
 

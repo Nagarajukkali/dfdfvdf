@@ -74,7 +74,7 @@ Feature:E2E scenario for existing business moving and non moving customer
     Then Life support section is displayed on Review page as per selected "<fuelType>" and verified "<accountType>"
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices                      |GaslifeSupportDevices       |
-      |No               |ELE     |                                            |                            |
+      |No               |GAS     |                                            |                            |
     And user verifies selected plan details for '<fuelType>'
     And user validates details on checkout review page
       |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
