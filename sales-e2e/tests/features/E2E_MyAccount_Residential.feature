@@ -259,5 +259,5 @@ Feature: This feature is to test the My account scenarios for residential custom
       |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType>|<newOrExisting>|
 
     Examples:
-      |folderName                                |username                   |password                                    |fuelType   |sourceSystem   |journey      |AAH  |DD   |customerType  |newOrExisting  |
-      |E2E_MyAccount_Resi_ELE_PS_Current_Plan_GD |nofrillsnodiscount@test.com|U2FsdGVkX1+VJgjPu6egPMpn4may0nOjl253Oh2CJmw=|ELE        |My Account     |Plan switch  |No   |Yes  |RES           |Existing       |
+      |folderName                                         |username                   |password                                    |fuelType   |sourceSystem   |journey      |AAH  |DD   |customerType  |newOrExisting  |
+      |E2E_MyAccount_Resi_ELE_PS_Current_Plan_No_Discount |nofrillsnodiscount@test.com|U2FsdGVkX1+VJgjPu6egPMpn4may0nOjl253Oh2CJmw=|ELE        |My Account     |Plan switch  |No   |Yes  |RES           |Existing       |
