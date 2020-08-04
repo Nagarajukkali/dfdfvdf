@@ -1,4 +1,7 @@
-@E2E
+@E2E @failed
+  #1 plan switch quotes are failing
+  #2 Move house, upsell accounts are having locationwithbalance call failure
+  #3 Current plan is not getting displayed in mocha
 Feature: This feature is to test the My account scenarios for residential customers
 
   Scenario Outline: Verify the RESI Electricity Plan switch journey from My Account
