@@ -16,6 +16,7 @@ export class myAccountMethod{
     await testFunction.click(t, eaMyAccount.elements.btnSignIn);
     await testFunction.waitForElementToBeAppeared(t,eaMyAccount.elements.eaSpinner);
     await testFunction.waitForElementToBeDisappeared(t,eaMyAccount.elements.eaSpinner);
+    await testFunction.isElementDisplayed(t,eaMyAccount.elements.eleViewAndChangePlan);
     await testFunction.takeScreenshot(t,"my_account_dashboard");
     console.log("User lands on my account dashboard.");
   }
