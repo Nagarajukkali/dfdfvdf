@@ -15,11 +15,12 @@
   "screenshotPath": "results/screenshots",
   "fullPage": true,
   "debugMode": false,
-  "debugOnFail": true,
+  "debugOnFail": false,
   "skip-uncaught-errors": false,
   "pageLoadTimeout": 5000,
   "selectorTimeout": 5000,
   "skipJsErrors": true,
+  "quarantineMode": true,
   "color": true,
   "proxy": "proxy.ealan.shinesolutions.com:3128",
   "proxyBypass": [
