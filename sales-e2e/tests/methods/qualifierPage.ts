@@ -134,7 +134,7 @@ export class qualifierMethod{
     await testFunction.clearAndEnterText(t,eaQualifierPage.elements.serviceAddress,address);
     await testFunction.isElementVisible(t,eaQualifierPage.elements.serviceAddressList);
     await testFunction.clickElementFromList(t,eaQualifierPage.elements.serviceAddressList,address);
-    await testFunction.isElementVisible(t, eaQualifierPage.elements.addressLoadingIcon);
+    //await testFunction.isElementVisible(t, eaQualifierPage.elements.addressLoadingIcon);
     await testFunction.waitForLoadingIconToClose();
     await t.wait(3000);
     console.log(`${address} is provided`);
