@@ -119,7 +119,8 @@ export class qualifierMethod{
       await testFunction.clearAndEnterText(t,eaQualifierPage.elements.serviceAddress,address);
       await testFunction.isElementVisible(t,eaQualifierPage.elements.serviceAddressList);
       await testFunction.clickElementFromList(t,eaQualifierPage.elements.serviceAddressList,address);
-      await testFunction.isElementVisible(t, eaQualifierPage.elements.addressLoadingIcon);
+      if((await testFunction.sizeOfElement(t,eaQualifierPage.elements.addressLoadingIcon))>0)
+        await testFunction.isElementVisible(t, eaQualifierPage.elements.addressLoadingIcon);
       await testFunction.waitForLoadingIconToClose();
       await t.wait(3000);
       if(await testFunction.sizeOfElement(t,eaQualifierPage.elements.planSelectionPopup)>0){
