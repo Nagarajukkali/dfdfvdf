@@ -83,7 +83,7 @@ export class myAccountMethod{
     else{
       console.log("Discounts are not available.");
     }
-    if(discountText.includes("Guaranteed discount")){
+    if(discountText.includes("Guaranteed Discount")){
       if(discountText.includes("Usage and Supply charges")){
         this.map.set('discount_'+checkoutDetailsMethod.getScenarioId(t),discount+' off usage and supply rates');
       }
