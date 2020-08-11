@@ -83,7 +83,7 @@ export class myAccountMethod{
     else{
       console.log("Discounts are not available.");
     }
-    if(discountText.includes("Guaranteed Discount")){
+    if(discountText.toLowerCase().includes("guaranteed discount")){
       if(discountText.includes("Usage and Supply charges")){
         this.map.set('discount_'+checkoutDetailsMethod.getScenarioId(t),discount+' off usage and supply rates');
       }
@@ -92,7 +92,7 @@ export class myAccountMethod{
       }
       this.map.set('estimatePeriod_'+checkoutDetailsMethod.getScenarioId(t),'Your estimated monthly cost with discount');
     }
-    if(discountText.includes("Pay by Due Date")){
+    if(discountText.toLowerCase().includes("pay by due date")){
       if(discountText.includes("Usage and Supply charges")){
         this.map.set('discount_'+checkoutDetailsMethod.getScenarioId(t),discount+' off usage and supply rates when you pay on time');
       }
