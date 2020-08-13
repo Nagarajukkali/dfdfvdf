@@ -20,7 +20,7 @@
   "pageLoadTimeout": 5000,
   "selectorTimeout": 5000,
   "skipJsErrors": true,
-  "quarantineMode": true,
+  "quarantineMode": false,
   "color": true,
   "proxy": "proxy.ealan.shinesolutions.com:3128",
   "proxyBypass": [

@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008102918
+    quoteId: BB2008123356
     sourceCode: Total_Plus_24%GD
-    actualQuoteDate: 2020-08-10
+    actualQuoteDate: 2020-08-12
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,30 +15,30 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0385787514
+      phoneNumber: 0377276385
     
-    emailId: XHnBZvGZht@energyaustralia.com.au
+    emailId: QcrwJTZXmr@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: INCORPORATED
+    businessType: PROPRIETARY LTD
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 58137540494
+      businessId: 15122199253
     
-    anzsic: AGRICULTURE
+    anzsic: MANUFACTURE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0385787514
+      businessPhoneNumber: 0377276385
     
-    businessEmailId: XHnBZvGZht@energyaustralia.com.au
+    businessEmailId: QcrwJTZXmr@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST

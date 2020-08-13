@@ -16,21 +16,21 @@ Before(  async t => {
 
 Given(/^user has opened the website link in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
   screenshotFolder=folderName;
-  let screenshotFolderPath="screenshots/Chrome/"+screenshotFolder;
+  let screenshotFolderPath="screenshots/Firefox/"+screenshotFolder;
   await FileUtils.deleteFiles(screenshotFolderPath);
   await t.navigateTo(eaHomePage.pageUrl);
 });
 
 Given(/^user has opened the bill uploader website link in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
   screenshotFolder=folderName;
-  let screenshotFolderPath="screenshots/Chrome/"+screenshotFolder;
+  let screenshotFolderPath="screenshots/Firefox/"+screenshotFolder;
   await FileUtils.deleteFiles(screenshotFolderPath);
   await t.navigateTo(eaHomePage.billUploaderUrl);
 });
 
 Given(/^user has opened the new connection website link in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
   screenshotFolder=folderName;
-  let screenshotFolderPath="screenshots/Chrome/"+screenshotFolder;
+  let screenshotFolderPath="screenshots/Firefox/"+screenshotFolder;
   await FileUtils.deleteFiles(screenshotFolderPath);
   await t.navigateTo(eaHomePage.newConnectionPageUrl);
 
@@ -38,7 +38,7 @@ Given(/^user has opened the new connection website link in a browser and creates
 
 Given(/^user has opened the '(.*)' link in a browser and creates '(.*)' to save evidences$/, async function (t,[campaign,folderName]) {
   screenshotFolder=folderName;
-  let screenshotFolderPath="screenshots/Chrome/"+screenshotFolder;
+  let screenshotFolderPath="screenshots/Firefox/"+screenshotFolder;
   await FileUtils.deleteFiles(screenshotFolderPath);
   switch (campaign) {
     case "offer":

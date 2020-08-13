@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008102885
+    quoteId: BB2008123363
     sourceCode: Basic
-    actualQuoteDate: 2020-08-10
+    actualQuoteDate: 2020-08-12
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,30 +15,30 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0338526467
+      phoneNumber: 0380427550
     
-    emailId: chUwTvkPSP@energyaustralia.com.au
+    emailId: vdvondhXIq@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: PARTNERSHIP
+    businessType: CORPORATION
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 44317267240
+      businessId: 45607076150
     
-    anzsic: COMMUNICATION
+    anzsic: MANUFACTURE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0338526467
+      businessPhoneNumber: 0380427550
     
-    businessEmailId: chUwTvkPSP@energyaustralia.com.au
+    businessEmailId: vdvondhXIq@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -55,11 +55,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-08-12
+    proposedStart: 2020-08-14
     offerType: ENE
     plan: BSOT-EV
     priceTag: EVPOT_S07
-    serviceOrderDate: 2020-08-12
+    serviceOrderDate: 2020-08-14
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 6203822385

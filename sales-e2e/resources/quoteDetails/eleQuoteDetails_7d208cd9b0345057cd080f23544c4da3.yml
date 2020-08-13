@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008123350
-    sourceCode: Total_17%GD
+    quoteId: BB2008123338
+    sourceCode: Total_11%GD
     actualQuoteDate: 2020-08-12
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -15,13 +15,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0315440973
+      phoneNumber: 0372272361
     
-    emailId: ehjqeNnfCi@energyaustralia.com.au
+    emailId: aZJRiwTujn@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 600237
+      id: 296814
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -29,37 +29,34 @@ saleDetail :
           dlFirstName: test
           dlMiddleName/: 
           dlLastName: test
-          licenseStateOfIssue: NSW
+          licenseStateOfIssue: VIC
         
       
     
     authLevel: Y
-    personPremiseRelationship: TENANT
+    personPremiseRelationship: OWNER
     seqNo: 2
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 5
-    streetName: Wilkies
-    streetType: S
-    suburb: BULLI
-    state: NSW
+    streetNo: 16
+    streetName: CULCAIRN
+    streetType: CT
+    suburb: NARRE WARREN SOUTH
+    state: VIC
     country: AUS
-    postCode: 2516
+    postCode: 3805
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
   
   offerDetail: 
-    fuelType: G
-    proposedStart: 2020-08-14
-    offerType: ENE
-    plan: TOPH-GN
-    priceTag: GNAGA_NR2007
-    serviceOrderDate: 2020-08-14
-    serviceOrderTime: BUSHRS
+    fuelType: E
+    offerType: COR
+    plan: TOPH-EV
+    priceTag: EVTRA_NR2001
     nmiMirnInformation: 
-      MIRN: 5240924834
+      NMI: 6305515608
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -69,10 +66,10 @@ saleDetail :
     lifeSupportEquipment: 
       lifeSupportEquipmentType: OTHER
     
-    lifeSupportOtherEquipmentDetails: Sample Other gas device.
+    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
   
   offerDetail: 
-    fuelType: E
+    fuelType: G
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -81,4 +78,7 @@ saleDetail :
   
   creditAssessmentDecision: Accept
   creditAssessmentReasonCode: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+  
 
