@@ -1,27 +1,28 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008102919
+    quoteId: BB2008143730
     sourceCode: Total_Plus_12%GD
-    actualQuoteDate: 2020-08-10
+    actualQuoteDate: 2020-08-14
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
+    personId: 1941430000
     title: Mr
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0319634430
+      phoneNumber: 0354846293
     
-    emailId: hngsaNIiWA@energyaustralia.com.au
+    emailId: YosSRYRXTW@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 131493
+      id: 261788
       primaryIdFlag: Y
     
     authLevel: Y
@@ -44,7 +45,7 @@ saleDetail :
   offerDetail: 
     fuelType: E
     offerType: PS
-    plan: SWSRH-EV
+    plan: SWSR1-EV
     priceTag: EVTRA_NR2001
     nmiMirnInformation: 
       NMI: 6305325960

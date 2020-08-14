@@ -1,6 +1,6 @@
 @E2E
 Feature: This feature is to test the verify account scenarios for existing residential customers
-
+@test
   Scenario Outline: Submit a quote for existing non moving residential customer through verify account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
@@ -41,11 +41,11 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |SWSRH-EV|6305325960|N                             |N                             |Y                      |LSIPDM                  |EMAIL        |
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |SWSR1-EV|6305325960|N                             |N                             |Y                      |LSIPDM                  |EMAIL        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |SWSRH-GV|5310602455|N                             |N                             |Y                      |OTHER                   |EMAIL        |
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |SWSR1-GV|5310602455|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
       |folderName                               |customer_type |fuelType |planName       |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
