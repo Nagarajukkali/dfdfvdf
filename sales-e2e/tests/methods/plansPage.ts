@@ -5,6 +5,7 @@ import {IdType, PlanType, testFunction} from '../../global_methods/helper';
 const eaQualifierPage=require('../pages/qualifier.page');
 import {cartsMethod} from './cartsPage';
 import {qualifierMethod} from './qualifierPage';
+import {Selector} from 'testcafe';
 
 export class plansMethod{
 
@@ -136,6 +137,83 @@ export class plansMethod{
         await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.heading);
         await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
       }
+    }
+  }
+
+  public static async validateDisclaimer(t: any,dataTable, data: any){
+    const disclaimer=Selector(() => document.getElementById("condiDisclaimer"));
+    const disclaimerText=await disclaimer().innerText;
+    if(dataTable[0].referencePriceComparison==='Y'){
+      await testFunction.assertText(t,disclaimer,data.disclaimers.referencePriceComparison.heading);
+      await testFunction.assertText(t,disclaimer,data.disclaimers.referencePriceComparison.description);
+    }
+    if(dataTable[0].goNeutral==='Y'){
+      await testFunction.assertText(t,disclaimer,data.disclaimers.goNeutral.heading);
+      await testFunction.assertText(t,disclaimer,data.disclaimers.goNeutral.description);
+    }
+    if(dataTable[0].solarBuyBack==='Y'){
+      await testFunction.assertText(t,disclaimer,data.disclaimers.solarBuyBack.heading);
+      if(dataTable[0].state==='VIC'){
+        await testFunction.assertText(t,disclaimer,data.disclaimers.solarBuyBack.VIC.description);
+      }
+      else{
+        await testFunction.assertText(t,disclaimer,data.disclaimers.solarBuyBack.NonVIC.description);
+      }
+    }
+    let planName=dataTable[0].planName;
+    let state=dataTable[0].state;
+    await this.validatePlanDisclaimer(t,disclaimer,data,planName,state);
+
+
+  }
+
+  public static async validatePlanDisclaimer(t,disclaimer,data,planName,state){
+    switch (planName) {
+      case PlanType.BASIC_HOME:
+
+        break;
+      case PlanType.NO_FRILLS:
+
+        break;
+      case PlanType.TOTAL_PLAN:
+        await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlan.heading);
+        switch (state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlan.VIC.description);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlan.NSW.description);
+            break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlan.ACT.description);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlan.SA.description);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlan.QLD.description);
+            break;
+          default:
+            throw Error("Invalid State");
+        }
+        break;
+      case PlanType.TOTAL_PLAN_PLUS:
+
+        break;
+      case PlanType.BASIC_BUSINESS:
+
+        break;
+      case PlanType.NO_FRILLS_BUSINESS:
+
+        break;
+      case PlanType.TOTAL_BUSINESS:
+
+        break;
+      case PlanType.TOTAL_PLAN_PLUS_BUSINESS:
+
+        break;
+      default:
+        console.error("Invalid plan is selected");
     }
   }
 
@@ -435,6 +513,18 @@ export class campaignMethod{
   }
 
 
-
+//Reference price comparison and estimated annual cost
+// # Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here.
+//
+// Solar feed-in tariffs
+// ^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. We are currently unable to set up your solar plan online.
+//
+//
+//
+// Go Neutral
+// ^ Opt in and we will offset the carbon emissions from your electricity and/or gas usage from the 6-month anniversary of the date your EnergyAustralia account is established. We will let you know in advance if we withdraw Go Neutral. For more info and full terms visit energyaustralia.com.au/carbon-neutral.
+//
+// Total Plan
+// * Offer only for eligible NSW residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time.
 
 }

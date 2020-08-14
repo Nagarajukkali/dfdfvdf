@@ -3,46 +3,61 @@ Feature:E2E scenario for offer campaign
 
   Scenario Outline: Validate complete data for offer campaign for NSW
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_Offer_NSW' to save evidences
-    When user provides "2000" for postcode and proceed to view the plans
-    Then user is presented with the plans
+    When user provides "2000" and clicks on show me plan link
+    #Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
-      |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |
+      |ELE      |N                 |Y                       |Y                    |Y                                    |N                                |
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
-      |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |
+      |GAS      |N                 |Y                       |Y                    |Y                                    |N                                |
+    And user validates disclaimer on plans page for "<campaign>"
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
+      |Y                        |Y          |Y              |Total Plan|NSW  |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |
-      |ELE      |Y                 |Y                       |N                    |Y                                    |
+      |ELE      |N                 |Y                       |Y                    |Y                                    |
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |
-      |GAS      |Y                 |Y                       |N                    |Y                                    |
+      |GAS      |N                 |Y                       |Y                    |Y                                    |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                      |movingType |propertyType |solarOption  |
-      |RES          |8 Wenden Avenue, NEWINGTON NSW 2127    |Moving     |Renter       |No           |
+      |customerType| connectionAddress               | movingType|propertyType|solarOption|
+      |RES         | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |No         |
     And user provides all details on checkout details page
-      |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
-      |RES          |RES        |New            |test       |test     |Driver License |             |
+      |customerType|journey    |customerStatus| firstName| lastName|idType        |
+      |RES         |RES        |New           | test     |test     |Driver License|
+    And user validates details on checkout details page
+      |sourceSystem   |journey    |fuelType   |
+      |<sourceSystem> |<journey>  |<fuelType> |
+    And user opts for AAH and DD
+      |optAAHOption|optDDOption|directDebitType|
+      |<AAH>       |<DD>       |Bank           |
     And user selects answer for property renovation question for '<state>'
     And user clicks on 'Review your order' button and navigates to review page
+    And user validates details on checkout review page
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     And user provides life support details on review page
-      |lifeSupportOption|fuelType |EleclifeSupportDevices    |GaslifeSupportDevices  |
-      |No               |         |                          |                       |
-    And user opts in for Carbon Neutral
+      |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
+      |Yes              |BOTH    |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
+    And user verifies selected plan details for '<fuelType>'
+    And user selects carbon neutral option
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
-      |ELE      |Y                 |Y                       |N                    |Y                                    |N                                |
+      |ELE      |N                 |Y                       |Y                    |Y                                    |N                                |
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
-      |GAS      |Y                 |Y                       |N                    |Y                                    |N                                |
-
+      |GAS      |N                 |Y                       |Y                    |Y                                    |N                                |
+    And user validates disclaimer on review page for "<campaign>"
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
+      |Y                        |Y          |Y              |Total Plan|NSW  |
     Examples:
       |customerStatus |campaign  |state  |eleDiscount |gasDiscount  |
-      |New            |Offer     |NSW    |16          |16           |
+      |New            |Offer     |NSW    |17          |17           |
 
   Scenario Outline: Validate complete data for offer campaign for ACT
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_Offer_ACT' to save evidences

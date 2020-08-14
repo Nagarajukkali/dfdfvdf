@@ -96,3 +96,9 @@ When(/^user provides business details on review page$/, async function (t,[],dat
     await checkoutReviewMethod.provideMissingABNACNDetails(t)
   await checkoutReviewMethod.enterBusinessDetails(t);
 });
+When(/^user validates disclaimer on review page for "([^"]*)"$/, async function (t,[campaignName],dataTable) {
+  dataTable = dataTable.hashes();
+  let data = await FileUtils.getJSONfile(campaignName);
+  await plansMethod.validateDisclaimer(t,dataTable,data);
+  console.log("Validation completed for disclaimers on review page.");
+});
