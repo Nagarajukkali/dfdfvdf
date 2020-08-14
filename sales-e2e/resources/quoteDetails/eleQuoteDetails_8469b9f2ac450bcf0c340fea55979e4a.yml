@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2007271736
+    quoteId: BB2008123373
     sourceCode: Total_5%GD
-    actualQuoteDate: 2020-07-27
+    actualQuoteDate: 2020-08-12
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,30 +15,30 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0335513900
+      phoneNumber: 0349248478
     
-    emailId: hmYqKURHXD@energyaustralia.com.au
+    emailId: mFdWTFudtm@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: LTDPARTNERSHIP
+    businessType: OTHERS
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ACN
-      businessId: 418373392
+      businessId: 934093706
     
-    anzsic: FINANCE
+    anzsic: UNKNOWN
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0335513900
+      businessPhoneNumber: 0349248478
     
-    businessEmailId: hmYqKURHXD@energyaustralia.com.au
+    businessEmailId: mFdWTFudtm@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST

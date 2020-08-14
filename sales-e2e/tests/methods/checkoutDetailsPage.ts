@@ -11,7 +11,9 @@ export class checkoutDetailsMethod{
 
     public static async provideDetailsInAboutMeSection(t,journey,firstName,lastName){
         if((await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.titleDropdown)).includes('Please select')){
+            await t.wait(1000);
             await testFunction.click(t,eaCheckoutDetailsPage.elements.titleDrop);
+            await t.wait(2000);
             await testFunction.click(t,eaCheckoutDetailsPage.elements.titleTag);
         }
         await this.enterFirstName(t,firstName);

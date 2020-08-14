@@ -42,7 +42,7 @@ const eaHomePage={
     totalPlan: Selector("[id*='plan-select-button-TOPH']"),
     totalPlanEleDiscount:Selector("#plan-rate-summary-TOPH-0 span.hs-plan-rate-summary__title-amount"),
     totalPlanGasDiscount:Selector("#plan-rate-summary-TOPH-1 span.hs-plan-rate-summary__title-amount"),
-    totalPlanPlus: Selector("[id*='plan-select-button-SWSRH']"),
+    totalPlanPlus: Selector("[id*='plan-select-button-SWSR1']"),
     totalPlanPlusEleDiscount:Selector("#plan-rate-summary-SWSRH-0 span.hs-plan-rate-summary__title-amount"),
     totalPlanPlusGasDiscount:Selector("#plan-rate-summary-SWSRH-1 span.hs-plan-rate-summary__title-amount"),
     basicBusiness:Selector("[id*='plan-select-button-BSOT']"),
