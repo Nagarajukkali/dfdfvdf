@@ -72,7 +72,12 @@
     },
     "goNeutral": {
       "heading": "Go Neutral",
-      "description": "^ Opt in and we will offset the carbon emissions from your electricity and/or gas usage from the 6-month anniversary of the date your EnergyAustralia account is established. We will let you know in advance if we withdraw Go Neutral. For more info and full terms visit energyaustralia.com.au/carbon-neutral."
+      "QLD": {
+        "description": "^ Opt in and we will offset the carbon emissions from your electricity usage from the 6-month anniversary of the date your EnergyAustralia account is established. We will let you know in advance if we withdraw Go Neutral. For more info and full terms visit energyaustralia.com.au/carbon-neutral."
+      },
+      "NonQLD": {
+        "description": "^ Opt in and we will offset the carbon emissions from your electricity and/or gas usage from the 6-month anniversary of the date your EnergyAustralia account is established. We will let you know in advance if we withdraw Go Neutral. For more info and full terms visit energyaustralia.com.au/carbon-neutral."
+      }
     },
     "solarBuyBack": {
       "heading": "Solar feed-in tariffs",

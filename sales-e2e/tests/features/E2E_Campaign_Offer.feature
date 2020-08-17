@@ -52,11 +52,10 @@ Scenario Outline: Submit a quote for offer campaign for '<folderName>'
 
 
   #Campaign validation test
-@test
+
   Scenario Outline: Submit a quote for offer campaign for '<folderName>'
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "2000" and clicks on show me plan link
-    #Then user is presented with the plans
+    When user provides "2516" and clicks on show me plan link
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
@@ -107,6 +106,9 @@ Scenario Outline: Submit a quote for offer campaign for '<folderName>'
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
       |Y                        |Y          |Y              |Total Plan|NSW  |
+    And user validates source code
+      |fuelType|eleSourceCode|gasSourceCode|
+      |Both    |Total_16%GD  |Total_17%GD  |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -127,6 +129,6 @@ Scenario Outline: Submit a quote for offer campaign for '<folderName>'
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign  |folderName               |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
-      |New           |BOTH    |17         |17         |offer     |E2E_New_Resi_Camp_Offer  |NSW  |Quote Tool    |Move Home|No   |No  |RES          |New            |
+      |New           |BOTH    |16         |17         |offer     |E2E_New_Resi_Camp_Offer  |NSW  |Quote Tool    |Move Home|No   |No  |RES          |New            |
 
 

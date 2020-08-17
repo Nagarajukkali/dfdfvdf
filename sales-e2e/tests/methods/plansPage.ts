@@ -149,7 +149,12 @@ export class plansMethod{
     }
     if(dataTable[0].goNeutral==='Y'){
       await testFunction.assertText(t,disclaimer,data.disclaimers.goNeutral.heading);
-      await testFunction.assertText(t,disclaimer,data.disclaimers.goNeutral.description);
+      if(dataTable[0].state==='QLD'){
+        await testFunction.assertText(t,disclaimer,data.disclaimers.goNeutral.QLD.description);
+      }
+      else{
+        await testFunction.assertText(t,disclaimer,data.disclaimers.goNeutral.NonQLD.description);
+      }
     }
     if(dataTable[0].solarBuyBack==='Y'){
       await testFunction.assertText(t,disclaimer,data.disclaimers.solarBuyBack.heading);
@@ -213,7 +218,7 @@ export class plansMethod{
 
         break;
       default:
-        console.error("Invalid plan is selected");
+        throw Error("Invalid plan");
     }
   }
 
