@@ -157,3 +157,9 @@ Then(/^plans page load according to the type of '(.*)'$/, async function (t,[NMI
 Then(/^user validates details on plans page for '(.*)'$/, async function (t, [customerType]) {
   await plansMethod.validateGeneralStateDisclaimer(t, customerType);
 });
+Then(/^user validates disclaimer on plans page for "([^"]*)"$/, async function (t,[campaignName],dataTable) {
+  dataTable = dataTable.hashes();
+  let data = await FileUtils.getJSONfile(campaignName);
+  await plansMethod.validateDisclaimer(t,dataTable,data);
+  console.log("Validation completed for disclaimers on plans page.");
+});

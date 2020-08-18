@@ -4,6 +4,8 @@ import {When, Then } from 'cucumber';
 import {FileUtils} from '../../libs/FileUtils'
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 import {plansMethod} from '../methods/plansPage';
+import {Given} from 'cucumber'
+import {FuelType} from '@ea/ea-commons-models';
 
 When(/^user provides life support details$/, async function(t,[],dataTable){
   let data=dataTable.hashes();
@@ -95,4 +97,34 @@ When(/^user provides business details on review page$/, async function (t,[],dat
   if(isABNACNMissing === "Yes")
     await checkoutReviewMethod.provideMissingABNACNDetails(t)
   await checkoutReviewMethod.enterBusinessDetails(t);
+});
+When(/^user validates disclaimer on review page for "([^"]*)"$/, async function (t,[campaignName],dataTable) {
+  dataTable = dataTable.hashes();
+  let data = await FileUtils.getJSONfile(campaignName);
+  await plansMethod.validateDisclaimer(t,dataTable,data);
+  console.log("Validation completed for disclaimers on review page.");
+});
+Given(/^user validates source code$/, async function (t,[],dataTable) {
+  let expectedEleSourceCode,expectedGasSourceCode;
+  let data=dataTable.hashes();
+  let fuelType=data[0].fuelType;
+  switch (fuelType) {
+    case FuelType.BOTH:
+      expectedEleSourceCode=checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t));
+      await testFunction.assertTextValue(t,data[0].eleSourceCode,expectedEleSourceCode);
+      expectedGasSourceCode=checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t));
+      await testFunction.assertTextValue(t,data[0].gasSourceCode,expectedGasSourceCode);
+      break;
+    case FuelType.ELE:
+      expectedEleSourceCode=checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t));
+      await testFunction.assertTextValue(t,data[0].eleSourceCode,expectedEleSourceCode);
+      break;
+    case FuelType.GAS:
+      expectedGasSourceCode=checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t));
+      await testFunction.assertTextValue(t,data[0].gasSourceCode,expectedGasSourceCode);
+      break;
+    default:
+      throw Error("Invalid fuel type");
+  }
+  console.log("Validation completed for source code.")
 });

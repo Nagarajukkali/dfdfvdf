@@ -1,6 +1,6 @@
 @E2E
 Feature: This feature is to test the verify account scenarios for existing residential customers
-@test
+
   Scenario Outline: Submit a quote for existing non moving residential customer through verify account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
