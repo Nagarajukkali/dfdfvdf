@@ -167,9 +167,38 @@ export class plansMethod{
     }
     let planName=dataTable[0].planName;
     let state=dataTable[0].state;
+    if(dataTable[0].signUpCredit==='Y'){
+      await this.validateSignUpCredit(t,disclaimer,data,state);
+    }
     await this.validatePlanDisclaimer(t,disclaimer,data,planName,state);
+  }
 
+  public static async validateSignUpCredit(t,disclaimer,data,state){
+      switch (state) {
+        case AustralianState.VIC:
+          await testFunction.assertText(t,disclaimer,data.disclaimers.Credit50.VIC.heading);
+          await testFunction.assertText(t,disclaimer,data.disclaimers.Credit50.VIC.description);
+          break;
+        case AustralianState.NSW:
+          await testFunction.assertText(t,disclaimer,data.disclaimers.Credit50.NSW.heading);
+          await testFunction.assertText(t,disclaimer,data.disclaimers.Credit50.NSW.description);
+          break;
+        case AustralianState.ACT:
+          await testFunction.assertText(t,disclaimer,data.disclaimers.Credit50.ACT.heading);
+          await testFunction.assertText(t,disclaimer,data.disclaimers.Credit50.ACT.description);
+          break;
+        case AustralianState.QLD:
+          await testFunction.assertText(t,disclaimer,data.disclaimers.Credit50.QLD.heading);
+          await testFunction.assertText(t,disclaimer,data.disclaimers.Credit50.QLD.description);
+          break;
+        case AustralianState.SA:
+          await testFunction.assertText(t,disclaimer,data.disclaimers.Credit50.SA.heading);
+          await testFunction.assertText(t,disclaimer,data.disclaimers.Credit50.SA.description);
+          break;
+        default:
+          throw Error("Invalid State");
 
+      }
   }
 
   public static async validatePlanDisclaimer(t,disclaimer,data,planName,state){
