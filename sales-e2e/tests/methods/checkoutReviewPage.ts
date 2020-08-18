@@ -143,6 +143,9 @@ export class checkoutReviewMethod {
           else if(t.testRun.test.name.includes('familyandfriends')){
             eleSourceCode='Total_'+eleDiscount.split(" ")[1]+'GD';
           }
+          else if(t.testRun.test.name.includes('geelong')){
+            eleSourceCode='Total_'+eleDiscount.split(" ")[1]+'GD_50';
+          }
           else{
             eleSourceCode=elePlanName.split(" ")[0]+'_'+eleDiscount.split(" ")[1]+'GD';
           }
@@ -165,6 +168,9 @@ export class checkoutReviewMethod {
           gasDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasDiscount);
           if(t.testRun.test.name.includes('EACorporateOffer')){
             gasSourceCode='Alliance_'+gasDiscount.split(" ")[1]+'GD';
+          }
+          else if(t.testRun.test.name.includes('geelong')){
+            gasSourceCode='Total_'+gasDiscount.split(" ")[1]+'GD_50';
           }
           else{
             gasSourceCode=gasPlanName.split(" ")[0]+'_'+gasDiscount.split(" ")[1]+'GD';

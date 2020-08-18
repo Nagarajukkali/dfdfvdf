@@ -9,7 +9,7 @@
   # 6. Provide Y/N for disclaimers as per the change in this step "And user validates disclaimer on review page for "<campaign>""
   # 7. Update Source Code if require in this step "And user validates source code"
   # 8. Update the Journey Moving/Non-Moving if require in this step "And user provides all other details on qualifier page"
-  # 9. If journey change to Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
+  # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for offer campaign
 
