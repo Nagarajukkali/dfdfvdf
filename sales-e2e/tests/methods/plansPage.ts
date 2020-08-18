@@ -394,8 +394,8 @@ export class verifyAccountMethod {
     }
 
     public static async verifyAccountDetails(t){
-        await testFunction.click(t, EaHomePage.elements.nextAccountNumber);
-        await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
+      await testFunction.click(t, EaHomePage.elements.nextAccountNumber);
+      await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
     }
 
     public static async provideIdentityDetails(t, idType, idValue){
@@ -486,8 +486,6 @@ export class verifyAccountMethod {
     if(await testFunction.isElementExists(t,EaHomePage.elements.businessInformation))
       await testFunction.clearTextField(t,EaHomePage.elements.businessInformation);
   }
-
-
 }
 
 export class campaignMethod{

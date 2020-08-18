@@ -1,10 +1,13 @@
-import { Selector } from 'testcafe';
+import {RequestLogger, Selector} from 'testcafe';
 import { ClientFunction } from 'testcafe';
 import {FUEL_TYPE_OPTIONS, AustralianState, CustomerType} from '@ea/ea-commons-models';
 import {fetchBrowser, getDateTime, screenshotFolder} from '../tests/step_definitions/hooks';
+import requestLoggerUtilities from '../global_methods/requestLoggerUtilities';
+const requestLoggerUtils = new requestLoggerUtilities();
 const replace={ replace: true };
 const { config }=require('../resources/resource');
 const screenshot=config.screenshot
+let logger=null;
 
   export enum CustomerStatus {
     NEW='New',
@@ -354,6 +357,22 @@ export class testFunction {
 
   public static isBusiness(customerType) {
     return customerType === CustomerType.BUSINESS;
+  }
+
+  public static async captureNetworkCall(t: any, endpoint) {
+    logger= RequestLogger(config.eaHomePageUrl + endpoint, {
+      logRequestHeaders:  true,
+      logRequestBody:     true,
+      logResponseHeaders: true,
+      stringifyResponseBody: false,
+      logResponseBody:    true
+    });
+    await t.addRequestHooks(logger);
+  }
+
+  public static async validateNetworkCall(t: any) {
+    await requestLoggerUtils.unzipLoggerResponses(t, {requestLogger: logger, toJson: true});
+    console.log('\nUnzipped Response taken by the logger:\n', logger.requests[0].response.body);
   }
 }
 
