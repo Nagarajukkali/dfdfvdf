@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008123342
+    quoteId: BB2008184387
     sourceCode: Basic
-    actualQuoteDate: 2020-08-12
+    actualQuoteDate: 2020-08-18
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,30 +15,30 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0344536574
+      phoneNumber: 0343670622
     
-    emailId: fqfRgIjLkI@energyaustralia.com.au
+    emailId: vQQSQbmMOu@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: LIMITED COMPANY
+    businessType: PROPRIETARY LTD
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 51794396718
+      businessId: 37308857777
     
-    anzsic: COMMUNICATION
+    anzsic: TRANSPORT
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0344536574
+      businessPhoneNumber: 0343670622
     
-    businessEmailId: fqfRgIjLkI@energyaustralia.com.au
+    businessEmailId: vQQSQbmMOu@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -55,11 +55,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-08-14
+    proposedStart: 2020-08-20
     offerType: ENE
     plan: BSOT-GV
     priceTag: GVT3A_S13N
-    serviceOrderDate: 2020-08-14
+    serviceOrderDate: 2020-08-20
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5330956738
