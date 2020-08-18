@@ -1,5 +1,6 @@
 module.exports={
 config: {
+    eaBaseUrl: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au`,
     eaHomePageUrl: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au?live=disabled`,
     eaNewConnectionPageUrl:`https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/new-connections-ui/#/connection`,
     eaCampaignUrl: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/`,

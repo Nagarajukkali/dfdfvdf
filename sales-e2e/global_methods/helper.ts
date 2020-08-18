@@ -360,7 +360,7 @@ export class testFunction {
   }
 
   public static async captureNetworkCall(t: any, endpoint) {
-    logger= RequestLogger(config.eaHomePageUrl + endpoint, {
+    logger= RequestLogger(config.eaBaseUrl + endpoint, {
       logRequestHeaders:  true,
       logRequestBody:     true,
       logResponseHeaders: true,

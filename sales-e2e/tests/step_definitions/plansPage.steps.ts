@@ -39,9 +39,9 @@ When(/^user verifies the account through verify account journey for residential 
   await verifyAccountMethod.verifyAccountDetails(t);
   await verifyAccountMethod.provideIdentityDetails(t, data[0].idType, data[0].idNumber);
   await testFunction.takeScreenshot(t,'verify_account_modal');
-  //await testFunction.captureNetworkCall(t,'qt2/app/account/retrieve');
+  await testFunction.captureNetworkCall(t,'/qt2/app/account/retrieve');
   await verifyAccountMethod.verifyAccountDetails(t);
-  //await testFunction.validateNetworkCall(t);
+  await testFunction.validateNetworkCall(t);
   await testFunction.takeScreenshot(t,'verify_account_modal');
   await verifyAccountMethod.showCostEstimates(t);
 });
