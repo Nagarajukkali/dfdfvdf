@@ -19,7 +19,7 @@
   },
   "config": {
     "env": "preprod",
-    "e2e_tags": "@E2E12345,~@failed"
+    "e2e_tags": "@E2E,~@failed"
   },
   "private": true,
   "dependencies": {
