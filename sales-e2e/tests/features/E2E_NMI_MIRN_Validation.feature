@@ -1,6 +1,6 @@
- @NMIMIRNAddressValidation
+ @NMIMIRNAddressValidation @E2E
 Feature: This feature is to test the NMI, MIRN and address validation
-  @E2E
+  
   Scenario Outline: verify the behaviour of plans page on entering '<NMIorMIRNorPostcodeType>'
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customerType>' plans page
@@ -33,7 +33,6 @@ Feature: This feature is to test the NMI, MIRN and address validation
       |Valid_NMI                         |RES         |SUCCESS                |6407557087              |NMI                |
       |Valid_MIRN                        |RES         |SUCCESS                |5321574765              |MIRN               |
 
-  @E2E
   Scenario Outline: verify the behaviour of lookup call when we provide '<addressType>' address on qualifier
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customerType>' plans page
@@ -69,7 +68,7 @@ Feature: This feature is to test the NMI, MIRN and address validation
 
     Examples:
       |folderName                        |campaign|NMIorMIRNorPostcodeType|postcode|
-      |CAMPAIGN_NOT_SERVICED             |ticketek|CAMPAIGN_NOT_SERVICED  |2600    |
+      |CAMPAIGN_NOT_SERVICED             |geelong |CAMPAIGN_NOT_SERVICED   |2000    |
 
 
 

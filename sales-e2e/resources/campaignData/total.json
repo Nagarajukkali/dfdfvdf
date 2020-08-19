@@ -6,8 +6,8 @@
     "feature": {
       "preSelect": {
         "Credit50": {
-          "heading": "",
-          "description": ""
+          "heading": "$50 Sign Up Credit",
+          "description": "Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": {
           "heading": "Carbon neutral option",
@@ -27,7 +27,7 @@
         }
       },
       "postSelect": {
-        "Credit50": "",
+        "Credit50": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
@@ -40,8 +40,8 @@
     "feature": {
       "preSelect": {
         "Credit50": {
-          "heading": "",
-          "description": ""
+          "heading": "$50 Sign Up Credit",
+          "description": "Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": {
           "heading": "Carbon neutral option",
@@ -57,7 +57,7 @@
         }
       },
       "postSelect": {
-        "Credit50": "",
+        "Credit50": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges."
@@ -94,8 +94,8 @@
     },
     "Credit50": {
       "VIC": {
-        "heading": "",
-        "description": ""
+        "heading": "$50 Sign Up Credit",
+        "description": "+ Offer available to residential customers in the Greater Geelong area who sign up to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       },
       "NSW": {
         "heading": "",
