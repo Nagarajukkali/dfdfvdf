@@ -22,8 +22,8 @@
           "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
         },
         "noStandardConnectionFee": {
-          "heading": "No standard connection fees",
-          "description": "Move with us and we'll waive connection and special meter reads during business hours."
+          "heading": "",
+          "description": ""
         }
       },
       "postSelect": {
@@ -31,7 +31,7 @@
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
-        "noStandardConnectionFee": "No standard connection fees. Move with us and we'll waive connection and special meter reads during business hours."
+        "noStandardConnectionFee": ""
       }
     }
   },

@@ -99,6 +99,7 @@ export class plansMethod{
   }
 
   public static async validateFeatures(t: any, dataTable, data: any) {
+    console.log("Validating plan features on campaign page.")
     if(dataTable[0].fuelType === "ELE") {
       if(dataTable[0].Feature_50Credit === "Y") {
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeature50CreditTitle, data.electricity.feature.preSelect.Credit50.heading);
