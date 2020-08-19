@@ -118,10 +118,6 @@ export class plansMethod{
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.heading);
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillDescription, data.electricity.feature.preSelect.discountOffTotalEnergyBill.description);
       }
-      if(dataTable[0].Feature_VIPDiscountOffTotalEnergyBill === "Y") {
-        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVIPDiscountOffTotalBillTitle, data.electricity.feature.preSelect.VIPDiscountOffTotalEnergyBill.heading);
-        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVIPDiscountOffTotalBillDescription, data.electricity.feature.preSelect.VIPDiscountOffTotalEnergyBill.description);
-      }
       if(dataTable[0].Feature_noStandardConnectionFee === "Y") {
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureNoStandardConnectionFeeTitle, data.electricity.feature.preSelect.noStandardConnectionFee.heading);
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureNoStandardConnectionFeeDescription, data.electricity.feature.preSelect.noStandardConnectionFee.description);

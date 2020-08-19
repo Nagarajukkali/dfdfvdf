@@ -1,5 +1,7 @@
 import {AustralianState} from '@ea/ea-commons-models';
 
+
+
 const cartsPage=require('../pages/carts.page');
 import {testFunction } from '../../global_methods/helper';
 
@@ -32,9 +34,6 @@ export class cartsMethod {
       }
       if(dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
         await testFunction.assertText(t, cartsPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill);
-      }
-      if(dataTable[0].Feature_VIPDiscountOffTotalEnergyBill === "Y") {
-        await testFunction.assertText(t, cartsPage.elements.eleFeatureVIPDiscountOffTotal, json.electricity.feature.postSelect.VIPDiscountOffTotalEnergyBill);
       }
     }
     if(await testFunction.isGas(dataTable[0].fuelType)) {

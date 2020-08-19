@@ -187,9 +187,14 @@ export class checkoutReviewMethod {
             gasSourceCode=gasPlanName.split(" ")[0]+'_'+gasDiscount.split(" ")[1]+'GD';
           }
         }
-        else if(gasPlanName===PlanType.TOTAL_PLAN_PLUS || gasPlanName==='Total Plan Plus - Business'){
-          gasDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasDiscount);
-          gasSourceCode=gasPlanName.split(" ")[0]+'_Plus_'+gasDiscount.split(" ")[1]+'GD';
+        else if(gasPlanName===PlanType.TOTAL_PLAN_PLUS || gasPlanName==='Total Plan Plus - Business') {
+          gasDiscount = await testFunction.getElementText(t, eaCheckoutReviewPage.elements.txtGasDiscount);
+
+          if (t.testRun.test.name.includes('gas-tpp campaign for VIC')) {
+            gasSourceCode = gasPlanName.split(" ")[0] + '_Plus_' + gasDiscount.split(" ")[1] + 'GD_50';
+          } else {
+            gasSourceCode = gasPlanName.split(" ")[0] + '_Plus_' + gasDiscount.split(" ")[1] + 'GD';
+           }
         }
         else if(gasPlanName===PlanType.NO_FRILLS || gasPlanName===PlanType.NO_FRILLS_BUSINESS){
           gasSourceCode='NOFRILLS';
@@ -471,10 +476,6 @@ export class checkoutReviewMethod {
       }
       if(dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill);
-      }
-      if(dataTable[0].Feature_VIPDiscountOffTotalEnergyBill === "Y") {
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureVIPDiscountOffTotal, json.electricity.feature.postSelect.VIPDiscountOffTotalEnergyBill);
-
       }
       if(dataTable[0].Feature_noStandardConnectionFee === "Y") {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureNoStandardConnectionFee, json.electricity.feature.postSelect.noStandardConnectionFee);

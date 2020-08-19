@@ -2,7 +2,7 @@
   "planName": "Total Plan Plus",
   "planDescription": "VIP discount on your total energy bill guaranteed - every time.",
 
-  "electricity": {
+  "gas": {
     "feature": {
       "preSelect": {
         "Credit50": {
@@ -67,7 +67,7 @@
     "Credit50": {
       "VIC": {
         "heading": "$50 Second Energy Account Credit",
-        "description": "+ Offer available to existing residential customers who sign up a second energy account to Total Plan Plus electricity. Limit of one $50 credit per customer address. Available to customers in VIC only. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        "description": "+ Offer available to existing residential customers who sign up a second energy account to Total Plan Plus gas. Limit of one $50 credit per customer address. Available to customers in VIC only. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       },
       "NSW": {
         "heading": "",
@@ -89,10 +89,10 @@
     "totalPlanPlus": {
       "heading": "Total Plan Plus",
       "VIC": {
-        "description": "* Offer only for existing VIC residential customers who sign up to an electricity offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description":  "* Offer only for existing VIC residential customers who sign up to a gas offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "NSW": {
-        "description": "* Offer only for existing NSW residential customers who sign up to an electricity offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for existing NSW residential customers who sign up to a gas offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "ACT": {
         "description": ""
@@ -101,7 +101,7 @@
         "description": ""
       },
       "SA": {
-        "description": "* Offer only for existing SA residential customers who sign up to an electricity offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for existing SA residential customers who sign up to a gas offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       }
     }
   }
