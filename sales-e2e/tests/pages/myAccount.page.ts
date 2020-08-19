@@ -30,6 +30,10 @@ const eaMyAccount={
     exitFees:Selector("#exit-fees div.field-body"),
     discounts:Selector("#discounts div.field-body div"),
     btnRetry:Selector("button[type='submit']"),
+    tfAccountNumber : Selector("#accountNumber"),
+    btnSearch : Selector('#find-user-search-btn'),
+    btnImpersonate : Selector("#impersonate-btn-0"),
+
   },
 };
 

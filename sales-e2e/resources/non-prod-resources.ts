@@ -12,8 +12,12 @@ config: {
     qt2ReportingCreds:{
       username:'abhar',
       password:'U2FsdGVkX1+ofbMmTfeufCoLeZbhDgsePj0GzAmmyv0='
-    }
-  },
+    },
+    ghostingUserCreds:{
+      username:'eacsr@ea.com',
+      password:'U2FsdGVkX19Rn/USOSqPpn1FTbs5vPvAFXa3NDuh2sA='
+  }
+},
   testData: {
     mastercard: {
       cardNumber: '5123456789012346',
