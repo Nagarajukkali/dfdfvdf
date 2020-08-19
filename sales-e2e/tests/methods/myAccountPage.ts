@@ -3,6 +3,7 @@ const eaMyAccount=require('../pages/myAccount.page');
 import {testFunction } from '../../global_methods/helper';
 import {checkoutDetailsMethod} from './checkoutDetailsPage';
 const cryptoJS = require('crypto-js');
+const { config }=require('../../resources/resource');
 let isSolar: boolean = true;
 
 export class myAccountMethod{
@@ -11,7 +12,7 @@ export class myAccountMethod{
 
   public static async loginToMyAccount(t,username,password){
     await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfUsername, username);
-    console.log(cryptoJS.AES.encrypt("TestPass1", username).toString());
+    //console.log(cryptoJS.AES.encrypt("TestPass1", username).toString());
     await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfPassword, cryptoJS.AES.decrypt(password, username).toString(cryptoJS.enc.Utf8));
     await testFunction.click(t, eaMyAccount.elements.btnSignIn);
     await testFunction.waitForElementToBeAppeared(t,eaMyAccount.elements.eaSpinner);
@@ -105,5 +106,25 @@ export class myAccountMethod{
     this.map.set('exitFees_'+checkoutDetailsMethod.getScenarioId(t),exitFees);
 
   }
+  public static async loginAsGhostingUser(t) {
+    const username = config.ghostingUserCreds.username;
+    const password = config.ghostingUserCreds.password;
+    await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfUsername, username);
+    await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfPassword, cryptoJS.AES.decrypt(password, username).toString(cryptoJS.enc.Utf8));
+    await testFunction.click(t, eaMyAccount.elements.btnSignIn);
+    await testFunction.takeScreenshot(t,"ghosting search page");
+  }
+
+  public static async searchAccountNumber(t,accountNumber) {
+    await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfAccountNumber, accountNumber);
+    await testFunction.click(t, eaMyAccount.elements.btnSearch);
+  }
+
+  public static async clickOnImpersonateButton(t) {
+    await testFunction.click(t, eaMyAccount.elements.btnImpersonate);
+    await testFunction.waitForElementToBeAppeared(t,eaMyAccount.elements.eaSpinner);
+    await testFunction.waitForElementToBeDisappeared(t,eaMyAccount.elements.eaSpinner);
+  }
+
 
 }

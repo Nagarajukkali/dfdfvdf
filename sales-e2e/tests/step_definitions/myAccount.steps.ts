@@ -84,3 +84,14 @@ When(/^user validates details on checkout details page$/, async function (t,[],d
   console.log("Checkout Details page validated successfully.");
 });
 
+When(/^user logs in to my account as a ghosting user$/, async function(t) {
+  await myAccountMethod.loginAsGhostingUser(t);
+});
+When(/^the user searches '(.*)'$/, async function(t, [accountNumber]) {
+  await myAccountMethod.searchAccountNumber(t,accountNumber);
+});
+When(/^the user clicks on Impersonate button$/, async function(t, [accountNumber]) {
+  await myAccountMethod.clickOnImpersonateButton(t);
+});
+
+
