@@ -1,0 +1,75 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: OB2008184210
+    sourceCode: Total_16%GD
+    actualQuoteDate: 2020-08-18
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0346344328
+    
+    emailId: oVxqAHzXPK@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 508453
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlMiddleName/: 
+          dlLastName: test
+          licenseStateOfIssue: SA
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 6
+    streetName: Kipling
+    streetType: AV
+    suburb: GLENGOWRIE
+    state: SA
+    country: AUS
+    postCode: 5044
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2020-08-19
+    offerType: ENE
+    plan: TOPH-GS
+    priceTag: GSADA_NR2001
+    serviceOrderDate: 2020-08-19
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5510730594
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+

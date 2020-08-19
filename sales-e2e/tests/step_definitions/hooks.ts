@@ -80,6 +80,9 @@ Given(/^user has opened the '(.*)' link in a browser and creates '(.*)' to save 
     case "geelong":
       await t.navigateTo(eaHomePage.campaignPageUrl+"geelong?live=disabled");
       break;
+    case "fiftyupclub":
+      await t.navigateTo(eaHomePage.campaignPageUrl+"fiftyupclub?live=disabled");
+      break;
     default:
       console.error("Invalid campaign type.");
   }

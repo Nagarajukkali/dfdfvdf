@@ -146,6 +146,9 @@ export class checkoutReviewMethod {
           else if(t.testRun.test.name.includes('geelong')){
             eleSourceCode='Total_'+eleDiscount.split(" ")[1]+'GD_50';
           }
+          else if(t.testRun.test.name.includes('total campaign for VIC')){
+            eleSourceCode='Total_'+eleDiscount.split(" ")[1]+'GD_50';
+          }
           else{
             eleSourceCode=elePlanName.split(" ")[0]+'_'+eleDiscount.split(" ")[1]+'GD';
           }
@@ -170,6 +173,9 @@ export class checkoutReviewMethod {
             gasSourceCode='Alliance_'+gasDiscount.split(" ")[1]+'GD';
           }
           else if(t.testRun.test.name.includes('geelong')){
+            gasSourceCode='Total_'+gasDiscount.split(" ")[1]+'GD_50';
+          }
+          else if(t.testRun.test.name.includes('total campaign for VIC')){
             gasSourceCode='Total_'+gasDiscount.split(" ")[1]+'GD_50';
           }
           else{
