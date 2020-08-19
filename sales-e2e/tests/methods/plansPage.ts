@@ -87,11 +87,12 @@ export class plansMethod{
     await testFunction.isElementDisplayed(t, EaHomePage.elements.planCostEstimate);
   }
 
-  public static async validatePlanHeading(t, data: any) {
-    await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingTitle, data.planName);
-    await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingFuel, "Electricity");
-    await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingDescription, data.planDescription);
-    if(await testFunction.sizeOfElement(t, EaHomePage.campaignElements.isQLD) == 0) {
+  public static async validatePlanHeading(t, dataTable, data: any) {
+    if(dataTable[0].fuelType === "ELE") {
+      await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingTitle, data.planName);
+      await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingFuel, "Electricity");
+      await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingDescription, data.planDescription);
+    } else if (dataTable[0].fuelType === 'GAS') {
       await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingTitle, data.planName);
       await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingFuel, "Gas");
       await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingDescription, data.planDescription);
@@ -115,6 +116,10 @@ export class plansMethod{
       if(dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.heading);
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillDescription, data.electricity.feature.preSelect.discountOffTotalEnergyBill.description);
+      }
+      if(dataTable[0].Feature_VIPDiscountOffTotalEnergyBill === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVIPDiscountOffTotalBillTitle, data.electricity.feature.preSelect.VIPDiscountOffTotalEnergyBill.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVIPDiscountOffTotalBillDescription, data.electricity.feature.preSelect.VIPDiscountOffTotalEnergyBill.description);
       }
       if(dataTable[0].Feature_noStandardConnectionFee === "Y") {
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureNoStandardConnectionFeeTitle, data.electricity.feature.preSelect.noStandardConnectionFee.heading);
@@ -232,7 +237,26 @@ export class plansMethod{
         }
         break;
       case PlanType.TOTAL_PLAN_PLUS:
-
+        await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlanPlus.heading);
+        switch (state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlanPlus.VIC.description);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlanPlus.NSW.description);
+            break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlanPlus.ACT.description);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlanPlus.SA.description);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlanPlus.QLD.description);
+            break;
+          default:
+            throw Error("Invalid State");
+        }
         break;
       case PlanType.BASIC_BUSINESS:
 

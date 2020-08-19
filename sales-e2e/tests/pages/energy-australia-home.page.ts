@@ -122,6 +122,8 @@ const eaHomePage={
     eleFeaturePeaceOfMindDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Peace of mind").sibling(),
     eleFeatureDiscountOffTotalBillTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Discount off"),
     eleFeatureDiscountOffTotalBillDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Discount off").sibling(),
+    eleFeatureVIPDiscountOffTotalBillTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("VIP discount off"),
+    eleFeatureVIPDiscountOffTotalBillDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("VIP discount off").sibling(),
     eleFeatureNoStandardConnectionFeeTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("No standard"),
     eleFeatureNoStandardConnectionFeeDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("No standard").sibling(),
 

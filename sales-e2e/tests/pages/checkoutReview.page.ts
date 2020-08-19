@@ -55,6 +55,7 @@ const eaCheckoutReviewPage={
       eleFeatureDiscountOffTotal: Selector("#reviewSectionEle [id*='benefit-text']").withText("Discount off total energy bill"),
       eleFeaturePeaceOfMind: Selector("#reviewSectionEle [id*='benefit-text']").withText("Peace of mind"),
       eleFeatureNoStandardConnectionFee: Selector("#reviewSectionEle [id*='benefit-text']").withText("No standard connection fees"),
+      eleFeatureVIPDiscountOffTotal: Selector("#reviewSectionEle [id*='benefit-text']").withText("VIP discount off total energy bill"),
       gasFeatures: Selector("#reviewSectionGas [id*='benefit-text']"),
       gasFeature50Credit: Selector("#reviewSectionGas [id*='benefit-text']").withText("$50"),
       gasFeatureCN: Selector("#reviewSectionGas [id*='benefit-text']").withText("Carbon neutral"),

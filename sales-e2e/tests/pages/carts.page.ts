@@ -10,6 +10,7 @@ const cartsPage={
     eleFeatureCN: Selector("[id*='flick-cart-plan__details-text-fuel-ELE']").withText("Carbon neutral"),
     eleFeatureDiscountOffTotal: Selector("[id*='flick-cart-plan__details-text-fuel-ELE']").withText("Discount off total energy bill"),
     eleFeaturePeaceOfMind: Selector("[id*='flick-cart-plan__details-text-fuel-ELE']").withText("Peace of mind"),
+    eleFeatureVIPDiscountOffTotal: Selector("[id*='flick-cart-plan__details-text-fuel-ELE']").withText("VIP discount off total energy bill"),
     gasFeatures: Selector("[id*='flick-cart-plan__details-text-fuel-GAS']"),
     gasFeature50Credit: Selector("[id*='flick-cart-plan__details-text-fuel-GAS']").withText("$50"),
     gasFeatureCN: Selector("[id*='flick-cart-plan__details-text-fuel-GAS']").withText("Carbon neutral"),

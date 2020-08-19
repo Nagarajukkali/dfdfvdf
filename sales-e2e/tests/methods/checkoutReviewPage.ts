@@ -152,7 +152,12 @@ export class checkoutReviewMethod {
         }
         else if(elePlanName===PlanType.TOTAL_PLAN_PLUS || elePlanName==='Total Plan Plus - Business'){
           eleDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtEleDiscount);
-          eleSourceCode=elePlanName.split(" ")[0]+'_Plus_'+eleDiscount.split(" ")[1]+'GD';
+          if (t.testRun.test.name.includes('elec-tpp campaign for VIC')){
+            eleSourceCode = elePlanName.split(" ")[0] + '_Plus_' + eleDiscount.split(" ")[1] + 'GD_50';
+          }
+          else{
+            eleSourceCode=elePlanName.split(" ")[0] + '_Plus_' + eleDiscount.split(" ")[1] + 'GD';
+          }
         }
         else if(elePlanName===PlanType.NO_FRILLS || elePlanName===PlanType.NO_FRILLS_BUSINESS){
           eleSourceCode='NOFRILLS';
@@ -460,6 +465,10 @@ export class checkoutReviewMethod {
       }
       if(dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill);
+      }
+      if(dataTable[0].Feature_VIPDiscountOffTotalEnergyBill === "Y") {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureVIPDiscountOffTotal, json.electricity.feature.postSelect.VIPDiscountOffTotalEnergyBill);
+
       }
       if(dataTable[0].Feature_noStandardConnectionFee === "Y") {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureNoStandardConnectionFee, json.electricity.feature.postSelect.noStandardConnectionFee);
