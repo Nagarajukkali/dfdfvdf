@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008194680
-    sourceCode: Total_17%GD
+    quoteId: BB2008194759
+    sourceCode: Total_Plus_18%GD
     actualQuoteDate: 2020-08-19
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -15,13 +15,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0324993269
+      phoneNumber: 0311783495
     
-    emailId: QRqdJLDjLy@energyaustralia.com.au
+    emailId: AxlVVrnzZs@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 378327
+      id: 586520
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -39,27 +39,24 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 5
-    streetName: Wilkies
+    streetNo: 74
+    streetName: Yillowra
     streetType: S
-    suburb: BULLI
+    suburb: AUBURN
     state: NSW
     country: AUS
-    postCode: 2516
+    postCode: 2144
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-08-21
-    offerType: ENE
-    plan: TOPH-GN
+    offerType: COR
+    plan: SWSR1-GN
     priceTag: GNAGA_NR2007
-    serviceOrderDate: 2020-08-21
-    serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      MIRN: 5240924834
+      MIRN: 5240524910
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N

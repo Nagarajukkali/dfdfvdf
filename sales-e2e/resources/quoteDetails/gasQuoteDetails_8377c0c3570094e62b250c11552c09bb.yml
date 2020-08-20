@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008194680
-    sourceCode: Total_17%GD
+    quoteId: BB2008194761
+    sourceCode: Total_Plus_10%GD
     actualQuoteDate: 2020-08-19
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -15,13 +15,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0324993269
+      phoneNumber: 0359327410
     
-    emailId: QRqdJLDjLy@energyaustralia.com.au
+    emailId: PhCdXVdFtg@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 378327
+      id: 612088
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -29,7 +29,7 @@ saleDetail :
           dlFirstName: test
           dlMiddleName/: 
           dlLastName: test
-          licenseStateOfIssue: NSW
+          licenseStateOfIssue: ACT
         
       
     
@@ -39,13 +39,13 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 5
-    streetName: Wilkies
-    streetType: S
-    suburb: BULLI
-    state: NSW
+    streetNo: 126
+    streetName: Shakespeare
+    streetType: CR
+    suburb: FRASER
+    state: ACT
     country: AUS
-    postCode: 2516
+    postCode: 2615
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
@@ -54,22 +54,13 @@ saleDetail :
     fuelType: G
     proposedStart: 2020-08-21
     offerType: ENE
-    plan: TOPH-GN
-    priceTag: GNAGA_NR2007
+    plan: SWSR1-GA
+    priceTag: GACTA_NR2001
     serviceOrderDate: 2020-08-21
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      MIRN: 5240924834
+      MIRN: 5261512002
     
-    energySafeVicQuestions: 
-      renovationsSinceDeenergisation: N
-      renovationsInProgressOrPlanned: N
-      customerWithLifeSupport: Y
-    
-    lifeSupportEquipment: 
-      lifeSupportEquipmentType: OTHER
-    
-    lifeSupportOtherEquipmentDetails: Sample Other gas device.
   
   offerDetail: 
     fuelType: E
