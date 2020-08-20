@@ -185,7 +185,7 @@ Feature:E2E scenario for gas-tpp campaign
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
       |GAS      |Y                 |Y                       |Y                    |N                                       |N                                |
     And user validates disclaimer on review page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |signupCredit|planName       |state|
+      |referencePriceComparison |goNeutral  |solarBuyBack   |signUpCredit|planName       |state|
       |Y                        |Y          |Y              |Y           |Total Plan Plus|VIC  |
     And user validates source code
       |fuelType|gasSourceCode|
