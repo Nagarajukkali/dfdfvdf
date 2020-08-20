@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008194780
-    sourceCode: Total_9%GD
+    quoteId: BB2008194787
+    sourceCode: Total_Plus_12%GD_50
     actualQuoteDate: 2020-08-19
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -15,13 +15,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0390111953
+      phoneNumber: 0333980233
     
-    emailId: ettOBUTwZq@energyaustralia.com.au
+    emailId: ubYEWwEPLQ@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 523880
+      id: 660658
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -29,7 +29,7 @@ saleDetail :
           dlFirstName: test
           dlMiddleName/: 
           dlLastName: test
-          licenseStateOfIssue: ACT
+          licenseStateOfIssue: VIC
         
       
     
@@ -39,13 +39,13 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 138
-    streetName: Narden
+    streetNo: 21
+    streetName: Eltham
     streetType: S
-    suburb: CRACE
-    state: ACT
+    suburb: FLEMINGTON
+    state: VIC
     country: AUS
-    postCode: 2911
+    postCode: 3031
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
@@ -54,12 +54,20 @@ saleDetail :
     fuelType: E
     proposedStart: 2020-08-21
     offerType: ENE
-    plan: TOPH-EA
-    priceTag: EAAC7_NR2007
+    plan: SWSR1-EV
+    priceTag: EVAGA_NR2001
     serviceOrderDate: 2020-08-21
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 7001183574
+      NMI: 6001456296
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: LSCNSPE
     
   
   offerDetail: 
@@ -74,7 +82,7 @@ saleDetail :
   creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    reEnergisationJSCCode: 501
-    reEnergisationJSCCharge: 80.43
+    reEnergisationJSCCode: REENBH
+    reEnergisationJSCCharge: 38.54
   
 
