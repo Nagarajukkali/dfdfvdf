@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008194780
-    sourceCode: Total_9%GD
+    quoteId: BB2008194807
+    sourceCode: Total_Plus_17%GD
     actualQuoteDate: 2020-08-19
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -15,13 +15,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0390111953
+      phoneNumber: 0321685370
     
-    emailId: ettOBUTwZq@energyaustralia.com.au
+    emailId: HgSCEVLQgR@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 523880
+      id: 56839
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -29,7 +29,7 @@ saleDetail :
           dlFirstName: test
           dlMiddleName/: 
           dlLastName: test
-          licenseStateOfIssue: ACT
+          licenseStateOfIssue: SA
         
       
     
@@ -39,31 +39,40 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 138
-    streetName: Narden
-    streetType: S
-    suburb: CRACE
-    state: ACT
+    streetNo: 6
+    streetName: Kipling
+    streetType: AV
+    suburb: GLENGOWRIE
+    state: SA
     country: AUS
-    postCode: 2911
+    postCode: 5044
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
   
   offerDetail: 
-    fuelType: E
-    proposedStart: 2020-08-21
+    fuelType: G
+    proposedStart: 2020-08-20
     offerType: ENE
-    plan: TOPH-EA
-    priceTag: EAAC7_NR2007
-    serviceOrderDate: 2020-08-21
+    plan: SWSR1-GS
+    priceTag: GSADA_NR2001
+    serviceOrderDate: 2020-08-20
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 7001183574
+      MIRN: 5510730594
     
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: OTHER
+    
+    lifeSupportOtherEquipmentDetails: Sample Other gas device.
   
   offerDetail: 
-    fuelType: G
+    fuelType: E
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -72,9 +81,4 @@ saleDetail :
   
   creditAssessmentDecision: Accept
   creditAssessmentReasonCode: Accept
-  meteringDetail: 
-    meterExchangeFlag: N
-    reEnergisationJSCCode: 501
-    reEnergisationJSCCharge: 80.43
-  
 

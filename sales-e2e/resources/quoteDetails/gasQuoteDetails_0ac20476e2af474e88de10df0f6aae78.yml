@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008174054
+    quoteId: BB2008194777
     sourceCode: Total_27%GD_50
-    actualQuoteDate: 2020-08-17
+    actualQuoteDate: 2020-08-19
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,13 +15,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0364050703
+      phoneNumber: 0376524400
     
-    emailId: sjXEfHZtUP@energyaustralia.com.au
+    emailId: iUyjwWqtIo@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 439620
+      id: 981181
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y

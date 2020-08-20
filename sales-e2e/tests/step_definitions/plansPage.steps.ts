@@ -101,7 +101,7 @@ Then(/^user validates the data on plans page for "([^"]*)"$/, async function (t,
    */
   dataTable = dataTable.hashes();
   let data = await FileUtils.getJSONfile(campaignName);
-  await plansMethod.validatePlanHeading(t, data);
+  await plansMethod.validatePlanHeading(t, dataTable, data);
   await plansMethod.validateFeatures(t, dataTable, data);
 });
 Then(/^user validates "([^"]*)" discount to be "([^"]*)" percent$/, async function (t, [fuelType, expectedDiscount]) {

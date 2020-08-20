@@ -155,7 +155,12 @@ export class checkoutReviewMethod {
         }
         else if(elePlanName===PlanType.TOTAL_PLAN_PLUS || elePlanName==='Total Plan Plus - Business'){
           eleDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtEleDiscount);
-          eleSourceCode=elePlanName.split(" ")[0]+'_Plus_'+eleDiscount.split(" ")[1]+'GD';
+          if (t.testRun.test.name.includes('elec-tpp campaign for VIC')){
+            eleSourceCode = elePlanName.split(" ")[0] + '_Plus_' + eleDiscount.split(" ")[1] + 'GD_50';
+          }
+          else{
+            eleSourceCode=elePlanName.split(" ")[0] + '_Plus_' + eleDiscount.split(" ")[1] + 'GD';
+          }
         }
         else if(elePlanName===PlanType.NO_FRILLS || elePlanName===PlanType.NO_FRILLS_BUSINESS){
           eleSourceCode='NOFRILLS';
@@ -182,9 +187,14 @@ export class checkoutReviewMethod {
             gasSourceCode=gasPlanName.split(" ")[0]+'_'+gasDiscount.split(" ")[1]+'GD';
           }
         }
-        else if(gasPlanName===PlanType.TOTAL_PLAN_PLUS || gasPlanName==='Total Plan Plus - Business'){
-          gasDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasDiscount);
-          gasSourceCode=gasPlanName.split(" ")[0]+'_Plus_'+gasDiscount.split(" ")[1]+'GD';
+        else if(gasPlanName===PlanType.TOTAL_PLAN_PLUS || gasPlanName==='Total Plan Plus - Business') {
+          gasDiscount = await testFunction.getElementText(t, eaCheckoutReviewPage.elements.txtGasDiscount);
+
+          if (t.testRun.test.name.includes('gas-tpp campaign for VIC')) {
+            gasSourceCode = gasPlanName.split(" ")[0] + '_Plus_' + gasDiscount.split(" ")[1] + 'GD_50';
+          } else {
+            gasSourceCode = gasPlanName.split(" ")[0] + '_Plus_' + gasDiscount.split(" ")[1] + 'GD';
+           }
         }
         else if(gasPlanName===PlanType.NO_FRILLS || gasPlanName===PlanType.NO_FRILLS_BUSINESS){
           gasSourceCode='NOFRILLS';
