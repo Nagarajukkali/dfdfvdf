@@ -120,8 +120,8 @@ const eaHomePage={
     eleFeatureCNDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral").sibling(),
     eleFeaturePeaceOfMindTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Peace of mind"),
     eleFeaturePeaceOfMindDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Peace of mind").sibling(),
-    eleFeatureDiscountOffTotalBillTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Discount off"),
-    eleFeatureDiscountOffTotalBillDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Discount off").sibling(),
+    eleFeatureDiscountOffTotalBillTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("off total energy"),
+    eleFeatureDiscountOffTotalBillDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("off total energy").sibling(),
     eleFeatureNoStandardConnectionFeeTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("No standard"),
     eleFeatureNoStandardConnectionFeeDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("No standard").sibling(),
 
@@ -131,8 +131,8 @@ const eaHomePage={
     gasFeatureCNDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral").sibling(),
     gasFeaturePeaceOfMindTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Peace of mind"),
     gasFeaturePeaceOfMindDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Peace of mind").sibling(),
-    gasFeatureDiscountOffTotalBillTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Discount off"),
-    gasFeatureDiscountOffTotalBillDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Discount off").sibling()
+    gasFeatureDiscountOffTotalBillTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("off total energy"),
+    gasFeatureDiscountOffTotalBillDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("off total energy").sibling()
   }
 };
 
