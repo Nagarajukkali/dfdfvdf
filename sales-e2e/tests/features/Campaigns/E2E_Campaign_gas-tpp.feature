@@ -75,8 +75,8 @@ Feature:E2E scenario for gas-tpp campaign
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-GN |5240924834 |N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
-      |customerStatus|fuelType|gasDiscount|campaign  |folderName                 |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
-      |New           |GAS     |18          |gas-tpp  |gas-tpp_NSW  |NSW  |Quote Tool    |Move Home|No   |No  |RES          |New            |
+      |customerStatus|fuelType|gasDiscount|campaign  |folderName                |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
+      |New           |GAS     |18          |gas-tpp  |E2E_Campaign_gas-tpp_NSW  |NSW  |Quote Tool    |Move Home|No   |No  |RES          |New            |
 
 
   Scenario Outline: Validate complete data for gas-tpp campaign for SA
