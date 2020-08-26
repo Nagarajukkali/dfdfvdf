@@ -16,30 +16,37 @@ Before(  async t => {
 
 Given(/^user has opened the website link in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
   screenshotFolder=folderName;
-  let screenshotFolderPath="screenshots/" + await fetchBrowser() + "/" + screenshotFolder;
+  let screenshotFolderPath="screenshots/Current/" + await fetchBrowser() + "/" + screenshotFolder;
   await FileUtils.deleteFiles(screenshotFolderPath);
+  await testFunction.cleanBaselineImageDir();
+  await testFunction.cleanDiffImageDir();
   await t.navigateTo(eaHomePage.pageUrl);
 });
 
 Given(/^user has opened the bill uploader website link in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
   screenshotFolder=folderName;
-  let screenshotFolderPath="screenshots/" + await fetchBrowser() + "/" + screenshotFolder;
+  let screenshotFolderPath="screenshots/Current/" + await fetchBrowser() + "/" + screenshotFolder;
   await FileUtils.deleteFiles(screenshotFolderPath);
+  await testFunction.cleanBaselineImageDir();
+  await testFunction.cleanDiffImageDir();
   await t.navigateTo(eaHomePage.billUploaderUrl);
 });
 
 Given(/^user has opened the new connection website link in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
   screenshotFolder=folderName;
-  let screenshotFolderPath="screenshots/" + await fetchBrowser() + "/" + screenshotFolder;
+  let screenshotFolderPath="screenshots/Current/" + await fetchBrowser() + "/" + screenshotFolder;
   await FileUtils.deleteFiles(screenshotFolderPath);
+  await testFunction.cleanBaselineImageDir();
+  await testFunction.cleanDiffImageDir();
   await t.navigateTo(eaHomePage.newConnectionPageUrl);
-
 });
 
 Given(/^user has opened the '(.*)' link in a browser and creates '(.*)' to save evidences$/, async function (t,[campaign,folderName]) {
   screenshotFolder=folderName;
-  let screenshotFolderPath="screenshots/" + await fetchBrowser() + "/" + screenshotFolder;
+  let screenshotFolderPath="screenshots/Current/" + await fetchBrowser() + "/" + screenshotFolder;
   await FileUtils.deleteFiles(screenshotFolderPath);
+  await testFunction.cleanBaselineImageDir();
+  await testFunction.cleanDiffImageDir();
   switch (campaign) {
     case "offer":
       await t.navigateTo(eaHomePage.campaignPageUrl+"offer?live=disabled");
@@ -90,8 +97,9 @@ Given(/^user has opened the '(.*)' link in a browser and creates '(.*)' to save 
 });
 
 After( async t => {
+  await testFunction.reportUIFailures(t);
   let format;
-  await t.takeScreenshot({path:`../${await fetchBrowser()}/${await screenshotFolder}/${await getDateTime()}.png`,fullPage:true});
+  await t.takeScreenshot({path:`../Current/${await fetchBrowser()}/${await screenshotFolder}/${await getDateTime()}.png`,fullPage:true});
   logger.info(`  Execution Completed: ${t.testRun.test.name}`);
 });
 

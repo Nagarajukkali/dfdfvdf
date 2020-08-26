@@ -1,43 +1,43 @@
-saleDetail : 
-  saleDetailHeader: 
-    quoteId: BB2008184405
+saleDetail :
+  saleDetailHeader:
+    quoteId: BB2008194854
     sourceCode: Total_11%GD
-    actualQuoteDate: 2020-08-18
+    actualQuoteDate: 2020-08-19
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
-  
-  personDetail: 
+
+  personDetail:
     title: Mr
     firstName: test
     lastName: test
     commMethod: EMAIL
-    phone: 
+    phone:
       phoneType: MOBILE
-      phoneNumber: 0354783430
-    
-    emailId: mUQgZmNiRc@energyaustralia.com.au
+      phoneNumber: 0327545260
+
+    emailId: iWlMahUxOq@energyaustralia.com.au
     dob: 1980-01-01
-    personIdDetail: 
+    personIdDetail:
       idType: DL
-      id: 160029
+      id: 128912
       primaryIdFlag: Y
-      idValidationInformation: 
+      idValidationInformation:
         consentForIdValidation: Y
-        idValidationDriversLicenseDetail: 
+        idValidationDriversLicenseDetail:
           dlFirstName: test
-          dlMiddleName/: 
+          dlMiddleName/:
           dlLastName: test
           licenseStateOfIssue: VIC
-        
-      
-    
+
+
+
     authLevel: Y
     personPremiseRelationship: TENANT
     seqNo: 2
-  
-  premiseDetail: 
+
+  premiseDetail:
     addressClass: ST
     streetNo: 42
     streetName: Brownlow
@@ -49,36 +49,36 @@ saleDetail :
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
-  
-  offerDetail: 
+
+  offerDetail:
     fuelType: E
     offerType: COR
     plan: TOPH-EV
     priceTag: EVPOA_NR2001
-    nmiMirnInformation: 
+    nmiMirnInformation:
       NMI: 6203778288
-    
-    energySafeVicQuestions: 
+
+    energySafeVicQuestions:
       renovationsSinceDeenergisation: N
       renovationsInProgressOrPlanned: N
       customerWithLifeSupport: Y
-    
-    lifeSupportEquipment: 
+
+    lifeSupportEquipment:
       lifeSupportEquipmentType: OTHER
-    
+
     lifeSupportOtherEquipmentDetails: Sample Other electricity device.
-  
-  offerDetail: 
+
+  offerDetail:
     fuelType: G
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
-  
-  billDeliveryDetail: 
+
+  billDeliveryDetail:
     billRouteType: EMAIL
-  
+
   creditAssessmentDecision: Accept
   creditAssessmentReasonCode: Accept
-  meteringDetail: 
+  meteringDetail:
     meterExchangeFlag: N
-  
+
 

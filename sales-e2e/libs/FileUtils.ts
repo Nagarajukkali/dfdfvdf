@@ -3,8 +3,6 @@ import {checkoutDetailsMethod} from "../tests/methods/checkoutDetailsPage";
 
 const YAML = require('yamljs');
 const fs   = require('fs');
-//const path = require('path');
-
 
 export class FileUtils {
   public static async getFilePath(t,fuelType){

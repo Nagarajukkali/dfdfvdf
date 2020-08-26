@@ -37,11 +37,11 @@ When(/^user provides all details on checkout details page$/, async function (t,[
 });
 
 When(/^user clicks on 'Review your order' button and navigates to review page$/, async function (t) {
-  await testFunction.takeScreenshot(t,'checkout_details_page');
+  await testFunction.takeScreenshot(t,'checkout_details_page_with_data', false);
   await checkoutDetailsMethod.clickOnReviewYourOrderBtn(t);
 });
 When(/^user clicks on 'Next' button and navigates to review page$/, async function (t) {
-  await testFunction.takeScreenshot(t,'checkout_details_page');
+  await testFunction.takeScreenshot(t,'checkout_details_page_with_data', false);
   await checkoutDetailsMethod.clickOnNextBtn(t);
 });
 

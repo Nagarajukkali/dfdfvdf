@@ -5,7 +5,6 @@ const eaHomePage=require('../pages/energy-australia-home.page');
 const eaMyAccount = require('../pages/myAccount.page');
 const eaQt2Reporting = require('../pages/eaQt2Reporting.page');
 
-
 Given(/^user has navigated to '(.*)' plans page$/, async function(t, [customerType]) {
   if(customerType===CustomerType.RESIDENTIAL){
     await testFunction.click(t, eaHomePage.elements.residentialComparePlansButton);
@@ -29,5 +28,5 @@ Given(/^user has opened the qt2 Reporting website link in a browser$/, async fun
 
 Given(/^user has navigated to move house page$/, async function (t) {
     await testFunction.click(t,eaHomePage.elements.linkMoveHouse);
-    await testFunction.takeScreenshot(t,"move_house");
+    await testFunction.takeScreenshot(t,"move_house", false);
 });

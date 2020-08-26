@@ -16,12 +16,12 @@ When(/^user search quote on the basis of '(.*)'$/, async function (t,[option]) {
 });
 Then(/^submitted quote is displayed$/, async function (t) {
   await qt2Reporting.verifySubmittedQuote(t);
-  await testFunction.takeScreenshot(t,"qt2_reporting_app");
+  await testFunction.takeScreenshot(t,"qt2_reporting_app_quotes", false);
 });
 
 Then(/^user validates all the details for '(.*)' submitted quote$/, async function (t,[fuelType]) {
   await qt2Reporting.validateQuoteDetails(t,fuelType);
-  await testFunction.takeScreenshot(t,"qt2_reporting_app");
+  await testFunction.takeScreenshot(t,"qt2_reporting_app_" + fuelType , false);
 });
 
 Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) {
