@@ -26,8 +26,10 @@ When(/^user selects '(.*)'$/, async function(t, [planName]){
 Given(/^user have selected fuel as "([^"]*)"$/, async function (t, [fuelType]) {
   await plansMethod.selectFuel(t, fuelType);
 });
+
 When(/^user verifies the account through verify account journey for residential customer$/, async function (t,[],dataTable) {
   let data = dataTable.hashes();
+  await testFunction.takeScreenshot(t,'verify_account_main');
   await selectionOptionModalWindowMethod.selectOptionsModalWindow(t, data[0].modal_option);
   await testFunction.takeScreenshot(t,'verify_account_modal');
   if(data[0].elecAccountNumber)
@@ -35,18 +37,20 @@ When(/^user verifies the account through verify account journey for residential 
   if(data[0].gasAccountNumber)
     await verifyAccountMethod.provideAccountDetails(t, "GAS", data[0].gasAccountNumber);
   await verifyAccountMethod.provideAccountInformation(t, data[0].postcode, data[0].customer_type);
-  await testFunction.takeScreenshot(t,'verify_account_modal');
+  await testFunction.takeScreenshot(t,'verify_account_modal_with_data');
   await verifyAccountMethod.verifyAccountDetails(t);
-  await verifyAccountMethod.provideIdentityDetails(t, data[0].idType, data[0].idNumber);
-  await testFunction.takeScreenshot(t,'verify_account_modal');
+  await verifyAccountMethod.provideIdentityDetails(t, data[0].idType, data[0].idNumber)
+  await testFunction.takeScreenshot(t,'verify_account_modal_id_with_data');
   //await testFunction.captureNetworkCall(t,'/qt2/app/account/retrieve');
   await verifyAccountMethod.verifyAccountDetails(t);
   //await testFunction.validateNetworkCall(t);
-  await testFunction.takeScreenshot(t,'verify_account_modal');
+  await testFunction.takeScreenshot(t,'verify_account_modal_final');
   await verifyAccountMethod.showCostEstimates(t);
 });
+
 When(/^user verifies the account through verify account journey for business customer$/, async function (t,[],dataTable) {
   let data = dataTable.hashes();
+  await testFunction.takeScreenshot(t,'verify_account_main');
   await selectionOptionModalWindowMethod.selectOptionsModalWindow(t, data[0].modal_option);
   await testFunction.takeScreenshot(t,'verify_account_modal');
   if(data[0].elecAccountNumber)
@@ -54,12 +58,12 @@ When(/^user verifies the account through verify account journey for business cus
   if(data[0].gasAccountNumber)
     await verifyAccountMethod.provideAccountDetails(t, "GAS", data[0].gasAccountNumber);
   await verifyAccountMethod.provideAccountInformation(t, data[0].ABNOrACN, data[0].customer_type);
-  await testFunction.takeScreenshot(t,'verify_account_modal');
+  await testFunction.takeScreenshot(t,'verify_account_modal_with_data');
   await verifyAccountMethod.verifyAccountDetails(t);
   await verifyAccountMethod.provideIdentityDetails(t, data[0].idType, data[0].idNumber);
-  await testFunction.takeScreenshot(t,'verify_account_modal');
+  await testFunction.takeScreenshot(t,'verify_account_modal_id_with_data');
   await verifyAccountMethod.verifyAccountDetails(t);
-  await testFunction.takeScreenshot(t,'verify_account_modal');
+  await testFunction.takeScreenshot(t,'verify_account_modal_final');
   await verifyAccountMethod.showCostEstimates(t);
 });
 

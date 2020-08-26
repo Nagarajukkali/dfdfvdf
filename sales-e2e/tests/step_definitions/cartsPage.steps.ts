@@ -5,7 +5,7 @@ import {Then} from 'cucumber'
 import {FileUtils} from '../../libs/FileUtils'
 
 When(/^user moves on to fill the qualifier$/, async function(t) {
-    await testFunction.takeScreenshot(t,"cart_page");
+    await testFunction.takeScreenshot(t,"cart_page", false);
     await cartsMethod.clickContinueCartsPage(t);
   });
 

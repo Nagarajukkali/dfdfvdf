@@ -8,7 +8,14 @@ config: {
     eaBillUploaderUrl:`https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/compare-electricity-and-gas-plans/upload-your-electricity-bill`,
     qt2ReportingURL:`https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/qt2reporting/login`,
     qt2ReportingHomePageURL:`https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/qt2reporting/app/reporting`,
-    screenshot:'N',
+    screenshot:'Y',
+    visualValidation: {
+      rebaseline: 'N',
+      validate: 'Y',
+      baseDir: 'screenshots/Base',
+      diffDir: 'screenshots/Diff',
+      currentDir: 'screenshots/Current',
+    },
     qt2ReportingCreds:{
       username:'abhar',
       password:'U2FsdGVkX1+ofbMmTfeufCoLeZbhDgsePj0GzAmmyv0='

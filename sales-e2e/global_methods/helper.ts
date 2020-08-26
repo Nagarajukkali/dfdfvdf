@@ -2,11 +2,15 @@ import {RequestLogger, Selector} from 'testcafe';
 import { ClientFunction } from 'testcafe';
 import {FUEL_TYPE_OPTIONS, AustralianState, CustomerType} from '@ea/ea-commons-models';
 import {fetchBrowser, getDateTime, screenshotFolder} from '../tests/step_definitions/hooks';
+import {FileUtils} from '../libs/FileUtils';
+const fs = require("mz/fs");
 import requestLoggerUtilities from '../global_methods/requestLoggerUtilities';
 const requestLoggerUtils = new requestLoggerUtilities();
 const replace={ replace: true };
 const { config }=require('../resources/resource');
-const screenshot=config.screenshot
+import {resemblejs} from 'resemblejs/resemble.js'; //--DO NOT REMOVE THIS IMPORT - THIS GIVES PATH TO THE CORE IMPLEMENTATION--//
+const resemble = require("resemblejs");
+const screenshot=config.screenshot;
 let logger=null;
 
   export enum CustomerStatus {
@@ -311,9 +315,15 @@ export class testFunction {
     }
   }
 
-  public static async takeScreenshot(t,fileName){
+  public static async takeScreenshot(t,fileName, validate = true){
     if(screenshot==='Y'){
-      await t.takeScreenshot({path:`../${await fetchBrowser()}/${await screenshotFolder}/`+fileName+`_${await getDateTime()}.png`,fullPage:true});
+      if(config.visualValidation.validate === 'Y') {
+          await t.takeScreenshot({path:`../Current/${await fetchBrowser()}/${await screenshotFolder}/`+fileName+`.png`,fullPage:true});
+        if(validate)
+          await testFunction.compareImages(t, fileName);
+      } else {
+        await t.takeScreenshot({path:`../Current/${await fetchBrowser()}/${await screenshotFolder}/`+fileName+`_${await getDateTime()}.png`,fullPage:true});
+      }
     }
   }
 
@@ -359,6 +369,78 @@ export class testFunction {
     return customerType === CustomerType.BUSINESS;
   }
 
+  public static async compareImages(t, imageName) {
+    //-----Performing the visual validations only if 'validate' key is set to 'Y'-----//
+    if(config.visualValidation.validate === 'Y') {
+      let browserName = await fetchBrowser();
+      let baseImage = `${config.visualValidation.baseDir}/${browserName}/${screenshotFolder}/${imageName}.png`;
+      let currentImage = `${config.visualValidation.currentDir}/${browserName}/${screenshotFolder}/${imageName}.png`;
+      let diffImage = `${config.visualValidation.diffDir}/${browserName}/${screenshotFolder}/${imageName}.png`;
+
+      //----Re-baselining the images if 'rebaseline' key is set to 'Y'----//
+      if(config.visualValidation.rebaseline === 'Y') {
+        fs.copyFileSync(currentImage, baseImage);
+        console.log(`${browserName}/${screenshotFolder}/${imageName}.png re-baselined`);
+      } else {
+        //-----Comparing the current image (generated in current execution) with it's baselined image-----//
+        resemble(currentImage).compareTo(baseImage).onComplete(function(data){
+          //----Diff file will only be generated if there is a mismatch in image comparison----//
+          if(data.misMatchPercentage > 0) {
+            console.log(`Diff Image: ${diffImage}`);
+            console.log(data);
+            fs.writeFileSync(diffImage, data.getBuffer());
+          }
+        });
+      }
+    }
+  }
+
+  /////placeholder method to define output settings for specific page validations
+  public static async setResembleOutputSettings(pageName = "default") {
+    pageName = pageName.toLowerCase();
+    switch (pageName) {
+      case "checkoutreview":
+        break;
+      case "checkoutcomplete":
+        break;
+      default:
+    }
+  }
+
+  public static async cleanBaselineImageDir() {
+    if(config.visualValidation.rebaseline === 'Y') {
+      let rootFolderPath = `${config.visualValidation.baseDir}/${await fetchBrowser()}`;
+      if(!fs.existsSync(rootFolderPath)) {
+        fs.mkdirSync(rootFolderPath);
+      }
+      let folderPath = `${config.visualValidation.baseDir}/${await fetchBrowser()}/${screenshotFolder}`;
+      if(fs.existsSync(folderPath)) {
+        await FileUtils.deleteFiles(folderPath);
+      }
+      fs.mkdirSync(folderPath);
+    }
+  }
+
+  public static async cleanDiffImageDir() {
+    let rootFolderPath = `${config.visualValidation.diffDir}/${await fetchBrowser()}`;
+    if(!fs.existsSync(rootFolderPath)) {
+      fs.mkdirSync(rootFolderPath);
+    }
+    let folderPath = `${config.visualValidation.diffDir}/${await fetchBrowser()}/${screenshotFolder}`;
+    if(fs.existsSync(folderPath)) {
+      await FileUtils.deleteFiles(folderPath);
+    }
+    fs.mkdirSync(folderPath);
+  }
+
+  //----The test will fail if there is even a single diff file generated in a scenario----//
+  public static async reportUIFailures(t) {
+    let folderPath = `${config.visualValidation.diffDir}/${await fetchBrowser()}/${screenshotFolder}`;
+    fs.readdir(folderPath, function (err, files) {
+      testFunction.assertTextValue(t, files.length, 0);
+    });
+  }
+
   public static async captureNetworkCall(t: any, endpoint) {
     logger= RequestLogger(config.eaBaseUrl + endpoint, {
       logRequestHeaders:  true,
@@ -374,6 +456,7 @@ export class testFunction {
     await requestLoggerUtils.unzipLoggerResponses(t, {requestLogger: logger, toJson: true});
     console.log('\nUnzipped Response taken by the logger:\n', logger.requests[0].response.body);
   }
+
 }
 
 
