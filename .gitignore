@@ -43,5 +43,6 @@ Thumbs.db
 /sales-e2e/results
 
 #Screenshots
-/sales-e2e/screenshots/*
+/sales-e2e/screenshots/Current/*
+/sales-e2e/screenshots/Diff/*
 
