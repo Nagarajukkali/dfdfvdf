@@ -1,0 +1,136 @@
+{
+  "planName": "Total Plan",
+  "planDescription": "Great discount on your total energy bill guaranteed - every time.",
+
+  "electricity": {
+    "feature": {
+      "preSelect": {
+        "Credit50": {
+          "heading": "",
+          "description": ""
+        },
+        "carbonNeutral": {
+          "heading": "Carbon neutral option",
+          "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
+        },
+        "peaceOfMind": {
+          "heading": "Peace of mind",
+          "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+        },
+        "discountOffTotalEnergyBill": {
+          "heading": "Discount off total energy bill",
+          "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
+        },
+        "noStandardConnectionFee": {
+          "heading": "",
+          "description": ""
+        }
+      },
+      "postSelect": {
+        "Credit50": "",
+        "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
+        "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
+        "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
+        "noStandardConnectionFee": ""
+      }
+    }
+  },
+
+  "gas": {
+    "feature": {
+      "preSelect": {
+        "Credit50": {
+          "heading": "",
+          "description": ""
+        },
+        "carbonNeutral": {
+          "heading": "Carbon neutral option",
+          "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
+        },
+        "peaceOfMind": {
+          "heading": "Peace of mind",
+          "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+        },
+        "discountOffTotalEnergyBill": {
+          "heading": "Discount off total energy bill",
+          "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
+        }
+      },
+      "postSelect": {
+        "Credit50": "",
+        "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
+        "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
+        "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges."
+      }
+    }
+  },
+
+  "disclaimers": {
+    "referencePriceComparison": {
+      "heading": "Reference price comparison and estimated annual cost",
+      "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+    },
+    "goNeutral": {
+      "heading": "Go Neutral",
+      "QLD": {
+        "description": "^ Opt in and we will offset the carbon emissions from your electricity usage from the 6-month anniversary of the date your EnergyAustralia account is established. We will let you know in advance if we withdraw Go Neutral. For more info and full terms visit energyaustralia.com.au/carbon-neutral."
+      },
+      "NonQLD": {
+        "description": "^ Opt in and we will offset the carbon emissions from your electricity and/or gas usage from the 6-month anniversary of the date your EnergyAustralia account is established. We will let you know in advance if we withdraw Go Neutral. For more info and full terms visit energyaustralia.com.au/carbon-neutral."
+      }
+    },
+    "solarBuyBack": {
+      "heading": "Solar feed-in tariffs",
+      "VIC": {
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. We are currently unable to set up your solar plan online. For more information about the Victorian FiT scheme see www.energy.vic.gov.au/renewable-energy/victorian-feed-in-tariff."
+      },
+      "NonVIC": {
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. We are currently unable to set up your solar plan online."
+      }
+    },
+    "noStandardConnectionFee": {
+      "heading": "",
+      "description": ""
+    },
+    "Credit50": {
+      "VIC": {
+        "heading": "",
+        "description": ""
+      },
+      "NSW": {
+        "heading": "",
+        "description": ""
+      },
+      "ACT": {
+        "heading": "",
+        "description": ""
+      },
+      "QLD": {
+        "heading": "",
+        "description": ""
+      },
+      "SA": {
+        "heading": "",
+        "description": ""
+      }
+    },
+    "totalPlan": {
+      "heading": "Total Plan",
+      "VIC": {
+        "description": "* Offer only for eligible VIC residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+      },
+      "NSW": {
+        "description": "* Offer only for eligible NSW residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+      },
+      "ACT": {
+        "description": "* Offer only for eligible ACT residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+      },
+      "QLD": {
+        "description": "* Offer only for eligible QLD residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+      },
+      "SA": {
+        "description": "* Offer only for eligible SA residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+      }
+    }
+  }
+}

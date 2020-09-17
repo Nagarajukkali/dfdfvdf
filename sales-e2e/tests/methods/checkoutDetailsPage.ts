@@ -1,9 +1,20 @@
+import {getTestCafeRC, width} from '../step_definitions/hooks';
+
 const eaCheckoutDetailsPage=require('../pages/checkOutDetails.page');
 const eaCheckoutReviewPage=require('../pages/checkoutReview.page');
-import {BusinessType, CustomerStatus, directDebitType, PlanType, testFunction, cdeResponses} from '../../global_methods/helper';
+import {
+  BusinessType,
+  CustomerStatus,
+  directDebitType,
+  PlanType,
+  testFunction,
+  cdeResponses,
+  scrollTo, setAttribute
+} from '../../global_methods/helper';
 import {AustralianState, CustomerType} from '@ea/ea-commons-models';
 const Hashes=require('jshashes');
 import {myAccountMethod} from '../methods/myAccountPage';
+import {ClientFunction} from 'testcafe';
 
 export class checkoutDetailsMethod{
 
@@ -53,8 +64,9 @@ export class checkoutDetailsMethod{
    }
 
     public static async provideContactDetails(t){
-        let phoneNumber="03"+testFunction.getRandomNumber(99999999);
-        let emailAddress=testFunction.generateRandomText(10)+'@energyaustralia.com.au';
+        let isValidatingUI = await testFunction.isValidatingUI();
+        let phoneNumber = isValidatingUI ? "0444444444" : "03"+testFunction.getRandomNumber(99999999);
+        let emailAddress = isValidatingUI ? "test@energyaustralia.com.au" : testFunction.generateRandomText(10)+'@energyaustralia.com.au';
         phoneNumber=phoneNumber.padEnd(10,"0");
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.email,emailAddress);
         let MD5 = new Hashes.MD5;
@@ -124,7 +136,7 @@ export class checkoutDetailsMethod{
         await this.checkoutNewCustomerPassportIdentification(t);
         break;
       case "Driver License":
-        await this.checkoutNewCustomerDriverLicenseIdentification(t);
+        await testFunction.isValidatingUI() ? await this.checkoutNewCustomerDriverLicenseIdentification(t, "testDL") : await this.checkoutNewCustomerDriverLicenseIdentification(t);
         break;
       case "Medicare":
         await this.checkoutNewCustomerMedicareIdentification(t, medicareType);
@@ -144,7 +156,7 @@ export class checkoutDetailsMethod{
   }
 
   public static async checkoutNewCustomerPassportIdentification(t){
-    let passportNo=testFunction.getRandomNumber(999999);
+    let passportNo = await testFunction.isValidatingUI() ? "PPTest" : testFunction.getRandomNumber(999999);
     await testFunction.click(t,eaCheckoutDetailsPage.elements.idDrop);
     await testFunction.click(t,eaCheckoutDetailsPage.elements.idValuePassport);
     await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idPassportNumber,passportNo);
@@ -153,7 +165,7 @@ export class checkoutDetailsMethod{
   }
 
   public static async checkoutNewCustomerMedicareIdentification(t, medicareType){
-    let medicareNo = testFunction.getRandomNumber(9999999999).padEnd(10,"0");
+    let medicareNo = await testFunction.isValidatingUI() ? "MedicareTest" : testFunction.getRandomNumber(9999999999).padEnd(10,"0");
     await testFunction.click(t,eaCheckoutDetailsPage.elements.idDrop);
     await testFunction.click(t,eaCheckoutDetailsPage.elements.idValueMedicare);
     if(medicareType.toLowerCase() === "green") {
@@ -207,15 +219,16 @@ export class checkoutDetailsMethod{
       }
   }
   public static async provideBusinessDetails(t,businessType){
+      businessType = businessType.toUpperCase();
       if(businessType===BusinessType.ABN){
-        let ABN=testFunction.getRandomNumber(99999999999);
+        let ABN = await testFunction.isValidatingUI() ? "11111111111" : testFunction.getRandomNumber(99999999999);
         ABN = ABN.padEnd(11, "0");
         await t.wait(2000);
         await testFunction.click(t,eaCheckoutDetailsPage.elements.ABN);
         await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.number_ABNACN,ABN);
       }
       else if(businessType===BusinessType.ACN){
-        let ACN=testFunction.getRandomNumber(999999999);
+        let ACN = await testFunction.isValidatingUI() ? "111111111" : testFunction.getRandomNumber(999999999);
         ACN = ACN.padEnd(9, "0");
         await t.wait(2000);
         await testFunction.click(t,eaCheckoutDetailsPage.elements.ACN);
@@ -272,7 +285,7 @@ export class checkoutDetailsMethod{
     return businessName;
   }
 
-  public static async addAAHDetails(t, accessLevel: string = "Level 2") {
+  public static async addAAHDetails(t) {
     let fName = "FNAME" + testFunction.generateRandomText(5);
     let lName = "LNAME" + testFunction.generateRandomText(5);
     let email = testFunction.generateRandomText(5) + "@test.com";
@@ -281,14 +294,18 @@ export class checkoutDetailsMethod{
     await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.aahLastName, lName);
     await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.aahEmail, email);
     await t.wait(2000);
-    switch (accessLevel) {
-      case "Level 1":
+    let indexForAccessLevel=testFunction.getRandomInt(0,2)
+    if(testFunction.isTablet()){
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.slickDotsAAH.nth(indexForAccessLevel));
+    }
+    switch (indexForAccessLevel) {
+      case 0:
         await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl1);
         break;
-      case "Level 2":
+      case 1:
         await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl2);
         break;
-      case "Level 3":
+      case 2:
         await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl3);
         break;
       default:
@@ -307,7 +324,13 @@ export class checkoutDetailsMethod{
       await testFunction.click(t, eaCheckoutDetailsPage.elements.cbBankAccountAgreeTermsAndCond);
       console.log("Bank details provided");
     } else if(DDType === directDebitType.CREDIT_CARD) {
-      await testFunction.click(t, eaCheckoutDetailsPage.elements.useCC);
+      if(testFunction.isTablet()){
+        console.log(eaCheckoutDetailsPage.elements.slickDotsDD.count);
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.slickDotsDD.nth(1));
+      }
+      else{
+        await testFunction.click(t, eaCheckoutDetailsPage.elements.useCC);
+      }
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCName, "CCName_" + testFunction.generateRandomText(5));
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCNumber, "4111111111111111");
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCExpiryMonth, "01");
@@ -352,25 +375,89 @@ export class checkoutDetailsMethod{
       case PlanType.BASIC_HOME:
         element = eaCheckoutDetailsPage.elements.basicElePlan;
         break;
+      case PlanType.BASIC_HOME_QLD:
+        element=eaCheckoutDetailsPage.elements.basicQLDElePlan;
       case PlanType.NO_FRILLS:
+        if(testFunction.isMobile()){
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiElePlanFeatureTitle);
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiElePlanRatesTitle);
+          await setAttribute("div.hs-plan-slider",'class','hs-plan-slider');
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+        }
         element = eaCheckoutDetailsPage.elements.noFrillsElePlan;
         break;
       case PlanType.TOTAL_PLAN:
+        if(testFunction.isMobile()){
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiElePlanRateSummary);
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiElePlanFeatureTitle);
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiElePlanRatesTitle);
+          await setAttribute("div.hs-plan-slider",'class','hs-plan-slider');
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+        }
+        if(testFunction.isTablet()){
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiElePlanFeatureTitle);
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiElePlanRatesTitle);
+          await setAttribute("div.hs-plan-slider",'class','hs-plan-slider');
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+        }
         element = eaCheckoutDetailsPage.elements.totalElePlan;
         break;
       case PlanType.TOTAL_PLAN_PLUS:
+        if(testFunction.isMobile()){
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiElePlanRateSummary);
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiElePlanFeatureTitle);
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiElePlanRatesTitle);
+          // const setAttribute = ClientFunction(selector => {
+          //   let element = document.querySelector(selector);
+          //
+          //   element.setAttribute('class', 'hs-plan-slider');
+          // });
+          await setAttribute("div.hs-plan-slider",'class','hs-plan-slider');
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+        }
+        if(testFunction.isTablet()){
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiElePlanFeatureTitle);
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiElePlanRatesTitle);
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+        }
         element = eaCheckoutDetailsPage.elements.totalPlanPlusEle;
         break;
       case PlanType.BASIC_BUSINESS:
         element = eaCheckoutDetailsPage.elements.basicEleBusiness;
         break;
+      case PlanType.BASIC_BUSINESS_QLD:
+        element = eaCheckoutDetailsPage.elements.basicQLDEleBusiness;
+        break;
       case PlanType.NO_FRILLS_BUSINESS:
         element = eaCheckoutDetailsPage.elements.noFrillEleBusiness;
         break;
       case PlanType.TOTAL_BUSINESS:
+        if(testFunction.isMobile()){
+          await scrollTo(eaCheckoutDetailsPage.elements.basicBsmeElePlanFeatureTitle);
+          await scrollTo(eaCheckoutDetailsPage.elements.basicBsmeElePlanRatesTitle);
+          await setAttribute("div.hs-plan-slider",'class','hs-plan-slider');
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+        }
         element = eaCheckoutDetailsPage.elements.totalElePlanBusiness;
         break;
       case PlanType.TOTAL_PLAN_PLUS_BUSINESS:
+        if(testFunction.isMobile()){
+          await scrollTo(eaCheckoutDetailsPage.elements.basicBsmeElePlanFeatureTitle);
+          await scrollTo(eaCheckoutDetailsPage.elements.basicBsmeElePlanRatesTitle);
+          await setAttribute("div.hs-plan-slider",'class','hs-plan-slider');
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+        }
+        if(testFunction.isTablet()){
+          await scrollTo(eaCheckoutDetailsPage.elements.basicBsmeElePlanFeatureTitle);
+          await scrollTo(eaCheckoutDetailsPage.elements.basicBsmeElePlanRatesTitle);
+          await setAttribute("div.hs-plan-slider",'class','hs-plan-slider');
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+        }
         element = eaCheckoutDetailsPage.elements.totalPlanPlusEleBusiness;
         break;
       default:
@@ -381,7 +468,12 @@ export class checkoutDetailsMethod{
     let pageUrl = await testFunction.getPageURL();
     console.log(pageUrl);
     if(!pageUrl.includes("ref=move") && !pageUrl.includes("ref=nc") && !pageUrl.includes("ref=upsell")) {
-      await testFunction.assertText(t, element, "Switch to this plan");
+      if(getTestCafeRC.browsers[0].includes('emulation')){
+        await testFunction.assertText(t, element, "Switch");
+      }
+      else{
+        await testFunction.assertText(t, element, "Switch to this plan");
+      }
       await testFunction.click(t, element);
       await testFunction.assertText(t, element, "Selected");
     } else {
@@ -396,12 +488,46 @@ export class checkoutDetailsMethod{
         element = eaCheckoutDetailsPage.elements.basicGasPlan;
         break;
       case PlanType.NO_FRILLS:
+        if(testFunction.isMobile()){
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiGasPlanFeatureTitle);
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiGasPlanRatesTitle);
+          await setAttribute("div.hs-plan-slider",'class','hs-plan-slider');
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+        }
         element = eaCheckoutDetailsPage.elements.noFrillsGasPlan;
         break;
       case PlanType.TOTAL_PLAN:
+        if(testFunction.isMobile()){
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiGasPlanFeatureTitle);
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiGasPlanRatesTitle);
+          await setAttribute("div.hs-plan-slider",'class','hs-plan-slider');
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+        }
+        if(testFunction.isTablet()){
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiGasPlanFeatureTitle);
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiGasPlanRatesTitle);
+          await setAttribute("div.hs-plan-slider",'class','hs-plan-slider');
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+        }
         element = eaCheckoutDetailsPage.elements.totalGasPlan;
         break;
       case PlanType.TOTAL_PLAN_PLUS:
+        if(testFunction.isMobile()){
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiGasPlanFeatureTitle);
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiGasPlanRatesTitle);
+          await setAttribute("div.hs-plan-slider",'class','hs-plan-slider');
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+        }
+        if(testFunction.isTablet()){
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiGasPlanFeatureTitle);
+          await scrollTo(eaCheckoutDetailsPage.elements.basicResiGasPlanRatesTitle);
+          await setAttribute("div.hs-plan-slider",'class','hs-plan-slider');
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+        }
         element = eaCheckoutDetailsPage.elements.totalPlanPlusGas;
         break;
       case PlanType.BASIC_BUSINESS:
@@ -411,9 +537,28 @@ export class checkoutDetailsMethod{
         element = eaCheckoutDetailsPage.elements.noFrillGasBusiness;
         break;
       case PlanType.TOTAL_BUSINESS:
+        if(testFunction.isMobile()){
+          await scrollTo(eaCheckoutDetailsPage.elements.basicBsmeGasPlanFeatureTitle);
+          await scrollTo(eaCheckoutDetailsPage.elements.basicBsmeGasPlanRatesTitle);
+          await setAttribute("div.hs-plan-slider",'class','hs-plan-slider');
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+        }
         element = eaCheckoutDetailsPage.elements.totalGasPlanBusiness;
         break;
       case PlanType.TOTAL_PLAN_PLUS_BUSINESS:
+        if(testFunction.isMobile()){
+          await scrollTo(eaCheckoutDetailsPage.elements.basicBsmeGasPlanFeatureTitle);
+          await scrollTo(eaCheckoutDetailsPage.elements.basicBsmeGasPlanRatesTitle);
+          await setAttribute("div.hs-plan-slider",'class','hs-plan-slider');
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+        }
+        if(testFunction.isTablet()){
+          await scrollTo(eaCheckoutDetailsPage.elements.basicBsmeGasPlanFeatureTitle);
+          await scrollTo(eaCheckoutDetailsPage.elements.basicBsmeGasPlanRatesTitle);
+          await setAttribute("div.hs-plan-slider",'class','hs-plan-slider');
+          await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
+        }
         element = eaCheckoutDetailsPage.elements.totalPlanPlusGasBusiness;
         break;
       default:
@@ -424,7 +569,12 @@ export class checkoutDetailsMethod{
     let pageUrl = await testFunction.getPageURL();
     console.log(pageUrl);
     if(!pageUrl.includes("ref=move") && !pageUrl.includes("ref=nc") && !pageUrl.includes("ref=upsell")) {
-      await testFunction.assertText(t, element, "Switch to this plan");
+      if(getTestCafeRC.browsers[0].includes('emulation')){
+        await testFunction.assertText(t, element, "Switch");
+      }
+      else{
+        await testFunction.assertText(t, element, "Switch to this plan");
+      }
       await testFunction.click(t, element);
       await testFunction.assertText(t, element, "Selected");
     } else {

@@ -18,7 +18,7 @@ export class myAccountMethod{
     await testFunction.waitForElementToBeAppeared(t,eaMyAccount.elements.eaSpinner);
     await testFunction.waitForElementToBeDisappeared(t,eaMyAccount.elements.eaSpinner);
     await testFunction.isElementDisplayed(t,eaMyAccount.elements.eleViewAndChangePlan);
-    await testFunction.takeScreenshot(t,"my_account_dashboard");
+    await testFunction.takeScreenshot(t, "my_account_dashboard");//disabled UI Validation
     console.log("User lands on my account dashboard.");
   }
 
@@ -31,7 +31,7 @@ export class myAccountMethod{
       isSolar = false;
     }
     await testFunction.waitForElementToBeDisappeared(t,eaMyAccount.elements.eaSpinner);
-    await testFunction.takeScreenshot(t,"my_account_view_and_change_plan");
+    await testFunction.takeScreenshot(t, "my_account_view_and_change_plan");//disabled UI Validation
     console.log("User lands on 'View or change plan' page.");
   }
 
@@ -44,7 +44,7 @@ export class myAccountMethod{
     }
     await testFunction.isElementDisplayed(t,eaMyAccount.elements.moveHeader);
     await t.wait(10000);
-    await testFunction.takeScreenshot(t,"my_account_move_home");
+    await testFunction.takeScreenshot(t, "my_account_move_home");//disabled UI Validation
   }
 
   public static async getPlanDetailsFromViewPlan(t){
@@ -112,7 +112,7 @@ export class myAccountMethod{
     await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfUsername, username);
     await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfPassword, cryptoJS.AES.decrypt(password, username).toString(cryptoJS.enc.Utf8));
     await testFunction.click(t, eaMyAccount.elements.btnSignIn);
-    await testFunction.takeScreenshot(t,"ghosting search page");
+    await testFunction.takeScreenshot(t, "ghosting search page");//disabled UI Validation
   }
 
   public static async searchAccountNumber(t,accountNumber) {

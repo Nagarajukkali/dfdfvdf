@@ -68,7 +68,7 @@ Feature:E2E scenario for offer campaign
       |Y                        |Y          |Y              |Total Plan|NSW  |
     And user validates source code
       |fuelType|eleSourceCode|gasSourceCode|
-      |BOTH    |Total_16%GD  |Total_17%GD  |
+      |BOTH    |Total_17%GD  |Total_17%GD  |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -89,7 +89,7 @@ Feature:E2E scenario for offer campaign
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign  |folderName              |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
-      |New           |BOTH    |16         |17         |offer     |E2E_Campaign_Offer_NSW  |NSW  |Quote Tool    |Move Home|No   |No  |RES          |New            |
+      |New           |BOTH    |17         |17         |offer     |E2E_Campaign_Offer_NSW  |NSW  |Quote Tool    |Move Home|No   |No  |RES          |New            |
 
 
   Scenario Outline: Validate complete data for offer campaign for ACT

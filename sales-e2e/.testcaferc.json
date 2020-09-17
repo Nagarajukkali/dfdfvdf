@@ -4,14 +4,15 @@
     "tests/**/*.feature"
   ],
   "browsers": [
-    "firefox:headless"
+    "chrome:headless"
   ],
-  "concurrency":5,
-  "reporter": [{
-          "name": "cucumber-json",
-          "output": "results/report/report.json"
-        }
-      ],
+  "concurrency": 5,
+  "reporter": [
+    {
+      "name": "cucumber-json",
+      "output": "results/report/report.json"
+    }
+  ],
   "screenshotPath": "results/screenshots",
   "fullPage": true,
   "debugMode": false,

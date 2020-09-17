@@ -1,0 +1,92 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2008256712
+    sourceCode: Total_10%GD
+    actualQuoteDate: 2020-08-25
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0349705194
+    
+    emailId: XXIshNLAUg@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: GNRALPARTNERSHIP
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 40333477440
+    
+    anzsic: PROPERTY
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0349705194
+    
+    businessEmailId: XXIshNLAUg@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 216
+    streetName: Northbourne
+    streetType: AV
+    suburb: BRADDON
+    state: ACT
+    country: AUS
+    postCode: 2612
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-08-27
+    offerType: ENE
+    plan: TOPB-EA
+    priceTag: EAACA_NB2007
+    serviceOrderDate: 2020-08-27
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 7001114516
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: OTHER
+    
+    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    proposedNTC: 041
+    proposedMC: MYMC
+    reEnergisationJSCCharge: 0
+  
+

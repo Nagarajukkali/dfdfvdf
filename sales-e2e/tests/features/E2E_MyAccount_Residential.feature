@@ -1,4 +1,7 @@
-@E2E
+#@E2E
+  #Disabling MA tests running from scheduled job due to un stability of MA
+  #We will trigger thees tests manually in jenkins once/twice in a day
+@myaccount
 Feature: This feature is to test the My account scenarios for residential customers
 
   Scenario Outline: Verify the RESI Electricity Plan switch journey from My Account
@@ -58,7 +61,7 @@ Feature: This feature is to test the My account scenarios for residential custom
     Examples:
       |folderName                       |username                               |password                                     |fuelType   |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
       |E2E_MyAccount_Residential_GAS_PS |Prateek.Chauhan@energyaustralia.com.au |U2FsdGVkX1+0r7zXQlO8CPFbEq3ETA40fGWjpN+WtGM= |GAS        |My Account     |Plan switch  |No   |No   |RES          |Existing       |
-
+  @deviceCheck
   Scenario Outline: Verify the RESI Move home journey from My Account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
@@ -102,7 +105,7 @@ Feature: This feature is to test the My account scenarios for residential custom
     Examples:
       |folderName                         |address                                  |username                |password                                     |optDisconnection|customerType |newOrExisting  |
       |E2E_MyAccount_Residential_MoveHome |9 Rodier Street, BALLARAT EAST VIC 3350  |MissingID_RESI@test.com |U2FsdGVkX19pydLDPzviWcrNZ6PzbXoPRKv4Bjmqyug= |No              |RES          |Existing       |
-
+  @deviceCheck
   Scenario Outline: Verify the RESI upsell journey from My Account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
@@ -165,7 +168,7 @@ Feature: This feature is to test the My account scenarios for residential custom
       |folderName                                 |username                    |password                                     |fuelType   |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
       |E2E_MyAccount_Residential_ELE_PS_MissingID |MissingID_RESI@test.com     |U2FsdGVkX19pydLDPzviWcrNZ6PzbXoPRKv4Bjmqyug= |ELE        |My Account     |Plan switch  |Yes  |Yes  |RES          |Existing       |
 
-  @currentplan
+  @currentplan @deviceCheck
   Scenario Outline: Verify the RESI Electricity Plan switch journey with current plan having guaranteed discount from My Account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page

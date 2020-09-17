@@ -1,17 +1,22 @@
 import {AustralianState, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 import {CustomerType} from '@ea/ea-commons-models';
 const EaHomePage=require('../pages/energy-australia-home.page');
-import {IdType, PlanType, testFunction} from '../../global_methods/helper';
+import {IdType, PlanType, testFunction,scrollTo} from '../../global_methods/helper';
 const eaQualifierPage=require('../pages/qualifier.page');
 import {cartsMethod} from './cartsPage';
 import {qualifierMethod} from './qualifierPage';
 import {Selector} from 'testcafe';
+const { config }=require('../../resources/resource');
 
 export class plansMethod{
-
     public static async clickPlansPageModal(t, customerType) {
         if(customerType===CustomerType.RESIDENTIAL || customerType===CustomerType.BUSINESS){
-            await testFunction.click(t,EaHomePage.elements.ModalWindow);
+            if(testFunction.isMobile()){
+              await testFunction.click(t,EaHomePage.elements.ModalWindowMobileOnly);
+            }
+            else{
+              await testFunction.click(t,EaHomePage.elements.ModalWindow);
+            }
           }
           else {
               console.error('Modal window could not be opened due to page error')
@@ -55,12 +60,41 @@ export class plansMethod{
           await testFunction.click(t,EaHomePage.elements.basicPlanQLD);
           break;
         case PlanType.NO_FRILLS:
+          if(testFunction.isMobile()){
+            await scrollTo(EaHomePage.elements.basicResiPlanFeatureTitle);
+            await scrollTo(EaHomePage.elements.basicResiPlanRatesTitle);
+            await testFunction.click(t,EaHomePage.elements.sliderRight);
+          }
           await testFunction.click(t,EaHomePage.elements.noFrillsPlan);
           break;
         case PlanType.TOTAL_PLAN:
+          if(testFunction.isMobile()){
+            await scrollTo(EaHomePage.elements.basicResiPlanRatesTitle);
+            await scrollTo(EaHomePage.elements.basicResiPlanFeatureTitle);
+            await testFunction.click(t,EaHomePage.elements.sliderRight);
+            await testFunction.click(t,EaHomePage.elements.sliderRight);
+          }
+          if(testFunction.isTablet()){
+            await scrollTo(EaHomePage.elements.basicResiPlanFeatureTitle);
+            await scrollTo(EaHomePage.elements.basicResiPlanRatesTitle);
+            await testFunction.click(t,EaHomePage.elements.sliderRight);
+          }
           await testFunction.click(t,EaHomePage.elements.totalPlan);
           break;
         case PlanType.TOTAL_PLAN_PLUS:
+          if(testFunction.isMobile()){
+            await scrollTo(EaHomePage.elements.basicResiPlanFeatureTitle);
+            await scrollTo(EaHomePage.elements.basicResiPlanRatesTitle);
+            await testFunction.click(t,EaHomePage.elements.sliderRight);
+            await testFunction.click(t,EaHomePage.elements.sliderRight);
+            await testFunction.click(t,EaHomePage.elements.sliderRight);
+          }
+          if(testFunction.isTablet()){
+            await scrollTo(EaHomePage.elements.basicResiPlanFeatureTitle);
+            await scrollTo(EaHomePage.elements.basicResiPlanRatesTitle);
+            await testFunction.click(t,EaHomePage.elements.sliderRight);
+            await testFunction.click(t,EaHomePage.elements.sliderRight);
+          }
           await testFunction.click(t,EaHomePage.elements.totalPlanPlus);
           break;
         case PlanType.BASIC_BUSINESS:
@@ -73,9 +107,25 @@ export class plansMethod{
           await testFunction.click(t,EaHomePage.elements.noFrillBusiness);
           break;
         case PlanType.TOTAL_BUSINESS:
+          if(testFunction.isMobile()){
+            await scrollTo(EaHomePage.elements.basicBsmePlanFeatureTitle);
+            await scrollTo(EaHomePage.elements.basicBsmePlanRatesTitle);
+            await testFunction.click(t,EaHomePage.elements.sliderRight);
+          }
           await testFunction.click(t,EaHomePage.elements.totalPlanBusiness);
           break;
         case PlanType.TOTAL_PLAN_PLUS_BUSINESS:
+          if(testFunction.isMobile()){
+            await scrollTo(EaHomePage.elements.basicBsmePlanFeatureTitle);
+            await scrollTo(EaHomePage.elements.basicBsmePlanRatesTitle);
+            await testFunction.click(t,EaHomePage.elements.sliderRight);
+            await testFunction.click(t,EaHomePage.elements.sliderRight);
+          }
+          if(testFunction.isTablet()){
+            await scrollTo(EaHomePage.elements.basicBsmePlanFeatureTitle);
+            await scrollTo(EaHomePage.elements.basicBsmePlanRatesTitle);
+            await testFunction.click(t,EaHomePage.elements.sliderRight);
+          }
           await testFunction.click(t,EaHomePage.elements.totalPlanPlusBusiness);
           break;
         default:
@@ -122,6 +172,18 @@ export class plansMethod{
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureNoStandardConnectionFeeTitle, data.electricity.feature.preSelect.noStandardConnectionFee.heading);
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureNoStandardConnectionFeeDescription, data.electricity.feature.preSelect.noStandardConnectionFee.description);
       }
+      if(dataTable[0].Feature_defaultOffer === "Y") {
+        await testFunction.assertText(t,EaHomePage.campaignElements.eleFeatureDefaultOfferTitle,data.electricity.feature.preSelect.defaultOffer.heading);
+        if(dataTable[0].state === 'VIC'){
+          await testFunction.assertText(t,EaHomePage.campaignElements.eleFeatureDefaultOfferDescription, data.electricity.feature.preSelect.defaultOffer.VIC.description);
+        }
+        else {
+          await testFunction.assertText(t,EaHomePage.campaignElements.eleFeatureDefaultOfferDescription, data.electricity.feature.preSelect.defaultOffer.NonVIC.description);
+        }
+      }
+      if(dataTable[0].Feature_vipPriorityService === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVipPriorityServiceTitle, data.electricity.feature.preSelect.vipPriorityService.heading);
+      }
     } else if(dataTable[0].fuelType === "GAS") {
       if(dataTable[0].Feature_50Credit === "Y") {
         await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature50CreditTitle, data.gas.feature.preSelect.Credit50.heading);
@@ -138,6 +200,9 @@ export class plansMethod{
       if(dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
         await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.heading);
         await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
+      }
+      if(dataTable[0].Feature_vipPriorityService === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureVipPriorityServiceTitle, data.electricity.feature.preSelect.vipPriorityService.heading);
       }
     }
   }
@@ -206,10 +271,48 @@ export class plansMethod{
   public static async validatePlanDisclaimer(t,disclaimer,data,planName,state){
     switch (planName) {
       case PlanType.BASIC_HOME:
-
+        await testFunction.assertText(t, disclaimer,data.disclaimers.basicPlan.heading);
+        switch (state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.basicPlan.VIC.description);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.basicPlan.NSW.description);
+            break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.basicPlan.ACT.description);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.basicPlan.SA.description);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.basicPlan.QLD.description);
+            break;
+          default:
+            throw Error("Invalid State");
+        }
         break;
       case PlanType.NO_FRILLS:
-
+        await testFunction.assertText(t,disclaimer,data.disclaimers.noFrills.heading);
+        switch (state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.noFrills.VIC.description);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.noFrills.NSW.description);
+            break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.noFrills.ACT.description);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.noFrills.SA.description);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.noFrills.QLD.description);
+            break;
+          default:
+            throw Error("Invalid State");
+        }
         break;
       case PlanType.TOTAL_PLAN:
         await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlan.heading);
@@ -262,10 +365,93 @@ export class plansMethod{
 
         break;
       case PlanType.TOTAL_BUSINESS:
-
+        await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlanBusiness.heading);
+        switch (state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlanBusiness.VIC.description);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlanBusiness.NSW.description);
+            break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlanBusiness.ACT.description);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlanBusiness.SA.description);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlanBusiness.QLD.description);
+            break;
+          default:
+            throw Error("Invalid State");
+        }
         break;
       case PlanType.TOTAL_PLAN_PLUS_BUSINESS:
-
+        await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlanPlusBusiness.heading);
+        switch (state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlanPlusBusiness.VIC.description);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlanPlusBusiness.NSW.description);
+            break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlanPlusBusiness.ACT.description);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlanPlusBusiness.SA.description);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.totalPlanPlusBusiness.QLD.description);
+            break;
+          default:
+            throw Error("Invalid State");
+        }
+        break;
+      case PlanType.FAMILY_AND_FRIENDS:
+        await testFunction.assertText(t,disclaimer,data.disclaimers.familyAndFriends.heading);
+        switch (state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.familyAndFriends.VIC.description);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.familyAndFriends.NSW.description);
+            break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.familyAndFriends.ACT.description);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.familyAndFriends.SA.description);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.familyAndFriends.QLD.description);
+            break;
+          default:
+            throw Error("Invalid State");
+        }
+        break;
+      case PlanType.FAMILY_AND_FRIENDS_BUSINESS:
+        await testFunction.assertText(t,disclaimer,data.disclaimers.familyAndFriendsBusiness.heading);
+        switch (state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.familyAndFriendsBusiness.VIC.description);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.familyAndFriendsBusiness.NSW.description);
+            break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.familyAndFriendsBusiness.ACT.description);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.familyAndFriendsBusiness.SA.description);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t,disclaimer,data.disclaimers.familyAndFriendsBusiness.QLD.description);
+            break;
+          default:
+            throw Error("Invalid State");
+        }
+        break;
         break;
       default:
         throw Error("Invalid plan");
@@ -361,12 +547,12 @@ export class plansMethod{
         let MIRN=await EaHomePage.elements.inputMIRN.textContent;
         await testFunction.assertText(t,EaHomePage.elements.txtElectricityBasedOn,'Electricity based on NMI '+NMI);
         await testFunction.assertText(t,EaHomePage.elements.txtGasBasedOn,'Gas based on MIRN '+MIRN);
-        await testFunction.takeScreenshot(t,'plans_page');
+        await testFunction.takeScreenshot(t, 'plans_page');//disabled UI Validation
         await this.selectPlan(t,'Total Plan');
         await cartsMethod.clickContinueCartsPage(t);
         await qualifierMethod.selectCustomerStatus(t,'New');
         await qualifierMethod.provideMovingType(t,'Non-Moving');
-        await testFunction.takeScreenshot(t,'plans_page');
+        await testFunction.takeScreenshot(t, 'plans_page');//disabled UI Validation
         await testFunction.click(t,eaQualifierPage.elements.addressContinue);
         await testFunction.isElementDisplayed(t,eaQualifierPage.elements.owner);
         break;
@@ -387,17 +573,67 @@ export class plansMethod{
     }
     console.log("General state disclaimer validated successfully on plans page.");
   }
+
+  public static async validateComparisonStatement(t,baseCreditCondition,rewardCreditCondition,planName){
+    let comparisonText;
+    switch (planName) {
+      case PlanType.NO_FRILLS:
+        comparisonText=await testFunction.getElementText(t,EaHomePage.elements.noFrillsComparisonStatement);
+        break;
+      case PlanType.TOTAL_PLAN:
+        comparisonText=await testFunction.getElementText(t,EaHomePage.elements.totalPlanComparisonStatement);
+        break;
+      case PlanType.TOTAL_PLAN_PLUS:
+        comparisonText=await testFunction.getElementText(t,EaHomePage.elements.totalPlanPlusComparisonStatement);
+        break;
+      case PlanType.TOTAL_BUSINESS:
+        comparisonText=await testFunction.getElementText(t,EaHomePage.elements.totalPlanBusinessComparisonStatement);
+        break;
+      case PlanType.TOTAL_PLAN_PLUS_BUSINESS:
+        comparisonText=await testFunction.getElementText(t,EaHomePage.elements.totalPlanPlusBusinessComparisonStatement);
+        break;
+
+    }
+    if(baseCreditCondition==='UNCONDITIONAL' && rewardCreditCondition===null){
+      await t.expect(comparisonText).contains('and including credits');
+      await t.expect(comparisonText).notContains('if eligible for credits');
+    }
+    if(baseCreditCondition==='CONDITIONAL' && rewardCreditCondition===null){
+      await t.expect(comparisonText).contains('if eligible for credits');
+      await t.expect(comparisonText).notContains('and including credits');
+    }
+    if(baseCreditCondition===null && rewardCreditCondition==='UNCONDITIONAL'){
+      await t.expect(comparisonText).notContains('and including credits');
+      await t.expect(comparisonText).notContains('if eligible for credits');
+    }
+    if(baseCreditCondition===null && rewardCreditCondition==='CONDITIONAL'){
+      await t.expect(comparisonText).contains('if eligible for credits');
+      await t.expect(comparisonText).notContains('and including credits');
+    }
+    if(baseCreditCondition==='UNCONDITIONAL' && rewardCreditCondition==='UNCONDITIONAL'){
+      await t.expect(comparisonText).contains('and including credits');
+      await t.expect(comparisonText).notContains('if eligible for credits');
+    }
+    if(baseCreditCondition==='CONDITIONAL' && rewardCreditCondition==='CONDITIONAL'){
+      await t.expect(comparisonText).contains('if eligible for credits');
+      await t.expect(comparisonText).notContains('and including credits');
+
+    }
+  }
 }
 
 export class selectionOptionModalWindowMethod {
     public static async selectOptionsModalWindow(t, modalWindowValue) {
-        if (modalWindowValue==='verify account') {
-            await testFunction.click(t,EaHomePage.elements.modalVerifyAccountOption);
-          } else if (modalWindowValue==='Bill upload') {
-            await testFunction.click(t,EaHomePage.elements.modalBillUploadOption);
-          }
+        if (modalWindowValue.toLowerCase() === 'verify account') {
+          await testFunction.click(t,EaHomePage.elements.modalVerifyAccountOption);
+        } else if (modalWindowValue.toLowerCase() === 'bill upload') {
+          await testFunction.click(t,EaHomePage.elements.modalBillUploadOption);
+        } else if (modalWindowValue === 'enter usage') {
+          await testFunction.click(t, EaHomePage.elements.modalEnterUsageOption);
+        }
     }
 }
+
 
 export class verifyAccountMethod {
     public static async verifyAccountIsDisplayed(t, fuelType, customerType) {
@@ -492,8 +728,11 @@ export class verifyAccountMethod {
     }
 
     public static async showCostEstimates(t){
+        let expectedLoyaltyPlanMessage = 'As a valued customer who\'s been with us for at least six consecutive months, you can sign up to Total Plan Plus. It\'s got the same features as Total Plan, but with a higher discount off your total energy bill. So you can enjoy a higher discount on both usage and supply charges for 12 months. Click \'Show estimates\' to compare Total Plan Plus against our other plans.';
         await testFunction.isElementDisplayed(t,EaHomePage.elements.getCostEstimatesChangeButton);
+        await testFunction.assertText(t, EaHomePage.elements.txtLoyaltyPlanMsg, expectedLoyaltyPlanMessage);
         await testFunction.click(t, EaHomePage.elements.getCostEstimatesChangeButton);
+        await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
     }
 
     public static async selectIdType(t, itemToClick) {
@@ -536,6 +775,18 @@ export class verifyAccountMethod {
     if(await testFunction.isElementExists(t,EaHomePage.elements.businessInformation))
       await testFunction.clearTextField(t,EaHomePage.elements.businessInformation);
   }
+
+  public static async enterSampleAccountDetails(t, customerType) {
+    if(await testFunction.isResidential(customerType)) {
+      await verifyAccountMethod.provideAccountDetails(t,"ELE", config.sampleResiAccount.eleAccount);
+      await verifyAccountMethod.provideAccountDetails(t, "GAS", config.sampleResiAccount.gasAccount);
+      await verifyAccountMethod.provideAccountInformation(t, config.sampleResiAccount.postcode, customerType);
+    }else {
+      await verifyAccountMethod.provideAccountDetails(t,"ELE", config.sampleBsmeAccount.eleAccount);
+      await verifyAccountMethod.provideAccountDetails(t, "GAS", config.sampleBsmeAccount.gasAccount);
+      await verifyAccountMethod.provideAccountInformation(t, config.sampleBsmeAccount.abn, customerType);
+    }
+  }
 }
 
 export class campaignMethod{
@@ -546,7 +797,11 @@ export class campaignMethod{
   }
 
   public static async enterOfferCodeAndPostcodeOnCampaign(t,offerCode,postcode) {
-    await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCode, offerCode);
+    if(await this.isNswSeniors()) {
+      await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCodeSeniorsCard, offerCode);
+    } else {
+      await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCode, offerCode);
+    }
     await t.wait(3000);
     await testFunction.clearAndEnterText(t, EaHomePage.elements.postcodeOnCampaignPage, postcode);
     await testFunction.click(t, EaHomePage.elements.btnCampaignSearch);
@@ -561,23 +816,13 @@ export class campaignMethod{
     await testFunction.click(t, EaHomePage.elements.btnCampaignSearch);
   }
 
-  public static  async addPlanOnCampaign(t){
+  public static async addPlanOnCampaign(t){
     await testFunction.click(t,EaHomePage.elements.selectCampaignPlans);
   }
 
-
-//Reference price comparison and estimated annual cost
-// # Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here.
-//
-// Solar feed-in tariffs
-// ^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. We are currently unable to set up your solar plan online.
-//
-//
-//
-// Go Neutral
-// ^ Opt in and we will offset the carbon emissions from your electricity and/or gas usage from the 6-month anniversary of the date your EnergyAustralia account is established. We will let you know in advance if we withdraw Go Neutral. For more info and full terms visit energyaustralia.com.au/carbon-neutral.
-//
-// Total Plan
-// * Offer only for eligible NSW residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time.
+  public static async isNswSeniors() {
+    let pageUrl = await testFunction.getPageURL();
+    return pageUrl.includes("/nsw-seniors");
+  }
 
 }

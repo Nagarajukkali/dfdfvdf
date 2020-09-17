@@ -1,0 +1,88 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: FR2008205635
+    sourceCode: NOFRILLS
+    actualQuoteDate: 2020-08-20
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0370972572
+    
+    emailId: ALUMTORSDF@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 267771
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlMiddleName/: 
+          dlLastName: test
+          licenseStateOfIssue: SA
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 3
+    streetName: River
+    streetType: DR
+    suburb: ATHELSTONE
+    state: SA
+    country: AUS
+    postCode: 5076
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-08-21
+    offerType: ENE
+    plan: RCPP-ES
+    priceTag: ESSAD_ZR2007
+    serviceOrderDate: 2020-08-21
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 2001245279
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: LSCNSPE
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: RCFE
+    reEnergisationJSCCharge: 45.68
+  
+

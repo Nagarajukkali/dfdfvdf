@@ -13,5 +13,5 @@ Feature: This feature is to test the keycloak
 
 
     Examples:
-      |folderName                               |customer_type |fuelType |
-      |E2E_VerifyAccount_Residential_NonMoving  |RES           |BOTH     |
+      |folderName                                   |customer_type |fuelType |
+      |E2E_VerifyAccount_Residential_NonMoving_KC   |RES           |BOTH     |

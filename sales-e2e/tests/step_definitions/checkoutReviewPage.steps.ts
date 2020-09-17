@@ -14,7 +14,7 @@ When(/^user provides life support details$/, async function(t,[],dataTable){
 });
 
 Then(/^user submits the quote$/, async function(t){
-  await testFunction.takeScreenshot(t,'checkout_review_page', false);
+  await testFunction.takeScreenshot(t, 'checkout_review_page');
   await checkoutReviewMethod.submitQuote(t);
 });
 
@@ -49,14 +49,14 @@ Then(/^user validates plan details on review page for "([^"]*)"$/, async functio
 });
 Then(/^identification verification pop up is displayed$/, async function (t) {
   await checkoutReviewMethod.verifyIDVPopup(t);
-  await testFunction.takeScreenshot(t,'IDV_Popup');
+  await testFunction.takeScreenshot(t, 'IDV_Popup');//disabled UI Validation
 });
 When(/^user clicks on identification confirmation button$/, async function (t) {
   await checkoutReviewMethod.confirmIdentification(t);
 });
 When(/^user enters identification details on identification popup$/, async function (t) {
   await checkoutReviewMethod.provideIdDetails(t);
-  await testFunction.takeScreenshot(t,'IDV_Popup');
+  await testFunction.takeScreenshot(t, 'IDV_Popup');//disabled UI Validation
 });
 When(/^user validates details on checkout review page$/, async function (t,[],dataTable) {
   /*

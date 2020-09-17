@@ -9,9 +9,10 @@ config: {
     qt2ReportingURL:`https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/qt2reporting/login`,
     qt2ReportingHomePageURL:`https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/qt2reporting/app/reporting`,
     screenshot:'N',
+    interceptNetworkRequest:'N',
     visualValidation: {
       rebaseline: 'N',
-      validate: 'Y',
+      validate: 'N',
       baseDir: 'screenshots/Base',
       diffDir: 'screenshots/Diff',
       currentDir: 'screenshots/Current',
@@ -23,7 +24,32 @@ config: {
     ghostingUserCreds:{
       username:'eacsr@ea.com',
       password:'U2FsdGVkX19Rn/USOSqPpn1FTbs5vPvAFXa3NDuh2sA='
-  }
+    },
+    sampleResiAccount: {
+      eleAccount: '8373520946',
+      gasAccount: '2816302453',
+      postcode: '3153',
+      idType: 'dob',
+      idValue: '01011980'
+    },
+    sampleBsmeAccount: {
+      eleAccount: '2870412120',
+      gasAccount: '3231348465',
+      abn: '78538656400',
+      idType: 'dob',
+      idValue: '01011980'
+    },
+    sampleResiAddress: "42 Brownlow Drive, POINT COOK VIC 3030",
+    sampleBsmeAddress: "36 Gregory Street West, WENDOUREE VIC 3355",
+    deviceScreenSize:{
+        eaMobile:{
+          maxWidth:767
+        },
+        eaTablet: {
+          minWidth:768,
+          maxWidth:991
+        }
+    }
 },
   testData: {
     mastercard: {

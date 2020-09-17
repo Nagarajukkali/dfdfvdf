@@ -1,5 +1,5 @@
 
-@tppcampaign
+@campaign
 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
@@ -325,7 +325,7 @@ Scenario Outline: Validate complete data for totalplanplus campaign for ACT
 #     And user selects '<customerStatus>' on qualifier
 #     And user provides all other details on qualifier page
 #       |customerType |connectionAddress                        |movingType |propertyType |solarOption  |
-#       |RES          |96 Jacobs Ridge Road, ORMEAU QLD 4208    |Moving     |Renter       |No           |
+#       |RES          |13 Jacobs Ridge Road, ORMEAU QLD 4208    |Moving     |Renter       |No           |
 #     And user provides all details on checkout details page
 #       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
 #       |RES          |RES        |New            |test       |test     |Driver License |             |
@@ -356,7 +356,7 @@ Scenario Outline: Validate complete data for totalplanplus campaign for ACT
 #     And user validates all the details for 'ELE' submitted quote
 #     And user validates below mandatory fields
 #       |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-#       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-EQ |3115895408|                              |                             |N                      |                        |EMAIL        |
+#       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-EQ |3115863522|                              |                             |N                      |                        |EMAIL        |
 
 #     Examples:
 #       |customerStatus|fuelType|eleDiscount|campaign            |folderName              |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |

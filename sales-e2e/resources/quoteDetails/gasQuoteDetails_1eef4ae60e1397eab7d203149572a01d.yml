@@ -1,0 +1,85 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2009037760
+    sourceCode: Total_20%GD
+    actualQuoteDate: 2020-09-03
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0377732586
+    
+    emailId: VwtKTbYxdx@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: GNRALPARTNERSHIP
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 98123875748
+    
+    anzsic: FINANCE
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0377732586
+    
+    businessEmailId: VwtKTbYxdx@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 10
+    streetName: Hank
+    streetType: S
+    suburb: HEATHERBRAE
+    state: NSW
+    country: AUS
+    postCode: 2324
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2020-09-04
+    offerType: ENE
+    plan: TOPB-GN
+    priceTag: GNAGA_NB2007
+    serviceOrderDate: 2020-09-04
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5247067723
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: GLSMRHAC
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+

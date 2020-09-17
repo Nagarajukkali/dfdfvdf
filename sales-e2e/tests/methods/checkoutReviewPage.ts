@@ -2,7 +2,7 @@ import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 const eaCheckoutDetailsPage=require('../pages/checkOutDetails.page');
 const eaCheckoutReviewPage=require('../pages/checkoutReview.page')
 const EaHomePage=require('../pages/energy-australia-home.page');
-import {LSDevices, PlanType, SelectionType, testFunction} from '../../global_methods/helper';
+import {LSDevices, PlanType, scrollTo, SelectionType, testFunction} from '../../global_methods/helper';
 import {checkoutDetailsMethod} from './checkoutDetailsPage';
 
 
@@ -135,7 +135,7 @@ export class checkoutReviewMethod {
       let gasDiscount;
       if(testFunction.isElectricity(fuelType)){
         let elePlanName=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtElePlanName);
-        if(elePlanName===PlanType.TOTAL_PLAN || elePlanName==='Total Plan - Business' || elePlanName==='Family and Friends'){
+        if(elePlanName===PlanType.TOTAL_PLAN || elePlanName==='Total Plan - Business' || elePlanName===PlanType.FAMILY_AND_FRIENDS|| elePlanName===PlanType.FAMILY_AND_FRIENDS_BUSINESS){
           eleDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtEleDiscount);
           if(t.testRun.test.name.includes('EACorporateOffer')){
             eleSourceCode='Alliance_'+eleDiscount.split(" ")[1]+'GD';
@@ -148,6 +148,9 @@ export class checkoutReviewMethod {
           }
           else if(t.testRun.test.name.includes('total campaign for VIC')){
             eleSourceCode='Total_'+eleDiscount.split(" ")[1]+'GD_50';
+          }
+          else if(t.testRun.test.name.includes('nsw-seniors')) {
+            eleSourceCode='Total_'+eleDiscount.split(" ")[1]+'GD_100';
           }
           else{
             eleSourceCode=elePlanName.split(" ")[0]+'_'+eleDiscount.split(" ")[1]+'GD';
@@ -172,16 +175,22 @@ export class checkoutReviewMethod {
       }
       if(testFunction.isGas(fuelType)){
         let gasPlanName=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasPlanName);
-        if(gasPlanName===PlanType.TOTAL_PLAN || gasPlanName==='Total Plan - Business'){
+        if(gasPlanName===PlanType.TOTAL_PLAN || gasPlanName==='Total Plan - Business' || gasPlanName===PlanType.FAMILY_AND_FRIENDS|| gasPlanName === PlanType.FAMILY_AND_FRIENDS_BUSINESS){
           gasDiscount=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.txtGasDiscount);
           if(t.testRun.test.name.includes('EACorporateOffer')){
             gasSourceCode='Alliance_'+gasDiscount.split(" ")[1]+'GD';
+          }
+          else if(t.testRun.test.name.includes('familyandfriends')){
+            gasSourceCode='Total_'+gasDiscount.split(" ")[1]+'GD';
           }
           else if(t.testRun.test.name.includes('geelong')){
             gasSourceCode='Total_'+gasDiscount.split(" ")[1]+'GD_50';
           }
           else if(t.testRun.test.name.includes('total campaign for VIC')){
             gasSourceCode='Total_'+gasDiscount.split(" ")[1]+'GD_50';
+          }
+          else if(t.testRun.test.name.includes('nsw-seniors')) {
+            gasSourceCode='Total_'+eleDiscount.split(" ")[1]+'GD_100';
           }
           else{
             gasSourceCode=gasPlanName.split(" ")[0]+'_'+gasDiscount.split(" ")[1]+'GD';
@@ -208,6 +217,7 @@ export class checkoutReviewMethod {
   }
 
   public static async submitQuote(t){
+      await scrollTo(eaCheckoutReviewPage.elements.agreeAndConfirm);
       await testFunction.click(t, eaCheckoutReviewPage.elements.agreeAndConfirm);
   }
 
@@ -412,6 +422,7 @@ export class checkoutReviewMethod {
         default:
           console.error("Invalid Electricity Equipment.");
       }
+      await testFunction.click(t, eaCheckoutDetailsPage.elements.progressBar);
   }
 
   public static async selectGasLSEquipment(t, equipmentName, fuelType) {
@@ -429,6 +440,7 @@ export class checkoutReviewMethod {
         default:
           console.error("Invalid Gas Equipment.");
       }
+      await testFunction.click(t, eaCheckoutDetailsPage.elements.progressBar);
   }
 
   public static async validateAbsenceOfFuelAccordion(t, fuelType) {
@@ -480,6 +492,12 @@ export class checkoutReviewMethod {
       if(dataTable[0].Feature_noStandardConnectionFee === "Y") {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureNoStandardConnectionFee, json.electricity.feature.postSelect.noStandardConnectionFee);
       }
+      if(dataTable[0].Feature_defaultOffer === "Y") {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureDefaultOffer, json.electricity.feature.postSelect.defaultOffer);
+      }
+      if(dataTable[0].Feature_vipPriorityService === "Y") {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureVipPriorityService, json.electricity.feature.postSelect.vipPriorityService);
+      }
     }
     if(await testFunction.isGas(dataTable[0].fuelType)) {
       await t.expect(await testFunction.sizeOfElement(t, eaCheckoutReviewPage.elements.gasFeatures)).eql(numOfExpectedFeatures);
@@ -494,6 +512,9 @@ export class checkoutReviewMethod {
       }
       if(dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasFeatureDiscountOffTotal, json.gas.feature.postSelect.discountOffTotalEnergyBill);
+      }
+      if(dataTable[0].Feature_vipPriorityService === "Y") {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasFeatureVipPriorityService, json.gas.feature.postSelect.vipPriorityService);
       }
     }
   }
