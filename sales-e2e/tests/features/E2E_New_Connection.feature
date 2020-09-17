@@ -1,6 +1,6 @@
-@E2E
+@E2E @newconnection
 Feature:E2E scenario for new connection
-
+  @deviceCheck
   Scenario Outline: Submit a quote for electricity new connection for residential customer
   Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
   When user provides connection details

@@ -1,0 +1,89 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2009108417
+    sourceCode: Total_12%GD
+    actualQuoteDate: 2020-09-10
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0377396630
+    
+    emailId: sSXnpoSXqX@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 204835
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlMiddleName/: 
+          dlLastName: test
+          licenseStateOfIssue: ACT
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 138
+    streetName: Narden
+    streetType: S
+    suburb: CRACE
+    state: ACT
+    country: AUS
+    postCode: 2911
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-09-14
+    offerType: ENE
+    plan: FFPH-EA
+    priceTag: EAAC7_NR2007
+    serviceOrderDate: 2020-09-14
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 7001183574
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: OTHER
+    
+    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: 501
+    reEnergisationJSCCharge: 80.43
+  
+

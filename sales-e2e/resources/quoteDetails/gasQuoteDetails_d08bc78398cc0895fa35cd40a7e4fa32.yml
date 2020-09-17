@@ -1,0 +1,85 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2009037766
+    sourceCode: Total_24%GD
+    actualQuoteDate: 2020-09-03
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0371931118
+    
+    emailId: aODSUylHxt@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: GNRALPARTNERSHIP
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 75720118542
+    
+    anzsic: COMMUNITY_SVC
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0371931118
+    
+    businessEmailId: aODSUylHxt@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 1a
+    streetName: Bell
+    streetType: S
+    suburb: SUNSHINE WEST
+    state: VIC
+    country: AUS
+    postCode: 3020
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2020-09-07
+    offerType: ENE
+    plan: TOPB-GV
+    priceTag: GVA1A_NB2001
+    serviceOrderDate: 2020-09-07
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5330460199
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: GLSMRHAC
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+

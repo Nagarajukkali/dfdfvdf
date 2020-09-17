@@ -1,4 +1,4 @@
-@ghosting
+@ghosting @myaccount
 Feature: This feature is to test that the ghosting user is able to submit quotes
 
   Scenario Outline: Verify the ghosting user is able to submit Plan Switch quote

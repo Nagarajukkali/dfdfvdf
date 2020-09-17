@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008194774
-    sourceCode: Total_Plus_7%GD
-    actualQuoteDate: 2020-08-19
+    quoteId: BB2008215894
+    sourceCode: Total_Plus_18%GD
+    actualQuoteDate: 2020-08-21
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,13 +15,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0331377384
+      phoneNumber: 0340740989
     
-    emailId: oMaYNZTrEQ@energyaustralia.com.au
+    emailId: dFJcXtXxJS@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 475883
+      id: 658127
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -29,7 +29,7 @@ saleDetail :
           dlFirstName: test
           dlMiddleName/: 
           dlLastName: test
-          licenseStateOfIssue: SA
+          licenseStateOfIssue: NSW
         
       
     
@@ -39,27 +39,27 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 6
-    streetName: Kipling
-    streetType: AV
-    suburb: GLENGOWRIE
-    state: SA
+    streetNo: 5
+    streetName: Wilkies
+    streetType: S
+    suburb: BULLI
+    state: NSW
     country: AUS
-    postCode: 5044
+    postCode: 2516
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-08-20
+    proposedStart: 2020-08-25
     offerType: ENE
-    plan: SWSR1-ES
-    priceTag: ESSAA_NR2007
-    serviceOrderDate: 2020-08-20
+    plan: SWSR1-EN
+    priceTag: ENIEA_NR2007
+    serviceOrderDate: 2020-08-25
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 2002332288
+      NMI: 4311150544
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -82,10 +82,9 @@ saleDetail :
   creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    priceTagMeteringCharge: M50441DRR_AS
-    proposedNTC: MRSRI
-    proposedMC: ACTIVMC
-    reEnergisationJSCCode: RE01
-    reEnergisationJSCCharge: 10.0
+    priceTagMeteringCharge: M25161DN_IH
+    proposedNTC: N70
+    proposedMC: IHUBMC
+    reEnergisationJSCCharge: 0
   
 

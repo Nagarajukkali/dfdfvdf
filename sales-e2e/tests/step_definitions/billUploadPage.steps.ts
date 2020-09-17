@@ -4,13 +4,13 @@ import {Then} from 'cucumber'
 import {billUploadMethod} from '../methods/billUploadPage';
 
 When(/^user clicks on upload bill button$/, async function(t) {
-  await testFunction.takeScreenshot(t,"bill_upload_page");
+  await testFunction.takeScreenshot(t, "bill_upload_page");//disabled UI Validation
   await billUploadMethod.clickOnUploadBill(t);
 });
 
 When(/^user uploads the '(.*)' bill$/, async function (t,[bill]) {
   await billUploadMethod.uploadBill(t,bill);
-  await testFunction.takeScreenshot(t,"bill_upload_page");
+  await testFunction.takeScreenshot(t, "bill_upload_page");//disabled UI Validation
 });
 
 Then(/^recommendation details are displayed$/, async function (t) {

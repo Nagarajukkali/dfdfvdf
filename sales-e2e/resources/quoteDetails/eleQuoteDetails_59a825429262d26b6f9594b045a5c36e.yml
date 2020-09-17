@@ -1,0 +1,91 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2008256699
+    sourceCode: Total_5%GD
+    actualQuoteDate: 2020-08-25
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0382677383
+    
+    emailId: UmRhjgmnsV@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: OTHERS
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 91832570403
+    
+    anzsic: GOVERNMENT
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0382677383
+    
+    businessEmailId: UmRhjgmnsV@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 36
+    streetName: Gregory
+    streetType: S
+    suburb: WENDOUREE
+    state: VIC
+    country: AUS
+    postCode: 3355
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-08-27
+    offerType: ENE
+    plan: TOPB-EV
+    priceTag: EVPO5_NB2001
+    serviceOrderDate: 2020-08-27
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 6203822385
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: OTHER
+    
+    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: RCTBH
+    reEnergisationJSCCharge: 56.05
+  
+

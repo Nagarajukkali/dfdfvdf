@@ -1,0 +1,91 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: FC2008256731
+    sourceCode: Total_Plus_14%GD
+    actualQuoteDate: 2020-08-25
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0372676687
+    
+    emailId: zHIRKLoqMZ@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: OTHERS
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 90192924393
+    
+    anzsic: HOSPITALITY
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0372676687
+    
+    businessEmailId: zHIRKLoqMZ@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 437
+    streetName: Oxley
+    streetType: AV
+    suburb: REDCLIFFE
+    state: QLD
+    country: AUS
+    postCode: 4020
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-08-27
+    offerType: ENE
+    plan: SWSRB-EQ
+    priceTag: EQEXA_NB2007
+    serviceOrderDate: 2020-08-27
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: QB02256002
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: OTHER
+    
+    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: RNRRBU
+    reEnergisationJSCCharge: 0.0
+  
+

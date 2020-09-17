@@ -1,4 +1,7 @@
-@E2E
+#@E2E
+  #Disabling MA tests running from scheduled job due to un stability of MA
+  #We will trigger thees tests manually in jenkins once/twice in a day
+@myaccount
 Feature: This feature is to test the My account scenarios for business customers
 
   Scenario Outline: Verify the BSME Plan switch journey from My Account
@@ -33,7 +36,7 @@ Feature: This feature is to test the My account scenarios for business customers
     Examples:
       |folderName                |username             |password                                     |fuelType|sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
       |E2E_MyAccount_Business_PS |e2e_bsme_ps@test.com |U2FsdGVkX1+ftH+UunfGSZtCIUBjus/t531HwywA6fY= |ELE     |My Account     |Plan Switch  |Yes  |Yes  |BUS          |Existing       |
-
+  @deviceCheck
   Scenario Outline: Verify the BSME Plan switch with current plan journey from My Account where customer contact person and ABN/ACN is missing
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page

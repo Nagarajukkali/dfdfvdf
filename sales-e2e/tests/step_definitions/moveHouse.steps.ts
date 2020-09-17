@@ -4,6 +4,6 @@ import {testFunction} from '../../global_methods/helper';
 
 When(/^user enters '(.*)' in address field and selects any available moving date$/, async function (t,[movingAddress]) {
   await moveHouseMethod.enterYourAddress(t,movingAddress);
-  await testFunction.takeScreenshot(t,"move_house");
+  await testFunction.takeScreenshot(t, "move_house");//disabled UI Validation
   await moveHouseMethod.selectMovingDate(t);
 });

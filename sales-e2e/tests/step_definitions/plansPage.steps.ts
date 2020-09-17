@@ -3,15 +3,18 @@ import {selectionOptionModalWindowMethod } from '../methods/plansPage';
 import {FileUtils} from '../../libs/FileUtils'
 import {When, Then } from 'cucumber';
 import {Given} from 'cucumber'
-import {testFunction} from '../../global_methods/helper';
-import {CustomerType} from '@ea/ea-commons-models';
+const EaHomePage = require('../pages/energy-australia-home.page');
+import {PlanType, testFunction} from '../../global_methods/helper';
+import {AustralianState, CustomerType} from '@ea/ea-commons-models';
+const { config }=require('../../resources/resource');
+const interceptNetworkRequest=config.interceptNetworkRequest;
 
 When(/^user clicks on the verify modal window on '(.*)' page$/, async function(t, [customerType]) {
-      await plansMethod.clickPlansPageModal(t,customerType);
+  await plansMethod.clickPlansPageModal(t,customerType);
 });
 
 When(/^user clicks on '(.*)' from the modal$/, async function(t, [modalWindowValue]) {
-    await selectionOptionModalWindowMethod.selectOptionsModalWindow(t, modalWindowValue);
+  await selectionOptionModalWindowMethod.selectOptionsModalWindow(t, modalWindowValue);
 });
 
 Then(/^User lands on plans page after verify account journey$/, async t =>{
@@ -19,7 +22,7 @@ Then(/^User lands on plans page after verify account journey$/, async t =>{
 });
 
 When(/^user selects '(.*)'$/, async function(t, [planName]){
-  await testFunction.takeScreenshot(t,'plans_page');
+  await testFunction.takeScreenshot(t, 'plans_page');//disabled UI Validation
   await plansMethod.selectPlan(t, planName);
 });
 
@@ -29,51 +32,51 @@ Given(/^user have selected fuel as "([^"]*)"$/, async function (t, [fuelType]) {
 
 When(/^user verifies the account through verify account journey for residential customer$/, async function (t,[],dataTable) {
   let data = dataTable.hashes();
-  await testFunction.takeScreenshot(t,'verify_account_main');
+  await testFunction.takeScreenshot(t, 'verify_account_main');//disabled UI Validation
   await selectionOptionModalWindowMethod.selectOptionsModalWindow(t, data[0].modal_option);
-  await testFunction.takeScreenshot(t,'verify_account_modal');
+  await testFunction.takeScreenshot(t, 'verify_account_modal');//disabled UI Validation
   if(data[0].elecAccountNumber)
     await verifyAccountMethod.provideAccountDetails(t,"ELE", data[0].elecAccountNumber);
   if(data[0].gasAccountNumber)
     await verifyAccountMethod.provideAccountDetails(t, "GAS", data[0].gasAccountNumber);
   await verifyAccountMethod.provideAccountInformation(t, data[0].postcode, data[0].customer_type);
-  await testFunction.takeScreenshot(t,'verify_account_modal_with_data');
+  await testFunction.takeScreenshot(t, 'verify_account_modal_with_data');//disabled UI Validation
   await verifyAccountMethod.verifyAccountDetails(t);
   await verifyAccountMethod.provideIdentityDetails(t, data[0].idType, data[0].idNumber)
-  await testFunction.takeScreenshot(t,'verify_account_modal_id_with_data');
+  await testFunction.takeScreenshot(t, 'verify_account_modal_id_with_data');//disabled UI Validation
   //await testFunction.captureNetworkCall(t,'/qt2/app/account/retrieve');
   await verifyAccountMethod.verifyAccountDetails(t);
   //await testFunction.validateNetworkCall(t);
-  await testFunction.takeScreenshot(t,'verify_account_modal_final');
+  await testFunction.takeScreenshot(t, 'verify_account_modal_final');//disabled UI Validation
   await verifyAccountMethod.showCostEstimates(t);
 });
 
 When(/^user verifies the account through verify account journey for business customer$/, async function (t,[],dataTable) {
   let data = dataTable.hashes();
-  await testFunction.takeScreenshot(t,'verify_account_main');
+  await testFunction.takeScreenshot(t, 'verify_account_main');//disabled UI Validation
   await selectionOptionModalWindowMethod.selectOptionsModalWindow(t, data[0].modal_option);
-  await testFunction.takeScreenshot(t,'verify_account_modal');
+  await testFunction.takeScreenshot(t, 'verify_account_modal');//disabled UI Validation
   if(data[0].elecAccountNumber)
     await verifyAccountMethod.provideAccountDetails(t,"ELE", data[0].elecAccountNumber);
   if(data[0].gasAccountNumber)
     await verifyAccountMethod.provideAccountDetails(t, "GAS", data[0].gasAccountNumber);
   await verifyAccountMethod.provideAccountInformation(t, data[0].ABNOrACN, data[0].customer_type);
-  await testFunction.takeScreenshot(t,'verify_account_modal_with_data');
+  await testFunction.takeScreenshot(t, 'verify_account_modal_with_data');//disabled UI Validation
   await verifyAccountMethod.verifyAccountDetails(t);
   await verifyAccountMethod.provideIdentityDetails(t, data[0].idType, data[0].idNumber);
-  await testFunction.takeScreenshot(t,'verify_account_modal_id_with_data');
+  await testFunction.takeScreenshot(t, 'verify_account_modal_id_with_data');//disabled UI Validation
   await verifyAccountMethod.verifyAccountDetails(t);
-  await testFunction.takeScreenshot(t,'verify_account_modal_final');
+  await testFunction.takeScreenshot(t, 'verify_account_modal_final');//disabled UI Validation
   await verifyAccountMethod.showCostEstimates(t);
 });
 
 When(/^user provides "([^"]*)" and clicks on show me plan link$/, async function (t,[postcode]) {
   await campaignMethod.enterPostcodeOnCampaign(t,postcode);
-  await testFunction.takeScreenshot(t,'campaign_page');
+  await testFunction.takeScreenshot(t, 'campaign_page');//disabled UI Validation
 });
 When(/^user provides "([^"]*)" and "([^"]*)" and clicks on show me plan link$/, async function (t,[offerCode,postcode]) {
   await campaignMethod.enterOfferCodeAndPostcodeOnCampaign(t,offerCode,postcode);
-  await testFunction.takeScreenshot(t,'campaign_page');
+  await testFunction.takeScreenshot(t, 'campaign_page');//disabled UI Validation
 });
 
 When(/^user clicks on Add plan button$/, async function (t) {
@@ -122,7 +125,7 @@ When(/^user provides below details for account verification on verify account mo
   let modalWindowOption=data[0].modal_option
   if(modalWindowOption.length!==0){
     await selectionOptionModalWindowMethod.selectOptionsModalWindow(t, data[0].modal_option);
-    await testFunction.takeScreenshot(t,'verify_account_modal');
+    await testFunction.takeScreenshot(t, 'verify_account_modal');//disabled UI Validation
   }
   if(data[0].elecAccountNumber)
     await verifyAccountMethod.provideAccountDetails(t,"ELE", data[0].elecAccountNumber);
@@ -132,19 +135,19 @@ When(/^user provides below details for account verification on verify account mo
     await verifyAccountMethod.provideAccountInformation(t, data[0].postcode, data[0].customer_type);
   if(data[0].customer_type===CustomerType.BUSINESS)
     await verifyAccountMethod.provideAccountInformation(t, data[0].ABNOrACN, data[0].customer_type);
-  await testFunction.takeScreenshot(t,'verify_account_modal');
+  await testFunction.takeScreenshot(t, 'verify_account_modal');//disabled UI Validation
   await verifyAccountMethod.verifyAccountDetails(t);
   await verifyAccountMethod.provideIdentityDetails(t, data[0].idType, data[0].idNumber);
-  await testFunction.takeScreenshot(t,'verify_account_modal');
+  await testFunction.takeScreenshot(t, 'verify_account_modal');//disabled UI Validation
   await verifyAccountMethod.verifyAccountDetails(t);
 });
 Then(/^Relevant error message is presented for customers marked with safety flag on verify account modal$/, async function (t) {
   await verifyAccountMethod.validateErrorMessageForBlockerAccounts(t);
-  await testFunction.takeScreenshot(t,'verify_account_modal');
+  await testFunction.takeScreenshot(t, 'verify_account_modal');//disabled UI Validation
 });
 Then(/^user can able to proceed further through verify account$/, async function (t) {
   await verifyAccountMethod.verifySuccessfulAccountVerification(t)
-  await testFunction.takeScreenshot(t,'verify_account_modal');
+  await testFunction.takeScreenshot(t, 'verify_account_modal');//disabled UI Validation
 });
 When(/^user navigates back to verify identity section$/, async function (t) {
   await verifyAccountMethod.navigateBackToVerifyIdentity(t);
@@ -153,11 +156,14 @@ When(/^user navigates back to verify account section and clears all the previous
   await verifyAccountMethod.navigateBackToVerifyAccount(t);
 });
 Given(/^user enters '(.*)' in '(.*)' field$/, async function (t,[NMIIorMIRNorPostcodeValue,NMIorMIRNorPostcode]) {
+  if(interceptNetworkRequest==='Y'){
+    await testFunction.captureNetworkCall(t,'/qt2/app/v1/offers/lookup');
+  }
   await plansMethod.enterNMIorMIRNorPostcode(t,NMIIorMIRNorPostcodeValue,NMIorMIRNorPostcode);
 });
 Then(/^plans page load according to the type of '(.*)'$/, async function (t,[NMIorMIRNType]) {
   await plansMethod.verifyNMIorMIRNLookup(t,NMIorMIRNType);
-  await testFunction.takeScreenshot(t,'plans_page');
+  await testFunction.takeScreenshot(t, 'plans_page');//disabled UI Validation
 
 });
 Then(/^user validates details on plans page for '(.*)'$/, async function (t, [customerType]) {
@@ -168,4 +174,52 @@ Then(/^user validates disclaimer on plans page for "([^"]*)"$/, async function (
   let data = await FileUtils.getJSONfile(campaignName);
   await plansMethod.validateDisclaimer(t,dataTable,data);
   console.log("Validation completed for disclaimers on plans page.");
+});
+
+Then(/^user validates verify account journey's UI for '(.*)' plans page$/, async function (t, [customerType]) {
+  await plansMethod.clickPlansPageModal(t,customerType);
+  await testFunction.compareImages(t, customerType + "_CTA_MODAL_MAIN");
+  await selectionOptionModalWindowMethod.selectOptionsModalWindow(t, "enter usage");
+  await testFunction.compareImages(t, customerType + "_MODAL_ENTER_USAGE");
+  await testFunction.click(t, EaHomePage.elements.modalBack);
+  await selectionOptionModalWindowMethod.selectOptionsModalWindow(t, "verify account");
+  await testFunction.compareImages(t, customerType + "_MODAL_VERIFY_ACCOUNT");
+  await verifyAccountMethod.enterSampleAccountDetails(t, customerType);
+  await verifyAccountMethod.verifyAccountDetails(t);
+  await testFunction.compareImages(t, customerType + "_MODAL_VERIFY_IDENTITY");
+  await verifyAccountMethod.provideIdentityDetails(t, config.sampleResiAccount.idType, config.sampleResiAccount.idValue);
+  await verifyAccountMethod.verifyAccountDetails(t);
+  await testFunction.compareImages(t, customerType + "_MODAL_VERIFY_ACCOUNT_FINAL");
+});
+
+Then(/^user validates '(.*)' plans page's UI$/, async function (t, [customerType]) {
+  await testFunction.compareImages(t, customerType + "_PLANS_PAGE");
+});
+
+Then(/^user validates reference price for '(.*)'$/, async function (t,[planName]) {
+  if(interceptNetworkRequest==='Y'){
+    let rewardCreditCondition,baseCreditCondition,baseSourceCode,rewardSourceCode,state;
+    let jsonObj=await testFunction.validateNetworkCall(t);
+    state=jsonObj.state;
+    let excludedPlans=(planName!==PlanType.BASIC_BUSINESS && planName!==PlanType.BASIC_HOME && planName!==PlanType.BASIC_HOME_QLD && planName!==PlanType.BASIC_BUSINESS_QLD);
+    if(excludedPlans){
+      let plans = jsonObj.electricity.plans;
+      plans.forEach(function myFunction(plan){
+        if(planName.toLowerCase() === plan.name.toLowerCase()){
+          let rewardsCount= plan.rewards.length
+          if(rewardsCount>0){
+            rewardCreditCondition = plan.rewards[0].planReward.creditCondition;
+            rewardSourceCode = plan.rewards[0].planReward.sourceCode;
+          }
+          baseCreditCondition = plan.benchmark.creditCondition;
+          baseSourceCode = plan.sourceCode;
+          // break;
+        }
+      });
+      if(state!==AustralianState.ACT) {
+        await plansMethod.validateComparisonStatement(t, baseCreditCondition, rewardCreditCondition, planName);
+        console.log("Validated Comparison Statement");
+      }
+    }
+  }
 });

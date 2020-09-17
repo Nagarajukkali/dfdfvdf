@@ -1,7 +1,7 @@
 import {RequestLogger, Selector} from 'testcafe';
 import { ClientFunction } from 'testcafe';
 import {FUEL_TYPE_OPTIONS, AustralianState, CustomerType} from '@ea/ea-commons-models';
-import {fetchBrowser, getDateTime, screenshotFolder} from '../tests/step_definitions/hooks';
+import {fetchBrowser, getDateTime, screenshotFolder, width} from '../tests/step_definitions/hooks';
 import {FileUtils} from '../libs/FileUtils';
 const fs = require("mz/fs");
 import requestLoggerUtilities from '../global_methods/requestLoggerUtilities';
@@ -12,6 +12,7 @@ import {resemblejs} from 'resemblejs/resemble.js'; //--DO NOT REMOVE THIS IMPORT
 const resemble = require("resemblejs");
 const screenshot=config.screenshot;
 let logger=null;
+const deviceScreenSize=config.deviceScreenSize
 
   export enum CustomerStatus {
     NEW='New',
@@ -45,6 +46,8 @@ let logger=null;
     NO_FRILLS_BUSINESS='No Frills Business',
     TOTAL_BUSINESS='Total Business',
     TOTAL_PLAN_PLUS_BUSINESS='Total Plan Plus Business',
+    FAMILY_AND_FRIENDS='Family and Friends',
+    FAMILY_AND_FRIENDS_BUSINESS='Family and Friends Business'
   }
   export enum IdType {
     DOB='dob',
@@ -84,6 +87,27 @@ let logger=null;
     ACCEPT_WITH_CONDITION = "ACCEPT_WC"
   }
 
+  export const scrollTo = ClientFunction((selector: Selector, offset?: { x: number; y: number }) => {
+  const _window = window;
+  return new Promise(resolve => {
+    const element: any = selector();
+    element.scrollIntoView();
+
+    if (offset) {
+      _window.scrollBy(offset.x, offset.y);
+    }
+
+    resolve();
+  });
+});
+
+  export const setAttribute = ClientFunction((selector,propertyName,propertyValue) => {
+  let element = document.querySelector(selector);
+
+  element.setAttribute(propertyName, propertyValue);
+});
+
+
 export class testFunction {
   public static async click(t, element) {
     try {
@@ -115,8 +139,8 @@ export class testFunction {
   }
 
   public static async assertText(t, element, expectedFieldValue: string) {
-    const actualFieldValue: string = await this.getElementText(t,element);
-    await t.expect(actualFieldValue).contains(expectedFieldValue);
+      const actualFieldValue: string = await this.getElementText(t,element);
+      await t.expect(actualFieldValue).contains(expectedFieldValue);
   }
 
   public static async assertTextOnPage(t, text) {
@@ -150,8 +174,7 @@ export class testFunction {
 
   public static async isElementExists(t,element){
     let count=await this.sizeOfElement(t,element);
-    if(count>0)
-      return true;
+    return count > 0;
   }
 
   public static async enterText(t, element, value) {
@@ -315,15 +338,10 @@ export class testFunction {
     }
   }
 
-  public static async takeScreenshot(t,fileName, validate = true){
-    if(screenshot==='Y'){
-      if(config.visualValidation.validate === 'Y') {
-          await t.takeScreenshot({path:`../Current/${await fetchBrowser()}/${await screenshotFolder}/`+fileName+`.png`,fullPage:true});
-        if(validate)
-          await testFunction.compareImages(t, fileName);
-      } else {
+  public static async takeScreenshot(t, fileName){
+    let UIValidation = this.isValidatingUI();
+    if(screenshot==='Y' && !UIValidation){
         await t.takeScreenshot({path:`../Current/${await fetchBrowser()}/${await screenshotFolder}/`+fileName+`_${await getDateTime()}.png`,fullPage:true});
-      }
     }
   }
 
@@ -370,8 +388,16 @@ export class testFunction {
   }
 
   public static async compareImages(t, imageName) {
-    //-----Performing the visual validations only if 'validate' key is set to 'Y'-----//
-    if(config.visualValidation.validate === 'Y') {
+    let isValidate = this.isValidatingUI();
+    console.log(`isValidate: ${isValidate}`);
+    //-----Performing the visual validations only if 'validate' key is set to 'Y' in config AND the UIValidation tests are running-----//
+    if(isValidate && config.visualValidation.validate === 'Y') {
+      //-----Capturing current result-----//
+      let screenshotPath = `../Current/${await fetchBrowser()}/${await screenshotFolder}/`+imageName+`.png`;
+      await t.takeScreenshot({path: screenshotPath,fullPage: true});
+
+      await t.wait(5000);
+
       let browserName = await fetchBrowser();
       let baseImage = `${config.visualValidation.baseDir}/${browserName}/${screenshotFolder}/${imageName}.png`;
       let currentImage = `${config.visualValidation.currentDir}/${browserName}/${screenshotFolder}/${imageName}.png`;
@@ -380,7 +406,7 @@ export class testFunction {
       //----Re-baselining the images if 'rebaseline' key is set to 'Y'----//
       if(config.visualValidation.rebaseline === 'Y') {
         fs.copyFileSync(currentImage, baseImage);
-        console.log(`${browserName}/${screenshotFolder}/${imageName}.png re-baselined`);
+        console.log(`${browserName}/${screenshotFolder}/${imageName}.png re-baselined.`);
       } else {
         //-----Comparing the current image (generated in current execution) with it's baselined image-----//
         resemble(currentImage).compareTo(baseImage).onComplete(function(data){
@@ -435,10 +461,12 @@ export class testFunction {
 
   //----The test will fail if there is even a single diff file generated in a scenario----//
   public static async reportUIFailures(t) {
-    let folderPath = `${config.visualValidation.diffDir}/${await fetchBrowser()}/${screenshotFolder}`;
-    fs.readdir(folderPath, function (err, files) {
-      testFunction.assertTextValue(t, files.length, 0);
-    });
+    if(await testFunction.isValidatingUI()) {
+      let folderPath = `${config.visualValidation.diffDir}/${await fetchBrowser()}/${screenshotFolder}`;
+      fs.readdir(folderPath, function (err, files) {
+        testFunction.assertTextValue(t, files.length, 0);
+      });
+    }
   }
 
   public static async captureNetworkCall(t: any, endpoint) {
@@ -454,9 +482,30 @@ export class testFunction {
 
   public static async validateNetworkCall(t: any) {
     await requestLoggerUtils.unzipLoggerResponses(t, {requestLogger: logger, toJson: true});
-    console.log('\nUnzipped Response taken by the logger:\n', logger.requests[0].response.body);
+    //console.log('\nUnzipped Response taken by the logger:\n', logger.requests[0].response.body);
+    return logger.requests[0].response.body;
   }
 
+  public static isMobile():boolean{
+    return (width<deviceScreenSize.eaMobile.maxWidth);
+  }
+
+  public static isTablet():boolean{
+    return (width>deviceScreenSize.eaTablet.minWidth && width<deviceScreenSize.eaTablet.maxWidth);
+  }
+
+
+
+
+  public static async isExistingCustomer(customerStatus) {
+    return (customerStatus.toLowerCase() === CustomerStatus.EXISTING.toLowerCase());
+  }
+
+  public static isValidatingUI() {
+    const doc = fs.readFileSync('../package.json','utf8');
+    let packageJson = JSON.parse(doc);
+    return packageJson.config.e2e_tags.toString().includes("@UIValidation");
+  }
 }
 
 

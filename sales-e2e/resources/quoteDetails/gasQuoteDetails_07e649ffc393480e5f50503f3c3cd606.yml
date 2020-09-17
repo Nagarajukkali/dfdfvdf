@@ -1,0 +1,85 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2009037762
+    sourceCode: Total_4%GD
+    actualQuoteDate: 2020-09-03
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0321155938
+    
+    emailId: KgALSpivEE@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: CORPORATION
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 85512540870
+    
+    anzsic: MANUFACTURE
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0321155938
+    
+    businessEmailId: KgALSpivEE@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 44
+    streetName: Windsor
+    streetType: AV
+    suburb: MAGILL
+    state: SA
+    country: AUS
+    postCode: 5072
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2020-09-04
+    offerType: ENE
+    plan: TOPB-GS
+    priceTag: GSADA_NB2001
+    serviceOrderDate: 2020-09-04
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5510300477
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: GLSMRHAC
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+

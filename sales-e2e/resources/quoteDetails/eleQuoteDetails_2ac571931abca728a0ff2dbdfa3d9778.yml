@@ -1,0 +1,91 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2009037763
+    sourceCode: Total_11%GD
+    actualQuoteDate: 2020-09-03
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0389795010
+    
+    emailId: aDyxRxEqaK@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: SOLE TRADER
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 68647474639
+    
+    anzsic: PERSONAL
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0389795010
+    
+    businessEmailId: aDyxRxEqaK@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 134
+    streetName: Carruthers
+    streetType: S
+    suburb: CURTIN
+    state: ACT
+    country: AUS
+    postCode: 2605
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-09-07
+    offerType: ENE
+    plan: TOPB-EA
+    priceTag: EAACA_NB2007
+    serviceOrderDate: 2020-09-07
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 7001026074
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: OTHER
+    
+    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: 501
+    reEnergisationJSCCharge: 80.43
+  
+

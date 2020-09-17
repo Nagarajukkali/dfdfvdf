@@ -1,0 +1,84 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2008215785
+    sourceCode: NOFRILLS
+    actualQuoteDate: 2020-08-21
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0340910260
+    
+    emailId: mlcnLRirwX@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 729715
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlMiddleName/: 
+          dlLastName: test
+          licenseStateOfIssue: VIC
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 21
+    streetName: Eltham
+    streetType: S
+    suburb: FLEMINGTON
+    state: VIC
+    country: AUS
+    postCode: 3031
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2020-08-25
+    offerType: ENE
+    plan: RCPP-GV
+    priceTag: GVA1A_ZR2007
+    serviceOrderDate: 2020-08-25
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5330396438
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: OTHER
+    
+    lifeSupportOtherEquipmentDetails: Sample Other gas device.
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+

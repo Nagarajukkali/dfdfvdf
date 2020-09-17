@@ -1,0 +1,142 @@
+{
+  "planName": "Total Plan",
+  "planDescription": "Great discount on your total energy bill guaranteed - every time.",
+
+  "electricity": {
+    "feature": {
+      "preSelect": {
+        "Credit50": {
+          "heading": "$100 Sign Up Credit",
+          "description": "Get a $100 credit per new energy account on your first bill when you sign up.+"
+        },
+        "carbonNeutral": {
+          "heading": "Carbon neutral option",
+          "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
+        },
+        "peaceOfMind": {
+          "heading": "Peace of mind",
+          "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+        },
+        "discountOffTotalEnergyBill": {
+          "heading": "Discount off total energy bill",
+          "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
+        },
+        "noStandardConnectionFee": {
+          "heading": "",
+          "description": ""
+        }
+      },
+      "postSelect": {
+        "Credit50": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.+",
+        "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
+        "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
+        "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
+        "noStandardConnectionFee": ""
+      }
+    }
+  },
+
+  "gas": {
+    "feature": {
+      "preSelect": {
+        "Credit50": {
+          "heading": "$100 Sign Up Credit",
+          "description": "Get a $100 credit per new energy account on your first bill when you sign up.+"
+        },
+        "carbonNeutral": {
+          "heading": "Carbon neutral option",
+          "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
+        },
+        "peaceOfMind": {
+          "heading": "Peace of mind",
+          "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+        },
+        "discountOffTotalEnergyBill": {
+          "heading": "Discount off total energy bill",
+          "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
+        },
+        "noStandardConnectionFee": {
+          "heading": "",
+          "description": ""
+        }
+      },
+      "postSelect": {
+        "Credit50": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.+",
+        "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
+        "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
+        "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
+        "noStandardConnectionFee": ""
+      }
+    }
+  },
+
+  "disclaimers": {
+    "referencePriceComparison": {
+      "heading": "Reference price comparison and estimated annual cost",
+      "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+    },
+    "goNeutral": {
+      "heading": "Go Neutral",
+      "QLD": {
+        "description": ""
+      },
+      "NonQLD": {
+        "description": "^ Opt in and we will offset the carbon emissions from your electricity and/or gas usage from the 6-month anniversary of the date your EnergyAustralia account is established. We will let you know in advance if we withdraw Go Neutral. For more info and full terms visit energyaustralia.com.au/carbon-neutral."
+      }
+    },
+    "solarBuyBack": {
+      "heading": "Solar feed-in tariffs",
+      "VIC": {
+        "description": ""
+      },
+      "NonVIC": {
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. We are currently unable to set up your solar plan online."
+      }
+    },
+    "noStandardConnectionFee": {
+      "heading": "",
+      "description": ""
+    },
+    "Credit50": {
+      "VIC": {
+        "heading": "",
+        "description": ""
+      },
+      "NSW": {
+        "heading": "$100 Sign Up Credit",
+        "description": "+ Offer only for eligible NSW residential customers with a valid NSW Seniors Card who sign up to an electricity or gas market offer. Limit of one $100 credit per new energy account, per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+      },
+      "ACT": {
+        "heading": "",
+        "description": ""
+      },
+      "QLD": {
+        "heading": "",
+        "description": ""
+      },
+      "SA": {
+        "heading": "",
+        "description": ""
+      }
+    },
+    "totalPlan": {
+      "heading": "Total Plan",
+      "VIC": {
+        "description": ""
+      },
+      "NSW": {
+        "description": "* Offer only for eligible NSW residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+      },
+      "ACT": {
+        "description": ""
+      },
+      "QLD": {
+        "description": ""
+      },
+      "SA": {
+        "description": ""
+      }
+    }
+  }
+}
+

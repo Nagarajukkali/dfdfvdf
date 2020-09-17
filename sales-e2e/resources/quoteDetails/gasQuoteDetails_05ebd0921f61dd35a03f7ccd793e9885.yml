@@ -1,0 +1,85 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: FC2008256728
+    sourceCode: Total_Plus_4%GD
+    actualQuoteDate: 2020-08-25
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0325831707
+    
+    emailId: mLEOfhJkEV@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: CORPORATION
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 73502497757
+    
+    anzsic: AGRICULTURE
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0325831707
+    
+    businessEmailId: mLEOfhJkEV@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 6
+    streetName: Peat
+    streetType: AV
+    suburb: HOLDEN HILL
+    state: SA
+    country: AUS
+    postCode: 5088
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2020-08-26
+    offerType: ENE
+    plan: SWSRB-GS
+    priceTag: GSADA_NB2001
+    serviceOrderDate: 2020-08-26
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5510116718
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: GLSMRHAC
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+

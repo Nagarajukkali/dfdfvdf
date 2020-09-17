@@ -19,7 +19,7 @@
   },
   "config": {
     "env": "preprod",
-    "e2e_tags": "@E2E,~@failed"
+    "e2e_tags": "@UIValidation,~@failed"
   },
   "private": true,
   "dependencies": {

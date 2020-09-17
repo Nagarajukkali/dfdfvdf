@@ -35,6 +35,12 @@ export class cartsMethod {
       if(dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
         await testFunction.assertText(t, cartsPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill);
       }
+      if(dataTable[0].Feature_defaultOffer === "Y") {
+        await testFunction.assertText(t, cartsPage.elements.eleFeatureDefaultOffer, json.electricity.feature.postSelect.defaultOffer);
+      }
+      if(dataTable[0].Feature_vipPriorityService === "Y") {
+        await testFunction.assertText(t, cartsPage.elements.eleFeatureVipPriorityService, json.electricity.feature.postSelect.vipPriorityService);
+      }
     }
     if(await testFunction.isGas(dataTable[0].fuelType)) {
       await t.expect(await testFunction.sizeOfElement(t, cartsPage.elements.gasFeatures)).eql(numOfExpectedFeatures);
@@ -49,6 +55,9 @@ export class cartsMethod {
       }
       if(dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
         await testFunction.assertText(t, cartsPage.elements.gasFeatureDiscountOffTotal, json.gas.feature.postSelect.discountOffTotalEnergyBill);
+      }
+      if(dataTable[0].Feature_vipPriorityService === "Y") {
+        await testFunction.assertText(t, cartsPage.elements.gasFeatureVipPriorityService, json.gas.feature.postSelect.vipPriorityService);
       }
     }
   }

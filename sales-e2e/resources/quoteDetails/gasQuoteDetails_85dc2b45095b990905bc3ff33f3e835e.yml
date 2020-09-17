@@ -1,27 +1,27 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008184408
+    quoteId: BB2008256489
     sourceCode: Total_17%GD
-    actualQuoteDate: 2020-08-18
+    actualQuoteDate: 2020-08-25
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: Mr
+    title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0343471660
+      phoneNumber: 0317754224
     
-    emailId: AYZFfXdpmd@energyaustralia.com.au
+    emailId: FwiqcrbXrB@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 520664
+      id: 947266
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -51,15 +51,15 @@ saleDetail :
     primaryResidence: N
   
   offerDetail: 
-    fuelType: G
-    proposedStart: 2020-08-20
+    fuelType: E
+    proposedStart: 2020-08-27
     offerType: ENE
-    plan: TOPH-GN
-    priceTag: GNAGA_NR2007
-    serviceOrderDate: 2020-08-20
+    plan: TOPH-EN
+    priceTag: ENIEA_NR2007
+    serviceOrderDate: 2020-08-27
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      MIRN: 5240924834
+      NMI: 4311150544
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -67,12 +67,11 @@ saleDetail :
       customerWithLifeSupport: Y
     
     lifeSupportEquipment: 
-      lifeSupportEquipmentType: OTHER
+      lifeSupportEquipmentType: LSCNSPE
     
-    lifeSupportOtherEquipmentDetails: Sample Other gas device.
   
   offerDetail: 
-    fuelType: E
+    fuelType: G
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -81,4 +80,11 @@ saleDetail :
   
   creditAssessmentDecision: Accept
   creditAssessmentReasonCode: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    priceTagMeteringCharge: M25161DN_IH
+    proposedNTC: N70
+    proposedMC: IHUBMC
+    reEnergisationJSCCharge: 0
+  
 

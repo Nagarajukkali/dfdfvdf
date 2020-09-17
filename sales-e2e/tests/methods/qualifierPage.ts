@@ -5,10 +5,10 @@ import {BusinessType, CustomerStatus, IdType, Moving, Property, Solar, testFunct
 export class qualifierMethod{
 
   public static async selectCustomerStatus(t, customerStatus) {
-    if(customerStatus===CustomerStatus.NEW){
+    if(customerStatus.toLowerCase()===CustomerStatus.NEW.toLowerCase()){
         await testFunction.click(t,eaQualifierPage.elements.newCustomerBtn);
       }
-    else if(customerStatus===CustomerStatus.EXISTING){
+    else if(customerStatus.toLowerCase()===CustomerStatus.EXISTING.toLowerCase()){
       await testFunction.click(t,eaQualifierPage.elements.existingCustomerBtn);
     }
     else{
@@ -44,7 +44,7 @@ export class qualifierMethod{
         default:
           console.log('account identity type is not valid');
       }
-      await testFunction.takeScreenshot(t,"qualifier_page");
+      await testFunction.takeScreenshot(t, "qualifier_page");//disabled UI Validation
       await testFunction.click(t, eaQualifierPage.elements.verifyAccountSubmit);
       await testFunction.waitForElementPropertyToBeChanged(t,eaQualifierPage.elements.verifyAccountSubmit,'wg-processing',"false");
       console.log("account is verified")
@@ -86,10 +86,10 @@ export class qualifierMethod{
         default:
           console.log('Invalid id type');
       }
+      await testFunction.takeScreenshot(t, "qualifier_page");//disabled UI Validation
+      await testFunction.click(t, eaQualifierPage.elements.verifyIdentitySubmit);
       await testFunction.waitForLoadingIconToClose();
       await t.wait(3000);
-      await testFunction.takeScreenshot(t,"qualifier_page");
-      await testFunction.click(t, eaQualifierPage.elements.verifyIdentitySubmit);
       console.log("Existing customer ID details are verified");
     }
 

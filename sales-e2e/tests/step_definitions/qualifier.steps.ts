@@ -1,8 +1,9 @@
 import {qualifierMethod} from '../methods/qualifierPage';
-import {testFunction, Moving} from '../../global_methods/helper';
+import {testFunction, Moving, Property, BusinessType, IdType} from '../../global_methods/helper';
 import {When, Then } from 'cucumber';
 import {CustomerType} from '@ea/ea-commons-models';
 const eaQualifierPage=require('../pages/qualifier.page');
+const { config }=require('../../resources/resource');
 
 When(/^user selects '(.*)' and provides '(.*)' '(.*)' '(.*)' and '(.*)' and '(.*)' for '(.*)' customer$/, async function (t, [customerStatus,accNumber,accountDetail,accountIdentityType,idType,idValue,customerType]) {
   await qualifierMethod.selectCustomerStatus(t, customerStatus);
@@ -37,7 +38,7 @@ When(/^user provides all other details on qualifier page for Existing customer$/
     if(state==='QLD'){
       await testFunction.click(t,eaQualifierPage.elements.moveElecQLDQuestion);
     }
-    await testFunction.takeScreenshot(t,"qualifier_page_calendar");
+    await testFunction.takeScreenshot(t, "qualifier_page_calendar");//disabled UI Validation
     await qualifierMethod.selectDateFromCalendar(t);
   } else if (movingType === Moving.NON_MOVING) {
     await testFunction.click(t, eaQualifierPage.elements.addressContinue);
@@ -80,19 +81,19 @@ When(/^user verifies account on qualifier$/, async function (t,[],dataTable) {
   await qualifierMethod.verifyIdentity(t,data[0].idType,data[0].idValue);
 });
 When(/^user selects '(.*)' on qualifier$/, async function (t,[customerStatus]) {
-  await testFunction.takeScreenshot(t,'qualifier_page');
+  await testFunction.takeScreenshot(t, 'qualifier_page');//disabled UI Validation
   await qualifierMethod.selectCustomerStatus(t,customerStatus);
 });
 Then(/^Relevant error message is presented for customers marked with safety flag on qualifier$/, async function (t) {
   await qualifierMethod.validateErrorMessageForBlockerAccounts(t);
-  await testFunction.takeScreenshot(t,'qualifier_page');
+  await testFunction.takeScreenshot(t, 'qualifier_page');//disabled UI Validation
 });
 When(/^user navigates back to account verification section and clears all the previously provided details$/, async function (t) {
   await qualifierMethod.navigateBackToAccountVerification(t);
 });
 Then(/^user can able to proceed further through qualifier$/, async function (t) {
   await qualifierMethod.verifySuccessfulAccountVerification(t);
-  await testFunction.takeScreenshot(t,'qualifier_page');
+  await testFunction.takeScreenshot(t, 'qualifier_page');//disabled UI Validation
 });
 When(/^user navigates back to account verification section from moving question and clears all the previously provided details$/, async function (t) {
   await qualifierMethod.navigateBackFromMovingQuestion(t);
@@ -106,5 +107,38 @@ When(/^user enters the address '(.*)' on qualifier$/, async function (t,[address
 });
 Then(/^relevant popup displays for provided '(.*)'$/, async function (t,[addressType]) {
   await  qualifierMethod.verifyLookupOnQualifier(t,addressType);
-  await testFunction.takeScreenshot(t,'qualifier_page');
+  await testFunction.takeScreenshot(t, 'qualifier_page');//disabled UI Validation
+});
+
+Then(/^user validates qualifier for "([^"]*)" "([^"]*)" customers$/, async function (t, [customerStatus, customerType]) {
+  await testFunction.compareImages(t, customerType + "_QUALIFIER_AreYouNewToEA");
+  await qualifierMethod.selectCustomerStatus(t,customerStatus);
+  if(await testFunction.isExistingCustomer(customerStatus)) {
+    await testFunction.compareImages(t, customerType + "_QUALIFIER_VerifyAccount");
+    if(await testFunction.isResidential(customerType)) {
+      await qualifierMethod.verifyAccount(t, config.sampleResiAccount.eleAccount, "Postcode", config.sampleResiAccount.postcode);
+    }else {
+      await qualifierMethod.verifyAccount(t, config.sampleBsmeAccount.eleAccount, BusinessType.ABN, config.sampleBsmeAccount.abn);
+    }
+    await testFunction.compareImages(t, customerType + "_QUALIFIER_VerifyIdentity");
+    if(await testFunction.isResidential(customerType)) {
+      await qualifierMethod.verifyIdentity(t, config.sampleResiAccount.idType, config.sampleResiAccount.idValue);
+    }else {
+      await qualifierMethod.verifyIdentity(t, config.sampleBsmeAccount.idType, config.sampleBsmeAccount.idValue);
+    }
+    await testFunction.waitForLoadingIconToClose();
+  }
+  await testFunction.compareImages(t, customerType + "_QUALIFIER_AreYouMovingHouse");
+  await qualifierMethod.provideMovingType(t, Moving.NON_MOVING);
+  await testFunction.compareImages(t, customerType + "_QUALIFIER_Address");
+  if(await testFunction.isResidential(customerType)) {
+    await qualifierMethod.provideAddress(t, config.sampleResiAddress);
+  }else {
+    await qualifierMethod.provideAddress(t, config.sampleBsmeAddress);
+  }
+  await testFunction.compareImages(t, customerType + "_QUALIFIER_OwnerOrRenter");
+  if(await testFunction.isResidential(customerType)) {
+    await qualifierMethod.selectPropertyType(t, Property.OWNER);
+  }
+  await testFunction.compareImages(t, customerType + "_QUALIFIER_SolarQuestion");
 });

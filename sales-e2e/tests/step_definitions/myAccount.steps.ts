@@ -59,7 +59,7 @@ When(/^user selects No for solar question on moving service page$/, async functi
   await testFunction.click(t, eaMyAccount.elements.btnSolarNo_MA);
 });
 When(/^user clicks on lets get moving button$/, async function (t, []) {
-  await testFunction.takeScreenshot(t,"my_account_move_home_Page");
+  await testFunction.takeScreenshot(t, "my_account_move_home_Page");//disabled UI Validation
   await testFunction.click(t, eaMyAccount.elements.btnLetsGetMoving);
 });
 When(/^user answers No for home improvements question$/, async function (t, []) {
@@ -81,7 +81,6 @@ When(/^user validates details on checkout details page$/, async function (t,[],d
   await checkoutDetailsMethod.validateRefineBar(t, params[0].fuelType, params[0].sourceSystem);
   await checkoutDetailsMethod.validateDisclaimer(t, params[0].sourceSystem, eaCheckoutDetailsPage.elements.txtFeesDisclaimer, "Please note for all payment options, excluding direct debit or Centrepay, a merchant service fee may apply to credit card payments - 0.36% for paying bills by Visa or Mastercard® and 1.5% for paying bills by American Express®. The best way to avoid these fees is to set up direct debit via My Account.");
   await checkoutDetailsMethod.validateNavigationButtons(t, params[0].sourceSystem, params[0].journey);
-  await testFunction.takeScreenshot(t,'checkout_details_page');
   console.log("Checkout Details page validated successfully.");
 });
 

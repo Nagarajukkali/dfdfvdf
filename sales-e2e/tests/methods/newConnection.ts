@@ -184,7 +184,7 @@ export class newConnectionMethod{
   public static async acceptTnCAndSubmit(t) {
     await testFunction.click(t,eaNewConnectionPage.elements.acceptTermsAndConds);
     await testFunction.isElementVisible(t,eaNewConnectionPage.elements.submitForm);
-    await testFunction.takeScreenshot(t,"new_connections_step3");
+    await testFunction.takeScreenshot(t, "new_connections_step3");//disabled UI Validation
     await testFunction.click(t,eaNewConnectionPage.elements.submitForm);
     await testFunction.isElementDisplayed(t,eaNewConnectionPage.elements.btnProceedToQuote);
   }

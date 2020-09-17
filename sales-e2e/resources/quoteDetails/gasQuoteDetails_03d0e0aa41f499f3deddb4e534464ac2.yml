@@ -1,0 +1,85 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2008256733
+    sourceCode: Total_Plus_20%GD
+    actualQuoteDate: 2020-08-25
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0333625214
+    
+    emailId: ELDlohGzzd@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: OTHERS
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 70101781365
+    
+    anzsic: PROPERTY
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0333625214
+    
+    businessEmailId: ELDlohGzzd@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 320
+    streetName: Crown
+    streetType: S
+    suburb: SURRY HILLS
+    state: NSW
+    country: AUS
+    postCode: 2010
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2020-08-26
+    offerType: ENE
+    plan: SWSRB-GN
+    priceTag: GNAGA_NB2007
+    serviceOrderDate: 2020-08-26
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5240554353
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: GLSMRHAC
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+

@@ -53,6 +53,8 @@ const eaCheckoutDetailsPage={
     aahPermissionLvl1: Selector("#select-1"),
     aahPermissionLvl2: Selector("#select-2"),
     aahPermissionLvl3: Selector("#select-3"),
+    slickDotsAAH:Selector("#additional-account-holder ul.slick-dots>li"),
+    slickDotsDD:Selector("#direct-debit ul.slick-dots>li"),
     addDirectDebit: Selector("#direct-debit__add"),
     tfBankAccountName: Selector("#bankAccountName"),
     tfBsb: Selector("#bsb"),
@@ -73,10 +75,12 @@ const eaCheckoutDetailsPage={
     eleDisconnectionCalendar: Selector("#disconnectCalendarEle"),
     gasDisconnectionCalendar: Selector("#disconnectCalendarGas"),
     basicElePlan:Selector("[id*='plan-select-button-RSOT-E']"),
+    basicQLDElePlan:Selector("[id*='plan-select-button-GRT-E']"),
     noFrillsElePlan:Selector("[id*='plan-select-button-RCPP-E']"),
     totalElePlan: Selector("[id*='plan-select-button-TOPH-E']"),
     totalPlanPlusEle:Selector("[id*='plan-select-button-SWSR1-E']"),
     basicEleBusiness:Selector("[id*='plan-select-button-BSOT-E']"),
+    basicQLDEleBusiness:Selector("[id*='plan-select-button-BGRT-E']"),
     noFrillEleBusiness:Selector("[id*='plan-select-button-BCPP-E']"),
     totalElePlanBusiness:Selector("[id*='plan-select-button-TOPB-E']"),
     totalPlanPlusEleBusiness:Selector("[id*='plan-select-button-SWSRB-E']"),
@@ -116,6 +120,17 @@ const eaCheckoutDetailsPage={
     progressBar: Selector("div[role*='main'] .checkout-progress-bar"),
     progressBarProgressIndicatorCompleted: Selector("div[role*='main'] .checkout-progress-bar span[class='completed']"),
     txtSubheading: Selector("#checkout-progress-bar-subheading"),
+    basicResiElePlanRateSummary:Selector("[id*='plan-rate-summary-title-RSOT-E']"),
+    basicResiElePlanFeatureTitle:Selector("[id*='plan-feature-title-RSOT-E']"),
+    basicResiElePlanRatesTitle:Selector("[id*='plan-rates-title-RSOT-E']"),
+    basicResiGasPlanFeatureTitle:Selector("[id*='plan-feature-title-RSOT-G']"),
+    basicResiGasPlanRatesTitle:Selector("[id*='plan-rates-title-RSOT-G']"),
+    basicBsmeElePlanFeatureTitle:Selector("[id*='plan-feature-title-BSOT-E']"),
+    basicBsmeElePlanRatesTitle:Selector("[id*='plan-rates-title-BSOT-E']"),
+    basicBsmeGasPlanFeatureTitle:Selector("[id*='plan-feature-title-BSOT-G']"),
+    basicBsmeGasPlanRatesTitle:Selector("[id*='plan-rates-title-BSOT-G']"),
+    sliderRight:Selector("div.hs-plan-slider__button__bg-right"),
+    connectionAddress:Selector("#connAddrTitle"),
     contactPreference: {
       disclaimer: Selector("div[class*='__contact-preference']"),
       linkClickHere: Selector("#contact-opt-out-modal"),
@@ -153,8 +168,10 @@ const eaCheckoutDetailsPage={
     txtFeesDisclaimer: Selector(".hs-plan-fees__card"),
     txtPaperBillFeeDisclaimer: Selector("#hs-plan-fees-paper-bill"),
     btnNext:Selector("#select-plans-next"),
-    btnBack:Selector("#select-plans-back")
-
+    btnBack:Selector("#select-plans-back"),
+    removeAAH: Selector("#additional-account-holder__remove"),
+    removeDirectDebit: Selector("#direct-debit__remove"),
+    removeConcession: Selector("#concession-card__remove")
   },
 };
 

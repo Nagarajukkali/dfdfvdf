@@ -1,0 +1,80 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2008205527
+    sourceCode: Total_13%GD
+    actualQuoteDate: 2020-08-20
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: Mr
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0377354781
+    
+    emailId: loesbxvIbI@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 135639
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlMiddleName/: 
+          dlLastName: test
+          licenseStateOfIssue: QLD
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 90
+    streetName: Coach
+    streetType: R
+    suburb: MORAYFIELD
+    state: QLD
+    country: AUS
+    postCode: 4506
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-08-24
+    offerType: ENE
+    plan: TOPH-EQ
+    priceTag: EQEX2_NR2007
+    serviceOrderDate: 2020-08-24
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: QB11474971
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: RNRRBU
+    reEnergisationJSCCharge: 0.0
+  
+

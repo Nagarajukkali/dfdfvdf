@@ -7,7 +7,7 @@ When(/^user provides connection details$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
   let fuelType=data[0].fuelType;
   let state=data[0].state;
-  await testFunction.takeScreenshot(t,"new_connections_connectionDetails");
+  await testFunction.takeScreenshot(t, "new_connections_connectionDetails");//disabled UI Validation
   await newConnectionMethod.selectFuel(t, fuelType);
   await newConnectionMethod.selectProperty(t,data[0].customerType);
   await newConnectionMethod.selectPremise(t,data[0].premiseType);
@@ -15,19 +15,19 @@ When(/^user provides connection details$/, async function (t,[],dataTable) {
   if(fuelType===FUEL_TYPE_OPTIONS.GAS.value && state==="Victoria"){
     await newConnectionMethod.selectConnectionType(t,data[0].connectionType);
   }
-  await testFunction.takeScreenshot(t,"new_connections_connectionDetails_with_data", false);
+  await testFunction.takeScreenshot(t, "new_connections_connectionDetails_with_data");
   await newConnectionMethod.proceedToStep2(t);
 });
 When(/^user provides property details for electricity connection$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
   let customerType=data[0].customerType;
-  await testFunction.takeScreenshot(t,"new_connections_propertyDetails");
+  await testFunction.takeScreenshot(t, "new_connections_propertyDetails");//disabled UI Validation
   await newConnectionMethod.selectOptionForPoleInstallation(t,data[0].optionForPoleInstallation);
   await newConnectionMethod.selectOptionForOffPeakLoad(t,data[0].optionForOffPeakLoad);
   if(customerType===CustomerType.BUSINESS){
     await newConnectionMethod.selectOptionForAMPS(t,data[0].optionForAMPS);
   }
-  await testFunction.takeScreenshot(t,"new_connections_propertyDetails_withData", false);
+  await testFunction.takeScreenshot(t, "new_connections_propertyDetails_withData");
   await newConnectionMethod.proceedToStep3(t);
 });
 When(/^user provides property contacts$/, async function (t,[],dataTable) {
@@ -42,7 +42,7 @@ When(/^user submit the request$/, async function (t) {
   await newConnectionMethod.acceptTnCAndSubmit(t);
 });
 When(/^user clicks on proceed to quote$/, async function (t) {
-  await testFunction.takeScreenshot(t,"new_connections_proceedToQuote");
+  await testFunction.takeScreenshot(t, "new_connections_proceedToQuote");//disabled UI Validation
   await newConnectionMethod.navigateToQuoteTool(t);
 });
 When(/^user provides property details for gas connection$/, async function (t,[],dataTable) {
@@ -53,8 +53,8 @@ When(/^user provides property details for gas connection$/, async function (t,[]
   await newConnectionMethod.selectOptionForSiteMarked(t,data[0].optionForSiteMarking);
 });
 When(/^user selects appliances$/, async function (t) {
-  await testFunction.takeScreenshot(t,"new_connections_appliances");
+  await testFunction.takeScreenshot(t, "new_connections_appliances");//disabled UI Validation
   await newConnectionMethod.selectAppliancesFromList(t);
-  await testFunction.takeScreenshot(t,"new_connections_appliances_with_data", false);
+  await testFunction.takeScreenshot(t, "new_connections_appliances_with_data");
   await newConnectionMethod.proceedToStep4(t);
 });
