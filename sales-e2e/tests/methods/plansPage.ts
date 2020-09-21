@@ -468,6 +468,7 @@ export class plansMethod{
 
   public static async enterNMIorMIRNorPostcode(t,NMIorMIRNorPostcodeValue,NMIorMIRNorPostcode){
       if(NMIorMIRNorPostcode==='NMI'){
+        await testFunction.clearTextField(t,EaHomePage.elements.inputNMI);
         await testFunction.clearAndEnterText(t,EaHomePage.elements.inputNMI,NMIorMIRNorPostcodeValue);
       }
       if(NMIorMIRNorPostcode==='MIRN'){
@@ -620,6 +621,81 @@ export class plansMethod{
 
     }
   }
+
+  public static async validateReferencePrice(t,estimatedCost,referencePrice,percentageDiff,state,actualCustomerType){
+    if(percentageDiff===0){
+      if(state!=='QLD' && state!=='ACT'){
+        if(actualCustomerType==='RES'){
+          await testFunction.assertText(t,EaHomePage.elements.basicHomeReferencePrice,referencePrice.toString());
+        }
+        else{
+          await testFunction.assertText(t,EaHomePage.elements.basicBusinessReferencePrice,referencePrice.toString());
+        }
+      }
+      if(state==='QLD'){
+        if(actualCustomerType==='RES'){
+          await testFunction.assertText(t,EaHomePage.elements.basicHomeReferencePrice_QLD,referencePrice.toString());
+        }
+        else{
+          await testFunction.assertText(t,EaHomePage.elements.basicBusinessReferencePrice_QLD,referencePrice.toString());
+        }
+      }
+    }
+    if(percentageDiff>0){
+      if(state!=='QLD' && state!=='ACT'){
+        if(actualCustomerType==='RES'){
+          await testFunction.assertText(t,EaHomePage.elements.basicHomeReferencePrice,estimatedCost.toString());
+          await testFunction.assertText(t,EaHomePage.elements.basicHomeReferencePrice,percentageDiff.toString());
+        }
+        else{
+          await testFunction.assertText(t,EaHomePage.elements.basicBusinessReferencePrice,estimatedCost.toString());
+          await testFunction.assertText(t,EaHomePage.elements.basicBusinessReferencePrice,percentageDiff.toString());
+        }
+
+      }
+      if(state==='QLD'){
+        if(actualCustomerType==='RES'){
+          await testFunction.assertText(t,EaHomePage.elements.basicHomeReferencePrice_QLD,estimatedCost.toString());
+          await testFunction.assertText(t,EaHomePage.elements.basicHomeReferencePrice_QLD,percentageDiff.toString());
+        }
+        else{
+          await testFunction.assertText(t,EaHomePage.elements.basicBusinessReferencePrice_QLD,estimatedCost.toString());
+          await testFunction.assertText(t,EaHomePage.elements.basicBusinessReferencePrice_QLD,percentageDiff.toString());
+        }
+      }
+    }
+  }
+
+  public static async validateEstimatedCost(t,planName,estimatedCost,actualCustomerType,state){
+    if(planName.includes('Basic - Home') || planName.includes('Basic - Business ')){
+      if(state!=='QLD' && state!=='ACT'){
+        if(actualCustomerType==='RES'){
+          await testFunction.assertText(t,EaHomePage.elements.basicHomePlanEstimate,estimatedCost.toString());
+        }
+        else{
+          await testFunction.assertText(t,EaHomePage.elements.basicBusinessPlanEstimate,estimatedCost.toString());
+        }
+      }
+      if(state==='QLD'){
+        if(actualCustomerType==='RES'){
+          await testFunction.assertText(t,EaHomePage.elements.basicHomePlanEstimate_QLD,estimatedCost.toString());
+        }
+        else{
+          await testFunction.assertText(t,EaHomePage.elements.basicBusinessPlanEstimate_QLD,estimatedCost.toString());
+        }
+      }
+    }
+    if(planName.includes('No Frills (Home)')){
+      await testFunction.assertText(t,EaHomePage.elements.noFrillsPlanEstimate,estimatedCost.toString());
+    }
+    if(planName.includes('Total Plan (Home) ') || planName.includes('Total Plan (Business)')){
+      await testFunction.assertText(t,EaHomePage.elements.totalPlanEstimate,estimatedCost.toString());
+    }
+    if(planName.includes('Total Plan (Business)')){
+      await testFunction.assertText(t,EaHomePage.elements.totalPlanBusinessEstimate,estimatedCost.toString());
+    }
+  }
+
 }
 
 export class selectionOptionModalWindowMethod {

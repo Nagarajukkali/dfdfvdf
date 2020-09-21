@@ -8,6 +8,7 @@ import {PlanType, testFunction} from '../../global_methods/helper';
 import {AustralianState, CustomerType} from '@ea/ea-commons-models';
 const { config }=require('../../resources/resource');
 const interceptNetworkRequest=config.interceptNetworkRequest;
+import {Workbook} from 'exceljs';
 
 When(/^user clicks on the verify modal window on '(.*)' page$/, async function(t, [customerType]) {
   await plansMethod.clickPlansPageModal(t,customerType);
@@ -220,6 +221,99 @@ Then(/^user validates reference price for '(.*)'$/, async function (t,[planName]
         await plansMethod.validateComparisonStatement(t, baseCreditCondition, rewardCreditCondition, planName);
         console.log("Validated Comparison Statement");
       }
+    }
+  }
+});
+
+Then(/^user enters NMI and validate reference price for "([^"]*)"$/, async function (t, [expectedCustomerType]) {
+  await testFunction.click(t,EaHomePage.elements.refinePeriod);
+  await testFunction.click(t,EaHomePage.elements.refinePeriodDropdown.withText("Yearly"));
+  const workbook = new Workbook();
+  //await workbook.xlsx.readFile('/Users/ravipandey/Desktop/Reference_Price_Test_Data.xlsx');
+  await workbook.xlsx.readFile(`${process.cwd()}/resources/Reprice_Data/Reference_Price_Test_Data.xlsx`);
+  const worksheet=workbook.getWorksheet(1);
+  const rowCount=worksheet.actualRowCount
+  for(let i=2;i<rowCount;i++){
+    let row=worksheet.getRow(i);
+    let actualCustomerType=row.getCell(3).value.toString();
+    let eleUsage=row.getCell(4).value.toString();
+    let customUsage;
+    let planName=row.getCell(7).value.toString();
+    let estimatedCost=Math.round(Number(row.getCell(9).value));
+    let benchmarkUsage=Math.round(Number(row.getCell(10).value));
+    let referencePrice=Math.round(Number(row.getCell(11).value));
+    let percentageDiff=Math.round(Number(((referencePrice-estimatedCost)/referencePrice)*100));
+    let NMI=row.getCell(12).value.toString();
+    let state=row.getCell(13).value.toString();
+    if(eleUsage==='Average Usage'){
+      customUsage=(benchmarkUsage/365).toFixed(2);
+    }
+    if(eleUsage==='Custom'){
+      customUsage=row.getCell(6).value.toString();
+    }
+    if(actualCustomerType===expectedCustomerType){
+      await plansMethod.enterNMIorMIRNorPostcode(t,NMI,'NMI');
+      await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
+      await t.wait(5000);
+      if(eleUsage==='Average Usage' || eleUsage==='Custom'){
+        if((await testFunction.sizeOfElement(t,EaHomePage.elements.refineEleUsageActiveOption))===0){
+          await testFunction.click(t,EaHomePage.elements.refineEleUsage);
+          await testFunction.click(t,EaHomePage.elements.refineEleUsageDropdown.withText('Custom'));
+        }
+        await testFunction.clearTextField(t,EaHomePage.elements.refineEleUsageActiveOption);
+        await testFunction.enterText(t,EaHomePage.elements.refineEleUsageActiveOption,customUsage);
+      }
+      else{
+        await testFunction.click(t,EaHomePage.elements.refineEleUsage);
+        await testFunction.click(t,EaHomePage.elements.refineEleUsageDropdown.withText(eleUsage));
+      }
+      await t.wait(2000);
+        if(referencePrice!==0){
+          await plansMethod.validateReferencePrice(t,estimatedCost,referencePrice,percentageDiff,state,actualCustomerType);
+        }
+      }
+
+    }
+});
+
+Then(/^user enters NMI and validate estimated cost for "([^"]*)"$/, async function (t, [expectedCustomerType]) {
+  await testFunction.click(t,EaHomePage.elements.refinePeriod);
+  await testFunction.click(t,EaHomePage.elements.refinePeriodDropdown.withText("Yearly"));
+  const workbook = new Workbook();
+  //await workbook.xlsx.readFile('/Users/ravipandey/Desktop/Estimated_Cost_Test_Data.xlsx');
+  await workbook.xlsx.readFile(`${process.cwd()}/resources/Reprice_Data/Estimated_Cost_Test_Data.xlsx`);
+  const worksheet=workbook.getWorksheet(1);
+  const rowCount=worksheet.actualRowCount
+  for(let i=2;i<rowCount;i++){
+    let row=worksheet.getRow(i);
+    let actualCustomerType=row.getCell(3).value.toString();
+    let eleUsage=row.getCell(4).value.toString();
+    let customUsage;
+    let planName=row.getCell(7).value.toString();
+    let estimatedCost=Math.round(Number(row.getCell(9).value));
+    let NMI=row.getCell(12).value.toString();
+    let state=row.getCell(13).value.toString();
+    if(eleUsage==='Custom'){
+      customUsage=row.getCell(6).value.toString();
+    }
+    if(actualCustomerType===expectedCustomerType){
+      await plansMethod.enterNMIorMIRNorPostcode(t,NMI,'NMI');
+      await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
+      await t.wait(5000);
+      if(eleUsage==='Custom'){
+        if((await testFunction.sizeOfElement(t,EaHomePage.elements.refineEleUsageActiveOption))===0){
+          await testFunction.click(t,EaHomePage.elements.refineEleUsage);
+          await testFunction.click(t,EaHomePage.elements.refineEleUsageDropdown.withText('Custom'));
+        }
+        await testFunction.clearTextField(t,EaHomePage.elements.refineEleUsageActiveOption);
+        await testFunction.enterText(t,EaHomePage.elements.refineEleUsageActiveOption,customUsage);
+      }
+      else{
+        await testFunction.click(t,EaHomePage.elements.refineEleUsage);
+        await testFunction.click(t,EaHomePage.elements.refineEleUsageDropdown.withText(eleUsage));
+      }
+      await t.wait(2000);
+      await plansMethod.validateEstimatedCost(t,planName,estimatedCost,actualCustomerType,state);
     }
   }
 });

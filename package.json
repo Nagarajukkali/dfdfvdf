@@ -18,8 +18,8 @@
     "report": "node report-generator.js"
   },
   "config": {
-    "env": "preprod",
-    "e2e_tags": "@UIValidation,~@failed"
+    "env": "latte",
+    "e2e_tags": "@test,~@failed"
   },
   "private": true,
   "dependencies": {
@@ -45,6 +45,7 @@
     "crypto-js": "^3.1.9-1",
     "cucumber-helper": "0.0.6",
     "dayjs": "^1.8.12",
+    "exceljs": "^4.1.1",
     "jshashes": "^1.0.8",
     "lodash": "4.17.15",
     "log4js": "4.0.0",
