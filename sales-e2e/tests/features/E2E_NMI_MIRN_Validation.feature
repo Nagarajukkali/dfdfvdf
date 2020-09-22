@@ -1,6 +1,6 @@
-
+@NMIMIRNAddressValidation @E2E
 Feature: This feature is to test the NMI, MIRN and address validation
-  @NMIMIRNAddressValidation @E2E
+
   Scenario Outline: verify the behaviour of plans page on entering '<NMIorMIRNorPostcodeType>'
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customerType>' plans page
@@ -32,7 +32,7 @@ Feature: This feature is to test the NMI, MIRN and address validation
       #|NMI_ADDRESS_NOT_SERVICED          |RES         |ADDRESS_NOT_SERVICED   |6102633815              |NMI                |
       |Valid_NMI                         |RES         |SUCCESS                |6407557087              |NMI                |
       |Valid_MIRN                        |RES         |SUCCESS                |5321574765              |MIRN               |
-  @NMIMIRNAddressValidation @E2E
+
   Scenario Outline: verify the behaviour of lookup call when we provide '<addressType>' address on qualifier
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customerType>' plans page
@@ -60,7 +60,6 @@ Feature: This feature is to test the NMI, MIRN and address validation
     #Address where selected plan is not available
     |Address_PLAN_NOT_AVAILABLE       |RES         |Total Plan    |New           |Non-Moving|12 Abattoir Lane, AVOCA VIC 3467        |PLAN_NOT_AVAILABLE   |
 
-  @NMIMIRNAddressValidation @E2E
   Scenario Outline: verify the behaviour of campaign page on entering '<NMIorMIRNorPostcodeType>' where we don't offer that campaign
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "<postcode>" and clicks on show me plan link
@@ -70,29 +69,7 @@ Feature: This feature is to test the NMI, MIRN and address validation
       |folderName                        |campaign|NMIorMIRNorPostcodeType|postcode|
       |CAMPAIGN_NOT_SERVICED             |geelong |CAMPAIGN_NOT_SERVICED   |2000    |
 
-    @reprice
-  Scenario Outline: verify reference price for different NMIs
-    Given user has opened the website link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to '<customerType>' plans page
-    And user have selected fuel as "ELE"
-    Then user enters NMI and validate reference price for "<customerType>"
 
-    Examples:
-      |folderName                        |customerType|
-      |Reference_Price_RES               |RES         |
-      |Reference_Price_BUS               |BUS         |
-
-    @reprice
-  Scenario Outline: verify estimated cost for different NMIs
-    Given user has opened the website link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to '<customerType>' plans page
-    And user have selected fuel as "ELE"
-    Then user enters NMI and validate estimated cost for "<customerType>"
-
-    Examples:
-      |folderName                        |customerType|
-      |Estimated_Cost_RES                |RES         |
-      |Estimated_Cost_BUS                |BUS         |
 
 
 

@@ -229,7 +229,6 @@ Then(/^user enters NMI and validate reference price for "([^"]*)"$/, async funct
   await testFunction.click(t,EaHomePage.elements.refinePeriod);
   await testFunction.click(t,EaHomePage.elements.refinePeriodDropdown.withText("Yearly"));
   const workbook = new Workbook();
-  //await workbook.xlsx.readFile('/Users/ravipandey/Desktop/Reference_Price_Test_Data.xlsx');
   await workbook.xlsx.readFile(`${process.cwd()}/resources/Reprice_Data/Reference_Price_Test_Data.xlsx`);
   const worksheet=workbook.getWorksheet(1);
   const rowCount=worksheet.actualRowCount
@@ -270,6 +269,8 @@ Then(/^user enters NMI and validate reference price for "([^"]*)"$/, async funct
       await t.wait(2000);
         if(referencePrice!==0){
           await plansMethod.validateReferencePrice(t,estimatedCost,referencePrice,percentageDiff,state,actualCustomerType);
+          await testFunction.takeScreenshot(t,"Reference_Price_"+NMI);
+          console.log("Reference price validated for NMI: "+NMI);
         }
       }
 
@@ -280,7 +281,6 @@ Then(/^user enters NMI and validate estimated cost for "([^"]*)"$/, async functi
   await testFunction.click(t,EaHomePage.elements.refinePeriod);
   await testFunction.click(t,EaHomePage.elements.refinePeriodDropdown.withText("Yearly"));
   const workbook = new Workbook();
-  //await workbook.xlsx.readFile('/Users/ravipandey/Desktop/Estimated_Cost_Test_Data.xlsx');
   await workbook.xlsx.readFile(`${process.cwd()}/resources/Reprice_Data/Estimated_Cost_Test_Data.xlsx`);
   const worksheet=workbook.getWorksheet(1);
   const rowCount=worksheet.actualRowCount
@@ -314,6 +314,8 @@ Then(/^user enters NMI and validate estimated cost for "([^"]*)"$/, async functi
       }
       await t.wait(2000);
       await plansMethod.validateEstimatedCost(t,planName,estimatedCost,actualCustomerType,state);
+      await testFunction.takeScreenshot(t,"Estimated_Cost_"+NMI);
+      console.log("Estimated cost validated for NMI: "+NMI);
     }
   }
 });

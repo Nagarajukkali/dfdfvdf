@@ -19,7 +19,7 @@
   },
   "config": {
     "env": "latte",
-    "e2e_tags": "@test,~@failed"
+    "e2e_tags": "@E2E,~@failed"
   },
   "private": true,
   "dependencies": {

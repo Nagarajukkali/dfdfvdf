@@ -623,7 +623,7 @@ export class plansMethod{
   }
 
   public static async validateReferencePrice(t,estimatedCost,referencePrice,percentageDiff,state,actualCustomerType){
-    if(percentageDiff===0){
+    if(percentageDiff<0.5){
       if(state!=='QLD' && state!=='ACT'){
         if(actualCustomerType==='RES'){
           await testFunction.assertText(t,EaHomePage.elements.basicHomeReferencePrice,referencePrice.toString());
@@ -641,7 +641,7 @@ export class plansMethod{
         }
       }
     }
-    if(percentageDiff>0){
+    if(percentageDiff>0.5){
       if(state!=='QLD' && state!=='ACT'){
         if(actualCustomerType==='RES'){
           await testFunction.assertText(t,EaHomePage.elements.basicHomeReferencePrice,estimatedCost.toString());
