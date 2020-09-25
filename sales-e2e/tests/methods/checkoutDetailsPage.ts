@@ -25,7 +25,8 @@ export class checkoutDetailsMethod{
             await t.wait(1000);
             await testFunction.click(t,eaCheckoutDetailsPage.elements.titleDrop);
             await t.wait(2000);
-            await testFunction.click(t,eaCheckoutDetailsPage.elements.titleTag);
+            let indexForTitle=testFunction.getRandomInt(0,4);
+            await testFunction.click(t,eaCheckoutDetailsPage.elements.titleTag.nth(indexForTitle));
         }
         await this.enterFirstName(t,firstName);
         await this.enterLastName(t,lastName);
@@ -152,6 +153,9 @@ export class checkoutDetailsMethod{
     await testFunction.click(t,eaCheckoutDetailsPage.elements.idValueDriverLicense);
     await testFunction.click(t,eaCheckoutDetailsPage.elements.idLicenseNumber);
     await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idLicenseNumber,licenseNumber);
+    await testFunction.click(t,eaCheckoutDetailsPage.elements.stateOfIssue);
+    let indexForState=await testFunction.getRandomInt(0,7);
+    await testFunction.click(t,eaCheckoutDetailsPage.elements.stateOfIssueDropdown.nth(indexForState));
     console.log("New customer dl details provided");
   }
 
