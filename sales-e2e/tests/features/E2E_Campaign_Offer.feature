@@ -1,6 +1,6 @@
 @E2E
 Feature:E2E scenario for offer campaign
-  @deviceCheck
+  @deviceCheck @smoke
 Scenario Outline: Submit a quote for offer campaign without AAH and DD
   Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
   When user provides "2000" and clicks on show me plan link

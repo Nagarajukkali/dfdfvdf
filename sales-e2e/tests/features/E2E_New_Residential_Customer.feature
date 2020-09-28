@@ -1,6 +1,6 @@
-@E2E @newcustomer @smoke
+@E2E @newcustomer
 Feature:E2E scenario for new residential moving and non moving customer
-  @deviceCheck
+  @deviceCheck @smoke
 Scenario Outline: Submit a quote for new residential moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page
@@ -71,7 +71,7 @@ Scenario Outline: Submit a quote for new residential non moving customer
     |<sourceSystem> |<journey>  |<fuelType> |
   And user provides all details on checkout details page
     |customerType |journey    |customerStatus| firstName| lastName|idType        |
-    |RES          |RES        |New           | test     |test     |Driver License|
+    |RES          |RES        |New           | test     |test     |Passport      |
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |No          |Yes        |CC             |

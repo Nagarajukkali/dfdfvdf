@@ -1,6 +1,6 @@
 @E2E @existingcustomerQT
 Feature:E2E scenario for existing business moving and non moving customer
-  @deviceCheck
+  @deviceCheck @smoke
   Scenario Outline: Submit a quote for existing business moving customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
