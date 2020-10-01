@@ -688,7 +688,7 @@ export class plansMethod{
     if(planName.includes('No Frills (Home)')){
       await testFunction.assertText(t,EaHomePage.elements.noFrillsPlanEstimate,estimatedCost.toString());
     }
-    if(planName.includes('Total Plan (Home) ') || planName.includes('Total Plan (Business)')){
+    if(planName.includes('Total Plan (Home) ')){
       await testFunction.assertText(t,EaHomePage.elements.totalPlanEstimate,estimatedCost.toString());
     }
     if(planName.includes('Total Plan (Business)')){
@@ -696,6 +696,51 @@ export class plansMethod{
     }
   }
 
+  public static async validateBestOfferEstimatedCost(t,planName,estimatedCost,percentageDiff,benchmarkUsage){
+    // if(planName.includes('Basic - Home') || planName.includes('Basic - Business ')){
+    //   if(state!=='QLD' && state!=='ACT'){
+    //     if(actualCustomerType==='RES'){
+    //       await testFunction.assertText(t,EaHomePage.elements.basicHomePlanEstimate,estimatedCost.toString());
+    //     }
+    //     else{
+    //       await testFunction.assertText(t,EaHomePage.elements.basicBusinessPlanEstimate,estimatedCost.toString());
+    //     }
+    //   }
+    //   if(state==='QLD'){
+    //     if(actualCustomerType==='RES'){
+    //       await testFunction.assertText(t,EaHomePage.elements.basicHomePlanEstimate_QLD,estimatedCost.toString());
+    //     }
+    //     else{
+    //       await testFunction.assertText(t,EaHomePage.elements.basicBusinessPlanEstimate_QLD,estimatedCost.toString());
+    //     }
+    //   }
+    // }
+    if(planName.includes('No Frills - Home')){
+      await testFunction.assertText(t,EaHomePage.elements.noFrillsPlanEstimate,estimatedCost.toString());
+      if(benchmarkUsage!=="")
+        await testFunction.assertText(t,EaHomePage.elements.noFrillsComparisonStatement,percentageDiff.toString());
+    }
+    if(planName.includes('Total Plan - Home')){
+      await testFunction.assertText(t,EaHomePage.elements.totalPlanEstimate,estimatedCost.toString());
+      if(benchmarkUsage!=="")
+        await testFunction.assertText(t,EaHomePage.elements.totalPlanComparisonStatement,percentageDiff.toString());
+    }
+    if(planName.includes('Total Plan Plus - Home')){
+      let basicHomePlanEstimate=Number(await testFunction.getElementText(t,EaHomePage.elements.basicHomePlanEstimate).substring(1));
+      let expectedPercentageDiff=Math.round(Number(((basicHomePlanEstimate-estimatedCost)/basicHomePlanEstimate)*100));
+      await testFunction.assertTextValue(t,percentageDiff.toString(),expectedPercentageDiff.toString());
+    }
+    if(planName.includes('Total Plan - Business')){
+      await testFunction.assertText(t,EaHomePage.elements.totalPlanBusinessEstimate,estimatedCost.toString());
+      if(benchmarkUsage!=="")
+        await testFunction.assertText(t,EaHomePage.elements.totalPlanBusinessComparisonStatement,percentageDiff.toString());
+    }
+    if(planName.includes('Total Plan Plus - Business')){
+      let basicBusinessPlanEstimate=Number((await testFunction.getElementText(t,EaHomePage.elements.basicBusinessPlanEstimate)).substring(1));
+      let expectedPercentageDiff=Math.round(Number(((basicBusinessPlanEstimate-estimatedCost)/basicBusinessPlanEstimate)*100));
+      await testFunction.assertTextValue(t,percentageDiff.toString(),expectedPercentageDiff.toString());
+    }
+  }
 }
 
 export class selectionOptionModalWindowMethod {

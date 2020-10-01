@@ -29,3 +29,14 @@ Feature: This feature is to test the reference price and estimated cost on plans
       |folderName                        |customerType|
       |Estimated_Cost_RES                |RES         |
       |Estimated_Cost_BUS                |BUS         |
+@test
+  Scenario Outline: verify estimated cost for best offer tool output file different "<customerType>" NMIs
+    Given user has opened the website link in a browser and creates '<folderName>' to save evidences
+    And user has navigated to '<customerType>' plans page
+    And user have selected fuel as "ELE"
+    Then user enters NMI and validate estimated cost in best offer tool output file for "<customerType>"
+
+    Examples:
+      |folderName                        |customerType|
+      #|Estimated_Cost_RES                |RES         |
+      |Estimated_Cost_BUS                |BUS         |

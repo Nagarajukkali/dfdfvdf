@@ -319,3 +319,38 @@ Then(/^user enters NMI and validate estimated cost for "([^"]*)"$/, async functi
     }
   }
 });
+
+Then(/^user enters NMI and validate estimated cost in best offer tool output file for "([^"]*)"$/, async function (t, [expectedCustomerType]) {
+  await testFunction.click(t,EaHomePage.elements.refinePeriod);
+  await testFunction.click(t,EaHomePage.elements.refinePeriodDropdown.withText("Yearly"));
+  const workbook = new Workbook();
+  await workbook.xlsx.readFile(`${process.cwd()}/resources/Reprice_Data/Best_Offer_Tool_Estimate_Calculation.xlsx`);
+  const worksheet=workbook.getWorksheet(1);
+  const rowCount=worksheet.actualRowCount
+  for(let i=2;i<rowCount;i++){
+    let row=worksheet.getRow(i);
+    let actualCustomerType=row.getCell(3).value.toString().substring(0,3);
+    let customUsage=row.getCell(9).value.toString();
+    let planName=row.getCell(8).value.toString();
+    let estimatedCost=Math.round(Number(row.getCell(10).value));
+    let NMI=row.getCell(2).value.toString();
+    let state=row.getCell(4).value.toString();
+    let percentageDiff=row.getCell(11).value.toString();
+    let benchmarkUsage=row.getCell(13).value.toString();
+    if(actualCustomerType===expectedCustomerType){
+      await plansMethod.enterNMIorMIRNorPostcode(t,NMI,'NMI');
+      await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
+      await t.wait(5000);
+      if((await testFunction.sizeOfElement(t,EaHomePage.elements.refineEleUsageActiveOption))===0){
+        await testFunction.click(t,EaHomePage.elements.refineEleUsage);
+        await testFunction.click(t,EaHomePage.elements.refineEleUsageDropdown.withText('Custom'));
+      }
+      await testFunction.clearTextField(t,EaHomePage.elements.refineEleUsageActiveOption);
+      await testFunction.enterText(t,EaHomePage.elements.refineEleUsageActiveOption,customUsage);
+      await t.wait(2000);
+      await plansMethod.validateBestOfferEstimatedCost(t,planName,estimatedCost,percentageDiff,benchmarkUsage);
+      await testFunction.takeScreenshot(t,"Estimated_Cost_"+NMI);
+      console.log("Estimated cost validated for NMI: "+NMI);
+    }
+  }
+});
