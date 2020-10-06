@@ -1,4 +1,4 @@
-@campaign
+@campaign10.2
 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
@@ -11,31 +11,31 @@
   # 8. Update the Journey Moving/Non-Moving if require in this step "And user provides all other details on qualifier page"
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
-Feature:E2E scenario for nofrills campaign
+Feature:E2E scenario for nofrills campaign for new moving
 
-  Scenario Outline: Validate complete data for nofrills campaign for NSW
+  Scenario Outline: Validate complete data for nofrills campaign for NSW new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2516" and clicks on show me plan link
     And user validates the data on plans page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
-      |ELE      |N                 |Y                       |Y                    |N                                    |N                                |
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
+      |ELE      |Y                 |Y                       |Y                    |N                                    |N                                |<state>|
     And user validates the data on plans page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
-      |GAS      |N                 |Y                       |Y                    |N                                    |N                                |
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |GAS      |Y                 |Y                       |Y                    |N                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
-      |Y                        |Y          |Y              |No Frills |NSW  |
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
+      |Y                        |Y          |Y              |No Frills |<state>  |Y           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |
-      |ELE      |N                 |Y                       |Y                    |N                                    |
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
+      |ELE      |Y                 |Y                       |Y                    |N                                    |<state>|
     And user validates plan details on cart page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |
-      |GAS      |N                 |Y                       |Y                    |N                                    |
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
+      |GAS      |Y                 |Y                       |Y                    |N                                    |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType| connectionAddress               | movingType|propertyType|solarOption|
-      |RES         | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |No         |
+      |customerType| connectionAddress                          | movingType|propertyType|solarOption|
+      |RES         | 69 Henley Marine Drive, RODD POINT NSW 2046|Moving     |Renter      |No         |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |
       |RES         |RES        |New           | test     |test     |Driver License|
@@ -51,22 +51,17 @@ Feature:E2E scenario for nofrills campaign
       |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
       |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     And user provides life support details on review page
-      |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
-      |Yes              |BOTH    |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
-    And user verifies selected plan details for '<fuelType>'
-    And user selects carbon neutral option
+      |lifeSupportOption|fuelType |EleclifeSupportDevices    |GaslifeSupportDevices  |
+      |No               |         |                          |                       |
     And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
-      |ELE      |N                 |Y                       |Y                    |N                                    |N                                |
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |ELE      |Y                 |N                       |Y                    |N                                    |N                                |<state>|
     And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
-      |GAS      |N                 |Y                       |Y                    |N                                    |N                                |
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |GAS      |Y                 |N                       |Y                    |N                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
-      |Y                        |Y          |Y              |No Frills |NSW  |
-    And user validates source code
-      |fuelType|eleSourceCode|gasSourceCode|
-      |BOTH    |NOFRILLS     |NOFRILLS  |
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
+      |Y                        |Y          |Y              |No Frills |<state>  |Y           |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -78,122 +73,65 @@ Feature:E2E scenario for nofrills campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-EN |4311150544|N                             |N                             |Y                      |LSCNSPE                 |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-EN |4102747329|                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
-
+      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-GN |5240080109|                             |                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
-      |customerStatus|fuelType|campaign     |folderName                 |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
-      |New           |BOTH    |nofrills     |E2E_Campaign_NoFrills_NSW  |NSW  |Quote Tool    |Move Home|No   |No  |RES          |New            |
+      |customerStatus|fuelType|campaign     |folderName                            |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
+      |New           |BOTH    |nofrills     |E2E_Campaign_NoFrills_NSW_New_Moving  |NSW  |Quote Tool    |Move Home|No   |No  |RES          |New            |
 
-  Scenario Outline: Validate complete data for nofrills campaign for VIC
+  Scenario Outline: Validate complete data for nofrills campaign for VIC new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "3031" for postcode and proceed to view the plans
-    Then user is presented with the plans
+    When user provides "3000" and clicks on show me plan link
     And user validates the data on plans page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
-      |ELE      |N                 |Y                       |Y                    |N                                    |N                                |
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
+      |ELE      |Y                 |Y                       |Y                    |N                                    |N                                |<state>|
     And user validates the data on plans page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
-      |GAS      |N                 |Y                       |Y                    |N                                    |N                                |
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |GAS      |Y                 |Y                       |Y                    |N                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
-      |Y                        |Y          |Y              |No Frills|VIC  |
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
+      |Y                        |Y          |Y              |No Frills |<state>  |Y           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |
-      |ELE      |N                 |Y                       |Y                    |N                                    |
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
+      |ELE      |Y                 |Y                       |Y                    |N                                    |<state>|
     And user validates plan details on cart page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |
-      |GAS      |N                 |Y                       |Y                    |N                                    |
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
+      |GAS      |Y                 |Y                       |Y                    |N                                    |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                        |movingType |propertyType |solarOption  |
-      |RES          |21 Eltham Street, FLEMINGTON VIC 3031    |Moving     |Renter       |No           |
+      |customerType| connectionAddress                          | movingType|propertyType|solarOption|
+      |RES          |31 Balwyn Road, CANTERBURY VIC 3126 |Moving     |Renter       |No           |
     And user provides all details on checkout details page
-      |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
-      |RES          |RES        |New            |test       |test     |Driver License |             |
+      |customerType|journey    |customerStatus| firstName| lastName|idType        |
+      |RES         |RES        |New           | test     |test     |Driver License|
+    And user validates details on checkout details page
+      |sourceSystem   |journey    |fuelType   |
+      |<sourceSystem> |<journey>  |<fuelType> |
+    And user opts for AAH and DD
+      |optAAHOption|optDDOption|directDebitType|
+      |<AAH>       |<DD>       |Bank           |
     And user selects answer for property renovation question for '<state>'
     And user clicks on 'Review your order' button and navigates to review page
-    And user provides life support details on review page
-      |lifeSupportOption|fuelType |EleclifeSupportDevices                        |GaslifeSupportDevices  |
-      |Yes              |BOTH     |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
-    And user verifies selected plan details for '<fuelType>'
-    And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
-      |ELE      |N                 |N                       |Y                    |N                                    |N                                |
-    And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
-      |GAS      |N                 |N                       |Y                    |N                                    |N                                |
-    And user validates disclaimer on review page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
-      |Y                        |Y          |Y              |No Frills|VIC  |
-    And user validates source code
-      |fuelType|eleSourceCode|gasSourceCode|
-      |BOTH    |NOFRILLS     |NOFRILLS    |
-    And user submits the quote
-    Then user lands on checkout complete page
-    And user validates details on checkout complete page
+    And user validates details on checkout review page
       |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
       |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
-    When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting
-    And user search quote on the basis of 'Email'
-    Then submitted quote is displayed
-    And user validates all the details for 'ELE' submitted quote
-    And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-EV |6001456296|N                             |N                             |Y                      |LSCNSPE                 |EMAIL        |
-    And user validates all the details for 'GAS' submitted quote
-    And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-GV |5330396438|N                             |N                             |Y                      |OTHER                   |EMAIL        |
-
-    Examples:
-      |customerStatus|fuelType|campaign  |folderName                |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
-      |New           |BOTH    |nofrills  |E2E_Campaign_NoFrills_VIC |VIC  |Quote Tool    |Move Home|No   |No  |RES          |New            |
-
-
-  Scenario Outline: Validate complete data for nofrills campaign for QLD
-    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "4506" for postcode and proceed to view the plans
-    Then user is presented with the plans
-    And user validates the data on plans page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
-      |ELE      |N                 |Y                       |Y                    |N                                    |N                                |
-    And user validates disclaimer on plans page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
-      |Y                        |Y          |Y              |No Frills |QLD  |
-    And user clicks on Add plan button
-    And user validates plan details on cart page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |
-      |ELE      |N                 |Y                       |Y                    |N                                    |
-    And user moves on to fill the qualifier
-    And user selects '<customerStatus>' on qualifier
-    And user provides all other details on qualifier page
-      |customerType |connectionAddress                        |movingType |propertyType |solarOption  |
-      |RES          |90 Coach Road West, MORAYFIELD QLD 4506  |Moving     |Renter       |No           |
-    And user provides all details on checkout details page
-      |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
-      |RES          |RES        |New            |test       |test     |Driver License |             |
-    And user selects answer for property renovation question for '<state>'
-    And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption|fuelType |EleclifeSupportDevices    |GaslifeSupportDevices  |
       |No               |         |                          |                       |
-    And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
-      |ELE      |N                 |N                       |Y                    |N                                    |N                                |
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |ELE      |Y                 |N                       |Y                    |N                                    |N                                |<state>|
+    And user validates plan details on review page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |GAS      |Y                 |N                       |Y                    |N                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
-      |Y                        |Y          |Y              |No Frills |QLD  |
-    And user validates source code
-      |fuelType|eleSourceCode|
-      |ELE     |NOFRILLS     |
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
+      |Y                        |Y          |Y              |No Frills |<state>  |Y           |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -205,14 +143,75 @@ Feature:E2E scenario for nofrills campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode  |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-EQ   |QB11474971|                              |                              |N                      |                        |EMAIL        |
-
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-EV |6102221416|N                             |N                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
+    And user validates all the details for 'GAS' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-GV |5310425534|N                             |N                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
-      |customerStatus|fuelType|campaign |folderName              |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
-      |New           |ELE     |nofrills     |E2E_Campaign_NoFrills_QLD |QLD  |Quote Tool    |Move Home|No   |No  |RES          |New            |
+      |customerStatus|fuelType|campaign     |folderName                            |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
+      |New           |BOTH    |nofrills     |E2E_Campaign_NoFrills_VIC_New_Moving  |VIC  |Quote Tool    |Move Home|No   |No  |RES          |New            |
 
-  Scenario Outline: Validate complete data for nofrills campaign for ACT
+  Scenario Outline: Validate complete data for nofrills campaign for QLD new moving
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "4500" and clicks on show me plan link
+    And user validates the data on plans page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
+      |ELE      |Y                 |Y                       |Y                    |N                                    |N                                |<state>|
+    And user validates disclaimer on plans page for "<campaign>"
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
+      |Y                        |Y          |Y              |No Frills |<state>  |Y           |
+    And user clicks on Add plan button
+    And user validates plan details on cart page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
+      |ELE      |Y                 |Y                       |Y                    |N                                    |<state>|
+    And user moves on to fill the qualifier
+    And user selects '<customerStatus>' on qualifier
+    And user provides all other details on qualifier page
+      |customerType| connectionAddress                          | movingType|propertyType|solarOption|
+      |RES          |36 Cypress Street, KULUIN QLD 4558  |Moving     |Renter       |No           |
+    And user provides all details on checkout details page
+      |customerType|journey    |customerStatus| firstName| lastName|idType        |
+      |RES         |RES        |New           | test     |test     |Driver License|
+    And user validates details on checkout details page
+      |sourceSystem   |journey    |fuelType   |
+      |<sourceSystem> |<journey>  |<fuelType> |
+    And user opts for AAH and DD
+      |optAAHOption|optDDOption|directDebitType|
+      |<AAH>       |<DD>       |Bank           |
+    And user selects answer for property renovation question for '<state>'
+    And user clicks on 'Review your order' button and navigates to review page
+    And user validates details on checkout review page
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType |EleclifeSupportDevices    |GaslifeSupportDevices  |
+      |No               |         |                          |                       |
+    And user validates plan details on review page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |ELE      |Y                 |N                       |Y                    |N                                    |N                                |<state>|
+    And user validates disclaimer on review page for "<campaign>"
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
+      |Y                        |Y          |Y              |No Frills |<state>  |Y           |
+    And user submits the quote
+    Then user lands on checkout complete page
+    And user validates details on checkout complete page
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'ELE' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-EQ |QB08556016|                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
+    Examples:
+      |customerStatus|fuelType|campaign     |folderName                            |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
+      |New           |ELE    |nofrills     |E2E_Campaign_NoFrills_QLD_New_Moving  |QLD  |Quote Tool    |Move Home|No   |No  |RES          |New            |
+
+  Scenario Outline: Validate complete data for nofrills campaign for ACT for new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2911" for postcode and proceed to view the plans
     And user validates the data on plans page for "<campaign>"
@@ -223,7 +222,7 @@ Feature:E2E scenario for nofrills campaign
       |GAS      |N                 |Y                       |Y                    |N                                    |N                                |
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
-      |Y                        |Y          |Y              |No Frills |ACT  |
+      |Y                        |Y          |Y              |No Frills |<state>  |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |
@@ -243,7 +242,6 @@ Feature:E2E scenario for nofrills campaign
     And user provides life support details on review page
       |lifeSupportOption|fuelType |EleclifeSupportDevices    |GaslifeSupportDevices  |
       |No               |         |                          |                       |
-    And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
       |ELE      |N                 |N                       |Y                    |N                                    |N                                |
@@ -252,10 +250,7 @@ Feature:E2E scenario for nofrills campaign
       |GAS      |N                 |N                       |Y                    |N                                    |N                                |
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
-      |Y                        |Y          |Y              |No Frills |ACT  |
-    And user validates source code
-      |fuelType|eleSourceCode|gasSourceCode|
-      |BOTH    |NOFRILLS     |NOFRILLS     |
+      |Y                        |Y          |Y              |No Frills |<state>  |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -267,63 +262,61 @@ Feature:E2E scenario for nofrills campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-EA |7001183574|                              |                             |N                      |                        |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-EA |7001183574|                              |                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
+    #update NMI
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-GA |5265774405|                              |                             |N                      |                        |EMAIL        |
-
+      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-GA |5265774405|                              |                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
+    #update MIRN
     Examples:
-      |customerStatus|fuelType|campaign  |folderName                 |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
-      |New           |BOTH    |nofrills  |E2E_Campaign_NoFrills_ACT  |ACT  |Quote Tool    |Move Home|No   |No  |RES          |New            |
+      |customerStatus|fuelType|campaign  |folderName                            |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
+      |New           |BOTH    |nofrills  |E2E_Campaign_NoFrills_ACT_New_moving  |ACT  |Quote Tool    |Move Home|No   |No  |RES          |New            |
 
-  Scenario Outline: Validate complete data for nofrills campaign for SA
+  @Acquisition_ATL_Total_nofrills
+  Scenario Outline: Validate complete data for nofrills campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "5044" for postcode and proceed to view the plans
-    Then user is presented with the plans
+    When user provides "3000" and clicks on show me plan link
     And user validates the data on plans page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
-      |ELE      |N                 |Y                       |Y                    |N                                    |N                                |
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
+      |ELE      |Y                 |Y                       |Y                    |N                                    |N                                |<state>|
     And user validates the data on plans page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
-      |GAS      |N                 |Y                       |Y                    |N                                    |N                                |
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |GAS      |Y                 |Y                       |Y                    |N                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
-      |Y                        |Y          |Y              |No Frills |SA  |
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
+      |Y                        |Y          |Y              |No Frills |<state>  |Y           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |
-      |ELE      |N                 |Y                       |Y                    |N                                    |
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
+      |ELE      |Y                 |Y                       |Y                    |N                                    |<state>|
     And user validates plan details on cart page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |
-      |GAS      |N                 |Y                       |Y                    |N                                    |
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
+      |GAS      |Y                 |Y                       |Y                    |N                                    |<state>|
     And user selects '<customerStatus>' on qualifier
-    And user provides all other details on qualifier page
-      |customerType |connectionAddress                      |movingType |propertyType |solarOption  |
-      |RES          |6 Kipling Avenue, GLENGOWRIE SA 5044   |Moving     |Renter       |No           |
+    And user verifies account on qualifier
+      |customerStatus   |accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |<customerStatus> |5124968245   |Postcode           |3029            |dl   |390399008|
+    And user provides all other details on qualifier page for Existing customer
+      |customerType|movingType |propertyType |solarOption|
+      |RES         |Non-Moving |Renter       |No         |
     And user provides all details on checkout details page
-      |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
-      |RES          |RES        |New            |test       |test     |Driver License |             |
-    And user selects answer for property renovation question for '<state>'
+      |customerType|journey    |customerStatus   | firstName| lastName|idType        |
+      |RES         |RES        |<customerStatus> | test     |test     |Driver License|
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
-      |lifeSupportOption|fuelType |EleclifeSupportDevices                        |GaslifeSupportDevices  |
-      |Yes              |ELE      |Crigler Najjar Syndrome Phototherapy Equipment|                       |
-    And user verifies selected plan details for '<fuelType>'
-    And user opts in for Carbon Neutral
+      |lifeSupportOption|fuelType |EleclifeSupportDevices    |GaslifeSupportDevices  |
+      |No               |         |                          |                       |
     And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
-      |ELE      |N                 |Y                       |Y                    |N                                    |N                                |
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |ELE      |N                 |N                       |Y                    |N                                    |N                                |<state>|
     And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
-      |GAS      |N                 |Y                       |Y                    |N                                    |N                                |
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |GAS      |N                 |N                       |Y                    |N                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
-      |Y                        |Y          |Y              |No Frills |SA  |
-    And user validates source code
-      |fuelType|eleSourceCode|gasSourceCode|
-      |BOTH    |NOFRILLS     |NOFRILLS     |
+      |Y                        |Y          |Y              |No Frills |<state>  |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -335,14 +328,186 @@ Feature:E2E scenario for nofrills campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-ES |2002332288|                              |                              |Y                      |LSCNSPE                 |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |RCPP-EV |6203817483|N                             |N                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RCPP-GS |5510730594|                              |                              |N                      |                        |EMAIL        |
-
+      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |RCPP-GV |5330790589|N                             |N                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
-      |customerStatus|fuelType|campaign  |folderName               |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
-      |New           |BOTH    |nofrills  |E2E_Campaign_NoFrills_SA |SA   |Quote Tool    |Move Home|No   |No  |RES          |New            |
+      |customerStatus|fuelType|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
+      |Existing      |BOTH    |nofrills |E2E_Campaign_nofrills_VIC_existing_non-moving |VIC  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
+
+  @Acquisition_ATL_Total_nofrills
+  Scenario Outline: Validate complete data for nofrills campaign for NSW existing non moving
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "2000" and clicks on show me plan link
+    And user validates the data on plans page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
+      |ELE      |Y                 |Y                       |Y                    |N                                    |N                                |<state>|
+    And user validates the data on plans page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |GAS      |Y                 |Y                       |Y                    |N                                    |N                                |<state>|
+    And user validates disclaimer on plans page for "<campaign>"
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
+      |Y                        |Y          |Y              |No Frills |<state>  |Y           |
+    And user clicks on Add plan button
+    And user validates plan details on cart page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
+      |ELE      |Y                 |Y                       |Y                    |N                                    |<state>|
+    And user validates plan details on cart page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
+      |GAS      |Y                 |Y                       |Y                    |N                                    |<state>|
+    And user selects '<customerStatus>' on qualifier
+    And user verifies account on qualifier
+      |customerStatus   |accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |<customerStatus> |6437229177   |Postcode           |2447            |dob   |28121947|
+    And user provides all other details on qualifier page for Existing customer
+      |customerType|movingType |propertyType |solarOption|
+      |RES         |Non-Moving |Renter       |No         |
+    And user provides all details on checkout details page
+      |customerType|journey    |customerStatus   | firstName| lastName|idType        |
+      |RES         |RES        |<customerStatus> | test     |test     |Driver License|
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType |EleclifeSupportDevices |GaslifeSupportDevices|
+      |No               |         |                       |               |
+    And user validates plan details on review page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |ELE      |N                 |N                       |Y                    |N                                    |N                                |<state>|
+    And user validates disclaimer on review page for "<campaign>"
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
+      |Y                        |Y          |Y              |No Frills |<state>  |
+    And user submits the quote
+    Then user lands on checkout complete page
+    And user validates details on checkout complete page
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |ELE |<AAH>|<DD> |<customerType> |<newOrExisting>|
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'ELE' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |RCPP-EN |4407376910|                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
+    Examples:
+      |customerStatus|fuelType|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
+      |Existing      |BOTH    |nofrills |E2E_Campaign_nofrills_NSW_existing_non-moving |NSW  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
+
+  @Acquisition_ATL_Total_nofrills
+  Scenario Outline: Validate complete data for nofrills campaign for SA existing non moving
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "5000" and clicks on show me plan link
+    And user validates the data on plans page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
+      |ELE      |Y                 |Y                       |Y                    |N                                    |N                                |<state>|
+    And user validates the data on plans page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |GAS      |Y                 |Y                       |Y                    |N                                    |N                                |<state>|
+    And user validates disclaimer on plans page for "<campaign>"
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
+      |Y                        |Y          |Y              |No Frills |<state>  |Y           |
+    And user clicks on Add plan button
+    And user validates plan details on cart page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
+      |ELE      |Y                 |Y                       |Y                    |N                                    |<state>|
+    And user validates plan details on cart page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
+      |GAS      |Y                 |Y                       |Y                    |N                                    |<state>|
+    And user selects '<customerStatus>' on qualifier
+    And user verifies account on qualifier
+      |customerStatus   |accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |<customerStatus> |9459589902   |Postcode           |5109            |dl   |100694552|
+    And user provides all other details on qualifier page for Existing customer
+      |customerType|movingType |propertyType |solarOption|
+      |RES         |Non-Moving |Renter       |No         |
+    And user provides all details on checkout details page
+      |customerType|journey    |customerStatus   | firstName| lastName|idType        |
+      |RES         |RES        |<customerStatus> | test     |test     |Driver License|
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType |EleclifeSupportDevices    |GaslifeSupportDevices  |
+      |No               |         |                          |                       |
+    And user validates plan details on review page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |ELE      |N                 |N                       |Y                    |N                                    |N                                |<state>|
+    And user validates plan details on review page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |GAS      |N                 |N                       |Y                    |N                                    |N                                |<state>|
+    And user validates disclaimer on review page for "<campaign>"
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
+      |Y                        |Y          |Y              |No Frills |<state>  |
+    And user submits the quote
+    Then user lands on checkout complete page
+    And user validates details on checkout complete page
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'ELE' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |RCPP-ES |2001473900|                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
+    And user validates all the details for 'GAS' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |RCPP-GS |5510120493|                             |                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
+    Examples:
+      |customerStatus|fuelType|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
+      |Existing      |BOTH    |nofrills |E2E_Campaign_nofrills_SA_existing_non-moving |SA  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
+
+  @Acquisition_ATL_Total_nofrills
+  Scenario Outline: Validate complete data for nofrills campaign for QLD existing non moving
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "4500" and clicks on show me plan link
+    And user validates the data on plans page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
+      |ELE      |Y                 |Y                       |Y                    |N                                    |N                                |<state>|
+    And user validates disclaimer on plans page for "<campaign>"
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
+      |Y                        |Y          |Y              |No Frills |<state>  |Y           |
+    And user clicks on Add plan button
+    And user validates plan details on cart page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
+      |ELE      |Y                 |Y                       |Y                    |N                                    |<state>|
+    And user moves on to fill the qualifier
+    And user selects '<customerStatus>' on qualifier
+    And user verifies account on qualifier
+      |customerStatus   |accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |<customerStatus> |9485951606   |Postcode           |4215            |dl    |139955532|
+    And user provides all other details on qualifier page for Existing customer
+      |customerType|movingType |propertyType |solarOption|
+      |RES         |Non-Moving |Renter       |No         |
+    And user provides all details on checkout details page
+      |customerType|journey    |customerStatus   | firstName| lastName|idType        |
+      |RES         |RES        |<customerStatus> | test     |test     |Driver License|
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType |EleclifeSupportDevices    |GaslifeSupportDevices  |
+      |No               |         |                          |                       |
+    And user validates plan details on review page for "<campaign>"
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |ELE      |N                 |N                       |Y                    |N                                    |N                                |<state>|
+    And user validates disclaimer on review page for "<campaign>"
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
+      |Y                        |Y          |Y              |No Frills |<state>  |
+    And user submits the quote
+    Then user lands on checkout complete page
+    And user validates details on checkout complete page
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'ELE' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |RCPP-EQ |QB01405934|                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
+    Examples:
+      |customerStatus|fuelType|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
+      |Existing      |ELE    |nofrills |E2E_Campaign_nofrills_QLD_existing_non-moving |QLD  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
 

@@ -19,8 +19,8 @@
     "report": "node report-generator.js"
   },
   "config": {
-    "env": "latte",
-    "e2e_tags": "@E2E,~@failed"
+    "env": "preprod",
+    "e2e_tags": "@campaign10.2,~@failed"
   },
   "private": true,
   "dependencies": {

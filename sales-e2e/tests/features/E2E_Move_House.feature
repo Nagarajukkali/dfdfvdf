@@ -59,6 +59,7 @@ Scenario Outline: Submit a quote for existing residential customer through move 
     |E2E_Existing_Resi_MoveHouse_01 |BOTH    |NSW  |No              |5 Wilkies Street, BULLI NSW 2516|Quote Tool    |Move Home|No   |No   |RES          |Existing       |
 
   @deviceCheck @smoke
+
   Scenario Outline: Submit a quote for existing residential customer through move house with AAH and DD
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     When user has navigated to move house page

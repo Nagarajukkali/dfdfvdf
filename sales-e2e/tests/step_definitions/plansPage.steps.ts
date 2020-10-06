@@ -81,7 +81,8 @@ When(/^user provides "([^"]*)" and "([^"]*)" and clicks on show me plan link$/, 
 });
 
 When(/^user clicks on Add plan button$/, async function (t) {
-  await campaignMethod.addPlanOnCampaign(t)
+  await campaignMethod.addPlanOnCampaign(t);
+  await testFunction.takeScreenshot(t, 'after clicking add plan button');//disabled UI Validation
 });
 
 Then(/^user verifies details of "([^"]*)" customer on plans page for "([^"]*)"$/, async function (t,[customerType,state]) {
@@ -110,16 +111,20 @@ Then(/^user validates the data on plans page for "([^"]*)"$/, async function (t,
   dataTable = dataTable.hashes();
   let data = await FileUtils.getJSONfile(campaignName);
   await plansMethod.validatePlanHeading(t, dataTable, data);
+  await testFunction.takeScreenshot(t, 'validated plan heading');//disabled UI Validation
   await plansMethod.validateFeatures(t, dataTable, data);
+  await testFunction.takeScreenshot(t, 'validated feature text for plans');//disabled UI Validation
 });
 Then(/^user validates "([^"]*)" discount to be "([^"]*)" percent$/, async function (t, [fuelType, expectedDiscount]) {
   /*
   Example:     And user validates "ELE" discount to be "16" percent
    */
   await plansMethod.validateDiscount(t, fuelType, expectedDiscount);
+  await testFunction.takeScreenshot(t, 'validating discount'+fuelType);//disabled UI Validation
 });
 When(/^user provides "([^"]*)" for postcode and proceed to view the plans$/, async function (t, [postcode]) {
   await campaignMethod.enterPostcodeOnCampaign(t, postcode);
+  await testFunction.takeScreenshot(t, 'providing postcode');//disabled UI Validation
 });
 When(/^user provides below details for account verification on verify account modal window$/, async function (t,[],dataTable) {
   let data = dataTable.hashes();
@@ -174,6 +179,7 @@ Then(/^user validates disclaimer on plans page for "([^"]*)"$/, async function (
   dataTable = dataTable.hashes();
   let data = await FileUtils.getJSONfile(campaignName);
   await plansMethod.validateDisclaimer(t,dataTable,data);
+  await testFunction.takeScreenshot(t, 'validated disclaimers for the plans page');//disabled UI Validation
   console.log("Validation completed for disclaimers on plans page.");
 });
 
@@ -224,6 +230,7 @@ Then(/^user validates reference price for '(.*)'$/, async function (t,[planName]
     }
   }
 });
+
 
 Then(/^user enters NMI and validate reference price for "([^"]*)"$/, async function (t, [expectedCustomerType]) {
   await testFunction.click(t,EaHomePage.elements.refinePeriod);

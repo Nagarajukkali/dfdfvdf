@@ -1,8 +1,14 @@
 saleDetail : 
   saleDetailHeader: 
+<<<<<<< HEAD
+    quoteId: NO2010052729
+    sourceCode: Total_16%GD_100
+    actualQuoteDate: 2020-10-05
+=======
     quoteId: BB2009098285
     sourceCode: Total_16%GD_100
     actualQuoteDate: 2020-09-09
+>>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,6 +21,15 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
+<<<<<<< HEAD
+      phoneNumber: 0347597217
+    
+    emailId: EululWeDSN@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: MEDICARE
+      id: 4726406791
+=======
       phoneNumber: 0360104060
     
     emailId: RnhiURmrjw@energyaustralia.com.au
@@ -22,6 +37,7 @@ saleDetail :
     personIdDetail: 
       idType: MEDICARE
       id: 7320393909
+>>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -54,11 +70,19 @@ saleDetail :
   
   offerDetail: 
     fuelType: G
+<<<<<<< HEAD
+    proposedStart: 2020-10-07
+    offerType: ENE
+    plan: TOPH-GN
+    priceTag: GNAGA_NR2007
+    serviceOrderDate: 2020-10-07
+=======
     proposedStart: 2020-09-11
     offerType: ENE
     plan: TOPH-GN
     priceTag: GNAGA_NR2007
     serviceOrderDate: 2020-09-11
+>>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5240924834

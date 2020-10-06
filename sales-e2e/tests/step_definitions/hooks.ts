@@ -141,7 +141,10 @@ Given(/^user has opened the '(.*)' link in a browser and creates '(.*)' to save 
     case "pga":
       await t.navigateTo(eaHomePage.campaignPageUrl+"pga?live=disabled");
       break;
-    case "biztpp":
+    case "mcc":
+      await t.navigateTo(eaHomePage.campaignPageUrl+"mcc?live=disabled");
+      break;
+      case "biztpp":
       await t.navigateTo(eaHomePage.campaignPageUrl+"biztpp?live=disabled");
       break;
     case "fca":
@@ -149,6 +152,12 @@ Given(/^user has opened the '(.*)' link in a browser and creates '(.*)' to save 
       break;
     case "cashrewards":
       await t.navigateTo(eaHomePage.campaignPageUrl+"cashrewards?rewardcode=test?live=disabled");
+      break;
+    case "superrewards":
+      await t.navigateTo(eaHomePage.campaignPageUrl+"super-rewards?rewardcode=test?live=disabled");
+      break;
+    case "EACorporateOffer":
+      await t.navigateTo(eaHomePage.campaignPageUrl+"EACorporateOffer?live=disabled");
       break;
     case "nsw-seniors":
       await t.navigateTo(eaHomePage.campaignPageUrl+"nsw-seniors?live=disabled");

@@ -1,8 +1,14 @@
 saleDetail : 
   saleDetailHeader: 
+<<<<<<< HEAD
+    quoteId: BB2009281535
+    sourceCode: Total_15%GD_75
+    actualQuoteDate: 2020-09-28
+=======
     quoteId: BB2008256489
     sourceCode: Total_17%GD
     actualQuoteDate: 2020-08-25
+>>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,6 +21,15 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
+<<<<<<< HEAD
+      phoneNumber: 0386197061
+    
+    emailId: wXkUTQPNMY@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 344832
+=======
       phoneNumber: 0317754224
     
     emailId: FwiqcrbXrB@energyaustralia.com.au
@@ -22,6 +37,7 @@ saleDetail :
     personIdDetail: 
       idType: DL
       id: 947266
+>>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -51,12 +67,21 @@ saleDetail :
     primaryResidence: N
   
   offerDetail: 
+<<<<<<< HEAD
+    fuelType: G
+    proposedStart: 2020-09-29
+    offerType: ENE
+    plan: TOPH-GN
+    priceTag: GNAGA_NR2007
+    serviceOrderDate: 2020-09-29
+=======
     fuelType: E
     proposedStart: 2020-08-27
     offerType: ENE
     plan: TOPH-EN
     priceTag: ENIEA_NR2007
     serviceOrderDate: 2020-08-27
+>>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 4311150544

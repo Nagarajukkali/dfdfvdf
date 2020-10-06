@@ -1,0 +1,66 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2009251389
+    sourceCode: Total_15%GD_75
+    actualQuoteDate: 2020-09-25
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 8224680000
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0383116776
+    
+    emailId: CVrdvwFWof@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 682424
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 5
+    streetName: Wilkies
+    streetType: S
+    suburb: BULLI
+    state: NSW
+    country: AUS
+    postCode: 2516
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2020-09-29
+    offerType: ENE
+    plan: TOPH-GN
+    priceTag: GNAGA_NR2007
+    serviceOrderDate: 2020-09-29
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5240924834
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+
