@@ -1,6 +1,6 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CR2010052467
+    quoteId: CR2010052491
     sourceCode: Total_10%GD
     actualQuoteDate: 2020-10-05
     quoteStatus: VERBALLYACCEPTED
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0396766003
+      phoneNumber: 0386937901
     
-    emailId: rdifugtieI@energyaustralia.com.au
+    emailId: QyBzDHStSk@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 524804
+      id: 386615
       primaryIdFlag: Y
     
     authLevel: Y

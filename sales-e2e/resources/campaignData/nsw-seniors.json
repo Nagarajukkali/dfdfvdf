@@ -6,8 +6,10 @@
     "feature": {
       "preSelect": {
         "Credit50": {
-          "heading": "$100 Sign Up Credit",
-          "description": "Get a $100 credit per new energy account on your first bill when you sign up.+"
+          "NSW": {
+            "heading": "$100 Sign Up Credit",
+            "description": "Get a $100 credit per energy account on your first bill when you sign up.+"
+          }
         },
         "carbonNeutral": {
           "heading": "Carbon neutral option",
@@ -27,11 +29,26 @@
         }
       },
       "postSelect": {
-        "Credit50": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.+",
+        "Credit50":{
+          "NSW": "$100 Sign Up Credit. Get a $100 credit per energy account on your first bill when you sign up.+"
+          },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
         "noStandardConnectionFee": ""
+      }
+    },
+    "sourceCode": {
+      "newCustomer": {
+        "NSW": "Total_16%GD_100"
+      },
+      "existingCustomer": {
+        "ENE": {
+          "NSW": ""
+        },
+        "PS": {
+          "NSW": ""
+        }
       }
     }
   },
@@ -40,8 +57,10 @@
     "feature": {
       "preSelect": {
         "Credit50": {
-          "heading": "$100 Sign Up Credit",
-          "description": "Get a $100 credit per new energy account on your first bill when you sign up.+"
+          "NSW": {
+            "heading": "$100 Sign Up Credit",
+            "description": "Get a $100 credit per energy account on your first bill when you sign up.+"
+          }
         },
         "carbonNeutral": {
           "heading": "Carbon neutral option",
@@ -61,11 +80,26 @@
         }
       },
       "postSelect": {
-        "Credit50": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.+",
+        "Credit50":{
+          "NSW": "$100 Sign Up Credit. Get a $100 credit per energy account on your first bill when you sign up.+"
+        },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
         "noStandardConnectionFee": ""
+      }
+    },
+    "sourceCode": {
+      "newCustomer": {
+          "NSW": "Total_16%GD_100"
+      },
+      "existingCustomer": {
+        "ENE": {
+          "NSW": ""
+        },
+        "PS": {
+          "NSW": ""
+        }
       }
     }
   },
@@ -104,7 +138,7 @@
       },
       "NSW": {
         "heading": "$100 Sign Up Credit",
-        "description": "+ Offer only for eligible NSW residential customers with a valid NSW Seniors Card who sign up to an electricity or gas market offer. Limit of one $100 credit per new energy account, per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        "description": "+ Offer only for eligible NSW residential customers with a valid NSW Seniors Card or NSW Senior Savers Card who sign up to an electricity or gas market offer. Limit of one $100 credit per energy account, per energy type, per customer address. For new customers: credit will be applied to your first bill and is not transferable or redeemable for cash. For existing customers: credit will be applied to your first bill after transferring to this new product and is not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "ACT": {
         "heading": "",

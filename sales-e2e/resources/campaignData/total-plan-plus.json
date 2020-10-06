@@ -1,7 +1,7 @@
 {
     "planName": "Total Plan Plus",
     "planDescription": "VIP discount on your total energy bill guaranteed - every time.",
-  
+
     "electricity": {
       "feature": {
         "preSelect": {
@@ -31,9 +31,34 @@
           "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
           "discountOffTotalEnergyBill": "VIP discount off total energy bill. Exclusive VIP guaranteed discount that applies to both energy usage rates and daily supply charges. Eligible customers only."
         }
+      },
+      "sourceCode": {
+        "newCustomer": {
+          "VIC": "",
+          "NSW": "",
+          "ACT": "",
+          "QLD": "",
+          "SA": ""
+        },
+        "existingCustomer": {
+          "ENE":{
+            "VIC": "",
+            "NSW": "",
+            "ACT": "",
+            "QLD": "",
+            "SA": ""
+          },
+          "PS": {
+            "VIC": "Total_Plus_11%GD",
+            "NSW": "Total_Plus_16%GD",
+            "ACT": "Total_Plus_13%GD",
+            "QLD": "",
+            "SA": "Total_Plus_13%GD"
+          }
+        }
       }
     },
-  
+
     "gas": {
       "feature": {
         "preSelect": {
@@ -59,9 +84,31 @@
           "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
           "discountOffTotalEnergyBill": "VIP discount off total energy bill. Exclusive VIP guaranteed discount that applies to both energy usage rates and daily supply charges. Eligible customers only."
         }
+      },
+      "sourceCode": {
+        "newCustomer": {
+          "VIC": "",
+          "NSW": "",
+          "ACT": "",
+          "SA": ""
+        },
+        "existingCustomer": {
+          "ENE":{
+            "VIC": "",
+            "NSW": "",
+            "ACT": "",
+            "SA": ""
+          },
+          "PS": {
+            "VIC": "Total_Plus_28%GD",
+            "NSW": "Total_Plus_16%GD",
+            "ACT": "Total_Plus_13%GD",
+            "SA": "Total_Plus_17%GD"
+          }
+        }
       }
     },
-  
+
     "disclaimers": {
       "referencePriceComparison": {
         "heading": "Reference price comparison and estimated annual cost",
@@ -131,4 +178,3 @@
       }
     }
   }
-  

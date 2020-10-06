@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008184410
+    quoteId: BB2009281539
     sourceCode: Total_Plus_24%GD
-    actualQuoteDate: 2020-08-18
+    actualQuoteDate: 2020-09-28
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: Mr
+    title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0345222472
+      phoneNumber: 0321716115
     
-    emailId: MSUpQFmBWv@energyaustralia.com.au
+    emailId: tagUKonQZR@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: GOVERNMENT
+    businessType: GNRALPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 40788001070
+      businessId: 90062618054
     
-    anzsic: UTILITIES
+    anzsic: CONSTRUCTION
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0345222472
+      businessPhoneNumber: 0321716115
     
-    businessEmailId: MSUpQFmBWv@energyaustralia.com.au
+    businessEmailId: tagUKonQZR@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST

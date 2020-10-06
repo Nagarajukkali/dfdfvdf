@@ -153,8 +153,30 @@ export class plansMethod{
     console.log("Validating plan features on campaign page.")
     if(dataTable[0].fuelType === "ELE") {
       if(dataTable[0].Feature_50Credit === "Y") {
-        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeature50CreditTitle, data.electricity.feature.preSelect.Credit50.heading);
-        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeature50CreditDescription, data.electricity.feature.preSelect.Credit50.description);
+        switch (dataTable[0].state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeature50CreditTitle, data.electricity.feature.preSelect.Credit50.VIC.heading);
+            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeature50CreditDescription, data.electricity.feature.preSelect.Credit50.VIC.description);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeature50CreditTitle, data.electricity.feature.preSelect.Credit50.NSW.heading);
+            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeature50CreditDescription, data.electricity.feature.preSelect.Credit50.NSW.description);
+            break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeature50CreditTitle, data.electricity.feature.preSelect.Credit50.ACT.heading);
+            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeature50CreditDescription, data.electricity.feature.preSelect.Credit50.ACT.description);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeature50CreditTitle, data.electricity.feature.preSelect.Credit50.QLD.heading);
+            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeature50CreditDescription, data.electricity.feature.preSelect.Credit50.QLD.description);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeature50CreditTitle, data.electricity.feature.preSelect.Credit50.SA.heading);
+            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeature50CreditDescription, data.electricity.feature.preSelect.Credit50.SA.description);
+            break;
+          default:
+            throw Error("Invalid State");
+        }
       }
       if(dataTable[0].Feature_carbonNeutral === "Y") {
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNTitle, data.electricity.feature.preSelect.carbonNeutral.heading);
@@ -186,8 +208,30 @@ export class plansMethod{
       }
     } else if(dataTable[0].fuelType === "GAS") {
       if(dataTable[0].Feature_50Credit === "Y") {
-        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature50CreditTitle, data.gas.feature.preSelect.Credit50.heading);
-        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature50CreditDescription, data.gas.feature.preSelect.Credit50.description);
+        switch (dataTable[0].state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature50CreditTitle, data.gas.feature.preSelect.Credit50.VIC.heading);
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature50CreditDescription, data.gas.feature.preSelect.Credit50.VIC.description);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature50CreditTitle, data.gas.feature.preSelect.Credit50.NSW.heading);
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature50CreditDescription, data.gas.feature.preSelect.Credit50.NSW.description);
+            break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature50CreditTitle, data.gas.feature.preSelect.Credit50.ACT.heading);
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature50CreditDescription, data.gas.feature.preSelect.Credit50.ACT.description);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature50CreditTitle, data.gas.feature.preSelect.Credit50.QLD.heading);
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature50CreditDescription, data.gas.feature.preSelect.Credit50.QLD.description);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature50CreditTitle, data.gas.feature.preSelect.Credit50.SA.heading);
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature50CreditDescription, data.gas.feature.preSelect.Credit50.SA.description);
+            break;
+          default:
+            throw Error("Invalid State");
+        }
       }
       if(dataTable[0].Feature_carbonNeutral === "Y") {
         await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNTitle, data.gas.feature.preSelect.carbonNeutral.heading);

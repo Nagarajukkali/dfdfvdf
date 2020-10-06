@@ -24,7 +24,25 @@ export class cartsMethod {
     if(await testFunction.isElectricity(dataTable[0].fuelType)) {
       await t.expect(await testFunction.sizeOfElement(t, cartsPage.elements.eleFeatures)).eql(numOfExpectedFeatures);
       if(dataTable[0].Feature_50Credit === "Y") {
-        await testFunction.assertText(t, cartsPage.elements.eleFeature50Credit, json.electricity.feature.postSelect.Credit50);
+          switch (dataTable[0].state) {
+            case AustralianState.VIC:
+              await testFunction.assertText(t, cartsPage.elements.eleFeature50Credit, json.electricity.feature.postSelect.Credit50.VIC);
+               break;
+            case AustralianState.NSW:
+              await testFunction.assertText(t, cartsPage.elements.eleFeature50Credit, json.electricity.feature.postSelect.Credit50.NSW);
+              break;
+            case AustralianState.ACT:
+              await testFunction.assertText(t, cartsPage.elements.eleFeature50Credit, json.electricity.feature.postSelect.Credit50.ACT);
+              break;
+            case AustralianState.QLD:
+              await testFunction.assertText(t, cartsPage.elements.eleFeature50Credit, json.electricity.feature.postSelect.Credit50.QLD);
+              break;
+            case AustralianState.SA:
+              await testFunction.assertText(t, cartsPage.elements.eleFeature50Credit, json.electricity.feature.postSelect.Credit50.SA);
+              break;
+            default:
+              throw Error("Invalid State");
+          }
       }
       if(dataTable[0].Feature_carbonNeutral === "Y") {
         await testFunction.assertText(t, cartsPage.elements.eleFeatureCN, json.electricity.feature.postSelect.carbonNeutral);
@@ -45,8 +63,25 @@ export class cartsMethod {
     if(await testFunction.isGas(dataTable[0].fuelType)) {
       await t.expect(await testFunction.sizeOfElement(t, cartsPage.elements.gasFeatures)).eql(numOfExpectedFeatures);
       if(dataTable[0].Feature_50Credit === "Y") {
-        await testFunction.assertText(t, cartsPage.elements.gasFeature50Credit, json.gas.feature.postSelect.Credit50);
-      }
+        switch (dataTable[0].state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t, cartsPage.elements.gasFeature50Credit, json.gas.feature.postSelect.Credit50.VIC);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t, cartsPage.elements.gasFeature50Credit, json.gas.feature.postSelect.Credit50.NSW);
+            break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t, cartsPage.elements.gasFeature50Credit, json.gas.feature.postSelect.Credit50.ACT);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t, cartsPage.elements.gasFeature50Credit, json.gas.feature.postSelect.Credit50.QLD);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t, cartsPage.elements.gasFeature50Credit, json.gas.feature.postSelect.Credit50.SA);
+            break;
+          default:
+            throw Error("Invalid State");
+        }}
       if(dataTable[0].Feature_carbonNeutral === "Y") {
         await testFunction.assertText(t, cartsPage.elements.gasFeatureCN, json.gas.feature.postSelect.carbonNeutral);
       }

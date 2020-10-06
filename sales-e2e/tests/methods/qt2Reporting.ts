@@ -1,5 +1,7 @@
+import {AustralianState} from '@ea/ea-commons-models';
+
 const eaQt2Reporting=require('../pages/eaQt2Reporting.page');
-import {testFunction } from '../../global_methods/helper';
+import {CustomerStatus, OfferType, testFunction} from '../../global_methods/helper';
 import {checkoutDetailsMethod} from './checkoutDetailsPage';
 import * as assert from 'assert';
 import {FileUtils} from '../../libs/FileUtils'
@@ -127,9 +129,150 @@ export class qt2Reporting {
       return creditAssessmentValue;
     }
 
+  public static async validateSourceCode(t, state, customerStatus, actualSourceCode, campaign,expectedOfferType, expectedFuelType) {
+    let data = await FileUtils.getJSONfile(campaign);
+    if (customerStatus === CustomerStatus.NEW) {
+      await this.validateNewCustomerSourceCode(t, state, actualSourceCode, data, expectedFuelType);
+    }
+    if (customerStatus === CustomerStatus.EXISTING) {
+      await this.validateExistingCustomerSourceCode(t, state, actualSourceCode, data,expectedOfferType, expectedFuelType);
+    }
+  }
 
+  public static async validateNewCustomerSourceCode(t, state, actualSourceCode, data,expectedFuelType) {
+    if (await testFunction.isElectricity(expectedFuelType)) {
+      switch (state) {
+        case AustralianState.VIC:
+          await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.newCustomer.VIC);
+          break;
+        case AustralianState.NSW:
+          await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.newCustomer.NSW);
+          break;
+        case AustralianState.SA:
+          await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.newCustomer.SA);
+          break;
+        case AustralianState.ACT:
+          await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.newCustomer.ACT);
+          break;
+        case AustralianState.QLD:
+          await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.newCustomer.QLD);
+          break;
+        default:
+      }
+    }
+    if (await testFunction.isGas(expectedFuelType)) {
+      switch (state) {
+        case AustralianState.VIC:
+          await this.validateMandatoryField(t, actualSourceCode, data.gas.sourceCode.newCustomer.VIC);
+          break;
+        case AustralianState.NSW:
+          await this.validateMandatoryField(t, actualSourceCode, data.gas.sourceCode.newCustomer.NSW);
+          break;
+        case AustralianState.SA:
+          await this.validateMandatoryField(t, actualSourceCode, data.gas.sourceCode.newCustomer.SA);
+          break;
+        case AustralianState.ACT:
+          await this.validateMandatoryField(t, actualSourceCode, data.gas.sourceCode.newCustomer.ACT);
+          break;
+        case AustralianState.QLD:
+          await this.validateMandatoryField(t, actualSourceCode, data.gas.sourceCode.newCustomer.QLD);
+          break;
+        default:
+      }
+    }
+  }
 
-
-
+  public static async validateExistingCustomerSourceCode(t, state, actualSourceCode, data ,expectedOfferType, expectedFuelType) {
+    if (await testFunction.isElectricity(expectedFuelType)) {
+      switch (state) {
+        case AustralianState.VIC:
+          if (expectedOfferType === OfferType.PS) {
+            await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.PS.VIC);
+          }
+          if (expectedOfferType === OfferType.ENE) {
+            await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.ENE.VIC);
+          }
+          break;
+        case AustralianState.NSW:
+          if (expectedOfferType === OfferType.PS) {
+            await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.PS.NSW);
+          }
+          if (expectedOfferType === OfferType.ENE) {
+            await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.ENE.NSW);
+          }
+          break;
+        case AustralianState.SA:
+          if (expectedOfferType === OfferType.PS) {
+            await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.PS.SA);
+          }
+          if (expectedOfferType === OfferType.ENE) {
+            await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.ENE.SA);
+          }
+          break;
+        case AustralianState.ACT:
+          if (expectedOfferType === OfferType.PS) {
+            await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.PS.ACT);
+          }
+          if (expectedOfferType === OfferType.ENE) {
+            await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.ENE.ACT);
+          }
+          break;
+        case AustralianState.QLD:
+          if (expectedOfferType === OfferType.PS) {
+            await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.PS.QLD);
+          }
+          if (expectedOfferType === OfferType.ENE) {
+            await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.ENE.QLD);
+          }
+          break;
+        default:
+      }
+    }
+    if (await testFunction.isGas(expectedFuelType)) {
+      switch (state) {
+        case AustralianState.VIC:
+          if (expectedOfferType === OfferType.PS) {
+            await this.validateMandatoryField(t, actualSourceCode, data.gas.sourceCode.existingCustomer.PS.VIC);
+          }
+          if (expectedOfferType === OfferType.ENE) {
+            await this.validateMandatoryField(t, actualSourceCode, data.gas.sourceCode.existingCustomer.ENE.VIC);
+          }
+          break;
+        case AustralianState.NSW:
+          if (expectedOfferType === OfferType.PS) {
+            await this.validateMandatoryField(t, actualSourceCode, data.gas.sourceCode.existingCustomer.PS.NSW);
+          }
+          if (expectedOfferType === OfferType.ENE) {
+            await this.validateMandatoryField(t, actualSourceCode, data.gas.sourceCode.existingCustomer.ENE.NSW);
+          }
+          break;
+        case AustralianState.SA:
+          if (expectedOfferType === OfferType.PS) {
+            await this.validateMandatoryField(t, actualSourceCode, data.gas.sourceCode.existingCustomer.PS.SA);
+          }
+          if (expectedOfferType === OfferType.ENE) {
+            await this.validateMandatoryField(t, actualSourceCode, data.gas.sourceCode.existingCustomer.ENE.SA);
+          }
+          break;
+        case AustralianState.ACT:
+          if (expectedOfferType === OfferType.PS) {
+            await this.validateMandatoryField(t, actualSourceCode, data.gas.sourceCode.existingCustomer.PS.ACT);
+          }
+          if (expectedOfferType === OfferType.ENE) {
+            await this.validateMandatoryField(t, actualSourceCode, data.gas.sourceCode.existingCustomer.ENE.ACT);
+          }
+          break;
+        case AustralianState.QLD:
+          if (expectedOfferType === OfferType.PS) {
+            await this.validateMandatoryField(t, actualSourceCode, data.gas.sourceCode.existingCustomer.PS.QLD);
+          }
+          if (expectedOfferType === OfferType.ENE) {
+            await this.validateMandatoryField(t, actualSourceCode, data.gas.sourceCode.existingCustomer.ENE.QLD);
+          }
+          break;
+        default:
+      }
+    }
+  }
 
 }

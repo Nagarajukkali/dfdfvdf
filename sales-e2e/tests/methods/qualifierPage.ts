@@ -87,6 +87,7 @@ export class qualifierMethod{
           console.log('Invalid id type');
       }
       await testFunction.takeScreenshot(t, "qualifier_page");//disabled UI Validation
+      await t.wait(1000);
       await testFunction.click(t, eaQualifierPage.elements.verifyIdentitySubmit);
       await testFunction.waitForLoadingIconToClose();
       await t.wait(3000);

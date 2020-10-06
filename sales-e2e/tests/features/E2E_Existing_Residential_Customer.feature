@@ -55,7 +55,9 @@ Scenario Outline: Submit a quote for existing residential moving customer
   Examples:
   |customerStatus|fuelType|planName  |folderName              |state|optDisconnection|sourceSystem  |journey  |AAH  |DD   |customerType |newOrExisting  |
   |Existing      |BOTH    |Basic Home|E2E_Existing_Resi_Moving|NSW  |No              |Quote Tool    |Move Home|No   |Yes  |RES          |Existing       |
+
   @deviceCheck @smoke
+
 Scenario Outline: Submit a quote for existing residential non moving customer with LS, select dual fuel and verify gas account
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page

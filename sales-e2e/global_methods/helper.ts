@@ -87,6 +87,12 @@ const deviceScreenSize=config.deviceScreenSize
     ACCEPT_WITH_CONDITION = "ACCEPT_WC"
   }
 
+export enum OfferType {
+  ENE='ENE',
+  COR='COR',
+  PS='PS'
+}
+
   export const scrollTo = ClientFunction((selector: Selector, offset?: { x: number; y: number }) => {
   const _window = window;
   return new Promise(resolve => {

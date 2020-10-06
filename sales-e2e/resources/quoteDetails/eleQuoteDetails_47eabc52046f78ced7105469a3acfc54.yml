@@ -1,8 +1,14 @@
 saleDetail : 
   saleDetailHeader: 
+<<<<<<< HEAD
+    quoteId: BB2009281532
+    sourceCode: Total_10%GD_50
+    actualQuoteDate: 2020-09-28
+=======
     quoteId: BB2008256491
     sourceCode: Total_11%GD
     actualQuoteDate: 2020-08-25
+>>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,6 +21,15 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
+<<<<<<< HEAD
+      phoneNumber: 0368415008
+    
+    emailId: hlhRxYQmgM@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 878142
+=======
       phoneNumber: 0347679503
     
     emailId: uNQtDrdmxF@energyaustralia.com.au
@@ -22,6 +37,7 @@ saleDetail :
     personIdDetail: 
       idType: DL
       id: 332350
+>>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
