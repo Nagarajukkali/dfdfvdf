@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008143731
+    quoteId: BB2009281537
     sourceCode: Total_Plus_28%GD
-    actualQuoteDate: 2020-08-14
+    actualQuoteDate: 2020-09-28
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -10,19 +10,19 @@ saleDetail :
   
   personDetail: 
     personId: 1941430000
-    title: Mr
+    title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0354846293
+      phoneNumber: 0367172666
     
-    emailId: YosSRYRXTW@energyaustralia.com.au
+    emailId: DJFBhnFEAr@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 261788
+      id: 251006
       primaryIdFlag: Y
     
     authLevel: Y

@@ -1,0 +1,75 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2010052579
+    sourceCode: Total_15%GD_50
+    actualQuoteDate: 2020-10-05
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0359062973
+    
+    emailId: hMDIIhdKJv@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 53622
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlMiddleName/: 
+          dlLastName: test
+          licenseStateOfIssue: SA
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 3
+    streetName: Newhaven
+    streetType: AV
+    suburb: GLENELG NORTH
+    state: SA
+    country: AUS
+    postCode: 5045
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2020-10-06
+    offerType: ENE
+    plan: FFPH-GS
+    priceTag: GSADA_NR2001
+    serviceOrderDate: 2020-10-06
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5510183967
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+

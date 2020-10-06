@@ -20,7 +20,7 @@ export class checkoutDetailsMethod{
 
     public static map=new Map();
 
-    public static async provideDetailsInAboutMeSection(t,journey,firstName,lastName){
+    public static async provideDetailsInAboutMeSection(t,journey,firstName,lastName,customerStatus){
         if((await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.titleDropdown)).includes('Please select')){
             await t.wait(1000);
             await testFunction.click(t,eaCheckoutDetailsPage.elements.titleDrop);

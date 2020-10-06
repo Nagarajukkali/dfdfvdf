@@ -1,0 +1,69 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2010052525
+    sourceCode: Total_Plus_14%GD
+    actualQuoteDate: 2020-10-05
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 7546820319
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0341286795
+    
+    emailId: oBuqAvvWbT@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 641019
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 37
+    streetName: Echlin
+    streetType: S
+    suburb: LABRADOR
+    state: QLD
+    country: AUS
+    postCode: 4215
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    offerType: PS
+    plan: SWSR1-EQ
+    priceTag: EQEXA_NR2007
+    nmiMirnInformation: 
+      NMI: QB01405934
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    priceTagMeteringCharge: M42151D1E_VE
+    proposedNTC: 8470
+    proposedMC: VECTORMC
+  
+

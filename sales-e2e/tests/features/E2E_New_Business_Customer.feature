@@ -1,4 +1,5 @@
-@E2E @newcustomer
+@E2E @newcustomer @smoke
+
 Feature:E2E scenario for new business moving and non moving customer
 
   Scenario Outline: Submit a quote for new business moving customer
@@ -52,6 +53,7 @@ Feature:E2E scenario for new business moving and non moving customer
   Examples:
     |customerStatus|fuelType|planName      |folderName        |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
     |New           |BOTH    |Basic Business|E2E_New_Bus_Moving|VIC  |Quote Tool    |Move Home|No   |Yes |BUS          |New            |
+
   @deviceCheck @smoke
 Scenario Outline: Submit a quote for new business non moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences

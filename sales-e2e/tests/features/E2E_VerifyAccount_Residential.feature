@@ -52,6 +52,7 @@ Feature: This feature is to test the verify account scenarios for existing resid
       |E2E_VerifyAccount_Residential_NonMoving  |RES           |BOTH     |Total Plan Plus|Quote Tool     |Plan Switch  |No   |No   |RES          |Existing       |
 
   @deviceCheck @smoke
+
   Scenario Outline: Submit a quote for existing moving residential customer through verify account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
