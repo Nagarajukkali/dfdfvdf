@@ -36,10 +36,7 @@ const eaCheckoutCompletePage={
       description: Selector("#handshakeapp .call-to-action h3"),
       btnDownload: Selector("#pdfDownload")
     },
-    feedbackForm: {
-      main: Selector("#formFeedback"),
-      heading: Selector("#formFeedback h3")
-    },
+    feedbackForm: Selector("#customer-feedback"),
     bannerIntroducingMA: {
       main: Selector("#handshakeapp .hs-my-account-banner"),
       heading: Selector("#handshakeapp .hs-my-account-banner h3"),

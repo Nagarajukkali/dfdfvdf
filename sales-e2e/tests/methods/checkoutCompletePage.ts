@@ -91,9 +91,8 @@ export class checkoutCompleteMethod {
   }
 
   public static async validateFeedbackForm(t) {
-    await testFunction.isElementDisplayed(t, eaCheckoutCompletePage.elements.feedbackForm.main);
-    await testFunction.isElementDisplayed(t, eaCheckoutCompletePage.elements.feedbackForm.heading);
-    console.log("Validation completed for feedback form section.");
+    await testFunction.isElementDisplayed(t, eaCheckoutCompletePage.elements.feedbackForm);
+    console.log("Validation completed for the presence of feedback form.");
   }
 
   public static async validateIntroducingMABanner(t, sourceSystem) {
