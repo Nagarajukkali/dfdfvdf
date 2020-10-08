@@ -1,70 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-<<<<<<< HEAD
-    quoteId: BB2009281524
+    quoteId: BB2010074645
     sourceCode: Basic
-    actualQuoteDate: 2020-09-28
-=======
-    quoteId: BB2008256511
-    sourceCode: Basic
-    actualQuoteDate: 2020-08-25
->>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
+    actualQuoteDate: 2020-10-07
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-<<<<<<< HEAD
-      phoneNumber: 0389676970
+      phoneNumber: 0319953592
     
-    emailId: OeGOeupxaL@energyaustralia.com.au
-=======
-      phoneNumber: 0360700119
-    
-    emailId: jqKagGdLav@energyaustralia.com.au
->>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
+    emailId: KrDQqryedG@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-<<<<<<< HEAD
-    businessType: GOVERNMENT
-=======
-    businessType: CORPORATION
->>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
+    businessType: GNRALPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-<<<<<<< HEAD
-      businessId: 43059954536
-=======
-      businessId: 71701154577
->>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
+      businessId: 40474087820
     
-    anzsic: PROPERTY
+    anzsic: UTILITIES
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-<<<<<<< HEAD
-      businessPhoneNumber: 0389676970
+      businessPhoneNumber: 0319953592
     
-    businessEmailId: OeGOeupxaL@energyaustralia.com.au
-=======
-      businessPhoneNumber: 0360700119
-    
-    businessEmailId: jqKagGdLav@energyaustralia.com.au
->>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
+    businessEmailId: KrDQqryedG@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -80,24 +54,15 @@ saleDetail :
     primaryResidence: N
   
   offerDetail: 
-<<<<<<< HEAD
     fuelType: G
-    proposedStart: 2020-09-29
+    proposedStart: 2020-10-09
     offerType: ENE
     plan: BSOT-GV
     priceTag: GVT3A_S13N
-    serviceOrderDate: 2020-09-29
-=======
-    fuelType: E
-    proposedStart: 2020-08-27
-    offerType: ENE
-    plan: BSOT-EV
-    priceTag: EVPOT_S07
-    serviceOrderDate: 2020-08-27
->>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
+    serviceOrderDate: 2020-10-09
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 6203822385
+      MIRN: 5330956738
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -105,11 +70,11 @@ saleDetail :
       customerWithLifeSupport: Y
     
     lifeSupportEquipment: 
-      lifeSupportEquipmentType: LSKDM
+      lifeSupportEquipmentType: GLSMRHAC
     
   
   offerDetail: 
-    fuelType: G
+    fuelType: E
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -117,9 +82,4 @@ saleDetail :
     billRouteType: EMAIL
   
   creditAssessmentDecision: Accept
-  meteringDetail: 
-    meterExchangeFlag: N
-    reEnergisationJSCCode: RCTBH
-    reEnergisationJSCCharge: 56.05
-  
 
