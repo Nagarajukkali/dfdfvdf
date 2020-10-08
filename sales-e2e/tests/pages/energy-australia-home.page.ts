@@ -167,7 +167,8 @@ const eaHomePage={
     eleFeatureDefaultOfferDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Default offer").sibling(),
     eleFeatureVipPriorityServiceTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("VIP Priority Service"),
     eleFeatureVipPriorityServiceDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("VIP Priority Service").sibling(),
-
+    eleFeatureChanceToWinTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("$2,000"),
+    eleFeatureChanceToWinDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("$2,000").sibling(),
     gasFeature50CreditTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Credit"),
     gasFeature50CreditDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Credit").sibling(),
     gasFeatureCNTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral"),
@@ -178,7 +179,8 @@ const eaHomePage={
     gasFeatureDiscountOffTotalBillDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText(/[D|d]iscount off/).sibling(),
     gasFeatureVipPriorityServiceTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("VIP Priority Service"),
     gasFeatureVipPriorityServiceDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("VIP Priority Service").sibling(),
-
+    gasFeatureChanceToWinTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("$2,000"),
+    gasFeatureChanceToWinDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("$2,000").sibling(),
   }
 };
 

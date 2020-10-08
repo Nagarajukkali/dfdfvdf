@@ -1,0 +1,163 @@
+{
+  "planName": "Total Plan - Business",
+  "planDescription": "Great discount on your total energy bill guaranteed - every time.",
+
+  "electricity": {
+    "feature": {
+      "preSelect": {
+        "Credit50": {
+          "VIC": {
+            "heading": "$100 Sign Up Credit",
+            "description": "Get a $100 credit per new energy account on your first bill when you sign up."
+          }
+        },
+        "chanceToWin": {
+          "VIC": {
+            "heading": "Chance to win $2,000",
+            "description": "Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.+"
+          }
+        },
+        "carbonNeutral": {
+          "heading": "",
+          "description": ""
+        },
+        "peaceOfMind": {
+          "heading": "Peace of mind",
+          "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+        },
+        "discountOffTotalEnergyBill": {
+          "heading": "Discount off total energy bill",
+          "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
+        },
+        "noStandardConnectionFee": {
+          "heading": "",
+          "description": ""
+        }
+      },
+      "postSelect": {
+        "Credit50": {
+          "VIC": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up."
+        },
+        "chanceToWin": {
+          "VIC": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business."
+        },
+        "carbonNeutral": "",
+        "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
+        "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
+        "noStandardConnectionFee": ""
+      }
+    },
+    "sourceCode": {
+      "newCustomer": {
+        "VIC": "Total_5%GD_100"
+      },
+      "existingCustomer": {
+        "ENE":{
+          "VIC": "Total_5%GD_100"
+        },
+        "PS": {
+          "VIC": "Total_5%GD"
+        }
+      }
+    }
+  },
+
+  "gas": {
+    "feature": {
+      "preSelect": {
+        "Credit50": {
+          "VIC": {
+            "heading": "$100 Sign Up Credit",
+            "description": "Get a $100 credit per new energy account on your first bill when you sign up."
+          }
+        },
+        "chanceToWin": {
+          "VIC": {
+            "heading": "Chance to win $2,000",
+            "description": "Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business."
+          }
+        },
+        "carbonNeutral": {
+          "heading": "",
+          "description": ""
+        },
+        "peaceOfMind": {
+          "heading": "Peace of mind",
+          "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+        },
+        "discountOffTotalEnergyBill": {
+          "heading": "Discount off total energy bill",
+          "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
+        },
+        "noStandardConnectionFee": {
+          "heading": "",
+          "description": ""
+        }
+      },
+      "postSelect": {
+        "Credit50": {
+          "VIC": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up."
+        },
+        "chanceToWin": {
+          "VIC": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business."
+        },
+        "carbonNeutral": "",
+        "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
+        "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
+        "noStandardConnectionFee": ""
+      }
+    },
+    "sourceCode": {
+      "newCustomer": {
+        "VIC": "Total_23%GD_100"
+      },
+      "existingCustomer": {
+        "ENE":{
+          "VIC": "Total_23%GD_100"
+        },
+        "PS": {
+          "VIC": "Total_23%GD"
+        }
+      }
+    }
+  },
+
+  "disclaimers": {
+    "referencePriceComparison": {
+      "heading": "Reference price comparison and estimated annual cost",
+      "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+    },
+    "goNeutral": {
+      "heading": "",
+      "description": ""
+    },
+    "solarBuyBack": {
+      "heading": "Solar feed-in tariffs",
+      "VIC": {
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. We are currently unable to set up your solar plan online. For more information about the Victorian FiT scheme see www.energy.vic.gov.au/renewable-energy/victorian-feed-in-tariff."
+      }
+    },
+    "chanceToWin": {
+      "heading": "Chance to win $2,000",
+      "VIC": {
+        "description": "+ Entry only open to NSW, QLD and VIC businesses that are eligible for EnergyAustralia's Total Plan Business. Ends 11/11/20 11:59pm AEDT. See T&Cs for entry details. Entrants will receive one (1) entry per business meter on their new electricity/gas business account with EnergyAustralia. T&Cs apply."
+      }
+    },
+    "noStandardConnectionFee": {
+      "heading": "",
+      "description": ""
+    },
+    "Credit50": {
+      "VIC": {
+        "heading": "$100 Sign Up Credit",
+        "description": "**Offer only for eligible VIC business customers who receive the mailing and sign up to Total Plan Business electricity or gas offer before 11/11/20 11:59pm AEDT. Limit of one $100 credit per new energy account, per energy type, per business premises. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+      }
+    },
+    "totalPlanBusiness": {
+      "heading": "Total Plan - Business",
+      "VIC": {
+        "description": "* Offer only for eligible VIC business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+      }
+    }
+  }
+}

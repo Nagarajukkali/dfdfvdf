@@ -516,6 +516,17 @@ export class checkoutReviewMethod {
       if(dataTable[0].Feature_vipPriorityService === "Y") {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureVipPriorityService, json.electricity.feature.postSelect.vipPriorityService);
       }
+      if(dataTable[0].Feature_chanceToWin === "Y") {
+        if(dataTable[0].state === 'VIC') {
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureChanceToWin, json.electricity.feature.postSelect.chanceToWin.VIC);
+        }else if (dataTable[0].state === 'NSW') {
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureChanceToWin, json.electricity.feature.postSelect.chanceToWin.NSW);
+        }else if (dataTable[0].state === 'QLD') {
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureChanceToWin, json.electricity.feature.postSelect.chanceToWin.QLD);
+        }else{
+          throw Error("Invalid State");
+        }
+      }
     }
     if(await testFunction.isGas(dataTable[0].fuelType)) {
       await t.expect(await testFunction.sizeOfElement(t, eaCheckoutReviewPage.elements.gasFeatures)).eql(numOfExpectedFeatures);
@@ -552,6 +563,15 @@ export class checkoutReviewMethod {
       }
       if(dataTable[0].Feature_vipPriorityService === "Y") {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasFeatureVipPriorityService, json.gas.feature.postSelect.vipPriorityService);
+      }
+      if(dataTable[0].Feature_chanceToWin === "Y") {
+        if(dataTable[0].state === 'VIC') {
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasFeatureChanceToWin, json.gas.feature.postSelect.chanceToWin.VIC);
+        }else if (dataTable[0].state === 'NSW') {
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasFeatureChanceToWin, json.gas.feature.postSelect.chanceToWin.NSW);
+        }else{
+          throw Error("Invalid State");
+        }
       }
     }
   }

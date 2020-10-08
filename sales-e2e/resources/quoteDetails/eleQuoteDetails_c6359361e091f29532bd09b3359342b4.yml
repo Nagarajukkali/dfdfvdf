@@ -1,0 +1,82 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2010084689
+    sourceCode: Total_21%GD
+    actualQuoteDate: 2020-10-08
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MRS
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0383040830
+    
+    emailId: yQNRBhfyHm@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: LTDPARTNERSHIP
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 50132833712
+    
+    anzsic: RETAIL_TRD
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0383040830
+    
+    businessEmailId: yQNRBhfyHm@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 320
+    streetName: Crown
+    streetType: S
+    suburb: SURRY HILLS
+    state: NSW
+    country: AUS
+    postCode: 2010
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-10-09
+    offerType: ENE
+    plan: TOPB-EN
+    priceTag: ENEA5_NT2007
+    serviceOrderDate: 2020-10-09
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: NCCC005405
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: RE-EN
+    reEnergisationJSCCharge: 11.41
+  
+
