@@ -206,6 +206,20 @@ export class plansMethod{
       if(dataTable[0].Feature_vipPriorityService === "Y") {
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVipPriorityServiceTitle, data.electricity.feature.preSelect.vipPriorityService.heading);
       }
+      if(dataTable[0].Feature_chanceToWin === "Y") {
+        if(dataTable[0].state === 'VIC') {
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureChanceToWinTitle, data.electricity.feature.preSelect.chanceToWin.VIC.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureChanceToWinDescription, data.electricity.feature.preSelect.chanceToWin.VIC.description);
+        }else if (dataTable[0].state === 'NSW') {
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureChanceToWinTitle, data.electricity.feature.preSelect.chanceToWin.NSW.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureChanceToWinDescription, data.electricity.feature.preSelect.chanceToWin.NSW.description);
+        }else if (dataTable[0].state === 'QLD') {
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureChanceToWinTitle, data.electricity.feature.preSelect.chanceToWin.QLD.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureChanceToWinDescription, data.electricity.feature.preSelect.chanceToWin.QLD.description);
+        }else{
+          throw Error("Invalid State");
+        }
+      }
     } else if(dataTable[0].fuelType === "GAS") {
       if(dataTable[0].Feature_50Credit === "Y") {
         switch (dataTable[0].state) {
@@ -248,6 +262,17 @@ export class plansMethod{
       if(dataTable[0].Feature_vipPriorityService === "Y") {
         await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureVipPriorityServiceTitle, data.electricity.feature.preSelect.vipPriorityService.heading);
       }
+      if(dataTable[0].Feature_chanceToWin === "Y") {
+        if(dataTable[0].state === 'VIC') {
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinTitle, data.gas.feature.preSelect.chanceToWin.VIC.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinDescription, data.gas.feature.preSelect.chanceToWin.VIC.description);
+        }else if (dataTable[0].state === 'NSW') {
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinTitle, data.gas.feature.preSelect.chanceToWin.NSW.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinDescription, data.gas.feature.preSelect.chanceToWin.NSW.description);
+        }else{
+          throw Error("Invalid State");
+        }
+      }
     }
   }
 
@@ -281,6 +306,9 @@ export class plansMethod{
     if(dataTable[0].signUpCredit==='Y'){
       await this.validateSignUpCredit(t,disclaimer,data,state);
     }
+    if(dataTable[0].chanceToWin==='Y'){
+      await this.validateChanceToWin(t,disclaimer,data,state);
+    }
     await this.validatePlanDisclaimer(t,disclaimer,data,planName,state);
   }
 
@@ -310,6 +338,26 @@ export class plansMethod{
           throw Error("Invalid State");
 
       }
+  }
+
+  public static async validateChanceToWin(t,disclaimer,data,state){
+    switch (state) {
+      case AustralianState.VIC:
+        await testFunction.assertText(t,disclaimer,data.disclaimers.chanceToWin.heading);
+        await testFunction.assertText(t,disclaimer,data.disclaimers.chanceToWin.VIC.description);
+        break;
+      case AustralianState.NSW:
+        await testFunction.assertText(t,disclaimer,data.disclaimers.chanceToWin.heading);
+        await testFunction.assertText(t,disclaimer,data.disclaimers.chanceToWin.NSW.description);
+        break;
+      case AustralianState.QLD:
+        await testFunction.assertText(t,disclaimer,data.disclaimers.chanceToWin.heading);
+        await testFunction.assertText(t,disclaimer,data.disclaimers.chanceToWin.QLD.description);
+        break;
+      default:
+        throw Error("Invalid State");
+
+    }
   }
 
   public static async validatePlanDisclaimer(t,disclaimer,data,planName,state){
