@@ -135,6 +135,9 @@ Given(/^user has opened the '(.*)' link in a browser and creates '(.*)' to save 
     case "business-energy":
       await t.navigateTo(eaHomePage.campaignPageUrl+"business-energy?live=disabled");
       break;
+    case "business-win":
+      await t.navigateTo(eaHomePage.campaignPageUrl+"business-win?live=disabled");
+      break;
     case "business-total-canstarblue":
       await t.navigateTo(eaHomePage.campaignPageUrl+"business/total-canstarblue?live=disabled");
       break;

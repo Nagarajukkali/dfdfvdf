@@ -6,8 +6,48 @@
     "feature": {
       "preSelect": {
         "Credit50": {
-          "heading": "",
-          "description": ""
+          "VIC": {
+            "heading": "",
+            "description": ""
+          },
+          "NSW": {
+            "heading": "",
+            "description": ""
+          },
+          "ACT": {
+            "heading": "",
+            "description": ""
+          },
+          "QLD": {
+            "heading": "",
+            "description": ""
+          },
+          "SA": {
+            "heading": "",
+            "description": ""
+          }
+        },
+        "chanceToWin": {
+          "VIC": {
+            "heading": "Chance to win $2,000",
+            "description": "Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.+"
+          },
+          "NSW": {
+            "heading": "Chance to win $2,000",
+            "description": "Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.+"
+          },
+          "ACT": {
+            "heading": "",
+            "description": ""
+          },
+          "QLD": {
+            "heading": "Chance to win $2,000",
+            "description": "Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.+"
+          },
+          "SA": {
+            "heading": "",
+            "description": ""
+          }
         },
         "carbonNeutral": {
           "heading": "",
@@ -27,11 +67,49 @@
         }
       },
       "postSelect": {
-        "Credit50": "",
+        "Credit50": {
+          "VIC": "",
+          "NSW": "",
+          "ACT": "",
+          "QLD": "",
+          "SA" : ""
+        },
+        "chanceToWin": {
+          "VIC": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.",
+          "NSW": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.",
+          "ACT": "",
+          "QLD": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.",
+          "SA" : ""
+        },
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
         "noStandardConnectionFee": ""
+      }
+    },
+    "sourceCode": {
+      "newCustomer": {
+        "VIC": "Total_5%GD",
+        "NSW": "Total_21%GD",
+        "ACT": "Total_10%GD",
+        "QLD": "Total_13%GD",
+        "SA": "Total_3%GD"
+      },
+      "existingCustomer": {
+        "ENE":{
+          "VIC": "Total_5%GD",
+          "NSW": "Total_21%GD",
+          "ACT": "Total_10%GD",
+          "QLD": "Total_13%GD",
+          "SA": "Total_3%GD"
+        },
+        "PS": {
+          "VIC": "Total_5%GD",
+          "NSW": "Total_21%GD",
+          "ACT": "Total_10%GD",
+          "QLD": "Total_13%GD",
+          "SA": "Total_3%GD"
+        }
       }
     }
   },
@@ -40,8 +118,48 @@
     "feature": {
       "preSelect": {
         "Credit50": {
-          "heading": "",
-          "description": ""
+          "VIC": {
+            "heading": "",
+            "description": ""
+          },
+          "NSW": {
+            "heading": "",
+            "description": ""
+          },
+          "ACT": {
+            "heading": "",
+            "description": ""
+          },
+          "QLD": {
+            "heading": "",
+            "description": ""
+          },
+          "SA": {
+            "heading": "",
+            "description": ""
+          }
+        },
+        "chanceToWin": {
+          "VIC": {
+            "heading": "Chance to win $2,000",
+            "description": "Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business."
+          },
+          "NSW": {
+            "heading": "Chance to win $2,000",
+            "description": "Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business."
+          },
+          "ACT": {
+            "heading": "",
+            "description": ""
+          },
+          "QLD": {
+            "heading": "Chance to win $2,000 †",
+            "description": "Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business."
+          },
+          "SA": {
+            "heading": "",
+            "description": ""
+          }
         },
         "carbonNeutral": {
           "heading": "",
@@ -54,13 +172,53 @@
         "discountOffTotalEnergyBill": {
           "heading": "Discount off total energy bill",
           "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
+        },
+        "noStandardConnectionFee": {
+          "heading": "",
+          "description": ""
         }
       },
       "postSelect": {
-        "Credit50": "",
+        "Credit50": {
+          "VIC": "",
+          "NSW": "",
+          "ACT": "",
+          "QLD": "",
+          "SA" : ""
+        },
+        "chanceToWin": {
+          "VIC": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.+",
+          "NSW": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.+",
+          "ACT": "",
+          "QLD": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.+",
+          "SA" : ""
+        },
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
-        "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges."
+        "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
+        "noStandardConnectionFee": ""
+      }
+    },
+    "sourceCode": {
+      "newCustomer": {
+        "VIC": "Total_23%GD",
+        "NSW": "Total_19%GD",
+        "ACT": "Total_19%GD",
+        "SA": "Total_3%GD"
+      },
+      "existingCustomer": {
+        "ENE":{
+          "VIC": "Total_23%GD",
+          "NSW": "Total_19%GD",
+          "ACT": "Total_19%GD",
+          "SA": "Total_3%GD"
+        },
+        "PS": {
+          "VIC": "Total_23%GD",
+          "NSW": "Total_19%GD",
+          "ACT": "Total_19%GD",
+          "SA": "Total_3%GD"
+        }
       }
     }
   },
@@ -81,6 +239,24 @@
       },
       "NonVIC": {
         "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. We are currently unable to set up your solar plan online."
+      }
+    },
+    "chanceToWin": {
+      "heading": "Chance to win $2,000",
+      "VIC": {
+        "description": "+ Entry only open to NSW, QLD and VIC businesses that are eligible for EnergyAustralia's Total Plan Business. Ends 11/11/20 11:59pm AEDT. See T&Cs for entry details. Entrants will receive one (1) entry per business meter on their new electricity/gas business account with EnergyAustralia. T&Cs apply."
+      },
+      "NSW": {
+        "description": "+ Entry only open to NSW, QLD and VIC businesses that are eligible for EnergyAustralia's Total Plan Business. Ends 11/11/20 11:59pm AEDT. See T&Cs for entry details. Entrants will receive one (1) entry per business meter on their new electricity/gas business account with EnergyAustralia. T&Cs apply."
+      },
+      "QLD": {
+        "description": "+ Entry only open to NSW, QLD and VIC businesses that are eligible for EnergyAustralia's Total Plan Business. Ends 11/11/20 11:59pm AEDT. See T&Cs for entry details. Entrants will receive one (1) entry per business meter on their new electricity/gas business account with EnergyAustralia. T&Cs apply."
+      },
+      "ACT": {
+        "description": ""
+      },
+      "SA": {
+        "description": ""
       }
     },
     "noStandardConnectionFee": {
@@ -129,4 +305,3 @@
     }
   }
 }
-

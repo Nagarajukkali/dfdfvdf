@@ -1,76 +1,68 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010074644
-    sourceCode: Basic
-    actualQuoteDate: 2020-10-07
+    quoteId: BB2010084695
+    sourceCode: Total_13%GD
+    actualQuoteDate: 2020-10-08
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MRS
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0319953592
+      phoneNumber: 0369011889
     
-    emailId: KrDQqryedG@energyaustralia.com.au
+    emailId: SwrdbBSzGr@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: GNRALPARTNERSHIP
+    businessType: INCORPORATED
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 40474087820
+      businessId: 85285521342
     
-    anzsic: UTILITIES
+    anzsic: PERSONAL
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0319953592
+      businessPhoneNumber: 0369011889
     
-    businessEmailId: KrDQqryedG@energyaustralia.com.au
+    businessEmailId: SwrdbBSzGr@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 36
-    streetName: Gregory
-    streetType: S
-    suburb: WENDOUREE
-    state: VIC
+    streetNo: 437
+    streetName: Oxley
+    streetType: AV
+    suburb: REDCLIFFE
+    state: QLD
     country: AUS
-    postCode: 3355
+    postCode: 4020
     premiseType: COM
     addressType: Premise
     primaryResidence: N
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-10-09
+    proposedStart: 2020-10-12
     offerType: ENE
-    plan: BSOT-EV
-    priceTag: EVPOT_S07
-    serviceOrderDate: 2020-10-09
+    plan: TOPB-EQ
+    priceTag: EQEXA_NB2007
+    serviceOrderDate: 2020-10-12
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 6203822385
-    
-    energySafeVicQuestions: 
-      renovationsSinceDeenergisation: N
-      renovationsInProgressOrPlanned: N
-      customerWithLifeSupport: Y
-    
-    lifeSupportEquipment: 
-      lifeSupportEquipmentType: LSKDM
+      NMI: QB02256002
     
   
   offerDetail: 
@@ -84,7 +76,7 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    reEnergisationJSCCode: RCTBH
-    reEnergisationJSCCharge: 56.05
+    reEnergisationJSCCode: RNRRBU
+    reEnergisationJSCCharge: 0.0
   
 

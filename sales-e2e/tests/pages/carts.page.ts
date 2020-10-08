@@ -7,6 +7,7 @@ const cartsPage={
     gasPlanName: Selector("[id*='flick-cart-plan__header-fuel-GAS'] div[class*='title']"),
     eleFeatures: Selector("[id*='flick-cart-plan__details-text-fuel-ELE']"),
     eleFeature50Credit: Selector("[id*='flick-cart-plan__details-text-fuel-ELE']").withText("Credit"),
+    eleFeatureChanceToWin: Selector("[id*='flick-cart-plan__details-text-fuel-ELE']").withText("$2,000"),
     eleFeatureCN: Selector("[id*='flick-cart-plan__details-text-fuel-ELE']").withText("Carbon neutral"),
     eleFeatureDiscountOffTotal: Selector("[id*='flick-cart-plan__details-text-fuel-ELE']").withText(/Discount off total energy bill/i),
     eleFeaturePeaceOfMind: Selector("[id*='flick-cart-plan__details-text-fuel-ELE']").withText("Peace of mind"),
@@ -15,6 +16,7 @@ const cartsPage={
 
     gasFeatures: Selector("[id*='flick-cart-plan__details-text-fuel-GAS']"),
     gasFeature50Credit: Selector("[id*='flick-cart-plan__details-text-fuel-GAS']").withText("Credit"),
+    gasFeatureChanceToWin: Selector("[id*='flick-cart-plan__details-text-fuel-GAS']").withText("$2,000"),
     gasFeatureCN: Selector("[id*='flick-cart-plan__details-text-fuel-GAS']").withText("Carbon neutral"),
     gasFeatureDiscountOffTotal: Selector("[id*='flick-cart-plan__details-text-fuel-GAS']").withText(/Discount off total energy bill/i),
     gasFeaturePeaceOfMind: Selector("[id*='flick-cart-plan__details-text-fuel-GAS']").withText("Peace of mind"),
