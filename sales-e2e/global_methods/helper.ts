@@ -126,7 +126,13 @@ export class testFunction {
   }
 
   public static async isElementDisplayed(t: any, element: any) {
-    await t.expect((element).exists).ok({ timeout: 30000 });
+    try{
+      await t.expect((element).exists).ok({ timeout: 30000 });
+    }
+    catch(error){
+      console.log(error);
+      throw Error("Unable to find the element: " + element);
+    }
   }
 
   public static async maximizeWindow(t) {
