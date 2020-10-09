@@ -63,7 +63,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
     And user selects No for solar question and confirm
     And user selects plans on checkout details page
       |elePlan         |gasPlan        |
-      |Total Business  |Basic Business |
+      |Total Plan - Business  |Basic Business |
     And user provides business details for My Account journey
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
@@ -114,7 +114,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
     And user selects No for solar question and confirm
     And user selects plans on checkout details page
       |elePlan         |
-      |Total Business  |
+      |Total Plan - Business  |
     And user provides business details for My Account journey
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page

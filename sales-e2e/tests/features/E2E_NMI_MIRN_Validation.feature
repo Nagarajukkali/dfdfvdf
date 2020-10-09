@@ -44,11 +44,11 @@ Feature: This feature is to test the NMI, MIRN and address validation
     Then relevant popup displays for provided '<addressType>'
 
     Examples:
-    |folderName                        |customerType|planName      |customerStatus|movingType|address                                |addressType          |
+    |folderName                        |customerType|planName             |customerStatus|movingType|address                                |addressType          |
     #Invalid Customer type Business Address on Resi page
-    |Address_Resi_INVALID_CUSTOMER_TYPE|RES         |Total Plan    |New           |Non-Moving|12 Atherton Road, OAKLEIGH VIC 3166    |INVALID_CUSTOMER_TYPE|
+    |Address_Resi_INVALID_CUSTOMER_TYPE|RES         |Total Plan           |New           |Non-Moving|12 Atherton Road, OAKLEIGH VIC 3166    |INVALID_CUSTOMER_TYPE|
     #Invalid Customer type Resi Address on Business page
-    |Address_Bus_INVALID_CUSTOMER_TYPE|BUS         |Total Business|New           |Non-Moving|271 Heatherhill Road, FRANKSTON VIC 3199|INVALID_CUSTOMER_TYPE|
+    |Address_Bus_INVALID_CUSTOMER_TYPE|BUS          |Total Plan - Business|New           |Non-Moving|271 Heatherhill Road, FRANKSTON VIC 3199|INVALID_CUSTOMER_TYPE|
     #Address where we don't provide energy
     |ADDRESS_NOT_SERVICED             |RES         |Total Plan    |New           |Non-Moving|48 East Bagdad Road, BAGDAD TAS 7030    |ADDRESS_NOT_SERVICED |
     #Address where we don't provide electricity

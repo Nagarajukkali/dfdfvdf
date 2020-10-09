@@ -101,6 +101,6 @@ Feature:E2E scenario for existing business moving and non moving customer
 
     Examples:
       |customerStatus|planName         |folderName                |fuelType|accountType|sourceSystem  |journey    |AAH  |DD |customerType |newOrExisting  |
-      |Existing      |Total Business   |E2E_Existing_Bus_NonMoving|BOTH    |ELE        |Quote Tool    |Plan Switch|No   |No |BUS          |Existing       |
+      |Existing      |Total Plan - Business   |E2E_Existing_Bus_NonMoving|BOTH    |ELE        |Quote Tool    |Plan Switch|No   |No |BUS          |Existing       |
 
 

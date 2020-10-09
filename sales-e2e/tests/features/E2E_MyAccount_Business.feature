@@ -16,7 +16,7 @@ Feature: This feature is to test the My account scenarios for business customers
       |<sourceSystem> |<journey>  |<fuelType> |
     And user selects plans on checkout details page
       |fuelType   |planName       |
-      |<fuelType> |Total Business |
+      |<fuelType> |Total Plan - Business |
     And user clicks on 'Next' button and navigates to review page
     And user provides business details on review page
       |isCustomerContactPersonMissing |isABNACNMissing |
@@ -51,7 +51,7 @@ Feature: This feature is to test the My account scenarios for business customers
       |<sourceSystem> |<journey>  |<fuelType> |
     And user selects plans on checkout details page
       |fuelType   |planName       |
-      |<fuelType> |Total Business |
+      |<fuelType> |Total Plan - Business |
     And user clicks on 'Next' button and navigates to review page
     And user provides business details on review page
       |isCustomerContactPersonMissing |isABNACNMissing |

@@ -46,7 +46,7 @@ Feature: This feature validates UI of the quote tool application
       |UI_RESI_QUALIFIER_NEW        |RES            |Total Plan     |new            |
       |UI_BSME_QUALIFIER_NEW        |BUS            |Basic Business |new            |
       |UI_RESI_QUALIFIER_EXISTING   |RES            |Basic Home     |existing       |
-      |UI_BSME_QUALIFIER_EXISTING   |BUS            |Total Business |existing       |
+      |UI_BSME_QUALIFIER_EXISTING   |BUS            |Total Plan - Business |existing       |
 
   Scenario Outline: Validating Checkout journey's UI via <customer_type> plans page
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences

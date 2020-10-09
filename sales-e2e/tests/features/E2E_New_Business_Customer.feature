@@ -104,4 +104,4 @@ Scenario Outline: Submit a quote for new business non moving customer
 
   Examples:
   |customerStatus|fuelType|planName      |folderName           |sourceSystem  |journey      |AAH  |DD  |customerType |newOrExisting  |
-  |New           |BOTH    |Total Business|E2E_New_Bus_NonMoving|Quote Tool    |Plan Switch  |Yes  |No  |BUS          |New            |
+  |New           |BOTH    |Total Plan - Business|E2E_New_Bus_NonMoving|Quote Tool    |Plan Switch  |Yes  |No  |BUS          |New            |

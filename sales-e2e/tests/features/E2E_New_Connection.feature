@@ -98,8 +98,8 @@ Feature:E2E scenario for new connection
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
     And user selects plans on checkout details page
-      |fuelType   |planName       |
-      |<fuelType> |Total Business |
+      |fuelType   |planName              |
+      |<fuelType> |Total Plan - Business |
     And user provides dob and id details
       |customerStatus|idType  |
       |New           |Passport|

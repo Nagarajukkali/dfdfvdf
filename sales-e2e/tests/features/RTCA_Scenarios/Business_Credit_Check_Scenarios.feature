@@ -82,7 +82,7 @@ Scenario Outline: Verify if a business customer is displayed with accept with co
 
     Examples:
       |customerStatus|fuelType|planName      |folderName                   |
-      |New           |BOTH    |Total Business|E2E_New_Bus_NonMoving_Decline|
+      |New           |BOTH    |Total Plan - Business|E2E_New_Bus_NonMoving_Decline|
 
 
   Scenario Outline: verify if a business customer is displayed with accept message when CDE returns accept
@@ -162,4 +162,4 @@ Scenario Outline: Verify if a business customer is displayed with accept with co
 
     Examples:
       |customerStatus|fuelType|planName      |folderName                 |
-      |New           |BOTH    |Total Business|E2E_New_Bus_NonMoving_Error|
+      |New           |BOTH    |Total Plan - Business|E2E_New_Bus_NonMoving_Error|

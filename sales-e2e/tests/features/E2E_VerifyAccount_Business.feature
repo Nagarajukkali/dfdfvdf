@@ -99,5 +99,5 @@ Feature: This feature is to test the verify account scenarios for existing busin
       |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GV |5330956738|N                             |N                             |Y                      |GLSMRHW                 |EMAIL        |
 
     Examples:
-      |folderName                               |customer_type |fuelType |planName        |state  |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
-      |E2E_VerifyAccount_Business_Moving        |BUS           |BOTH     |Total Business  |VIC    |Quote Tool     |Move Home    |No   |No   |BUS          |Existing       |
+      |folderName                               |customer_type |fuelType |planName               |state  |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
+      |E2E_VerifyAccount_Business_Moving        |BUS           |BOTH     |Total Plan - Business  |VIC    |Quote Tool     |Move Home    |No   |No   |BUS          |Existing       |

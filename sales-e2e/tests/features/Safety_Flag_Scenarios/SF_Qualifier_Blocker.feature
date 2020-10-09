@@ -43,7 +43,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                      |planName      |
-      |Bus_Safety_Flag_Qualifier_Main_Y|Total Business|
+      |Bus_Safety_Flag_Qualifier_Main_Y|Total Plan - Business|
   #3
   Scenario Outline: Verify the blocker scenario for dual fuel resi account when SF 'P' on main person through bill uploader
     Given user has opened the bill uploader website link in a browser and creates '<folderName>' to save evidences
@@ -85,7 +85,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                      |planName|
-      |Bus_Safety_Flag_Qualifier_Main_P|Total Business|
+      |Bus_Safety_Flag_Qualifier_Main_P|Total Plan - Business|
 
     #5
   @safetyflag
@@ -129,7 +129,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                    |planName|
-      |Bus_Safety_Flag_Qualifier_FR_P|Total Business|
+      |Bus_Safety_Flag_Qualifier_FR_P|Total Plan - Business|
 
      #7
   @safetyflag
@@ -173,7 +173,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                    |planName|
-      |Bus_Safety_Flag_Qualifier_CC_Y|Total Business|
+      |Bus_Safety_Flag_Qualifier_CC_Y|Total Plan - Business|
 
     #9
   @safetyflag
@@ -217,7 +217,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                         |planName|
-      |Bus_Safety_Flag_Qualifier_trustee_P|Total Business|
+      |Bus_Safety_Flag_Qualifier_trustee_P|Total Plan - Business|
 
      #11
   @safetyflag
@@ -261,7 +261,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                      |planName|
-      |Bus_Safety_Flag_Qualifier_Main_U|Total Business|
+      |Bus_Safety_Flag_Qualifier_Main_U|Total Plan - Business|
 
   #Following scenarios are considering both Elec and Gas having different main person
   #1
@@ -306,7 +306,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                         |planName|
-      |Bus_Safety_Flag_Qualifier_CC_Elec_P|Total Business|
+      |Bus_Safety_Flag_Qualifier_CC_Elec_P|Total Plan - Business|
 
     #3
   @safetyflag
@@ -417,7 +417,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                                 |planName|
-      |Bus_Safety_Flag_Qualifier_Single_Main_Gas_Y|Total Business|
+      |Bus_Safety_Flag_Qualifier_Single_Main_Gas_Y|Total Plan - Business|
 
     #5
   @safetyflag
@@ -451,7 +451,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                                 |planName|
-      |Bus_Safety_Flag_Qualifier_Single_AnyP_Gas_U|Total Business|
+      |Bus_Safety_Flag_Qualifier_Single_AnyP_Gas_U|Total Plan - Business|
 
     #Following scenarios for accounts having different level of access on different level of persons
   #1
@@ -496,7 +496,7 @@ Feature: This feature is to test the behaviour of existing customer accounts whi
 
     Examples:
       |folderName                                 |planName|
-      |Bus_Safety_Flag_Qualifier_At_Differnt_Level|Total Business|
+      |Bus_Safety_Flag_Qualifier_At_Differnt_Level|Total Plan - Business|
 
 
 

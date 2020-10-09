@@ -27,7 +27,7 @@ Feature:E2E scenario for fca campaign
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName       |state|
-      |Y                        |N          |Y              |Total Business |NSW  |
+      |Y                        |N          |Y              |Total Plan - Business |NSW  |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |
@@ -62,7 +62,7 @@ Feature:E2E scenario for fca campaign
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName       |state|
-      |Y                        |N          |Y              |Total Business |NSW  |
+      |Y                        |N          |Y              |Total Plan - Business |NSW  |
     And user validates source code
       |fuelType|eleSourceCode     |gasSourceCode     |
       |BOTH    |Total_Plus_22%GD  |Total_Plus_20%GD  |
@@ -103,7 +103,7 @@ Feature:E2E scenario for fca campaign
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName       |state|
-      |Y                        |N          |Y              |Total Business |VIC  |
+      |Y                        |N          |Y              |Total Plan - Business |VIC  |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |
@@ -138,7 +138,7 @@ Feature:E2E scenario for fca campaign
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName       |state|
-      |Y                        |N          |Y              |Total Business |VIC  |
+      |Y                        |N          |Y              |Total Plan - Business |VIC  |
     And user validates source code
       |fuelType|eleSourceCode     |gasSourceCode     |
       |BOTH    |Total_Plus_6%GD   |Total_Plus_24%GD  |
@@ -178,7 +178,7 @@ Feature:E2E scenario for fca campaign
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName       |state|
-      |Y                        |N          |Y              |Total Business | SA  |
+      |Y                        |N          |Y              |Total Plan - Business | SA  |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |
@@ -213,7 +213,7 @@ Feature:E2E scenario for fca campaign
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName        |state|
-      |Y                        |N          |Y              |Total Business |SA   |
+      |Y                        |N          |Y              |Total Plan - Business |SA   |
     And user validates source code
       |fuelType|eleSourceCode     |gasSourceCode     |
       |BOTH    |Total_Plus_4%GD   |Total_Plus_4%GD   |
@@ -253,7 +253,7 @@ Feature:E2E scenario for fca campaign
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName      |state|
-      |Y                        |N          |Y              |Total Business|ACT  |
+      |Y                        |N          |Y              |Total Plan - Business|ACT  |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |
@@ -288,7 +288,7 @@ Feature:E2E scenario for fca campaign
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName      |state|
-      |Y                        |N          |Y              |Total Business|ACT  |
+      |Y                        |N          |Y              |Total Plan - Business|ACT  |
     And user validates source code
       |fuelType|eleSourceCode     |gasSourceCode     |
       |BOTH    |Total_Plus_11%GD  |Total_Plus_19%GD  |
@@ -324,7 +324,7 @@ Feature:E2E scenario for fca campaign
       |ELE      |N                 |N                       |Y                    |Y                                    |N                                |
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName      |state|
-      |Y                        |N          |Y              |Total Business|QLD  |
+      |Y                        |N          |Y              |Total Plan - Business|QLD  |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |
@@ -354,7 +354,7 @@ Feature:E2E scenario for fca campaign
       |ELE      |N                 |N                       |Y                    |Y                                    |N                                |
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName       |state|
-      |Y                        |N          |Y              |Total Business|QLD  |
+      |Y                        |N          |Y              |Total Plan - Business|QLD  |
     And user validates source code
       |fuelType|eleSourceCode     |
       |ELE     |Total_Plus_14%GD  |

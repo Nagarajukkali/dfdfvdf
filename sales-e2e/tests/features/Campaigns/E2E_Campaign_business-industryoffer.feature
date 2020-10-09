@@ -27,7 +27,7 @@ Feature:E2E scenario for business-industryoffer campaign
             | GAS      | N                | N                     | Y                   | Y                                  | N                               |
         And user validates disclaimer on plans page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName       | state |
-            | Y                        | N         | Y            | Total Business | NSW   |
+            | Y                        | N         | Y            | Total Plan - Business | NSW   |
         And user clicks on Add plan button
         And user validates plan details on cart page for "<campaign>"
             | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
@@ -62,7 +62,7 @@ Feature:E2E scenario for business-industryoffer campaign
             | GAS      | N                | N                     | Y                   | Y                                  | N                               |
         And user validates disclaimer on review page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName       | state |
-            | Y                        | N         | Y            | Total Business | NSW   |
+            | Y                        | N         | Y            | Total Plan - Business | NSW   |
         And user validates source code
             | fuelType | eleSourceCode | gasSourceCode |
             | BOTH     | Total_22%GD   | Total_20%GD   |
@@ -102,7 +102,7 @@ Feature:E2E scenario for business-industryoffer campaign
             | GAS      | N                | N                     | Y                   | Y                                  | N                               |
         And user validates disclaimer on plans page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName       | state |
-            | Y                        | N         | Y            | Total Business | VIC   |
+            | Y                        | N         | Y            | Total Plan - Business | VIC   |
         And user clicks on Add plan button
         And user validates plan details on cart page for "<campaign>"
             | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
@@ -137,7 +137,7 @@ Feature:E2E scenario for business-industryoffer campaign
             | GAS      | N                | N                     | Y                   | Y                                  | N                               |
         And user validates disclaimer on review page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName       | state |
-            | Y                        | N         | Y            | Total Business | VIC   |
+            | Y                        | N         | Y            | Total Plan - Business | VIC   |
         And user validates source code
             | fuelType | eleSourceCode | gasSourceCode |
             | BOTH     | Total_6%GD    | Total_24%GD   |
@@ -177,7 +177,7 @@ Feature:E2E scenario for business-industryoffer campaign
             | GAS      | N                | N                     | Y                   | Y                                  | N                               |
         And user validates disclaimer on plans page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName       | state |
-            | Y                        | N         | Y            | Total Business | SA    |
+            | Y                        | N         | Y            | Total Plan - Business | SA    |
         And user clicks on Add plan button
         And user validates plan details on cart page for "<campaign>"
             | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
@@ -212,7 +212,7 @@ Feature:E2E scenario for business-industryoffer campaign
             | GAS      | N                | N                     | Y                   | Y                                  | N                               |
         And user validates disclaimer on review page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName       | state |
-            | Y                        | N         | Y            | Total Business | SA    |
+            | Y                        | N         | Y            | Total Plan - Business | SA    |
         And user validates source code
             | fuelType | eleSourceCode | gasSourceCode |
             | BOTH     | Total_4%GD    | Total_4%GD    |
@@ -252,7 +252,7 @@ Feature:E2E scenario for business-industryoffer campaign
             | GAS      | N                | N                     | Y                   | Y                                  | N                               |
         And user validates disclaimer on plans page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName       | state |
-            | Y                        | N         | Y            | Total Business | ACT   |
+            | Y                        | N         | Y            | Total Plan - Business | ACT   |
         And user clicks on Add plan button
         And user validates plan details on cart page for "<campaign>"
             | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
@@ -287,7 +287,7 @@ Feature:E2E scenario for business-industryoffer campaign
             | GAS      | N                | N                     | Y                   | Y                                  | N                               |
         And user validates disclaimer on review page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName       | state |
-            | Y                        | N         | Y            | Total Business | ACT   |
+            | Y                        | N         | Y            | Total Plan - Business | ACT   |
         And user validates source code
             | fuelType | eleSourceCode | gasSourceCode |
             | BOTH     | Total_11%GD   | Total_19%GD   |
@@ -323,7 +323,7 @@ Feature:E2E scenario for business-industryoffer campaign
             | ELE      | N                | N                     | Y                   | Y                                  | N                               |
         And user validates disclaimer on plans page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName       | state |
-            | Y                        | N         | Y            | Total Business | QLD   |
+            | Y                        | N         | Y            | Total Plan - Business | QLD   |
         And user clicks on Add plan button
         And user validates plan details on cart page for "<campaign>"
             | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
@@ -353,7 +353,7 @@ Feature:E2E scenario for business-industryoffer campaign
             | ELE      | N                | N                     | Y                   | Y                                  | N                               |
         And user validates disclaimer on review page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName       | state |
-            | Y                        | N         | Y            | Total Business | QLD   |
+            | Y                        | N         | Y            | Total Plan - Business | QLD   |
         And user validates source code
             | fuelType | eleSourceCode |
             | ELE      | Total_14%GD   |

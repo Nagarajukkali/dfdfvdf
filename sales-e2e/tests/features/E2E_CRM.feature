@@ -106,7 +106,7 @@ Feature: Sanity E2E scenarios for ST & ST+1 for 1View Project
     Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM005' to save evidences
     And user has navigated to 'BUS' plans page
     And user have selected fuel as "BOTH"
-    When user selects 'Total Business'
+    When user selects 'Total Plan - Business'
     And user moves on to fill the qualifier
     And user selects 'New' on qualifier
     And user provides all other details on qualifier page
@@ -157,7 +157,7 @@ Feature: Sanity E2E scenarios for ST & ST+1 for 1View Project
     Given user has opened the website link in a browser and creates 'E2E_CRM_QTCRM007' to save evidences
     And user has navigated to 'BUS' plans page
     And user have selected fuel as "GAS"
-    When user selects 'Total Business'
+    When user selects 'Total Plan - Business'
     And user moves on to fill the qualifier
     And user selects 'New' on qualifier
     And user provides all other details on qualifier page
@@ -301,7 +301,7 @@ Feature: Sanity E2E scenarios for ST & ST+1 for 1View Project
     And user verifies the account through verify account journey for business customer
       |customer_type|modal_option   |elecAccountNumber|ABNOrACN     |idType |idNumber  |
       |BUS          |verify account |1536689555       |803123232    |pin    |222222    |
-    And user selects 'Total Business'
+    And user selects 'Total Plan - Business'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
       |customerType|movingType |solarOption  |
