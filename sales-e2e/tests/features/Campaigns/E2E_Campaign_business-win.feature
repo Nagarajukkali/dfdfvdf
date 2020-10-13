@@ -110,7 +110,7 @@ Feature:E2E scenario for business-win campaign
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
-      |Existing      |6261447599   |ABN                |63824650000     |dob   |01011980|
+      |Existing      |0054341369   |ABN                |52987721200     |dob   |01011980|
     And user provides all other details on qualifier page for Existing customer
       |customerType|movingType |solarOption|
       |BUS         |Non-Moving |No         |
@@ -149,12 +149,12 @@ Feature:E2E scenario for business-win campaign
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |PS      |TOPB-EV  |6203822385|                              |                              | N                     |                   |EMAIL        |<customerStatus>  |<campaign>|
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |PS      |TOPB-EV  |6305223008|                              |                              | N                     |                   |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |PS      |TOPB-GV  |5330956738|                              |                              |    N                  |                |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |PS      |TOPB-GV  |5321271926|                              |                              |    N                  |                |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign         |folderName                       |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
-      |Existing      |BOTH    |5          |23         |business-win  |E2E_Campaign_business-win_VIC_new_moving |Quote Tool  |Plan Switch|VIC    |BUS          |Existing            |No  |No  |
+      |Existing      |BOTH    |5          |23         |business-win  |E2E_Campaign_business-win_VIC_existing_moving |Quote Tool  |Plan Switch|VIC    |BUS          |Existing            |No  |No  |
