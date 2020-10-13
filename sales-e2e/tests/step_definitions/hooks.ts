@@ -10,12 +10,15 @@ const eaHomePage=require('../pages/energy-australia-home.page');
 logger.level='debug';
 export let screenshotFolder=null;
 export let getTestCafeRC=null;
+export let getPackage=null;
 export let height=null;
 export let width=null;
 
 Before(  async t => {
   await testFunction.maximizeWindow(t);
   const doc = fs.readFileSync('.testcaferc.json','utf8');
+  const packageDoc = fs.readFileSync('../package.json','utf8');
+  getPackage=JSON.parse(packageDoc);
   getTestCafeRC = JSON.parse(doc);
   logger.info(`  Test: ${t.testRun.test.name}`);
 });

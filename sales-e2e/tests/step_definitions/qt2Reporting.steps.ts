@@ -5,36 +5,36 @@ import {FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 import {testFunction} from '../../global_methods/helper';
 import {FileUtils} from '../../libs/FileUtils'
-import {getTestCafeRC} from './hooks';
+import {getPackage, getTestCafeRC} from './hooks';
 
 
 When(/^user logs in to qt2 reporting$/, async function(t) {
-  if(!getTestCafeRC.browsers[0].includes('emulation')){
+  if(!getTestCafeRC.browsers[0].includes('emulation') && !getPackage.config.env.includes('chai') && !getPackage.config.env.includes('decaf')){
     await qt2Reporting.loginToqt2Reporting(t);
   }
 });
 
 When(/^user search quote on the basis of '(.*)'$/, async function (t,[option]) {
-  if(!getTestCafeRC.browsers[0].includes('emulation')) {
+  if(!getTestCafeRC.browsers[0].includes('emulation') && !getPackage.config.env.includes('chai') && !getPackage.config.env.includes('decaf')) {
     await qt2Reporting.searchEleQuote(t, option);
   }
 });
 Then(/^submitted quote is displayed$/, async function (t) {
-  if(!getTestCafeRC.browsers[0].includes('emulation')) {
+  if(!getTestCafeRC.browsers[0].includes('emulation') && !getPackage.config.env.includes('chai') && !getPackage.config.env.includes('decaf')) {
     await qt2Reporting.verifySubmittedQuote(t);
     await testFunction.takeScreenshot(t, "qt2_reporting_app_quotes");
   }
 });
 
 Then(/^user validates all the details for '(.*)' submitted quote$/, async function (t,[fuelType]) {
-  if(!getTestCafeRC.browsers[0].includes('emulation')) {
+  if(!getTestCafeRC.browsers[0].includes('emulation') && !getPackage.config.env.includes('chai') && !getPackage.config.env.includes('decaf')) {
     await qt2Reporting.validateQuoteDetails(t, fuelType);
     await testFunction.takeScreenshot(t, "qt2_reporting_app_" + fuelType);
   }
 });
 
 Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) {
-  if(!getTestCafeRC.browsers[0].includes('emulation')) {
+  if(!getTestCafeRC.browsers[0].includes('emulation') && !getPackage.config.env.includes('chai') && !getPackage.config.env.includes('decaf')) {
     //Expected Data
     let data = dataTable.hashes();
     let expectedFuelType = data[0].fuelType;

@@ -19,8 +19,8 @@
     "report": "node report-generator.js"
   },
   "config": {
-    "env": "mocha",
-    "e2e_tags": "@campaign10.3,~@failed"
+    "env": "preprod",
+    "e2e_tags": "@E2E,~@failed"
   },
   "private": true,
   "dependencies": {
