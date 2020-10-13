@@ -5,7 +5,8 @@ import {getPackage, getTestCafeRC} from './hooks';
 const eaHomePage=require('../pages/energy-australia-home.page');
 const eaMyAccount = require('../pages/myAccount.page');
 const eaQt2Reporting = require('../pages/eaQt2Reporting.page');
-
+const { config }=require('../../resources/resource');
+const envToExclude=config.qt2ReportingToExcludeInEnvs;
 Given(/^user has navigated to '(.*)' plans page$/, async function(t, [customerType]) {
   if(customerType===CustomerType.RESIDENTIAL){
     await testFunction.click(t, eaHomePage.elements.residentialComparePlansButton);
@@ -34,7 +35,7 @@ Given(/^user navigates to my account login page$/, async function (t, []) {
 });
 
 Given(/^user has opened the qt2 Reporting website link in a browser$/, async function(t, [folderName]) {
-  if(!getTestCafeRC.browsers[0].includes('emulation') && !getPackage.config.env.includes('chai') && !getPackage.config.env.includes('decaf')){
+  if(!getTestCafeRC.browsers[0].includes('emulation') && !envToExclude.includes(getPackage.config.env)){
     await t.navigateTo(eaQt2Reporting.qt2ReportingPageURL);
   }
 });

@@ -10,6 +10,7 @@ config: {
     qt2ReportingHomePageURL:`https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/qt2reporting/app/reporting`,
     screenshot:'N',
     interceptNetworkRequest:'N',
+    qt2ReportingToExcludeInEnvs:'chai,decaf,espresso',
     visualValidation: {
       rebaseline: 'N',
       validate: 'N',
