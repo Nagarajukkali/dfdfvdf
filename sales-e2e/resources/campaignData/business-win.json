@@ -140,7 +140,7 @@
     "chanceToWin": {
       "heading": "Chance to win $2,000",
       "VIC": {
-        "description": "+ Entry only open to NSW, QLD and VIC businesses that are eligible for EnergyAustralia's Total Plan Business. Ends 11/11/20 11:59pm AEDT. See T&Cs for entry details. Entrants will receive one (1) entry per business meter on their new electricity/gas business account with EnergyAustralia. T&Cs apply."
+        "description": "+ Entry only open to NSW, QLD and VIC businesses that are eligible for EnergyAustralia's Total Plan Business. Ends 11/11/20 11:59pm AEDT. See T&Cs for entry details. Entrants will receive one (1) entry per business meter on their new electricity/gas business account with EnergyAustralia. One prize only per business. T&Cs apply."
       }
     },
     "noStandardConnectionFee": {
@@ -150,7 +150,7 @@
     "Credit50": {
       "VIC": {
         "heading": "$100 Sign Up Credit",
-        "description": "**Offer only for eligible VIC business customers who receive the mailing and sign up to Total Plan Business electricity or gas offer before 11/11/20 11:59pm AEDT. Limit of one $100 credit per new energy account, per energy type, per business premises. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        "description": "** Offer only for eligible VIC business customers who receive the mailing and sign up to Total Plan Business electricity or gas offer before 11/11/20 11:59pm AEDT. Limit of one $100 credit per new energy account, per energy type, per business premises. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       }
     },
     "totalPlanBusiness": {
