@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010074645
+    quoteId: BB2010144586
     sourceCode: Basic
-    actualQuoteDate: 2020-10-07
+    actualQuoteDate: 2020-10-14
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,30 +15,43 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0319953592
+      phoneNumber: 0327217140
     
-    emailId: KrDQqryedG@energyaustralia.com.au
+    emailId: HiohTHkzwZ@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: GNRALPARTNERSHIP
+    businessType: CORPORATION
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 40474087820
+      businessId: 57432448268
     
-    anzsic: UTILITIES
+    anzsic: HOSPITALITY
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0319953592
+      businessPhoneNumber: 0327217140
     
-    businessEmailId: KrDQqryedG@energyaustralia.com.au
+    businessEmailId: HiohTHkzwZ@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 320
+    streetName: Crown
+    streetType: S
+    suburb: SURRY HILLS
+    state: NSW
+    country: AUS
+    postCode: 2010
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
@@ -49,20 +62,18 @@ saleDetail :
     state: VIC
     country: AUS
     postCode: 3355
-    premiseType: COM
-    addressType: Premise
-    primaryResidence: N
+    addressType: Mailing
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-10-09
+    proposedStart: 2020-10-15
     offerType: ENE
-    plan: BSOT-GV
-    priceTag: GVT3A_S13N
-    serviceOrderDate: 2020-10-09
+    plan: BSOT-GN
+    priceTag: GNAGA_GB
+    serviceOrderDate: 2020-10-15
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      MIRN: 5330956738
+      MIRN: 5240554353
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -79,7 +90,7 @@ saleDetail :
     fuelTypeNaReasonCode: NOINTEREST
   
   billDeliveryDetail: 
-    billRouteType: EMAIL
+    billRouteType: POSTMM
   
   creditAssessmentDecision: Accept
 

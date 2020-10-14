@@ -1,7 +1,7 @@
 @E2E @newcustomer @smoke
 
 Feature:E2E scenario for new business moving and non moving customer
-
+  
   Scenario Outline: Submit a quote for new business moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'BUS' plans page
@@ -12,8 +12,8 @@ Feature:E2E scenario for new business moving and non moving customer
   And user moves on to fill the qualifier
   And user selects '<customerStatus>' on qualifier
   And user provides all other details on qualifier page
-    |customerType| customerStatus| connectionAddress                         |movingType|propertyType|solarOption|
-    |BUS         |New            | 36 Gregory Street West, WENDOUREE VIC 3355|Moving    |            |No         |
+    |customerType| customerStatus| connectionAddress                     |movingType|propertyType|solarOption|
+    |BUS         |New            | 320 Crown Street, SURRY HILLS NSW 2010|Moving    |            |No         |
   And user provides all details on checkout details page
     |customerType|journey    | firstName| lastName|businessType|
     |BUS         |BUS        | test     |test     |ABN         |
@@ -24,6 +24,9 @@ Feature:E2E scenario for new business moving and non moving customer
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |No          |Yes        |Bank           |
+  And user selects billing preference option
+    |option        |otherAddress                              |
+    |Other address |36 Gregory Street West, WENDOUREE VIC 3355|
   And user clicks on 'Review your order' button and navigates to review page
   And user validates details on checkout review page
     |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
@@ -44,15 +47,15 @@ Feature:E2E scenario for new business moving and non moving customer
   And user validates all the details for 'ELE' submitted quote
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-    |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |BSOT-EV |6203822385|N                             |N                             |Y                      |LSKDM                   |EMAIL        |
+    |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |BSOT-EN |NCCC005405|N                             |N                             |Y                      |LSKDM                   |POSTMM       |
   And user validates all the details for 'GAS' submitted quote
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-    |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |BSOT-GV |5330956738|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
+    |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |BSOT-GN |5240554353|N                             |N                             |Y                      |GLSMRHAC                |POSTMM       |
 
   Examples:
     |customerStatus|fuelType|planName      |folderName        |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
-    |New           |BOTH    |Basic Business|E2E_New_Bus_Moving|VIC  |Quote Tool    |Move Home|No   |Yes |BUS          |New            |
+    |New           |BOTH    |Basic Business|E2E_New_Bus_Moving|NSW  |Quote Tool    |Move Home|No   |Yes |BUS          |New            |
 
   @deviceCheck @smoke
 Scenario Outline: Submit a quote for new business non moving customer
@@ -76,6 +79,7 @@ Scenario Outline: Submit a quote for new business non moving customer
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |Yes         |No         |               |
+  And user opts for special offer
   And user clicks on 'Review your order' button and navigates to review page
   And user validates details on checkout review page
     |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |

@@ -113,6 +113,13 @@ export enum OfferType {
   element.setAttribute(propertyName, propertyValue);
 });
 
+  export const setLocalStorageItem = ClientFunction((prop, value) => {
+  localStorage.setItem(prop, value);
+});
+
+  export const getLocalStorageItem = ClientFunction(prop => {
+  return localStorage.getItem(prop);
+});
 
 export class testFunction {
   public static async click(t, element) {
@@ -492,10 +499,28 @@ export class testFunction {
     await t.addRequestHooks(logger);
   }
 
+  public static async captureAnalyticsNetworkCall(t: any) {
+    logger= RequestLogger(  {
+      url: /b\/ss/,
+      method:'POST'
+    }, {
+      logRequestHeaders:  true,
+      logRequestBody:     true,
+      stringifyRequestBody: true,
+    });
+    await t.addRequestHooks(logger);
+  }
+
   public static async validateNetworkCall(t: any) {
     await requestLoggerUtils.unzipLoggerResponses(t, {requestLogger: logger, toJson: true});
     //console.log('\nUnzipped Response taken by the logger:\n', logger.requests[0].response.body);
     return logger.requests[0].response.body;
+  }
+
+  public static async validateAnalyticsNetworkCall(t: any) {
+    //await requestLoggerUtils.unzipLoggerRequest(t, {requestLogger: logger, toJson: true});
+    //console.log('\nUnzipped Response taken by the logger:\n', logger.requests[0].response.body);
+    return logger.requests[0].request.body;
   }
 
   public static isMobile():boolean{

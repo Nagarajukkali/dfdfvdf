@@ -1,47 +1,27 @@
 saleDetail : 
   saleDetailHeader: 
-<<<<<<< HEAD
-    quoteId: BB2009281534
+    quoteId: BB2010144575
     sourceCode: Total_15%GD_75
-    actualQuoteDate: 2020-09-28
-=======
-    quoteId: BB2009252400
-    sourceCode: Total_15%GD_75
-    actualQuoteDate: 2020-09-25
->>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
+    actualQuoteDate: 2020-10-14
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-<<<<<<< HEAD
-    title: MR
-=======
     title: MS
->>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-<<<<<<< HEAD
-      phoneNumber: 0386197061
+      phoneNumber: 0321907990
     
-    emailId: wXkUTQPNMY@energyaustralia.com.au
+    emailId: vdBBXGBNuf@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 344832
-=======
-      phoneNumber: 0312707400
-    
-    emailId: tWeRkoZFSN@energyaustralia.com.au
-    dob: 1980-01-01
-    personIdDetail: 
-      idType: DL
-      id: 233786
->>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
+      id: 183990
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -49,7 +29,7 @@ saleDetail :
           dlFirstName: test
           dlMiddleName/: 
           dlLastName: test
-          licenseStateOfIssue: NT
+          licenseStateOfIssue: TAS
         
       
     
@@ -72,11 +52,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-09-29
+    proposedStart: 2020-10-16
     offerType: ENE
     plan: TOPH-EN
     priceTag: ENIEA_NR2007
-    serviceOrderDate: 2020-09-29
+    serviceOrderDate: 2020-10-16
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 4311150544
@@ -102,7 +82,7 @@ saleDetail :
   creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    priceTagMeteringCharge: M25161D1E_VE
+    priceTagMeteringCharge: M25161DN_IH
     proposedNTC: N70
     proposedMC: IHUBMC
     reEnergisationJSCCharge: 0

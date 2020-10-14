@@ -1,16 +1,14 @@
 @E2E
 Feature:E2E scenario for offer campaign
-
   @deviceCheck @smoke
-
 Scenario Outline: Submit a quote for offer campaign without AAH and DD
   Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
   When user provides "2000" and clicks on show me plan link
   And user clicks on Add plan button
   And user selects '<customerStatus>' on qualifier
   And user provides all other details on qualifier page
-    |customerType| connectionAddress               | movingType|propertyType|solarOption|
-    |RES         | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |No         |
+    |customerType| connectionAddress                  | movingType|propertyType|solarOption|
+    |RES         | 74 Yillowra Street, AUBURN NSW 2144|Non-Moving |Renter      |No         |
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|idType        |
     |RES         |RES        |New           | test     |test     |Driver License|
@@ -20,11 +18,15 @@ Scenario Outline: Submit a quote for offer campaign without AAH and DD
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |<AAH>       |<DD>       |Bank           |
-  And user selects answer for property renovation question for '<state>'
+  And user opts for concession card
+  And user selects billing preference option
+    |option             |otherAddress                                 |
+    |Connection address |                                             |
+  And user opts for special offer
   And user clicks on 'Review your order' button and navigates to review page
   And user validates details on checkout review page
     |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
+    |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
   And user provides life support details on review page
     |lifeSupportOption|fuelType|EleclifeSupportDevices                        |GaslifeSupportDevices|
     |Yes              |BOTH    |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
@@ -41,15 +43,15 @@ Scenario Outline: Submit a quote for offer campaign without AAH and DD
   And user validates all the details for 'ELE' submitted quote
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign|
-    |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-EN |4311150544|N                             |N                             |Y                      |LSCNSPE                 |EMAIL        |<customerStatus>  |<campaign>|
+    |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-EN |4102681649|N                             |N                             |Y                      |LSCNSPE                 |POSTMM       |<customerStatus>  |<campaign>|
   And user validates all the details for 'GAS' submitted quote
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType| customerStatus   | campaign |
-    |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
+    |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-GN |5240524910|N                             |N                             |Y                      |OTHER                   |POSTMM       |<customerStatus>  |<campaign>|
 
   Examples:
-    |customerStatus|fuelType|campaign  |folderName                                    |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
-    |New           |BOTH    |offer     |E2E_New_Resi_Camp_OFFER_WithoutAAH_WithoutDD  |NSW  |Quote Tool    |Move Home|No   |No  |RES          |New            |
+    |customerStatus|fuelType|campaign  |folderName                                    |sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
+    |New           |BOTH    |offer     |E2E_New_Resi_Camp_OFFER_WithoutAAH_WithoutDD  |Quote Tool    |COR      |No   |No  |RES          |New            |
 
   Scenario Outline: Submit a quote for offer campaign with AAH and DD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -57,17 +59,18 @@ Scenario Outline: Submit a quote for offer campaign without AAH and DD
     And user clicks on Add plan button
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType| connectionAddress               | movingType|propertyType|solarOption|
-      |RES         | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |No         |
+      |customerType| connectionAddress                       | movingType|propertyType|solarOption|
+      |RES         | 9 Charming Street, HAMPTON EAST VIC 3188|Moving     |Renter      |No         |
     And user provides all details on checkout details page
-      |customerType|journey    |customerStatus| firstName| lastName|idType        |
-      |RES         |RES        |New           | test     |test     |Driver License|
+      |customerType|journey    |customerStatus| firstName| lastName|idType  |
+      |RES         |RES        |New           | test     |test     |Passport|
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |<AAH>       |<DD>       |Bank           |
+    And user opts for concession card
     And user selects answer for property renovation question for '<state>'
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
@@ -89,14 +92,14 @@ Scenario Outline: Submit a quote for offer campaign without AAH and DD
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType| customerStatus   | campaign |
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-EN |4311150544|N                             |N                             |Y                      |LSCNSPE                 |EMAIL        |<customerStatus>  |<campaign>|
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-EV |6407220528|N                             |N                             |Y                      |LSCNSPE                 |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType| customerStatus   | campaign |
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GV |5310571404|N                             |N                             |Y                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
       |customerStatus|fuelType|campaign  |folderName                                    |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
-      |New           |BOTH    |offer     |E2E_New_Resi_Camp_OFFER_WithAAH_WithDD        |NSW  |Quote Tool    |Move Home|Yes  |Yes |RES          |New            |
+      |New           |BOTH    |offer     |E2E_New_Resi_Camp_OFFER_WithAAH_WithDD        |VIC  |Quote Tool    |Move Home|Yes  |Yes |RES          |New            |
 
 

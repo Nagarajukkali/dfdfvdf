@@ -159,3 +159,6 @@ Then(/^user validates '([^"]*)' page UI$/, async function (t, [checkoutPage]) {
     console.log("Invalid checkout page name.");
   }
 });
+When(/^user opts for special offer$/, async function (t,[]) {
+  await testFunction.click(t,eaCheckoutDetailsPage.elements.chkboxSpecialOffer);
+});

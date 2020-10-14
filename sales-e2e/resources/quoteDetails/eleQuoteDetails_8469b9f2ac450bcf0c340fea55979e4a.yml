@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010074642
+    quoteId: BB2010144581
     sourceCode: Total_5%GD
-    actualQuoteDate: 2020-10-07
+    actualQuoteDate: 2020-10-14
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,30 +15,30 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0394404777
+      phoneNumber: 0313019509
     
-    emailId: ASMDwXcTqf@energyaustralia.com.au
+    emailId: ynUwwiAEzR@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: OTHERS
+    businessType: INCORPORATED
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ACN
-      businessId: 764601970
+      businessId: 963972983
     
-    anzsic: CONSTRUCTION
+    anzsic: COMMUNICATION
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0394404777
+      businessPhoneNumber: 0313019509
     
-    businessEmailId: ASMDwXcTqf@energyaustralia.com.au
+    businessEmailId: ynUwwiAEzR@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST

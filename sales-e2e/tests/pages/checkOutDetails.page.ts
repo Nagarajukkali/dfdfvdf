@@ -100,8 +100,8 @@ const eaCheckoutDetailsPage={
     rbBillPrefEmail: Selector("[for*='bill-delivery-method__email-option-value']"),
     rbBillPrefConnectionAddress: Selector("[for*='bill-delivery-method__connection-address-option-value']"),
     rbBillPrefOtherAddress: Selector("[value*='otherAddress'] [class*='wg-radio-option-text']"),
-    tfBillPrefOtherAddress: Selector("#bill-delivery-other-address-auto"),
-    serviceAddressList: Selector("[ng-form*='bill-delivery-other-address'] a"),
+    tfBillPrefOtherAddress: Selector("#bill-delivery-other-address-auto-input"),
+    serviceAddressList: Selector("#bill-delivery-other-address-auto-autocomplete li"),
     rbFinalBillPrefEmail: Selector("[for*='final-bill-method__email-option-value']"),
     rbFinalBillPrefConnectionAddress: Selector("#final-bill-method__connection-address-option-value"),
     rbFinalBillPrefOtherAddress: Selector("#final-bill-method__other-address-option [class*='wg-radio-option-text']"),
@@ -133,6 +133,7 @@ const eaCheckoutDetailsPage={
     basicBsmeGasPlanRatesTitle:Selector("[id*='plan-rates-title-BSOT-G']"),
     sliderRight:Selector("div.hs-plan-slider__button__bg-right"),
     connectionAddress:Selector("#connAddrTitle"),
+    chkboxSpecialOffer:Selector("#solar-request-receive-special-offer"),
     contactPreference: {
       disclaimer: Selector("div[class*='__contact-preference']"),
       linkClickHere: Selector("#contact-opt-out-modal"),

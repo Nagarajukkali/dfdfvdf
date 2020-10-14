@@ -1,43 +1,27 @@
 saleDetail : 
   saleDetailHeader: 
-<<<<<<< HEAD
-    quoteId: BB2009281535
+    quoteId: BB2010144576
     sourceCode: Total_15%GD_75
-    actualQuoteDate: 2020-09-28
-=======
-    quoteId: BB2008256489
-    sourceCode: Total_17%GD
-    actualQuoteDate: 2020-08-25
->>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
+    actualQuoteDate: 2020-10-14
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-<<<<<<< HEAD
-      phoneNumber: 0386197061
+      phoneNumber: 0321907990
     
-    emailId: wXkUTQPNMY@energyaustralia.com.au
+    emailId: vdBBXGBNuf@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 344832
-=======
-      phoneNumber: 0317754224
-    
-    emailId: FwiqcrbXrB@energyaustralia.com.au
-    dob: 1980-01-01
-    personIdDetail: 
-      idType: DL
-      id: 947266
->>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
+      id: 183990
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -45,7 +29,7 @@ saleDetail :
           dlFirstName: test
           dlMiddleName/: 
           dlLastName: test
-          licenseStateOfIssue: NSW
+          licenseStateOfIssue: TAS
         
       
     
@@ -67,24 +51,15 @@ saleDetail :
     primaryResidence: N
   
   offerDetail: 
-<<<<<<< HEAD
     fuelType: G
-    proposedStart: 2020-09-29
+    proposedStart: 2020-10-16
     offerType: ENE
     plan: TOPH-GN
     priceTag: GNAGA_NR2007
-    serviceOrderDate: 2020-09-29
-=======
-    fuelType: E
-    proposedStart: 2020-08-27
-    offerType: ENE
-    plan: TOPH-EN
-    priceTag: ENIEA_NR2007
-    serviceOrderDate: 2020-08-27
->>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
+    serviceOrderDate: 2020-10-16
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 4311150544
+      MIRN: 5240924834
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -92,11 +67,12 @@ saleDetail :
       customerWithLifeSupport: Y
     
     lifeSupportEquipment: 
-      lifeSupportEquipmentType: LSCNSPE
+      lifeSupportEquipmentType: OTHER
     
+    lifeSupportOtherEquipmentDetails: Sample Other gas device.
   
   offerDetail: 
-    fuelType: G
+    fuelType: E
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -105,11 +81,4 @@ saleDetail :
   
   creditAssessmentDecision: Accept
   creditAssessmentReasonCode: Accept
-  meteringDetail: 
-    meterExchangeFlag: N
-    priceTagMeteringCharge: M25161DN_IH
-    proposedNTC: N70
-    proposedMC: IHUBMC
-    reEnergisationJSCCharge: 0
-  
 

@@ -617,8 +617,8 @@ export class checkoutDetailsMethod{
         }else {
           await testFunction.click(t, eaCheckoutDetailsPage.elements.rbBillPrefOtherAddress);
           await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfBillPrefOtherAddress, otherAddress);
-          await t.wait(3000);
-          await testFunction.click(t, eaCheckoutDetailsPage.elements.serviceAddressList);
+          await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.serviceAddressList);
+          await testFunction.clickElementFromList(t,eaCheckoutDetailsPage.elements.serviceAddressList,otherAddress);
           await t.wait(2000);
         }
         break;

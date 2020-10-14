@@ -1,35 +1,35 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2009281512
-    sourceCode: Total_15%GD_75
-    actualQuoteDate: 2020-09-28
+    quoteId: BB2010144578
+    sourceCode: Total_27%GD_50
+    actualQuoteDate: 2020-10-14
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0367551060
+      phoneNumber: 0397173310
     
-    emailId: wcHMjHYDwE@energyaustralia.com.au
+    emailId: lqPOJuzYWM@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 75273
+      idType: PASSPORT
+      id: 554969
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
-        idValidationDriversLicenseDetail: 
-          dlFirstName: test
-          dlMiddleName/: 
-          dlLastName: test
-          licenseStateOfIssue: NSW
+        idValidationPassportDetail: 
+          passportFirstName: test
+          passportMiddleName/: 
+          passportLastName: test
+          passportCountry: AUS
         
       
     
@@ -39,27 +39,27 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 5
-    streetName: Wilkies
+    streetNo: 9
+    streetName: Charming
     streetType: S
-    suburb: BULLI
-    state: NSW
+    suburb: HAMPTON EAST
+    state: VIC
     country: AUS
-    postCode: 2516
+    postCode: 3188
     premiseType: DOM
     addressType: Premise
-    primaryResidence: N
+    primaryResidence: Y
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-09-29
+    proposedStart: 2020-10-16
     offerType: ENE
-    plan: TOPH-GN
-    priceTag: GNAGA_NR2007
-    serviceOrderDate: 2020-09-29
+    plan: TOPH-GV
+    priceTag: GVA2A_NR2001
+    serviceOrderDate: 2020-10-16
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      MIRN: 5240924834
+      MIRN: 5310571404
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N

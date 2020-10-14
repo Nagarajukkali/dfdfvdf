@@ -1,27 +1,27 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2009281509
+    quoteId: BB2010144579
     sourceCode: Total_15%GD_75
-    actualQuoteDate: 2020-09-28
+    actualQuoteDate: 2020-10-14
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0352222750
+      phoneNumber: 0316680657
     
-    emailId: mHFyBxBCQA@energyaustralia.com.au
+    emailId: jpSYylKnCc@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 439848
+      id: 285323
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -29,7 +29,7 @@ saleDetail :
           dlFirstName: test
           dlMiddleName/: 
           dlLastName: test
-          licenseStateOfIssue: NSW
+          licenseStateOfIssue: TAS
         
       
     
@@ -39,27 +39,24 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 5
-    streetName: Wilkies
+    streetNo: 74
+    streetName: Yillowra
     streetType: S
-    suburb: BULLI
+    suburb: AUBURN
     state: NSW
     country: AUS
-    postCode: 2516
+    postCode: 2144
     premiseType: DOM
     addressType: Premise
-    primaryResidence: N
+    primaryResidence: Y
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-09-29
-    offerType: ENE
+    offerType: COR
     plan: TOPH-EN
-    priceTag: ENIEA_NR2007
-    serviceOrderDate: 2020-09-29
-    serviceOrderTime: BUSHRS
+    priceTag: ENEA1_NR2007
     nmiMirnInformation: 
-      NMI: 4311150544
+      NMI: 4102681649
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -76,15 +73,11 @@ saleDetail :
     fuelTypeNaReasonCode: NOINTEREST
   
   billDeliveryDetail: 
-    billRouteType: EMAIL
+    billRouteType: POSTMM
   
   creditAssessmentDecision: Accept
   creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    priceTagMeteringCharge: M25161DN_IH
-    proposedNTC: N70
-    proposedMC: IHUBMC
-    reEnergisationJSCCharge: 0
   
 
