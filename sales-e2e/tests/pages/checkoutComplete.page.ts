@@ -46,7 +46,8 @@ const eaCheckoutCompletePage={
       feature2: Selector("li.hs-my-account-banner__feature").nth(1),
       feature3: Selector("li.hs-my-account-banner__feature").nth(2),
     },
-    btnNavigation: Selector(".confirmation__navigation a")
+    btnNavigation: Selector(".confirmation__navigation a"),
+    powerResponseSection:Selector("section.power-response-rewards"),
   }
 }
 

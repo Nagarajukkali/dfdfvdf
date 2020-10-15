@@ -39,5 +39,6 @@ Then(/^user validates details on checkout complete page$/, async function (t,[],
   await checkoutCompleteMethod.validateFeedbackForm(t);
   await checkoutCompleteMethod.validateIntroducingMABanner(t, sourceSystem);
   await checkoutCompleteMethod.validateNavigationButton(t, sourceSystem);
+  await checkoutCompleteMethod.validatePowerResponseSection(t,customerType);
   console.log("Checkout Complete page validated successfully");
 });

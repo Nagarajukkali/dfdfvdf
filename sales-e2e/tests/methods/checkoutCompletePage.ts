@@ -1,4 +1,5 @@
 import { testFunction} from '../../global_methods/helper';
+import {CustomerType} from '@ea/ea-commons-models';
 const eaCheckoutCompletePage = require('../pages/checkoutComplete.page');
 const eaCheckoutDetailsPage = require('../pages/checkOutDetails.page');
 
@@ -122,5 +123,30 @@ export class checkoutCompleteMethod {
     }
     await testFunction.assertText(t, eaCheckoutCompletePage.elements.btnNavigation, expectedText);
     console.log("Validation completed for 'Go to' button on checkout complete page.");
+  }
+
+  public static async validatePowerResponseSection(t,customerType){
+    if(customerType===CustomerType.RESIDENTIAL){
+      const expectedHeadingText="Earn rewards with PowerResponse.";
+      const expectedParagraphText="Reduce your electricity usage during a PowerResponse energy saving event, and you could be eligible to receive credits off your electricity bill. Eligibility criteria applies.";
+      const expectedLinkText="Learn more"
+      await testFunction.isElementDisplayed(t,eaCheckoutCompletePage.elements.powerResponseSection);
+      await testFunction.isElementDisplayed(t,eaCheckoutCompletePage.elements.powerResponseSection.find(".power-response-rewards__heading-wrapper"));
+      await testFunction.isElementDisplayed(t,eaCheckoutCompletePage.elements.powerResponseSection.find(".power-response-rewards__image-wrapper"));
+      await testFunction.assertText(t, eaCheckoutCompletePage.elements.powerResponseSection.find(".power-response-rewards__heading-wrapper").find("h4"), expectedHeadingText);
+      await testFunction.assertText(t, eaCheckoutCompletePage.elements.powerResponseSection.find(".power-response-rewards__heading-wrapper").find("p"), expectedParagraphText);
+      await testFunction.assertText(t, eaCheckoutCompletePage.elements.powerResponseSection.find(".power-response-rewards__heading-wrapper").find("a"), expectedLinkText);
+      const actualImageText=await testFunction.getElementAttribute(t,eaCheckoutCompletePage.elements.powerResponseSection.find(".power-response-rewards__image-wrapper").find("img"),"alt");
+      const expectedImageText="A picture of a mother, husband and young child sitting around the family kitchen. The mother has shoulder-length red hair,\n" +
+        "            and is wearing a top with yellow sleeves. She is on her phone and laptop. The husband is holding the young child. On the bench\n" +
+        "            sits a bowl of oranges, coloured pencils and children’s drawings."
+      await testFunction.assertTextValue(t,actualImageText,expectedImageText);
+      console.log("Validation completed for 'Power Response' section on checkout complete page.");
+    }
+    if(customerType===CustomerType.BUSINESS){
+      await t.expect(await testFunction.sizeOfElement(t,eaCheckoutCompletePage.elements.powerResponseSection)).eql(0);
+    }
+
+
   }
 }
