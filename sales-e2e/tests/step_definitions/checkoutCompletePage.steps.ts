@@ -3,6 +3,7 @@ import {testFunction } from '../../global_methods/helper';
 import { Then } from 'cucumber';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 import {checkoutReviewMethod} from '../methods/checkoutReviewPage';
+import {getPackage} from './hooks';
 
 Then(/^user lands on checkout complete page$/, async function(t){
   await testFunction.waitForLoadingIconToClose();
@@ -39,6 +40,8 @@ Then(/^user validates details on checkout complete page$/, async function (t,[],
   await checkoutCompleteMethod.validateFeedbackForm(t);
   await checkoutCompleteMethod.validateIntroducingMABanner(t, sourceSystem);
   await checkoutCompleteMethod.validateNavigationButton(t, sourceSystem);
-  await checkoutCompleteMethod.validatePowerResponseSection(t,customerType);
+  if(getPackage.config.env.includes("preprod")){
+    await checkoutCompleteMethod.validatePowerResponseSection(t,customerType);
+  }
   console.log("Checkout Complete page validated successfully");
 });

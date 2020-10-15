@@ -1,4 +1,4 @@
-@E2E @newcustomer @smoke
+@E2E @newcustomer
 Feature:E2E scenario for new residential moving and non moving customer
   @deviceCheck @smoke
 Scenario Outline: Submit a quote for new residential moving customer

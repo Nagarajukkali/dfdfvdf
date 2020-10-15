@@ -1,6 +1,6 @@
 @ghosting @myaccount
 Feature: This feature is to test that the ghosting user is able to submit quotes
-  @smoke
+
   Scenario Outline: Verify the ghosting user is able to submit Plan Switch quote
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page

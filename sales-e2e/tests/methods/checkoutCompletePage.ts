@@ -144,7 +144,7 @@ export class checkoutCompleteMethod {
       console.log("Validation completed for 'Power Response' section on checkout complete page.");
     }
     if(customerType===CustomerType.BUSINESS){
-      await t.expect(await testFunction.sizeOfElement(t,eaCheckoutCompletePage.elements.powerResponseSection)).eql(0);
+      await testFunction.isElementAbsent(t,eaCheckoutCompletePage.elements.powerResponseSection);
     }
 
 
