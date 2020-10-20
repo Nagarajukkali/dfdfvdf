@@ -138,7 +138,7 @@ Feature: This feature is to test the My account scenarios for residential custom
       |folderName                       |username          |password                                    |fuelType   |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
       |E2E_MyAccount_Residential_Upsell |upsell02@test.com |U2FsdGVkX18tkoy+x1GGxXg4gex2qBLzChEHNEvDZyE=|GAS        |My Account     |Upsell       |No   |No   |RES          |Existing       |
 
-  Scenario Outline: Verify the RESI Electricity Plan switch journey from My Account where ID details are missing
+  Scenario Outline: Verify the RESI Electricity Plan switch journey with current plan from My Account where ID details are missing
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
     When user logs in to my account using '<username>' and '<password>'
