@@ -1,27 +1,27 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010144580
+    quoteId: BB2010205044
     sourceCode: Total_15%GD_75
-    actualQuoteDate: 2020-10-14
+    actualQuoteDate: 2020-10-20
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MS
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0316680657
+      phoneNumber: 0386289411
     
-    emailId: jpSYylKnCc@energyaustralia.com.au
+    emailId: QWRhMJqMkk@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 285323
+      id: 578898
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -29,7 +29,7 @@ saleDetail :
           dlFirstName: test
           dlMiddleName/: 
           dlLastName: test
-          licenseStateOfIssue: TAS
+          licenseStateOfIssue: NT
         
       
     
