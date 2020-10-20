@@ -41,7 +41,7 @@ Then(/^user validates details on checkout complete page$/, async function (t,[],
   await checkoutCompleteMethod.validateIntroducingMABanner(t, sourceSystem);
   await checkoutCompleteMethod.validateNavigationButton(t, sourceSystem);
   if(getPackage.config.env.includes("preprod")){
-    await checkoutCompleteMethod.validatePowerResponseSection(t,customerType);
+    await checkoutCompleteMethod.validatePowerResponseSection(t,customerType,fuelType);
   }
   console.log("Checkout Complete page validated successfully");
 });

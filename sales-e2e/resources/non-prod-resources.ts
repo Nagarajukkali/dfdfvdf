@@ -19,8 +19,8 @@ config: {
       currentDir: 'screenshots/Current',
     },
     qt2ReportingCreds:{
-      username:'abhar',
-      password:'U2FsdGVkX1+ofbMmTfeufCoLeZbhDgsePj0GzAmmyv0='
+      username:'aparid',
+      password:'U2FsdGVkX19rUdxjOUEWGYeras0MT+iVvpY6aktiTR0='
     },
     ghostingUserCreds:{
       username:'eacsr@ea.com',

@@ -1,5 +1,5 @@
 import { testFunction} from '../../global_methods/helper';
-import {CustomerType} from '@ea/ea-commons-models';
+import {CustomerType, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 const eaCheckoutCompletePage = require('../pages/checkoutComplete.page');
 const eaCheckoutDetailsPage = require('../pages/checkOutDetails.page');
 
@@ -125,8 +125,8 @@ export class checkoutCompleteMethod {
     console.log("Validation completed for 'Go to' button on checkout complete page.");
   }
 
-  public static async validatePowerResponseSection(t,customerType){
-    if(customerType===CustomerType.RESIDENTIAL){
+  public static async validatePowerResponseSection(t,customerType,fuelType){
+    if(customerType===CustomerType.RESIDENTIAL && fuelType===FUEL_TYPE_OPTIONS.ELE.value){
       const expectedHeadingText="Earn rewards with PowerResponse.";
       const expectedParagraphText="Reduce your electricity usage during a PowerResponse energy saving event, and you could be eligible to receive credits off your electricity bill. Eligibility criteria applies.";
       const expectedLinkText="Learn more"
@@ -143,7 +143,7 @@ export class checkoutCompleteMethod {
       await testFunction.assertTextValue(t,actualImageText,expectedImageText);
       console.log("Validation completed for 'Power Response' section on checkout complete page.");
     }
-    if(customerType===CustomerType.BUSINESS){
+    if(customerType===CustomerType.BUSINESS || fuelType===FUEL_TYPE_OPTIONS.GAS.value){
       await testFunction.isElementAbsent(t,eaCheckoutCompletePage.elements.powerResponseSection);
     }
 
