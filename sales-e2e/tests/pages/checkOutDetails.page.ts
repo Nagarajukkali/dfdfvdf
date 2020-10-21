@@ -134,6 +134,8 @@ const eaCheckoutDetailsPage={
     sliderRight:Selector("div.hs-plan-slider__button__bg-right"),
     connectionAddress:Selector("#connAddrTitle"),
     chkboxSpecialOffer:Selector("#solar-request-receive-special-offer"),
+    welcomePackEmail:Selector("#welcomePackE"),
+    welcomePackPost:Selector("#welcomePackP"),
     contactPreference: {
       disclaimer: Selector("div[class*='__contact-preference']"),
       linkClickHere: Selector("#contact-opt-out-modal"),

@@ -27,6 +27,7 @@ Feature:E2E scenario for new business moving and non moving customer
   And user selects billing preference option
     |option        |otherAddress                              |
     |Other address |36 Gregory Street West, WENDOUREE VIC 3355|
+  And user sends welcome pack through 'Email'
   And user clicks on 'Review your order' button and navigates to review page
   And user validates details on checkout review page
     |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
@@ -80,6 +81,7 @@ Scenario Outline: Submit a quote for new business non moving customer
     |optAAHOption|optDDOption|directDebitType|
     |Yes         |No         |               |
   And user opts for special offer
+  And user sends welcome pack through 'Post'
   And user clicks on 'Review your order' button and navigates to review page
   And user validates details on checkout review page
     |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |

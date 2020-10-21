@@ -162,3 +162,9 @@ Then(/^user validates '([^"]*)' page UI$/, async function (t, [checkoutPage]) {
 When(/^user opts for special offer$/, async function (t,[]) {
   await testFunction.click(t,eaCheckoutDetailsPage.elements.chkboxSpecialOffer);
 });
+When(/^user sends welcome pack through '(.*)'$/, async function (t,[option]) {
+  if(option==='Email')
+    await t.expect(await testFunction.getElementAttribute(t,eaCheckoutDetailsPage.elements.welcomePackEmail,'class')).contains('checked');
+  if(option==='Post')
+    await testFunction.click(t,eaCheckoutDetailsPage.elements.welcomePackPost);
+});
