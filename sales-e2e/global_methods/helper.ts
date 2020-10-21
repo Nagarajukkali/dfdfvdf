@@ -128,7 +128,7 @@ export class testFunction {
       await t.click(element);
     } catch (error) {
       console.log(error);
-      throw Error("Unable to click on the element: " + element);
+      throw Error("Unable to click on the element: " + await element());
     }
   }
 
@@ -138,7 +138,7 @@ export class testFunction {
     }
     catch(error){
       console.log(error);
-      throw Error("Unable to find the element: " + element);
+      throw Error("Unable to find the element: " + await element());
     }
   }
 
