@@ -22,8 +22,13 @@ Feature:E2E scenario for new connection
     |fuelType     |planName   |
     |<fuelType>   |Total Plan |
   And user provides dob and id details
-    |customerStatus|idType        |
-    |New           |Driver License|
+    |customerStatus|idType  |medicareType|
+    |New           |Medicare|green       |
+  And user selects billing preference option
+    |option             |otherAddress        |
+    |Connection address |                    |
+  And user sends welcome pack through 'Email'
+  And user opts for special offer
   And user clicks on 'Review your order' button and navigates to review page
   And user validates details on checkout review page
     |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
@@ -62,8 +67,12 @@ Feature:E2E scenario for new connection
       |fuelType   |planName   |
       |<fuelType> |Total Plan |
     And user provides dob and id details
-      |customerStatus|idType        |
-      |New           |Driver License|
+      |customerStatus|idType        |medicareType|
+      |New           |Medicare      |yellow      |
+    And user selects billing preference option
+      |option        |otherAddress                              |
+      |Other address |36 Gregory Street West, WENDOUREE VIC 3355|
+    And user sends welcome pack through 'Post'
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
       |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
@@ -104,6 +113,11 @@ Feature:E2E scenario for new connection
       |customerStatus|idType  |
       |New           |Passport|
     And user provides business details
+    And user selects billing preference option
+      |option             |otherAddress        |
+      |Email              |                    |
+    And user sends welcome pack through 'Email'
+    And user opts for special offer
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
       |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |

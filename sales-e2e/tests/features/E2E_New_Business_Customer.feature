@@ -80,8 +80,11 @@ Scenario Outline: Submit a quote for new business non moving customer
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |Yes         |No         |               |
-  And user opts for special offer
+  And user selects billing preference option
+    |option        |otherAddress                              |
+    |Email         |                                          |
   And user sends welcome pack through 'Post'
+  And user opts for special offer
   And user clicks on 'Review your order' button and navigates to review page
   And user validates details on checkout review page
     |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |

@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010205045
+    quoteId: BB2010225374
     sourceCode: NOFRILLS
-    actualQuoteDate: 2020-10-20
+    actualQuoteDate: 2020-10-22
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0371828787
+      phoneNumber: 0389268945
     
-    emailId: KeWYqIVAAg@energyaustralia.com.au
+    emailId: NkygLqxWRb@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 15760
+      id: 405906
       primaryIdFlag: Y
     
     authLevel: Y
@@ -40,7 +40,7 @@ saleDetail :
     postCode: 2516
     premiseType: DOM
     addressType: Premise
-    primaryResidence: N
+    primaryResidence: Y
   
   offerDetail: 
     fuelType: E
@@ -65,7 +65,7 @@ saleDetail :
     fuelTypeNaReasonCode: NOINTEREST
   
   billDeliveryDetail: 
-    billRouteType: EMAIL
+    billRouteType: POSTMM
   
   creditAssessmentDecision: Accept
   meteringDetail: 

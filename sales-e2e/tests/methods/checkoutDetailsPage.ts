@@ -597,7 +597,7 @@ export class checkoutDetailsMethod{
         if(finalBill) {
           await testFunction.click(t, eaCheckoutDetailsPage.elements.rbFinalBillPrefEmail);
         }else {
-          await testFunction.click(t, eaCheckoutDetailsPage.elements.rbBillPrefEmail);
+          await t.expect(await testFunction.getElementAttribute(t,eaCheckoutDetailsPage.elements.rbBillPrefEmail,'class')).contains('checked');
         }
         break;
       case "Connection address":

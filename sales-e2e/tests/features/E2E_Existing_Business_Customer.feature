@@ -14,8 +14,8 @@ Feature:E2E scenario for existing business moving and non moving customer
       |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
       |Existing      |8541728674   |ABN                |13756067200     |dob   |01011980|
     And user provides all other details on qualifier page for Existing customer
-      |customerType|movingType |connectionAddress                         |solarOption|
-      |BUS         |Moving     |36 Gregory Street West, WENDOUREE VIC 3355|No         |
+      |customerType|movingType |connectionAddress                     |solarOption|
+      |BUS         |Moving     |320 Crown Street, SURRY HILLS NSW 2010|No         |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|businessType|
       |BUS         |BUS        |Existing      | test     |test     |ABN         |
@@ -23,6 +23,13 @@ Feature:E2E scenario for existing business moving and non moving customer
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
     And user selects answer for property renovation question for '<state>'
+    And user opts for AAH and DD
+      |optAAHOption|optDDOption|directDebitType|
+      |Yes         |Yes        |CC             |
+    And user selects billing preference option
+      |option        |otherAddress                              |
+      |Email         |                                          |
+    And user opts for special offer
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption|fuelType|EleclifeSupportDevices     |GaslifeSupportDevices|
@@ -43,15 +50,15 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |BSOT-EV |6203822385|N                             |N                             |Y                      |LSVFLS                  |EMAIL        |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |BSOT-EN |NCCC005405|N                             |N                             |Y                      |LSVFLS                  |EMAIL        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |BSOT-GV |5330956738|N                             |N                             |Y                      |OTHER                   |EMAIL        |
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |BSOT-GN |5240554353|N                             |N                             |Y                      |OTHER                   |EMAIL        |
 
     Examples:
       |customerStatus|fuelType|planName         |folderName             |state|sourceSystem  |journey  |AAH  |DD |customerType |newOrExisting  |
-      |Existing      |BOTH    |Basic Business   |E2E_Existing_Bus_Moving|VIC  |Quote Tool    |Move Home|No   |No |BUS          |Existing       |
+      |Existing      |BOTH    |Basic Business   |E2E_Existing_Bus_Moving|NSW  |Quote Tool    |Move Home|Yes  |Yes|BUS          |Existing       |
 
   Scenario Outline: Submit a quote for existing business non moving customer with LS, select dual fuel and verify electricity account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -72,6 +79,10 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
+    And user selects billing preference option
+      |option        |otherAddress                              |
+      |Other address |36 Gregory Street West, WENDOUREE VIC 3355|
+    And user opts for special offer
     And user clicks on 'Review your order' button and navigates to review page
     Then Life support section is displayed on Review page as per selected "<fuelType>" and verified "<accountType>"
     And user provides life support details on review page
@@ -93,11 +104,11 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |PS       |TOPB-EV |6203822385|N                             |N                             |Y                      |LSOC                    |EMAIL        |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |PS       |TOPB-EV |6203822385|N                             |N                             |Y                      |LSOC                    |POSTMM        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |PS       |TOPB-GV |5330956738|N                             |N                             |N                      |                        |EMAIL        |
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |PS       |TOPB-GV |5330956738|N                             |N                             |N                      |                        |POSTMM        |
 
     Examples:
       |customerStatus|planName         |folderName                |fuelType|accountType|sourceSystem  |journey    |AAH  |DD |customerType |newOrExisting  |

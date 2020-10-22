@@ -11,8 +11,8 @@ Scenario Outline: Submit a quote for new residential moving customer
   And user moves on to fill the qualifier
   And user selects '<customerStatus>' on qualifier
   And user provides all other details on qualifier page
-    |customerType| connectionAddress               | movingType|propertyType|solarOption|
-    |RES         | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |No         |
+    |customerType| connectionAddress                     | movingType|propertyType|solarOption|
+    |RES         | 42 Brownlow Drive, POINT COOK VIC 3030|Moving     |Renter      |No         |
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
     |RES         |RES        |New           | test     |test     |Driver License|             |
@@ -22,7 +22,13 @@ Scenario Outline: Submit a quote for new residential moving customer
   And user selects answer for property renovation question for '<state>'
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
-    |Yes         |No         |               |
+    |Yes         |Yes        |CC             |
+  And user opts for concession card
+  And user selects billing preference option
+    |option             |otherAddress        |
+    |Connection address |                    |
+  And user sends welcome pack through 'Post'
+  And user opts for special offer
   And user clicks on 'Review your order' button and navigates to review page
   And user validates details on checkout review page
     |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
@@ -44,15 +50,15 @@ Scenario Outline: Submit a quote for new residential moving customer
   And user validates all the details for 'ELE' submitted quote
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-    |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-EN |4311150544|N                             |N                             |Y                      |LSCNSPE                 |EMAIL        |
+    |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-EV |6203778288|N                             |N                             |Y                      |LSCNSPE                 |POSTMM       |
   And user validates all the details for 'GAS' submitted quote
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-    |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GN |5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
+    |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GV |5330733757|N                             |N                             |Y                      |OTHER                   |POSTMM       |
 
   Examples:
     |customerStatus|fuelType|planName  |folderName         |state|sourceSystem   |journey   |AAH  |DD   |customerType |newOrExisting  |
-    |New           |BOTH    |Total Plan|E2E_New_Resi_Moving|NSW  |Quote Tool     |Move Home |Yes  |No   |RES          |New            |
+    |New           |BOTH    |Total Plan|E2E_New_Resi_Moving|VIC  |Quote Tool     |Move Home |Yes  |No   |RES          |New            |
 
 Scenario Outline: Submit a quote for new residential non moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -64,8 +70,8 @@ Scenario Outline: Submit a quote for new residential non moving customer
   And user moves on to fill the qualifier
   And user selects '<customerStatus>' on qualifier
   And user provides all other details on qualifier page
-    |customerType|connectionAddress                     | movingType|propertyType|solarOption|
-    |RES         |42 Brownlow Drive, POINT COOK VIC 3030|Non-Moving |Renter      |No         |
+    |customerType|connectionAddress                | movingType|propertyType|solarOption|
+    |RES         |3 River Drive, ATHELSTONE SA 5076|Non-Moving |Renter      |No         |
   And user validates details on checkout details page
     |sourceSystem   |journey    |fuelType   |
     |<sourceSystem> |<journey>  |<fuelType> |
@@ -74,7 +80,11 @@ Scenario Outline: Submit a quote for new residential non moving customer
     |RES          |RES        |New           | test     |test     |Passport      |
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
-    |No          |Yes        |CC             |
+    |No          |Yes        |Bank           |
+  And user selects billing preference option
+    |option        |otherAddress                              |
+    |Email         |                                          |
+  And user sends welcome pack through 'Email'
   And user clicks on 'Review your order' button and navigates to review page
   And user validates details on checkout review page
     |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
@@ -96,11 +106,11 @@ Scenario Outline: Submit a quote for new residential non moving customer
   And user validates all the details for 'ELE' submitted quote
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-    |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-EV |6203778288|N                             |N                             |Y                      |OTHER                   |EMAIL        |
+    |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-ES |2001245279|N                             |N                             |Y                      |OTHER                   |EMAIL        |
   And user validates all the details for 'GAS' submitted quote
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-    |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-GV |5330733757|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
+    |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-GS |5510149276|N                             |N                             |Y                      |GLSMRHAC                |EMAIL        |
 
   Examples:
     |customerStatus|fuelType|planName     |folderName                |sourceSystem   |journey     |AAH  |DD   |customerType |newOrExisting  |

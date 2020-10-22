@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010225379
-    sourceCode: Basic
+    quoteId: BB2010225407
+    sourceCode: Total_10%GD_50
     actualQuoteDate: 2020-10-22
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -9,60 +9,67 @@ saleDetail :
     customerClass: RESI
   
   personDetail: 
-    personId: 8224680000
-    title: MR
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0389327121
+      phoneNumber: 0371777840
     
-    emailId: OgVOPbDWcH@energyaustralia.com.au
+    emailId: oiAaWqEvRO@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: MEDICARE
-      id: 2483100000
+      id: 3473605392
       primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationMedicareDetail: 
+          medicareFirstName: test
+          medicareMiddleName/: 
+          medicareLastName: test
+          medicareReferenceNumber: 1
+          medicareExpiryDate: 2025-01-01
+          medicareCardColour: Blue
+        
+      
     
     authLevel: Y
-    personPremiseRelationship: TENANT
+    personPremiseRelationship: OWNER
     seqNo: 2
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 9
-    streetName: Charming
-    streetType: S
-    suburb: HAMPTON EAST
+    streetNo: 16
+    streetName: CULCAIRN
+    streetType: CT
+    suburb: NARRE WARREN SOUTH
     state: VIC
     country: AUS
-    postCode: 3188
+    postCode: 3805
     premiseType: DOM
     addressType: Premise
     primaryResidence: Y
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 5
-    streetName: Wilkies
-    streetType: S
-    suburb: BULLI
-    state: NSW
+    streetNo: 3
+    streetName: River
+    streetType: DR
+    suburb: ATHELSTONE
+    state: SA
     country: AUS
-    postCode: 2516
+    postCode: 5076
     addressType: Mailing
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-10-26
-    offerType: ENE
-    plan: RSOT-EV
-    priceTag: EVUND_S01Y8
-    serviceOrderDate: 2020-10-26
-    serviceOrderTime: BUSHRS
+    offerType: COR
+    plan: TOPH-EV
+    priceTag: EVTRA_NR2001
     nmiMirnInformation: 
-      NMI: 6407220528
+      NMI: 6305515608
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -83,9 +90,8 @@ saleDetail :
     billRouteType: POSTMM
   
   creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    reEnergisationJSCCode: RECFIB
-    reEnergisationJSCCharge: 49.56
   
 

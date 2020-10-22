@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2009281538
+    quoteId: BB2010225385
     sourceCode: Total_Plus_6%GD
-    actualQuoteDate: 2020-09-28
+    actualQuoteDate: 2020-10-22
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,30 +15,30 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0321716115
+      phoneNumber: 0344905272
     
-    emailId: tagUKonQZR@energyaustralia.com.au
+    emailId: HcORyaRckT@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: GNRALPARTNERSHIP
+    businessType: OTHERS
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 90062618054
+      businessId: 34307236484
     
-    anzsic: CONSTRUCTION
+    anzsic: RETAIL_TRD
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0321716115
+      businessPhoneNumber: 0344905272
     
-    businessEmailId: tagUKonQZR@energyaustralia.com.au
+    businessEmailId: HcORyaRckT@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -52,6 +52,17 @@ saleDetail :
     premiseType: COM
     addressType: Premise
     primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 36
+    streetName: Gregory
+    streetType: S
+    suburb: WENDOUREE
+    state: VIC
+    country: AUS
+    postCode: 3355
+    addressType: Mailing
   
   offerDetail: 
     fuelType: E
@@ -76,7 +87,7 @@ saleDetail :
     fuelTypeNaReasonCode: NOINTEREST
   
   billDeliveryDetail: 
-    billRouteType: EMAIL
+    billRouteType: POSTMM
   
   creditAssessmentDecision: Accept
   meteringDetail: 

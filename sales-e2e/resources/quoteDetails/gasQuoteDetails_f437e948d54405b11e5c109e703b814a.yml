@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010074641
+    quoteId: BB2010225380
     sourceCode: Basic
-    actualQuoteDate: 2020-10-07
+    actualQuoteDate: 2020-10-22
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,18 +16,31 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0365848744
+      phoneNumber: 0389327121
     
-    emailId: tzQZIGdVmv@energyaustralia.com.au
+    emailId: OgVOPbDWcH@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 688052
+      idType: MEDICARE
+      id: 2483100000
       primaryIdFlag: Y
     
     authLevel: Y
     personPremiseRelationship: TENANT
     seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 9
+    streetName: Charming
+    streetType: S
+    suburb: HAMPTON EAST
+    state: VIC
+    country: AUS
+    postCode: 3188
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: Y
   
   premiseDetail: 
     addressClass: ST
@@ -38,20 +51,18 @@ saleDetail :
     state: NSW
     country: AUS
     postCode: 2516
-    premiseType: DOM
-    addressType: Premise
-    primaryResidence: N
+    addressType: Mailing
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-10-09
+    proposedStart: 2020-10-26
     offerType: ENE
-    plan: RSOT-GN
-    priceTag: GNAGA_GR
-    serviceOrderDate: 2020-10-09
+    plan: RSOT-GV
+    priceTag: GVA2A_S03N
+    serviceOrderDate: 2020-10-26
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      MIRN: 5240924834
+      MIRN: 5310571404
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -69,7 +80,7 @@ saleDetail :
     fuelTypeNaReasonCode: NOINTEREST
   
   billDeliveryDetail: 
-    billRouteType: EMAIL
+    billRouteType: POSTMM
   
   creditAssessmentDecision: Accept
 

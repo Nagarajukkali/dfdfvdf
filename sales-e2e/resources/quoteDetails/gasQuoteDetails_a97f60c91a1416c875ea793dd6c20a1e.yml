@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010144586
+    quoteId: BB2010225347
     sourceCode: Basic
-    actualQuoteDate: 2020-10-14
+    actualQuoteDate: 2020-10-22
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MRS
+    title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0327217140
+      phoneNumber: 0323316459
     
-    emailId: HiohTHkzwZ@energyaustralia.com.au
+    emailId: QMyjgrlKbY@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: CORPORATION
+    businessType: LIMITED COMPANY
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 57432448268
+      businessId: 65191109214
     
-    anzsic: HOSPITALITY
+    anzsic: COMMUNICATION
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0327217140
+      businessPhoneNumber: 0323316459
     
-    businessEmailId: HiohTHkzwZ@energyaustralia.com.au
+    businessEmailId: QMyjgrlKbY@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -66,11 +66,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-10-15
+    proposedStart: 2020-10-23
     offerType: ENE
     plan: BSOT-GN
     priceTag: GNAGA_GB
-    serviceOrderDate: 2020-10-15
+    serviceOrderDate: 2020-10-23
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5240554353

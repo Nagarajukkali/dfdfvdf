@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010225384
-    sourceCode: Total_15%GD_75
+    quoteId: BB2010225376
+    sourceCode: Total_13%GD
     actualQuoteDate: 2020-10-22
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -9,49 +9,46 @@ saleDetail :
     customerClass: RESI
   
   personDetail: 
-    personId: 8224680000
+    personId: 7546820319
     title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0361812401
+      phoneNumber: 0312684570
     
-    emailId: emoCOQJJju@energyaustralia.com.au
+    emailId: WcRMmNEJGA@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 758706
+      idType: PASSPORT
+      id: 118500
       primaryIdFlag: Y
     
     authLevel: Y
-    personPremiseRelationship: TENANT
+    personPremiseRelationship: OWNER
     seqNo: 2
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 5
-    streetName: Wilkies
+    streetNo: 37
+    streetName: Echlin
     streetType: S
-    suburb: BULLI
-    state: NSW
+    suburb: LABRADOR
+    state: QLD
     country: AUS
-    postCode: 2516
+    postCode: 4215
     premiseType: DOM
     addressType: Premise
-    primaryResidence: N
+    primaryResidence: Y
   
   offerDetail: 
-    fuelType: G
-    proposedStart: 2020-10-26
-    offerType: ENE
-    plan: TOPH-GN
-    priceTag: GNAGA_NR2007
-    serviceOrderDate: 2020-10-26
-    serviceOrderTime: BUSHRS
+    fuelType: E
+    offerType: PS
+    plan: TOPH-EQ
+    priceTag: EQEXA_NR2007
     nmiMirnInformation: 
-      MIRN: 5240924834
+      NMI: QB01405934
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -59,12 +56,11 @@ saleDetail :
       customerWithLifeSupport: Y
     
     lifeSupportEquipment: 
-      lifeSupportEquipmentType: OTHER
+      lifeSupportEquipmentType: LSIPDM
     
-    lifeSupportOtherEquipmentDetails: Sample Other gas device.
   
   offerDetail: 
-    fuelType: E
+    fuelType: G
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -72,4 +68,10 @@ saleDetail :
     billRouteType: EMAIL
   
   creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    priceTagMeteringCharge: M42151D1E_VE
+    proposedNTC: 8470
+    proposedMC: VECTORMC
+  
 

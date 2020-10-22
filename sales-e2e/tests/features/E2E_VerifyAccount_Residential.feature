@@ -17,10 +17,17 @@ Feature: This feature is to test the verify account scenarios for existing resid
       |RES         |Non-Moving |Owner        |No           |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus|firstName|lastName|idType        |
-      |RES         |RES        |Existing      |test     |test    |Driver License|
+      |RES         |RES        |Existing      |test     |test    |Medicare      |
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
+    And user opts for AAH and DD
+      |optAAHOption|optDDOption|directDebitType|
+      |Yes         |Yes        |CC             |
+    And user opts for concession card
+    And user selects billing preference option
+      |option             |otherAddress        |
+      |Connection address |                    |
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
       |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
@@ -41,15 +48,15 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |SWSR1-EV|6305325960|N                             |N                             |Y                      |LSIPDM                  |EMAIL        |
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |SWSR1-EV|6305325960|N                             |N                             |Y                      |LSIPDM                  |POSTMM        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |SWSR1-GV|5310602455|N                             |N                             |Y                      |OTHER                   |EMAIL        |
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |SWSR1-GV|5310602455|N                             |N                             |Y                      |OTHER                   |POSTMM        |
 
     Examples:
       |folderName                               |customer_type |fuelType |planName       |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
-      |E2E_VerifyAccount_Residential_NonMoving  |RES           |BOTH     |Total Plan Plus|Quote Tool     |Plan Switch  |No   |No   |RES          |Existing       |
+      |E2E_VerifyAccount_Residential_NonMoving  |RES           |BOTH     |Total Plan Plus|Quote Tool     |Plan Switch  |Yes  |Yes   |RES          |Existing       |
 
   @deviceCheck @smoke
 
@@ -75,6 +82,14 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
+    And user opts for AAH and DD
+      |optAAHOption|optDDOption|directDebitType|
+      |No          |Yes        |Bank           |
+    And user opts for concession card
+    And user selects billing preference option
+      |option             |otherAddress        |
+      |Email              |                    |
+    And user opts for special offer
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
       |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |

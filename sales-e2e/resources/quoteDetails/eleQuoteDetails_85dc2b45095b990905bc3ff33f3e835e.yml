@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010205054
-    sourceCode: Total_15%GD_75
-    actualQuoteDate: 2020-10-20
+    quoteId: BB2010225344
+    sourceCode: Total_10%GD_50
+    actualQuoteDate: 2020-10-22
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -12,16 +12,16 @@ saleDetail :
     title: DR
     firstName: test
     lastName: test
-    commMethod: EMAIL
+    commMethod: POSTAL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0364605410
+      phoneNumber: 0331480640
     
-    emailId: lIqjZZxFOD@energyaustralia.com.au
+    emailId: EehUHYJzDW@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 438108
+      id: 151237
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -29,7 +29,7 @@ saleDetail :
           dlFirstName: test
           dlMiddleName/: 
           dlLastName: test
-          licenseStateOfIssue: WA
+          licenseStateOfIssue: VIC
         
       
     
@@ -39,27 +39,27 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 5
-    streetName: Wilkies
-    streetType: S
-    suburb: BULLI
-    state: NSW
+    streetNo: 42
+    streetName: Brownlow
+    streetType: DR
+    suburb: POINT COOK
+    state: VIC
     country: AUS
-    postCode: 2516
+    postCode: 3030
     premiseType: DOM
     addressType: Premise
-    primaryResidence: N
+    primaryResidence: Y
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-10-22
+    proposedStart: 2020-10-26
     offerType: ENE
-    plan: TOPH-EN
-    priceTag: ENIEA_NR2007
-    serviceOrderDate: 2020-10-22
+    plan: TOPH-EV
+    priceTag: EVPOA_NR2001
+    serviceOrderDate: 2020-10-26
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 4311150544
+      NMI: 6203778288
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -76,15 +76,13 @@ saleDetail :
     fuelTypeNaReasonCode: NOINTEREST
   
   billDeliveryDetail: 
-    billRouteType: EMAIL
+    billRouteType: POSTMM
   
   creditAssessmentDecision: Accept
   creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    priceTagMeteringCharge: M25161DN_IH
-    proposedNTC: N70
-    proposedMC: IHUBMC
-    reEnergisationJSCCharge: 0
+    reEnergisationJSCCode: RCTBH
+    reEnergisationJSCCharge: 56.05
   
 

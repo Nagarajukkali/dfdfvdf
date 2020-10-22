@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010205048
+    quoteId: BB2010225343
     sourceCode: Total_23%GD
-    actualQuoteDate: 2020-10-20
+    actualQuoteDate: 2020-10-22
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -12,33 +12,33 @@ saleDetail :
     title: MRS
     firstName: test
     lastName: test
-    commMethod: EMAIL
+    commMethod: POSTAL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0374772726
+      phoneNumber: 0352651311
     
-    emailId: zgXAgYpQMc@energyaustralia.com.au
+    emailId: fkpeaqSFul@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: SOLE TRADER
+    businessType: OTHERS
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ACN
-      businessId: 315673479
+      businessId: 262192240
     
-    anzsic: COMMUNICATION
-    businessCommMethod: EMAIL
+    anzsic: MINING
+    businessCommMethod: POSTAL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0374772726
+      businessPhoneNumber: 0352651311
     
-    businessEmailId: zgXAgYpQMc@energyaustralia.com.au
+    businessEmailId: fkpeaqSFul@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST

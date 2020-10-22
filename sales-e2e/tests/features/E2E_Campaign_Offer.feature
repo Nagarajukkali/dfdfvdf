@@ -72,6 +72,11 @@ Scenario Outline: Submit a quote for offer campaign without AAH and DD
       |<AAH>       |<DD>       |Bank           |
     And user opts for concession card
     And user selects answer for property renovation question for '<state>'
+    And user selects billing preference option
+      |option        |otherAddress                              |
+      |Email         |                                          |
+    And user sends welcome pack through 'Post'
+    And user opts for special offer
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
       |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |

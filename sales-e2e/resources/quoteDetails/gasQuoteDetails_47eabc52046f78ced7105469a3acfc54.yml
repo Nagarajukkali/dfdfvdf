@@ -1,14 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-<<<<<<< HEAD
-    quoteId: BB2009281533
-    sourceCode: Total_27%GD_50
-    actualQuoteDate: 2020-09-28
-=======
-    quoteId: BB2008256491
-    sourceCode: Total_11%GD
-    actualQuoteDate: 2020-08-25
->>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
+    quoteId: BB2010225341
+    sourceCode: Total_12%GD_50
+    actualQuoteDate: 2020-10-22
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -21,31 +15,21 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-<<<<<<< HEAD
-      phoneNumber: 0368415008
+      phoneNumber: 0372382976
     
-    emailId: hlhRxYQmgM@energyaustralia.com.au
+    emailId: JSQywtcKkb@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 878142
-=======
-      phoneNumber: 0347679503
-    
-    emailId: uNQtDrdmxF@energyaustralia.com.au
-    dob: 1980-01-01
-    personIdDetail: 
-      idType: DL
-      id: 332350
->>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
+      idType: PASSPORT
+      id: 274039
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
-        idValidationDriversLicenseDetail: 
-          dlFirstName: test
-          dlMiddleName/: 
-          dlLastName: test
-          licenseStateOfIssue: VIC
+        idValidationPassportDetail: 
+          passportFirstName: test
+          passportMiddleName/: 
+          passportLastName: test
+          passportCountry: AUS
         
       
     
@@ -55,33 +39,24 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 42
-    streetName: Brownlow
+    streetNo: 3
+    streetName: River
     streetType: DR
-    suburb: POINT COOK
-    state: VIC
+    suburb: ATHELSTONE
+    state: SA
     country: AUS
-    postCode: 3030
+    postCode: 5076
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
   
   offerDetail: 
-<<<<<<< HEAD
     fuelType: G
     offerType: COR
-    plan: TOPH-GV
-    priceTag: GVT1A_NR2001
+    plan: TOPH-GS
+    priceTag: GSADA_NR2001
     nmiMirnInformation: 
-      MIRN: 5330733757
-=======
-    fuelType: E
-    offerType: COR
-    plan: TOPH-EV
-    priceTag: EVPOA_NR2001
-    nmiMirnInformation: 
-      NMI: 6203778288
->>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
+      MIRN: 5510149276
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -89,20 +64,11 @@ saleDetail :
       customerWithLifeSupport: Y
     
     lifeSupportEquipment: 
-<<<<<<< HEAD
       lifeSupportEquipmentType: GLSMRHAC
     
   
   offerDetail: 
     fuelType: E
-=======
-      lifeSupportEquipmentType: OTHER
-    
-    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
-  
-  offerDetail: 
-    fuelType: G
->>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -111,7 +77,4 @@ saleDetail :
   
   creditAssessmentDecision: Accept
   creditAssessmentReasonCode: Accept
-  meteringDetail: 
-    meterExchangeFlag: N
-  
 

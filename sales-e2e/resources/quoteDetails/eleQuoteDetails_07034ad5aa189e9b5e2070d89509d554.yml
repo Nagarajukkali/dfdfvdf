@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2009281536
+    quoteId: BB2010225387
     sourceCode: Total_Plus_11%GD
-    actualQuoteDate: 2020-09-28
+    actualQuoteDate: 2020-10-22
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0367172666
+      phoneNumber: 0398943085
     
-    emailId: DJFBhnFEAr@energyaustralia.com.au
+    emailId: iebiJlKbxU@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 251006
+      idType: MEDICARE
+      id: 5961100000
       primaryIdFlag: Y
     
     authLevel: Y
@@ -40,7 +40,7 @@ saleDetail :
     postCode: 3153
     premiseType: DOM
     addressType: Premise
-    primaryResidence: N
+    primaryResidence: Y
   
   offerDetail: 
     fuelType: E
@@ -65,7 +65,7 @@ saleDetail :
     fuelTypeNaReasonCode: NOINTEREST
   
   billDeliveryDetail: 
-    billRouteType: EMAIL
+    billRouteType: POSTMM
   
   creditAssessmentDecision: Accept
   meteringDetail: 

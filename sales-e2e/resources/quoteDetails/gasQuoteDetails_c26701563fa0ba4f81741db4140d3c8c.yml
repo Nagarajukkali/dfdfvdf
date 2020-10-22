@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2009281543
+    quoteId: BB2010225390
     sourceCode: Total_23%GD
-    actualQuoteDate: 2020-09-28
+    actualQuoteDate: 2020-10-22
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0373897013
+      phoneNumber: 0374718160
     
-    emailId: IOGVmqQNaz@energyaustralia.com.au
+    emailId: WXPAuORTRY@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: PARTNERSHIP
+    businessType: INCORPORATED
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 84678691168
+      businessId: 99325991931
     
-    anzsic: MINING
+    anzsic: FINANCE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0373897013
+      businessPhoneNumber: 0374718160
     
-    businessEmailId: IOGVmqQNaz@energyaustralia.com.au
+    businessEmailId: WXPAuORTRY@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -55,11 +55,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-09-29
+    proposedStart: 2020-10-26
     offerType: ENE
     plan: TOPB-GV
     priceTag: GVT3A_NB2001
-    serviceOrderDate: 2020-09-29
+    serviceOrderDate: 2020-10-26
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5330956738
