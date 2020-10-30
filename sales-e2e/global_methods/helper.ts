@@ -475,7 +475,9 @@ export class testFunction {
     if(fs.existsSync(folderPath)) {
       await FileUtils.deleteFiles(folderPath);
     }
-    fs.mkdirSync(folderPath);
+    if(!fs.existsSync(folderPath)){
+      fs.mkdirSync(folderPath);
+    }
   }
 
   //----The test will fail if there is even a single diff file generated in a scenario----//
