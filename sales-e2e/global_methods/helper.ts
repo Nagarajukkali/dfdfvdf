@@ -123,23 +123,26 @@ export enum OfferType {
 
 export class testFunction {
   public static async click(t, element) {
-    try {
-      await this.isElementDisplayed(t, element);
-      await t.click(element);
-    } catch (error) {
-      console.log(error);
-      throw Error("Unable to click on the element: " + await element());
-    }
+    await this.isElementDisplayed(t, element);
+    await t.click(element);
+    // try {
+    //   await this.isElementDisplayed(t, element);
+    //   await t.click(element);
+    // } catch (error) {
+    //   console.log(error);
+    //   //throw Error("Unable to click on the element: " + await element());
+    // }
   }
 
   public static async isElementDisplayed(t: any, element: any) {
-    try{
-      await t.expect((element).exists).ok({ timeout: 30000 });
-    }
-    catch(error){
-      console.log(error);
-      throw Error("Unable to find the element: " + await element());
-    }
+    await t.expect((element).exists).ok({ timeout: 30000 });
+    // try{
+    //   await t.expect((element).exists).ok({ timeout: 30000 });
+    // }
+    // catch(error){
+    //   console.log(error);
+    //   //throw Error("Unable to find the element: " + await element());
+    // }
   }
 
   public static async maximizeWindow(t) {
