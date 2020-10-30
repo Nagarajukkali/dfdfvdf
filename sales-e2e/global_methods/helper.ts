@@ -462,7 +462,9 @@ export class testFunction {
       if(fs.existsSync(folderPath)) {
         await FileUtils.deleteFiles(folderPath);
       }
-      fs.mkdirSync(folderPath);
+      if(!fs.existsSync(folderPath)){
+        fs.mkdirSync(folderPath);
+      }
     }
   }
 
