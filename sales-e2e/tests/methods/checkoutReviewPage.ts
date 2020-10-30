@@ -16,13 +16,13 @@ export class checkoutReviewMethod {
   public static async verifyExistingLifeSupportDetails(t,fuelType,accountType){
     switch (fuelType) {
     case FUEL_TYPE_OPTIONS.BOTH.value:
-      this.verifyExistingLSDetailsForBothFuelSelected(t,accountType);
+      await this.verifyExistingLSDetailsForBothFuelSelected(t,accountType);
       break;
     case FUEL_TYPE_OPTIONS.ELE.value:
-      this.verifyExistingLSDetailsForEleSelected(t,accountType);
+      await this.verifyExistingLSDetailsForEleSelected(t,accountType);
       break;
     case FUEL_TYPE_OPTIONS.GAS.value:
-      this.verifyExistingLSDetailsForGasSelected(t,accountType);
+      await this.verifyExistingLSDetailsForGasSelected(t,accountType);
       break;
     default:
       console.error("Invalid fueltype or accountype selected");
@@ -32,15 +32,15 @@ export class checkoutReviewMethod {
   public static async verifyExistingLSDetailsForBothFuelSelected(t,verifiedAccount){
   switch (verifiedAccount) {
   case FUEL_TYPE_OPTIONS.BOTH.value:
-    this.verifyDisplayOfExistingLSSectionForBothAccountVerified(t);
+    await this.verifyDisplayOfExistingLSSectionForBothAccountVerified(t);
     break;
   case FUEL_TYPE_OPTIONS.ELE.value:
-    this.verifyDisplayOfExistingLSSectionForEleAccountVerified(t);
-    this.verifyLifeSupportQuestion(t,"GAS");
+    await this.verifyDisplayOfExistingLSSectionForEleAccountVerified(t);
+    await this.verifyLifeSupportQuestion(t,"GAS");
     break;
   case FUEL_TYPE_OPTIONS.GAS.value:
-    this.verifyDisplayOfExistingLSSectionForGasAccountVerified(t);
-    this.verifyLifeSupportQuestion(t,"ELE");
+    await this.verifyDisplayOfExistingLSSectionForGasAccountVerified(t);
+    await this.verifyLifeSupportQuestion(t,"ELE");
     break;
   default:
     console.error("Invalid account is selected");
@@ -49,10 +49,10 @@ export class checkoutReviewMethod {
 
   public static async verifyExistingLSDetailsForEleSelected(t,verifiedAccount){
     if(verifiedAccount===FUEL_TYPE_OPTIONS.BOTH.value || verifiedAccount===FUEL_TYPE_OPTIONS.ELE.value){
-      this.verifyDisplayOfExistingLSSectionForEleAccountVerified(t);
+      await this.verifyDisplayOfExistingLSSectionForEleAccountVerified(t);
     }
     else if(verifiedAccount===FUEL_TYPE_OPTIONS.GAS.value){
-      this.verifyLifeSupportQuestionForSingleFuel(t);
+      await this.verifyLifeSupportQuestionForSingleFuel(t);
     }
     else{
       console.error("Invalid account type");
@@ -61,10 +61,10 @@ export class checkoutReviewMethod {
 
   public static async verifyExistingLSDetailsForGasSelected(t,verifiedAccount){
     if(verifiedAccount===FUEL_TYPE_OPTIONS.BOTH.value || verifiedAccount===FUEL_TYPE_OPTIONS.GAS.value){
-      this.verifyDisplayOfExistingLSSectionForGasAccountVerified(t);
+      await this.verifyDisplayOfExistingLSSectionForGasAccountVerified(t);
     }
     else if(verifiedAccount===FUEL_TYPE_OPTIONS.ELE.value){
-      this.verifyLifeSupportQuestionForSingleFuel(t);
+      await this.verifyLifeSupportQuestionForSingleFuel(t);
     }
     else{
       console.error("Invalid account is selected");
