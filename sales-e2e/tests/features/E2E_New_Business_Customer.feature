@@ -1,7 +1,7 @@
 @E2E @newcustomer
 
 Feature:E2E scenario for new business moving and non moving customer
-
+    #DOB is coming for business customer
   Scenario Outline: Submit a quote for new business moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'BUS' plans page
@@ -20,13 +20,14 @@ Feature:E2E scenario for new business moving and non moving customer
   And user validates details on checkout details page
     |sourceSystem   |journey    |fuelType   |
     |<sourceSystem> |<journey>  |<fuelType> |
+  And user selects mailing address option
+    |addressType  |otherAddress                      |
+    |Other Address|68 Mercer Street, GEELONG VIC 3220|
   And user selects answer for property renovation question for '<state>'
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |No          |Yes        |Bank           |
-  And user selects billing preference option
-    |option        |otherAddress                              |
-    |Other address |36 Gregory Street West, WENDOUREE VIC 3355|
+  And user selects "Post" billing preference option
   And user sends welcome pack through 'Email'
   And user clicks on 'Review your order' button and navigates to review page
   And user validates details on checkout review page
@@ -59,6 +60,7 @@ Feature:E2E scenario for new business moving and non moving customer
     |New           |BOTH    |Basic Business|E2E_New_Bus_Moving|NSW  |Quote Tool    |Move Home|No   |Yes |BUS          |New            |
 
   @deviceCheck @smoke
+    #DOB is coming for business customer
 Scenario Outline: Submit a quote for new business non moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'BUS' plans page
@@ -77,12 +79,13 @@ Scenario Outline: Submit a quote for new business non moving customer
   And user validates details on checkout details page
     |sourceSystem   |journey    |fuelType   |
     |<sourceSystem> |<journey>  |<fuelType> |
+  And user selects mailing address option
+    |addressType       |otherAddress |
+    |Connection Address|             |
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |Yes         |No         |               |
-  And user selects billing preference option
-    |option        |otherAddress                              |
-    |Email         |                                          |
+  And user selects "Email" billing preference option
   And user sends welcome pack through 'Post'
   And user opts for special offer
   And user clicks on 'Review your order' button and navigates to review page

@@ -1,27 +1,27 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010205044
+    quoteId: BB2011042718
     sourceCode: Total_15%GD_75
-    actualQuoteDate: 2020-10-20
+    actualQuoteDate: 2020-11-04
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MISS
+    title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0386289411
+      phoneNumber: 0347997527
     
-    emailId: QWRhMJqMkk@energyaustralia.com.au
+    emailId: CnbJUsfqpo@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 578898
+      id: 923116
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -49,6 +49,17 @@ saleDetail :
     premiseType: DOM
     addressType: Premise
     primaryResidence: Y
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 74
+    streetName: Yillowra
+    streetType: S
+    suburb: AUBURN
+    state: NSW
+    country: AUS
+    postCode: 2144
+    addressType: Mailing
   
   offerDetail: 
     fuelType: G

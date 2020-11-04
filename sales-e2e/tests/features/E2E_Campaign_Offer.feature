@@ -15,13 +15,15 @@ Scenario Outline: Submit a quote for offer campaign without AAH and DD
   And user validates details on checkout details page
     |sourceSystem   |journey    |fuelType   |
     |<sourceSystem> |<journey>  |<fuelType> |
+  And user selects mailing address option
+    |addressType       |otherAddress                              |
+    |Connection Address|                                          |
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |<AAH>       |<DD>       |Bank           |
   And user opts for concession card
-  And user selects billing preference option
-    |option             |otherAddress                                 |
-    |Connection address |                                             |
+  And user selects "Post" billing preference option
+  And user sends welcome pack through 'Email'
   And user opts for special offer
   And user clicks on 'Review your order' button and navigates to review page
   And user validates details on checkout review page
@@ -67,14 +69,15 @@ Scenario Outline: Submit a quote for offer campaign without AAH and DD
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
+    And user selects mailing address option
+      |addressType  |otherAddress                       |
+      |Other Address|74 Yillowra Street, AUBURN NSW 2144|
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |<AAH>       |<DD>       |Bank           |
     And user opts for concession card
     And user selects answer for property renovation question for '<state>'
-    And user selects billing preference option
-      |option        |otherAddress                              |
-      |Email         |                                          |
+    And user selects "Email" billing preference option
     And user sends welcome pack through 'Post'
     And user opts for special offer
     And user clicks on 'Review your order' button and navigates to review page

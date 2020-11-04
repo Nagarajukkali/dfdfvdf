@@ -24,9 +24,13 @@ Feature:E2E scenario for new connection
   And user provides dob and id details
     |customerStatus|idType  |medicareType|
     |New           |Medicare|green       |
-  And user selects billing preference option
-    |option             |otherAddress        |
-    |Connection address |                    |
+  And user selects mailing address option
+    |addressType  |otherAddress                          |
+    |Other Address|42 Brownlow Drive, POINT COOK VIC 3030|
+  And user selects "Post" billing preference option
+  And user opts for AAH and DD
+    |optAAHOption|optDDOption|directDebitType|
+    |Yes         |No         |               |
   And user sends welcome pack through 'Email'
   And user opts for special offer
   And user clicks on 'Review your order' button and navigates to review page
@@ -44,7 +48,7 @@ Feature:E2E scenario for new connection
 
   Examples:
     |folderName         |fuelType |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
-    |E2E_New_Resi_NC_ELE|ELE      |New Connection |Plan Switch  |No   |No   |RES          |New            |
+    |E2E_New_Resi_NC_ELE|ELE      |New Connection |Plan Switch  |Yes  |No   |RES          |New            |
 
   Scenario Outline: Submit a quote for gas new connection for residential customer
     Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
@@ -69,9 +73,10 @@ Feature:E2E scenario for new connection
     And user provides dob and id details
       |customerStatus|idType        |medicareType|
       |New           |Medicare      |yellow      |
-    And user selects billing preference option
-      |option        |otherAddress                              |
-      |Other address |36 Gregory Street West, WENDOUREE VIC 3355|
+    And user selects mailing address option
+      |addressType       |otherAddress  |
+      |Connection Address|              |
+    And user selects "Email" billing preference option
     And user sends welcome pack through 'Post'
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
@@ -113,9 +118,10 @@ Feature:E2E scenario for new connection
       |customerStatus|idType  |
       |New           |Passport|
     And user provides business details
-    And user selects billing preference option
-      |option             |otherAddress        |
-      |Email              |                    |
+    And user selects mailing address option
+      |addressType  |otherAddress                          |
+      |Other Address|320 Crown Street, SURRY HILLS NSW 2010|
+    And user selects "Post" billing preference option
     And user sends welcome pack through 'Email'
     And user opts for special offer
     And user clicks on 'Review your order' button and navigates to review page

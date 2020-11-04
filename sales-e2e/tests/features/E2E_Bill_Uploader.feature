@@ -18,13 +18,14 @@ Feature: This feature is to test the Bill Uploader scenarios
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType        |medicareType|
       |RES          |RES        |New           | test     |test     |Medicare      |blue        |
+    And user selects mailing address option
+      |addressType  |otherAddress                     |
+      |Other Address|3 River Drive, ATHELSTONE SA 5076|
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |<AAH>       |<DD>       |CC             |
     And user opts for concession card
-    And user selects billing preference option
-      |option        |otherAddress                     |
-      |Other address |3 River Drive, ATHELSTONE SA 5076|
+    And user selects "Post" billing preference option
     And user sends welcome pack through 'Email'
     And user opts for special offer
     And user clicks on 'Review your order' button and navigates to review page
@@ -70,13 +71,14 @@ Feature: This feature is to test the Bill Uploader scenarios
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType        |
       |RES          |RES        |New           | test     |test     |Driver License|
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |<AAH>       |<DD>       |CC             |
     And user opts for concession card
-    And user selects billing preference option
-      |option             |otherAddress        |
-      |Connection address |                    |
+    And user selects "Email" billing preference option
     And user sends welcome pack through 'Post'
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
@@ -99,7 +101,7 @@ Feature: This feature is to test the Bill Uploader scenarios
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-EV |6305515608|N                             |N                             |Y                      |OTHER                   |POSTMM       |
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-EV |6305515608|N                             |N                             |Y                      |OTHER                   |EMAIL       |
 
     Examples:
       |billName|customerStatus|fuelType|folderName                  |sourceSystem   |journey      |AAH  |DD  |customerType |newOrExisting  |

@@ -20,13 +20,19 @@ Scenario Outline: Submit a quote for existing residential customer through move 
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|idType        |
     |RES         |RES        |Existing      | test     |test     |Driver License|
+  And user selects mailing address option
+    |addressType  |otherAddress                            |
+    |Other Address|9 Charming Street, HAMPTON EAST VIC 3188|
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |<AAH>       |<DD>       |CC             |
+  And user opts for concession card
   And user validates details on checkout details page
     |sourceSystem   |journey    |fuelType   |
     |<sourceSystem> |<journey>  |<fuelType> |
   And user selects answer for property renovation question for '<state>'
+  And user selects "Email" billing preference option
+  And user sends welcome pack through 'Email'
   And user chooses "<optDisconnection>" for disconnection
   And user clicks on 'Review your order' button and navigates to review page
   And user validates details on checkout review page
@@ -84,11 +90,12 @@ Scenario Outline: Submit a quote for existing residential customer through move 
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user selects answer for property renovation question for '<state>'
     And user chooses "<optDisconnection>" for disconnection
-    And user selects billing preference option
-      |option             |otherAddress        |
-      |Connection address |                    |
+    And user selects "Post" billing preference option
     And user sends welcome pack through 'Post'
     And user opts for special offer
     And user clicks on 'Review your order' button and navigates to review page

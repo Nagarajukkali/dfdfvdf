@@ -23,7 +23,7 @@ export class checkoutDetailsMethod{
     public static async provideDetailsInAboutMeSection(t,journey,firstName,lastName,customerStatus){
         if((await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.titleDropdown)).includes('Please select')){
             await t.wait(1000);
-            await testFunction.click(t,eaCheckoutDetailsPage.elements.titleDrop);
+            await testFunction.click(t,eaCheckoutDetailsPage.elements.titleDropdown);
             await t.wait(2000);
             let indexForTitle=testFunction.getRandomInt(0,4);
             await testFunction.click(t,eaCheckoutDetailsPage.elements.titleTag.nth(indexForTitle));
@@ -47,9 +47,7 @@ export class checkoutDetailsMethod{
     }
 
     public static async enterDOB(t){
-      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobDay,'01');
-      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobMonth,'01');
-      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dobYear,'1980');
+      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.dob,'01011980');
       console.log("DOB entered");
     }
 
@@ -174,17 +172,14 @@ export class checkoutDetailsMethod{
     await testFunction.click(t,eaCheckoutDetailsPage.elements.idValueMedicare);
     if(medicareType.toLowerCase() === "green") {
       await testFunction.click(t, eaCheckoutDetailsPage.elements.medicareColorGreen);
-      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.idMedicareValidMM, '01');
-      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.idMedicareValidYYYY, '2025');
+      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.idMedicareValid, '012025');
     } else {
       if(medicareType.toLowerCase() === "blue") {
         await testFunction.click(t, eaCheckoutDetailsPage.elements.medicareColorBlue);
       }else if(medicareType.toLowerCase() === "yellow") {
         await testFunction.click(t, eaCheckoutDetailsPage.elements.medicareColorYellow);
       }
-      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidDD,'01');
-      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidMM,'01');
-      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidYY,'25');
+      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidDD,'010125');
     }
     await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareNumber,medicareNo);
     await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareRef,'1');
@@ -229,14 +224,14 @@ export class checkoutDetailsMethod{
         ABN = ABN.padEnd(11, "0");
         await t.wait(2000);
         await testFunction.click(t,eaCheckoutDetailsPage.elements.ABN);
-        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.number_ABNACN,ABN);
+        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.inputABNNumber,ABN);
       }
       else if(businessType===BusinessType.ACN){
         let ACN = await testFunction.isValidatingUI() ? "111111111" : testFunction.getRandomNumber(999999999);
         ACN = ACN.padEnd(9, "0");
         await t.wait(2000);
         await testFunction.click(t,eaCheckoutDetailsPage.elements.ACN);
-        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.number_ABNACN,ACN);
+        await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.inputACNNumber,ACN);
       }else {
         console.error('ABN/ACN is not valid');
       }
@@ -337,8 +332,7 @@ export class checkoutDetailsMethod{
       }
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCName, "CCName_" + testFunction.generateRandomText(5));
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCNumber, "4111111111111111");
-      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCExpiryMonth, "01");
-      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCExpiryYear, "30");
+      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCExpiry, "0130");
       await testFunction.click(t, eaCheckoutDetailsPage.elements.cbCCAgreeTermsAndCond);
       console.log("CC details provided");
     }
@@ -412,11 +406,6 @@ export class checkoutDetailsMethod{
           await scrollTo(eaCheckoutDetailsPage.elements.basicResiElePlanRateSummary);
           await scrollTo(eaCheckoutDetailsPage.elements.basicResiElePlanFeatureTitle);
           await scrollTo(eaCheckoutDetailsPage.elements.basicResiElePlanRatesTitle);
-          // const setAttribute = ClientFunction(selector => {
-          //   let element = document.querySelector(selector);
-          //
-          //   element.setAttribute('class', 'hs-plan-slider');
-          // });
           await setAttribute("div.hs-plan-slider",'class','hs-plan-slider');
           await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
           await testFunction.click(t,eaCheckoutDetailsPage.elements.sliderRight);
@@ -481,7 +470,7 @@ export class checkoutDetailsMethod{
       await testFunction.click(t, element);
       await testFunction.assertText(t, element, "Selected");
     } else {
-      await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.plansExpand);
+      await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.elePlansExpand);
       await testFunction.click(t, element);
     }
   }
@@ -582,7 +571,7 @@ export class checkoutDetailsMethod{
       await testFunction.click(t, element);
       await testFunction.assertText(t, element, "Selected");
     } else {
-      await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.plansExpand);
+      await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.gasPlansExpand);
       await testFunction.click(t, element);
     }
   }
@@ -591,47 +580,44 @@ export class checkoutDetailsMethod{
       await testFunction.click(t,eaCheckoutDetailsPage.elements.chkboxCarbonNeutral);
   }
 
-  public static async selectBillingPreference(t: any, option: string, otherAddress: string, finalBill: boolean = false) {
-    switch (option) {
-      case "Email":
-        if(finalBill) {
-          await testFunction.click(t, eaCheckoutDetailsPage.elements.rbFinalBillPrefEmail);
-        }else {
-          await t.expect(await testFunction.getElementAttribute(t,eaCheckoutDetailsPage.elements.rbBillPrefEmail,'class')).contains('checked');
-        }
-        break;
-      case "Connection address":
-        if(finalBill) {
-          await testFunction.click(t, eaCheckoutDetailsPage.elements.rbFinalBillPrefConnectionAddress);
-        }else {
-          await testFunction.click(t, eaCheckoutDetailsPage.elements.rbBillPrefConnectionAddress);
-        }
-        break;
-      case "Other address":
-        if(finalBill) {
-          await testFunction.click(t, eaCheckoutDetailsPage.elements.rbFinalBillPrefOtherAddress);
-          await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfFinalBillPrefOtherAddress, otherAddress);
-          await t.wait(3000);
-          await testFunction.click(t, eaCheckoutDetailsPage.elements.finalBillServiceAddressList);
-          await t.wait(2000);
-        }else {
-          await testFunction.click(t, eaCheckoutDetailsPage.elements.rbBillPrefOtherAddress);
-          await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfBillPrefOtherAddress, otherAddress);
-          await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.serviceAddressList);
-          await testFunction.clickElementFromList(t,eaCheckoutDetailsPage.elements.serviceAddressList,otherAddress);
-          await t.wait(2000);
-        }
-        break;
-      default:
-        console.error("Invalid bill pref selected.");
+  public static async selectBillingPreference(t: any, option: string,otherAddress: string,finalBill: boolean = false) {
+    if(option==='Email'){
+      if(finalBill) {
+        await t.expect(await testFunction.getElementAttribute(t,eaCheckoutDetailsPage.elements.rbFinalBillPrefEmail,'class')).contains('ea-state-active');
+      }else {
+        await t.expect(await testFunction.getElementAttribute(t,eaCheckoutDetailsPage.elements.rbBillPrefEmail,'class')).contains('ea-state-active');
+      }
+    }
+    if(option==='Post'){
+      if(finalBill) {
+        await testFunction.click(t, eaCheckoutDetailsPage.elements.rbFinalBillPrefConnectionAddress);
+      }else {
+        await testFunction.click(t, eaCheckoutDetailsPage.elements.rbBillPrefPost);
+      }
+    }
+    if(finalBill){
+      if(option==='Other Address'){
+        await testFunction.click(t, eaCheckoutDetailsPage.elements.rbFinalBillPrefOtherAddress);
+        await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfFinalBillPrefOtherAddress, otherAddress);
+        await t.wait(3000);
+        await testFunction.click(t, eaCheckoutDetailsPage.elements.finalBillServiceAddressList);
+        await t.wait(2000);
+      }
     }
   }
 
   public static async addConcessionCardDetails(t) {
+    const indexForConcessionCard=testFunction.getRandomInt(0,5);
     await testFunction.click(t, eaCheckoutDetailsPage.elements.addConcession);
     await testFunction.click(t, eaCheckoutDetailsPage.elements.concessionCardTypeDropDown);
-    await testFunction.click(t, eaCheckoutDetailsPage.elements.concessionCardTypeOption);
-    await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfConcessionCardNumber, "V123456");
+    await testFunction.click(t, eaCheckoutDetailsPage.elements.concessionCardTypeOption.nth(indexForConcessionCard));
+    const concessionCardSelectedOption=await testFunction.getElementText(t,eaCheckoutDetailsPage.elements.concessionCardTypeDropDown);
+    if(concessionCardSelectedOption.includes("Queensland Government Seniors Card"))
+      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfConcessionCardNumber, "Q123456");
+    else if(concessionCardSelectedOption.includes("Centrelink"))
+      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfConcessionCardNumber, "331456789S");
+    else
+      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfConcessionCardNumber, "V123456");
     await testFunction.click(t, eaCheckoutDetailsPage.elements.cbConcessionAgreeTerms);
   }
 

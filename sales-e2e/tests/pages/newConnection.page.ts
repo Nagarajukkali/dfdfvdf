@@ -75,7 +75,7 @@ const eaNewConnectionPage={
     plumberTitle:Selector("#edit-plumber-details-title-mr"),
     applicantTitleActive:Selector("#applicant-details-title-active-option"),
     applicantTitle:Selector("#edit-applicant-details-title-mr"),
-    connectionDetailSection:Selector("#connectionDetails"),
+    connectionDetailSection:Selector("#connection-details"),
     hotWaterField:Selector("#appliance-qty-instHotWater"),
   },
 };

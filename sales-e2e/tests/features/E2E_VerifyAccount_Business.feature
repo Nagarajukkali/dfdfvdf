@@ -20,15 +20,16 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus|firstName|lastName|businessType |
       |BUS         |BUS        |Existing      |test     |test    |ABN          |
+    And user selects mailing address option
+      |addressType       |otherAddress  |
+      |Connection Address|              |
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |Yes         |Yes        |CC             |
-    And user selects billing preference option
-      |option        |otherAddress                              |
-      |Other address |36 Gregory Street West, WENDOUREE VIC 3355|
+    And user selects "Post" billing preference option
     And user opts for special offer
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
@@ -78,10 +79,11 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
+    And user selects mailing address option
+      |addressType  |otherAddress                              |
+      |Other Address|36 Gregory Street West, WENDOUREE VIC 3355|
     And user selects answer for property renovation question for '<state>'
-    And user selects billing preference option
-      |option             |otherAddress        |
-      |Email              |                    |
+    And user selects "Email" billing preference option
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
       |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
