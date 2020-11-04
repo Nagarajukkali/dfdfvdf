@@ -2,7 +2,7 @@
 Feature:E2E scenario for existing business moving and non moving customer
 
   @deviceCheck @smoke
-
+    #quote submission failed with CC
   Scenario Outline: Submit a quote for existing business moving customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
@@ -22,13 +22,14 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
+    And user selects mailing address option
+      |addressType       |otherAddress|
+      |Connection Address|            |
     And user selects answer for property renovation question for '<state>'
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |Yes         |Yes        |CC             |
-    And user selects billing preference option
-      |option        |otherAddress                              |
-      |Email         |                                          |
+    And user selects "Email" billing preference option
     And user opts for special offer
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
@@ -79,9 +80,10 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
-    And user selects billing preference option
-      |option        |otherAddress                              |
-      |Other address |36 Gregory Street West, WENDOUREE VIC 3355|
+    And user selects mailing address option
+      |addressType  |otherAddress                              |
+      |Other Address|36 Gregory Street West, WENDOUREE VIC 3355|
+    And user selects "Post" billing preference option
     And user opts for special offer
     And user clicks on 'Review your order' button and navigates to review page
     Then Life support section is displayed on Review page as per selected "<fuelType>" and verified "<accountType>"

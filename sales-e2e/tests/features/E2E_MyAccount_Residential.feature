@@ -119,6 +119,9 @@ Feature: This feature is to test the My account scenarios for residential custom
     And user selects plans on checkout details page
       |fuelType |planName       |
       |GAS      |Total Plan Plus|
+    And user provides identification details
+      |customerType|customerStatus|idType        |
+      |RES         |Existing      |Driver License|
     And user opts for concession card
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page

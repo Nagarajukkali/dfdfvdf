@@ -21,13 +21,14 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
+    And user selects mailing address option
+      |addressType  |otherAddress                            |
+      |Other Address|271 Heatherhill Road, FRANKSTON VIC 3199|
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |Yes         |Yes        |CC             |
     And user opts for concession card
-    And user selects billing preference option
-      |option             |otherAddress        |
-      |Connection address |                    |
+    And user selects "Post" billing preference option
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
       |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
@@ -59,7 +60,6 @@ Feature: This feature is to test the verify account scenarios for existing resid
       |E2E_VerifyAccount_Residential_NonMoving  |RES           |BOTH     |Total Plan Plus|Quote Tool     |Plan Switch  |Yes  |Yes   |RES          |Existing       |
 
   @deviceCheck @smoke
-
   Scenario Outline: Submit a quote for existing moving residential customer through verify account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
@@ -82,13 +82,14 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
+    And user selects mailing address option
+      |addressType       |otherAddress    |
+      |Connection Address|                |
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |No          |Yes        |Bank           |
     And user opts for concession card
-    And user selects billing preference option
-      |option             |otherAddress        |
-      |Email              |                    |
+    And user selects "Email" billing preference option
     And user opts for special offer
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page

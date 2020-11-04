@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010225375
+    quoteId: BB2011042720
     sourceCode: NOFRILLS
-    actualQuoteDate: 2020-10-22
+    actualQuoteDate: 2020-11-04
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0389268945
+      phoneNumber: 0386104902
     
-    emailId: NkygLqxWRb@energyaustralia.com.au
+    emailId: wYntZMqHRk@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 405906
+      id: 951212
       primaryIdFlag: Y
     
     authLevel: Y
@@ -41,6 +41,17 @@ saleDetail :
     premiseType: DOM
     addressType: Premise
     primaryResidence: Y
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 5
+    streetName: Wilkies
+    streetType: S
+    suburb: BULLI
+    state: NSW
+    country: AUS
+    postCode: 2516
+    addressType: Mailing
   
   offerDetail: 
     fuelType: G

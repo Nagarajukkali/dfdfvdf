@@ -1,6 +1,7 @@
 @E2E @existingcustomerQT
 Feature:E2E scenario for existing residential moving and non moving customer
 
+  #Not able to proceed to review page
 Scenario Outline: Submit a quote for existing residential moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page
@@ -20,15 +21,16 @@ Scenario Outline: Submit a quote for existing residential moving customer
   And user validates details on checkout details page
     |sourceSystem   |journey    |fuelType   |
     |<sourceSystem> |<journey>  |<fuelType> |
+  And user selects mailing address option
+    |addressType  |otherAddress                     |
+    |Other Address|3 River Drive, ATHELSTONE SA 5076|
   And user selects answer for property renovation question for '<state>'
   And user chooses "<optDisconnection>" for disconnection
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |Yes         |No         |               |
   And user opts for concession card
-  And user selects billing preference option
-    |option        |otherAddress                    |
-    |Other address |5 Wilkies Street, BULLI NSW 2516|
+  And user selects "Post" billing preference option
   And user opts for special offer
   And user clicks on 'Review your order' button and navigates to review page
   And user validates details on checkout review page
@@ -62,7 +64,7 @@ Scenario Outline: Submit a quote for existing residential moving customer
   |Existing      |BOTH    |Basic Home|E2E_Existing_Resi_Moving|VIC  |No              |Quote Tool    |Move Home|Yes  |No  |RES          |Existing       |
 
   @deviceCheck @smoke
-
+    #Not able to proceed to review page
 Scenario Outline: Submit a quote for existing residential non moving customer with LS, select dual fuel and verify gas account
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page
@@ -82,13 +84,14 @@ Scenario Outline: Submit a quote for existing residential non moving customer wi
   And user validates details on checkout details page
     |sourceSystem   |journey    |fuelType   |
     |<sourceSystem> |<journey>  |<fuelType> |
+  And user selects mailing address option
+    |addressType       |otherAddress                              |
+    |Connection Address|                                          |
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |No          |Yes        |Bank           |
   And user opts for concession card
-  And user selects billing preference option
-    |option             |otherAddress        |
-    |Connection address |                    |
+  And user selects "Post" billing preference option
   And user clicks on 'Review your order' button and navigates to review page
   Then Life support section is displayed on Review page as per selected "<fuelType>" and verified "<accountType>"
   And user provides life support details on review page
@@ -121,6 +124,7 @@ Scenario Outline: Submit a quote for existing residential non moving customer wi
     |Existing      |No Frills|E2E_Existing_Resi_NonMoving|BOTH    |GAS        |Quote Tool    |Plan Switch |No   |Yes  |RES          |Existing       |
 
 
+    #concession card number is required
   Scenario Outline: Submit a quote for QLD existing residential non moving customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -141,13 +145,14 @@ Scenario Outline: Submit a quote for existing residential non moving customer wi
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
+    And user selects mailing address option
+      |addressType  |otherAddress                         |
+      |Other Address|13 Jacobs Ridge Road, ORMEAU QLD 4208|
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |No          |Yes        |Bank           |
     And user opts for concession card
-    And user selects billing preference option
-      |option             |otherAddress        |
-      |Email              |                    |
+    And user selects "Post" billing preference option
     And user opts for special offer
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
@@ -169,7 +174,7 @@ Scenario Outline: Submit a quote for existing residential non moving customer wi
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |TOPH-EQ |QB01405934|N                             |N                             |Y                      |LSIPDM                  |EMAIL        |
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |TOPH-EQ |QB01405934|N                             |N                             |Y                      |LSIPDM                  |POSTMM       |
 
 
     Examples:

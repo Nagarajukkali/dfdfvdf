@@ -88,25 +88,19 @@ When(/^user provides business details$/, async function (t,[],dataTable) {
 When(/^user selects carbon neutral option$/, async function (t) {
   await checkoutDetailsMethod.selectCarbonNeutralOption(t);
 });
-When(/^user selects billing preference option$/, async function (t, [], dataTable) {
-  /*
-  Example:
-  And user selects billing preference option
-    |option         |otherAddress                                 |
-    |Other address  |271 Heatherhill Road, FRANKSTON  VIC  3199   |
-   */
-  let data = dataTable.hashes();
-  await checkoutDetailsMethod.selectBillingPreference(t, data[0].option, data[0].otherAddress);
+When(/^user selects "([^"]*)" billing preference option$/, async function (t,[option]) {
+  await checkoutDetailsMethod.selectBillingPreference(t, option,"");
 });
-When(/^user selects final bill option$/, async function (t, [], dataTable) {
+When(/^user selects final bill option$/, async function (t,[],dataTable) {
   /*
   Example:
   And user selects final bill option
     |option         |otherAddress                                 |
     |Other address  |271 Heatherhill Road, FRANKSTON  VIC  3199   |
    */
-  let data = dataTable.hashes();
-  await checkoutDetailsMethod.selectBillingPreference(t, data[0].option, data[0].otherAddress, true);
+  let data=dataTable.hashes();
+  const billingOption=data[0].option;
+  await checkoutDetailsMethod.selectBillingPreference(t, billingOption,data[0].otherAddress, true);
 });
 When(/^user opts for concession card$/, async function (t) {
   await checkoutDetailsMethod.addConcessionCardDetails(t);
@@ -168,7 +162,26 @@ When(/^user opts for special offer$/, async function (t,[]) {
 });
 When(/^user sends welcome pack through '(.*)'$/, async function (t,[option]) {
   if(option==='Email')
-    await t.expect(await testFunction.getElementAttribute(t,eaCheckoutDetailsPage.elements.welcomePackEmail,'class')).contains('checked');
+    await t.expect(await testFunction.getElementAttribute(t,eaCheckoutDetailsPage.elements.preferredCommEmail,'class')).contains('ea-state-active');
   if(option==='Post')
-    await testFunction.click(t,eaCheckoutDetailsPage.elements.welcomePackPost);
+    await testFunction.click(t,eaCheckoutDetailsPage.elements.preferredCommPost);
+});
+When(/^user selects mailing address option$/, async function (t,[],dataTable) {
+  let option = dataTable.hashes();
+  if(option[0].addressType === "Connection Address") {
+    await testFunction.click(t,eaCheckoutDetailsPage.elements.mailingAddrAsConnAddr);
+  }
+  else if(option[0].addressType==='Other Address'){
+    const otherAddress=option[0].otherAddress
+    await testFunction.click(t,eaCheckoutDetailsPage.elements.mailingAddrAsOtherAddr);
+    await testFunction.enterText(t,eaCheckoutDetailsPage.elements.inputMailingAddrAsOtherAddr,otherAddress);
+    await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.serviceAddressList);
+    await testFunction.clickElementFromList(t,eaCheckoutDetailsPage.elements.serviceAddressList,otherAddress);
+    await t.wait(1000);
+  }
+  else{
+    console.error("Invalid mailing address provided");
+  }
+  console.log("Mailing address is selected");
+
 });
