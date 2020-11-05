@@ -28,9 +28,6 @@ Feature:E2E scenario for new connection
     |addressType  |otherAddress                          |
     |Other Address|42 Brownlow Drive, POINT COOK VIC 3030|
   And user selects "Post" billing preference option
-  And user opts for AAH and DD
-    |optAAHOption|optDDOption|directDebitType|
-    |Yes         |No         |               |
   And user sends welcome pack through 'Email'
   And user opts for special offer
   And user clicks on 'Review your order' button and navigates to review page
@@ -48,7 +45,7 @@ Feature:E2E scenario for new connection
 
   Examples:
     |folderName         |fuelType |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
-    |E2E_New_Resi_NC_ELE|ELE      |New Connection |Plan Switch  |Yes  |No   |RES          |New            |
+    |E2E_New_Resi_NC_ELE|ELE      |New Connection |Plan Switch  |NO  |No   |RES          |New            |
 
   Scenario Outline: Submit a quote for gas new connection for residential customer
     Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences

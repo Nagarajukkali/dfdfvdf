@@ -2,7 +2,6 @@
 Feature: This feature is to test the verify account scenarios for existing business customers
 
   @deviceCheck @smoke
-
   Scenario Outline: Submit a quote for existing non moving business customer with life support for both accounts through verify account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
