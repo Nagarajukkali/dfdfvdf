@@ -43,5 +43,5 @@ Then(/^user validates details on checkout complete page$/, async function (t,[],
   if(getPackage.config.env.includes("preprod")){
     await checkoutCompleteMethod.validatePowerResponseSection(t,customerType,fuelType);
   }
-  console.log("Checkout Complete page validated successfully");
+  console.log("Checkout Complete page validated successfully for "+sourceSystem+" "+journey+" journey.");
 });

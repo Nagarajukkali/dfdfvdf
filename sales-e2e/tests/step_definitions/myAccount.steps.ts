@@ -81,7 +81,8 @@ When(/^user validates details on checkout details page$/, async function (t,[],d
   await checkoutDetailsMethod.validateRefineBar(t, params[0].fuelType, params[0].sourceSystem);
   await checkoutDetailsMethod.validateDisclaimer(t, params[0].sourceSystem, eaCheckoutDetailsPage.elements.txtFeesDisclaimer, "Please note for all payment options, excluding direct debit or Centrepay, a merchant service fee may apply to credit card payments - 0.36% for paying bills by Visa or Mastercard® and 1.5% for paying bills by American Express®. The best way to avoid these fees is to set up direct debit via My Account.");
   await checkoutDetailsMethod.validateNavigationButtons(t, params[0].sourceSystem, params[0].journey);
-  console.log("Checkout Details page validated successfully.");
+  await checkoutDetailsMethod.validatePresenceOfEmailQuoteAndCancelButton(t,params[0].sourceSystem,params[0].journey);
+  console.log("Checkout Details page validated successfully for "+params[0].sourceSystem+" "+params[0].journey+" journey.");
 });
 
 When(/^user logs in to my account as a ghosting user$/, async function(t) {

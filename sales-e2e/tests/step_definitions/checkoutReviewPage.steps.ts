@@ -81,7 +81,7 @@ When(/^user validates details on checkout review page$/, async function (t,[],da
   await checkoutReviewMethod.validateCarbonNeutralSection(t);
   await checkoutReviewMethod.validateNavigationButtons(t);
   await checkoutReviewMethod.validateGeneralStateDisclaimer(t, customerType, isNewCustomer, isMoving);
-  console.log("Checkout Review page validated successfully");
+  console.log("Checkout Review page validated successfully for "+sourceSystem+" "+journey+" journey.");
 });
 
 When(/^user provides missing identification details on review page$/, async function (t,[idType]) {

@@ -694,7 +694,7 @@ export class checkoutDetailsMethod{
       }
 
     }
-    console.log("Header validation completed.");
+    console.log("Header validation completed for "+sourceSystem+" "+journey+" journey.");
   }
 
   public static async validateProgressbarAndSubheading(t, sourceSystem, journey, fuelType) {
@@ -728,7 +728,7 @@ export class checkoutDetailsMethod{
         await testFunction.assertTextValue(t, subHeading, "Details");
       }
     }
-    console.log("Progress bar And Subheading validation completed.");
+    console.log("Progress bar And Subheading validation completed for "+sourceSystem+" "+journey+" journey.");
   }
 
   public static async validateContactPrefSection(t) {
@@ -765,7 +765,7 @@ export class checkoutDetailsMethod{
       if (await testFunction.isGas(fuelType)) {
         await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.refineBar.gasUsage);
       }
-      console.log("Validation completed for refine bar.");
+      console.log("Validation completed for refine bar for "+sourceSystem);
     } else {
       console.log("Refine bar validation on checkout details page is not applicable for non my account journeys.");
     }
@@ -779,12 +779,10 @@ export class checkoutDetailsMethod{
       expectedText = expectedText.replace(" ", "");
       await testFunction.assertTextValue(t, actualText, expectedText);
     }
-    console.log("Disclaimer validated successfully.");
+    console.log("Disclaimer validated successfully for " +sourceSystem);
   }
 
   public static async validateNavigationButtons(t, sourceSystem, journey) {
-      console.log(sourceSystem);
-      console.log(journey);
     if(sourceSystem.toLowerCase() === "my account" && journey.toLowerCase() !== "move home" && journey.toLowerCase() !== "upsell") {
       await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.btnBack);
       await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.btnNext);
@@ -794,6 +792,29 @@ export class checkoutDetailsMethod{
       await testFunction.isElementAbsent(t, eaCheckoutDetailsPage.elements.btnNext);
       await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.reviewYourOrderBtn);
     }
+    console.log("Validated navigation buttons for "+sourceSystem+" "+journey+" journey." );
+  }
+
+  public static async validatePresenceOfEmailQuoteAndCancelButton(t,sourceSystem,journey){
+    if((sourceSystem.toLowerCase()==="my account" && journey.toLowerCase() !== "plan switch") || sourceSystem.toLowerCase()==="new connection"){
+      await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.cancelButton);
+      await testFunction.isElementAbsent(t,eaCheckoutDetailsPage.elements.emailQuoteLink);
+      console.log("Validated presence of cancel button for "+sourceSystem+" "+journey+" journey." );
+    }
+    if(sourceSystem==='quote tool'){
+      const getPageURL=await testFunction.getPageURL();
+      if(getPageURL.includes("RES")){
+        await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.cancelButton);
+        await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.emailQuoteLink);
+        console.log("Validated presence of email quote and cancel button for "+sourceSystem+" "+journey+" journey." );
+      }
+      else{
+        await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.cancelButton);
+        await testFunction.isElementAbsent(t,eaCheckoutDetailsPage.elements.emailQuoteLink);
+        console.log("Validated presence of cancel button for "+sourceSystem+" "+journey+" journey." );
+      }
+    }
+
   }
 
   public static async validateCurrentPlanDetails(t){
@@ -830,5 +851,6 @@ export class checkoutDetailsMethod{
       console.log("Current plan table is not available.")
     }
   }
+
 
 }

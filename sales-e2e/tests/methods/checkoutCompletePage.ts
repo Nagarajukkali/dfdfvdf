@@ -63,7 +63,7 @@ export class checkoutCompleteMethod {
     } else {
       throw Error("Invalid customer type");
     }
-    console.log("Progress bar And Subheading validation completed on checkout complete page.");
+    console.log("Progress bar And Subheading validation completed on checkout complete page for "+sourceSystem+" "+journey+" journey.");
   }
 
   public static async validateApplicationAcceptedSection(t) {
@@ -80,7 +80,7 @@ export class checkoutCompleteMethod {
     if(await testFunction.isGas(fuelType)) {
       await testFunction.isElementDisplayed(t, eaCheckoutCompletePage.elements.selectedPlan.gas);
     }
-    console.log("Validation completed for selected plan section on checkout complete page.");
+    console.log("Validation completed for selected plan section on checkout complete page for "+fuelType);
   }
 
   public static async validateDownloadPDFSection(t) {
@@ -110,7 +110,7 @@ export class checkoutCompleteMethod {
       await testFunction.assertText(t, eaCheckoutCompletePage.elements.bannerIntroducingMA.feature2, "Manage your account details");
       await testFunction.assertText(t, eaCheckoutCompletePage.elements.bannerIntroducingMA.feature3, "Monitor your usage");
     }
-    console.log("Validation completed for introducing my account banner.");
+    console.log("Validation completed for introducing my account banner for "+sourceSystem);
   }
 
   public static async validateNavigationButton(t, sourceSystem) {
@@ -122,7 +122,7 @@ export class checkoutCompleteMethod {
       expectedText = "Back to home";
     }
     await testFunction.assertText(t, eaCheckoutCompletePage.elements.btnNavigation, expectedText);
-    console.log("Validation completed for 'Go to' button on checkout complete page.");
+    console.log("Validation completed for 'Go to' button on checkout complete page for "+sourceSystem);
   }
 
   public static async validatePowerResponseSection(t,customerType,fuelType){
@@ -141,7 +141,7 @@ export class checkoutCompleteMethod {
         "            and is wearing a top with yellow sleeves. She is on her phone and laptop. The husband is holding the young child. On the bench\n" +
         "            sits a bowl of oranges, coloured pencils and children’s drawings."
       await testFunction.assertTextValue(t,actualImageText,expectedImageText);
-      console.log("Validation completed for 'Power Response' section on checkout complete page.");
+      console.log("Validation completed for 'Power Response' section on checkout complete page of "+fuelType+" "+customerType+" customer.");
     }
     if(customerType===CustomerType.BUSINESS || fuelType===FUEL_TYPE_OPTIONS.GAS.value){
       await testFunction.isElementAbsent(t,eaCheckoutCompletePage.elements.powerResponseSection);

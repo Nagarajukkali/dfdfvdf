@@ -1,27 +1,27 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010225345
+    quoteId: BB2011052762
     sourceCode: Total_27%GD_50
-    actualQuoteDate: 2020-10-22
+    actualQuoteDate: 2020-11-05
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: DR
+    title: MISS
     firstName: test
     lastName: test
     commMethod: POSTAL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0331480640
+      phoneNumber: 0360404759
     
-    emailId: EehUHYJzDW@energyaustralia.com.au
+    emailId: YwRfvsPSPa@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 151237
+      id: 975133
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -29,7 +29,7 @@ saleDetail :
           dlFirstName: test
           dlMiddleName/: 
           dlLastName: test
-          licenseStateOfIssue: VIC
+          licenseStateOfIssue: ACT
         
       
     
@@ -50,13 +50,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: Y
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 42
+    streetName: Brownlow
+    streetType: DR
+    suburb: POINT COOK
+    state: VIC
+    country: AUS
+    postCode: 3030
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-10-26
+    proposedStart: 2020-11-09
     offerType: ENE
     plan: TOPH-GV
     priceTag: GVT1A_NR2001
-    serviceOrderDate: 2020-10-26
+    serviceOrderDate: 2020-11-09
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5330733757

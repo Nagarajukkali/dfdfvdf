@@ -625,7 +625,7 @@ export class checkoutReviewMethod {
       await testFunction.assertText(t, eaCheckoutReviewPage.elements.connectionDetails.customerType.heading, "Customer type");
       await testFunction.isElementDisplayed(t, eaCheckoutReviewPage.elements.connectionDetails.customerType.data);
     }
-    console.log("Validation completed for Connection details section on review page.");
+    console.log("Validation completed for Connection details section on review page for "+journey);
   }
 
   public static async validateAccountHoldersSection(t, sourceSystem, journey, aah) {
@@ -649,8 +649,7 @@ export class checkoutReviewMethod {
       } else {
         await testFunction.isElementAbsent(t, eaCheckoutReviewPage.elements.accountHolders.additionalAccountHolder.main);
       }
-
-      console.log("Validation completed for account holder section on checkout review page.");
+      console.log("Validation completed for account holder section on checkout review page for "+sourceSystem+" "+journey+" journey.");
     }
   }
 
@@ -681,7 +680,7 @@ export class checkoutReviewMethod {
     await testFunction.assertText(t, eaCheckoutReviewPage.elements.billingAndPaymentPref.billsDeliveredTo.heading, "Bills delivered to");
     await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.billingAndPaymentPref.billsDeliveredTo.data);
 
-    console.log("Validation completed for billing and payment preference section on checkout review page.");
+    console.log("Validation completed for billing and payment preference section on checkout review page for "+sourceSystem+" "+journey+" journey.");
   }
 
   public static async validateFeesAndChargesSection(t) {
