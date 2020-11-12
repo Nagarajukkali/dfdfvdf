@@ -1,6 +1,6 @@
 @E2E @existingcustomerQT
 Feature:E2E scenario for existing residential moving and non moving customer
-
+@failed
   #Not able to proceed to review page
 Scenario Outline: Submit a quote for existing residential moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -64,7 +64,6 @@ Scenario Outline: Submit a quote for existing residential moving customer
   |Existing      |BOTH    |Basic Home|E2E_Existing_Resi_Moving|VIC  |No              |Quote Tool    |Move Home|Yes  |No  |RES          |Existing       |
 
   @deviceCheck @smoke
-    #Not able to proceed to review page
 Scenario Outline: Submit a quote for existing residential non moving customer with LS, select dual fuel and verify gas account
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page

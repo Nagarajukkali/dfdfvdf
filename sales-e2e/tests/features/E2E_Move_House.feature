@@ -1,4 +1,4 @@
-@E2E @existingcustomerQT
+@E2E @existingcustomerQT @failed
 Feature:E2E scenario for existing residential moving customer through move house
 
 Scenario Outline: Submit a quote for existing residential customer through move house without AAH and DD

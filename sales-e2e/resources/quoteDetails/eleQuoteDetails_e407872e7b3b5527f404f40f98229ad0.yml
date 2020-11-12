@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010225376
+    quoteId: BB2011102846
     sourceCode: Total_13%GD
-    actualQuoteDate: 2020-10-22
+    actualQuoteDate: 2020-11-10
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0312684570
+      phoneNumber: 0310573267
     
-    emailId: WcRMmNEJGA@energyaustralia.com.au
+    emailId: gfdeOTQivs@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: PASSPORT
-      id: 118500
+      id: 303212
       primaryIdFlag: Y
     
     authLevel: Y
@@ -41,6 +41,17 @@ saleDetail :
     premiseType: DOM
     addressType: Premise
     primaryResidence: Y
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 13
+    streetName: Jacobs Ridge
+    streetType: R
+    suburb: ORMEAU
+    state: QLD
+    country: AUS
+    postCode: 4208
+    addressType: Mailing
   
   offerDetail: 
     fuelType: E
@@ -65,7 +76,7 @@ saleDetail :
     fuelTypeNaReasonCode: NOINTEREST
   
   billDeliveryDetail: 
-    billRouteType: EMAIL
+    billRouteType: POSTMM
   
   creditAssessmentDecision: Accept
   meteringDetail: 

@@ -179,7 +179,7 @@ export class checkoutDetailsMethod{
       }else if(medicareType.toLowerCase() === "yellow") {
         await testFunction.click(t, eaCheckoutDetailsPage.elements.medicareColorYellow);
       }
-      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValidDD,'010125');
+      await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareValid,'010125');
     }
     await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareNumber,medicareNo);
     await testFunction.clearAndEnterText(t,eaCheckoutDetailsPage.elements.idMedicareRef,'1');

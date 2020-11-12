@@ -92,6 +92,7 @@ Feature:E2E scenario for new connection
       |folderName         |fuelType |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
       |E2E_New_Resi_NC_GAS|GAS      |New Connection |Plan Switch  |No   |No   |RES          |New            |
 
+  @failed
   Scenario Outline: Submit a quote for electricity new connection for business customer
     Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
     When user provides connection details

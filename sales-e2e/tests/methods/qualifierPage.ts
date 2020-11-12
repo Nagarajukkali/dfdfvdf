@@ -68,7 +68,7 @@ export class qualifierMethod{
           await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeDOBValue);
           break;
         case IdType.DL:
-          await this.selectIdTypeQualifier(t, 'Drivers licence');
+          await this.selectIdTypeQualifier(t, 'Driver Licence');
           await this.provideIdValue(t, idValue,eaQualifierPage.elements.idTypeValue);
           break;
         case IdType.PIN:
