@@ -171,6 +171,9 @@ Given(/^user has opened the '(.*)' link in a browser and creates '(.*)' to save 
     case "business-industryoffer":
       await t.navigateTo(eaHomePage.campaignPageUrl+"business/industryoffer?live=disabled");
       break;
+    case "mcdonalds":
+      await t.navigateTo(eaHomePage.campaignPageUrl+"mcdonalds?live=disabled");
+      break;
     default:
       console.error("Invalid campaign type.");
   }
