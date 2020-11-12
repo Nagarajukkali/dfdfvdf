@@ -175,6 +175,7 @@ When(/^user selects mailing address option$/, async function (t,[],dataTable) {
     const otherAddress=option[0].otherAddress
     await testFunction.click(t,eaCheckoutDetailsPage.elements.mailingAddrAsOtherAddr);
     await testFunction.enterText(t,eaCheckoutDetailsPage.elements.inputMailingAddrAsOtherAddr,otherAddress);
+    await t.wait(2000);
     await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.serviceAddressList);
     await testFunction.clickElementFromList(t,eaCheckoutDetailsPage.elements.serviceAddressList,otherAddress);
     await t.wait(1000);
