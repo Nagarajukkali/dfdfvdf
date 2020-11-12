@@ -7,20 +7,20 @@
       "preSelect": {
         "Credit50": {
           "VIC": {
-            "heading": "",
-            "description": ""
+            "heading": "$100 Sign Up Credit",
+            "description": "Get a $100 credit per new energy account on your first bill when you sign up.**"
           },
           "NSW": {
-            "heading": "",
-            "description": ""
+            "heading": "$100 Sign Up Credit",
+            "description": "Get a $100 credit per new energy account on your first bill when you sign up.**"
           },
           "ACT": {
             "heading": "",
             "description": ""
           },
           "QLD": {
-            "heading": "",
-            "description": ""
+            "heading": "$100 Sign Up Credit",
+            "description": "Get a $100 credit per new energy account on your first bill when you sign up.**"
           },
           "SA": {
             "heading": "",
@@ -68,10 +68,10 @@
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "",
-          "NSW": "",
+          "VIC": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.**",
+          "NSW": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.**",
           "ACT": "",
-          "QLD": "",
+          "QLD": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.**",
           "SA" : ""
         },
         "chanceToWin": {
@@ -89,18 +89,18 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_5%GD",
-        "NSW": "Total_21%GD",
+        "VIC": "Total_5%GD_100",
+        "NSW": "Total_21%GD_100",
         "ACT": "Total_10%GD",
-        "QLD": "Total_13%GD",
+        "QLD": "Total_13%GD_100",
         "SA": "Total_3%GD"
       },
       "existingCustomer": {
         "ENE":{
-          "VIC": "Total_5%GD",
-          "NSW": "Total_21%GD",
+          "VIC": "Total_5%GD_100",
+          "NSW": "Total_21%GD_100",
           "ACT": "Total_10%GD",
-          "QLD": "Total_13%GD",
+          "QLD": "Total_13%GD_100",
           "SA": "Total_3%GD"
         },
         "PS": {
@@ -119,20 +119,20 @@
       "preSelect": {
         "Credit50": {
           "VIC": {
-            "heading": "",
-            "description": ""
+            "heading": "$100 Sign Up Credit",
+            "description": "Get a $100 credit per new energy account on your first bill when you sign up.**"
           },
           "NSW": {
-            "heading": "",
-            "description": ""
+            "heading": "$100 Sign Up Credit",
+            "description": "Get a $100 credit per new energy account on your first bill when you sign up.**"
           },
           "ACT": {
             "heading": "",
             "description": ""
           },
           "QLD": {
-            "heading": "",
-            "description": ""
+            "heading": "$100 Sign Up Credit",
+            "description": "Get a $100 credit per new energy account on your first bill when you sign up.**"
           },
           "SA": {
             "heading": "",
@@ -180,10 +180,10 @@
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "",
-          "NSW": "",
+          "VIC": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.**",
+          "NSW": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.**",
           "ACT": "",
-          "QLD": "",
+          "QLD": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.**",
           "SA" : ""
         },
         "chanceToWin": {
@@ -201,15 +201,15 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_23%GD",
-        "NSW": "Total_19%GD",
+        "VIC": "Total_23%GD_100",
+        "NSW": "Total_19%GD_100",
         "ACT": "Total_19%GD",
         "SA": "Total_3%GD"
       },
       "existingCustomer": {
         "ENE":{
-          "VIC": "Total_23%GD",
-          "NSW": "Total_19%GD",
+          "VIC": "Total_23%GD_100",
+          "NSW": "Total_19%GD_100",
           "ACT": "Total_19%GD",
           "SA": "Total_3%GD"
         },
@@ -265,20 +265,20 @@
     },
     "Credit50": {
       "VIC": {
-        "heading": "",
-        "description": ""
+        "heading": "$100 Sign Up Credit",
+        "description": "**Offer only for eligible VIC, NSW & QLD business customers who sign up to a new Total Plan Business electricity or gas account online. Limit of one $100 credit per new energy account, per energy type, per business premises. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "NSW": {
-        "heading": "",
-        "description": ""
+        "heading": "$100 Sign Up Credit",
+        "description": "**Offer only for eligible VIC, NSW & QLD business customers who sign up to a new Total Plan Business electricity or gas account online. Limit of one $100 credit per new energy account, per energy type, per business premises. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "ACT": {
         "heading": "",
         "description": ""
       },
       "QLD": {
-        "heading": "",
-        "description": ""
+        "heading": "$100 Sign Up Credit",
+        "description": "**Offer only for eligible VIC, NSW & QLD business customers who sign up to a new Total Plan Business electricity or gas account online. Limit of one $100 credit per new energy account, per energy type, per business premises. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "SA": {
         "heading": "",
