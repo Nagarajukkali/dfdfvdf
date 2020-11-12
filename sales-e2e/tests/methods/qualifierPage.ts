@@ -118,6 +118,7 @@ export class qualifierMethod{
 
   public static async provideAddress(t, address) {
       await testFunction.clearAndEnterText(t,eaQualifierPage.elements.serviceAddress,address);
+    await t.wait(2000);
       await testFunction.isElementVisible(t,eaQualifierPage.elements.serviceAddressList);
       await testFunction.clickElementFromList(t,eaQualifierPage.elements.serviceAddressList,address);
       // if((await testFunction.sizeOfElement(t,eaQualifierPage.elements.addressLoadingIcon))>0)
