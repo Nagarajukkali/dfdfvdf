@@ -362,6 +362,7 @@ export class checkoutDetailsMethod{
     } else {
       console.error("Disconnection is not chosen");
     }
+    console.log("Disconnection option is selected");
   }
 
   public static async selectPlan(t, fuelType, planName){
@@ -589,11 +590,7 @@ export class checkoutDetailsMethod{
       }
     }
     if(option==='Post'){
-      if(finalBill) {
-        await testFunction.click(t, eaCheckoutDetailsPage.elements.rbFinalBillPrefConnectionAddress);
-      }else {
-        await testFunction.click(t, eaCheckoutDetailsPage.elements.rbBillPrefPost);
-      }
+      await testFunction.click(t, eaCheckoutDetailsPage.elements.rbBillPrefPost);
     }
     if(finalBill){
       if(option==='Other Address'){
@@ -602,6 +599,9 @@ export class checkoutDetailsMethod{
         await t.wait(3000);
         await testFunction.click(t, eaCheckoutDetailsPage.elements.finalBillServiceAddressList);
         await t.wait(2000);
+      }
+      if(option==='Connection Address'){
+        await testFunction.click(t, eaCheckoutDetailsPage.elements.rbFinalBillPrefConnectionAddress);
       }
     }
   }

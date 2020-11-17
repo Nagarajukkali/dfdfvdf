@@ -79,6 +79,9 @@ Feature: This feature is to test the verify account scenarios for existing resid
       |RES         |RES        |Existing      |test     |test    |Passport  |
     And user selects answer for property renovation question for '<state>'
     And user chooses "<optDisconnection>" for disconnection
+    And user selects final bill option
+      |option             |otherAddress            |
+      |Connection Address |                        |
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
@@ -119,4 +122,4 @@ Feature: This feature is to test the verify account scenarios for existing resid
 
     Examples:
       |folderName                               |customer_type |fuelType |planName    |optDisconnection |state  |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
-      |E2E_VerifyAccount_Residential_Moving     |RES           |BOTH     |No Frills   |No               |VIC    |Quote Tool     |Move Home    |No   |No   |RES          |Existing       |
+      |E2E_VerifyAccount_Residential_Moving     |RES           |BOTH     |No Frills   |Yes              |VIC    |Quote Tool     |Move Home    |No   |No   |RES          |Existing       |

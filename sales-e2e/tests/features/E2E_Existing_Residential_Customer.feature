@@ -25,6 +25,9 @@ Scenario Outline: Submit a quote for existing residential moving customer
     |Other Address|3 River Drive, ATHELSTONE SA 5076|
   And user selects answer for property renovation question for '<state>'
   And user chooses "<optDisconnection>" for disconnection
+  And user selects final bill option
+    |option         |otherAddress                                 |
+    |Other Address  |271 Heatherhill Road, FRANKSTON  VIC  3199   |
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |Yes         |No         |               |
@@ -60,7 +63,7 @@ Scenario Outline: Submit a quote for existing residential moving customer
 
   Examples:
   |customerStatus|fuelType|planName  |folderName              |state|optDisconnection|sourceSystem  |journey  |AAH  |DD   |customerType |newOrExisting  |
-  |Existing      |BOTH    |Basic Home|E2E_Existing_Resi_Moving|VIC  |No              |Quote Tool    |Move Home|Yes  |No  |RES          |Existing       |
+  |Existing      |BOTH    |Basic Home|E2E_Existing_Resi_Moving|VIC  |Yes             |Quote Tool    |Move Home|Yes  |No  |RES          |Existing       |
 
   @deviceCheck @smoke
 Scenario Outline: Submit a quote for existing residential non moving customer with LS, select dual fuel and verify gas account
