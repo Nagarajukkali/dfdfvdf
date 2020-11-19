@@ -14,6 +14,9 @@ Scenario Outline: Verify if a business customer is displayed with accept with co
     |customerType|journey    | firstName| lastName|businessType|
     |BUS         |BUS        | test     |test     |ABN         |
   And user selects answer for property renovation question for '<state>'
+  And user selects mailing address option
+    |addressType  |otherAddress                      |
+    |Other Address|68 Mercer Street, GEELONG VIC 3220|
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |No          |Yes        |Bank           |
@@ -57,6 +60,9 @@ Scenario Outline: Verify if a business customer is displayed with accept with co
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|businessType|
       |BUS         |BUS        |New           | test     |test     |ACN         |
+    And user selects mailing address option
+      |addressType       |otherAddress |
+      |Connection Address|             |
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |Yes         |No         |               |
@@ -98,6 +104,9 @@ Scenario Outline: Verify if a business customer is displayed with accept with co
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
     And user selects answer for property renovation question for '<state>'
+    And user selects mailing address option
+      |addressType  |otherAddress                      |
+      |Other Address|68 Mercer Street, GEELONG VIC 3220|
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |No          |Yes        |Bank           |
@@ -137,6 +146,9 @@ Scenario Outline: Verify if a business customer is displayed with accept with co
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|businessType|
       |BUS         |BUS        |New           | test     |test     |ACN         |
+    And user selects mailing address option
+      |addressType       |otherAddress |
+      |Connection Address|             |
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |Yes         |No         |               |

@@ -13,6 +13,9 @@ Scenario Outline: Verify if a residential customer is displayed with accept with
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus|firstName | lastName|idType        |medicareType |
     |RES         |RES        |New           |AcceptCond|test     |Driver License|             |
+  And user selects mailing address option
+    |addressType       |otherAddress                              |
+    |Connection Address|                                          |
   And user selects answer for property renovation question for '<state>'
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
@@ -56,6 +59,9 @@ Scenario Outline: Verify if a residential customer is displayed with application
   And user provides all details on checkout details page
     |customerType |journey    |customerStatus| firstName| lastName|idType        |
     |RES          |RES        |New           | decline  |test     |Driver License|
+  And user selects mailing address option
+    |addressType  |otherAddress                      |
+    |Other Address|68 Mercer Street, GEELONG VIC 3220|
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |No          |Yes        |CC             |
@@ -96,6 +102,9 @@ Scenario Outline: Verify if a residential customer is displayed with application
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus|firstName | lastName|idType        |medicareType |
       |RES         |RES        |New           |accept    |test     |Driver License|             |
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user selects answer for property renovation question for '<state>'
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
@@ -136,6 +145,9 @@ Scenario Outline: Verify if a residential customer is displayed with application
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType        |
       |RES          |RES        |New           | error    |test     |Driver License|
+    And user selects mailing address option
+      |addressType  |otherAddress                      |
+      |Other Address|68 Mercer Street, GEELONG VIC 3220|
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |No          |Yes        |CC             |

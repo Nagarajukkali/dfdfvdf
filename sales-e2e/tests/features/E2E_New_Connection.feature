@@ -111,10 +111,10 @@ Feature:E2E scenario for new connection
     And user selects plans on checkout details page
       |fuelType   |planName              |
       |<fuelType> |Total Plan - Business |
+    And user provides business details
     And user provides dob and id details
       |customerStatus|idType  |
       |New           |Passport|
-    And user provides business details
     And user selects mailing address option
       |addressType  |otherAddress                          |
       |Other Address|320 Crown Street, SURRY HILLS NSW 2010|

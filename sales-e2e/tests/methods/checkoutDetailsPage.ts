@@ -582,7 +582,7 @@ export class checkoutDetailsMethod{
   }
 
   public static async selectBillingPreference(t: any, option: string,otherAddress: string,finalBill: boolean = false) {
-    if(option==='Email'){
+      if(option==='Email'){
       if(finalBill) {
         await t.expect(await testFunction.getElementAttribute(t,eaCheckoutDetailsPage.elements.rbFinalBillPrefEmail,'class')).contains('ea-state-active');
       }else {

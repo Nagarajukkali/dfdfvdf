@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010225379
+    quoteId: BB2011187049
     sourceCode: Basic
-    actualQuoteDate: 2020-10-22
+    actualQuoteDate: 2020-11-18
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0389327121
+      phoneNumber: 0379303601
     
-    emailId: OgVOPbDWcH@energyaustralia.com.au
+    emailId: qsDojkLjiL@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: MEDICARE
-      id: 2483100000
+      id: 5131600000
       primaryIdFlag: Y
     
     authLevel: Y
@@ -44,22 +44,22 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 5
-    streetName: Wilkies
-    streetType: S
-    suburb: BULLI
-    state: NSW
+    streetNo: 3
+    streetName: River
+    streetType: DR
+    suburb: ATHELSTONE
+    state: SA
     country: AUS
-    postCode: 2516
+    postCode: 5076
     addressType: Mailing
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-10-26
+    proposedStart: 2020-11-20
     offerType: ENE
     plan: RSOT-EV
     priceTag: EVUND_S01Y8
-    serviceOrderDate: 2020-10-26
+    serviceOrderDate: 2020-11-20
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 6407220528
