@@ -42,6 +42,9 @@ Feature:E2E scenario for business/total-canstarblue campaign
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
@@ -118,6 +121,9 @@ Feature:E2E scenario for business/total-canstarblue campaign
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
@@ -193,6 +199,9 @@ Feature:E2E scenario for business/total-canstarblue campaign
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
@@ -268,6 +277,9 @@ Feature:E2E scenario for business/total-canstarblue campaign
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
@@ -337,6 +349,9 @@ Feature:E2E scenario for business/total-canstarblue campaign
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |

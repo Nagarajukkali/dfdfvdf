@@ -1,0 +1,88 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2011187062
+    sourceCode: Total_Plus_20%GD
+    actualQuoteDate: 2020-11-18
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MS
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0340037760
+    
+    emailId: jwSjCflnEc@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: LTDPARTNERSHIP
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 52231098000
+    
+    anzsic: AGRICULTURE
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0340037760
+    
+    businessEmailId: jwSjCflnEc@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 216
+    streetName: Northbourne
+    streetType: AV
+    suburb: BRADDON
+    state: ACT
+    country: AUS
+    postCode: 2612
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 216
+    streetName: Northbourne
+    streetType: AV
+    suburb: BRADDON
+    state: ACT
+    country: AUS
+    postCode: 2612
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2020-11-20
+    offerType: ENE
+    plan: SWSRB-GA
+    priceTag: GACTA_NB2001
+    serviceOrderDate: 2020-11-20
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5260021184
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+

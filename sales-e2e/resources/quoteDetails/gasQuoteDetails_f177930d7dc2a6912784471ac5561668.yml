@@ -1,0 +1,88 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2011187064
+    sourceCode: Total_Plus_4%GD
+    actualQuoteDate: 2020-11-18
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: DR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0382294580
+    
+    emailId: xhWweEVaXR@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: GNRALPARTNERSHIP
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 86216747494
+    
+    anzsic: MINING
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0382294580
+    
+    businessEmailId: xhWweEVaXR@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 6
+    streetName: Peat
+    streetType: AV
+    suburb: HOLDEN HILL
+    state: SA
+    country: AUS
+    postCode: 5088
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 6
+    streetName: Peat
+    streetType: AV
+    suburb: HOLDEN HILL
+    state: SA
+    country: AUS
+    postCode: 5088
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2020-11-19
+    offerType: ENE
+    plan: SWSRB-GS
+    priceTag: GSADA_NB2001
+    serviceOrderDate: 2020-11-19
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5510116718
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+

@@ -1,0 +1,93 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2011187058
+    sourceCode: Total_Plus_24%GD
+    actualQuoteDate: 2020-11-18
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MS
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0341157962
+    
+    emailId: tHRauLLeXA@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: GNRALPARTNERSHIP
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 11231892540
+    
+    anzsic: RETAIL_TRD
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0341157962
+    
+    businessEmailId: tHRauLLeXA@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 36
+    streetName: Gregory
+    streetType: S
+    suburb: WENDOUREE
+    state: VIC
+    country: AUS
+    postCode: 3355
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 36
+    streetName: Gregory
+    streetType: S
+    suburb: WENDOUREE
+    state: VIC
+    country: AUS
+    postCode: 3355
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2020-11-20
+    offerType: ENE
+    plan: SWSRB-GV
+    priceTag: GVT3A_NB2001
+    serviceOrderDate: 2020-11-20
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5330956738
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: N
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+

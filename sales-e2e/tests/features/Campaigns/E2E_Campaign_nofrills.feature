@@ -39,6 +39,9 @@ Feature:E2E scenario for nofrills campaign for new moving
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |
       |RES         |RES        |New           | test     |test     |Driver License|
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
@@ -109,6 +112,9 @@ Feature:E2E scenario for nofrills campaign for new moving
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |
       |RES         |RES        |New           | test     |test     |Driver License|
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
@@ -174,6 +180,9 @@ Feature:E2E scenario for nofrills campaign for new moving
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |
       |RES         |RES        |New           | test     |test     |Driver License|
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
@@ -237,6 +246,9 @@ Feature:E2E scenario for nofrills campaign for new moving
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user selects answer for property renovation question for '<state>'
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
@@ -304,6 +316,9 @@ Feature:E2E scenario for nofrills campaign for new moving
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus   | firstName| lastName|idType        |
       |RES         |RES        |<customerStatus> | test     |test     |Driver License|
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption|fuelType |EleclifeSupportDevices    |GaslifeSupportDevices  |
@@ -368,6 +383,9 @@ Feature:E2E scenario for nofrills campaign for new moving
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus   | firstName| lastName|idType        |
       |RES         |RES        |<customerStatus> | test     |test     |Driver License|
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption|fuelType |EleclifeSupportDevices |GaslifeSupportDevices|
@@ -425,6 +443,9 @@ Feature:E2E scenario for nofrills campaign for new moving
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus   | firstName| lastName|idType        |
       |RES         |RES        |<customerStatus> | test     |test     |Driver License|
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption|fuelType |EleclifeSupportDevices    |GaslifeSupportDevices  |
@@ -484,6 +505,9 @@ Feature:E2E scenario for nofrills campaign for new moving
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus   | firstName| lastName|idType        |
       |RES         |RES        |<customerStatus> | test     |test     |Driver License|
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       |lifeSupportOption|fuelType |EleclifeSupportDevices    |GaslifeSupportDevices  |

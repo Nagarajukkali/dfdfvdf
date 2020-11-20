@@ -1,0 +1,93 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2011187055
+    sourceCode: Total_Plus_22%GD_100
+    actualQuoteDate: 2020-11-18
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MRS
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0387362742
+    
+    emailId: tAUZwMAyWS@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: GOVERNMENT
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 58447737721
+    
+    anzsic: GOVERNMENT
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0387362742
+    
+    businessEmailId: tAUZwMAyWS@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 320
+    streetName: Crown
+    streetType: S
+    suburb: SURRY HILLS
+    state: NSW
+    country: AUS
+    postCode: 2010
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 320
+    streetName: Crown
+    streetType: S
+    suburb: SURRY HILLS
+    state: NSW
+    country: AUS
+    postCode: 2010
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-11-19
+    offerType: ENE
+    plan: SWSRB-EN
+    priceTag: ENEA5_NT2007
+    serviceOrderDate: 2020-11-19
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: NCCC005405
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: RE-EN
+    reEnergisationJSCCharge: 11.41
+  
+

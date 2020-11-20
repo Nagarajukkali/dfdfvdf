@@ -41,6 +41,9 @@ Feature:E2E scenario for nsw-seniors campaign
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
       |RES         |RES        |New           | test     |test     |Medicare      |blue         |
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
