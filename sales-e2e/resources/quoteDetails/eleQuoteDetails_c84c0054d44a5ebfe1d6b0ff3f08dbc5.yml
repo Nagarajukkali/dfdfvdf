@@ -1,0 +1,93 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: FC2011187012
+    sourceCode: Total_Plus_14%GD_100
+    actualQuoteDate: 2020-11-18
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MRS
+    firstName: Dharmesh
+    lastName: Yelande
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0395018272
+    
+    emailId: FSQwHgKens@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: GNRALPARTNERSHIP
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 40909486334
+    
+    anzsic: UTILITIES
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0395018272
+    
+    businessEmailId: FSQwHgKens@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 437
+    streetName: Oxley
+    streetType: AV
+    suburb: REDCLIFFE
+    state: QLD
+    country: AUS
+    postCode: 4020
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 437
+    streetName: Oxley
+    streetType: AV
+    suburb: REDCLIFFE
+    state: QLD
+    country: AUS
+    postCode: 4020
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2020-11-20
+    offerType: ENE
+    plan: SWSRB-EQ
+    priceTag: EQEXA_NB2007
+    serviceOrderDate: 2020-11-20
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: QB02256002
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: RNRRBU
+    reEnergisationJSCCharge: 0.0
+  
+

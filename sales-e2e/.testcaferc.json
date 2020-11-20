@@ -16,7 +16,7 @@
   "screenshotPath": "results/screenshots",
   "fullPage": true,
   "debugMode": false,
-  "debugOnFail": true,
+  "debugOnFail": false,
   "skip-uncaught-errors": false,
   "pageLoadTimeout": 5000,
   "selectorTimeout": 5000,

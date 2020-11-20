@@ -1,0 +1,93 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: FC2011187010
+    sourceCode: Total_Plus_24%GD_100
+    actualQuoteDate: 2020-11-18
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MS
+    firstName: Shakti
+    lastName: Mohan
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0363399084
+    
+    emailId: qxjtHJmhwI@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: OTHERS
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 88742783396
+    
+    anzsic: UNKNOWN
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0363399084
+    
+    businessEmailId: qxjtHJmhwI@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 36
+    streetName: Gregory
+    streetType: S
+    suburb: WENDOUREE
+    state: VIC
+    country: AUS
+    postCode: 3355
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 36
+    streetName: Gregory
+    streetType: S
+    suburb: WENDOUREE
+    state: VIC
+    country: AUS
+    postCode: 3355
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2020-11-20
+    offerType: ENE
+    plan: SWSRB-GV
+    priceTag: GVT3A_NB2001
+    serviceOrderDate: 2020-11-20
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5330956738
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: N
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+
