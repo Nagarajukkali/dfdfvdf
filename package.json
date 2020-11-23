@@ -14,6 +14,7 @@
     "e2e:browserstack": "cd sales-e2e && gherkin-testcafe --tags $npm_package_config_e2e_tags;npm run report",
     "e2e:remote": "rm -rf sales-e2e/results && cd sales-e2e && gherkin-testcafe --tags $npm_package_config_e2e_tags remote --qr-code",
     "e2e:live": "rm -rf sales-e2e/results && cd sales-e2e && gherkin-testcafe --tags $npm_package_config_e2e_tags -L",
+    "e2e:video": "rm -rf sales-e2e/results && cd sales-e2e && gherkin-testcafe --tags $npm_package_config_e2e_tags --video artifacts/videos",
     "e2e:windows-all": "rd /s /q \"sales-e2e/results\" && cd sales-e2e && node ../../node_modules/gherkin-testcafe/main.js --tags $npm_package_config_e2e_tags",
     "e2e:windows-remote": "rd /s /q \"sales-e2e/results\" && cd sales-e2e && node ../../node_modules/gherkin-testcafe/main.js --tags $npm_package_config_e2e_tags remote --qr-code",
     "report": "node report-generator.js"
@@ -27,6 +28,7 @@
     "@angular/compiler": "^7.2.4",
     "@angular/core": "^7.2.4",
     "@ea/ea-commons-models": "^0.1.1",
+    "@ffmpeg-installer/ffmpeg": "^1.0.20",
     "crypto-js": "^3.1.9-1",
     "dayjs": "^1.8.12",
     "exceljs": "^4.1.1",
