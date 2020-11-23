@@ -45,6 +45,9 @@ Feature:E2E scenario for total-plan-plus campaign
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus   | firstName| lastName|idType        |
       |RES         |RES        |<customerStatus> | test     |test     |Driver License|
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
       |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
@@ -114,6 +117,9 @@ Feature:E2E scenario for total-plan-plus campaign
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus   | firstName| lastName|idType        |
       |RES         |RES        |<customerStatus> | test     |test     |Driver License|
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user selects answer for property renovation question for '<state>'
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
@@ -177,6 +183,9 @@ Feature:E2E scenario for total-plan-plus campaign
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus   | firstName| lastName|idType        |
       |RES         |RES        |<customerStatus> | test     |test     |Driver License|
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user selects answer for property renovation question for '<state>'
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
@@ -247,6 +256,9 @@ Feature:E2E scenario for total-plan-plus campaign
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus   | firstName| lastName|idType        |
       |RES         |RES        |<customerStatus> | test     |test     |Driver License|
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user selects answer for property renovation question for '<state>'
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page

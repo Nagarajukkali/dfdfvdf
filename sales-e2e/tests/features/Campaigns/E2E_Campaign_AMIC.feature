@@ -27,6 +27,9 @@ Feature:E2E scenario for AMIC campaign
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user selects answer for property renovation question for '<state>'
     And user opts in for Carbon Neutral
     And user clicks on 'Review your order' button and navigates to review page
@@ -86,6 +89,9 @@ Feature:E2E scenario for AMIC campaign
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user selects answer for property renovation question for '<state>'
     And user opts in for Carbon Neutral
     And user clicks on 'Review your order' button and navigates to review page
@@ -144,6 +150,9 @@ Feature:E2E scenario for AMIC campaign
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user selects answer for property renovation question for '<state>'
     And user opts in for Carbon Neutral
     And user clicks on 'Review your order' button and navigates to review page
@@ -203,6 +212,9 @@ Feature:E2E scenario for AMIC campaign
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user selects answer for property renovation question for '<state>'
     And user opts in for Carbon Neutral
     And user clicks on 'Review your order' button and navigates to review page
@@ -256,6 +268,9 @@ Feature:E2E scenario for AMIC campaign
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user selects answer for property renovation question for '<state>'
     And user opts in for Carbon Neutral
     And user clicks on 'Review your order' button and navigates to review page
@@ -308,6 +323,9 @@ Feature:E2E scenario for AMIC campaign
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user selects answer for property renovation question for '<state>'
     And user opts in for Carbon Neutral
     And user clicks on 'Review your order' button and navigates to review page

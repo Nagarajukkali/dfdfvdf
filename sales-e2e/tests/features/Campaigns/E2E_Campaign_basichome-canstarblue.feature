@@ -38,6 +38,9 @@ Feature:E2E scenario for basichome-canstarblue campaign
         And user provides all details on checkout details page
             | customerType | journey | customerStatus | firstName | lastName | idType         |
             | RES          | RES     | New            | test      | test     | Driver License |
+      And user selects mailing address option
+        |addressType       |otherAddress                              |
+        |Connection Address|                                          |
         And user validates details on checkout details page
             | sourceSystem   | journey   | fuelType   |
             | <sourceSystem> | <journey> | <fuelType> |
@@ -114,6 +117,9 @@ Feature:E2E scenario for basichome-canstarblue campaign
         And user provides all details on checkout details page
             | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
             | RES          | RES     | New            | test      | test     | Driver License |              |
+      And user selects mailing address option
+        |addressType       |otherAddress                              |
+        |Connection Address|                                          |
         And user selects answer for property renovation question for '<state>'
         And user clicks on 'Review your order' button and navigates to review page
         And user provides life support details on review page
@@ -181,6 +187,9 @@ Feature:E2E scenario for basichome-canstarblue campaign
         And user provides all details on checkout details page
             | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
             | RES          | RES     | New            | test      | test     | Driver License |              |
+      And user selects mailing address option
+        |addressType       |otherAddress                              |
+        |Connection Address|                                          |
         And user selects answer for property renovation question for '<state>'
         And user clicks on 'Review your order' button and navigates to review page
         And user provides life support details on review page
@@ -245,6 +254,9 @@ Feature:E2E scenario for basichome-canstarblue campaign
         And user provides all details on checkout details page
             | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
             | RES          | RES     | New            | test      | test     | Driver License |              |
+      And user selects mailing address option
+        |addressType       |otherAddress                              |
+        |Connection Address|                                          |
         And user selects answer for property renovation question for '<state>'
         And user clicks on 'Review your order' button and navigates to review page
         And user provides life support details on review page
@@ -277,7 +289,7 @@ Feature:E2E scenario for basichome-canstarblue campaign
         Examples:
             | customerStatus | fuelType | eleDiscount | campaign              | folderName                             | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
             | New            | ELE      | No          | basichome-canstarblue | E2E_Campaign_basichome-canstarblue_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
- 
+
     Scenario Outline: Validate complete data for basichome-canstarblue campaign for VIC
         Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
         When user provides "3188" for postcode and proceed to view the plans
@@ -305,6 +317,9 @@ Feature:E2E scenario for basichome-canstarblue campaign
         And user provides all details on checkout details page
             | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
             | RES          | RES     | New            | test      | test     | Driver License |              |
+      And user selects mailing address option
+        |addressType       |otherAddress                              |
+        |Connection Address|                                          |
         And user selects answer for property renovation question for '<state>'
         And user clicks on 'Review your order' button and navigates to review page
         And user provides life support details on review page
