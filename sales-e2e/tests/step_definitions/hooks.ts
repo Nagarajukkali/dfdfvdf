@@ -1,8 +1,9 @@
-import {Before, After, Then, Given} from 'cucumber';
+import {Before, After, Then, Given, When} from 'cucumber';
 import {testFunction} from '../../global_methods/helper';
 import {ClientFunction} from 'testcafe';
 import {FileUtils} from '../../libs/FileUtils'
 import * as fs from 'fs';
+import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 let log4js=require('log4js');
 const USERAGENT=ClientFunction(() => navigator.userAgent);
 let logger=log4js.getLogger();
@@ -54,6 +55,16 @@ Given(/^user has opened the new connection website link in a browser and creates
   await t.navigateTo(eaHomePage.newConnectionPageUrl);
   height = await ClientFunction(()=>window.innerHeight)();
   width = await ClientFunction(()=>window.innerWidth)();
+});
+
+Given(/^user hits the saved quote url$/, async function (t) {
+  const url=checkoutDetailsMethod.map.get("savedQuote_"+checkoutDetailsMethod.getScenarioId(t));
+  console.log(url);
+  await t.navigateTo(url);
+});
+
+Given(/^user hits the quote url which doesn't exist$/, async function (t) {
+  await t.navigateTo(eaHomePage.savedQuoteURL);
 });
 
 Given(/^user has opened the '(.*)' link in a browser and creates '(.*)' to save evidences$/, async function (t,[campaign,folderName]) {

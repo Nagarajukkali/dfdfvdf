@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2011042721
+    quoteId: BB2011193023
     sourceCode: Total_5%GD
-    actualQuoteDate: 2020-11-04
+    actualQuoteDate: 2020-11-19
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: MS
     firstName: test
     lastName: test
     commMethod: POSTAL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0340690464
+      phoneNumber: 0347619385
     
-    emailId: VlGMfkjfzV@energyaustralia.com.au
+    emailId: opsfbjkHsp@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: OTHERS
+    businessType: GNRALPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ACN
-      businessId: 997036053
+      businessId: 234159620
     
-    anzsic: UNKNOWN
+    anzsic: HOSPITALITY
     businessCommMethod: POSTAL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0340690464
+      businessPhoneNumber: 0347619385
     
-    businessEmailId: VlGMfkjfzV@energyaustralia.com.au
+    businessEmailId: opsfbjkHsp@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST

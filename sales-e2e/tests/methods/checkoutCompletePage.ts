@@ -146,7 +146,10 @@ export class checkoutCompleteMethod {
     if(customerType===CustomerType.BUSINESS || fuelType===FUEL_TYPE_OPTIONS.GAS.value){
       await testFunction.isElementAbsent(t,eaCheckoutCompletePage.elements.powerResponseSection);
     }
+  }
 
-
+  public static async navigateBackToPlansPage(t){
+    await testFunction.click(t,eaCheckoutCompletePage.elements.btnBackToHome);
+    await testFunction.isElementDisplayed(t,eaCheckoutCompletePage.elements.iconHomePage);
   }
 }

@@ -25,6 +25,7 @@ const eaNewConnectionPage={
     inputInstallingPoleUnknown:Selector("[for=edit-temporary-builders-pole-option-unknown]"),
     inputPeakLoadNo:Selector("[for=edit-off-peak-loads-option-no]"),
     inputPeakLoadYes:Selector("[for=edit-off-peak-loads-option-yes]"),
+    offPeakLoadType:Selector("#off-peak-loads-types label"),
     inputPeakLoadUnknown:Selector("[for=edit-off-peak-loads-option-unknown]"),
     txtFirstname:Selector("#applicant-details-first-name"),
     txtLastname:Selector("#applicant-details-last-name"),
@@ -77,6 +78,10 @@ const eaNewConnectionPage={
     applicantTitle:Selector("#edit-applicant-details-title-mr"),
     connectionDetailSection:Selector("#connection-details"),
     hotWaterField:Selector("#appliance-qty-instHotWater"),
+    txtErrorModal:Selector("#blockerModal .ea-modal__body"),
+    btnGoToPlans:Selector("#ea-modal-primary-action-blockerModal"),
+    feedbackForm:Selector("form.decline-inner"),
+    plansTable:Selector("div.hs-plan-table-container__plans-wrapper"),
   },
 };
 

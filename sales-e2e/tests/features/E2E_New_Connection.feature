@@ -111,10 +111,10 @@ Feature:E2E scenario for new connection
     And user selects plans on checkout details page
       |fuelType   |planName              |
       |<fuelType> |Total Plan - Business |
-    And user provides business details
     And user provides dob and id details
       |customerStatus|idType  |
       |New           |Passport|
+    And user provides business details
     And user selects mailing address option
       |addressType  |otherAddress                          |
       |Other Address|320 Crown Street, SURRY HILLS NSW 2010|
@@ -136,6 +136,53 @@ Feature:E2E scenario for new connection
     Examples:
       |folderName        |fuelType |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
       |E2E_New_BUS_NC_ELE|ELE      |New Connection |Plan Switch  |No   |No   |BUS          |New            |
+
+#  With Electricity Sign Up
+#  If users pricing zone is Jemena or United Energy and customer has eTariffModifier of "EXTRA_APPLIANCES" then block
+#  If users pricing zone is CitiPower or Power Corp and customer has offpeak loads then block
+  Scenario Outline: Verify an error message is displayed for pricing zone Jemena or United energy when off peak load selected
+    Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
+    When user provides connection details
+      |fuelType   |customerType|premiseType|state   |postcode|
+      |<fuelType> |RES         |Single     |Victoria|3019    |
+    And user provides property details for electricity connection
+      |customerType|optionForPoleInstallation|optionForOffPeakLoad|
+      |RES         |No                       |Yes                 |
+    And user provides property contacts
+      |idType          |state|
+      |Driver's Licence|VIC  |
+    And user submit the request
+    And user clicks on proceed to quote
+    Then Error modal is displayed for "UNSUPPORTED_METER_TYPE"
+    When user clicks on go to plans button
+    Then user lands on plans page
+
+    Examples:
+      |folderName                                  |fuelType |
+      |E2E_New_Resi_NC_Error_Unsupported_Meter_Type|ELE      |
+
+#    When new connection and no plans existing for customers connection address then show message
+  @failed
+  Scenario Outline: Verify an error message is displayed for an address where we don't provide energy
+    Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
+    When user provides connection details
+      |fuelType   |customerType|premiseType|state   |postcode|
+      |<fuelType> |RES         |Single     |Victoria|3100    |
+    And user provides property details for electricity connection
+      |customerType|optionForPoleInstallation|optionForOffPeakLoad|
+      |RES         |No                       |Yes                 |
+    And user provides property contacts
+      |idType          |state|
+      |Driver's Licence|VIC  |
+    And user submit the request
+    And user clicks on proceed to quote
+    Then Error modal is displayed for "ENERGY_NOT_SERVICED"
+    When user clicks on go to plans button
+    Then user lands on plans page
+
+    Examples:
+      |folderName                             |fuelType |
+      |E2E_New_Resi_NC_Error_Energy_Not_Supply|ELE      |
 
 
 

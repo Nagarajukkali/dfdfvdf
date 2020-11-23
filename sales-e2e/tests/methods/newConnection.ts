@@ -78,7 +78,10 @@ export class newConnectionMethod{
 
   public static async selectOptionForOffPeakLoad(t,option) {
     if(option==='No') await testFunction.click(t,eaNewConnectionPage.elements.inputPeakLoadNo);
-    else if(option==='Yes') await testFunction.click(t,eaNewConnectionPage.elements.inputPeakLoadYes);
+    else if(option==='Yes'){
+      await testFunction.click(t,eaNewConnectionPage.elements.inputPeakLoadYes);
+      await testFunction.click(t,eaNewConnectionPage.elements.offPeakLoadType.withText("Pool Pump"));
+    }
   }
 
   public static async proceedToStep3(t) {
@@ -191,7 +194,8 @@ export class newConnectionMethod{
 
   public static async navigateToQuoteTool(t) {
     await testFunction.click(t,eaNewConnectionPage.elements.btnProceedToQuote);
-    await testFunction.isElementVisible(t,eaNewConnectionPage.elements.connectionDetailSection);
+    if((await testFunction.sizeOfElement(t,eaNewConnectionPage.elements.connectionDetailSection)>0))
+      await testFunction.isElementVisible(t,eaNewConnectionPage.elements.connectionDetailSection);
   }
 
   public static async selectConnectionType(t,connectionType) {
@@ -201,6 +205,35 @@ export class newConnectionMethod{
 
   public static async selectAppliancesFromList(t) {
     await testFunction.clearAndEnterText(t,eaNewConnectionPage.elements.hotWaterField,"1");
+  }
+
+  public static async validateErrorMessage(t,errorType){
+    let expectedErrorText;
+    await testFunction.waitForElementToBeAppeared(t,eaNewConnectionPage.elements.txtErrorModal);
+    await testFunction.isElementDisplayed(t,eaNewConnectionPage.elements.txtErrorModal);
+    switch (errorType) {
+      case "UNSUPPORTED_METER_TYPE":
+        expectedErrorText="We are unable to complete this quote online as we are unable to determine your meter type. Please call the New Connection team on 1300 137 473 to complete your new connection quote.";
+      case "ENERGY_NOT_SERVICED":
+        expectedErrorText="There are no current electricity market offers in your area at this time, please refer to our Energy Price Fact Sheets to see if a standing offer is available in your region or contact us on 1300 137 473.";
+      case "EXPIRED_QUOTE":
+        expectedErrorText="The quote for this address has expired. You can return to the Plans Page to start a new quote.";
+      case "QUOTE_NOT_EXIST":
+        expectedErrorText="We are unable to retrieve this quote, as some plan information might have changed since it was generated and may no longer be accurate. You can return to the Plans Page to restart this quote.";
+
+    }
+    await testFunction.assertText(t,eaNewConnectionPage.elements.txtErrorModal,expectedErrorText);
+
+  }
+
+  public static async goToPlansPage(t){
+    await testFunction.click(t,eaNewConnectionPage.elements.btnGoToPlans);
+  }
+
+  public static async isPlansPageDisplayed(t){
+    await testFunction.waitForElementToBeAppeared(t,eaNewConnectionPage.elements.feedbackForm);
+    await testFunction.isElementDisplayed(t,eaNewConnectionPage.elements.feedbackForm);
+    await testFunction.isElementVisible(t,eaNewConnectionPage.elements.plansTable);
   }
 
 }

@@ -4,6 +4,7 @@ import { Then } from 'cucumber';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 import {checkoutReviewMethod} from '../methods/checkoutReviewPage';
 import {getPackage} from './hooks';
+import {When} from 'cucumber'
 
 Then(/^user lands on checkout complete page$/, async function(t){
   await testFunction.waitForLoadingIconToClose();
@@ -44,4 +45,7 @@ Then(/^user validates details on checkout complete page$/, async function (t,[],
     await checkoutCompleteMethod.validatePowerResponseSection(t,customerType,fuelType);
   }
   console.log("Checkout Complete page validated successfully for "+sourceSystem+" "+journey+" journey.");
+});
+When(/^user navigate back to plans page$/, async function (t) {
+  await checkoutCompleteMethod.navigateBackToPlansPage(t);
 });

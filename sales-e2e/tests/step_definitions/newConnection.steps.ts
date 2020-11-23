@@ -2,6 +2,7 @@ import { newConnectionMethod } from '../methods/newConnection';
 import { When } from 'cucumber';
 import { CustomerType, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 import {testFunction} from '../../global_methods/helper';
+import {Then} from 'cucumber'
 
 When(/^user provides connection details$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
@@ -57,4 +58,13 @@ When(/^user selects appliances$/, async function (t) {
   await newConnectionMethod.selectAppliancesFromList(t);
   await testFunction.takeScreenshot(t, "new_connections_appliances_with_data");
   await newConnectionMethod.proceedToStep4(t);
+});
+Then(/^Error modal is displayed for "([^"]*)"$/, async function (t,[errorType]) {
+  await newConnectionMethod.validateErrorMessage(t,errorType);
+});
+When(/^user clicks on go to plans button$/, async function (t) {
+  await newConnectionMethod.goToPlansPage(t);
+});
+Then(/^user lands on plans page$/, async function (t) {
+  await newConnectionMethod.isPlansPageDisplayed(t);
 });

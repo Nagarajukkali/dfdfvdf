@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010225347
+    quoteId: BB2011193026
     sourceCode: Basic
-    actualQuoteDate: 2020-10-22
+    actualQuoteDate: 2020-11-19
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0323316459
+      phoneNumber: 0370284671
     
-    emailId: QMyjgrlKbY@energyaustralia.com.au
+    emailId: jlQaaJsLWC@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: LIMITED COMPANY
+    businessType: SOLE TRADER
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 65191109214
+      businessId: 81296753164
     
-    anzsic: COMMUNICATION
+    anzsic: MANUFACTURE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0323316459
+      businessPhoneNumber: 0370284671
     
-    businessEmailId: QMyjgrlKbY@energyaustralia.com.au
+    businessEmailId: jlQaaJsLWC@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -55,22 +55,22 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 36
-    streetName: Gregory
+    streetNo: 68
+    streetName: Mercer
     streetType: S
-    suburb: WENDOUREE
+    suburb: GEELONG
     state: VIC
     country: AUS
-    postCode: 3355
+    postCode: 3220
     addressType: Mailing
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-10-23
+    proposedStart: 2020-11-20
     offerType: ENE
     plan: BSOT-GN
     priceTag: GNAGA_GB
-    serviceOrderDate: 2020-10-23
+    serviceOrderDate: 2020-11-20
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5240554353

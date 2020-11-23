@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010225382
+    quoteId: BB2011193022
     sourceCode: Basic
-    actualQuoteDate: 2020-10-22
+    actualQuoteDate: 2020-11-19
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,30 +15,30 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0369661784
+      phoneNumber: 0313175925
     
-    emailId: lgiwEzAQwN@energyaustralia.com.au
+    emailId: xBAqtGIFQQ@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: INCORPORATED
+    businessType: LTDPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 37369644915
+      businessId: 13756067200
     
-    anzsic: UTILITIES
+    anzsic: EDUCATION
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0369661784
+      businessPhoneNumber: 0313175925
     
-    businessEmailId: lgiwEzAQwN@energyaustralia.com.au
+    businessEmailId: xBAqtGIFQQ@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -53,13 +53,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 320
+    streetName: Crown
+    streetType: S
+    suburb: SURRY HILLS
+    state: NSW
+    country: AUS
+    postCode: 2010
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-10-23
+    proposedStart: 2020-11-20
     offerType: ENE
     plan: BSOT-GN
     priceTag: GNAGA_GB
-    serviceOrderDate: 2020-10-23
+    serviceOrderDate: 2020-11-20
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5240554353

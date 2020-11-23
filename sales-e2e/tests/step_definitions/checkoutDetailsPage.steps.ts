@@ -76,12 +76,10 @@ When(/^user selects plans on checkout details page$/, async function (t,[],dataT
 When(/^user provides dob and id details$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
   await checkoutDetailsMethod.enterDOB(t);
-  if((await testFunction.sizeOfElement(t,eaCheckoutDetailsPage.elements.company))===0){
-    if(data[0].idType === "Medicare") {
-      await checkoutDetailsMethod.checkoutIdentification(t,data[0].customerStatus,data[0].idType, data[0].medicareType);
-    } else {
-      await checkoutDetailsMethod.checkoutIdentification(t,data[0].customerStatus,data[0].idType, "");
-    }
+  if(data[0].idType === "Medicare") {
+    await checkoutDetailsMethod.checkoutIdentification(t,data[0].customerStatus,data[0].idType, data[0].medicareType);
+  } else {
+    await checkoutDetailsMethod.checkoutIdentification(t,data[0].customerStatus,data[0].idType, "");
   }
 });
 When(/^user provides business details$/, async function (t,[],dataTable) {
@@ -187,4 +185,7 @@ When(/^user selects mailing address option$/, async function (t,[],dataTable) {
   }
   console.log("Mailing address is selected");
 
+});
+When(/^user saves the quote url$/, async function (t) {
+  await checkoutDetailsMethod.saveQuoteUrl(t);
 });

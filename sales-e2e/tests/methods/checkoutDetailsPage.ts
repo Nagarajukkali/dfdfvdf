@@ -14,7 +14,7 @@ import {
 import {AustralianState, CustomerType} from '@ea/ea-commons-models';
 const Hashes=require('jshashes');
 import {myAccountMethod} from '../methods/myAccountPage';
-import {ClientFunction} from 'testcafe';
+import {ClientFunction, Selector} from 'testcafe';
 
 export class checkoutDetailsMethod{
 
@@ -850,6 +850,11 @@ export class checkoutDetailsMethod{
       await testFunction.isElementAbsent(t,eaCheckoutDetailsPage.elements.currentPlan.planTable);
       console.log("Current plan table is not available.")
     }
+  }
+
+  public static async saveQuoteUrl(t){
+      const quoteUrl=await testFunction.getPageURL();
+      this.map.set("savedQuote_"+this.getScenarioId(t),quoteUrl);
   }
 
 

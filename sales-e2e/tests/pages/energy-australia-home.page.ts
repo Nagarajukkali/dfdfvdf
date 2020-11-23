@@ -6,6 +6,7 @@ const eaHomePage={
   newConnectionPageUrl: config.eaNewConnectionPageUrl,
   campaignPageUrl: config.eaCampaignUrl,
   billUploaderUrl: config.eaBillUploaderUrl,
+  savedQuoteURL: config.savedQuoteURL,
   elements: {
     selectedState: Selector("#navbar div[class*='state-value']"),
     residentialComparePlansButton: Selector('.icon-GasElectricity'),

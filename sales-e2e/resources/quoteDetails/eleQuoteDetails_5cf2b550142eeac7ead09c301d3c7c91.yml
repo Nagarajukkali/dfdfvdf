@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2009281521
+    quoteId: BB2011193016
     sourceCode: Total_Plus_16%GD
-    actualQuoteDate: 2020-09-28
+    actualQuoteDate: 2020-11-19
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0340384942
+      phoneNumber: 0366712643
     
-    emailId: koKoFxeHww@energyaustralia.com.au
+    emailId: JxvuoIZsim@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 701109
+      id: 809379
       primaryIdFlag: Y
     
     authLevel: Y
@@ -40,15 +40,26 @@ saleDetail :
     postCode: 2516
     premiseType: DOM
     addressType: Premise
-    primaryResidence: N
+    primaryResidence: Y
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 9
+    streetName: Charming
+    streetType: S
+    suburb: HAMPTON EAST
+    state: VIC
+    country: AUS
+    postCode: 3188
+    addressType: Mailing
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-09-29
+    proposedStart: 2020-11-23
     offerType: ENE
     plan: SWSR1-EN
     priceTag: ENIEA_NR2007
-    serviceOrderDate: 2020-09-29
+    serviceOrderDate: 2020-11-23
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 4311150544
@@ -74,7 +85,7 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    priceTagMeteringCharge: M25161DN_IH
+    priceTagMeteringCharge: M25161D1E_VE
     proposedNTC: N70
     proposedMC: IHUBMC
     reEnergisationJSCCharge: 0

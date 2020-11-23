@@ -48,6 +48,8 @@ const eaCheckoutCompletePage={
     },
     btnNavigation: Selector(".confirmation__navigation a"),
     powerResponseSection:Selector("section.power-response-rewards"),
+    btnBackToHome:Selector("#complete-home-link"),
+    iconHomePage:Selector("span.icon-GasElectricity"),
   }
 }
 
