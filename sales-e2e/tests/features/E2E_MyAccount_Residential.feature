@@ -76,11 +76,14 @@ Feature: This feature is to test the My account scenarios for residential custom
       |sourceSystem |journey    |fuelType   |
       |My Account   |Move Home  |BOTH       |
     And user selects plans on checkout details page
-      |fuelType |planName       |
-      |ELE      |Total Plan Plus|
+      |fuelType |planName  |
+      |ELE      |Total Plan|
     And user selects plans on checkout details page
       |fuelType |planName   |
       |GAS      |Total Plan |
+    And user selects mailing address option
+      |addressType       |otherAddress   |
+      |Connection Address|               |
     And user provides identification details
       |customerType|customerStatus|idType        |
       |RES         |Existing      |Driver License|
@@ -105,7 +108,7 @@ Feature: This feature is to test the My account scenarios for residential custom
 
     Examples:
       |folderName                         |address                                  |username                |password                                     |optDisconnection|customerType |newOrExisting  |
-      |E2E_MyAccount_Residential_MoveHome |9 Rodier Street, BALLARAT EAST VIC 3350  |MissingID_RESI@test.com |U2FsdGVkX19pydLDPzviWcrNZ6PzbXoPRKv4Bjmqyug= |No              |RES          |Existing       |
+      |E2E_MyAccount_Residential_MoveHome |9 Rodier Street, BALLARAT EAST VIC 3350  |MissingID_RESI@test.com |U2FsdGVkX19pydLDPzviWcrNZ6PzbXoPRKv4Bjmqyug= |Yes             |RES          |Existing       |
 
   @deviceCheck
   Scenario Outline: Verify the RESI upsell journey from My Account
@@ -119,9 +122,9 @@ Feature: This feature is to test the My account scenarios for residential custom
     And user selects plans on checkout details page
       |fuelType |planName       |
       |GAS      |Total Plan Plus|
-    And user provides identification details
-      |customerType|customerStatus|idType        |
-      |RES         |Existing      |Driver License|
+    And user selects mailing address option
+      |addressType  |otherAddress                          |
+      |Other Address|42 Brownlow Drive, POINT COOK VIC 3030|
     And user opts for concession card
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page

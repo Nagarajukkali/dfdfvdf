@@ -19,7 +19,7 @@ const eaMyAccount={
     moveHouseCalendarAvailableDates: Selector(".uib-day button:not([disabled])"),
     btnSolarNo_MA: Selector("#mover-solar-button-no"),
     btnLetsGetMoving: Selector("#mover-lets-get-moving-button"),
-    rbHomeImprovement_No: Selector("#option-prev-or-planned-home-improve-false"),
+    rbHomeImprovement_No: Selector("#edit-planned-home-renovations-no__label"),
     oneUXSpinner: Selector("[class*='spinner']").with({visibilityCheck: true}),
     eaSpinner:Selector(".ea-spinner.ng-star-inserted"),
     btnUpSellComparePlan:Selector(".up-sell div.cta>button"),

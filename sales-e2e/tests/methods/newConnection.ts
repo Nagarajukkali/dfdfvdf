@@ -214,12 +214,18 @@ export class newConnectionMethod{
     switch (errorType) {
       case "UNSUPPORTED_METER_TYPE":
         expectedErrorText="We are unable to complete this quote online as we are unable to determine your meter type. Please call the New Connection team on 1300 137 473 to complete your new connection quote.";
+        break;
       case "ENERGY_NOT_SERVICED":
         expectedErrorText="There are no current electricity market offers in your area at this time, please refer to our Energy Price Fact Sheets to see if a standing offer is available in your region or contact us on 1300 137 473.";
+        break;
       case "EXPIRED_QUOTE":
         expectedErrorText="The quote for this address has expired. You can return to the Plans Page to start a new quote.";
+        break;
       case "QUOTE_NOT_EXIST":
         expectedErrorText="We are unable to retrieve this quote, as some plan information might have changed since it was generated and may no longer be accurate. You can return to the Plans Page to restart this quote.";
+        break;
+      default:
+        console.error("Unexpected error")
 
     }
     await testFunction.assertText(t,eaNewConnectionPage.elements.txtErrorModal,expectedErrorText);

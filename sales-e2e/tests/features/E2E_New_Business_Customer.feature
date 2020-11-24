@@ -1,7 +1,7 @@
 @E2E @newcustomer
 
 Feature:E2E scenario for new business moving and non moving customer
-    #DOB is coming for business customer
+
   Scenario Outline: Submit a quote for new business moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'BUS' plans page
@@ -60,7 +60,6 @@ Feature:E2E scenario for new business moving and non moving customer
     |New           |BOTH    |Basic Business|E2E_New_Bus_Moving|NSW  |Quote Tool    |Move Home|No   |Yes |BUS          |New            |
 
   @deviceCheck @smoke
-    #DOB is coming for business customer
 Scenario Outline: Submit a quote for new business non moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'BUS' plans page
