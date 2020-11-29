@@ -295,21 +295,24 @@ export class checkoutDetailsMethod{
     await t.wait(2000);
     let indexForAccessLevel=testFunction.getRandomInt(0,2)
     if(testFunction.isTablet()){
-      await testFunction.click(t,eaCheckoutDetailsPage.elements.slickDotsAAH.nth(indexForAccessLevel));
+      await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl1);
     }
-    switch (indexForAccessLevel) {
-      case 0:
-        await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl1);
-        break;
-      case 1:
-        await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl2);
-        break;
-      case 2:
-        await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl3);
-        break;
-      default:
-        console.error("Invalid access level selected.");
+    else{
+      switch (indexForAccessLevel) {
+        case 0:
+          await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl1);
+          break;
+        case 1:
+          await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl2);
+          break;
+        case 2:
+          await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl3);
+          break;
+        default:
+          console.error("Invalid access level selected.");
+      }
     }
+
     console.log("AAH details provided");
   }
 
@@ -323,13 +326,14 @@ export class checkoutDetailsMethod{
       await testFunction.click(t, eaCheckoutDetailsPage.elements.cbBankAccountAgreeTermsAndCond);
       console.log("Bank details provided");
     } else if(DDType === directDebitType.CREDIT_CARD) {
-      if(testFunction.isTablet()){
-        console.log(eaCheckoutDetailsPage.elements.slickDotsDD.count);
-        await testFunction.click(t,eaCheckoutDetailsPage.elements.slickDotsDD.nth(1));
-      }
-      else{
-        await testFunction.click(t, eaCheckoutDetailsPage.elements.useCC);
-      }
+      // if(testFunction.isTablet()){
+      //   console.log(eaCheckoutDetailsPage.elements.slickDotsDD.count);
+      //   await testFunction.click(t,eaCheckoutDetailsPage.elements.slickDotsDD.nth(1));
+      // }
+      // else{
+      //   await testFunction.click(t, eaCheckoutDetailsPage.elements.useCC);
+      // }
+      await testFunction.click(t, eaCheckoutDetailsPage.elements.useCC);
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCName, "CCName_" + testFunction.generateRandomText(5));
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCNumber, "4111111111111111");
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCExpiry, "0130");

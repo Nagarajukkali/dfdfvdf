@@ -162,7 +162,6 @@ Feature:E2E scenario for new connection
       |E2E_New_Resi_NC_Error_Unsupported_Meter_Type|ELE      |
 
 #    When new connection and no plans existing for customers connection address then show message
-  @failed
   Scenario Outline: Verify an error message is displayed for an address where we don't provide energy
     Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
     When user provides connection details

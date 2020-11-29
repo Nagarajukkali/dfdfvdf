@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2011193018
+    quoteId: BB2011263495
     sourceCode: Total_13%GD
-    actualQuoteDate: 2020-11-19
+    actualQuoteDate: 2020-11-26
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0374959958
+      phoneNumber: 0380775886
     
-    emailId: jXJtqhvmpj@energyaustralia.com.au
+    emailId: PPSlHNHDeT@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: PASSPORT
-      id: 925346
+      id: 924911
       primaryIdFlag: Y
     
     authLevel: Y

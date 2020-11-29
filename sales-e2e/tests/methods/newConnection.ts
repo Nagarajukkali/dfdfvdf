@@ -216,7 +216,7 @@ export class newConnectionMethod{
         expectedErrorText="We are unable to complete this quote online as we are unable to determine your meter type. Please call the New Connection team on 1300 137 473 to complete your new connection quote.";
         break;
       case "ENERGY_NOT_SERVICED":
-        expectedErrorText="There are no current electricity market offers in your area at this time, please refer to our Energy Price Fact Sheets to see if a standing offer is available in your region or contact us on 1300 137 473.";
+        expectedErrorText="There are no current electricity market offers in your area at this time, please refer to our Energy Price Fact Sheets to see if a standing offer is available in your region or contact us on 1800 818 378.";
         break;
       case "EXPIRED_QUOTE":
         expectedErrorText="The quote for this address has expired. You can return to the Plans Page to start a new quote.";
@@ -229,6 +229,7 @@ export class newConnectionMethod{
 
     }
     await testFunction.assertText(t,eaNewConnectionPage.elements.txtErrorModal,expectedErrorText);
+    await testFunction.takeScreenshot(t,"Error_"+errorType);
 
   }
 

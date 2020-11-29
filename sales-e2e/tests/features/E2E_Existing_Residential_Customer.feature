@@ -179,7 +179,7 @@ Scenario Outline: Submit a quote for existing residential non moving customer wi
 
 
     Examples:
-      |customerStatus|planName  |folderName                 |fuelType|sourceSystem  |journey     |AAH  |DD   |customerType |newOrExisting  |
-      |Existing      |Total Plan|E2E_Existing_Resi_NonMoving|ELE     |Quote Tool    |Plan Switch |No   |Yes  |RES          |Existing       |
+      |customerStatus|planName  |folderName                     |fuelType|sourceSystem  |journey     |AAH  |DD   |customerType |newOrExisting  |
+      |Existing      |Total Plan|E2E_Existing_Resi_QLD_NonMoving|ELE     |Quote Tool    |Plan Switch |No   |Yes  |RES          |Existing       |
 
 

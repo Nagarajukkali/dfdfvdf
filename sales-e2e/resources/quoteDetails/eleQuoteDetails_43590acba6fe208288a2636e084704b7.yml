@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2011263502
-    sourceCode: Total_15%GD_75
+    quoteId: BB2011263498
+    sourceCode: Total_Plus_14%GD
     actualQuoteDate: 2020-11-26
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -9,20 +9,20 @@ saleDetail :
     customerClass: RESI
   
   personDetail: 
-    personId: 8224680000
+    personId: 7546820319
     title: MR
     firstName: test
     lastName: test
-    commMethod: POSTAL
+    commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0388430322
+      phoneNumber: 0388337690
     
-    emailId: OVdXEVILXb@energyaustralia.com.au
+    emailId: AtBgHnnExd@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 874887
+      id: 599480
       primaryIdFlag: Y
     
     authLevel: Y
@@ -31,38 +31,38 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 5
-    streetName: Wilkies
+    streetNo: 36
+    streetName: Cypress
     streetType: S
-    suburb: BULLI
-    state: NSW
+    suburb: KULUIN
+    state: QLD
     country: AUS
-    postCode: 2516
+    postCode: 4558
     premiseType: DOM
     addressType: Premise
-    primaryResidence: N
+    primaryResidence: Y
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 5
-    streetName: Wilkies
+    streetNo: 36
+    streetName: Cypress
     streetType: S
-    suburb: BULLI
-    state: NSW
+    suburb: KULUIN
+    state: QLD
     country: AUS
-    postCode: 2516
+    postCode: 4558
     addressType: Mailing
   
   offerDetail: 
-    fuelType: G
+    fuelType: E
     proposedStart: 2020-11-30
     offerType: ENE
-    plan: TOPH-GN
-    priceTag: GNAGA_NR2007
+    plan: SWSR1-EQ
+    priceTag: EQEX1_NR2007
     serviceOrderDate: 2020-11-30
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      MIRN: 5240924834
+      NMI: QB08556016
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -70,17 +70,21 @@ saleDetail :
       customerWithLifeSupport: Y
     
     lifeSupportEquipment: 
-      lifeSupportEquipmentType: OTHER
+      lifeSupportEquipmentType: LSCPAPR
     
-    lifeSupportOtherEquipmentDetails: Sample Other gas device.
   
   offerDetail: 
-    fuelType: E
+    fuelType: G
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
   billDeliveryDetail: 
-    billRouteType: POSTMM
+    billRouteType: EMAIL
   
   creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: RNRRBU
+    reEnergisationJSCCharge: 0.0
+  
 

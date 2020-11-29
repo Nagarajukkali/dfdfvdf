@@ -27,6 +27,7 @@ Given(/^user has navigated to '(.*)' plans page$/, async function(t, [customerTy
   await testFunction.isElementDisplayed(t,eaHomePage.elements.plansCardFee);
   await testFunction.isElementDisplayed(t,eaHomePage.elements.planEstimateValue);
   await testFunction.takeScreenshot(t, 'plans_page');//disabled UI Validation
+  console.log("Navigated to "+customerType+" plans page");
 });
 
 Given(/^user navigates to my account login page$/, async function (t, []) {

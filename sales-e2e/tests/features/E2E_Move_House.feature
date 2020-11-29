@@ -7,7 +7,7 @@ Scenario Outline: Submit a quote for existing residential customer through move 
   And user enters '<movingAddress>' in address field and selects any available moving date
   And user verifies account on qualifier
     |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
-    |Existing      |8372937428   |Postcode           |3024            |dob   |01011980|
+    |Existing      |7810021000   |Postcode           |3672            |dob   |01011980|
   And user provides all other details on qualifier page
     |customerType|movingType|connectionAddress               |propertyType |solarOption|
     |RES         |NA        |5 Wilkies Street, BULLI NSW 2516|Renter       |No         |
@@ -62,7 +62,7 @@ Scenario Outline: Submit a quote for existing residential customer through move 
 
   Examples:
     |folderName                     |fuelType|state|optDisconnection|movingAddress                   |sourceSystem  |journey  |AAH  |DD   |customerType |newOrExisting  |
-    |E2E_Existing_Resi_MoveHouse_01 |BOTH    |NSW  |No              |5 Wilkies Street, BULLI NSW 2516|Quote Tool    |Move Home|No   |No   |RES          |Existing       |
+    |E2E_Existing_Resi_MoveHouse_01 |BOTH    |NSW  |Yes             |5 Wilkies Street, BULLI NSW 2516|Quote Tool    |Move Home|No   |No   |RES          |Existing       |
 
   @deviceCheck @smoke
   Scenario Outline: Submit a quote for existing residential customer through move house with AAH and DD
