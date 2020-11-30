@@ -617,7 +617,7 @@ export class checkoutDetailsMethod{
     await testFunction.click(t, eaCheckoutDetailsPage.elements.concessionCardTypeOption.nth(indexForConcessionCard));
     const concessionCardSelectedOption=await testFunction.getElementText(t,eaCheckoutDetailsPage.elements.concessionCardTypeDropDown);
     if(concessionCardSelectedOption.includes("Queensland Government Seniors Card"))
-      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfConcessionCardNumber, "Q123456");
+      await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfConcessionCardNumber, "10000036");
     else if(concessionCardSelectedOption.includes("Centrelink"))
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfConcessionCardNumber, "331456789S");
     else
