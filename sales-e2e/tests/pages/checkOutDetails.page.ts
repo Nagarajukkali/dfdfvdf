@@ -137,7 +137,8 @@ const eaCheckoutDetailsPage={
     inputMailingAddrAsOtherAddr:Selector("#mailingAddress-auto-input"),
     contactPreference: {
       disclaimer: Selector(".hs-contact-preference__text"),
-      linkClickHere: Selector("#contact-opt-out-modal"),
+      //linkClickHere: Selector("#contact-opt-out-modal"),
+      linkClickHere: Selector("p.hs-contact-preference__text button"),
       modalHeading: Selector("[id*='ContactPreferenceModalId'].ea-modal__heading"),
       lblModalText: Selector("[for*='contactPreferenceOptIn']"),
       btnSubmit: Selector("[modaltitle*='Contact preference'] button[class*='primary']"),
