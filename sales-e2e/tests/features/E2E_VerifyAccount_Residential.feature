@@ -79,6 +79,7 @@ Feature: This feature is to test the verify account scenarios for existing resid
       |RES         |RES        |Existing      |test     |test    |Passport  |
     And user selects answer for property renovation question for '<state>'
     And user chooses "<optDisconnection>" for disconnection
+    #some issue in selecting connection address and other address for final billing
     And user selects final bill option
       |option             |otherAddress            |
       |Connection Address |                        |

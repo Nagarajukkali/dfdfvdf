@@ -25,9 +25,10 @@ Scenario Outline: Submit a quote for existing residential moving customer
     |Other Address|3 River Drive, ATHELSTONE SA 5076|
   And user selects answer for property renovation question for '<state>'
   And user chooses "<optDisconnection>" for disconnection
+  #some issue in selecting connection address and other address for final billing
   And user selects final bill option
-    |option         |otherAddress                                 |
-    |Other Address  |271 Heatherhill Road, FRANKSTON  VIC  3199   |
+    |option            |otherAddress                                 |
+    |Connection Address|271 Heatherhill Road, FRANKSTON  VIC  3199   |
   And user opts for AAH and DD
     |optAAHOption|optDDOption|directDebitType|
     |Yes         |No         |               |
