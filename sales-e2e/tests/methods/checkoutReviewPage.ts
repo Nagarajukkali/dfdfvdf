@@ -738,15 +738,16 @@ export class checkoutReviewMethod {
       let ABN=testFunction.getRandomNumber(99999999999);
       ABN = ABN.padEnd(11, "0");
       await testFunction.click(t,eaCheckoutReviewPage.elements.abn);
-      await testFunction.clearAndEnterText(t,eaCheckoutReviewPage.elements.abnAcnValue,ABN);
+      await testFunction.clearAndEnterText(t,eaCheckoutReviewPage.elements.inputABNNumber,ABN);
     }
     else{
       let ACN=testFunction.getRandomNumber(999999999);
       ACN = ACN.padEnd(9, "0");
       await t.wait(2000);
       await testFunction.click(t,eaCheckoutReviewPage.elements.acn);
-      await testFunction.clearAndEnterText(t,eaCheckoutReviewPage.elements.abnAcnValue,ACN);
+      await testFunction.clearAndEnterText(t,eaCheckoutReviewPage.elements.inputACNNumber,ACN);
     }
+    await testFunction.clearAndEnterText(t,eaCheckoutReviewPage.elements.inputBusinessName,"NA");
   }
 
   public static async enterBusinessDetails(t){

@@ -91,6 +91,9 @@ Feature: This feature is to test that the ghosting user is able to submit quotes
     And user selects plans on checkout details page
       |fuelType |planName       |
       |GAS      |Total Plan Plus|
+    And user selects mailing address option
+      |addressType       |otherAddress |
+      |Connection Address|             |
     And user opts for concession card
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page

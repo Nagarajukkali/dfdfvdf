@@ -92,6 +92,10 @@ Feature: This feature is to test the My account scenarios for residential custom
       |No          |Yes        |Bank           |
     And user answers No for home improvements question
     And user chooses "<optDisconnection>" for disconnection
+    #some issue in selecting connection address and other address for final billing
+#    And user selects final bill option
+#      |option       |otherAddress                                 |
+#      |Other Address|271 Heatherhill Road, FRANKSTON  VIC  3199   |
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
       |sourceSystem |journey    |fuelType   |AAH  |DD   |customerType |newOrExisting  |
@@ -108,7 +112,7 @@ Feature: This feature is to test the My account scenarios for residential custom
 
     Examples:
       |folderName                         |address                                  |username                |password                                     |optDisconnection|customerType |newOrExisting  |
-      |E2E_MyAccount_Residential_MoveHome |9 Rodier Street, BALLARAT EAST VIC 3350  |MissingID_RESI@test.com |U2FsdGVkX19pydLDPzviWcrNZ6PzbXoPRKv4Bjmqyug= |Yes             |RES          |Existing       |
+      |E2E_MyAccount_Residential_MoveHome |9 Rodier Street, BALLARAT EAST VIC 3350  |MissingID_RESI@test.com |U2FsdGVkX19pydLDPzviWcrNZ6PzbXoPRKv4Bjmqyug= |No             |RES          |Existing       |
 
   @deviceCheck
   Scenario Outline: Verify the RESI upsell journey from My Account
