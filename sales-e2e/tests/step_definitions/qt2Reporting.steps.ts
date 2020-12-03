@@ -58,7 +58,7 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
     let isCampaignTest = (t.testRun.test.name.includes('campaign'));
     let isOfferType=(actualOfferType==='ENE'||actualOfferType === 'COR');
     let isState= (actualState!=='ACT');
-    let isPlanCode = (expectedPlanCode.includes('RSOT') || expectedPlanCode.includes('BSOT') || expectedPlanCode.includes('TOPB') || expectedPlanCode.includes('SWSR'));
+    let isPlanCode = (expectedPlanCode.includes('BSOT') || expectedPlanCode.includes('TOPB') || expectedPlanCode.includes('SWSR'));
 
     //Comparison
     await qt2Reporting.validateMandatoryField(t, actualQuoteStatus, expectedQuoteStatus);
@@ -98,13 +98,9 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
       let expectedEleSourceCode = checkoutDetailsMethod.map.get('ele source code_' + checkoutDetailsMethod.getScenarioId(t));
       if ( isCampaignTest) {
         await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus,actualEleSourceCode,data[0].campaign,expectedOfferType,expectedFuelType);
-      }else if(isOfferType  && isState && !isPlanCode ){
-        if(actualState === 'NSW'){
-          await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode+'_75');
-        }
-        else {
-          await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode+'_50');
-        }
+      }else if(isOfferType && !isPlanCode ){
+        await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode+'_25');
+
       } else {
           await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode);
 
@@ -142,13 +138,8 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
       let expectedGasSourceCode = checkoutDetailsMethod.map.get('gas source code_' + checkoutDetailsMethod.getScenarioId(t));
       if (isCampaignTest) {
         await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus,actualGasSourceCode,data[0].campaign,expectedGasSourceCode,expectedFuelType);
-      } else if(isOfferType  && isState && !isPlanCode ){
-        if(actualState === 'NSW'){
-          await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode+'_75');
-        }
-        else {
-          await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode+'_50');
-        }
+      } else if(isOfferType && !isPlanCode ){
+        await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode+'_25');
       } else {
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode);
       }

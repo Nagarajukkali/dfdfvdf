@@ -1,33 +1,32 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010225341
-    sourceCode: Total_12%GD_50
-    actualQuoteDate: 2020-10-22
+    quoteId: BB2012038112
+    sourceCode: Total_12%GD_25
+    actualQuoteDate: 2020-12-03
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0372382976
+      phoneNumber: 0337789452
     
-    emailId: JSQywtcKkb@energyaustralia.com.au
+    emailId: TwsOvqHWIL@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: PASSPORT
-      id: 274039
+      id: 964816
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationPassportDetail: 
           passportFirstName: test
-          passportMiddleName/: 
           passportLastName: test
           passportCountry: AUS
         
@@ -49,6 +48,17 @@ saleDetail :
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 42
+    streetName: Brownlow
+    streetType: DR
+    suburb: POINT COOK
+    state: VIC
+    country: AUS
+    postCode: 3030
+    addressType: Mailing
   
   offerDetail: 
     fuelType: G
