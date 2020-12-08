@@ -1,13 +1,31 @@
 {
     "planName": "Basic Home",
     "planDescription": "Standard rates with no discounts.",
-  
+
     "electricity": {
       "feature": {
         "preSelect": {
           "Credit50": {
-            "heading": "",
-            "description": ""
+            "VIC": {
+              "heading": "$25 Sign Up Credit",
+              "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
+            },
+            "NSW": {
+              "heading": "$25 Sign Up Credit",
+              "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
+            },
+            "ACT": {
+              "heading": "$25 Sign Up Credit",
+              "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
+            },
+            "QLD": {
+              "heading": "$25 Sign Up Credit",
+              "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
+            },
+            "SA": {
+              "heading": "$25 Sign Up Credit",
+              "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
+            }
           },
           "carbonNeutral": {
             "heading": "Carbon neutral option",
@@ -32,19 +50,68 @@
           }
         },
         "postSelect": {
-          "Credit50": "",
+          "Credit50": {
+            "VIC": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
+            "NSW": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
+            "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
+            "QLD": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
+            "SA": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+"
+          },
           "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
           "defaultOffer": "Default offer. For electricity, Default Market Offer prices apply if you're on a flat tariff."
         }
+      },
+      "sourceCode": {
+        "newCustomer": {
+          "VIC": "Basic_25",
+          "NSW": "Basic_25",
+          "ACT": "Basic_25",
+          "QLD": "Basic_25",
+          "SA": "Basic_25"
+        },
+        "existingCustomer": {
+          "ENE": {
+            "VIC": "Basic_25",
+            "NSW": "Basic_25",
+            "ACT": "Basic_25",
+            "QLD": "Basic_25",
+            "SA": "Basic_25"
+          },
+          "PS": {
+            "VIC": "Basic",
+            "NSW": "Basic",
+            "ACT": "Basic",
+            "QLD": "Basic",
+            "SA": "Basic"
+          }
+        }
       }
     },
-  
+
     "gas": {
       "feature": {
         "preSelect": {
           "Credit50": {
-            "heading": "",
-            "description": ""
+            "VIC": {
+              "heading": "$25 Sign Up Credit",
+              "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
+            },
+            "NSW": {
+              "heading": "$25 Sign Up Credit",
+              "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
+            },
+            "ACT": {
+              "heading": "$25 Sign Up Credit",
+              "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
+            },
+            "QLD": {
+              "heading": "$25 Sign Up Credit",
+              "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
+            },
+            "SA": {
+              "heading": "$25 Sign Up Credit",
+              "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
+            }
           },
           "carbonNeutral": {
             "heading": "Carbon neutral option",
@@ -60,14 +127,41 @@
           }
         },
         "postSelect": {
-          "Credit50": "",
+          "Credit50": {
+            "VIC": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
+            "NSW": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
+            "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
+            "SA" : "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+"
+          },
           "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
           "peaceOfMind": "",
           "discountOffTotalEnergyBill": ""
         }
+      },
+      "sourceCode": {
+        "newCustomer": {
+          "VIC": "Basic_25",
+          "NSW": "Basic_25",
+          "ACT": "Basic_25",
+          "SA": "Basic_25"
+        },
+        "existingCustomer": {
+          "ENE": {
+            "VIC": "Basic_25",
+            "NSW": "Basic_25",
+            "ACT": "Basic_25",
+            "SA": "Basic_25"
+          },
+          "PS": {
+            "VIC": "Basic",
+            "NSW": "Basic",
+            "ACT": "Basic",
+            "SA": "Basic"
+          }
+        }
       }
     },
-  
+
     "disclaimers": {
       "referencePriceComparison": {
         "heading": "Reference price comparison and estimated annual cost",
@@ -97,24 +191,24 @@
       },
       "Credit50": {
         "VIC": {
-          "heading": "",
-          "description": ""
+          "heading": "$25 Sign Up Credit",
+          "description": "+ Offer available to VIC residential customers only who sign up via energyaustralia.com.au to an electricity or gas market offer. Limit of one $25 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
         },
         "NSW": {
-          "heading": "",
-          "description": ""
+          "heading": "$25 Sign Up Credit",
+          "description": "+ Offer available to NSW residential customers only who sign up via energyaustralia.com.au to an electricity or gas market offer. Limit of one $25 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
         },
         "ACT": {
-          "heading": "",
-          "description": ""
+          "heading": "$25 Sign Up Credit ",
+          "description": "+ Offer available to ACT residential customers only who sign up via energyaustralia.com.au to an electricity or gas market offer. Limit of one $25 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
         },
         "QLD": {
-          "heading": "",
-          "description": ""
+          "heading": "$25 Sign Up Credit",
+          "description": "+ Offer available to QLD residential customers only who sign up via energyaustralia.com.au to an electricity or gas market offer. Limit of one $25 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
         },
         "SA": {
-          "heading": "",
-          "description": ""
+          "heading": "$25 Sign Up Credit",
+          "description": "+ Offer available to SA residential customers only who sign up via energyaustralia.com.au to an electricity or gas market offer. Limit of one $25 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
         }
       },
       "basicPlan": {
@@ -137,4 +231,3 @@
       }
     }
   }
-  

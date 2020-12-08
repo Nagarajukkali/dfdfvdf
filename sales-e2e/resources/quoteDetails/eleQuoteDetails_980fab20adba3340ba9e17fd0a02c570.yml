@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CR2010052496
-    sourceCode: Total_13%GD
-    actualQuoteDate: 2020-10-05
+    quoteId: CR2012089503
+    sourceCode: Total_14%GD
+    actualQuoteDate: 2020-12-08
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0358166875
+      phoneNumber: 0338076979
     
-    emailId: TNeQydLidR@energyaustralia.com.au
+    emailId: ZTeGKHDhTy@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 830391
+      id: 465481
       primaryIdFlag: Y
     
     authLevel: Y
@@ -41,6 +41,17 @@ saleDetail :
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 37
+    streetName: Echlin
+    streetType: S
+    suburb: LABRADOR
+    state: QLD
+    country: AUS
+    postCode: 4215
+    addressType: Mailing
   
   offerDetail: 
     fuelType: E

@@ -1,27 +1,27 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2012038112
+    quoteId: BB2012079150
     sourceCode: Total_12%GD_25
-    actualQuoteDate: 2020-12-03
+    actualQuoteDate: 2020-12-07
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MRS
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0337789452
+      phoneNumber: 0356120365
     
-    emailId: TwsOvqHWIL@energyaustralia.com.au
+    emailId: YWjGkOUSjZ@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: PASSPORT
-      id: 964816
+      id: 252793
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y

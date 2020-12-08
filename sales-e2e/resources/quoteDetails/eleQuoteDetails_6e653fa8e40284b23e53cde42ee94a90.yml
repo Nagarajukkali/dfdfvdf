@@ -1,0 +1,85 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2012079142
+    sourceCode: Total_12%GD_25
+    actualQuoteDate: 2020-12-07
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0339788545
+    
+    emailId: QTzAotHrKU@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DLNT
+      id: 277056
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlLastName: test
+          licenseStateOfIssue: NT
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 3
+    streetName: Newhaven
+    streetType: AV
+    suburb: GLENELG NORTH
+    state: SA
+    country: AUS
+    postCode: 5045
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 3
+    streetName: Newhaven
+    streetType: AV
+    suburb: GLENELG NORTH
+    state: SA
+    country: AUS
+    postCode: 5045
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: E
+    offerType: COR
+    plan: TOPH-ES
+    priceTag: ESSAA_NR2007
+    nmiMirnInformation: 
+      NMI: 2001649095
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+  
+

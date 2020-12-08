@@ -11,6 +11,7 @@ const { config }=require('../resources/resource');
 import {resemblejs} from 'resemblejs/resemble.js'; //--DO NOT REMOVE THIS IMPORT - THIS GIVES PATH TO THE CORE IMPLEMENTATION--//
 const resemble = require("resemblejs");
 const screenshot=config.screenshot;
+const eaHomePage=config.eaCampaignUrl;
 let logger=null;
 const deviceScreenSize=config.deviceScreenSize
 
@@ -546,6 +547,21 @@ export class testFunction {
     const doc = fs.readFileSync('../package.json','utf8');
     let packageJson = JSON.parse(doc);
     return packageJson.config.e2e_tags.toString().includes("@UIValidation");
+  }
+
+  public static getCampaignURL(campaign:string):string{
+    let campaignPageURL;
+    switch (campaign) {
+      case "cashrewards":
+        campaignPageURL=`${eaHomePage}${campaign}?rewardcode=test&live=disabled`;
+        break;
+      case "super-rewards":
+        campaignPageURL=`${eaHomePage}${campaign}?rewardcode=test&live=disabled`;
+        break;
+      default:
+        campaignPageURL=`${eaHomePage}${campaign}?live=disabled`;
+    }
+    return campaignPageURL;
   }
 }
 

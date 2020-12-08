@@ -1,4 +1,4 @@
-@campaign
+@campaign12.2
 #For any campaign changes need to verify/update below steps:
 # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
 # 2. Provide Y/N for features as per the change in this step "And user validates the data on plans page for "<campaign>""
@@ -13,31 +13,31 @@
 Feature:E2E scenario for basichome-canstarblue campaign
 
     Scenario Outline: Validate complete data for basichome-canstarblue campaign for NSW
-        Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-        When user provides "2144" and clicks on show me plan link
-        And user validates the data on plans page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |
-            | ELE      | N                | Y                     | Y                    | NSW   | N                               |
-        And user validates the data on plans page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |
-            | GAS      | N                | Y                     | N                    | NSW   | N                               |
-        And user validates disclaimer on plans page for "<campaign>"
-            | referencePriceComparison | goNeutral | solarBuyBack | planName   | state |
-            | Y                        | Y         | Y            | Basic Home | NSW   |
-        And user clicks on Add plan button
-        And user validates plan details on cart page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill |
-            | ELE      | N                | Y                     | Y                    | N                                  |
-        And user validates plan details on cart page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill |
-            | GAS      | N                | Y                     | N                    | N                                  |
-        And user selects '<customerStatus>' on qualifier
-        And user provides all other details on qualifier page
-            | customerType | connectionAddress                   | movingType | propertyType | solarOption |
-            | RES          | 74 Yillowra Street, AUBURN NSW 2144 | Non-Moving | Renter       | No          |
-        And user provides all details on checkout details page
-            | customerType | journey | customerStatus | firstName | lastName | idType         |
-            | RES          | RES     | New            | test      | test     | Driver License |
+      Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+      When user provides "2144" and clicks on show me plan link
+      And user validates the data on plans page for "<campaign>"
+          | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |
+          | ELE      | Y                | Y                     | Y                    | NSW   | N                               |
+      And user validates the data on plans page for "<campaign>"
+          | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |
+          | GAS      | Y                | Y                     | N                    | NSW   | N                               |
+      And user validates disclaimer on plans page for "<campaign>"
+          | referencePriceComparison | goNeutral | solarBuyBack | planName   | state |
+          | Y                        | Y         | Y            | Basic Home | NSW   |
+      And user clicks on Add plan button
+      And user validates plan details on cart page for "<campaign>"
+          | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill |state|
+          | ELE      | Y                | Y                     | Y                    | N                                  |<state>|
+      And user validates plan details on cart page for "<campaign>"
+          | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill |state|
+          | GAS      | Y                | Y                     | N                    | N                                  |<state>|
+      And user selects '<customerStatus>' on qualifier
+      And user provides all other details on qualifier page
+          | customerType | connectionAddress                   | movingType | propertyType | solarOption |
+          | RES          | 74 Yillowra Street, AUBURN NSW 2144 | Non-Moving | Renter       | No          |
+      And user provides all details on checkout details page
+          | customerType | journey | customerStatus | firstName | lastName | idType         |
+          | RES          | RES     | New            | test      | test     | Driver License |
       And user selects mailing address option
         |addressType       |otherAddress                              |
         |Connection Address|                                          |
@@ -57,11 +57,11 @@ Feature:E2E scenario for basichome-canstarblue campaign
         And user verifies selected plan details for '<fuelType>'
         And user selects carbon neutral option
         And user validates plan details on review page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_noStandardConnectionFee |
-            | ELE      | N                | Y                     | Y                    | N                               |
+            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_noStandardConnectionFee |state|
+            | ELE      | Y                | Y                     | Y                    | N                               |<state>|
         And user validates plan details on review page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill |
-            | GAS      | N                | Y                     | N                    | N                                  |
+            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill |state|
+            | GAS      | Y                | Y                     | N                    | N                                  |<state>|
         And user validates disclaimer on review page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName   | state |
             | Y                        | Y         | Y            | Basic Home | NSW   |
@@ -79,12 +79,12 @@ Feature:E2E scenario for basichome-canstarblue campaign
         Then submitted quote is displayed
         And user validates all the details for 'ELE' submitted quote
         And user validates below mandatory fields
-            | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-            | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | RSOT-EN  | 4102681649 | N                              | N                              | Y                       | LSCNSPE                  | EMAIL         |
+            | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus    |campaign  |
+            | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | RSOT-EN  | 4102681649 | N                              | N                              | Y                       | LSCNSPE                  | EMAIL         |<customerStatus>  |<campaign>|
         And user validates all the details for 'GAS' submitted quote
         And user validates below mandatory fields
-            | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-            | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | RSOT-GN  | 5240524910 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
+            | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus    |campaign  |
+            | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | RSOT-GN  | 5240524910 | N                              | N                              | Y                       | OTHER                    | EMAIL         |<customerStatus>  |<campaign>|
 
         Examples:
             | customerStatus | fuelType | eleDiscount | gasDiscount | campaign              | folderName                             | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
@@ -92,73 +92,73 @@ Feature:E2E scenario for basichome-canstarblue campaign
 
 
     Scenario Outline: Validate complete data for basichome-canstarblue campaign for ACT
-        Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-        When user provides "2615" for postcode and proceed to view the plans
-        And user validates the data on plans page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |
-            | ELE      | N                | Y                     | Y                    | ACT   | N                               |
-        And user validates the data on plans page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |
-            | GAS      | N                | Y                     | N                    | ACT   | N                               |
-        And user validates disclaimer on plans page for "<campaign>"
-            | referencePriceComparison | goNeutral | solarBuyBack | planName   | state |
-            | Y                        | Y         | Y            | Basic Home | ACT   |
-        And user clicks on Add plan button
-        And user validates plan details on cart page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill |
-            | ELE      | N                | Y                     | Y                    | N                                  |
-        And user validates plan details on cart page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill |
-            | GAS      | N                | Y                     | N                    | N                                  |
-        And user selects '<customerStatus>' on qualifier
-        And user provides all other details on qualifier page
-            | customerType | connectionAddress                         | movingType | propertyType | solarOption |
-            | RES          | 126 Shakespeare Crescent, FRASER ACT 2615 | Moving     | Renter       | No          |
-        And user provides all details on checkout details page
-            | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
-            | RES          | RES     | New            | test      | test     | Driver License |              |
+      Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+      When user provides "2615" for postcode and proceed to view the plans
+      And user validates the data on plans page for "<campaign>"
+          | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |
+          | ELE      | Y                | Y                     | Y                    | ACT   | N                               |
+      And user validates the data on plans page for "<campaign>"
+          | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |
+          | GAS      | Y                | Y                     | N                    | ACT   | N                               |
+      And user validates disclaimer on plans page for "<campaign>"
+          | referencePriceComparison | goNeutral | solarBuyBack | planName   | state |
+          | Y                        | Y         | Y            | Basic Home | ACT   |
+      And user clicks on Add plan button
+      And user validates plan details on cart page for "<campaign>"
+          | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill |state|
+          | ELE      | Y                | Y                     | Y                    | N                                  |<state>|
+      And user validates plan details on cart page for "<campaign>"
+          | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill |state|
+          | GAS      | Y                | Y                     | N                    | N                                  |<state>|
+      And user selects '<customerStatus>' on qualifier
+      And user provides all other details on qualifier page
+          | customerType | connectionAddress                         | movingType | propertyType | solarOption |
+          | RES          | 126 Shakespeare Crescent, FRASER ACT 2615 | Moving     | Renter       | No          |
+      And user provides all details on checkout details page
+          | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
+          | RES          | RES     | New            | test      | test     | Driver License |              |
       And user selects mailing address option
         |addressType       |otherAddress                              |
         |Connection Address|                                          |
-        And user selects answer for property renovation question for '<state>'
-        And user clicks on 'Review your order' button and navigates to review page
-        And user provides life support details on review page
-            | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
-            | No                |          |                        |                       |
-        And user verifies selected plan details for '<fuelType>'
-        And user validates plan details on review page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-            | ELE      | N                | N                     | Y                    | N                                  | N                               |
-        And user validates plan details on review page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-            | GAS      | N                | N                     | N                    | N                                  | N                               |
-        And user validates disclaimer on review page for "<campaign>"
-            | referencePriceComparison | goNeutral | solarBuyBack | planName   | state |
-            | Y                        | Y         | Y            | Basic Home | ACT   |
-        And user validates source code
-            | fuelType | eleSourceCode | gasSourceCode |
-            | BOTH     | Basic         | Basic         |
-        And user submits the quote
-        Then user lands on checkout complete page
-        And user validates details on checkout complete page
-            | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
-            | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
-        When user has opened the qt2 Reporting website link in a browser
-        And user logs in to qt2 reporting
-        And user search quote on the basis of 'Email'
-        Then submitted quote is displayed
-        And user validates all the details for 'ELE' submitted quote
-        And user validates below mandatory fields
-            | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-            | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | RSOT-EA  | 7001068488 |                                |                                | N                       |                          | EMAIL         |
-        And user validates all the details for 'GAS' submitted quote
-        And user validates below mandatory fields
-            | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-            | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | RSOT-GA  | 5261512002 |                                |                                | N                       |                          | EMAIL         |
+      And user selects answer for property renovation question for '<state>'
+      And user clicks on 'Review your order' button and navigates to review page
+      And user provides life support details on review page
+          | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
+          | No                |          |                        |                       |
+      And user verifies selected plan details for '<fuelType>'
+      And user validates plan details on review page for "<campaign>"
+          | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state|
+          | ELE      | Y                | N                     | Y                    | N                                  | N                               |<state>|
+      And user validates plan details on review page for "<campaign>"
+          | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state|
+          | GAS      | Y                | N                     | N                    | N                                  | N                               |<state>|
+      And user validates disclaimer on review page for "<campaign>"
+          | referencePriceComparison | goNeutral | solarBuyBack | planName   | state |
+          | Y                        | Y         | Y            | Basic Home | ACT   |
+      And user validates source code
+          | fuelType | eleSourceCode | gasSourceCode |
+          | BOTH     | Basic         | Basic         |
+      And user submits the quote
+      Then user lands on checkout complete page
+      And user validates details on checkout complete page
+          | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
+          | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
+      When user has opened the qt2 Reporting website link in a browser
+      And user logs in to qt2 reporting
+      And user search quote on the basis of 'Email'
+      Then submitted quote is displayed
+      And user validates all the details for 'ELE' submitted quote
+      And user validates below mandatory fields
+          | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus    |campaign  |
+          | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | RSOT-EA  | 7001068488 |                                |                                | N                       |                          | EMAIL         |<customerStatus>  |<campaign>|
+      And user validates all the details for 'GAS' submitted quote
+      And user validates below mandatory fields
+          | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus    |campaign  |
+          | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | RSOT-GA  | 5261512002 |                                |                                | N                       |                          | EMAIL         |<customerStatus>  |<campaign>|
 
-        Examples:
-            | customerStatus | fuelType | eleDiscount | gasDiscount | campaign              | folderName                                   | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-            | New            | BOTH     | No          | No          | basichome-canstarblue | E2E_Campaign_basichome-canstarblue_ACT       | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      Examples:
+          | customerStatus | fuelType | eleDiscount | gasDiscount | campaign              | folderName                                   | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
+          | New            | BOTH     | No          | No          | basichome-canstarblue | E2E_Campaign_basichome-canstarblue_ACT       | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
     Scenario Outline: Validate complete data for basichome-canstarblue campaign for SA
         Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -166,20 +166,20 @@ Feature:E2E scenario for basichome-canstarblue campaign
         Then user is presented with the plans
         And user validates the data on plans page for "<campaign>"
             | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |
-            | ELE      | N                | Y                     | Y                    | SA    | N                               |
+            | ELE      | Y                | Y                     | Y                    | SA    | N                               |
         And user validates the data on plans page for "<campaign>"
             | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |
-            | GAS      | N                | Y                     | N                    | SA    | N                               |
+            | GAS      | Y                | Y                     | N                    | SA    | N                               |
         And user validates disclaimer on plans page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName   | state |
             | Y                        | Y         | Y            | Basic Home | SA    |
         And user clicks on Add plan button
         And user validates plan details on cart page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill |
-            | ELE      | N                | Y                     | Y                    | N                                  |
+            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill |state|
+            | ELE      | Y                | Y                     | Y                    | N                                  |<state>|
         And user validates plan details on cart page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill |
-            | GAS      | N                | Y                     | N                    | N                                  |
+            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill |state|
+            | GAS      | Y                | Y                     | N                    | N                                  |<state>|
         And user selects '<customerStatus>' on qualifier
         And user provides all other details on qualifier page
             | customerType | connectionAddress                 | movingType | propertyType | solarOption |
@@ -198,11 +198,11 @@ Feature:E2E scenario for basichome-canstarblue campaign
         And user verifies selected plan details for '<fuelType>'
         And user opts in for Carbon Neutral
         And user validates plan details on review page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-            | ELE      | N                | Y                     | Y                    | N                                  | N                               |
+            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state|
+            | ELE      | Y                | Y                     | Y                    | N                                  | N                               |<state>|
         And user validates plan details on review page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-            | GAS      | N                | Y                     | N                    | N                                  | N                               |
+            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state|
+            | GAS      | Y                | Y                     | N                    | N                                  | N                               |<state>|
         And user validates disclaimer on review page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName   | state |
             | Y                        | Y         | Y            | Basic Home | SA    |
@@ -220,12 +220,12 @@ Feature:E2E scenario for basichome-canstarblue campaign
         Then submitted quote is displayed
         And user validates all the details for 'ELE' submitted quote
         And user validates below mandatory fields
-            | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-            | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | RSOT-ES  | 2001245279 |                                |                                | Y                       | LSCNSPE                  | EMAIL         |
+            | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus    |campaign  |
+            | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | RSOT-ES  | 2001245279 |                                |                                | Y                       | LSCNSPE                  | EMAIL         |<customerStatus>  |<campaign>|
         And user validates all the details for 'GAS' submitted quote
         And user validates below mandatory fields
-            | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-            | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | RSOT-GS  | 5510149276 |                                |                                | N                       |                          | EMAIL         |
+            | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus    |campaign  |
+            | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | RSOT-GS  | 5510149276 |                                |                                | N                       |                          | EMAIL         |<customerStatus>  |<campaign>|
 
         Examples:
             | customerStatus | fuelType | eleDiscount | gasDiscount | campaign              | folderName                            | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
@@ -238,14 +238,14 @@ Feature:E2E scenario for basichome-canstarblue campaign
         Then user is presented with the plans
         And user validates the data on plans page for "<campaign>"
             | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |
-            | ELE      | N                | Y                     | Y                    | QLD   | N                               |
+            | ELE      | Y                | Y                     | Y                    | QLD   | N                               |
         And user validates disclaimer on plans page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName   | state |
             | Y                        | Y         | Y            | Basic Home | QLD   |
         And user clicks on Add plan button
         And user validates plan details on cart page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill |
-            | ELE      | N                | Y                     | Y                    | N                                  |
+            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill |state|
+            | ELE      | Y                | Y                     | Y                    | N                                  |<state>|
         And user moves on to fill the qualifier
         And user selects '<customerStatus>' on qualifier
         And user provides all other details on qualifier page
@@ -264,8 +264,8 @@ Feature:E2E scenario for basichome-canstarblue campaign
             | No                |          |                        |                       |
         And user verifies selected plan details for '<fuelType>'
         And user validates plan details on review page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-            | ELE      | N                | N                     | Y                    | N                                  | N                               |
+            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state|
+            | ELE      | Y                | N                     | Y                    | N                                  | N                               |<state>|
         And user validates disclaimer on review page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName   | state |
             | Y                        | Y         | Y            | Basic Home | QLD   |
@@ -283,79 +283,138 @@ Feature:E2E scenario for basichome-canstarblue campaign
         Then submitted quote is displayed
         And user validates all the details for 'ELE' submitted quote
         And user validates below mandatory fields
-            | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-            | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | GRT-EQ   | 3115863522 |                                |                                | N                       |                          | EMAIL         |
+            | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus    |campaign  |
+            | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | GRT-EQ   | 3115863522 |                                |                                | N                       |                          | EMAIL         |<customerStatus>  |<campaign>|
 
         Examples:
             | customerStatus | fuelType | eleDiscount | campaign              | folderName                             | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
             | New            | ELE      | No          | basichome-canstarblue | E2E_Campaign_basichome-canstarblue_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
     Scenario Outline: Validate complete data for basichome-canstarblue campaign for VIC
-        Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-        When user provides "3188" for postcode and proceed to view the plans
-        Then user is presented with the plans
-        And user validates the data on plans page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |
-            | ELE      | N                | Y                     | Y                    | VIC   | N                               |
-        And user validates the data on plans page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |
-            | GAS      | N                | Y                     | N                    | VIC   | N                               |
-        And user validates disclaimer on plans page for "<campaign>"
-            | referencePriceComparison | goNeutral | solarBuyBack | planName   | state |
-            | Y                        | Y         | Y            | Basic Home | VIC   |
-        And user clicks on Add plan button
-        And user validates plan details on cart page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_defaultOffer |
-            | ELE      | N                | Y                     | N                   | Y                    |
-        And user validates plan details on cart page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_defaultOffer |
-            | GAS      | N                | Y                     | N                   | N                    |
-        And user selects '<customerStatus>' on qualifier
-        And user provides all other details on qualifier page
-            | customerType | connectionAddress                        | movingType | propertyType | solarOption |
-            | RES          | 9 Charming Street, HAMPTON EAST VIC 3188 | Moving     | Renter       | No          |
-        And user provides all details on checkout details page
-            | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
-            | RES          | RES     | New            | test      | test     | Driver License |              |
+      Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+      When user provides "3188" for postcode and proceed to view the plans
+      Then user is presented with the plans
+      And user validates the data on plans page for "<campaign>"
+          | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |
+          | ELE      | Y                | Y                     | Y                    | VIC   | N                               |
+      And user validates the data on plans page for "<campaign>"
+          | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |
+          | GAS      | Y                | Y                     | N                    | VIC   | N                               |
+      And user validates disclaimer on plans page for "<campaign>"
+          | referencePriceComparison | goNeutral | solarBuyBack | planName   | state |
+          | Y                        | Y         | Y            | Basic Home | VIC   |
+      And user clicks on Add plan button
+      And user validates plan details on cart page for "<campaign>"
+          | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_defaultOffer |state|
+          | ELE      | Y                | Y                     | N                   | Y                    |<state>|
+      And user validates plan details on cart page for "<campaign>"
+          | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_defaultOffer |state|
+          | GAS      | Y                | Y                     | N                   | N                    |<state>|
+      And user selects '<customerStatus>' on qualifier
+      And user provides all other details on qualifier page
+          | customerType | connectionAddress                        | movingType | propertyType | solarOption |
+          | RES          | 9 Charming Street, HAMPTON EAST VIC 3188 | Non-Moving | Renter       | No          |
+      And user provides all details on checkout details page
+          | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
+          | RES          | RES     | New            | test      | test     | Driver License |              |
       And user selects mailing address option
         |addressType       |otherAddress                              |
         |Connection Address|                                          |
-        And user selects answer for property renovation question for '<state>'
-        And user clicks on 'Review your order' button and navigates to review page
-        And user provides life support details on review page
-            | lifeSupportOption | fuelType | EleclifeSupportDevices                         | GaslifeSupportDevices |
-            | Yes               | BOTH     | Crigler Najjar Syndrome Phototherapy Equipment | Gas Other             |
-        And user verifies selected plan details for '<fuelType>'
-        And user validates plan details on review page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_defaultOffer | Feature_noStandardConnectionFee |
-            | ELE      | N                | N                     | N                   | Y                    | N                               |
-        And user validates plan details on review page for "<campaign>"
-            | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_defaultOffer | Feature_noStandardConnectionFee |
-            | GAS      | N                | N                     | N                   | N                    | N                               |
-        And user validates disclaimer on review page for "<campaign>"
-            | referencePriceComparison | goNeutral | solarBuyBack | planName   | state |
-            | Y                        | Y         | Y            | Basic Home | VIC   |
-        And user validates source code
-            | fuelType | eleSourceCode | gasSourceCode |
-            | BOTH     | Basic         | Basic         |
-        And user submits the quote
-        Then user lands on checkout complete page
-        And user validates details on checkout complete page
-            | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
-            | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
-        When user has opened the qt2 Reporting website link in a browser
-        And user logs in to qt2 reporting
-        And user search quote on the basis of 'Email'
-        Then submitted quote is displayed
-        And user validates all the details for 'ELE' submitted quote
-        And user validates below mandatory fields
-            | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-            | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | RSOT-EV  | 6407220528 | N                              | N                              | Y                       | LSCNSPE                  | EMAIL         |
-        And user validates all the details for 'GAS' submitted quote
-        And user validates below mandatory fields
-            | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-            | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | RSOT-GV  | 5310571404 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
+      And user clicks on 'Review your order' button and navigates to review page
+      And user provides life support details on review page
+          | lifeSupportOption | fuelType | EleclifeSupportDevices                         | GaslifeSupportDevices |
+          | Yes               | BOTH     | Crigler Najjar Syndrome Phototherapy Equipment | Gas Other             |
+      And user verifies selected plan details for '<fuelType>'
+      And user validates plan details on review page for "<campaign>"
+          | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_defaultOffer | Feature_noStandardConnectionFee |state|
+          | ELE      | Y                | N                     | N                   | Y                    | N                               |<state>|
+      And user validates plan details on review page for "<campaign>"
+          | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_defaultOffer | Feature_noStandardConnectionFee |state|
+          | GAS      | Y                | N                     | N                   | N                    | N                               |<state>|
+      And user validates disclaimer on review page for "<campaign>"
+          | referencePriceComparison | goNeutral | solarBuyBack | planName   | state |
+          | Y                        | Y         | Y            | Basic Home | VIC   |
+      And user validates source code
+          | fuelType | eleSourceCode | gasSourceCode |
+          | BOTH     | Basic         | Basic         |
+      And user submits the quote
+      Then user lands on checkout complete page
+      And user validates details on checkout complete page
+          | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
+          | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
+      When user has opened the qt2 Reporting website link in a browser
+      And user logs in to qt2 reporting
+      And user search quote on the basis of 'Email'
+      Then submitted quote is displayed
+      And user validates all the details for 'ELE' submitted quote
+      And user validates below mandatory fields
+          | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus    |campaign  |
+          | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | RSOT-EV  | 6407220528 | N                              | N                              | Y                       | LSCNSPE                  | EMAIL         |<customerStatus>  |<campaign>|
+      And user validates all the details for 'GAS' submitted quote
+      And user validates below mandatory fields
+          | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus    |campaign  |
+          | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | RSOT-GV  | 5310571404 | N                              | N                              | Y                       | OTHER                    | EMAIL         |<customerStatus>  |<campaign>|
 
-        Examples:
-            | customerStatus | fuelType | eleDiscount | gasDiscount | campaign              | folderName                             | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-            | New            | BOTH     | No          | No          | basichome-canstarblue | E2E_Campaign_basichome-canstarblue_VIC | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      Examples:
+          | customerStatus | fuelType | eleDiscount | gasDiscount | campaign              | folderName                                       | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
+          | New            | BOTH     | No          | No          | basichome-canstarblue | E2E_Campaign_basichome-canstarblue_nonmoving_VIC | VIC   | Quote Tool   | COR       | No  | No | RES          | New           |
+
+  Scenario Outline: Validate complete data for basichome-canstarblue campaign for NSW existing non moving
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "2000" and clicks on show me plan link
+    And user validates the data on plans page for "<campaign>"
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |
+      | ELE      | Y                | Y                     | Y                    | NSW   | N                               |
+    And user validates the data on plans page for "<campaign>"
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |
+      | GAS      | Y                | Y                     | N                    | NSW   | N                               |
+    And user validates disclaimer on plans page for "<campaign>"
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
+      |Y                        |Y          |Y              |Basic Home |<state>  |Y           |
+    And user clicks on Add plan button
+    And user validates plan details on cart page for "<campaign>"
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill |state|
+      | ELE      | Y                | Y                     | Y                    | N                                  |<state>|
+    And user validates plan details on cart page for "<campaign>"
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill |state|
+      | GAS      | Y                | Y                     | N                    | N                                  |<state>|
+    And user selects '<customerStatus>' on qualifier
+    And user verifies account on qualifier
+      |customerStatus   |accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |<customerStatus> |6437229177   |Postcode           |2447            |dob   |28121947|
+    And user provides all other details on qualifier page for Existing customer
+      |customerType|movingType |propertyType |solarOption|
+      |RES         |Non-Moving |Renter       |No         |
+    And user provides all details on checkout details page
+      |customerType|journey    |customerStatus   | firstName| lastName|idType        |
+      |RES         |RES        |<customerStatus> | test     |test     |Driver License|
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType |EleclifeSupportDevices |GaslifeSupportDevices|
+      |No               |         |                       |               |
+    And user validates plan details on review page for "<campaign>"
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_noStandardConnectionFee |state|
+      | ELE      | N                | N                     | Y                    | N                               |<state>|
+    And user validates disclaimer on review page for "<campaign>"
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
+      |Y                        |Y          |Y              |Basic Home |<state>  |
+    And user submits the quote
+    Then user lands on checkout complete page
+    And user validates details on checkout complete page
+      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
+      |<sourceSystem> |<journey>  |ELE |<AAH>|<DD> |<customerType> |<newOrExisting>|
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'ELE' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |RSOT-EN |4407376910|                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
+
+    Examples:
+      |customerStatus|fuelType|campaign              |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
+      |Existing      |BOTH    |basichome-canstarblue |E2E_Campaign_basichome-canstarblue_NSW_existing_non-moving |NSW  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |

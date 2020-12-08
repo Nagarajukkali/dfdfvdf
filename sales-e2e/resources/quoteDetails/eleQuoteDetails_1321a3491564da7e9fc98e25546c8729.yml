@@ -1,35 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2011042717
-    sourceCode: Total_15%GD_75
-    actualQuoteDate: 2020-11-04
+    quoteId: BB2012079262
+    sourceCode: Total_16%GD_25
+    actualQuoteDate: 2020-12-07
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0347997527
+      phoneNumber: 0322651543
     
-    emailId: CnbJUsfqpo@energyaustralia.com.au
+    emailId: umtVeymeKw@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 923116
+      idType: DLTAS
+      id: 453211
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
-          dlMiddleName/: 
           dlLastName: test
-          licenseStateOfIssue: NT
+          licenseStateOfIssue: TAS
         
       
     

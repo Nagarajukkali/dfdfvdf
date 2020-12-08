@@ -1,0 +1,85 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2012079234
+    sourceCode: Basic_25
+    actualQuoteDate: 2020-12-07
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: MS
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0388861912
+    
+    emailId: UhKoYwTWCJ@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DLVIC
+      id: 245346
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlLastName: test
+          licenseStateOfIssue: VIC
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 126
+    streetName: Shakespeare
+    streetType: CR
+    suburb: FRASER
+    state: ACT
+    country: AUS
+    postCode: 2615
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 126
+    streetName: Shakespeare
+    streetType: CR
+    suburb: FRASER
+    state: ACT
+    country: AUS
+    postCode: 2615
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2020-12-09
+    offerType: ENE
+    plan: RSOT-GA
+    priceTag: GACTA_GRA
+    serviceOrderDate: 2020-12-09
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5261512002
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+

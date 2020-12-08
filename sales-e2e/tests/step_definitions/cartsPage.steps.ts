@@ -15,5 +15,5 @@ Then(/^user validates plan details on cart page for "([^"]*)"$/, async function 
   let json = await FileUtils.getJSONfile(campaignName);
   await cartsMethod.validatePlanName(t, json, dataTable);
   await cartsMethod.validateFeatures(t, dataTable, json, numOfExpectedFeatures);
-  await testFunction.takeScreenshot(t, 'validated plan details on carts page');//disabled UI Validation
+  //await testFunction.takeScreenshot(t, 'validated plan details on carts page');//disabled UI Validation
 });
