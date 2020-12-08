@@ -1,0 +1,83 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: CR2012089498
+    sourceCode: Total_12%GD_25
+    actualQuoteDate: 2020-12-08
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0370139555
+    
+    emailId: HhszptNpgV@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DLSA
+      id: 796066
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlLastName: test
+          licenseStateOfIssue: SA
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 21
+    streetName: Tarrant
+    streetType: CR
+    suburb: DUNLOP
+    state: ACT
+    country: AUS
+    postCode: 2615
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 21
+    streetName: Tarrant
+    streetType: CR
+    suburb: DUNLOP
+    state: ACT
+    country: AUS
+    postCode: 2615
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: E
+    offerType: COR
+    plan: TOPH-EA
+    priceTag: EAACA_NR2007
+    nmiMirnInformation/: 
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+  
+

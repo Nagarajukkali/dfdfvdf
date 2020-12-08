@@ -186,6 +186,28 @@ export class plansMethod{
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeaturePeaceOfMindTitle, data.electricity.feature.preSelect.peaceOfMind.heading);
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeaturePeaceOfMindDescription, data.electricity.feature.preSelect.peaceOfMind.description);
       }
+      if(dataTable[0].Feature_XX_discountOffTotalEnergyBill === "Y") {
+        switch (dataTable[0].state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.VIC.heading);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.NSW.heading);
+            break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.ACT.heading);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.QLD.heading);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.SA.heading);
+            break;
+          default:
+            throw Error("Invalid State");
+        }
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillDescription, data.electricity.feature.preSelect.discountOffTotalEnergyBill.description);
+      }
       if(dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.heading);
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillDescription, data.electricity.feature.preSelect.discountOffTotalEnergyBill.description);
@@ -254,6 +276,28 @@ export class plansMethod{
       if(dataTable[0].Feature_peaceOfMind === "Y") {
         await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindTitle, data.gas.feature.preSelect.peaceOfMind.heading);
         await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindDescription, data.gas.feature.preSelect.peaceOfMind.description);
+      }
+      if(dataTable[0].Feature_XX_discountOffTotalEnergyBill === "Y") {
+        switch (dataTable[0].state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.VIC.heading);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.NSW.heading);
+            break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.ACT.heading);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.QLD.heading);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.SA.heading);
+            break;
+          default:
+            throw Error("Invalid State");
+        }
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
       }
       if(dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
         await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.heading);

@@ -100,7 +100,6 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
         await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus,actualEleSourceCode,data[0].campaign,expectedOfferType,expectedFuelType);
       }else if(isOfferType && !isPlanCode ){
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode+'_25');
-
       } else {
           await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode);
 

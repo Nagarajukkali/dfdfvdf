@@ -111,16 +111,17 @@ Then(/^user validates the data on plans page for "([^"]*)"$/, async function (t,
   dataTable = dataTable.hashes();
   let data = await FileUtils.getJSONfile(campaignName);
   await plansMethod.validatePlanHeading(t, dataTable, data);
-  await testFunction.takeScreenshot(t, 'validated plan heading');//disabled UI Validation
+  //await testFunction.takeScreenshot(t, 'validated plan heading');//disabled UI Validation
   await plansMethod.validateFeatures(t, dataTable, data);
-  await testFunction.takeScreenshot(t, 'validated feature text for plans');//disabled UI Validation
+  //await testFunction.takeScreenshot(t, 'validated feature text for plans');//disabled UI Validation
+  console.log("feature validated");
 });
 Then(/^user validates "([^"]*)" discount to be "([^"]*)" percent$/, async function (t, [fuelType, expectedDiscount]) {
   /*
   Example:     And user validates "ELE" discount to be "16" percent
    */
   await plansMethod.validateDiscount(t, fuelType, expectedDiscount);
-  await testFunction.takeScreenshot(t, 'validating discount'+fuelType);//disabled UI Validation
+  //await testFunction.takeScreenshot(t, 'validating discount'+fuelType);//disabled UI Validation
 });
 When(/^user provides "([^"]*)" for postcode and proceed to view the plans$/, async function (t, [postcode]) {
   await campaignMethod.enterPostcodeOnCampaign(t, postcode);
@@ -179,7 +180,7 @@ Then(/^user validates disclaimer on plans page for "([^"]*)"$/, async function (
   dataTable = dataTable.hashes();
   let data = await FileUtils.getJSONfile(campaignName);
   await plansMethod.validateDisclaimer(t,dataTable,data);
-  await testFunction.takeScreenshot(t, 'validated disclaimers for the plans page');//disabled UI Validation
+  //await testFunction.takeScreenshot(t, 'validated disclaimers for the plans page');//disabled UI Validation
   console.log("Validation completed for disclaimers on plans page.");
 });
 

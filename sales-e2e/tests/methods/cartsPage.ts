@@ -50,6 +50,27 @@ export class cartsMethod {
       if(dataTable[0].Feature_peaceOfMind === "Y") {
         await testFunction.assertText(t, cartsPage.elements.eleFeaturePeaceOfMind, json.electricity.feature.postSelect.peaceOfMind);
       }
+      if(dataTable[0].Feature_XX_discountOffTotalEnergyBill === "Y") {
+        switch (dataTable[0].state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t, cartsPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill.VIC);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t, cartsPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill.NSW);
+            break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t, cartsPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill.ACT);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t, cartsPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill.QLD);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t, cartsPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill.SA);
+            break;
+          default:
+            throw Error("Invalid State");
+        }
+      }
       if(dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
         await testFunction.assertText(t, cartsPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill);
       }
@@ -98,6 +119,27 @@ export class cartsMethod {
       }
       if(dataTable[0].Feature_peaceOfMind === "Y") {
         await testFunction.assertText(t, cartsPage.elements.gasFeaturePeaceOfMind, json.gas.feature.postSelect.peaceOfMind);
+      }
+      if(dataTable[0].Feature_XX_discountOffTotalEnergyBill === "Y") {
+        switch (dataTable[0].state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t, cartsPage.elements.gasFeatureDiscountOffTotal, json.gas.feature.postSelect.discountOffTotalEnergyBill.VIC);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t, cartsPage.elements.gasFeatureDiscountOffTotal, json.gas.feature.postSelect.discountOffTotalEnergyBill.NSW);
+            break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t, cartsPage.elements.gasFeatureDiscountOffTotal, json.gas.feature.postSelect.discountOffTotalEnergyBill.ACT);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t, cartsPage.elements.gasFeatureDiscountOffTotal, json.gas.feature.postSelect.discountOffTotalEnergyBill.QLD);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t, cartsPage.elements.gasFeatureDiscountOffTotal, json.gas.feature.postSelect.discountOffTotalEnergyBill.SA);
+            break;
+          default:
+            throw Error("Invalid State");
+        }
       }
       if(dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
         await testFunction.assertText(t, cartsPage.elements.gasFeatureDiscountOffTotal, json.gas.feature.postSelect.discountOffTotalEnergyBill);

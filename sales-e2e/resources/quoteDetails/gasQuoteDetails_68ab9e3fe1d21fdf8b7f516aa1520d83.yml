@@ -1,0 +1,79 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: MA2012079254
+    sourceCode: Alliance_29%GD_25
+    actualQuoteDate: 2020-12-07
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 3029873030
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0355785088
+    
+    emailId: ZYFoDgYrFn@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 413012
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 10
+    streetName: Minter
+    streetType: CT
+    suburb: TRUGANINA
+    state: VIC
+    country: AUS
+    postCode: 3029
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 10
+    streetName: Minter
+    streetType: CT
+    suburb: TRUGANINA
+    state: VIC
+    country: AUS
+    postCode: 3029
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: G
+    offerType: PS
+    plan: TOPH-GV
+    priceTag: GVT1A_NR2001
+    nmiMirnInformation: 
+      MIRN: 5330790589
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: N
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+

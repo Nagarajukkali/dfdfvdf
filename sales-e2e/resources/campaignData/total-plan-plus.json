@@ -34,25 +34,25 @@
       },
       "sourceCode": {
         "newCustomer": {
-          "VIC": "",
-          "NSW": "",
-          "ACT": "",
-          "QLD": "",
-          "SA": ""
+          "VIC": "Total_Plus_12%GD",
+          "NSW": "Total_Plus_17%GD",
+          "ACT": "Total_Plus_13%GD",
+          "QLD": "Total_Plus_15%GD",
+          "SA": "Total_Plus_13%GD"
         },
         "existingCustomer": {
           "ENE":{
-            "VIC": "",
-            "NSW": "",
-            "ACT": "",
-            "QLD": "",
-            "SA": ""
+            "VIC": "Total_Plus_12%GD",
+            "NSW": "Total_Plus_17%GD",
+            "ACT": "Total_Plus_13%GD",
+            "QLD": "Total_Plus_15%GD",
+            "SA": "Total_Plus_13%GD"
           },
           "PS": {
-            "VIC": "Total_Plus_11%GD",
-            "NSW": "Total_Plus_16%GD",
+            "VIC": "Total_Plus_12%GD",
+            "NSW": "Total_Plus_17%GD",
             "ACT": "Total_Plus_13%GD",
-            "QLD": "",
+            "QLD": "Total_Plus_15%GD",
             "SA": "Total_Plus_13%GD"
           }
         }
@@ -87,23 +87,23 @@
       },
       "sourceCode": {
         "newCustomer": {
-          "VIC": "",
-          "NSW": "",
-          "ACT": "",
-          "SA": ""
+          "VIC": "Total_Plus_12%GD",
+          "NSW": "Total_Plus_17%GD",
+          "ACT": "Total_Plus_13%GD",
+          "SA": "Total_Plus_13%GD"
         },
         "existingCustomer": {
           "ENE":{
-            "VIC": "",
-            "NSW": "",
-            "ACT": "",
-            "SA": ""
+            "VIC": "Total_Plus_12%GD",
+            "NSW": "Total_Plus_17%GD",
+            "ACT": "Total_Plus_13%GD",
+            "SA": "Total_Plus_13%GD"
           },
           "PS": {
-            "VIC": "Total_Plus_28%GD",
-            "NSW": "Total_Plus_16%GD",
+            "VIC": "Total_Plus_12%GD",
+            "NSW": "Total_Plus_17%GD",
             "ACT": "Total_Plus_13%GD",
-            "SA": "Total_Plus_17%GD"
+            "SA": "Total_Plus_13%GD"
           }
         }
       }

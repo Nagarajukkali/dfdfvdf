@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CA2010052980
+    quoteId: CA2012079163
     sourceCode: NOFRILLS
-    actualQuoteDate: 2020-10-05
+    actualQuoteDate: 2020-12-07
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0367037011
+      phoneNumber: 0389335221
     
-    emailId: JZgzBgsoEP@energyaustralia.com.au
+    emailId: mFuciCrvJB@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 633845
+      id: 258270
       primaryIdFlag: Y
     
     authLevel: Y
@@ -41,6 +41,17 @@ saleDetail :
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 10
+    streetName: Minter
+    streetType: CT
+    suburb: TRUGANINA
+    state: VIC
+    country: AUS
+    postCode: 3029
+    addressType: Mailing
   
   offerDetail: 
     fuelType: E
