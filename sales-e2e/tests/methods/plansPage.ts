@@ -877,6 +877,7 @@ export class plansMethod{
       await testFunction.assertTextValue(t,percentageDiff.toString(),expectedPercentageDiff.toString());
     }
   }
+
 }
 
 export class selectionOptionModalWindowMethod {
@@ -1043,6 +1044,20 @@ export class verifyAccountMethod {
       await verifyAccountMethod.provideAccountDetails(t, "GAS", config.sampleBsmeAccount.gasAccount);
       await verifyAccountMethod.provideAccountInformation(t, config.sampleBsmeAccount.abn, customerType);
     }
+  }
+  public static async resetVerifiedAccount(t){
+    await testFunction.click(t,EaHomePage.elements.resetCTALink);
+    await testFunction.click(t,EaHomePage.elements.resetConfirmButton);
+    await testFunction.waitForElementToBeAppeared(t,EaHomePage.elements.refineModalCloseButton);
+    await testFunction.click(t,EaHomePage.elements.refineModalCloseButton);
+    await testFunction.waitForElementToBeAppeared(t,EaHomePage.elements.totalPlan);
+  }
+
+  public static async verifyRetrievedDetails(t,address,NMI,MIRN){
+      await testFunction.isElementDisplayed(t,EaHomePage.elements.serviceAddressText);
+      await testFunction.assertText(t,EaHomePage.elements.serviceAddressText,address);
+      await testFunction.assertText(t,EaHomePage.elements.NMIText,NMI);
+      await testFunction.assertText(t,EaHomePage.elements.MIRNText,MIRN);
   }
 }
 

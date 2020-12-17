@@ -362,3 +362,10 @@ Then(/^user enters NMI and validate estimated cost in best offer tool output fil
     }
   }
 });
+When(/^user reset the verified account$/, async function (t) {
+  await verifyAccountMethod.resetVerifiedAccount(t)
+});
+Then(/^user verifies retrieved account details on plans page$/, async function (t,[],dataTable) {
+  let data = dataTable.hashes();
+  await verifyAccountMethod.verifyRetrievedDetails(t,data[0].address,data[0].NMI,data[0].MIRN);
+});
