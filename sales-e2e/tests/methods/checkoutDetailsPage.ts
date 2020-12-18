@@ -598,7 +598,13 @@ export class checkoutDetailsMethod{
     }
     if(finalBill){
       if(option==='Other Address'){
-        await testFunction.click(t, eaCheckoutDetailsPage.elements.rbFinalBillPrefOtherAddress);
+        await t.hover(eaCheckoutDetailsPage.elements.rbFinalBillPrefOtherAddress)
+        await t.wait(500);
+        /**
+         * I'm using a client function as test cafe seems to be clicking the first element in the radio button group
+         *  i.e. await testFunction.click(t, eaCheckoutDetailsPage.elements.rbFinalBillPrefOtherAddress);
+         */
+        await ClientFunction(() => (window.document.querySelector("#edit-final-bill-other-address__label") as any).click())();
         await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfFinalBillPrefOtherAddress, otherAddress);
         await t.wait(3000);
         await testFunction.click(t, eaCheckoutDetailsPage.elements.finalBillServiceAddressList);
