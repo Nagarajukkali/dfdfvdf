@@ -804,31 +804,37 @@ export class plansMethod{
 
   public static async validateEstimatedCost(t,planName,estimatedCost,actualCustomerType,state){
     if(planName.includes('Basic - Home') || planName.includes('Basic - Business ')){
+      const estimatedCostBasic=Math.round(estimatedCost);
       if(state!=='QLD' && state!=='ACT'){
         if(actualCustomerType==='RES'){
-          await testFunction.assertText(t,EaHomePage.elements.basicHomePlanEstimate,estimatedCost.toString());
+          await testFunction.assertText(t,EaHomePage.elements.basicHomePlanEstimate,estimatedCostBasic.toString());
         }
         else{
-          await testFunction.assertText(t,EaHomePage.elements.basicBusinessPlanEstimate,estimatedCost.toString());
+          await testFunction.assertText(t,EaHomePage.elements.basicBusinessPlanEstimate,estimatedCostBasic.toString());
         }
       }
       if(state==='QLD'){
         if(actualCustomerType==='RES'){
-          await testFunction.assertText(t,EaHomePage.elements.basicHomePlanEstimate_QLD,estimatedCost.toString());
+          await testFunction.assertText(t,EaHomePage.elements.basicHomePlanEstimate_QLD,estimatedCostBasic.toString());
         }
         else{
-          await testFunction.assertText(t,EaHomePage.elements.basicBusinessPlanEstimate_QLD,estimatedCost.toString());
+          await testFunction.assertText(t,EaHomePage.elements.basicBusinessPlanEstimate_QLD,estimatedCostBasic.toString());
         }
       }
     }
     if(planName.includes('No Frills (Home)')){
-      await testFunction.assertText(t,EaHomePage.elements.noFrillsPlanEstimate,estimatedCost.toString());
+      const estimatedCostNoFrills=Math.round(estimatedCost);
+      await testFunction.assertText(t,EaHomePage.elements.noFrillsPlanEstimate,estimatedCostNoFrills.toString());
     }
-    if(planName.includes('Total Plan (Home) ')){
-      await testFunction.assertText(t,EaHomePage.elements.totalPlanEstimate,estimatedCost.toString());
+    if(planName.includes('Total Plan (Home)')){
+      let discount=parseInt((await testFunction.getElementText(t,EaHomePage.elements.totalPlanDiscount)).split("%")[0]);
+      let estimatedTotalPlanCost=Math.round(Number(estimatedCost*(1-discount/100)));
+      await testFunction.assertText(t,EaHomePage.elements.totalPlanEstimate,estimatedTotalPlanCost.toString());
     }
     if(planName.includes('Total Plan (Business)')){
-      await testFunction.assertText(t,EaHomePage.elements.totalPlanBusinessEstimate,estimatedCost.toString());
+      let discount=parseInt((await testFunction.getElementText(t,EaHomePage.elements.totalPlanBusinessDiscount)).split("%")[0]);
+      let estimatedTotalPlanBusinessCost=Math.round(Number(estimatedCost*(1-discount/100)));
+      await testFunction.assertText(t,EaHomePage.elements.totalPlanBusinessEstimate,estimatedTotalPlanBusinessCost.toString());
     }
   }
 

@@ -1,5 +1,5 @@
 #@E2E
-@reprice
+#@reprice
   #For any reprice changes:
 # 1. Update Reference_Price_Test_Data file if you want to validate reference price scenario in this path sales-e2e/resources/Reprice_Data/
 # 2. Use Estimate Calculator and calculate on `Average Usage` and update the require columns in Reference_Price_Test_Data file
@@ -19,6 +19,7 @@ Feature: This feature is to test the reference price and estimated cost on plans
       |Reference_Price_RES               |RES         |
       |Reference_Price_BUS               |BUS         |
 
+    @reprice
   Scenario Outline: verify estimated cost for different "<customerType>" NMIs
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customerType>' plans page

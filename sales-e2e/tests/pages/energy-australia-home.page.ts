@@ -133,6 +133,8 @@ const eaHomePage={
     totalPlanBusinessEstimate:Selector("[id*='plan-estimate-BASE_TOPB-E'][class='hs-plan-estimate__value']"),
     totalPlanPlusBusinessEstimate:Selector("[id*='plan-estimate-BASE_SWSRB-E'][class='hs-plan-estimate__value']"),
     basicBusinessPlanEstimate_QLD:Selector("[id*='plan-estimate-BASE_BGRT-E'][class='hs-plan-estimate__value']"),
+    totalPlanDiscount:Selector("[id*='plan-rate-summary-TOPH'] .hs-plan-rate-summary__title-amount"),
+    totalPlanBusinessDiscount:Selector("[id*='plan-rate-summary-TOPB'] .hs-plan-rate-summary__title-amount"),
     disclaimer: {
       generalStateDisclaimerOld: Selector("#general-state-disclaimer"),
       generalStateDisclaimerP1: Selector("#general-state-disclaimer p").nth(0),
