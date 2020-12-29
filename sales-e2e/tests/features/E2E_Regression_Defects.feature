@@ -56,6 +56,48 @@ Feature:This feature file is to add scenarios for regression defects
       |folderName                              |customer_type |fuelType |planName       |address                                 |
       |E2E_Reg_MovingAddress_Verified_Account  |RES           |BOTH     |Total Plan Plus|271 Heatherhill Road, FRANKSTON VIC 3199|
 
+  Scenario Outline: Verify quote submission for upsell fuel through move house page
+    Given user has opened the website link in a browser and creates '<folderName>' to save evidences
+    When user has navigated to move house page
+    And user enters '<movingAddress>' in address field and selects any available moving date
+    And user verifies account on qualifier
+      |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
+      |Existing      |0058120000   |Postcode           |2018            |dl    |248508352|
+    And user provides all other details on qualifier page
+      |customerType|movingType|connectionAddress               |propertyType |solarOption|
+      |RES         |NA        |5 Wilkies Street, BULLI NSW 2516|Renter       |No         |
+    And user selects plans on checkout details page
+      |fuelType |planName       |
+      |GAS      |Total Plan Plus|
+    And user provides all details on checkout details page
+      |customerType|journey    |customerStatus| firstName| lastName|idType        |
+      |RES         |RES        |Existing      | test     |test     |Driver License|
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
+    And user selects answer for property renovation question for '<state>'
+    And user chooses "<optDisconnection>" for disconnection
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType|EleclifeSupportDevices|GaslifeSupportDevices|
+      |Yes              |GAS     |                     |Gas Other            |
+    And user verifies selected plan details for '<fuelType>'
+    And user submits the quote
+    Then user lands on checkout complete page
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'GAS' submitted quote
+    And user validates below mandatory fields
+      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-GN|5240924834|N                             |N                             |Y                      |OTHER                   |EMAIL        |
+
+    Examples:
+      |folderName           |fuelType|state|optDisconnection|movingAddress                   |
+      |E2E_Upsell_MoveHouse |GAS     |NSW  |Yes             |5 Wilkies Street, BULLI NSW 2516|
+
+
 
 
 
