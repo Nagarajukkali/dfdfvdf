@@ -296,16 +296,23 @@ Then(/^user enters NMI and validate estimated cost for "([^"]*)"$/, async functi
     let row=worksheet.getRow(i);
     let actualCustomerType=row.getCell(3).value.toString();
     let eleUsage=row.getCell(4).value.toString();
-    let customUsage;
-    let planName=row.getCell(7).value.toString();
-    let estimatedCost=Math.round(Number(row.getCell(9).value));
-    let NMI=row.getCell(12).value.toString();
-    let state=row.getCell(13).value.toString();
+    let customUsage,noFrillsPlanName,noFrillsEstimatedCost;
+    let basicPlanName=row.getCell(7).value.toString();
+    let basicEstimatedCost=Number(row.getCell(8).value);
+    if(actualCustomerType===CustomerType.RESIDENTIAL){
+      noFrillsPlanName=row.getCell(9).value.toString();
+      noFrillsEstimatedCost=Number(row.getCell(10).value);
+    }
+    let totalPlanName=row.getCell(11).value.toString();
+    let totalEstimatedCost=Number(row.getCell(12).value);
+    let NMI=row.getCell(15).value.toString();
+    let state=row.getCell(16).value.toString();
     if(eleUsage==='Custom'){
-      customUsage=row.getCell(6).value.toString();
+      customUsage=row.getCell(5).value.toString();
     }
     if(actualCustomerType===expectedCustomerType){
       await plansMethod.enterNMIorMIRNorPostcode(t,NMI,'NMI');
+      await testFunction.waitForElementToBeAppeared(t,EaHomePage.elements.eaSpinner);
       await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
       await t.wait(5000);
       if(eleUsage==='Custom'){
@@ -321,7 +328,11 @@ Then(/^user enters NMI and validate estimated cost for "([^"]*)"$/, async functi
         await testFunction.click(t,EaHomePage.elements.refineEleUsageDropdown.withText(eleUsage));
       }
       await t.wait(2000);
-      await plansMethod.validateEstimatedCost(t,planName,estimatedCost,actualCustomerType,state);
+      await plansMethod.validateEstimatedCost(t,basicPlanName,basicEstimatedCost,actualCustomerType,state);
+      await plansMethod.validateEstimatedCost(t,totalPlanName,totalEstimatedCost,actualCustomerType,state);
+      if(expectedCustomerType===CustomerType.RESIDENTIAL){
+        await plansMethod.validateEstimatedCost(t,noFrillsPlanName,noFrillsEstimatedCost,actualCustomerType,state);
+      }
       await testFunction.takeScreenshot(t,"Estimated_Cost_"+NMI);
       console.log("Estimated cost validated for NMI: "+NMI);
     }
