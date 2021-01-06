@@ -3,7 +3,7 @@
   #We will trigger thees tests manually in jenkins once/twice in a day
 @myaccount
 Feature: This feature is to test the My account scenarios for business customers
-
+@failed
   Scenario Outline: Verify the BSME Plan switch journey with current plan from My Account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
@@ -71,7 +71,7 @@ Feature: This feature is to test the My account scenarios for business customers
       |folderName                          |username                |password                                     |fuelType|sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
       |E2E_MyAccount_Business_PS_MissingID |MissingID_BSME@test.com |U2FsdGVkX19c8L2pzEDdebOhgJBsSfi7fZpLS5vRkI0= |ELE     |My Account     |Plan Switch  |No   |No   |BUS          |Existing       |
 
-  @currentplan
+  @currentplan @failed
   Scenario Outline: Verify the BSME Electricity Plan switch journey to not show current plan for account having both GD and PDD discounts from My Account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page

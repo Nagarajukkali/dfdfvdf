@@ -31,7 +31,7 @@ Feature: This feature is to test that the ghosting user is able to submit quotes
     Examples:
       |folderName                |account number |fuelType   |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
       |E2E_MyAccount_Ghosting_PS |4368599970     |ELE        |My Account     |Plan switch  |No   |No   |RES          |Existing       |
-
+@failed
   Scenario Outline: Verify the ghosting user is able to submit Move home quote
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
