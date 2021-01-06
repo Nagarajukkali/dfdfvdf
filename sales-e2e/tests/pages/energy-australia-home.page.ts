@@ -144,7 +144,13 @@ const eaHomePage={
     modalEnterUsageOption: Selector("div#hs-enter-usage-cta button"),
     modalNext: Selector("#refineModal .ea-modal__primary-action"),
     modalBack: Selector("#refineModal .ea-modal__secondary-action"),
-    txtOfferCodeSeniorsCard: Selector("#campaign-theme-code-input")
+    txtOfferCodeSeniorsCard: Selector("#campaign-theme-code-input"),
+    resetCTALink:Selector("button#hs-refine-modal-cta .hs-refine-modal-cta__text"),
+    resetConfirmButton:Selector("#resetEstimate .ea-button--primary"),
+    refineModalCloseButton:Selector("#refineModal .close-button"),
+    serviceAddressText:Selector("#hs-service-address-details-address"),
+    NMIText:Selector("#hs-service-address-details-nmi"),
+    MIRNText:Selector("#hs-service-address-details-mirn"),
   },
   campaignElements:{
     elePlanHeadingTitle:Selector("[id*='plan-heading-title'][id*='-E']"),

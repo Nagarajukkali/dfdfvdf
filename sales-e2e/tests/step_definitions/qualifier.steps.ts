@@ -142,3 +142,21 @@ Then(/^user validates qualifier for "([^"]*)" "([^"]*)" customers$/, async funct
   }
   await testFunction.compareImages(t, customerType + "_QUALIFIER_SolarQuestion");
 });
+When(/^user closes the qualifier$/, async function (t) {
+  await testFunction.click(t,eaQualifierPage.elements.btnQualifierClose);
+});
+Then(/^New\/Existing customer qualifier question is displayed$/, async function (t) {
+  await testFunction.isElementVisible(t,eaQualifierPage.elements.newCustomerBtn);
+  await testFunction.isElementVisible(t,eaQualifierPage.elements.existingCustomerBtn);
+});
+Then(/^Address field is '(.*)'$/, async function (t,[addressField]) {
+  if(addressField==='auto_populated'){
+    await t.expect(await testFunction.sizeOfElement(t,eaQualifierPage.elements.serviceAddress)).notEql(0);
+  }
+  if(addressField==='blank'){
+    await t.expect(await testFunction.sizeOfElement(t,eaQualifierPage.elements.serviceAddress)).eql(0);
+  }
+});
+Then(/^user clicks on continue button after providing address$/, async function (t) {
+  await qualifierMethod.clickOnContinueAddress(t);
+});

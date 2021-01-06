@@ -3,6 +3,7 @@ import {Selector } from 'testcafe';
 const cartsPage={
   elements: {
     cartsPageContinueButton: Selector('#flick-fix-button-wrapper__proceedBtn'),
+    btnCartClose:Selector("button.cart-header__close"),
     elePlanName: Selector("#cart-plan-ELE .cart-plan__title"),
     gasPlanName: Selector("#cart-plan-GAS .cart-plan__title"),
     eleFeatures: Selector("#cart-plan-ELE .cart-plan__details-text"),
@@ -21,6 +22,8 @@ const cartsPage={
     gasFeatureDiscountOffTotal: Selector("#cart-plan-GAS .cart-plan__details-text").withText(/Discount off total energy bill/i),
     gasFeaturePeaceOfMind: Selector("#cart-plan-GAS .cart-plan__details-text").withText("Peace of mind"),
     gasFeatureVipPriorityService: Selector("#cart-plan-GAS .cart-plan__details-text").withText("VIP Priority Service")
+
+
   },
 };
 
