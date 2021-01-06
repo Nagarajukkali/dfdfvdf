@@ -3,6 +3,7 @@ import { When } from 'cucumber';
 import {testFunction} from '../../global_methods/helper';
 import {Then} from 'cucumber'
 import {FileUtils} from '../../libs/FileUtils'
+const cartsPage=require('../pages/carts.page');
 
 When(/^user moves on to fill the qualifier$/, async function(t) {
     await testFunction.takeScreenshot(t, "cart_page");
@@ -16,4 +17,7 @@ Then(/^user validates plan details on cart page for "([^"]*)"$/, async function 
   await cartsMethod.validatePlanName(t, json, dataTable);
   await cartsMethod.validateFeatures(t, dataTable, json, numOfExpectedFeatures);
   //await testFunction.takeScreenshot(t, 'validated plan details on carts page');//disabled UI Validation
+});
+When(/^user closes the cart page$/, async function (t) {
+  await testFunction.click(t,cartsPage.elements.btnCartClose);
 });
