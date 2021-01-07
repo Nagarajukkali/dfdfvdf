@@ -34,6 +34,13 @@ Then(/^user validates all the details for '(.*)' submitted quote$/, async functi
   }
 });
 
+Then(/^user validates the details for '(.*)' submitted quote$/, async function (t,[fuelType]) {
+  if(!getTestCafeRC.browsers[0].includes('emulation') && !envToExclude.includes(getPackage.config.env)) {
+    await qt2Reporting.validateQuoteDetailsForMailingAddress(t, fuelType);
+    await testFunction.takeScreenshot(t, "qt2_reporting_app_" + fuelType);
+  }
+});
+
 Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) {
   if(!getTestCafeRC.browsers[0].includes('emulation') && !envToExclude.includes(getPackage.config.env)) {
     //Expected Data
@@ -188,3 +195,30 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
 
 });
 
+Then(/^user validates the mailing address fields$/, async function (t,[],dataTable)  {
+  if(!getTestCafeRC.browsers[0].includes('emulation') && !envToExclude.includes(getPackage.config.env)) {
+    let data = dataTable.hashes();
+    let expectedFuelType = data[0].fuelType;
+    let streetName = data[0].streetName;
+    let suburb = data[0].suburb;
+    let state = data[0].state;
+    let country = data[0].country;
+    let postcode = data[0].postcode;
+    let addressType = data[0].addressType;
+    let jsonObj = await FileUtils.convertYmlTOJSONObj(t, expectedFuelType);
+    let actualStreetName = jsonObj.saleDetail.premiseDetail.streetName;
+    let actualSuburb = jsonObj.saleDetail.premiseDetail.suburb;
+    let actualState = jsonObj.saleDetail.premiseDetail.state;
+    let actualCountry = jsonObj.saleDetail.premiseDetail.country;
+    let actualPostcode = jsonObj.saleDetail.premiseDetail.postCode;
+    let actualAddressType = jsonObj.saleDetail.premiseDetail.addressType;
+    if (expectedFuelType === FUEL_TYPE_OPTIONS.ELE.value || expectedFuelType === FUEL_TYPE_OPTIONS.GAS.value) {
+      await qt2Reporting.validateMandatoryField(t, actualSuburb, suburb);
+      await qt2Reporting.validateMandatoryField(t, actualState, state);
+      await qt2Reporting.validateMandatoryField(t, actualCountry, country);
+      await qt2Reporting.validateMandatoryField(t, actualAddressType, addressType);
+      await qt2Reporting.validateMandatoryField(t, actualStreetName, streetName);
+      await qt2Reporting.validateMandatoryField(t, actualPostcode, postcode);
+    }
+  }
+});
