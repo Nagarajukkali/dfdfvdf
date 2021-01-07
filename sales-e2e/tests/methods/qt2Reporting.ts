@@ -45,6 +45,23 @@ export class qt2Reporting {
       }
     }
 
+  public static async validateQuoteDetailsForMailingAddress(t,fuelType){
+    if(await testFunction.isElectricity(fuelType)){
+      let eleQuoteDetails=await this.getEleQuoteDetails(t);
+      eleQuoteDetails=eleQuoteDetails.replace("premiseDetail","mainAddress");
+      await FileUtils.createYamlFile(t,eleQuoteDetails,fuelType);
+      let jsonObj = await FileUtils.convertYmlTOJSONObj(t,fuelType);
+      this.verifyJSONData(jsonObj.saleDetail);
+    }
+    if(await testFunction.isGas(fuelType)){
+      let gasQuoteDetails=await this.getGasQuoteDetails(t);
+      gasQuoteDetails=gasQuoteDetails.replace("premiseDetail","mainAddress");
+      await FileUtils.createYamlFile(t,gasQuoteDetails,fuelType);
+      let jsonObj = await FileUtils.convertYmlTOJSONObj(t,fuelType);
+      this.verifyJSONData(jsonObj.saleDetail);
+    }
+  }
+
     public static async getEleQuoteDetails(t){
       let fuelType=await testFunction.getElementText(t,eaQt2Reporting.elements.fuelType);
       if(fuelType==='ELECTRICITY'){
