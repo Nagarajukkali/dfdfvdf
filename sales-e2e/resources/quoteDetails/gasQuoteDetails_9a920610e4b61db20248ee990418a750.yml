@@ -1,0 +1,92 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2101111847
+    sourceCode: Total_27%GD_25
+    actualQuoteDate: 2021-01-11
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: MRS
+    firstName: test
+    lastName: test
+    commMethod: POSTAL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0394824460
+    
+    emailId: DhvMiuVOaT@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DLNT
+      id: 437950
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlLastName: test
+          licenseStateOfIssue: NT
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  mainAddress: 
+    addressClass: ST
+    streetNo: 42
+    streetName: Brownlow
+    streetType: DR
+    suburb: POINT COOK
+    state: VIC
+    country: AUS
+    postCode: 3030
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: Y
+  
+  premiseDetail: 
+    addressClass: ST
+    streetName: Private Bag 6
+    suburb: HAMILTON
+    state: VIC
+    country: AUS
+    postCode: 3300
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2021-01-13
+    offerType: ENE
+    plan: TOPH-GV
+    priceTag: GVT1A_NR2101
+    serviceOrderDate: 2021-01-13
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5330733757
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: OTHER
+    
+    lifeSupportOtherEquipmentDetails: Sample Other gas device.
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: POSTMM
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+

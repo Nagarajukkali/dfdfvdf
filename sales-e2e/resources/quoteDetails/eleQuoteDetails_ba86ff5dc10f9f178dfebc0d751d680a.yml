@@ -1,0 +1,91 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2101111850
+    sourceCode: Basic_25
+    actualQuoteDate: 2021-01-11
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 8224680000
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0358154436
+    
+    emailId: xDWAQZrrhp@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: MEDICARE
+      id: 1211200000
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 9
+    streetName: Charming
+    streetType: S
+    suburb: HAMPTON EAST
+    state: VIC
+    country: AUS
+    postCode: 3188
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: Y
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 3
+    streetName: River
+    streetType: DR
+    suburb: ATHELSTONE
+    state: SA
+    country: AUS
+    postCode: 5076
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2021-01-13
+    offerType: ENE
+    plan: RSOT-EV
+    priceTag: EVUND_S01Y8
+    serviceOrderDate: 2021-01-13
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 6407220528
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: OTHER
+    
+    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: POSTMM
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: RECFIB
+    reEnergisationJSCCharge: 49.56
+  
+
