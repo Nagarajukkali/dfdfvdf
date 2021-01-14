@@ -78,11 +78,6 @@ Feature: This feature is to test the verify account scenarios for existing resid
       |customerType|journey    |customerStatus|firstName|lastName|idType    |
       |RES         |RES        |Existing      |test     |test    |Passport  |
     And user selects answer for property renovation question for '<state>'
-    And user chooses "<optDisconnection>" for disconnection
-    #some issue in selecting connection address and other address for final billing
-    And user selects final bill option
-      |option             |otherAddress            |
-      |Connection Address |                        |
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
@@ -93,6 +88,10 @@ Feature: This feature is to test the verify account scenarios for existing resid
       |optAAHOption|optDDOption|directDebitType|
       |No          |Yes        |Bank           |
     And user opts for concession card
+    And user chooses "<optDisconnection>" for disconnection
+    And user selects final bill option
+      |option             |otherAddress            |
+      |Connection Address |                        |
     And user selects "Email" billing preference option
     And user opts for special offer
     And user clicks on 'Review your order' button and navigates to review page

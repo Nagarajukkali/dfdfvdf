@@ -150,11 +150,12 @@ Then(/^New\/Existing customer qualifier question is displayed$/, async function 
   await testFunction.isElementVisible(t,eaQualifierPage.elements.existingCustomerBtn);
 });
 Then(/^Address field is '(.*)'$/, async function (t,[addressField]) {
+  let serviceAddress=await eaQualifierPage.elements.serviceAddress.value;
   if(addressField==='auto_populated'){
-    await t.expect(await testFunction.sizeOfElement(t,eaQualifierPage.elements.serviceAddress)).notEql(0);
+    await t.expect(serviceAddress.length).notEql(0);
   }
   if(addressField==='blank'){
-    await t.expect(await testFunction.sizeOfElement(t,eaQualifierPage.elements.serviceAddress)).eql(0);
+    await t.expect(serviceAddress.length).eql(0);
   }
 });
 Then(/^user clicks on continue button after providing address$/, async function (t) {

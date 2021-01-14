@@ -1,7 +1,6 @@
 @E2E @regressiondefects
 Feature:This feature file is to add scenarios for regression defects
-  @failed
-    #raised a defect for this
+
   Scenario Outline: Verify New/Existing customer qualifier question should be displayed when verified customer's details get reset
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
@@ -18,7 +17,7 @@ Feature:This feature file is to add scenarios for regression defects
     When user closes the qualifier
     And user closes the cart page
     And user reset the verified account
-    And user selects '<planName>'
+    And user selects 'No Frills'
     And user moves on to fill the qualifier
     Then New/Existing customer qualifier question is displayed
     And user selects 'New' on qualifier
