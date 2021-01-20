@@ -611,7 +611,7 @@ export class checkoutDetailsMethod{
         await t.wait(2000);
       }
       if(option==='Connection Address'){
-        await t.hover(t, eaCheckoutDetailsPage.elements.rbFinalBillPrefConnectionAddress);
+        await t.hover(eaCheckoutDetailsPage.elements.rbFinalBillPrefConnectionAddress);
         await t.wait(500);
         /**
          * I'm using a client function as test cafe seems to be clicking the first element in the radio button group
