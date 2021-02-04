@@ -15,7 +15,7 @@ Feature:E2E scenario for bizreferral campaign
 
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for NSW
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "BIZREFERRAL" and "2010" and clicks on show me plan link
+    When user provides "test111111" and "2010" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -67,7 +67,7 @@ Feature:E2E scenario for bizreferral campaign
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName                   |state|
       |Y                        |N          |Y              |Family and Friends Business|NSW  |
     And user validates source code
-      |fuelType|eleSourceCode     |gasSourceCode     |
+      |fuelType|eleSourceCode|gasSourceCode     |
       |BOTH    |Total_23%GD  |Total_21%GD  |
     And user submits the quote
     Then user lands on checkout complete page
@@ -80,12 +80,12 @@ Feature:E2E scenario for bizreferral campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-EN |NCCC005405|                              |                              |Y                      |OTHER                   |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-EN |NCCC005405|                              |                              |Y                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-GN  |5240554353|                              |                              |Y                      |GLSMRHAC                |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-GN  |5240554353|                              |                              |Y                      |GLSMRHAC                |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
     |customerStatus|fuelType|eleDiscount|gasDiscount|campaign     |folderName                   |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
@@ -94,7 +94,7 @@ Feature:E2E scenario for bizreferral campaign
 
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for VIC
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "BIZREFERRAL" and "3355" and clicks on show me plan link
+    When user provides "test111111" and "3355" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -159,12 +159,12 @@ Feature:E2E scenario for bizreferral campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-EV  |6203822385|                              |                              |Y                      |OTHER                   |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-EV  |6203822385|                              |                              |Y                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-GV  |5330956738|                              |                              |Y                      |GLSMRHAC                |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-GV  |5330956738|                              |                              |Y                      |GLSMRHAC                |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign     |folderName                   |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
@@ -172,7 +172,7 @@ Feature:E2E scenario for bizreferral campaign
 
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "BIZREFERRAL" and "5088" and clicks on show me plan link
+    When user provides "test111111" and "5088" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -237,12 +237,12 @@ Feature:E2E scenario for bizreferral campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-ES  |2001114983|                              |                              |Y                      |OTHER                   |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-ES  |2001114983|                              |                              |Y                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-GS  |5510116718|                              |                              |Y                      |GLSMRHAC                |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-GS  |5510116718|                              |                              |Y                      |GLSMRHAC                |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign     |folderName                   |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
@@ -250,7 +250,7 @@ Feature:E2E scenario for bizreferral campaign
 
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for ACT
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "BIZREFERRAL" and "2612" and clicks on show me plan link
+    When user provides "test111111" and "2612" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -315,12 +315,12 @@ Feature:E2E scenario for bizreferral campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-EA  |7001114516|                              |                              |Y                      |OTHER                   |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-EA  |7001114516|                              |                              |Y                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-GA  |5260021184|                              |                              |Y                      |GLSMRHAC                |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-GA  |5260021184|                              |                              |Y                      |GLSMRHAC                |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign     |folderName                   |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
@@ -329,7 +329,7 @@ Feature:E2E scenario for bizreferral campaign
 
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for QLD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "BIZREFERRAL" and "4020" and clicks on show me plan link
+    When user provides "test111111" and "4020" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
@@ -385,9 +385,8 @@ Feature:E2E scenario for bizreferral campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-EQ  |QB02256002|                              |                              |Y                      |OTHER                   |EMAIL        |
-    And user validates all the details for 'GAS' submitted quote
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-EQ  |QB02256002|                              |                              |Y                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
       |customerStatus|fuelType|eleDiscount|campaign     |folderName                   |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |

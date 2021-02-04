@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008256696
+    quoteId: BB2102043880
     sourceCode: Total_Plus_13%GD
-    actualQuoteDate: 2020-08-25
+    actualQuoteDate: 2021-02-04
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0383282352
+      phoneNumber: 0386926921
     
-    emailId: lZIoUuZQvz@energyaustralia.com.au
+    emailId: oTEJisVlxs@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: INCORPORATED
+    businessType: GNRALPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 91085638714
+      businessId: 34360712366
     
-    anzsic: HOSPITALITY
+    anzsic: COMMUNICATION
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0383282352
+      businessPhoneNumber: 0386926921
     
-    businessEmailId: lZIoUuZQvz@energyaustralia.com.au
+    businessEmailId: oTEJisVlxs@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -53,13 +53,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 437
+    streetName: Oxley
+    streetType: AV
+    suburb: REDCLIFFE
+    state: QLD
+    country: AUS
+    postCode: 4020
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-08-27
+    proposedStart: 2021-02-08
     offerType: ENE
     plan: SWSRB-EQ
     priceTag: EQEXA_NB2007
-    serviceOrderDate: 2020-08-27
+    serviceOrderDate: 2021-02-08
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: QB02256002

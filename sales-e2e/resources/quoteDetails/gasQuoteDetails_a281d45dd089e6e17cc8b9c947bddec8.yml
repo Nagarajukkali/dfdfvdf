@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008256693
+    quoteId: BB2102043882
     sourceCode: Total_Plus_3%GD
-    actualQuoteDate: 2020-08-25
+    actualQuoteDate: 2021-02-04
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0337988846
+      phoneNumber: 0383316190
     
-    emailId: dngnqdhkVX@energyaustralia.com.au
+    emailId: fzJQcxTmDP@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: LIMITED COMPANY
+    businessType: SOLE TRADER
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 44057131570
+      businessId: 47433254536
     
-    anzsic: PERSONAL
+    anzsic: UTILITIES
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0337988846
+      businessPhoneNumber: 0383316190
     
-    businessEmailId: dngnqdhkVX@energyaustralia.com.au
+    businessEmailId: fzJQcxTmDP@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -53,13 +53,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 6
+    streetName: Peat
+    streetType: AV
+    suburb: HOLDEN HILL
+    state: SA
+    country: AUS
+    postCode: 5088
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-08-26
+    proposedStart: 2021-02-05
     offerType: ENE
     plan: SWSRB-GS
     priceTag: GSADA_NB2001
-    serviceOrderDate: 2020-08-26
+    serviceOrderDate: 2021-02-05
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5510116718

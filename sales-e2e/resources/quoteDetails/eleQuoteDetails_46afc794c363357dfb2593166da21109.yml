@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008256683
+    quoteId: BB2102043865
     sourceCode: Total_5%GD
-    actualQuoteDate: 2020-08-25
+    actualQuoteDate: 2021-02-04
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,30 +15,30 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0313934214
+      phoneNumber: 0316857930
     
-    emailId: WmfgAHmJzH@energyaustralia.com.au
+    emailId: TbBzovmNRz@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: SOLE TRADER
+    businessType: GOVERNMENT
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 81787014665
+      businessId: 91212112010
     
-    anzsic: PROPERTY
+    anzsic: AGRICULTURE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0313934214
+      businessPhoneNumber: 0316857930
     
-    businessEmailId: WmfgAHmJzH@energyaustralia.com.au
+    businessEmailId: TbBzovmNRz@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -53,13 +53,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 6
+    streetName: Peat
+    streetType: AV
+    suburb: HOLDEN HILL
+    state: SA
+    country: AUS
+    postCode: 5088
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-08-26
+    proposedStart: 2021-02-05
     offerType: ENE
     plan: FFPB-ES
     priceTag: ESSAA_NB2007
-    serviceOrderDate: 2020-08-26
+    serviceOrderDate: 2021-02-05
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 2001114983

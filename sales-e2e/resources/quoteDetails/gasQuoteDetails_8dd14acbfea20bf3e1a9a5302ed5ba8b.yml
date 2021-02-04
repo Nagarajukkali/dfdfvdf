@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008256695
+    quoteId: BB2102043884
     sourceCode: Total_Plus_19%GD
-    actualQuoteDate: 2020-08-25
+    actualQuoteDate: 2021-02-04
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0356722180
+      phoneNumber: 0331896475
     
-    emailId: jbMKTczaPZ@energyaustralia.com.au
+    emailId: pgdwCAMKUe@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: SOLE TRADER
+    businessType: GOVERNMENT
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 61610324030
+      businessId: 79238861410
     
-    anzsic: AGRICULTURE
+    anzsic: UNKNOWN
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0356722180
+      businessPhoneNumber: 0331896475
     
-    businessEmailId: jbMKTczaPZ@energyaustralia.com.au
+    businessEmailId: pgdwCAMKUe@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -53,13 +53,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 216
+    streetName: Northbourne
+    streetType: AV
+    suburb: BRADDON
+    state: ACT
+    country: AUS
+    postCode: 2612
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-08-27
+    proposedStart: 2021-02-08
     offerType: ENE
     plan: SWSRB-GA
     priceTag: GACTA_NB2001
-    serviceOrderDate: 2020-08-27
+    serviceOrderDate: 2021-02-08
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5260021184

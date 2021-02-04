@@ -81,12 +81,12 @@ Feature:E2E scenario for biztpp campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EN |NCCC005405|                              |                              |Y                      |OTHER                   |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EN |NCCC005405|                              |                              |Y                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GN |5240554353|                              |                              |Y                      |GLSMRHAC                |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GN |5240554353|                              |                              |Y                      |GLSMRHAC                |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign   |folderName              |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
@@ -160,12 +160,12 @@ Feature:E2E scenario for biztpp campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EV |6203822385|                              |                              |Y                      |OTHER                   |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EV |6203822385|                              |                              |Y                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GV |5330956738|                              |                              |Y                      |GLSMRHAC                |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GV |5330956738|                              |                              |Y                      |GLSMRHAC                |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign |folderName              |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
@@ -238,12 +238,12 @@ Feature:E2E scenario for biztpp campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-ES |2001114983|                              |                              |Y                      |OTHER                   |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-ES |2001114983|                              |                              |Y                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GS |5510116718|                              |                              |Y                      |GLSMRHAC                |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GS |5510116718|                              |                              |Y                      |GLSMRHAC                |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign |folderName              |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
@@ -316,12 +316,12 @@ Feature:E2E scenario for biztpp campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EA |7001114516|                              |                              |Y                      |OTHER                   |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EA |7001114516|                              |                              |Y                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode  |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GA  |5260021184|                              |                              |Y                      |GLSMRHAC                |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode  |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GA  |5260021184|                              |                              |Y                      |GLSMRHAC                |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign |folderName              |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
@@ -386,8 +386,8 @@ Feature:E2E scenario for biztpp campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EQ |QB02256002|                              |                              |Y                      |OTHER                   |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EQ |QB02256002|                              |                              |Y                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
 
     Examples:

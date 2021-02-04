@@ -12,7 +12,6 @@
 
 Feature:E2E scenario for biz-australia campaign
 
-
   Scenario Outline: Validate complete data for biz-australia campaign for NSW-Essential for new non-moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "BIZOFFER5" and "2580" and clicks on show me plan link

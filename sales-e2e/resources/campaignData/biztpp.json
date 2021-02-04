@@ -33,6 +33,31 @@
         "discountOffTotalEnergyBill": "Discount off total Energy Bill. Guaranteed Discount that applies to both energy usage rates and daily supply charges.",
         "noStandardConnectionFee": ""
       }
+    },
+    "sourceCode": {
+      "newCustomer": {
+        "VIC": "Total_Plus_5%GD",
+        "NSW": "Total_Plus_21%GD",
+        "ACT": "Total_Plus_10%GD",
+        "SA": "Total_Plus_3%GD",
+        "QLD": "Total_Plus_13%GD"
+      },
+      "existingCustomer": {
+        "ENE": {
+          "VIC": "Total_Plus_5%GD",
+          "NSW": "Total_Plus_21%GD",
+          "ACT": "Total_Plus_10%GD",
+          "SA": "Total_Plus_3%GD",
+          "QLD": "Total_Plus_13%GD"
+        },
+        "PS": {
+          "VIC": "Total_Plus_5%GD",
+          "NSW": "Total_Plus_21%GD",
+          "ACT": "Total_Plus_10%GD",
+          "SA": "Total_Plus_3%GD",
+          "QLD": "Total_Plus_13%GD"
+        }
+      }
     }
   },
 
@@ -61,6 +86,28 @@
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "Discount off total Energy Bill. Guaranteed Discount that applies to both energy usage rates and daily supply charges."
+      }
+    },
+    "sourceCode": {
+      "newCustomer": {
+        "VIC": "Total_Plus_23%GD",
+        "NSW": "Total_Plus_19%GD",
+        "ACT": "Total_Plus_19%GD",
+        "SA": "Total_Plus_3%GD"
+      },
+      "existingCustomer": {
+        "ENE": {
+          "VIC": "Total_Plus_23%GD",
+          "NSW": "Total_Plus_19%GD",
+          "ACT": "Total_Plus_19%GD",
+          "SA": "Total_Plus_3%GD"
+        },
+        "PS": {
+          "VIC": "Total_Plus_23%GD",
+          "NSW": "Total_Plus_19%GD",
+          "ACT": "Total_Plus_19%GD",
+          "SA": "Total_Plus_3%GD"
+        }
       }
     }
   },

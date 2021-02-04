@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2009088197
+    quoteId: BB2102043861
     sourceCode: Total_23%GD
-    actualQuoteDate: 2020-09-08
+    actualQuoteDate: 2021-02-04
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0330996156
+      phoneNumber: 0343087753
     
-    emailId: JEsmRrqdqz@energyaustralia.com.au
+    emailId: WNgEMNNeZj@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: LIMITED COMPANY
+    businessType: GOVERNMENT
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 37237732930
+      businessId: 74344795080
     
-    anzsic: COMMUNITY_SVC
+    anzsic: EDUCATION
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0330996156
+      businessPhoneNumber: 0343087753
     
-    businessEmailId: JEsmRrqdqz@energyaustralia.com.au
+    businessEmailId: WNgEMNNeZj@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -53,13 +53,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 320
+    streetName: Crown
+    streetType: S
+    suburb: SURRY HILLS
+    state: NSW
+    country: AUS
+    postCode: 2010
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-09-09
+    proposedStart: 2021-02-05
     offerType: ENE
     plan: FFPB-EN
     priceTag: ENEA5_NT2007
-    serviceOrderDate: 2020-09-09
+    serviceOrderDate: 2021-02-05
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: NCCC005405

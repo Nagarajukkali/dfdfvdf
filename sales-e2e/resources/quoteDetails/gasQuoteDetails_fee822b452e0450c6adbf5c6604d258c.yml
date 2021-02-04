@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008256682
+    quoteId: BB2102043868
     sourceCode: Total_25%GD
-    actualQuoteDate: 2020-08-25
+    actualQuoteDate: 2021-02-04
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0323549436
+      phoneNumber: 0353423956
     
-    emailId: GrRglMqUkA@energyaustralia.com.au
+    emailId: OkxSphexjK@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: LIMITED COMPANY
+    businessType: LTDPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 54506680696
+      businessId: 60266451724
     
-    anzsic: MINING
+    anzsic: MANUFACTURE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0323549436
+      businessPhoneNumber: 0353423956
     
-    businessEmailId: GrRglMqUkA@energyaustralia.com.au
+    businessEmailId: OkxSphexjK@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -53,13 +53,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 36
+    streetName: Gregory
+    streetType: S
+    suburb: WENDOUREE
+    state: VIC
+    country: AUS
+    postCode: 3355
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-08-27
+    proposedStart: 2021-02-08
     offerType: ENE
     plan: FFPB-GV
-    priceTag: GVT3A_NB2001
-    serviceOrderDate: 2020-08-27
+    priceTag: GVT3A_NB2101
+    serviceOrderDate: 2021-02-08
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5330956738

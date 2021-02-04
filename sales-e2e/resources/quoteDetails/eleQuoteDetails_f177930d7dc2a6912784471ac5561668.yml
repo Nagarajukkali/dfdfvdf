@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2011187063
+    quoteId: BB2102033823
     sourceCode: Total_Plus_3%GD
-    actualQuoteDate: 2020-11-18
+    actualQuoteDate: 2021-02-03
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: DR
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0382294580
+      phoneNumber: 0347542321
     
-    emailId: xhWweEVaXR@energyaustralia.com.au
+    emailId: QyVnIHvKah@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: GNRALPARTNERSHIP
+    businessType: OTHERS
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 86216747494
+      businessId: 94739438434
     
-    anzsic: MINING
+    anzsic: HOSPITALITY
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0382294580
+      businessPhoneNumber: 0347542321
     
-    businessEmailId: xhWweEVaXR@energyaustralia.com.au
+    businessEmailId: QyVnIHvKah@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -66,11 +66,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-11-19
+    proposedStart: 2021-02-04
     offerType: ENE
     plan: SWSRB-ES
     priceTag: ESSAA_NB2007
-    serviceOrderDate: 2020-11-19
+    serviceOrderDate: 2021-02-04
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 2001114983

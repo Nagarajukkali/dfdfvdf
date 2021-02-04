@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: FR2012079157
+    quoteId: FR2102033806
     sourceCode: Basic_25
-    actualQuoteDate: 2020-12-07
+    actualQuoteDate: 2021-02-03
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MRS
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0377563902
+      phoneNumber: 0325435900
     
-    emailId: NXMoLcSGEy@energyaustralia.com.au
+    emailId: qyLrlpPEPx@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLNSW
-      id: 859223
+      idType: DLVIC
+      id: 254554
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: NSW
+          licenseStateOfIssue: VIC
         
       
     

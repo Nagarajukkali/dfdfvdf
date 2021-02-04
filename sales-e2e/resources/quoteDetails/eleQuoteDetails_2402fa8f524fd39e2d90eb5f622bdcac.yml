@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2008256741
+    quoteId: BB2102043863
     sourceCode: Total_12%GD
-    actualQuoteDate: 2020-08-25
+    actualQuoteDate: 2021-02-04
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0362942200
+      phoneNumber: 0341768336
     
-    emailId: TqQBdUhhqE@energyaustralia.com.au
+    emailId: NkEndJKlzZ@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: INCORPORATED
+    businessType: SOLE TRADER
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 82213587924
+      businessId: 38985642962
     
-    anzsic: MINING
+    anzsic: EDUCATION
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0362942200
+      businessPhoneNumber: 0341768336
     
-    businessEmailId: TqQBdUhhqE@energyaustralia.com.au
+    businessEmailId: NkEndJKlzZ@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -53,13 +53,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 216
+    streetName: Northbourne
+    streetType: AV
+    suburb: BRADDON
+    state: ACT
+    country: AUS
+    postCode: 2612
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-08-27
+    proposedStart: 2021-02-08
     offerType: ENE
     plan: FFPB-EA
-    priceTag: EAACA_NB2007
-    serviceOrderDate: 2020-08-27
+    priceTag: EAAC5_NB2007
+    serviceOrderDate: 2021-02-08
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 7001114516
@@ -85,7 +96,7 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    proposedNTC: 041
+    proposedNTC: 091
     proposedMC: MYMC
     reEnergisationJSCCharge: 0
   
