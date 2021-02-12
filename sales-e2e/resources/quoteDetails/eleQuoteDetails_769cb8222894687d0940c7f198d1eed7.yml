@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2012079131
-    sourceCode: Total_11%GD
-    actualQuoteDate: 2020-12-07
+    quoteId: BB2102114151
+    sourceCode: Total_10%GD
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0367659714
+      phoneNumber: 0398598159
     
-    emailId: czzeqCvgBM@energyaustralia.com.au
+    emailId: tJGHKDviHF@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 93479
+      id: 202998
       primaryIdFlag: Y
     
     authLevel: Y
@@ -57,7 +57,7 @@ saleDetail :
     fuelType: E
     offerType: PS
     plan: TOPH-EV
-    priceTag: EVPO5_NR2001
+    priceTag: EVPO5_NR2101
     nmiMirnInformation: 
       NMI: 6203817483
     

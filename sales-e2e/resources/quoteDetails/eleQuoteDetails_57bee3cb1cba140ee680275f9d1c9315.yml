@@ -1,33 +1,32 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: FR2010052993
-    sourceCode: NOFRILLS
-    actualQuoteDate: 2020-10-05
+    quoteId: FR2102114188
+    sourceCode: NOFRILLS_25
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0332018952
+      phoneNumber: 0344839395
     
-    emailId: mAUPCZwXXK@energyaustralia.com.au
+    emailId: kbFzzaceJm@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 757320
+      idType: DLACT
+      id: 924544
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
-          dlMiddleName/: 
           dlLastName: test
           licenseStateOfIssue: ACT
         
@@ -50,13 +49,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 138
+    streetName: Narden
+    streetType: S
+    suburb: CRACE
+    state: ACT
+    country: AUS
+    postCode: 2911
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-10-07
+    proposedStart: 2021-02-15
     offerType: ENE
     plan: RCPP-EA
     priceTag: EAACA_ZR2007
-    serviceOrderDate: 2020-10-07
+    serviceOrderDate: 2021-02-15
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 7001183574

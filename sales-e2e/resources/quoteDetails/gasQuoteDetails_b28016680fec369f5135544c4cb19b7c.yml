@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2012079261
+    quoteId: BB2102114063
     sourceCode: Total_30%GD
-    actualQuoteDate: 2020-12-07
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0368328938
+      phoneNumber: 0369872167
     
-    emailId: NgnGfQtCGm@energyaustralia.com.au
+    emailId: XnHfxAZQHL@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 177196
+      id: 746003
       primaryIdFlag: Y
     
     authLevel: Y
@@ -57,7 +57,7 @@ saleDetail :
     fuelType: G
     offerType: PS
     plan: FFPH-GV
-    priceTag: GVT1A_NR2001
+    priceTag: GVT1A_NR2101
     nmiMirnInformation: 
       MIRN: 5330790589
     

@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CA2010052987
+    quoteId: CA2102114169
     sourceCode: NOFRILLS
-    actualQuoteDate: 2020-10-05
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0397852600
+      phoneNumber: 0352345012
     
-    emailId: ZReztYKUlk@energyaustralia.com.au
+    emailId: PTOyYCiDcI@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 427636
+      id: 984307
       primaryIdFlag: Y
     
     authLevel: Y
@@ -42,11 +42,22 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 37
+    streetName: Echlin
+    streetType: S
+    suburb: LABRADOR
+    state: QLD
+    country: AUS
+    postCode: 4215
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: E
     offerType: PS
     plan: RCPP-EQ
-    priceTag: EQEXA_ZR2007
+    priceTag: EQEXA_ZR2101
     nmiMirnInformation: 
       NMI: QB01405934
     

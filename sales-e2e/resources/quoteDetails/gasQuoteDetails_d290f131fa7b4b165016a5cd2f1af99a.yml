@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: SR2012089509
-    sourceCode: Total_12%GD
-    actualQuoteDate: 2020-12-08
+    quoteId: SR2102124256
+    sourceCode: Total_13%GD
+    actualQuoteDate: 2021-02-12
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0320803990
+      phoneNumber: 0363564300
     
-    emailId: uLYeimBNJB@energyaustralia.com.au
+    emailId: hChyEUVBWX@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 472831
+      id: 465692
       primaryIdFlag: Y
     
     authLevel: Y

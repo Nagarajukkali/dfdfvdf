@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: MK2012079259
-    sourceCode: Alliance_18%GD_25
-    actualQuoteDate: 2020-12-07
+    quoteId: MK2102114130
+    sourceCode: Alliance_20%GD_50
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0355531909
+      phoneNumber: 0329011677
     
-    emailId: inxInzfxsK@energyaustralia.com.au
+    emailId: UnwmPjEekl@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 195711
+      id: 816680
       primaryIdFlag: Y
     
     authLevel: Y

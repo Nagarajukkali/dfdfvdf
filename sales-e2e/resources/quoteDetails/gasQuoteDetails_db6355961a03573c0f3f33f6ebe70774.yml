@@ -1,35 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CA2010052975
-    sourceCode: NOFRILLS_75
-    actualQuoteDate: 2020-10-05
+    quoteId: CA2102114158
+    sourceCode: NOFRILLS_50
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0340468958
+      phoneNumber: 0369142293
     
-    emailId: CEwSQQlggf@energyaustralia.com.au
+    emailId: jRlNxlSHwn@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 789057
+      idType: DLWA
+      id: 304305
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
-          dlMiddleName/: 
           dlLastName: test
-          licenseStateOfIssue: NSW
+          licenseStateOfIssue: WA
         
       
     
@@ -50,13 +49,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 69
+    streetName: Henley Marine
+    streetType: DR
+    suburb: RODD POINT
+    state: NSW
+    country: AUS
+    postCode: 2046
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-10-06
+    proposedStart: 2021-02-12
     offerType: ENE
     plan: RCPP-GN
     priceTag: GNAGA_ZR2007
-    serviceOrderDate: 2020-10-06
+    serviceOrderDate: 2021-02-12
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5240080109

@@ -10,7 +10,7 @@ const cartsPage={
     eleFeature50Credit: Selector("#cart-plan-ELE .cart-plan__details-text").withText("Credit"),
     eleFeatureChanceToWin: Selector("#cart-plan-ELE .cart-plan__details-text").withText("$2,000"),
     eleFeatureCN: Selector("#cart-plan-ELE .cart-plan__details-text").withText("Carbon neutral"),
-    eleFeatureDiscountOffTotal: Selector("#cart-plan-ELE .cart-plan__details-text").withText(/Discount off total energy bill/i),
+    eleFeatureDiscountOffTotal: Selector("#cart-plan-ELE .cart-plan__details-text").withText(/[D|d]iscount off total/),
     eleFeaturePeaceOfMind: Selector("#cart-plan-ELE .cart-plan__details-text").withText("Peace of mind"),
     eleFeatureDefaultOffer: Selector("#cart-plan-ELE .cart-plan__details-text").withText("Default offer"),
     eleFeatureVipPriorityService: Selector("#cart-plan-ELE .cart-plan__details-text").withText("VIP Priority Service"),
@@ -19,7 +19,7 @@ const cartsPage={
     gasFeature50Credit: Selector("#cart-plan-GAS .cart-plan__details-text").withText("Credit"),
     gasFeatureChanceToWin: Selector("#cart-plan-GAS .cart-plan__details-text").withText("$2,000"),
     gasFeatureCN: Selector("#cart-plan-GAS .cart-plan__details-text").withText("Carbon neutral"),
-    gasFeatureDiscountOffTotal: Selector("#cart-plan-GAS .cart-plan__details-text").withText(/Discount off total energy bill/i),
+    gasFeatureDiscountOffTotal: Selector("#cart-plan-GAS .cart-plan__details-text").withText(/[D|d]iscount off total/),
     gasFeaturePeaceOfMind: Selector("#cart-plan-GAS .cart-plan__details-text").withText("Peace of mind"),
     gasFeatureVipPriorityService: Selector("#cart-plan-GAS .cart-plan__details-text").withText("VIP Priority Service")
 

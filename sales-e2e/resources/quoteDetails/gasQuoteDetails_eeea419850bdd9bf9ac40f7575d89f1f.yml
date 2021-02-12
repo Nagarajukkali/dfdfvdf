@@ -1,35 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010053004
-    sourceCode: Total_16%GD_75
-    actualQuoteDate: 2020-10-05
+    quoteId: BB2102124317
+    sourceCode: Total_16%GD_25
+    actualQuoteDate: 2021-02-12
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0327881404
+      phoneNumber: 0351717161
     
-    emailId: ftOOAyYgos@energyaustralia.com.au
+    emailId: ZhaqDwIEhk@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 529302
+      idType: DLWA
+      id: 366261
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
-          dlMiddleName/: 
           dlLastName: test
-          licenseStateOfIssue: ACT
+          licenseStateOfIssue: WA
         
       
     
@@ -50,13 +49,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 21
+    streetName: Tarrant
+    streetType: CR
+    suburb: DUNLOP
+    state: ACT
+    country: AUS
+    postCode: 2615
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-10-07
+    proposedStart: 2021-02-16
     offerType: ENE
     plan: TOPH-GA
     priceTag: GACTA_NR2001
-    serviceOrderDate: 2020-10-07
+    serviceOrderDate: 2021-02-16
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5260073228

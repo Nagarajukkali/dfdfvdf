@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: FC2011187007
+    quoteId: FC2102053961
     sourceCode: Total_Plus_22%GD_100
-    actualQuoteDate: 2020-11-18
+    actualQuoteDate: 2021-02-05
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,30 +15,30 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0330593806
+      phoneNumber: 0316043517
     
-    emailId: RxthOjDAIL@energyaustralia.com.au
+    emailId: jEVyqelFQQ@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: LIMITED COMPANY
+    businessType: OTHERS
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 83300194661
+      businessId: 72109645290
     
     anzsic: MANUFACTURE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0330593806
+      businessPhoneNumber: 0316043517
     
-    businessEmailId: RxthOjDAIL@energyaustralia.com.au
+    businessEmailId: jEVyqelFQQ@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -66,11 +66,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-11-19
+    proposedStart: 2021-02-08
     offerType: ENE
     plan: SWSRB-EN
     priceTag: ENEA5_NT2007
-    serviceOrderDate: 2020-11-19
+    serviceOrderDate: 2021-02-08
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: NCCC005405

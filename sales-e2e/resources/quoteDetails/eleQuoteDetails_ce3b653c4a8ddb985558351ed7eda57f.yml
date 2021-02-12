@@ -1,35 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: MA2011055559
+    quoteId: MA2102114133
     sourceCode: Alliance_12%GD_50
-    actualQuoteDate: 2020-11-05
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MS
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0327387758
+      phoneNumber: 0320406100
     
-    emailId: dXvLVwxmDQ@energyaustralia.com.au
+    emailId: HtaWdZeNeX@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 387672
+      idType: DLWA
+      id: 365642
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
-          dlMiddleName/: 
           dlLastName: test
-          licenseStateOfIssue: TAS
+          licenseStateOfIssue: WA
         
       
     
@@ -50,13 +49,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 9
+    streetName: Charming
+    streetType: S
+    suburb: HAMPTON EAST
+    state: VIC
+    country: AUS
+    postCode: 3188
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-11-09
+    proposedStart: 2021-02-15
     offerType: ENE
     plan: TOPH-EV
-    priceTag: EVUNA_NR2001
-    serviceOrderDate: 2020-11-09
+    priceTag: EVUNA_NR2101
+    serviceOrderDate: 2021-02-15
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 6407220528
@@ -80,6 +90,6 @@ saleDetail :
   meteringDetail: 
     meterExchangeFlag: N
     reEnergisationJSCCode: RECFIB
-    reEnergisationJSCCharge: 49.56
+    reEnergisationJSCCharge: 49.45
   
 

@@ -1,35 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CR2010052487
-    sourceCode: Total_15%GD_75
-    actualQuoteDate: 2020-10-05
+    quoteId: CR2102114031
+    sourceCode: Total_18%GD_50
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0315811640
+      phoneNumber: 0313321553
     
-    emailId: tfuVveFcqi@energyaustralia.com.au
+    emailId: dFsJjUKCRU@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 488476
+      idType: DLVIC
+      id: 976449
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
-          dlMiddleName/: 
           dlLastName: test
-          licenseStateOfIssue: NSW
+          licenseStateOfIssue: VIC
         
       
     
@@ -50,13 +49,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 69
+    streetName: Henley Marine
+    streetType: DR
+    suburb: RODD POINT
+    state: NSW
+    country: AUS
+    postCode: 2046
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-10-06
+    proposedStart: 2021-02-12
     offerType: ENE
     plan: TOPH-EN
     priceTag: ENEA5_TR2007
-    serviceOrderDate: 2020-10-06
+    serviceOrderDate: 2021-02-12
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 4102747329

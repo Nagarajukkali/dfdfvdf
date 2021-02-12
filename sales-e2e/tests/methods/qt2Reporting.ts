@@ -163,7 +163,18 @@ export class qt2Reporting {
           await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.newCustomer.VIC);
           break;
         case AustralianState.NSW:
-          await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.newCustomer.NSW);
+          if(t.testRun.test.name.includes('Essential')){
+            await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.newCustomer.NSW.Essential);
+          }
+          else if(t.testRun.test.name.includes('Endeavour')){
+            await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.newCustomer.NSW.Endeavour);
+          }
+          else if(t.testRun.test.name.includes('Ausgrid')){
+            await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.newCustomer.NSW.Ausgrid);
+          }
+          else{
+            await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.newCustomer.NSW.default);
+          }
           break;
         case AustralianState.SA:
           await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.newCustomer.SA);
@@ -212,10 +223,32 @@ export class qt2Reporting {
           break;
         case AustralianState.NSW:
           if (expectedOfferType === OfferType.PS) {
-            await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.PS.NSW);
+            if(t.testRun.test.name.includes('Essential')){
+              await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.PS.NSW.Essential);
+            }
+            else if(t.testRun.test.name.includes('Endeavour')){
+              await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.PS.NSW.Endeavour);
+            }
+            else if(t.testRun.test.name.includes('Ausgrid')){
+              await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.PS.NSW.Ausgrid);
+            }
+            else{
+              await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.PS.NSW.default);
+            }
           }
           if (expectedOfferType === OfferType.ENE) {
-            await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.ENE.NSW);
+            if(t.testRun.test.name.includes('Essential')){
+              await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.ENE.NSW.Essential);
+            }
+            else if(t.testRun.test.name.includes('Endeavour')){
+              await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.ENE.NSW.Endeavour);
+            }
+            else if(t.testRun.test.name.includes('Ausgrid')){
+              await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.ENE.NSW.Ausgrid);
+            }
+            else{
+              await this.validateMandatoryField(t, actualSourceCode, data.electricity.sourceCode.existingCustomer.ENE.NSW.default);
+            }
           }
           break;
         case AustralianState.SA:

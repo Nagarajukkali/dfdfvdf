@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010052524
-    sourceCode: Total_Plus_13%GD
-    actualQuoteDate: 2020-10-05
+    quoteId: BB2102113759
+    sourceCode: Total_Plus_14%GD
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0350242766
+      phoneNumber: 0337204620
     
-    emailId: ctVwfHCMjv@energyaustralia.com.au
+    emailId: PsgmwXbanG@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 241431
+      id: 630342
       primaryIdFlag: Y
     
     authLevel: Y
@@ -41,6 +41,17 @@ saleDetail :
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 62
+    streetName: Saints
+    streetType: R
+    suburb: SALISBURY PARK
+    state: SA
+    country: AUS
+    postCode: 5109
+    addressType: Mailing
   
   offerDetail: 
     fuelType: G

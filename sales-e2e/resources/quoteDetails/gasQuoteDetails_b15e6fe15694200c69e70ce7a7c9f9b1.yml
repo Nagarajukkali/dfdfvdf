@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010052693
+    quoteId: BB2102124307
     sourceCode: Total_27%GD_50
-    actualQuoteDate: 2020-10-05
+    actualQuoteDate: 2021-02-12
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,21 +15,20 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0330136639
+      phoneNumber: 0384930409
     
-    emailId: wplbAcQUpd@energyaustralia.com.au
+    emailId: LZFrGwFxRY@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 737076
+      idType: DLNSW
+      id: 230608
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
-          dlMiddleName/: 
           dlLastName: test
-          licenseStateOfIssue: VIC
+          licenseStateOfIssue: NSW
         
       
     
@@ -50,13 +49,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 31
+    streetName: Balwyn
+    streetType: R
+    suburb: CANTERBURY
+    state: VIC
+    country: AUS
+    postCode: 3126
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-10-07
+    proposedStart: 2021-02-16
     offerType: ENE
     plan: TOPH-GV
-    priceTag: GVR2A_NR2001
-    serviceOrderDate: 2020-10-07
+    priceTag: GVR2A_NR2101
+    serviceOrderDate: 2021-02-16
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5310425534

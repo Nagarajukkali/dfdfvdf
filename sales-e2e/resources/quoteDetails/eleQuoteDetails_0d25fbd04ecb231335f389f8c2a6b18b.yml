@@ -1,27 +1,27 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CA2102033797
-    sourceCode: Basic_25
-    actualQuoteDate: 2021-02-03
+    quoteId: CA2102114000
+    sourceCode: Basic
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MRS
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0386922674
+      phoneNumber: 0373821150
     
-    emailId: bDMidMJlky@energyaustralia.com.au
+    emailId: sVYZGtifMV@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DLQLD
-      id: 789777
+      id: 421122
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y

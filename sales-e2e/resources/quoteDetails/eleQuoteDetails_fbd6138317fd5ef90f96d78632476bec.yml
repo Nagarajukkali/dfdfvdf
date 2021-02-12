@@ -1,27 +1,27 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: FR2012079193
-    sourceCode: Total_11%GD_25
-    actualQuoteDate: 2020-12-07
+    quoteId: FR2102114218
+    sourceCode: Total_10%GD_50
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0384135368
+      phoneNumber: 0339317717
     
-    emailId: dTafoRZyMI@energyaustralia.com.au
+    emailId: bSMjozCCsg@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DLTAS
-      id: 349304
+      id: 990869
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -64,7 +64,7 @@ saleDetail :
     fuelType: E
     offerType: COR
     plan: TOPH-EV
-    priceTag: EVCIA_NR2001
+    priceTag: EVCIA_NR2101
     nmiMirnInformation: 
       NMI: 6102221416
     

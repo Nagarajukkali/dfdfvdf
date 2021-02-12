@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: FR2102033811
+    quoteId: FR2102114019
     sourceCode: Basic
-    actualQuoteDate: 2021-02-03
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0385533981
+      phoneNumber: 0369923177
     
-    emailId: otZpZCEPCh@energyaustralia.com.au
+    emailId: iGTabBAqcy@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 761189
+      id: 417730
       primaryIdFlag: Y
     
     authLevel: Y

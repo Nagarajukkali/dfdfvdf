@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CA2012079164
+    quoteId: CA2102114165
     sourceCode: NOFRILLS
-    actualQuoteDate: 2020-12-07
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0389335221
+      phoneNumber: 0357248782
     
-    emailId: mFuciCrvJB@energyaustralia.com.au
+    emailId: WIobwQBHvt@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 258270
+      id: 597341
       primaryIdFlag: Y
     
     authLevel: Y
@@ -57,7 +57,7 @@ saleDetail :
     fuelType: G
     offerType: PS
     plan: RCPP-GV
-    priceTag: GVT1A_ZR2007
+    priceTag: GVT1A_ZR2101
     nmiMirnInformation: 
       MIRN: 5330790589
     

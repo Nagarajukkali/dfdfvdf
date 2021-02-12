@@ -1,4 +1,4 @@
-@campaign10.2
+@campaign21.2.3 @failed
 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
@@ -72,7 +72,7 @@ Feature:E2E scenario for elec-tpp campaign
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-EN |4102747329|                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|campaign    |folderName              |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
-      |New           |ELE    |16         |elec-tpp    |E2E_Campaign_elec-tpp_NSW_new_moving    |NSW  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
+      |New           |ELE    |19         |elec-tpp    |E2E_Campaign_elec-tpp_NSW_new_moving    |NSW  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
 
   Scenario Outline: Validate complete data for elec-tpp campaign for ACT - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -204,14 +204,14 @@ Feature:E2E scenario for elec-tpp campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+      |ELE      |N                 |Y                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName       |state|signUpCredit|
-      |Y                        |Y          |Y              |Total Plan Plus|<state>  |Y           |
+      |Y                        |Y          |Y              |Total Plan Plus|<state>  |N           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
-      |ELE      |Y                 |Y                       |Y                    |Y                                    |<state>|
+      |ELE      |N                 |Y                       |Y                    |Y                                    |<state>|
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -239,10 +239,10 @@ Feature:E2E scenario for elec-tpp campaign
       |No               |         |                          |                       |
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |N                      |Y                    |Y                                    |N                                |<state>|
+      |ELE      |N                 |N                      |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName       |state|signUpCredit|
-      |Y                        |Y          |Y              |Total Plan Plus|<state>  |Y           |
+      |Y                        |Y          |Y              |Total Plan Plus|<state>  |N           |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -258,5 +258,5 @@ Feature:E2E scenario for elec-tpp campaign
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-ES |2001649095   |                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|campaign            |folderName              |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
-      |New           |ELE    |13         |elec-tpp    |E2E_Campaign_elec-tpp_SA_new_moving    |SA  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
+      |New           |ELE    |14         |elec-tpp    |E2E_Campaign_elec-tpp_SA_new_moving    |SA  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
 

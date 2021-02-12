@@ -1,4 +1,4 @@
-@campaign12.2
+@campaign21.2.3
 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
@@ -12,7 +12,7 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for nofrills-canstarblue campaign for new moving
-
+  @campaign21.2.3
   Scenario Outline: Validate complete data for nofrills-canstarblue campaign for NSW new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2516" and clicks on show me plan link
@@ -86,6 +86,7 @@ Feature:E2E scenario for nofrills-canstarblue campaign for new moving
       |customerStatus|fuelType|campaign     |folderName                            |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
       |New           |BOTH    |nofrills-canstarblue     |E2E_Campaign_nofrills-canstarblue_NSW_New_Moving  |NSW  |Quote Tool    |Move Home|No   |No  |RES          |New            |
 
+  @campaign21.2.3
   Scenario Outline: Validate complete data for nofrills-canstarblue campaign for VIC new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
@@ -159,6 +160,7 @@ Feature:E2E scenario for nofrills-canstarblue campaign for new moving
       |customerStatus|fuelType|campaign     |folderName                            |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
       |New           |BOTH    |nofrills-canstarblue     |E2E_Campaign_nofrills-canstarblue_VIC_New_Moving  |VIC  |Quote Tool    |Move Home|No   |No  |RES          |New            |
 
+  @campaign21.2.3
   Scenario Outline: Validate complete data for nofrills-canstarblue campaign for QLD new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4500" and clicks on show me plan link
@@ -220,6 +222,7 @@ Feature:E2E scenario for nofrills-canstarblue campaign for new moving
       |customerStatus|fuelType|campaign     |folderName                            |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
       |New           |ELE    |nofrills-canstarblue     |E2E_Campaign_nofrills-canstarblue_QLD_New_Moving  |QLD  |Quote Tool    |Move Home|No   |No  |RES          |New            |
 
+  @campaign21.2.3
   Scenario Outline: Validate complete data for nofrills-canstarblue campaign for ACT for new non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2911" for postcode and proceed to view the plans
@@ -230,8 +233,8 @@ Feature:E2E scenario for nofrills-canstarblue campaign for new moving
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
       |GAS      |Y                 |Y                       |Y                    |N                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
-      |Y                        |Y          |Y              |No Frills |<state>  |
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
+      |Y                        |Y          |Y              |No Frills |<state>  |Y       |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
@@ -260,8 +263,8 @@ Feature:E2E scenario for nofrills-canstarblue campaign for new moving
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
       |GAS      |Y                 |N                       |Y                    |N                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
-      |Y                        |Y          |Y              |No Frills |<state>  |
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
+      |Y                        |Y          |Y              |No Frills |<state>  |Y       |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -285,7 +288,7 @@ Feature:E2E scenario for nofrills-canstarblue campaign for new moving
       |customerStatus|fuelType|campaign              |folderName                            |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
       |New           |BOTH    |nofrills-canstarblue  |E2E_Campaign_nofrills-canstarblue_ACT_New_nonmoving|ACT  |Quote Tool   |COR      |No   |No  |RES          |New            |
 
-  @Acquisition_ATL_Total_nofrills-canstarblue
+  @campaign21.2.3
   Scenario Outline: Validate complete data for nofrills-canstarblue campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
@@ -329,8 +332,8 @@ Feature:E2E scenario for nofrills-canstarblue campaign for new moving
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
       |GAS      |N                 |N                       |Y                    |N                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
-      |Y                        |Y          |Y              |No Frills |<state>  |
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
+      |Y                        |N          |Y              |No Frills |<state>  |N       |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -352,7 +355,7 @@ Feature:E2E scenario for nofrills-canstarblue campaign for new moving
       |customerStatus|fuelType|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
       |Existing      |BOTH    |nofrills-canstarblue |E2E_Campaign_nofrills-canstarblue_VIC_existing_non-moving |VIC  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
 
-  @Acquisition_ATL_Total_nofrills-canstarblue
+  @campaign21.2.3
   Scenario Outline: Validate complete data for nofrills-canstarblue campaign for NSW existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" and clicks on show me plan link
@@ -412,26 +415,26 @@ Feature:E2E scenario for nofrills-canstarblue campaign for new moving
       |customerStatus|fuelType|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
       |Existing      |BOTH    |nofrills-canstarblue |E2E_Campaign_nofrills-canstarblue_NSW_existing_non-moving |NSW  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
 
-  @Acquisition_ATL_Total_nofrills-canstarblue
+  @campaign21.2.3
   Scenario Outline: Validate complete data for nofrills-canstarblue campaign for SA existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" and clicks on show me plan link
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |Y                       |Y                    |N                                    |N                                |<state>|
+      |ELE      |N                 |Y                       |Y                    |N                                    |N                                |<state>|
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
-      |GAS      |Y                 |Y                       |Y                    |N                                    |N                                |<state>|
+      |GAS      |N                 |Y                       |Y                    |N                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
-      |Y                        |Y          |Y              |No Frills |<state>  |Y           |
+      |Y                        |Y          |Y              |No Frills |<state>  |N           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
-      |ELE      |Y                 |Y                       |Y                    |N                                    |<state>|
+      |ELE      |N                 |Y                       |Y                    |N                                    |<state>|
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
-      |GAS      |Y                 |Y                       |Y                    |N                                    |<state>|
+      |GAS      |N                 |Y                       |Y                    |N                                    |<state>|
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       |customerStatus   |accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
@@ -456,8 +459,8 @@ Feature:E2E scenario for nofrills-canstarblue campaign for new moving
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
       |GAS      |N                 |N                       |Y                    |N                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
-      |Y                        |Y          |Y              |No Frills |<state>  |
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
+      |Y                        |Y          |Y              |No Frills |<state>  |N       |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -479,7 +482,7 @@ Feature:E2E scenario for nofrills-canstarblue campaign for new moving
       |customerStatus|fuelType|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
       |Existing      |BOTH    |nofrills-canstarblue |E2E_Campaign_nofrills-canstarblue_SA_existing_non-moving |SA  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
 
-  @Acquisition_ATL_Total_nofrills-canstarblue
+  @campaign21.2.3
   Scenario Outline: Validate complete data for nofrills-canstarblue campaign for QLD existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4500" and clicks on show me plan link

@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2012079167
-    sourceCode: NOFRILLS_25
-    actualQuoteDate: 2020-12-07
+    quoteId: BB2102114172
+    sourceCode: NOFRILLS_50
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MISS
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0391660667
+      phoneNumber: 0316021225
     
-    emailId: nQGcxFduwH@energyaustralia.com.au
+    emailId: HuZfIfZHgf@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLNT
-      id: 334266
+      idType: DLWA
+      id: 50100
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: NT
+          licenseStateOfIssue: WA
         
       
     
@@ -64,7 +64,7 @@ saleDetail :
     fuelType: E
     offerType: COR
     plan: RCPP-EV
-    priceTag: EVCIA_ZR2007
+    priceTag: EVCIA_ZR2101
     nmiMirnInformation: 
       NMI: 6102221416
     

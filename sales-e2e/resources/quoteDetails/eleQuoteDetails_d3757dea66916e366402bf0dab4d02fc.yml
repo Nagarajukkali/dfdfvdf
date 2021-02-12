@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CR2012089500
-    sourceCode: Total_11%GD_25
-    actualQuoteDate: 2020-12-08
+    quoteId: CR2102114038
+    sourceCode: Total_10%GD_50
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,20 +15,20 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0359869194
+      phoneNumber: 0382702891
     
-    emailId: iNuWLhFAVO@energyaustralia.com.au
+    emailId: HJQnayukXi@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLNSW
-      id: 326834
+      idType: DLNT
+      id: 317058
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: NSW
+          licenseStateOfIssue: NT
         
       
     
@@ -62,11 +62,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-12-10
+    proposedStart: 2021-02-15
     offerType: ENE
     plan: TOPH-EV
-    priceTag: EVCIA_NR2001
-    serviceOrderDate: 2020-12-10
+    priceTag: EVCIA_NR2101
+    serviceOrderDate: 2021-02-15
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 6102221416
@@ -90,6 +90,6 @@ saleDetail :
   meteringDetail: 
     meterExchangeFlag: N
     reEnergisationJSCCode: RCTBH
-    reEnergisationJSCCharge: 37.99
+    reEnergisationJSCCharge: 37.9
   
 

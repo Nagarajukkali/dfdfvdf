@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: SR2012089504
-    sourceCode: Total_16%GD_25
-    actualQuoteDate: 2020-12-08
+    quoteId: SR2102124243
+    sourceCode: Total_18%GD_50
+    actualQuoteDate: 2021-02-12
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MS
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0336485091
+      phoneNumber: 0363701450
     
-    emailId: BBrfXxoTnO@energyaustralia.com.au
+    emailId: COxbNyTbuM@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLNSW
-      id: 200222
+      idType: DLACT
+      id: 605509
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: NSW
+          licenseStateOfIssue: ACT
         
       
     
@@ -62,11 +62,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-12-09
+    proposedStart: 2021-02-12
     offerType: ENE
     plan: TOPH-EN
     priceTag: ENEA5_TR2007
-    serviceOrderDate: 2020-12-09
+    serviceOrderDate: 2021-02-12
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 4102747329
