@@ -1,33 +1,32 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010052616
+    quoteId: BB2102114149
     sourceCode: Total_10%GD_50
-    actualQuoteDate: 2020-10-05
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0353539669
+      phoneNumber: 0364443440
     
-    emailId: sBnxaBXhat@energyaustralia.com.au
+    emailId: cHmjIvqqUD@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 647693
+      idType: DLVIC
+      id: 992331
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
-          dlMiddleName/: 
           dlLastName: test
           licenseStateOfIssue: VIC
         
@@ -50,13 +49,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 31
+    streetName: Balwyn
+    streetType: R
+    suburb: CANTERBURY
+    state: VIC
+    country: AUS
+    postCode: 3126
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-10-07
+    proposedStart: 2021-02-15
     offerType: ENE
     plan: TOPH-EV
-    priceTag: EVCIA_NR2001
-    serviceOrderDate: 2020-10-07
+    priceTag: EVCIA_NR2101
+    serviceOrderDate: 2021-02-15
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 6102221416
@@ -80,6 +90,6 @@ saleDetail :
   meteringDetail: 
     meterExchangeFlag: N
     reEnergisationJSCCode: RCTBH
-    reEnergisationJSCCharge: 37.99
+    reEnergisationJSCCharge: 37.9
   
 

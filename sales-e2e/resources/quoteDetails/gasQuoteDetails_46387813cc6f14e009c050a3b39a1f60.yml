@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010052717
-    sourceCode: Total_15%GD_50
-    actualQuoteDate: 2020-10-05
+    quoteId: BB2102124312
+    sourceCode: Total_16%GD_50
+    actualQuoteDate: 2021-02-12
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,21 +15,20 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0341419123
+      phoneNumber: 0327707128
     
-    emailId: YajplFfJil@energyaustralia.com.au
+    emailId: IlEoIzGQIe@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 491190
+      idType: DLSA
+      id: 432689
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
-          dlMiddleName/: 
           dlLastName: test
-          licenseStateOfIssue: NSW
+          licenseStateOfIssue: SA
         
       
     
@@ -50,13 +49,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 69
+    streetName: Henley Marine
+    streetType: DR
+    suburb: RODD POINT
+    state: NSW
+    country: AUS
+    postCode: 2046
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-10-06
+    proposedStart: 2021-02-15
     offerType: ENE
     plan: TOPH-GN
     priceTag: GNAGA_NR2007
-    serviceOrderDate: 2020-10-06
+    serviceOrderDate: 2021-02-15
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5240080109

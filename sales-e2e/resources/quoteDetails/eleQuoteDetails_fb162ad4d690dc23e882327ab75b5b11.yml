@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: FR2012079137
+    quoteId: FR2102114216
     sourceCode: Total_12%GD_25
-    actualQuoteDate: 2020-12-07
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,20 +15,20 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0391630871
+      phoneNumber: 0319529400
     
-    emailId: DqrGEOrCmG@energyaustralia.com.au
+    emailId: lghasdwyTT@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLTAS
-      id: 49607
+      idType: DLACT
+      id: 918978
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: TAS
+          licenseStateOfIssue: ACT
         
       
     
@@ -62,11 +62,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-12-09
+    proposedStart: 2021-02-15
     offerType: ENE
     plan: TOPH-EA
     priceTag: EAACA_NR2007
-    serviceOrderDate: 2020-12-09
+    serviceOrderDate: 2021-02-15
     serviceOrderTime: BUSHRS
     nmiMirnInformation/: 
   

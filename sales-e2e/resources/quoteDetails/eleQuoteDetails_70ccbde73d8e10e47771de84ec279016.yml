@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010052727
-    sourceCode: Total_Plus_16%GD
-    actualQuoteDate: 2020-10-05
+    quoteId: BB2102124273
+    sourceCode: Total_Plus_19%GD
+    actualQuoteDate: 2021-02-12
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0330526764
+      phoneNumber: 0321026668
     
-    emailId: GpwwjEjcCJ@energyaustralia.com.au
+    emailId: PWrsuoIYEw@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 342528
+      id: 314895
       primaryIdFlag: Y
     
     authLevel: Y
@@ -43,6 +43,19 @@ saleDetail :
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
+  
+  premiseDetail: 
+    flatNo: 1
+    flatType: U
+    addressClass: ST
+    streetNo: 57
+    streetName: Wallace
+    streetType: S
+    suburb: MACKSVILLE
+    state: NSW
+    country: AUS
+    postCode: 2447
+    addressType: Mailing
   
   offerDetail: 
     fuelType: E

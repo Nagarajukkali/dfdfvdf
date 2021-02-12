@@ -1,4 +1,4 @@
-@campaign12.2
+@campaign21.2.3
 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
@@ -12,7 +12,7 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for nofrills campaign for new moving
-
+  @campaign21.2.3
   Scenario Outline: Validate complete data for nofrills campaign for NSW new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2516" and clicks on show me plan link
@@ -86,6 +86,7 @@ Feature:E2E scenario for nofrills campaign for new moving
       |customerStatus|fuelType|campaign     |folderName                            |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
       |New           |BOTH    |nofrills     |E2E_Campaign_NoFrills_NSW_New_Moving  |NSW  |Quote Tool    |Move Home|No   |No  |RES          |New            |
 
+  @campaign21.2.3
   Scenario Outline: Validate complete data for nofrills campaign for VIC new non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
@@ -158,6 +159,7 @@ Feature:E2E scenario for nofrills campaign for new moving
       |customerStatus|fuelType|campaign     |folderName                            |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
       |New           |BOTH    |nofrills     |E2E_Campaign_NoFrills_VIC_New_NonMoving|VIC  |Quote Tool    |COR      |No   |No  |RES          |New            |
 
+  @campaign21.2.3
   Scenario Outline: Validate complete data for nofrills campaign for QLD new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4500" and clicks on show me plan link
@@ -219,6 +221,7 @@ Feature:E2E scenario for nofrills campaign for new moving
       |customerStatus|fuelType|campaign     |folderName                            |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
       |New           |ELE    |nofrills     |E2E_Campaign_NoFrills_QLD_New_Moving  |QLD  |Quote Tool    |Move Home|No   |No  |RES          |New            |
 
+  @campaign21.2.3
   Scenario Outline: Validate complete data for nofrills campaign for ACT for new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2911" for postcode and proceed to view the plans
@@ -285,7 +288,7 @@ Feature:E2E scenario for nofrills campaign for new moving
       |customerStatus|fuelType|campaign  |folderName                            |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
       |New           |BOTH    |nofrills  |E2E_Campaign_NoFrills_ACT_New_moving  |ACT  |Quote Tool    |Move Home|No   |No  |RES          |New            |
 
-  @Acquisition_ATL_Total_nofrills
+  @campaign21.2.3
   Scenario Outline: Validate complete data for nofrills campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
@@ -352,7 +355,7 @@ Feature:E2E scenario for nofrills campaign for new moving
       |customerStatus|fuelType|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
       |Existing      |BOTH    |nofrills |E2E_Campaign_nofrills_VIC_existing_non-moving |VIC  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
 
-  @Acquisition_ATL_Total_nofrills
+  @campaign21.2.3
   Scenario Outline: Validate complete data for nofrills campaign for NSW existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" and clicks on show me plan link
@@ -412,26 +415,26 @@ Feature:E2E scenario for nofrills campaign for new moving
       |customerStatus|fuelType|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
       |Existing      |BOTH    |nofrills |E2E_Campaign_nofrills_NSW_existing_non-moving |NSW  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
 
-  @Acquisition_ATL_Total_nofrills
+  @campaign21.2.3
   Scenario Outline: Validate complete data for nofrills campaign for SA existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" and clicks on show me plan link
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |Y                       |Y                    |N                                    |N                                |<state>|
+      |ELE      |N                 |Y                       |Y                    |N                                    |N                                |<state>|
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
-      |GAS      |Y                 |Y                       |Y                    |N                                    |N                                |<state>|
+      |GAS      |N                 |Y                       |Y                    |N                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
-      |Y                        |Y          |Y              |No Frills |<state>  |Y           |
+      |Y                        |Y          |Y              |No Frills |<state>  |N           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
-      |ELE      |Y                 |Y                       |Y                    |N                                    |<state>|
+      |ELE      |N                 |Y                       |Y                    |N                                    |<state>|
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
-      |GAS      |Y                 |Y                       |Y                    |N                                    |<state>|
+      |GAS      |N                 |Y                       |Y                    |N                                    |<state>|
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       |customerStatus   |accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
@@ -479,7 +482,7 @@ Feature:E2E scenario for nofrills campaign for new moving
       |customerStatus|fuelType|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
       |Existing      |BOTH    |nofrills |E2E_Campaign_nofrills_SA_existing_non-moving |SA  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
 
-  @Acquisition_ATL_Total_nofrills
+  @campaign21.2.3
   Scenario Outline: Validate complete data for nofrills campaign for QLD existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4500" and clicks on show me plan link

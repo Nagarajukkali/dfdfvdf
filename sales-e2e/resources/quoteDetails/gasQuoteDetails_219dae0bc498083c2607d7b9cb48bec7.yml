@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010052527
+    quoteId: BB2102113761
     sourceCode: Total_Plus_17%GD
-    actualQuoteDate: 2020-10-05
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0370164035
+      phoneNumber: 0328794494
     
-    emailId: zIGsBbdQkk@energyaustralia.com.au
+    emailId: nXdemItVKr@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 29793
+      id: 864052
       primaryIdFlag: Y
     
     authLevel: Y
@@ -41,6 +41,17 @@ saleDetail :
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 12
+    streetName: Oldfield
+    streetType: CC
+    suburb: KAMBAH
+    state: ACT
+    country: AUS
+    postCode: 2902
+    addressType: Mailing
   
   offerDetail: 
     fuelType: G

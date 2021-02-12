@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2012079141
-    sourceCode: Total_14%GD_25
-    actualQuoteDate: 2020-12-07
+    quoteId: BB2102114228
+    sourceCode: Total_16%GD_50
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MRS
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0338803537
+      phoneNumber: 0317478949
     
-    emailId: FkdPmBwwQI@energyaustralia.com.au
+    emailId: QmRSuTMVPI@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLTAS
-      id: 80613
+      idType: DLSA
+      id: 771841
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: TAS
+          licenseStateOfIssue: SA
         
       
     
@@ -62,11 +62,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-12-09
+    proposedStart: 2021-02-15
     offerType: ENE
     plan: TOPH-EQ
     priceTag: EQEX1_NR2007
-    serviceOrderDate: 2020-12-09
+    serviceOrderDate: 2021-02-15
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: QB08556016

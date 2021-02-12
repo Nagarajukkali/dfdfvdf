@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: FR2010052995
+    quoteId: FR2102114190
     sourceCode: NOFRILLS
-    actualQuoteDate: 2020-10-05
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0381622566
+      phoneNumber: 0392766378
     
-    emailId: uHkfVLGFKi@energyaustralia.com.au
+    emailId: cXFSTqAqJY@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 666152
+      id: 60477
       primaryIdFlag: Y
     
     authLevel: Y
@@ -42,11 +42,22 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 10
+    streetName: Minter
+    streetType: CT
+    suburb: TRUGANINA
+    state: VIC
+    country: AUS
+    postCode: 3029
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: E
     offerType: PS
     plan: RCPP-EV
-    priceTag: EVPOA_ZR2007
+    priceTag: EVPOA_ZR2101
     nmiMirnInformation: 
       NMI: 6203817483
     

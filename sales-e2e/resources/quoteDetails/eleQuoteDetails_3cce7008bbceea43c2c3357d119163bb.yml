@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CA2010052984
+    quoteId: CA2102114166
     sourceCode: NOFRILLS
-    actualQuoteDate: 2020-10-05
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0345796318
+      phoneNumber: 0388449610
     
-    emailId: OQwGvGJYAI@energyaustralia.com.au
+    emailId: BgXEstgLse@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 517779
+      id: 196981
       primaryIdFlag: Y
     
     authLevel: Y
@@ -44,11 +44,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    flatNo: 1
+    flatType: U
+    addressClass: ST
+    streetNo: 57
+    streetName: Wallace
+    streetType: S
+    suburb: MACKSVILLE
+    state: NSW
+    country: AUS
+    postCode: 2447
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: E
     offerType: PS
     plan: RCPP-EN
-    priceTag: ENCED_ZR2007
+    priceTag: ENCED_ZR2101
     nmiMirnInformation: 
       NMI: 4407376910
     

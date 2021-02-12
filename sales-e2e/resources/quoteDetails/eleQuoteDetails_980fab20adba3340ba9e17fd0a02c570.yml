@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CR2012089503
-    sourceCode: Total_14%GD
-    actualQuoteDate: 2020-12-08
+    quoteId: CR2102114045
+    sourceCode: Total_16%GD
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0338076979
+      phoneNumber: 0315155472
     
-    emailId: ZTeGKHDhTy@energyaustralia.com.au
+    emailId: aCIZUgBhMR@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 465481
+      id: 846554
       primaryIdFlag: Y
     
     authLevel: Y

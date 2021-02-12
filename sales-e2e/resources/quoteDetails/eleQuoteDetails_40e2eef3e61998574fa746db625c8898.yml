@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2102033776
-    sourceCode: Basic_25
-    actualQuoteDate: 2021-02-03
+    quoteId: BB2102114027
+    sourceCode: Basic
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: DR
+    title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0342962819
+      phoneNumber: 0374578601
     
-    emailId: FvAqlJymxv@energyaustralia.com.au
+    emailId: yFWIeKcoSO@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLNSW
-      id: 691642
+      idType: DLVIC
+      id: 182626
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: NSW
+          licenseStateOfIssue: VIC
         
       
     
@@ -62,11 +62,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-02-05
+    proposedStart: 2021-02-15
     offerType: ENE
     plan: RSOT-EV
     priceTag: EVUND_S01Y8
-    serviceOrderDate: 2021-02-05
+    serviceOrderDate: 2021-02-15
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 6407220528
@@ -93,6 +93,6 @@ saleDetail :
   meteringDetail: 
     meterExchangeFlag: N
     reEnergisationJSCCode: RECFIB
-    reEnergisationJSCCharge: 49.56
+    reEnergisationJSCCharge: 49.45
   
 

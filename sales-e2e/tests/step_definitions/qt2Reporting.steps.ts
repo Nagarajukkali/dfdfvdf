@@ -64,8 +64,10 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
     let actualBillRouteType = jsonObj.saleDetail.billDeliveryDetail.billRouteType;
     let isCampaignTest = (t.testRun.test.name.includes('campaign'));
     let isOfferType=(actualOfferType==='ENE'||actualOfferType === 'COR');
-    let isState= (actualState!=='ACT');
-    let isPlanCode = (expectedPlanCode.includes('BSOT') || expectedPlanCode.includes('TOPB') || expectedPlanCode.includes('SWSR'));
+    let isStateEligibleFor$25Credit= (actualState==='ACT');
+    let isStateEligibleFor$50Credit= (actualState==='VIC' || actualState==='NSW' || actualState==='QLD');
+    let isStateEligibleForNoCredit= (actualState==='SA');
+    let isBusinessPlanCode = (expectedPlanCode.includes('BSOT') || expectedPlanCode.includes('TOPB') || expectedPlanCode.includes('SWSR'));
 
     //Comparison
     await qt2Reporting.validateMandatoryField(t, actualQuoteStatus, expectedQuoteStatus);
@@ -105,9 +107,12 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
       let expectedEleSourceCode = checkoutDetailsMethod.map.get('ele source code_' + checkoutDetailsMethod.getScenarioId(t));
       if ( isCampaignTest) {
         await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus,actualEleSourceCode,data[0].campaign,expectedOfferType,expectedFuelType);
-      }else if(isOfferType && !isPlanCode ){
+      }else if(isOfferType && !isBusinessPlanCode && isStateEligibleFor$25Credit){
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode+'_25');
-      } else {
+      }
+      else if(isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit){
+        await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode+'_50');
+      }else {
           await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode);
 
       }
@@ -144,9 +149,12 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
       let expectedGasSourceCode = checkoutDetailsMethod.map.get('gas source code_' + checkoutDetailsMethod.getScenarioId(t));
       if (isCampaignTest) {
         await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus,actualGasSourceCode,data[0].campaign,expectedGasSourceCode,expectedFuelType);
-      } else if(isOfferType && !isPlanCode ){
+      } else if(isOfferType && !isBusinessPlanCode && isStateEligibleFor$25Credit ){
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode+'_25');
-      } else {
+      }
+      else if(isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit ){
+        await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode+'_50');
+      }else {
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode);
       }
     }

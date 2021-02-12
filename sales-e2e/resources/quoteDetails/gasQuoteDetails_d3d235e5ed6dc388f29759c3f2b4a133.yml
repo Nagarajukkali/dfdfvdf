@@ -1,27 +1,27 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2012079128
-    sourceCode: Total_16%GD_25
-    actualQuoteDate: 2020-12-07
+    quoteId: BB2102114143
+    sourceCode: Total_16%GD_50
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MISS
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0333784852
+      phoneNumber: 0364103094
     
-    emailId: WTLcYQczYd@energyaustralia.com.au
+    emailId: VAlXcLaqMK@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DLNT
-      id: 488782
+      id: 457215
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y

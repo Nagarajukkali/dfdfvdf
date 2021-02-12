@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: FR2012079140
-    sourceCode: Total_12%GD
-    actualQuoteDate: 2020-12-07
+    quoteId: FR2102114224
+    sourceCode: Total_13%GD
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0353357584
+      phoneNumber: 0325403718
     
-    emailId: aJhFySfoUo@energyaustralia.com.au
+    emailId: GtSEeyWtCI@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 555140
+      id: 264745
       primaryIdFlag: Y
     
     authLevel: Y

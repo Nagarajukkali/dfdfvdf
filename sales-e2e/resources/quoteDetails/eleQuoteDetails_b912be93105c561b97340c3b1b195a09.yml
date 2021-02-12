@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010084685
+    quoteId: BB2102043417
     sourceCode: Total_3%GD
-    actualQuoteDate: 2020-10-08
+    actualQuoteDate: 2021-02-04
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MS
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0352897173
+      phoneNumber: 0381489019
     
-    emailId: szkuaYEWFC@energyaustralia.com.au
+    emailId: pAYNJeKXtz@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: PARTNERSHIP
+    businessType: GNRALPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 79008980545
+      businessId: 15691744576
     
-    anzsic: CONSTRUCTION
+    anzsic: UNKNOWN
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0352897173
+      businessPhoneNumber: 0381489019
     
-    businessEmailId: szkuaYEWFC@energyaustralia.com.au
+    businessEmailId: pAYNJeKXtz@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -53,17 +53,26 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 6
+    streetName: Peat
+    streetType: AV
+    suburb: HOLDEN HILL
+    state: SA
+    country: AUS
+    postCode: 5088
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-10-09
+    proposedStart: 2021-02-05
     offerType: ENE
     plan: TOPB-ES
     priceTag: ESSAA_NB2007
-    serviceOrderDate: 2020-10-09
+    serviceOrderDate: 2021-02-05
     serviceOrderTime: BUSHRS
-    nmiMirnInformation: 
-      NMI: 2001114983
-    
+    nmiMirnInformation/: 
   
   offerDetail: 
     fuelType: G
@@ -76,7 +85,6 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    reEnergisationJSCCode: RCFE
     reEnergisationJSCCharge: 45.68
   
 

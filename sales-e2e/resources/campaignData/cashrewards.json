@@ -7,20 +7,20 @@
       "preSelect": {
         "Credit50": {
           "VIC": {
-            "heading": "$25 Sign Up Credit",
-            "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
           },
           "NSW": {
-            "heading": "$25 Sign Up Credit",
-            "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
           },
           "ACT": {
             "heading": "$25 Sign Up Credit",
             "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
           },
           "QLD": {
-            "heading": "$25 Sign Up Credit",
-            "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
           },
           "SA": {
             "heading": "$25 Sign Up Credit",
@@ -37,19 +37,19 @@
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
-            "heading": "11% discount off total energy bill"
+            "heading": "10% discount off total electricity bill"
           },
           "NSW": {
-            "heading": "16% discount off total energy bill"
+            "heading": "18% discount off total electricity bill"
           },
           "ACT": {
-            "heading": "12% discount off total energy bill"
+            "heading": "12% discount off total electricity bill"
           },
           "QLD": {
-            "heading": "14% discount off total energy bill"
+            "heading": "16% discount off total electricity bill"
           },
           "SA": {
-            "heading": "12% discount off total energy bill"
+            "heading": "13% discount off total electricity bill"
           },
           "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
         },
@@ -60,46 +60,61 @@
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
-          "NSW": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
+          "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
+          "NSW": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
           "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
-          "QLD": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
+          "QLD": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
           "SA" : "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": {
-          "VIC": "11% discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
-          "NSW": "16% discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
-          "ACT": "12% discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
-          "QLD": "14% discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
-          "SA" : "12% discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges."
+          "VIC": "10% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges.",
+          "NSW": "18% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges.",
+          "ACT": "12% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges.",
+          "QLD": "16% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges.",
+          "SA" : "13% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges."
         },
         "noStandardConnectionFee": "No standard connection fees. Move with us and we'll waive connection and special meter reads during business hours."
       }
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_11%GD_25",
-        "NSW": "Total_16%GD_25",
+        "VIC": "Total_10%GD_50",
+        "NSW": {
+          "Ausgrid": "Total_16%GD_25",
+          "Essential": "Total_16%GD_25",
+          "Endeavour": "Total_16%GD_25",
+          "default": "Total_18%GD_50"
+        },
         "ACT": "Total_12%GD_25",
-        "QLD": "Total_14%GD_25",
-        "SA": "Total_12%GD_25"
+        "QLD": "Total_16%GD_50",
+        "SA": "Total_13%GD"
       },
       "existingCustomer": {
         "ENE":{
-          "VIC": "Total_11%GD_25",
-          "NSW": "Total_16%GD_25",
+          "VIC": "Total_10%GD_50",
+          "NSW": {
+            "Ausgrid": "Total_16%GD_25",
+            "Essential": "Total_16%GD_25",
+            "Endeavour": "Total_16%GD_25",
+            "default": "Total_18%GD_50"
+          },
           "ACT": "Total_12%GD_25",
-          "QLD": "Total_14%GD_25",
-          "SA": "Total_12%GD_25"
+          "QLD": "Total_16%GD_50",
+          "SA": "Total_13%GD"
         },
         "PS": {
-          "VIC": "Total_11%GD",
-          "NSW": "Total_16%GD",
+          "VIC": "Total_10%GD",
+          "NSW": {
+            "Ausgrid": "Total_16%GD",
+            "Essential": "Total_16%GD",
+            "Endeavour": "Total_16%GD",
+            "default": "Total_18%GD"
+          },
           "ACT": "Total_12%GD",
-          "QLD": "Total_14%GD",
-          "SA": "Total_12%GD"
+          "QLD": "Total_16%GD",
+          "SA": "Total_13%GD"
         }
       }
     }
@@ -110,20 +125,20 @@
       "preSelect": {
         "Credit50": {
           "VIC": {
-            "heading": "$25 Sign Up Credit",
-            "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
           },
           "NSW": {
-            "heading": "$25 Sign Up Credit",
-            "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
           },
           "ACT": {
             "heading": "$25 Sign Up Credit",
             "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
           },
           "QLD": {
-            "heading": "$25 Sign Up Credit",
-            "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
           },
           "SA": {
             "heading": "$25 Sign Up Credit",
@@ -140,56 +155,56 @@
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
-            "heading": "27% discount off total energy bill"
+            "heading": "27% discount off total gas bill"
           },
           "NSW": {
-            "heading": "16% discount off total energy bill"
+            "heading": "16% discount off total gas bill"
           },
           "ACT": {
-            "heading": "16% discount off total energy bill"
+            "heading": "16% discount off total gas bill"
           },
           "SA": {
-            "heading": "12% discount off total energy bill"
+            "heading": "13% discount off total gas bill"
           },
           "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
         }
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
-          "NSW": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
+          "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
+          "NSW": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
           "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
           "SA" : "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": {
-          "VIC": "27% discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
-          "NSW": "16% discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
-          "ACT": "16% discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
-          "SA" : "12% discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges."
+          "VIC": "27% discount off total gas bill. Guaranteed discount that applies to both gas usage rates and daily supply charges.",
+          "NSW": "16% discount off total gas bill. Guaranteed discount that applies to both gas usage rates and daily supply charges.",
+          "ACT": "16% discount off total gas bill. Guaranteed discount that applies to both gas usage rates and daily supply charges.",
+          "SA" : "13% discount off total gas bill. Guaranteed discount that applies to both gas usage rates and daily supply charges."
         }
       }
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_27%GD_25",
-        "NSW": "Total_16%GD_25",
+        "VIC": "Total_27%GD_50",
+        "NSW": "Total_16%GD_50",
         "ACT": "Total_16%GD_25",
-        "SA": "Total_12%GD_25"
+        "SA": "Total_13%GD"
       },
       "existingCustomer": {
         "ENE":{
-          "VIC": "Total_27%GD_25",
-          "NSW": "Total_16%GD_25",
+          "VIC": "Total_27%GD_50",
+          "NSW": "Total_16%GD_50",
           "ACT": "Total_16%GD_25",
-          "SA": "Total_12%GD_25"
+          "SA": "Total_13%GD"
         },
         "PS": {
           "VIC": "Total_27%GD",
           "NSW": "Total_16%GD",
           "ACT": "Total_16%GD",
-          "SA": "Total_12%GD"
+          "SA": "Total_13%GD"
         }
       }
     }
@@ -224,20 +239,20 @@
     },
     "Credit50": {
       "VIC": {
-        "heading": "$25 Sign Up Credit",
-        "description": "+ Offer available to VIC residential customers only who sign up via energyaustralia.com.au to an electricity or gas market offer. Limit of one $25 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+        "heading": "$50 Sign Up Credit",
+        "description": "+ Offer available to VIC residential customers only who sign up via energyaustralia.com.au to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "NSW": {
-        "heading": "$25 Sign Up Credit",
-        "description": "+ Offer available to NSW residential customers only who sign up via energyaustralia.com.au to an electricity or gas market offer. Limit of one $25 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+        "heading": "$50 Sign Up Credit",
+        "description": "+ Offer available to NSW residential customers only who sign up via energyaustralia.com.au to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "ACT": {
         "heading": "$25 Sign Up Credit ",
-        "description": "+ Offer available to ACT residential customers only who sign up via energyaustralia.com.au to an electricity or gas market offer. Limit of one $25 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+        "description": "+ Offer available to ACT residential customers only who sign up via energyaustralia.com.au to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "QLD": {
-        "heading": "$25 Sign Up Credit",
-        "description": "+ Offer available to QLD residential customers only who sign up via energyaustralia.com.au to an electricity or gas market offer. Limit of one $25 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+        "heading": "$50 Sign Up Credit",
+        "description": "+ Offer available to QLD residential customers only who sign up via energyaustralia.com.au to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "SA": {
         "heading": "$25 Sign Up Credit",

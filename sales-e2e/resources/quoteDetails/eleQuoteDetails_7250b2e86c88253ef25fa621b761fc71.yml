@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CA2012079162
-    sourceCode: NOFRILLS_25
-    actualQuoteDate: 2020-12-07
+    quoteId: CA2102114161
+    sourceCode: NOFRILLS_50
+    actualQuoteDate: 2021-02-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MS
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0370287699
+      phoneNumber: 0379780856
     
-    emailId: YIrxyfomou@energyaustralia.com.au
+    emailId: TbhwQzPKdj@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLVIC
-      id: 442119
+      idType: DLTAS
+      id: 782687
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: VIC
+          licenseStateOfIssue: TAS
         
       
     
@@ -62,11 +62,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-12-09
+    proposedStart: 2021-02-15
     offerType: ENE
     plan: RCPP-EQ
-    priceTag: EQEXD_ZR2007
-    serviceOrderDate: 2020-12-09
+    priceTag: EQEXD_ZR2101
+    serviceOrderDate: 2021-02-15
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: QB08556016

@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2011045510
-    sourceCode: Total_13%GD_100
-    actualQuoteDate: 2020-11-04
+    quoteId: BB2102043410
+    sourceCode: Total_13%GD
+    actualQuoteDate: 2021-02-04
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MS
-    firstName: Tim
-    lastName: Tam
+    title: DR
+    firstName: test
+    lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0334901905
+      phoneNumber: 0394687093
     
-    emailId: nfqbgUWZxM@energyaustralia.com.au
+    emailId: AejmPvZmFW@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: LTDPARTNERSHIP
+    businessType: SOLE TRADER
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 17923663816
+      businessId: 18067458925
     
-    anzsic: CONSTRUCTION
+    anzsic: PROPERTY
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0334901905
+      businessPhoneNumber: 0394687093
     
-    businessEmailId: nfqbgUWZxM@energyaustralia.com.au
+    businessEmailId: AejmPvZmFW@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -53,17 +53,26 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 437
+    streetName: Oxley
+    streetType: AV
+    suburb: REDCLIFFE
+    state: QLD
+    country: AUS
+    postCode: 4020
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-11-06
+    proposedStart: 2021-02-08
     offerType: ENE
     plan: TOPB-EQ
     priceTag: EQEXA_NB2007
-    serviceOrderDate: 2020-11-06
+    serviceOrderDate: 2021-02-08
     serviceOrderTime: BUSHRS
-    nmiMirnInformation: 
-      NMI: QB02256002
-    
+    nmiMirnInformation/: 
   
   offerDetail: 
     fuelType: G
@@ -76,7 +85,6 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    reEnergisationJSCCode: RNRRBU
     reEnergisationJSCCharge: 0.0
   
 

@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2011045506
-    sourceCode: Total_21%GD_100
-    actualQuoteDate: 2020-11-04
+    quoteId: BB2102043408
+    sourceCode: Total_21%GD
+    actualQuoteDate: 2021-02-04
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
-    firstName: Don
-    lastName: Bradman
+    title: DR
+    firstName: test
+    lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0324777610
+      phoneNumber: 0358523320
     
-    emailId: LbNxLURVev@energyaustralia.com.au
+    emailId: YTzoShSPoG@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: OTHERS
+    businessType: SOLE TRADER
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 76246747048
+      businessId: 22617612729
     
-    anzsic: UNKNOWN
+    anzsic: MINING
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0324777610
+      businessPhoneNumber: 0358523320
     
-    businessEmailId: LbNxLURVev@energyaustralia.com.au
+    businessEmailId: YTzoShSPoG@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -53,17 +53,26 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 320
+    streetName: Crown
+    streetType: S
+    suburb: SURRY HILLS
+    state: NSW
+    country: AUS
+    postCode: 2010
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-11-05
+    proposedStart: 2021-02-05
     offerType: ENE
     plan: TOPB-EN
-    priceTag: ENEA5_NT2007
-    serviceOrderDate: 2020-11-05
+    priceTag: ENEAA_NB2007
+    serviceOrderDate: 2021-02-05
     serviceOrderTime: BUSHRS
-    nmiMirnInformation: 
-      NMI: NCCC005405
-    
+    nmiMirnInformation/: 
   
   offerDetail: 
     fuelType: G
@@ -76,7 +85,6 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    reEnergisationJSCCode: RE-EN
     reEnergisationJSCCharge: 11.41
   
 
