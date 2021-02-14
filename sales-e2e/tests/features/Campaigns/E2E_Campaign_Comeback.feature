@@ -1,4 +1,4 @@
-@campaign21.2.3 @failed
+@campaign21.2.3
 
 Feature:E2E scenario for comeback campaign
 
