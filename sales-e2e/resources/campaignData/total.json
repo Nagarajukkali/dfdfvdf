@@ -16,7 +16,7 @@
           },
           "ACT": {
             "heading": "$25 Sign Up Credit",
-            "description": "Get a $25 credit per new energy account on your first bill when you sign up.+"
+            "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
           },
           "QLD": {
             "heading": "$50 Sign Up Credit",
@@ -48,7 +48,7 @@
         "Credit50": {
           "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
           "NSW": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
-          "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up.+",
+          "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
           "QLD": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
           "SA" : "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
@@ -114,7 +114,7 @@
           },
           "ACT": {
             "heading": "$25 Sign Up Credit",
-            "description": "Get a $25 credit per new energy account on your first bill when you sign up.+"
+            "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
           },
           "QLD": {
             "heading": "$50 Sign Up Credit",
@@ -142,7 +142,7 @@
         "Credit50": {
           "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
           "NSW": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
-          "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up.+",
+          "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
           "QLD": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
           "SA" : "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },

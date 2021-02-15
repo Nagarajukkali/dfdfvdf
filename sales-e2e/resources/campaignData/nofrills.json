@@ -203,11 +203,11 @@
     "Credit50": {
       "VIC": {
         "heading": "$50 Sign Up Credit",
-        "description": "+ Offer available to VIC residential customers only who sign up via energyaustralia.com.au to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+        "description": "+ Offer available to VIC residential customers who sign up to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       },
       "NSW": {
         "heading": "$50 Sign Up Credit",
-        "description": "+ Offer available to NSW residential customers only who sign up via energyaustralia.com.au to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+        "description": "+ Offer available to NSW residential customers who sign up to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       },
       "ACT": {
         "heading": "$25 Sign Up Credit",
@@ -215,7 +215,7 @@
       },
       "QLD": {
         "heading": "$50 Sign Up Credit",
-        "description": "+ Offer available to QLD residential customers only who sign up via energyaustralia.com.au to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+        "description": "+ Offer available to QLD residential customers who sign up to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       },
       "SA": {
         "heading": "$25 Sign Up Credit",
