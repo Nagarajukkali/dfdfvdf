@@ -1,35 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010052546
-    sourceCode: Total_Plus_16%GD_75
-    actualQuoteDate: 2020-10-05
+    quoteId: BB2102154688
+    sourceCode: Total_Plus_19%GD_50
+    actualQuoteDate: 2021-02-15
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0311047703
+      phoneNumber: 0381120668
     
-    emailId: wINetNMare@energyaustralia.com.au
+    emailId: MgxKLwnuJr@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 974998
+      idType: DLVIC
+      id: 580777
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
-          dlMiddleName/: 
           dlLastName: test
-          licenseStateOfIssue: NSW
+          licenseStateOfIssue: VIC
         
       
     
@@ -50,13 +49,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 69
+    streetName: Henley Marine
+    streetType: DR
+    suburb: RODD POINT
+    state: NSW
+    country: AUS
+    postCode: 2046
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-10-06
+    proposedStart: 2021-02-16
     offerType: ENE
     plan: SWSR1-EN
     priceTag: ENEA5_TR2007
-    serviceOrderDate: 2020-10-06
+    serviceOrderDate: 2021-02-16
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 4102747329
