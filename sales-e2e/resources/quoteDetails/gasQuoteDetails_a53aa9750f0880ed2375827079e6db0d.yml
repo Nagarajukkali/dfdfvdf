@@ -1,0 +1,85 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: SR2102124249
+    sourceCode: Total_16%GD_25
+    actualQuoteDate: 2021-02-12
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: MS
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0381035015
+    
+    emailId: CEeEtiKFYP@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DLWA
+      id: 713740
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlLastName: test
+          licenseStateOfIssue: WA
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 21
+    streetName: Tarrant
+    streetType: CR
+    suburb: DUNLOP
+    state: ACT
+    country: AUS
+    postCode: 2615
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 21
+    streetName: Tarrant
+    streetType: CR
+    suburb: DUNLOP
+    state: ACT
+    country: AUS
+    postCode: 2615
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2021-02-15
+    offerType: ENE
+    plan: TOPH-GA
+    priceTag: GACTA_NR2001
+    serviceOrderDate: 2021-02-15
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5260073228
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+

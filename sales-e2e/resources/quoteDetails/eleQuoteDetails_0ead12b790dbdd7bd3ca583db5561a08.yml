@@ -1,0 +1,90 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: PA2102094228
+    sourceCode: Alliance_15%GD
+    actualQuoteDate: 2021-02-09
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: DR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0312734600
+    
+    emailId: sbUJcRsnes@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DLVIC
+      id: 250262
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlLastName: test
+          licenseStateOfIssue: VIC
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 3
+    streetName: River
+    streetType: DR
+    suburb: ATHELSTONE
+    state: SA
+    country: AUS
+    postCode: 5076
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 3
+    streetName: River
+    streetType: DR
+    suburb: ATHELSTONE
+    state: SA
+    country: AUS
+    postCode: 5076
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2021-02-10
+    offerType: ENE
+    plan: TOPH-ES
+    priceTag: ESSAD_NR2007
+    serviceOrderDate: 2021-02-10
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 2001245279
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: RCFE
+    reEnergisationJSCCharge: 45.68
+  
+

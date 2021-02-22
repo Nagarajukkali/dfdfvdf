@@ -1,0 +1,77 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2102113742
+    sourceCode: Total_12%GD
+    actualQuoteDate: 2021-02-11
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 7253885720
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0393124886
+    
+    emailId: AxNJSbNXNN@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 453999
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 12
+    streetName: Oldfield
+    streetType: CC
+    suburb: KAMBAH
+    state: ACT
+    country: AUS
+    postCode: 2902
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 12
+    streetName: Oldfield
+    streetType: CC
+    suburb: KAMBAH
+    state: ACT
+    country: AUS
+    postCode: 2902
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: E
+    offerType: PS
+    plan: TOPH-EA
+    priceTag: EAACA_NR2007
+    nmiMirnInformation: 
+      NMI: 7001073236
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+  
+
