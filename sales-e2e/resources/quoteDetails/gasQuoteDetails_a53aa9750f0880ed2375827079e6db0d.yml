@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2102245572
-    sourceCode: Total_12%GD_25
+    quoteId: SR2102245583
+    sourceCode: Total_16%GD_25
     actualQuoteDate: 2021-02-24
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -9,26 +9,26 @@ saleDetail :
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0350404706
+      phoneNumber: 0385662685
     
-    emailId: BmdyflnQdM@energyaustralia.com.au
+    emailId: ytPUApFJWz@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLNT
-      id: 203316
+      idType: DLTAS
+      id: 265617
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: NT
+          licenseStateOfIssue: TAS
         
       
     
@@ -61,17 +61,19 @@ saleDetail :
     addressType: Mailing
   
   offerDetail: 
-    fuelType: E
+    fuelType: G
     proposedStart: 2021-02-26
     offerType: ENE
-    plan: TOPH-EA
-    priceTag: EAACA_NR2007
+    plan: TOPH-GA
+    priceTag: GACTA_NR2001
     serviceOrderDate: 2021-02-26
     serviceOrderTime: BUSHRS
-    nmiMirnInformation/: 
+    nmiMirnInformation: 
+      MIRN: 5260073228
+    
   
   offerDetail: 
-    fuelType: G
+    fuelType: E
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -80,8 +82,4 @@ saleDetail :
   
   creditAssessmentDecision: Accept
   creditAssessmentReasonCode: Accept
-  meteringDetail: 
-    meterExchangeFlag: N
-    reEnergisationJSCCharge: 80.43
-  
 

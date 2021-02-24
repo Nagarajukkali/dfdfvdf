@@ -1,27 +1,27 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2102114147
+    quoteId: BB2102245580
     sourceCode: Total_12%GD_25
-    actualQuoteDate: 2021-02-11
+    actualQuoteDate: 2021-02-24
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: DR
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0366254621
+      phoneNumber: 0365059356
     
-    emailId: yTuUAPrbbZ@energyaustralia.com.au
+    emailId: JoxtHJuIXe@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DLWA
-      id: 137382
+      id: 470999
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -62,11 +62,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-02-15
+    proposedStart: 2021-02-26
     offerType: ENE
     plan: TOPH-EA
     priceTag: EAACA_NR2007
-    serviceOrderDate: 2021-02-15
+    serviceOrderDate: 2021-02-26
     serviceOrderTime: BUSHRS
     nmiMirnInformation/: 
   
