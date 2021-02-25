@@ -1,4 +1,4 @@
-@campaign21.2.3
+@campaign21.2.4 
 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/

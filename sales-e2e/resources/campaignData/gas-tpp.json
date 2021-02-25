@@ -16,7 +16,7 @@
           },
           "ACT": {
             "heading": "$25 Second Energy Account Credit",
-            "description": "Get a $25 credit on your first bill when you sign up your second energy account.+"
+            "description": "Get a $25 credit on your first bill when you sign up your second energy account online.+"
           },
           "SA": {
             "heading": "$50 Second Energy Account Credit",
@@ -44,7 +44,7 @@
         "Credit50": {
           "VIC": "$50 Second Energy Account Credit. Get a $50 credit on your first bill when you sign up your second energy account.+",
           "NSW": "$50 Second Energy Account Credit. Get a $50 credit on your first bill when you sign up your second energy account.+",
-          "ACT": "$25 Second Energy Account Credit. Get a $25 credit on your first bill when you sign up your second energy account.+",
+          "ACT": "$25 Second Energy Account Credit. Get a $25 credit on your first bill when you sign up your second energy account online.+",
           "SA" : "$50 Second Energy Account Credit. Get a $50 credit on your first bill when you sign up your second energy account.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
