@@ -873,5 +873,21 @@ export class checkoutDetailsMethod{
       this.map.set("savedQuote_"+this.getScenarioId(t),quoteUrl);
   }
 
+  public static async validateMAHeader(t,sourceSystem){
+    if(sourceSystem === "My Account") {
+      await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.MAHeader.userDesktopHeader);
+      await testFunction.assertText(t,eaCheckoutDetailsPage.elements.MAHeader.userDesktopHeader,"account")
+      await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.MAHeader.userDesktopHeader.find(".icon"));
+      await testFunction.assertText(t,eaCheckoutDetailsPage.elements.MAHeader.userDesktopHeader.find("button"),"Log out");
+      await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.MAHeader.links);
+      await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.MAHeader.userDesktopHeader.find(".dashboard-link"));
+      await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.MAHeader.userDesktopHeader.find("[alt='MyAccount home']"));
+      await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.MAHeader.userDesktopHeader.find(".title.home"));
+      await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.MAHeader.userDesktopHeader.find(".title.usage"));
+      await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.MAHeader.userDesktopHeader.find(".title.profile"));
+      await testFunction.isElementVisible(t,eaCheckoutDetailsPage.elements.MAHeader.userDesktopHeader.find(".title.help"));
+      console.log("Validation completed for MA header");
+    }
+  }
 
 }

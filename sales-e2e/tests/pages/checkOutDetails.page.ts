@@ -179,6 +179,10 @@ const eaCheckoutDetailsPage={
     removeConcession: Selector("#concession-card__remove"),
     cancelButton: Selector("#reviewAgreeConfirmButton-back"),
     emailQuoteLink: Selector("#reviewAgreeConfirmButton-secondary"),
+    MAHeader:{
+      userDesktopHeader:Selector("div.host.desktop"),
+      links:Selector("div.links"),
+    }
 
   },
 };

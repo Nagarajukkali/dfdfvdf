@@ -74,6 +74,7 @@ When(/^user validates details on checkout details page$/, async function (t,[],d
   |sourceSystem |journey  |fuelType |
    */
   let params = dataTable.hashes();
+  await checkoutDetailsMethod.validateMAHeader(t, params[0].sourceSystem);
   await checkoutDetailsMethod.validateHeader(t, params[0].sourceSystem, params[0].journey);
   await checkoutDetailsMethod.validateProgressbarAndSubheading(t, params[0].sourceSystem, params[0].journey, params[0].fuelType);
   await checkoutDetailsMethod.validateCurrentPlanDetails(t);
