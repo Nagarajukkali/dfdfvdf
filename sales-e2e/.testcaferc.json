@@ -27,5 +27,10 @@
   "proxyBypass": [
     "localhost:4302"
   ],
-  "speed": 1
+  "speed": 1,
+  "hostname": "localhost",
+  "ssl": {
+    "key": "key.pem",
+    "cert": "cert.pem"
+  }
 }
