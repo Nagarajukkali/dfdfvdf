@@ -35,6 +35,17 @@ Given(/^user has opened the website link in a browser and creates '(.*)' to save
   width = await ClientFunction(()=>window.innerWidth)();
 });
 
+Given(/^user has opened AB Test Plans Page in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
+  screenshotFolder=folderName;
+  let screenshotFolderPath="screenshots/Current/" + await fetchBrowser() + "/" + screenshotFolder;
+  await FileUtils.deleteFiles(screenshotFolderPath);
+  await testFunction.cleanBaselineImageDir();
+  await testFunction.cleanDiffImageDir();
+  await t.navigateTo(eaHomePage.eaHomePageABTest);
+  height = await ClientFunction(()=>window.innerHeight)();
+  width = await ClientFunction(()=>window.innerWidth)();
+});
+
 Given(/^user has opened the bill uploader website link in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
   screenshotFolder=folderName;
   let screenshotFolderPath="screenshots/Current/" + await fetchBrowser() + "/" + screenshotFolder;

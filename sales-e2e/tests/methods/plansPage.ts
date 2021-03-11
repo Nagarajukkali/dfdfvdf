@@ -712,6 +712,19 @@ export class plansMethod{
     console.log("General state disclaimer validated successfully on plans page.");
   }
 
+  public static async croRefineButtons(t, customerType) {
+    if(await testFunction.isResidential(customerType)) {
+      //Residential customers
+      await testFunction.assertText(t, EaHomePage.elements.croRefineOptions.energyUsageButton, "Energy usage");
+      await testFunction.assertText(t, EaHomePage.elements.croRefineOptions.addGreenEnergyButton, "Add green energy");
+      await testFunction.assertText(t, EaHomePage.elements.croRefineOptions.moreOptionsButton, "More");
+      await testFunction.takeScreenshot(t, 'Refine Options');
+    } else if(await testFunction.isBusiness(customerType)){
+      //Business customers
+      await testFunction.assertText(t, EaHomePage.elements.disclaimer.generalStateDisclaimerOld, "Find a better deal for your business here at EnergyAustralia. Easily compare plans, rates and benefits then switch online for instant email confirmation.");
+    }
+  }
+
   public static async validateComparisonStatement(t,baseCreditCondition,rewardCreditCondition,planName){
     let comparisonText;
     switch (planName) {
@@ -885,6 +898,139 @@ export class plansMethod{
     }
   }
 
+  public static async selectOption(t: any, option: any) {
+    switch (option) {
+      case 'Energy Usage':
+        await testFunction.click(t,EaHomePage.elements.croRefineOptions.energyUsageButton);
+        await testFunction.isElementDisplayed(t,EaHomePage.elements.croCustomiseEstimateSideBar.sideBar);
+        await testFunction.takeScreenshot(t, 'energyusage_option');
+        break;
+      case 'Add Green Energy':
+        await testFunction.click(t, EaHomePage.elements.croRefineOptions.addGreenEnergyButton);
+        await testFunction.takeScreenshot(t, 'greenenergy_option');
+        break;
+      case 'More':
+        await testFunction.click(t, EaHomePage.elements.croRefineOptions.moreOptionsButton);
+        await testFunction.takeScreenshot(t, 'more_option');
+        break;
+    }
+  }
+
+  public static async validateEnergyUsageSideBar(t: any) {
+    await testFunction.isElementDisplayed(t,EaHomePage.elements.croCustomiseEstimateSideBar.energyUsageAccordionHeader);
+    await testFunction.isElementDisplayed(t,EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordionHeader);
+    await testFunction.isElementDisplayed(t,EaHomePage.elements.croCustomiseEstimateSideBar.billingPeriodAccordionHeader);
+    await testFunction.isElementDisplayed(t,EaHomePage.elements.croCustomiseEstimateSideBar.enterNMIorMIRNAccordionHeader);
+    await testFunction.isElementDisplayed(t,EaHomePage.elements.croCustomiseEstimateSideBar.uploadBillAccordionHeader);
+    await testFunction.isElementDisplayed(t,EaHomePage.elements.croCustomiseEstimateSideBar.existingCustomerAccordionHeader);
+  }
+
+  public static async validateEnergyUsageToolTip(t: any, usage: any) {
+    switch (usage) {
+      case 'Electricity':
+        await testFunction.click(t,EaHomePage.elements.croCustomiseEstimateSideBar.electricityUsageTooltip);
+        await testFunction.isElementDisplayed(t,EaHomePage.elements.croCustomiseEstimateSideBar.electricityUsageTooltipText);
+        await testFunction.assertText(t,EaHomePage.elements.croCustomiseEstimateSideBar.electricityUsageTooltipText,'Households with 1-2 people doing one load of laundry per week are typically low usage.\n' +
+          '\n' +
+          'Households with 5 or more people are typically high usage.\n' +
+          '\n' +
+          '*The Low, Medium, High and Custom cost estimates below are calculated using the Australian Energy Regulator (AER) benchmark usage attribution, which may not reflect your actual usage patterns. You can verify your account to retrieve your own usage to receive a more accurate cost estimate.\n' +
+          '\n' +
+          '*Electricity estimates are based on the daily usage band you select. The amount you will be charged will be based on the actual energy you use which can vary throughout the year. This is not an official quote. Electricity daily usage must not exceed 499.99 kWh.')
+        await testFunction.click(t,EaHomePage.elements.croCustomiseEstimateSideBar.electricityUsageTooltipCloseButton);
+        await testFunction.takeScreenshot(t, 'elec_tooltip');
+        break;
+      case 'Gas':
+        await testFunction.click(t,EaHomePage.elements.croCustomiseEstimateSideBar.gasUsageTooltip);
+        await testFunction.isElementDisplayed(t,EaHomePage.elements.croCustomiseEstimateSideBar.gasUsageTooltipText);
+        await testFunction.assertText(t,EaHomePage.elements.croCustomiseEstimateSideBar.gasUsageTooltipText,'');
+        await testFunction.click(t, EaHomePage.elements.croCustomiseEstimateSideBar.gasUsageTooltipCloseButton);
+        await testFunction.takeScreenshot(t, 'gas_tooltip');
+        break;
+    }
+  }
+
+  public static async selectSideBarUsage(t, fueltype: any, usage: any) {
+    switch (fueltype){
+      case 'Electricity':
+        switch (usage){
+          case 'Low':
+            await testFunction.click(t,EaHomePage.elements.croCustomiseEstimateSideBar.electricityUsageLow);
+            await testFunction.takeScreenshot(t, 'elec_usage_low');
+            break;
+          case 'Medium':
+            await testFunction.click(t,EaHomePage.elements.croCustomiseEstimateSideBar.electricityUsageMedium);
+            await testFunction.takeScreenshot(t, 'elec_usage_medium');
+            break;
+          case 'High':
+            await testFunction.click(t,EaHomePage.elements.croCustomiseEstimateSideBar.electricityUsageHigh);
+            await testFunction.takeScreenshot(t, 'elec_usage_high');
+            break;
+          case 'Custom':
+            await testFunction.click(t,EaHomePage.elements.croCustomiseEstimateSideBar.electricityUsageCustom);
+            await testFunction.takeScreenshot(t, 'elec_usage_custom');
+            break;
+        }
+      case 'Gas':
+        switch (usage){
+          case 'Low':
+            await testFunction.click(t,EaHomePage.elements.croCustomiseEstimateSideBar.gasUsageLow);
+            await testFunction.takeScreenshot(t, 'gas_usage_low');
+            break;
+          case 'Medium':
+            await testFunction.click(t,EaHomePage.elements.croCustomiseEstimateSideBar.gasUsageMedium);
+            await testFunction.takeScreenshot(t, 'gas_usage_medium');
+            break;
+          case 'High':
+            await testFunction.click(t,EaHomePage.elements.croCustomiseEstimateSideBar.gasUsageHigh);
+            await testFunction.takeScreenshot(t, 'gas_usage_high');
+            break;
+          case 'Custom':
+            await testFunction.click(t,EaHomePage.elements.croCustomiseEstimateSideBar.gasUsageCustom);
+            await testFunction.takeScreenshot(t, 'gas_usage_custom');
+            break;
+        }
+    }
+  }
+
+  public static async enterSideBarCustomUsage(t: any, fueltype: any) {
+    switch (fueltype) {
+      case 'Electricity':
+        await testFunction.enterText(t, EaHomePage.elements.croCustomiseEstimateSideBar.electricityUsageCustomText, '20');
+        await testFunction.takeScreenshot(t, 'elec_custom_usage');
+        break;
+      case 'Gas':
+        await testFunction.enterText(t, EaHomePage.elements.croCustomiseEstimateSideBar.gasUsageCustomText, '200');
+        await testFunction.takeScreenshot(t, 'gas_custom_usage');
+        break;
+    }
+  }
+
+  public static async validateSideBarBillingPeriod(t: any) {
+    await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.billingPeriodAccordion.billingPeriodText);
+    await testFunction.assertText(t, EaHomePage.elements.croCustomiseEstimateSideBar.billingPeriodAccordion.activeBillingPeriod,'Monthly');
+    await testFunction.takeScreenshot(t, 'billing_period_accordion_section');
+    await testFunction.click(t, EaHomePage.elements.croCustomiseEstimateSideBar.billingPeriodAccordion.openBillingPeriodOption);
+    await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.billingPeriodAccordion.billingPeriodDropdownMonthlyValue);
+    await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.billingPeriodAccordion.billingPeriodDropdownBiMonthlyValue);
+    await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.billingPeriodAccordion.billingPeriodDropdownQuarterlyValue);
+    await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.billingPeriodAccordion.billingPeriodDropdownYearlyValue);
+    await testFunction.takeScreenshot(t, 'billing_period_dropdown_section');
+    await testFunction.click(t, EaHomePage.elements.croCustomiseEstimateSideBar.billingPeriodAccordion.billingPeriodDropdownYearlyValue);
+    }
+
+  public static async validateSideBarGreenEnergy(t: any) {
+    await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyText);
+    await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyChargesText);
+    await testFunction.takeScreenshot(t, 'green_energy_accordion_section');
+    await testFunction.click(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.openGreenEnergyOption);
+    await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown0Value);
+    await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown10Value);
+    await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown20Value);
+    await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown100Value);
+    await testFunction.takeScreenshot(t, 'green_energy_dropdown_section');
+    await testFunction.click(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown100Value);
+  }
 }
 
 export class selectionOptionModalWindowMethod {
@@ -948,6 +1094,10 @@ export class verifyAccountMethod {
       await testFunction.click(t, EaHomePage.elements.nextAccountNumber);
       await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
     }
+  public static async verifyAccountNext(t){
+    await testFunction.click(t, EaHomePage.elements.croCustomiseEstimateSideBar.existingCustomerAccordion.nextButton);
+    await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
+  }
 
     public static async provideIdentityDetails(t, idType, idValue){
         switch(idType){

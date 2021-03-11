@@ -175,6 +175,7 @@ Then(/^plans page load according to the type of '(.*)'$/, async function (t,[NMI
 });
 Then(/^user validates details on plans page for '(.*)'$/, async function (t, [customerType]) {
   await plansMethod.validateGeneralStateDisclaimer(t, customerType);
+  await testFunction.takeScreenshot(t, 'ABTest_plans_page');
 });
 Then(/^user validates disclaimer on plans page for "([^"]*)"$/, async function (t,[campaignName],dataTable) {
   dataTable = dataTable.hashes();
@@ -379,4 +380,112 @@ When(/^user reset the verified account$/, async function (t) {
 Then(/^user verifies retrieved account details on plans page$/, async function (t,[],dataTable) {
   let data = dataTable.hashes();
   await verifyAccountMethod.verifyRetrievedDetails(t,data[0].address,data[0].NMI,data[0].MIRN);
+});
+Given(/^user validates cro refine options on plans page for '(.*)'$/, async function (t,[customerType]) {
+  await plansMethod.croRefineButtons(t, customerType);
+});
+When(/^user clicks the '(.*)' option$/, async function (t,[option]) {
+  await plansMethod.selectOption(t,option);
+});
+Then(/^user validates the sidebar accordions$/, async function (t) {
+ await plansMethod.validateEnergyUsageSideBar(t);
+  await testFunction.takeScreenshot(t, 'validate_sidebar');
+});
+When(/^user clicks the '(.*)' accordion$/, async function (t,[accordionOption]) {
+  switch (accordionOption) {
+    case 'Green Energy':
+      await testFunction.click(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordionHeader);
+      await testFunction.takeScreenshot(t, 'green_energy_accordion');
+      break;
+    case 'Billing Period':
+      await testFunction.click(t, EaHomePage.elements.croCustomiseEstimateSideBar.billingPeriodAccordionHeader);
+      await testFunction.takeScreenshot(t, 'billing_period_accordion');
+      break;
+  }
+});
+Then(/^user validates the Energy Usage accordion is still expanded$/, async function (t) {
+ await testFunction.assertText(t, await testFunction.getElementAttribute(t,EaHomePage.elements.croCustomiseEstimateSideBar.energyUsageAccordionHeader,'class'),'expanded' );
+  await testFunction.takeScreenshot(t, 'energy_accordion_expanded');
+});
+When(/^user clicks the '(.*)' usage tooltip and validates the tooltip text$/, async function (t, [usage]) {
+  await plansMethod.validateEnergyUsageToolTip(t,usage);
+});
+When(/^user clicks the '(.*)' '(.*)' usage field$/, async function (t, [fueltype,usage]) {
+  await plansMethod.selectSideBarUsage(t,fueltype,usage);
+});
+When(/^user enters values for '(.*)' custom usage field$/, async function (t, [fueltype]) {
+  await plansMethod.enterSideBarCustomUsage(t,fueltype);
+});
+When(/^user clicks the done button to close the sidebar$/, async function (t) {
+  await testFunction.click(t, EaHomePage.elements.croCustomiseEstimateSideBar.closeSideBar);
+  await testFunction.takeScreenshot(t, 'sidebar_done');
+});
+Then(/^user validates the color of the '(.*)' button$/, async function (t, [option]) {
+  switch (option) {
+    case 'Energy Usage':
+      await testFunction.assertText(t, await testFunction.getElementAttribute(t, EaHomePage.elements.croRefineOptions.energyUsageButton, 'fill'), '#0d8924');
+      await testFunction.takeScreenshot(t, 'energy_usage_plans_page_color');
+      break;
+    case 'Add Green Energy':
+      await testFunction.assertText(t, await testFunction.getElementAttribute(t, EaHomePage.elements.croRefineOptions.addGreenEnergyButton, 'fill'), '#0d8924');
+      await testFunction.takeScreenshot(t, 'add_green_energy_plans_page_color');
+      break;
+    case 'More':
+      await testFunction.assertText(t, await testFunction.getElementAttribute(t, EaHomePage.elements.croRefineOptions.moreOptionsButton, 'fill'), '#0d8924');
+      await testFunction.takeScreenshot(t, 'more_Refine_plans_page_color');
+      break;
+  }
+});
+Then(/^user validates the Billing Period section in the sidebar$/, async function (t) {
+  await plansMethod.validateSideBarBillingPeriod(t);
+});
+Then(/^user validates the Green Energy section in the sidebar$/, async function (t) {
+  await plansMethod.validateSideBarGreenEnergy(t);
+});
+Then(/^user validates if the plans page loads yearly estimates$/, async function (t) {
+ await testFunction.assertText(t, EaHomePage.elements.basicHomePlanEstimatePeriod,'Your estimated yearly cost');
+ await testFunction.takeScreenshot(t, 'validate_estimate_period_plans_page')
+});
+Then(/^user validates if the green energy value is displayed on the plans page$/, async function (t) {
+  await testFunction.click(t, EaHomePage.elements.basicHomeElectricityRatesDropdown);
+  await testFunction.assertText(t, EaHomePage.elements.greenEnergyTitleBasicHome,'100% Green energy');
+  await testFunction.assertText(t, EaHomePage.elements.greenEnergyBasicHome,'PureEnergy100');
+  await testFunction.takeScreenshot(t, 'green_energy_rates_plans_page')
+});
+When(/^user clicks the upload bill accordion in the side bar$/, async function (t) {
+  await testFunction.click(t,EaHomePage.elements.croCustomiseEstimateSideBar.uploadBillAccordionHeader);
+});
+When(/^user clicks the NMI or MIRN accordion in the side bar$/, async function (t) {
+  await testFunction.click(t,EaHomePage.elements.croCustomiseEstimateSideBar.enterNMIorMIRNAccordionHeader);
+});
+Then(/^user validates the Bill Upload section in the sidebar$/, async function (t) {
+  await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.billUploadAccordion.billUploadText);
+  await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.billUploadAccordion.billUploadLink);
+  await testFunction.click(t, EaHomePage.elements.croCustomiseEstimateSideBar.billUploadAccordion.billUploadLink);
+});
+Then(/^user validates the NMI or MIRN section in the sidebar$/, async function (t) {
+  await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.nmiOrMirnAccordion.nmiOrMirnText);
+  await testFunction.assertText(t, EaHomePage.elements.croCustomiseEstimateSideBar.nmiOrMirnAccordion.nmiOrMirnText,'Your NMI (National Metering Identifier) and MIRN (Meter Installation Reference Number) are 10 - 11 digit numbers that can be found on your existing utility bills. These numbers allow us to estimate your energy costs using your meter rates and tariffs specific to your connection address.');
+});
+When(/^user validates the existing customer section in the sidebar$/, async function (t) {
+  await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.existingCustomerAccordion.existingCustomerText);
+  await testFunction.assertText(t, EaHomePage.elements.croCustomiseEstimateSideBar.existingCustomerAccordion.existingCustomerText,'Your account number can be found on your bill.');
+});
+When(/^user verifies the account through verify account journey for residential customer through AB test side Bar$/, async function (t,[],dataTable) {
+  let data = dataTable.hashes();
+  await testFunction.takeScreenshot(t, 'verify_account_main');//disabled UI Validation
+  if(data[0].elecAccountNumber)
+    await verifyAccountMethod.provideAccountDetails(t,"ELE", data[0].elecAccountNumber);
+  if(data[0].gasAccountNumber)
+    await verifyAccountMethod.provideAccountDetails(t, "GAS", data[0].gasAccountNumber);
+  await verifyAccountMethod.provideAccountInformation(t, data[0].postcode, data[0].customer_type);
+  await testFunction.takeScreenshot(t, 'verify_account_modal_with_data');//disabled UI Validation
+  await verifyAccountMethod.verifyAccountNext(t);
+  await verifyAccountMethod.provideIdentityDetails(t, data[0].idType, data[0].idNumber)
+  await testFunction.takeScreenshot(t, 'verify_account_modal_id_with_data');//disabled UI Validation
+  //await testFunction.captureNetworkCall(t,'/qt2/app/account/retrieve');
+  await verifyAccountMethod.verifyAccountNext(t);
+  //await testFunction.validateNetworkCall(t);
+  await testFunction.takeScreenshot(t, 'verify_account_modal_final');//disabled UI Validation
+  await verifyAccountMethod.showCostEstimates(t);
 });
