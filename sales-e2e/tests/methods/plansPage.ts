@@ -611,6 +611,7 @@ export class plansMethod{
         await testFunction.clearAndEnterText(t,EaHomePage.elements.inputMIRN,NMIorMIRNorPostcodeValue);
       }
       if(NMIorMIRNorPostcode==='POSTCODE'){
+        await testFunction.click(t,EaHomePage.elements.rbPostcode);
         await testFunction.clearAndEnterText(t,EaHomePage.elements.inputPostcode,NMIorMIRNorPostcodeValue);
       }
 

@@ -174,9 +174,9 @@ const eaCheckoutDetailsPage={
     txtPaperBillFeeDisclaimer: Selector("#hs-plan-fees-paper-bill"),
     btnNext:Selector("#select-plans-next"),
     btnBack:Selector("#select-plans-back"),
-    removeAAH: Selector("#additional-account-holder__remove"),
+    removeAAH: Selector("#aah__remove"),
     removeDirectDebit: Selector("#direct-debit__remove"),
-    removeConcession: Selector("#concession-card__remove"),
+    removeConcession: Selector("#concession__remove"),
     cancelButton: Selector("#reviewAgreeConfirmButton-back"),
     emailQuoteLink: Selector("#reviewAgreeConfirmButton-secondary"),
     MAHeader:{

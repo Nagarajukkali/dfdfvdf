@@ -67,6 +67,9 @@ Feature: This feature validates UI of the quote tool application
     When user provides all details on checkout details page
       |customerType     |journey          |customerStatus   |firstName|lastName |idType         |businessType |
       |<customer_type>  |<customer_type>  |<customerStatus> |test     |test     |Driver License |ABN          |
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
     And user "collapse" optional detail sections on checkout details page for '<customer_type>'
       |AAH    |DD   |Concession |
       |Yes    |Yes  |Yes        |
