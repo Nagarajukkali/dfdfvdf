@@ -7,6 +7,7 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user has navigated to 'BUS' plans page
     Then user validates details on plans page for 'BUS'
     When user selects '<planName>'
+    And user selects gas '<planName>'
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
@@ -65,6 +66,7 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user has navigated to 'BUS' plans page
     Then user validates details on plans page for 'BUS'
     When user selects '<planName>'
+    And user selects gas '<planName>'
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier

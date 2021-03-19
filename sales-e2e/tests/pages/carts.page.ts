@@ -21,7 +21,9 @@ const cartsPage={
     gasFeatureCN: Selector("#cart-plan-GAS .cart-plan__details-text").withText("Carbon neutral"),
     gasFeatureDiscountOffTotal: Selector("#cart-plan-GAS .cart-plan__details-text").withText(/[D|d]iscount off total/),
     gasFeaturePeaceOfMind: Selector("#cart-plan-GAS .cart-plan__details-text").withText("Peace of mind"),
-    gasFeatureVipPriorityService: Selector("#cart-plan-GAS .cart-plan__details-text").withText("VIP Priority Service")
+    gasFeatureVipPriorityService: Selector("#cart-plan-GAS .cart-plan__details-text").withText("VIP Priority Service"),
+    addDifferentGasPlan:Selector("#cart-plan-GAS+button"),
+    addDifferentElePlan:Selector("#cart-plan-ELE+button"),
 
 
   },

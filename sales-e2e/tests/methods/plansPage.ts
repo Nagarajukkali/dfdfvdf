@@ -1256,5 +1256,4 @@ export class campaignMethod{
     let pageUrl = await testFunction.getPageURL();
     return pageUrl.includes("/nsw-seniors");
   }
-
 }

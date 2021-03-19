@@ -6,12 +6,16 @@ Feature: This feature is to test the verify account scenarios for existing busin
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
     Then user validates details on plans page for '<customer_type>'
-    And user have selected fuel as "<fuelType>"
+    And user have selected fuel as "ELE"
     When user clicks on the verify modal window on '<customer_type>' page
+#    And user verifies the account through verify account journey for business customer
+#      |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |ABNOrACN     |idType |idNumber  |
+#      |BUS          |verify account |2870412120       |3231348465       |78538656400  |dob    |01011980  |
     And user verifies the account through verify account journey for business customer
       |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |ABNOrACN     |idType |idNumber  |
-      |BUS          |verify account |2870412120       |3231348465       |78538656400  |dob    |01011980  |
+      |BUS          |verify account |2870412120       |                 |78538656400  |dob    |01011980  |
     And user selects '<planName>'
+    And user selects gas '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
       |customerType|movingType |propertyType |solarOption  |
@@ -56,18 +60,22 @@ Feature: This feature is to test the verify account scenarios for existing busin
 
     Examples:
       |folderName                               |customer_type |fuelType |planName                |accountType|sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
-      |E2E_VerifyAccount_Business_NonMoving     |BUS           |BOTH     |Total Plan Plus Business|BOTH       |Quote Tool     |Plan Switch  |Yes  |Yes  |BUS          |Existing       |
+      |E2E_VerifyAccount_Business_NonMoving     |BUS           |BOTH     |Total Plan Plus Business|ELE        |Quote Tool     |Plan Switch  |Yes  |Yes  |BUS          |Existing       |
 
   Scenario Outline: Submit a quote for existing moving business customer through verify account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page
     Then user validates details on plans page for '<customer_type>'
-    And user have selected fuel as "<fuelType>"
+    And user have selected fuel as "GAS"
     When user clicks on the verify modal window on '<customer_type>' page
+#    And user verifies the account through verify account journey for business customer
+#      |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |ABNOrACN   |idType |idNumber  |
+#      |BUS          |verify account |5802060000       |7745301000       |30179084300|dob    |01011980  |
     And user verifies the account through verify account journey for business customer
       |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |ABNOrACN   |idType |idNumber  |
-      |BUS          |verify account |5802060000       |7745301000       |30179084300|dob    |01011980  |
+      |BUS          |verify account |                 |7745301000       |30179084300|dob    |01011980  |
     And user selects '<planName>'
+    And user selects ele '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
       |customerType|movingType |connectionAddress                          |propertyType |solarOption  |

@@ -9,6 +9,7 @@ Feature:E2E scenario for new business moving and non moving customer
   #Then user validates reference price for '<planName>'
   Then user validates details on plans page for 'BUS'
   When user selects '<planName>'
+  And user selects gas '<planName>'
   And user moves on to fill the qualifier
   And user selects '<customerStatus>' on qualifier
   And user provides all other details on qualifier page
@@ -67,6 +68,7 @@ Scenario Outline: Submit a quote for new business non moving customer
   #Then user validates reference price for '<planName>'
   Then user validates details on plans page for 'BUS'
   When user selects '<planName>'
+  And user selects gas '<planName>'
   And user moves on to fill the qualifier
   And user selects '<customerStatus>' on qualifier
   And user provides all other details on qualifier page
