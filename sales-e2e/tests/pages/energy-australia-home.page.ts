@@ -7,6 +7,7 @@ const eaHomePage={
   campaignPageUrl: config.eaCampaignUrl,
   billUploaderUrl: config.eaBillUploaderUrl,
   eaHomePageABTest: config.eaHomePageABTest,
+  eaHomePageBusinessABTest: config.eaHomePageBusinessABTest,
   savedQuoteURL: config.savedQuoteURL,
   elements: {
     selectedState: Selector("#navbar div[class*='state-value']"),
@@ -82,6 +83,9 @@ const eaHomePage={
     basicHomeElectricityRatesDropdown: Selector("#plan-ELE-rate-accordion-heading-RSOT div"),
     greenEnergyTitleBasicHome: Selector("#plan-ELE-rate-accordion-body-RSOT .hs-plan-green__title"),
     greenEnergyBasicHome: Selector("#plan-ELE-rate-accordion-body-RSOT #plan-green-rate-description"),
+    basicBusElectricityRatesDropdown: Selector("#plan-ELE-rate-accordion-heading-BSOT-EN div"),
+    greenEnergyTitleBasicBus: Selector("#plan-ELE-rate-accordion-body-BSOT-EN .hs-plan-green__title"),
+    greenEnergyBasicBus: Selector("#plan-ELE-rate-accordion-body-BSOT-EN #plan-green-rate-description"),
     eleTotalPlanDiscount:Selector("[id*=plan-rate-summary-TOPH-E] span.hs-plan-rate-summary__title-amount"),
     gasTotalPlanDiscount:Selector("[id*=plan-rate-summary-TOPH-G] span.hs-plan-rate-summary__title-amount"),
     planCostEstimate: Selector("[class*='hs-plan-estimate__value']"),
@@ -148,7 +152,8 @@ const eaHomePage={
       generalStateDisclaimerP3: Selector("#general-state-disclaimer p").nth(2)
     },
     croRefineOptions: {
-      moreOptionsButton: Selector("#cro-bill-upload-option span"),
+      customizeEstimateTitle: Selector("#dbopt-exp567b-refine-sidebar .cro-refine-sidebar__title"),
+      moreOptionsButton: Selector("#cro-more-option span"),
       energyUsageButton: Selector("#cro-usage-option span"),
       addGreenEnergyButton: Selector("#cro-green-energy-option span"),
     },
@@ -176,10 +181,11 @@ const eaHomePage={
       gasUsageHigh: Selector("#edit-gas-usage-field-2__label"),
       gasUsageCustom: Selector("#edit-gas-usage-field-3__label"),
       gasUsageCustomText: Selector("#edit-gas-usage-field-3__label input"),
+        customizedEnergyUsage: Selector("`#cro-usage-option svg`"),
       billingPeriodAccordion: {
         billingPeriodText: Selector("#eui-accordion-content-2 p"),
         activeBillingPeriod: Selector("#eui-accordion-content-2 #estimate-period-refine-active-option"),
-        openBillingPeriodOption: Selector("#eui-accordion-content-2 .ea-dropdown__options"),
+        openBillingPeriodOption: Selector("#eui-accordion-content-2 #estimate-period-refine-active-option"),
         billingPeriodDropdownMonthlyValue: Selector("#eui-accordion-content-2 .ea-dropdown__options li").nth(0),
         billingPeriodDropdownBiMonthlyValue: Selector("#eui-accordion-content-2 .ea-dropdown__options li").nth(1),
         billingPeriodDropdownQuarterlyValue: Selector("#eui-accordion-content-2 .ea-dropdown__options li").nth(2),
@@ -192,6 +198,7 @@ const eaHomePage={
         greenEnergyDropdown0Value: Selector("#eui-accordion-content-1 .ea-dropdown__options li").nth(0),
         greenEnergyDropdown10Value: Selector("#eui-accordion-content-1 .ea-dropdown__options li").nth(1),
         greenEnergyDropdown20Value: Selector("#eui-accordion-content-1 .ea-dropdown__options li").nth(2),
+        greenEnergyDropdown25Value: Selector("#eui-accordion-content-1 .ea-dropdown__options li").nth(2),
         greenEnergyDropdown100Value: Selector("#eui-accordion-content-1 .ea-dropdown__options li").nth(3),
       },
       billUploadAccordion: {
@@ -202,8 +209,8 @@ const eaHomePage={
         nmiOrMirnText: Selector("#eui-accordion-content-3 p").nth(0),
       },
       existingCustomerAccordion: {
-        existingCustomerText: Selector("#eui-accordion-content-5 p").nth(0),
-        nextButton: Selector("ea-modal-primary-action-refineModal"),
+        existingCustomerText: Selector("#eui-accordion-content-5 .hs-validate-account__text"),
+        nextButton: Selector("#ea-modal-primary-action-refineModal"),
       },
       closeSideBar: Selector("footer button[class*='ea-button--primary']"),
     },

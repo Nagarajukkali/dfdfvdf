@@ -1,6 +1,6 @@
 @abtest
 Feature: This feature is to test the verify account scenarios for existing residential customers with AB test functionality for plans page
-
+  
   Scenario Outline: Submit a quote for existing residential customer through verify account AB test functionality for plans page
     Given user has opened AB Test Plans Page in a browser and creates '<folderName>' to save evidences
     And user validates details on plans page for '<customerType>'

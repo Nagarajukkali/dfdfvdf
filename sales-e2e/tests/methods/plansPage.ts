@@ -699,6 +699,23 @@ export class plansMethod{
     }
   }
 
+  public static async verifyNMIorMIRNLookupMessage(t,NMIorMIRNType){
+    let errorMessage;
+    switch (NMIorMIRNType) {
+      case "ADDRESS_NOT_SERVICED":
+        errorMessage = "Unfortunately we don\'t supply energy to this address. For more information please call us on 1800 596 517.";
+        await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtAddressNotServicedMsg);
+        await testFunction.assertText(t, EaHomePage.elements.txtAddressNotServicedMsg, errorMessage);
+        break;
+      case "GAS_NOT_SERVICED":
+        errorMessage = "Please note: at 27 Munnell St GULARGAMBONE NSW 2828, we only supply electricity, so we\'ve removed the gas plan from your quote.";
+        await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtAddressNotServicedMsg);
+        await testFunction.assertText(t, EaHomePage.elements.txtAddressNotServicedMsg, errorMessage);
+        await testFunction.assertText(t, EaHomePage.elements.basicResiPlanHeadingFuel, 'Electricity');
+        break;
+    }
+  }
+
   public static async validateGeneralStateDisclaimer(t, customerType) {
     if(await testFunction.isResidential(customerType)) {
       //Residential customers
@@ -720,9 +737,12 @@ export class plansMethod{
       await testFunction.assertText(t, EaHomePage.elements.croRefineOptions.moreOptionsButton, "More");
       await testFunction.takeScreenshot(t, 'Refine Options');
     } else if(await testFunction.isBusiness(customerType)){
-      //Business customers
-      await testFunction.assertText(t, EaHomePage.elements.disclaimer.generalStateDisclaimerOld, "Find a better deal for your business here at EnergyAustralia. Easily compare plans, rates and benefits then switch online for instant email confirmation.");
+      await testFunction.assertText(t, EaHomePage.elements.croRefineOptions.energyUsageButton, "Energy usage");
+      await testFunction.assertText(t, EaHomePage.elements.croRefineOptions.addGreenEnergyButton, "Add green energy");
+      await testFunction.assertText(t, EaHomePage.elements.croRefineOptions.moreOptionsButton, "More");
+      await testFunction.takeScreenshot(t, 'Refine Options');
     }
+    console.log("Refine buttons are validated on plans page");
   }
 
   public static async validateComparisonStatement(t,baseCreditCondition,rewardCreditCondition,planName){
@@ -971,6 +991,7 @@ export class plansMethod{
             await testFunction.takeScreenshot(t, 'elec_usage_custom');
             break;
         }
+        break;
       case 'Gas':
         switch (usage){
           case 'Low':
@@ -990,7 +1011,9 @@ export class plansMethod{
             await testFunction.takeScreenshot(t, 'gas_usage_custom');
             break;
         }
+        break;
     }
+    console.log("User clicked on "+fueltype+usage+"option");
   }
 
   public static async enterSideBarCustomUsage(t: any, fueltype: any) {
@@ -1009,27 +1032,43 @@ export class plansMethod{
   public static async validateSideBarBillingPeriod(t: any) {
     await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.billingPeriodAccordion.billingPeriodText);
     await testFunction.assertText(t, EaHomePage.elements.croCustomiseEstimateSideBar.billingPeriodAccordion.activeBillingPeriod,'Monthly');
+    console.log("User validated the active billing period");
     await testFunction.takeScreenshot(t, 'billing_period_accordion_section');
     await testFunction.click(t, EaHomePage.elements.croCustomiseEstimateSideBar.billingPeriodAccordion.openBillingPeriodOption);
+    console.log("User clicked the billing period dropdown");
     await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.billingPeriodAccordion.billingPeriodDropdownMonthlyValue);
     await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.billingPeriodAccordion.billingPeriodDropdownBiMonthlyValue);
     await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.billingPeriodAccordion.billingPeriodDropdownQuarterlyValue);
     await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.billingPeriodAccordion.billingPeriodDropdownYearlyValue);
+    console.log("User validated the billing period values");
     await testFunction.takeScreenshot(t, 'billing_period_dropdown_section');
     await testFunction.click(t, EaHomePage.elements.croCustomiseEstimateSideBar.billingPeriodAccordion.billingPeriodDropdownYearlyValue);
+    console.log("User successfully clicked the Yearly billing period value");
     }
 
-  public static async validateSideBarGreenEnergy(t: any) {
+  public static async validateSideBarGreenEnergy(t: any, customer_type) {
     await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyText);
     await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyChargesText);
     await testFunction.takeScreenshot(t, 'green_energy_accordion_section');
     await testFunction.click(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.openGreenEnergyOption);
-    await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown0Value);
-    await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown10Value);
-    await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown20Value);
-    await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown100Value);
-    await testFunction.takeScreenshot(t, 'green_energy_dropdown_section');
-    await testFunction.click(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown100Value);
+    switch (customer_type) {
+      case 'RES':
+        await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown0Value);
+        await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown10Value);
+        await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown20Value);
+        await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown100Value);
+        await testFunction.takeScreenshot(t, 'green_energy_dropdown_section');
+        await testFunction.click(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown100Value);
+        break;
+      case 'BUS':
+        await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown0Value);
+        await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown10Value);
+        await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown25Value);
+        await testFunction.isElementDisplayed(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown100Value);
+        await testFunction.takeScreenshot(t, 'green_energy_dropdown_section');
+        await testFunction.click(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown100Value);
+        break;
+    }
   }
 }
 
