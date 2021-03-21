@@ -44,6 +44,19 @@ Given(/^user has opened AB Test Plans Page in a browser and creates '(.*)' to sa
   await t.navigateTo(eaHomePage.eaHomePageABTest);
   height = await ClientFunction(()=>window.innerHeight)();
   width = await ClientFunction(()=>window.innerWidth)();
+  console.log("User is navigated to AB test residential page");
+});
+
+Given(/^user has opened AB Test Business Plans Page in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {
+  screenshotFolder=folderName;
+  let screenshotFolderPath="screenshots/Current/" + await fetchBrowser() + "/" + screenshotFolder;
+  await FileUtils.deleteFiles(screenshotFolderPath);
+  await testFunction.cleanBaselineImageDir();
+  await testFunction.cleanDiffImageDir();
+  await t.navigateTo(eaHomePage.eaHomePageBusinessABTest);
+  height = await ClientFunction(()=>window.innerHeight)();
+  width = await ClientFunction(()=>window.innerWidth)();
+  console.log("User is navigated to AB test business page");
 });
 
 Given(/^user has opened the bill uploader website link in a browser and creates '(.*)' to save evidences$/, async function(t, [folderName]) {

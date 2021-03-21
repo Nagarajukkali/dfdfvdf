@@ -2,7 +2,8 @@ module.exports={
 config: {
     eaBaseUrl: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au`,
     eaHomePageUrl: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au?live=disabled`,
-    eaHomePageABTest: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/plans?yogi=`,
+    eaHomePageABTest: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/plans?test=dbopt-567`,
+    eaHomePageBusinessABTest: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/business/electricity-and-gas/small-business/plans?test=dbopt-567`,
     eaNewConnectionPageUrl:`https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/new-connections-ui/#/connection`,
     eaCampaignUrl: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/`,
     eaMyAccountUrl: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/myaccount/index.html`,

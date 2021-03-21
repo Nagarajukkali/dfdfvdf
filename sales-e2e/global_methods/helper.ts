@@ -172,6 +172,10 @@ export class testFunction {
     await t.expect(actualText).eql(expectedText);
   }
 
+  public static async assertPartialTextValue(t,actualText,expectedText){
+    await t.expect(actualText).contains(expectedText);
+  }
+
   public static async getPageURL() {
     const getURL = ClientFunction(() => window.location.href);
     const url = await getURL();
