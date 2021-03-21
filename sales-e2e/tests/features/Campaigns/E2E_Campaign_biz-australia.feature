@@ -423,7 +423,7 @@ Feature:E2E scenario for biz-australia campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign         |folderName                       |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |BOTH    |11         |20         |biz-australia  |E2E_Campaign_biz-australia_ACT_new_moving |Quote Tool  |Move Home|ACT    |BUS          |New            |No  |No  |
-
+@campaign21.3.4 @demo1
   Scenario Outline: Validate complete data for biz-australia campaign for SA for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "BIZOFFER5" and "5000" and clicks on show me plan link
@@ -497,5 +497,5 @@ Feature:E2E scenario for biz-australia campaign
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign         |folderName                       |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
-      |New           |BOTH    |3         |4         |biz-australia  |E2E_Campaign_biz-australia_SA_new_moving |Quote Tool  |Move Home|SA    |BUS          |New            |No  |No  |
+      |New           |BOTH    |4         |4         |biz-australia  |E2E_Campaign_biz-australia_SA_new_moving |Quote Tool  |Move Home|SA    |BUS          |New            |No  |No  |
 
