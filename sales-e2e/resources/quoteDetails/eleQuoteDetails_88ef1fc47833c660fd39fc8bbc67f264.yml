@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010225385
+    quoteId: BB2103196551
     sourceCode: Total_Plus_6%GD
-    actualQuoteDate: 2020-10-22
+    actualQuoteDate: 2021-03-19
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,9 +15,9 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0344905272
+      phoneNumber: 0325304260
     
-    emailId: HcORyaRckT@energyaustralia.com.au
+    emailId: JSdRFNSXEk@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
@@ -30,15 +30,15 @@ saleDetail :
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 34307236484
+      businessId: 78538656400
     
-    anzsic: RETAIL_TRD
+    anzsic: CONSTRUCTION
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0344905272
+      businessPhoneNumber: 0325304260
     
-    businessEmailId: HcORyaRckT@energyaustralia.com.au
+    businessEmailId: JSdRFNSXEk@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -55,20 +55,20 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 36
-    streetName: Gregory
-    streetType: S
-    suburb: WENDOUREE
+    streetNo: 2
+    streetName: Linton
+    streetType: AV
+    suburb: MOE
     state: VIC
     country: AUS
-    postCode: 3355
+    postCode: 3825
     addressType: Mailing
   
   offerDetail: 
     fuelType: E
     offerType: PS
     plan: SWSRB-EV
-    priceTag: EVTRA_NB2001
+    priceTag: EVTRA_NB2101
     nmiMirnInformation: 
       NMI: 6305402728
     

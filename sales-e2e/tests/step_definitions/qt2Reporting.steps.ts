@@ -68,6 +68,7 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
     let isStateEligibleFor$50Credit= (actualState==='VIC' || actualState==='NSW' || actualState==='QLD');
     let isStateEligibleForNoCredit= (actualState==='SA');
     let isBusinessPlanCode = (expectedPlanCode.includes('BSOT') || expectedPlanCode.includes('TOPB') || expectedPlanCode.includes('SWSR'));
+    let isResiPlanCode = (expectedPlanCode.includes('RSOT'));
 
     //Comparison
     await qt2Reporting.validateMandatoryField(t, actualQuoteStatus, expectedQuoteStatus);
@@ -110,7 +111,7 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
       }else if(isOfferType && !isBusinessPlanCode && isStateEligibleFor$25Credit){
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode+'_25');
       }
-      else if(isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit){
+      else if(isOfferType && !isBusinessPlanCode && !isResiPlanCode && isStateEligibleFor$50Credit){
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode+'_50');
       }else {
           await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode);
@@ -152,7 +153,7 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
       } else if(isOfferType && !isBusinessPlanCode && isStateEligibleFor$25Credit ){
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode+'_25');
       }
-      else if(isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit ){
+      else if(isOfferType && !isBusinessPlanCode && !isResiPlanCode && isStateEligibleFor$50Credit ){
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode+'_50');
       }else {
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode);

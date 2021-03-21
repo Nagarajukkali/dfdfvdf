@@ -39,6 +39,9 @@ Feature: This feature is to test the verify account scenarios for existing busin
       |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
       |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     Then Life support section is displayed on Review page as per selected "<fuelType>" and verified "<accountType>"
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType|GaslifeSupportDevices|
+      |Yes              |GAS     |Gas Other            |
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     And user lands on checkout complete page
