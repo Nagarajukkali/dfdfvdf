@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2102043407
+    quoteId: BB2103176344
     sourceCode: Total_19%GD
-    actualQuoteDate: 2021-02-04
+    actualQuoteDate: 2021-03-17
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MRS
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0315959393
+      phoneNumber: 0373235540
     
-    emailId: febExvFcAU@energyaustralia.com.au
+    emailId: MnHJUXkGui@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: CORPORATION
+    businessType: SOLE TRADER
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 37555623119
+      businessId: 49233200470
     
-    anzsic: CONSTRUCTION
+    anzsic: PERSONAL
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0315959393
+      businessPhoneNumber: 0373235540
     
-    businessEmailId: febExvFcAU@energyaustralia.com.au
+    businessEmailId: MnHJUXkGui@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST

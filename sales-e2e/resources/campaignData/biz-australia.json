@@ -68,7 +68,7 @@
           "default": "Total_Plus_22%GD_100"
         },
         "ACT": "Total_Plus_11%GD",
-        "SA": "Total_Plus_3%GD",
+        "SA": "Total_Plus_4%GD",
         "QLD": "Total_Plus_14%GD"
       },
       "existingCustomer": {
@@ -81,7 +81,7 @@
             "default": "Total_Plus_22%GD_100"
           },
           "ACT": "Total_Plus_11%GD",
-          "SA": "Total_Plus_3%GD",
+          "SA": "Total_Plus_4%GD",
           "QLD": "Total_Plus_14%GD"
         },
         "PS": {
@@ -93,7 +93,7 @@
             "default": "Total_Plus_22%GD_100"
           },
           "ACT": "Total_Plus_11%GD",
-          "SA": "Total_Plus_3%GD",
+          "SA": "Total_Plus_4%GD",
           "QLD": "Total_Plus_14%GD"
         }
       }

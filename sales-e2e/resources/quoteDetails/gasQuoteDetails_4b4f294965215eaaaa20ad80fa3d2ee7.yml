@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2103176343
-    sourceCode: Total_18%GD
-    actualQuoteDate: 2021-03-17
+    quoteId: BB2103196660
+    sourceCode: Total_19%GD_200
+    actualQuoteDate: 2021-03-19
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,64 +15,67 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0373235540
+      phoneNumber: 0342105537
     
-    emailId: MnHJUXkGui@energyaustralia.com.au
+    emailId: MFBkSUStdX@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: SOLE TRADER
+    businessType: LTDPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 49233200470
+      businessId: 88598692741
     
-    anzsic: PERSONAL
+    anzsic: RECREATIONAL
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0373235540
+      businessPhoneNumber: 0342105537
     
-    businessEmailId: MnHJUXkGui@energyaustralia.com.au
+    businessEmailId: MFBkSUStdX@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 465
-    streetName: Sandy Point
-    streetType: R
-    suburb: LOWER BORO
+    streetNo: 13
+    streetName: Station
+    streetType: S
+    suburb: WENTWORTH FALLS
     state: NSW
     country: AUS
-    postCode: 2580
+    postCode: 2782
     premiseType: COM
     addressType: Premise
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 465
-    streetName: Sandy Point
-    streetType: R
-    suburb: LOWER BORO
+    streetNo: 13
+    streetName: Station
+    streetType: S
+    suburb: WENTWORTH FALLS
     state: NSW
     country: AUS
-    postCode: 2580
+    postCode: 2782
     addressType: Mailing
   
   offerDetail: 
-    fuelType: E
-    offerType: COR
-    plan: TOPB-EN
-    priceTag: ENCEA_NB2007
+    fuelType: G
+    proposedStart: 2021-03-23
+    offerType: ENE
+    plan: TOPB-GN
+    priceTag: GNAGA_NB2007
+    serviceOrderDate: 2021-03-23
+    serviceOrderTime: BUSHRS
     nmiMirnInformation/: 
   
   offerDetail: 
-    fuelType: G
+    fuelType: E
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -80,7 +83,4 @@ saleDetail :
     billRouteType: EMAIL
   
   creditAssessmentDecision: Accept
-  meteringDetail: 
-    meterExchangeFlag: N
-  
 

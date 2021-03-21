@@ -1,83 +1,88 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2103196655
-    sourceCode: Total_Plus_4%GD
-    actualQuoteDate: 2021-03-19
+    quoteId: BB2103186418
+    sourceCode: Total_23%GD_100
+    actualQuoteDate: 2021-03-18
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: DR
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0375621223
+      phoneNumber: 0344506691
     
-    emailId: lCJQajRuWL@energyaustralia.com.au
+    emailId: mpQqmohcEk@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: PROPRIETARY LTD
+    businessType: CORPORATION
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 55610094400
+      businessId: 72107145982
     
     anzsic: GOVERNMENT
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0375621223
+      businessPhoneNumber: 0344506691
     
-    businessEmailId: lCJQajRuWL@energyaustralia.com.au
+    businessEmailId: mpQqmohcEk@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 6
-    streetName: Peat
-    streetType: AV
-    suburb: HOLDEN HILL
-    state: SA
+    streetNo: 36
+    streetName: Gregory
+    streetType: S
+    suburb: WENDOUREE
+    state: VIC
     country: AUS
-    postCode: 5088
+    postCode: 3355
     premiseType: COM
     addressType: Premise
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 6
-    streetName: Peat
-    streetType: AV
-    suburb: HOLDEN HILL
-    state: SA
+    streetNo: 36
+    streetName: Gregory
+    streetType: S
+    suburb: WENDOUREE
+    state: VIC
     country: AUS
-    postCode: 5088
+    postCode: 3355
     addressType: Mailing
   
   offerDetail: 
-    fuelType: E
+    fuelType: G
     proposedStart: 2021-03-22
     offerType: ENE
-    plan: SWSRB-ES
-    priceTag: ESSAA_NB2007
+    plan: TOPB-GV
+    priceTag: GVT3A_NB2101
     serviceOrderDate: 2021-03-22
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 2001114983
+      MIRN: 5330956738
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: N
     
   
   offerDetail: 
-    fuelType: G
+    fuelType: E
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -85,9 +90,4 @@ saleDetail :
     billRouteType: EMAIL
   
   creditAssessmentDecision: Accept
-  meteringDetail: 
-    meterExchangeFlag: N
-    reEnergisationJSCCode: RCFE
-    reEnergisationJSCCharge: 45.68
-  
 

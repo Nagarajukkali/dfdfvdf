@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2103176343
-    sourceCode: Total_18%GD
-    actualQuoteDate: 2021-03-17
+    quoteId: BB2103196649
+    sourceCode: Total_19%GD
+    actualQuoteDate: 2021-03-19
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: DR
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0373235540
+      phoneNumber: 0391128200
     
-    emailId: MnHJUXkGui@energyaustralia.com.au
+    emailId: QuTJaSilIm@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: SOLE TRADER
+    businessType: LTDPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 49233200470
+      businessId: 91313331594
     
     anzsic: PERSONAL
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0373235540
+      businessPhoneNumber: 0391128200
     
-    businessEmailId: MnHJUXkGui@energyaustralia.com.au
+    businessEmailId: QuTJaSilIm@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -66,9 +66,12 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    offerType: COR
+    proposedStart: 2021-03-23
+    offerType: ENE
     plan: TOPB-EN
     priceTag: ENCEA_NB2007
+    serviceOrderDate: 2021-03-23
+    serviceOrderTime: BUSHRS
     nmiMirnInformation/: 
   
   offerDetail: 
@@ -82,5 +85,6 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
+    reEnergisationJSCCharge: 18.0
   
 

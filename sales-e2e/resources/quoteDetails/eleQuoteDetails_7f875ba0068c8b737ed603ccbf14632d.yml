@@ -1,75 +1,80 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2103176343
-    sourceCode: Total_18%GD
-    actualQuoteDate: 2021-03-17
+    quoteId: BB2103186433
+    sourceCode: Total_13%GD_200
+    actualQuoteDate: 2021-03-18
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: DR
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0373235540
+      phoneNumber: 0311413616
     
-    emailId: MnHJUXkGui@energyaustralia.com.au
+    emailId: CsbGcVoiAJ@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: SOLE TRADER
+    businessType: LTDPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 49233200470
+      businessId: 71722502769
     
-    anzsic: PERSONAL
+    anzsic: EDUCATION
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0373235540
+      businessPhoneNumber: 0311413616
     
-    businessEmailId: MnHJUXkGui@energyaustralia.com.au
+    businessEmailId: CsbGcVoiAJ@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 465
-    streetName: Sandy Point
-    streetType: R
-    suburb: LOWER BORO
+    streetNo: 13
+    streetName: Station
+    streetType: S
+    suburb: WENTWORTH FALLS
     state: NSW
     country: AUS
-    postCode: 2580
+    postCode: 2782
     premiseType: COM
     addressType: Premise
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 465
-    streetName: Sandy Point
-    streetType: R
-    suburb: LOWER BORO
+    streetNo: 13
+    streetName: Station
+    streetType: S
+    suburb: WENTWORTH FALLS
     state: NSW
     country: AUS
-    postCode: 2580
+    postCode: 2782
     addressType: Mailing
   
   offerDetail: 
     fuelType: E
-    offerType: COR
+    proposedStart: 2021-03-22
+    offerType: ENE
     plan: TOPB-EN
-    priceTag: ENCEA_NB2007
-    nmiMirnInformation/: 
+    priceTag: ENIEA_NB2007
+    serviceOrderDate: 2021-03-22
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 4310504640
+    
   
   offerDetail: 
     fuelType: G
@@ -82,5 +87,7 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
+    reEnergisationJSCCode: MIMR
+    reEnergisationJSCCharge: 38.8
   
 
