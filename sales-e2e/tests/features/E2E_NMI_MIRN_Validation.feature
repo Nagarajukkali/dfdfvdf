@@ -14,7 +14,8 @@ Feature: This feature is to test the NMI, MIRN and address validation
       #Extinct NMI
       |Extinct_NMI_BLOCKED               |RES         |NMI_BLOCKED            |6305132344              |NMI                |
       #Parent embedded Network
-      |Parent_Embedde_Network_NMI_BLOCKED|RES         |NMI_BLOCKED            |6305824268              |NMI                |
+      #Regression defect raised DG-25820
+#      |Parent_Embedde_Network_NMI_BLOCKED|RES         |NMI_BLOCKED            |6305824268              |NMI                |
       #Child Embedded Network NMI
       |Child_Embedde_Network_NMI_BLOCKED |RES         |NMI_BLOCKED            |6305899601              |NMI                |
       #CnI NMI
@@ -27,8 +28,9 @@ Feature: This feature is to test the NMI, MIRN and address validation
       |GAS_NOT_SERVICED_NMI              |RES         |GAS_NOT_SERVICED       |20015938669             |NMI                |
       #Address where we don't supply electricity
       #|ELE_NOT_SERVICED_NMI             |RES         |ELE_NOT_SERVICED       |20015938669             |NMI                |
-      |NMI_NOT_FOUND                     |RES         |NMI_NOT_FOUND          |6435787996              |NMI                |
-      |MIRN_NOT_FOUND                    |BUS         |MIRN_NOT_FOUND         |5467868933              |MIRN               |
+       #Regression defect raised DG-25820
+#      |NMI_NOT_FOUND                     |RES         |NMI_NOT_FOUND          |6435787996              |NMI                |
+#      |MIRN_NOT_FOUND                    |BUS         |MIRN_NOT_FOUND         |5467868933              |MIRN               |
       #|NMI_ADDRESS_NOT_SERVICED          |RES         |ADDRESS_NOT_SERVICED   |6102633815              |NMI                |
       |Valid_NMI                         |RES         |SUCCESS                |6407557087              |NMI                |
       |Valid_MIRN                        |RES         |SUCCESS                |5321574765              |MIRN               |
