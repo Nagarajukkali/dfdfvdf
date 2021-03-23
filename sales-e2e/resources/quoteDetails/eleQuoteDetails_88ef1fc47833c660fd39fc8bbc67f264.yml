@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2103196551
+    quoteId: BB2103236903
     sourceCode: Total_Plus_6%GD
-    actualQuoteDate: 2021-03-19
+    actualQuoteDate: 2021-03-23
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,30 +15,30 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0325304260
+      phoneNumber: 0322228810
     
-    emailId: JSdRFNSXEk@energyaustralia.com.au
+    emailId: GlJHWWzGTs@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: OTHERS
+    businessType: GOVERNMENT
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 78538656400
+      businessId: 91884187960
     
-    anzsic: CONSTRUCTION
+    anzsic: PROPERTY
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0325304260
+      businessPhoneNumber: 0322228810
     
-    businessEmailId: JSdRFNSXEk@energyaustralia.com.au
+    businessEmailId: GlJHWWzGTs@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST

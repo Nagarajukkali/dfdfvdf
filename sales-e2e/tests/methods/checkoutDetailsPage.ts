@@ -835,7 +835,7 @@ export class checkoutDetailsMethod{
 
   public static async validateCurrentPlanDetails(t){
     if(myAccountMethod.map.get('isCurrentPlanDisplayed_'+checkoutDetailsMethod.getScenarioId(t))){
-      await testFunction.waitForElementToBeDisappeared(t,eaCheckoutDetailsPage.elements.eaSpinner);
+      // await testFunction.waitForElementToBeDisappeared(t,eaCheckoutDetailsPage.elements.eaSpinner);
       let itemsCount=await testFunction.sizeOfElement(t,eaCheckoutDetailsPage.elements.currentPlan.planDetailsSection);
       await testFunction.assertTextValue(t,itemsCount,4);
       await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.planHeadingTitle);

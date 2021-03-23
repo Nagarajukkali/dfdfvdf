@@ -3,7 +3,7 @@
   #We will trigger thees tests manually in jenkins once/twice in a day
 @myaccount
 Feature: This feature is to test the My account scenarios for business customers
-@failed
+
   Scenario Outline: Verify the BSME Plan switch journey with current plan from My Account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page

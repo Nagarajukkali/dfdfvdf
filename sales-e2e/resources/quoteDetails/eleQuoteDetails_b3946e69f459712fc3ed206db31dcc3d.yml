@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010225377
+    quoteId: BB2103226824
     sourceCode: Total_5%GD
-    actualQuoteDate: 2020-10-22
+    actualQuoteDate: 2021-03-22
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,9 +15,9 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0359611386
+      phoneNumber: 0378145377
     
-    emailId: oBBXIePQDC@energyaustralia.com.au
+    emailId: OmyEWCqpID@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
@@ -30,15 +30,15 @@ saleDetail :
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 54670936630
+      businessId: 19663933458
     
-    anzsic: COMMUNICATION
+    anzsic: UNKNOWN
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0359611386
+      businessPhoneNumber: 0378145377
     
-    businessEmailId: oBBXIePQDC@energyaustralia.com.au
+    businessEmailId: OmyEWCqpID@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -68,10 +68,8 @@ saleDetail :
     fuelType: E
     offerType: PS
     plan: TOPB-EV
-    priceTag: EVPO5_NB2001
-    nmiMirnInformation: 
-      NMI: 6203822385
-    
+    priceTag: EVPOA_NB2101
+    nmiMirnInformation/: 
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
       renovationsInProgressOrPlanned: N

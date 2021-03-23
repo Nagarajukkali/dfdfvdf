@@ -1,23 +1,23 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2103196491
+    quoteId: BB2103236905
     sourceCode: Total_5%GD
-    actualQuoteDate: 2021-03-19
+    actualQuoteDate: 2021-03-23
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MISS
+    title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0323078331
+      phoneNumber: 0311526422
     
-    emailId: xogQfMZpiD@energyaustralia.com.au
+    emailId: DUkYfXhrYI@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
@@ -30,15 +30,15 @@ saleDetail :
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 30179084300
+      businessId: 44893070962
     
-    anzsic: UNKNOWN
+    anzsic: RECREATIONAL
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0323078331
+      businessPhoneNumber: 0311526422
     
-    businessEmailId: xogQfMZpiD@energyaustralia.com.au
+    businessEmailId: DUkYfXhrYI@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -66,11 +66,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-03-23
+    proposedStart: 2021-03-25
     offerType: ENE
     plan: TOPB-EV
     priceTag: EVPO5_NB2101
-    serviceOrderDate: 2021-03-23
+    serviceOrderDate: 2021-03-25
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 6203822385

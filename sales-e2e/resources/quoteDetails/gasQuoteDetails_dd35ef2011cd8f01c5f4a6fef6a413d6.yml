@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010144578
+    quoteId: BB2103226794
     sourceCode: Total_27%GD_50
-    actualQuoteDate: 2020-10-14
+    actualQuoteDate: 2021-03-22
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -12,22 +12,21 @@ saleDetail :
     title: DR
     firstName: test
     lastName: test
-    commMethod: EMAIL
+    commMethod: POSTAL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0397173310
+      phoneNumber: 0363600486
     
-    emailId: lqPOJuzYWM@energyaustralia.com.au
+    emailId: nRVxlLBbgY@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: PASSPORT
-      id: 554969
+      id: 71656
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationPassportDetail: 
           passportFirstName: test
-          passportMiddleName/: 
           passportLastName: test
           passportCountry: AUS
         
@@ -50,13 +49,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: Y
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 74
+    streetName: Yillowra
+    streetType: S
+    suburb: AUBURN
+    state: NSW
+    country: AUS
+    postCode: 2144
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-10-16
+    proposedStart: 2021-03-24
     offerType: ENE
     plan: TOPH-GV
-    priceTag: GVA2A_NR2001
-    serviceOrderDate: 2020-10-16
+    priceTag: GVA2A_NR2101
+    serviceOrderDate: 2021-03-24
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5310571404
