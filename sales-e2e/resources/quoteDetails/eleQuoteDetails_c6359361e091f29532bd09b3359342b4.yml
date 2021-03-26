@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2102043408
-    sourceCode: Total_21%GD
-    actualQuoteDate: 2021-02-04
+    quoteId: BB2103267282
+    sourceCode: Total_21%GD_200
+    actualQuoteDate: 2021-03-26
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: DR
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0358523320
+      phoneNumber: 0386904199
     
-    emailId: YTzoShSPoG@energyaustralia.com.au
+    emailId: ZmrlxSVbUs@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: SOLE TRADER
+    businessType: OTHERS
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 22617612729
+      businessId: 54491510365
     
-    anzsic: MINING
+    anzsic: TRANSPORT
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0358523320
+      businessPhoneNumber: 0386904199
     
-    businessEmailId: YTzoShSPoG@energyaustralia.com.au
+    businessEmailId: ZmrlxSVbUs@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -66,13 +66,15 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-02-05
+    proposedStart: 2021-03-29
     offerType: ENE
     plan: TOPB-EN
-    priceTag: ENEAA_NB2007
-    serviceOrderDate: 2021-02-05
+    priceTag: ENEA5_NT2007
+    serviceOrderDate: 2021-03-29
     serviceOrderTime: BUSHRS
-    nmiMirnInformation/: 
+    nmiMirnInformation: 
+      NMI: NCCC005405
+    
   
   offerDetail: 
     fuelType: G
@@ -85,6 +87,7 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
+    reEnergisationJSCCode: RE-EN
     reEnergisationJSCCharge: 11.41
   
 

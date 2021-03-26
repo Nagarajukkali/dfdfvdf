@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2102043410
-    sourceCode: Total_13%GD
-    actualQuoteDate: 2021-02-04
+    quoteId: BB2103267284
+    sourceCode: Total_13%GD_200
+    actualQuoteDate: 2021-03-26
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: DR
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0394687093
+      phoneNumber: 0331716110
     
-    emailId: AejmPvZmFW@energyaustralia.com.au
+    emailId: aZNZaJxwgG@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: SOLE TRADER
+    businessType: INCORPORATED
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 18067458925
+      businessId: 11442096403
     
-    anzsic: PROPERTY
+    anzsic: AGRICULTURE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0394687093
+      businessPhoneNumber: 0331716110
     
-    businessEmailId: AejmPvZmFW@energyaustralia.com.au
+    businessEmailId: aZNZaJxwgG@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -66,13 +66,15 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-02-08
+    proposedStart: 2021-03-30
     offerType: ENE
     plan: TOPB-EQ
     priceTag: EQEXA_NB2007
-    serviceOrderDate: 2021-02-08
+    serviceOrderDate: 2021-03-30
     serviceOrderTime: BUSHRS
-    nmiMirnInformation/: 
+    nmiMirnInformation: 
+      NMI: QB02256002
+    
   
   offerDetail: 
     fuelType: G
@@ -85,6 +87,7 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
+    reEnergisationJSCCode: RNRRBU
     reEnergisationJSCCharge: 0.0
   
 
