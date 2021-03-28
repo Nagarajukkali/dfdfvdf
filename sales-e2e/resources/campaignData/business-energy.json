@@ -7,20 +7,20 @@
       "preSelect": {
         "Credit50": {
           "VIC": {
-            "heading": "$100 Sign Up Credit",
-            "description": "Get a $100 credit per new energy account on your first bill when you sign up.**"
+            "heading": "Get up to $200 credit",
+            "description": "Credits applied to first bill. $100 to electricity. $100 to gas."
           },
           "NSW": {
-            "heading": "$100 Sign Up Credit",
-            "description": "Get a $100 credit per new energy account on your first bill when you sign up.**"
+            "heading": "Get up to $400 credit",
+            "description": "Credits applied to first bill. $200 to electricity. $200 to gas."
           },
           "ACT": {
             "heading": "",
             "description": ""
           },
           "QLD": {
-            "heading": "$100 Sign Up Credit",
-            "description": "Get a $100 credit per new energy account on your first bill when you sign up.**"
+            "heading": "Get a $200 credit",
+            "description": "Credits applied to first bill. $200 to electricity."
           },
           "SA": {
             "heading": "",
@@ -68,10 +68,10 @@
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.**",
-          "NSW": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.**",
+          "VIC": "Get up to $200 credit. Credits applied to first bill. $100 to electricity. $100 to gas.",
+          "NSW": "Get up to $400 credit. Credits applied to first bill. $200 to electricity. $200 to gas.",
           "ACT": "",
-          "QLD": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.**",
+          "QLD": "Get a $200 credit. Credits applied to first bill. $200 to electricity.",
           "SA" : ""
         },
         "chanceToWin": {
@@ -89,28 +89,28 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_5%GD",
+        "VIC": "Total_5%GD_100",
         "NSW": {
-          "Ausgrid": "Total_21%GD",
-          "Essential": "Total_18%GD",
-          "Endeavour": "Total_13%GD",
-          "default": "Total_21%GD"
+          "Ausgrid": "Total_21%GD_200",
+          "Essential": "Total_18%GD_200",
+          "Endeavour": "Total_13%GD_200",
+          "default": "Total_21%GD_200"
         },
         "ACT": "Total_10%GD",
-        "QLD": "Total_13%GD",
+        "QLD": "Total_13%GD_200",
         "SA": "Total_3%GD"
       },
       "existingCustomer": {
         "ENE":{
-          "VIC": "Total_5%GD",
+          "VIC": "Total_5%GD_100",
           "NSW": {
-            "Ausgrid": "Total_21%GD",
-            "Essential": "Total_18%GD",
-            "Endeavour": "Total_13%GD",
-            "default": "Total_21%GD"
+            "Ausgrid": "Total_21%GD_200",
+            "Essential": "Total_18%GD_200",
+            "Endeavour": "Total_13%GD_200",
+            "default": "Total_21%GD_200"
           },
           "ACT": "Total_10%GD",
-          "QLD": "Total_13%GD",
+          "QLD": "Total_13%GD_200",
           "SA": "Total_3%GD"
         },
         "PS": {
@@ -134,20 +134,20 @@
       "preSelect": {
         "Credit50": {
           "VIC": {
-            "heading": "$100 Sign Up Credit",
-            "description": "Get a $100 credit per new energy account on your first bill when you sign up.**"
+            "heading": "Get up to $200 credit",
+            "description": "Credits applied to first bill. $100 to electricity. $100 to gas."
           },
           "NSW": {
-            "heading": "$100 Sign Up Credit",
-            "description": "Get a $100 credit per new energy account on your first bill when you sign up.**"
+            "heading": "Get up to $400 credit",
+            "description": "Credits applied to first bill. $200 to electricity. $200 to gas."
           },
           "ACT": {
             "heading": "",
             "description": ""
           },
           "QLD": {
-            "heading": "$100 Sign Up Credit",
-            "description": "Get a $100 credit per new energy account on your first bill when you sign up.**"
+            "heading": "",
+            "description": ""
           },
           "SA": {
             "heading": "",
@@ -195,10 +195,10 @@
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.**",
-          "NSW": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.**",
+          "VIC": "Get up to $200 credit. Credits applied to first bill. $100 to electricity. $100 to gas.",
+          "NSW": "Get up to $400 credit. Credits applied to first bill. $200 to electricity. $200 to gas.",
           "ACT": "",
-          "QLD": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.**",
+          "QLD": "",
           "SA" : ""
         },
         "chanceToWin": {
@@ -216,15 +216,15 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_23%GD",
-        "NSW": "Total_19%GD",
+        "VIC": "Total_23%GD_100",
+        "NSW": "Total_19%GD_200",
         "ACT": "Total_19%GD",
         "SA": "Total_3%GD"
       },
       "existingCustomer": {
         "ENE":{
-          "VIC": "Total_23%GD",
-          "NSW": "Total_19%GD",
+          "VIC": "Total_23%GD_100",
+          "NSW": "Total_19%GD_200",
           "ACT": "Total_19%GD",
           "SA": "Total_3%GD"
         },
@@ -280,20 +280,20 @@
     },
     "Credit50": {
       "VIC": {
-        "heading": "$100 Sign Up Credit",
-        "description": "**Offer only for eligible VIC, NSW & QLD business customers who sign up to a new Total Plan Business electricity or gas account online. Limit of one $100 credit per new energy account, per energy type, per business premises. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+        "heading": "Account Credits",
+        "description": "* Offer available to new VIC business accounts only who sign up to Total Plan Business electricity or gas offer. Credits applied to first bill - $100 to new electricity account, $100 to new gas account. $200 credit if you sign up both your electricity and gas as new accounts. Credits are not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "NSW": {
-        "heading": "$100 Sign Up Credit",
-        "description": "**Offer only for eligible VIC, NSW & QLD business customers who sign up to a new Total Plan Business electricity or gas account online. Limit of one $100 credit per new energy account, per energy type, per business premises. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+        "heading": "Account Credits",
+        "description": "* Offer available to new NSW business accounts only who sign up to Total Plan Business electricity or gas offer. Credits applied to first bill - $200 to new electricity account, $200 to new gas account. $400 credit if you sign up both your electricity and gas as new accounts. Credits are not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "ACT": {
         "heading": "",
         "description": ""
       },
       "QLD": {
-        "heading": "$100 Sign Up Credit",
-        "description": "**Offer only for eligible VIC, NSW & QLD business customers who sign up to a new Total Plan Business electricity or gas account online. Limit of one $100 credit per new energy account, per energy type, per business premises. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+        "heading": "Account Credits",
+        "description": "* Offer available to new QLD business accounts only who sign up to Total Plan Business electricity offer. Credits applied to first bill - $200 to new electricity account. $200 credit if you sign up your electricity as a new accounts. Credits are not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "SA": {
         "heading": "",
