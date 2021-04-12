@@ -1,68 +1,79 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2005218045
-    sourceCode: Total_6%GD
-    actualQuoteDate: 2020-05-21
+    quoteId: BB2104086514
+    sourceCode: Total_6%GD_100
+    actualQuoteDate: 2021-04-08
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: Mr
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0348627759
+      phoneNumber: 0390044636
     
-    emailId: eXzBphmANj@energyaustralia.com.au
+    emailId: OMSriFVoiF@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: LTDPARTNERSHIP
+    businessType: INCORPORATED
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 54030765708
+      businessId: 63537324353
     
-    anzsic: FINANCE
+    anzsic: PERSONAL
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0348627759
+      businessPhoneNumber: 0390044636
     
-    businessEmailId: eXzBphmANj@energyaustralia.com.au
+    businessEmailId: OMSriFVoiF@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 21
-    streetName: Eltham
+    streetNo: 36
+    streetName: Gregory
     streetType: S
-    suburb: FLEMINGTON
+    suburb: WENDOUREE
     state: VIC
     country: AUS
-    postCode: 3031
+    postCode: 3355
     premiseType: COM
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 36
+    streetName: Gregory
+    streetType: S
+    suburb: WENDOUREE
+    state: VIC
+    country: AUS
+    postCode: 3355
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-05-25
+    proposedStart: 2021-04-12
     offerType: ENE
     plan: TOPB-EV
-    priceTag: EVAGA_NB2001
-    serviceOrderDate: 2020-05-25
+    priceTag: EVPO5_NB2101
+    serviceOrderDate: 2021-04-12
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 6001456296
+      NMI: 6203822385
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -81,7 +92,7 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    reEnergisationJSCCode: REENBH
-    reEnergisationJSCCharge: 38.54
+    reEnergisationJSCCode: RCTBH
+    reEnergisationJSCCharge: 55.93
   
 

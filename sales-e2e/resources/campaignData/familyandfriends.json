@@ -11,8 +11,8 @@
             "description": "Get a $50 credit per new energy account on your first bill when you sign up.+"
           },
           "NSW": {
-            "heading": "$50 Sign Up Credit",
-            "description": "Get a $50 credit per new energy account on your first bill when you sign up.+"
+            "heading": "",
+            "description": ""
           },
           "ACT": {
             "heading": "$25 Sign Up Credit",
@@ -51,7 +51,7 @@
       "postSelect": {
         "Credit50": {
           "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
-          "NSW": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
+          "NSW": "",
           "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up.+",
           "QLD": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
           "SA" : "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up.+"
@@ -67,10 +67,10 @@
       "newCustomer": {
         "VIC": "Total_13%GD_50",
         "NSW": {
-          "Ausgrid": "Total_21%GD_50",
-          "Essential": "TTotal_21%GD_50",
-          "Endeavour": "Total_21%GD_50",
-          "default": "Total_21%GD_50"
+          "Ausgrid": "Total_27%GD",
+          "Essential": "Total_27%GD",
+          "Endeavour": "Total_27%GD",
+          "default": "Total_27%GD"
         },
         "ACT": "Total_15%GD_25",
         "QLD": "Total_19%GD_50",
@@ -80,10 +80,10 @@
         "ENE":{
           "VIC": "Total_13%GD_50",
           "NSW": {
-            "Ausgrid": "Total_21%GD_50",
-            "Essential": "TTotal_21%GD_50",
-            "Endeavour": "Total_21%GD_50",
-            "default": "Total_21%GD_50"
+            "Ausgrid": "Total_27%GD",
+            "Essential": "Total_27%GD",
+            "Endeavour": "Total_27%GD",
+            "default": "Total_27%GD"
           },
           "ACT": "Total_15%GD_25",
           "QLD": "Total_19%GD_50",
@@ -92,10 +92,10 @@
         "PS": {
           "VIC": "Total_13%GD",
           "NSW": {
-            "Ausgrid": "Total_21%GD",
-            "Essential": "Total_21%GD",
-            "Endeavour": "Total_21%GD",
-            "default": "Total_21%GD"
+            "Ausgrid": "Total_27%GD",
+            "Essential": "Total_27%GD",
+            "Endeavour": "Total_27%GD",
+            "default": "Total_27%GD"
           },
           "ACT": "Total_15%GD",
           "QLD": "Total_19%GD",
@@ -114,8 +114,8 @@
             "description": "Get a $50 credit per new energy account on your first bill when you sign up.+"
           },
           "NSW": {
-            "heading": "$50 Sign Up Credit",
-            "description": "Get a $50 credit per new energy account on your first bill when you sign up.+"
+            "heading": "",
+            "description": ""
           },
           "ACT": {
             "heading": "$25 Sign Up Credit",
@@ -150,7 +150,7 @@
       "postSelect": {
         "Credit50": {
           "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
-          "NSW": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
+          "NSW": "",
           "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up.+",
           "SA" : "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up.+"
         },
@@ -162,20 +162,20 @@
     },    "sourceCode": {
       "newCustomer": {
         "VIC": "Total_30%GD_50",
-        "NSW": "Total_19%GD_50",
+        "NSW": "Total_24%GD",
         "ACT": "Total_19%GD_25",
         "SA": "Total_16%GD"
       },
       "existingCustomer": {
         "ENE":{
           "VIC": "Total_30%GD_50",
-          "NSW": "Total_19%GD_50",
+          "NSW": "Total_24%GD",
           "ACT": "Total_19%GD_25",
           "SA": "Total_16%GD"
         },
         "PS": {
           "VIC": "Total30%GD",
-          "NSW": "Total_19%GD",
+          "NSW": "Total_24%GD",
           "ACT": "Total_19%GD",
           "SA": "Total_16%GD"
         }
@@ -216,8 +216,8 @@
         "description": "+ Offer available to VIC residential customers who sign up to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "NSW": {
-        "heading": "$50 Sign Up Credit",
-        "description": "+ Offer available to NSW residential customers who sign up to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+        "heading": "",
+        "description": ""
       },
       "ACT": {
         "heading": "$25 Sign Up Credit",

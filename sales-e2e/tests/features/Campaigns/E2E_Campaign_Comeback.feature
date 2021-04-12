@@ -1,7 +1,7 @@
-@campaign21.2.4 
+@campaign
 
 Feature:E2E scenario for comeback campaign
-
+  @campaign21.4.3
   Scenario Outline: Validate complete data for comeback campaign for NSW - new movingq
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" and clicks on show me plan link
@@ -26,7 +26,7 @@ Feature:E2E scenario for comeback campaign
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                      |movingType |propertyType |solarOption  |
-      |RES         | 69 Henley Marine Drive, RODD POINT NSW 2046|Moving     |Renter      |No         |
+      |RES         | 74 Yillowra Street, AUBURN NSW 2144|Moving     |Renter      |No         |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |
@@ -67,14 +67,14 @@ Feature:E2E scenario for comeback campaign
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode |NMI |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-EN |4102747329|                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-EN |4102681649|                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-GN |5240080109|                             |                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-GN |5240524910|                             |                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName              |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
-      |New           |BOTH    |19         |17         |comeback    |E2E_Campaign_Comeback_NSW_new_moving    |NSW  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
+      |New           |BOTH    |25         |22         |comeback    |E2E_Campaign_Comeback_NSW_new_moving    |NSW  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
 
   Scenario Outline: Validate complete data for comeback campaign for ACT - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -407,10 +407,10 @@ Feature:E2E scenario for comeback campaign
       |No               |         |                       |               |
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |<state>|
+      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |<state>|
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |<state>|
+      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName       |state|signUpCredit|
       |Y                        |Y          |Y              |Total Plan Plus|<state>  |Y       |
@@ -434,7 +434,7 @@ Feature:E2E scenario for comeback campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName                   |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
       |Existing      |BOTH    |11         |28         |comeback    |E2E_Campaign_Comeback_VIC_exis_nonmov    |VIC  |Quote Tool    |Plan Switch |No   |No  |RES          |Existing          |
-
+  @campaign21.4.3
   Scenario Outline: Validate complete data for comeback campaign for NSW - existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" for postcode and proceed to view the plans
@@ -460,7 +460,7 @@ Feature:E2E scenario for comeback campaign
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       |customerStatus   |accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
-      |<customerStatus> |6437229177   |Postcode           |2447            |dob   |28121947|
+      |<customerStatus> |6437229177   |Postcode           |2447            |dob   |01011980|
     And user provides all other details on qualifier page for Existing customer
       |customerType|movingType |propertyType |solarOption|
       |RES         |Non-Moving |Renter       |No         |
@@ -480,10 +480,10 @@ Feature:E2E scenario for comeback campaign
       |No               |         |                       |               |
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |<state>|
+      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName       |state|signUpCredit|
-      |Y                        |Y          |Y              |Total Plan Plus|NSW  |N           |
+      |Y                        |Y          |Y              |Total Plan Plus|NSW  |Y           |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -499,7 +499,7 @@ Feature:E2E scenario for comeback campaign
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS      |SWSR1-EN |4407376910 |                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName                   |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
-      |Existing      |BOTH    |19         |17         |comeback    |E2E_Campaign_Comeback_NSW_exis_nonmov    |NSW  |Quote Tool    |Plan Switch |No   |No  |RES          |Existing          |
+      |Existing      |BOTH    |25         |22         |comeback    |E2E_Campaign_Comeback_NSW_exis_nonmov    |NSW  |Quote Tool    |Plan Switch |No   |No  |RES          |Existing          |
 
   Scenario Outline: Validate complete data for comeback campaign for SA - existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -552,7 +552,7 @@ Feature:E2E scenario for comeback campaign
       |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName       |state|signUpCredit|
-      |Y                        |Y          |Y              |Total Plan Plus|<state>  |N       |
+      |Y                        |Y          |Y              |Total Plan Plus|<state>  |Y       |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -599,7 +599,7 @@ Feature:E2E scenario for comeback campaign
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       |customerStatus   |accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
-      |<customerStatus> |6895078753   |Postcode           |2902            |dob   |04041973|
+      |<customerStatus> |6895078753   |Postcode           |2902            |dob   |01011980|
     And user provides all other details on qualifier page for Existing customer
       |customerType|movingType |propertyType |solarOption|
       |RES         |Non-Moving |Renter       |No         |
@@ -686,7 +686,7 @@ Feature:E2E scenario for comeback campaign
       |No               |         |                       |               |
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |<state>|
+      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName       |state|signUpCredit|
       |Y                        |Y          |Y              |Total Plan Plus|<state>  |Y           |

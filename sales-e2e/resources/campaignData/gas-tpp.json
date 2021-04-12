@@ -11,8 +11,8 @@
             "description": "Get a $50 credit on your first bill when you sign up your second energy account.+"
           },
           "NSW": {
-            "heading": "$50 Second Energy Account Credit",
-            "description": "Get a $50 credit on your first bill when you sign up your second energy account.+"
+            "heading": "",
+            "description": ""
           },
           "ACT": {
             "heading": "$25 Second Energy Account Credit",
@@ -43,7 +43,7 @@
       "postSelect": {
         "Credit50": {
           "VIC": "$50 Second Energy Account Credit. Get a $50 credit on your first bill when you sign up your second energy account.+",
-          "NSW": "$50 Second Energy Account Credit. Get a $50 credit on your first bill when you sign up your second energy account.+",
+          "NSW": "",
           "ACT": "$25 Second Energy Account Credit. Get a $25 credit on your first bill when you sign up your second energy account online.+",
           "SA" : "$50 Second Energy Account Credit. Get a $50 credit on your first bill when you sign up your second energy account.+"
         },
@@ -56,7 +56,7 @@
     "sourceCode": {
       "newCustomer": {
         "VIC": "Total_Plus_28%GD_50",
-        "NSW": "Total_Plus_17%GD_50",
+        "NSW": "Total_Plus_22%GD",
         "ACT": "Total_Plus_17%GD_25",
         "QLD": "",
         "SA": "Total_Plus_14%GD"
@@ -64,14 +64,14 @@
       "existingCustomer": {
         "ENE":{
           "VIC": "Total_Plus_28%GD_50",
-          "NSW": "Total_Plus_17%GD_50",
+          "NSW": "Total_Plus_22%GD",
           "ACT": "Total_Plus_17%GD_25",
           "QLD": "",
           "SA": "Total_Plus_14%GD"
         },
         "PS": {
           "VIC": "Total_Plus_28%GD_50",
-          "NSW": "Total_Plus_17%GD_50",
+          "NSW": "Total_Plus_22%GD",
           "ACT": "Total_Plus_17%GD_25",
           "QLD": "",
           "SA": "Total_Plus_14%GD"
@@ -114,8 +114,8 @@
         "description": "+ Offer available to existing residential customers who sign up a second energy account to Total Plan Plus gas. Limit of one $50 credit per customer address. Available to customers in VIC only. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       },
       "NSW": {
-        "heading": "$50 Second Energy Account Credit",
-        "description": "+ Offer available to existing residential customers who sign up a second energy account to Total Plan Plus gas. Limit of one $50 credit per customer address. Available to customers in NSW only. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        "heading": "",
+        "description": ""
       },
       "ACT": {
         "heading": "$25 Second Energy Account Credit",

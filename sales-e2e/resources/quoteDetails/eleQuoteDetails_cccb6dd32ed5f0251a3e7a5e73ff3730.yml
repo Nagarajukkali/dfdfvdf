@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: FC2102053962
-    sourceCode: Total_Plus_20%GD_100
-    actualQuoteDate: 2021-02-05
+    quoteId: BB2104086585
+    sourceCode: Total_14%GD_100
+    actualQuoteDate: 2021-04-08
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -10,74 +10,74 @@ saleDetail :
   
   personDetail: 
     title: DR
-    firstName: Remo
-    lastName: Dsoulza
+    firstName: test
+    lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0316043517
+      phoneNumber: 0392742205
     
-    emailId: jEVyqelFQQ@energyaustralia.com.au
+    emailId: OAdwCqYDqL@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: OTHERS
+    businessType: INCORPORATED
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 72109645290
+      businessId: 93965976308
     
-    anzsic: MANUFACTURE
+    anzsic: FINANCE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0316043517
+      businessPhoneNumber: 0392742205
     
-    businessEmailId: jEVyqelFQQ@energyaustralia.com.au
+    businessEmailId: OAdwCqYDqL@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 320
-    streetName: Crown
-    streetType: S
-    suburb: SURRY HILLS
-    state: NSW
+    streetNo: 437
+    streetName: Oxley
+    streetType: AV
+    suburb: REDCLIFFE
+    state: QLD
     country: AUS
-    postCode: 2010
+    postCode: 4020
     premiseType: COM
     addressType: Premise
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 320
-    streetName: Crown
-    streetType: S
-    suburb: SURRY HILLS
-    state: NSW
+    streetNo: 437
+    streetName: Oxley
+    streetType: AV
+    suburb: REDCLIFFE
+    state: QLD
     country: AUS
-    postCode: 2010
+    postCode: 4020
     addressType: Mailing
   
   offerDetail: 
-    fuelType: G
-    proposedStart: 2021-02-08
+    fuelType: E
+    proposedStart: 2021-04-12
     offerType: ENE
-    plan: SWSRB-GN
-    priceTag: GNAGA_NB2007
-    serviceOrderDate: 2021-02-08
+    plan: TOPB-EQ
+    priceTag: EQEXA_NB2007
+    serviceOrderDate: 2021-04-12
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      MIRN: 5240554353
+      NMI: QB02256002
     
   
   offerDetail: 
-    fuelType: E
+    fuelType: G
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -85,4 +85,9 @@ saleDetail :
     billRouteType: EMAIL
   
   creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: RNRRBU
+    reEnergisationJSCCharge: 0.0
+  
 

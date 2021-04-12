@@ -1,4 +1,4 @@
-@campaign21.3.4 
+@campaign
 
 Feature:E2E scenario for business-come-back campaign
 
@@ -227,7 +227,7 @@ Feature:E2E scenario for business-come-back campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign         |folderName                       |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |BOTH    |21         |19         |business-come-back  |E2E_Campaign_business-come-back_NSW_new_moving |Quote Tool  |Move Home|NSW    |BUS          |New            |No  |No  |
-  
+
   Scenario Outline: Validate complete data for business-come-back campaign for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link

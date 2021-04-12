@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2102114053
+    quoteId: BB2104077796
     sourceCode: Total_16%GD
-    actualQuoteDate: 2021-02-11
+    actualQuoteDate: 2021-04-07
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,20 +15,20 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0342777330
+      phoneNumber: 0314546422
     
-    emailId: zgjWzaZCcM@energyaustralia.com.au
+    emailId: EbtYZbMbdC@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLWA
-      id: 61379
+      idType: DLQLD
+      id: 793182
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: WA
+          licenseStateOfIssue: QLD
         
       
     
@@ -62,11 +62,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-02-12
+    proposedStart: 2021-04-07
     offerType: ENE
     plan: FFPH-ES
     priceTag: ESSAA_NR2007
-    serviceOrderDate: 2021-02-12
+    serviceOrderDate: 2021-04-07
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 2001649095

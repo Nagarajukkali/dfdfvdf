@@ -1,4 +1,4 @@
-@campaign21.2.3
+@campaign
 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
@@ -35,7 +35,7 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType| connectionAddress                          | movingType|propertyType|solarOption|
-      |RES         | 69 Henley Marine Drive, RODD POINT NSW 2046|Non-Moving |Renter      |No         |
+      |RES         | 74 Yillowra Street, AUBURN NSW 2144|Non-Moving |Renter      |No         |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |
       |RES         |RES        |New           | test     |test     |Driver License|
@@ -76,11 +76,11 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RCPP-EN |4102747329|                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RCPP-EN |4102681649|                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RCPP-GN |5240080109|                             |                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RCPP-GN |5240524910|                             |                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|campaign     |folderName                                      |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
       |New           |BOTH    |nofrills-finder     |E2E_Campaign_nofrills-finder_NSW_New_NonMoving  |NSW  |Quote Tool    |COR|No   |No  |RES          |New            |
@@ -375,7 +375,7 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       |customerStatus   |accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
-      |<customerStatus> |6437229177   |Postcode           |2447            |dob   |28121947|
+      |<customerStatus> |6437229177   |Postcode           |2447            |dob   |01011980|
     And user provides all other details on qualifier page for Existing customer
       |customerType|movingType |propertyType |solarOption|
       |RES         |Non-Moving |Renter       |No         |

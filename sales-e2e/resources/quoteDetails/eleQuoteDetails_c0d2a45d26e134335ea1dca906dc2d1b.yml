@@ -1,27 +1,27 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: PA2102094230
+    quoteId: PA2104096617
     sourceCode: Alliance_12%GD_50
-    actualQuoteDate: 2021-02-09
+    actualQuoteDate: 2021-04-09
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MISS
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0399809602
+      phoneNumber: 0332565987
     
-    emailId: HDVRFsurOh@energyaustralia.com.au
+    emailId: vnfGAQNOzE@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DLWA
-      id: 602124
+      id: 771622
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y

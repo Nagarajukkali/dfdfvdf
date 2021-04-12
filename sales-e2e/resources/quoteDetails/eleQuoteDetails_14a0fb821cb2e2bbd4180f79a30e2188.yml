@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: FC2102053961
+    quoteId: FC2104086133
     sourceCode: Total_Plus_22%GD_100
-    actualQuoteDate: 2021-02-05
+    actualQuoteDate: 2021-04-08
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: DR
-    firstName: Remo
-    lastName: Dsoulza
+    title: MRS
+    firstName: test
+    lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0316043517
+      phoneNumber: 0331993015
     
-    emailId: jEVyqelFQQ@energyaustralia.com.au
+    emailId: ecUkjZWQPH@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: OTHERS
+    businessType: SOLE TRADER
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 72109645290
+      businessId: 51113652520
     
-    anzsic: MANUFACTURE
+    anzsic: MINING
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0316043517
+      businessPhoneNumber: 0331993015
     
-    businessEmailId: jEVyqelFQQ@energyaustralia.com.au
+    businessEmailId: ecUkjZWQPH@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -66,11 +66,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-02-08
+    proposedStart: 2021-04-08
     offerType: ENE
     plan: SWSRB-EN
     priceTag: ENEA5_NT2007
-    serviceOrderDate: 2021-02-08
+    serviceOrderDate: 2021-04-08
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: NCCC005405

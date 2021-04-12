@@ -1,27 +1,27 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2102114046
-    sourceCode: Total_21%GD_50
-    actualQuoteDate: 2021-02-11
+    quoteId: BB2104086573
+    sourceCode: Total_24%GD
+    actualQuoteDate: 2021-04-08
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MRS
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0390249310
+      phoneNumber: 0323384476
     
-    emailId: qvVllnCtDJ@energyaustralia.com.au
+    emailId: MuhztFkoLa@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DLWA
-      id: 776756
+      id: 698053
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -38,38 +38,38 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 69
-    streetName: Henley Marine
-    streetType: DR
-    suburb: RODD POINT
+    streetNo: 74
+    streetName: Yillowra
+    streetType: S
+    suburb: AUBURN
     state: NSW
     country: AUS
-    postCode: 2046
+    postCode: 2144
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 69
-    streetName: Henley Marine
-    streetType: DR
-    suburb: RODD POINT
+    streetNo: 74
+    streetName: Yillowra
+    streetType: S
+    suburb: AUBURN
     state: NSW
     country: AUS
-    postCode: 2046
+    postCode: 2144
     addressType: Mailing
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-02-12
+    proposedStart: 2021-04-09
     offerType: ENE
     plan: FFPH-EN
-    priceTag: ENEA5_TR2007
-    serviceOrderDate: 2021-02-12
+    priceTag: ENEA1_NR2007
+    serviceOrderDate: 2021-04-09
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 4102747329
+      NMI: 4102681649
     
   
   offerDetail: 
@@ -84,10 +84,7 @@ saleDetail :
   creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    priceTagMeteringCharge: M20461DRR_AS
-    proposedNTC: EA011
-    proposedMC: ACTIVMC
-    reEnergisationJSCCode: RE01
-    reEnergisationJSCCharge: 10.0
+    reEnergisationJSCCode: RE-EN
+    reEnergisationJSCCharge: 11.41
   
 

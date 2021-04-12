@@ -1,4 +1,4 @@
-@campaign10.2
+@campaign
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
   # 2. Provide Y/N for features as per the change in this step "And user validates the data on plans page for "<campaign>""

@@ -46,7 +46,7 @@ const deviceScreenSize=config.deviceScreenSize
     BASIC_BUSINESS_QLD='Basic Business QLD',
     NO_FRILLS_BUSINESS='No Frills Business',
     TOTAL_BUSINESS='Total Plan - Business',
-    TOTAL_PLAN_PLUS_BUSINESS='Total Plan Plus Business',
+    TOTAL_PLAN_PLUS_BUSINESS='Total Plan Plus - Business',
     FAMILY_AND_FRIENDS='Family and Friends',
     FAMILY_AND_FRIENDS_BUSINESS='Family and Friends Business'
   }
@@ -561,6 +561,9 @@ export class testFunction {
         break;
       case "super-rewards":
         campaignPageURL=`${eaHomePage}${campaign}?rewardcode=test&live=disabled`;
+        break;
+      case "industryoffer":
+        campaignPageURL=`${eaHomePage}/business/${campaign}`;
         break;
       default:
         campaignPageURL=`${eaHomePage}${campaign}?live=disabled`;

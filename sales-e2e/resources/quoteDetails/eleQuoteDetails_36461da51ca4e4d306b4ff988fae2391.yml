@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: FC2102053965
+    quoteId: FC2104086135
     sourceCode: Total_Plus_6%GD_100
-    actualQuoteDate: 2021-02-05
+    actualQuoteDate: 2021-04-08
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MRS
-    firstName: Shakti
-    lastName: Mohan
+    title: MISS
+    firstName: test
+    lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0398395910
+      phoneNumber: 0320487527
     
-    emailId: MNLJqWEmcG@energyaustralia.com.au
+    emailId: wFxskxeIgG@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: LTDPARTNERSHIP
+    businessType: OTHERS
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 51582721338
+      businessId: 79475811604
     
-    anzsic: UNKNOWN
+    anzsic: AGRICULTURE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0398395910
+      businessPhoneNumber: 0320487527
     
-    businessEmailId: MNLJqWEmcG@energyaustralia.com.au
+    businessEmailId: wFxskxeIgG@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -66,11 +66,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-02-09
+    proposedStart: 2021-04-09
     offerType: ENE
     plan: SWSRB-EV
     priceTag: EVPO5_NB2101
-    serviceOrderDate: 2021-02-09
+    serviceOrderDate: 2021-04-09
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 6203822385
@@ -93,6 +93,6 @@ saleDetail :
   meteringDetail: 
     meterExchangeFlag: N
     reEnergisationJSCCode: RCTBH
-    reEnergisationJSCCharge: 56.05
+    reEnergisationJSCCharge: 55.93
   
 
