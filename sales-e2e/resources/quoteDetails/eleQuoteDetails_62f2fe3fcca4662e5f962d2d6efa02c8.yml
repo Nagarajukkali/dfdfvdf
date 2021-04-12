@@ -1,2 +1,95 @@
-saleDetail :     saleDetailHeader:         quoteId: BB2102195130        sourceCode: Total_Plus_11%GD_50        actualQuoteDate: 2021-02-19        quoteStatus: VERBALLYACCEPTED        customerType: RESIDENTIAL        paymentMethod: AUSPOST        customerClass: RESI        personDetail:         title: MRS        firstName: test        lastName: test        commMethod: EMAIL        phone:             phoneType: MOBILE            phoneNumber: 0320482404                emailId: wWudwRaRrm@energyaustralia.com.au        dob: 1980-01-01        personIdDetail:             idType: DLVIC            id: 77325            primaryIdFlag: Y            idValidationInformation:                 consentForIdValidation: Y                idValidationDriversLicenseDetail:                     dlFirstName: test                    dlLastName: test                    licenseStateOfIssue: VIC                                            authLevel: Y        personPremiseRelationship: TENANT        seqNo: 2        premiseDetail:         addressClass: ST        streetNo: 31        streetName: Balwyn        streetType: R        suburb: CANTERBURY        state: VIC        country: AUS        postCode: 3126        premiseType: DOM        addressType: Premise        primaryResidence: N        premiseDetail:         addressClass: ST        streetNo: 31        streetName: Balwyn        streetType: R        suburb: CANTERBURY        state: VIC        country: AUS        postCode: 3126        addressType: Mailing        offerDetail:         fuelType: E        proposedStart: 2021-02-23        offerType: ENE        plan: SWSR1-EV        priceTag: EVCIA_NR2101        serviceOrderDate: 2021-02-23        serviceOrderTime: BUSHRS        nmiMirnInformation:             NMI: 6102221416                energySafeVicQuestions:             renovationsSinceDeenergisation: N            renovationsInProgressOrPlanned: N            customerWithLifeSupport: N                offerDetail:         fuelType: G        offerType: N/A        fuelTypeNaReasonCode: NOINTEREST        billDeliveryDetail:         billRouteType: EMAIL        creditAssessmentDecision: Accept    creditAssessmentReasonCode: Accept    meteringDetail:         meterExchangeFlag: N        reEnergisationJSCCode: RCTBH        reEnergisationJSCCharge: 37.9    
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2104077785
+    sourceCode: Total_Plus_11%GD_50
+    actualQuoteDate: 2021-04-07
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: MISS
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0396000000
+    
+    emailId: fUFErOGENH@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DLQLD
+      id: 911647
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlLastName: test
+          licenseStateOfIssue: QLD
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 31
+    streetName: Balwyn
+    streetType: R
+    suburb: CANTERBURY
+    state: VIC
+    country: AUS
+    postCode: 3126
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 31
+    streetName: Balwyn
+    streetType: R
+    suburb: CANTERBURY
+    state: VIC
+    country: AUS
+    postCode: 3126
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2021-04-08
+    offerType: ENE
+    plan: SWSR1-EV
+    priceTag: EVCIA_NR2101
+    serviceOrderDate: 2021-04-08
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 6102221416
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: N
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: RCTBH
+    reEnergisationJSCCharge: 37.9
+  
 

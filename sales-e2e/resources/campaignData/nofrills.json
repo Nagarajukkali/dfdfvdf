@@ -11,8 +11,8 @@
             "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
           },
           "NSW": {
-            "heading": "$50 Sign Up Credit",
-            "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+            "heading": "",
+            "description": ""
           },
           "ACT": {
             "heading": "$25 Sign Up Credit",
@@ -47,7 +47,7 @@
       "postSelect": {
         "Credit50": {
           "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
-          "NSW": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
+          "NSW": "",
           "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
           "QLD": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
           "SA" : "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+"
@@ -62,10 +62,10 @@
       "newCustomer": {
         "VIC": "NOFRILLS_50",
         "NSW": {
-          "Ausgrid": "NOFRILLS_50",
-          "Essential": "NOFRILLS_50",
-          "Endeavour": "NOFRILLS_50",
-          "default": "NOFRILLS_50"
+          "Ausgrid": "NOFRILLS",
+          "Essential": "NOFRILLS",
+          "Endeavour": "NOFRILLS",
+          "default": "NOFRILLS"
         },
         "ACT": "NOFRILLS_25",
         "QLD": "NOFRILLS_50",
@@ -75,10 +75,10 @@
         "ENE":{
           "VIC": "NOFRILLS_50",
           "NSW": {
-            "Ausgrid": "NOFRILLS_50",
-            "Essential": "NOFRILLS_50",
-            "Endeavour": "NOFRILLS_50",
-            "default": "NOFRILLS_50"
+            "Ausgrid": "NOFRILLS",
+            "Essential": "NOFRILLS",
+            "Endeavour": "NOFRILLS",
+            "default": "NOFRILLS"
           },
           "ACT": "NOFRILLS_25",
           "QLD": "NOFRILLS_50",
@@ -109,8 +109,8 @@
             "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
           },
           "NSW": {
-            "heading": "$50 Sign Up Credit",
-            "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+            "heading": "",
+            "description": ""
           },
           "ACT": {
             "heading": "$25 Sign Up Credit",
@@ -141,7 +141,7 @@
       "postSelect": {
         "Credit50": {
           "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
-          "NSW": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
+          "NSW": "",
           "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
           "SA" : "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+"
         },
@@ -153,14 +153,14 @@
     "sourceCode": {
       "newCustomer": {
         "VIC": "NOFRILLS_50",
-        "NSW": "NOFRILLS_50",
+        "NSW": "NOFRILLS",
         "ACT": "NOFRILLS_25",
         "SA": "NOFRILLS"
       },
       "existingCustomer": {
         "ENE": {
           "VIC": "NOFRILLS_50",
-          "NSW": "NOFRILLS_50",
+          "NSW": "NOFRILLS",
           "ACT": "NOFRILLS_25",
           "SA": "NOFRILLS"
         },
@@ -206,8 +206,8 @@
         "description": "+ Offer available to VIC residential customers who sign up to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       },
       "NSW": {
-        "heading": "$50 Sign Up Credit",
-        "description": "+ Offer available to NSW residential customers who sign up to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        "heading": "",
+        "description": ""
       },
       "ACT": {
         "heading": "$25 Sign Up Credit",

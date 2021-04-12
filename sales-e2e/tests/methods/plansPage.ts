@@ -280,9 +280,9 @@ export class plansMethod{
             await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature200CreditDescription, data.gas.feature.preSelect.Credit200.NSW.description);
             break;
           default:
-              throw Error("Invalid State"); 
-        } 
-      } */  
+              throw Error("Invalid State");
+        }
+      } */
       if(dataTable[0].Feature_carbonNeutral === "Y") {
         await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNTitle, data.gas.feature.preSelect.carbonNeutral.heading);
         await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNDescription, data.gas.feature.preSelect.carbonNeutral.description);
@@ -340,6 +340,7 @@ export class plansMethod{
     if(dataTable[0].referencePriceComparison==='Y'){
       await testFunction.assertText(t,disclaimer,data.disclaimers.referencePriceComparison.heading);
       await testFunction.assertText(t,disclaimer,data.disclaimers.referencePriceComparison.description);
+      console.log("Reference disclaimer validated");
     }
     if(dataTable[0].goNeutral==='Y'){
       await testFunction.assertText(t,disclaimer,data.disclaimers.goNeutral.heading);
@@ -349,6 +350,7 @@ export class plansMethod{
       else{
         await testFunction.assertText(t,disclaimer,data.disclaimers.goNeutral.NonQLD.description);
       }
+      console.log("Go neutral disclaimer validated");
     }
     if(dataTable[0].solarBuyBack==='Y'){
       await testFunction.assertText(t,disclaimer,data.disclaimers.solarBuyBack.heading);
@@ -358,6 +360,7 @@ export class plansMethod{
       else{
         await testFunction.assertText(t,disclaimer,data.disclaimers.solarBuyBack.NonVIC.description);
       }
+      console.log("Solar buyback disclaimer validated");
     }
     let planName=dataTable[0].planName;
     let state=dataTable[0].state;
@@ -394,8 +397,8 @@ export class plansMethod{
           break;
         default:
           throw Error("Invalid State");
-
       }
+      console.log("Sign up credit disclaimer validated");
   }
 
   public static async validateChanceToWin(t,disclaimer,data,state){
@@ -1293,14 +1296,14 @@ export class campaignMethod{
       }
     }
     await t.wait(3000);
-    const noOfPostcodeElement=await testFunction.sizeOfElement(t,EaHomePage.elements.rbPostcode); 
+    const noOfPostcodeElement=await testFunction.sizeOfElement(t,EaHomePage.elements.rbPostcode);
     if(noOfPostcodeElement>1){
       await testFunction.click(t,EaHomePage.elements.rbPostcode.nth(noOfPostcodeElement-1));
     }
     else{
       await testFunction.click(t,EaHomePage.elements.rbPostcode);
     }
-    const noOfPostcodeInputElement=await testFunction.sizeOfElement(t,EaHomePage.elements.postcodeOnCampaignPage); 
+    const noOfPostcodeInputElement=await testFunction.sizeOfElement(t,EaHomePage.elements.postcodeOnCampaignPage);
     if(noOfPostcodeInputElement>1){
       await testFunction.clearAndEnterText(t, EaHomePage.elements.postcodeOnCampaignPage.nth(noOfPostcodeInputElement-1), postcode);
     }

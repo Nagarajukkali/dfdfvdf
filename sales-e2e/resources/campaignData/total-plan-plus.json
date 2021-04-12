@@ -36,10 +36,10 @@
         "newCustomer": {
           "VIC": "Total_Plus_11%GD",
           "NSW": {
-            "Ausgrid": "Total_Plus_19%GD",
-            "Essential": "Total_Plus_19%GD",
-            "Endeavour": "Total_Plus_19%GD",
-            "default": "Total_Plus_19%GD"
+            "Ausgrid": "Total_Plus_25%GD",
+            "Essential": "Total_Plus_25%GD",
+            "Endeavour": "Total_Plus_25%GD",
+            "default": "Total_Plus_25%GD"
           },
           "ACT": "Total_Plus_13%GD",
           "QLD": "Total_Plus_17%GD",
@@ -49,10 +49,10 @@
           "ENE":{
             "VIC": "Total_Plus_11%GD",
             "NSW": {
-              "Ausgrid": "Total_Plus_19%GD",
-              "Essential": "Total_Plus_19%GD",
-              "Endeavour": "Total_Plus_19%GD",
-              "default": "Total_Plus_19%GD"
+              "Ausgrid": "Total_Plus_25%GD",
+              "Essential": "Total_Plus_25%GD",
+              "Endeavour": "Total_Plus_25%GD",
+              "default": "Total_Plus_25%GD"
             },
             "ACT": "Total_Plus_13%GD",
             "QLD": "Total_Plus_17%GD",
@@ -61,10 +61,10 @@
           "PS": {
             "VIC": "Total_Plus_11%GD",
             "NSW": {
-              "Ausgrid": "Total_Plus_19%GD",
-              "Essential": "Total_Plus_19%GD",
-              "Endeavour": "Total_Plus_19%GD",
-              "default": "Total_Plus_19%GD"
+              "Ausgrid": "Total_Plus_25%GD",
+              "Essential": "Total_Plus_25%GD",
+              "Endeavour": "Total_Plus_25%GD",
+              "default": "Total_Plus_25%GD"
             },
             "ACT": "Total_Plus_13%GD",
             "QLD": "Total_Plus_17%GD",
@@ -103,20 +103,20 @@
       "sourceCode": {
         "newCustomer": {
           "VIC": "Total_Plus_28%GD",
-          "NSW": "Total_Plus_17%GD",
+          "NSW": "Total_Plus_22%GD",
           "ACT": "Total_Plus_17%GD",
           "SA": "Total_Plus_14%GD"
         },
         "existingCustomer": {
           "ENE":{
             "VIC": "Total_Plus_28%GD",
-            "NSW": "Total_Plus_17%GD",
+            "NSW": "Total_Plus_22%GD",
             "ACT": "Total_Plus_17%GD",
             "SA": "Total_Plus_14%GD"
           },
           "PS": {
             "VIC": "Total_Plus_28%GD",
-            "NSW": "Total_Plus_17%GD",
+            "NSW": "Total_Plus_22%GD",
             "ACT": "Total_Plus_17%GD",
             "SA": "Total_Plus_14%GD"
           }

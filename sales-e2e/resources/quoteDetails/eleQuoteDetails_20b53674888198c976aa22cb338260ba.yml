@@ -1,0 +1,86 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: FC2104086129
+    sourceCode: Total_Plus_19%GD_100
+    actualQuoteDate: 2021-04-08
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MISS
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0365056408
+    
+    emailId: KspNeXzHro@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: CORPORATION
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 67539724120
+    
+    anzsic: HOSPITALITY
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0365056408
+    
+    businessEmailId: KspNeXzHro@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 465
+    streetName: Sandy Point
+    streetType: R
+    suburb: LOWER BORO
+    state: NSW
+    country: AUS
+    postCode: 2580
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 465
+    streetName: Sandy Point
+    streetType: R
+    suburb: LOWER BORO
+    state: NSW
+    country: AUS
+    postCode: 2580
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: E
+    offerType: COR
+    plan: SWSRB-EN
+    priceTag: ENCEA_NB2007
+    nmiMirnInformation/: 
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+  
+

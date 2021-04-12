@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: MA2102114136
+    quoteId: MA2104096608
     sourceCode: Alliance_15%GD
-    actualQuoteDate: 2021-02-11
+    actualQuoteDate: 2021-04-09
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,20 +15,20 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0392671997
+      phoneNumber: 0319062180
     
-    emailId: vAwDDQDKqK@energyaustralia.com.au
+    emailId: CWoGsCLlEv@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLNT
-      id: 915926
+      idType: DLVIC
+      id: 574057
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: NT
+          licenseStateOfIssue: VIC
         
       
     

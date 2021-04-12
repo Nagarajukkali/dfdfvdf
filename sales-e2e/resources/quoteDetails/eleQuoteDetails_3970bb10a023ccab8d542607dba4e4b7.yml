@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2102033817
-    sourceCode: Total_Plus_20%GD_100
-    actualQuoteDate: 2021-02-03
+    quoteId: BB2104086546
+    sourceCode: Total_Plus_19%GD_100
+    actualQuoteDate: 2021-04-08
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,69 +15,64 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0335916418
+      phoneNumber: 0363775602
     
-    emailId: ISGrwTOyma@energyaustralia.com.au
+    emailId: TRsNfxHiEJ@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: INCORPORATED
+    businessType: PARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 59590648744
+      businessId: 34818033900
     
-    anzsic: RETAIL_TRD
+    anzsic: PROPERTY
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0335916418
+      businessPhoneNumber: 0363775602
     
-    businessEmailId: ISGrwTOyma@energyaustralia.com.au
+    businessEmailId: TRsNfxHiEJ@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 320
-    streetName: Crown
-    streetType: S
-    suburb: SURRY HILLS
+    streetNo: 465
+    streetName: Sandy Point
+    streetType: R
+    suburb: LOWER BORO
     state: NSW
     country: AUS
-    postCode: 2010
+    postCode: 2580
     premiseType: COM
     addressType: Premise
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 320
-    streetName: Crown
-    streetType: S
-    suburb: SURRY HILLS
+    streetNo: 465
+    streetName: Sandy Point
+    streetType: R
+    suburb: LOWER BORO
     state: NSW
     country: AUS
-    postCode: 2010
+    postCode: 2580
     addressType: Mailing
   
   offerDetail: 
-    fuelType: G
-    proposedStart: 2021-02-04
-    offerType: ENE
-    plan: SWSRB-GN
-    priceTag: GNAGA_NB2007
-    serviceOrderDate: 2021-02-04
-    serviceOrderTime: BUSHRS
-    nmiMirnInformation: 
-      MIRN: 5240554353
-    
+    fuelType: E
+    offerType: COR
+    plan: SWSRB-EN
+    priceTag: ENCEA_NB2007
+    nmiMirnInformation/: 
   
   offerDetail: 
-    fuelType: E
+    fuelType: G
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -85,4 +80,7 @@ saleDetail :
     billRouteType: EMAIL
   
   creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+  
 

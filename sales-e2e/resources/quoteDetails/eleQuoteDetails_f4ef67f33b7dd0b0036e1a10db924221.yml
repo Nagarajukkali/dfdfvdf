@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2010052520
-    sourceCode: Total_Plus_11%GD
-    actualQuoteDate: 2020-10-05
+    quoteId: BB2104096913
+    sourceCode: Total_Plus_11%GD_50
+    actualQuoteDate: 2021-04-09
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0393466733
+      phoneNumber: 0348408184
     
-    emailId: KFFNcBUZKR@energyaustralia.com.au
+    emailId: ZkPFrTzXRV@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 397834
+      id: 988177
       primaryIdFlag: Y
     
     authLevel: Y
@@ -42,11 +42,22 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 10
+    streetName: Minter
+    streetType: CT
+    suburb: TRUGANINA
+    state: VIC
+    country: AUS
+    postCode: 3029
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: E
     offerType: PS
     plan: SWSR1-EV
-    priceTag: EVPO5_NR2001
+    priceTag: EVPO5_NR2101
     nmiMirnInformation: 
       NMI: 6203817483
     

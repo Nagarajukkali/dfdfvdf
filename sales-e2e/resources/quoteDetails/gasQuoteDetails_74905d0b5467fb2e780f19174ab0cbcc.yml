@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2102124321
+    quoteId: BB2104096637
     sourceCode: Total_27%GD
-    actualQuoteDate: 2021-02-12
+    actualQuoteDate: 2021-04-09
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0350044204
+      phoneNumber: 0338616832
     
-    emailId: ZlqozahJbE@energyaustralia.com.au
+    emailId: WMcerURaMd@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 524609
+      id: 763696
       primaryIdFlag: Y
     
     authLevel: Y

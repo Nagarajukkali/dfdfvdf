@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2102124311
-    sourceCode: Total_18%GD_50
-    actualQuoteDate: 2021-02-12
+    quoteId: BB2104096632
+    sourceCode: Total_21%GD
+    actualQuoteDate: 2021-04-09
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0327707128
+      phoneNumber: 0311567158
     
-    emailId: IlEoIzGQIe@energyaustralia.com.au
+    emailId: CKnBRaVOnu@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLSA
-      id: 432689
+      idType: DLNT
+      id: 596541
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: SA
+          licenseStateOfIssue: NT
         
       
     
@@ -38,38 +38,38 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 69
-    streetName: Henley Marine
-    streetType: DR
-    suburb: RODD POINT
+    streetNo: 74
+    streetName: Yillowra
+    streetType: S
+    suburb: AUBURN
     state: NSW
     country: AUS
-    postCode: 2046
+    postCode: 2144
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 69
-    streetName: Henley Marine
-    streetType: DR
-    suburb: RODD POINT
+    streetNo: 74
+    streetName: Yillowra
+    streetType: S
+    suburb: AUBURN
     state: NSW
     country: AUS
-    postCode: 2046
+    postCode: 2144
     addressType: Mailing
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-02-15
+    proposedStart: 2021-04-12
     offerType: ENE
     plan: TOPH-EN
-    priceTag: ENEA5_TR2007
-    serviceOrderDate: 2021-02-15
+    priceTag: ENEA1_NR2007
+    serviceOrderDate: 2021-04-12
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 4102747329
+      NMI: 4102681649
     
   
   offerDetail: 
@@ -84,10 +84,7 @@ saleDetail :
   creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    priceTagMeteringCharge: M20461DRR_AS
-    proposedNTC: EA011
-    proposedMC: ACTIVMC
-    reEnergisationJSCCode: RE01
-    reEnergisationJSCCharge: 10.0
+    reEnergisationJSCCode: RE-EN
+    reEnergisationJSCCharge: 11.41
   
 

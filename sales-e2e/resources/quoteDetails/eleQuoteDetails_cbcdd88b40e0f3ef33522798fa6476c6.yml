@@ -1,88 +1,81 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2102033820
-    sourceCode: Total_Plus_24%GD
-    actualQuoteDate: 2021-02-03
+    quoteId: BB2104076057
+    sourceCode: Total_19%GD_100
+    actualQuoteDate: 2021-04-07
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: DR
+    title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0391269467
+      phoneNumber: 0347097441
     
-    emailId: bJNFnuBDbQ@energyaustralia.com.au
+    emailId: pSvKItMMVD@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: OTHERS
+    businessType: PARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 28904159627
+      businessId: 75654241087
     
-    anzsic: COMMUNITY_SVC
+    anzsic: FINANCE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0391269467
+      businessPhoneNumber: 0347097441
     
-    businessEmailId: bJNFnuBDbQ@energyaustralia.com.au
+    businessEmailId: pSvKItMMVD@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 36
-    streetName: Gregory
-    streetType: S
-    suburb: WENDOUREE
-    state: VIC
+    streetNo: 465
+    streetName: Sandy Point
+    streetType: R
+    suburb: LOWER BORO
+    state: NSW
     country: AUS
-    postCode: 3355
+    postCode: 2580
     premiseType: COM
     addressType: Premise
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 36
-    streetName: Gregory
-    streetType: S
-    suburb: WENDOUREE
-    state: VIC
+    streetNo: 465
+    streetName: Sandy Point
+    streetType: R
+    suburb: LOWER BORO
+    state: NSW
     country: AUS
-    postCode: 3355
+    postCode: 2580
     addressType: Mailing
   
   offerDetail: 
-    fuelType: G
-    proposedStart: 2021-02-05
+    fuelType: E
+    proposedStart: 2021-04-09
     offerType: ENE
-    plan: SWSRB-GV
-    priceTag: GVT3A_NB2101
-    serviceOrderDate: 2021-02-05
+    plan: TOPB-EN
+    priceTag: ENCEA_NB2007
+    serviceOrderDate: 2021-04-09
     serviceOrderTime: BUSHRS
-    nmiMirnInformation: 
-      MIRN: 5330956738
-    
-    energySafeVicQuestions: 
-      renovationsSinceDeenergisation: N
-      renovationsInProgressOrPlanned: N
-      customerWithLifeSupport: N
-    
+    nmiMirnInformation/: 
   
   offerDetail: 
-    fuelType: E
+    fuelType: G
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -90,4 +83,8 @@ saleDetail :
     billRouteType: EMAIL
   
   creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCharge: 18.0
+  
 

@@ -1,88 +1,83 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: FC2102053966
-    sourceCode: Total_Plus_24%GD_100
-    actualQuoteDate: 2021-02-05
+    quoteId: BB2104076061
+    sourceCode: Total_22%GD_100
+    actualQuoteDate: 2021-04-07
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MRS
-    firstName: Shakti
-    lastName: Mohan
+    title: MS
+    firstName: test
+    lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0398395910
+      phoneNumber: 0372691991
     
-    emailId: MNLJqWEmcG@energyaustralia.com.au
+    emailId: OIfJxJmGGS@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: LTDPARTNERSHIP
+    businessType: SOLE TRADER
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 51582721338
+      businessId: 94926922349
     
-    anzsic: UNKNOWN
+    anzsic: UTILITIES
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0398395910
+      businessPhoneNumber: 0372691991
     
-    businessEmailId: MNLJqWEmcG@energyaustralia.com.au
+    businessEmailId: OIfJxJmGGS@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 36
-    streetName: Gregory
+    streetNo: 320
+    streetName: Crown
     streetType: S
-    suburb: WENDOUREE
-    state: VIC
+    suburb: SURRY HILLS
+    state: NSW
     country: AUS
-    postCode: 3355
+    postCode: 2010
     premiseType: COM
     addressType: Premise
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 36
-    streetName: Gregory
+    streetNo: 320
+    streetName: Crown
     streetType: S
-    suburb: WENDOUREE
-    state: VIC
+    suburb: SURRY HILLS
+    state: NSW
     country: AUS
-    postCode: 3355
+    postCode: 2010
     addressType: Mailing
   
   offerDetail: 
-    fuelType: G
-    proposedStart: 2021-02-09
+    fuelType: E
+    proposedStart: 2021-04-08
     offerType: ENE
-    plan: SWSRB-GV
-    priceTag: GVT3A_NB2101
-    serviceOrderDate: 2021-02-09
+    plan: TOPB-EN
+    priceTag: ENEA5_NT2007
+    serviceOrderDate: 2021-04-08
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      MIRN: 5330956738
-    
-    energySafeVicQuestions: 
-      renovationsSinceDeenergisation: N
-      renovationsInProgressOrPlanned: N
-      customerWithLifeSupport: N
+      NMI: NCCC005405
     
   
   offerDetail: 
-    fuelType: E
+    fuelType: G
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -90,4 +85,9 @@ saleDetail :
     billRouteType: EMAIL
   
   creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: RE-EN
+    reEnergisationJSCCharge: 11.41
+  
 

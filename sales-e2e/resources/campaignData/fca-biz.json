@@ -1,26 +1,25 @@
 {
   "planName": "Total Plan Plus - Business",
   "planDescription": "Great discount on your total energy bill guaranteed - every time.",
-
   "electricity": {
     "feature": {
       "preSelect": {
         "Credit50": {
           "VIC": {
-            "heading": "$100 Sign Up Credit",
-            "description": "Get a $100 credit per new energy account on your first bill when you sign up.**"
+            "heading": "Get a $200 credit",
+            "description": "Credits applied to first bill. $100 to electricity. $100 to gas."
           },
           "NSW": {
-            "heading": "$100 Sign Up Credit",
-            "description": "Get a $100 credit per new energy account on your first bill when you sign up.**"
+            "heading": "Get a $200 credit",
+            "description": "Credits applied to first bill. $100 to electricity. $100 to gas."
           },
           "ACT": {
             "heading": "$100 Sign Up Credit",
             "description": "Get a $100 credit per new energy account on your first bill when you sign up.**"
           },
           "QLD": {
-            "heading": "$100 Sign Up Credit",
-            "description": "Get a $100 credit per new energy account on your first bill when you sign up.**"
+            "heading": "Get up to $100 credit",
+            "description": "Credits applied to first bill. $100 to electricity."
           },
           "SA": {
             "heading": "",
@@ -46,25 +45,25 @@
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.**",
-          "NSW": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.**",
+          "VIC": "Get a $200 credit. Credits applied to first bill. $100 to electricity. $100 to gas.",
+          "NSW": "Get a $200 credit. Credits applied to first bill. $100 to electricity. $100 to gas.",
           "ACT": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.**",
-          "QLD": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.**",
-          "SA" : ""
+          "QLD": "Get up to $100 credit. Credits applied to first bill. $100 to electricity.",
+          "SA": ""
         },
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
         "noStandardConnectionFee": ""
       }
-  },
+    },
     "sourceCode": {
       "newCustomer": {
         "VIC": "Total_Plus_6%GD_100",
         "NSW": {
           "Ausgrid": "Total_Plus_22%GD_100",
-          "Essential": "Total_Plus_22%GD_100",
-          "Endeavour": "Total_Plus_22%GD_100",
+          "Essential": "Total_Plus_19%GD_100",
+          "Endeavour": "Total_Plus_14%GD_100",
           "default": "Total_Plus_22%GD_100"
         },
         "ACT": "Total_Plus_11%GD_100",
@@ -76,8 +75,8 @@
           "VIC": "Total_Plus_6%GD_100",
           "NSW": {
             "Ausgrid": "Total_Plus_22%GD_100",
-            "Essential": "Total_Plus_22%GD_100",
-            "Endeavour": "Total_Plus_22%GD_100",
+            "Essential": "Total_Plus_19%GD_100",
+            "Endeavour": "Total_Plus_14%GD_100",
             "default": "Total_Plus_22%GD_100"
           },
           "ACT": "Total_Plus_11%GD_100",
@@ -85,39 +84,36 @@
           "QLD": "Total_Plus_14%GD_100"
         },
         "PS": {
-          "VIC": "Total_Plus_6%GD_100",
+          "VIC": "Total_Plus_6%GD",
           "NSW": {
-            "Ausgrid": "Total_Plus_22%GD_100",
-            "Essential": "Total_Plus_22%GD_100",
-            "Endeavour": "Total_Plus_22%GD_100",
-            "default": "Total_Plus_22%GD_100"
+            "Ausgrid": "Total_Plus_22%GD",
+            "Essential": "Total_Plus_19%GD",
+            "Endeavour": "Total_Plus_14%GD",
+            "default": "Total_Plus_22%GD"
           },
           "ACT": "Total_Plus_11%GD_100",
           "SA": "Total_Plus_6%GD",
-          "QLD": "Total_Plus_14%GD_100"
+          "QLD": "Total_Plus_14%GD"
         }
       }
     }
+
   },
   "gas": {
     "feature": {
       "preSelect": {
         "Credit50": {
           "VIC": {
-            "heading": "$100 Sign Up Credit",
-            "description": "Get a $100 credit per new energy account on your first bill when you sign up.**"
+            "heading": "Get a $200 credit",
+            "description": "Credits applied to first bill. $100 to electricity. $100 to gas."
           },
           "NSW": {
-            "heading": "$100 Sign Up Credit",
-            "description": "Get a $100 credit per new energy account on your first bill when you sign up.**"
+            "heading": "Get a $200 credit",
+            "description": "Credits applied to first bill. $100 to electricity. $100 to gas."
           },
           "ACT": {
             "heading": "$100 Sign Up Credit",
             "description": "Get a $100 credit per new energy account on your first bill when you sign up.**"
-          },
-          "QLD": {
-            "heading": "",
-            "description": ""
           },
           "SA": {
             "heading": "",
@@ -135,48 +131,43 @@
         "discountOffTotalEnergyBill": {
           "heading": "Discount off total energy bill",
           "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
-        },
-        "noStandardConnectionFee": {
-          "heading": "",
-          "description": ""
         }
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.**",
-          "NSW": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.**",
+          "VIC": "Get a $200 credit. Credits applied to first bill. $100 to electricity. $100 to gas.",
+          "NSW": "Get a $200 credit. Credits applied to first bill. $100 to electricity. $100 to gas.",
           "ACT": "$100 Sign Up Credit. Get a $100 credit per new energy account on your first bill when you sign up.**",
-          "QLD": "",
-          "SA" : ""
+          "SA": ""
         },
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
         "noStandardConnectionFee": ""
       }
-  },
-  "sourceCode": {
-    "newCustomer": {
-      "VIC": "Total_Plus_24%GD_100",
-      "NSW": "Total_Plus_20%GD_100",
-      "ACT": "Total_Plus_20%GD_100",
-      "SA": "Total_Plus_15%GD"
     },
-    "existingCustomer": {
-      "ENE": {
+    "sourceCode": {
+      "newCustomer": {
         "VIC": "Total_Plus_24%GD_100",
         "NSW": "Total_Plus_20%GD_100",
         "ACT": "Total_Plus_20%GD_100",
         "SA": "Total_Plus_15%GD"
       },
-      "PS": {
-        "VIC": "Total_Plus_24%GD_100",
-        "NSW": "Total_Plus_20%GD_100",
-        "ACT": "Total_Plus_20%GD_100",
-        "SA": "Total_Plus_15%GD"
+      "existingCustomer": {
+        "ENE": {
+          "VIC": "Total_Plus_24%GD_100",
+          "NSW": "Total_Plus_20%GD_100",
+          "ACT": "Total_Plus_20%GD_100",
+          "SA": "Total_Plus_15%GD"
+        },
+        "PS": {
+          "VIC": "Total_Plus_23%GD",
+          "NSW": "Total_Plus_19%GD",
+          "ACT": "Total_Plus_20%GD",
+          "SA": "Total_Plus_15%GD"
+        }
       }
     }
-  }
   },
   "disclaimers": {
     "referencePriceComparison": {
@@ -196,37 +187,33 @@
         "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. We are currently unable to set up your solar plan online."
       }
     },
-    "chanceToWin": {
-      "heading": "",
-      "description": ""
-    },
     "noStandardConnectionFee": {
       "heading": "",
       "description": ""
     },
     "Credit50": {
       "VIC": {
-        "heading": "$100 Sign Up Credit",
-        "description": "**Offer only for eligible VIC business customers who sign up to a new Total Plan Plus Business electricity or gas account. Limit of one $100 credit per new energy account, per energy type, per business premises. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+        "heading": "Account Credits",
+        "description": "Offer available to new VIC business accounts only who sign up to Total Plan Business electricity or gas offer. Credits applied to first bill - $100 to new electricity account, $100 to new gas account. $200 credit if you sign up both your electricity and gas as new accounts. Credits are not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "NSW": {
-        "heading": "$100 Sign Up Credit",
-        "description": "**Offer only for eligible NSW business customers who sign up to a new Total Plan Plus Business electricity or gas account. Limit of one $100 credit per new energy account, per energy type, per business premises. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+        "heading": "Account Credits",
+        "description": "Offer available to new NSW business accounts only who sign up to Total Plan Business electricity or gas offer. Credits applied to first bill - $100 to new electricity account, $100 to new gas account. $200 credit if you sign up both your electricity and gas as new accounts. Credits are not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "ACT": {
         "heading": "$100 Sign Up Credit",
         "description": "**Offer only for eligible ACT business customers who sign up to a new Total Plan Plus Business electricity or gas account. Limit of one $100 credit per new energy account, per energy type, per business premises. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "QLD": {
-        "heading": "$100 Sign Up Credit",
-        "description": "**Offer only for eligible QLD business customers who sign up to a new Total Plan Plus Business electricity or gas account. Limit of one $100 credit per new energy account, per energy type, per business premises. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+        "heading": "Account Credits",
+        "description": "Offer available to new QLD business accounts only who sign up to Total Plan Business electricity offer. Credits applied to first bill - $100 to new electricity account. $100 credit if you sign up your electricity as a new accounts. Credits are not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "SA": {
         "heading": "",
         "description": ""
       }
     },
-    "totalPlanBusiness": {
+    "totalPlanPlusBusiness": {
       "heading": "Total Plan Plus - Business",
       "VIC": {
         "description": "* Offer only for existing VIC business customers who have had an active, eligible energy account with us for at least 6 consecutive months. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 24-month benefit period. Your usage and supply charges won't increase during the 24-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
@@ -246,8 +233,5 @@
     }
   }
 }
-
-
-
 
 

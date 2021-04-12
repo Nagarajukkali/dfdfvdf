@@ -1,0 +1,93 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2104086549
+    sourceCode: Total_Plus_14%GD_100
+    actualQuoteDate: 2021-04-08
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0395123648
+    
+    emailId: vXaeLotcgq@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: GOVERNMENT
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 13521781870
+    
+    anzsic: UNKNOWN
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0395123648
+    
+    businessEmailId: vXaeLotcgq@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 13
+    streetName: Station
+    streetType: S
+    suburb: WENTWORTH FALLS
+    state: NSW
+    country: AUS
+    postCode: 2782
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 13
+    streetName: Station
+    streetType: S
+    suburb: WENTWORTH FALLS
+    state: NSW
+    country: AUS
+    postCode: 2782
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2021-04-12
+    offerType: ENE
+    plan: SWSRB-EN
+    priceTag: ENIEA_NB2007
+    serviceOrderDate: 2021-04-12
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 4310504640
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: MIMR
+    reEnergisationJSCCharge: 38.8
+  
+

@@ -8,23 +8,23 @@
         "Credit50": {
           "VIC": {
             "heading": "$50 Sign Up Credit",
-            "description": "Get a $50 credit per energy account on your first bill when you sign up.+"
+            "description": "Get a $50 credit per energy account on your first bill when you sign up online.+"
           },
           "NSW": {
-            "heading": "$50 Sign Up Credit",
-            "description": "Get a $50 credit per energy account on your first bill when you sign up.+"
+            "heading": "",
+            "description": ""
           },
           "ACT": {
             "heading": "$25 Sign Up Credit",
-            "description": "Get a $25 credit per energy account on your first bill when you sign up.+"
+            "description": "Get a $25 credit per energy account on your first bill when you sign up online.+"
           },
           "QLD": {
             "heading": "$50 Sign Up Credit",
-            "description": "Get a $50 credit per energy account on your first bill when you sign up.+"
+            "description": "Get a $50 credit per energy account on your first bill when you sign up online.+"
           },
           "SA": {
             "heading": "$25 Sign Up Credit",
-            "description": "Get a $25 credit per energy account on your first bill when you sign up.+"
+            "description": "Get a $25 credit per energy account on your first bill when you sign up online.+"
           }
         },
         "carbonNeutral": {
@@ -47,7 +47,7 @@
       "postSelect": {
         "Credit50": {
           "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
-          "NSW": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
+          "NSW": "",
           "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
           "QLD": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
           "SA" : ""
@@ -62,10 +62,10 @@
       "newCustomer": {
         "VIC": "Alliance_12%GD_50",
         "NSW": {
-          "Ausgrid": "Alliance_20%GD_50",
-          "Essential": "Alliance_20%GD_50",
-          "Endeavour": "Alliance_20%GD_50",
-          "default": "Alliance_20%GD_50"
+          "Ausgrid": "Alliance_26%GD",
+          "Essential": "Alliance_26%GD",
+          "Endeavour": "Alliance_26%GD",
+          "default": "Alliance_26%GD"
         },
         "ACT": "Alliance_14%GD_25",
         "QLD": "Alliance_18%GD_50",
@@ -75,10 +75,10 @@
         "ENE":{
           "VIC": "Alliance_12%GD_50",
           "NSW": {
-            "Ausgrid": "Alliance_20%GD_50",
-            "Essential": "Alliance_20%GD_50",
-            "Endeavour": "Alliance_20%GD_50",
-            "default": "Alliance_20%GD_50"
+            "Ausgrid": "Alliance_26%GD",
+            "Essential": "Alliance_26%GD",
+            "Endeavour": "Alliance_26%GD",
+            "default": "Alliance_26%GD"
           },
           "ACT": "Alliance_14%GD_25",
           "QLD": "Alliance_18%GD_50",
@@ -87,10 +87,10 @@
         "PS": {
           "VIC": "Alliance_12%GD_50",
           "NSW": {
-            "Ausgrid": "Alliance_20%GD_50",
-            "Essential": "Alliance_20%GD_50",
-            "Endeavour": "Alliance_20%GD_50",
-            "default": "Alliance_20%GD_50"
+            "Ausgrid": "Alliance_26%GD",
+            "Essential": "Alliance_26%GD",
+            "Endeavour": "Alliance_26%GD",
+            "default": "Alliance_26%GD"
           },
           "ACT": "Alliance_14%GD_25",
           "QLD": "Alliance_18%GD_50",
@@ -106,15 +106,15 @@
         "Credit50": {
           "VIC": {
             "heading": "$50 Sign Up Credit",
-            "description": "Get a $50 credit per energy account on your first bill when you sign up.+"
+            "description": "Get a $50 credit per energy account on your first bill when you sign up online.+"
           },
           "NSW": {
-            "heading": "$50 Sign Up Credit",
-            "description": "Get a $50 credit per energy account on your first bill when you sign up.+"
+            "heading": "",
+            "description": ""
           },
           "ACT": {
             "heading": "$25 Sign Up Credit",
-            "description": "Get a $25 credit per energy account on your first bill when you sign up.+"
+            "description": "Get a $25 credit per energy account on your first bill when you sign up online.+"
           },
           "QLD": {
             "heading": "$50 Sign Up Credit",
@@ -141,7 +141,7 @@
       "postSelect": {
         "Credit50": {
           "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
-          "NSW": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
+          "NSW": "",
           "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
           "SA" : ""
         },
@@ -153,19 +153,19 @@
     "sourceCode": {
       "newCustomer": {
         "VIC": "Alliance_29%GD_50",
-        "NSW": "Alliance_18%GD_50",
+        "NSW": "Alliance_23%GD",
         "ACT": "Alliance_18%GD_25",
         "SA": "Alliance_15%GD"
       },
       "existingCustomer": {
         "VIC": "Alliance_29%GD_50",
-        "NSW": "Alliance_18%GD_50",
+        "NSW": "Alliance_23%GD",
         "ACT": "Alliance_18%GD_25",
         "SA": "Alliance_15%GD"
       },
       "PS": {
         "VIC": "Alliance_29%GD_50",
-        "NSW": "Alliance_18%GD_50",
+        "NSW": "Alliance_23%GD",
         "ACT": "Alliance_18%GD_25",
         "SA": "Alliance_15%GD"
       }
@@ -205,8 +205,8 @@
         "description": "+ Limit of one $50 credit per energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "NSW": {
-        "heading": "$50 Sign Up Credit",
-        "description": "+ Limit of one $50 credit per energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+        "heading": "",
+        "description": ""
       },
       "ACT": {
         "heading": "$25 Sign Up Credit ",
