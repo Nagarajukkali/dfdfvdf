@@ -828,4 +828,148 @@ export class checkoutReviewMethod {
     }
     console.log("General state disclaimer validated successfully on review page.");
   }
+
+  public static async validateSolarComponent(t,solarSetUp){
+    let connectionAddress;
+    let pageUrl = await testFunction.getPageURL();
+    if(pageUrl.includes("mydetails")){
+      connectionAddress=await testFunction.getElementText(t,eaCheckoutDetailsPage.elements.connectionAddress);
+      await testFunction.isElementExists(t,eaCheckoutDetailsPage.elements.solarPowerComponent);
+    }
+    else{
+      connectionAddress=await testFunction.getElementText(t,eaCheckoutReviewPage.elements.connectionDetails.connectionAddress.data)
+      await testFunction.isElementExists(t,eaCheckoutReviewPage.elements.solarPower.main);
+    }
+    await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.heading,"Solar power");
+    if(solarSetUp.toLowerCase()==='yes'){
+      await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.subHeading,"We have detected solar at this address.");
+      await testFunction.click(t,eaCheckoutReviewPage.elements.solarPower.tooltip);
+      let expectedSolarPowerTooltip="Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions . We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
+      if(connectionAddress.includes("VIC")){
+        let expectedVICSolarPowerTooltip="For more information about the Victorian FiT scheme see www.energy.vic.gov.au/renewable-energy/victorian-feed-in-tariff ."
+        let expectedTariffSelectableText="Please make a selection below, however if you are eligible for a government solar rebate (these rates will not be shown below), the rebate will be reflected in your welcome pack and added to your account.";
+        await testFunction.isElementExists(t,eaCheckoutReviewPage.elements.solarPower.vicTooltipText)
+        await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.vicTooltipText,expectedVICSolarPowerTooltip);
+        if(pageUrl.includes("customerType=RES")){
+          await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.tariffSelectableText,expectedTariffSelectableText);
+        }
+        else{
+          let expectedTariffUnSelectableText="If you are eligible for a government solar rebate and it is not displayed below, the rebate will be reflected in your welcome pack and added to your account."
+          await testFunction.isElementExists(t,eaCheckoutReviewPage.elements.solarPower.tariffUnSelectableText);
+          await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.tariffUnSelectableText,expectedTariffUnSelectableText);
+        }
+      }
+      else{
+        let expectedTariffUnSelectableText="If you are eligible for a government solar rebate and it is not displayed below, the rebate will be reflected in your welcome pack and added to your account."
+        await testFunction.isElementExists(t,eaCheckoutReviewPage.elements.solarPower.tariffUnSelectableText);
+        await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.tariffUnSelectableText,expectedTariffUnSelectableText);
+        await testFunction.isElementAbsent(t,eaCheckoutReviewPage.elements.solarPower.vicTooltipText);
+        await testFunction.isElementAbsent(t,eaCheckoutReviewPage.elements.solarPower.tariffSelectableText);
+      }
+      await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.tooltipText,expectedSolarPowerTooltip);
+      await testFunction.click(t,eaCheckoutReviewPage.elements.solarPower.tooltipClose);
+      if(connectionAddress.includes("VIC") && pageUrl.includes("customerType=RES")){
+        await testFunction.isElementExists(t,eaCheckoutReviewPage.elements.solarPower.singleRateTariff);
+        await testFunction.isElementExists(t,eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff);
+        await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.singleRateTariff,"Single rate feed-in tariff (excl. GST)");
+        await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.singleRateTariff,"10.2c/kWh");
+        await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff,"Time of use feed-in tariffs (excl. GST)");
+        await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff,"Peak:");
+        await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff,"12.5c/kWh");
+        await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff,"(3pm-9pm Weekdays)");
+        await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff,"Shoulder:")
+        await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff,"9.8c/kWh");
+        await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff,"(7am-3pm, 9pm-10pm Weekdays)");
+        await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff,"(7am-10pm Weekends)");
+        await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff,"Off Peak:");
+        await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff,"9.1c/kWh")
+        await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff,"(10pm-7am Everyday)");
+        await testFunction.click(t,eaCheckoutReviewPage.elements.agreeAndConfirm);
+        await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.errorMessage,"You must select tariff type");
+    }
+    }
+    else if(solarSetUp.toLowerCase()==='unknown'){
+      await testFunction.isElementVisible(t,eaCheckoutReviewPage.elements.solarPower.errorIcon);
+      await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.solarUndeterminedText,"We could not determine if there is solar at this address. If there is no solar power please continue.");
+      await testFunction.isElementVisible(t,eaCheckoutReviewPage.elements.solarPower.contactUsIcon);
+      await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.contactUsText,"If you do have solar power set up at this address please contact us so we can add it to your quote.");
+      await testFunction.click(t,eaCheckoutReviewPage.elements.solarPower.contactUsText.find("a"));
+      const url=await testFunction.getPageURL();
+      await t.expect(url).contains("contact-us");
+      await testFunction.takeScreenshot(t,"Contact_Us");
+      await t.closeWindow();
+      await testFunction.isElementAbsent(t,eaCheckoutReviewPage.elements.solarPower.tooltip);
+    }
+    console.log("Validation completed for solar component.");
+  }
+
+  public static async selectSolarTariff(t,tariffType,state){
+      if(state===AustralianState.VIC){
+        if(tariffType==="single_rate")
+          await testFunction.click(t,eaCheckoutReviewPage.elements.solarPower.singleRateTariff);
+        else if(tariffType==="time_of_use")
+          await testFunction.click(t,eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff);
+      }
+      console.log("solar tariff type "+tariffType+" is selected");
+  }
+
+  public static async validateSolarFeedInTariffUnderRates(t,tariffType,state){
+    await testFunction.isElementDisplayed(t,eaCheckoutReviewPage.elements.solarPower.ratesTitle);
+    await testFunction.isElementDisplayed(t,eaCheckoutReviewPage.elements.solarPower.ratesContainer);
+    await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.ratesTitle,"Solar feed-in tariffs");
+    if(tariffType==="single_rate"){
+      await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.singleRateFeedInTariff,"Single rate feed-in tariff (excl. GST):");
+      await testFunction.isElementDisplayed(t,eaCheckoutReviewPage.elements.solarPower.singleTariffRate);
+    }
+    else if(tariffType==="time_of_use"){
+      await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.timeOfUseRatesTariff,"Time of use feed-in tariffs (excl. GST):");
+      await testFunction.isElementDisplayed(t,eaCheckoutReviewPage.elements.solarPower.peakRates);
+      await testFunction.isElementDisplayed(t,eaCheckoutReviewPage.elements.solarPower.shoulderRates);
+      await testFunction.isElementDisplayed(t,eaCheckoutReviewPage.elements.solarPower.offPeakRates);
+      await testFunction.click(t,eaCheckoutReviewPage.elements.solarPower.peakRatesToolTip);
+      await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.peakRatesToolTipText,"Peak applicable times:");
+      await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.peakRatesToolTipText,"(3pm-9pm Weekdays)")
+      await testFunction.click(t,eaCheckoutReviewPage.elements.solarPower.peakRatesToolTipClose);
+      await testFunction.click(t,eaCheckoutReviewPage.elements.solarPower.shoulderRatesToolTip);
+      await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.shoulderRatesToolTipText,"Shoulder applicable times:");
+      await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.shoulderRatesToolTipText,"(7am-3pm, 9pm-10pm Weekdays)");
+      await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.shoulderRatesToolTipText,"(7am-10pm Weekends)");
+      await testFunction.click(t,eaCheckoutReviewPage.elements.solarPower.shoulderRatesToolTipClose);
+      await testFunction.click(t,eaCheckoutReviewPage.elements.solarPower.offPeakRatesToolTip);
+      await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.offPeakRatesToolTipText,"Off peak applicable times:");
+      await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.offPeakRatesToolTipText,"(10pm-7am Everyday)");
+      await testFunction.click(t,eaCheckoutReviewPage.elements.solarPower.offPeakRatesToolTipClose);
+    }
+
+    await testFunction.click(t,eaCheckoutReviewPage.elements.solarPower.rateFeedInTariffToolTip);
+    if(state===AustralianState.VIC){
+      await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.solarFITToolTipGeneralDisclaimer,"Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. For more information about the Victorian FiT scheme see www.energy.vic.gov.au/renewable-energy/victorian-feed-in-tariff.");
+      await testFunction.click(t,eaCheckoutReviewPage.elements.solarPower.solarFITToolTipGeneralDisclaimer.find("a[href*='victorian-feed-in-tariff']"));
+      const url2=await testFunction.getPageURL();
+      await t.expect(url2).contains("victorian-feed-in-tariff");
+      await testFunction.takeScreenshot(t,"victorian-feed-in-tariff");
+      await t.closeWindow();
+    }
+    else{
+      await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.solarFITToolTipGeneralDisclaimer,"Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation.");
+      await testFunction.assertFalseText(t,eaCheckoutReviewPage.elements.solarPower.solarFITToolTipGeneralDisclaimer,"For more information about the Victorian FiT scheme see www.energy.vic.gov.au/renewable-energy/victorian-feed-in-tariff.");
+      await testFunction.click(t,eaCheckoutReviewPage.elements.solarPower.solarFITToolTipGeneralDisclaimer.find("a[href*='conditions-pricing']"));
+      const url=await testFunction.getPageURL();
+      await t.expect(url).contains("conditions-pricing");
+      await testFunction.takeScreenshot(t,"conditions-pricing");
+      await t.closeWindow();
+    }
+    await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.solarFITToolTipGovernmentDisclaimer,"If you qualify for a government scheme, which isn't displayed below. It will be added to your account and reflected in your welcome pack.");
+    await testFunction.click(t,eaCheckoutReviewPage.elements.solarPower.ratesTitleToolTipClose);
+    console.log("Validation completed for solar feed in tariff under rates section");
+
+  }
+
+  public static async verifyPresenceOfSolarIndicator(t){
+      await testFunction.isElementDisplayed(t,eaCheckoutReviewPage.elements.solarPower.solarIndicator);
+      await testFunction.isElementVisible(t,eaCheckoutReviewPage.elements.solarPower.solarIndicator.find(".hs-solar-indicator__sun-icon"));
+      await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.solarIndicator.find("span"),"We have detected solar at this address.");
+      console.log("Validated presence of solar indicator");
+  }
+
 }

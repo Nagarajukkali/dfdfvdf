@@ -38,8 +38,8 @@ Feature:E2E scenario for eacorporateoffer
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      | customerType | connectionAddress                   | movingType | propertyType | solarOption |
-      | RES          | 74 Yillowra Street, AUBURN NSW 2144 | Moving     | Renter       | No          |
+      | customerType | connectionAddress                   | movingType | propertyType |
+      | RES          | 74 Yillowra Street, AUBURN NSW 2144 | Moving     | Renter       |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         |
       | RES          | RES     | New            | test      | test     | Driver License |
@@ -119,8 +119,8 @@ Feature:E2E scenario for eacorporateoffer
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      | customerType | connectionAddress                        | movingType | propertyType | solarOption |
-      | RES          | 9 Charming Street, HAMPTON EAST VIC 3188 | Moving     | Renter       | No          |
+      | customerType | connectionAddress                        | movingType | propertyType |
+      | RES          | 9 Charming Street, HAMPTON EAST VIC 3188 | Moving     | Renter       |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
       | RES          | RES     | New            | test      | test     | Driver License |              |
@@ -191,8 +191,8 @@ Feature:E2E scenario for eacorporateoffer
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      | customerType | connectionAddress                 | movingType | propertyType | solarOption |
-      | RES          | 3 River Drive, ATHELSTONE SA 5076 | Moving     | Renter       | No          |
+      | customerType | connectionAddress                 | movingType | propertyType |
+      | RES          | 3 River Drive, ATHELSTONE SA 5076 | Moving     | Renter       |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
       | RES          | RES     | New            | test      | test     | Driver License |              |
@@ -262,8 +262,8 @@ Feature:E2E scenario for eacorporateoffer
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      | customerType | connectionAddress                         | movingType | propertyType | solarOption |
-      | RES          | 126 Shakespeare Crescent, FRASER ACT 2615 | Moving     | Renter       | No          |
+      | customerType | connectionAddress                         | movingType | propertyType |
+      | RES          | 126 Shakespeare Crescent, FRASER ACT 2615 | Moving     | Renter       |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
       | RES          | RES     | New            | test      | test     | Driver License |              |
@@ -326,8 +326,8 @@ Feature:E2E scenario for eacorporateoffer
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      | customerType | connectionAddress                     | movingType | propertyType | solarOption |
-      | RES          | 13 Jacobs Ridge Road, ORMEAU QLD 4208 | Moving     | Renter       | No          |
+      | customerType | connectionAddress                     | movingType | propertyType |
+      | RES          | 13 Jacobs Ridge Road, ORMEAU QLD 4208 | Moving     | Renter       |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
       | RES          | RES     | New            | test      | test     | Driver License |              |

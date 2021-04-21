@@ -1,6 +1,6 @@
 @E2E @newcustomer
 Feature:E2E scenario for new residential moving and non moving customer
-  @deviceCheck @smoke
+  @deviceCheck @smoke @solar
 Scenario Outline: Submit a quote for new residential moving customer
   Given user has opened the website link in a browser and creates '<folderName>' to save evidences
   And user has navigated to 'RES' plans page
@@ -11,14 +11,16 @@ Scenario Outline: Submit a quote for new residential moving customer
   And user moves on to fill the qualifier
   And user selects '<customerStatus>' on qualifier
   And user provides all other details on qualifier page
-    |customerType| connectionAddress                     | movingType|propertyType|solarOption|
-    |RES         | 42 Brownlow Drive, POINT COOK VIC 3030|Moving     |Renter      |No         |
+    |customerType| connectionAddress                     | movingType|propertyType|
+    |RES         | 42 Brownlow Drive, POINT COOK VIC 3030|Moving     |Renter      |
   And user validates details on checkout details page
-    |sourceSystem   |journey    |fuelType   |
-    |<sourceSystem> |<journey>  |<fuelType> |
+    |sourceSystem   |journey    |fuelType   |solarSetup|
+    |<sourceSystem> |<journey>  |<fuelType> |Yes      |
+  And user validates solar indicator on checkout details page
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
     |RES         |RES        |New           | test     |test     |Driver License|             |
+  And user selects "time_of_use" solar tariff type for "VIC"
   And user selects mailing address option
     |addressType       |otherAddress                              |
     |Connection Address|                                          |
@@ -39,6 +41,7 @@ Scenario Outline: Submit a quote for new residential moving customer
     |Yes              |BOTH    |Crigler Najjar Syndrome Phototherapy Equipment|Gas Other            |
   And user selects carbon neutral option
   And user verifies selected plan details for '<fuelType>'
+  And user validates "time_of_use" solar tariff type for "<state>" under electricity rates section
   And user submits the quote
   Then user lands on checkout complete page
   And user validates details on checkout complete page
@@ -52,6 +55,9 @@ Scenario Outline: Submit a quote for new residential moving customer
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
     |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-EV |6203778288|N                             |N                             |Y                      |LSCNSPE                 |POSTMM       |
+  And user validates the solar details
+    |fuelType|solarPowerIndicator|solarNetworkTariffCode|solarTimeOfUse|
+    |ELE     |Y                  |GENR13                |Y             |
   And user validates all the details for 'GAS' submitted quote
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
@@ -72,8 +78,8 @@ Scenario Outline: Submit a quote for new residential non moving customer
   And user moves on to fill the qualifier
   And user selects '<customerStatus>' on qualifier
   And user provides all other details on qualifier page
-    |customerType|connectionAddress                | movingType|propertyType|solarOption|
-    |RES         |3 River Drive, ATHELSTONE SA 5076|Non-Moving |Renter      |No         |
+    |customerType|connectionAddress                | movingType|propertyType|
+    |RES         |3 River Drive, ATHELSTONE SA 5076|Non-Moving |Renter      |
   And user validates details on checkout details page
     |sourceSystem   |journey    |fuelType   |
     |<sourceSystem> |<journey>  |<fuelType> |

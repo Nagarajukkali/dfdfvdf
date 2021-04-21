@@ -1,0 +1,90 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2103167040
+    sourceCode: Total_23%GD
+    actualQuoteDate: 2021-03-16
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0363311860
+    
+    emailId: MJeEEvTIcf@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: PROPRIETARY LTD
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 43319450113
+    
+    anzsic: MINING
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0363311860
+    
+    businessEmailId: MJeEEvTIcf@energyaustralia.com.au
+  
+  mainAddress: 
+    addressClass: ST
+    streetNo: 1
+    streetName: Pintail
+    streetType: DR
+    suburb: TORQUAY
+    state: VIC
+    country: AUS
+    postCode: 3228
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 1
+    streetName: Pintail
+    streetType: DR
+    suburb: TORQUAY
+    state: VIC
+    country: AUS
+    postCode: 3228
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: G
+    offerType: PS
+    plan: TOPB-GV
+    priceTag: GVT1A_NB2101
+    nmiMirnInformation: 
+      MIRN: 5331227952
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: N
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+

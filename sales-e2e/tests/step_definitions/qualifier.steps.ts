@@ -23,7 +23,6 @@ When(/^user provides all details on qualifier page$/, async function(t,[],dataTa
   await qualifierMethod.provideAddress(t, data[0].connectionAddress);
   await qualifierMethod.selectDateFromCalendar(t);
   await qualifierMethod.selectPropertyType(t, data[0].propertyType);
-  await qualifierMethod.selectSolarOption(t, data[0].solarOption);
 });
 
 When(/^user provides all other details on qualifier page for Existing customer$/, async function (t,[],dataTable) {
@@ -46,14 +45,12 @@ When(/^user provides all other details on qualifier page for Existing customer$/
   if(customerType===CustomerType.RESIDENTIAL){
     await qualifierMethod.selectPropertyType(t, data[0].propertyType);
   }
-  await qualifierMethod.selectSolarOption(t, data[0].solarOption);
 });
 
 When(/^user provides all other details on qualifier page$/, async function (t,[],dataTable) {
   let data=dataTable.hashes();
   let customerType=data[0].customerType;
   let movingType=data[0].movingType;
-  let solarOption=data[0].solarOption;
   await testFunction.waitForLoadingIconToClose();
   await qualifierMethod.provideMovingType(t, data[0].movingType);
   if(movingType === Moving.MOVING){
@@ -69,10 +66,6 @@ When(/^user provides all other details on qualifier page$/, async function (t,[]
   if(customerType===CustomerType.RESIDENTIAL){
     await qualifierMethod.selectPropertyType(t, data[0].propertyType);
   }
-  if(solarOption != 'NA') {
-    await qualifierMethod.selectSolarOption(t, solarOption);
-  }
-
 });
 
 When(/^user verifies account on qualifier$/, async function (t,[],dataTable) {

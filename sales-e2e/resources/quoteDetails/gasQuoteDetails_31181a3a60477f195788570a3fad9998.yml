@@ -1,0 +1,93 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2103167042
+    sourceCode: Total_23%GD
+    actualQuoteDate: 2021-03-16
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MISS
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0367733112
+    
+    emailId: DGrQsiGdQF@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: PARTNERSHIP
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ACN
+      businessId: 794282916
+    
+    anzsic: COMMUNICATION
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0367733112
+    
+    businessEmailId: DGrQsiGdQF@energyaustralia.com.au
+  
+  mainAddress: 
+    addressClass: ST
+    streetNo: 66-68
+    streetName: Melville
+    streetType: R
+    suburb: BRUNSWICK WEST
+    state: VIC
+    country: AUS
+    postCode: 3055
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 66-68
+    streetName: Melville
+    streetType: R
+    suburb: BRUNSWICK WEST
+    state: VIC
+    country: AUS
+    postCode: 3055
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2021-03-18
+    offerType: ENE
+    plan: TOPB-GV
+    priceTag: GVT2A_NB2101
+    serviceOrderDate: 2021-03-18
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5321141138
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: N
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+

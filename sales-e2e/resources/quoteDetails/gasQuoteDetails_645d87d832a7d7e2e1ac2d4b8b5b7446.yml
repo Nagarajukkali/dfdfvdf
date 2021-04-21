@@ -1,0 +1,95 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2103167020
+    sourceCode: Total_19%GD
+    actualQuoteDate: 2021-03-16
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0397484573
+    
+    emailId: KgUOwmhdjp@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: LIMITED COMPANY
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 48702718417
+    
+    anzsic: COMMUNICATION
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0397484573
+    
+    businessEmailId: KgUOwmhdjp@energyaustralia.com.au
+  
+  mainAddress: 
+    addressClass: ST
+    streetNo: 1
+    streetName: Reads
+    streetType: R
+    suburb: WAMBERAL
+    state: NSW
+    country: AUS
+    postCode: 2260
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 1
+    streetName: Reads
+    streetType: R
+    suburb: WAMBERAL
+    state: NSW
+    country: AUS
+    postCode: 2260
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2021-03-17
+    offerType: ENE
+    plan: TOPB-GN
+    priceTag: GNAGA_NB2007
+    serviceOrderDate: 2021-03-17
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation/: 
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: OTHER
+    
+    lifeSupportOtherEquipmentDetails: Sample Other gas device.
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+

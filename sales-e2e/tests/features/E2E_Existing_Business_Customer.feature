@@ -14,8 +14,8 @@ Feature:E2E scenario for existing business moving and non moving customer
       |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
       |Existing      |8541728674   |ABN                |13756067200     |dob   |01011980|
     And user provides all other details on qualifier page for Existing customer
-      |customerType|movingType |connectionAddress                     |solarOption|
-      |BUS         |Moving     |320 Crown Street, SURRY HILLS NSW 2010|No         |
+      |customerType|movingType |connectionAddress                     |
+      |BUS         |Moving     |320 Crown Street, SURRY HILLS NSW 2010|
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|businessType|
       |BUS         |BUS        |Existing      | test     |test     |ABN         |
@@ -73,8 +73,8 @@ Feature:E2E scenario for existing business moving and non moving customer
       |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
       |Existing      |6261447599   |ABN                |63824650000     |dob   |01011980|
     And user provides all other details on qualifier page for Existing customer
-      |customerType|movingType |solarOption|
-      |BUS         |Non-Moving |No         |
+      |customerType|movingType |
+      |BUS         |Non-Moving |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|businessType|
       |BUS         |BUS        |Existing      | test     |test     |ABN         |

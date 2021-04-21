@@ -1,4 +1,5 @@
 import {CustomerType, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
+const eaMyAccount = require('../pages/myAccount.page');
 
 const eaNewConnectionPage=require('../pages/newConnection.page');
 import {testFunction} from '../../global_methods/helper';
@@ -208,39 +209,62 @@ export class newConnectionMethod{
   }
 
   public static async validateErrorMessage(t,errorType){
-    let expectedErrorText;
+    let expectedErrorText,errorMessageHeading;
     await testFunction.waitForElementToBeAppeared(t,eaNewConnectionPage.elements.txtErrorModal);
     await testFunction.isElementDisplayed(t,eaNewConnectionPage.elements.txtErrorModal);
     switch (errorType) {
       case "UNSUPPORTED_METER_TYPE":
+        errorMessageHeading="Sorry, there was a problem loading the page"
         expectedErrorText="We are unable to complete this quote online as we are unable to determine your meter type. Please call the New Connection team on 1300 137 473 to complete your new connection quote.";
         break;
       case "ENERGY_NOT_SERVICED":
+        errorMessageHeading="Sorry, there was a problem loading the page"
         expectedErrorText="There are no current electricity market offers in your area at this time, please refer to our Energy Price Fact Sheets to see if a standing offer is available in your region or contact us on 1800 818 378.";
         break;
       case "EXPIRED_QUOTE":
+        errorMessageHeading="Sorry, there was a problem loading the page"
         expectedErrorText="The quote for this address has expired. You can return to the Plans Page to start a new quote.";
         break;
       case "QUOTE_NOT_EXIST":
+        errorMessageHeading="Sorry, there was a problem loading the page"
         expectedErrorText="We are unable to retrieve this quote, as some plan information might have changed since it was generated and may no longer be accurate. You can return to the Plans Page to restart this quote.";
+        break;
+      case "SOLAR_UNKNOWN":
+        errorMessageHeading = "We have detected an issue with this address";
+        expectedErrorText = "We have detected an issue with the electricity meter at this address. Please contact us so one of our customer support agents can solve this error.";
+        await testFunction.click(t,eaNewConnectionPage.elements.txtErrorModal.find("a"));
+        const url=await testFunction.getPageURL();
+        await t.expect(url).contains("contact-us");
+        await testFunction.takeScreenshot(t,"Contact_Us");
+        await t.closeWindow();
         break;
       default:
         console.error("Unexpected error")
-
     }
+    await testFunction.assertText(t,eaNewConnectionPage.elements.errorModalHeader,errorMessageHeading)
     await testFunction.assertText(t,eaNewConnectionPage.elements.txtErrorModal,expectedErrorText);
     await testFunction.takeScreenshot(t,"Error_"+errorType);
 
   }
 
   public static async goToPlansPage(t){
-    await testFunction.click(t,eaNewConnectionPage.elements.btnGoToPlans);
+    await testFunction.click(t,eaNewConnectionPage.elements.goToButtonOnErrorModal);
   }
 
-  public static async isPlansPageDisplayed(t){
-    await testFunction.waitForElementToBeAppeared(t,eaNewConnectionPage.elements.feedbackForm);
-    await testFunction.isElementDisplayed(t,eaNewConnectionPage.elements.feedbackForm);
-    await testFunction.isElementVisible(t,eaNewConnectionPage.elements.plansTable);
+  public static async isPlansPageDisplayed(t,expectedPage){
+    if(expectedPage==="plans"){
+      await testFunction.waitForElementToBeAppeared(t,eaNewConnectionPage.elements.feedbackForm);
+      await testFunction.isElementDisplayed(t,eaNewConnectionPage.elements.feedbackForm);
+      await testFunction.isElementVisible(t,eaNewConnectionPage.elements.plansTable);
+      await testFunction.takeScreenshot(t,"plans_page");
+    }
+    else if(expectedPage==="my account"){
+      await testFunction.waitForElementToBeAppeared(t,eaMyAccount.elements.eaSpinner);
+      await testFunction.waitForElementToBeDisappeared(t,eaMyAccount.elements.eaSpinner);
+      await testFunction.isElementDisplayed(t,eaMyAccount.elements.eleViewAndChangePlan);
+      await testFunction.takeScreenshot(t,"dashboard");
+    }
+
   }
 
 }

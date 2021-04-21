@@ -10,8 +10,8 @@ Feature: This feature is to test the Bill Uploader scenarios
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page for Existing customer
-      |customerType|movingType |propertyType |solarOption  |
-      |RES         |Non-Moving |Owner        |No           |
+      |customerType|movingType |propertyType |
+      |RES         |Non-Moving |Owner        |
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
@@ -63,8 +63,8 @@ Feature: This feature is to test the Bill Uploader scenarios
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page for Existing customer
-      |customerType|movingType |propertyType |solarOption  |
-      |RES         |Non-Moving |Owner        |No           |
+      |customerType|movingType |propertyType |
+      |RES         |Non-Moving |Owner        |
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |

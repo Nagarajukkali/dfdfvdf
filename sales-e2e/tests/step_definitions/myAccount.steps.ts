@@ -5,6 +5,7 @@ const eaCheckoutDetailsPage = require('../pages/checkOutDetails.page');
 import {CustomerType, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 import {myAccountMethod} from '../methods/myAccountPage';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
+import {checkoutReviewMethod} from '../methods/checkoutReviewPage';
 
 When(/^user logs in to my account using '(.*)' and '(.*)'$/, async function(t, [username, password]) {
   await myAccountMethod.loginToMyAccount(t,username,password);
@@ -19,15 +20,6 @@ When(/^user clicks on compare and switch plan button$/, async function (t) {
   console.log(myAccountMethod.map);
   await testFunction.click(t, eaMyAccount.elements.btnCompareAndSwitchPlans);
   console.log("User clicks on 'Compare and switch plan' button.")
-});
-When(/^user selects No for solar question and confirm$/, async function (t, []) {
-  if(await testFunction.sizeOfElement(t, eaMyAccount.elements.btnSolarNo) !== 0)  {
-    await testFunction.click(t, eaMyAccount.elements.btnSolarNo);
-    await testFunction.click(t, eaMyAccount.elements.btnQualifierConfirm);
-    console.log("User answers solar question.");
-  }else {
-    console.log("Solar question not available for gas fuel.");
-  }
 });
 When(/^user provides identification details$/, async function (t, [], dataTable) {
   let data=dataTable.hashes();
@@ -55,18 +47,18 @@ When(/^user selects connection date$/, async function (t, []) {
     await testFunction.click(t,eaMyAccount.elements.chkBoxGas);
   await testFunction.click(t, eaMyAccount.elements.moveHouseCalendarAvailableDates);
 });
-When(/^user selects No for solar question on moving service page$/, async function (t, []) {
-  await testFunction.click(t, eaMyAccount.elements.btnSolarNo_MA);
-});
+
 When(/^user clicks on lets get moving button$/, async function (t, []) {
   await testFunction.takeScreenshot(t, "my_account_move_home_Page");//disabled UI Validation
   await testFunction.click(t, eaMyAccount.elements.btnLetsGetMoving);
+  await testFunction.waitForElementToBeAppeared(t,eaCheckoutDetailsPage.elements.selectYourPlanText);
 });
 When(/^user answers No for home improvements question$/, async function (t, []) {
   await testFunction.click(t, eaMyAccount.elements.rbHomeImprovement_No);
 });
 When(/^user clicks on compare plans button$/, async function (t) {
   await testFunction.click(t,eaMyAccount.elements.btnUpSellComparePlan);
+  await testFunction.waitForElementToBeAppeared(t,eaCheckoutDetailsPage.elements.selectYourPlanText);
 
 });
 When(/^user validates details on checkout details page$/, async function (t,[],dataTable) {
@@ -77,12 +69,15 @@ When(/^user validates details on checkout details page$/, async function (t,[],d
   await checkoutDetailsMethod.validateMAHeader(t, params[0].sourceSystem);
   await checkoutDetailsMethod.validateHeader(t, params[0].sourceSystem, params[0].journey);
   await checkoutDetailsMethod.validateProgressbarAndSubheading(t, params[0].sourceSystem, params[0].journey, params[0].fuelType);
-  await checkoutDetailsMethod.validateCurrentPlanDetails(t);
+  await checkoutDetailsMethod.validateCurrentPlanDetails(t,params[0].sourceSystem, params[0].journey);
   await checkoutDetailsMethod.validateContactPrefSection(t);
   await checkoutDetailsMethod.validateRefineBar(t, params[0].fuelType, params[0].sourceSystem);
   await checkoutDetailsMethod.validateDisclaimer(t, params[0].sourceSystem, eaCheckoutDetailsPage.elements.txtFeesDisclaimer, "Please note for all payment options, excluding direct debit or Centrepay, a merchant service fee may apply to credit card payments - 0.36% for paying bills by Visa or Mastercard® and 1.5% for paying bills by American Express®. The best way to avoid these fees is to set up direct debit via My Account.");
   await checkoutDetailsMethod.validateNavigationButtons(t, params[0].sourceSystem, params[0].journey);
   await checkoutDetailsMethod.validatePresenceOfEmailQuoteAndCancelButton(t,params[0].sourceSystem,params[0].journey);
+  if(params[0].solarSetup!==undefined){
+    await checkoutReviewMethod.validateSolarComponent(t,params[0].solarSetup);
+  }
   console.log("Checkout Details page validated successfully for "+params[0].sourceSystem+" "+params[0].journey+" journey.");
 });
 
