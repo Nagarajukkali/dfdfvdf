@@ -12,6 +12,9 @@ const moveHouse={
     btnMoving:Selector("hs-moving-datepicker > form > div:nth-child(2) > button"),
     errorMsgInDateSelection:Selector(".error-business-hint.two-business-days"),
     disclaimerMsg:Selector(".t-emphasize"),
+    solarSetUpUnknownError:Selector("#plan-error-SOLAR_SETUP_UNKNOWN"),
+    solarSetUpUnknownErrorForUndetectedNMI:Selector("#hs-solar-power-error-move .static-message-content"),
+    contactUsTextForUndetectedNMI:Selector("#hs-solar-power-error-move .hs-solar-contact-us__text"),
   },
 };
 

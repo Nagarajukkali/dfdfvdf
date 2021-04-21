@@ -63,8 +63,8 @@ Feature:This feature file is to add scenarios for regression defects
       |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
       |Existing      |0058120000   |Postcode           |2018            |dl    |248508352|
     And user provides all other details on qualifier page
-      |customerType|movingType|connectionAddress               |propertyType |solarOption|
-      |RES         |NA        |5 Wilkies Street, BULLI NSW 2516|Renter       |No         |
+      |customerType|movingType|connectionAddress               |propertyType |
+      |RES         |NA        |5 Wilkies Street, BULLI NSW 2516|Renter       |
     And user selects plans on checkout details page
       |fuelType |planName       |
       |GAS      |Total Plan Plus|

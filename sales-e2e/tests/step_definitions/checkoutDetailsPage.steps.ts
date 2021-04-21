@@ -5,6 +5,8 @@ import {When} from 'cucumber';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 import {testFunction } from '../../global_methods/helper';
 import { CustomerType} from '@ea/ea-commons-models';
+import {checkoutReviewMethod} from '../methods/checkoutReviewPage';
+import {plansMethod} from '../methods/plansPage';
 
 When(/^user provides all details for existing customer on checkout details page$/, async function(t,[],dataTable){
   let data=dataTable.hashes();
@@ -188,4 +190,20 @@ When(/^user selects mailing address option$/, async function (t,[],dataTable) {
 });
 When(/^user saves the quote url$/, async function (t) {
   await checkoutDetailsMethod.saveQuoteUrl(t);
+});
+When(/^user validates solar component on checkout details page when solar setup is "([^"]*)"$/, async function (t,[solarSetup]) {
+  await checkoutReviewMethod.validateSolarComponent(t,solarSetup);
+});
+When(/^user clicks on add plan button$/, async function (t) {
+  await checkoutDetailsMethod.clickOnAddPlan(t);
+
+});
+Then(/^user validates solar government scheme disclaimer under solar buy back rates section$/, async function (t) {
+  await plansMethod.validateSolarGovernmentSchemeDisclaimer(t);
+});
+Then(/^user validates solar indicator on checkout details page$/, async function (t) {
+  await checkoutReviewMethod.verifyPresenceOfSolarIndicator(t);
+});
+Then(/^user validates solar disclaimer for QLD COR customer on PFIT NTC$/, async function (t) {
+  await checkoutDetailsMethod.validateSolarDisclaimerForQLDCORCustomerOnPFITNTC(t);
 });

@@ -18,8 +18,8 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user selects gas '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
-      |customerType|movingType |propertyType |solarOption  |
-      |BUS         |Non-Moving |Owner        |No           |
+      |customerType|movingType |propertyType |
+      |BUS         |Non-Moving |Owner        |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus|firstName|lastName|businessType |
       |BUS         |BUS        |Existing      |test     |test    |ABN          |
@@ -81,8 +81,8 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user selects ele '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
-      |customerType|movingType |connectionAddress                          |propertyType |solarOption  |
-      |BUS         |Moving     |36 Gregory Street West, WENDOUREE VIC 3355 |Renter       |No           |
+      |customerType|movingType |connectionAddress                          |propertyType |
+      |BUS         |Moving     |36 Gregory Street West, WENDOUREE VIC 3355 |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus|firstName|lastName|businessType   |
       |BUS         |BUS        |Existing      |test     |test    |ABN            |

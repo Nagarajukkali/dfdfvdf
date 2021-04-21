@@ -1,6 +1,7 @@
 import {cartsMethod} from './cartsPage';
 const eaQualifierPage=require('../pages/qualifier.page');
 import {BusinessType, CustomerStatus, IdType, Moving, Property, Solar, testFunction} from '../../global_methods/helper';
+import {Selector} from "testcafe";
 
 export class qualifierMethod{
 
@@ -117,6 +118,10 @@ export class qualifierMethod{
   }
 
   public static async provideAddress(t, address) {
+    const actualAddress=Selector(() => document.getElementById("connection-address-auto-input"));
+    const actualAddressText=await actualAddress().value;
+    const expectedAddressText=testFunction.formatAddress(address);
+    if(actualAddressText.toLowerCase()!==expectedAddressText.toLowerCase()){
       await testFunction.clearAndEnterText(t,eaQualifierPage.elements.serviceAddress,address);
       await t.wait(2000);
       await testFunction.isElementVisible(t,eaQualifierPage.elements.serviceAddressList);
@@ -128,8 +133,9 @@ export class qualifierMethod{
       if(await testFunction.sizeOfElement(t,eaQualifierPage.elements.planSelectionPopup)>0){
         await testFunction.click(t,eaQualifierPage.elements.planSelectionPopup);
       }
-      await testFunction.click(t, eaQualifierPage.elements.addressContinue);
-      console.log(`${address} is provided`);
+    }
+    await testFunction.click(t, eaQualifierPage.elements.addressContinue);
+    console.log(`${address} is provided`);
   }
 
   public static async enterAddress(t, address) {
@@ -158,17 +164,6 @@ export class qualifierMethod{
     }
     else{
       console.error('Property type is not selected');
-    }
-  }
-  public static async selectSolarOption(t,solarOpt){
-    if(solarOpt===Solar.YES){
-      await testFunction.click(t,eaQualifierPage.elements.solarYes);
-    }
-    else if(solarOpt===Solar.NO){
-      await testFunction.click(t,eaQualifierPage.elements.solarNo);
-    }
-    else{
-      console.error('Solar option is not selected');
     }
   }
 

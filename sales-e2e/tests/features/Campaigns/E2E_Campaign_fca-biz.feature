@@ -37,8 +37,8 @@ Feature:E2E scenario for fca-biz campaign
       |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                       |movingType |propertyType |solarOption  |
-      |BUS          |465 Sandy Point Road, LOWER BORO NSW 2580  |Non-Moving     |Renter       |No           |
+      |customerType |connectionAddress                       |movingType |propertyType |
+      |BUS          |465 Sandy Point Road, LOWER BORO NSW 2580  |Non-Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -108,8 +108,8 @@ Feature:E2E scenario for fca-biz campaign
       |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                       |movingType |propertyType |solarOption  |
-      |BUS          |13 Station Street, WENTWORTH FALLS NSW 2782  |Moving     |Renter       |No           |
+      |customerType |connectionAddress                       |movingType |propertyType |
+      |BUS          |13 Station Street, WENTWORTH FALLS NSW 2782  |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -181,8 +181,8 @@ Feature:E2E scenario for fca-biz campaign
       |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                       |movingType |propertyType |solarOption  |
-      |BUS          |320 Crown Street, SURRY HILLS NSW 2010  |Moving     |Renter       |No           |
+      |customerType |connectionAddress                       |movingType |propertyType |
+      |BUS          |320 Crown Street, SURRY HILLS NSW 2010  |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -253,8 +253,8 @@ Feature:E2E scenario for fca-biz campaign
       |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                           |movingType |propertyType |solarOption  |
-      |BUS          |36 Gregory Street West, WENDOUREE VIC 3355  |Moving     |Renter       |No           |
+      |customerType |connectionAddress                           |movingType |propertyType |
+      |BUS          |36 Gregory Street West, WENDOUREE VIC 3355  |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -322,8 +322,8 @@ Feature:E2E scenario for fca-biz campaign
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                      |movingType |propertyType |solarOption  |
-      |BUS          |437 Oxley Avenue, REDCLIFFE QLD 4020   |Moving     |Renter       |No           |
+      |customerType |connectionAddress                      |movingType |propertyType |
+      |BUS          |437 Oxley Avenue, REDCLIFFE QLD 4020   |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -390,8 +390,8 @@ Feature:E2E scenario for fca-biz campaign
       |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                       |movingType |propertyType |solarOption  |
-      |BUS          |216 Northbourne Avenue, BRADDON ACT 2612  |Moving     |Renter       |No           |
+      |customerType |connectionAddress                       |movingType |propertyType |
+      |BUS          |216 Northbourne Avenue, BRADDON ACT 2612  |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |

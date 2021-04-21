@@ -13,8 +13,8 @@ Feature:E2E scenario for new business moving and non moving customer
   And user moves on to fill the qualifier
   And user selects '<customerStatus>' on qualifier
   And user provides all other details on qualifier page
-    |customerType| customerStatus| connectionAddress                     |movingType|propertyType|solarOption|
-    |BUS         |New            | 320 Crown Street, SURRY HILLS NSW 2010|Moving    |            |No         |
+    |customerType| customerStatus| connectionAddress                     |movingType|propertyType|
+    |BUS         |New            | 320 Crown Street, SURRY HILLS NSW 2010|Moving    |            |
   And user provides all details on checkout details page
     |customerType|journey    | firstName| lastName|businessType|
     |BUS         |BUS        | test     |test     |ABN         |
@@ -72,8 +72,8 @@ Scenario Outline: Submit a quote for new business non moving customer
   And user moves on to fill the qualifier
   And user selects '<customerStatus>' on qualifier
   And user provides all other details on qualifier page
-    |customerType| connectionAddress                |movingType|propertyType|solarOption|
-    |BUS         |68 Mercer Street, GEELONG VIC 3220|Non-Moving|            |No         |
+    |customerType| connectionAddress                |movingType|propertyType|
+    |BUS         |68 Mercer Street, GEELONG VIC 3220|Non-Moving|            |
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|businessType|
     |BUS         |BUS        |New           | test     |test     |ACN         |

@@ -1,0 +1,106 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2103167044
+    sourceCode: Total_16%GD_50
+    actualQuoteDate: 2021-03-16
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: DR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0373129175
+    
+    emailId: PCGmuvnVGL@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DLACT
+      id: 915753
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlLastName: test
+          licenseStateOfIssue: ACT
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: OWNER
+    seqNo: 2
+  
+  mainAddress: 
+    addressClass: ST
+    streetNo: 4
+    streetName: North Point
+    streetType: CR
+    suburb: PELICAN WATERS
+    state: QLD
+    country: AUS
+    postCode: 4551
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 4
+    streetName: North Point
+    streetType: CR
+    suburb: PELICAN WATERS
+    state: QLD
+    country: AUS
+    postCode: 4551
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2021-03-18
+    offerType: ENE
+    plan: TOPH-EQ
+    priceTag: EQEXA_NR2007
+    serviceOrderDate: 2021-03-18
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 3120046220
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: LSCNSPE
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: POSTMM
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    priceTagMeteringCharge: M455114N_IH
+    proposedNTC: 8470
+    proposedMC: IHUBMC
+    reEnergisationJSCCode: I612
+    reEnergisationJSCCharge: 25.0
+  
+  solarDetail: 
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: 9870
+    solarTimeOfUse: N
+  
+

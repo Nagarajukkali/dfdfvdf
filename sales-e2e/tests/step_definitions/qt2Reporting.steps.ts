@@ -231,3 +231,20 @@ Then(/^user validates the mailing address fields$/, async function (t,[],dataTab
     }
   }
 });
+Then(/^user validates the solar details$/, async function (t,[],dataTable) {
+  if(!getTestCafeRC.browsers[0].includes('emulation') && !envToExclude.includes(getPackage.config.env)) {
+    let data = dataTable.hashes();
+    let expectedFuelType = data[0].fuelType;
+    let expectedSolarPowerIndicator = data[0].solarPowerIndicator;
+    let expectedSolarNetworkTariffCode = data[0].solarNetworkTariffCode;
+    let expectedSolarTimeOfUse = data[0].solarTimeOfUse;
+    let jsonObj = await FileUtils.convertYmlTOJSONObj(t, expectedFuelType);
+    let actualSolarPowerIndicator = jsonObj.saleDetail.solarDetail.solarPowerIndicator;
+    let actualSolarNetworkTariffCode = jsonObj.saleDetail.solarDetail.solarNetworkTariffCode;
+    let actualSolarTimeOfUse = jsonObj.saleDetail.solarDetail.solarTimeOfUse;
+    await qt2Reporting.validateMandatoryField(t, actualSolarPowerIndicator, expectedSolarPowerIndicator);
+    await qt2Reporting.validateMandatoryField(t, actualSolarNetworkTariffCode, expectedSolarNetworkTariffCode);
+    await qt2Reporting.validateMandatoryField(t, actualSolarTimeOfUse, expectedSolarTimeOfUse);
+    console.log("Solar details validated.");
+  }
+});

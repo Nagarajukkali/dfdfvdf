@@ -1,65 +1,72 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2103236883
-    sourceCode: NOFRILLS
-    actualQuoteDate: 2021-03-23
+    quoteId: BB2103167034
+    sourceCode: Total_10%GD_50
+    actualQuoteDate: 2021-03-16
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    personId: 2001033000
-    title: MR
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0330204943
+      phoneNumber: 0313279241
     
-    emailId: cbjpytLznw@energyaustralia.com.au
+    emailId: XZeMRjiQsA@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 519129
+      idType: DLACT
+      id: 389395
       primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlLastName: test
+          licenseStateOfIssue: ACT
+        
+      
     
     authLevel: Y
     personPremiseRelationship: OWNER
     seqNo: 2
   
-  premiseDetail: 
+  mainAddress: 
     addressClass: ST
-    streetNo: 5
-    streetName: Wilkies
-    streetType: S
-    suburb: BULLI
-    state: NSW
+    streetNo: 87
+    streetName: Westlake
+    streetType: DR
+    suburb: MELTON WEST
+    state: VIC
     country: AUS
-    postCode: 2516
+    postCode: 3337
     premiseType: DOM
     addressType: Premise
-    primaryResidence: Y
+    primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 5
-    streetName: Wilkies
-    streetType: S
-    suburb: BULLI
-    state: NSW
+    streetNo: 87
+    streetName: Westlake
+    streetType: DR
+    suburb: MELTON WEST
+    state: VIC
     country: AUS
-    postCode: 2516
+    postCode: 3337
     addressType: Mailing
   
   offerDetail: 
     fuelType: E
-    offerType: PS
-    plan: RCPP-EN
-    priceTag: ENIEA_ZR2101
+    offerType: COR
+    plan: TOPH-EV
+    priceTag: EVPOA_NR2101
     nmiMirnInformation: 
-      NMI: 4311150544
+      NMI: 6203683344
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
@@ -67,7 +74,7 @@ saleDetail :
       customerWithLifeSupport: Y
     
     lifeSupportEquipment: 
-      lifeSupportEquipmentType: LSIPDM
+      lifeSupportEquipmentType: LSCNSPE
     
   
   offerDetail: 
@@ -79,10 +86,13 @@ saleDetail :
     billRouteType: POSTMM
   
   creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    priceTagMeteringCharge: M25161DN_IH
-    proposedNTC: N73
-    proposedMC: IHUBMC
+  
+  solarDetail: 
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: PFIT
+    solarTimeOfUse: N
   
 

@@ -140,6 +140,7 @@ Feature:E2E scenario for new connection
 #  With Electricity Sign Up
 #  If users pricing zone is Jemena or United Energy and customer has eTariffModifier of "EXTRA_APPLIANCES" then block
 #  If users pricing zone is CitiPower or Power Corp and customer has offpeak loads then block
+
   Scenario Outline: Verify an error message is displayed for pricing zone Jemena or United energy when off peak load selected
     Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
     When user provides connection details
@@ -154,8 +155,8 @@ Feature:E2E scenario for new connection
     And user submit the request
     And user clicks on proceed to quote
     Then Error modal is displayed for "UNSUPPORTED_METER_TYPE"
-    When user clicks on go to plans button
-    Then user lands on plans page
+    When user clicks on "go to plans" button
+    Then user lands on "plans" page
 
     Examples:
       |folderName                                  |fuelType |
@@ -176,8 +177,8 @@ Feature:E2E scenario for new connection
     And user submit the request
     And user clicks on proceed to quote
     Then Error modal is displayed for "ENERGY_NOT_SERVICED"
-    When user clicks on go to plans button
-    Then user lands on plans page
+    When user clicks on "go to plans" button
+    Then user lands on "plans" page
 
     Examples:
       |folderName                             |fuelType |

@@ -1,0 +1,96 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2103167010
+    sourceCode: Total_Plus_11%GD
+    actualQuoteDate: 2021-03-16
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 6666843000
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0321902812
+    
+    emailId: PZzUOgvKcq@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 212004
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 42
+    streetName: Brownlow
+    streetType: DR
+    suburb: POINT COOK
+    state: VIC
+    country: AUS
+    postCode: 3030
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 9
+    streetName: Charming
+    streetType: S
+    suburb: HAMPTON EAST
+    state: VIC
+    country: AUS
+    postCode: 3188
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2021-03-18
+    offerType: ENE
+    plan: SWSR1-EV
+    priceTag: EVPOA_NR2101
+    serviceOrderDate: 2021-03-18
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 6203778288
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: OTHER
+    
+    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: RCTBH
+    reEnergisationJSCCharge: 55.93
+  
+  solarDetail: 
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: GENR13
+    solarTimeOfUse: Y
+  
+

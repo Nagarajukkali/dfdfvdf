@@ -8,8 +8,8 @@ Scenario Outline: Verify if a business customer is displayed with accept with co
   And user moves on to fill the qualifier
   And user selects '<customerStatus>' on qualifier
   And user provides all other details on qualifier page
-    |customerType| customerStatus| connectionAddress                         |movingType|propertyType|solarOption|
-    |BUS         |New            | 36 Gregory Street West, WENDOUREE VIC 3355|Moving    |            |No         |
+    |customerType| customerStatus| connectionAddress                         |movingType|propertyType|
+    |BUS         |New            | 36 Gregory Street West, WENDOUREE VIC 3355|Moving    |            |
   And user provides all details on checkout details page
     |customerType|journey    | firstName| lastName|businessType|
     |BUS         |BUS        | test     |test     |ABN         |
@@ -55,8 +55,8 @@ Scenario Outline: Verify if a business customer is displayed with accept with co
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType| connectionAddress                |movingType|propertyType|solarOption|
-      |BUS         |68 Mercer Street, GEELONG VIC 3220|Non-Moving|            |No         |
+      |customerType| connectionAddress                |movingType|propertyType|
+      |BUS         |68 Mercer Street, GEELONG VIC 3220|Non-Moving|            |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|businessType|
       |BUS         |BUS        |New           | test     |test     |ACN         |
@@ -98,8 +98,8 @@ Scenario Outline: Verify if a business customer is displayed with accept with co
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType| customerStatus| connectionAddress                         |movingType|propertyType|solarOption|
-      |BUS         |New            | 36 Gregory Street West, WENDOUREE VIC 3355|Moving    |            |No         |
+      |customerType| customerStatus| connectionAddress                         |movingType|propertyType|
+      |BUS         |New            | 36 Gregory Street West, WENDOUREE VIC 3355|Moving    |            |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -141,8 +141,8 @@ Scenario Outline: Verify if a business customer is displayed with accept with co
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType| connectionAddress                |movingType|propertyType|solarOption|
-      |BUS         |68 Mercer Street, GEELONG VIC 3220|Non-Moving|            |No         |
+      |customerType| connectionAddress                |movingType|propertyType|
+      |BUS         |68 Mercer Street, GEELONG VIC 3220|Non-Moving|            |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|businessType|
       |BUS         |BUS        |New           | test     |test     |ACN         |

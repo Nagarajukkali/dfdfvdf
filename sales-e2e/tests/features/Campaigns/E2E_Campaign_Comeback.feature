@@ -25,8 +25,8 @@ Feature:E2E scenario for comeback campaign
       |GAS      |Y                 |Y                       |Y                    |Y                                    |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                      |movingType |propertyType |solarOption  |
-      |RES         | 74 Yillowra Street, AUBURN NSW 2144|Moving     |Renter      |No         |
+      |customerType |connectionAddress                      |movingType |propertyType   |
+      |RES         | 74 Yillowra Street, AUBURN NSW 2144|Moving     |Renter               |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |
@@ -99,8 +99,8 @@ Feature:E2E scenario for comeback campaign
       |GAS      |Y                 |Y                       |Y                    |Y                                    |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                    |movingType |propertyType |solarOption  |
-      |RES          |21 Tarrant Crescent, DUNLOP ACT 2615 |Moving     |Renter       |No           |
+      |customerType |connectionAddress                    |movingType |propertyType |
+      |RES          |21 Tarrant Crescent, DUNLOP ACT 2615 |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |
@@ -174,8 +174,8 @@ Feature:E2E scenario for comeback campaign
       |GAS      |Y                 |Y                       |Y                    |Y                                    |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                    |movingType |propertyType |solarOption  |
-      |RES          |31 Balwyn Road, CANTERBURY VIC 3126 |Moving     |Renter       |No           |
+      |customerType |connectionAddress                    |movingType |propertyType |
+      |RES          |31 Balwyn Road, CANTERBURY VIC 3126 |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |
@@ -249,8 +249,8 @@ Feature:E2E scenario for comeback campaign
       |GAS      |Y                 |Y                       |Y                    |Y                                    |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                    |movingType |propertyType |solarOption  |
-      |RES          |3 Newhaven Avenue, GLENELG NORTH SA 5045 |Moving     |Renter       |No           |
+      |customerType |connectionAddress                    |movingType |propertyType |
+      |RES          |3 Newhaven Avenue, GLENELG NORTH SA 5045 |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |
@@ -318,8 +318,8 @@ Feature:E2E scenario for comeback campaign
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                    |movingType |propertyType |solarOption  |
-      |RES          |36 Cypress Street, KULUIN QLD 4558  |Moving     |Renter       |No           |
+      |customerType |connectionAddress                    |movingType |propertyType |
+      |RES          |36 Cypress Street, KULUIN QLD 4558  |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |
@@ -390,8 +390,8 @@ Feature:E2E scenario for comeback campaign
       |customerStatus   |accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
       |<customerStatus> |5124968245   |Postcode           |3029            |dl   |390399008|
     And user provides all other details on qualifier page for Existing customer
-      |customerType|movingType |propertyType |solarOption|
-      |RES         |Non-Moving |Renter       |No         |
+      |customerType|movingType |propertyType |
+      |RES         |Non-Moving |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus   | firstName| lastName|idType        |
       |RES         |RES        |<customerStatus> | test     |test     |Driver License|
@@ -462,8 +462,8 @@ Feature:E2E scenario for comeback campaign
       |customerStatus   |accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
       |<customerStatus> |6437229177   |Postcode           |2447            |dob   |01011980|
     And user provides all other details on qualifier page for Existing customer
-      |customerType|movingType |propertyType |solarOption|
-      |RES         |Non-Moving |Renter       |No         |
+      |customerType|movingType |propertyType |
+      |RES         |Non-Moving |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus   | firstName| lastName|idType        |
       |RES         |RES        |<customerStatus> | test     |test     |Driver License|
@@ -528,8 +528,8 @@ Feature:E2E scenario for comeback campaign
       |customerStatus   |accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
       |<customerStatus> |9459589902   |Postcode           |5109            |dl   |100694552|
     And user provides all other details on qualifier page for Existing customer
-      |customerType|movingType |propertyType |solarOption|
-      |RES         |Non-Moving |Renter       |No         |
+      |customerType|movingType |propertyType |
+      |RES         |Non-Moving |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus   | firstName| lastName|idType        |
       |RES         |RES        |<customerStatus> | test     |test     |Driver License|
@@ -601,8 +601,8 @@ Feature:E2E scenario for comeback campaign
       |customerStatus   |accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
       |<customerStatus> |6895078753   |Postcode           |2902            |dob   |01011980|
     And user provides all other details on qualifier page for Existing customer
-      |customerType|movingType |propertyType |solarOption|
-      |RES         |Non-Moving |Renter       |No         |
+      |customerType|movingType |propertyType |
+      |RES         |Non-Moving |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus   | firstName| lastName|idType        |
       |RES         |RES        |<customerStatus> | test     |test     |Driver License|
@@ -668,8 +668,8 @@ Feature:E2E scenario for comeback campaign
       |customerStatus   |accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
       |<customerStatus> |9485951606   |Postcode           |4215            |dl    |139955532|
     And user provides all other details on qualifier page for Existing customer
-      |customerType|movingType |propertyType |solarOption|
-      |RES         |Non-Moving |Renter       |No         |
+      |customerType|movingType |propertyType |
+      |RES         |Non-Moving |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus   | firstName| lastName|idType        |
       |RES         |RES        |<customerStatus> | test     |test     |Driver License|

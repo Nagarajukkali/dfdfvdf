@@ -8,8 +8,8 @@ Scenario Outline: Verify if a residential customer is displayed with accept with
   And user moves on to fill the qualifier
   And user selects '<customerStatus>' on qualifier
   And user provides all other details on qualifier page
-    |customerType| connectionAddress               | movingType|propertyType|solarOption|
-    |RES         | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |No         |
+    |customerType| connectionAddress               | movingType|propertyType|
+    |RES         | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus|firstName | lastName|idType        |medicareType |
     |RES         |RES        |New           |AcceptCond|test     |Driver License|             |
@@ -54,8 +54,8 @@ Scenario Outline: Verify if a residential customer is displayed with application
   And user moves on to fill the qualifier
   And user selects '<customerStatus>' on qualifier
   And user provides all other details on qualifier page
-    |customerType|connectionAddress                     | movingType|propertyType|solarOption|
-    |RES         |42 Brownlow Drive, POINT COOK VIC 3030|Non-Moving |Renter      |No         |
+    |customerType|connectionAddress                     | movingType|propertyType|
+    |RES         |42 Brownlow Drive, POINT COOK VIC 3030|Non-Moving |Renter      |
   And user provides all details on checkout details page
     |customerType |journey    |customerStatus| firstName| lastName|idType        |
     |RES          |RES        |New           | decline  |test     |Driver License|
@@ -97,8 +97,8 @@ Scenario Outline: Verify if a residential customer is displayed with application
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType| connectionAddress               | movingType|propertyType|solarOption|
-      |RES         | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |No         |
+      |customerType| connectionAddress               | movingType|propertyType|
+      |RES         | 5 Wilkies Street, BULLI NSW 2516|Moving     |Renter      |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus|firstName | lastName|idType        |medicareType |
       |RES         |RES        |New           |accept    |test     |Driver License|             |
@@ -140,8 +140,8 @@ Scenario Outline: Verify if a residential customer is displayed with application
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType|connectionAddress                     | movingType|propertyType|solarOption|
-      |RES         |42 Brownlow Drive, POINT COOK VIC 3030|Non-Moving |Renter      |No         |
+      |customerType|connectionAddress                     | movingType|propertyType|
+      |RES         |42 Brownlow Drive, POINT COOK VIC 3030|Non-Moving |Renter      |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType        |
       |RES          |RES        |New           | error    |test     |Driver License|

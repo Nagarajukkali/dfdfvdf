@@ -36,8 +36,8 @@ Feature:E2E scenario for fiftyupclub campaign
       |GAS      |N                 |Y                       |Y                    |Y                                    |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType| connectionAddress               | movingType|propertyType|solarOption|
-      |RES         | 5 Wilkies Street, BULLI NSW 2516|Non-Moving |Renter      |No         |
+      |customerType| connectionAddress               | movingType|propertyType|
+      |RES         | 5 Wilkies Street, BULLI NSW 2516|Non-Moving |Renter      |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |
       |RES         |RES        |New           | test     |test     |Driver License|
@@ -117,8 +117,8 @@ Feature:E2E scenario for fiftyupclub campaign
       |GAS      |N                 |Y                       |Y                    |Y                                    |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                        |movingType |propertyType |solarOption  |
-      |RES          |21 Eltham Street, FLEMINGTON VIC 3031    |Moving     |Renter       |No           |
+      |customerType |connectionAddress                        |movingType |propertyType |
+      |RES          |21 Eltham Street, FLEMINGTON VIC 3031    |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |
@@ -183,8 +183,8 @@ Feature:E2E scenario for fiftyupclub campaign
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                        |movingType |propertyType |solarOption  |
-      |RES          |90 Coach Road West, MORAYFIELD QLD 4506  |Non-Moving |Renter       |No           |
+      |customerType |connectionAddress                        |movingType |propertyType |
+      |RES          |90 Coach Road West, MORAYFIELD QLD 4506  |Non-Moving |Renter       |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |
@@ -248,8 +248,8 @@ Feature:E2E scenario for fiftyupclub campaign
       |GAS      |N                 |Y                       |Y                    |Y                                    |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                      |movingType |propertyType |solarOption  |
-      |RES          |6 Kipling Avenue, GLENGOWRIE SA 5044   |Moving     |Renter       |No           |
+      |customerType |connectionAddress                      |movingType |propertyType |
+      |RES          |6 Kipling Avenue, GLENGOWRIE SA 5044   |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |

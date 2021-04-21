@@ -36,8 +36,8 @@ Feature:E2E scenario for nsw-seniors campaign
       |GAS      |Y                 |Y                       |Y                    |Y                                    |<state>  |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                       |movingType |propertyType |solarOption  |
-      |RES          |5 Wilkies Street, BULLI NSW 2516        |Moving     |Renter       |No           |
+      |customerType |connectionAddress                       |movingType |propertyType |
+      |RES          |5 Wilkies Street, BULLI NSW 2516        |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |medicareType |
       |RES         |RES        |New           | test     |test     |Medicare      |blue         |

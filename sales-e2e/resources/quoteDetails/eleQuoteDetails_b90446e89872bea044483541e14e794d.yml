@@ -1,0 +1,93 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2103167024
+    sourceCode: Total_3%GD
+    actualQuoteDate: 2021-03-16
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MS
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0378521930
+    
+    emailId: QyMmiUcoWo@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: LIMITED COMPANY
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 60809695820
+    
+    anzsic: TRANSPORT
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0378521930
+    
+    businessEmailId: QyMmiUcoWo@energyaustralia.com.au
+  
+  mainAddress: 
+    addressClass: ST
+    streetNo: 3
+    streetName: Fisher
+    streetType: S
+    suburb: MYRTLE BANK
+    state: SA
+    country: AUS
+    postCode: 5064
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 3
+    streetName: Fisher
+    streetType: S
+    suburb: MYRTLE BANK
+    state: SA
+    country: AUS
+    postCode: 5064
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: E
+    offerType: PS
+    plan: TOPB-ES
+    priceTag: ESSA5_NB2007
+    nmiMirnInformation: 
+      NMI: 2001003192
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+  
+  solarDetail: 
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: GENR2016
+    solarTimeOfUse: N
+  
+

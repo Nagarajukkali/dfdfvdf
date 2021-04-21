@@ -62,9 +62,9 @@ When(/^user selects appliances$/, async function (t) {
 Then(/^Error modal is displayed for "([^"]*)"$/, async function (t,[errorType]) {
   await newConnectionMethod.validateErrorMessage(t,errorType);
 });
-When(/^user clicks on go to plans button$/, async function (t) {
+When(/^user clicks on "([^"]*)" button$/, async function (t) {
   await newConnectionMethod.goToPlansPage(t);
 });
-Then(/^user lands on plans page$/, async function (t) {
-  await newConnectionMethod.isPlansPageDisplayed(t);
+Then(/^user lands on "([^"]*)" page$/, async function (t,[expectedPage]) {
+  await newConnectionMethod.isPlansPageDisplayed(t,expectedPage);
 });

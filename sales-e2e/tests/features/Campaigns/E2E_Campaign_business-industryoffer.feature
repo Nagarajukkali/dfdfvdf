@@ -37,8 +37,8 @@ Feature:E2E scenario for business-industryoffer campaign
             | GAS      | N                | N                     | Y                   | Y                                  |
         And user selects '<customerStatus>' on qualifier
         And user provides all other details on qualifier page
-            | customerType | connectionAddress                    | movingType | propertyType | solarOption |
-            | BUS          | 10 Hank Street, HEATHERBRAE NSW 2324 | Moving     | Renter       | No          |
+            | customerType | connectionAddress                    | movingType | propertyType |
+            | BUS          | 10 Hank Street, HEATHERBRAE NSW 2324 | Moving     | Renter       |
         And user provides all details on checkout details page
             | customerType | journey | firstName | lastName | businessType |
             | BUS          | BUS     | test      | test     | ABN          |
@@ -115,8 +115,8 @@ Feature:E2E scenario for business-industryoffer campaign
             | GAS      | N                | N                     | Y                   | Y                                  |
         And user selects '<customerStatus>' on qualifier
         And user provides all other details on qualifier page
-            | customerType | connectionAddress                      | movingType | propertyType | solarOption |
-            | BUS          | 1a Bell Street, SUNSHINE WEST VIC 3020 | Moving     | Renter       | No          |
+            | customerType | connectionAddress                      | movingType | propertyType |
+            | BUS          | 1a Bell Street, SUNSHINE WEST VIC 3020 | Moving     | Renter       |
         And user provides all details on checkout details page
             | customerType | journey | firstName | lastName | businessType |
             | BUS          | BUS     | test      | test     | ABN          |
@@ -193,8 +193,8 @@ Feature:E2E scenario for business-industryoffer campaign
             | GAS      | N                | N                     | Y                   | Y                                  |
         And user selects '<customerStatus>' on qualifier
         And user provides all other details on qualifier page
-            | customerType | connectionAddress                 | movingType | propertyType | solarOption |
-            | BUS          | 44 Windsor Avenue, MAGILL SA 5072 | Moving     | Renter       | No          |
+            | customerType | connectionAddress                 | movingType | propertyType |
+            | BUS          | 44 Windsor Avenue, MAGILL SA 5072 | Moving     | Renter       |
         And user provides all details on checkout details page
             | customerType | journey | firstName | lastName | businessType |
             | BUS          | BUS     | test      | test     | ABN          |
@@ -271,8 +271,8 @@ Feature:E2E scenario for business-industryoffer campaign
             | GAS      | N                | N                     | Y                   | Y                                  |
         And user selects '<customerStatus>' on qualifier
         And user provides all other details on qualifier page
-            | customerType | connectionAddress                      | movingType | propertyType | solarOption |
-            | BUS          | 134 Carruthers Street, CURTIN ACT 2605 | Moving     | Renter       | No          |
+            | customerType | connectionAddress                      | movingType | propertyType |
+            | BUS          | 134 Carruthers Street, CURTIN ACT 2605 | Moving     | Renter       |
         And user provides all details on checkout details page
             | customerType | journey | firstName | lastName | businessType |
             | BUS          | BUS     | test      | test     | ABN          |
@@ -343,8 +343,8 @@ Feature:E2E scenario for business-industryoffer campaign
         And user moves on to fill the qualifier
         And user selects '<customerStatus>' on qualifier
         And user provides all other details on qualifier page
-            | customerType | connectionAddress                     | movingType | propertyType | solarOption |
-            | BUS          | 9 Hamilton Street, NORTHGATE QLD 4013 | Moving     | Renter       | No          |
+            | customerType | connectionAddress                     | movingType | propertyType |
+            | BUS          | 9 Hamilton Street, NORTHGATE QLD 4013 | Moving     | Renter       |
         And user provides all details on checkout details page
             | customerType | journey | firstName | lastName | businessType |
             | BUS          | BUS     | test      | test     | ABN          |
