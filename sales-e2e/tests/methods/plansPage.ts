@@ -1276,10 +1276,10 @@ export class verifyAccountMethod {
 
 export class campaignMethod{
   public static async enterPostcodeOnCampaign(t,postcode){
-    await testFunction.click(t,EaHomePage.elements.rbPostcode);
+    await testFunction.click(t,EaHomePage.elements.rbPostcodeOnModal);
     await t.wait(1000);
-    await testFunction.clearAndEnterText(t,EaHomePage.elements.postcodeOnCampaignPage,postcode);
-    await testFunction.click(t,EaHomePage.elements.btnCampaignSearch);
+    await testFunction.clearAndEnterText(t,EaHomePage.elements.postcodeOnCampaignPageOnModal,postcode);
+    await testFunction.click(t,EaHomePage.elements.btnCampaignSearchOnModal);
     await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
   }
 
@@ -1287,47 +1287,14 @@ export class campaignMethod{
     if(await this.isNswSeniors()) {
       await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCodeSeniorsCard, offerCode);
     } else {
-      const noOfOfferCodeElement=await testFunction.sizeOfElement(t,EaHomePage.elements.txtOfferCode);
-      if(noOfOfferCodeElement>1){
-        await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCode.nth(noOfOfferCodeElement-1), offerCode);
-      }
-      else{
-        await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCode, offerCode);
-      }
+      await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCode, offerCode);
     }
-    await t.wait(3000);
-    const noOfPostcodeElement=await testFunction.sizeOfElement(t,EaHomePage.elements.rbPostcode);
-    if(noOfPostcodeElement>1){
-      await testFunction.click(t,EaHomePage.elements.rbPostcode.nth(noOfPostcodeElement-1));
-    }
-    else{
-      await testFunction.click(t,EaHomePage.elements.rbPostcode);
-    }
-    const noOfPostcodeInputElement=await testFunction.sizeOfElement(t,EaHomePage.elements.postcodeOnCampaignPage);
-    if(noOfPostcodeInputElement>1){
-      await testFunction.clearAndEnterText(t, EaHomePage.elements.postcodeOnCampaignPage.nth(noOfPostcodeInputElement-1), postcode);
-    }
-    else{
-      await testFunction.clearAndEnterText(t, EaHomePage.elements.postcodeOnCampaignPage, postcode);
-    }
-    const noOfCampaignSubmitElement=await testFunction.sizeOfElement(t,EaHomePage.elements.btnCampaignSearch);
-    if(noOfCampaignSubmitElement>1){
-      await testFunction.click(t, EaHomePage.elements.btnCampaignSearch.nth(noOfCampaignSubmitElement-1));
-    }
-    else{
-      await testFunction.click(t, EaHomePage.elements.btnCampaignSearch);
-    }
-    await testFunction.waitForElementToBeDisappeared(t, EaHomePage.elements.eaSpinner);
-  }
-  public static async enterPostcodeOnCampaign1(t, state, postcode?: String){
-    if(postcode == undefined) {
-      state = state.toUpperCase();
-      postcode = testFunction.getPostcode(state)
-    }
+    await t.wait(1000);
+    await testFunction.click(t,EaHomePage.elements.rbPostcode);
     await testFunction.clearAndEnterText(t, EaHomePage.elements.postcodeOnCampaignPage, postcode);
     await testFunction.click(t, EaHomePage.elements.btnCampaignSearch);
+    await testFunction.waitForElementToBeDisappeared(t, EaHomePage.elements.eaSpinner);
   }
-
   public static async addPlanOnCampaign(t){
     await testFunction.click(t,EaHomePage.elements.selectCampaignPlans);
   }
