@@ -1,0 +1,98 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2103167039
+    sourceCode: Total_5%GD
+    actualQuoteDate: 2021-03-16
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0363311860
+    
+    emailId: MJeEEvTIcf@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: PROPRIETARY LTD
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 43319450113
+    
+    anzsic: MINING
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0363311860
+    
+    businessEmailId: MJeEEvTIcf@energyaustralia.com.au
+  
+  mainAddress: 
+    addressClass: ST
+    streetNo: 1
+    streetName: Pintail
+    streetType: DR
+    suburb: TORQUAY
+    state: VIC
+    country: AUS
+    postCode: 3228
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 1
+    streetName: Pintail
+    streetType: DR
+    suburb: TORQUAY
+    state: VIC
+    country: AUS
+    postCode: 3228
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: E
+    offerType: PS
+    plan: TOPB-EV
+    priceTag: EVPOA_NB2101
+    nmiMirnInformation: 
+      NMI: 6203928101
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: N
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+  
+  solarDetail: 
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: GENR13
+    solarTimeOfUse: N
+  
+

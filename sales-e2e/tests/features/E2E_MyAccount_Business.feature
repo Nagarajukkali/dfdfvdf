@@ -3,14 +3,13 @@
   #We will trigger thees tests manually in jenkins once/twice in a day
 @myaccount
 Feature: This feature is to test the My account scenarios for business customers
-
+  @failed
   Scenario Outline: Verify the BSME Plan switch journey with current plan from My Account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
     When user logs in to my account using '<username>' and '<password>'
     And user clicks on view and change plan accordion for 'ELE'
     And user clicks on compare and switch plan button
-    And user selects No for solar question and confirm
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
@@ -44,7 +43,6 @@ Feature: This feature is to test the My account scenarios for business customers
     When user logs in to my account using '<username>' and '<password>'
     And user clicks on view and change plan accordion for 'ELE'
     And user clicks on compare and switch plan button
-    And user selects No for solar question and confirm
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
@@ -78,7 +76,6 @@ Feature: This feature is to test the My account scenarios for business customers
     When user logs in to my account using '<username>' and '<password>'
     And user clicks on view and change plan accordion for '<fuelType>'
     And user clicks on compare and switch plan button
-    And user selects No for solar question and confirm
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |

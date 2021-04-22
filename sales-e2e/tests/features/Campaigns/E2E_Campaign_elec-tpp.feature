@@ -30,8 +30,8 @@ Feature:E2E scenario for elec-tpp campaign
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                      |movingType |propertyType |solarOption  |
-      |RES         | 74 Yillowra Street, AUBURN NSW 2144|Moving     |Renter      |No         |
+      |customerType |connectionAddress                      |movingType |propertyType   |
+      |RES         | 74 Yillowra Street, AUBURN NSW 2144|Moving     |Renter               |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |
@@ -91,8 +91,8 @@ Feature:E2E scenario for elec-tpp campaign
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                    |movingType |propertyType |solarOption  |
-      |RES          |21 Tarrant Crescent, DUNLOP ACT 2615 |Moving     |Renter       |No           |
+      |customerType |connectionAddress                    |movingType |propertyType |
+      |RES          |21 Tarrant Crescent, DUNLOP ACT 2615 |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |
@@ -153,8 +153,8 @@ Feature:E2E scenario for elec-tpp campaign
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                    |movingType |propertyType |solarOption  |
-      |RES          |31 Balwyn Road, CANTERBURY VIC 3126 |Moving     |Renter       |No           |
+      |customerType |connectionAddress                    |movingType |propertyType |
+      |RES          |31 Balwyn Road, CANTERBURY VIC 3126 |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |
@@ -215,8 +215,8 @@ Feature:E2E scenario for elec-tpp campaign
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                    |movingType |propertyType |solarOption  |
-      |RES          |3 Newhaven Avenue, GLENELG NORTH SA 5045 |Moving     |Renter       |No           |
+      |customerType |connectionAddress                    |movingType |propertyType |
+      |RES          |3 Newhaven Avenue, GLENELG NORTH SA 5045 |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |

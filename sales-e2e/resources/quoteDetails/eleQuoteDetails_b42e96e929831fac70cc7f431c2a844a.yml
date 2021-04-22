@@ -1,0 +1,92 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2103167012
+    sourceCode: Total_Plus_11%GD
+    actualQuoteDate: 2021-03-16
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 8224680000
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0375141838
+    
+    emailId: lCdmfhrBQO@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 236540
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    flatNo: 1
+    flatType: U
+    addressClass: ST
+    streetNo: 297
+    streetName: Dorset
+    streetType: R
+    suburb: CROYDON
+    state: VIC
+    country: AUS
+    postCode: 3136
+    premiseType: DOM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    flatNo: 1
+    flatType: U
+    addressClass: ST
+    streetNo: 297
+    streetName: Dorset
+    streetType: R
+    suburb: CROYDON
+    state: VIC
+    country: AUS
+    postCode: 3136
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2021-03-17
+    offerType: ENE
+    plan: SWSR1-EV
+    priceTag: EVTRA_NR2101
+    serviceOrderDate: 2021-03-17
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation/: 
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: OTHER
+    
+    lifeSupportOtherEquipmentDetails: Sample Other electricity device.
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCharge: 19.99
+  
+

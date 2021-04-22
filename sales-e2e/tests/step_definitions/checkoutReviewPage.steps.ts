@@ -71,6 +71,7 @@ When(/^user validates details on checkout review page$/, async function (t,[],da
   let customerType = params[0].customerType;
   let isNewCustomer = params[0].newOrExisting.toLowerCase() === "new";
   let isMoving = journey.toLowerCase() === "move home";
+  let solarSetup = params[0].solarSetup;
 
   await checkoutDetailsMethod.validateHeader(t, sourceSystem, journey);
   await checkoutReviewMethod.validateProgressbarAndSubheading(t);
@@ -81,6 +82,8 @@ When(/^user validates details on checkout review page$/, async function (t,[],da
   await checkoutReviewMethod.validateCarbonNeutralSection(t);
   await checkoutReviewMethod.validateNavigationButtons(t);
   await checkoutReviewMethod.validateGeneralStateDisclaimer(t, customerType, isNewCustomer, isMoving);
+  if(solarSetup!==undefined)
+    await checkoutReviewMethod.validateSolarComponent(t,solarSetup);
   console.log("Checkout Review page validated successfully for "+sourceSystem+" "+journey+" journey.");
 });
 
@@ -127,4 +130,11 @@ Given(/^user validates source code$/, async function (t,[],dataTable) {
       throw Error("Invalid fuel type");
   }
   console.log("Validation completed for source code.")
+});
+When(/^user selects "([^"]*)" solar tariff type for "([^"]*)"$/, async function (t,[solarTariffType,state]) {
+    await checkoutReviewMethod.selectSolarTariff(t,solarTariffType,state);
+});
+When(/^user validates "([^"]*)" solar tariff type for "([^"]*)" under electricity rates section$/, async function (t,[tariffType,state]) {
+  await checkoutReviewMethod.validateSolarFeedInTariffUnderRates(t,tariffType,state);
+
 });

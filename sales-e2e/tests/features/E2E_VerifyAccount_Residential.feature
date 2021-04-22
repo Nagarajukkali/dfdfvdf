@@ -13,8 +13,8 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user selects '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
-      |customerType|movingType |propertyType |solarOption  |
-      |RES         |Non-Moving |Owner        |No           |
+      |customerType|movingType |propertyType |
+      |RES         |Non-Moving |Owner        |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus|firstName|lastName|idType        |
       |RES         |RES        |Existing      |test     |test    |Medicare      |
@@ -72,8 +72,8 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user selects '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
-      |customerType|movingType |connectionAddress                          |propertyType |solarOption  |
-      |RES         |Moving     |271 Heatherhill Road, FRANKSTON VIC 3199   |Renter       |No           |
+      |customerType|movingType |connectionAddress                          |propertyType |
+      |RES         |Moving     |271 Heatherhill Road, FRANKSTON VIC 3199   |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus|firstName|lastName|idType    |
       |RES         |RES        |Existing      |test     |test    |Passport  |
@@ -137,8 +137,8 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user selects '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
-      |customerType|movingType |connectionAddress                    |propertyType |solarOption  |state|
-      |RES         |Moving     |36 Cypress Street, KULUIN QLD 4558   |Renter       |No           |QLD  |
+      |customerType|movingType |connectionAddress                    |propertyType |state|
+      |RES         |Moving     |36 Cypress Street, KULUIN QLD 4558   |Renter       |QLD  |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus|firstName|lastName|idType        |
       |RES         |RES        |Existing      |test     |test    |Driver License|

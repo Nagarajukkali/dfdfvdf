@@ -37,8 +37,8 @@ Feature:E2E scenario for geelong campaign
       |GAS      |Y                 |Y                       |Y                    |N                                    |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                        |movingType |propertyType |solarOption  |
-      |RES          |21 Eltham Street, FLEMINGTON VIC 3031    |Non-Moving |Renter       |No           |
+      |customerType |connectionAddress                        |movingType |propertyType |
+      |RES          |21 Eltham Street, FLEMINGTON VIC 3031    |Non-Moving |Renter       |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |

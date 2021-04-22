@@ -762,6 +762,15 @@ export class plansMethod{
     console.log("Refine buttons are validated on plans page");
   }
 
+  public static async validateSolarGovernmentSchemeDisclaimer(t){
+    let countOfElements=await testFunction.sizeOfElement(t,EaHomePage.elements.solarRateToolTip);
+    for(let i=0;i<countOfElements;i++){
+      await testFunction.click(t,EaHomePage.elements.solarRateToolTip.nth(i));
+      await testFunction.assertText(t,EaHomePage.elements.solarRateToolTipText.nth(i),"If you are eligible for a government solar rebate, the rebate will be reflected in your welcome pack and added to your account.");
+    }
+    console.log("Solar Government Scheme disclaimer validated successfully.")
+  }
+
   public static async validateComparisonStatement(t,baseCreditCondition,rewardCreditCondition,planName){
     let comparisonText;
     switch (planName) {
@@ -1085,6 +1094,30 @@ export class plansMethod{
         await testFunction.takeScreenshot(t, 'green_energy_dropdown_section');
         await testFunction.click(t, EaHomePage.elements.croCustomiseEstimateSideBar.greenEnergyAccordion.greenEnergyDropdown100Value);
         break;
+    }
+  }
+  public static async provideAddressOnPlansPage(t, address) {
+    await testFunction.clearAndEnterText(t,EaHomePage.elements.addressInput,address);
+    await t.wait(2000);
+    await testFunction.isElementVisible(t,EaHomePage.elements.addressList);
+    await testFunction.clickElementFromList(t,EaHomePage.elements.addressList,address);
+    await testFunction.waitForLoadingIconToClose();
+    await t.wait(3000);
+    console.log(`${address} is provided`);
+  }
+
+  public static async verifySolarDisclaimer(t: any,dataTable) {
+    const disclaimer=Selector(() => document.getElementById("condiDisclaimer"));
+      await testFunction.isElementDisplayed(t, disclaimer);
+    if(dataTable[0].solarBuyBack==='Y'){
+      await testFunction.assertText(t,disclaimer,"Solar feed-in tariffs");
+      if(dataTable[0].state==='VIC'){
+        await testFunction.assertText(t,disclaimer,"^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. For more information about the Victorian FiT scheme see www.energy.vic.gov.au/renewable-energy/victorian-feed-in-tariff.");
+      }
+      else{
+        await testFunction.assertText(t,disclaimer,"^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation.");
+      }
+      console.log("Solar buyback disclaimer validated");
     }
   }
 }

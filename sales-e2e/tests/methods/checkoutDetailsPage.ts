@@ -294,7 +294,7 @@ export class checkoutDetailsMethod{
     await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.aahEmail, email);
     await t.wait(2000);
     let indexForAccessLevel=testFunction.getRandomInt(0,2)
-    if(testFunction.isTablet()){
+    if(testFunction.isMobile()){
       await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl1);
     }
     else{
@@ -312,7 +312,6 @@ export class checkoutDetailsMethod{
           console.error("Invalid access level selected.");
       }
     }
-
     console.log("AAH details provided");
   }
 
@@ -833,34 +832,36 @@ export class checkoutDetailsMethod{
 
   }
 
-  public static async validateCurrentPlanDetails(t){
-    if(myAccountMethod.map.get('isCurrentPlanDisplayed_'+checkoutDetailsMethod.getScenarioId(t))){
-      // await testFunction.waitForElementToBeDisappeared(t,eaCheckoutDetailsPage.elements.eaSpinner);
-      let itemsCount=await testFunction.sizeOfElement(t,eaCheckoutDetailsPage.elements.currentPlan.planDetailsSection);
-      await testFunction.assertTextValue(t,itemsCount,4);
-      await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.planHeadingTitle);
-      await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.planHeadingTitle,'Your Current Plan');
-      await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.planHeadingFuel,'Electricity');
-      await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.planDetailsTitle);
-      await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.planEstimate);
-      await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.planEstimate,myAccountMethod.map.get('estimatePeriod_'+checkoutDetailsMethod.getScenarioId(t)));
-      await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.planGSTDisclaimer);
-      await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.discounts);
-      await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.discounts,myAccountMethod.map.get('discount_'+checkoutDetailsMethod.getScenarioId(t)));
-      await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.exitFees);
-      await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.exitFees,myAccountMethod.map.get('exitFees_'+checkoutDetailsMethod.getScenarioId(t)));
-      let pageUrl = await testFunction.getPageURL();
-      if(pageUrl.includes('customerType=BUS')){
-        await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.customerType,'Small business flat tariff');
+  public static async validateCurrentPlanDetails(t,sourceSystem,journey){
+    if((sourceSystem === "My Account") && journey==="plan switch"){
+      if(myAccountMethod.map.get('isCurrentPlanDisplayed_'+checkoutDetailsMethod.getScenarioId(t))){
+        await testFunction.waitForElementToBeDisappeared(t,eaCheckoutDetailsPage.elements.eaSpinner);
+        let itemsCount=await testFunction.sizeOfElement(t,eaCheckoutDetailsPage.elements.currentPlan.planDetailsSection);
+        await testFunction.assertTextValue(t,itemsCount,4);
+        await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.planHeadingTitle);
+        await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.planHeadingTitle,'Your Current Plan');
+        await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.planHeadingFuel,'Electricity');
+        await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.planDetailsTitle);
+        await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.planEstimate);
+        await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.planEstimate,myAccountMethod.map.get('estimatePeriod_'+checkoutDetailsMethod.getScenarioId(t)));
+        await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.planGSTDisclaimer);
+        await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.discounts);
+        await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.discounts,myAccountMethod.map.get('discount_'+checkoutDetailsMethod.getScenarioId(t)));
+        await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.exitFees);
+        await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.exitFees,myAccountMethod.map.get('exitFees_'+checkoutDetailsMethod.getScenarioId(t)));
+        let pageUrl = await testFunction.getPageURL();
+        if(pageUrl.includes('customerType=BUS')){
+          await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.customerType,'Small business flat tariff');
+        }
+        else{
+          await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.customerType,'Residential flat tariff');
+        }
+        await testFunction.click(t,eaCheckoutDetailsPage.elements.currentPlan.planEleRateAccordion);
+        await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.disclaimer);
+        let expectedDisclaimer="Not all features or benefits of your plan are displayed. For further information on your plan details, rates, fees and charges, tariff type, benefits, including discounts please refer to your welcome pack or bill."
+        await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.disclaimer,expectedDisclaimer);
+        console.log("Validated Current Plan section.");
       }
-      else{
-        await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.customerType,'Residential flat tariff');
-      }
-      await testFunction.click(t,eaCheckoutDetailsPage.elements.currentPlan.planEleRateAccordion);
-      await testFunction.isElementDisplayed(t,eaCheckoutDetailsPage.elements.currentPlan.disclaimer);
-      let expectedDisclaimer="Not all features or benefits of your plan are displayed. For further information on your plan details, rates, fees and charges, tariff type, benefits, including discounts please refer to your welcome pack or bill."
-      await testFunction.assertText(t,eaCheckoutDetailsPage.elements.currentPlan.disclaimer,expectedDisclaimer);
-      console.log("Validated Current Plan section.");
     }
     else{
       await testFunction.isElementAbsent(t,eaCheckoutDetailsPage.elements.currentPlan.planTable);
@@ -889,5 +890,26 @@ export class checkoutDetailsMethod{
       console.log("Validation completed for MA header");
     }
   }
+  public static async clickOnAddPlan(t){
+    if(!(await testFunction.isElementExists(t,eaCheckoutDetailsPage.elements.selectElePlanExpanded))){
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.btnAddPlanElectricity);
+    }
+    if(!(await testFunction.isElementExists(t,eaCheckoutDetailsPage.elements.selectGasPlanExpanded))){
+      await testFunction.click(t,eaCheckoutDetailsPage.elements.btnAddPlanGas);
+    }
+  }
+
+  public static async validateSolarDisclaimerForQLDCORCustomerOnPFITNTC(t){
+    const expectedDisclaimer="To ensure you don’t lose your government rebate, you’ll need to sign up with the same name used to apply for the Solar Bonus Scheme.";
+    await testFunction.isElementDisplayed(t,eaCheckoutReviewPage.elements.solarPower.solarQLDCORPFITDisclaimer);
+    await testFunction.assertText(t,eaCheckoutReviewPage.elements.solarPower.solarQLDCORPFITDisclaimer,expectedDisclaimer);
+    // await testFunction.click(t,eaCheckoutReviewPage.elements.solarPower.solarQLDCORPFITDisclaimer.find("a"));
+    // const url=await testFunction.getPageURL();
+    // await t.expect(url).contains("solar/feed-in-tariffs/solar-bonus-scheme-44c");
+    // await testFunction.takeScreenshot(t,"solar/feed-in-tariffs/solar-bonus-scheme-44c");
+    // await t.closeWindow();
+    console.log("Validated solar disclaimer for QLD COR customer on PFIT tariff");
+  }
+
 
 }

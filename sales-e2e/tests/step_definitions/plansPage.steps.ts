@@ -180,6 +180,7 @@ Then(/^plans page load according to the type of '(.*)' on plans page$/, async fu
 });
 Then(/^user validates details on plans page for '(.*)'$/, async function (t, [customerType]) {
   await plansMethod.validateGeneralStateDisclaimer(t, customerType);
+  await plansMethod.validateSolarGovernmentSchemeDisclaimer(t);
   await testFunction.takeScreenshot(t, 'ABTest_plans_page');
 });
 Then(/^user validates disclaimer on plans page for "([^"]*)"$/, async function (t,[campaignName],dataTable) {
@@ -514,6 +515,14 @@ When(/^user verifies the account through verify account journey for residential 
   //await testFunction.validateNetworkCall(t);
   await testFunction.takeScreenshot(t, 'verify_account_modal_final');//disabled UI Validation
   await verifyAccountMethod.showCostEstimates(t);
+});
+When(/^user enters the address "([^"]*)" on plans page$/, async function (t,[address]) {
+  await plansMethod.provideAddressOnPlansPage(t,address);
+});
+
+Then(/^user validates the solar disclaimer on the page$/, async function (t,dataTable) {
+  dataTable = dataTable.hashes();
+  await plansMethod.verifySolarDisclaimer(t,dataTable);
 });
 
 When(/^user verifies the account through verify account journey for business customer through AB test side Bar$/, async function (t,[],dataTable) {

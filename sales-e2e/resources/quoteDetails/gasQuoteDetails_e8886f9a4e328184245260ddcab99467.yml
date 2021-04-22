@@ -1,0 +1,85 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2103167031
+    sourceCode: Total_19%GD
+    actualQuoteDate: 2021-03-16
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MISS
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0357916580
+    
+    emailId: jedpXmzgdO@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: GNRALPARTNERSHIP
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ACN
+      businessId: 897507840
+    
+    anzsic: UTILITIES
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0357916580
+    
+    businessEmailId: jedpXmzgdO@energyaustralia.com.au
+  
+  mainAddress: 
+    addressClass: ST
+    streetNo: 6
+    streetName: Kultarr
+    streetType: LA
+    suburb: THROSBY
+    state: ACT
+    country: AUS
+    postCode: 2914
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 6
+    streetName: Kultarr
+    streetType: LA
+    suburb: THROSBY
+    state: ACT
+    country: AUS
+    postCode: 2914
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: G
+    offerType: COR
+    plan: TOPB-GA
+    priceTag: GACTA_NB2001
+    nmiMirnInformation: 
+      MIRN: 5261012701
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+

@@ -217,6 +217,8 @@ const eaHomePage={
       },
       closeSideBar: Selector("footer button[class*='ea-button--primary']"),
     },
+    solarRateToolTip:Selector("[id*='solar-rate-title-'] .ea-tooltip__trigger-icon"),
+    solarRateToolTipText:Selector("[id*='solar-rate-title-'] .ea-tooltip__content-container"),
     modalEnterUsageOption: Selector("div#hs-enter-usage-cta button"),
     modalNext: Selector("#refineModal .ea-modal__primary-action"),
     modalBack: Selector("#refineModal .ea-modal__secondary-action"),
@@ -227,6 +229,8 @@ const eaHomePage={
     serviceAddressText:Selector("#hs-service-address-details-address"),
     NMIText:Selector("#hs-service-address-details-nmi"),
     MIRNText:Selector("#hs-service-address-details-mirn"),
+    addressInput:Selector("#address-auto-input"),
+    addressList:Selector("#address-auto-autocomplete>ul>li"),
   },
   campaignElements:{
     elePlanHeadingTitle:Selector("[id*='plan-heading-title'][id*='-E']"),

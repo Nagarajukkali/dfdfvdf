@@ -9,7 +9,6 @@ Feature: This feature is to test that the ghosting user is able to submit quotes
     And the user clicks on Impersonate button
     And user clicks on view and change plan accordion for '<fuelType>'
     And user clicks on compare and switch plan button
-    And user selects No for solar question and confirm
     And user validates details on checkout details page
       |sourceSystem   |journey    |fuelType   |
       |<sourceSystem> |<journey>  |<fuelType> |
@@ -32,6 +31,7 @@ Feature: This feature is to test that the ghosting user is able to submit quotes
       |folderName                |account number |fuelType   |sourceSystem   |journey      |AAH  |DD   |customerType |newOrExisting  |
       |E2E_MyAccount_Ghosting_PS |4368599970     |ELE        |My Account     |Plan switch  |No   |No   |RES          |Existing       |
 
+  @failed
   Scenario Outline: Verify the ghosting user is able to submit Move home quote
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
@@ -41,7 +41,6 @@ Feature: This feature is to test that the ghosting user is able to submit quotes
     And user clicks on move home link for 'ELE'
     And user enters service address as '<address>'
     And user selects connection date
-    And user selects No for solar question on moving service page
     And user clicks on lets get moving button
     And user validates details on checkout details page
       |sourceSystem |journey    |fuelType   |

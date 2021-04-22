@@ -55,8 +55,8 @@ Feature: This feature validates UI of the quote tool application
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType     |connectionAddress   |movingType |propertyType |solarOption  |
-      |<customer_type>  |<connectionAddress> |Non-Moving |Renter       |No           |
+      |customerType     |connectionAddress   |movingType |propertyType |
+      |<customer_type>  |<connectionAddress> |Non-Moving |Renter       |
     And user validates details on checkout details page
       |sourceSystem   |journey      |fuelType   |
       |Quote Tool     |Plan Switch  |BOTH       |

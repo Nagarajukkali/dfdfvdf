@@ -1,14 +1,15 @@
 @E2E
 Feature:E2E scenario for offer campaign
-  @deviceCheck @smoke
+  #regression defect raised
+  @deviceCheck @smoke @failed
 Scenario Outline: Submit a quote for offer campaign without AAH and DD
   Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
   When user provides "2000" and clicks on show me plan link
   And user clicks on Add plan button
   And user selects '<customerStatus>' on qualifier
   And user provides all other details on qualifier page
-    |customerType| connectionAddress                  | movingType|propertyType|solarOption|
-    |RES         | 74 Yillowra Street, AUBURN NSW 2144|Non-Moving |Renter      |No         |
+    |customerType| connectionAddress                  | movingType|propertyType|
+    |RES         | 74 Yillowra Street, AUBURN NSW 2144|Non-Moving |Renter      |
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|idType        |
     |RES         |RES        |New           | test     |test     |Driver License|
@@ -61,8 +62,8 @@ Scenario Outline: Submit a quote for offer campaign without AAH and DD
     And user clicks on Add plan button
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType| connectionAddress                       | movingType|propertyType|solarOption|
-      |RES         | 9 Charming Street, HAMPTON EAST VIC 3188|Moving     |Renter      |No         |
+      |customerType| connectionAddress                       | movingType|propertyType|
+      |RES         | 9 Charming Street, HAMPTON EAST VIC 3188|Moving     |Renter      |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType  |
       |RES         |RES        |New           | test     |test     |Passport|

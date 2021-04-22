@@ -128,7 +128,7 @@ const eaCheckoutDetailsPage={
     basicBsmeGasPlanFeatureTitle:Selector("[id*='plan-feature-title-BSOT-G']"),
     basicBsmeGasPlanRatesTitle:Selector("[id*='plan-rates-title-BSOT-G']"),
     sliderRight:Selector("div.hs-plan-slider__button__bg-right"),
-    connectionAddress:Selector("#connAddrTitle"),
+    connectionAddress:Selector("#connection-details-address"),
     chkboxSpecialOffer:Selector("#special-offers label"),
     preferredCommEmail:Selector("#edit-preferred-communication-method-email__label"),
     preferredCommPost:Selector("#edit-preferred-communication-method-post__label"),
@@ -182,7 +182,13 @@ const eaCheckoutDetailsPage={
     MAHeader:{
       userDesktopHeader:Selector("div.host.desktop"),
       links:Selector("div.links"),
-    }
+    },
+    solarPowerComponent:Selector("div.hs-solar-power"),
+    selectYourPlanText:Selector('#checkout-progress-bar-subheading h3'),
+    btnAddPlanElectricity:Selector('#select-plan-change-add-button-electricity'),
+    btnAddPlanGas:Selector('#select-plan-change-add-button-gas'),
+    selectElePlanExpanded:Selector('.select-plan #select-plan-ELE .select-plan-expanded'),
+    selectGasPlanExpanded:Selector('.select-plan #select-plan-GAS .select-plan-expanded'),
 
   },
 };

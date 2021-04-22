@@ -12,8 +12,8 @@ Scenario Outline: Submit a quote for existing residential moving customer
     |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
     |Existing      |8372937428   |Postcode           |3024            |dob   |01011980|
   And user provides all other details on qualifier page for Existing customer
-    |customerType|movingType |connectionAddress                       |propertyType |solarOption|
-    |RES         |Moving     |9 Charming Street, HAMPTON EAST VIC 3188|Renter       |No         |
+    |customerType|movingType |connectionAddress                       |propertyType |
+    |RES         |Moving     |9 Charming Street, HAMPTON EAST VIC 3188|Renter       |
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|idType  |
     |RES         |RES        |Existing      | test     |test     |Medicare|
@@ -77,8 +77,8 @@ Scenario Outline: Submit a quote for existing residential non moving customer wi
     |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
     |Existing      |5134624952   |Postcode           |2516            |dob   |01011980|
   And user provides all other details on qualifier page for Existing customer
-    |customerType|movingType |propertyType |solarOption  |
-    |RES         |Non-Moving |Owner        |No           |
+    |customerType|movingType |propertyType |
+    |RES         |Non-Moving |Owner        |
   And user provides all details on checkout details page
     |customerType |journey    |customerStatus| firstName| lastName|idType        |
     |RES          |RES        |Existing      | test     |test     |Driver License|
@@ -138,8 +138,8 @@ Scenario Outline: Submit a quote for existing residential non moving customer wi
       |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
       |Existing      |9485951606   |Postcode           |4215            |dl    |139955532|
     And user provides all other details on qualifier page for Existing customer
-      |customerType|movingType |propertyType |solarOption  |
-      |RES         |Non-Moving |Owner        |No           |
+      |customerType|movingType |propertyType |
+      |RES         |Non-Moving |Owner        |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus| firstName| lastName|idType        |
       |RES          |RES        |Existing      | test     |test     |Passport      |

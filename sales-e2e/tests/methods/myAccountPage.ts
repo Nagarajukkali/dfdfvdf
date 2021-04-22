@@ -4,7 +4,6 @@ import {testFunction } from '../../global_methods/helper';
 import {checkoutDetailsMethod} from './checkoutDetailsPage';
 const cryptoJS = require('crypto-js');
 const { config }=require('../../resources/resource');
-let isSolar: boolean = true;
 
 export class myAccountMethod{
 
@@ -12,7 +11,7 @@ export class myAccountMethod{
 
   public static async loginToMyAccount(t,username,password){
     await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfUsername, username);
-    //console.log(cryptoJS.AES.encrypt("TestPass1", username).toString());
+    // console.log(cryptoJS.AES.encrypt("TestPass1", username).toString());
     await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfPassword, cryptoJS.AES.decrypt(password, username).toString(cryptoJS.enc.Utf8));
     await testFunction.click(t, eaMyAccount.elements.btnSignIn);
     await testFunction.waitForElementToBeAppeared(t,eaMyAccount.elements.eaSpinner);
@@ -25,10 +24,8 @@ export class myAccountMethod{
   public static async navigateToViewAndChangePlan(t,fuelType){
     if(fuelType === FUEL_TYPE_OPTIONS.ELE.value) {
       await testFunction.click(t, eaMyAccount.elements.eleViewAndChangePlan);
-      isSolar = true;
     } else if(fuelType === FUEL_TYPE_OPTIONS.GAS.value) {
       await testFunction.click(t, eaMyAccount.elements.gasViewAndChangePlan);
-      isSolar = false;
     }
     await testFunction.waitForElementToBeDisappeared(t,eaMyAccount.elements.eaSpinner);
     await testFunction.takeScreenshot(t, "my_account_view_and_change_plan");//disabled UI Validation

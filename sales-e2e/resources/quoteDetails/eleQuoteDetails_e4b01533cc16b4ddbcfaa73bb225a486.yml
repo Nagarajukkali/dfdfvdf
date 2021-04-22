@@ -1,0 +1,95 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2103167045
+    sourceCode: Total_13%GD
+    actualQuoteDate: 2021-03-16
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0323285768
+    
+    emailId: FjGrQakYSL@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: PARTNERSHIP
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ACN
+      businessId: 785343163
+    
+    anzsic: CONSTRUCTION
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0323285768
+    
+    businessEmailId: FjGrQakYSL@energyaustralia.com.au
+  
+  mainAddress: 
+    addressClass: ST
+    streetNo: 7
+    streetName: Kimlin
+    streetType: LA
+    suburb: DAGUN
+    state: QLD
+    country: AUS
+    postCode: 4570
+    premiseType: COM
+    addressType: Premise
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 7
+    streetName: Kimlin
+    streetType: LA
+    suburb: DAGUN
+    state: QLD
+    country: AUS
+    postCode: 4570
+    addressType: Mailing
+  
+  offerDetail: 
+    fuelType: E
+    offerType: PS
+    plan: TOPB-EQ
+    priceTag: EQEXA_NB2007
+    nmiMirnInformation: 
+      NMI: QB02178486
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    proposedNTC: 8570
+    proposedMC: MDYMC
+  
+  solarDetail: 
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: 9870
+    solarTimeOfUse: N
+  
+

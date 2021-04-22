@@ -163,6 +163,11 @@ export class testFunction {
       await t.expect(actualFieldValue).contains(expectedFieldValue);
   }
 
+  public static async assertFalseText(t, element, expectedFieldValue: string) {
+    const actualFieldValue: string = await this.getElementText(t,element);
+    await t.expect(actualFieldValue).notContains(expectedFieldValue);
+  }
+
   public static async assertTextOnPage(t, text) {
     const actualPageContent=await Selector('html').textContent;
     await t.expect(actualPageContent).contains(text);
@@ -569,6 +574,35 @@ export class testFunction {
         campaignPageURL=`${eaHomePage}${campaign}?live=disabled`;
     }
     return campaignPageURL;
+  }
+
+  public static formatAddress(address:String){
+    let formattedAddress;
+    if(address.includes("Avenue")){
+      formattedAddress=address.replace("Avenue,","Ave");
+    }
+    else if(address.includes("Road")){
+      formattedAddress=address.replace("Road,","Rd");
+    }
+    else if(address.includes("Street")){
+      formattedAddress=address.replace("Street,","ST");
+    }
+    else if(address.includes("Lane")){
+      formattedAddress=address.replace("Lane,","LANE");
+    }
+    else if(address.includes("Place")){
+      formattedAddress=address.replace("Place,","PL");
+    }
+    else if(address.includes("Drive")){
+      formattedAddress=address.replace("Drive,","DR");
+    }
+    else if(address.includes("Crescent")){
+      formattedAddress=address.replace("Crescent,","Cres");
+    }
+    else if(address.includes("Court")){
+      formattedAddress=address.replace("Court,","CT");
+    }
+    return formattedAddress;
   }
 }
 

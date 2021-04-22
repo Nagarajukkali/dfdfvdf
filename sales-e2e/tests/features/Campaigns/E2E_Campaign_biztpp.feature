@@ -38,8 +38,8 @@ Feature:E2E scenario for biztpp campaign
       |GAS      |Y                 |N                       |Y                    |Y                                    |NSW  |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                       |movingType |propertyType |solarOption  |
-      |BUS          |320 Crown Street, SURRY HILLS NSW 2010  |Moving     |Renter       |No           |
+      |customerType |connectionAddress                       |movingType |propertyType |
+      |BUS          |320 Crown Street, SURRY HILLS NSW 2010  |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -113,8 +113,8 @@ Feature:E2E scenario for biztpp campaign
       |GAS      |Y                 |N                       |Y                    |Y                                    |VIC  |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                           |movingType |propertyType |solarOption  |
-      |BUS          |36 Gregory Street West, WENDOUREE VIC 3355  |Moving     |Renter       |No           |
+      |customerType |connectionAddress                           |movingType |propertyType |
+      |BUS          |36 Gregory Street West, WENDOUREE VIC 3355  |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -188,8 +188,8 @@ Feature:E2E scenario for biztpp campaign
       |GAS      |N                 |N                       |Y                    |Y                                    |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                    |movingType |propertyType |solarOption  |
-      |BUS          |6 Peat Avenue, HOLDEN HILL SA 5088   |Moving     |Renter       |No           |
+      |customerType |connectionAddress                    |movingType |propertyType |
+      |BUS          |6 Peat Avenue, HOLDEN HILL SA 5088   |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -263,8 +263,8 @@ Feature:E2E scenario for biztpp campaign
       |GAS      |N                 |N                       |Y                    |Y                                    |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                          |movingType |propertyType |solarOption  |
-      |BUS          |216 Northbourne Avenue, BRADDON ACT 2612   |Moving     |Renter       |No           |
+      |customerType |connectionAddress                          |movingType |propertyType |
+      |BUS          |216 Northbourne Avenue, BRADDON ACT 2612   |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -332,8 +332,8 @@ Feature:E2E scenario for biztpp campaign
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                      |movingType |propertyType |solarOption  |
-      |BUS          |437 Oxley Avenue, REDCLIFFE QLD 4020   |Moving     |Renter       |No           |
+      |customerType |connectionAddress                      |movingType |propertyType |
+      |BUS          |437 Oxley Avenue, REDCLIFFE QLD 4020   |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |

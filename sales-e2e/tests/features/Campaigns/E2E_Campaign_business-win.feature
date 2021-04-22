@@ -37,8 +37,8 @@ Feature:E2E scenario for business-win campaign
       |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |Y                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                           |movingType |propertyType |solarOption  |
-      |BUS          |36 Gregory Street West, WENDOUREE VIC 3355  |Moving     |Renter       |No           |
+      |customerType |connectionAddress                           |movingType |propertyType |
+      |BUS          |36 Gregory Street West, WENDOUREE VIC 3355  |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -115,8 +115,8 @@ Feature:E2E scenario for business-win campaign
       |customerStatus|accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
       |Existing      |0054341369   |ABN                |52987721200     |dob   |01011980|
     And user provides all other details on qualifier page for Existing customer
-      |customerType|movingType |solarOption|
-      |BUS         |Non-Moving |No         |
+      |customerType|movingType |
+      |BUS         |Non-Moving |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|businessType|
       |BUS         |BUS        |Existing      | test     |test     |ABN         |
