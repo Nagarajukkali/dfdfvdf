@@ -1,4 +1,4 @@
-@E2E
+@E2E @test
 Feature:E2E scenario for offer campaign
   #regression defect raised
   @deviceCheck @smoke @failed
@@ -63,7 +63,7 @@ Scenario Outline: Submit a quote for offer campaign without AAH and DD
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType| connectionAddress                       | movingType|propertyType|
-      |RES         | 9 Charming Street, HAMPTON EAST VIC 3188|Moving     |Renter      |
+      |RES         | 271 Heatherhill Road, FRANKSTON VIC 3199|Moving     |Renter      |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType  |
       |RES         |RES        |New           | test     |test     |Passport|
@@ -101,11 +101,11 @@ Scenario Outline: Submit a quote for offer campaign without AAH and DD
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType| customerStatus   | campaign |
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-EV |6407220528|N                             |N                             |Y                      |LSCNSPE                 |EMAIL        |<customerStatus>  |<campaign>|
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-EV |6407557087|N                             |N                             |Y                      |LSCNSPE                 |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType| customerStatus   | campaign |
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GV |5310571404|N                             |N                             |Y                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GV |5321574765|N                             |N                             |Y                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
       |customerStatus|fuelType|campaign  |folderName                                    |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |

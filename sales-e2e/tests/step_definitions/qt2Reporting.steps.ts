@@ -65,7 +65,7 @@ Then(/^user validates below mandatory fields$/, async function (t,[],dataTable) 
     let isCampaignTest = (t.testRun.test.name.includes('campaign'));
     let isOfferType=(actualOfferType==='ENE'||actualOfferType === 'COR');
     let isStateEligibleFor$25Credit= (actualState==='ACT');
-    let isStateEligibleFor$50Credit= (actualState==='VIC' || actualState==='NSW' || actualState==='QLD');
+    let isStateEligibleFor$50Credit= (actualState==='VIC' || actualState==='QLD');
     let isStateEligibleForNoCredit= (actualState==='SA');
     let isBusinessPlanCode = (expectedPlanCode.includes('BSOT') || expectedPlanCode.includes('TOPB') || expectedPlanCode.includes('SWSR'));
     let isResiPlanCode = (expectedPlanCode.includes('RSOT'));

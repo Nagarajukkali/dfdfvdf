@@ -13,7 +13,7 @@ Scenario Outline: Submit a quote for existing residential moving customer
     |Existing      |8372937428   |Postcode           |3024            |dob   |01011980|
   And user provides all other details on qualifier page for Existing customer
     |customerType|movingType |connectionAddress                       |propertyType |
-    |RES         |Moving     |9 Charming Street, HAMPTON EAST VIC 3188|Renter       |
+    |RES         |Moving     |271 Heatherhill Road, FRANKSTON VIC 3199|Renter       |
   And user provides all details on checkout details page
     |customerType|journey    |customerStatus| firstName| lastName|idType  |
     |RES         |RES        |Existing      | test     |test     |Medicare|
@@ -55,11 +55,11 @@ Scenario Outline: Submit a quote for existing residential moving customer
   And user validates all the details for 'ELE' submitted quote
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-    |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RSOT-EV |6407220528|N                             |N                             |Y                      |OTHER                   |POSTMM        |
+    |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RSOT-EV |6407557087|N                             |N                             |Y                      |OTHER                   |POSTMM        |
   And user validates all the details for 'GAS' submitted quote
   And user validates below mandatory fields
     |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-    |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RSOT-GV |5310571404|N                             |N                             |Y                      |OTHER                   |POSTMM        |
+    |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |RSOT-GV |5321574765|N                             |N                             |Y                      |OTHER                   |POSTMM        |
 
   Examples:
   |customerStatus|fuelType|planName  |folderName              |state|optDisconnection|sourceSystem  |journey  |AAH  |DD   |customerType |newOrExisting  |
