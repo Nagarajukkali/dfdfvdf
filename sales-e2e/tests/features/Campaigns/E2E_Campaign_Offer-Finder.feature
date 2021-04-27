@@ -139,7 +139,7 @@ Feature:E2E scenario for offer-finder campaign
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-EQ |QB08556016|                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|campaign     |folderName                              |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
-      |New           |ELE     |16         |offer-finder  |E2E_Campaign_offer-finder_QLD_new_moving |QLD  |Quote Tool    |Move Home|No   |No  |RES          |New            |
+      |New           |ELE     |20         |offer-finder  |E2E_Campaign_offer-finder_QLD_new_moving |QLD  |Quote Tool    |Move Home|No   |No  |RES          |New            |
 
   Scenario Outline: Validate complete data for offer-finder campaign for SA - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -339,7 +339,7 @@ Feature:E2E scenario for offer-finder campaign
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-GV |5310425534|    N                          |    N                         |N                      |                         |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign   |folderName                                   |state |sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting  |
-      |New           |BOTH    |10         |27         |offer-finder|E2E_Campaign_offer-finder_VIC_new_nonmoving |VIC   |Quote Tool    |COR        |No   |No  |RES          |New            |
+      |New           |BOTH    |13         |27         |offer-finder|E2E_Campaign_offer-finder_VIC_new_nonmoving |VIC   |Quote Tool    |COR        |No   |No  |RES          |New            |
 
   Scenario Outline: Validate complete data for offer-finder campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -408,7 +408,7 @@ Feature:E2E scenario for offer-finder campaign
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |TOPH-GV |5330790589|N                             |N                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
-      |Existing      |BOTH    |10        |27         |offer-finder |E2E_Campaign_offer-finder_VIC_existing_non-moving |VIC  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
+      |Existing      |BOTH    |13        |27         |offer-finder |E2E_Campaign_offer-finder_VIC_existing_non-moving |VIC  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
   @campaign21.4.3
   Scenario Outline: Validate complete data for offer-finder campaign for NSW existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -595,5 +595,5 @@ Feature:E2E scenario for offer-finder campaign
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |TOPH-EQ |QB01405934|                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
-      |Existing      |ELE    |16         |offer-finder |E2E_Campaign_offer-finder_QLD_existing_non-moving |QLD  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
+      |Existing      |ELE    |20         |offer-finder |E2E_Campaign_offer-finder_QLD_existing_non-moving |QLD  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
 

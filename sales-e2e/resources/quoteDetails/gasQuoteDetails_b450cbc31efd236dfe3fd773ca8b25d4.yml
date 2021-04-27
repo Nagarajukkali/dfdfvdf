@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: MK2104096603
+    quoteId: MK2104270084
     sourceCode: Alliance_29%GD_50
-    actualQuoteDate: 2021-04-09
+    actualQuoteDate: 2021-04-27
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MRS
+    title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0339052284
+      phoneNumber: 0391501459
     
-    emailId: kJfWqVSZjM@energyaustralia.com.au
+    emailId: xkiWueJhUp@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLQLD
-      id: 295620
+      idType: DLTAS
+      id: 655949
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: QLD
+          licenseStateOfIssue: TAS
         
       
     
@@ -38,38 +38,38 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 9
-    streetName: Charming
-    streetType: S
-    suburb: HAMPTON EAST
+    streetNo: 31
+    streetName: Balwyn
+    streetType: R
+    suburb: CANTERBURY
     state: VIC
     country: AUS
-    postCode: 3188
+    postCode: 3126
     premiseType: DOM
     addressType: Premise
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 9
-    streetName: Charming
-    streetType: S
-    suburb: HAMPTON EAST
+    streetNo: 31
+    streetName: Balwyn
+    streetType: R
+    suburb: CANTERBURY
     state: VIC
     country: AUS
-    postCode: 3188
+    postCode: 3126
     addressType: Mailing
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2021-04-12
+    proposedStart: 2021-04-29
     offerType: ENE
     plan: TOPH-GV
-    priceTag: GVA2A_NR2101
-    serviceOrderDate: 2021-04-12
+    priceTag: GVR2A_NR2101
+    serviceOrderDate: 2021-04-29
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      MIRN: 5310571404
+      MIRN: 5310425534
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N

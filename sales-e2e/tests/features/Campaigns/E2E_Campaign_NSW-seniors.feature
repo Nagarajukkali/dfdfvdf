@@ -1,4 +1,4 @@
-@campaign
+@campaign 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
   # 2. Provide Y/N for features as per the change in this step "And user validates the data on plans page for "<campaign>""
@@ -96,4 +96,4 @@ Feature:E2E scenario for nsw-seniors campaign
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign     |folderName               |sourceSystem|journey   |state  |customerType |newOrExisting  |AAH |DD  |
-      |New           |BOTH    |16         |16         |nsw-seniors  |E2E_Campaign_NSW_seniors |Quote Tool  |Move Home |NSW    |RES          |New            |No  |No  |
+      |New           |BOTH    |27         |25         |nsw-seniors  |E2E_Campaign_NSW_seniors |Quote Tool  |Move Home |NSW    |RES          |New            |No  |No  |

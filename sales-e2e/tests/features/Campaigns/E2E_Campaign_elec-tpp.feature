@@ -196,7 +196,7 @@ Feature:E2E scenario for elec-tpp campaign
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-EV |6102221416   |N                             |N                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|campaign            |folderName              |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
-      |New           |ELE    |11         |elec-tpp    |E2E_Campaign_elec-tpp_VIC_new_moving    |VIC  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
+      |New           |ELE    |14         |elec-tpp    |E2E_Campaign_elec-tpp_VIC_new_moving    |VIC  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
 
   Scenario Outline: Validate complete data for elec-tpp campaign for SA - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences

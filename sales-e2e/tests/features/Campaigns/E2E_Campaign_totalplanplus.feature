@@ -83,7 +83,7 @@ Feature:E2E scenario for total-plan-plus campaign
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS      |SWSR1-GV |5330790589 |N                             |N                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName                   |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
-      |Existing      |BOTH    |11         |28         |total-plan-plus    |E2E_Campaign_total-plan-plus_VIC_exis_nonmov    |VIC  |Quote Tool    |Plan Switch |No   |No  |RES          |Existing          |
+      |Existing      |BOTH    |14         |28         |total-plan-plus    |E2E_Campaign_total-plan-plus_VIC_exis_nonmov    |VIC  |Quote Tool    |Plan Switch |No   |No  |RES          |Existing          |
   @campaign21.4.3
   Scenario Outline: Validate complete data for total-plan-plus campaign for NSW - existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences

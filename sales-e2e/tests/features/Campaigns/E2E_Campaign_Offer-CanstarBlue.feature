@@ -139,7 +139,7 @@ Feature:E2E scenario for offer-canstarblue campaign
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-EQ |QB08556016|                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|campaign           |folderName                                       |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
-      |New           |ELE     |16         |offer-canstarblue  |E2E_Campaign_offer-canstarblue_QLD_new_nonmoving |QLD  |Quote Tool    |COR      |No   |No  |RES          |New            |
+      |New           |ELE     |20         |offer-canstarblue  |E2E_Campaign_offer-canstarblue_QLD_new_nonmoving |QLD  |Quote Tool    |COR      |No   |No  |RES          |New            |
 
   Scenario Outline: Validate complete data for offer-canstarblue campaign for SA - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -340,7 +340,7 @@ Feature:E2E scenario for offer-canstarblue campaign
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GV |5310425534| N                             | N                            |N                      |                         |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign   |folderName                              |state |sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting  |
-      |New           |BOTH    |10         |27         |offer-canstarblue|E2E_Campaign_offer-canstarblue_VIC_new_moving |VIC   |Quote Tool    |Move Home  |No   |No  |RES          |New            |
+      |New           |BOTH    |13         |27         |offer-canstarblue|E2E_Campaign_offer-canstarblue_VIC_new_moving |VIC   |Quote Tool    |Move Home  |No   |No  |RES          |New            |
 
   Scenario Outline: Validate complete data for offer-canstarblue campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -409,7 +409,7 @@ Feature:E2E scenario for offer-canstarblue campaign
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |TOPH-GV |5330790589|N                             |N                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
-      |Existing      |BOTH    |10         |27         |offer-canstarblue |E2E_Campaign_offer-canstarblue_VIC_existing_non-moving |VIC  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
+      |Existing      |BOTH    |13         |27         |offer-canstarblue |E2E_Campaign_offer-canstarblue_VIC_existing_non-moving |VIC  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
   @campaign21.4.3
   Scenario Outline: Validate complete data for offer-canstarblue campaign for NSW existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -596,5 +596,5 @@ Feature:E2E scenario for offer-canstarblue campaign
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |TOPH-EQ |QB01405934|                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
-      |Existing      |ELE    |16         |offer-canstarblue |E2E_Campaign_offer-canstarblue_QLD_existing_non-moving |QLD  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
+      |Existing      |ELE    |20         |offer-canstarblue |E2E_Campaign_offer-canstarblue_QLD_existing_non-moving |QLD  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
 
