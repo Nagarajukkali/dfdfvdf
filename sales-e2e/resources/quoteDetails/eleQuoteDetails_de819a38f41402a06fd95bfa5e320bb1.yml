@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2104096627
-    sourceCode: Total_16%GD_50
-    actualQuoteDate: 2021-04-09
+    quoteId: BB2104270080
+    sourceCode: Total_20%GD_50
+    actualQuoteDate: 2021-04-27
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MISS
+    title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0373810679
+      phoneNumber: 0321819685
     
-    emailId: oKqDpeFQoS@energyaustralia.com.au
+    emailId: AVeieLJuxh@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLNT
-      id: 168892
+      idType: DLQLD
+      id: 985346
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: NT
+          licenseStateOfIssue: QLD
         
       
     
@@ -62,11 +62,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-04-13
+    proposedStart: 2021-04-29
     offerType: ENE
     plan: TOPH-EQ
     priceTag: EQEX1_NR2007
-    serviceOrderDate: 2021-04-13
+    serviceOrderDate: 2021-04-29
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: QB08556016
@@ -86,5 +86,8 @@ saleDetail :
     meterExchangeFlag: N
     reEnergisationJSCCode: RNRRBU
     reEnergisationJSCCharge: 0.0
+  
+  solarDetail: 
+    solarPowerIndicator: N
   
 

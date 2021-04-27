@@ -1,49 +1,32 @@
 saleDetail : 
   saleDetailHeader: 
-<<<<<<< HEAD
-    quoteId: NO2010052728
-    sourceCode: Total_16%GD_100
-    actualQuoteDate: 2020-10-05
-=======
-    quoteId: BB2009098284
-    sourceCode: Total_16%GD_100
-    actualQuoteDate: 2020-09-09
->>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
+    quoteId: NO2104269865
+    sourceCode: Total_27%GD_50
+    actualQuoteDate: 2021-04-26
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-<<<<<<< HEAD
-      phoneNumber: 0347597217
+      phoneNumber: 0316190029
     
-    emailId: EululWeDSN@energyaustralia.com.au
+    emailId: zpcQLSWEJq@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: MEDICARE
-      id: 4726406791
-=======
-      phoneNumber: 0360104060
-    
-    emailId: RnhiURmrjw@energyaustralia.com.au
-    dob: 1980-01-01
-    personIdDetail: 
-      idType: MEDICARE
-      id: 7320393909
->>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
+      id: 7876076889
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationMedicareDetail: 
           medicareFirstName: test
-          medicareMiddleName/: 
           medicareLastName: test
           medicareReferenceNumber: 1
           medicareExpiryDate: 2025-01-01
@@ -68,21 +51,24 @@ saleDetail :
     addressType: Premise
     primaryResidence: N
   
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 5
+    streetName: Wilkies
+    streetType: S
+    suburb: BULLI
+    state: NSW
+    country: AUS
+    postCode: 2516
+    addressType: Mailing
+  
   offerDetail: 
     fuelType: E
-<<<<<<< HEAD
-    proposedStart: 2020-10-07
+    proposedStart: 2021-04-28
     offerType: ENE
     plan: TOPH-EN
     priceTag: ENIEA_NR2007
-    serviceOrderDate: 2020-10-07
-=======
-    proposedStart: 2020-09-11
-    offerType: ENE
-    plan: TOPH-EN
-    priceTag: ENIEA_NR2007
-    serviceOrderDate: 2020-09-11
->>>>>>> 0564a5d2641531cb3f881437a69a4dbbeb9ce7f7
+    serviceOrderDate: 2021-04-28
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 4311150544
@@ -110,8 +96,13 @@ saleDetail :
   meteringDetail: 
     meterExchangeFlag: N
     priceTagMeteringCharge: M25161DN_IH
-    proposedNTC: N70
+    proposedNTC: N73
     proposedMC: IHUBMC
     reEnergisationJSCCharge: 0
+  
+  solarDetail: 
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: NESN
+    solarTimeOfUse: N
   
 

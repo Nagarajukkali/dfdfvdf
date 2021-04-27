@@ -92,10 +92,10 @@ Feature:E2E scenario for partner-program
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign         | folderName                                 | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 26          | 23          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
-
+@test
   Scenario Outline: Validate complete data for partner-program campaign for VIC for new non moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "bizoffer5" and "3188" and clicks on show me plan link
+    When user provides "bizoffer5" and "3199" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -118,8 +118,8 @@ Feature:E2E scenario for partner-program
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      | customerType | connectionAddress                        | movingType | propertyType |
-      | RES          | 9 Charming Street, HAMPTON EAST VIC 3188 | Non-Moving | Renter       |
+      | customerType |connectionAddress                        | movingType | propertyType |
+      | RES          |31 Balwyn Road, CANTERBURY VIC 3126 | Non-Moving | Renter       |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
       | RES          | RES     | New            | test      | test     | Driver License |              |
@@ -154,15 +154,15 @@ Feature:E2E scenario for partner-program
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus    |campaign  |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-EV  | 6407220528 | N                              | N                              | N                       |                   | EMAIL         |<customerStatus>  |<campaign>|
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-EV  | 6102221416 | N                              | N                              | N                       |                   | EMAIL         |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus    |campaign  |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-GV  | 5310571404 | N                              | N                              | N                       |                     | EMAIL         |<customerStatus>  |<campaign>|
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-GV  | 5310425534 | N                              | N                              | N                       |                     | EMAIL         |<customerStatus>  |<campaign>|
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign         | folderName                                    | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 12          | 29          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR | No  | No | RES          | New           |
+      | New            | BOTH     | 15          | 29          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR | No  | No | RES          | New           |
 
   Scenario Outline: Validate complete data for partner-program campaign for SA for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -351,7 +351,7 @@ Feature:E2E scenario for partner-program
 
     Examples:
       | customerStatus | fuelType | eleDiscount | campaign         | folderName                        | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | ELE      | 18          | partner-program | E2E_Campaign_partner-program_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | ELE      | 22          | partner-program | E2E_Campaign_partner-program_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
   Scenario Outline: Validate complete data for partner-program campaign for SA existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences

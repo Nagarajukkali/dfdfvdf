@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CA2102114210
-    sourceCode: Total_16%GD
-    actualQuoteDate: 2021-02-11
+    quoteId: CA2104269872
+    sourceCode: Total_20%GD
+    actualQuoteDate: 2021-04-26
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0353463740
+      phoneNumber: 0386967025
     
-    emailId: zsWuIiwBEV@energyaustralia.com.au
+    emailId: TgpKtAluKE@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 724112
+      id: 822771
       primaryIdFlag: Y
     
     authLevel: Y
@@ -76,5 +76,10 @@ saleDetail :
     priceTagMeteringCharge: M42151D1E_VE
     proposedNTC: 8470
     proposedMC: VECTORMC
+  
+  solarDetail: 
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: 9850
+    solarTimeOfUse: N
   
 

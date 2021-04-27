@@ -91,10 +91,10 @@ Feature:E2E scenario for mcdonalds
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign         | folderName                       | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 26          | 23          | mcdonalds | E2E_Campaign_mcdonalds_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
-
+@test
   Scenario Outline: Validate complete data for mcdonalds campaign for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "PPMAC01" and "3188" and clicks on show me plan link
+    When user provides "PPMAC01" and "3199" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -117,8 +117,8 @@ Feature:E2E scenario for mcdonalds
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      | customerType | connectionAddress                        | movingType | propertyType |
-      | RES          | 9 Charming Street, HAMPTON EAST VIC 3188 | Moving     | Renter       |
+      | customerType |connectionAddress                        | movingType | propertyType |
+      | RES          |31 Balwyn Road, CANTERBURY VIC 3126 | Moving     | Renter       |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
       | RES          | RES     | New            | test      | test     | Driver License |              |
@@ -154,15 +154,15 @@ Feature:E2E scenario for mcdonalds
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus    |campaign  |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-EV  | 6407220528 | N                              | N                              | N                       |                   | EMAIL         |<customerStatus>  |<campaign>|
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-EV  | 6102221416 | N                              | N                              | N                       |                   | EMAIL         |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus    |campaign  |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-GV  | 5310571404 | N                              | N                              | N                       |                     | EMAIL         |<customerStatus>  |<campaign>|
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-GV  | 5310425534 | N                              | N                              | N                       |                     | EMAIL         |<customerStatus>  |<campaign>|
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign         | folderName                        | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 12          | 29          | mcdonalds | E2E_Campaign_mcdonalds_VIC | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | BOTH     | 15          | 29          | mcdonalds | E2E_Campaign_mcdonalds_VIC | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
   Scenario Outline: Validate complete data for mcdonalds campaign for SA for new non moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -351,7 +351,7 @@ Feature:E2E scenario for mcdonalds
 
     Examples:
       | customerStatus | fuelType | eleDiscount | campaign         | folderName                        | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | ELE      | 18          | mcdonalds | E2E_Campaign_mcdonalds_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | ELE      | 22          | mcdonalds | E2E_Campaign_mcdonalds_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
   Scenario Outline: Validate complete data for mcdonalds campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -421,4 +421,4 @@ Feature:E2E scenario for mcdonalds
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |TOPH-GV |5330790589|N                             |N                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign  |folderName                                   |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
-      |Existing      |BOTH    |12         |29         |mcdonalds |E2E_Campaign_mcdonalds_VIC_existing_non-moving |VIC  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
+      |Existing      |BOTH    |15         |29         |mcdonalds |E2E_Campaign_mcdonalds_VIC_existing_non-moving |VIC  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |

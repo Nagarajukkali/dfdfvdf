@@ -139,7 +139,7 @@
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |FFPH-EQ |QB08556016|                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|campaign     |folderName                              |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
-      |New           |ELE     |19         |familyandfriends  |E2E_Campaign_familyandfriends_QLD_new_moving |QLD  |Quote Tool    |Move Home|No   |No  |RES          |New            |
+      |New           |ELE     |23         |familyandfriends  |E2E_Campaign_familyandfriends_QLD_new_moving |QLD  |Quote Tool    |Move Home|No   |No  |RES          |New            |
 
   Scenario Outline: Validate complete data for familyandfriends campaign for SA - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -338,7 +338,7 @@
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |FFPH-GV |5310425534|  N                            |  N                           |N                      |                         |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign   |folderName                              |state |sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting  |
-      |New           |BOTH    |13         |30         |familyandfriends|E2E_Campaign_familyandfriends_VIC_new_moving |VIC   |Quote Tool    |Move Home  |No   |No  |RES          |New            |
+      |New           |BOTH    |16         |30         |familyandfriends|E2E_Campaign_familyandfriends_VIC_new_moving |VIC   |Quote Tool    |Move Home  |No   |No  |RES          |New            |
 
   Scenario Outline: Validate complete data for familyandfriends campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -407,7 +407,7 @@
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |FFPH-GV |5330790589|N                             |N                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
-      |Existing      |BOTH    |13         |30         |familyandfriends |E2E_Campaign_familyandfriends_VIC_existing_non-moving |VIC  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
+      |Existing      |BOTH    |16         |30         |familyandfriends |E2E_Campaign_familyandfriends_VIC_existing_non-moving |VIC  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
     @campaign21.4.3
   Scenario Outline: Validate complete data for familyandfriends campaign for NSW existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -594,5 +594,5 @@
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |FFPH-EQ |QB01405934|                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
-      |Existing      |ELE    |19         |familyandfriends |E2E_Campaign_familyandfriends_QLD_existing_non-moving |QLD  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
+      |Existing      |ELE    |23         |familyandfriends |E2E_Campaign_familyandfriends_QLD_existing_non-moving |QLD  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
 

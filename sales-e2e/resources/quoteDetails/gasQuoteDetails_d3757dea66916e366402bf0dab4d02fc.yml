@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CR2102114039
+    quoteId: CR2104269729
     sourceCode: Total_27%GD_50
-    actualQuoteDate: 2021-02-11
+    actualQuoteDate: 2021-04-26
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MISS
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0382702891
+      phoneNumber: 0390755620
     
-    emailId: HJQnayukXi@energyaustralia.com.au
+    emailId: tVRjhspFlS@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLNT
-      id: 317058
+      idType: DLACT
+      id: 446974
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: NT
+          licenseStateOfIssue: ACT
         
       
     
@@ -62,11 +62,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2021-02-15
+    proposedStart: 2021-04-28
     offerType: ENE
     plan: TOPH-GV
     priceTag: GVR2A_NR2101
-    serviceOrderDate: 2021-02-15
+    serviceOrderDate: 2021-04-28
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5310425534

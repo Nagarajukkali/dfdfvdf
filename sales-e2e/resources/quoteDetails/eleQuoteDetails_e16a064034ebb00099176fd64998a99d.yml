@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: PA2104096622
-    sourceCode: Alliance_18%GD_50
-    actualQuoteDate: 2021-04-09
+    quoteId: PA2104270036
+    sourceCode: Alliance_22%GD_50
+    actualQuoteDate: 2021-04-27
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: DR
+    title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0390257401
+      phoneNumber: 0329668248
     
-    emailId: xNBGPJsdiB@energyaustralia.com.au
+    emailId: wErTRCbXou@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLNT
-      id: 486690
+      idType: DLWA
+      id: 274836
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: NT
+          licenseStateOfIssue: WA
         
       
     
@@ -62,11 +62,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-04-12
+    proposedStart: 2021-04-29
     offerType: ENE
     plan: TOPH-EQ
     priceTag: EQEX1_NR2007
-    serviceOrderDate: 2021-04-12
+    serviceOrderDate: 2021-04-29
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 3115863522
@@ -90,5 +90,10 @@ saleDetail :
     proposedMC: ACUMENMC
     reEnergisationJSCCode: SITERDMET
     reEnergisationJSCCharge: 98.33
+  
+  solarDetail: 
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: 7550
+    solarTimeOfUse: N
   
 

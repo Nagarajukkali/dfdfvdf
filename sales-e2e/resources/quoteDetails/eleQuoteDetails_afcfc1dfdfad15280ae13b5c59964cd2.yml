@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2104096639
-    sourceCode: Total_16%GD
-    actualQuoteDate: 2021-04-09
+    quoteId: BB2104270072
+    sourceCode: Total_20%GD
+    actualQuoteDate: 2021-04-27
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0384912569
+      phoneNumber: 0323426875
     
-    emailId: qdwFswrvSE@energyaustralia.com.au
+    emailId: UvipnRJeeb@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 617954
+      id: 927893
       primaryIdFlag: Y
     
     authLevel: Y
@@ -76,5 +76,10 @@ saleDetail :
     priceTagMeteringCharge: M42151D1E_VE
     proposedNTC: 8470
     proposedMC: VECTORMC
+  
+  solarDetail: 
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: 9850
+    solarTimeOfUse: N
   
 
