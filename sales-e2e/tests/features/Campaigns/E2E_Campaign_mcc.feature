@@ -91,7 +91,7 @@ Feature:E2E scenario for mcc
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign                             | folderName                       | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 26          | 23          | mcc | E2E_Campaign_mcc_newmoving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
-@test
+
   Scenario Outline: Validate complete data for mcc campaign for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMCC01" and "3199" and clicks on show me plan link
