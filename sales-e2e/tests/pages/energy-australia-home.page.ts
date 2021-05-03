@@ -74,6 +74,7 @@ const eaHomePage={
     rbPostcodeOnModal:Selector("#edit-campaign-modal-location-type-postcode__label"),
     rbPostcode:Selector("#edit-campaign-location-type-postcode__label"),
     rbPostcodePlansPage:Selector("#edit-refine-location-type-postcode__label"),
+    rbAddressPlansPage:Selector("#edit-refine-location-type-address__label"),
     postcodeOnCampaignPageOnModal:Selector("#campaign-modal-location-refine-postcode-input"),
     postcodeOnCampaignPage:Selector("#campaign-location-refine-postcode-input"),
     txtOfferCode:Selector("#campaign-unique-code-input"),
@@ -232,6 +233,8 @@ const eaHomePage={
     MIRNText:Selector("#hs-service-address-details-mirn"),
     addressInput:Selector("#address-auto-input"),
     addressList:Selector("#address-auto-autocomplete>ul>li"),
+    stateDropdown:Selector("[data-block-plugin-id='ea_state_nav_block']").nth(1),
+    stateDropdownList:Selector("[data-block-plugin-id='ea_state_nav_block']").nth(1).find(".state-dropdown li"),
   },
   campaignElements:{
     elePlanHeadingTitle:Selector("[id*='plan-heading-title'][id*='-E']"),

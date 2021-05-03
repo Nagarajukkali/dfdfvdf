@@ -541,3 +541,10 @@ When(/^user verifies the account through verify account journey for business cus
   await testFunction.takeScreenshot(t, 'verify_account_modal_final');//disabled UI Validation
   await verifyAccountMethod.showCostEstimates(t);
 });
+
+When(/^user enters the postcode "([^"]*)" on plans page$/, async function (t,[postcode]) {
+  await plansMethod.providePostcodeOnPlansPage(t,postcode);
+});
+When(/^user selects "([^"]*)" state from the state dropdown on plans page$/, async function (t,[state]) {
+  await plansMethod.selectStateFromDropdown(t,state)
+});

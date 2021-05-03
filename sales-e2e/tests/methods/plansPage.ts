@@ -6,6 +6,7 @@ const eaQualifierPage=require('../pages/qualifier.page');
 import {cartsMethod} from './cartsPage';
 import {qualifierMethod} from './qualifierPage';
 import {Selector} from 'testcafe';
+import {getSpyData} from '../../global_methods/analyticsFunction';
 const { config }=require('../../resources/resource');
 
 export class plansMethod{
@@ -1097,6 +1098,9 @@ export class plansMethod{
     }
   }
   public static async provideAddressOnPlansPage(t, address) {
+    if(!await testFunction.isElementVisible(t,EaHomePage.elements.addressInput)){
+      await testFunction.click(t,EaHomePage.elements.rbAddressPlansPage);
+    }
     await testFunction.clearAndEnterText(t,EaHomePage.elements.addressInput,address);
     await t.wait(2000);
     await testFunction.isElementVisible(t,EaHomePage.elements.addressList);
@@ -1104,6 +1108,22 @@ export class plansMethod{
     await testFunction.waitForLoadingIconToClose();
     await t.wait(3000);
     console.log(`${address} is provided`);
+  }
+
+  public static async providePostcodeOnPlansPage(t, postcode) {
+    await testFunction.click(t,EaHomePage.elements.rbPostcodePlansPage);
+    await testFunction.clearAndEnterText(t,EaHomePage.elements.inputPostcode,postcode)
+    await testFunction.waitForLoadingIconToClose();
+    await t.wait(3000);
+    console.log(`${postcode} is provided`);
+  }
+
+  public static async selectStateFromDropdown(t,state){
+      await testFunction.click(t,EaHomePage.elements.stateDropdown);
+      await testFunction.click(t,EaHomePage.elements.stateDropdownList.withText(state));
+    await testFunction.waitForLoadingIconToClose();
+    await t.wait(3000);
+    console.log(`${state} is selected`);
   }
 
   public static async verifySolarDisclaimer(t: any,dataTable) {
@@ -1119,6 +1139,23 @@ export class plansMethod{
       }
       console.log("Solar buyback disclaimer validated");
     }
+  }
+
+  public static async validateAnalyticsSolarData(
+    t: TestController,
+    expectedFlag: ('yes'|'no')
+  ): Promise<void> {
+    const solarIndicatorValue = await t.eval(
+      () => window.ead.productInfo.electricity.solarPanels
+    );
+    await t.expect(solarIndicatorValue).eql(expectedFlag);
+  }
+
+  public static async validateAnalyticsForStateAndPostcodeUpdate(t:TestController,state:string,postcode:string){
+    const updatedStateData=await t.eval(()=>window.ead.productInfo.state);
+    await t.expect(updatedStateData).eql(state);
+    const updatedPostcodeData=await t.eval(()=>window.ead.productInfo.postcode);
+    await t.expect(updatedPostcodeData).eql(postcode);
   }
 }
 
@@ -1336,4 +1373,5 @@ export class campaignMethod{
     let pageUrl = await testFunction.getPageURL();
     return pageUrl.includes("/nsw-seniors");
   }
+
 }
