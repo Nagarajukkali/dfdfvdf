@@ -1,4 +1,4 @@
-@E2E @test
+@E2E
 Feature:E2E scenario for offer campaign
   #regression defect raised
   @deviceCheck @smoke @failed

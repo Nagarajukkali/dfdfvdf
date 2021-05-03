@@ -1,4 +1,4 @@
-@NMIMIRNAddressValidation @E2E @test
+@NMIMIRNAddressValidation @E2E
 Feature: This feature is to test the NMI, MIRN and address validation
 
   Scenario Outline: verify the behaviour of plans page on entering '<NMIorMIRNorPostcodeType>'
