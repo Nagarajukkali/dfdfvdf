@@ -1,44 +1,43 @@
 import {checkoutReviewMethod} from '../methods/checkoutReviewPage';
-import {testFunction } from '../../global_methods/helper';
-import {When, Then } from 'cucumber';
-import {FileUtils} from '../../libs/FileUtils'
+import {testFunction} from '../../global_methods/helper';
+import {Given, Then, When} from 'cucumber';
+import {FileUtils} from '../../libs/FileUtils';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 import {plansMethod} from '../methods/plansPage';
-import {Given} from 'cucumber'
 import {FuelType} from '@ea/ea-commons-models';
 
-When(/^user provides life support details$/, async function(t,[],dataTable){
-  let data=dataTable.hashes();
-  await checkoutReviewMethod.answerLifeSupportQuestion(t,data[0].lifeSupportOption);
+When(/^user provides life support details$/, async function (t, [], dataTable) {
+  let data = dataTable.hashes();
+  await checkoutReviewMethod.answerLifeSupportQuestion(t, data[0].lifeSupportOption);
   await testFunction.waitForLoadingIconToClose();
 });
 
-Then(/^user submits the quote$/, async function(t){
+Then(/^user submits the quote$/, async function (t) {
   await testFunction.takeScreenshot(t, 'checkout_review_page');
   await checkoutReviewMethod.submitQuote(t);
 });
 
-When(/^user provides life support details on review page$/, async function (t,[],dataTable) {
-  let data=dataTable.hashes();
-  let fuelType=data[0].fuelType;
-  let lifeSupportOption=data[0].lifeSupportOption;
-  await checkoutReviewMethod.answerLifeSupportQuestion(t,lifeSupportOption);
-  if(lifeSupportOption==='Yes'){
-    await checkoutReviewMethod.clickOnRegisterDeviceBtn(t,fuelType);
-    if(testFunction.isElectricity(fuelType)){
-      await checkoutReviewMethod.selectElecLSEquipment(t,data[0].EleclifeSupportDevices,fuelType);
+When(/^user provides life support details on review page$/, async function (t, [], dataTable) {
+  let data = dataTable.hashes();
+  let fuelType = data[0].fuelType;
+  let lifeSupportOption = data[0].lifeSupportOption;
+  await checkoutReviewMethod.answerLifeSupportQuestion(t, lifeSupportOption);
+  if (lifeSupportOption === 'Yes') {
+    await checkoutReviewMethod.clickOnRegisterDeviceBtn(t, fuelType);
+    if (testFunction.isElectricity(fuelType)) {
+      await checkoutReviewMethod.selectElecLSEquipment(t, data[0].EleclifeSupportDevices, fuelType);
     }
-    if(testFunction.isGas(fuelType)){
-      await checkoutReviewMethod.selectGasLSEquipment(t,data[0].GaslifeSupportDevices,fuelType);
+    if (testFunction.isGas(fuelType)) {
+      await checkoutReviewMethod.selectGasLSEquipment(t, data[0].GaslifeSupportDevices, fuelType);
     }
   }
 });
-Then(/^Life support section is displayed on Review page as per selected "([^"]*)" and verified "([^"]*)"$/, async function (t,[fuelType,accountType]) {
+Then(/^Life support section is displayed on Review page as per selected "([^"]*)" and verified "([^"]*)"$/, async function (t, [fuelType, accountType]) {
   await checkoutReviewMethod.verifyLifeSupportSection(t);
-  await checkoutReviewMethod.verifyExistingLifeSupportDetails(t,fuelType,accountType);
+  await checkoutReviewMethod.verifyExistingLifeSupportDetails(t, fuelType, accountType);
 });
-Then(/^user verifies selected plan details for '(.*)'$/, async  function(t,[fuelType]) {
-  await checkoutReviewMethod.getDiscount(t,fuelType);
+Then(/^user verifies selected plan details for '(.*)'$/, async function (t, [fuelType]) {
+  await checkoutReviewMethod.getDiscount(t, fuelType);
 });
 Then(/^user validates plan details on review page for "([^"]*)"$/, async function (t, [campaignName], dataTable) {
   let numOfExpectedFeatures = await testFunction.getExpectedFeatureCount(dataTable.rows());
@@ -58,7 +57,7 @@ When(/^user enters identification details on identification popup$/, async funct
   await checkoutReviewMethod.provideIdDetails(t);
   await testFunction.takeScreenshot(t, 'IDV_Popup');//disabled UI Validation
 });
-When(/^user validates details on checkout review page$/, async function (t,[],dataTable) {
+When(/^user validates details on checkout review page$/, async function (t, [], dataTable) {
   /*
   |sourceSystem |journey    |fuelType |AAH  |DD |
    */
@@ -82,59 +81,62 @@ When(/^user validates details on checkout review page$/, async function (t,[],da
   await checkoutReviewMethod.validateCarbonNeutralSection(t);
   await checkoutReviewMethod.validateNavigationButtons(t);
   await checkoutReviewMethod.validateGeneralStateDisclaimer(t, customerType, isNewCustomer, isMoving);
-  if(solarSetup!==undefined)
-    await checkoutReviewMethod.validateSolarComponent(t,solarSetup);
-  console.log("Checkout Review page validated successfully for "+sourceSystem+" "+journey+" journey.");
+  if (solarSetup !== undefined) {
+    await checkoutReviewMethod.validateSolarComponent(t, solarSetup);
+  }
+  console.log("Checkout Review page validated successfully for " + sourceSystem + " " + journey + " journey.");
 });
 
-When(/^user provides missing identification details on review page$/, async function (t,[idType]) {
+When(/^user provides missing identification details on review page$/, async function (t, [idType]) {
   await checkoutReviewMethod.missingCustomerIdentificationDetails(t);
 });
 
-When(/^user provides business details on review page$/, async function (t,[],dataTable) {
+When(/^user provides business details on review page$/, async function (t, [], dataTable) {
   let data = dataTable.hashes();
   let isCustomerContactPersonMissing = data[0].isCustomerContactPersonMissing;
   let isABNACNMissing = data[0].isABNACNMissing;
-  if(isCustomerContactPersonMissing === "Yes")
+  if (isCustomerContactPersonMissing === "Yes") {
     await checkoutReviewMethod.provideMissingCustomerContactPersonDetails(t);
-  if(isABNACNMissing === "Yes")
-    await checkoutReviewMethod.provideMissingABNACNDetails(t)
+  }
+  if (isABNACNMissing === "Yes") {
+    await checkoutReviewMethod.provideMissingABNACNDetails(t);
+  }
   await checkoutReviewMethod.enterBusinessDetails(t);
 });
-When(/^user validates disclaimer on review page for "([^"]*)"$/, async function (t,[campaignName],dataTable) {
+When(/^user validates disclaimer on review page for "([^"]*)"$/, async function (t, [campaignName], dataTable) {
   dataTable = dataTable.hashes();
   let data = await FileUtils.getJSONfile(campaignName);
-  await plansMethod.validateDisclaimer(t,dataTable,data);
+  await plansMethod.validateDisclaimer(t, dataTable, data);
   console.log("Validation completed for disclaimers on review page.");
 });
-Given(/^user validates source code$/, async function (t,[],dataTable) {
-  let expectedEleSourceCode,expectedGasSourceCode;
-  let data=dataTable.hashes();
-  let fuelType=data[0].fuelType;
+Given(/^user validates source code$/, async function (t, [], dataTable) {
+  let expectedEleSourceCode, expectedGasSourceCode;
+  let data = dataTable.hashes();
+  let fuelType = data[0].fuelType;
   switch (fuelType) {
     case FuelType.BOTH:
-      expectedEleSourceCode=checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t));
-      await testFunction.assertTextValue(t,data[0].eleSourceCode,expectedEleSourceCode);
-      expectedGasSourceCode=checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t));
-      await testFunction.assertTextValue(t,data[0].gasSourceCode,expectedGasSourceCode);
+      expectedEleSourceCode = checkoutDetailsMethod.map.get('ele source code_' + checkoutDetailsMethod.getScenarioId(t));
+      await testFunction.assertTextValue(t, data[0].eleSourceCode, expectedEleSourceCode);
+      expectedGasSourceCode = checkoutDetailsMethod.map.get('gas source code_' + checkoutDetailsMethod.getScenarioId(t));
+      await testFunction.assertTextValue(t, data[0].gasSourceCode, expectedGasSourceCode);
       break;
     case FuelType.ELE:
-      expectedEleSourceCode=checkoutDetailsMethod.map.get('ele source code_'+checkoutDetailsMethod.getScenarioId(t));
-      await testFunction.assertTextValue(t,data[0].eleSourceCode,expectedEleSourceCode);
+      expectedEleSourceCode = checkoutDetailsMethod.map.get('ele source code_' + checkoutDetailsMethod.getScenarioId(t));
+      await testFunction.assertTextValue(t, data[0].eleSourceCode, expectedEleSourceCode);
       break;
     case FuelType.GAS:
-      expectedGasSourceCode=checkoutDetailsMethod.map.get('gas source code_'+checkoutDetailsMethod.getScenarioId(t));
-      await testFunction.assertTextValue(t,data[0].gasSourceCode,expectedGasSourceCode);
+      expectedGasSourceCode = checkoutDetailsMethod.map.get('gas source code_' + checkoutDetailsMethod.getScenarioId(t));
+      await testFunction.assertTextValue(t, data[0].gasSourceCode, expectedGasSourceCode);
       break;
     default:
       throw Error("Invalid fuel type");
   }
-  console.log("Validation completed for source code.")
+  console.log("Validation completed for source code.");
 });
-When(/^user selects "([^"]*)" solar tariff type for "([^"]*)"$/, async function (t,[solarTariffType,state]) {
-    await checkoutReviewMethod.selectSolarTariff(t,solarTariffType,state);
+When(/^user selects "([^"]*)" solar tariff type for "([^"]*)"$/, async function (t, [solarTariffType, state]) {
+  await checkoutReviewMethod.selectSolarTariff(t, solarTariffType, state);
 });
-When(/^user validates "([^"]*)" solar tariff type for "([^"]*)" under electricity rates section$/, async function (t,[tariffType,state]) {
-  await checkoutReviewMethod.validateSolarFeedInTariffUnderRates(t,tariffType,state);
+When(/^user validates "([^"]*)" solar tariff type for "([^"]*)" under electricity rates section$/, async function (t, [tariffType, state]) {
+  await checkoutReviewMethod.validateSolarFeedInTariffUnderRates(t, tariffType, state);
 
 });

@@ -1,12 +1,11 @@
 import {checkoutCompleteMethod} from '../methods/checkoutCompletePage';
-import {testFunction } from '../../global_methods/helper';
-import { Then } from 'cucumber';
+import {testFunction} from '../../global_methods/helper';
+import {Then, When} from 'cucumber';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 import {checkoutReviewMethod} from '../methods/checkoutReviewPage';
 import {getPackage} from './hooks';
-import {When} from 'cucumber'
 
-Then(/^user lands on checkout complete page$/, async function(t){
+Then(/^user lands on checkout complete page$/, async function (t) {
   await testFunction.waitForLoadingIconToClose();
   await checkoutCompleteMethod.verifyWelcomePackMessage(t);
   await testFunction.takeScreenshot(t, 'checkout_complete_page');
@@ -18,7 +17,7 @@ Then(/^user downloads a pdf copy of plan details$/, async function (t) {
 Then(/^Your application has been declined is displayed$/, async function (t) {
   await checkoutCompleteMethod.verifyApplicationDeclineMsg(t);
 });
-Then(/^user validates details on checkout complete page$/, async function (t,[],dataTable) {
+Then(/^user validates details on checkout complete page$/, async function (t, [], dataTable) {
   /*
     |sourceSystem |journey    |fuelType |AAH  |DD |customerType |newOrExisting  |
      */
@@ -41,10 +40,10 @@ Then(/^user validates details on checkout complete page$/, async function (t,[],
   await checkoutCompleteMethod.validateFeedbackForm(t);
   await checkoutCompleteMethod.validateIntroducingMABanner(t, sourceSystem);
   await checkoutCompleteMethod.validateNavigationButton(t, sourceSystem);
-  if(getPackage.config.env.includes("preprod")){
-    await checkoutCompleteMethod.validatePowerResponseSection(t,customerType,fuelType);
+  if (getPackage.config.env.includes("preprod")) {
+    await checkoutCompleteMethod.validatePowerResponseSection(t, customerType, fuelType);
   }
-  console.log("Checkout Complete page validated successfully for "+sourceSystem+" "+journey+" journey.");
+  console.log("Checkout Complete page validated successfully for " + sourceSystem + " " + journey + " journey.");
 });
 When(/^user navigate back to plans page$/, async function (t) {
   await checkoutCompleteMethod.navigateBackToPlansPage(t);

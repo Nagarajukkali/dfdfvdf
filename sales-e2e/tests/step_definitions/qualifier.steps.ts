@@ -1,7 +1,8 @@
 import {qualifierMethod} from '../methods/qualifierPage';
-import {testFunction, Moving, Property, BusinessType, IdType} from '../../global_methods/helper';
-import {When, Then } from 'cucumber';
+import {BusinessType, Moving, Property, testFunction} from '../../global_methods/helper';
+import {Then, When} from 'cucumber';
 import {CustomerType} from '@ea/ea-commons-models';
+
 const eaQualifierPage=require('../pages/qualifier.page');
 const { config }=require('../../resources/resource');
 

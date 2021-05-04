@@ -1,39 +1,41 @@
 import {When} from "cucumber";
 import {testFunction} from '../../global_methods/helper';
-const eaMyAccount = require('../pages/myAccount.page');
-const eaCheckoutDetailsPage = require('../pages/checkOutDetails.page');
-import {CustomerType, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
+import {CustomerType} from '@ea/ea-commons-models';
 import {myAccountMethod} from '../methods/myAccountPage';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 import {checkoutReviewMethod} from '../methods/checkoutReviewPage';
 
-When(/^user logs in to my account using '(.*)' and '(.*)'$/, async function(t, [username, password]) {
-  await myAccountMethod.loginToMyAccount(t,username,password);
+const eaMyAccount = require('../pages/myAccount.page');
+const eaCheckoutDetailsPage = require('../pages/checkOutDetails.page');
+
+When(/^user logs in to my account using '(.*)' and '(.*)'$/, async function (t, [username, password]) {
+  await myAccountMethod.loginToMyAccount(t, username, password);
 });
 
 When(/^user clicks on view and change plan accordion for '(.*)'$/, async function (t, [fuelType]) {
- await myAccountMethod.navigateToViewAndChangePlan(t,fuelType);
+  await myAccountMethod.navigateToViewAndChangePlan(t, fuelType);
 });
 When(/^user clicks on compare and switch plan button$/, async function (t) {
-  if(t.testRun.test.name.includes('current plan'))
+  if (t.testRun.test.name.includes('current plan')) {
     await myAccountMethod.getPlanDetailsFromViewPlan(t);
+  }
   console.log(myAccountMethod.map);
   await testFunction.click(t, eaMyAccount.elements.btnCompareAndSwitchPlans);
-  console.log("User clicks on 'Compare and switch plan' button.")
+  console.log("User clicks on 'Compare and switch plan' button.");
 });
 When(/^user provides identification details$/, async function (t, [], dataTable) {
-  let data=dataTable.hashes();
-  let customerType=data[0].customerType;
+  let data = dataTable.hashes();
+  let customerType = data[0].customerType;
   await testFunction.waitForLoadingIconToClose();
-  if(customerType === CustomerType.RESIDENTIAL){
-    await checkoutDetailsMethod.checkoutIdentification(t,data[0].customerStatus,data[0].idType, "");
+  if (customerType === CustomerType.RESIDENTIAL) {
+    await checkoutDetailsMethod.checkoutIdentification(t, data[0].customerStatus, data[0].idType, "");
   }
-  if(customerType === CustomerType.BUSINESS){
-    await checkoutDetailsMethod.provideBusinessDetails(t,data[0].businessType);
+  if (customerType === CustomerType.BUSINESS) {
+    await checkoutDetailsMethod.provideBusinessDetails(t, data[0].businessType);
   }
 });
 When(/^user clicks on move home link for '(.*)'$/, async function (t, [fuelType]) {
-  await myAccountMethod.navigateToMoveHome(t,fuelType);
+  await myAccountMethod.navigateToMoveHome(t, fuelType);
 });
 When(/^user enters service address as '(.*)'$/, async function (t, [address]) {
   await testFunction.clearAndEnterText(t, eaMyAccount.elements.serviceAddress, address);
@@ -42,26 +44,27 @@ When(/^user enters service address as '(.*)'$/, async function (t, [address]) {
   console.log(`${address} is provided`);
 });
 When(/^user selects connection date$/, async function (t, []) {
-  let className=await testFunction.getElementAttribute(t,eaMyAccount.elements.chkBoxGas,'class');
-  if(className.includes('unchecked'))
-    await testFunction.click(t,eaMyAccount.elements.chkBoxGas);
+  let className = await testFunction.getElementAttribute(t, eaMyAccount.elements.chkBoxGas, 'class');
+  if (className.includes('unchecked')) {
+    await testFunction.click(t, eaMyAccount.elements.chkBoxGas);
+  }
   await testFunction.click(t, eaMyAccount.elements.moveHouseCalendarAvailableDates);
 });
 
 When(/^user clicks on lets get moving button$/, async function (t, []) {
   await testFunction.takeScreenshot(t, "my_account_move_home_Page");//disabled UI Validation
   await testFunction.click(t, eaMyAccount.elements.btnLetsGetMoving);
-  await testFunction.waitForElementToBeAppeared(t,eaCheckoutDetailsPage.elements.selectYourPlanText);
+  await testFunction.waitForElementToBeAppeared(t, eaCheckoutDetailsPage.elements.selectYourPlanText);
 });
 When(/^user answers No for home improvements question$/, async function (t, []) {
   await testFunction.click(t, eaMyAccount.elements.rbHomeImprovement_No);
 });
 When(/^user clicks on compare plans button$/, async function (t) {
-  await testFunction.click(t,eaMyAccount.elements.btnUpSellComparePlan);
-  await testFunction.waitForElementToBeAppeared(t,eaCheckoutDetailsPage.elements.selectYourPlanText);
+  await testFunction.click(t, eaMyAccount.elements.btnUpSellComparePlan);
+  await testFunction.waitForElementToBeAppeared(t, eaCheckoutDetailsPage.elements.selectYourPlanText);
 
 });
-When(/^user validates details on checkout details page$/, async function (t,[],dataTable) {
+When(/^user validates details on checkout details page$/, async function (t, [], dataTable) {
   /*
   |sourceSystem |journey  |fuelType |
    */
@@ -69,25 +72,25 @@ When(/^user validates details on checkout details page$/, async function (t,[],d
   await checkoutDetailsMethod.validateMAHeader(t, params[0].sourceSystem);
   await checkoutDetailsMethod.validateHeader(t, params[0].sourceSystem, params[0].journey);
   await checkoutDetailsMethod.validateProgressbarAndSubheading(t, params[0].sourceSystem, params[0].journey, params[0].fuelType);
-  await checkoutDetailsMethod.validateCurrentPlanDetails(t,params[0].sourceSystem, params[0].journey);
+  await checkoutDetailsMethod.validateCurrentPlanDetails(t, params[0].sourceSystem, params[0].journey);
   await checkoutDetailsMethod.validateContactPrefSection(t);
   await checkoutDetailsMethod.validateRefineBar(t, params[0].fuelType, params[0].sourceSystem);
   await checkoutDetailsMethod.validateDisclaimer(t, params[0].sourceSystem, eaCheckoutDetailsPage.elements.txtFeesDisclaimer, "Please note for all payment options, excluding direct debit or Centrepay, a merchant service fee may apply to credit card payments - 0.36% for paying bills by Visa or Mastercard® and 1.5% for paying bills by American Express®. The best way to avoid these fees is to set up direct debit via My Account.");
   await checkoutDetailsMethod.validateNavigationButtons(t, params[0].sourceSystem, params[0].journey);
-  await checkoutDetailsMethod.validatePresenceOfEmailQuoteAndCancelButton(t,params[0].sourceSystem,params[0].journey);
-  if(params[0].solarSetup!==undefined){
-    await checkoutReviewMethod.validateSolarComponent(t,params[0].solarSetup);
+  await checkoutDetailsMethod.validatePresenceOfEmailQuoteAndCancelButton(t, params[0].sourceSystem, params[0].journey);
+  if (params[0].solarSetup !== undefined) {
+    await checkoutReviewMethod.validateSolarComponent(t, params[0].solarSetup);
   }
-  console.log("Checkout Details page validated successfully for "+params[0].sourceSystem+" "+params[0].journey+" journey.");
+  console.log("Checkout Details page validated successfully for " + params[0].sourceSystem + " " + params[0].journey + " journey.");
 });
 
-When(/^user logs in to my account as a ghosting user$/, async function(t) {
+When(/^user logs in to my account as a ghosting user$/, async function (t) {
   await myAccountMethod.loginAsGhostingUser(t);
 });
-When(/^the user searches '(.*)'$/, async function(t, [accountNumber]) {
-  await myAccountMethod.searchAccountNumber(t,accountNumber);
+When(/^the user searches '(.*)'$/, async function (t, [accountNumber]) {
+  await myAccountMethod.searchAccountNumber(t, accountNumber);
 });
-When(/^the user clicks on Impersonate button$/, async function(t, [accountNumber]) {
+When(/^the user clicks on Impersonate button$/, async function (t, [accountNumber]) {
   await myAccountMethod.clickOnImpersonateButton(t);
 });
 
