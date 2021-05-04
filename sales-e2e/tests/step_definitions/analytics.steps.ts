@@ -8,8 +8,9 @@ Given(/^user initiates the call to capture analytics events$/, async function(t)
 
 
 });
-Then(/^user validates the data layer is updated for solar$/, async function(t) {
-  await plansMethod.validateAnalyticsSolarData(t,"yes");
+Then(/^user validates the data layer is updated for solar as '(.*)'$/, async function(t,[actualSolarIndicatorValue]) {
+  //const data = await getSpyData();
+  await plansMethod.validateAnalyticsSolarData(t,actualSolarIndicatorValue);
 });
 Then(/^user closes the spy on datalayer$/, async function(t) {
   await spyOff;
