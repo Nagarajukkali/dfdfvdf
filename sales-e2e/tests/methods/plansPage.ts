@@ -1143,7 +1143,7 @@ export class plansMethod{
 
   public static async validateAnalyticsSolarData(
     t: TestController,
-    expectedFlag: ('yes'|'no')
+    expectedFlag: ('yes'|'no'|'unknown'|'blocked')
   ): Promise<void> {
     const solarIndicatorValue = await t.eval(
       () => window.ead.productInfo.electricity.solarPanels
