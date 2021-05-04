@@ -1,5 +1,6 @@
-import { Satellite } from '@eadigital/analytics-core';
-import { ClientFunction } from 'testcafe';
+import {Satellite} from '@eadigital/analytics-core';
+import {ClientFunction} from 'testcafe';
+
 declare global {
   interface Window {
     satelliteTrackSpyData: string[];

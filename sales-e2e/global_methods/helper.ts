@@ -1,100 +1,104 @@
-import {RequestLogger, Selector} from 'testcafe';
-import { ClientFunction } from 'testcafe';
-import {FUEL_TYPE_OPTIONS, AustralianState, CustomerType} from '@ea/ea-commons-models';
+import {ClientFunction, RequestLogger, Selector} from 'testcafe';
+import {AustralianState, CustomerType, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 import {fetchBrowser, getDateTime, screenshotFolder, width} from '../tests/step_definitions/hooks';
 import {FileUtils} from '../libs/FileUtils';
-const fs = require("mz/fs");
 import requestLoggerUtilities from '../global_methods/requestLoggerUtilities';
+
+const fs = require("mz/fs");
 const requestLoggerUtils = new requestLoggerUtilities();
-const replace={ replace: true };
-const { config }=require('../resources/resource');
-import {resemblejs} from 'resemblejs/resemble.js'; //--DO NOT REMOVE THIS IMPORT - THIS GIVES PATH TO THE CORE IMPLEMENTATION--//
+const replace = {replace: true};
+const {config} = require('../resources/resource');
 const resemble = require("resemblejs");
-const screenshot=config.screenshot;
-const eaHomePage=config.eaCampaignUrl;
-let logger=null;
-const deviceScreenSize=config.deviceScreenSize
+const screenshot = config.screenshot;
+const eaHomePage = config.eaCampaignUrl;
+let logger = null;
+const deviceScreenSize = config.deviceScreenSize;
 
-  export enum CustomerStatus {
-    NEW='New',
-    EXISTING='Existing'
-  }
-  export enum Moving {
-    MOVING='Moving',
-    NON_MOVING='Non-Moving'
-  }
-  export enum Property {
-    OWNER='Owner',
-    RENTER='Renter'
-  }
-  export enum Solar {
-    YES='Yes',
-    NO='No'
-  }
-  export enum BusinessType {
-    ABN='ABN',
-    ACN='ACN'
-  }
-
-  export enum PlanType {
-    BASIC_HOME='Basic Home',
-    BASIC_HOME_QLD='Basic Home QLD',
-    NO_FRILLS='No Frills',
-    TOTAL_PLAN='Total Plan',
-    TOTAL_PLAN_PLUS='Total Plan Plus',
-    BASIC_BUSINESS='Basic Business',
-    BASIC_BUSINESS_QLD='Basic Business QLD',
-    NO_FRILLS_BUSINESS='No Frills Business',
-    TOTAL_BUSINESS='Total Plan - Business',
-    TOTAL_PLAN_PLUS_BUSINESS='Total Plan Plus - Business',
-    FAMILY_AND_FRIENDS='Family and Friends',
-    FAMILY_AND_FRIENDS_BUSINESS='Family and Friends Business'
-  }
-  export enum IdType {
-    DOB='dob',
-    DL='dl',
-    PIN='pin',
-    MEDICARE='medicare',
-    PASSPORT='passport'
-  }
-
-  export enum LSDevices {
-    ELE_LSCNSPE='Crigler Najjar Syndrome Phototherapy Equipment',
-    ELE_LSCPAPR='Chronic Positive Airways Pressure Respirator',
-    ELE_LSIPDM='Intermittent Peritoneal Dialysis Machine',
-    ELE_LSKDM='Kidney Dialysis Machine',
-    ELE_LSOC='Oxygen Concentrator',
-    ELE_LSVFLS='Ventilator For Life Support',
-    ELE_OTHER='Ele Other',
-    GAS_GLSMRHAC='Medically Required Heating and/or Air Conditioning',
-    GAS_GLSMRHW='Medically Required Hot Water',
-    GAS_OTHER='Gas Other'
-  }
-
-  export enum SelectionType {
-    CHECK='Check',
-    UNCHECK='Uncheck'
-  }
-
-  export enum directDebitType {
-    BANK_ACCOUNT = 'Bank',
-    CREDIT_CARD = 'CC'
-  }
-
-  export enum cdeResponses {
-    ACCEPT = "ACCEPT",
-    DECLINE = "DECLINE",
-    RETRY = "RETRY",
-    ACCEPT_WITH_CONDITION = "ACCEPT_WC"
-  }
-
-export enum OfferType {
-  ENE='ENE',
-  COR='COR',
-  PS='PS'
+export enum CustomerStatus {
+  NEW = 'New',
+  EXISTING = 'Existing'
 }
 
-  export const scrollTo = ClientFunction((selector: Selector, offset?: { x: number; y: number }) => {
+export enum Moving {
+  MOVING = 'Moving',
+  NON_MOVING = 'Non-Moving'
+}
+
+export enum Property {
+  OWNER = 'Owner',
+  RENTER = 'Renter'
+}
+
+export enum Solar {
+  YES = 'Yes',
+  NO = 'No'
+}
+
+export enum BusinessType {
+  ABN = 'ABN',
+  ACN = 'ACN'
+}
+
+export enum PlanType {
+  BASIC_HOME = 'Basic Home',
+  BASIC_HOME_QLD = 'Basic Home QLD',
+  NO_FRILLS = 'No Frills',
+  TOTAL_PLAN = 'Total Plan',
+  TOTAL_PLAN_PLUS = 'Total Plan Plus',
+  BASIC_BUSINESS = 'Basic Business',
+  BASIC_BUSINESS_QLD = 'Basic Business QLD',
+  NO_FRILLS_BUSINESS = 'No Frills Business',
+  TOTAL_BUSINESS = 'Total Plan - Business',
+  TOTAL_PLAN_PLUS_BUSINESS = 'Total Plan Plus - Business',
+  FAMILY_AND_FRIENDS = 'Family and Friends',
+  FAMILY_AND_FRIENDS_BUSINESS = 'Family and Friends Business'
+}
+
+export enum IdType {
+  DOB = 'dob',
+  DL = 'dl',
+  PIN = 'pin',
+  MEDICARE = 'medicare',
+  PASSPORT = 'passport'
+}
+
+export enum LSDevices {
+  ELE_LSCNSPE = 'Crigler Najjar Syndrome Phototherapy Equipment',
+  ELE_LSCPAPR = 'Chronic Positive Airways Pressure Respirator',
+  ELE_LSIPDM = 'Intermittent Peritoneal Dialysis Machine',
+  ELE_LSKDM = 'Kidney Dialysis Machine',
+  ELE_LSOC = 'Oxygen Concentrator',
+  ELE_LSVFLS = 'Ventilator For Life Support',
+  ELE_OTHER = 'Ele Other',
+  GAS_GLSMRHAC = 'Medically Required Heating and/or Air Conditioning',
+  GAS_GLSMRHW = 'Medically Required Hot Water',
+  GAS_OTHER = 'Gas Other'
+}
+
+export enum SelectionType {
+  CHECK = 'Check',
+  UNCHECK = 'Uncheck'
+}
+
+export enum directDebitType {
+  BANK_ACCOUNT = 'Bank',
+  CREDIT_CARD = 'CC'
+}
+
+export enum cdeResponses {
+  ACCEPT = "ACCEPT",
+  DECLINE = "DECLINE",
+  RETRY = "RETRY",
+  ACCEPT_WITH_CONDITION = "ACCEPT_WC"
+}
+
+export enum OfferType {
+  ENE = 'ENE',
+  COR = 'COR',
+  PS = 'PS'
+}
+
+export const scrollTo = ClientFunction((selector: Selector, offset?: { x: number; y: number }) => {
   const _window = window;
   return new Promise(resolve => {
     const element: any = selector();
@@ -108,17 +112,17 @@ export enum OfferType {
   });
 });
 
-  export const setAttribute = ClientFunction((selector,propertyName,propertyValue) => {
+export const setAttribute = ClientFunction((selector, propertyName, propertyValue) => {
   let element = document.querySelector(selector);
 
   element.setAttribute(propertyName, propertyValue);
 });
 
-  export const setLocalStorageItem = ClientFunction((prop, value) => {
+export const setLocalStorageItem = ClientFunction((prop, value) => {
   localStorage.setItem(prop, value);
 });
 
-  export const getLocalStorageItem = ClientFunction(prop => {
+export const getLocalStorageItem = ClientFunction(prop => {
   return localStorage.getItem(prop);
 });
 
@@ -134,10 +138,9 @@ export class testFunction {
   }
 
   public static async isElementDisplayed(t: any, element: any) {
-    try{
-      await t.expect((element).exists).ok({ timeout: 30000 });
-    }
-    catch(error){
+    try {
+      await t.expect((element).exists).ok({timeout: 30000});
+    } catch (error) {
       console.log(error);
       throw Error("Unable to find the element: " + await element());
     }
@@ -148,7 +151,7 @@ export class testFunction {
   }
 
   public static async sizeOfElement(t, element) {
-    let val=await element.count
+    let val = await element.count
       .then(result => result);
     return val;
   }
@@ -159,25 +162,25 @@ export class testFunction {
   }
 
   public static async assertText(t, element, expectedFieldValue: string) {
-      const actualFieldValue: string = await this.getElementText(t,element);
-      await t.expect(actualFieldValue).contains(expectedFieldValue);
+    const actualFieldValue: string = await this.getElementText(t, element);
+    await t.expect(actualFieldValue).contains(expectedFieldValue);
   }
 
   public static async assertFalseText(t, element, expectedFieldValue: string) {
-    const actualFieldValue: string = await this.getElementText(t,element);
+    const actualFieldValue: string = await this.getElementText(t, element);
     await t.expect(actualFieldValue).notContains(expectedFieldValue);
   }
 
   public static async assertTextOnPage(t, text) {
-    const actualPageContent=await Selector('html').textContent;
+    const actualPageContent = await Selector('html').textContent;
     await t.expect(actualPageContent).contains(text);
   }
 
-  public static async assertTextValue(t,actualText,expectedText){
+  public static async assertTextValue(t, actualText, expectedText) {
     await t.expect(actualText).eql(expectedText);
   }
 
-  public static async assertPartialTextValue(t,actualText,expectedText){
+  public static async assertPartialTextValue(t, actualText, expectedText) {
     await t.expect(actualText).contains(expectedText);
   }
 
@@ -196,13 +199,13 @@ export class testFunction {
     }
   }
 
-  public static async clearTextField(t,element){
-    await this.isElementDisplayed(t,element);
+  public static async clearTextField(t, element) {
+    await this.isElementDisplayed(t, element);
     await t.click(element).pressKey('ctrl+a delete');
   }
 
-  public static async isElementExists(t,element){
-    let count=await this.sizeOfElement(t,element);
+  public static async isElementExists(t, element) {
+    let count = await this.sizeOfElement(t, element);
     return count > 0;
   }
 
@@ -245,10 +248,10 @@ export class testFunction {
     return fuelType === FUEL_TYPE_OPTIONS.GAS.value || fuelType === FUEL_TYPE_OPTIONS.BOTH.value;
   }
 
-  public static waitForLoadingIconToClose(){
-    const waitForLoading=ClientFunction(() => {
+  public static waitForLoadingIconToClose() {
+    const waitForLoading = ClientFunction(() => {
       return new Promise(resolve => {
-        const interval=setInterval(() => {
+        const interval = setInterval(() => {
           if (document.querySelector('.processing')) {
             return;
           }
@@ -264,21 +267,21 @@ export class testFunction {
     return element.getAttribute(attribute);
   }
 
-  public static async navigateTo(t,url){
+  public static async navigateTo(t, url) {
     await t.navigateTo(url);
   }
 
-  public static async selectValueFromList(t,element,option){
-    const listItem=element.find('option');
+  public static async selectValueFromList(t, element, option) {
+    const listItem = element.find('option');
     await t.click(element).click(listItem.withText(option));
   }
 
   public static generateRandomText(length) {
-    let result='';
-    let characters='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-    let charactersLength=characters.length;
-    for (let i=0; i < length; i++) {
-      result +=characters.charAt(Math.floor(Math.random() * charactersLength));
+    let result = '';
+    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    let charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;
   }
@@ -288,9 +291,9 @@ export class testFunction {
   }
 
   public static async waitForLoadingIconToClose_MA(t) {
-    const waitForLoading=ClientFunction(() => {
+    const waitForLoading = ClientFunction(() => {
       return new Promise(resolve => {
-        const interval=setInterval(() => {
+        const interval = setInterval(() => {
           if (document.querySelector("[class*='spinner']")) {
             return;
           }
@@ -302,75 +305,80 @@ export class testFunction {
     return waitForLoading;
   }
 
-  public static async waitForElementToBeInvisible(t,element,value,expectedText){
-    for(let i=0;i<10;i++){
-      const strVal=await testFunction.getElementAttribute(t,element,value);
-      if(strVal.includes(expectedText)){
+  public static async waitForElementToBeInvisible(t, element, value, expectedText) {
+    for (let i = 0; i < 10; i++) {
+      const strVal = await testFunction.getElementAttribute(t, element, value);
+      if (strVal.includes(expectedText)) {
         await t.wait(2000);
-      }
-      else{
+      } else {
         break;
       }
     }
   }
-  public static async waitForElementPropertyToBeChanged(t,element,value,expectedText?){
-    for(let i=0;i<10;i++){
-      if(testFunction.isElementVisible(t,element)){
-        const strVal=await testFunction.getElementAttribute(t,element,value);
-        if(strVal.includes(expectedText)){
+
+  public static async waitForElementPropertyToBeChanged(t, element, value, expectedText?) {
+    for (let i = 0; i < 10; i++) {
+      if (testFunction.isElementVisible(t, element)) {
+        const strVal = await testFunction.getElementAttribute(t, element, value);
+        if (strVal.includes(expectedText)) {
           break;
-        }
-        else{
+        } else {
           await t.wait(2000);
         }
       }
-      }
-  }
-
-
-  public static async waitForElementToBeDisappeared(t,element){
-    if(await this.sizeOfElement(t,element)>0){
-      await t.expect(element.exists).notOk({ timeout: 60000 });
     }
   }
 
-  public static async waitForElementToBeAppeared(t,element){
-    let i=0;
-    while((await this.sizeOfElement(t,element))===0){
+
+  public static async waitForElementToBeDisappeared(t, element) {
+    if (await this.sizeOfElement(t, element) > 0) {
+      await t.expect(element.exists).notOk({timeout: 60000});
+    }
+  }
+
+  public static async waitForElementToBeAppeared(t, element) {
+    let i = 0;
+    while ((await this.sizeOfElement(t, element)) === 0) {
       await t.wait(1000);
       i++;
-      if(i===60){
+      if (i === 60) {
         break;
       }
     }
   }
-  public static async selectDateFromCalendar(t,element){
-    const table=element;
-    const tableElement=await element();
-    const  rowCount=tableElement.childElementCount;
-    let flag=false;
-    for(let i=0;i<rowCount;i++){
-      const rows=table.child(i);
-      const row=await rows();
-      const colCount=row.childElementCount;
-      for(let j=1;j<colCount;j++){
-        const cols=rows.child(j);
-        const dateBtn=cols.child(0);
-        const backgroundColor=await dateBtn.getStyleProperty("background-color").then(result=>result);
-        if(backgroundColor.includes("rgba(110, 178, 20, 0.45)")){
-          await testFunction.click(t,cols);
-          flag=true;
+
+  public static async selectDateFromCalendar(t, element) {
+    const table = element;
+    const tableElement = await element();
+    const rowCount = tableElement.childElementCount;
+    let flag = false;
+    for (let i = 0; i < rowCount; i++) {
+      const rows = table.child(i);
+      const row = await rows();
+      const colCount = row.childElementCount;
+      for (let j = 1; j < colCount; j++) {
+        const cols = rows.child(j);
+        const dateBtn = cols.child(0);
+        const backgroundColor = await dateBtn.getStyleProperty("background-color").then(result => result);
+        if (backgroundColor.includes("rgba(110, 178, 20, 0.45)")) {
+          await testFunction.click(t, cols);
+          flag = true;
           break;
         }
       }
-      if(flag) break;
+      if (flag) {
+        break;
+      }
     }
   }
 
-  public static async takeScreenshot(t, fileName){
+  public static async takeScreenshot(t, fileName) {
     let UIValidation = this.isValidatingUI();
-    if(screenshot==='Y' && !UIValidation){
-        await t.takeScreenshot({path:`../Current/${await fetchBrowser()}/${await screenshotFolder}/`+fileName+`_${await getDateTime()}.png`,fullPage:true});
+    if (screenshot === 'Y' && !UIValidation) {
+      await t.takeScreenshot({
+        path: `../Current/${await fetchBrowser()}/${await screenshotFolder}/` + fileName + `_${await getDateTime()}.png`,
+        fullPage: true
+      });
     }
   }
 
@@ -394,8 +402,8 @@ export class testFunction {
   public static async getExpectedFeatureCount(dataRow: string[][]) {
     const dataArr = dataRow;
     let numOfExpectedFeatures = 0;
-    for(let i = 0 ; i<dataArr[0].length ; i++) {
-      if(dataArr[0][i] === "Y") {
+    for (let i = 0; i < dataArr[0].length; i++) {
+      if (dataArr[0][i] === "Y") {
         numOfExpectedFeatures++;
       }
     }
@@ -420,10 +428,10 @@ export class testFunction {
     let isValidate = this.isValidatingUI();
     console.log(`isValidate: ${isValidate}`);
     //-----Performing the visual validations only if 'validate' key is set to 'Y' in config AND the UIValidation tests are running-----//
-    if(isValidate && config.visualValidation.validate === 'Y') {
+    if (isValidate && config.visualValidation.validate === 'Y') {
       //-----Capturing current result-----//
-      let screenshotPath = `../Current/${await fetchBrowser()}/${await screenshotFolder}/`+imageName+`.png`;
-      await t.takeScreenshot({path: screenshotPath,fullPage: true});
+      let screenshotPath = `../Current/${await fetchBrowser()}/${await screenshotFolder}/` + imageName + `.png`;
+      await t.takeScreenshot({path: screenshotPath, fullPage: true});
 
       await t.wait(5000);
 
@@ -433,14 +441,14 @@ export class testFunction {
       let diffImage = `${config.visualValidation.diffDir}/${browserName}/${screenshotFolder}/${imageName}.png`;
 
       //----Re-baselining the images if 'rebaseline' key is set to 'Y'----//
-      if(config.visualValidation.rebaseline === 'Y') {
+      if (config.visualValidation.rebaseline === 'Y') {
         fs.copyFileSync(currentImage, baseImage);
         console.log(`${browserName}/${screenshotFolder}/${imageName}.png re-baselined.`);
       } else {
         //-----Comparing the current image (generated in current execution) with it's baselined image-----//
-        resemble(currentImage).compareTo(baseImage).onComplete(function(data){
+        resemble(currentImage).compareTo(baseImage).onComplete(function (data) {
           //----Diff file will only be generated if there is a mismatch in image comparison----//
-          if(data.misMatchPercentage > 0) {
+          if (data.misMatchPercentage > 0) {
             console.log(`Diff Image: ${diffImage}`);
             console.log(data);
             fs.writeFileSync(diffImage, data.getBuffer());
@@ -463,16 +471,16 @@ export class testFunction {
   }
 
   public static async cleanBaselineImageDir() {
-    if(config.visualValidation.rebaseline === 'Y') {
+    if (config.visualValidation.rebaseline === 'Y') {
       let rootFolderPath = `${config.visualValidation.baseDir}/${await fetchBrowser()}`;
-      if(!fs.existsSync(rootFolderPath)) {
+      if (!fs.existsSync(rootFolderPath)) {
         fs.mkdirSync(rootFolderPath);
       }
       let folderPath = `${config.visualValidation.baseDir}/${await fetchBrowser()}/${screenshotFolder}`;
-      if(fs.existsSync(folderPath)) {
+      if (fs.existsSync(folderPath)) {
         await FileUtils.deleteFiles(folderPath);
       }
-      if(!fs.existsSync(folderPath)){
+      if (!fs.existsSync(folderPath)) {
         fs.mkdirSync(folderPath);
       }
     }
@@ -480,21 +488,21 @@ export class testFunction {
 
   public static async cleanDiffImageDir() {
     let rootFolderPath = `${config.visualValidation.diffDir}/${await fetchBrowser()}`;
-    if(!fs.existsSync(rootFolderPath)) {
+    if (!fs.existsSync(rootFolderPath)) {
       fs.mkdirSync(rootFolderPath);
     }
     let folderPath = `${config.visualValidation.diffDir}/${await fetchBrowser()}/${screenshotFolder}`;
-    if(fs.existsSync(folderPath)) {
+    if (fs.existsSync(folderPath)) {
       await FileUtils.deleteFiles(folderPath);
     }
-    if(!fs.existsSync(folderPath)){
+    if (!fs.existsSync(folderPath)) {
       fs.mkdirSync(folderPath);
     }
   }
 
   //----The test will fail if there is even a single diff file generated in a scenario----//
   public static async reportUIFailures(t) {
-    if(await testFunction.isValidatingUI()) {
+    if (await testFunction.isValidatingUI()) {
       let folderPath = `${config.visualValidation.diffDir}/${await fetchBrowser()}/${screenshotFolder}`;
       fs.readdir(folderPath, function (err, files) {
         testFunction.assertTextValue(t, files.length, 0);
@@ -503,23 +511,23 @@ export class testFunction {
   }
 
   public static async captureNetworkCall(t: any, endpoint) {
-    logger= RequestLogger(config.eaBaseUrl + endpoint, {
-      logRequestHeaders:  true,
-      logRequestBody:     true,
+    logger = RequestLogger(config.eaBaseUrl + endpoint, {
+      logRequestHeaders: true,
+      logRequestBody: true,
       logResponseHeaders: true,
       stringifyResponseBody: false,
-      logResponseBody:    true
+      logResponseBody: true
     });
     await t.addRequestHooks(logger);
   }
 
   public static async captureAnalyticsNetworkCall(t: any) {
-    logger= RequestLogger(  {
+    logger = RequestLogger({
       url: /b\/ss/,
-      method:'POST'
+      method: 'POST'
     }, {
-      logRequestHeaders:  true,
-      logRequestBody:     true,
+      logRequestHeaders: true,
+      logRequestBody: true,
       stringifyRequestBody: true,
     });
     await t.addRequestHooks(logger);
@@ -537,15 +545,13 @@ export class testFunction {
     return logger.requests[0].request.body;
   }
 
-  public static isMobile():boolean{
-    return (width<deviceScreenSize.eaMobile.maxWidth);
+  public static isMobile(): boolean {
+    return (width < deviceScreenSize.eaMobile.maxWidth);
   }
 
-  public static isTablet():boolean{
-    return (width>deviceScreenSize.eaTablet.minWidth && width<deviceScreenSize.eaTablet.maxWidth);
+  public static isTablet(): boolean {
+    return (width > deviceScreenSize.eaTablet.minWidth && width < deviceScreenSize.eaTablet.maxWidth);
   }
-
-
 
 
   public static async isExistingCustomer(customerStatus) {
@@ -553,54 +559,47 @@ export class testFunction {
   }
 
   public static isValidatingUI() {
-    const doc = fs.readFileSync('../package.json','utf8');
+    const doc = fs.readFileSync('../package.json', 'utf8');
     let packageJson = JSON.parse(doc);
     return packageJson.config.e2e_tags.toString().includes("@UIValidation");
   }
 
-  public static getCampaignURL(campaign:string):string{
+  public static getCampaignURL(campaign: string): string {
     let campaignPageURL;
     switch (campaign) {
       case "cashrewards":
-        campaignPageURL=`${eaHomePage}${campaign}?rewardcode=test&live=disabled`;
+        campaignPageURL = `${eaHomePage}${campaign}?rewardcode=test&live=disabled`;
         break;
       case "super-rewards":
-        campaignPageURL=`${eaHomePage}${campaign}?rewardcode=test&live=disabled`;
+        campaignPageURL = `${eaHomePage}${campaign}?rewardcode=test&live=disabled`;
         break;
       case "industryoffer":
-        campaignPageURL=`${eaHomePage}/business/${campaign}`;
+        campaignPageURL = `${eaHomePage}/business/${campaign}`;
         break;
       default:
-        campaignPageURL=`${eaHomePage}${campaign}?live=disabled`;
+        campaignPageURL = `${eaHomePage}${campaign}?live=disabled`;
     }
     return campaignPageURL;
   }
 
-  public static formatAddress(address:String){
+  public static formatAddress(address: String) {
     let formattedAddress;
-    if(address.includes("Avenue")){
-      formattedAddress=address.replace("Avenue,","Ave");
-    }
-    else if(address.includes("Road")){
-      formattedAddress=address.replace("Road,","Rd");
-    }
-    else if(address.includes("Street")){
-      formattedAddress=address.replace("Street,","ST");
-    }
-    else if(address.includes("Lane")){
-      formattedAddress=address.replace("Lane,","LANE");
-    }
-    else if(address.includes("Place")){
-      formattedAddress=address.replace("Place,","PL");
-    }
-    else if(address.includes("Drive")){
-      formattedAddress=address.replace("Drive,","DR");
-    }
-    else if(address.includes("Crescent")){
-      formattedAddress=address.replace("Crescent,","Cres");
-    }
-    else if(address.includes("Court")){
-      formattedAddress=address.replace("Court,","CT");
+    if (address.includes("Avenue")) {
+      formattedAddress = address.replace("Avenue,", "Ave");
+    } else if (address.includes("Road")) {
+      formattedAddress = address.replace("Road,", "Rd");
+    } else if (address.includes("Street")) {
+      formattedAddress = address.replace("Street,", "ST");
+    } else if (address.includes("Lane")) {
+      formattedAddress = address.replace("Lane,", "LANE");
+    } else if (address.includes("Place")) {
+      formattedAddress = address.replace("Place,", "PL");
+    } else if (address.includes("Drive")) {
+      formattedAddress = address.replace("Drive,", "DR");
+    } else if (address.includes("Crescent")) {
+      formattedAddress = address.replace("Crescent,", "Cres");
+    } else if (address.includes("Court")) {
+      formattedAddress = address.replace("Court,", "CT");
     }
     return formattedAddress;
   }

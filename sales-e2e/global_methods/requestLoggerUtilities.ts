@@ -18,7 +18,7 @@ export default class requestLoggerUtilities {
    * @param {boolean} [options.toString=false]  If true result will be return to string (using buffer.toString()).
    * @returns {promise} Returns a promise with the result. Result will be a buffer (default) a json or a string.
    */
-  async unzipResponseBody (t, options) {
+  async unzipResponseBody(t, options) {
     return new Promise((resolve, reject) => {
       zlib.gunzip(options.body, async (error, buff) => {
         if (error !== null) {

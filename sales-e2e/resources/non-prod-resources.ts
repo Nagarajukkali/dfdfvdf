@@ -1,19 +1,19 @@
-module.exports={
-config: {
+module.exports = {
+  config: {
     eaBaseUrl: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au`,
     eaHomePageUrl: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au?live=disabled`,
     eaHomePageABTest: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/plans?test=dbopt-567`,
     eaHomePageBusinessABTest: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/business/electricity-and-gas/small-business/plans?test=dbopt-567`,
-    eaNewConnectionPageUrl:`https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/new-connections-ui/#/connection`,
+    eaNewConnectionPageUrl: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/new-connections-ui/#/connection`,
     eaCampaignUrl: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/`,
     eaMyAccountUrl: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/myaccount/index.html`,
-    eaBillUploaderUrl:`https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/compare-electricity-and-gas-plans/upload-your-electricity-bill`,
-    qt2ReportingURL:`https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/qt2reporting/login`,
-    qt2ReportingHomePageURL:`https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/qt2reporting/app/reporting`,
-    savedQuoteURL:`https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/checkout?r=891a9711-c203-46e5-80dd-5b06ffd85706&customerType=RES&exdat=e30%3D#/mydetails`,
-    screenshot:'N',
-    interceptNetworkRequest:'N',
-    qt2ReportingToExcludeInEnvs:'chai,decaf,espresso',
+    eaBillUploaderUrl: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/compare-electricity-and-gas-plans/upload-your-electricity-bill`,
+    qt2ReportingURL: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/qt2reporting/login`,
+    qt2ReportingHomePageURL: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/qt2reporting/app/reporting`,
+    savedQuoteURL: `https://${process.env.npm_package_config_env}.nonprod.digital.energyaustralia.com.au/checkout?r=891a9711-c203-46e5-80dd-5b06ffd85706&customerType=RES&exdat=e30%3D#/mydetails`,
+    screenshot: 'N',
+    interceptNetworkRequest: 'N',
+    qt2ReportingToExcludeInEnvs: 'chai,decaf,espresso',
     visualValidation: {
       rebaseline: 'N',
       validate: 'N',
@@ -21,13 +21,13 @@ config: {
       diffDir: 'screenshots/Diff',
       currentDir: 'screenshots/Current',
     },
-    qt2ReportingCreds:{
-      username:'aparid',
-      password:'U2FsdGVkX19rUdxjOUEWGYeras0MT+iVvpY6aktiTR0='
+    qt2ReportingCreds: {
+      username: 'aparid',
+      password: 'U2FsdGVkX19rUdxjOUEWGYeras0MT+iVvpY6aktiTR0='
     },
-    ghostingUserCreds:{
-      username:'eacsr@ea.com',
-      password:'U2FsdGVkX19Rn/USOSqPpn1FTbs5vPvAFXa3NDuh2sA='
+    ghostingUserCreds: {
+      username: 'eacsr@ea.com',
+      password: 'U2FsdGVkX19Rn/USOSqPpn1FTbs5vPvAFXa3NDuh2sA='
     },
     sampleResiAccount: {
       eleAccount: '8373520946',
@@ -45,16 +45,16 @@ config: {
     },
     sampleResiAddress: "42 Brownlow Drive, POINT COOK VIC 3030",
     sampleBsmeAddress: "36 Gregory Street West, WENDOUREE VIC 3355",
-    deviceScreenSize:{
-        eaMobile:{
-          maxWidth:767
-        },
-        eaTablet: {
-          minWidth:768,
-          maxWidth:991
-        }
+    deviceScreenSize: {
+      eaMobile: {
+        maxWidth: 767
+      },
+      eaTablet: {
+        minWidth: 768,
+        maxWidth: 991
+      }
     }
-},
+  },
   testData: {
     mastercard: {
       cardNumber: '5123456789012346',
