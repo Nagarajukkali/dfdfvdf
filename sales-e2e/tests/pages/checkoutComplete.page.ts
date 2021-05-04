@@ -1,9 +1,9 @@
-import {Selector } from 'testcafe';
+import {Selector} from 'testcafe';
 
-const eaCheckoutCompletePage={
+const eaCheckoutCompletePage = {
   elements: {
     lblWelcomeText: Selector("[id*='WelText']"),
-    lblWhatHappensNowText:Selector(".whats-next h3"),
+    lblWhatHappensNowText: Selector(".whats-next h3"),
     lifeSupportSubmitDisclaimer: Selector("#life-support-submit-disclaimer"),
     linkDownloadForm: Selector("#life-support-submit-disclaimer a[href*='.pdf']"),
     elecLifeSupport: Selector("#record-ele-life-support"),
@@ -16,10 +16,10 @@ const eaCheckoutCompletePage={
     lblGasLifeSupportStatus: Selector("#record-gas-life-support-status-text"),
     listElecDevices: Selector("#record-ele-life-support-devices"),
     listGasDevices: Selector("#record-gas-life-support-devices"),
-    btnDownloadPDF:Selector("#pdfDownload"),
-    resiNewWelText:Selector("#resiNewCusWelText"),
-    applicationDeclineText:Selector(".rtca-declined-container h1"),
-    applicationDeclineDisclaimer:Selector(".rtca-declined-container p"),
+    btnDownloadPDF: Selector("#pdfDownload"),
+    resiNewWelText: Selector("#resiNewCusWelText"),
+    applicationDeclineText: Selector(".rtca-declined-container h1"),
+    applicationDeclineDisclaimer: Selector(".rtca-declined-container p"),
     progressBar: {
       main: Selector("#handshakeapp .checkout-progress-bar"),
       completedIndicator: Selector("#handshakeapp .checkout-progress-bar .completed"),
@@ -47,10 +47,10 @@ const eaCheckoutCompletePage={
       feature3: Selector("li.hs-my-account-banner__feature").nth(2),
     },
     btnNavigation: Selector(".confirmation__navigation a"),
-    powerResponseSection:Selector("section.power-response-rewards"),
-    btnBackToHome:Selector("#complete-home-link"),
-    iconHomePage:Selector(".svg-icon.elec-and-gas"),
+    powerResponseSection: Selector("section.power-response-rewards"),
+    btnBackToHome: Selector("#complete-home-link"),
+    iconHomePage: Selector(".svg-icon.elec-and-gas"),
   }
-}
+};
 
-module.exports=eaCheckoutCompletePage;
+module.exports = eaCheckoutCompletePage;

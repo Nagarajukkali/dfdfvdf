@@ -1,9 +1,9 @@
-import {Selector } from 'testcafe';
+import {Selector} from 'testcafe';
 
-const cartsPage={
+const cartsPage = {
   elements: {
     cartsPageContinueButton: Selector('#flick-fix-button-wrapper__proceedBtn'),
-    btnCartClose:Selector("button.cart-header__close"),
+    btnCartClose: Selector("button.cart-header__close"),
     elePlanName: Selector("#cart-plan-ELE .cart-plan__title"),
     gasPlanName: Selector("#cart-plan-GAS .cart-plan__title"),
     eleFeatures: Selector("#cart-plan-ELE .cart-plan__details-text"),
@@ -22,14 +22,14 @@ const cartsPage={
     gasFeatureDiscountOffTotal: Selector("#cart-plan-GAS .cart-plan__details-text").withText(/[D|d]iscount off total/),
     gasFeaturePeaceOfMind: Selector("#cart-plan-GAS .cart-plan__details-text").withText("Peace of mind"),
     gasFeatureVipPriorityService: Selector("#cart-plan-GAS .cart-plan__details-text").withText("VIP Priority Service"),
-    addDifferentGasPlan:Selector("#cart-plan-GAS+button"),
-    addDifferentElePlan:Selector("#cart-plan-ELE+button"),
+    addDifferentGasPlan: Selector("#cart-plan-GAS+button"),
+    addDifferentElePlan: Selector("#cart-plan-ELE+button"),
 
 
   },
 };
 
-module.exports=cartsPage;
+module.exports = cartsPage;
 
 
 
