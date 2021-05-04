@@ -1,5 +1,5 @@
 Feature: Scenarios to cover the data layer updates and analytics events trigger on plan page
-@test
+
   Scenario Outline: Validate the updated data layer for state and postcode on change of address/postcode
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page

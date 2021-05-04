@@ -4,9 +4,9 @@ import {Selector } from 'testcafe';
 const eaMyAccount={
   pageUrl: config.eaMyAccountUrl,
   elements: {
-    tfUsername: Selector("#username"),
-    tfPassword: Selector("#password"),
-    btnSignIn: Selector("#myaccount-login-btn"),
+    tfUsername: Selector("#okta-signin-username"),
+    tfPassword: Selector("#okta-signin-password"),
+    btnSignIn: Selector("#okta-signin-submit"),
     eleViewAndChangePlan: Selector("a[href*='view-plan']").nth(0),
     gasViewAndChangePlan: Selector("a[href*='view-plan']").nth(1),
     btnCompareAndSwitchPlans: Selector("[class*='header-action'] button"),
