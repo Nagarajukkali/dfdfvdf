@@ -1,4 +1,3 @@
-
 Feature: This feature is to test the keycloak
 
   Scenario Outline: keycloak
@@ -8,10 +7,10 @@ Feature: This feature is to test the keycloak
     And user have selected fuel as "<fuelType>"
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for residential customer
-      |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |postcode |idType |idNumber |
-      |RES          |verify account |8373520946       |2816302453       |3153     |dob    |01011980 |
+      | customer_type | modal_option   | elecAccountNumber | gasAccountNumber | postcode | idType | idNumber |
+      | RES           | verify account | 8373520946        | 2816302453       | 3153     | dob    | 01011980 |
 
 
     Examples:
-      |folderName                                   |customer_type |fuelType |
-      |E2E_VerifyAccount_Residential_NonMoving_KC   |RES           |BOTH     |
+      | folderName                                 | customer_type | fuelType |
+      | E2E_VerifyAccount_Residential_NonMoving_KC | RES           | BOTH     |
