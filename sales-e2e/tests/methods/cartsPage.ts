@@ -43,8 +43,13 @@ export class cartsMethod {
             throw Error("Invalid State");
         }
       }
-      if (dataTable[0].Feature_carbonNeutral === "Y") {
+      if(dataTable[0].Feature_carbonNeutral === "Y") {
+        if(t.testRun.test.name.includes('familyandfriends')){
+          await testFunction.assertText(t, cartsPage.elements.eleFeatureFFCN, json.electricity.feature.postSelect.carbonNeutral);
+        }
+        else {
         await testFunction.assertText(t, cartsPage.elements.eleFeatureCN, json.electricity.feature.postSelect.carbonNeutral);
+        }
       }
       if (dataTable[0].Feature_peaceOfMind === "Y") {
         await testFunction.assertText(t, cartsPage.elements.eleFeaturePeaceOfMind, json.electricity.feature.postSelect.peaceOfMind);
@@ -112,10 +117,14 @@ export class cartsMethod {
             break;
           default:
             throw Error("Invalid State");
+        }}
+      if(dataTable[0].Feature_carbonNeutral === "Y") {
+        if(t.testRun.test.name.includes('familyandfriends')){
+          await testFunction.assertText(t, cartsPage.elements.gasFeatureFFCN, json.gas.feature.postSelect.carbonNeutral);
         }
-      }
-      if (dataTable[0].Feature_carbonNeutral === "Y") {
+        else {
         await testFunction.assertText(t, cartsPage.elements.gasFeatureCN, json.gas.feature.postSelect.carbonNeutral);
+        }
       }
       if (dataTable[0].Feature_peaceOfMind === "Y") {
         await testFunction.assertText(t, cartsPage.elements.gasFeaturePeaceOfMind, json.gas.feature.postSelect.peaceOfMind);

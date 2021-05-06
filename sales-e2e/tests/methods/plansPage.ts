@@ -342,6 +342,7 @@ export class plansMethod {
       }
     }
   }
+
   public static async validateDisclaimer(t: any, dataTable, data: any) {
     const disclaimer = Selector(() => document.getElementById("condiDisclaimer"));
     const disclaimerText = await disclaimer().innerText;

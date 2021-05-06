@@ -1,4 +1,4 @@
-@campaign
+@campaign  @campaign21.5.2
 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
@@ -12,7 +12,7 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
   Feature:E2E scenario for familyandfriends campaign
-    @campaign21.4.3
+   
   Scenario Outline: Validate complete data for familyandfriends campaign for NSW - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "test111111" and "2000" and clicks on show me plan link
@@ -27,7 +27,7 @@
       |GAS      |N                 |Y                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
-      |Y                        |Y          |Y              |Family and Friends|<state>  |N           |
+      |Y                        |N          |Y              |Family and Friends|<state>  |N           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
@@ -41,7 +41,7 @@
       |RES         | 74 Yillowra Street, AUBURN NSW 2144|Moving     |Renter               |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |
-      |RES         |RES        |New           | test     |test     |Driver License|
+      |RES         |RES        |New           | test    |test     |Driver License|
     And user selects mailing address option
       |addressType       |otherAddress                              |
       |Connection Address|                                          |
@@ -66,7 +66,7 @@
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
-      |Y                        |Y          |Y              |Family and Friends|<state>  |N           |
+      |Y                        |N          |Y              |Family and Friends|<state>  |N           |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -98,7 +98,7 @@
       |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
-      |Y                        |Y          |Y              |Family and Friends|<state>  |Y           |
+      |Y                        |N          |Y              |Family and Friends|<state>  |Y           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
@@ -123,7 +123,7 @@
       |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
-      |Y                        |Y          |Y              |Family and Friends|<state>  |Y           |
+      |Y                        |N          |Y              |Family and Friends|<state>  |Y           |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -155,7 +155,7 @@
       |GAS      |N                 |Y                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
-      |Y                        |Y          |Y              |Family and Friends|<state>  |N           |
+      |Y                        |N          |Y              |Family and Friends|<state>  |N           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
@@ -185,7 +185,7 @@
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
-      |Y                        |Y          |Y              |Family and Friends|<state>   |N           |
+      |Y                        |N          |Y              |Family and Friends|<state>   |N           |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -221,7 +221,7 @@
       |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state    |
-      |Y                        |Y          |Y              |Family and Friends|<state>  |
+      |Y                        |N          |Y              |Family and Friends|<state>  |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
@@ -251,7 +251,7 @@
       |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|
-      |Y                        |Y          |Y              |Family and Friends|<state>   |
+      |Y                        |N          |Y              |Family and Friends|<state>   |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -287,7 +287,7 @@
       |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state    |signUpCredit|
-      |Y                        |Y          |Y              |Family and Friends|<state>  |Y           |
+      |Y                        |N          |Y              |Family and Friends|<state>  |Y           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
@@ -318,7 +318,7 @@
       |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state |signUpCredit|
-      |Y                        |Y          |Y              |Family and Friends|<state>   |Y           |
+      |Y                        |N          |Y              |Family and Friends|<state>   |Y           |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -354,7 +354,7 @@
       |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state    |signUpCredit|
-      |Y                        |Y          |Y              |Family and Friends|<state>  |Y           |
+      |Y                        |N          |Y              |Family and Friends|<state>  |Y           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
@@ -371,7 +371,7 @@
       |RES         |Non-Moving |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus   | firstName| lastName|idType        |
-      |RES         |RES        |<customerStatus> | test     |test     |Driver License|
+      |RES         |RES        |<customerStatus> | test    |test     |Driver License|
     And user selects mailing address option
       |addressType       |otherAddress                              |
       |Connection Address|                                          |
@@ -387,7 +387,7 @@
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
-      |Y                        |Y          |Y              |Family and Friends|VIC  |Y           |
+      |Y                        |N          |Y              |Family and Friends|VIC  |Y           |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -423,7 +423,7 @@
       |GAS      |N                 |Y                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state    |signUpCredit|
-      |Y                        |Y          |Y              |Family and Friends|<state>  |N           |
+      |Y                        |N          |Y              |Family and Friends|<state>  |N           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
@@ -453,7 +453,7 @@
       |ELE      |N                 |N                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
-      |Y                        |Y          |Y              |Family and Friends|<state>  |N           |
+      |Y                        |N          |Y              |Family and Friends|<state>  |N           |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -485,7 +485,7 @@
       |GAS      |N                 |Y                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state    |signUpCredit|
-      |Y                        |Y          |Y              |Family and Friends|<state>  |N           |
+      |Y                        |N          |Y              |Family and Friends|<state>  |N           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
@@ -518,7 +518,7 @@
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
-      |Y                        |Y          |Y              |Family and Friends|SA  |N           |
+      |Y                        |N          |Y              |Family and Friends|SA  |N           |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -550,7 +550,7 @@
       |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state    |signUpCredit|
-      |Y                        |Y          |Y              |Family and Friends|<state>  |Y           |
+      |Y                        |N          |Y              |Family and Friends|<state>  |Y           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
@@ -578,7 +578,7 @@
       |ELE      |N                 |N                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
-      |Y                        |Y          |Y              |Family and Friends|QLD  |Y           |
+      |Y                        |N          |Y              |Family and Friends|QLD  |Y           |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
