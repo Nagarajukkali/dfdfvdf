@@ -178,8 +178,14 @@ export class plansMethod {
         }
       }
       if (dataTable[0].Feature_carbonNeutral === "Y") {
-        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNTitle, data.electricity.feature.preSelect.carbonNeutral.heading);
-        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNDescription, data.electricity.feature.preSelect.carbonNeutral.description);
+        if (t.testRun.test.name.includes('familyandfriends')) {
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureFFCNTitle, data.electricity.feature.preSelect.carbonNeutral.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNFFDescription, data.electricity.feature.preSelect.carbonNeutral.description);
+        } else {
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNTitle, data.electricity.feature.preSelect.carbonNeutral.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNDescription, data.electricity.feature.preSelect.carbonNeutral.description);
+        }
+
       }
       if (dataTable[0].Feature_peaceOfMind === "Y") {
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeaturePeaceOfMindTitle, data.electricity.feature.preSelect.peaceOfMind.heading);
@@ -282,56 +288,60 @@ export class plansMethod {
          }
        } */
       if (dataTable[0].Feature_carbonNeutral === "Y") {
-        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNTitle, data.gas.feature.preSelect.carbonNeutral.heading);
-        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNDescription, data.gas.feature.preSelect.carbonNeutral.description);
-      }
-      if (dataTable[0].Feature_peaceOfMind === "Y") {
-        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindTitle, data.gas.feature.preSelect.peaceOfMind.heading);
-        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindDescription, data.gas.feature.preSelect.peaceOfMind.description);
-      }
-      if (dataTable[0].Feature_XX_discountOffTotalEnergyBill === "Y") {
-        switch (dataTable[0].state) {
-          case AustralianState.VIC:
-            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.VIC.heading);
-            break;
-          case AustralianState.NSW:
-            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.NSW.heading);
-            break;
-          case AustralianState.ACT:
-            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.ACT.heading);
-            break;
-          case AustralianState.QLD:
-            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.QLD.heading);
-            break;
-          case AustralianState.SA:
-            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.SA.heading);
-            break;
-          default:
-            throw Error("Invalid State");
-        }
-        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
-      }
-      if (dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
-        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.heading);
-        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
-      }
-      if (dataTable[0].Feature_vipPriorityService === "Y") {
-        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureVipPriorityServiceTitle, data.electricity.feature.preSelect.vipPriorityService.heading);
-      }
-      if (dataTable[0].Feature_chanceToWin === "Y") {
-        if (dataTable[0].state === 'VIC') {
-          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinTitle, data.gas.feature.preSelect.chanceToWin.VIC.heading);
-          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinDescription, data.gas.feature.preSelect.chanceToWin.VIC.description);
-        } else if (dataTable[0].state === 'NSW') {
-          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinTitle, data.gas.feature.preSelect.chanceToWin.NSW.heading);
-          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinDescription, data.gas.feature.preSelect.chanceToWin.NSW.description);
+        if (t.testRun.test.name.includes('familyandfriends')) {
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureFFCNTitle, data.gas.feature.preSelect.carbonNeutral.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNFFDescription, data.gas.feature.preSelect.carbonNeutral.description);
         } else {
-          throw Error("Invalid State");
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNTitle, data.gas.feature.preSelect.carbonNeutral.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNDescription, data.gas.feature.preSelect.carbonNeutral.description);
+        }
+        if (dataTable[0].Feature_peaceOfMind === "Y") {
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindTitle, data.gas.feature.preSelect.peaceOfMind.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindDescription, data.gas.feature.preSelect.peaceOfMind.description);
+        }
+        if (dataTable[0].Feature_XX_discountOffTotalEnergyBill === "Y") {
+          switch (dataTable[0].state) {
+            case AustralianState.VIC:
+              await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.VIC.heading);
+              break;
+            case AustralianState.NSW:
+              await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.NSW.heading);
+              break;
+            case AustralianState.ACT:
+              await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.ACT.heading);
+              break;
+            case AustralianState.QLD:
+              await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.QLD.heading);
+              break;
+            case AustralianState.SA:
+              await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.SA.heading);
+              break;
+            default:
+              throw Error("Invalid State");
+          }
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
+        }
+        if (dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
+        }
+        if (dataTable[0].Feature_vipPriorityService === "Y") {
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureVipPriorityServiceTitle, data.electricity.feature.preSelect.vipPriorityService.heading);
+        }
+        if (dataTable[0].Feature_chanceToWin === "Y") {
+          if (dataTable[0].state === 'VIC') {
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinTitle, data.gas.feature.preSelect.chanceToWin.VIC.heading);
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinDescription, data.gas.feature.preSelect.chanceToWin.VIC.description);
+          } else if (dataTable[0].state === 'NSW') {
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinTitle, data.gas.feature.preSelect.chanceToWin.NSW.heading);
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinDescription, data.gas.feature.preSelect.chanceToWin.NSW.description);
+          } else {
+            throw Error("Invalid State");
+          }
         }
       }
     }
   }
-
   public static async validateDisclaimer(t: any, dataTable, data: any) {
     const disclaimer = Selector(() => document.getElementById("condiDisclaimer"));
     const disclaimerText = await disclaimer().innerText;
@@ -366,7 +376,7 @@ export class plansMethod {
     if (dataTable[0].chanceToWin === 'Y') {
       await this.validateChanceToWin(t, disclaimer, data, state);
     }
-    await this.validatePlanDisclaimer(t, disclaimer, data, planName, state);
+    await this.validatePlanDisclaimer(t,disclaimer,data,planName,state);
   }
 
   public static async validateSignUpCredit(t, disclaimer, data, state) {
