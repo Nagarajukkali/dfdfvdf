@@ -177,9 +177,16 @@ export class plansMethod {
             throw Error("Invalid State");
         }
       }
-      if (dataTable[0].Feature_carbonNeutral === "Y") {
-        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNTitle, data.electricity.feature.preSelect.carbonNeutral.heading);
-        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNDescription, data.electricity.feature.preSelect.carbonNeutral.description);
+      if(dataTable[0].Feature_carbonNeutral === "Y") {
+        if(t.testRun.test.name.includes('familyandfriends')){
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureFFCNTitle, data.electricity.feature.preSelect.carbonNeutral.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNFFDescription, data.electricity.feature.preSelect.carbonNeutral.description);
+        }
+        else{
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNTitle, data.electricity.feature.preSelect.carbonNeutral.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNDescription, data.electricity.feature.preSelect.carbonNeutral.description);
+        }
+
       }
       if (dataTable[0].Feature_peaceOfMind === "Y") {
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeaturePeaceOfMindTitle, data.electricity.feature.preSelect.peaceOfMind.heading);
@@ -267,22 +274,27 @@ export class plansMethod {
             throw Error("Invalid State");
         }
       }
-      /* if(dataTable[0].Feature_200Credit === "Y") {
-         switch (dataTable[0].state) {
-           case AustralianState.VIC:
-             await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature200CreditTitle, data.gas.feature.preSelect.Credit200.VIC.heading);
-             await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature200CreditDescription, data.gas.feature.preSelect.Credit200.VIC.description);
-             break;
-           case AustralianState.NSW:
-             await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature200CreditTitle, data.egas.feature.preSelect.Credit200.NSW.heading);
-             await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature200CreditDescription, data.gas.feature.preSelect.Credit200.NSW.description);
-             break;
-           default:
-               throw Error("Invalid State");
-         }
-       } */
-      if (dataTable[0].Feature_carbonNeutral === "Y") {
-        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNTitle, data.gas.feature.preSelect.carbonNeutral.heading);
+     /* if(dataTable[0].Feature_200Credit === "Y") {
+        switch (dataTable[0].state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature200CreditTitle, data.gas.feature.preSelect.Credit200.VIC.heading);
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature200CreditDescription, data.gas.feature.preSelect.Credit200.VIC.description);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature200CreditTitle, data.egas.feature.preSelect.Credit200.NSW.heading);
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature200CreditDescription, data.gas.feature.preSelect.Credit200.NSW.description);
+            break;
+          default:
+              throw Error("Invalid State");
+        }
+      } */
+      if(dataTable[0].Feature_carbonNeutral === "Y") {
+        if(t.testRun.test.name.includes('familyandfriends')){
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureFFCNTitle, data.gas.feature.preSelect.carbonNeutral.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNFFDescription, data.gas.feature.preSelect.carbonNeutral.description);
+        }
+        else{
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNTitle, data.gas.feature.preSelect.carbonNeutral.heading);
         await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNDescription, data.gas.feature.preSelect.carbonNeutral.description);
       }
       if (dataTable[0].Feature_peaceOfMind === "Y") {
@@ -366,7 +378,7 @@ export class plansMethod {
     if (dataTable[0].chanceToWin === 'Y') {
       await this.validateChanceToWin(t, disclaimer, data, state);
     }
-    await this.validatePlanDisclaimer(t, disclaimer, data, planName, state);
+    await this.validatePlanDisclaimer(t,disclaimer,data,planName,state);
   }
 
   public static async validateSignUpCredit(t, disclaimer, data, state) {
