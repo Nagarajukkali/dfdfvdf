@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2007020807
+    quoteId: BB2105071754
     sourceCode: Basic
-    actualQuoteDate: 2020-07-02
+    actualQuoteDate: 2021-05-07
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: Mr
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0313558027
+      phoneNumber: 0352881256
     
-    emailId: JhsxPGUypF@energyaustralia.com.au
+    emailId: FFrGydlqGb@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: LTDPARTNERSHIP
+    businessType: PARTNERSHIP
     businessNameDetail: 
       businessName: accept
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 53959920776
+      businessId: 95627479643
     
-    anzsic: FINANCE
+    anzsic: UNKNOWN
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0313558027
+      businessPhoneNumber: 0352881256
     
-    businessEmailId: JhsxPGUypF@energyaustralia.com.au
+    businessEmailId: FFrGydlqGb@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -51,15 +51,28 @@ saleDetail :
     postCode: 3355
     premiseType: COM
     addressType: Premise
+    DPID: 96541244
     primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 68
+    streetName: Mercer
+    streetType: S
+    suburb: GEELONG
+    state: VIC
+    country: AUS
+    postCode: 3220
+    addressType: Mailing
+    DPID: 46447648
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-07-06
+    proposedStart: 2021-05-11
     offerType: ENE
     plan: BSOT-GV
     priceTag: GVT3A_S13N
-    serviceOrderDate: 2020-07-06
+    serviceOrderDate: 2021-05-11
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5330956738

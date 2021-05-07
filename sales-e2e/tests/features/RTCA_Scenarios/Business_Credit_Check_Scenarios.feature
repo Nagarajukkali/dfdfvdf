@@ -1,10 +1,11 @@
 @CDECheck
 Feature:E2E scenario of RTCA validation for new business customer
-
+@failed
   Scenario Outline: Verify if a business customer is displayed with accept with condition pop up when wrong ID is provided
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
     When user selects '<planName>'
+    And user selects gas '<planName>'
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -52,6 +53,7 @@ Feature:E2E scenario of RTCA validation for new business customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
     When user selects '<planName>'
+    And user selects gas '<planName>'
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -95,6 +97,7 @@ Feature:E2E scenario of RTCA validation for new business customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
     When user selects '<planName>'
+    And user selects gas '<planName>'
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -138,6 +141,7 @@ Feature:E2E scenario of RTCA validation for new business customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
     When user selects '<planName>'
+    And user selects gas '<planName>'
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page

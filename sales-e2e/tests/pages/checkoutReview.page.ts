@@ -66,7 +66,7 @@ const eaCheckoutReviewPage = {
     gasFeatureVipPriorityService: Selector("#reviewSectionGas [id*='benefit-text']").withText("VIP Priority Service"),
     gasFeatureChanceToWin: Selector("#reviewSectionGas [id*='benefit-text']").withText("$2,000"),
     identificationPopup: Selector("[id*='rtca-confirm']"),
-    identificationConfirmButton: Selector("[id*='reviewSubmitConfirm']"),
+    identificationConfirmButton: Selector("#ea-modal-primary-action-RTCA_RETRY_MODAL"),
     idFirstName: Selector("#id_firstName"),
     idLastName: Selector("#id_lastName"),
     idDOBDay: Selector("#id_dateOfBirth-day"),

@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2007020800
+    quoteId: BB2105071751
     sourceCode: Total_5%GD
-    actualQuoteDate: 2020-07-02
+    actualQuoteDate: 2021-05-07
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: Mr
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0319955738
+      phoneNumber: 0398729577
     
-    emailId: sbVvatTqWO@energyaustralia.com.au
+    emailId: eMKsPogLHL@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: LTDPARTNERSHIP
+    businessType: SOLE TRADER
     businessNameDetail: 
       businessName: decline
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ACN
-      businessId: 378723429
+      businessId: 563841469
     
-    anzsic: FINANCE
+    anzsic: PERSONAL
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0319955738
+      businessPhoneNumber: 0398729577
     
-    businessEmailId: sbVvatTqWO@energyaustralia.com.au
+    businessEmailId: eMKsPogLHL@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -51,13 +51,26 @@ saleDetail :
     postCode: 3220
     premiseType: COM
     addressType: Premise
+    DPID: 46447648
     primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 68
+    streetName: Mercer
+    streetType: S
+    suburb: GEELONG
+    state: VIC
+    country: AUS
+    postCode: 3220
+    addressType: Mailing
+    DPID: 46447648
   
   offerDetail: 
     fuelType: E
     offerType: COR
     plan: TOPB-EV
-    priceTag: EVPOA_NB2001
+    priceTag: EVPOA_NB2101
     nmiMirnInformation: 
       NMI: 6203142753
     
@@ -82,5 +95,8 @@ saleDetail :
   creditAssessmentDecision: Decline
   meteringDetail: 
     meterExchangeFlag: N
+  
+  solarDetail: 
+    solarPowerIndicator: N
   
 

@@ -55,7 +55,7 @@ Feature:E2E scenario of RTCA validation for new residential customer
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                      | movingType | propertyType |
-      | RES          | 42 Brownlow Drive, POINT COOK VIC 3030 | Non-Moving | Renter       |
+      | RES          | 42 Brownlow Drive, DIAMOND CREEK VIC 3089 | Non-Moving | Renter       |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         |
       | RES          | RES     | New            | decline   | test     | Driver License |
@@ -79,11 +79,11 @@ Feature:E2E scenario of RTCA validation for new residential customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-EV  | 6203778288 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-EV  | 6305727918 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-GV  | 5330733757 | N                              | N                              | Y                       | GLSMRHAC                 | EMAIL         |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-GV  | 5320087624 | N                              | N                              | Y                       | GLSMRHAC                 | EMAIL         |
 
     Examples:
       | customerStatus | fuelType | planName   | folderName                     |
@@ -141,7 +141,7 @@ Feature:E2E scenario of RTCA validation for new residential customer
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                      | movingType | propertyType |
-      | RES          | 42 Brownlow Drive, POINT COOK VIC 3030 | Non-Moving | Renter       |
+      | RES          | 42 Brownlow Drive, DIAMOND CREEK VIC 3089 | Non-Moving | Renter       |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         |
       | RES          | RES     | New            | error     | test     | Driver License |
@@ -165,11 +165,11 @@ Feature:E2E scenario of RTCA validation for new residential customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-EV  | 6203778288 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-EV  | 6305727918 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-GV  | 5330733757 | N                              | N                              | Y                       | GLSMRHAC                 | EMAIL         |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-GV  | 5320087624 | N                              | N                              | Y                       | GLSMRHAC                 | EMAIL         |
 
     Examples:
       | customerStatus | fuelType | planName   | folderName                   |
