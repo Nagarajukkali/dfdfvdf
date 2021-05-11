@@ -237,7 +237,7 @@ Feature: This feature is to test the My account scenarios for residential custom
       | folderName                                 | username               | password                                     | fuelType | sourceSystem | journey     | AAH | DD | customerType | newOrExisting |
       | E2E_MyAccount_Resi_ELE_PS_Current_Plan_PDD | currentplan03@test.com | U2FsdGVkX19pZVkiZ60o0iAFhXdDJs0/oxVAuNlMfyY= | ELE      | My Account   | Plan switch | No  | No | RES          | Existing      |
 
-  @currentplan
+  @currentplan @failed
   Scenario Outline: Verify the RESI Electricity Plan switch journey with current plan having no discount from My Account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
@@ -411,7 +411,7 @@ Feature: This feature is to test the My account scenarios for residential custom
       | folderName                                     | username                | password                                     | fuelType | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | E2E_MyAccount_Resi_ELE_Upsell_VIC_Solar_Retail | solareleupsell@test.com | U2FsdGVkX19q7UocMUMUg8nNxiUpn3DHzsVAsx2DGRk= | ELE      | My Account   | Upsell  | No  | No | RES          | Existing      |
 
-  @solar
+  @solar @failed
   Scenario Outline: Verify error message displays on checkout details page for plan switch through My Account when solar tariff is missing in MSATS
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
@@ -457,7 +457,7 @@ Feature: This feature is to test the My account scenarios for residential custom
       | folderName                                 | username                  | password                                     | fuelType | address                                 | optDisconnection |
       | E2E_MyAccount_Resi_MoveHouse_SOLAR_UNKNOWN | resisolarnswgovt@test.com | U2FsdGVkX1+XFCu2vgJXQNGsB/mec9xh7V1ac7VVOwc= | ELE      | 19 Willington Street, TURRELLA NSW 2205 | No               |
 
-  @solar
+  @solar @failed
   Scenario Outline: Verify error message displays on checkout details page for upsell through My Account when solar tariff is missing in MSATS
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
@@ -510,7 +510,7 @@ Feature: This feature is to test the My account scenarios for residential custom
   # To test this scenario need to down MSATS endpoint
   # not feasible for automation
   # keeping it here just for tracking purpose
-  @data-required
+  @data-required @failed
   Scenario Outline: Verify error component displays on checkout details page for upsell through My Account when MSATS endpoint is down
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
@@ -543,7 +543,7 @@ Feature: This feature is to test the My account scenarios for residential custom
   # To test this scenario need to down MSATS endpoint
   # not feasible for automation
   # keeping it here just for tracking purpose
-  @data-required
+  @data-required @failed
   Scenario Outline: Verify error component displays on checkout review page for plan switch through My Account when MSATS endpoint is down
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page

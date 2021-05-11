@@ -838,7 +838,7 @@ export class checkoutDetailsMethod {
   }
 
   public static async validateCurrentPlanDetails(t, sourceSystem, journey) {
-    if ((sourceSystem === "My Account") && journey === "plan switch") {
+    if ((sourceSystem.toLowerCase() === "my account") && journey.toLowerCase() === "plan switch") {
       if (myAccountMethod.map.get('isCurrentPlanDisplayed_' + checkoutDetailsMethod.getScenarioId(t))) {
         await testFunction.waitForElementToBeDisappeared(t, eaCheckoutDetailsPage.elements.eaSpinner);
         let itemsCount = await testFunction.sizeOfElement(t, eaCheckoutDetailsPage.elements.currentPlan.planDetailsSection);
