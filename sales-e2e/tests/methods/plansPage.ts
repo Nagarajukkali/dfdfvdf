@@ -1111,6 +1111,7 @@ export class plansMethod {
     await testFunction.clickElementFromList(t, EaHomePage.elements.addressList, address);
     await testFunction.waitForLoadingIconToClose();
     await t.wait(3000);
+    await testFunction.waitForElementToBeDisappeared(t, EaHomePage.elements.eaSpinner);
     console.log(`${address} is provided`);
   }
 
