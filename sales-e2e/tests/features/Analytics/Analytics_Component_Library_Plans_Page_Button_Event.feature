@@ -1,4 +1,4 @@
-@componentlibrary
+@componentlibrary @analytics
 Feature: Scenarios to cover the data layer updates and analytics events trigger on plan page
 
   Scenario: Validate the component library events for button on plans page

@@ -1,4 +1,4 @@
-@solaranalytics
+@solaranalytics @analytics
 Feature: Analytics Events for Solar panel validation on plans page
 
   Scenario: Validate Analytics event for solar panels as Yes for Residential Address
