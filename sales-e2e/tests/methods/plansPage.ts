@@ -2,11 +2,13 @@ import {AustralianState, CustomerType, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-m
 import {IdType, PlanType, scrollTo, testFunction} from '../../global_methods/helper';
 import {cartsMethod} from './cartsPage';
 import {qualifierMethod} from './qualifierPage';
-import {Selector} from 'testcafe';
-
 const EaHomePage = require('../pages/energy-australia-home.page');
 const eaQualifierPage = require('../pages/qualifier.page');
-const {config} = require('../../resources/resource');
+import {Selector} from 'testcafe';
+import {getSpyData, spyOff, spyOn} from '../../global_methods/analyticsFunction';
+const { config }=require('../../resources/resource');
+const fs   = require('fs');
+const validateAnalyticsEvent=config.validateAnalytics;
 
 export class plansMethod {
   public static async clickPlansPageModal(t, customerType) {
@@ -340,6 +342,43 @@ export class plansMethod {
           }
         }
       }
+    }
+  }
+
+  public static async selectBPIDPlan(t: any, planName: any) {
+    switch (planName) {
+      case PlanType.BASIC_HOME:
+        await testFunction.click(t, EaHomePage.elements.basicPlan_BPID);
+        break;
+      case PlanType.BASIC_HOME_QLD:
+        await testFunction.click(t, EaHomePage.elements.basicPlanQLD_BPID);
+        break;
+      case PlanType.NO_FRILLS:
+        await testFunction.click(t, EaHomePage.elements.noFrillsPlan_BPID);
+        break;
+      case PlanType.TOTAL_PLAN:
+        await testFunction.click(t, EaHomePage.elements.totalPlan_BPID);
+        break;
+      case PlanType.TOTAL_PLAN_PLUS:
+        await testFunction.click(t, EaHomePage.elements.totalPlanPlus_BPID);
+        break;
+      case PlanType.BASIC_BUSINESS:
+        await testFunction.click(t, EaHomePage.elements.basicBusiness_BPID);
+        break;
+      case PlanType.BASIC_BUSINESS_QLD:
+        await testFunction.click(t, EaHomePage.elements.basicBusinessQLD_BPID);
+        break;
+      case PlanType.NO_FRILLS_BUSINESS:
+        await testFunction.click(t, EaHomePage.elements.noFrillBusiness_BPID);
+        break;
+      case PlanType.TOTAL_BUSINESS:
+        await testFunction.click(t, EaHomePage.elements.totalPlanBusiness_BPID);
+        break;
+      case PlanType.TOTAL_PLAN_PLUS_BUSINESS:
+        await testFunction.click(t, EaHomePage.elements.totalPlanPlusBusiness_BPID);
+        break;
+      default:
+        console.error("Invalid energy fact sheet is selected");
     }
   }
 
@@ -1161,18 +1200,46 @@ export class plansMethod {
     const updatedPostcodeData = await t.eval(() => window.ead.productInfo.postcode);
     await t.expect(updatedPostcodeData).eql(postcode);
   }
+
+  public static async validateComponentLibraryEvent(t:TestController,pageComponent:string, eventCall:string){
+    eventCall = eventCall.toLowerCase();
+    pageComponent = pageComponent.toLowerCase();
+    let event_JSONObj;
+    const eventFilePath='resources/AnalyticsData/analytics_ComponentLibrary_event.json';
+    const doc = fs.readFileSync(eventFilePath,'utf8');
+    event_JSONObj = JSON.parse(doc);
+    const eventStatus=await t.eval(()=>window.ead.event);
+    await t.expect(eventStatus).eql(event_JSONObj[pageComponent][eventCall]);
+    console.log("Analytics Event validated for " +pageComponent+ " " +eventCall+ " event");
+    let component_JSONObj;
+    const componentFilePath='resources/AnalyticsData/analytics_ComponentLibrary_component.json';
+    const document = fs.readFileSync(componentFilePath,'utf8');
+    component_JSONObj = JSON.parse(document);
+    const componentStatus=await t.eval(()=>window.ead.component);
+    await t.expect(componentStatus).eql(component_JSONObj[pageComponent][eventCall]);
+    console.log("Analytics Component validated for " +pageComponent+ " " +eventCall+ " component");
+  }
 }
 
 export class selectionOptionModalWindowMethod {
-  public static async selectOptionsModalWindow(t, modalWindowValue) {
-    if (modalWindowValue.toLowerCase() === 'verify account') {
-      await testFunction.click(t, EaHomePage.elements.modalVerifyAccountOption);
-    } else if (modalWindowValue.toLowerCase() === 'bill upload') {
-      await testFunction.click(t, EaHomePage.elements.modalBillUploadOption);
-    } else if (modalWindowValue === 'enter usage') {
-      await testFunction.click(t, EaHomePage.elements.modalEnterUsageOption);
+    public static async selectOptionsModalWindow(t, modalWindowValue) {
+        if (modalWindowValue.toLowerCase() === 'verify account') {
+          await testFunction.click(t,EaHomePage.elements.modalVerifyAccountOption);
+          if(validateAnalyticsEvent==='Y'){
+            await plansMethod.validateComponentLibraryEvent(t,"refine_modal","verify_account_button");
+          }
+        } else if (modalWindowValue.toLowerCase() === 'bill upload') {
+          await testFunction.click(t,EaHomePage.elements.modalBillUploadOption);
+          if(validateAnalyticsEvent==='Y'){
+          await plansMethod.validateComponentLibraryEvent(t,"refine_modal","bill_upload_button");
+          }
+        } else if (modalWindowValue === 'enter usage') {
+          await testFunction.click(t, EaHomePage.elements.modalEnterUsageOption);
+            if(validateAnalyticsEvent==='Y'){
+          await plansMethod.validateComponentLibraryEvent(t,"refine_modal","enter_usage_button");
+            }
+        }
     }
-  }
 }
 
 
@@ -1220,12 +1287,14 @@ export class verifyAccountMethod {
     }
   }
 
-  public static async verifyAccountDetails(t) {
-    await testFunction.click(t, EaHomePage.elements.nextAccountNumber);
-    await testFunction.waitForElementToBeDisappeared(t, EaHomePage.elements.eaSpinner);
-  }
-
-  public static async verifyAccountNext(t) {
+    public static async verifyAccountDetails(t){
+      await testFunction.click(t, EaHomePage.elements.nextAccountNumber);
+      await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
+      if(validateAnalyticsEvent==='Y'){
+        await plansMethod.validateComponentLibraryEvent(t,"refine_modal","verify_account_next_button");
+      }
+    }
+  public static async verifyAccountNext(t){
     await testFunction.click(t, EaHomePage.elements.croCustomiseEstimateSideBar.existingCustomerAccordion.nextButton);
     await testFunction.waitForElementToBeDisappeared(t, EaHomePage.elements.eaSpinner);
   }
@@ -1273,13 +1342,17 @@ export class verifyAccountMethod {
     await testFunction.assertText(t, EaHomePage.elements.familyViolenceMessage, value);
   }
 
-  public static async showCostEstimates(t) {
-    let expectedLoyaltyPlanMessage = 'As a valued customer who\'s been with us for at least six consecutive months, you can sign up to Total Plan Plus. It\'s got the same features as Total Plan, but with a higher discount off your total energy bill. So you can enjoy a higher discount on both usage and supply charges for 12 months. Click \'Show estimates\' to compare Total Plan Plus against our other plans.';
-    await testFunction.isElementDisplayed(t, EaHomePage.elements.getCostEstimatesChangeButton);
-    await testFunction.assertText(t, EaHomePage.elements.txtLoyaltyPlanMsg, expectedLoyaltyPlanMessage);
-    await testFunction.click(t, EaHomePage.elements.getCostEstimatesChangeButton);
-    await testFunction.waitForElementToBeDisappeared(t, EaHomePage.elements.eaSpinner);
-  }
+    public static async showCostEstimates(t){
+        let expectedLoyaltyPlanMessage = 'As a valued customer who\'s been with us for at least six consecutive months, you can sign up to Total Plan Plus. It\'s got the same features as Total Plan, but with a higher discount off your total energy bill. So you can enjoy a higher discount on both usage and supply charges for 12 months. Click \'Show estimates\' to compare Total Plan Plus against our other plans.';
+        await testFunction.isElementDisplayed(t,EaHomePage.elements.getCostEstimatesChangeButton);
+        await testFunction.assertText(t, EaHomePage.elements.txtLoyaltyPlanMsg, expectedLoyaltyPlanMessage);
+        await testFunction.click(t, EaHomePage.elements.getCostEstimatesChangeButton);
+        await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
+        if(validateAnalyticsEvent==='Y'){
+          await plansMethod.validateComponentLibraryEvent(t,"refine_modal","verify_account_show_estimates_button");
+        }
+
+    }
 
   public static async selectIdType(t, itemToClick) {
     await testFunction.click(t, EaHomePage.elements.idTypeDropDownVerifyAccount);
@@ -1351,6 +1424,11 @@ export class verifyAccountMethod {
     await testFunction.assertText(t, EaHomePage.elements.serviceAddressText, address);
     await testFunction.assertText(t, EaHomePage.elements.NMIText, NMI);
     await testFunction.assertText(t, EaHomePage.elements.MIRNText, MIRN);
+  }
+
+  public static async closeRefineModal(t) {
+    await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.refineModalCloseButton);
+    await testFunction.click(t, EaHomePage.elements.refineModalCloseButton);
   }
 }
 

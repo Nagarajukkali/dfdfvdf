@@ -13,6 +13,26 @@ When(/^user clicks on the verify modal window on '(.*)' page$/, async function (
   await plansMethod.clickPlansPageModal(t, customerType);
 });
 
+When(/^user closes the refine modal$/, async function (t, []) {
+  await verifyAccountMethod.closeRefineModal(t);
+});
+
+When(/^user clicks on best electricity offer link$/, async function (t, []) {
+  await testFunction.click(t,EaHomePage.elements.bestElectricityOfferLink);
+});
+
+When(/^user clicks on reference price disclaimer link$/, async function (t, []) {
+  await testFunction.click(t,EaHomePage.elements.referencePriceDisclaimerLink);
+});
+
+When(/^user clicks on solar disclaimer link$/, async function (t, []) {
+  await testFunction.click(t,EaHomePage.elements.solarDisclaimerLink);
+});
+
+When(/^user clicks on carbon neutral disclaimer link$/, async function (t, []) {
+  await testFunction.click(t,EaHomePage.elements.carbonNeutralDisclaimerLink);
+});
+
 When(/^user clicks on '(.*)' from the modal$/, async function (t, [modalWindowValue]) {
   await selectionOptionModalWindowMethod.selectOptionsModalWindow(t, modalWindowValue);
 });
@@ -556,4 +576,8 @@ When(/^user enters the postcode "([^"]*)" on plans page$/, async function (t, [p
 });
 When(/^user selects "([^"]*)" state from the state dropdown on plans page$/, async function (t, [state]) {
   await plansMethod.selectStateFromDropdown(t, state)
+});
+
+When(/^user selects '(.*)' fact sheet$/, async function (t, [planName]) {
+  await plansMethod.selectBPIDPlan(t, planName);
 });

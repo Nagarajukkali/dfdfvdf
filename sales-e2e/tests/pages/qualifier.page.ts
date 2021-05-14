@@ -2,8 +2,8 @@ import {Selector} from 'testcafe';
 
 const eaQualifierPage = {
   elements: {
-    newCustomerBtn: Selector('#isNewEA0 label'),
-    existingCustomerBtn: Selector('#isNewEA1 label'),
+    newCustomerBtn: Selector('#isNewEA0 button'),
+    existingCustomerBtn: Selector('#isNewEA1 button'),
     accountNumber: Selector('#accNo'),
     accountDetail: Selector('#accPC'),
     existingCustomerAbn: Selector('#option-bus-abnacn-type-abn > span.wg-radio-option-text.ng-binding'),
@@ -21,8 +21,8 @@ const eaQualifierPage = {
     idTypeValue: Selector('#idno'),
     idTypePin: Selector('#idtype sui-option:nth-child(3)'),
     verifyIdentitySubmit: Selector('#verifyingID'),
-    nonMoving: Selector('#moveHouse1'),
-    moving: Selector('#moveHouse0'),
+    nonMoving: Selector('#moveHouse1 button'),
+    moving: Selector('#moveHouse0 button'),
     //serviceAddress:Selector('#address-auto'),
     serviceAddress: Selector('#connection-address-auto-input'),
     //serviceAddressList:Selector('#address-auto+ ul>li a'),
@@ -33,9 +33,9 @@ const eaQualifierPage = {
     familyViolenceMessage: Selector('#VerifyID > .wg-alert-error'),
     owner: Selector('#ownerOrTenant0 > button'),
     renter: Selector('#ownerOrTenant1 > button'),
-    isElecInNewAddressQLD_Yes: Selector('#moveElecOn0'),
-    isElecInNewAddressQLD_No: Selector('#moveElecOn1'),
-    isElecInNewAddressQLD_NotSure: Selector('#moveElecOn2'),
+    isElecInNewAddressQLD_Yes: Selector('#moveElecOn0 button'),
+    isElecInNewAddressQLD_No: Selector('#moveElecOn1 button'),
+    isElecInNewAddressQLD_NotSure: Selector('#moveElecOn2 button'),
     linkDetailsNotHandy: Selector('#signInDetailsNotHandy'),
     moveElecQLDQuestion: Selector(".move-elec-on__button"),
     btnQualifierClose: Selector("#btn-icon-close"),
@@ -45,6 +45,7 @@ const eaQualifierPage = {
     headingOnChangePlanSelectionModal: Selector("#modal-heading-CHANGE_PLAN_SELECTION_MODAL"),
     txtInvalidMeterType: Selector("#-error-NMI_BLOCKED"),
     txtAddressNotServiced: Selector("#-error-ADDRESS_NOT_SERVICED"),
+    solarDetectionErrorLink: Selector("#solar-detection-error a")
 
   },
 };
