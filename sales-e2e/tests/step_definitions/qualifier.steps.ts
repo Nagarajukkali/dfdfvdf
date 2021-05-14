@@ -2,9 +2,10 @@ import {qualifierMethod} from '../methods/qualifierPage';
 import {BusinessType, Moving, Property, testFunction} from '../../global_methods/helper';
 import {Then, When} from 'cucumber';
 import {CustomerType} from '@ea/ea-commons-models';
-
+import {plansMethod} from '../methods/plansPage';
 const eaQualifierPage=require('../pages/qualifier.page');
 const { config }=require('../../resources/resource');
+const validateAnalyticsEvent=config.validateAnalytics;
 
 When(/^user selects '(.*)' and provides '(.*)' '(.*)' '(.*)' and '(.*)' and '(.*)' for '(.*)' customer$/, async function (t, [customerStatus,accNumber,accountDetail,accountIdentityType,idType,idValue,customerType]) {
   await qualifierMethod.selectCustomerStatus(t, customerStatus);
@@ -42,6 +43,9 @@ When(/^user provides all other details on qualifier page for Existing customer$/
     await qualifierMethod.selectDateFromCalendar(t);
   } else if (movingType === Moving.NON_MOVING) {
     await testFunction.click(t, eaQualifierPage.elements.addressContinue);
+    if(validateAnalyticsEvent==='Y'){
+      await plansMethod.validateComponentLibraryEvent(t,"qualifier_page","address_continue_button");
+    }
   }
   if(customerType===CustomerType.RESIDENTIAL){
     await qualifierMethod.selectPropertyType(t, data[0].propertyType);
@@ -154,4 +158,7 @@ Then(/^Address field is '(.*)'$/, async function (t,[addressField]) {
 });
 Then(/^user clicks on continue button after providing address$/, async function (t) {
   await qualifierMethod.clickOnContinueAddress(t);
+});
+When(/^user clicks on back button$/, async function (t) {
+  await testFunction.click(t, eaQualifierPage.elements.btnBackOnQualifier);
 });

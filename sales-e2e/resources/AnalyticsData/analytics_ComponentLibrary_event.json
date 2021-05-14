@@ -1,0 +1,248 @@
+{
+  "refine_modal": {
+    "refine_modal_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Get cost estimates based on your current household energy usage. Start now",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "enter_usage_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Enter usage",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "enter_usage_apply_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Apply",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "verify_account_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Verify account",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "verify_account_next_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Next",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "verify_account_show_estimates_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Show estimates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "verify_account_change_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Customer data estimates are based on your current usage - Electricity 7,500 kWh and Gas 93,580 MJ yearly. Change",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "verify_account_confirm_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Confirm",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "bill_upload_link": {
+      "eventAction": "linkClick",
+      "eventLabel": "Upload bill",
+      "eventLocation": "https://preprod.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/compare-electricity-and-gas-plans/upload-your-electricity-bill",
+      "eventName": "click",
+      "eventValue": "NA"
+    }
+  },
+  "plans_page": {
+    "total_select_plan_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Selected",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "nofrills_select_plan_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Selected",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_business_electricity_select_plan_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Selected",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_business_gas_select_plan_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Selected",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_business_electricity_select_plan_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Selected",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_business_gas_select_plan_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Selected",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_plan_bpid_link": {
+      "eventAction": "linkClick",
+      "eventLabel": "Basic plan information and energy fact sheets",
+      "eventLocation": "https://preprod.nonprod.digital.energyaustralia.com.au/bpid/?ct=RES&ft=BOTH&pc=RSOT&on=Basic%20Home",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "nofrills_plan_bpid_link": {
+      "eventAction": "linkClick",
+      "eventLabel": "Basic plan information and energy fact sheets",
+      "eventLocation": "https://preprod.nonprod.digital.energyaustralia.com.au/bpid/?ct=RES&ft=BOTH&pc=RCPP&on=No%20Frills",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_plan_bpid_link": {
+      "eventAction": "linkClick",
+      "eventLabel": "Basic plan information and energy fact sheets",
+      "eventLocation": "https://preprod.nonprod.digital.energyaustralia.com.au/bpid/?ct=RES&ft=BOTH&pc=TOPH&on=Total%20Plan",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "best_electricity_offer_link": {
+      "eventAction": "linkClick",
+      "eventLabel": "best electricity deals",
+      "eventLocation": "https://preprod.nonprod.digital.energyaustralia.com.au/offer",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "ref_price_disclaimer_link": {
+      "eventAction": "linkClick",
+      "eventLabel": "here",
+      "eventLocation": "https://www.energyaustralia.com.au/home/help-and-support/faqs/dmo",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "solar_disclaimer_link": {
+      "eventAction": "linkClick",
+      "eventLabel": "here",
+      "eventLocation": "https://www.energyaustralia.com.au/conditions-pricing",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "carbon_neutral_disclaimer_link": {
+      "eventAction": "linkClick",
+      "eventLabel": "energyaustralia.com.au/carbon-neutral",
+      "eventLocation": "https://www.energyaustralia.com.au/carbon-neutral",
+      "eventName": "click",
+      "eventValue": "NA"
+    }
+  },
+  "cart_page": {
+    "close_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Close",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "continue_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Continue",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    }
+  },
+  "qualifier_page": {
+    "new_customer_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "New customer",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "existing_customer_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Existing customer",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "non_moving_button": {
+        "eventAction": "buttonClick",
+        "eventLabel": "No",
+        "eventLocation": "NA",
+        "eventName": "click",
+        "eventValue": "NA"
+    },
+    "moving_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Yes",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "address_continue_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Continue Loading",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "owner_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Owner",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "renter_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Renter",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "back_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Back",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "verify_account_submit_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Submit Loading",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+  },
+    "solar_detection_error_link" : {
+      "eventAction": "linkClick",
+      "eventLabel": "contact us",
+      "eventLocation": "https://preprod.nonprod.digital.energyaustralia.com.au/home/help-and-support/contact-us",
+      "eventName": "click",
+      "eventValue": "NA"
+    }
+  }
+}

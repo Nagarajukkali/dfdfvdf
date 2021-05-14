@@ -1,17 +1,28 @@
 import {cartsMethod} from './cartsPage';
 import {BusinessType, CustomerStatus, IdType, Moving, Property, testFunction} from '../../global_methods/helper';
 import {Selector} from "testcafe";
+import {plansMethod} from './plansPage';
+const { config }=require('../../resources/resource');
+const validateAnalyticsEvent=config.validateAnalytics;
 
 const eaQualifierPage = require('../pages/qualifier.page');
 
 export class qualifierMethod {
 
   public static async selectCustomerStatus(t, customerStatus) {
-    if (customerStatus.toLowerCase() === CustomerStatus.NEW.toLowerCase()) {
-      await testFunction.click(t, eaQualifierPage.elements.newCustomerBtn);
-    } else if (customerStatus.toLowerCase() === CustomerStatus.EXISTING.toLowerCase()) {
-      await testFunction.click(t, eaQualifierPage.elements.existingCustomerBtn);
-    } else {
+    if(customerStatus.toLowerCase()===CustomerStatus.NEW.toLowerCase()){
+        await testFunction.click(t,eaQualifierPage.elements.newCustomerBtn);
+      if(validateAnalyticsEvent==='Y') {
+        await plansMethod.validateComponentLibraryEvent(t, "qualifier_page", "new_customer_button");
+      }
+      }
+    else if(customerStatus.toLowerCase()===CustomerStatus.EXISTING.toLowerCase()){
+      await testFunction.click(t,eaQualifierPage.elements.existingCustomerBtn);
+      if(validateAnalyticsEvent==='Y') {
+        await plansMethod.validateComponentLibraryEvent(t, "qualifier_page", "existing_customer_button");
+      }
+    }
+    else{
       console.error('customer status option is not selected.');
     }
     console.log(`${customerStatus} is selected`);
@@ -47,6 +58,9 @@ export class qualifierMethod {
     await testFunction.takeScreenshot(t, "qualifier_page");//disabled UI Validation
     await testFunction.click(t, eaQualifierPage.elements.verifyAccountSubmit);
     await testFunction.waitForElementPropertyToBeChanged(t, eaQualifierPage.elements.verifyAccountSubmit, 'wg-processing', "false");
+    if(validateAnalyticsEvent==='Y') {
+      await plansMethod.validateComponentLibraryEvent(t, "qualifier_page", "verify_account_submit_button");
+    }
     console.log("account is verified");
   }
 
@@ -93,6 +107,9 @@ export class qualifierMethod {
     await testFunction.click(t, eaQualifierPage.elements.verifyIdentitySubmit);
     await testFunction.waitForLoadingIconToClose();
     await t.wait(3000);
+    if(validateAnalyticsEvent==='Y') {
+      await plansMethod.validateComponentLibraryEvent(t, "qualifier_page", "verify_account_submit_button");
+    }
     console.log("Existing customer ID details are verified");
   }
 
@@ -105,14 +122,22 @@ export class qualifierMethod {
   }
 
   public static async provideMovingType(t, movingType) {
-    if (movingType === Moving.NON_MOVING) {
-      await testFunction.click(t, eaQualifierPage.elements.nonMoving);
-    } else if (movingType === Moving.MOVING) {
-      console.log("inside moving");
-      await testFunction.click(t, eaQualifierPage.elements.moving);
-    } else {
-      console.error('moving option is not selected.');
-    }
+    if(movingType===Moving.NON_MOVING){
+        await testFunction.click(t,eaQualifierPage.elements.nonMoving);
+      if(validateAnalyticsEvent==='Y'){
+        await plansMethod.validateComponentLibraryEvent(t,"qualifier_page","non_moving_button");
+      }
+      }
+      else if(movingType===Moving.MOVING){
+        console.log("inside moving");
+          await testFunction.click(t,eaQualifierPage.elements.moving);
+      if(validateAnalyticsEvent==='Y'){
+        await plansMethod.validateComponentLibraryEvent(t,"qualifier_page","moving_button");
+      }
+      }
+      else{
+        console.error('moving option is not selected.');
+      }
     console.log(`${movingType} is selected`);
   }
 
@@ -133,7 +158,15 @@ export class qualifierMethod {
         await testFunction.click(t, eaQualifierPage.elements.planSelectionPopup);
       }
     }
+    if ((await testFunction.sizeOfElement(t, eaQualifierPage.elements.solarDetectionErrorLink) > 0) && validateAnalyticsEvent==='Y') {
+      await testFunction.click(t,eaQualifierPage.elements.solarDetectionErrorLink);
+      await t.closeWindow();
+      await plansMethod.validateComponentLibraryEvent(t, "qualifier_page", "solar_detection_error_link");
+    }
     await testFunction.click(t, eaQualifierPage.elements.addressContinue);
+    if(validateAnalyticsEvent==='Y'){
+      await plansMethod.validateComponentLibraryEvent(t,"qualifier_page","address_continue_button");
+    }
     console.log(`${address} is provided`);
   }
 
@@ -154,13 +187,14 @@ export class qualifierMethod {
   public static async selectDateFromCalendar(t) {
     await testFunction.selectDateFromCalendar(t, eaQualifierPage.elements.calendarTable);
   }
-
-  public static async selectPropertyType(t, propertyType) {
-    if (propertyType === Property.OWNER) {
-      await testFunction.click(t, eaQualifierPage.elements.owner);
-    } else if (propertyType === Property.RENTER) {
-      await testFunction.click(t, eaQualifierPage.elements.renter);
-    } else {
+  public static async selectPropertyType(t,propertyType){
+    if(propertyType ===Property.OWNER){
+      await testFunction.click(t,eaQualifierPage.elements.owner);
+    }
+    else if(propertyType ===Property.RENTER){
+      await testFunction.click(t,eaQualifierPage.elements.renter);
+    }
+    else{
       console.error('Property type is not selected');
     }
   }

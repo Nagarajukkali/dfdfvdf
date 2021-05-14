@@ -4,8 +4,6 @@ import {plansMethod} from '../methods/plansPage';
 
 Given(/^user initiates the call to capture analytics events$/, async function (t) {
   await spyOn();
-
-
 });
 Then(/^user validates the data layer is updated for solar as '(.*)'$/, async function (t, [actualSolarIndicatorValue]) {
   //const data = await getSpyData();
@@ -21,3 +19,13 @@ Then(/^user validates the state and postcode of data layer is updated for the pr
   const postcode = data[0].postcode;
   await plansMethod.validateAnalyticsForStateAndPostcodeUpdate(t, state, postcode);
 });
+
+Then(/^user validates the '(.*)' '(.*)' event$/, async function (t,[pageComponent,event]) {
+  await plansMethod.validateComponentLibraryEvent(t, pageComponent, event);
+});
+
+Then(/^user validates the '(.*)' '(.*)' link event$/, async function (t,[pageComponent,event]) {
+  await t.closeWindow();
+  await plansMethod.validateComponentLibraryEvent(t, pageComponent, event);
+});
+

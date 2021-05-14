@@ -1,0 +1,180 @@
+{
+  "refine_modal": {
+    "refine_modal_button": {
+      "componentLocation": "button:refine modal cta:Get cost estimates based on your current household energy usage. Start now",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "enter_usage_button": {
+      "componentLocation": "button:refine modal:Enter usage",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "enter_usage_apply_button": {
+      "componentLocation": "button:refine modal:Apply",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "verify_account_button": {
+      "componentLocation": "button:refine modal:Verify account",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "verify_account_next_button": {
+      "componentLocation": "button:refine modal:Next",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "verify_account_show_estimates_button": {
+      "componentLocation": "button:refine modal:Show estimates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "verify_account_change_button": {
+      "componentLocation": "button:refine modal cta:Customer data estimates are based on your current usage - Electricity 7,500 kWh and Gas 93,580 MJ yearly. Change",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "verify_account_confirm_button": {
+      "componentLocation": "button:reset estimate modal:Confirm",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "bill_upload_link": {
+      "componentLocation": "link:refine modal:Upload bill",
+      "componentName": "NA",
+      "platform": "angular"
+    }
+  },
+  "plans_page": {
+    "total_select_plan_button": {
+      "componentLocation": "button:Total Plan - Electricity & gas:Selected",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "nofrills_select_plan_button": {
+      "componentLocation": "button:No Frills - Electricity & gas:Selected",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_business_electricity_select_plan_button": {
+      "componentLocation": "button:Basic Business - Electricity:Selected",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_business_gas_select_plan_button": {
+      "componentLocation": "button:Basic Business - Gas:Selected",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_business_electricity_select_plan_button": {
+      "componentLocation": "button:Total Plan - Business - Electricity:Selected",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_business_gas_select_plan_button": {
+      "componentLocation": "button:Total Plan - Business - Gas:Selected",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_plan_bpid_link": {
+      "componentLocation": "link:Basic Home - Electricity & gas:Basic plan information and energy fact sheets",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "nofrills_plan_bpid_link": {
+      "componentLocation": "link:No Frills - Electricity & gas:Basic plan information and energy fact sheets",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_plan_bpid_link": {
+      "componentLocation": "link:Total Plan - Electricity & gas:Basic plan information and energy fact sheets",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "best_electricity_offer_link": {
+      "componentLocation": "link:plans page disclaimers:best electricity deals",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "ref_price_disclaimer_link": {
+      "componentLocation": "link:Shared_Ref_Fit:here",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "solar_disclaimer_link": {
+      "componentLocation": "link:Shared_Ref_Fit:here",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "carbon_neutral_disclaimer_link": {
+      "componentLocation": "link:Shared_Carbon_New:energyaustralia.com.au/carbon-neutral",
+      "componentName": "NA",
+      "platform": "angular"
+    }
+  },
+  "cart_page": {
+    "close_button": {
+      "componentLocation": "button:cart:Close",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "continue_button": {
+      "componentLocation": "button:cart:Continue",
+      "componentName": "NA",
+      "platform": "angular"
+    }
+  },
+  "qualifier_page": {
+    "new_customer_button": {
+      "componentLocation": "button:qualifier new or existing:New customer",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "existing_customer_button": {
+      "componentLocation": "button:qualifier new or existing:Existing customer",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "non_moving_button": {
+      "componentLocation": "button:qualifier moving:No",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "moving_button": {
+      "componentLocation": "button:qualifier moving:Yes",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "address_continue_button": {
+      "componentLocation": "button:qualifier address:Continue Loading",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "owner_button": {
+      "componentLocation": "button:cart:Continue",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "renter_button": {
+      "componentLocation": "button:cart:Continue",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "back_button": {
+      "componentLocation": "button:qualifier:Back",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "verify_account_submit_button": {
+      "componentLocation": "button:qualifier new or existing:Submit Loading",
+      "componentName": "NA",
+      "platform": "angular"
+  },
+    "solar_detection_error_link": {
+      "componentLocation": "link:qualifier address:contact us",
+      "componentName": "NA",
+      "platform": "angular"
+    }
+  }
+}
