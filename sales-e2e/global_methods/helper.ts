@@ -51,7 +51,9 @@ export enum PlanType {
   TOTAL_BUSINESS = 'Total Plan - Business',
   TOTAL_PLAN_PLUS_BUSINESS = 'Total Plan Plus - Business',
   FAMILY_AND_FRIENDS = 'Family and Friends',
-  FAMILY_AND_FRIENDS_BUSINESS = 'Family and Friends Business'
+  FAMILY_AND_FRIENDS_BUSINESS = 'Family and Friends Business',
+  BUSINESS_CARBON_NEUTRAL = 'Business Carbon Neutral',
+  BUSINESS_BALANCE_PLAN = 'Business Balance Plan',
 }
 
 export enum IdType {

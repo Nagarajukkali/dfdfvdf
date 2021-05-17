@@ -62,46 +62,32 @@ export class plansMethod {
         break;
       case PlanType.NO_FRILLS:
         if (testFunction.isMobile()) {
-          await scrollTo(EaHomePage.elements.basicResiPlanFeatureTitle);
-          await scrollTo(EaHomePage.elements.basicResiPlanRatesTitle);
-          await testFunction.click(t, EaHomePage.elements.sliderRight);
+          await scrollTo(EaHomePage.elements.noFrillsPlan);
         }
         await testFunction.click(t, EaHomePage.elements.noFrillsPlan);
         break;
       case PlanType.TOTAL_PLAN:
-        if (testFunction.isMobile()) {
-          await scrollTo(EaHomePage.elements.basicResiPlanRatesTitle);
-          await scrollTo(EaHomePage.elements.basicResiPlanFeatureTitle);
-          await testFunction.click(t, EaHomePage.elements.sliderRight);
-          await testFunction.click(t, EaHomePage.elements.sliderRight);
-        }
-        if (testFunction.isTablet()) {
-          await scrollTo(EaHomePage.elements.basicResiPlanFeatureTitle);
-          await scrollTo(EaHomePage.elements.basicResiPlanRatesTitle);
-          await testFunction.click(t, EaHomePage.elements.sliderRight);
+        if (testFunction.isMobile() || testFunction.isTablet()) {
+          await scrollTo(EaHomePage.elements.totalPlan);
         }
         await testFunction.click(t, EaHomePage.elements.totalPlan);
         break;
       case PlanType.TOTAL_PLAN_PLUS:
-        if (testFunction.isMobile()) {
-          await scrollTo(EaHomePage.elements.basicResiPlanFeatureTitle);
-          await scrollTo(EaHomePage.elements.basicResiPlanRatesTitle);
-          await testFunction.click(t, EaHomePage.elements.sliderRight);
-          await testFunction.click(t, EaHomePage.elements.sliderRight);
-          await testFunction.click(t, EaHomePage.elements.sliderRight);
-        }
-        if (testFunction.isTablet()) {
-          await scrollTo(EaHomePage.elements.basicResiPlanFeatureTitle);
-          await scrollTo(EaHomePage.elements.basicResiPlanRatesTitle);
-          await testFunction.click(t, EaHomePage.elements.sliderRight);
-          await testFunction.click(t, EaHomePage.elements.sliderRight);
+        if (testFunction.isMobile() || testFunction.isTablet()) {
+          await scrollTo(EaHomePage.elements.totalPlanPlus);
         }
         await testFunction.click(t, EaHomePage.elements.totalPlanPlus);
         break;
       case PlanType.BASIC_BUSINESS:
+        if (testFunction.isMobile() || testFunction.isTablet()) {
+          await scrollTo(EaHomePage.elements.basicBusiness);
+        }
         await testFunction.click(t, EaHomePage.elements.basicBusiness);
         break;
       case PlanType.BASIC_BUSINESS_QLD:
+        if (testFunction.isMobile() || testFunction.isTablet()) {
+          await scrollTo(EaHomePage.elements.basicBusinessQLD);
+        }
         await testFunction.click(t, EaHomePage.elements.basicBusinessQLD);
         break;
       case PlanType.NO_FRILLS_BUSINESS:
@@ -109,25 +95,27 @@ export class plansMethod {
         break;
       case PlanType.TOTAL_BUSINESS:
         if (testFunction.isMobile()) {
-          await scrollTo(EaHomePage.elements.basicBsmePlanFeatureTitle);
-          await scrollTo(EaHomePage.elements.basicBsmePlanRatesTitle);
-          await testFunction.click(t, EaHomePage.elements.sliderRight);
+          await scrollTo(EaHomePage.elements.totalPlanBusiness);
         }
         await testFunction.click(t, EaHomePage.elements.totalPlanBusiness);
         break;
       case PlanType.TOTAL_PLAN_PLUS_BUSINESS:
-        if (testFunction.isMobile()) {
-          await scrollTo(EaHomePage.elements.basicBsmePlanFeatureTitle);
-          await scrollTo(EaHomePage.elements.basicBsmePlanRatesTitle);
-          await testFunction.click(t, EaHomePage.elements.sliderRight);
-          await testFunction.click(t, EaHomePage.elements.sliderRight);
-        }
-        if (testFunction.isTablet()) {
-          await scrollTo(EaHomePage.elements.basicBsmePlanFeatureTitle);
-          await scrollTo(EaHomePage.elements.basicBsmePlanRatesTitle);
-          await testFunction.click(t, EaHomePage.elements.sliderRight);
+        if (testFunction.isMobile() || testFunction.isTablet()) {
+          await scrollTo(EaHomePage.elements.totalPlanPlusBusiness);
         }
         await testFunction.click(t, EaHomePage.elements.totalPlanPlusBusiness);
+        break;
+      case PlanType.BUSINESS_CARBON_NEUTRAL:
+        if (testFunction.isMobile() || testFunction.isTablet()) {
+          await scrollTo(EaHomePage.elements.businessCNPlan);
+        }
+        await testFunction.click(t, EaHomePage.elements.businessCNPlan);
+        break;
+      case PlanType.BUSINESS_BALANCE_PLAN:
+        if (testFunction.isMobile() || testFunction.isTablet()) {
+          await scrollTo(EaHomePage.elements.businessBalancePlan);
+        }
+        await testFunction.click(t, EaHomePage.elements.businessBalancePlan);
         break;
       default:
         console.error("Invalid plan is selected");
@@ -811,6 +799,7 @@ export class plansMethod {
   public static async validateSolarGovernmentSchemeDisclaimer(t) {
     let countOfElements = await testFunction.sizeOfElement(t, EaHomePage.elements.solarRateToolTip);
     for (let i = 0; i < countOfElements; i++) {
+      await scrollTo(EaHomePage.elements.solarRateToolTip.nth(i));
       await testFunction.click(t, EaHomePage.elements.solarRateToolTip.nth(i));
       await testFunction.assertText(t, EaHomePage.elements.solarRateToolTipText.nth(i), "If you are eligible for a government solar rebate, the rebate will be reflected in your welcome pack and added to your account.");
     }

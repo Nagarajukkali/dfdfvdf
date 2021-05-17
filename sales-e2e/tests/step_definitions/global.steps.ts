@@ -12,13 +12,12 @@ Given(/^user has navigated to '(.*)' plans page$/, async function (t, [customerT
   if (customerType === CustomerType.RESIDENTIAL) {
     await testFunction.click(t, eaHomePage.elements.residentialComparePlansButton);
   } else if (customerType === CustomerType.BUSINESS) {
-    if (testFunction.isTablet()) {
+    if (testFunction.isMobile()) {
       await testFunction.isElementDisplayed(t, eaHomePage.elements.menuBarCollapsed);
       await testFunction.click(t, eaHomePage.elements.menuBarCollapsed);
       await testFunction.click(t, eaHomePage.elements.businessMobileIcon);
-      await testFunction.click(t, eaHomePage.elements.businessplansMenu);
+      await testFunction.click(t, eaHomePage.elements.businessMobileIcon);
       await testFunction.click(t, eaHomePage.elements.smallBusinessLink);
-      await testFunction.click(t, eaHomePage.elements.btnBusAccessQuoteTool);
     } else {
       await testFunction.click(t, eaHomePage.elements.businessLink);
       await testFunction.click(t, eaHomePage.elements.smallBusinessButton);
