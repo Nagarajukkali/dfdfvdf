@@ -351,6 +351,7 @@ export class testFunction {
     const table = element;
     const tableElement = await element();
     const rowCount = tableElement.childElementCount;
+    let dateValue;
     let flag = false;
     for (let i = 0; i < rowCount; i++) {
       const rows = table.child(i);
@@ -361,6 +362,7 @@ export class testFunction {
         const dateBtn = cols.child(0);
         const backgroundColor = await dateBtn.getStyleProperty("background-color").then(result => result);
         if (backgroundColor.includes("rgba(110, 178, 20, 0.45)")) {
+          dateValue=await testFunction.getElementText(t,cols);
           await testFunction.click(t, cols);
           flag = true;
           break;
@@ -370,6 +372,7 @@ export class testFunction {
         break;
       }
     }
+    return dateValue;
   }
 
   public static async takeScreenshot(t, fileName) {

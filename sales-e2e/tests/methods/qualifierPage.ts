@@ -185,7 +185,8 @@ export class qualifierMethod {
   }
 
   public static async selectDateFromCalendar(t) {
-    await testFunction.selectDateFromCalendar(t, eaQualifierPage.elements.calendarTable);
+    const dateValue = await testFunction.selectDateFromCalendar(t, eaQualifierPage.elements.calendarTable);
+    console.log(dateValue);
   }
   public static async selectPropertyType(t,propertyType){
     if(propertyType ===Property.OWNER){
