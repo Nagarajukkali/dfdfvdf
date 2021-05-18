@@ -69,7 +69,7 @@ Feature: This feature is to test the My account scenarios for business customers
       | folderName                          | username                | password                                     | fuelType | sourceSystem | journey     | AAH | DD | customerType | newOrExisting |
       | E2E_MyAccount_Business_PS_MissingID | MissingID_BSME@test.com | U2FsdGVkX19c8L2pzEDdebOhgJBsSfi7fZpLS5vRkI0= | ELE      | My Account   | Plan Switch | No  | No | BUS          | Existing      |
 
-  @currentplan @failed
+  @currentplan
   Scenario Outline: Verify the BSME Electricity Plan switch journey to not show current plan for account having both GD and PDD discounts from My Account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
@@ -81,7 +81,7 @@ Feature: This feature is to test the My account scenarios for business customers
       | <sourceSystem> | <journey> | <fuelType> |
     And user selects plans on checkout details page
       | fuelType   | planName                 |
-      | <fuelType> | Total Plan Plus Business |
+      | <fuelType> | Total Plan Plus - Business |
     And user clicks on 'Next' button and navigates to review page
     And user provides business details on review page
       | isCustomerContactPersonMissing | isABNACNMissing |
@@ -100,4 +100,4 @@ Feature: This feature is to test the My account scenarios for business customers
 
     Examples:
       | folderName                                        | username                   | password                                     | fuelType | sourceSystem | journey     | AAH | DD | customerType | newOrExisting |
-      | E2E_MyAccount_Bsme_ELE_PS_Not_Current_Plan_GD_PDD | bsmecurrentplansa@test.com | U2FsdGVkX19fWGmAK8EevhuEO0lsln1rmWQcWHsU0ec= | ELE      | My Account   | Plan switch | No  | No | BUS          | Existing      |
+      | E2E_MyAccount_Bsme_ELE_PS_Not_Current_Plan_GD_PDD | bsmemultiplediscount@test.com | U2FsdGVkX1+vvasyPd9IrYb04NK0OuqDAm2BbGkf2A4= | ELE      | My Account   | Plan switch | No  | No | BUS          | Existing      |

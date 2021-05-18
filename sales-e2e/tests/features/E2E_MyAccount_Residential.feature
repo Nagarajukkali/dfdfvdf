@@ -175,7 +175,7 @@ Feature: This feature is to test the My account scenarios for residential custom
       | folderName                                 | username                | password                                     | fuelType | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
       | E2E_MyAccount_Residential_ELE_PS_MissingID | MissingID_RESI@test.com | U2FsdGVkX19pydLDPzviWcrNZ6PzbXoPRKv4Bjmqyug= | ELE      | My Account   | Plan switch | Yes | Yes | RES          | Existing      |
 
-  @currentplan @deviceCheck  @failed
+  @currentplan @deviceCheck
   Scenario Outline: Verify the RESI Electricity Plan switch journey with current plan having guaranteed discount from My Account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
@@ -204,7 +204,7 @@ Feature: This feature is to test the My account scenarios for residential custom
 
     Examples:
       | folderName                                | username     | password                                     | fuelType | sourceSystem | journey     | AAH | DD | customerType | newOrExisting |
-      | E2E_MyAccount_Resi_ELE_PS_Current_Plan_GD | cp1@test.com | U2FsdGVkX19YPkVS1ABCAhv2r+1CGiV9MnvSGz52Qvw= | ELE      | My Account   | Plan switch | No  | No | RES          | Existing      |
+      | E2E_MyAccount_Resi_ELE_PS_Current_Plan_GD | guaranteeddiscount@test.com | U2FsdGVkX1+mGIOtvUS9pzLrrqIzYOOE4t2/4WJ98Sg= | ELE      | My Account   | Plan switch | No  | No | RES          | Existing      |
 
   @currentplan
   Scenario Outline: Verify the RESI Electricity Plan switch journey with current plan having pay on time discount from My Account
@@ -237,7 +237,7 @@ Feature: This feature is to test the My account scenarios for residential custom
       | folderName                                 | username               | password                                     | fuelType | sourceSystem | journey     | AAH | DD | customerType | newOrExisting |
       | E2E_MyAccount_Resi_ELE_PS_Current_Plan_PDD | currentplan03@test.com | U2FsdGVkX19pZVkiZ60o0iAFhXdDJs0/oxVAuNlMfyY= | ELE      | My Account   | Plan switch | No  | No | RES          | Existing      |
 
-  @currentplan @failed
+  @currentplan
   Scenario Outline: Verify the RESI Electricity Plan switch journey with current plan having no discount from My Account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user navigates to my account login page
@@ -266,7 +266,7 @@ Feature: This feature is to test the My account scenarios for residential custom
 
     Examples:
       | folderName                                         | username                    | password                                     | fuelType | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
-      | E2E_MyAccount_Resi_ELE_PS_Current_Plan_No_Discount | nofrillsnodiscount@test.com | U2FsdGVkX1+VJgjPu6egPMpn4may0nOjl253Oh2CJmw= | ELE      | My Account   | Plan switch | No  | Yes | RES          | Existing      |
+      | E2E_MyAccount_Resi_ELE_PS_Current_Plan_No_Discount | nodiscount3@test.com | U2FsdGVkX19Tbk4gb1sRhuJBvQdyRimtHeYuYp067j0= | ELE      | My Account   | Plan switch | No  | Yes | RES          | Existing      |
 
   @solar
   Scenario Outline: Verify the RESI VIC Electricity Plan switch journey with retail solar scheme
