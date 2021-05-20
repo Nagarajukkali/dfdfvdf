@@ -86,7 +86,7 @@
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |FFPH-GN |5240524910|                             |                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign        |folderName                               |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
-      |New           |BOTH    |27         |24         |familyandfriends     |E2E_Campaign_familyandfriends_NSW_new_moving  |NSW  |Quote Tool    |Move Home|No   |No  |RES          |New            |
+      |New           |BOTH    |27         |27         |familyandfriends     |E2E_Campaign_familyandfriends_NSW_new_moving  |NSW  |Quote Tool    |Move Home|No   |No  |RES          |New            |
 
   Scenario Outline: Validate complete data for familyandfriends campaign for QLD - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -95,14 +95,14 @@
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+      |ELE      |N                 |Y                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
-      |Y                        |N          |Y              |Family and Friends|<state>  |Y           |
+      |Y                        |N          |Y              |Family and Friends|<state>  |N           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
-      |ELE      |Y                 |Y                       |Y                    |Y                                    |<state>|
+      |ELE      |N                 |Y                       |Y                    |Y                                    |<state>|
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -120,10 +120,10 @@
       |No               |         |                          |                       |
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |<state>|
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
-      |Y                        |N          |Y              |Family and Friends|<state>  |Y           |
+      |Y                        |N          |Y              |Family and Friends|<state>  |N           |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -166,7 +166,7 @@
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                        |movingType |propertyType |
-      |RES          |3 Newhaven Avenue, GLENELG NORTH SA 5045 |Moving     |Renter       |
+      |RES          |3 River Dr ATHELSTONE SA 5076 |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |
@@ -205,7 +205,7 @@
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |FFPH-GS |5510183967|                              |                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign   |folderName                                 |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting  |
-      |New           |BOTH    |16         |16         |familyandfriends|E2E_Campaign_familyandfriends_SA_new_moving |SA   |Quote Tool    |Move Home  |No   |No  |RES          |New            |
+      |New           |BOTH    |17         |17         |familyandfriends|E2E_Campaign_familyandfriends_SA_new_moving |SA   |Quote Tool    |Move Home  |No   |No  |RES          |New            |
 
   Scenario Outline: Validate complete data for familyandfriends campaign for ACT - new non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -281,20 +281,20 @@
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+      |ELE      |N                 |Y                       |Y                    |Y                                    |N                                |<state>|
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+      |GAS      |N                 |Y                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state    |signUpCredit|
-      |Y                        |N          |Y              |Family and Friends|<state>  |Y           |
+      |Y                        |N          |Y              |Family and Friends|<state>  |N           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
-      |ELE      |Y                 |Y                       |Y                    |Y                                    |<state>|
+      |ELE      |N                 |Y                       |Y                    |Y                                    |<state>|
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
-      |GAS      |Y                 |Y                       |Y                    |Y                                    |<state>|
+      |GAS      |N                 |Y                       |Y                    |Y                                    |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                   |movingType |propertyType |
@@ -312,13 +312,13 @@
       |No               |         |                          |                       |
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral  |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |N                      |Y                    |Y                                    |N                                |<state>|
+      |ELE      |N                 |N                      |Y                    |Y                                    |N                                |<state>|
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |<state>|
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state |signUpCredit|
-      |Y                        |N          |Y              |Family and Friends|<state>   |Y           |
+      |Y                        |N          |Y              |Family and Friends|<state>   |N           |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -338,7 +338,7 @@
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |FFPH-GV |5310425534|  N                            |  N                           |N                      |                         |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign   |folderName                              |state |sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting  |
-      |New           |BOTH    |16         |30         |familyandfriends|E2E_Campaign_familyandfriends_VIC_new_moving |VIC   |Quote Tool    |Move Home  |No   |No  |RES          |New            |
+      |New           |BOTH    |16         |36         |familyandfriends|E2E_Campaign_familyandfriends_VIC_new_moving |VIC   |Quote Tool    |Move Home  |No   |No  |RES          |New            |
 
   Scenario Outline: Validate complete data for familyandfriends campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -348,20 +348,20 @@
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+      |ELE      |N                 |Y                       |Y                    |Y                                    |N                                |<state>|
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+      |GAS      |N                 |Y                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state    |signUpCredit|
-      |Y                        |N          |Y              |Family and Friends|<state>  |Y           |
+      |Y                        |N          |Y              |Family and Friends|<state>  |N           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
-      |ELE      |Y                 |Y                       |Y                    |Y                                    |<state>|
+      |ELE      |N                 |Y                       |Y                    |Y                                    |<state>|
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
-      |GAS      |Y                 |Y                       |Y                    |Y                                    |<state>|
+      |GAS      |N                 |Y                       |Y                    |Y                                    |<state>|
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       |customerStatus   |accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
@@ -387,7 +387,7 @@
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
-      |Y                        |N          |Y              |Family and Friends|VIC  |Y           |
+      |Y                        |N          |Y              |Family and Friends|VIC  |N           |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -407,8 +407,8 @@
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |FFPH-GV |5330790589|N                             |N                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
-      |Existing      |BOTH    |16         |30         |familyandfriends |E2E_Campaign_familyandfriends_VIC_existing_non-moving |VIC  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
-    @campaign21.4.3
+      |Existing      |BOTH    |16         |36         |familyandfriends |E2E_Campaign_familyandfriends_VIC_existing_non-moving |VIC  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
+    
   Scenario Outline: Validate complete data for familyandfriends campaign for NSW existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "test111111" and "2000" and clicks on show me plan link
@@ -469,7 +469,7 @@
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS       |FFPH-EN |4407376910|                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
-      |Existing      |BOTH    |27         |24         |familyandfriends |E2E_Campaign_familyandfriends_NSW_existing_non-moving |NSW  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
+      |Existing      |BOTH    |27         |27         |familyandfriends |E2E_Campaign_familyandfriends_NSW_existing_non-moving |NSW  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
 
   Scenario Outline: Validate complete data for familyandfriends campaign for SA existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -538,7 +538,7 @@
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS       |FFPH-GS |5510120493|                             |                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
-      |Existing      |BOTH    |16         |16         |familyandfriends |E2E_Campaign_familyandfriends_SA_existing_non-moving |SA  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
+      |Existing      |BOTH    |17         |17         |familyandfriends |E2E_Campaign_familyandfriends_SA_existing_non-moving |SA  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
 
   Scenario Outline: Validate complete data for familyandfriends campaign for QLD existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -547,14 +547,14 @@
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+      |ELE      |N                 |Y                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state    |signUpCredit|
-      |Y                        |N          |Y              |Family and Friends|<state>  |Y           |
+      |Y                        |N          |Y              |Family and Friends|<state>  |N           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
-      |ELE      |Y                 |Y                       |Y                    |Y                                    |<state>|
+      |ELE      |N                 |Y                       |Y                    |Y                                    |<state>|
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
@@ -578,7 +578,7 @@
       |ELE      |N                 |N                       |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|
-      |Y                        |N          |Y              |Family and Friends|QLD  |Y           |
+      |Y                        |N          |Y              |Family and Friends|QLD  |N           |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page

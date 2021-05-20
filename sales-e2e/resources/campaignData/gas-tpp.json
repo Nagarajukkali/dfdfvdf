@@ -2,6 +2,99 @@
   "planName": "Total Plan Plus",
   "planDescription": "VIP discount on your total energy bill guaranteed - every time.",
 
+  "electricity": {
+    "feature": {
+      "preSelect": {
+        "Credit50": {
+          "VIC": {
+            "heading": "$50 Second Energy Account Credit",
+            "description": "Get a $50 credit on your first bill when you sign up your second energy account.+"
+          },
+          "NSW": {
+            "heading": "",
+            "description": ""
+          },
+          "ACT": {
+            "heading": "$25 Second Energy Account Credit",
+            "description": "Get a $25 credit on your first bill when you sign up your second energy account online.+"
+          },
+          "SA": {
+            "heading": "$50 Second Energy Account Credit",
+            "description": "Get a $50 credit on your first bill when you sign up your second energy account.+"
+          }
+        },
+        "carbonNeutral": {
+          "heading": "Carbon neutral option",
+          "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
+        },
+        "peaceOfMind": {
+          "heading": "Peace of mind",
+          "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+        },
+        "discountOffTotalEnergyBill": {
+          "heading": "VIP discount off total energy bill",
+          "description": "Exclusive VIP guaranteed discount that applies to both energy usage rates and daily supply charges. Eligible customers only."
+        },
+        "noStandardConnectionFee": {
+          "heading": "No standard connection fees",
+          "description": "Move with us and we'll waive connection and special meter reads during business hours."
+        }
+      },
+      "postSelect": {
+        "Credit50": {
+          "VIC": "$50 Second Energy Account Credit. Get a $50 credit on your first bill when you sign up your second energy account.+",
+          "NSW": "",
+          "ACT": "$25 Second Energy Account Credit. Get a $25 credit on your first bill when you sign up your second energy account online.+",
+          "SA" : "$50 Second Energy Account Credit. Get a $50 credit on your first bill when you sign up your second energy account.+"
+        },
+        "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
+        "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
+        "discountOffTotalEnergyBill": "Exclusive VIP guaranteed discount that applies to both energy usage rates and daily supply charges. Eligible customers only.",
+        "noStandardConnectionFee": "No standard connection fees. Move with us and we'll waive connection and special meter reads during business hours."
+      }
+    },
+    "sourceCode": {
+      "newCustomer": {
+        "VIC": "Total_Plus_14%GD",
+        "NSW": {
+          "Ausgrid": "Total_Plus_25%GD",
+          "Essential": "Total_Plus_25%GD",
+          "Endeavour": "Total_Plus_25%GD",
+          "default": "Total_Plus_25%GD"
+        },
+        "ACT": "Total_Plus_13%GD_25",
+        "QLD": "Total_Plus_21%GD_50",
+        "SA": "Total_Plus_15%GD"
+      },
+      "existingCustomer": {
+        "ENE":{
+          "VIC": "Total_Plus_14%GD",
+          "NSW": {
+            "Ausgrid": "Total_Plus_25%GD",
+            "Essential": "Total_Plus_25%GD",
+            "Endeavour": "Total_Plus_25%GD",
+            "default": "Total_Plus_25%GD"
+          },
+          "ACT": "Total_Plus_13%GD_25",
+          "QLD": "Total_Plus_21%GD_50",
+          "SA": "Total_Plus_15%GD"
+        },
+        "PS": {
+          "VIC": "Total_Plus_14%GD",
+          "NSW": {
+            "Ausgrid": "Total_Plus_25%GD",
+            "Essential": "Total_Plus_25%GD",
+            "Endeavour": "Total_Plus_25%GD",
+            "default": "Total_Plus_25%GD"
+          },
+          "ACT": "Total_Plus_13%GD_25",
+          "QLD": "Total_Plus_21%GD_50",
+          "SA": "Total_Plus_15%GD"
+        }
+      }
+    }
+  },
+
   "gas": {
     "feature": {
       "preSelect": {
@@ -55,26 +148,26 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_Plus_28%GD_50",
-        "NSW": "Total_Plus_22%GD",
+        "VIC": "Total_Plus_34%GD",
+        "NSW": "Total_Plus_25%GD",
         "ACT": "Total_Plus_17%GD_25",
         "QLD": "",
-        "SA": "Total_Plus_14%GD"
+        "SA": "Total_Plus_15%GD"
       },
       "existingCustomer": {
         "ENE":{
-          "VIC": "Total_Plus_28%GD_50",
-          "NSW": "Total_Plus_22%GD",
+          "VIC": "Total_Plus_34%GD",
+          "NSW": "Total_Plus_25%GD",
           "ACT": "Total_Plus_17%GD_25",
           "QLD": "",
-          "SA": "Total_Plus_14%GD"
+          "SA": "Total_Plus_15%GD"
         },
         "PS": {
-          "VIC": "Total_Plus_28%GD_50",
-          "NSW": "Total_Plus_22%GD",
+          "VIC": "Total_Plus_34%GD",
+          "NSW": "Total_Plus_25%GD",
           "ACT": "Total_Plus_17%GD_25",
           "QLD": "",
-          "SA": "Total_Plus_14%GD"
+          "SA": "Total_Plus_15%GD"
         }
       }
     }

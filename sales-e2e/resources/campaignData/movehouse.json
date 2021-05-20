@@ -49,7 +49,7 @@
             "heading": "20% discount off total electricity bill"
           },
           "SA": {
-            "heading": "13% discount off total electricity bill"
+            "heading": "14% discount off total electricity bill"
           },
           "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
         },
@@ -73,14 +73,14 @@
           "NSW": "24% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges.",
           "ACT": "12% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges.",
           "QLD": "20% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges.",
-          "SA" : "13% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges."
+          "SA" : "14% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges."
         },
         "noStandardConnectionFee": "No standard connection fees. Move with us and we'll waive connection and special meter reads during business hours."
       }
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_13%GD_50",
+        "VIC": "Total_13%GD",
         "NSW": {
           "Ausgrid": "Total_24%GD",
           "Essential": "Total_24%GD",
@@ -89,11 +89,11 @@
         },
         "ACT": "Total_12%GD_25",
         "QLD": "Total_20%GD_50",
-        "SA": "Total_13%GD"
+        "SA": "Total_14%GD"
       },
       "existingCustomer": {
         "ENE":{
-          "VIC": "Total_13%GD_50",
+          "VIC": "Total_13%GD",
           "NSW": {
             "Ausgrid": "Total_24%GD",
             "Essential": "Total_24%GD",
@@ -102,7 +102,7 @@
           },
           "ACT": "Total_12%GD_25",
           "QLD": "Total_20%GD_50",
-          "SA": "Total_13%GD"
+          "SA": "Total_14%GD"
         },
         "PS": {
           "VIC": "Total_13%GD",
@@ -114,7 +114,7 @@
           },
           "ACT": "Total_12%GD",
           "QLD": "Total_20%GD",
-          "SA": "Total_13%GD"
+          "SA": "Total_14%GD"
         }
       }
     }
@@ -155,16 +155,16 @@
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
-            "heading": "27% discount off total gas bill"
+            "heading": "33% discount off total gas bill"
           },
           "NSW": {
-            "heading": "21% discount off total gas bill"
+            "heading": "24% discount off total gas bill"
           },
           "ACT": {
             "heading": "16% discount off total gas bill"
           },
           "SA": {
-            "heading": "13% discount off total gas bill"
+            "heading": "14% discount off total gas bill"
           },
           "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
         }
@@ -179,32 +179,32 @@
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": {
-          "VIC": "27% discount off total gas bill. Guaranteed discount that applies to both gas usage rates and daily supply charges.",
-          "NSW": "21% discount off total gas bill. Guaranteed discount that applies to both gas usage rates and daily supply charges.",
+          "VIC": "33% discount off total gas bill. Guaranteed discount that applies to both gas usage rates and daily supply charges.",
+          "NSW": "24% discount off total gas bill. Guaranteed discount that applies to both gas usage rates and daily supply charges.",
           "ACT": "16% discount off total gas bill. Guaranteed discount that applies to both gas usage rates and daily supply charges.",
-          "SA" : "13% discount off total gas bill. Guaranteed discount that applies to both gas usage rates and daily supply charges."
+          "SA" : "14% discount off total gas bill. Guaranteed discount that applies to both gas usage rates and daily supply charges."
         }
       }
     },
   "sourceCode": {
     "newCustomer": {
-      "VIC": "Total_27%GD_50",
-      "NSW": "Total_21%GD",
+      "VIC": "Total_33%GD",
+      "NSW": "Total_24%GD",
       "ACT": "Total_16%GD_25",
-      "SA": "Total_13%GD"
+      "SA": "Total_14%GD"
     },
     "existingCustomer": {
       "ENE":{
-        "VIC": "Total_27%GD_50",
-        "NSW": "Total_21%GD",
+        "VIC": "Total_33%GD_50",
+        "NSW": "Total_24%GD",
         "ACT": "Total_16%GD_25",
-        "SA": "Total_13%GD"
+        "SA": "Total_14%GD"
       },
       "PS": {
-        "VIC": "Total_27%GD",
-        "NSW": "Total_21%GD",
+        "VIC": "Total_33%GD",
+        "NSW": "Total_24%GD",
         "ACT": "Total_16%GD",
-        "SA": "Total_13%GD"
+        "SA": "Total_14%GD"
       }
     }
     }

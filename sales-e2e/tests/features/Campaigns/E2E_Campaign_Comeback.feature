@@ -74,7 +74,7 @@ Feature:E2E scenario for comeback campaign
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-GN |5240524910|                             |                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName              |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
-      |New           |BOTH    |25         |22         |comeback    |E2E_Campaign_Comeback_NSW_new_moving    |NSW  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
+      |New           |BOTH    |25         |25         |comeback    |E2E_Campaign_Comeback_NSW_new_moving    |NSW  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
 
   Scenario Outline: Validate complete data for comeback campaign for ACT - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -224,7 +224,7 @@ Feature:E2E scenario for comeback campaign
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-GV |5310425534 |N                             |N                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign            |folderName              |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
-      |New           |BOTH    |14         |28         |comeback    |E2E_Campaign_Comeback_VIC_new_moving    |VIC  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
+      |New           |BOTH    |14         |34         |comeback    |E2E_Campaign_Comeback_VIC_new_moving    |VIC  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
 
   Scenario Outline: Validate complete data for comeback campaign for SA - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -250,7 +250,7 @@ Feature:E2E scenario for comeback campaign
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                    |movingType |propertyType |
-      |RES          |3 Newhaven Avenue, GLENELG NORTH SA 5045 |Moving     |Renter       |
+      |RES          |3 River Dr ATHELSTONE SA 5076 |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |
@@ -299,7 +299,7 @@ Feature:E2E scenario for comeback campaign
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-GS |5510183967 |                             |                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign            |folderName              |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |quoteStatus |
-      |New           |BOTH    |14         |14         |comeback    |E2E_Campaign_Comeback_SA_new_moving    |SA  |Quote Tool    |Move Home         |No   |No  |RES          |New            |VERBALLYACCEPTED|
+      |New           |BOTH    |15         |15         |comeback    |E2E_Campaign_Comeback_SA_new_moving    |SA  |Quote Tool    |Move Home         |No   |No  |RES          |New            |VERBALLYACCEPTED|
 
   Scenario Outline: Validate complete data for comeback campaign for QLD - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -433,7 +433,7 @@ Feature:E2E scenario for comeback campaign
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS      |SWSR1-GV |5330790589 |N                             |N                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName                   |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
-      |Existing      |BOTH    |14         |28         |comeback    |E2E_Campaign_Comeback_VIC_exis_nonmov    |VIC  |Quote Tool    |Plan Switch |No   |No  |RES          |Existing          |
+      |Existing      |BOTH    |14         |34         |comeback    |E2E_Campaign_Comeback_VIC_exis_nonmov    |VIC  |Quote Tool    |Plan Switch |No   |No  |RES          |Existing          |
   @campaign21.4.3
   Scenario Outline: Validate complete data for comeback campaign for NSW - existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -499,7 +499,7 @@ Feature:E2E scenario for comeback campaign
       |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS      |SWSR1-EN |4407376910 |                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName                   |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
-      |Existing      |BOTH    |25         |22         |comeback    |E2E_Campaign_Comeback_NSW_exis_nonmov    |NSW  |Quote Tool    |Plan Switch |No   |No  |RES          |Existing          |
+      |Existing      |BOTH    |25         |25         |comeback    |E2E_Campaign_Comeback_NSW_exis_nonmov    |NSW  |Quote Tool    |Plan Switch |No   |No  |RES          |Existing          |
 
   Scenario Outline: Validate complete data for comeback campaign for SA - existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -572,7 +572,7 @@ Feature:E2E scenario for comeback campaign
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS      |SWSR1-GS |5510120493 |                             |                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName                   |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
-      |Existing      |BOTH    |14         |14         |comeback    |E2E_Campaign_Comeback_SA_exis_nonmov    |SA  |Quote Tool    |Plan Switch |No   |No  |RES          |Existing          |
+      |Existing      |BOTH    |15         |15         |comeback    |E2E_Campaign_Comeback_SA_exis_nonmov    |SA  |Quote Tool    |Plan Switch |No   |No  |RES          |Existing          |
 
   Scenario Outline: Validate complete data for comeback campaign for ACT - existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
