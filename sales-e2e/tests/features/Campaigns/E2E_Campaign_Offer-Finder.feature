@@ -166,7 +166,7 @@ Feature:E2E scenario for offer-finder campaign
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                        |movingType |propertyType |
-      |RES          |3 River Drive, ATHELSTONE SA 50765 |Moving     |Renter       |
+      |RES          |3 River Drive, ATHELSTONE SA 5076 |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |

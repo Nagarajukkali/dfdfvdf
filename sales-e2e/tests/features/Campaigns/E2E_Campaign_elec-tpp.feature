@@ -268,7 +268,7 @@ Feature:E2E scenario for elec-tpp campaign
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode |NMI |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-ES |2001649095   |                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-ES |2001245279   |                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|campaign            |folderName              |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
       |New           |ELE    |15         |elec-tpp    |E2E_Campaign_elec-tpp_SA_new_moving    |SA  |Quote Tool    |Move Home         |No   |No  |RES          |New            |

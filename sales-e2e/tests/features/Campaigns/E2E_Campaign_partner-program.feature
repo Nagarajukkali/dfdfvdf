@@ -12,7 +12,7 @@
 
 
 Feature:E2E scenario for partner-program
-  @campaign21.4.3
+  @campaign21.4.3  @demo 
   Scenario Outline: Validate complete data for partner-program campaign for NSW for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "bizoffer5" and "2144" and clicks on show me plan link
