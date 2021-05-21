@@ -1,4 +1,4 @@
-@campaign @test
+@campaign 
 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
@@ -34,7 +34,6 @@ Feature:E2E scenario for elec-tpp campaign
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
       |GAS      |N                 |Y                       |Y                    |Y                                    |<state>|
-    And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                      |movingType |propertyType   |
@@ -211,7 +210,7 @@ Feature:E2E scenario for elec-tpp campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|campaign            |folderName              |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
       |New           |ELE    |14         |elec-tpp    |E2E_Campaign_elec-tpp_VIC_new_moving    |VIC  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
-
+@test
   Scenario Outline: Validate complete data for elec-tpp campaign for SA - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" and clicks on show me plan link
@@ -230,7 +229,7 @@ Feature:E2E scenario for elec-tpp campaign
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                    |movingType |propertyType |
-      |RES          |3 River Dr ATHELSTONE SA 5076 |Moving     |Renter       |
+      |RES          |3 River Drive, ATHELSTONE SA 5076 |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |

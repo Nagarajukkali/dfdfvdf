@@ -274,7 +274,7 @@ Feature:E2E scenario for offer campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign   |folderName                              |state |sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting  |
       |New           |BOTH    |12         |16         |offer|E2E_Campaign_offer_ACT_new_moving |ACT   |Quote Tool    |Move Home  |No   |No  |RES          |New            |
-@test
+
   Scenario Outline: Validate complete data for offer campaign for VIC - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
@@ -341,7 +341,7 @@ Feature:E2E scenario for offer campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign   |folderName                              |state |sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting  |
       |New           |BOTH    |13         |33         |offer|E2E_Campaign_offer_VIC_new_moving |VIC   |Quote Tool    |Move Home  |No   |No  |RES          |New            |
-  @test
+
   Scenario Outline: Validate complete data for offer campaign for NSW - new non moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2516" and clicks on show me plan link
@@ -412,7 +412,7 @@ Feature:E2E scenario for offer campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign  |folderName                            |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
       |New           |BOTH    |24         |24         |offer     |E2E_Campaign_offer_NSW_new_nonmoving  |NSW  |Quote Tool    |COR      |No   |No  |RES          |New            |
-@test
+
   Scenario Outline: Validate complete data for offer campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
@@ -543,7 +543,7 @@ Feature:E2E scenario for offer campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
       |Existing      |BOTH    |24         |24         |offer |E2E_Campaign_offer_NSW_existing_non-moving |NSW  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
-@test
+
   Scenario Outline: Validate complete data for offer campaign for SA existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" for postcode and proceed to view the plans

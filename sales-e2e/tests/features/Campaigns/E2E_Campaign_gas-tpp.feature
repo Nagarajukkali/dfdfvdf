@@ -34,7 +34,6 @@ Feature:E2E scenario for gas-tpp campaign
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
       |GAS      |N                 |Y                       |Y                    |Y                                    |<state>|
-    And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                      |movingType |propertyType |
@@ -83,7 +82,7 @@ Feature:E2E scenario for gas-tpp campaign
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-GN |5240080109|                             |                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-GN |5240524910|                             |                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName              |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
       |New           |BOTH   |25      |25         |gas-tpp    |E2E_Campaign_gas-tpp_NSW_new_moving    |NSW  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
@@ -171,7 +170,6 @@ Feature:E2E scenario for gas-tpp campaign
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
       |GAS      |N                 |Y                       |Y                    |Y                                    |<state>|
-    And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                    |movingType |propertyType |
@@ -188,6 +186,7 @@ Feature:E2E scenario for gas-tpp campaign
     And user opts for AAH and DD
       |optAAHOption|optDDOption|directDebitType|
       |<AAH>       |<DD>       |Bank           |
+    And user selects answer for property renovation question for '<state>'
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
       |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
@@ -224,7 +223,7 @@ Feature:E2E scenario for gas-tpp campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign            |folderName              |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
       |New           |BOTH    |14      |28         |gas-tpp    |E2E_Campaign_gas-tpp_VIC_new_moving    |VIC  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
-@test
+
   Scenario Outline: Validate complete data for gas-tpp campaign for SA - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" and clicks on show me plan link

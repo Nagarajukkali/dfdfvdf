@@ -88,7 +88,7 @@
           "default": "Total_24%GD"
         },
         "ACT": "Total_12%GD_25",
-        "QLD": "Total_20%GD_50",
+        "QLD": "Total_20%GD",
         "SA": "Total_14%GD"
       },
       "existingCustomer": {
@@ -101,7 +101,7 @@
             "default": "Total_24%GD"
           },
           "ACT": "Total_12%GD_25",
-          "QLD": "Total_20%GD_50",
+          "QLD": "Total_20%GD",
           "SA": "Total_14%GD"
         },
         "PS": {
@@ -195,7 +195,7 @@
     },
     "existingCustomer": {
       "ENE":{
-        "VIC": "Total_33%GD_50",
+        "VIC": "Total_33%GD",
         "NSW": "Total_24%GD",
         "ACT": "Total_16%GD_25",
         "SA": "Total_14%GD"

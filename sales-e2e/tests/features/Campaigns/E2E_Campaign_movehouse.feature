@@ -12,7 +12,7 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for movehouse campaign
-  @campaign21.4.3
+  @campaign21.4.3 @demo
   Scenario Outline: Validate complete data for movehouse campaign for NSW - new non moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2516" and clicks on show me plan link
@@ -37,7 +37,7 @@ Feature:E2E scenario for movehouse campaign
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType| connectionAddress                          | movingType|propertyType|
-      |RES         | 74 Yillowra Street, AUBURN NSW 2144|Non-Moving |Renter               |
+      |RES         | 5 Wilkies Street, BULLI NSW 2516|Non-Moving |Renter               |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |
       |RES         |RES        |New           | test     |test     |Driver License|
@@ -78,11 +78,11 @@ Feature:E2E scenario for movehouse campaign
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-EN |4102681649|                             |                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS      |TOPH-EN |4311150544|                             |                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-GN |5240524910|                             |                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS      |TOPH-GN |5240924834|                             |                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign      |folderName                                |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
       |New           |BOTH    |24         |24         |movehouse     |E2E_Campaign_movehouse_NSW_new_nonmoving  |NSW  |Quote Tool    |COR      |No   |No  |RES          |New            |
@@ -166,7 +166,7 @@ Feature:E2E scenario for movehouse campaign
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                        |movingType |propertyType |
-      |RES          |3 Newhaven Avenue, GLENELG NORTH SA 5045 |Moving     |Renter       |
+      |RES          |3 River Drive, ATHELSTONE SA 5076 |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
       |RES          |RES        |New            |test       |test     |Driver License |             |
@@ -199,11 +199,11 @@ Feature:E2E scenario for movehouse campaign
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-ES |2001649095|                              |                             |N                       |                  |EMAIL        |<customerStatus>  |<campaign>|
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-ES |2001245279|                              |                             |N                       |                  |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GS |5510183967|                              |                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |TOPH-GS |5510149276|                              |                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign   |folderName                                 |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting  |
       |New           |BOTH    |14         |14         |movehouse|E2E_Campaign_movehouse_SA_new_moving |SA   |Quote Tool    |Move Home  |No   |No  |RES          |New            |
