@@ -1,4 +1,4 @@
-@campaign
+@campaign @campaign21.5.4_1
 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
@@ -12,7 +12,7 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for gas-tpp campaign
-  @campaign21.4.3 @test
+  @campaign21.4.3 
   Scenario Outline: Validate complete data for gas-tpp campaign for NSW - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" and clicks on show me plan link
@@ -148,7 +148,7 @@ Feature:E2E scenario for gas-tpp campaign
     Examples:
       |customerStatus|fuelType|gasDiscount|campaign            |folderName              |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
       |New           |GAS    |17         |gas-tpp    |E2E_Campaign_gas-tpp_ACT_new_moving    |ACT  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
-@test
+
   Scenario Outline: Validate complete data for gas-tpp campaign for VIC - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link

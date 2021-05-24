@@ -1,4 +1,4 @@
-@campaign
+@campaign @campaign21.5.4_2 
 #For any campaign changes need to verify/update below steps:
 # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
 # 2. Provide Y/N for features as per the change in this step "And user validates the data on plans page for "<campaign>""
@@ -12,7 +12,7 @@
 
 
 Feature:E2E scenario for partner-program
-  @campaign21.4.3  @demo 
+  @campaign21.4.3  
   Scenario Outline: Validate complete data for partner-program campaign for NSW for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "bizoffer5" and "2144" and clicks on show me plan link

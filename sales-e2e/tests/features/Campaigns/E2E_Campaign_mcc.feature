@@ -1,4 +1,4 @@
-@campaign
+@campaign @campaign21.5.4_1
 #For any campaign changes need to verify/update below steps:
 # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
 # 2. Provide Y/N for features as per the change in this step "And user validates the data on plans page for "<campaign>""
@@ -11,7 +11,7 @@
 # 9. If journey change to Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for mcc
-  @campaign21.4.3  @demo 
+  @campaign21.4.3  
   Scenario Outline: Validate complete data for mcc campaign for NSW for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMCC01" and "2144" and clicks on show me plan link

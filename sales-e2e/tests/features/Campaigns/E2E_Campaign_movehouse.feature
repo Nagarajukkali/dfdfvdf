@@ -1,4 +1,4 @@
-@campaign
+@campaign @campaign21.5.4_1
 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
@@ -12,7 +12,7 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for movehouse campaign
-  @campaign21.4.3 @demo
+  @campaign21.4.3 
   Scenario Outline: Validate complete data for movehouse campaign for NSW - new non moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2516" and clicks on show me plan link

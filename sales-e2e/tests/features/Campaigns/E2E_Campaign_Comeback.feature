@@ -1,4 +1,4 @@
-@campaign
+@campaign @campaign21.5.4_1
 
 Feature:E2E scenario for comeback campaign
   @campaign21.4.3
