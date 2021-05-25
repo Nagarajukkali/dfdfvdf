@@ -168,9 +168,9 @@ export class plansMethod {
         }
       }
       if (dataTable[0].Feature_carbonNeutral === "Y") {
-        if (t.testRun.test.name.includes('familyandfriends')) {
-          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureFFCNTitle, data.electricity.feature.preSelect.carbonNeutral.heading);
-          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNFFDescription, data.electricity.feature.preSelect.carbonNeutral.description);
+        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('partner-program')) {
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNEGTitle, data.electricity.feature.preSelect.carbonNeutral.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNEGDescription, data.electricity.feature.preSelect.carbonNeutral.description);
         } else {
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNTitle, data.electricity.feature.preSelect.carbonNeutral.heading);
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNDescription, data.electricity.feature.preSelect.carbonNeutral.description);
@@ -278,9 +278,9 @@ export class plansMethod {
          }
        } */
       if (dataTable[0].Feature_carbonNeutral === "Y") {
-        if (t.testRun.test.name.includes('familyandfriends')) {
-          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureFFCNTitle, data.gas.feature.preSelect.carbonNeutral.heading);
-          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNFFDescription, data.gas.feature.preSelect.carbonNeutral.description);
+        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('partner-program')) {
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNEGTitle, data.gas.feature.preSelect.carbonNeutral.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNEGDescription, data.gas.feature.preSelect.carbonNeutral.description);
         } else {
           await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNTitle, data.gas.feature.preSelect.carbonNeutral.heading);
           await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNDescription, data.gas.feature.preSelect.carbonNeutral.description);

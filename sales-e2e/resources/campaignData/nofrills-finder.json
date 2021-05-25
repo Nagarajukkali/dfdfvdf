@@ -59,7 +59,7 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "NOFRILLS_50",
+        "VIC": "NOFRILLS",
         "NSW": {
           "Ausgrid": "NOFRILLS_50",
           "Essential": "NOFRILLS_50",
@@ -67,12 +67,12 @@
           "default": "NOFRILLS_50"
         },
         "ACT": "NOFRILLS_25",
-        "QLD": "NOFRILLS_50",
+        "QLD": "NOFRILLS",
         "SA": "NOFRILLS"
       },
       "existingCustomer": {
         "ENE":{
-          "VIC": "NOFRILLS_50",
+          "VIC": "NOFRILLS",
           "NSW": {
             "Ausgrid": "NOFRILLS_50",
             "Essential": "NOFRILLS_50",
@@ -80,7 +80,7 @@
             "default": "NOFRILLS_50"
           },
           "ACT": "NOFRILLS_25",
-          "QLD": "NOFRILLS_50",
+          "QLD": "NOFRILLS",
           "SA": "NOFRILLS"
         },
         "PS": {
@@ -150,14 +150,14 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "NOFRILLS_50",
+        "VIC": "NOFRILLS",
         "NSW": "NOFRILLS_50",
         "ACT": "NOFRILLS_25",
         "SA": "NOFRILLS"
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "NOFRILLS_50",
+          "VIC": "NOFRILLS",
           "NSW": "NOFRILLS_50",
           "ACT": "NOFRILLS_25",
           "SA": "NOFRILLLS"
