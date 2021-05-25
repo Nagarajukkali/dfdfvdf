@@ -206,3 +206,7 @@ Then(/^user validates solar indicator on checkout details page$/, async function
 Then(/^user validates solar disclaimer for QLD COR customer on PFIT NTC$/, async function (t) {
   await checkoutDetailsMethod.validateSolarDisclaimerForQLDCORCustomerOnPFITNTC(t);
 });
+
+Then(/^user validates the analytics data for user age for the customer$/, async function (t, []) {
+  await checkoutDetailsMethod.validateAge(t);
+});
