@@ -404,11 +404,11 @@ Feature:E2E scenario for offer campaign
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-EN |4311150544|                             |                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS      |TOPH-EN |4311150544|                             |                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |TOPH-GN |5240924834|                             |                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS      |TOPH-GN |5240924834|                             |                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign  |folderName                            |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
       |New           |BOTH    |24         |24         |offer     |E2E_Campaign_offer_NSW_new_nonmoving  |NSW  |Quote Tool    |COR      |No   |No  |RES          |New            |

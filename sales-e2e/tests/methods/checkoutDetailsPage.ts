@@ -792,6 +792,10 @@ export class checkoutDetailsMethod {
     let expectedDisclaimerText = "We are committed to providing you with the very best energy solution and service, and may contact you about this offer to see how we can assist. If you do not wish to be contacted click here.";
     let actualDisclaimerText = await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.contactPreference.disclaimer);
     await testFunction.assertTextValue(t, actualDisclaimerText, expectedDisclaimerText);
+    if(validateAnalyticsEvent==='Y'){
+     const updatedContactPreference = await t.eval(() => window.ead.user.contactPrefence);
+     await t.expect(updatedContactPreference).eql("optIn");
+    }
 
     await testFunction.click(t, eaCheckoutDetailsPage.elements.contactPreference.linkClickHere);
 
@@ -806,7 +810,13 @@ export class checkoutDetailsMethod {
     await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.contactPreference.btnSubmit);
     await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.contactPreference.btnClose);
 
+    await testFunction.click(t, eaCheckoutDetailsPage.elements.chkboxContactPreference);
     await testFunction.click(t, eaCheckoutDetailsPage.elements.contactPreference.btnSubmit);
+    if(validateAnalyticsEvent==='Y'){
+      const updatedContactPreference = await t.eval(() => window.ead.user.contactPrefence);
+      await t.expect(updatedContactPreference).eql("optOut");
+    }
+
     console.log("Validation completed for Contact Preferences section.");
   }
 
