@@ -108,7 +108,11 @@ export class qualifierMethod {
     await testFunction.waitForLoadingIconToClose();
     await t.wait(3000);
     if(validateAnalyticsEvent==='Y') {
+      await testFunction.isElementDisplayed(t,eaQualifierPage.elements.moving);
       await plansMethod.validateComponentLibraryEvent(t, "qualifier_page", "verify_account_submit_button");
+      const personID = await t.eval(() => window.ead.user.crn);
+      await t.expect(personID).notEql("");
+      console.log("Existing customer person ID details are verified in analytics logs");
     }
     console.log("Existing customer ID details are verified");
   }
@@ -184,20 +188,47 @@ export class qualifierMethod {
     await testFunction.click(t, eaQualifierPage.elements.addressContinue);
   }
 
-  public static async selectDateFromCalendar(t) {
+  public static async selectDateFromCalendar(t,) {
     const dateValue = await testFunction.selectDateFromCalendar(t, eaQualifierPage.elements.calendarTable);
-    console.log(dateValue);
   }
+
+  public static async selectDateFromCalendarAnalyticsEvent(t,movingType) {
+    const dateValue = await testFunction.selectDateFromCalendar(t, eaQualifierPage.elements.calendarTable);
+    if(validateAnalyticsEvent==='Y'){
+      const movingstatus = await t.eval(() => window.ead.productInfo.movingHouse);
+      const movingDate = await t.eval(() => window.ead.productInfo.moveInDate);
+      if(movingType===Moving.MOVING){
+        console
+        await t.expect(movingstatus).eql("yes");
+        await t.expect(movingDate).contains(dateValue);
+      }else if(movingType===Moving.NON_MOVING){
+        await t.expect(movingstatus).eql("no");
+        await t.expect(movingDate).contains("");
+      }
+      console.log("Moving status and Moving date analytics validated");
+    }
+
+  }
+
   public static async selectPropertyType(t,propertyType){
     if(propertyType ===Property.OWNER){
       await testFunction.click(t,eaQualifierPage.elements.owner);
+      if(validateAnalyticsEvent==='Y') {
+        const customerPropertyRelationship = await t.eval(() => window.ead.user.tenancyType);
+        await t.expect(customerPropertyRelationship).eql("owner");
+      }
     }
     else if(propertyType ===Property.RENTER){
       await testFunction.click(t,eaQualifierPage.elements.renter);
+      if(validateAnalyticsEvent==='Y') {
+        const customerPropertyRelationship = await t.eval(() => window.ead.user.tenancyType);
+        await t.expect(customerPropertyRelationship).eql("renter");
+      }
     }
     else{
       console.error('Property type is not selected');
     }
+    console.log('Property type and Property Analytics is validated successfully');
   }
 
   public static async validateErrorMessageForBlockerAccounts(t) {

@@ -1,9 +1,9 @@
-import {getTestCafeRC} from '../step_definitions/hooks';
+import {getDateTime, getTestCafeRC} from '../step_definitions/hooks';
 import {
   BusinessType,
   cdeResponses,
   CustomerStatus,
-  directDebitType,
+  directDebitType, Moving,
   PlanType,
   scrollTo,
   setAttribute,
@@ -12,22 +12,30 @@ import {
 import {AustralianState, CustomerType} from '@ea/ea-commons-models';
 import {myAccountMethod} from '../methods/myAccountPage';
 import {ClientFunction} from 'testcafe';
+import {assertNotNull} from '@angular/compiler/src/output/output_ast';
 
 const eaCheckoutDetailsPage = require('../pages/checkOutDetails.page');
 const eaCheckoutReviewPage = require('../pages/checkoutReview.page');
 const Hashes = require('jshashes');
-
+const { config }=require('../../resources/resource');
+const validateAnalyticsEvent=config.validateAnalytics;
 export class checkoutDetailsMethod {
 
   public static map = new Map();
 
   public static async provideDetailsInAboutMeSection(t, journey, firstName, lastName, customerStatus) {
+    let titleValue,titleValue1;
     if ((await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.titleDropdown)).includes('Please select')) {
       await t.wait(1000);
       await testFunction.click(t, eaCheckoutDetailsPage.elements.titleDropdown);
       await t.wait(2000);
       let indexForTitle = testFunction.getRandomInt(0, 4);
       await testFunction.click(t, eaCheckoutDetailsPage.elements.titleTag.nth(indexForTitle));
+    }
+    if(validateAnalyticsEvent==='Y') {
+      titleValue=await testFunction.getElementText(t,eaCheckoutDetailsPage.elements.titleDropdown);
+      const title = await t.eval(() => window.ead.user.userTitle);
+      await t.expect(title).eql(titleValue.toLowerCase());
     }
     await this.enterFirstName(t, firstName);
     await this.enterLastName(t, lastName);
@@ -53,6 +61,19 @@ export class checkoutDetailsMethod {
     await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.dob, '01011980');
     console.log("DOB entered");
   }
+
+  public static async validateAge(t){
+    let currentDate = new Date().toISOString().slice(0, 10)
+    let dobValue=new Date(await ClientFunction(() => (window.document.querySelector("#dob") as HTMLInputElement).value)());
+    if(validateAnalyticsEvent==='Y') {
+      const dateOfBirth = await t.eval(() => window.ead.user.userAge);
+      // @ts-ignore
+      let timeDiff = Math.abs(new Date(currentDate) - dobValue);
+      let age = Math.floor((timeDiff / (1000 * 3600 * 24))/365.25);
+      await t.expect(dateOfBirth).eql(age);
+      }
+  }
+
 
   public static getScenarioId(t) {
     let MD5 = new Hashes.MD5;
@@ -375,6 +396,20 @@ export class checkoutDetailsMethod {
 
   public static async selectPlan(t, fuelType, planName) {
     await testFunction.isElectricity(fuelType) ? await this.selectElePlan(t, planName) : await this.selectGasPlan(t, planName);
+  }
+
+  public static async validateAnalyticsForMovingStateAndPersonState(t,movingType,personType) {
+
+    const personStatus = await t.eval(() => window.ead.user.tenancyType);
+   // const movingDate = await t.eval(() => window.ead.productInfo.moveInDate);
+    //const movingDate = await t.eval(() => window.ead.productInfo.moveInDate);
+    //const movingDate = await t.eval(() => window.ead.productInfo.moveInDate);
+    if(personType==='New'){
+
+    }else if(personType==='Existing'){
+
+    }
+    //await t.expect(updatedPostcodeData).eql(postcode);
   }
 
   public static async selectElePlan(t, elePlan: String) {

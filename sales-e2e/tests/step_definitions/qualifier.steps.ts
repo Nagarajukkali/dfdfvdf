@@ -27,6 +27,11 @@ When(/^user provides all details on qualifier page$/, async function(t,[],dataTa
   await qualifierMethod.selectPropertyType(t, data[0].propertyType);
 });
 
+When(/^user selects moving date in the qualifier for '(.*)' customer$/, async function(t,[movingType]){
+  await qualifierMethod.selectDateFromCalendarAnalyticsEvent(t,movingType);
+});
+
+
 When(/^user provides all other details on qualifier page for Existing customer$/, async function (t,[],dataTable) {
   let data = dataTable.hashes();
   let movingType = data[0].movingType;
@@ -101,7 +106,7 @@ When(/^user selects '(.*)' for moving question on qualifier$/, async function (t
 
 });
 When(/^user enters the address '(.*)' on qualifier$/, async function (t,[address]) {
-  await qualifierMethod.enterAddress(t,address);
+  await qualifierMethod.provideAddress(t,address);
 });
 Then(/^relevant popup displays for provided '(.*)'$/, async function (t,[addressType]) {
   await  qualifierMethod.verifyLookupOnQualifier(t,addressType);
@@ -161,4 +166,8 @@ Then(/^user clicks on continue button after providing address$/, async function 
 });
 When(/^user clicks on back button$/, async function (t) {
   await testFunction.click(t, eaQualifierPage.elements.btnBackOnQualifier);
+});
+
+When(/^user selects property type as '(.*)'$/, async function (t, [propertyType]) {
+  await qualifierMethod.selectPropertyType(t, propertyType);
 });

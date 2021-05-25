@@ -1,6 +1,7 @@
 import {Given, Then} from 'cucumber';
 import {spyOff, spyOn} from '../../global_methods/analyticsFunction';
 import {plansMethod} from '../methods/plansPage';
+import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 
 Given(/^user initiates the call to capture analytics events$/, async function (t) {
   await spyOn();
@@ -27,5 +28,9 @@ Then(/^user validates the '(.*)' '(.*)' event$/, async function (t,[pageComponen
 Then(/^user validates the '(.*)' '(.*)' link event$/, async function (t,[pageComponent,event]) {
   await t.closeWindow();
   await plansMethod.validateComponentLibraryEvent(t, pageComponent, event);
+});
+
+Then(/^user validates the analytics event for the '(.*)' state and '(.*)' person state on the data layer$/, async function (t,[movingType,personType]) {
+  await checkoutDetailsMethod.validateAnalyticsForMovingStateAndPersonState(t,movingType,personType);
 });
 
