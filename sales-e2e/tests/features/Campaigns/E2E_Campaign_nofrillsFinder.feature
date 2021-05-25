@@ -35,7 +35,7 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType| connectionAddress                          | movingType|propertyType|
-      |RES         | 74 Yillowra Street, AUBURN NSW 2144|Non-Moving |Renter               |
+      |RES         | 5 Wilkies Street, BULLI NSW 2516|Non-Moving |Renter               |
     And user provides all details on checkout details page
       |customerType|journey    |customerStatus| firstName| lastName|idType        |
       |RES         |RES        |New           | test     |test     |Driver License|
@@ -76,11 +76,11 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RCPP-EN |4102681649|                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |PS      |RCPP-EN |4311150544|                             |                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |COR      |RCPP-GN |5240524910|                             |                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|RESIDENTIAL |PS      |RCPP-GN |5240924834|                             |                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|campaign     |folderName                                      |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
       |New           |BOTH    |nofrills-finder     |E2E_Campaign_nofrills-finder_NSW_New_NonMoving  |NSW  |Quote Tool    |COR|No   |No  |RES          |New            |

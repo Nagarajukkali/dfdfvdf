@@ -65,7 +65,7 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
     let isCampaignTest = (t.testRun.test.name.includes('campaign'));
     let isOfferType = (actualOfferType === 'ENE' || actualOfferType === 'COR');
     let isStateEligibleFor$25Credit = (actualState === 'ACT');
-    let isStateEligibleFor$50Credit = (actualState === 'VIC' || actualState === 'QLD');
+    //let isStateEligibleFor$50Credit = (actualState === 'VIC' || actualState === 'QLD');
     let isStateEligibleForNoCredit = (actualState === 'SA');
     let isBusinessPlanCode = (expectedPlanCode.includes('BSOT') || expectedPlanCode.includes('TOPB') || expectedPlanCode.includes('SWSR'));
     let isResiPlanCode = (expectedPlanCode.includes('RSOT'));
@@ -110,9 +110,11 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
         await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualEleSourceCode, data[0].campaign, expectedOfferType, expectedFuelType);
       } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$25Credit) {
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_25');
-      } else if (isOfferType && !isBusinessPlanCode && !isResiPlanCode && isStateEligibleFor$50Credit) {
-        await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_50');
-      } else {
+      }
+      //   else if (isOfferType && !isBusinessPlanCode && !isResiPlanCode && isStateEligibleFor$50Credit) {
+      //   await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_50');
+      // }
+        else {
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode);
 
       }
@@ -151,9 +153,11 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
         await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualGasSourceCode, data[0].campaign, expectedGasSourceCode, expectedFuelType);
       } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$25Credit) {
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_25');
-      } else if (isOfferType && !isBusinessPlanCode && !isResiPlanCode && isStateEligibleFor$50Credit) {
-        await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_50');
-      } else {
+      }
+      //   else if (isOfferType && !isBusinessPlanCode && !isResiPlanCode && isStateEligibleFor$50Credit) {
+      //   await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_50');
+      // }
+        else {
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode);
       }
     }

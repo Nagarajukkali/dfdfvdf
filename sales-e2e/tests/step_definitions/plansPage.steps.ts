@@ -581,3 +581,20 @@ When(/^user selects "([^"]*)" state from the state dropdown on plans page$/, asy
 When(/^user selects '(.*)' fact sheet$/, async function (t, [planName]) {
   await plansMethod.selectBPIDPlan(t, planName);
 });
+
+When(/^user selects the '(.*)' usage period$/, async function (t, [period]) {
+  await plansMethod.enterCostEstimatePeriod(t, period);
+});
+
+When( /^user selects '(.*)' location type$/, async function (t, [addressOrPostcode]) {
+  await plansMethod.selectAddressOrPostcode(t, addressOrPostcode)
+})
+
+When (/^user selects '(.*)' '(.*)' usage per day$/, async function (t, [usage, fueltype]) {
+  await plansMethod.selectUsagePerDay(t, usage,fueltype );
+});
+
+When (/^user selects '(.*)' green energy$/, async function (t, [greenEnergyPercentage]) {
+  await plansMethod.selectGreenEnergy(t, greenEnergyPercentage );
+});
+

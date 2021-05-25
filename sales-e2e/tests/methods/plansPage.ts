@@ -1208,7 +1208,64 @@ export class plansMethod {
     await t.expect(componentStatus).eql(component_JSONObj[pageComponent][eventCall]);
     console.log("Analytics Component validated for " +pageComponent+ " " +eventCall+ " component");
   }
-}
+
+  public static async enterCostEstimatePeriod( t, period: any) {
+    await testFunction.click(t, EaHomePage.elements.refinePeriod);
+    await testFunction.click(t, EaHomePage.elements.refinePeriodDropdown.withText(period));
+  }
+  public static async selectUsagePerDay(t, usage: any, fueltype: any) {
+    if (fueltype === 'Electricity'){
+      await testFunction.click(t, EaHomePage.elements.refineEleUsage);
+      await testFunction.click(t, EaHomePage.elements.refineEleUsageDropdown.withText(usage));
+    } else {
+      await testFunction.click(t, EaHomePage.elements.refineGasUsage);
+      await testFunction.click(t, EaHomePage.elements.refineGasUsageDropdown.withText(usage));
+    }
+  }
+
+  public static async selectGreenEnergy(t, greenEnergyPercentage: string){
+    await testFunction.click(t, EaHomePage.elements.refineGreenEnergy);
+    await testFunction.click(t, EaHomePage.elements.refineGreenEnergyDropDown.withText(greenEnergyPercentage));
+  }
+
+  public  static  async  selectAddressOrPostcode(t, addressOrPostcode: string){
+    if (addressOrPostcode === 'Address') {
+      await testFunction.click(t, EaHomePage.elements.rbAddressPlansPage);
+    }
+    else
+      await testFunction.click(t, EaHomePage.elements.rbPostcodePlansPage);
+  }
+
+  public static async validateAnalyticsLocationType(t: TestController, locationType: string){
+    const updatedlocationType = await t.eval(() => window.ead.productInfo.locationType);
+    await t.expect(updatedlocationType).eql(locationType);
+  }
+
+  public static async validateAnalyticsUsagePeriod(t: TestController, usagePeriod: string){
+    const updatedUsagePeriodData = await t.eval(() => window.ead.productInfo.usagePeriod);
+    await t.expect(updatedUsagePeriodData).eql(usagePeriod);
+  }
+
+  public static async validateAnalyticsGreenEnergyPercentage(t: TestController, greenEnergyPercentage: string){
+    const updatedGreenEnergyData = await t.eval(() => window.ead.productInfo.electricity.estGreenEnergyPercentage);
+    await t.expect(updatedGreenEnergyData).eql(greenEnergyPercentage);
+  }
+
+  public static async validateAnalyticsForUsagePerDay(t: TestController,  estUsage: string, usageValue, fuelType) {
+    if (fuelType === FUEL_TYPE_OPTIONS.ELE.value) {
+      const updatedElecUsageData = await t.eval(() => window.ead.productInfo.electricity.estElecUsage);
+      await t.expect(updatedElecUsageData).eql(estUsage);
+      const updatedEleUsageValue: number = await t.eval(() => window.ead.productInfo.electricity.usageVolume)
+      await t.expect(updatedEleUsageValue).eql(Number(usageValue));
+    } else {
+      const updatedGasUsageData = await t.eval(() => window.ead.productInfo.gas.estGasUsage);
+      await t.expect(updatedGasUsageData).eql(estUsage);
+      const updatedGasUsageValue = await t.eval(() => window.ead.productInfo.gas.usageVolume)
+      await t.expect(updatedGasUsageValue).eql(Number(usageValue));
+       }
+    }
+
+  }
 
 export class selectionOptionModalWindowMethod {
     public static async selectOptionsModalWindow(t, modalWindowValue) {
