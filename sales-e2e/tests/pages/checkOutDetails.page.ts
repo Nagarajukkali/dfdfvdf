@@ -189,6 +189,7 @@ const eaCheckoutDetailsPage = {
     btnAddPlanGas: Selector('#select-plan-change-add-button-gas'),
     selectElePlanExpanded: Selector('.select-plan #select-plan-ELE .select-plan-expanded'),
     selectGasPlanExpanded: Selector('.select-plan #select-plan-GAS .select-plan-expanded'),
+    chkboxContactPreference: Selector('#detailsContactPreferenceModalId label'),
 
   },
 };

@@ -34,3 +34,24 @@ Then(/^user validates the analytics event for the '(.*)' state and '(.*)' person
   await checkoutDetailsMethod.validateAnalyticsForMovingStateAndPersonState(t,movingType,personType);
 });
 
+Then(/^user validates the data layer is updated for usage period as '(.*)'$/, async function (t, [usagePeriodValue]) {
+  await plansMethod.validateAnalyticsUsagePeriod(t, usagePeriodValue);
+});
+
+Then(/^user validates the green energy percentage value of data layer is updated as '(.*)'$/, async function (t, [greenEnergyPercentage]) {
+  await plansMethod.validateAnalyticsGreenEnergyPercentage(t, greenEnergyPercentage);
+});
+
+Then(/^user validates the data layer is updated for location type as '(.*)'$/, async function (t, [locationTypeValue]) {
+  await plansMethod.validateAnalyticsLocationType(t, locationTypeValue);
+});
+
+Then(/^user validates the usage and usage value of data layer is updated$/, async function (t, [], dataTable) {
+  const data = dataTable.hashes();
+  const usage = data[0].usage;
+  const usageValue  = data[0].usageValue;
+  const fuelType = data[0].fuelType;
+  await plansMethod.validateAnalyticsForUsagePerDay(t, usage,usageValue,fuelType);
+});
+
+
