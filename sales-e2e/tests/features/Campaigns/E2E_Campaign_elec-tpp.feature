@@ -12,7 +12,7 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for elec-tpp campaign
-  
+
   Scenario Outline: Validate complete data for elec-tpp campaign for NSW - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" and clicks on show me plan link
@@ -210,7 +210,7 @@ Feature:E2E scenario for elec-tpp campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|campaign            |folderName              |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
       |New           |ELE    |14         |elec-tpp    |E2E_Campaign_elec-tpp_VIC_new_moving    |VIC  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
-@test
+
   Scenario Outline: Validate complete data for elec-tpp campaign for SA - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" and clicks on show me plan link

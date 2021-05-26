@@ -12,7 +12,7 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for offer campaign
-  
+
   Scenario Outline: Validate complete data for offer campaign for NSW - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2516" and clicks on show me plan link
@@ -481,7 +481,7 @@ Feature:E2E scenario for offer campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
       |Existing      |BOTH    |13         |33         |offer |E2E_Campaign_offer_VIC_existing_non-moving |VIC  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
-  @test
+
   Scenario Outline: Validate complete data for offer campaign for NSW existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" for postcode and proceed to view the plans
@@ -612,7 +612,7 @@ Feature:E2E scenario for offer campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
       |Existing      |BOTH    |14         |14         |offer |E2E_Campaign_offer_SA_existing_non-moving |SA  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
-@test
+
   Scenario Outline: Validate complete data for offer campaign for QLD existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4500" for postcode and proceed to view the plans

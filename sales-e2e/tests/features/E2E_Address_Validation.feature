@@ -62,16 +62,14 @@ Feature: This feature is to test the NMI, MIRN and address validation
     #Address where selected plan is not available
       | Address_PLAN_NOT_AVAILABLE         | RES          | Total Plan            | New            | Non-Moving | 12 Abattoir Lane, AVOCA VIC 3467         | PLAN_NOT_AVAILABLE    |
 
-    #Geelong campaign is not available
-  @failed
   Scenario Outline: verify the behaviour of campaign page on entering '<NMIorMIRNorPostcodeType>' where we don't offer that campaign
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "<postcode>" and clicks on show me plan link
+    When user provides "1234" and "<postcode>" and clicks on show me plan link
     Then plans page load according to the type of '<NMIorMIRNorPostcodeType>'
 
     Examples:
       | folderName            | campaign | NMIorMIRNorPostcodeType | postcode |
-      | CAMPAIGN_NOT_SERVICED | geelong  | CAMPAIGN_NOT_SERVICED   | 2000     |
+      | CAMPAIGN_NOT_SERVICED | nsw-seniors  | CAMPAIGN_NOT_SERVICED   | 3000     |
 
 
 

@@ -103,7 +103,6 @@ When(/^user navigates back to account verification section from moving question 
 });
 When(/^user selects '(.*)' for moving question on qualifier$/, async function (t,[movingType]) {
   await qualifierMethod.provideMovingType(t,movingType);
-
 });
 When(/^user enters the address '(.*)' on qualifier$/, async function (t,[address]) {
   await qualifierMethod.provideAddress(t,address);
