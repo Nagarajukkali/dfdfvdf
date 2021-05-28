@@ -1,4 +1,4 @@
-@refinestateanalytics @analytics
+@refinestateanalytics @analytics @test
 
 Feature: Analytics Events for Refine State validation on plans page
 
