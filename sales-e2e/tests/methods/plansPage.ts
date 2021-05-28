@@ -33,14 +33,26 @@ export class plansMethod {
         case FUEL_TYPE_OPTIONS.BOTH.value:
           await testFunction.click(t, EaHomePage.elements.fuelSelectorOption);
           await testFunction.click(t, EaHomePage.elements.fuelSelectorOptionDual);
+          if(validateAnalyticsEvent === 'Y'){
+            const updatedSelectedFuel = await t.eval(() => window.ead.productInfo.selectedFuels);
+            await t.expect(updatedSelectedFuel).eql('both');
+          }
           break;
         case FUEL_TYPE_OPTIONS.ELE.value:
           await testFunction.click(t, EaHomePage.elements.fuelSelectorOption);
           await testFunction.click(t, EaHomePage.elements.fuelSelectorOptionEle);
+          if(validateAnalyticsEvent === 'Y'){
+            const updatedSelectedFuel = await t.eval(() => window.ead.productInfo.selectedFuels);
+            await t.expect(updatedSelectedFuel).eql('electricity');
+          }
           break;
         case FUEL_TYPE_OPTIONS.GAS.value:
           await testFunction.click(t, EaHomePage.elements.fuelSelectorOption);
           await testFunction.click(t, EaHomePage.elements.fuelSelectorOptionGas);
+          if(validateAnalyticsEvent === 'Y'){
+            const updatedSelectedFuel = await t.eval(() => window.ead.productInfo.selectedFuels);
+            await t.expect(updatedSelectedFuel).eql('gas');
+          }
           break;
         default:
           console.error("Invalid fuel type is selected");
@@ -1217,9 +1229,15 @@ export class plansMethod {
     if (fueltype === 'Electricity'){
       await testFunction.click(t, EaHomePage.elements.refineEleUsage);
       await testFunction.click(t, EaHomePage.elements.refineEleUsageDropdown.withText(usage));
+      if(usage === 'Custom'){
+        await testFunction.enterText(t, EaHomePage.elements.refineElectrcityCustomInput,'25');
+      }
     } else {
       await testFunction.click(t, EaHomePage.elements.refineGasUsage);
       await testFunction.click(t, EaHomePage.elements.refineGasUsageDropdown.withText(usage));
+      if(usage === 'Custom'){
+        await testFunction.enterText(t, EaHomePage.elements.refineGasCustomInput,'30');
+      }
     }
   }
 
@@ -1252,19 +1270,34 @@ export class plansMethod {
   }
 
   public static async validateAnalyticsForUsagePerDay(t: TestController,  estUsage: string, usageValue, fuelType) {
+    await t.wait(1000);
     if (fuelType === FUEL_TYPE_OPTIONS.ELE.value) {
       const updatedElecUsageData = await t.eval(() => window.ead.productInfo.electricity.estElecUsage);
       await t.expect(updatedElecUsageData).eql(estUsage);
       const updatedEleUsageValue: number = await t.eval(() => window.ead.productInfo.electricity.usageVolume)
-      await t.expect(updatedEleUsageValue).eql(Number(usageValue));
+      if(estUsage === 'custom'){
+        usageValue = await testFunction.getInputText(t,EaHomePage.elements.refineElectrcityCustomInput);
+      }
+      if(estUsage === 'customer'){
+        usageValue = await testFunction.getElementText(t, EaHomePage.elements.refineEleUsageActiveOption);
+        usageValue = usageValue.replace(/[^0-9\.]+/g,"");
+      }
+      await t.expect(updatedEleUsageValue).eql(parseFloat(usageValue));
+
     } else {
       const updatedGasUsageData = await t.eval(() => window.ead.productInfo.gas.estGasUsage);
       await t.expect(updatedGasUsageData).eql(estUsage);
-      const updatedGasUsageValue = await t.eval(() => window.ead.productInfo.gas.usageVolume)
-      await t.expect(updatedGasUsageValue).eql(Number(usageValue));
-       }
+      const updatedGasUsageValue = await t.eval(() => window.ead.productInfo.gas.usageVolume);
+      if(estUsage === 'custom'){
+        usageValue = await testFunction.getInputText(t,EaHomePage.elements.refineGasCustomInput);
+      }
+      if(estUsage === 'customer'){
+        usageValue = await testFunction.getElementText(t, EaHomePage.elements.refineGasUsageActiveOption);
+        usageValue = usageValue.replace(/[^0-9\.]+/g,"");
+      }
+      await t.expect(updatedGasUsageValue).eql(parseFloat(usageValue));
+      }
     }
-
   }
 
 export class selectionOptionModalWindowMethod {
