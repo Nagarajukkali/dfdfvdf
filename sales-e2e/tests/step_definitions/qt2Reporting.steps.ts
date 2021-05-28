@@ -104,11 +104,11 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
 
       //updated conditions for $50 extensions
 
-      if(validateAnalyticsEvent==='Y') {
-        let expectedElecQuoteId = jsonObj.saleDetail.saleDetailHeader.quoteId;
-        let actualElecQuoteId = checkoutDetailsMethod.map.get('elecQuoteId'+checkoutDetailsMethod.getScenarioId(t));
-        await t.expect(actualElecQuoteId).eql(expectedElecQuoteId);
-      }
+      // if(validateAnalyticsEvent==='Y') {
+      //   let expectedElecQuoteId = jsonObj.saleDetail.saleDetailHeader.quoteId;
+      //   let actualElecQuoteId = checkoutDetailsMethod.map.get('elecQuoteId'+checkoutDetailsMethod.getScenarioId(t));
+      //   await t.expect(actualElecQuoteId).eql(expectedElecQuoteId);
+      // }
 
       let actualEleSourceCode = jsonObj.saleDetail.saleDetailHeader.sourceCode;
       let expectedEleSourceCode = checkoutDetailsMethod.map.get('ele source code_' + checkoutDetailsMethod.getScenarioId(t));
@@ -152,11 +152,11 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
       //     await qt2Reporting.validateMandatoryField(t,actualGasSourceCode,expectedGasSourceCode);
       // }
 
-      if(validateAnalyticsEvent==='Y') {
-        let expectedGasQuoteId = jsonObj.saleDetail.saleDetailHeader.quoteId;
-        let actualGasQuoteId = checkoutDetailsMethod.map.get('gasQuoteId'+checkoutDetailsMethod.getScenarioId(t));
-        await t.expect(actualGasQuoteId).eql(expectedGasQuoteId);
-      }
+      // if(validateAnalyticsEvent==='Y') {
+      //   let expectedGasQuoteId = jsonObj.saleDetail.saleDetailHeader.quoteId;
+      //   let actualGasQuoteId = checkoutDetailsMethod.map.get('gasQuoteId'+checkoutDetailsMethod.getScenarioId(t));
+      //   await t.expect(actualGasQuoteId).eql(expectedGasQuoteId);
+      // }
 
       //updated conditions for $50 extensions
       let actualGasSourceCode = jsonObj.saleDetail.saleDetailHeader.sourceCode;
