@@ -51,7 +51,7 @@ Feature: Scenarios to cover the data layer updates and analytics events trigger 
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-GS  | 5510149276 | N                              | N                              | Y                       | GLSMRHAC                 | EMAIL         |
-
+    And user closes the spy on datalayer
     Examples:
       | customerStatus | fuelType | planName   | folderName                                    | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
       | New            | BOTH     | Total Plan | E2E_Analytics_Resi_Checkout_Complete_QuoteID  | Quote Tool   | Plan Switch | No  | Yes | RES          | New           |
