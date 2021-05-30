@@ -582,6 +582,21 @@ When(/^user selects '(.*)' fact sheet$/, async function (t, [planName]) {
   await plansMethod.selectBPIDPlan(t, planName);
 });
 
+Then(/^user validates the data on '(.*)' plans page for "([^"]*)"$/, async function (t, [page,campaignName], dataTable) {
+  dataTable = dataTable.hashes();
+  let data = await FileUtils.getJSONfile(campaignName);
+  await plansMethod.validatePlanHeadingPlanPage(t, dataTable, data, page);
+  //await testFunction.takeScreenshot(t, 'validated plan heading');//disabled UI Validation
+  await plansMethod.validateFeaturesPlanPage(t, dataTable, data, page);
+  //await testFunction.takeScreenshot(t, 'validated feature text for plans');//disabled UI Validation
+  console.log("feature validated");
+});
+
+When(/^user validates the reprice pre-positioning disclaimer for '(.*)' '(.*)' for '(.*)' state$/, async function (t, [plan,campaign,state]) {
+  let data = await FileUtils.getJSONfile(campaign);
+  await plansMethod.validateRepricePrePositioningText(t, data, state);
+});
+
 When(/^user selects the '(.*)' usage period$/, async function (t, [period]) {
   await plansMethod.enterCostEstimatePeriod(t, period);
 });
