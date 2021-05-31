@@ -221,7 +221,7 @@ export class plansMethod {
       }
     }else if(journey=== 'Business'){
       if((plan === PlanType.BASIC_BUSINESS)){
-        await testFunction.assertText(t, EaHomePage.elements.BasicBusinessTable.repriceText, 'Our electricity standing offer rates are under ' +
+        await testFunction.assertText(t, EaHomePage.elements.BasicBusinessTable.repriceText, 'Our energy standing offer rates are under ' +
           'review and may change from 1 July 2021. If ' +
           'this happens new rates can be viewed online ' +
           'from this date. More information on rate ' +
