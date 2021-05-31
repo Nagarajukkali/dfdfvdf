@@ -959,4 +959,43 @@ export class checkoutReviewMethod {
     console.log("Validated presence of solar indicator");
   }
 
+  public static async validateRepricePrePositioningTextPlansPage(t: any, plan,journey) {
+    if(journey=== 'Residential') {
+      if((plan === PlanType.BASIC_HOME)){
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.electricityRepriceText, 'Our electricity standing offer rates are under ' +
+          'review and may change from 1 July 2021. If ' +
+          'this happens new rates can be viewed online ' +
+          'from this date. More information on rate ' +
+          'changes here.'
+        );
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasRepriceText, 'Our electricity standing offer rates are under ' +
+          'review and may change from 1 July 2021. If ' +
+          'this happens new rates can be viewed online ' +
+          'from this date. More information on rate ' +
+          'changes here.'
+        );
+      }else if ((plan === PlanType.NO_FRILLS) || (plan === PlanType.TOTAL_PLAN)){
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.electricityRepriceText, "Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasRepriceText, "Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+
+      }
+    }else if(journey=== 'Business'){
+      if((plan === PlanType.BASIC_BUSINESS)){
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.electricityRepriceText, 'Our electricity standing offer rates are under ' +
+          'review and may change from 1 July 2021. If ' +
+          'this happens new rates can be viewed online ' +
+          'from this date. More information on rate ' +
+          'changes here.'
+        );
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasRepriceText, 'Our electricity standing offer rates are under ' +
+          'review and may change from 1 July 2021. If ' +
+          'this happens new rates can be viewed online ' +
+          'from this date. More information on rate ' +
+          'changes here.'
+        );
+      }
+    }
+      console.log("Reprice text validated for " +plan+ " on " +journey+ " review page")
+  }
+
 }

@@ -205,6 +205,33 @@ export class plansMethod {
       console.log("Reprice text validated for "+data.planName)
   }
 
+  public static async validateRepricePrePositioningTextPlansPage(t: any, plan,journey) {
+    if(journey=== 'Residential') {
+      if(plan === PlanType.BASIC_HOME){
+        await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.repriceText, 'Our electricity standing offer rates are under ' +
+          'review and may change from 1 July 2021. If ' +
+          'this happens new rates can be viewed online ' +
+          'from this date. More information on rate ' +
+          'changes here.'
+        );
+      }else if (plan === PlanType.NO_FRILLS){
+        await testFunction.assertText(t, EaHomePage.elements.NoFrillsPlanTable.repriceText, "Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+      }else if (plan === PlanType.TOTAL_PLAN){
+        await testFunction.assertText(t, EaHomePage.elements.TotalPlanTable.repriceText, "Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+      }
+    }else if(journey=== 'Business'){
+      if((plan === PlanType.BASIC_BUSINESS)){
+        await testFunction.assertText(t, EaHomePage.elements.BasicBusinessTable.repriceText, 'Our electricity standing offer rates are under ' +
+          'review and may change from 1 July 2021. If ' +
+          'this happens new rates can be viewed online ' +
+          'from this date. More information on rate ' +
+          'changes here.'
+        );
+      }
+    }
+    console.log("Reprice text validated for " +plan+ " on " +journey+ " plans page")
+  }
+
   public static async validateFeatures(t: any, dataTable, data: any) {
     console.log("Validating plan features on campaign page.");
     if (dataTable[0].fuelType === "ELE") {
