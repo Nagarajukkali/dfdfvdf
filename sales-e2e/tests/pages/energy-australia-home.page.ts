@@ -265,8 +265,17 @@ const eaHomePage = {
       cNNDescription: Selector("[id*='plan-feature'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral").sibling(),
       defaultOfferTitle: Selector("[id*='plan-feature'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral"),
       defaultOfferDescription: Selector("[id*='plan-feature'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral").sibling(),
-    }
-
+      repriceText: Selector("[id*='plan-rates-description-'][id*='SOT'] [class*='hs-plan-rates-heading__reprice']"),
+    },
+    TotalPlanTable: {
+      repriceText: Selector("[id*='plan-rates-description-'][id*='TOP'] [class*='hs-plan-rates-heading__reprice']"),
+    },
+    NoFrillsPlanTable: {
+      repriceText: Selector("[id*='plan-rates-description-'][id*='CPP'] [class*='hs-plan-rates-heading__reprice']"),
+    },
+    BasicBusinessTable: {
+      repriceText: Selector("[id*='plan-rates-description-'][id*='SOT'] [class*='hs-plan-rates-heading__reprice']"),
+    },
   },
   campaignElements: {
     electrciityRepriceText: Selector("[id*='plan-rates-description-'][id*='-E'] [class*='hs-plan-rates-heading__reprice']"),

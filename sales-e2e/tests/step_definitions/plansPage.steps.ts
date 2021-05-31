@@ -597,6 +597,10 @@ When(/^user validates the reprice pre-positioning disclaimer for '(.*)' '(.*)' f
   await plansMethod.validateRepricePrePositioningText(t, data, state);
 });
 
+When(/^user validates the reprice pre-positioning disclaimer for '(.*)' on '(.*)' plans page$/, async function (t, [plan, journey]) {
+  await plansMethod.validateRepricePrePositioningTextPlansPage(t, plan, journey);
+});
+
 When(/^user selects the '(.*)' usage period$/, async function (t, [period]) {
   await plansMethod.enterCostEstimatePeriod(t, period);
 });

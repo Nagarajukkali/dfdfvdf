@@ -161,6 +161,8 @@ const eaCheckoutReviewPage = {
     listBusinessType: Selector("#business-type-active-option").parent().nextSibling().child(),
     anzsicCode: Selector("#anzsic-code-active-option"),
     listAnzsicCode: Selector("#anzsic-code-active-option").parent().nextSibling().child(),
+    electricityRepriceText : Selector("[id*='Electricity-reprice']"),
+    gasRepriceText : Selector("[id*='Gas-reprice']"),
     solarPower: {
       main: Selector("section.review-order__solar-power"),
       heading: Selector("#solar-power h4"),
