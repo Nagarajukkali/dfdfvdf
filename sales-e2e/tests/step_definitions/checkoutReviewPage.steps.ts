@@ -140,3 +140,7 @@ When(/^user validates "([^"]*)" solar tariff type for "([^"]*)" under electricit
   await checkoutReviewMethod.validateSolarFeedInTariffUnderRates(t, tariffType, state);
 
 });
+
+When(/^user validates the reprice pre-positioning disclaimer for '(.*)' on '(.*)' review page$/, async function (t, [plan, journey]) {
+  await checkoutReviewMethod.validateRepricePrePositioningTextPlansPage(t, plan, journey);
+});

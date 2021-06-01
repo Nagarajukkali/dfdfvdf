@@ -259,8 +259,29 @@ const eaHomePage = {
     addressList: Selector("#address-auto-autocomplete>ul>li"),
     stateDropdown: Selector("[data-block-plugin-id='ea_state_nav_block']").nth(1),
     stateDropdownList: Selector("[data-block-plugin-id='ea_state_nav_block']").nth(1).find(".state-dropdown li"),
+    BasicPlanTable: {
+      basicHomeTitle: Selector("[id*='plan-heading-title-BASE_RSOT-']"),
+      basicHomeFuel: Selector("[id*='plan-heading-fuel-BASE_RSOT-']"),
+      basicHomePlanHeadingDescription : Selector("[id*='plan-heading-description-BASE_RSOT-']"),
+      cNTitle: Selector("[id*='plan-feature'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral"),
+      cNNDescription: Selector("[id*='plan-feature'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral").sibling(),
+      defaultOfferTitle: Selector("[id*='plan-feature'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral"),
+      defaultOfferDescription: Selector("[id*='plan-feature'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral").sibling(),
+      repriceText: Selector("[id*='plan-rates-description-'][id*='SOT'] [class*='hs-plan-rates-heading__reprice']"),
+    },
+    TotalPlanTable: {
+      repriceText: Selector("[id*='plan-rates-description-'][id*='TOP'] [class*='hs-plan-rates-heading__reprice']"),
+    },
+    NoFrillsPlanTable: {
+      repriceText: Selector("[id*='plan-rates-description-'][id*='CPP'] [class*='hs-plan-rates-heading__reprice']"),
+    },
+    BasicBusinessTable: {
+      repriceText: Selector("[id*='plan-rates-description-'][id*='SOT'] [class*='hs-plan-rates-heading__reprice']"),
+    },
   },
   campaignElements: {
+    electrciityRepriceText: Selector("[id*='plan-rates-description-'][id*='-E'] [class*='hs-plan-rates-heading__reprice']"),
+    gasRepriceText: Selector("[id*='plan-rates-description-'][id*='-G'] [class*='hs-plan-rates-heading__reprice']"),
     elePlanHeadingTitle: Selector("[id*='plan-heading-title'][id*='-E']"),
     gasPlanHeadingTitle: Selector("[id*='plan-heading-title'][id*='-G']"),
     elePlanHeadingFuel: Selector("[id*='plan-heading-fuel'][id*='-E']"),

@@ -150,6 +150,100 @@ export class plansMethod {
     }
   }
 
+  public static async validatePlanHeadingPlanPage(t, dataTable, data: any, page) {
+    if (page === "Residential") {
+      switch(data.planName){
+        case PlanType.BASIC_HOME :
+          await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.basicHomeTitle, data.planName);
+          await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.basicHomeFuel, "Electricity & gas");
+          await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.basicHomePlanHeadingDescription, data.planDescription);
+      }
+    } else if (page === 'Business') {
+      await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingTitle, data.planName);
+      await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingFuel, "Gas");
+      await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingDescription, data.planDescription);
+    }
+  }
+
+  public static async validateFeaturesPlanPage(t: any, dataTable, data: any, page) {
+    console.log("Validating plan features on plans page page.");
+    if (page === "Residential") {
+      if (data.planName=== PlanType.BASIC_HOME) {
+        if (dataTable[0].Feature_carbonNeutral === "Y") {
+          await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.cNTitle, data.both.feature.preSelect.carbonNeutral.heading);
+          await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.cNNDescription, data.both.feature.preSelect.carbonNeutral.description);
+        }
+        if (dataTable[0].Feature_defaultOffer === "Y") {
+          await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.defaultOfferTitle, data.both.feature.preSelect.defaultOffer.heading);
+          if (dataTable[0].state === 'VIC') {
+            await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.defaultOfferDescription, data.both.feature.preSelect.defaultOffer.VIC.description);
+          } else {
+            await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.defaultOfferDescription, data.both.feature.preSelect.defaultOffer.NonVIC.description);
+          }
+        }
+      }
+    }
+  }
+
+  public static async validateRepricePrePositioningText(t: any, data,state) {
+      if(data.planName=== PlanType.BASIC_HOME) {
+        if(state === AustralianState.QLD){
+          await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, 'Our electricity standing offer rates are under ' +
+            'review and may change from 1 July 2021. If ' +
+            'this happens new rates can be viewed online ' +
+            'from this date. More information on rate ' +
+            'changes here.'
+          );
+        }else{
+          await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, 'Our electricity standing offer rates are under ' +
+            'review and may change from 1 July 2021. If ' +
+            'this happens new rates can be viewed online ' +
+            'from this date. More information on rate ' +
+            'changes here.'
+          );
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasRepriceText, 'Our electricity standing offer rates are under ' +
+            'review and may change from 1 July 2021. If ' +
+            'this happens new rates can be viewed online ' +
+            'from this date. More information on rate ' +
+            'changes here.');
+        }
+      }else if ((data.planName=== PlanType.TOTAL_PLAN) || (data.planName=== PlanType.NO_FRILLS) || (data.planName=== PlanType.TOTAL_PLAN_PLUS)){
+        if(state === AustralianState.QLD){
+          await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, "Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+        }else{
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasRepriceText, "Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+          }
+        }
+      console.log("Reprice text validated for "+data.planName)
+  }
+
+  public static async validateRepricePrePositioningTextPlansPage(t: any, plan,journey) {
+    if(journey=== 'Residential') {
+      if(plan === PlanType.BASIC_HOME){
+        await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.repriceText, 'Our electricity standing offer rates are under ' +
+          'review and may change from 1 July 2021. If ' +
+          'this happens new rates can be viewed online ' +
+          'from this date. More information on rate ' +
+          'changes here.'
+        );
+      }else if (plan === PlanType.NO_FRILLS){
+        await testFunction.assertText(t, EaHomePage.elements.NoFrillsPlanTable.repriceText, "Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+      }else if (plan === PlanType.TOTAL_PLAN){
+        await testFunction.assertText(t, EaHomePage.elements.TotalPlanTable.repriceText, "Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+      }
+    }else if(journey=== 'Business'){
+      if((plan === PlanType.BASIC_BUSINESS)){
+        await testFunction.assertText(t, EaHomePage.elements.BasicBusinessTable.repriceText, 'Our energy standing offer rates are under ' +
+          'review and may change from 1 July 2021. If ' +
+          'this happens new rates can be viewed online ' +
+          'from this date. More information on rate ' +
+          'changes here.'
+        );
+      }
+    }
+    console.log("Reprice text validated for " +plan+ " on " +journey+ " plans page")
+  }
+
   public static async validateFeatures(t: any, dataTable, data: any) {
     console.log("Validating plan features on campaign page.");
     if (dataTable[0].fuelType === "ELE") {
