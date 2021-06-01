@@ -197,9 +197,9 @@ export class plansMethod {
         }
       }else if ((data.planName=== PlanType.TOTAL_PLAN) || (data.planName=== PlanType.NO_FRILLS) || (data.planName=== PlanType.TOTAL_PLAN_PLUS)){
         if(state === AustralianState.QLD){
-          await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, "Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+          await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, "Our rates will generally be adjusted annually, and we'll notify you when this happens.");
         }else{
-          await testFunction.assertText(t, EaHomePage.campaignElements.gasRepriceText, "Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasRepriceText, "Our rates will generally be adjusted annually, and we'll notify you when this happens.");
           }
         }
       console.log("Reprice text validated for "+data.planName)
@@ -215,9 +215,9 @@ export class plansMethod {
           'changes here.'
         );
       }else if (plan === PlanType.NO_FRILLS){
-        await testFunction.assertText(t, EaHomePage.elements.NoFrillsPlanTable.repriceText, "Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+        await testFunction.assertText(t, EaHomePage.elements.NoFrillsPlanTable.repriceText, "Our rates will generally be adjusted annually, and we'll notify you when this happens.");
       }else if (plan === PlanType.TOTAL_PLAN){
-        await testFunction.assertText(t, EaHomePage.elements.TotalPlanTable.repriceText, "Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+        await testFunction.assertText(t, EaHomePage.elements.TotalPlanTable.repriceText, "Our rates will generally be adjusted annually, and we'll notify you when this happens.");
       }
     }else if(journey=== 'Business'){
       if((plan === PlanType.BASIC_BUSINESS)){
