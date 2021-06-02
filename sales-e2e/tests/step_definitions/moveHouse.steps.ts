@@ -21,3 +21,7 @@ When(/^user selects moving date$/, async function (t) {
 Then(/^error message is displayed for undetected NMI in MSATS$/, async function (t) {
   await moveHouseMethod.validateSolarSetupUnknownErrorForUndetectedNMI(t);
 });
+//When(/^user enters '(.*)' in address field$/, async function (t, [movingAddress]) {
+ // await moveHouseMethod.enterYourAddress(t, movingAddress);
+  //await testFunction.takeScreenshot(t, "move_house");
+//}); 

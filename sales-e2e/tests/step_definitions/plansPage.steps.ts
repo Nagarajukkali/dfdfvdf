@@ -4,6 +4,7 @@ import {Given, Then, When} from 'cucumber';
 import {PlanType, testFunction} from '../../global_methods/helper';
 import {AustralianState, CustomerType} from '@ea/ea-commons-models';
 import {Workbook} from 'exceljs';
+import { Console } from 'console';
 
 const EaHomePage = require('../pages/energy-australia-home.page');
 const {config} = require('../../resources/resource');
@@ -195,15 +196,13 @@ Given(/^user enters '(.*)' in '(.*)' field$/, async function (t, [NMIIorMIRNorPo
   }
   await plansMethod.enterNMIorMIRNorPostcode(t, NMIIorMIRNorPostcodeValue, NMIorMIRNorPostcode);
 });
-Then(/^plans page load according to the type of '(.*)'$/, async function (t, [NMIorMIRNType]) {
-  await plansMethod.verifyNMIorMIRNLookup(t, NMIorMIRNType);
+Then(/^plans page load according to the type of '(.*)'$/, async function (t, [addressType]) {
+  await plansMethod.verifyAddressLookup(t, addressType);
   await testFunction.takeScreenshot(t, 'plans_page');//disabled UI Validation
-
 });
 Then(/^plans page load according to the type of '(.*)' on plans page$/, async function (t, [NMIorMIRNType]) {
   await plansMethod.verifyNMIorMIRNLookupMessage(t, NMIorMIRNType);
   await testFunction.takeScreenshot(t, 'plans_page');//disabled UI Validation
-
 });
 Then(/^user validates details on plans page for '(.*)'$/, async function (t, [customerType]) {
   await plansMethod.validateGeneralStateDisclaimer(t, customerType);

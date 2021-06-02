@@ -111,6 +111,11 @@
       "componentLocation": "link:Shared_Carbon_New:energyaustralia.com.au/carbon-neutral",
       "componentName": "NA",
       "platform": "angular"
+    },
+    "nsw_remote_meter_error": {
+      "componentLocation": "message:plans app plan messages: This electricity meter has been remotely disconnected and can't be reconnected by us (you need a retailer that can remotely connect meters). Contact Endeavour Energy on 133 718 for the retailer's details. ",
+      "componentName": "NA",
+      "platform": "angular"
     }
   },
   "cart_page": {
@@ -173,6 +178,11 @@
   },
     "solar_detection_error_link": {
       "componentLocation": "link:qualifier address:contact us",
+      "componentName": "NA",
+      "platform": "angular"
+  },
+    "nsw_remote_meter_qualifier_error": {
+      "componentLocation": "message:plans app plan messages: This electricity meter has been remotely disconnected and can't be reconnected by us (you need a retailer that can remotely connect meters). Contact Endeavour Energy on 133 718 for the retailer's details. ",
       "componentName": "NA",
       "platform": "angular"
     }
