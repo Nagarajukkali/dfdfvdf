@@ -258,5 +258,14 @@
       "eventName": "error",
       "eventValue": "NA"
     }
+  },
+  "movehouse_page": {
+    "nsw_remote_meter_movehouse_error": {
+      "eventAction": "message",
+      "eventLabel": " This electricity meter has been remotely disconnected and can't be reconnected by us (you need a retailer that can remotely connect meters). Contact Endeavour Energy on 133 718 for the retailer's details. ",
+      "eventLocation": "NA",
+      "eventName": "error",
+      "eventValue": "NA"
+    }
   }
 }
