@@ -761,88 +761,7 @@ export class plansMethod {
     }
 
   }
-
-  public static async verifyNMIorMIRNLookup(t, NMIorMIRNType) {
-    let errorMessage;
-    switch (NMIorMIRNType) {
-      case "STATE_NOT_SERVICED":
-        errorMessage = "Unfortunately we don't supply energy to postcode 6000. For more information please call us on";
-        await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtStateNotServicedMsg);
-        await testFunction.assertText(t, EaHomePage.elements.txtStateNotServicedMsg, errorMessage);
-        break;
-      case "POSTCODE_NOT_SERVICED":
-        errorMessage = "Unfortunately we don't supply energy to postcode 4600. For more information please call us on";
-        await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtPostcodeNotServicedMsg);
-        await testFunction.assertText(t, EaHomePage.elements.txtPostcodeNotServicedMsg, errorMessage);
-        break;
-      case "NMI_BLOCKED":
-        errorMessage = "We’re unable to sign you up online for Electricity because of the meter type detected at this address. For more information please call us on";
-        await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtBlockedNMIMsg);
-        await testFunction.assertText(t, EaHomePage.elements.txtBlockedNMIMsg, errorMessage);
-        await testFunction.assertText(t, EaHomePage.elements.basicResiPlanHeadingFuel, 'Gas');
-        break;
-      case "NMI_NOT_FOUND":
-        errorMessage = "Unfortunately we don't recognise NMI . You can enter your postcode instead to get the rates for your area, or give us a call us on";
-        await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtNMINotFoundMsg);
-        await testFunction.assertText(t, EaHomePage.elements.txtNMINotFoundMsg, errorMessage);
-        break;
-      case "MIRN_NOT_FOUND":
-        errorMessage = "Unfortunately we don't recognise MIRN . You can enter your postcode instead to get the rates for your area, or give us a call us on";
-        await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtMIRNNotFoundMsg);
-        await testFunction.assertText(t, EaHomePage.elements.txtMIRNNotFoundMsg, errorMessage);
-        break;
-      case "INVALID_CUSTOMER_TYPE":
-        errorMessage = "Meter detected";
-        await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.changeCustomerModal);
-        await testFunction.isElementDisplayed(t, EaHomePage.elements.changeCustomerModal);
-        await testFunction.assertText(t, EaHomePage.elements.headingOnChangePlanSelectionModal, errorMessage);
-        break;
-      case "CAMPAIGN_NOT_SERVICED":
-        errorMessage = "This offer is not available in";
-        await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtCampaignNotServicedMsg);
-        await testFunction.assertText(t, EaHomePage.elements.txtCampaignNotServicedMsg, errorMessage);
-        break;
-      case "ADDRESS_NOT_SERVICED":
-        errorMessage = "We’re unable to sign you up online because of the meter type detected at this address. For more information please call us on";
-        await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtAddressNotServicedMsg);
-        await testFunction.assertText(t, EaHomePage.elements.txtAddressNotServicedMsg, errorMessage);
-        break;
-      case "GAS_NOT_SERVICED":
-        errorMessage = "we only supply electricity.";
-        await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtAddressNotServicedMsg);
-        await testFunction.assertText(t, EaHomePage.elements.txtAddressNotServicedMsg, errorMessage);
-        await testFunction.assertText(t, EaHomePage.elements.basicResiPlanHeadingFuel, 'Electricity');
-        break;
-      case "ELE_NOT_SERVICED":
-        errorMessage = "we only supply gas.";
-        await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtAddressNotServicedMsg);
-        await testFunction.assertText(t, EaHomePage.elements.txtAddressNotServicedMsg, errorMessage);
-        await testFunction.assertText(t, EaHomePage.elements.basicResiPlanHeadingFuel, 'Electricity');
-        break;
-      case "SYSTEM_ERROR":
-        errorMessage = "We're sorry, there has been an unexpected error and we're unable to process your request online. Please contact our team on 1800 596 517 and they'd be happy to assist.";
-        await testFunction.assertText(t, EaHomePage.elements.txtSystemErrorMsg, errorMessage);
-        break;
-      case "SUCCESS":
-        await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.eaSpinner);
-        await testFunction.waitForElementToBeDisappeared(t, EaHomePage.elements.eaSpinner);
-        let NMI = await EaHomePage.elements.inputNMI.textContent;
-        let MIRN = await EaHomePage.elements.inputMIRN.textContent;
-        await testFunction.assertText(t, EaHomePage.elements.txtElectricityBasedOn, 'Electricity based on NMI ' + NMI);
-        await testFunction.assertText(t, EaHomePage.elements.txtGasBasedOn, 'Gas based on MIRN ' + MIRN);
-        await testFunction.takeScreenshot(t, 'plans_page');//disabled UI Validation
-        await this.selectPlan(t, 'Total Plan');
-        await cartsMethod.clickContinueCartsPage(t);
-        await qualifierMethod.selectCustomerStatus(t, 'New');
-        await qualifierMethod.provideMovingType(t, 'Non-Moving');
-        await testFunction.takeScreenshot(t, 'plans_page');//disabled UI Validation
-        await testFunction.click(t, eaQualifierPage.elements.addressContinue);
-        await testFunction.isElementDisplayed(t, eaQualifierPage.elements.owner);
-        break;
-      default:
-        throw Error("Invalid Error Code");
-    }
-  }
+  
 
   public static async verifyNMIorMIRNLookupMessage(t, NMIorMIRNType) {
     let errorMessage;
@@ -1358,7 +1277,93 @@ export class plansMethod {
       await t.expect(updatedGasUsageValue).eql(Number(usageValue));
        }
     }
-
+    public static async verifyAddressLookup(t, addressType) {
+      let errorMessage;
+      switch (addressType) {
+        case "STATE_NOT_SERVICED":
+          errorMessage = "Unfortunately we don't supply energy to postcode 6000. For more information please call us on";
+          await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtStateNotServicedMsg);
+          await testFunction.assertText(t, EaHomePage.elements.txtStateNotServicedMsg, errorMessage);
+          break;
+        case "POSTCODE_NOT_SERVICED":
+          errorMessage = "Unfortunately we don't supply energy to postcode 4600. For more information please call us on";
+          await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtPostcodeNotServicedMsg);
+          await testFunction.assertText(t, EaHomePage.elements.txtPostcodeNotServicedMsg, errorMessage);
+          break;
+        case "NMI_BLOCKED":
+          errorMessage = "We’re unable to sign you up online for Electricity because of the meter type detected at this address. For more information please call us on";
+          await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtBlockedNMIMsg);
+          await testFunction.assertText(t, EaHomePage.elements.txtBlockedNMIMsg, errorMessage);
+          await testFunction.assertText(t, EaHomePage.elements.basicResiPlanHeadingFuel, 'Gas');
+          break;
+        case "NSW_REMOTE_METER":
+            errorMessage = "This electricity meter has been remotely disconnected and can't be reconnected by us (you need a retailer that can remotely connect meters).";
+            await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtBlockedNMIMsg);
+            await testFunction.assertText(t, EaHomePage.elements.txtBlockedNMIMsg, errorMessage);
+            await testFunction.assertText(t, EaHomePage.elements.basicResiPlanHeadingFuel, 'Gas');
+            break;
+        case "NMI_NOT_FOUND":
+          errorMessage = "Unfortunately we don't recognise NMI . You can enter your postcode instead to get the rates for your area, or give us a call us on";
+          await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtNMINotFoundMsg);
+          await testFunction.assertText(t, EaHomePage.elements.txtNMINotFoundMsg, errorMessage);
+          break;
+        case "MIRN_NOT_FOUND":
+          errorMessage = "Unfortunately we don't recognise MIRN . You can enter your postcode instead to get the rates for your area, or give us a call us on";
+          await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtMIRNNotFoundMsg);
+          await testFunction.assertText(t, EaHomePage.elements.txtMIRNNotFoundMsg, errorMessage);
+          break;
+        case "INVALID_CUSTOMER_TYPE":
+          errorMessage = "Meter detected";
+          await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.changeCustomerModal);
+          await testFunction.isElementDisplayed(t, EaHomePage.elements.changeCustomerModal);
+          await testFunction.assertText(t, EaHomePage.elements.headingOnChangePlanSelectionModal, errorMessage);
+          break;
+        case "CAMPAIGN_NOT_SERVICED":
+          errorMessage = "This offer is not available in";
+          await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtCampaignNotServicedMsg);
+          await testFunction.assertText(t, EaHomePage.elements.txtCampaignNotServicedMsg, errorMessage);
+          break;
+        case "ADDRESS_NOT_SERVICED":
+          errorMessage = "Unfortunately we don't supply energy to this address. For more information please call us on";
+          await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtAddressNotServicedMsg);
+          await testFunction.assertText(t, EaHomePage.elements.txtAddressNotServicedMsg, errorMessage);
+          break;
+        case "GAS_NOT_SERVICED":
+          errorMessage = "we only supply electricity.";
+          await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtAddressNotServicedMsg);
+          await testFunction.assertText(t, EaHomePage.elements.txtAddressNotServicedMsg, errorMessage);
+          await testFunction.assertText(t, EaHomePage.elements.basicResiPlanHeadingFuel, 'Electricity');
+          break;
+        case "ELE_NOT_SERVICED":
+          errorMessage = "we only supply gas.";
+          await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.txtAddressNotServicedMsg);
+          await testFunction.assertText(t, EaHomePage.elements.txtAddressNotServicedMsg, errorMessage);
+          await testFunction.assertText(t, EaHomePage.elements.basicResiPlanHeadingFuel, 'Electricity');
+          break;
+        case "SYSTEM_ERROR":
+          errorMessage = "We're sorry, there has been an unexpected error and we're unable to process your request online. Please contact our team on 1800 596 517 and they'd be happy to assist.";
+          await testFunction.assertText(t, EaHomePage.elements.txtSystemErrorMsg, errorMessage);
+          break;
+        case "SUCCESS":
+          await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.eaSpinner);
+          await testFunction.waitForElementToBeDisappeared(t, EaHomePage.elements.eaSpinner);
+          let NMI = await EaHomePage.elements.inputNMI.textContent;
+          let MIRN = await EaHomePage.elements.inputMIRN.textContent;
+          await testFunction.assertText(t, EaHomePage.elements.txtElectricityBasedOn, 'Electricity based on NMI ' + NMI);
+          await testFunction.assertText(t, EaHomePage.elements.txtGasBasedOn, 'Gas based on MIRN ' + MIRN);
+          await testFunction.takeScreenshot(t, 'plans_page');//disabled UI Validation
+          await this.selectPlan(t, 'Total Plan');
+          await cartsMethod.clickContinueCartsPage(t);
+          await qualifierMethod.selectCustomerStatus(t, 'New');
+          await qualifierMethod.provideMovingType(t, 'Non-Moving');
+          await testFunction.takeScreenshot(t, 'plans_page');//disabled UI Validation
+          await testFunction.click(t, eaQualifierPage.elements.addressContinue);
+          await testFunction.isElementDisplayed(t, eaQualifierPage.elements.owner);
+          break;
+        default:
+          throw Error("Invalid Error Code");
+      }
+    }
   }
 
 export class selectionOptionModalWindowMethod {
