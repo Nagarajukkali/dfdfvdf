@@ -33,26 +33,14 @@ export class plansMethod {
         case FUEL_TYPE_OPTIONS.BOTH.value:
           await testFunction.click(t, EaHomePage.elements.fuelSelectorOption);
           await testFunction.click(t, EaHomePage.elements.fuelSelectorOptionDual);
-          if(validateAnalyticsEvent === 'Y'){
-            const updatedSelectedFuel = await t.eval(() => window.ead.productInfo.selectedFuels);
-            await t.expect(updatedSelectedFuel).eql('both');
-          }
           break;
         case FUEL_TYPE_OPTIONS.ELE.value:
           await testFunction.click(t, EaHomePage.elements.fuelSelectorOption);
           await testFunction.click(t, EaHomePage.elements.fuelSelectorOptionEle);
-          if(validateAnalyticsEvent === 'Y'){
-            const updatedSelectedFuel = await t.eval(() => window.ead.productInfo.selectedFuels);
-            await t.expect(updatedSelectedFuel).eql('electricity');
-          }
           break;
         case FUEL_TYPE_OPTIONS.GAS.value:
           await testFunction.click(t, EaHomePage.elements.fuelSelectorOption);
           await testFunction.click(t, EaHomePage.elements.fuelSelectorOptionGas);
-          if(validateAnalyticsEvent === 'Y'){
-            const updatedSelectedFuel = await t.eval(() => window.ead.productInfo.selectedFuels);
-            await t.expect(updatedSelectedFuel).eql('gas');
-          }
           break;
         default:
           console.error("Invalid fuel type is selected");
@@ -1358,6 +1346,63 @@ export class plansMethod {
     await t.expect(updatedUsagePeriodData).eql(usagePeriod);
   }
 
+  public static async validateAnalyticsSelectedPlan(t: TestController,
+                                                    expectedFlag: ('both' | 'electricity' | 'gas')
+  ): Promise<void> {
+    const selectedPlanValue = await t.eval(
+      () => window.ead.productInfo.selectedFuels
+    );
+    await t.expect(selectedPlanValue).eql(expectedFlag);
+  }
+
+  public static async validateAnalyticsAvailablePlan(t: TestController, journey: string, fuelType: string){
+    let availableElectricityPlans = await t.eval(() => window.ead.productInfo.electricity.plan.availablePlans);
+    availableElectricityPlans=availableElectricityPlans.toString();
+    let availableGasPlans = await t.eval(() => window.ead.productInfo.gas.plan.availablePlans);
+    availableGasPlans=availableGasPlans.toString();
+    if(journey==='Residential'){
+      if(fuelType==='Electricity') {
+        await t.expect(availableElectricityPlans).eql("BASE_RSOT-EN,BASE_RCPP-EN,BASE_TOPH-EN-AUSGRID");
+      }else if(fuelType==='Gas'){
+        await t.expect(availableGasPlans).eql("BASE_RSOT-GN,BASE_RCPP-GN,BASE_TOPH-GN");
+      }
+      console.log("Analytics data validated for " + journey + " page for available plans for " +fuelType);
+    }else if (journey==='Business'){
+      if(fuelType==='Electricity') {
+        await t.expect(availableElectricityPlans).eql("BASE_TOPB-EN-AUSGRID,BASE_BCNP-EN-AUSGRID,BASE_BSPB2-EN-AUSGRID,BASE_BSOT-EN");
+      }else if(fuelType==='Gas'){
+        await t.expect(availableGasPlans).eql("BASE_TOPB-GN,BASE_BSPB2-GN,BASE_BSOT-GN");
+      }
+      console.log("Analytics data validated for " + journey + " page for available plans for " +fuelType);
+    }else if (journey==='Campaign'){
+      if(fuelType==='Electricity') {
+        await t.expect(availableElectricityPlans).eql("CAM_OFFER_TOPH-EN-AUSGRID");
+      }else if(fuelType==='Gas'){
+        await t.expect(availableGasPlans).eql("CAM_OFFER_TOPH-GN");
+      }
+      console.log("Analytics data validated for " + journey + " page for available plans for " +fuelType);
+    }
+  }
+
+  public static async validateAnalyticsSelectedPlanDetails(t: TestController, plan: string, fuelType: string){
+
+    if(plan===PlanType.TOTAL_PLAN){
+      if(fuelType==='Electricity'){
+
+
+
+
+      }else if(fuelType==='Gas'){
+
+      }
+    }else if(plan===PlanType.NO_FRILLS){
+      if(fuelType==='Electricity'){
+
+      }else if(fuelType==='Gas'){
+
+      }
+    }
+  }
   public static async validateAnalyticsGreenEnergyPercentage(t: TestController, greenEnergyPercentage: string){
     const updatedGreenEnergyData = await t.eval(() => window.ead.productInfo.electricity.estGreenEnergyPercentage);
     await t.expect(updatedGreenEnergyData).eql(greenEnergyPercentage);

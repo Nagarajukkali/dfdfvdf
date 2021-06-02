@@ -23,7 +23,7 @@ Feature: Analytics Events for Refine State validation on plans page
       | usage    | usageValue    | fuelType |
       | high     | 100           | GAS      |
     And user closes the spy on datalayer
-  @failed
+
   Scenario: Validate Analytics event for refine state when Residential plans page is loaded(default values)
     Given user has opened the website link in a browser and creates 'E2E_Analytics_Resi_Refine_State' to save evidences
     And user has navigated to 'RES' plans page
@@ -82,7 +82,6 @@ Feature: Analytics Events for Refine State validation on plans page
       | custom   |               | GAS      |
     And user closes the spy on datalayer
 
- @failed
   Scenario: Validate Analytics event for customer usage in the refine state on Residential plans page
     Given user has opened the website link in a browser and creates 'E2E_Analytics_Resi_Refine_State_Customer_Usage' to save evidences
     And user has navigated to 'RES' plans page

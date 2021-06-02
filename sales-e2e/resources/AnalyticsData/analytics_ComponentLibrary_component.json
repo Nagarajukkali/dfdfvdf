@@ -16,17 +16,17 @@
       "platform": "angular"
     },
     "verify_account_button": {
-      "componentLocation": "button:refine modal:Verify account",
+      "componentLocation": "button:Get cost estimates based on your household energy usage:Verify account",
       "componentName": "NA",
       "platform": "angular"
     },
     "verify_account_next_button": {
-      "componentLocation": "button:refine modal:Next",
+      "componentLocation": "button:Get cost estimates based on your household energy usage:Next",
       "componentName": "NA",
       "platform": "angular"
     },
     "verify_account_show_estimates_button": {
-      "componentLocation": "button:refine modal:Show estimates",
+      "componentLocation": "button:Get cost estimates based on your household energy usage:Show estimates",
       "componentName": "NA",
       "platform": "angular"
     },

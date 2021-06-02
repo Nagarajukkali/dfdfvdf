@@ -54,4 +54,17 @@ Then(/^user validates the usage and usage value of data layer is updated$/, asyn
   await plansMethod.validateAnalyticsForUsagePerDay(t, usage,usageValue,fuelType);
 });
 
+Then(/^user validates the data layer is updated for selected plan as '(.*)'$/, async function (t, [fuelType]) {
+  await plansMethod.validateAnalyticsSelectedPlan(t, fuelType);
+  console.log("Selected plan analytics validated for "+fuelType);
+});
+
+Then(/^user validates the data layer is updated for available plan for '(.*)' plans page for '(.*)'$/, async function (t, [customertype,fueltype]) {
+  await plansMethod.validateAnalyticsAvailablePlan(t, customertype,fueltype);
+});
+
+Then(/^user validates the data layer for '(.*)' plan selected by user for '(.*)'$/, async function (t, [plan,fueltype]) {
+  await plansMethod.validateAnalyticsSelectedPlanDetails(t, plan,fueltype);
+});
+
 
