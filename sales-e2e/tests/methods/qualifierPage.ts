@@ -280,6 +280,11 @@ export class qualifierMethod {
         errorMessage = "Unfortunately we don't supply energy to this address. For more information please call us on";
         await testFunction.assertText(t, eaQualifierPage.elements.txtAddressNotServiced, errorMessage);
         break;
+      case "NSW_REMOTE_METER":
+        errorMessage = "This electricity meter has been remotely disconnected and can't be reconnected by us (you need a retailer that can remotely connect meters).";
+        await testFunction.waitForElementToBeAppeared(t, eaQualifierPage.elements.txtInvalidMeterType);
+        await testFunction.assertText(t, eaQualifierPage.elements.txtInvalidMeterType, errorMessage);
+        break;
       case "PLAN_NOT_AVAILABLE":
         headingOnModal = "Plan Unavailable";
         await testFunction.assertText(t, eaQualifierPage.elements.headingOnChangePlanSelectionModal, headingOnModal);

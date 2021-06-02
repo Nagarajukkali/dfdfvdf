@@ -25,6 +25,10 @@ Then(/^user validates the '(.*)' '(.*)' event$/, async function (t,[pageComponen
   await plansMethod.validateComponentLibraryEvent(t, pageComponent, event);
 });
 
+Then(/^user validates the '(.*)' '(.*)' event for NSW remote meter$/, async function (t,[pageComponent,event]) {
+  await plansMethod.validateComponentLibraryEvent(t, pageComponent, event);
+});
+
 Then(/^user validates the '(.*)' '(.*)' link event$/, async function (t,[pageComponent,event]) {
   await t.closeWindow();
   await plansMethod.validateComponentLibraryEvent(t, pageComponent, event);
@@ -53,5 +57,3 @@ Then(/^user validates the usage and usage value of data layer is updated$/, asyn
   const fuelType = data[0].fuelType;
   await plansMethod.validateAnalyticsForUsagePerDay(t, usage,usageValue,fuelType);
 });
-
-
