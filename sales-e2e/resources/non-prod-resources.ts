@@ -14,7 +14,7 @@ module.exports = {
     screenshot:'N',
     interceptNetworkRequest:'N',
     qt2ReportingToExcludeInEnvs:'chai,decaf,espresso',
-    validateAnalytics:'N',
+    validateAnalytics:'Y',
     visualValidation: {
       rebaseline: 'N',
       validate: 'N',

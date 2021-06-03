@@ -1304,21 +1304,46 @@ export class plansMethod {
   }
 
   public static async validateAnalyticsSelectedPlanDetails(t: TestController, plan: string, fuelType: string){
-
     if(plan===PlanType.TOTAL_PLAN){
       if(fuelType==='Electricity'){
-
-
-
+        let selectedPlanDetails = await t.eval(() => window.ead.productInfo.electricity);
+        selectedPlanDetails=selectedPlanDetails.toString();
+        console.log(selectedPlanDetails);
 
       }else if(fuelType==='Gas'){
-
+        let selectedPlanDetails = await t.eval(() => window.ead.productInfo.gas.plan);
+        selectedPlanDetails=selectedPlanDetails.toString();
+        console.log(selectedPlanDetails);
       }
     }else if(plan===PlanType.NO_FRILLS){
       if(fuelType==='Electricity'){
-
+        let selectedPlanDetails = await t.eval(() => window.ead.productInfo.electricity.plan);
+        //selectedPlanDetails=selectedPlanDetails.toString();
+        await t.expect(selectedPlanDetails).contains("benefitTerm: '1 year'," +
+          "  connectionFees: 54.395," +
+          "  discountPercentage: 0," +
+          "  estimatedCost: 'NA'," +
+          "  exitFees: []," +
+          "  greenEnergyPercentage: 4.95," +
+          "  id: 'BASE_RCPP-EV'," +
+          "  latePaymentFee: 0," +
+          "  name: 'No Frills'," +
+          "  offerName: 'NA'," +
+          "  offPeakRate: 'NA'," +
+          "  peakRate: 'NA'," +
+          "  rateType: 'Fix 12 mth'," +
+          "  solarSingleRate: 10.2," +
+          "  solarTimeOffPeakRate: 9.1," +
+          "  solarTimePeakRate: 12.5," +
+          "  solarTimeShoulderRate: 9.8," +
+          "  sourceCode: 'NOFRILLS'," +
+          "  supplyChargePerDay: 0.836," +
+          "  version: 'NA' }");
+        console.log(selectedPlanDetails);
       }else if(fuelType==='Gas'){
-
+        let selectedPlanDetails = await t.eval(() => window.ead.productInfo.gas.plan);
+        selectedPlanDetails=selectedPlanDetails.toString();
+        console.log(selectedPlanDetails);
       }
     }
   }
