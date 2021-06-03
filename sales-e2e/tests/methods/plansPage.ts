@@ -1304,48 +1304,35 @@ export class plansMethod {
   }
 
   public static async validateAnalyticsSelectedPlanDetails(t: TestController, plan: string, fuelType: string){
+    let event_JSONObj;
+    const eventFilePath='resources/AnalyticsData/analytics_selected_plan.json';
+    const doc = fs.readFileSync(eventFilePath,'utf8');
+    event_JSONObj = JSON.parse(doc);
     if(plan===PlanType.TOTAL_PLAN){
       if(fuelType==='Electricity'){
-        let selectedPlanDetails = await t.eval(() => window.ead.productInfo.electricity);
-        selectedPlanDetails=selectedPlanDetails.toString();
-        console.log(selectedPlanDetails);
-
-      }else if(fuelType==='Gas'){
-        let selectedPlanDetails = await t.eval(() => window.ead.productInfo.gas.plan);
-        selectedPlanDetails=selectedPlanDetails.toString();
-        console.log(selectedPlanDetails);
-      }
-    }else if(plan===PlanType.NO_FRILLS){
-      if(fuelType==='Electricity'){
-        const expectedSelectedPlanDetails={
-          availablePlans: [ 'BASE_RSOT-EV', 'BASE_RCPP-EV', 'BASE_TOPH-EV' ],
-          benefitTerm: '1 year',
-          connectionFees: 54.395,
-          discountPercentage: 0,
-          estimatedCost: 'NA',
-          exitFees: [],
-          greenEnergyPercentage: 4.95,
-          id: 'BASE_RCPP-EV',
-          latePaymentFee: 0,
-          name: 'No Frills',
-          offerName: 'NA',
-          offPeakRate: 'NA',
-          peakRate: 'NA',
-          rateType: 'Fix 12 mth',
-          solarSingleRate: 10.2,
-          solarTimeOffPeakRate: 9.1,
-          solarTimePeakRate: 12.5,
-          solarTimeShoulderRate: 9.8,
-          sourceCode: 'NOFRILLS',
-          supplyChargePerDay: 0.836,
-          version: 'NA'
-        };
         let selectedPlanDetails = await t.eval(() => window.ead.productInfo.electricity.plan);
-        await t.expect(selectedPlanDetails).eql(expectedSelectedPlanDetails);
+        await t.expect(selectedPlanDetails).eql(event_JSONObj[plan][fuelType]);
       }else if(fuelType==='Gas'){
         let selectedPlanDetails = await t.eval(() => window.ead.productInfo.gas.plan);
-        selectedPlanDetails=selectedPlanDetails.toString();
-        console.log(selectedPlanDetails);
+        await t.expect(selectedPlanDetails).eql(event_JSONObj[plan][fuelType]);
+      }
+    }
+    else if(plan===PlanType.NO_FRILLS){
+      if(fuelType==='Electricity'){
+        let selectedPlanDetails = await t.eval(() => window.ead.productInfo.electricity.plan);
+        await t.expect(selectedPlanDetails).eql(event_JSONObj[plan][fuelType]);
+      }else if(fuelType==='Gas'){
+        let selectedPlanDetails = await t.eval(() => window.ead.productInfo.gas.plan);
+        await t.expect(selectedPlanDetails).eql(event_JSONObj[plan][fuelType]);
+      }
+    }
+    else if(plan===PlanType.TOTAL_BUSINESS){
+      if(fuelType==='Electricity'){
+        let selectedPlanDetails = await t.eval(() => window.ead.productInfo.electricity.plan);
+        await t.expect(selectedPlanDetails).eql(event_JSONObj[plan][fuelType]);
+      }else if(fuelType==='Gas'){
+        let selectedPlanDetails = await t.eval(() => window.ead.productInfo.gas.plan);
+        await t.expect(selectedPlanDetails).eql(event_JSONObj[plan][fuelType]);
       }
     }
   }
