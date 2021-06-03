@@ -112,6 +112,16 @@
       "componentName": "NA",
       "platform": "angular"
     },
+    "address_radio_button": {
+      "componentLocation": "radioButton:refine location:Address",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "postcode_radio_button": {
+      "componentLocation": "radioButton:refine location:Postcode",
+      "componentName": "NA",
+      "platform": "angular"
+    },
     "nsw_remote_meter_error": {
       "componentLocation": "message:plans app plan messages: This electricity meter has been remotely disconnected and can't be reconnected by us (you need a retailer that can remotely connect meters). Contact Endeavour Energy on 133 718 for the retailer's details. ",
       "componentName": "NA",

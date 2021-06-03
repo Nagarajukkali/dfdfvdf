@@ -129,4 +129,34 @@ Feature: Scenarios to cover the data layer updates and analytics events trigger 
     Then user validates the data layer is updated for solar as 'unknown'
     And user closes the spy on datalayer
 
+  Scenario: Validate the component library events for radio button on residential plans page
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Plans_Page_Radio_Button' to save evidences
+    And user has navigated to 'RES' plans page
+    And user initiates the call to capture analytics events
+    When user selects 'Address' location type
+    Then user validates the 'plans_page' 'Address_Radio_Button' event for NSW remote meter
+    When user selects 'Postcode' location type
+    Then user validates the 'plans_page' 'Postcode_Radio_Button' event for NSW remote meter
+    When user selects 'Total Plan'
+    And user moves on to fill the qualifier
+    And user selects 'New' on qualifier
+    And user provides all other details on qualifier page
+      |customerType| connectionAddress                   | movingType|propertyType  |
+      |RES         | Unit 1 297 Dorset Road, CROYDON VIC 3136|Non-Moving |Renter      |
+    And user closes the spy on datalayer
 
+  Scenario: Validate the component library events for radio button on business plans page
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Plans_Page_Radio_Button' to save evidences
+    And user has navigated to 'BUS' plans page
+    And user initiates the call to capture analytics events
+    When user selects 'Address' location type
+    Then user validates the 'plans_page' 'Address_Radio_Button' event for NSW remote meter
+    When user selects 'Postcode' location type
+    Then user validates the 'plans_page' 'Postcode_Radio_Button' event for NSW remote meter
+    When user selects 'Basic Business'
+    And user moves on to fill the qualifier
+    And user selects 'New' on qualifier
+    And user provides all other details on qualifier page
+      | customerType | connectionAddress                      | movingType | propertyType |
+      | BUS          | 320 Crown Street, SURRY HILLS NSW 2010 | Moving     |              |
+    And user closes the spy on datalayer
