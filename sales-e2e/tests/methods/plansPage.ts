@@ -1317,29 +1317,31 @@ export class plansMethod {
       }
     }else if(plan===PlanType.NO_FRILLS){
       if(fuelType==='Electricity'){
+        const expectedSelectedPlanDetails={
+          availablePlans: [ 'BASE_RSOT-EV', 'BASE_RCPP-EV', 'BASE_TOPH-EV' ],
+          benefitTerm: '1 year',
+          connectionFees: 54.395,
+          discountPercentage: 0,
+          estimatedCost: 'NA',
+          exitFees: [],
+          greenEnergyPercentage: 4.95,
+          id: 'BASE_RCPP-EV',
+          latePaymentFee: 0,
+          name: 'No Frills',
+          offerName: 'NA',
+          offPeakRate: 'NA',
+          peakRate: 'NA',
+          rateType: 'Fix 12 mth',
+          solarSingleRate: 10.2,
+          solarTimeOffPeakRate: 9.1,
+          solarTimePeakRate: 12.5,
+          solarTimeShoulderRate: 9.8,
+          sourceCode: 'NOFRILLS',
+          supplyChargePerDay: 0.836,
+          version: 'NA'
+        };
         let selectedPlanDetails = await t.eval(() => window.ead.productInfo.electricity.plan);
-        //selectedPlanDetails=selectedPlanDetails.toString();
-        await t.expect(selectedPlanDetails).contains("benefitTerm: '1 year'," +
-          "  connectionFees: 54.395," +
-          "  discountPercentage: 0," +
-          "  estimatedCost: 'NA'," +
-          "  exitFees: []," +
-          "  greenEnergyPercentage: 4.95," +
-          "  id: 'BASE_RCPP-EV'," +
-          "  latePaymentFee: 0," +
-          "  name: 'No Frills'," +
-          "  offerName: 'NA'," +
-          "  offPeakRate: 'NA'," +
-          "  peakRate: 'NA'," +
-          "  rateType: 'Fix 12 mth'," +
-          "  solarSingleRate: 10.2," +
-          "  solarTimeOffPeakRate: 9.1," +
-          "  solarTimePeakRate: 12.5," +
-          "  solarTimeShoulderRate: 9.8," +
-          "  sourceCode: 'NOFRILLS'," +
-          "  supplyChargePerDay: 0.836," +
-          "  version: 'NA' }");
-        console.log(selectedPlanDetails);
+        await t.expect(selectedPlanDetails).eql(expectedSelectedPlanDetails);
       }else if(fuelType==='Gas'){
         let selectedPlanDetails = await t.eval(() => window.ead.productInfo.gas.plan);
         selectedPlanDetails=selectedPlanDetails.toString();
