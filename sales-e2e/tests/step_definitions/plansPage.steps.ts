@@ -176,6 +176,25 @@ When(/^user provides below details for account verification on verify account mo
   await testFunction.takeScreenshot(t, 'verify_account_modal');//disabled UI Validation
   await verifyAccountMethod.verifyAccountDetails(t);
 });
+When(/^user verifies the account through verify account journey with invalid postcide for residential customer$/, async function (t, [], dataTable) {
+  let data = dataTable.hashes();
+  let modalWindowOption = data[0].modal_option;
+  if (modalWindowOption.length !== 0) {
+    await selectionOptionModalWindowMethod.selectOptionsModalWindow(t, data[0].modal_option);
+    await testFunction.takeScreenshot(t, 'verify_account_modal');//disabled UI Validation
+  }
+  if (data[0].elecAccountNumber) {
+    await verifyAccountMethod.provideAccountDetails(t, "ELE", data[0].elecAccountNumber);
+  }
+  if (data[0].gasAccountNumber) {
+    await verifyAccountMethod.provideAccountDetails(t, "GAS", data[0].gasAccountNumber);
+  }
+  if (data[0].customer_type === CustomerType.RESIDENTIAL) {
+    await verifyAccountMethod.provideAccountInformation(t, data[0].postcode, data[0].customer_type);
+  }
+  await testFunction.takeScreenshot(t, 'verify_account_modal');//disabled UI Validation
+  await verifyAccountMethod.verifyAccountDetails(t);
+});
 Then(/^Relevant error message is presented for customers marked with safety flag on verify account modal$/, async function (t) {
   await verifyAccountMethod.validateErrorMessageForBlockerAccounts(t);
   await testFunction.takeScreenshot(t, 'verify_account_modal');//disabled UI Validation
