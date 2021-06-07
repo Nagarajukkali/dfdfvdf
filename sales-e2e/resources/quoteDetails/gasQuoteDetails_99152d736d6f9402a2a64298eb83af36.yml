@@ -1,0 +1,92 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2106074925
+    sourceCode: Total_14%GD
+    actualQuoteDate: 2021-06-07
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0399191252
+    
+    emailId: tklhuittMo@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: PASSPORT
+      id: 367156
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationPassportDetail: 
+          passportFirstName: test
+          passportLastName: test
+          passportCountry: AUS
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 3
+    streetName: River
+    streetType: DR
+    suburb: ATHELSTONE
+    state: SA
+    country: AUS
+    postCode: 5076
+    premiseType: DOM
+    addressType: Premise
+    DPID: 31595230
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 42
+    streetName: Brownlow
+    streetType: DR
+    suburb: POINT COOK
+    state: VIC
+    country: AUS
+    postCode: 3030
+    addressType: Mailing
+    DPID: 98714098
+  
+  offerDetail: 
+    fuelType: G
+    offerType: COR
+    plan: TOPH-GS
+    priceTag: GSADA_NR2001
+    nmiMirnInformation: 
+      MIRN: 5510149276
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: GLSMRHAC
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+

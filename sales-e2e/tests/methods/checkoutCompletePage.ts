@@ -1,5 +1,6 @@
 import {testFunction} from '../../global_methods/helper';
 import {CustomerType, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
+import {checkoutDetailsMethod} from './checkoutDetailsPage';
 const { config }=require('../../resources/resource');
 const validateAnalyticsEvent=config.validateAnalytics;
 
@@ -72,13 +73,13 @@ export class checkoutCompleteMethod {
   public static async validateApplicationAcceptedSection(t) {
     await testFunction.isElementDisplayed(t, eaCheckoutCompletePage.elements.applicationAccepted);
     console.log("Validation completed for application accepted section on checkout complete page.");
-    // if(validateAnalyticsEvent==='Y') {
-    //   const actualElecQuoteID = await t.eval(() => window.ead.productInfo.electricity.quoteID);
-    //   checkoutDetailsMethod.map.set('elecQuoteId' + checkoutDetailsMethod.getScenarioId(t), actualElecQuoteID);
-    //   const actualGasQuoteID = await t.eval(() => window.ead.productInfo.gas.quoteID);
-    //   checkoutDetailsMethod.map.set('gasQuoteId' + checkoutDetailsMethod.getScenarioId(t), actualGasQuoteID);
-    //   return checkoutDetailsMethod.map;
-    //  }
+    if(validateAnalyticsEvent==='Y') {
+      const actualElecQuoteID = await t.eval(() => window.ead.productInfo.electricity.quoteID);
+      checkoutDetailsMethod.map.set('elecQuoteId' + checkoutDetailsMethod.getScenarioId(t), actualElecQuoteID);
+      const actualGasQuoteID = await t.eval(() => window.ead.productInfo.gas.quoteID);
+      checkoutDetailsMethod.map.set('gasQuoteId' + checkoutDetailsMethod.getScenarioId(t), actualGasQuoteID);
+      return checkoutDetailsMethod.map;
+     }
   }
 
   public static async validateSelectedPlanSection(t, fuelType) {
