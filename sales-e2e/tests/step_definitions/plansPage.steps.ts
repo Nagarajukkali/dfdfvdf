@@ -616,3 +616,118 @@ When (/^user selects '(.*)' green energy$/, async function (t, [greenEnergyPerce
   await plansMethod.selectGreenEnergy(t, greenEnergyPercentage );
 });
 
+When(/^user clicks the estimate cost tooltip$/, async function (t) {
+  await testFunction.click(t, EaHomePage.elements.estimateCostTooltip);
+});
+When(/^user clicks the electricity usage tooltip$/, async function (t) {
+  await testFunction.click(t, EaHomePage.elements.electricityUsagesTooltip);
+});
+When(/^user clicks the gas usage tooltip$/, async function (t) {
+  await testFunction.click(t, EaHomePage.elements.gasUsagesTooltip);
+});
+When(/^user clicks the green energy tooltip$/, async function (t) {
+  await testFunction.click(t, EaHomePage.elements.greenEnergyTooltip);
+});
+
+When(/^user clicks on '(.*)' estimate tooltip$/, async function (t,[planName]) {
+  switch (planName) {
+    case "basic-home" :
+      await testFunction.click(t, EaHomePage.elements.basicHomeEstimatecostTooltip);
+      break;
+    case "no-frills" :
+      await testFunction.click(t, EaHomePage.elements.nofrillsEstimatecostTooltip);
+      break;
+    case "total-plan" :
+      await testFunction.click(t, EaHomePage.elements.totalplanEstimatecostTooltip);
+      break;
+  }
+});
+
+When(/^user clicks on '(.*)' benefit period tooltip$/, async function (t,[planName]) {
+  switch (planName) {
+    case "basic-home" :
+      await testFunction.click(t, EaHomePage.elements.basicHomeBenefitPeriodTooltip);
+      break;
+    case "no-frills" :
+      await testFunction.click(t, EaHomePage.elements.nofrillsBenefitPeriodTooltip);
+      break;
+    case "total-plan" :
+      await testFunction.click(t, EaHomePage.elements.totalplanBenefitPeriodTooltip);
+      break;
+  }
+});
+
+When(/^user clicks on '(.*)' exit fees tooltip$/, async function (t,[planName]) {
+  switch (planName) {
+    case "basic-home" :
+      await testFunction.click(t, EaHomePage.elements.basicHomeExitFeesTooltip);
+      break;
+    case "no-frills" :
+      await testFunction.click(t, EaHomePage.elements.nofrillsExitFeesTooltip);
+      break;
+    case "total-plan" :
+      await testFunction.click(t, EaHomePage.elements.totalplanExitFeesTooltip);
+      break;
+  }
+});
+
+When(/^user clicks on '(.*)' fees tooltip$/, async function (t,[planName]) {
+  switch (planName) {
+    case "basic-home" :
+      await testFunction.click(t, EaHomePage.elements.basicHomeFeesTooltip);
+      break;
+    case "no-frills" :
+      await testFunction.click(t, EaHomePage.elements.nofrillsFeesTooltip);
+      break;
+    case "total-plan" :
+      await testFunction.click(t, EaHomePage.elements.totalplanFeesTooltip);
+      break;
+  }
+});
+When(/^user clicks on '(.*)' rates tooltip$/, async function (t,[planName]) {
+  switch (planName) {
+    case "basic-home" :
+      await testFunction.click(t, EaHomePage.elements.basicHomeRatesTooltip);
+      break;
+    case "no-frills" :
+      await testFunction.click(t, EaHomePage.elements.nofrillsRatesTooltip);
+      break;
+    case "total-plan" :
+      await testFunction.click(t, EaHomePage.elements.totalplanRatesTooltip);
+      break;
+  }
+});
+When(/^user clicks on '(.*)' late payment tooltip$/, async function (t,[planName]) {
+  switch (planName) {
+    case "basic-home" :
+      await testFunction.click(t, EaHomePage.elements.basicHomeLatePaymentTooltip);
+      break;
+    case "no-frills" :
+      await testFunction.click(t, EaHomePage.elements.nofrillsLatePaymentTooltip);
+      break;
+    case "total-plan" :
+      await testFunction.click(t, EaHomePage.elements.totalplanLatePaymentTooltip);
+      break;
+  }
+});
+
+When(/^user clicks on '(.*)' solar buyback tooltip$/, async function (t,[planName]) {
+  switch (planName) {
+    case "basic-home" :
+      await testFunction.click(t, EaHomePage.elements.basicHomeSolarRatesTooltip);
+      break;
+    case "no-frills" :
+      await testFunction.click(t, EaHomePage.elements.nofrillsSolarRatesTooltip);
+      break;
+    case "total-plan" :
+      await testFunction.click(t, EaHomePage.elements.totalplanSolarRatesTooltip);
+      break;
+  }
+});
+Then(/^user closes the electricity usage modal window$/, async function (t) {
+  await testFunction.click(t, EaHomePage.elements.elecUsagemodalClosebutton);
+});
+
+Then(/^user closes the gas usage modal window$/, async function (t) {
+  await testFunction.click(t, EaHomePage.elements.gasUsagemodalClosebutton);
+});

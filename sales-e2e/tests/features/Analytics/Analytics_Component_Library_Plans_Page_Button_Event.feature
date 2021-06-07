@@ -142,7 +142,7 @@ Feature: Scenarios to cover the data layer updates and analytics events trigger 
     And user selects 'New' on qualifier
     And user provides all other details on qualifier page
       |customerType| connectionAddress                   | movingType|propertyType  |
-      |RES         | Unit 1 297 Dorset Road, CROYDON VIC 3136|Non-Moving |Renter      |
+      |RES         | 10 Keswick Crescent, BAYSWATER NORTH VIC 3153|Non-Moving |Renter      |
     And user closes the spy on datalayer
 
   Scenario: Validate the component library events for radio button on business plans page
@@ -160,3 +160,81 @@ Feature: Scenarios to cover the data layer updates and analytics events trigger 
       | customerType | connectionAddress                      | movingType | propertyType |
       | BUS          | 320 Crown Street, SURRY HILLS NSW 2010 | Moving     |              |
     And user closes the spy on datalayer
+
+  Scenario: Validate the component library events for tooltips on residential plans page
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Plans_Page_Tooltip_Event' to save evidences
+    And user has navigated to 'RES' plans page
+    And user initiates the call to capture analytics events
+    When user clicks the estimate cost tooltip
+    Then user validates the 'plans_page' 'estimate_cost_tooltip' event
+    When user clicks the green energy tooltip
+    Then user validates the 'plans_page' 'green_Energy_tooltip' event
+    When user clicks the green energy tooltip
+    Then user validates the 'plans_page' 'green_Energy_tooltip' event
+    When user clicks on 'basic-home' estimate tooltip
+    Then user validates the 'plans_page' 'basic_home_estimate_cost_tooltip' event
+    When user clicks on 'no-frills' estimate tooltip
+    Then user validates the 'plans_page' 'nofrills_estimate_cost_ToolTip' event
+    When user clicks on 'total-plan' estimate tooltip
+    Then user validates the 'plans_page' 'total_plan_estimate_cost_ToolTip' event
+    When user clicks on 'basic-home' benefit period tooltip
+    Then user validates the 'plans_page' 'basic_home_benefit_period_ToolTip' event
+    When user clicks on 'no-frills' benefit period tooltip
+    Then user validates the 'plans_page' 'nofrills_benefit_period_ToolTip' event
+    When user clicks on 'total-plan' benefit period tooltip
+    Then user validates the 'plans_page' 'total_plan_benefit_period_ToolTip' event
+    When user clicks on 'basic-home' exit fees tooltip
+    Then user validates the 'plans_page' 'basic_home_exitfees_ToolTip' event
+    When user clicks on 'no-frills' exit fees tooltip
+    Then user validates the 'plans_page' 'nofrills_exitfees_ToolTip' event
+    When user clicks on 'total-plan' exit fees tooltip
+    Then user validates the 'plans_page' 'total_plan_exitfees_ToolTip' event
+    When user clicks on 'basic-home' fees tooltip
+    Then user validates the 'plans_page' 'basic_home_fees_ToolTip' event
+    When user clicks on 'no-frills' fees tooltip
+    Then user validates the 'plans_page' 'nofrills_fees_ToolTip' event
+    When user clicks on 'total-plan' fees tooltip
+    Then user validates the 'plans_page' 'total_plan_fees_ToolTip' event
+    When user clicks on 'basic-home' rates tooltip
+    Then user validates the 'plans_page' 'basic_home_rates_ToolTip' event
+    When user clicks on 'no-frills' rates tooltip
+    Then user validates the 'plans_page' 'nofrills_rates_ToolTip' event
+    When user clicks on 'total-plan' rates tooltip
+    Then user validates the 'plans_page' 'total_plan_rates_ToolTip' event
+    When user clicks on 'basic-home' late payment tooltip
+    Then user validates the 'plans_page' 'basic_home_late_payment_ToolTip' event
+    When user clicks on 'no-frills' late payment tooltip
+    Then user validates the 'plans_page' 'nofrills_late_payment_ToolTip' event
+    When user clicks on 'total-plan' late payment tooltip
+    Then user validates the 'plans_page' 'total_plan_late_payment_ToolTip' event
+    When user clicks on 'basic-home' solar buyback tooltip
+    Then user validates the 'plans_page' 'basic_home_solar_buyback_ToolTip' event
+    When user clicks on 'no-frills' solar buyback tooltip
+    Then user validates the 'plans_page' 'nofrills_solar_buyback_ToolTip' event
+    When user clicks on 'total-plan' solar buyback tooltip
+    Then user validates the 'plans_page' 'total_plan_solar_buyback_ToolTip' event
+    And user closes the spy on datalayer
+
+  Scenario: Validate the component library events for tooltips on business plans page
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Business_Page_Tooltip_Event' to save evidences
+    And user has navigated to 'BUS' plans page
+    And user initiates the call to capture analytics events
+    When user clicks the estimate cost tooltip
+    Then user validates the 'plans_page' 'estimate_cost_tooltip' event
+    When user clicks the green energy tooltip
+    Then user validates the 'plans_page' 'green_Energy_tooltip' event
+    And user closes the spy on datalayer
+
+  Scenario: Validate the component library events for modal for elec and gas usage on residential plans page
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Plans_Page_Tooltip_Event' to save evidences
+    And user has navigated to 'RES' plans page
+    And user initiates the call to capture analytics events
+    When user clicks the electricity usage tooltip
+    Then user validates the 'plans_page' 'elec_usage_tooltip' event
+    And user closes the electricity usage modal window
+    When user clicks the gas usage tooltip
+    Then user validates the 'plans_page' 'gas_usage_tooltip' event
+    And user closes the gas usage modal window
+    And user closes the spy on datalayer
+
+
