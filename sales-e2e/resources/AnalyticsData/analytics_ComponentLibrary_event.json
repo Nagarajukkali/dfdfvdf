@@ -184,6 +184,181 @@
       "eventName": "error",
       "eventValue": "NA"
     },
+    "green_energy_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": " GreenPower enables Australian households and busi",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "estimate_cost_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": " View your estimate using different usage periods ",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_home_estimate_cost_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": "Annual usage for an average customer in your distr",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_home_benefit_period_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": "You'll receive your plan benefits for the duration",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_home_exitfees_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": "No exit fees apply if you leave us during the bene",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_home_fees_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": "This fee is determined by your distributor. It onl",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_home_rates_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": "Our electricity standing offer rates are under rev",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_home_late_payment_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": "A late payment fee does not apply to this plan.",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_home_solar_buyback_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": " If you are eligible for a government solar rebate",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "nofrills_estimate_cost_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": "Annual usage for an average customer in your distr",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "nofrills_benefit_period_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": "You'll receive your plan benefits for at least the",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "nofrills_exitfees_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": "No exit fees apply if you leave us during the bene",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "nofrills_fees_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": "This fee is determined by your distributor. It onl",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "nofrills_rates_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": "Our rates will generally be adjusted annually, and",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "nofrills_late_payment_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": "A late payment fee applies if you pay your bill af",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "nofrills_solar_buyback_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": " If you are eligible for a government solar rebate",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_plan_estimate_cost_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": "Annual usage for an average customer in your distr",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_plan_benefit_period_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": "You'll receive your plan benefits for at least the",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_plan_exitfees_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": "No exit fees apply if you leave us during the bene",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_plan_fees_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": "This fee is determined by your distributor. It onl",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_plan_rates_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": "Our rates will generally be adjusted annually, and",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_plan_late_payment_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": "A late payment fee applies if you pay your bill af",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_plan_solar_buyback_tooltip": {
+      "eventAction": "tooltipClick",
+      "eventLabel": " If you are eligible for a government solar rebate",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "elec_usage_tooltip": {
+      "eventAction": "modalOpen",
+      "eventLabel": "Update your electricity estimate* by selecting a matching usage.",
+      "eventLocation": "NA",
+      "eventName": "popup",
+      "eventValue": "NA"
+    },
+    "gas_usage_tooltip": {
+      "eventAction": "modalOpen",
+      "eventLabel": "Update your gas estimate* by selecting a matching usage.",
+      "eventLocation": "NA",
+      "eventName": "popup",
+      "eventValue": "NA"
+    },
     "address_not_serviced_error_message": {
       "eventAction": "message",
       "eventLabel": " Unfortunately we don't supply energy to this address. For more information please call us on 1800 596 5171800 420 684. ",
@@ -254,6 +429,13 @@
     "address_continue_button": {
       "eventAction": "buttonClick",
       "eventLabel": "Continue Loading",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "address_continue_no_solar_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Confirm no solar at address Loading",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"

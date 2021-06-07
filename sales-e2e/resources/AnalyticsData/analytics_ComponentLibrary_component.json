@@ -16,17 +16,17 @@
       "platform": "angular"
     },
     "verify_account_button": {
-      "componentLocation": "button:refine modal:Verify account",
+      "componentLocation": "button:Get cost estimates based on your household energy usage:Verify account",
       "componentName": "NA",
       "platform": "angular"
     },
     "verify_account_next_button": {
-      "componentLocation": "button:refine modal:Next",
+      "componentLocation": "button:Get cost estimates based on your household energy usage:Next",
       "componentName": "NA",
       "platform": "angular"
     },
     "verify_account_show_estimates_button": {
-      "componentLocation": "button:refine modal:Show estimates",
+      "componentLocation": "button:Get cost estimates based on your household energy usage:Show estimates",
       "componentName": "NA",
       "platform": "angular"
     },
@@ -46,7 +46,7 @@
       "platform": "angular"
     },
     "bill_upload_link": {
-      "componentLocation": "link:refine modal:Upload bill",
+      "componentLocation": "link:Get cost estimates based on your household energy usage:Upload bill",
       "componentName": "NA",
       "platform": "angular"
     }
@@ -132,6 +132,131 @@
       "componentName": "NA",
       "platform": "angular"
     },
+    "estimate_cost_tooltip": {
+      "componentLocation": "tooltip:refine period: View your estimate using different usage periods ",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "green_energy_tooltip": {
+      "componentLocation": "tooltip:refine green energy: GreenPower enables Australian households and busi",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_plan_estimate_cost_tooltip": {
+      "componentLocation": "tooltip:Total Plan - Electricity & gas:Annual usage for an average customer in your distr",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_plan_benefit_period_tooltip": {
+      "componentLocation": "tooltip:Total Plan - Electricity & gas:You'll receive your plan benefits for at least the",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_plan_exitfees_tooltip": {
+      "componentLocation": "tooltip:Total Plan - Electricity & gas:No exit fees apply if you leave us during the bene",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_plan_fees_tooltip": {
+      "componentLocation": "tooltip:Total Plan - Electricity & gas:This fee is determined by your distributor. It onl",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_plan_rates_tooltip": {
+      "componentLocation": "tooltip:Total Plan - Electricity & gas:Our rates will generally be adjusted annually, and",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_plan_late_payment_tooltip": {
+      "componentLocation": "tooltip:Total Plan - Electricity & gas:A late payment fee applies if you pay your bill af",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_plan_solar_buyback_tooltip": {
+      "componentLocation": "tooltip:Total Plan - Electricity & gas: If you are eligible for a government solar rebate",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "nofrills_estimate_cost_tooltip": {
+      "componentLocation": "tooltip:No Frills - Electricity & gas:Annual usage for an average customer in your distr",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "nofrills_benefit_period_tooltip": {
+      "componentLocation": "tooltip:No Frills - Electricity & gas:You'll receive your plan benefits for at least the",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "nofrills_exitfees_tooltip": {
+      "componentLocation": "tooltip:No Frills - Electricity & gas:No exit fees apply if you leave us during the bene",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "nofrills_fees_tooltip": {
+      "componentLocation": "tooltip:No Frills - Electricity & gas:This fee is determined by your distributor. It onl",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "nofrills_rates_tooltip": {
+      "componentLocation": "tooltip:No Frills - Electricity & gas:Our rates will generally be adjusted annually, and",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "nofrills_late_payment_tooltip": {
+      "componentLocation": "tooltip:No Frills - Electricity & gas:A late payment fee applies if you pay your bill af",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "nofrills_solar_buyback_tooltip": {
+      "componentLocation": "tooltip:No Frills - Electricity & gas: If you are eligible for a government solar rebate",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_home_benefit_period_tooltip": {
+      "componentLocation": "tooltip:Basic Home - Electricity & gas:You'll receive your plan benefits for the duration",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_home_exitfees_tooltip": {
+      "componentLocation": "tooltip:Basic Home - Electricity & gas:No exit fees apply if you leave us during the bene",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_home_fees_tooltip": {
+      "componentLocation": "tooltip:Basic Home - Electricity & gas:This fee is determined by your distributor. It onl",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_home_rates_tooltip": {
+      "componentLocation": "tooltip:Basic Home - Electricity & gas:Our electricity standing offer rates are under rev",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_home_late_payment_tooltip": {
+      "componentLocation": "tooltip:Basic Home - Electricity & gas:A late payment fee does not apply to this plan.",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_home_solar_buyback_tooltip": {
+      "componentLocation": "tooltip:Basic Home - Electricity & gas: If you are eligible for a government solar rebate",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_home_estimate_cost_tooltip": {
+      "componentLocation": "tooltip:Basic Home - Electricity & gas:Annual usage for an average customer in your distr",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "elec_usage_tooltip": {
+      "componentLocation": "modal:refine electricity usage per day:Update your electricity estimate* by selecting a matching usage.",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "gas_usage_tooltip": {
+      "componentLocation": "modal:refine gas usage per day:Update your gas estimate* by selecting a matching usage.",
+      "componentName": "NA",
+      "platform": "angular"
+    },
     "address_not_serviced_error_message": {
       "componentLocation": "message:plans app plan messages: Unfortunately we don't supply energy to this address. For more information please call us on 1800 596 5171800 420 684. ",
       "componentName": "NA",
@@ -183,6 +308,11 @@
     },
     "address_continue_button": {
       "componentLocation": "button:qualifier address:Continue Loading",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "address_continue_no_solar_button": {
+      "componentLocation": "button:qualifier address:Confirm no solar at address Loading",
       "componentName": "NA",
       "platform": "angular"
     },
