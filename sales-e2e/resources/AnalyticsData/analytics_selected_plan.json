@@ -1,0 +1,153 @@
+{
+  "No Frills": {
+    "Electricity": {
+      "availablePlans": [
+        "BASE_RSOT-EV",
+        "BASE_RCPP-EV",
+        "BASE_TOPH-EV"
+      ],
+      "benefitTerm": "1 year",
+      "connectionFees": 54.395,
+      "discountPercentage": 0,
+      "estimatedCost": "NA",
+      "exitFees": [],
+      "greenEnergyPercentage": 4.95,
+      "id": "BASE_RCPP-EV",
+      "latePaymentFee": 0,
+      "name": "No Frills",
+      "offerName": "NA",
+      "offPeakRate": "NA",
+      "peakRate": "NA",
+      "rateType": "Fix 12 mth",
+      "solarSingleRate": 10.2,
+      "solarTimeOffPeakRate": 9.1,
+      "solarTimePeakRate": 12.5,
+      "solarTimeShoulderRate": 9.8,
+      "sourceCode": "NOFRILLS",
+      "supplyChargePerDay": 0.836,
+      "version": "NA"
+    },
+    "Gas": {
+      "availablePlans": [
+        "BASE_RSOT-GV",
+        "BASE_RCPP-GV",
+        "BASE_TOPH-GV"
+      ],
+      "benefitTerm": "1 year",
+      "connectionFees": 10.23,
+      "discountPercentage": 0,
+      "estimatedCost": "NA",
+      "exitFees": [],
+      "id": "BASE_RCPP-GV",
+      "latePaymentFee": 0,
+      "name": "No Frills",
+      "offerName": "NA",
+      "peakRate": "NA",
+      "rateType": "Fix 12 mth",
+      "sourceCode": "NOFRILLS",
+      "supplyChargePerDay": 0.726,
+      "version": "NA"
+    }
+  },
+  "Total Plan": {
+    "Electricity": {
+      "availablePlans": [
+        "BASE_RSOT-EV",
+        "BASE_RCPP-EV",
+        "BASE_TOPH-EV"
+      ],
+      "benefitTerm": "1 year",
+      "connectionFees": 54.395,
+      "discountPercentage": 13,
+      "estimatedCost": "NA",
+      "exitFees": [],
+      "greenEnergyPercentage": 4.95,
+      "id": "BASE_TOPH-EV",
+      "latePaymentFee": 0,
+      "name": "Total Plan",
+      "offPeakRate": "NA",
+      "offerName": "NA",
+      "peakRate": "NA",
+      "rateType": "Fix 12 mth",
+      "solarSingleRate": 10.2,
+      "solarTimeOffPeakRate": 9.1,
+      "solarTimePeakRate": 12.5,
+      "solarTimeShoulderRate": 9.8,
+      "sourceCode": "Total_13%GD",
+      "supplyChargePerDay": 0.982399,
+      "version": "NA"
+    },
+    "Gas": {
+      "availablePlans": [
+        "BASE_RSOT-GV",
+        "BASE_RCPP-GV",
+        "BASE_TOPH-GV"
+      ],
+      "benefitTerm": "1 year",
+      "connectionFees": 10.23,
+      "discountPercentage": 33,
+      "estimatedCost": "NA",
+      "exitFees": [],
+      "id": "BASE_TOPH-GV",
+      "latePaymentFee": 0,
+      "name": "Total Plan",
+      "offerName": "NA",
+      "peakRate": "NA",
+      "rateType": "Fix 12 mth",
+      "sourceCode": "Total_33%GD",
+      "supplyChargePerDay": 0.9306,
+      "version": "NA"
+    }
+  },
+  "Total Plan - Business": {
+    "Electricity": {
+      "availablePlans": [
+        "BASE_TOPB-EN-AUSGRID",
+        "BASE_BCNP-EN-AUSGRID",
+        "BASE_BSPB2-EN-AUSGRID",
+        "BASE_BSOT-EN"
+      ],
+      "benefitTerm": "1 year",
+      "connectionFees": 12.551,
+      "discountPercentage": 21,
+      "estimatedCost": "NA",
+      "exitFees": [],
+      "greenEnergyPercentage": 4.95,
+      "id": "BASE_TOPB-EN-AUSGRID",
+      "latePaymentFee": 12,
+      "name": "Total Plan - Business",
+      "offPeakRate": "NA",
+      "offerName": "NA",
+      "peakRate": "NA",
+      "rateType": "Fix 12 mth",
+      "solarSingleRate": 9.5,
+      "solarTimeOffPeakRate": "NA",
+      "solarTimePeakRate": "NA",
+      "solarTimeShoulderRate": "NA",
+      "sourceCode": "Total_21%GD",
+      "supplyChargePerDay": 2.178,
+      "version": "NA"
+    },
+    "Gas": {
+      "availablePlans": [
+        "BASE_TOPB-GN",
+        "BASE_BSPB2-GN",
+        "BASE_BSOT-GN"
+      ],
+      "benefitTerm": "1 year",
+      "connectionFees": 12.43,
+      "discountPercentage": 19,
+      "estimatedCost": "NA",
+      "exitFees": [],
+      "id": "BASE_TOPB-GN",
+      "latePaymentFee": 12,
+      "name": "Total Plan - Business",
+      "offerName": "NA",
+      "peakRate": "NA",
+      "rateType": "Fix 12 mth",
+      "sourceCode": "Total_19%GD",
+      "supplyChargePerDay": 0.7557,
+      "version": "NA"
+    }
+  }
+}

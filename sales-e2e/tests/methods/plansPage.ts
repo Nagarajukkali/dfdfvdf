@@ -761,7 +761,7 @@ export class plansMethod {
     }
 
   }
-  
+
 
   public static async verifyNMIorMIRNLookupMessage(t, NMIorMIRNType) {
     let errorMessage;
@@ -1230,9 +1230,15 @@ export class plansMethod {
     if (fueltype === 'Electricity'){
       await testFunction.click(t, EaHomePage.elements.refineEleUsage);
       await testFunction.click(t, EaHomePage.elements.refineEleUsageDropdown.withText(usage));
+      if(usage === 'Custom'){
+        await testFunction.enterText(t, EaHomePage.elements.refineElectrcityCustomInput,'25');
+      }
     } else {
       await testFunction.click(t, EaHomePage.elements.refineGasUsage);
       await testFunction.click(t, EaHomePage.elements.refineGasUsageDropdown.withText(usage));
+      if(usage === 'Custom'){
+        await testFunction.enterText(t, EaHomePage.elements.refineGasCustomInput,'30');
+      }
     }
   }
 
@@ -1259,24 +1265,112 @@ export class plansMethod {
     await t.expect(updatedUsagePeriodData).eql(usagePeriod);
   }
 
+  public static async validateAnalyticsSelectedPlan(t: TestController,
+                                                    expectedFlag: ('both' | 'electricity' | 'gas')
+  ): Promise<void> {
+    const selectedPlanValue = await t.eval(
+      () => window.ead.productInfo.selectedFuels
+    );
+    await t.expect(selectedPlanValue).eql(expectedFlag);
+  }
+
+  public static async validateAnalyticsAvailablePlan(t: TestController, journey: string, fuelType: string){
+    let availableElectricityPlans = await t.eval(() => window.ead.productInfo.electricity.plan.availablePlans);
+    availableElectricityPlans=availableElectricityPlans.toString();
+    let availableGasPlans = await t.eval(() => window.ead.productInfo.gas.plan.availablePlans);
+    availableGasPlans=availableGasPlans.toString();
+    if(journey==='Residential'){
+      if(fuelType==='Electricity') {
+        await t.expect(availableElectricityPlans).eql("BASE_RSOT-EN,BASE_RCPP-EN,BASE_TOPH-EN-AUSGRID");
+      }else if(fuelType==='Gas'){
+        await t.expect(availableGasPlans).eql("BASE_RSOT-GN,BASE_RCPP-GN,BASE_TOPH-GN");
+      }
+      console.log("Analytics data validated for " + journey + " page for available plans for " +fuelType);
+    }else if (journey==='Business'){
+      if(fuelType==='Electricity') {
+        await t.expect(availableElectricityPlans).eql("BASE_TOPB-EN-AUSGRID,BASE_BCNP-EN-AUSGRID,BASE_BSPB2-EN-AUSGRID,BASE_BSOT-EN");
+      }else if(fuelType==='Gas'){
+        await t.expect(availableGasPlans).eql("BASE_TOPB-GN,BASE_BSPB2-GN,BASE_BSOT-GN");
+      }
+      console.log("Analytics data validated for " + journey + " page for available plans for " +fuelType);
+    }else if (journey==='Campaign'){
+      if(fuelType==='Electricity') {
+        await t.expect(availableElectricityPlans).eql("CAM_OFFER_TOPH-EN-AUSGRID");
+      }else if(fuelType==='Gas'){
+        await t.expect(availableGasPlans).eql("CAM_OFFER_TOPH-GN");
+      }
+      console.log("Analytics data validated for " + journey + " page for available plans for " +fuelType);
+    }
+  }
+
+  public static async validateAnalyticsSelectedPlanDetails(t: TestController, plan: string, fuelType: string){
+    let event_JSONObj;
+    const eventFilePath='resources/AnalyticsData/analytics_selected_plan.json';
+    const doc = fs.readFileSync(eventFilePath,'utf8');
+    event_JSONObj = JSON.parse(doc);
+    if(plan===PlanType.TOTAL_PLAN){
+      if(fuelType==='Electricity'){
+        let selectedPlanDetails = await t.eval(() => window.ead.productInfo.electricity.plan);
+        await t.expect(selectedPlanDetails).eql(event_JSONObj[plan][fuelType]);
+      }else if(fuelType==='Gas'){
+        let selectedPlanDetails = await t.eval(() => window.ead.productInfo.gas.plan);
+        await t.expect(selectedPlanDetails).eql(event_JSONObj[plan][fuelType]);
+      }
+    }
+    else if(plan===PlanType.NO_FRILLS){
+      if(fuelType==='Electricity'){
+        let selectedPlanDetails = await t.eval(() => window.ead.productInfo.electricity.plan);
+        await t.expect(selectedPlanDetails).eql(event_JSONObj[plan][fuelType]);
+      }else if(fuelType==='Gas'){
+        let selectedPlanDetails = await t.eval(() => window.ead.productInfo.gas.plan);
+        await t.expect(selectedPlanDetails).eql(event_JSONObj[plan][fuelType]);
+      }
+    }
+    else if(plan===PlanType.TOTAL_BUSINESS){
+      if(fuelType==='Electricity'){
+        let selectedPlanDetails = await t.eval(() => window.ead.productInfo.electricity.plan);
+        await t.expect(selectedPlanDetails).eql(event_JSONObj[plan][fuelType]);
+      }else if(fuelType==='Gas'){
+        let selectedPlanDetails = await t.eval(() => window.ead.productInfo.gas.plan);
+        await t.expect(selectedPlanDetails).eql(event_JSONObj[plan][fuelType]);
+      }
+    }
+  }
   public static async validateAnalyticsGreenEnergyPercentage(t: TestController, greenEnergyPercentage: string){
     const updatedGreenEnergyData = await t.eval(() => window.ead.productInfo.electricity.estGreenEnergyPercentage);
     await t.expect(updatedGreenEnergyData).eql(greenEnergyPercentage);
   }
 
   public static async validateAnalyticsForUsagePerDay(t: TestController,  estUsage: string, usageValue, fuelType) {
+    await t.wait(1000);
     if (fuelType === FUEL_TYPE_OPTIONS.ELE.value) {
       const updatedElecUsageData = await t.eval(() => window.ead.productInfo.electricity.estElecUsage);
       await t.expect(updatedElecUsageData).eql(estUsage);
       const updatedEleUsageValue: number = await t.eval(() => window.ead.productInfo.electricity.usageVolume)
-      await t.expect(updatedEleUsageValue).eql(Number(usageValue));
+      if(estUsage === 'custom'){
+        usageValue = await testFunction.getInputText(t,EaHomePage.elements.refineElectrcityCustomInput);
+      }
+      if(estUsage === 'customer'){
+        usageValue = await testFunction.getElementText(t, EaHomePage.elements.refineEleUsageActiveOption);
+        usageValue = usageValue.replace(/[^0-9\.]+/g,"");
+      }
+      await t.expect(updatedEleUsageValue).eql(parseFloat(usageValue));
+
     } else {
       const updatedGasUsageData = await t.eval(() => window.ead.productInfo.gas.estGasUsage);
       await t.expect(updatedGasUsageData).eql(estUsage);
-      const updatedGasUsageValue = await t.eval(() => window.ead.productInfo.gas.usageVolume)
-      await t.expect(updatedGasUsageValue).eql(Number(usageValue));
-       }
+      const updatedGasUsageValue = await t.eval(() => window.ead.productInfo.gas.usageVolume);
+      if(estUsage === 'custom'){
+        usageValue = await testFunction.getInputText(t,EaHomePage.elements.refineGasCustomInput);
+      }
+      if(estUsage === 'customer'){
+        usageValue = await testFunction.getElementText(t, EaHomePage.elements.refineGasUsageActiveOption);
+        usageValue = usageValue.replace(/[^0-9\.]+/g,"");
+      }
+      await t.expect(updatedGasUsageValue).eql(parseFloat(usageValue));
+      }
     }
+
     public static async verifyAddressLookup(t, addressType) {
       let errorMessage;
       switch (addressType) {
