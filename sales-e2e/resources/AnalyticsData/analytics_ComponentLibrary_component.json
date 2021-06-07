@@ -40,6 +40,11 @@
       "componentName": "NA",
       "platform": "angular"
     },
+    "verify_account_error_message": {
+      "componentLocation": "message:Get cost estimates based on your household energy usage:Postcode does not match with the electricity account number. Please try again.",
+      "componentName": "NA",
+      "platform": "angular"
+    },
     "bill_upload_link": {
       "componentLocation": "link:Get cost estimates based on your household energy usage:Upload bill",
       "componentName": "NA",
@@ -249,6 +254,21 @@
     },
     "gas_usage_tooltip": {
       "componentLocation": "modal:refine gas usage per day:Update your gas estimate* by selecting a matching usage.",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "address_not_serviced_error_message": {
+      "componentLocation": "message:plans app plan messages: Unfortunately we don't supply energy to this address. For more information please call us on 1800 596 5171800 420 684. ",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "gas_not_serviced_error_message": {
+      "componentLocation": "message:plans app plan messages: Please note: at 27 Munnell St GULARGAMBONE NSW 2828, we only supply electricity. ",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "nmi_blocked_error_message": {
+      "componentLocation": "message:plans app plan messages: We’re unable to sign you up online for Electricity because of the meter type detected at this address. For more information please call us on 1800 440 924",
       "componentName": "NA",
       "platform": "angular"
     }
