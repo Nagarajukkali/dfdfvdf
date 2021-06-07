@@ -80,13 +80,6 @@ export class checkoutCompleteMethod {
       checkoutDetailsMethod.map.set('gasQuoteId' + checkoutDetailsMethod.getScenarioId(t), actualGasQuoteID);
       return checkoutDetailsMethod.map;
      }
-    if(validateAnalyticsEvent==='Y') {
-      const actualElecQuoteID = await t.eval(() => window.ead.productInfo.electricity.quoteID);
-      checkoutDetailsMethod.map.set('elecQuoteId' + checkoutDetailsMethod.getScenarioId(t), actualElecQuoteID);
-      const actualGasQuoteID = await t.eval(() => window.ead.productInfo.gas.quoteID);
-      checkoutDetailsMethod.map.set('gasQuoteId' + checkoutDetailsMethod.getScenarioId(t), actualGasQuoteID);
-      return checkoutDetailsMethod.map;
-     }
   }
 
   public static async validateSelectedPlanSection(t, fuelType) {
