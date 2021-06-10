@@ -15,7 +15,7 @@ Feature: Scenarios to cover the data layer updates and analytics events trigger 
   Examples:
       | customer_type | fuelType | 
       | RES           | BOTH     |
-@demo
+
   Scenario: Validate the component library events for message on plans page
     Given user has opened the website link in a browser and creates 'E2E_Analytics_Plans_Page_Message_Event' to save evidences
     And user has navigated to 'RES' plans page

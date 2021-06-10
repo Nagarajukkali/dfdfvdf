@@ -262,7 +262,7 @@ export class plansMethod {
         }
       }
       if (dataTable[0].Feature_carbonNeutral === "Y") {
-        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('partner-program')) {
+        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('employee') || t.testRun.test.name.includes('partner-program')) {
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNEGTitle, data.electricity.feature.preSelect.carbonNeutral.heading);
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNEGDescription, data.electricity.feature.preSelect.carbonNeutral.description);
         } else {
@@ -272,8 +272,13 @@ export class plansMethod {
 
       }
       if (dataTable[0].Feature_peaceOfMind === "Y") {
-        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeaturePeaceOfMindTitle, data.electricity.feature.preSelect.peaceOfMind.heading);
-        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeaturePeaceOfMindDescription, data.electricity.feature.preSelect.peaceOfMind.description);
+        if (t.testRun.test.name.includes('employee')){
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeaturePeaceOfMindEETitle, data.electricity.feature.preSelect.peaceOfMind.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeaturePeaceOfMindEEDescription, data.electricity.feature.preSelect.peaceOfMind.description);
+        } else {
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeaturePeaceOfMindTitle, data.electricity.feature.preSelect.peaceOfMind.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeaturePeaceOfMindDescription, data.electricity.feature.preSelect.peaceOfMind.description);
+        } 
       }
       if (dataTable[0].Feature_XX_discountOffTotalEnergyBill === "Y") {
         switch (dataTable[0].state) {
@@ -372,7 +377,7 @@ export class plansMethod {
          }
        } */
       if (dataTable[0].Feature_carbonNeutral === "Y") {
-        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('partner-program')) {
+        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('employee') || t.testRun.test.name.includes('partner-program')) {
           await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNEGTitle, data.gas.feature.preSelect.carbonNeutral.heading);
           await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNEGDescription, data.gas.feature.preSelect.carbonNeutral.description);
         } else {
@@ -380,8 +385,13 @@ export class plansMethod {
           await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNDescription, data.gas.feature.preSelect.carbonNeutral.description);
         }
         if (dataTable[0].Feature_peaceOfMind === "Y") {
-          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindTitle, data.gas.feature.preSelect.peaceOfMind.heading);
-          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindDescription, data.gas.feature.preSelect.peaceOfMind.description);
+          if (t.testRun.test.name.includes('employee')){
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindEETitle, data.gas.feature.preSelect.peaceOfMind.heading);
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindEEDescription, data.gas.feature.preSelect.peaceOfMind.description);
+          } else {
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindTitle, data.gas.feature.preSelect.peaceOfMind.heading);
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindDescription, data.gas.feature.preSelect.peaceOfMind.description);
+          }
         }
         if (dataTable[0].Feature_XX_discountOffTotalEnergyBill === "Y") {
           switch (dataTable[0].state) {
@@ -733,6 +743,28 @@ export class plansMethod {
             throw Error("Invalid State");
         }
         break;
+        case PlanType.EMPLOYEE_PLAN:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.employeePlan.heading);
+          switch (state) {
+            case AustralianState.VIC:
+              await testFunction.assertText(t, disclaimer, data.disclaimers.employeePlan.VIC.description);
+              break;
+            case AustralianState.NSW:
+              await testFunction.assertText(t, disclaimer, data.disclaimers.employeePlan.NSW.description);
+              break;
+            case AustralianState.ACT:
+              await testFunction.assertText(t, disclaimer, data.disclaimers.employeePlan.ACT.description);
+              break;
+            case AustralianState.SA:
+              await testFunction.assertText(t, disclaimer, data.disclaimers.employeePlan.SA.description);
+              break;
+            case AustralianState.QLD:
+              await testFunction.assertText(t, disclaimer, data.disclaimers.employeePlan.QLD.description);
+              break;
+            default:
+              throw Error("Invalid State");
+          }
+          break;
         break;
       default:
         throw Error("Invalid plan");
@@ -1686,6 +1718,17 @@ export class campaignMethod {
     } else {
       await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCode, offerCode);
     }
+    await t.wait(1000);
+    await testFunction.click(t, EaHomePage.elements.rbPostcode);
+    await testFunction.clearAndEnterText(t, EaHomePage.elements.postcodeOnCampaignPage, postcode);
+    await testFunction.click(t, EaHomePage.elements.btnCampaignSearch);
+    await testFunction.waitForElementToBeDisappeared(t, EaHomePage.elements.eaSpinner);
+  }
+
+  public static async enterEmailEmployeeidAndPostcodeOnCampaign(t, email, employeeId, postcode) {
+    await testFunction.clearAndEnterText(t, EaHomePage.elements.txtEmail, email);
+    await t.wait(1000);
+    await testFunction.clearAndEnterText(t, EaHomePage.elements.txtEmployeeid, employeeId);
     await t.wait(1000);
     await testFunction.click(t, EaHomePage.elements.rbPostcode);
     await testFunction.clearAndEnterText(t, EaHomePage.elements.postcodeOnCampaignPage, postcode);
