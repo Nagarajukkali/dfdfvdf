@@ -169,10 +169,12 @@ export class qualifierMethod {
     }
     let continuebutton =await testFunction.getElementText(t, eaQualifierPage.elements.addressContinue);
     await testFunction.click(t, eaQualifierPage.elements.addressContinue);
-    if(validateAnalyticsEvent==='Y'&& continuebutton.includes('Continue')){
+    if(validateAnalyticsEvent==='Y'){
+      if(continuebutton.includes('Continue')){
       await plansMethod.validateComponentLibraryEvent(t,"qualifier_page","address_continue_button");
-    }else{
+      }else{
       await plansMethod.validateComponentLibraryEvent(t,"qualifier_page","address_continue_no_solar_button");
+      }
     }
     console.log(`${address} is provided`);
   }

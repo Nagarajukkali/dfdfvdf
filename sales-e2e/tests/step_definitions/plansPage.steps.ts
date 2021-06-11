@@ -103,6 +103,10 @@ When(/^user provides "([^"]*)" and "([^"]*)" and clicks on show me plan link$/, 
   await campaignMethod.enterOfferCodeAndPostcodeOnCampaign(t, offerCode, postcode);
   await testFunction.takeScreenshot(t, 'campaign_page');//disabled UI Validation
 });
+When(/^user provides email "([^"]*)" and "([^"]*)" and clicks on show me plan link$/, async function (t, [email, postcode]) {
+  await campaignMethod.enterEmailAndPostcodeOnCampaign(t, email, postcode);
+  await testFunction.takeScreenshot(t, 'campaign_page');//disabled UI Validation
+});
 When(/^user provides email "([^"]*)" employee id "([^"]*)" and "([^"]*)" and clicks on show me plan link$/, async function (t, [email, employeeId, postcode]) {
   await campaignMethod.enterEmailEmployeeidAndPostcodeOnCampaign(t, email, employeeId, postcode);
   await testFunction.takeScreenshot(t, 'campaign_page');//disabled UI Validation

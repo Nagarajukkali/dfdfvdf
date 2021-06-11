@@ -493,7 +493,11 @@ export class checkoutReviewMethod {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureCN, json.electricity.feature.postSelect.carbonNeutral);
       }
       if (dataTable[0].Feature_peaceOfMind === "Y") {
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeaturePeaceOfMind, json.electricity.feature.postSelect.peaceOfMind);
+        if (t.testRun.test.name.includes('employee')){
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeaturePeaceOfMindEE, json.electricity.feature.postSelect.peaceOfMind);
+        } else{
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeaturePeaceOfMind, json.electricity.feature.postSelect.peaceOfMind);
+        }
       }
       if (dataTable[0].Feature_XX_discountOffTotalEnergyBill === "Y") {
         switch (dataTable[0].state) {
@@ -568,7 +572,11 @@ export class checkoutReviewMethod {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasFeatureCN, json.gas.feature.postSelect.carbonNeutral);
       }
       if (dataTable[0].Feature_peaceOfMind === "Y") {
+        if (t.testRun.test.name.includes('employee')){
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasFeaturePeaceOfMindEE, json.gas.feature.postSelect.peaceOfMind);
+        }else{
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasFeaturePeaceOfMind, json.gas.feature.postSelect.peaceOfMind);
+        }
       }
       if (dataTable[0].Feature_XX_discountOffTotalEnergyBill === "Y") {
         switch (dataTable[0].state) {

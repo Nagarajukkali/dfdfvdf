@@ -1736,6 +1736,15 @@ export class campaignMethod {
     await testFunction.waitForElementToBeDisappeared(t, EaHomePage.elements.eaSpinner);
   }
 
+  public static async enterEmailAndPostcodeOnCampaign(t, email, postcode) {
+    await testFunction.clearAndEnterText(t, EaHomePage.elements.txtEmailFF, email);
+    await t.wait(1000);
+    await testFunction.click(t, EaHomePage.elements.rbPostcode);
+    await testFunction.clearAndEnterText(t, EaHomePage.elements.postcodeOnCampaignPage, postcode);
+    await testFunction.click(t, EaHomePage.elements.btnCampaignSearch);
+    await testFunction.waitForElementToBeDisappeared(t, EaHomePage.elements.eaSpinner);
+  }
+
   public static async addPlanOnCampaign(t) {
     await testFunction.click(t, EaHomePage.elements.selectCampaignPlans);
   }

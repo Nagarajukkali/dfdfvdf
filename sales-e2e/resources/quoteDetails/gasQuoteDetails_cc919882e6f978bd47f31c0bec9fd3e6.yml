@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2104269742
-    sourceCode: Total_30%GD_50
-    actualQuoteDate: 2021-04-26
+    quoteId: BB2106115105
+    sourceCode: Total_36%GD
+    actualQuoteDate: 2021-06-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0387499178
+      phoneNumber: 0370943302
     
-    emailId: uVkruSACNE@energyaustralia.com.au
+    emailId: DanKYpfyCi@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLTAS
-      id: 89302
+      idType: DLQLD
+      id: 370593
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: TAS
+          licenseStateOfIssue: QLD
         
       
     
@@ -47,6 +47,7 @@ saleDetail :
     postCode: 3126
     premiseType: DOM
     addressType: Premise
+    DPID: 58161712
     primaryResidence: N
   
   premiseDetail: 
@@ -59,14 +60,15 @@ saleDetail :
     country: AUS
     postCode: 3126
     addressType: Mailing
+    DPID: 58161712
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2021-04-28
+    proposedStart: 2021-06-16
     offerType: ENE
     plan: FFPH-GV
     priceTag: GVR2A_NR2101
-    serviceOrderDate: 2021-04-28
+    serviceOrderDate: 2021-06-16
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5310425534

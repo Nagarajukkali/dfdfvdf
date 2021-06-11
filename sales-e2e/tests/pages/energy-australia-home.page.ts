@@ -82,6 +82,7 @@ const eaHomePage = {
     postcodeOnCampaignPage: Selector("#campaign-location-refine-postcode-input"),
     txtOfferCode: Selector("#campaign-unique-code-input"),
     txtEmail: Selector("#campaign-ea-email-input"),
+    txtEmailFF: Selector("#campaign-family-friends-email-input"),
     txtEmployeeid: Selector("#campaign-ea-id-input"),
     btnCampaignSearch: Selector("[id^='campaign-search-submit']"),
     btnCampaignSearchOnModal: Selector("#campaign-modal-search-submit"),
