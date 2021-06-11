@@ -56,8 +56,8 @@ Feature: Scenarios to cover the data layer analytics for existing customer
     And user verifies account on qualifier
       | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
       | Existing       | 8372937428    | Postcode            | 3024             | dob    | 01011980 |
-    Then user validates the 'Electricity' account state for '8373520946' account number and '3153'
-    And user validates the 'Gas' account state for '2816302453' account number and '3153'
+    Then user validates the 'Electricity' account state for '8372937428' account number and '3024'
+    And user validates the 'Gas' account state for '1919752359' account number and '3024'
     And user closes the spy on datalayer
 
   Scenario: Validate the updated data layer for moving state and person state on existing customer residential journey when gas account number is provided
@@ -69,12 +69,12 @@ Feature: Scenarios to cover the data layer analytics for existing customer
     And user selects 'Existing' on qualifier
     And user verifies account on qualifier
       | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
-      | Existing       | 2816302453    | Postcode            | 3024             | dob    | 01011980 |
+      | Existing       | 2816302453    | Postcode            | 3153             | dob    | 01011980 |
     Then user validates the 'Electricity' account state for '8373520946' account number and '3153'
     And user validates the 'Gas' account state for '2816302453' account number and '3153'
     And user closes the spy on datalayer
 
-  Scenario: Validate the updated data layer for moving state and person state on existing customer residential journey
+  Scenario: Validate the updated data layer for moving state and person state on existing customer business journey
     Given user has opened the website link in a browser and creates 'E2E_Analytics_Existing_Business_Customer_Qualifier_Button' to save evidences
     And user has navigated to 'BUS' plans page
     And user initiates the call to capture analytics events
@@ -92,4 +92,4 @@ Feature: Scenarios to cover the data layer analytics for existing customer
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | connectionAddress                      |
       | BUS          | Moving     | 320 Crown Street, SURRY HILLS NSW 2010 |
-    Then user validates the 'Electricity' account state for '8541728674' account number and 'ABN'
+    Then user validates the 'Electricity' account state for '8541728674' account number and '13756067200'
