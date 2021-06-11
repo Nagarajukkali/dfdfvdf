@@ -648,6 +648,36 @@ When(/^user clicks the green energy tooltip$/, async function (t) {
   await testFunction.click(t, EaHomePage.elements.greenEnergyTooltip);
 });
 
+When(/^user clicks '(.*)' toggle button$/, async function (t,[planName]) {
+  if((planName===PlanType.BASIC_HOME)||(planName===PlanType.BASIC_BUSINESS)){
+    await testFunction.click(t, EaHomePage.elements.basicHomeToggleButton);
+  }else if(planName===PlanType.NO_FRILLS){
+    await testFunction.click(t, EaHomePage.elements.noFrillsToggleButton);
+  }else if((planName===PlanType.TOTAL_PLAN)||(planName===PlanType.TOTAL_BUSINESS)){
+    await testFunction.click(t, EaHomePage.elements.totalPlanToggleButton);
+  }
+});
+
+When(/^user clicks '(.*)' electricity accordion button$/, async function (t,[planName]) {
+  if((planName===PlanType.BASIC_HOME)||(planName===PlanType.BASIC_BUSINESS)){
+    await testFunction.click(t, EaHomePage.elements.basicHomeEleRatesAccordion);
+  }else if(planName===PlanType.NO_FRILLS){
+    await testFunction.click(t, EaHomePage.elements.noFrillsEleRatesAccordion);
+  }else if((planName===PlanType.TOTAL_PLAN)||(planName===PlanType.TOTAL_BUSINESS)){
+    await testFunction.click(t, EaHomePage.elements.totalPlanEleRatesAccordion);
+  }
+});
+
+When(/^user clicks '(.*)' gas accordion button$/, async function (t,[planName]) {
+  if((planName===PlanType.BASIC_HOME)||(planName===PlanType.BASIC_BUSINESS)){
+    await testFunction.click(t, EaHomePage.elements.basicHomeGasRatesAccordion);
+  }else if(planName===PlanType.NO_FRILLS){
+    await testFunction.click(t, EaHomePage.elements.noFrillsGasRatesAccordion);
+  }else if((planName===PlanType.TOTAL_PLAN)||(planName===PlanType.TOTAL_BUSINESS)){
+    await testFunction.click(t, EaHomePage.elements.totalPlanGasRatesAccordion);
+  }
+});
+
 When(/^user clicks on '(.*)' estimate tooltip$/, async function (t,[planName]) {
   switch (planName) {
     case "basic-home" :
@@ -749,4 +779,11 @@ Then(/^user closes the electricity usage modal window$/, async function (t) {
 
 Then(/^user closes the gas usage modal window$/, async function (t) {
   await testFunction.click(t, EaHomePage.elements.gasUsagemodalClosebutton);
+});
+Then(/^user validates the '(.*)' account state for '(.*)' account number and '(.*)'$/, async function (t,[accountFuelRelationship,accountNumber,accountInfo]) {
+  await plansMethod.validateAccountNumberAnalytics(t, accountFuelRelationship, accountNumber, accountInfo);
+});
+
+Given(/^user clicks '(.*)' features plan toggle button$/, async function (t, [planToggleButton]) {
+  await plansMethod.selectSimplifiedPlanToggleButton(t, planToggleButton);
 });
