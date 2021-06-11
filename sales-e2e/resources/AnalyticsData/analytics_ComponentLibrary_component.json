@@ -271,6 +271,221 @@
       "componentLocation": "message:plans app plan messages: We’re unable to sign you up online for Electricity because of the meter type detected at this address. For more information please call us on 1800 440 924",
       "componentName": "NA",
       "platform": "angular"
+    },
+    "total_plan_toggle_off": {
+      "componentLocation": "toggleButton:Total Plan - Electricity & gas:off",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_plan_toggle_on": {
+      "componentLocation": "toggleButton:Total Plan - Electricity & gas:on",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "nofrills_toggle_off": {
+      "componentLocation": "toggleButton:No Frills - Electricity & gas:off",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_home_toggle_off": {
+      "componentLocation": "toggleButton:Basic Home - Electricity & gas:off",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "nofrills_toggle_on": {
+      "componentLocation": "toggleButton:No Frills - Electricity & gas:on",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_home_toggle_on": {
+      "componentLocation": "toggleButton:Basic Home - Electricity & gas:on",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_business_toggle_on": {
+      "componentLocation": "toggleButton:Total Plan - Business - Electricity:on",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_business_toggle_on": {
+      "componentLocation": "toggleButton:Basic Business - Electricity:on",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_business_toggle_off": {
+      "componentLocation": "toggleButton:Total Plan - Business - Electricity:off",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_business_toggle_off": {
+      "componentLocation": "toggleButton:Basic Business - Electricity:off",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_plan_electricity_accordion_on": {
+      "componentLocation": "accordionOpened:Total Plan - Electricity & gas:Show electricity rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_plan_electricity_accordion_off": {
+      "componentLocation": "accordionClosed:Total Plan - Electricity & gas:Show electricity rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_plan_gas_accordion_on": {
+      "componentLocation": "accordionOpened:Total Plan - Electricity & gas:Show gas rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_plan_gas_accordion_off": {
+      "componentLocation": "accordionClosed:Total Plan - Electricity & gas:Show gas rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "nofrills_electricity_accordion_on": {
+      "componentLocation": "accordionOpened:No Frills - Electricity & gas:Show electricity rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "nofrills_electricity_accordion_off": {
+      "componentLocation": "accordionClosed:No Frills - Electricity & gas:Show electricity rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "nofrills_gas_accordion_on": {
+      "componentLocation": "accordionOpened:No Frills - Electricity & gas:Show gas rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "nofrills_gas_accordion_off": {
+      "componentLocation": "accordionClosed:No Frills - Electricity & gas:Show gas rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_home_electricity_accordion_on": {
+      "componentLocation": "accordionOpened:Basic Home - Electricity & gas:Show electricity rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_home_electricity_accordion_off": {
+      "componentLocation": "accordionClosed:Basic Home - Electricity & gas:Show electricity rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_home_gas_accordion_on": {
+      "componentLocation": "accordionOpened:Basic Home - Electricity & gas:Show gas rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_home_gas_accordion_off": {
+      "componentLocation": "accordionClosed:Basic Home - Electricity & gas:Show gas rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_business_electricity_accordion_on": {
+      "componentLocation": "accordionOpened:Total Plan - Business - Electricity:Show electricity rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_business_electricity_accordion_off": {
+      "componentLocation": "accordionClosed:Total Plan - Business - Electricity:Show electricity rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_business_gas_accordion_on": {
+      "componentLocation": "accordionOpened:Total Plan - Business - Gas:Show gas rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "total_business_gas_accordion_off": {
+      "componentLocation": "accordionClosed:Total Plan - Business - Gas:Show gas rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_business_electricity_accordion_on": {
+      "componentLocation": "accordionOpened:Basic Business - Electricity:Show electricity rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_business_electricity_accordion_off": {
+      "componentLocation": "accordionClosed:Basic Business - Electricity:Show electricity rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_business_gas_accordion_on": {
+      "componentLocation": "accordionOpened:Basic Business - Gas:Show gas rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "basic_business_gas_accordion_off": {
+      "componentLocation": "accordionClosed:Basic Business - Gas:Show gas rates",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "fueltype_electricity_only": {
+      "componentLocation": "dropDown:refine fuel selector:electricity only",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "fueltype_gas_only": {
+      "componentLocation": "dropDown:refine fuel selector:gas only",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "fueltype_dual": {
+      "componentLocation": "dropDown:refine fuel selector:electricity and gas",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "usage_period_yearly": {
+      "componentLocation": "dropDown:refine period:Yearly",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "usage_period_bi-monthly": {
+      "componentLocation": "dropDown:refine period:Bi-monthly",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "green_energy_20%": {
+      "componentLocation": "dropDown:refine green energy:20%",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "green_energy_25%": {
+      "componentLocation": "dropDown:refine green energy:25%",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "res_electricity_usage_high": {
+      "componentLocation": "dropDown:refine electricity usage per day:High - 20 kWh",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "res_gas_usage_high":{
+      "componentLocation": "dropDown:refine gas usage per day:High - 100 MJ",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "bus_electricity_usage_medium": {
+      "componentLocation": "dropDown:refine electricity usage per day:Medium - 17 kWh",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "bus_gas_usage_medium": {
+      "componentLocation": "dropDown:refine gas usage per day:Medium - 345 MJ",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "key_features_plan_toggle": {
+      "componentLocation": "buttonGroup:refine simplified table toggle:Key features",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "all_features_plan_toggle": {
+      "componentLocation": "buttonGroup:refine simplified table toggle:All features",
+      "componentName": "NA",
+      "platform": "angular"
     }
   },
   "cart_page": {

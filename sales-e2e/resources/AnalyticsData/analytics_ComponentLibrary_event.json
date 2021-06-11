@@ -379,6 +379,307 @@
       "eventLocation": "NA",
       "eventName": "error",
       "eventValue": "NA"
+    },
+    "total_plan_toggle_off": {
+      "eventAction": "toggleButton",
+      "eventLabel": "off",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "nofrills_toggle_off": {
+      "eventAction": "toggleButton",
+      "eventLabel": "off",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_home_toggle_off": {
+      "eventAction": "toggleButton",
+      "eventLabel": "off",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_plan_toggle_on": {
+      "eventAction": "toggleButton",
+      "eventLabel": "on",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "nofrills_toggle_on": {
+      "eventAction": "toggleButton",
+      "eventLabel": "on",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_home_toggle_on": {
+      "eventAction": "toggleButton",
+      "eventLabel": "on",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_business_toggle_on": {
+      "eventAction": "toggleButton",
+      "eventLabel": "on",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_business_toggle_off": {
+      "eventAction": "toggleButton",
+      "eventLabel": "off",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_business_toggle_on": {
+      "eventAction": "toggleButton",
+      "eventLabel": "on",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_business_toggle_off": {
+      "eventAction": "toggleButton",
+      "eventLabel": "off",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_plan_electricity_accordion_on": {
+      "eventAction": "accordionOpened",
+      "eventLabel": "Show electricity rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_plan_electricity_accordion_off": {
+      "eventAction": "accordionClosed",
+      "eventLabel": "Show electricity rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_plan_gas_accordion_on": {
+      "eventAction": "accordionOpened",
+      "eventLabel": "Show gas rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_plan_gas_accordion_off": {
+      "eventAction": "accordionClosed",
+      "eventLabel": "Show gas rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "nofrills_electricity_accordion_on": {
+      "eventAction": "accordionOpened",
+      "eventLabel": "Show electricity rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "nofrills_electricity_accordion_off": {
+      "eventAction": "accordionClosed",
+      "eventLabel": "Show electricity rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "nofrills_gas_accordion_on": {
+      "eventAction": "accordionOpened",
+      "eventLabel": "Show gas rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "nofrills_gas_accordion_off": {
+      "eventAction": "accordionClosed",
+      "eventLabel": "Show gas rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_home_electricity_accordion_on": {
+      "eventAction": "accordionOpened",
+      "eventLabel": "Show electricity rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_home_electricity_accordion_off": {
+      "eventAction": "accordionClosed",
+      "eventLabel": "Show electricity rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_home_gas_accordion_on": {
+      "eventAction": "accordionOpened",
+      "eventLabel": "Show gas rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_home_gas_accordion_off": {
+      "eventAction": "accordionClosed",
+      "eventLabel": "Show gas rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_business_electricity_accordion_on": {
+      "eventAction": "accordionOpened",
+      "eventLabel": "Show electricity rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_business_electricity_accordion_off": {
+      "eventAction": "accordionClosed",
+      "eventLabel": "Show electricity rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_business_gas_accordion_on": {
+      "eventAction": "accordionOpened",
+      "eventLabel": "Show gas rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "total_business_gas_accordion_off": {
+      "eventAction": "accordionClosed",
+      "eventLabel": "Show gas rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_business_electricity_accordion_on": {
+      "eventAction": "accordionOpened",
+      "eventLabel": "Show electricity rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_business_electricity_accordion_off": {
+      "eventAction": "accordionClosed",
+      "eventLabel": "Show electricity rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_business_gas_accordion_on": {
+      "eventAction": "accordionOpened",
+      "eventLabel": "Show gas rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "basic_business_gas_accordion_off": {
+      "eventAction": "accordionClosed",
+      "eventLabel": "Show gas rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "fueltype_electricity_only": {
+      "eventAction": "dropDown",
+      "eventLabel": "electricity only",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "fueltype_gas_only": {
+      "eventAction": "dropDown",
+      "eventLabel": "gas only",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "fueltype_dual": {
+      "eventAction": "dropDown",
+      "eventLabel": "electricity and gas",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "usage_period_yearly": {
+      "eventAction": "dropDown",
+      "eventLabel": "Yearly",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "usage_period_bi-monthly": {
+      "eventAction": "dropDown",
+      "eventLabel": "Bi-monthly",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "green_energy_20%": {
+      "eventAction": "dropDown",
+      "eventLabel": "20%",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "green_energy_25%": {
+      "eventAction": "dropDown",
+      "eventLabel": "25%",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "res_electricity_usage_high": {
+      "eventAction": "dropDown",
+      "eventLabel": "High - 20 kWh",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "res_gas_usage_high": {
+      "eventAction": "dropDown",
+      "eventLabel": "High - 100 MJ",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "bus_electricity_usage_medium": {
+      "eventAction": "dropDown",
+      "eventLabel": "Medium - 17 kWh",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "bus_gas_usage_medium": {
+      "eventAction": "dropDown",
+      "eventLabel": "Medium - 345 MJ",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "key_features_plan_toggle": {
+      "eventAction": "buttonGroup",
+      "eventLabel": "Key features",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "all_features_plan_toggle": {
+      "eventAction": "buttonGroup",
+      "eventLabel": "All features",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
     }
   },
   "cart_page": {
