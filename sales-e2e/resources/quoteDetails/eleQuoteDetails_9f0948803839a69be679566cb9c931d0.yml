@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106115135
-    sourceCode: Employee_32%GD
+    quoteId: BB2106115138
+    sourceCode: Employee_25%GD
     actualQuoteDate: 2021-06-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -9,19 +9,19 @@ saleDetail :
     customerClass: RESI
   
   personDetail: 
-    title: DR
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0326691179
+      phoneNumber: 0362825536
     
-    emailId: XQQQnvDdHv@energyaustralia.com.au
+    emailId: eoNPgOMvUJ@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DLTAS
-      id: 261944
+      id: 776682
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -38,40 +38,42 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 74
-    streetName: Yillowra
-    streetType: S
-    suburb: AUBURN
-    state: NSW
+    streetNo: 3
+    streetName: River
+    streetType: DR
+    suburb: ATHELSTONE
+    state: SA
     country: AUS
-    postCode: 2144
+    postCode: 5076
     premiseType: DOM
     addressType: Premise
-    DPID: 85507214
+    DPID: 31595230
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 74
-    streetName: Yillowra
-    streetType: S
-    suburb: AUBURN
-    state: NSW
+    streetNo: 3
+    streetName: River
+    streetType: DR
+    suburb: ATHELSTONE
+    state: SA
     country: AUS
-    postCode: 2144
+    postCode: 5076
     addressType: Mailing
-    DPID: 85507214
+    DPID: 31595230
   
   offerDetail: 
     fuelType: E
     proposedStart: 2021-06-15
     offerType: ENE
-    plan: AGED-EN
-    priceTag: ENEAD_RS2
+    plan: TEP-ES
+    priceTag: ESSAD_SR0
     serviceOrderDate: 2021-06-15
     serviceOrderTime: BUSHRS
+    salarySacrificeConfirm: Y
+    salarySacrificeAmount: 0
     nmiMirnInformation: 
-      NMI: 4102681649
+      NMI: 2001245279
     
   
   offerDetail: 
@@ -86,8 +88,8 @@ saleDetail :
   creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    reEnergisationJSCCode: RE-EN
-    reEnergisationJSCCharge: 11.41
+    reEnergisationJSCCode: RCFE
+    reEnergisationJSCCharge: 45.68
   
   solarDetail: 
     solarPowerIndicator: N

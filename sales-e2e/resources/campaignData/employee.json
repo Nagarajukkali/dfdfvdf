@@ -77,20 +77,26 @@
     "sourceCode": {
       "newCustomer": {
         "VIC": "Employee_25%GD",
-        "NSW": "Employee_32%GD",
+        "NSW": {
+          "default": "Employee_32%GD"
+        },
         "QLD": "Employee_28%GD",
         "SA": "Employee_25%GD"
       },
       "existingCustomer": {
         "ENE":{
           "VIC": "Employee_25%GD",
-          "NSW": "Employee_32%GD",
+          "NSW": {
+            "default": "Employee_32%GD"
+          },
           "QLD": "Employee_28%GD",
           "SA": "Employee_25%GD"
         },
         "PS": {
           "VIC": "Employee_25%GD",
-          "NSW": "Employee_32%GD",
+          "NSW": {
+            "default": "Employee_32%GD"
+          },
           "QLD": "Employee_28%GD",
           "SA": "Employee_25%GD"
         }

@@ -12,7 +12,7 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
   Feature:E2E scenario for employee campaign
- @demo1
+
   Scenario Outline: Validate complete data for employee campaign for NSW - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "nathan.glen@energyaustralia.com.au" employee id "10000033" and "2000" and clicks on show me plan link

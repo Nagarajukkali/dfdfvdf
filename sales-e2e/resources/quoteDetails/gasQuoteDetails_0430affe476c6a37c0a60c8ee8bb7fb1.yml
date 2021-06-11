@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106115135
-    sourceCode: Employee_32%GD
+    quoteId: BB2106115141
+    sourceCode: Employee_37%GD
     actualQuoteDate: 2021-06-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -15,20 +15,20 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0326691179
+      phoneNumber: 0351739368
     
-    emailId: XQQQnvDdHv@energyaustralia.com.au
+    emailId: ymUZVMXFHC@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLTAS
-      id: 261944
+      idType: DLQLD
+      id: 476853
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: TAS
+          licenseStateOfIssue: QLD
         
       
     
@@ -38,44 +38,49 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 74
-    streetName: Yillowra
-    streetType: S
-    suburb: AUBURN
-    state: NSW
+    streetNo: 31
+    streetName: Balwyn
+    streetType: R
+    suburb: CANTERBURY
+    state: VIC
     country: AUS
-    postCode: 2144
+    postCode: 3126
     premiseType: DOM
     addressType: Premise
-    DPID: 85507214
+    DPID: 58161712
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 74
-    streetName: Yillowra
-    streetType: S
-    suburb: AUBURN
-    state: NSW
+    streetNo: 31
+    streetName: Balwyn
+    streetType: R
+    suburb: CANTERBURY
+    state: VIC
     country: AUS
-    postCode: 2144
+    postCode: 3126
     addressType: Mailing
-    DPID: 85507214
-  
-  offerDetail: 
-    fuelType: E
-    proposedStart: 2021-06-15
-    offerType: ENE
-    plan: AGED-EN
-    priceTag: ENEAD_RS2
-    serviceOrderDate: 2021-06-15
-    serviceOrderTime: BUSHRS
-    nmiMirnInformation: 
-      NMI: 4102681649
-    
+    DPID: 58161712
   
   offerDetail: 
     fuelType: G
+    proposedStart: 2021-06-16
+    offerType: ENE
+    plan: AGED-GV
+    priceTag: GVR2A_M1R
+    serviceOrderDate: 2021-06-16
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5310425534
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: N
+    
+  
+  offerDetail: 
+    fuelType: E
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -84,12 +89,4 @@ saleDetail :
   
   creditAssessmentDecision: Accept
   creditAssessmentReasonCode: Accept
-  meteringDetail: 
-    meterExchangeFlag: N
-    reEnergisationJSCCode: RE-EN
-    reEnergisationJSCCharge: 11.41
-  
-  solarDetail: 
-    solarPowerIndicator: N
-  
 

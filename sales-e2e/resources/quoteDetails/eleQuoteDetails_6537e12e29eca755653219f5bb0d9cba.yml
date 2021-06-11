@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106115135
-    sourceCode: Employee_32%GD
+    quoteId: BB2106115147
+    sourceCode: Employee_28%GD
     actualQuoteDate: 2021-06-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -9,28 +9,21 @@ saleDetail :
     customerClass: RESI
   
   personDetail: 
-    title: DR
+    personId: 7546820319
+    title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0326691179
+      phoneNumber: 0382388295
     
-    emailId: XQQQnvDdHv@energyaustralia.com.au
+    emailId: dIpBEnawZg@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLTAS
-      id: 261944
+      idType: DL
+      id: 453243
       primaryIdFlag: Y
-      idValidationInformation: 
-        consentForIdValidation: Y
-        idValidationDriversLicenseDetail: 
-          dlFirstName: test
-          dlLastName: test
-          licenseStateOfIssue: TAS
-        
-      
     
     authLevel: Y
     personPremiseRelationship: TENANT
@@ -38,40 +31,37 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 74
-    streetName: Yillowra
+    streetNo: 37
+    streetName: Echlin
     streetType: S
-    suburb: AUBURN
-    state: NSW
+    suburb: LABRADOR
+    state: QLD
     country: AUS
-    postCode: 2144
+    postCode: 4215
     premiseType: DOM
     addressType: Premise
-    DPID: 85507214
+    DPID: 42197038
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 74
-    streetName: Yillowra
+    streetNo: 37
+    streetName: Echlin
     streetType: S
-    suburb: AUBURN
-    state: NSW
+    suburb: LABRADOR
+    state: QLD
     country: AUS
-    postCode: 2144
+    postCode: 4215
     addressType: Mailing
-    DPID: 85507214
+    DPID: 42197038
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-06-15
-    offerType: ENE
-    plan: AGED-EN
-    priceTag: ENEAD_RS2
-    serviceOrderDate: 2021-06-15
-    serviceOrderTime: BUSHRS
+    offerType: PS
+    plan: AGED-EQ
+    priceTag: EQEXA_G11
     nmiMirnInformation: 
-      NMI: 4102681649
+      NMI: QB01405934
     
   
   offerDetail: 
@@ -83,13 +73,15 @@ saleDetail :
     billRouteType: EMAIL
   
   creditAssessmentDecision: Accept
-  creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    reEnergisationJSCCode: RE-EN
-    reEnergisationJSCCharge: 11.41
+    priceTagMeteringCharge: M42151D1E_VE
+    proposedNTC: 8470
+    proposedMC: VECTORMC
   
   solarDetail: 
-    solarPowerIndicator: N
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: 9850
+    solarTimeOfUse: N
   
 

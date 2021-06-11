@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106115135
-    sourceCode: Employee_32%GD
+    quoteId: BB2106115137
+    sourceCode: Employee_28%GD
     actualQuoteDate: 2021-06-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -9,26 +9,26 @@ saleDetail :
     customerClass: RESI
   
   personDetail: 
-    title: DR
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0326691179
+      phoneNumber: 0318604523
     
-    emailId: XQQQnvDdHv@energyaustralia.com.au
+    emailId: aYMqaLeYPa@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLTAS
-      id: 261944
+      idType: DLNSW
+      id: 942492
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: TAS
+          licenseStateOfIssue: NSW
         
       
     
@@ -38,40 +38,40 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 74
-    streetName: Yillowra
+    streetNo: 36
+    streetName: Cypress
     streetType: S
-    suburb: AUBURN
-    state: NSW
+    suburb: KULUIN
+    state: QLD
     country: AUS
-    postCode: 2144
+    postCode: 4558
     premiseType: DOM
     addressType: Premise
-    DPID: 85507214
+    DPID: 31477735
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 74
-    streetName: Yillowra
+    streetNo: 36
+    streetName: Cypress
     streetType: S
-    suburb: AUBURN
-    state: NSW
+    suburb: KULUIN
+    state: QLD
     country: AUS
-    postCode: 2144
+    postCode: 4558
     addressType: Mailing
-    DPID: 85507214
+    DPID: 31477735
   
   offerDetail: 
     fuelType: E
     proposedStart: 2021-06-15
     offerType: ENE
-    plan: AGED-EN
-    priceTag: ENEAD_RS2
+    plan: AGED-EQ
+    priceTag: EQEXD_G1131
     serviceOrderDate: 2021-06-15
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 4102681649
+      NMI: QB08556016
     
   
   offerDetail: 
@@ -86,8 +86,8 @@ saleDetail :
   creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    reEnergisationJSCCode: RE-EN
-    reEnergisationJSCCharge: 11.41
+    reEnergisationJSCCode: RNRRBU
+    reEnergisationJSCCharge: 0.0
   
   solarDetail: 
     solarPowerIndicator: N

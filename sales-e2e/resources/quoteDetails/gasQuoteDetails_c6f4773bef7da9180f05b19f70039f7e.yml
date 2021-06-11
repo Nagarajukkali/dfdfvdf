@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106115135
-    sourceCode: Employee_32%GD
+    quoteId: BB2106115136
+    sourceCode: Employee_28%GD
     actualQuoteDate: 2021-06-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -63,19 +63,19 @@ saleDetail :
     DPID: 85507214
   
   offerDetail: 
-    fuelType: E
+    fuelType: G
     proposedStart: 2021-06-15
     offerType: ENE
-    plan: AGED-EN
-    priceTag: ENEAD_RS2
+    plan: AGED-GN
+    priceTag: GNAGA_SMR
     serviceOrderDate: 2021-06-15
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 4102681649
+      MIRN: 5240524910
     
   
   offerDetail: 
-    fuelType: G
+    fuelType: E
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -84,12 +84,4 @@ saleDetail :
   
   creditAssessmentDecision: Accept
   creditAssessmentReasonCode: Accept
-  meteringDetail: 
-    meterExchangeFlag: N
-    reEnergisationJSCCode: RE-EN
-    reEnergisationJSCCharge: 11.41
-  
-  solarDetail: 
-    solarPowerIndicator: N
-  
 
