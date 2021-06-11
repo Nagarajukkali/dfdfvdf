@@ -362,7 +362,7 @@ Feature: Scenarios to cover the data layer updates and analytics events trigger 
     And user selects 'Medium - 345 MJ' 'Gas' usage per day
     Then user validates the 'plans_page' 'bus_gas_usage_medium' event
     And user closes the spy on datalayer
-  @21.6.4.analytics.1
+  @21.6.4.analytics
   Scenario: Validate the component library events for All features/Key Features toggle button on residential plans page
     Given user has opened the website link in a browser and creates 'E2E_Analytics_Residential_Plans_Page_feature_toggle' to save evidences
     And user has navigated to 'RES' plans page
@@ -372,7 +372,7 @@ Feature: Scenarios to cover the data layer updates and analytics events trigger 
     And  user clicks 'All' features plan toggle button
     Then user validates the 'plans_page' 'all_features_plan_toggle' event
     And user closes the spy on datalayer
-  @21.6.4.analytics.1
+  @21.6.4.analytics
   Scenario: Validate the component library events for All features/Key Features toggele button on business plans page
     Given user has opened the website link in a browser and creates 'E2E_Analytics_Business_Plans_Page_feature_toggle' to save evidences
     And user has navigated to 'BUS' plans page
