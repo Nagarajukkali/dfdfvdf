@@ -1,7 +1,7 @@
 @componentlibrary @analytics
 Feature: Scenarios to cover the data layer updates and analytics events trigger on plan page
 
-  Scenario: Validate the component library events for message on plans page
+  Scenario Outline: Validate the component library events for message on plans page
     Given user has opened the website link in a browser and creates 'E2E_Analytics_Verify_Modal_Message_Event' to save evidences
     And user has navigated to 'RES' plans page
     And user have selected fuel as "<fuelType>"
@@ -9,11 +9,11 @@ Feature: Scenarios to cover the data layer updates and analytics events trigger 
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey with invalid postcide for residential customer
       | customer_type | modal_option   | elecAccountNumber | gasAccountNumber | postcode |
-      | RES           | verify account | 8373520946        | 2816302453       | 6000     | 
+      | RES           | verify account | 8373520946        | 2816302453       | 6000     |
     Then user validates the 'refine_modal' 'verify_account_error_message' event
     And user closes the spy on datalayer
   Examples:
-      | customer_type | fuelType | 
+      | customer_type | fuelType |
       | RES           | BOTH     |
 
   Scenario: Validate the component library events for message on plans page

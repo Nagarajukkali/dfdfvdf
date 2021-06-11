@@ -52,6 +52,15 @@ export class plansMethod {
     await testFunction.waitForElementToBeDisappeared(t, EaHomePage.elements.eaSpinner);
   }
 
+  public static async selectSimplifiedPlanToggleButton(t, planToggleButton: string){
+    if (planToggleButton === 'All'){
+      await testFunction.click(t, EaHomePage.elements.allFeaturesToggleButton);
+    } else
+    {
+      await testFunction.click(t, EaHomePage.elements.keyFeaturesToggleButton)
+    }
+  }
+
   public static async selectPlan(t: any, planName: any) {
     switch (planName) {
       case PlanType.BASIC_HOME:
@@ -124,6 +133,23 @@ export class plansMethod {
 
   public static async validateThePlansAreLoaded(t) {
     await testFunction.isElementDisplayed(t, EaHomePage.elements.planCostEstimate);
+  }
+
+  public static async validateAccountNumberAnalytics(t, accountFuelRelationship,accountNumber, accountInfo){
+    if(validateAnalyticsEvent==='Y'){
+      if(accountFuelRelationship==='Electricity'){
+        let elecAccountNumber = await t.eval(() => window.ead.user.account[0].accNumber);
+        let accountInformation = await t.eval(() => window.ead.user.account[0].accPostCode);
+        await t.expect(elecAccountNumber).eql(accountNumber);
+        await t.expect(accountInformation).eql(accountInfo);
+      }else if(accountFuelRelationship==='Gas'){
+        let gasAccountNumber = await t.eval(() => window.ead.user.account[1].accNumber);
+        let accountInformation = await t.eval(() => window.ead.user.account[1].accPostCode);
+        await t.expect(gasAccountNumber).eql(accountNumber);
+        await t.expect(accountInformation).eql(accountInfo);
+      }
+      console.log("Analytics validated for "+accountFuelRelationship+" Account");
+    }
   }
 
   public static async validatePlanHeading(t, dataTable, data: any) {

@@ -310,6 +310,20 @@ const eaHomePage = {
     totalplanRatesTooltip:Selector("[id*='plan-details-rates'][id*=TOP] eui-tooltip"),
     totalplanLatePaymentTooltip:Selector("[id*='plan-details-late-payent-fee'][id*=TOP] eui-tooltip"),
     totalplanSolarRatesTooltip:Selector("[id*='solar-rate-title'][id*=TOP] eui-tooltip"),
+
+    basicHomeToggleButton:Selector("[id*='plan-rates-title-'][id*='SOT'] button"),
+    noFrillsToggleButton:Selector("[id*='plan-rates-title-'][id*='CPP'] button"),
+    totalPlanToggleButton:Selector("[id*='plan-rates-title-'][id*='TOP'] button"),
+
+    basicHomeEleRatesAccordion: Selector("[id*='plan-ELE-rate-accordion-heading-'][id*='SOT']"),
+    noFrillsEleRatesAccordion: Selector("[id*='plan-ELE-rate-accordion-heading-'][id*='CPP']"),
+    totalPlanEleRatesAccordion: Selector("[id*='plan-ELE-rate-accordion-heading-'][id*='TOP']"),
+    basicHomeGasRatesAccordion: Selector("[id*='plan-GAS-rate-accordion-heading-'][id*='SOT']"),
+    noFrillsGasRatesAccordion: Selector("[id*='plan-GAS-rate-accordion-heading-'][id*='CPP']"),
+    totalPlanGasRatesAccordion: Selector("[id*='plan-GAS-rate-accordion-heading-'][id*='TOP']"),
+    allFeaturesToggleButton: Selector('#edit-simplified-plan-toggle-all-features__label'),
+    keyFeaturesToggleButton: Selector('#edit-simplified-plan-toggle-key-features__label'),
+
   },
   campaignElements: {
     electrciityRepriceText: Selector("[id*='plan-rates-description-'][id*='-E'] [class*='hs-plan-rates-heading__reprice']"),

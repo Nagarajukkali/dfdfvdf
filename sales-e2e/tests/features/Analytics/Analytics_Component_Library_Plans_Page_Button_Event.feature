@@ -236,5 +236,149 @@ Feature: Scenarios to cover the data layer updates and analytics events trigger 
     Then user validates the 'plans_page' 'gas_usage_tooltip' event
     And user closes the gas usage modal window
     And user closes the spy on datalayer
+  @21.6.4.analytics
+  Scenario: Validate the component library events for toggle button on residential plans page
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Plans_Page_Toggle_Event' to save evidences
+    And user has navigated to 'RES' plans page
+    And user initiates the call to capture analytics events
+    When user clicks 'Total Plan' toggle button
+    Then user validates the 'plans_page' 'total_plan_toggle_off' event
+    When user clicks 'Total Plan' toggle button
+    Then user validates the 'plans_page' 'total_plan_toggle_on' event
+    When user clicks 'No Frills' toggle button
+    Then user validates the 'plans_page' 'nofrills_toggle_off' event
+    When user clicks 'No Frills' toggle button
+    Then user validates the 'plans_page' 'nofrills_toggle_on' event
+    When user clicks 'Basic Home' toggle button
+    Then user validates the 'plans_page' 'basic_home_toggle_off' event
+    When user clicks 'Basic Home' toggle button
+    Then user validates the 'plans_page' 'basic_home_toggle_on' event
+    And user closes the spy on datalayer
+@21.6.4.analytics
+  Scenario: Validate the component library events for toggle button on business plans page
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Bsme_Page_Toggle_Event' to save evidences
+    And user has navigated to 'BUS' plans page
+    And user initiates the call to capture analytics events
+    When user clicks 'Total Plan - Business' toggle button
+    Then user validates the 'plans_page' 'total_business_toggle_off' event
+    When user clicks 'Total Plan - Business' toggle button
+    Then user validates the 'plans_page' 'total_business_toggle_on' event
+    When user clicks 'Basic Business' toggle button
+    Then user validates the 'plans_page' 'basic_business_toggle_off' event
+    When user clicks 'Basic Business' toggle button
+    Then user validates the 'plans_page' 'basic_business_toggle_on' event
+    And user closes the spy on datalayer
+@21.6.4.analytics
+  Scenario: Validate the component library events for accordion on residential plans page
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Plans_Page_accordion_Event' to save evidences
+    And user has navigated to 'RES' plans page
+    And user initiates the call to capture analytics events
+    When user clicks 'Total Plan' electricity accordion button
+    Then user validates the 'plans_page' 'total_plan_electricity_accordion_on' event
+    When user clicks 'Total Plan' electricity accordion button
+    Then user validates the 'plans_page' 'total_plan_electricity_accordion_off' event
+    When user clicks 'Total Plan' gas accordion button
+    Then user validates the 'plans_page' 'total_plan_gas_accordion_on' event
+    When user clicks 'Total Plan' gas accordion button
+    Then user validates the 'plans_page' 'total_plan_gas_accordion_off' event
+    When user clicks 'No Frills' electricity accordion button
+    Then user validates the 'plans_page' 'nofrills_electricity_accordion_on' event
+    When user clicks 'No Frills' electricity accordion button
+    Then user validates the 'plans_page' 'nofrills_electricity_accordion_off' event
+    When user clicks 'No Frills' gas accordion button
+    Then user validates the 'plans_page' 'nofrills_gas_accordion_on' event
+    When user clicks 'No Frills' gas accordion button
+    Then user validates the 'plans_page' 'nofrills_gas_accordion_off' event
+    When user clicks 'Basic Home' electricity accordion button
+    Then user validates the 'plans_page' 'basic_home_electricity_accordion_on' event
+    When user clicks 'Basic Home' electricity accordion button
+    Then user validates the 'plans_page' 'basic_home_electricity_accordion_off' event
+    When user clicks 'Basic Home' gas accordion button
+    Then user validates the 'plans_page' 'basic_home_gas_accordion_on' event
+    When user clicks 'Basic Home' gas accordion button
+    Then user validates the 'plans_page' 'basic_home_gas_accordion_off' event
+    And user closes the spy on datalayer
+  @21.6.4.analytics
+  Scenario: Validate the component library events for accordion button on business plans page for electricity fuel
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Bsme_Page_accordion_Elec_Event' to save evidences
+    And user has navigated to 'BUS' plans page
+    And user initiates the call to capture analytics events
+    When user clicks 'Total Plan - Business' electricity accordion button
+    Then user validates the 'plans_page' 'total_business_electricity_accordion_on' event
+    When user clicks 'Total Plan - Business' electricity accordion button
+    Then user validates the 'plans_page' 'total_business_electricity_accordion_off' event
+    When user clicks 'Basic Business' electricity accordion button
+    Then user validates the 'plans_page' 'basic_business_electricity_accordion_on' event
+    When user clicks 'Basic Business' electricity accordion button
+    Then user validates the 'plans_page' 'basic_business_electricity_accordion_off' event
+    And user closes the spy on datalayer
 
-
+  @21.6.4.analytics
+  Scenario: Validate the component library events for accordion button on business plans page for gas fuel
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Bsme_Page_accordion_Gas_Event' to save evidences
+    And user has navigated to 'BUS' plans page
+    And user initiates the call to capture analytics events
+    And user have selected fuel as "GAS"
+    When user clicks 'Basic Business' gas accordion button
+    Then user validates the 'plans_page' 'basic_business_gas_accordion_on' event
+    When user clicks 'Basic Business' gas accordion button
+    Then user validates the 'plans_page' 'basic_business_gas_accordion_off' event
+    When user clicks 'Total Plan - Business' gas accordion button
+    Then user validates the 'plans_page' 'total_business_gas_accordion_on' event
+    When user clicks 'Total Plan - Business' gas accordion button
+    Then user validates the 'plans_page' 'total_business_gas_accordion_off' event
+    And user closes the spy on datalayer
+  @21.6.4.analytics
+  Scenario: Validate the component library events for dropdown on residential plans page
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Residential_Plans_Page_dropdown_event' to save evidences
+    And user has navigated to 'RES' plans page
+    And user initiates the call to capture analytics events
+    And user have selected fuel as "ELE"
+    Then user validates the 'plans_page' 'fueltype_electricity_only' event
+    When user selects the 'Yearly' usage period
+    Then user validates the 'plans_page' 'usage_period_yearly' event
+    And user selects 'High - 20 kWh' 'Electricity' usage per day
+    Then user validates the 'plans_page' 'res_electricity_usage_high' event
+    And user selects '20%' green energy
+    Then user validates the 'plans_page' 'green_energy_20%' event
+    And user have selected fuel as "BOTH"
+    Then user validates the 'plans_page' 'fueltype_dual' event
+    And user selects 'High - 100 MJ' 'Gas' usage per day
+    Then user validates the 'plans_page' 'res_gas_usage_high' event
+    And user closes the spy on datalayer
+  @21.6.4.analytics
+  Scenario: Validate the component library events for dropdown on business plans page
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Business_Plans_Page_usage_event' to save evidences
+    And user has navigated to 'BUS' plans page
+    And user initiates the call to capture analytics events
+    When user selects the 'Bi-monthly' usage period
+    Then user validates the 'plans_page' 'usage_period_bi-monthly' event
+    And user selects 'Medium - 17 kWh' 'Electricity' usage per day
+    Then user validates the 'plans_page' 'bus_electricity_usage_medium' event
+    And user selects '25%' green energy
+    Then user validates the 'plans_page' 'green_energy_25%' event
+    And user have selected fuel as "GAS"
+    Then user validates the 'plans_page' 'fueltype_gas_only' event
+    And user selects 'Medium - 345 MJ' 'Gas' usage per day
+    Then user validates the 'plans_page' 'bus_gas_usage_medium' event
+    And user closes the spy on datalayer
+  @21.6.4.analytics.1
+  Scenario: Validate the component library events for All features/Key Features toggle button on residential plans page
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Residential_Plans_Page_feature_toggle' to save evidences
+    And user has navigated to 'RES' plans page
+    And user initiates the call to capture analytics events
+    And  user clicks 'Key' features plan toggle button
+    Then user validates the 'plans_page' 'key_features_plan_toggle' event
+    And  user clicks 'All' features plan toggle button
+    Then user validates the 'plans_page' 'all_features_plan_toggle' event
+    And user closes the spy on datalayer
+  @21.6.4.analytics.1
+  Scenario: Validate the component library events for All features/Key Features toggele button on business plans page
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Business_Plans_Page_feature_toggle' to save evidences
+    And user has navigated to 'BUS' plans page
+    And user initiates the call to capture analytics events
+    And  user clicks 'Key' features plan toggle button
+    Then user validates the 'plans_page' 'key_features_plan_toggle' event
+    And  user clicks 'All' features plan toggle button
+    Then user validates the 'plans_page' 'all_features_plan_toggle' event
+    And user closes the spy on datalayer
