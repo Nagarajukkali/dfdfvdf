@@ -365,7 +365,7 @@ Feature:E2E scenario for fca-biz campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|campaign         |folderName                       |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |ELE     |14         |fca-biz  |E2E_Campaign_fca-biz_QLD_new_moving |Quote Tool  |Move Home|QLD    |BUS          |New            |No  |No  |
-
+@campaign21.6.4
   Scenario Outline: Validate complete data for fca-biz campaign for ACT for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "FCAOFFER" and "2600" and clicks on show me plan link

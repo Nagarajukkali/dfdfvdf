@@ -13,7 +13,7 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for biztpp campaign
-  @campaign21.4.3
+  @campaign21.6.4
   Scenario Outline: Validate complete data for biztpp campaign for NSW
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "HAIROFFER" and "2010" and clicks on show me plan link
@@ -22,20 +22,20 @@ Feature:E2E scenario for biztpp campaign
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |NSW  |
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |NSW  |
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |NSW  |
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |NSW  |
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName                |state|signUpCredit|
-      |Y                        |N          |Y              |Total Plan Plus - Business|NSW  |Y           |
+      |Y                        |N          |Y              |Total Plan Plus - Business|NSW  |N           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |NSW  |
+      |ELE      |N                 |N                       |Y                    |Y                                    |NSW  |
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
-      |GAS      |Y                 |N                       |Y                    |Y                                    |NSW  |
+      |GAS      |N                 |N                       |Y                    |Y                                    |NSW  |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                       |movingType |propertyType |
@@ -60,13 +60,13 @@ Feature:E2E scenario for biztpp campaign
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |NSW  |
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |NSW  |
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |NSW  |
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |NSW  |
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName                |state|signUpCredit|
-      |Y                        |N          |Y              |Total Plan Plus - Business|NSW  |Y           |
+      |Y                        |N          |Y              |Total Plan Plus - Business|NSW  |N           |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -88,7 +88,7 @@ Feature:E2E scenario for biztpp campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign   |folderName              |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |BOTH    |21         |19         |biztpp     |E2E_Campaign_biztpp_NSW |Quote Tool  |Move Home|NSW    |BUS          |New            |No  |No  |
-  @campaign21.4.3
+  @campaign21.6.4
   Scenario Outline: Validate complete data for biztpp campaign for VIC
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "HAIROFFER" and "3355" and clicks on show me plan link
@@ -97,20 +97,20 @@ Feature:E2E scenario for biztpp campaign
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |VIC  |
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |VIC  |
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |VIC  |
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |VIC  |
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName                |state|signUpCredit|
-      |Y                        |N          |Y              |Total Plan Plus - Business|VIC  |Y           |
+      |Y                        |N          |Y              |Total Plan Plus - Business|VIC  |N           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |VIC  |
+      |ELE      |N                 |N                       |Y                    |Y                                    |VIC  |
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
-      |GAS      |Y                 |N                       |Y                    |Y                                    |VIC  |
+      |GAS      |N                 |N                       |Y                    |Y                                    |VIC  |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                           |movingType |propertyType |
@@ -135,13 +135,13 @@ Feature:E2E scenario for biztpp campaign
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |VIC  |
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |VIC  |
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |VIC  |
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |VIC  |
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName                |state|signUpCredit|
-      |Y                        |N          |Y              |Total Plan Plus - Business|VIC  |Y           |
+      |Y                        |N          |Y              |Total Plan Plus - Business|VIC  |N           |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -313,7 +313,7 @@ Feature:E2E scenario for biztpp campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign |folderName              |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |BOTH    |10         |19         |biztpp   |E2E_Campaign_biztpp_ACT |Quote Tool  |Move Home|ACT    |BUS          |New            |No  |No  |
-  @campaign21.4.3
+  @campaign21.6.4
   Scenario Outline: Validate complete data for biztpp campaign for QLD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "HAIROFFER" and "4020" and clicks on show me plan link
@@ -321,14 +321,14 @@ Feature:E2E scenario for biztpp campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |QLD  |
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |QLD  |
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName                   |state|signUpCredit|
-      |Y                        |N          |Y              |Total Plan Plus - Business|QLD  |Y              |
+      |Y                        |N          |Y              |Total Plan Plus - Business|QLD  |N              |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |QLD  |
+      |ELE      |N                 |N                       |Y                    |Y                                    |QLD  |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -354,10 +354,10 @@ Feature:E2E scenario for biztpp campaign
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |QLD  |
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |QLD  |
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName                |state|signUpCredit|
-      |Y                        |N          |Y              |Total Plan Plus - Business|QLD  |Y           |
+      |Y                        |N          |Y              |Total Plan Plus - Business|QLD  |N           |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page

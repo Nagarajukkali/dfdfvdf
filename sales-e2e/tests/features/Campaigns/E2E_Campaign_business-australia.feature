@@ -12,7 +12,7 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for biz-australia campaign
-  @campaign21.4.3
+  @campaign21.6.4
   Scenario Outline: Validate complete data for biz-australia campaign for NSW-Essential for new non-moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "BIZOFFER5" and "2580" and clicks on show me plan link
@@ -21,20 +21,20 @@ Feature:E2E scenario for biz-australia campaign
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |chanceToWin|planName               |state  |signUpCredit|
-      |Y                        |N          |Y              |N          |Total Plan Plus - Business  |NSW|Y           |
+      |Y                        |N          |Y              |N          |Total Plan Plus - Business  |NSW|N           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                       |movingType |propertyType |
@@ -59,13 +59,13 @@ Feature:E2E scenario for biz-australia campaign
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |chanceToWin|planName              |state|signUpCredit|
-      |Y                        |N          |Y              |N          |Total Plan Plus - Business |<state>  |Y       |
+      |Y                        |N          |Y              |N          |Total Plan Plus - Business |<state>  |N       |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -87,7 +87,7 @@ Feature:E2E scenario for biz-australia campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign         |folderName                       |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |BOTH    |19         |20         |biz-australia  |E2E_Campaign_biz-australia_NSW-essential_new_nonmoving |Quote Tool  |Plan Switch|NSW    |BUS          |New            |No  |No  |
-  @campaign21.4.3
+  @campaign21.6.4
   Scenario Outline: Validate complete data for biz-australia campaign for NSW-Endeavour for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "BIZOFFER5" and "2780" and clicks on show me plan link
@@ -96,20 +96,20 @@ Feature:E2E scenario for biz-australia campaign
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |chanceToWin|planName               |state|signUpCredit|
-      |Y                        |N          |Y              |N          |Total Plan Plus - Business  |<state>  |Y       |
+      |Y                        |N          |Y              |N          |Total Plan Plus - Business  |<state>  |N       |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                       |movingType |propertyType |
@@ -134,13 +134,13 @@ Feature:E2E scenario for biz-australia campaign
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |chanceToWin|planName              |state|signUpCredit|
-      |Y                        |N          |Y              |N          |Total Plan Plus - Business |<state>  |Y       |
+      |Y                        |N          |Y              |N          |Total Plan Plus - Business |<state>  |N       |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -162,7 +162,7 @@ Feature:E2E scenario for biz-australia campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign         |folderName                                            |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |BOTH    |14         |20         |biz-australia  |E2E_Campaign_biz-australia_NSW_Endeavour_new_moving |Quote Tool  |Move Home|NSW    |BUS          |New            |No  |No  |
-  @campaign21.4.3
+  @campaign21.6.4
   Scenario Outline: Validate complete data for biz-australia campaign for NSW for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "BIZOFFER5" and "2000" and clicks on show me plan link
@@ -171,20 +171,20 @@ Feature:E2E scenario for biz-australia campaign
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |chanceToWin|planName               |state|signUpCredit|
-      |Y                        |N          |Y              |N          |Total Plan Plus - Business  |<state>  |Y       |
+      |Y                        |N          |Y              |N          |Total Plan Plus - Business  |<state>  |N       |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                       |movingType |propertyType |
@@ -209,13 +209,13 @@ Feature:E2E scenario for biz-australia campaign
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |chanceToWin|planName              |state|signUpCredit|
-      |Y                        |N          |Y              |N          |Total Plan Plus - Business |<state>  |Y       |
+      |Y                        |N          |Y              |N          |Total Plan Plus - Business |<state>  |N       |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -237,7 +237,7 @@ Feature:E2E scenario for biz-australia campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign         |folderName                       |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |BOTH    |22         |20         |biz-australia  |E2E_Campaign_biz-australia_NSW_new_moving |Quote Tool  |Move Home|NSW    |BUS          |New            |No  |No  |
-  @campaign21.4.3
+  @campaign21.6.4
   Scenario Outline: Validate complete data for biz-australia campaign for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "BIZOFFER5" and "3000" and clicks on show me plan link
@@ -312,7 +312,7 @@ Feature:E2E scenario for biz-australia campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign         |folderName                       |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |BOTH    |6          |24         |biz-australia  |E2E_Campaign_biz-australia_VIC_new_moving |Quote Tool  |Move Home|VIC    |BUS          |New            |No  |No  |
-  @campaign21.4.3
+  @campaign21.6.4
   Scenario Outline: Validate complete data for biz-australia campaign for QLD for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "BIZOFFER5" and "4500" and clicks on show me plan link
