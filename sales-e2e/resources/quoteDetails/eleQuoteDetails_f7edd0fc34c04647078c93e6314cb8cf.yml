@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106115108
-    sourceCode: Total_27%GD
+    quoteId: BB2106115145
+    sourceCode: Employee_25%GD
     actualQuoteDate: 2021-06-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -9,20 +9,20 @@ saleDetail :
     customerClass: RESI
   
   personDetail: 
-    personId: 8234554000
+    personId: 0597321000
     title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0384944925
+      phoneNumber: 0353833241
     
-    emailId: PKJLCbkhRN@energyaustralia.com.au
+    emailId: hLzwtlDsUI@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 118772
+      id: 857493
       primaryIdFlag: Y
     
     authLevel: Y
@@ -30,42 +30,40 @@ saleDetail :
     seqNo: 2
   
   premiseDetail: 
-    flatNo: 1
-    flatType: U
     addressClass: ST
-    streetNo: 57
-    streetName: Wallace
-    streetType: S
-    suburb: MACKSVILLE
-    state: NSW
+    streetNo: 62
+    streetName: Saints
+    streetType: R
+    suburb: SALISBURY PARK
+    state: SA
     country: AUS
-    postCode: 2447
+    postCode: 5109
     premiseType: DOM
     addressType: Premise
-    DPID: 59760646
+    DPID: 48985820
     primaryResidence: N
   
   premiseDetail: 
-    flatNo: 1
-    flatType: U
     addressClass: ST
-    streetNo: 57
-    streetName: Wallace
-    streetType: S
-    suburb: MACKSVILLE
-    state: NSW
+    streetNo: 62
+    streetName: Saints
+    streetType: R
+    suburb: SALISBURY PARK
+    state: SA
     country: AUS
-    postCode: 2447
+    postCode: 5109
     addressType: Mailing
-    DPID: 59760646
+    DPID: 48985820
   
   offerDetail: 
     fuelType: E
     offerType: PS
-    plan: FFPH-EN
-    priceTag: ENCE1_NR2007
+    plan: TEP-ES
+    priceTag: ESSAA_SR0
+    salarySacrificeConfirm: Y
+    salarySacrificeAmount: 0
     nmiMirnInformation: 
-      NMI: 4407376910
+      NMI: 2001473900
     
   
   offerDetail: 
@@ -81,6 +79,8 @@ saleDetail :
     meterExchangeFlag: N
   
   solarDetail: 
-    solarPowerIndicator: N
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: GENR2016
+    solarTimeOfUse: N
   
 

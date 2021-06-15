@@ -225,7 +225,7 @@ Feature: Scenarios to cover the data layer updates and analytics events trigger 
     Then user validates the 'plans_page' 'green_Energy_tooltip' event
     And user closes the spy on datalayer
 
-  Scenario: Validate the component library events for modal for elec and gas usage on residential plans page
+  Scenario: Validate the component library events for tooltips on residential plans page
     Given user has opened the website link in a browser and creates 'E2E_Analytics_Plans_Page_Tooltip_Event' to save evidences
     And user has navigated to 'RES' plans page
     And user initiates the call to capture analytics events

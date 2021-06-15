@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106115108
-    sourceCode: Total_27%GD
+    quoteId: BB2106115137
+    sourceCode: Employee_28%GD
     actualQuoteDate: 2021-06-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -9,63 +9,69 @@ saleDetail :
     customerClass: RESI
   
   personDetail: 
-    personId: 8234554000
-    title: MR
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0384944925
+      phoneNumber: 0318604523
     
-    emailId: PKJLCbkhRN@energyaustralia.com.au
+    emailId: aYMqaLeYPa@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DL
-      id: 118772
+      idType: DLNSW
+      id: 942492
       primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlLastName: test
+          licenseStateOfIssue: NSW
+        
+      
     
     authLevel: Y
     personPremiseRelationship: TENANT
     seqNo: 2
   
   premiseDetail: 
-    flatNo: 1
-    flatType: U
     addressClass: ST
-    streetNo: 57
-    streetName: Wallace
+    streetNo: 36
+    streetName: Cypress
     streetType: S
-    suburb: MACKSVILLE
-    state: NSW
+    suburb: KULUIN
+    state: QLD
     country: AUS
-    postCode: 2447
+    postCode: 4558
     premiseType: DOM
     addressType: Premise
-    DPID: 59760646
+    DPID: 31477735
     primaryResidence: N
   
   premiseDetail: 
-    flatNo: 1
-    flatType: U
     addressClass: ST
-    streetNo: 57
-    streetName: Wallace
+    streetNo: 36
+    streetName: Cypress
     streetType: S
-    suburb: MACKSVILLE
-    state: NSW
+    suburb: KULUIN
+    state: QLD
     country: AUS
-    postCode: 2447
+    postCode: 4558
     addressType: Mailing
-    DPID: 59760646
+    DPID: 31477735
   
   offerDetail: 
     fuelType: E
-    offerType: PS
-    plan: FFPH-EN
-    priceTag: ENCE1_NR2007
+    proposedStart: 2021-06-15
+    offerType: ENE
+    plan: AGED-EQ
+    priceTag: EQEXD_G1131
+    serviceOrderDate: 2021-06-15
+    serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 4407376910
+      NMI: QB08556016
     
   
   offerDetail: 
@@ -77,8 +83,11 @@ saleDetail :
     billRouteType: EMAIL
   
   creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
+    reEnergisationJSCCode: RNRRBU
+    reEnergisationJSCCharge: 0.0
   
   solarDetail: 
     solarPowerIndicator: N

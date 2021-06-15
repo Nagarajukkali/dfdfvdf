@@ -1,0 +1,258 @@
+{
+  "planName": "Employee Plan",
+  "planDescription": "Guaranteed total energy bill discount on every bill, every time.",
+
+  "electricity": {
+    "feature": {
+      "preSelect": {
+        "Credit50": {
+          "VIC": {
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up.+"
+          },
+          "NSW": {
+            "heading": "",
+            "description": ""
+          },
+          "QLD": {
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up.+"
+          },
+          "SA": {
+            "heading": "$25 Sign Up Credit",
+            "description": "Get a $25 credit per new energy account on your first bill when you sign up.+"
+          }
+        },
+        "carbonNeutral": {
+          "heading": "Energy with a bit of good",
+          "description": "100% carbon neutral energy at home for no extra cost to you."
+        },
+        "peaceOfMind": {
+          "heading": "Priority customer service",
+          "description": "Dedicated Family, Friends and You team."
+        },
+        "discountOffTotalEnergyBill": {
+          "VIC": {
+            "heading": "25% discount off total electricity bill"
+          },
+          "NSW": {
+            "heading": "32% discount off total electricity bill"
+          },
+          "QLD": {
+            "heading": "28% discount off total electricity bill"
+          },
+          "SA": {
+            "heading": "25% discount off total electricity bill"
+          },
+          "description": "Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges."
+        },
+        "noStandardConnectionFee": {
+          "heading": "",
+          "description": ""
+        },
+        "vipPriorityService": {
+          "heading": "",
+          "description": ""
+        }
+      },
+      "postSelect": {
+        "Credit50": {
+          "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
+          "NSW": "",
+          "QLD": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
+          "SA" : "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up.+"
+        },
+        "carbonNeutral": "Energy with a bit of good. 100% carbon neutral energy at home for no extra cost to you.",
+        "peaceOfMind": "Priority customer service. Dedicated Family, Friends and You team.",
+        "discountOffTotalEnergyBill": {
+          "VIC": "25% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
+          "NSW": "32% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
+          "QLD": "28% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
+          "SA" : "25% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges."
+        },
+        "noStandardConnectionFee": "",
+        "vipPriorityService": ""
+      }
+    },
+    "sourceCode": {
+      "newCustomer": {
+        "VIC": "Employee_25%GD",
+        "NSW": {
+          "default": "Employee_32%GD"
+        },
+        "QLD": "Employee_28%GD",
+        "SA": "Employee_25%GD"
+      },
+      "existingCustomer": {
+        "ENE":{
+          "VIC": "Employee_25%GD",
+          "NSW": {
+            "default": "Employee_32%GD"
+          },
+          "QLD": "Employee_28%GD",
+          "SA": "Employee_25%GD"
+        },
+        "PS": {
+          "VIC": "Employee_25%GD",
+          "NSW": {
+            "default": "Employee_32%GD"
+          },
+          "QLD": "Employee_28%GD",
+          "SA": "Employee_25%GD"
+        }
+      }
+    }
+  },
+
+  "gas": {
+    "feature": {
+      "preSelect": {
+        "Credit50": {
+          "VIC": {
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up.+"
+          },
+          "NSW": {
+            "heading": "",
+            "description": ""
+          },
+          "QLD": {
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up.+"
+          },
+          "SA": {
+            "heading": "$25 Sign Up Credit",
+            "description": "Get a $25 credit per new energy account on your first bill when you sign up.+"
+          }
+        },
+        "carbonNeutral": {
+          "heading": "Energy with a bit of good",
+          "description": "100% carbon neutral energy at home for no extra cost to you."
+        },
+        "peaceOfMind": {
+          "heading": "Priority customer service",
+          "description": "Dedicated Family, Friends and You team."
+        },
+        "discountOffTotalEnergyBill": {
+          "VIC": {
+            "heading": "37% discount off total gas bill"
+          },
+          "NSW": {
+            "heading": "28% discount off total gas bill"
+          },
+          "SA": {
+            "heading": "25% discount off total gas bill"
+          },
+          "description": "Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges."
+        },
+        "vipPriorityService": {
+          "heading": "",
+          "description": ""
+        }
+      },
+      "postSelect": {
+        "Credit50": {
+          "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
+          "NSW": "",
+          "SA" : "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up.+"
+        },
+        "carbonNeutral": "Energy with a bit of good. 100% carbon neutral energy at home for no extra cost to you.",
+        "peaceOfMind": "Priority customer service. Dedicated Family, Friends and You team.",
+        "discountOffTotalEnergyBill": {
+          "VIC": "37% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
+          "NSW": "28% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
+          "SA" : "25% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges."
+        },
+        "vipPriorityService": ""
+      }
+    },    "sourceCode": {
+      "newCustomer": {
+        "VIC": "Employee_37%GD",
+        "NSW": "Employee_28%GD",
+        "SA": "Employee_25%GD"
+      },
+      "existingCustomer": {
+        "ENE":{
+          "VIC": "Employee_37%GD",
+          "NSW": "Employee_28%GD",
+          "SA": "Employee_25%GD"
+        },
+        "PS": {
+          "VIC": "Employee_37%GD",
+          "NSW": "Employee_28%GD",
+          "SA": "Employee_25%GD"
+        }
+      }
+    }
+  },
+
+  "disclaimers": {
+    "referencePriceComparison": {
+      "heading": "Reference price comparison and estimated annual cost",
+      "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+    },
+    "goNeutral": {
+      "heading": "",
+      "QLD": {
+      "description": ""
+      },
+      "NonQLD": {
+        "description": ""
+      }
+    },
+    "solarBuyBack": {
+      "heading": "Solar feed-in tariffs",
+      "VIC": {
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. For more information about the Victorian FiT scheme see www.energy.vic.gov.au/renewable-energy/victorian-feed-in-tariff."
+      },
+      "NonVIC": {
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
+      }
+    },
+    "noStandardConnectionFee": {
+      "heading": "",
+      "description": ""
+    },
+    "Credit50": {
+      "VIC": {
+        "heading": "$50 Sign Up Credit",
+        "description": "+ Offer available to VIC residential customers who sign up to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+      },
+      "NSW": {
+        "heading": "",
+        "description": ""
+      },
+      "ACT": {
+        "heading": "$25 Sign Up Credit",
+        "description": "+ Offer available to ACT residential customers who sign up to an electricity or gas market offer. Limit of one $25 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+      },
+      "QLD": {
+        "heading": "$50 Sign Up Credit",
+        "description": "+ Offer available to QLD residential customers who sign up to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+      },
+      "SA": {
+        "heading": "$25 Sign Up Credit",
+        "description": "+ Offer available to SA residential customers who sign up to an electricity or gas market offer. Limit of one $25 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+      }
+    },
+    "employeePlan": {
+      "heading": "Employee Plan",
+      "VIC": {
+        "description": "* Offer only for eligible VIC EnergyAustralia employees and max term contractors. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your rates for this plan may vary but we'll notify you before this happens. If we improve or add features during your benefit period, we'll let you know. Go Neutral is automatically included in your plan and we will offset the carbon emissions from your electricity and/or gas account at no extra cost. We will let you know in advance if we withdraw Go Neutral. We may change or end this offer at any time."
+      },
+      "NSW": {
+        "description": "* Offer only for eligible NSW EnergyAustralia employees and max term contractors. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your rates for this plan may vary but we'll notify you before this happens. If we improve or add features during your benefit period, we'll let you know. Go Neutral is automatically included in your plan and we will offset the carbon emissions from your electricity and/or gas account at no extra cost. We will let you know in advance if we withdraw Go Neutral. We may change or end this offer at any time."
+      },
+      "ACT": {
+        "description": "* Offer only for eligible ACT residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. Go Neutral is automatically included in your plan and we will offset the carbon emissions from your electricity and/or gas account at no extra cost. We will let you know in advance if we withdraw Go Neutral. We may change or end this offer at any time."
+      },
+      "QLD": {
+        "description": "* Offer only for eligible QLD EnergyAustralia employees and max term contractors. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your rates for this plan may vary but we'll notify you before this happens. If we improve or add features during your benefit period, we'll let you know. Go Neutral is automatically included in your plan and we will offset the carbon emissions from your electricity and/or gas account at no extra cost. We will let you know in advance if we withdraw Go Neutral. We may change or end this offer at any time."
+      },
+      "SA": {
+        "description": "* Offer only for eligible SA EnergyAustralia employees and max term contractors. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your rates for this plan may vary but we'll notify you before this happens. If we improve or add features during your benefit period, we'll let you know. Go Neutral is automatically included in your plan and we will offset the carbon emissions from your electricity and/or gas account at no extra cost. We will let you know in advance if we withdraw Go Neutral. We may change or end this offer at any time."
+      }
+    }
+  }
+}
+

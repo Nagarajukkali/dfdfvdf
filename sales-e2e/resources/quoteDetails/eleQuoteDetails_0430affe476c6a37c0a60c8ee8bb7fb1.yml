@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106115102
-    sourceCode: Total_15%GD_25
+    quoteId: BB2106115140
+    sourceCode: Employee_25%GD
     actualQuoteDate: 2021-06-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -9,19 +9,19 @@ saleDetail :
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0326961794
+      phoneNumber: 0351739368
     
-    emailId: BztzhRpBdz@energyaustralia.com.au
+    emailId: ymUZVMXFHC@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DLQLD
-      id: 251809
+      id: 476853
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -38,36 +38,46 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 21
-    streetName: Tarrant
-    streetType: CR
-    suburb: DUNLOP
-    state: ACT
+    streetNo: 31
+    streetName: Balwyn
+    streetType: R
+    suburb: CANTERBURY
+    state: VIC
     country: AUS
-    postCode: 2615
+    postCode: 3126
     premiseType: DOM
     addressType: Premise
-    DPID: 75543732
+    DPID: 58161712
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 21
-    streetName: Tarrant
-    streetType: CR
-    suburb: DUNLOP
-    state: ACT
+    streetNo: 31
+    streetName: Balwyn
+    streetType: R
+    suburb: CANTERBURY
+    state: VIC
     country: AUS
-    postCode: 2615
+    postCode: 3126
     addressType: Mailing
-    DPID: 75543732
+    DPID: 58161712
   
   offerDetail: 
     fuelType: E
-    offerType: COR
-    plan: FFPH-EA
-    priceTag: EAACA_NR2007
-    nmiMirnInformation/: 
+    proposedStart: 2021-06-16
+    offerType: ENE
+    plan: AGED-EV
+    priceTag: EVCID_S01Y8
+    serviceOrderDate: 2021-06-16
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 6102221416
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: N
+    
   
   offerDetail: 
     fuelType: G
@@ -81,5 +91,10 @@ saleDetail :
   creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
+    reEnergisationJSCCode: RCTBH
+    reEnergisationJSCCharge: 37.9
+  
+  solarDetail: 
+    solarPowerIndicator: N
   
 

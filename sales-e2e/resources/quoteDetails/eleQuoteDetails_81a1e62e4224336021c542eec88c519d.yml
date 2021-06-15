@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2104077804
-    sourceCode: Total_16%GD
-    actualQuoteDate: 2021-04-07
+    quoteId: BB2106115109
+    sourceCode: Total_17%GD
+    actualQuoteDate: 2021-06-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0318089103
+      phoneNumber: 0395891364
     
-    emailId: UeOoTldiXb@energyaustralia.com.au
+    emailId: AWCOuvqnbo@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 649847
+      id: 20289
       primaryIdFlag: Y
     
     authLevel: Y
@@ -40,6 +40,7 @@ saleDetail :
     postCode: 5109
     premiseType: DOM
     addressType: Premise
+    DPID: 48985820
     primaryResidence: N
   
   premiseDetail: 
@@ -52,6 +53,7 @@ saleDetail :
     country: AUS
     postCode: 5109
     addressType: Mailing
+    DPID: 48985820
   
   offerDetail: 
     fuelType: E
@@ -73,5 +75,10 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
+  
+  solarDetail: 
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: GENR2016
+    solarTimeOfUse: N
   
 

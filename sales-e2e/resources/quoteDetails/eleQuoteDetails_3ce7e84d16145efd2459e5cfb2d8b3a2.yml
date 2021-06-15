@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106115108
-    sourceCode: Total_27%GD
+    quoteId: BB2106115142
+    sourceCode: Employee_25%GD
     actualQuoteDate: 2021-06-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -9,20 +9,20 @@ saleDetail :
     customerClass: RESI
   
   personDetail: 
-    personId: 8234554000
+    personId: 3029873030
     title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0384944925
+      phoneNumber: 0384215364
     
-    emailId: PKJLCbkhRN@energyaustralia.com.au
+    emailId: ssmxcelwsk@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 118772
+      id: 735585
       primaryIdFlag: Y
     
     authLevel: Y
@@ -30,42 +30,43 @@ saleDetail :
     seqNo: 2
   
   premiseDetail: 
-    flatNo: 1
-    flatType: U
     addressClass: ST
-    streetNo: 57
-    streetName: Wallace
-    streetType: S
-    suburb: MACKSVILLE
-    state: NSW
+    streetNo: 10
+    streetName: Minter
+    streetType: CT
+    suburb: TRUGANINA
+    state: VIC
     country: AUS
-    postCode: 2447
+    postCode: 3029
     premiseType: DOM
     addressType: Premise
-    DPID: 59760646
+    DPID: 69770536
     primaryResidence: N
   
   premiseDetail: 
-    flatNo: 1
-    flatType: U
     addressClass: ST
-    streetNo: 57
-    streetName: Wallace
-    streetType: S
-    suburb: MACKSVILLE
-    state: NSW
+    streetNo: 10
+    streetName: Minter
+    streetType: CT
+    suburb: TRUGANINA
+    state: VIC
     country: AUS
-    postCode: 2447
+    postCode: 3029
     addressType: Mailing
-    DPID: 59760646
+    DPID: 69770536
   
   offerDetail: 
     fuelType: E
     offerType: PS
-    plan: FFPH-EN
-    priceTag: ENCE1_NR2007
+    plan: AGED-EV
+    priceTag: EVPOT_S05
     nmiMirnInformation: 
-      NMI: 4407376910
+      NMI: 6203817483
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: N
     
   
   offerDetail: 

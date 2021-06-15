@@ -13,6 +13,7 @@ const cartsPage = {
     eleFeatureCNEG: Selector("#cart-plan-ELE .cart-plan__details-text").withText("Energy with a bit of good"),
     eleFeatureDiscountOffTotal: Selector("#cart-plan-ELE .cart-plan__details-text").withText(/[D|d]iscount off total/),
     eleFeaturePeaceOfMind: Selector("#cart-plan-ELE .cart-plan__details-text").withText("Peace of mind"),
+    eleFeaturePeaceOfMindEE: Selector("#cart-plan-ELE .cart-plan__details-text").withText("Priority customer service"),
     eleFeatureDefaultOffer: Selector("#cart-plan-ELE .cart-plan__details-text").withText("Default offer"),
     eleFeatureVipPriorityService: Selector("#cart-plan-ELE .cart-plan__details-text").withText("VIP Priority Service"),
 
@@ -23,6 +24,7 @@ const cartsPage = {
     gasFeatureCNEG: Selector("#cart-plan-GAS .cart-plan__details-text").withText("Energy with a bit of good"),
     gasFeatureDiscountOffTotal: Selector("#cart-plan-GAS .cart-plan__details-text").withText(/[D|d]iscount off total/),
     gasFeaturePeaceOfMind: Selector("#cart-plan-GAS .cart-plan__details-text").withText("Peace of mind"),
+    gasFeaturePeaceOfMindEE: Selector("#cart-plan-GAS .cart-plan__details-text").withText("Priority customer service"),
     gasFeatureVipPriorityService: Selector("#cart-plan-GAS .cart-plan__details-text").withText("VIP Priority Service"),
     addDifferentGasPlan: Selector("#cart-plan-GAS+button"),
     addDifferentElePlan: Selector("#cart-plan-ELE+button"),

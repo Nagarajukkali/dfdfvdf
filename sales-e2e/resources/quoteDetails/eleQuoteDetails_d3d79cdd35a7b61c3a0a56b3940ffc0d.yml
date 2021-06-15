@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106115108
-    sourceCode: Total_27%GD
+    quoteId: BB2106115144
+    sourceCode: Employee_32%GD
     actualQuoteDate: 2021-06-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0384944925
+      phoneNumber: 0390704094
     
-    emailId: PKJLCbkhRN@energyaustralia.com.au
+    emailId: pFYhTAiZZM@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 118772
+      id: 131820
       primaryIdFlag: Y
     
     authLevel: Y
@@ -62,8 +62,8 @@ saleDetail :
   offerDetail: 
     fuelType: E
     offerType: PS
-    plan: FFPH-EN
-    priceTag: ENCE1_NR2007
+    plan: AGED-EN
+    priceTag: ENCE1_GR
     nmiMirnInformation: 
       NMI: 4407376910
     

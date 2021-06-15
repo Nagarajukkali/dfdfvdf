@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106115108
-    sourceCode: Total_27%GD
+    quoteId: BB2106115147
+    sourceCode: Employee_28%GD
     actualQuoteDate: 2021-06-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
@@ -9,20 +9,20 @@ saleDetail :
     customerClass: RESI
   
   personDetail: 
-    personId: 8234554000
+    personId: 7546820319
     title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0384944925
+      phoneNumber: 0382388295
     
-    emailId: PKJLCbkhRN@energyaustralia.com.au
+    emailId: dIpBEnawZg@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 118772
+      id: 453243
       primaryIdFlag: Y
     
     authLevel: Y
@@ -30,42 +30,38 @@ saleDetail :
     seqNo: 2
   
   premiseDetail: 
-    flatNo: 1
-    flatType: U
     addressClass: ST
-    streetNo: 57
-    streetName: Wallace
+    streetNo: 37
+    streetName: Echlin
     streetType: S
-    suburb: MACKSVILLE
-    state: NSW
+    suburb: LABRADOR
+    state: QLD
     country: AUS
-    postCode: 2447
+    postCode: 4215
     premiseType: DOM
     addressType: Premise
-    DPID: 59760646
+    DPID: 42197038
     primaryResidence: N
   
   premiseDetail: 
-    flatNo: 1
-    flatType: U
     addressClass: ST
-    streetNo: 57
-    streetName: Wallace
+    streetNo: 37
+    streetName: Echlin
     streetType: S
-    suburb: MACKSVILLE
-    state: NSW
+    suburb: LABRADOR
+    state: QLD
     country: AUS
-    postCode: 2447
+    postCode: 4215
     addressType: Mailing
-    DPID: 59760646
+    DPID: 42197038
   
   offerDetail: 
     fuelType: E
     offerType: PS
-    plan: FFPH-EN
-    priceTag: ENCE1_NR2007
+    plan: AGED-EQ
+    priceTag: EQEXA_G11
     nmiMirnInformation: 
-      NMI: 4407376910
+      NMI: QB01405934
     
   
   offerDetail: 
@@ -79,8 +75,13 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
+    priceTagMeteringCharge: M42151D1E_VE
+    proposedNTC: 8470
+    proposedMC: VECTORMC
   
   solarDetail: 
-    solarPowerIndicator: N
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: 9850
+    solarTimeOfUse: N
   
 
