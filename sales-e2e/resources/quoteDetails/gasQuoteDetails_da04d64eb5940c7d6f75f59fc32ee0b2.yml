@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106155435
-    sourceCode: Total_19%GD
+    quoteId: BB2106155436
+    sourceCode: Total_20%GD
     actualQuoteDate: 2021-06-15
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
@@ -67,14 +67,14 @@ saleDetail :
     DPID: 49626371
   
   offerDetail: 
-    fuelType: E
+    fuelType: G
     offerType: COR
-    plan: TOPB-EN
-    priceTag: ENCEA_NB2007
+    plan: TOPB-GN
+    priceTag: GNRIA_NB2007
     nmiMirnInformation/: 
   
   offerDetail: 
-    fuelType: G
+    fuelType: E
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -82,7 +82,4 @@ saleDetail :
     billRouteType: EMAIL
   
   creditAssessmentDecision: Accept
-  meteringDetail: 
-    meterExchangeFlag: N
-  
 
