@@ -66,9 +66,6 @@ Feature:E2E scenario for business-industryoffer campaign
         And user validates disclaimer on review page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName       | state |
             | Y                        | N         | Y            | Total Plan - Business | NSW   |
-        And user validates source code
-            | fuelType | eleSourceCode | gasSourceCode |
-            | BOTH     | Total_22%GD   | Total_20%GD   |
         And user submits the quote
         Then user lands on checkout complete page
         And user validates details on checkout complete page
@@ -144,9 +141,6 @@ Scenario Outline: Validate complete data for business-industryoffer campaign for
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |chanceToWin|planName              |state|signUpCredit|
       |Y                        |N          |Y              |N          |Total Plan - Business |<state>  |N       |
-    And user validates source code
-        | fuelType | eleSourceCode | gasSourceCode |
-        | BOTH     | Total_19%GD   | Total_20%GD   |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -222,9 +216,6 @@ Scenario Outline: Validate complete data for business-industryoffer campaign for
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |chanceToWin|planName              |state|signUpCredit|
       |Y                        |N          |Y              |N          |Total Plan - Business |<state>  |N       |
-    And user validates source code
-        | fuelType | eleSourceCode | gasSourceCode |
-        | BOTH     | Total_14%GD   | Total_20%GD   |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -301,9 +292,6 @@ Scenario Outline: Validate complete data for business-industryoffer campaign for
         And user validates disclaimer on review page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName       | state |
             | Y                        | N         | Y            | Total Plan - Business | VIC   |
-        And user validates source code
-            | fuelType | eleSourceCode | gasSourceCode |
-            | BOTH     | Total_6%GD    | Total_24%GD   |
         And user submits the quote
         Then user lands on checkout complete page
         And user validates details on checkout complete page
@@ -379,9 +367,6 @@ Scenario Outline: Validate complete data for business-industryoffer campaign for
         And user validates disclaimer on review page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName       | state |
             | Y                        | N         | Y            | Total Plan - Business | SA    |
-        And user validates source code
-            | fuelType | eleSourceCode | gasSourceCode |
-            | BOTH     | Total_4%GD    | Total_4%GD    |
         And user submits the quote
         Then user lands on checkout complete page
         And user validates details on checkout complete page
@@ -457,9 +442,6 @@ Scenario Outline: Validate complete data for business-industryoffer campaign for
         And user validates disclaimer on review page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName       | state |
             | Y                        | N         | Y            | Total Plan - Business | ACT   |
-        And user validates source code
-            | fuelType | eleSourceCode | gasSourceCode |
-            | BOTH     | Total_11%GD   | Total_20%GD   |
         And user submits the quote
         Then user lands on checkout complete page
         And user validates details on checkout complete page
@@ -526,9 +508,6 @@ Scenario Outline: Validate complete data for business-industryoffer campaign for
         And user validates disclaimer on review page for "<campaign>"
             | referencePriceComparison | goNeutral | solarBuyBack | planName       | state |
             | Y                        | N         | Y            | Total Plan - Business | QLD   |
-        And user validates source code
-            | fuelType | eleSourceCode |
-            | ELE      | Total_14%GD   |
         And user submits the quote
         Then user lands on checkout complete page
         And user validates details on checkout complete page
