@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2102043862
+    quoteId: BB2106155331
     sourceCode: Total_21%GD
-    actualQuoteDate: 2021-02-04
+    actualQuoteDate: 2021-06-15
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: DR
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0343087753
+      phoneNumber: 0394828639
     
-    emailId: WNgEMNNeZj@energyaustralia.com.au
+    emailId: JxRDwMJpej@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: GOVERNMENT
+    businessType: CORPORATION
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 74344795080
+      businessId: 52057420291
     
-    anzsic: EDUCATION
+    anzsic: COMMUNITY_SVC
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0343087753
+      businessPhoneNumber: 0394828639
     
-    businessEmailId: WNgEMNNeZj@energyaustralia.com.au
+    businessEmailId: JxRDwMJpej@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -51,6 +51,7 @@ saleDetail :
     postCode: 2010
     premiseType: COM
     addressType: Premise
+    DPID: 71046817
     primaryResidence: N
   
   premiseDetail: 
@@ -63,14 +64,15 @@ saleDetail :
     country: AUS
     postCode: 2010
     addressType: Mailing
+    DPID: 71046817
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2021-02-05
+    proposedStart: 2021-06-16
     offerType: ENE
     plan: FFPB-GN
     priceTag: GNAGA_NB2007
-    serviceOrderDate: 2021-02-05
+    serviceOrderDate: 2021-06-16
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5240554353

@@ -1,0 +1,87 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2106115147
+    sourceCode: Employee_28%GD
+    actualQuoteDate: 2021-06-11
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 7546820319
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0382388295
+    
+    emailId: dIpBEnawZg@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 453243
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 37
+    streetName: Echlin
+    streetType: S
+    suburb: LABRADOR
+    state: QLD
+    country: AUS
+    postCode: 4215
+    premiseType: DOM
+    addressType: Premise
+    DPID: 42197038
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 37
+    streetName: Echlin
+    streetType: S
+    suburb: LABRADOR
+    state: QLD
+    country: AUS
+    postCode: 4215
+    addressType: Mailing
+    DPID: 42197038
+  
+  offerDetail: 
+    fuelType: E
+    offerType: PS
+    plan: AGED-EQ
+    priceTag: EQEXA_G11
+    nmiMirnInformation: 
+      NMI: QB01405934
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    priceTagMeteringCharge: M42151D1E_VE
+    proposedNTC: 8470
+    proposedMC: VECTORMC
+  
+  solarDetail: 
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: 9850
+    solarTimeOfUse: N
+  
+

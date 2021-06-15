@@ -1,0 +1,87 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2106115142
+    sourceCode: Employee_25%GD
+    actualQuoteDate: 2021-06-11
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 3029873030
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0384215364
+    
+    emailId: ssmxcelwsk@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 735585
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 10
+    streetName: Minter
+    streetType: CT
+    suburb: TRUGANINA
+    state: VIC
+    country: AUS
+    postCode: 3029
+    premiseType: DOM
+    addressType: Premise
+    DPID: 69770536
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 10
+    streetName: Minter
+    streetType: CT
+    suburb: TRUGANINA
+    state: VIC
+    country: AUS
+    postCode: 3029
+    addressType: Mailing
+    DPID: 69770536
+  
+  offerDetail: 
+    fuelType: E
+    offerType: PS
+    plan: AGED-EV
+    priceTag: EVPOT_S05
+    nmiMirnInformation: 
+      NMI: 6203817483
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: N
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+  
+  solarDetail: 
+    solarPowerIndicator: N
+  
+

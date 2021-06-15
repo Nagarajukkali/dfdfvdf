@@ -44,7 +44,7 @@ export class cartsMethod {
         }
       }
       if(dataTable[0].Feature_carbonNeutral === "Y") {
-        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('partner-program')) {
+        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('employee') || t.testRun.test.name.includes('partner-program')) {
           await testFunction.assertText(t, cartsPage.elements.eleFeatureCNEG, json.electricity.feature.postSelect.carbonNeutral);
         }
         else {
@@ -52,7 +52,12 @@ export class cartsMethod {
         }
       }
       if (dataTable[0].Feature_peaceOfMind === "Y") {
-        await testFunction.assertText(t, cartsPage.elements.eleFeaturePeaceOfMind, json.electricity.feature.postSelect.peaceOfMind);
+        if (t.testRun.test.name.includes('employee')){
+          await testFunction.assertText(t, cartsPage.elements.eleFeaturePeaceOfMindEE, json.electricity.feature.postSelect.peaceOfMind);
+        }
+          else{
+          await testFunction.assertText(t, cartsPage.elements.eleFeaturePeaceOfMind, json.electricity.feature.postSelect.peaceOfMind);
+        }
       }
       if (dataTable[0].Feature_XX_discountOffTotalEnergyBill === "Y") {
         switch (dataTable[0].state) {
@@ -119,7 +124,7 @@ export class cartsMethod {
             throw Error("Invalid State");
         }}
       if(dataTable[0].Feature_carbonNeutral === "Y") {
-        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('partner-program')) {
+        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('employee') || t.testRun.test.name.includes('partner-program')) {
           await testFunction.assertText(t, cartsPage.elements.gasFeatureCNEG, json.gas.feature.postSelect.carbonNeutral);
         }
         else {
@@ -127,7 +132,11 @@ export class cartsMethod {
         }
       }
       if (dataTable[0].Feature_peaceOfMind === "Y") {
-        await testFunction.assertText(t, cartsPage.elements.gasFeaturePeaceOfMind, json.gas.feature.postSelect.peaceOfMind);
+        if (t.testRun.test.name.includes('employee')){
+          await testFunction.assertText(t, cartsPage.elements.gasFeaturePeaceOfMindEE, json.gas.feature.postSelect.peaceOfMind);  
+        } else {
+          await testFunction.assertText(t, cartsPage.elements.gasFeaturePeaceOfMind, json.gas.feature.postSelect.peaceOfMind);
+        }
       }
       if (dataTable[0].Feature_XX_discountOffTotalEnergyBill === "Y") {
         switch (dataTable[0].state) {

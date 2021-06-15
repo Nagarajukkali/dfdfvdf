@@ -1,0 +1,98 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: FC2106155333
+    sourceCode: Total_Plus_4%GD
+    actualQuoteDate: 2021-06-15
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MS
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0357413340
+    
+    emailId: HdeViFaOSR@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: PROPRIETARY LTD
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 90934037020
+    
+    anzsic: COMMUNITY_SVC
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0357413340
+    
+    businessEmailId: HdeViFaOSR@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 6
+    streetName: Peat
+    streetType: AV
+    suburb: HOLDEN HILL
+    state: SA
+    country: AUS
+    postCode: 5088
+    premiseType: COM
+    addressType: Premise
+    DPID: 41591020
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 6
+    streetName: Peat
+    streetType: AV
+    suburb: HOLDEN HILL
+    state: SA
+    country: AUS
+    postCode: 5088
+    addressType: Mailing
+    DPID: 41591020
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2021-06-16
+    offerType: ENE
+    plan: SWSRB-GS
+    priceTag: GSADA_NB2001
+    serviceOrderDate: 2021-06-16
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5510116718
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: GLSMRHAC
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+

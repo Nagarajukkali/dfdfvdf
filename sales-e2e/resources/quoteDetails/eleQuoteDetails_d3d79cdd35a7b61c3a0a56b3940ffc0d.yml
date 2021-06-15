@@ -1,0 +1,86 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2106115144
+    sourceCode: Employee_32%GD
+    actualQuoteDate: 2021-06-11
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 8234554000
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0390704094
+    
+    emailId: pFYhTAiZZM@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 131820
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    flatNo: 1
+    flatType: U
+    addressClass: ST
+    streetNo: 57
+    streetName: Wallace
+    streetType: S
+    suburb: MACKSVILLE
+    state: NSW
+    country: AUS
+    postCode: 2447
+    premiseType: DOM
+    addressType: Premise
+    DPID: 59760646
+    primaryResidence: N
+  
+  premiseDetail: 
+    flatNo: 1
+    flatType: U
+    addressClass: ST
+    streetNo: 57
+    streetName: Wallace
+    streetType: S
+    suburb: MACKSVILLE
+    state: NSW
+    country: AUS
+    postCode: 2447
+    addressType: Mailing
+    DPID: 59760646
+  
+  offerDetail: 
+    fuelType: E
+    offerType: PS
+    plan: AGED-EN
+    priceTag: ENCE1_GR
+    nmiMirnInformation: 
+      NMI: 4407376910
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+  
+  solarDetail: 
+    solarPowerIndicator: N
+  
+

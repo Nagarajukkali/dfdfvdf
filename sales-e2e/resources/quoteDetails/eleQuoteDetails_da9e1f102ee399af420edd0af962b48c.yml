@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2103267284
-    sourceCode: Total_13%GD_200
-    actualQuoteDate: 2021-03-26
+    quoteId: BB2106155324
+    sourceCode: Total_13%GD
+    actualQuoteDate: 2021-06-15
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MRS
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0331716110
+      phoneNumber: 0347642947
     
-    emailId: aZNZaJxwgG@energyaustralia.com.au
+    emailId: qCYyqJuYgQ@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: INCORPORATED
+    businessType: OTHERS
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 11442096403
+      businessId: 25076503970
     
-    anzsic: AGRICULTURE
+    anzsic: FINANCE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0331716110
+      businessPhoneNumber: 0347642947
     
-    businessEmailId: aZNZaJxwgG@energyaustralia.com.au
+    businessEmailId: qCYyqJuYgQ@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -51,6 +51,7 @@ saleDetail :
     postCode: 4020
     premiseType: COM
     addressType: Premise
+    DPID: 42021399
     primaryResidence: N
   
   premiseDetail: 
@@ -63,14 +64,15 @@ saleDetail :
     country: AUS
     postCode: 4020
     addressType: Mailing
+    DPID: 42021399
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-03-30
+    proposedStart: 2021-06-17
     offerType: ENE
     plan: TOPB-EQ
     priceTag: EQEXA_NB2007
-    serviceOrderDate: 2021-03-30
+    serviceOrderDate: 2021-06-17
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: QB02256002
@@ -89,5 +91,8 @@ saleDetail :
     meterExchangeFlag: N
     reEnergisationJSCCode: RNRRBU
     reEnergisationJSCCharge: 0.0
+  
+  solarDetail: 
+    solarPowerIndicator: N
   
 

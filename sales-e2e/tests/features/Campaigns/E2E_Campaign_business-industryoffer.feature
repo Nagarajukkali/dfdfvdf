@@ -12,7 +12,7 @@
 # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for business-industryoffer campaign
-@campaign21.6.4 @demo2
+@campaign21.6.4 
     Scenario Outline: Validate complete data for business-industryoffer campaign for NSW
         Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
         When user provides "NSWCOCOFFER" and "2010" and clicks on show me plan link
@@ -90,10 +90,10 @@ Feature:E2E scenario for business-industryoffer campaign
         Examples:
             | customerStatus | fuelType | eleDiscount | gasDiscount | campaign               | folderName                              | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
             | New            | BOTH     | 22          | 20          | industryoffer | E2E_Campaign_business-industryoffer_NSW | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
-@campaign21.6.4
+@campaign21.6.4 @demo2
 Scenario Outline: Validate complete data for business-industryoffer campaign for NSW-Essential for new non-moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "2580" and clicks on show me plan link
+    When user provides "NSWCOCOFFER" and "2580" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -167,11 +167,11 @@ Scenario Outline: Validate complete data for business-industryoffer campaign for
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign         |folderName                       |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
-      |New           |BOTH    |18         |19         |industryoffer |E2E_Campaign_business-energy_NSW-essential_new_nonmoving |Quote Tool  |Plan Switch|NSW    |BUS          |New            |No  |No  |
-@campaign21.6.4
+      |New           |BOTH    |19         |20         |industryoffer |E2E_Campaign_business-energy_NSW-essential_new_nonmoving |Quote Tool  |Plan Switch|NSW    |BUS          |New            |No  |No  |
+@campaign21.6.4 @demo2
   Scenario Outline: Validate complete data for business-industryoffer campaign for NSW-Endeavour for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "2780" and clicks on show me plan link
+    When user provides "NSWCOCOFFER" and "2780" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -245,7 +245,7 @@ Scenario Outline: Validate complete data for business-industryoffer campaign for
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign         |folderName                                            |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
-      |New           |BOTH    |13         |19         |industryoffer  |E2E_Campaign_business-energy_NSW_Endeavour_new_moving |Quote Tool  |Move Home|NSW    |BUS          |New            |No  |No  |
+      |New           |BOTH    |14         |20         |industryoffer  |E2E_Campaign_business-energy_NSW_Endeavour_new_moving |Quote Tool  |Move Home|NSW    |BUS          |New            |No  |No  |
  
  @campaign21.6.4
     Scenario Outline: Validate complete data for business-industryoffer campaign for VIC
@@ -459,7 +459,7 @@ Scenario Outline: Validate complete data for business-industryoffer campaign for
             | Y                        | N         | Y            | Total Plan - Business | ACT   |
         And user validates source code
             | fuelType | eleSourceCode | gasSourceCode |
-            | BOTH     | Total_11%GD   | Total_19%GD   |
+            | BOTH     | Total_11%GD   | Total_20%GD   |
         And user submits the quote
         Then user lands on checkout complete page
         And user validates details on checkout complete page

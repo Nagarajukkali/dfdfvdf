@@ -54,6 +54,7 @@ export enum PlanType {
   FAMILY_AND_FRIENDS_BUSINESS = 'Family and Friends Business',
   BUSINESS_CARBON_NEUTRAL = 'Business Carbon Neutral',
   BUSINESS_BALANCE_PLAN = 'Business Balance Plan',
+  EMPLOYEE_PLAN = 'Employee Plan',
 }
 
 export enum IdType {
@@ -580,6 +581,9 @@ export class testFunction {
         break;
       case "industryoffer":
         campaignPageURL = `${eaHomePage}/business/${campaign}`;
+        break;
+      case "business-home-page":
+        campaignPageURL = `${eaHomePage}/business/electricity-and-gas/small-business/plans`;
         break;
       default:
         campaignPageURL = `${eaHomePage}${campaign}?live=disabled`;

@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2104269745
+    quoteId: BB2106115106
     sourceCode: Total_16%GD
-    actualQuoteDate: 2021-04-26
+    actualQuoteDate: 2021-06-11
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0319562180
+      phoneNumber: 0335735520
     
-    emailId: RmLhAWOdbP@energyaustralia.com.au
+    emailId: uqLUzmoFaT@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 843379
+      id: 457454
       primaryIdFlag: Y
     
     authLevel: Y
@@ -40,6 +40,7 @@ saleDetail :
     postCode: 3029
     premiseType: DOM
     addressType: Premise
+    DPID: 69770536
     primaryResidence: N
   
   premiseDetail: 
@@ -52,6 +53,7 @@ saleDetail :
     country: AUS
     postCode: 3029
     addressType: Mailing
+    DPID: 69770536
   
   offerDetail: 
     fuelType: E

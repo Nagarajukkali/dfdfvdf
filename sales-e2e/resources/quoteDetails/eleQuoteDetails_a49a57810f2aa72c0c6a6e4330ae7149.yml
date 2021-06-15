@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2103267280
-    sourceCode: Total_13%GD_200
-    actualQuoteDate: 2021-03-26
+    quoteId: BB2106155318
+    sourceCode: Total_13%GD
+    actualQuoteDate: 2021-06-15
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0376882077
+      phoneNumber: 0316386969
     
-    emailId: WdYEfLhLxC@energyaustralia.com.au
+    emailId: IMsvCzNIbG@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: GNRALPARTNERSHIP
+    businessType: PROPRIETARY LTD
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 39377474444
+      businessId: 60708299142
     
-    anzsic: RETAIL_TRD
+    anzsic: PERSONAL
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0376882077
+      businessPhoneNumber: 0316386969
     
-    businessEmailId: WdYEfLhLxC@energyaustralia.com.au
+    businessEmailId: IMsvCzNIbG@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -51,6 +51,7 @@ saleDetail :
     postCode: 2782
     premiseType: COM
     addressType: Premise
+    DPID: 83542571
     primaryResidence: N
   
   premiseDetail: 
@@ -63,14 +64,15 @@ saleDetail :
     country: AUS
     postCode: 2782
     addressType: Mailing
+    DPID: 83542571
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-03-30
+    proposedStart: 2021-06-17
     offerType: ENE
     plan: TOPB-EN
     priceTag: ENIEA_NB2007
-    serviceOrderDate: 2021-03-30
+    serviceOrderDate: 2021-06-17
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 4310504640
@@ -89,5 +91,8 @@ saleDetail :
     meterExchangeFlag: N
     reEnergisationJSCCode: MIMR
     reEnergisationJSCCharge: 38.8
+  
+  solarDetail: 
+    solarPowerIndicator: N
   
 

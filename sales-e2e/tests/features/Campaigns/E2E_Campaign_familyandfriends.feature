@@ -1,4 +1,4 @@
-@campaign  @campaign21.5.4_1
+@campaign  @campaign21.5.4_1  
 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
@@ -12,10 +12,10 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
   Feature:E2E scenario for familyandfriends campaign
- 
+
   Scenario Outline: Validate complete data for familyandfriends campaign for NSW - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "test111111" and "2000" and clicks on show me plan link
+    When user provides email "sarita.chakote@energyaustralia.com.au" and "2000" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -90,7 +90,7 @@
 
   Scenario Outline: Validate complete data for familyandfriends campaign for QLD - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "test111111" and "4500" and clicks on show me plan link
+    When user provides email "sarita.chakote@energyaustralia.com.au" and "4500" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
@@ -143,7 +143,7 @@
 
   Scenario Outline: Validate complete data for familyandfriends campaign for SA - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "test111111" and "5000" and clicks on show me plan link
+    When user provides email "sarita.chakote@energyaustralia.com.au" and "5000" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -209,7 +209,7 @@
 
   Scenario Outline: Validate complete data for familyandfriends campaign for ACT - new non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "test111111" and "2600" and clicks on show me plan link
+    When user provides email "sarita.chakote@energyaustralia.com.au" and "2600" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -275,7 +275,7 @@
 
   Scenario Outline: Validate complete data for familyandfriends campaign for VIC - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "test111111" and "3000" and clicks on show me plan link
+    When user provides email "sarita.chakote@energyaustralia.com.au" and "3000" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -342,7 +342,7 @@
 
   Scenario Outline: Validate complete data for familyandfriends campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "test111111" and "3000" and clicks on show me plan link
+    When user provides email "sarita.chakote@energyaustralia.com.au" and "3000" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -411,7 +411,7 @@
     
   Scenario Outline: Validate complete data for familyandfriends campaign for NSW existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "test111111" and "2000" and clicks on show me plan link
+    When user provides email "sarita.chakote@energyaustralia.com.au" and "2000" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -473,7 +473,7 @@
 
   Scenario Outline: Validate complete data for familyandfriends campaign for SA existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "test111111" and "5000" and clicks on show me plan link
+    When user provides email "sarita.chakote@energyaustralia.com.au" and "5000" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -542,7 +542,7 @@
 
   Scenario Outline: Validate complete data for familyandfriends campaign for QLD existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "test111111" and "4500" and clicks on show me plan link
+    When user provides email "sarita.chakote@energyaustralia.com.au" and "4500" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"

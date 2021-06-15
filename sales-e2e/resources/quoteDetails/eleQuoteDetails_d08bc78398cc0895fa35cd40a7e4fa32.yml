@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2009037765
+    quoteId: BB2106155327
     sourceCode: Total_6%GD
-    actualQuoteDate: 2020-09-03
+    actualQuoteDate: 2021-06-15
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0371931118
+      phoneNumber: 0380229960
     
-    emailId: aODSUylHxt@energyaustralia.com.au
+    emailId: dnRXIKuySJ@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: GNRALPARTNERSHIP
+    businessType: LTDPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 75720118542
+      businessId: 54486702419
     
-    anzsic: COMMUNITY_SVC
+    anzsic: TRANSPORT
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0371931118
+      businessPhoneNumber: 0380229960
     
-    businessEmailId: aODSUylHxt@energyaustralia.com.au
+    businessEmailId: dnRXIKuySJ@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -51,15 +51,28 @@ saleDetail :
     postCode: 3020
     premiseType: COM
     addressType: Premise
+    DPID: 97577765
     primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 1a
+    streetName: Bell
+    streetType: S
+    suburb: SUNSHINE WEST
+    state: VIC
+    country: AUS
+    postCode: 3020
+    addressType: Mailing
+    DPID: 97577765
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-09-07
+    proposedStart: 2021-06-17
     offerType: ENE
     plan: TOPB-EV
-    priceTag: EVPO7_NB2001
-    serviceOrderDate: 2020-09-07
+    priceTag: EVPO7_NB2101
+    serviceOrderDate: 2021-06-17
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 6203055100
@@ -86,6 +99,9 @@ saleDetail :
   meteringDetail: 
     meterExchangeFlag: N
     reEnergisationJSCCode: RCTBH
-    reEnergisationJSCCharge: 56.05
+    reEnergisationJSCCharge: 55.93
+  
+  solarDetail: 
+    solarPowerIndicator: N
   
 
