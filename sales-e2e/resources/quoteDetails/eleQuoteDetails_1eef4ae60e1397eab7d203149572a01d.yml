@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2009037759
+    quoteId: BB2106155325
     sourceCode: Total_22%GD
-    actualQuoteDate: 2020-09-03
+    actualQuoteDate: 2021-06-15
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0377732586
+      phoneNumber: 0318445098
     
-    emailId: VwtKTbYxdx@energyaustralia.com.au
+    emailId: xoFPhWhlBF@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: GNRALPARTNERSHIP
+    businessType: PARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 98123875748
+      businessId: 89022397626
     
-    anzsic: FINANCE
+    anzsic: COMMUNICATION
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0377732586
+      businessPhoneNumber: 0318445098
     
-    businessEmailId: VwtKTbYxdx@energyaustralia.com.au
+    businessEmailId: xoFPhWhlBF@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -51,15 +51,28 @@ saleDetail :
     postCode: 2324
     premiseType: COM
     addressType: Premise
+    DPID: 85394709
     primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 10
+    streetName: Hank
+    streetType: S
+    suburb: HEATHERBRAE
+    state: NSW
+    country: AUS
+    postCode: 2324
+    addressType: Mailing
+    DPID: 85394709
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-09-04
+    proposedStart: 2021-06-16
     offerType: ENE
     plan: TOPB-EN
     priceTag: ENEAL_NL2007
-    serviceOrderDate: 2020-09-04
+    serviceOrderDate: 2021-06-16
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 4102013997
@@ -87,5 +100,10 @@ saleDetail :
     meterExchangeFlag: N
     reEnergisationJSCCode: RE-EN
     reEnergisationJSCCharge: 11.41
+  
+  solarDetail: 
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: GENR
+    solarTimeOfUse: N
   
 

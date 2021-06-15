@@ -1,23 +1,23 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2103267274
-    sourceCode: Total_23%GD_100
-    actualQuoteDate: 2021-03-26
+    quoteId: BB2106155323
+    sourceCode: Total_30%GD
+    actualQuoteDate: 2021-06-15
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MISS
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0390109729
+      phoneNumber: 0335516545
     
-    emailId: ZFEGuBDjOr@energyaustralia.com.au
+    emailId: bYZtYgaksQ@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
@@ -30,15 +30,15 @@ saleDetail :
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 19416881370
+      businessId: 21535817850
     
-    anzsic: RETAIL_TRD
+    anzsic: COMMUNICATION
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0390109729
+      businessPhoneNumber: 0335516545
     
-    businessEmailId: ZFEGuBDjOr@energyaustralia.com.au
+    businessEmailId: bYZtYgaksQ@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -51,6 +51,7 @@ saleDetail :
     postCode: 3355
     premiseType: COM
     addressType: Premise
+    DPID: 96541244
     primaryResidence: N
   
   premiseDetail: 
@@ -63,14 +64,15 @@ saleDetail :
     country: AUS
     postCode: 3355
     addressType: Mailing
+    DPID: 96541244
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2021-03-30
+    proposedStart: 2021-06-17
     offerType: ENE
     plan: TOPB-GV
     priceTag: GVT3A_NB2101
-    serviceOrderDate: 2021-03-30
+    serviceOrderDate: 2021-06-17
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5330956738

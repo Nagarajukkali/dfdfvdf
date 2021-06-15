@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106155318
-    sourceCode: Total_13%GD
+    quoteId: BB2106155436
+    sourceCode: Total_20%GD
     actualQuoteDate: 2021-06-15
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
@@ -9,77 +9,72 @@ saleDetail :
     customerClass: BSME
   
   personDetail: 
-    title: MS
+    title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0316386969
+      phoneNumber: 0362991298
     
-    emailId: IMsvCzNIbG@energyaustralia.com.au
+    emailId: FnUFTxilku@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: PROPRIETARY LTD
+    businessType: LTDPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 60708299142
+      businessId: 77441795609
     
     anzsic: PERSONAL
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0316386969
+      businessPhoneNumber: 0362991298
     
-    businessEmailId: IMsvCzNIbG@energyaustralia.com.au
+    businessEmailId: FnUFTxilku@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 13
-    streetName: Station
-    streetType: S
-    suburb: WENTWORTH FALLS
+    streetNo: 465
+    streetName: Sandy Point
+    streetType: R
+    suburb: LOWER BORO
     state: NSW
     country: AUS
-    postCode: 2782
+    postCode: 2580
     premiseType: COM
     addressType: Premise
-    DPID: 83542571
+    DPID: 49626371
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 13
-    streetName: Station
-    streetType: S
-    suburb: WENTWORTH FALLS
+    streetNo: 465
+    streetName: Sandy Point
+    streetType: R
+    suburb: LOWER BORO
     state: NSW
     country: AUS
-    postCode: 2782
+    postCode: 2580
     addressType: Mailing
-    DPID: 83542571
-  
-  offerDetail: 
-    fuelType: E
-    proposedStart: 2021-06-17
-    offerType: ENE
-    plan: TOPB-EN
-    priceTag: ENIEA_NB2007
-    serviceOrderDate: 2021-06-17
-    serviceOrderTime: BUSHRS
-    nmiMirnInformation: 
-      NMI: 4310504640
-    
+    DPID: 49626371
   
   offerDetail: 
     fuelType: G
+    offerType: COR
+    plan: TOPB-GN
+    priceTag: GNRIA_NB2007
+    nmiMirnInformation/: 
+  
+  offerDetail: 
+    fuelType: E
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -87,12 +82,4 @@ saleDetail :
     billRouteType: EMAIL
   
   creditAssessmentDecision: Accept
-  meteringDetail: 
-    meterExchangeFlag: N
-    reEnergisationJSCCode: MIMR
-    reEnergisationJSCCharge: 38.8
-  
-  solarDetail: 
-    solarPowerIndicator: N
-  
 

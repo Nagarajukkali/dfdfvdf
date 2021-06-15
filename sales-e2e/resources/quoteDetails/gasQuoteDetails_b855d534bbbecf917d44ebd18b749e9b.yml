@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106155318
-    sourceCode: Total_13%GD
+    quoteId: BB2106155297
+    sourceCode: Total_20%GD
     actualQuoteDate: 2021-06-15
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
@@ -15,71 +15,71 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0316386969
+      phoneNumber: 0368286956
     
-    emailId: IMsvCzNIbG@energyaustralia.com.au
+    emailId: cSLWvYQQwI@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: PROPRIETARY LTD
+    businessType: SOLE TRADER
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 60708299142
+      businessId: 87317003121
     
-    anzsic: PERSONAL
+    anzsic: MINING
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0316386969
+      businessPhoneNumber: 0368286956
     
-    businessEmailId: IMsvCzNIbG@energyaustralia.com.au
+    businessEmailId: cSLWvYQQwI@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 13
-    streetName: Station
+    streetNo: 320
+    streetName: Crown
     streetType: S
-    suburb: WENTWORTH FALLS
+    suburb: SURRY HILLS
     state: NSW
     country: AUS
-    postCode: 2782
+    postCode: 2010
     premiseType: COM
     addressType: Premise
-    DPID: 83542571
+    DPID: 71046817
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 13
-    streetName: Station
+    streetNo: 320
+    streetName: Crown
     streetType: S
-    suburb: WENTWORTH FALLS
+    suburb: SURRY HILLS
     state: NSW
     country: AUS
-    postCode: 2782
+    postCode: 2010
     addressType: Mailing
-    DPID: 83542571
-  
-  offerDetail: 
-    fuelType: E
-    proposedStart: 2021-06-17
-    offerType: ENE
-    plan: TOPB-EN
-    priceTag: ENIEA_NB2007
-    serviceOrderDate: 2021-06-17
-    serviceOrderTime: BUSHRS
-    nmiMirnInformation: 
-      NMI: 4310504640
-    
+    DPID: 71046817
   
   offerDetail: 
     fuelType: G
+    proposedStart: 2021-06-16
+    offerType: ENE
+    plan: TOPB-GN
+    priceTag: GNAGA_NB2007
+    serviceOrderDate: 2021-06-16
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5240554353
+    
+  
+  offerDetail: 
+    fuelType: E
     offerType: N/A
     fuelTypeNaReasonCode: NOINTEREST
   
@@ -87,12 +87,4 @@ saleDetail :
     billRouteType: EMAIL
   
   creditAssessmentDecision: Accept
-  meteringDetail: 
-    meterExchangeFlag: N
-    reEnergisationJSCCode: MIMR
-    reEnergisationJSCCharge: 38.8
-  
-  solarDetail: 
-    solarPowerIndicator: N
-  
 

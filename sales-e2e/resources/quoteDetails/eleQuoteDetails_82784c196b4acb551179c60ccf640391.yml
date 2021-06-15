@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2104086538
-    sourceCode: Total_Plus_21%GD_100
-    actualQuoteDate: 2021-04-08
+    quoteId: BB2106155304
+    sourceCode: Total_Plus_21%GD
+    actualQuoteDate: 2021-06-15
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MS
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0392761726
+      phoneNumber: 0361940140
     
-    emailId: JAAmWqczAo@energyaustralia.com.au
+    emailId: krZHTzDrDo@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: LTDPARTNERSHIP
+    businessType: SOLE TRADER
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 33778174125
+      businessId: 41501875384
     
-    anzsic: UNKNOWN
+    anzsic: TRANSPORT
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0392761726
+      businessPhoneNumber: 0361940140
     
-    businessEmailId: JAAmWqczAo@energyaustralia.com.au
+    businessEmailId: krZHTzDrDo@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -51,6 +51,7 @@ saleDetail :
     postCode: 2010
     premiseType: COM
     addressType: Premise
+    DPID: 71046817
     primaryResidence: N
   
   premiseDetail: 
@@ -63,14 +64,15 @@ saleDetail :
     country: AUS
     postCode: 2010
     addressType: Mailing
+    DPID: 71046817
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-04-09
+    proposedStart: 2021-06-16
     offerType: ENE
     plan: SWSRB-EN
     priceTag: ENEA5_NT2007
-    serviceOrderDate: 2021-04-09
+    serviceOrderDate: 2021-06-16
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: NCCC005405
@@ -98,5 +100,8 @@ saleDetail :
     meterExchangeFlag: N
     reEnergisationJSCCode: RE-EN
     reEnergisationJSCCharge: 11.41
+  
+  solarDetail: 
+    solarPowerIndicator: N
   
 

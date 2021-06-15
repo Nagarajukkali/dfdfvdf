@@ -1,4 +1,4 @@
-@campaign
+@campaign 
 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
@@ -15,7 +15,7 @@ Feature:E2E scenario for bizreferral campaign
 
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for NSW
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "test111111" and "2010" and clicks on show me plan link
+    When user provides email "sarita.chakote@energyaustralia.com.au" and "2010" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -94,7 +94,7 @@ Feature:E2E scenario for bizreferral campaign
 
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for VIC
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "test111111" and "3355" and clicks on show me plan link
+    When user provides email "sarita.chakote@energyaustralia.com.au" and "3355" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -172,7 +172,7 @@ Feature:E2E scenario for bizreferral campaign
 
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "test111111" and "5088" and clicks on show me plan link
+    When user provides email "sarita.chakote@energyaustralia.com.au" and "5088" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -250,7 +250,7 @@ Feature:E2E scenario for bizreferral campaign
 
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for ACT
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "test111111" and "2612" and clicks on show me plan link
+    When user provides email "sarita.chakote@energyaustralia.com.au" and "2612" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -329,7 +329,7 @@ Feature:E2E scenario for bizreferral campaign
 
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for QLD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "test111111" and "4020" and clicks on show me plan link
+    When user provides email "sarita.chakote@energyaustralia.com.au" and "4020" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"

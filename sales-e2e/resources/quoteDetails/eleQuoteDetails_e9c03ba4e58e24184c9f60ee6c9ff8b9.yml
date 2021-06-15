@@ -1,7 +1,7 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106155318
-    sourceCode: Total_13%GD
+    quoteId: BB2106155302
+    sourceCode: Total_6%GD
     actualQuoteDate: 2021-06-15
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
@@ -15,67 +15,72 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0316386969
+      phoneNumber: 0379012463
     
-    emailId: IMsvCzNIbG@energyaustralia.com.au
+    emailId: DkkZHPVnzt@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: PROPRIETARY LTD
+    businessType: LIMITED COMPANY
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 60708299142
+      businessId: 32639306125
     
-    anzsic: PERSONAL
+    anzsic: WHOLESALE_TRD
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0316386969
+      businessPhoneNumber: 0379012463
     
-    businessEmailId: IMsvCzNIbG@energyaustralia.com.au
+    businessEmailId: DkkZHPVnzt@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 13
-    streetName: Station
+    streetNo: 36
+    streetName: Gregory
     streetType: S
-    suburb: WENTWORTH FALLS
-    state: NSW
+    suburb: WENDOUREE
+    state: VIC
     country: AUS
-    postCode: 2782
+    postCode: 3355
     premiseType: COM
     addressType: Premise
-    DPID: 83542571
+    DPID: 96541244
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 13
-    streetName: Station
+    streetNo: 36
+    streetName: Gregory
     streetType: S
-    suburb: WENTWORTH FALLS
-    state: NSW
+    suburb: WENDOUREE
+    state: VIC
     country: AUS
-    postCode: 2782
+    postCode: 3355
     addressType: Mailing
-    DPID: 83542571
+    DPID: 96541244
   
   offerDetail: 
     fuelType: E
     proposedStart: 2021-06-17
     offerType: ENE
-    plan: TOPB-EN
-    priceTag: ENIEA_NB2007
+    plan: TOPB-EV
+    priceTag: EVPO5_NB2101
     serviceOrderDate: 2021-06-17
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 4310504640
+      NMI: 6203822385
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: N
     
   
   offerDetail: 
@@ -89,8 +94,8 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    reEnergisationJSCCode: MIMR
-    reEnergisationJSCCharge: 38.8
+    reEnergisationJSCCode: RCTBH
+    reEnergisationJSCCharge: 55.93
   
   solarDetail: 
     solarPowerIndicator: N

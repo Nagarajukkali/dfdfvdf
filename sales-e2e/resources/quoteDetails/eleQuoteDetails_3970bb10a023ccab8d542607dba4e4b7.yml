@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2104086546
-    sourceCode: Total_Plus_19%GD_100
-    actualQuoteDate: 2021-04-08
+    quoteId: BB2106155307
+    sourceCode: Total_Plus_19%GD
+    actualQuoteDate: 2021-06-15
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,30 +15,30 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0363775602
+      phoneNumber: 0340597662
     
-    emailId: TRsNfxHiEJ@energyaustralia.com.au
+    emailId: qwdcIqMVDv@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: PARTNERSHIP
+    businessType: PROPRIETARY LTD
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 34818033900
+      businessId: 47006076648
     
     anzsic: PROPERTY
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0363775602
+      businessPhoneNumber: 0340597662
     
-    businessEmailId: TRsNfxHiEJ@energyaustralia.com.au
+    businessEmailId: qwdcIqMVDv@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -51,6 +51,7 @@ saleDetail :
     postCode: 2580
     premiseType: COM
     addressType: Premise
+    DPID: 49626371
     primaryResidence: N
   
   premiseDetail: 
@@ -63,6 +64,7 @@ saleDetail :
     country: AUS
     postCode: 2580
     addressType: Mailing
+    DPID: 49626371
   
   offerDetail: 
     fuelType: E

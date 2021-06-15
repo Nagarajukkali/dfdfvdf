@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2103267279
-    sourceCode: Total_19%GD_200
-    actualQuoteDate: 2021-03-26
+    quoteId: BB2106155317
+    sourceCode: Total_19%GD
+    actualQuoteDate: 2021-06-15
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0334369450
+      phoneNumber: 0315835771
     
-    emailId: dPoDDsvhsR@energyaustralia.com.au
+    emailId: AmGOBxmZdX@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: PROPRIETARY LTD
+    businessType: GOVERNMENT
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 12511917112
+      businessId: 95151413235
     
-    anzsic: MINING
+    anzsic: COMMUNITY_SVC
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0334369450
+      businessPhoneNumber: 0315835771
     
-    businessEmailId: dPoDDsvhsR@energyaustralia.com.au
+    businessEmailId: AmGOBxmZdX@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -51,6 +51,7 @@ saleDetail :
     postCode: 2580
     premiseType: COM
     addressType: Premise
+    DPID: 49626371
     primaryResidence: N
   
   premiseDetail: 
@@ -63,6 +64,7 @@ saleDetail :
     country: AUS
     postCode: 2580
     addressType: Mailing
+    DPID: 49626371
   
   offerDetail: 
     fuelType: G

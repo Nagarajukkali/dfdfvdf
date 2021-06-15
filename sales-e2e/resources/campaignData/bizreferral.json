@@ -37,7 +37,9 @@
     "sourceCode": {
       "newCustomer": {
         "VIC": "Total_7%GD",
-        "NSW": "Total_23%GD",
+        "NSW": {
+          "default": "Total_23%GD"
+        },
         "ACT": "Total_12%GD",
         "SA": "Total_5%GD",
         "QLD": "Total_15%GD"
@@ -45,14 +47,18 @@
       "existingCustomer": {
         "ENE": {
           "VIC": "Total_7%GD",
-          "NSW": "Total_23%GD",
+          "NSW": {
+            "default": "Total_23%GD"
+          },
           "ACT": "Total_12%GD",
           "SA": "Total_5%GD",
           "QLD": "Total_15%GD"
         },
         "PS": {
           "VIC": "Total_7%GD",
-          "NSW": "Total_23%GD",
+          "NSW": {
+            "default": "Total_23%GD"
+          },
           "ACT": "Total_12%GD",
           "SA": "Total_5%GD",
           "QLD": "Total_15%GD"
