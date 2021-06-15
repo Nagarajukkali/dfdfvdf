@@ -315,12 +315,12 @@ const eaHomePage = {
     noFrillsToggleButton:Selector("[id*='plan-rates-title-'][id*='CPP'] button"),
     totalPlanToggleButton:Selector("[id*='plan-rates-title-'][id*='TOP'] button"),
 
-    basicHomeEleRatesAccordion: Selector("[id*='plan-ELE-rate-accordion-heading-'][id*='SOT']"),
-    noFrillsEleRatesAccordion: Selector("[id*='plan-ELE-rate-accordion-heading-'][id*='CPP']"),
-    totalPlanEleRatesAccordion: Selector("[id*='plan-ELE-rate-accordion-heading-'][id*='TOP']"),
-    basicHomeGasRatesAccordion: Selector("[id*='plan-GAS-rate-accordion-heading-'][id*='SOT']"),
-    noFrillsGasRatesAccordion: Selector("[id*='plan-GAS-rate-accordion-heading-'][id*='CPP']"),
-    totalPlanGasRatesAccordion: Selector("[id*='plan-GAS-rate-accordion-heading-'][id*='TOP']"),
+    basicHomeEleRatesAccordion: Selector("[id*='plan-ELE-rate-accordion-heading-'][id*='SOT'] img"),
+    noFrillsEleRatesAccordion: Selector("[id*='plan-ELE-rate-accordion-heading-'][id*='CPP'] img"),
+    totalPlanEleRatesAccordion: Selector("[id*='plan-ELE-rate-accordion-heading-'][id*='TOP'] img"),
+    basicHomeGasRatesAccordion: Selector("[id*='plan-GAS-rate-accordion-heading-'][id*='SOT'] img"),
+    noFrillsGasRatesAccordion: Selector("[id*='plan-GAS-rate-accordion-heading-'][id*='CPP'] img"),
+    totalPlanGasRatesAccordion: Selector("[id*='plan-GAS-rate-accordion-heading-'][id*='TOP'] img"),
     allFeaturesToggleButton: Selector('#edit-simplified-plan-toggle-all-features__label'),
     keyFeaturesToggleButton: Selector('#edit-simplified-plan-toggle-key-features__label'),
 

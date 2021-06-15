@@ -92,4 +92,4 @@ Feature: Scenarios to cover the data layer analytics for existing customer
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | connectionAddress                      |
       | BUS          | Moving     | 320 Crown Street, SURRY HILLS NSW 2010 |
-    Then user validates the 'Electricity' account state for '8541728674' account number and '13756067200'
+    Then user validates the 'Electricity' account state for '8541728674' account number and '3133'
