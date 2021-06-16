@@ -44,7 +44,6 @@ Feature:This feature file is to add scenarios for regression defects
     And user moves on to fill the qualifier
     And user selects 'Moving' for moving question on qualifier
     And user enters the address '<address>' on qualifier
-    And user clicks on continue button after providing address
     And user closes the qualifier
     And user closes the cart page
     Then user verifies retrieved account details on plans page

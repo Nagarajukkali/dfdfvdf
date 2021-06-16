@@ -1,4 +1,4 @@
-@campaign 
+@campaign
 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
@@ -391,4 +391,40 @@ Feature:E2E scenario for bizreferral campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|campaign     |folderName                   |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |ELE     |15         |bizreferral  |E2E_Campaign_bizreferral_QLD |Quote Tool  |Move Home|QLD    |BUS          |New            |No  |No  |
+@21.6.4.familyandfriends
+  Scenario: Validate family and friends business campaign referee email validation rules
+    Given user has opened the 'bizreferral' link in a browser and creates 'E2E_bizreferral_EmailCodeValidation' to save evidences
+    Then user validates the label for Referee email address as the offer code
+    And user validates the banner test for Referee email address instead of offer code
+    When user provides email "" and "2000" and clicks on show me plan link
+    Then user is presented with 'You need to provide an EnergyAustralia employee’s email address to proceed' message
+    When user provides email "sarita.chakote" and "2000" and clicks on show me plan link
+    Then user is presented with 'That email address is invalid, please try again' message
+    When user provides email "avilash.parida@energyaustralia.com.au" and "2000" and clicks on show me plan link
+    Then user is presented with 'That email address is invalid, please try again' static message
+    When user provides email "sarita.chakote@energyaustralia.com.au" and "2000" and clicks on show me plan link
+    Then user is presented with the plans
+    And user clicks on Add plan button
+    And user selects 'New' on qualifier
+    And user provides all other details on qualifier page
+      |customerType |connectionAddress                       |movingType |propertyType |
+      |BUS          |320 Crown Street, SURRY HILLS NSW 2010  |Moving     |Renter       |
+    And user provides all details on checkout details page
+      |customerType|journey    | firstName| lastName|businessType|
+      |BUS         |BUS        | test     |test     |ABN         |
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
+    And user selects answer for property renovation question for 'NSW'
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType |EleclifeSupportDevices |GaslifeSupportDevices|
+      |No               |         |                       |               |
+    And user submits the quote
+    Then user lands on checkout complete page
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+
 
