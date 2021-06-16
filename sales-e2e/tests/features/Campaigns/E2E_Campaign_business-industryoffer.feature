@@ -78,18 +78,18 @@ Feature:E2E scenario for business-industryoffer campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EN  | 4102013997 |                                |                                | Y                       | OTHER                    | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus   | campaign   |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EN  | 4102013997 |                                |                                | Y                       | OTHER                    | EMAIL         |<customerStatus> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GN  | 5247067723 |                                |                                | Y                       | GLSMRHAC                 | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus   | campaign   |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GN  | 5247067723 |                                |                                | Y                       | GLSMRHAC                 | EMAIL         |<customerStatus> | <campaign> |
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                              | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 22          | 20          | industryoffer | E2E_Campaign_business-industryoffer_NSW | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
 
-  @campaign21.6.4 @demo2
+  @campaign21.6.4 
   Scenario Outline: Validate complete data for business-industryoffer campaign for NSW-Essential for new non-moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "NSWCOCOFFER" and "2580" and clicks on show me plan link
@@ -163,9 +163,9 @@ Feature:E2E scenario for business-industryoffer campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                                               | sourceSystem | journey     | state | customerType | newOrExisting | AAH | DD |
-      | New            | BOTH     | 19          | 20          | industryoffer | E2E_Campaign_business-energy_NSW-essential_new_nonmoving | Quote Tool   | Plan Switch | NSW   | BUS          | New           | No  | No |
+      | New            | BOTH     | 19          | 20          | industryoffer | E2E_Campaign_business-industryoffer_NSW-essential_new_nonmoving | Quote Tool   | Plan Switch | NSW   | BUS          | New           | No  | No |
 
-  @campaign21.6.4 @demo2
+  @campaign21.6.4 
   Scenario Outline: Validate complete data for business-industryoffer campaign for NSW-Endeavour for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "NSWCOCOFFER" and "2780" and clicks on show me plan link
@@ -239,7 +239,7 @@ Feature:E2E scenario for business-industryoffer campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                                            | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | BOTH     | 14          | 20          | industryoffer | E2E_Campaign_business-energy_NSW_Endeavour_new_moving | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
+      | New            | BOTH     | 14          | 20          | industryoffer | E2E_Campaign_business-industryoffer_NSW_Endeavour_new_moving | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
 
   @campaign21.6.4
   Scenario Outline: Validate complete data for business-industryoffer campaign for VIC
@@ -306,12 +306,12 @@ Feature:E2E scenario for business-industryoffer campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EV  | 6203055100 |                                |                                | Y                       | OTHER                    | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus   | campaign   |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EV  | 6203055100 |                                |                                | Y                       | OTHER                    | EMAIL         |<customerStatus> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GV  | 5330460199 |                                |                                | Y                       | GLSMRHAC                 | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus   | campaign   |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GV  | 5330460199 |                                |                                | Y                       | GLSMRHAC                 | EMAIL         |<customerStatus> | <campaign> |
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                              | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
@@ -381,12 +381,12 @@ Feature:E2E scenario for business-industryoffer campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-ES  | 2001077362 |                                |                                | Y                       | OTHER                    | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus   | campaign   |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-ES  | 2001077362 |                                |                                | Y                       | OTHER                    | EMAIL         |<customerStatus> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GS  | 5510300477 |                                |                                | Y                       | GLSMRHAC                 | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus   | campaign   |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GS  | 5510300477 |                                |                                | Y                       | GLSMRHAC                 | EMAIL         |<customerStatus> | <campaign> |
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                             | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
@@ -457,12 +457,12 @@ Feature:E2E scenario for business-industryoffer campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EA  | 7001026074 |                                |                                | Y                       | OTHER                    | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus   | campaign   |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EA  | 7001026074 |                                |                                | Y                       | OTHER                    | EMAIL         |<customerStatus> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GA  | 5260024970 |                                |                                | Y                       | GLSMRHAC                 | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus   | campaign   |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GA  | 5260024970 |                                |                                | Y                       | GLSMRHAC                 | EMAIL         |<customerStatus> | <campaign> |
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                              | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
@@ -524,8 +524,8 @@ Feature:E2E scenario for business-industryoffer campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EQ  | QB03807622 |                                |                                | Y                       | OTHER                    | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus   | campaign   |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EQ  | QB03807622 |                                |                                | Y                       | OTHER                    | EMAIL         |<customerStatus> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
 
     Examples:

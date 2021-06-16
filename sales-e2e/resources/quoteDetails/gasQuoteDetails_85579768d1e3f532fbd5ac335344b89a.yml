@@ -1,0 +1,98 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2106165768
+    sourceCode: Total_Plus_23%GD
+    actualQuoteDate: 2021-06-16
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: MISS
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0332502999
+    
+    emailId: moyYNoBEbx@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: PARTNERSHIP
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 37795222727
+    
+    anzsic: UNKNOWN
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0332502999
+    
+    businessEmailId: moyYNoBEbx@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 36
+    streetName: Gregory
+    streetType: S
+    suburb: WENDOUREE
+    state: VIC
+    country: AUS
+    postCode: 3355
+    premiseType: COM
+    addressType: Premise
+    DPID: 96541244
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 36
+    streetName: Gregory
+    streetType: S
+    suburb: WENDOUREE
+    state: VIC
+    country: AUS
+    postCode: 3355
+    addressType: Mailing
+    DPID: 96541244
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2021-06-18
+    offerType: ENE
+    plan: SWSRB-GV
+    priceTag: GVT3A_NB2101
+    serviceOrderDate: 2021-06-18
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5330956738
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: GLSMRHAC
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+

@@ -1,0 +1,85 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2106165774
+    sourceCode: Total_Plus_20%GD
+    actualQuoteDate: 2021-06-16
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: DR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0335329797
+    
+    emailId: pfuAiAavFZ@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: OTHERS
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 52165947966
+    
+    anzsic: HOSPITALITY
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0335329797
+    
+    businessEmailId: pfuAiAavFZ@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 465
+    streetName: Sandy Point
+    streetType: R
+    suburb: LOWER BORO
+    state: NSW
+    country: AUS
+    postCode: 2580
+    premiseType: COM
+    addressType: Premise
+    DPID: 49626371
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 465
+    streetName: Sandy Point
+    streetType: R
+    suburb: LOWER BORO
+    state: NSW
+    country: AUS
+    postCode: 2580
+    addressType: Mailing
+    DPID: 49626371
+  
+  offerDetail: 
+    fuelType: G
+    offerType: COR
+    plan: SWSRB-GN
+    priceTag: GNRIA_NB2007
+    nmiMirnInformation/: 
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+

@@ -440,7 +440,7 @@ Feature:E2E scenario for fca-biz campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign         |folderName                       |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |BOTH    |11         |20         |fca-biz  |E2E_Campaign_fca-biz_ACT_new_moving |Quote Tool  |Move Home|ACT    |BUS          |New            |No  |No  |
-@campaign21.6.4 
+@campaign21.6.4 @demo3
 Scenario Outline: Validate complete data for fca-biz campaign campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "FCAOFFER" and "5088" and clicks on show me plan link
@@ -466,7 +466,7 @@ Scenario Outline: Validate complete data for fca-biz campaign campaign for SA
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                    |movingType |propertyType |
-      |BUS          |6 Peat Avenue, HOLDEN HILL SA 5088   |Moving     |Renter       |
+      |BUS          |44 Windsor Avenue, MAGILL SA 5072  |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -506,11 +506,11 @@ Scenario Outline: Validate complete data for fca-biz campaign campaign for SA
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-ES |2001114983|                              |                              |Y                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-ES |2001077362|                              |                              |Y                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GS |5510116718|                              |                              |Y                      |GLSMRHAC                |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GS |5510300477|                              |                              |Y                      |GLSMRHAC                |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign |folderName              |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |

@@ -162,7 +162,7 @@ Feature:E2E scenario for biztpp campaign
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign |folderName              |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
-      |New           |BOTH    |6          |23         |biztpp   |E2E_Campaign_biztpp_VIC |Quote Tool  |Move Home|VIC    |BUS          |New            |No  |No  |
+      |New           |BOTH    |5          |23         |biztpp   |E2E_Campaign_biztpp_VIC |Quote Tool  |Move Home|VIC    |BUS          |New            |No  |No  |
 
   Scenario Outline: Validate complete data for biztpp campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
