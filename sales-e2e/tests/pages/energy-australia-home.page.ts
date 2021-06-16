@@ -177,6 +177,10 @@ const eaHomePage = {
     referencePriceDisclaimerLink: Selector("#disclaimer-Shared_Ref_Fit a[href*='/home/help-and-support/faqs/dmo']"),
     solarDisclaimerLink: Selector("#disclaimer-Shared_Ref_Fit a[href*='/conditions-pricing']"),
     carbonNeutralDisclaimerLink: Selector("#disclaimer-Shared_Carbon_New a[href*='/carbon-neutral']"),
+    familyAndFriendsRefereeEmailLabel: Selector("div[class*='ng-star-inserted'] [id*='campaign-search-form-family-friends-email'] label"),
+    familyAndFriendsRefereeEmailBanner: Selector("div[class*='ng-star-inserted'] form [class*='campaign-search-form__subtext']"),
+    familyAndFriendsRefereeEmailDynamicError: Selector("div[class*='ng-star-inserted'] [class*='campaign-search-form__themed_control'] .ea-field-errors"),
+    familyAndFriendsRefereeEmailStaticError: Selector("div[class*='ng-star-inserted'] form [class*='static-message-content']"),
     disclaimer: {
       generalStateDisclaimerOld: Selector("#general-state-disclaimer"),
       generalStateDisclaimerP1: Selector("#general-state-disclaimer p").nth(0),

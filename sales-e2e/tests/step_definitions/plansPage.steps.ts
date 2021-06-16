@@ -794,3 +794,21 @@ Then(/^user validates the '(.*)' account state for '(.*)' account number and '(.
 Given(/^user clicks '(.*)' features plan toggle button$/, async function (t, [planToggleButton]) {
   await plansMethod.selectSimplifiedPlanToggleButton(t, planToggleButton);
 });
+Then(/^user validates the label for Referee email address as the offer code$/, async function (t) {
+  await testFunction.isElementDisplayed(t,EaHomePage.elements.familyAndFriendsRefereeEmailLabel);
+  await testFunction.assertText(t, EaHomePage.elements.familyAndFriendsRefereeEmailLabel, "Referee’s EnergyAustralia email address");
+});
+Then(/^user validates the banner test for Referee email address instead of offer code$/, async function (t) {
+  await testFunction.isElementDisplayed(t,EaHomePage.elements.familyAndFriendsRefereeEmailBanner);
+  await testFunction.assertText(t, EaHomePage.elements.familyAndFriendsRefereeEmailBanner, "Enter your referee’s EnergyAustralia email and your connection address or postcode to begin");
+});
+Then(/^user is presented with '(.*)' message$/, async function (t,[dynamicMessage]){
+  await testFunction.isElementDisplayed(t,EaHomePage.elements.familyAndFriendsRefereeEmailDynamicError);
+  const error = await testFunction.getElementText(t, EaHomePage.elements.familyAndFriendsRefereeEmailDynamicError);
+  await testFunction.assertTextValue(t, error, dynamicMessage);
+});
+Then(/^user is presented with '(.*)' static message$/, async function (t,[staticMessage]){
+  await testFunction.isElementDisplayed(t,EaHomePage.elements.familyAndFriendsRefereeEmailStaticError);
+  const error = testFunction.getElementText(t, EaHomePage.elements.familyAndFriendsRefereeEmailStaticError);
+  await testFunction.assertTextValue(t, error, staticMessage);
+});

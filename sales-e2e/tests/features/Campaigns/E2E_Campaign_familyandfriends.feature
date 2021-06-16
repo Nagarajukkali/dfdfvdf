@@ -1,4 +1,4 @@
-@campaign  @campaign21.5.4_1  
+@campaign  @campaign21.5.4_1
 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
@@ -408,7 +408,7 @@
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
       |Existing      |BOTH    |16         |36         |familyandfriends |E2E_Campaign_familyandfriends_VIC_existing_non-moving |VIC  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
-    
+
   Scenario Outline: Validate complete data for familyandfriends campaign for NSW existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "sarita.chakote@energyaustralia.com.au" and "2000" and clicks on show me plan link
@@ -595,4 +595,39 @@
     Examples:
       |customerStatus|fuelType|eleDiscount|campaign    |folderName                                       |state|sourceSystem  |journey    |AAH  |DD  |customerType |newOrExisting        |
       |Existing      |ELE    |23         |familyandfriends |E2E_Campaign_familyandfriends_QLD_existing_non-moving |QLD  |Quote Tool    |Plan Switch|No   |No  |RES          |Existing  non-moving |
+
+    @21.6.4.familyandfriends
+    Scenario: Validate family and friends residential campaign referee email validation rules
+      Given user has opened the 'familyandfriends' link in a browser and creates 'E2E_FamilyAndFriends_EmailCodeValidation' to save evidences
+      Then user validates the label for Referee email address as the offer code
+      And user validates the banner test for Referee email address instead of offer code
+      When user provides email "" and "2000" and clicks on show me plan link
+      Then user is presented with 'You need to provide an EnergyAustralia employee’s email address to proceed' message
+      When user provides email "sarita.chakote" and "2000" and clicks on show me plan link
+      Then user is presented with 'That email address is invalid, please try again' message
+      When user provides email "avilash.parida@energyaustralia.com.au" and "2000" and clicks on show me plan link
+      Then user is presented with 'That email address is invalid, please try again' static message
+      When user provides email "sarita.chakote@energyaustralia.com.au" and "2000" and clicks on show me plan link
+      Then user is presented with the plans
+      And user clicks on Add plan button
+      And user selects 'New' on qualifier
+      And user provides all other details on qualifier page
+        |customerType| connectionAddress                          | movingType|propertyType|
+        |RES         | 74 Yillowra Street, AUBURN NSW 2144|Moving     |Renter               |
+      And user provides all details on checkout details page
+        |customerType|journey    |customerStatus| firstName| lastName|idType        |
+        |RES         |RES        |New           | test    |test     |Driver License|
+      And user selects mailing address option
+        |addressType       |otherAddress                              |
+        |Connection Address|                                          |
+      And user clicks on 'Review your order' button and navigates to review page
+      And user provides life support details on review page
+        |lifeSupportOption|fuelType |EleclifeSupportDevices    |GaslifeSupportDevices  |
+        |No               |         |                          |                       |
+      And user submits the quote
+      Then user lands on checkout complete page
+      When user has opened the qt2 Reporting website link in a browser
+      And user logs in to qt2 reporting
+      And user search quote on the basis of 'Email'
+      Then submitted quote is displayed
 
