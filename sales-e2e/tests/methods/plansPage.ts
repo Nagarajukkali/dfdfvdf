@@ -304,7 +304,7 @@ export class plansMethod {
         } else {
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeaturePeaceOfMindTitle, data.electricity.feature.preSelect.peaceOfMind.heading);
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeaturePeaceOfMindDescription, data.electricity.feature.preSelect.peaceOfMind.description);
-        } 
+        }
       }
       if (dataTable[0].Feature_XX_discountOffTotalEnergyBill === "Y") {
         switch (dataTable[0].state) {
@@ -1278,6 +1278,18 @@ export class plansMethod {
     const componentStatus=await t.eval(()=>window.ead.component);
     await t.expect(componentStatus).eql(component_JSONObj[pageComponent][eventCall]);
     console.log("Analytics Component validated for " +pageComponent+ " " +eventCall+ " component");
+  }
+
+  public static async validatePageName(t:TestController,journey:string, page:string){
+    journey = journey.toLowerCase();
+    page = page.toLowerCase();
+    let page_JSONObj;
+    const pageFilePath='resources/AnalyticsData/analytics_PageName.json';
+    const doc = fs.readFileSync(pageFilePath,'utf8');
+    page_JSONObj = JSON.parse(doc);
+    const pageStatus=await t.eval(()=>window.ead.page.pageName);
+    await t.expect(pageStatus).eql(page_JSONObj[journey][page]);
+    console.log("Analytics Event validated for " +journey+ " " +page);
   }
 
   public static async enterCostEstimatePeriod( t, period: any) {

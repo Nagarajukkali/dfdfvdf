@@ -71,3 +71,7 @@ Then(/^user validates the data layer for '(.*)' plan selected by user for '(.*)'
   await plansMethod.validateAnalyticsSelectedPlanDetails(t, plan,fueltype);
 });
 
+Then(/^user validates the page name for '(.*)' '(.*)' page$/, async function (t,[journey,page]) {
+  await plansMethod.validatePageName(t, journey, page);
+});
+
