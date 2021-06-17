@@ -1,0 +1,45 @@
+{
+  "residential": {
+    "plans": "ea:home:electricity-and-gas:plans",
+    "cart": "ea:home:plans:cart",
+    "qualifier_are_you_new_to_ea": "ea:home:plans:switch-now:are-you-new-to-energy-australia",
+    "qualifier_moving": "ea:home:plans:switch-now:are-you-moving-home",
+    "qualifier_address": "ea:home:plans:switch-now:what-is-your-new-address",
+    "qualifier_connectiondate": "ea:home:plans:switch-now:when-do-you-need-to-be-connected",
+    "qualifier_propertytype": "ea:home:plans:switch-now:do-you-own-or-rent-this-property",
+    "qualifier_accountdetails": "ea:home:plans:switch-now:please-sign-in",
+    "qualifier_idtype": "ea:home:plans:switch-now:to-proceed-please-verify-one-form-of-id"
+  },
+  "business": {
+    "plans": "ea:business:electricity-and-gas:small-business:plans",
+    "cart": "ea:bus:plans:cart",
+    "qualifier_are_you_new_to_ea": "ea:bus:plans:switch-now:are-you-new-to-energy-australia",
+    "qualifier_moving": "ea:bus:plans:switch-now:are-you-moving-home",
+    "qualifier_address": "ea:bus:plans:switch-now:what-is-your-new-address",
+    "qualifier_connectiondate": "ea:bus:plans:switch-now:when-do-you-need-to-be-connected",
+    "qualifier_propertytype": "ea:bus:plans:switch-now:do-you-own-or-rent-this-property",
+    "qualifier_accountdetails": "ea:bus:plans:switch-now:please-sign-in",
+    "qualifier_idtype": "ea:bus:plans:switch-now:to-proceed-please-verify-one-form-of-id"
+  },
+  "offer": {
+    "plans": "ea:offer",
+    "qualifier_are_you_new_to_ea": "ea:home:plans:switch-now:are-you-new-to-energy-australia",
+    "qualifier_moving": "ea:home:plans:switch-now:are-you-moving-home",
+    "qualifier_address": "ea:home:plans:switch-now:what-is-your-new-address",
+    "qualifier_connectiondate": "ea:home:plans:switch-now:when-do-you-need-to-be-connected",
+    "qualifier_propertytype": "ea:home:plans:switch-now:do-you-own-or-rent-this-property",
+    "qualifier_accountdetails": "ea:home:plans:switch-now:please-sign-in",
+    "qualifier_idtype": "ea:home:plans:switch-now:to-proceed-please-verify-one-form-of-id"
+  },
+  "bizreferral": {
+    "plans": "ea:bizreferral",
+    "cart": "ea:bus:plans:cart",
+    "qualifier_are_you_new_to_ea": "ea:bus:plans:switch-now:are-you-new-to-energy-australia",
+    "qualifier_moving": "ea:bus:plans:switch-now:are-you-moving-home",
+    "qualifier_address": "ea:bus:plans:switch-now:what-is-your-new-address",
+    "qualifier_connectiondate": "ea:bus:plans:switch-now:when-do-you-need-to-be-connected",
+    "qualifier_propertytype": "ea:bus:plans:switch-now:do-you-own-or-rent-this-property",
+    "qualifier_accountdetails": "ea:bus:plans:switch-now:please-sign-in",
+    "qualifier_idtype": "ea:bus:plans:switch-now:to-proceed-please-verify-one-form-of-id"
+  }
+}

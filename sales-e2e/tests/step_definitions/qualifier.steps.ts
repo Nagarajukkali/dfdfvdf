@@ -83,6 +83,14 @@ When(/^user verifies account on qualifier$/, async function (t,[],dataTable) {
   await qualifierMethod.verifyAccount(t,data[0].accountNumber,data[0].accountIdentityType,data[0].postcodeOrABNACN);
   await qualifierMethod.verifyIdentity(t,data[0].idType,data[0].idValue);
 });
+When(/^user verifies account in c1 on qualifier$/, async function (t,[],dataTable) {
+  let data=dataTable.hashes();
+  await qualifierMethod.verifyAccount(t,data[0].accountNumber,data[0].accountIdentityType,data[0].postcodeOrABNACN);
+});
+When(/^user verifies identity in c1 on qualifier$/, async function (t,[],dataTable) {
+  let data=dataTable.hashes();
+  await qualifierMethod.verifyIdentity(t,data[0].idType,data[0].idValue);
+});
 When(/^user selects '(.*)' on qualifier$/, async function (t,[customerStatus]) {
   await testFunction.takeScreenshot(t, 'qualifier_page');//disabled UI Validation
   await qualifierMethod.selectCustomerStatus(t,customerStatus);
@@ -170,3 +178,9 @@ When(/^user clicks on back button$/, async function (t) {
 When(/^user selects property type as '(.*)'$/, async function (t, [propertyType]) {
   await qualifierMethod.selectPropertyType(t, propertyType);
 });
+
+When(/^user selects connection date in qualifier$/, async function (t, []) {
+  await qualifierMethod.selectDateFromCalendar(t);
+});
+
+

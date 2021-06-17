@@ -203,7 +203,6 @@ export class qualifierMethod {
       const movingstatus = await t.eval(() => window.ead.productInfo.movingHouse);
       const movingDate = await t.eval(() => window.ead.productInfo.moveInDate);
       if(movingType===Moving.MOVING){
-        console
         await t.expect(movingstatus).eql("yes");
         await t.expect(movingDate).contains(dateValue);
       }else if(movingType===Moving.NON_MOVING){
