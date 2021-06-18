@@ -1287,7 +1287,7 @@ export class plansMethod {
     const pageFilePath='resources/AnalyticsData/analytics_PageName.json';
     const doc = fs.readFileSync(pageFilePath,'utf8');
     page_JSONObj = JSON.parse(doc);
-    const pageStatus=await t.eval(()=>window.ead.page.pageName);
+    const pageStatus=await t.eval(()=>window.ead.page);
     await t.expect(pageStatus).eql(page_JSONObj[journey][page]);
     console.log("Analytics Event validated for " +journey+ " " +page);
   }

@@ -1,45 +1,406 @@
 {
   "residential": {
-    "plans": "ea:home:electricity-and-gas:plans",
-    "cart": "ea:home:plans:cart",
-    "qualifier_are_you_new_to_ea": "ea:home:plans:switch-now:are-you-new-to-energy-australia",
-    "qualifier_moving": "ea:home:plans:switch-now:are-you-moving-home",
-    "qualifier_address": "ea:home:plans:switch-now:what-is-your-new-address",
-    "qualifier_connectiondate": "ea:home:plans:switch-now:when-do-you-need-to-be-connected",
-    "qualifier_propertytype": "ea:home:plans:switch-now:do-you-own-or-rent-this-property",
-    "qualifier_accountdetails": "ea:home:plans:switch-now:please-sign-in",
-    "qualifier_idtype": "ea:home:plans:switch-now:to-proceed-please-verify-one-form-of-id"
+    "plans": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:electricity-and-gas:plans",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/plans",
+      "previousPageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/?live=disabled",
+      "siteSection": "ea-home",
+      "siteSection1": "residential",
+      "siteSection2": "product"
+    },
+    "cart": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:cart",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/plans",
+      "previousPageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/?live=disabled",
+      "siteSection": "ea-home",
+      "siteSection1": "residential",
+      "siteSection2": "product"
+    },
+    "qualifier_are_you_new_to_ea": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:are-you-new-to-energy-australia",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/plans",
+      "previousPageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/?live=disabled",
+      "siteSection": "ea-home",
+      "siteSection1": "residential",
+      "siteSection2": "product"
+    },
+    "qualifier_moving": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:are-you-moving-home",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/plans",
+      "previousPageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/?live=disabled",
+      "siteSection": "ea-home",
+      "siteSection1": "residential",
+      "siteSection2": "product"
+    },
+    "qualifier_address": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:what-is-your-new-address",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/plans",
+      "previousPageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/?live=disabled",
+      "siteSection": "ea-home",
+      "siteSection1": "residential",
+      "siteSection2": "product"
+    },
+    "qualifier_connectiondate": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:when-do-you-need-to-be-connected",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/plans",
+      "previousPageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/?live=disabled",
+      "siteSection": "ea-home",
+      "siteSection1": "residential",
+      "siteSection2": "product"
+    },
+    "qualifier_propertytype": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:do-you-own-or-rent-this-property",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/plans",
+      "previousPageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/?live=disabled",
+      "siteSection": "ea-home",
+      "siteSection1": "residential",
+      "siteSection2": "product"
+    },
+    "qualifier_accountdetails": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:please-sign-in",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/plans",
+      "previousPageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/?live=disabled",
+      "siteSection": "ea-home",
+      "siteSection1": "residential",
+      "siteSection2": "product"
+    },
+    "qualifier_idtype": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:to-proceed-please-verify-one-form-of-id",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/plans",
+      "previousPageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/?live=disabled",
+      "siteSection": "ea-home",
+      "siteSection1": "residential",
+      "siteSection2": "product"
+    }
   },
   "business": {
-    "plans": "ea:business:electricity-and-gas:small-business:plans",
-    "cart": "ea:bus:plans:cart",
-    "qualifier_are_you_new_to_ea": "ea:bus:plans:switch-now:are-you-new-to-energy-australia",
-    "qualifier_moving": "ea:bus:plans:switch-now:are-you-moving-home",
-    "qualifier_address": "ea:bus:plans:switch-now:what-is-your-new-address",
-    "qualifier_connectiondate": "ea:bus:plans:switch-now:when-do-you-need-to-be-connected",
-    "qualifier_propertytype": "ea:bus:plans:switch-now:do-you-own-or-rent-this-property",
-    "qualifier_accountdetails": "ea:bus:plans:switch-now:please-sign-in",
-    "qualifier_idtype": "ea:bus:plans:switch-now:to-proceed-please-verify-one-form-of-id"
+    "plans": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:business:electricity-and-gas:small-business:plans",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/business/electricity-and-gas/small-business/plans",
+      "previousPageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/business",
+      "siteSection": "ea-home",
+      "siteSection1": "business",
+      "siteSection2": "product"
+    },
+    "cart": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:cart",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/business/electricity-and-gas/small-business/plans",
+      "previousPageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/business",
+      "siteSection": "ea-home",
+      "siteSection1": "business",
+      "siteSection2": "product"
+    },
+    "qualifier_are_you_new_to_ea": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:are-you-new-to-energy-australia",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/business/electricity-and-gas/small-business/plans",
+      "previousPageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/business",
+      "siteSection": "ea-home",
+      "siteSection1": "business",
+      "siteSection2": "product"
+    },
+    "qualifier_moving": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:are-you-moving-home",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/business/electricity-and-gas/small-business/plans",
+      "previousPageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/business",
+      "siteSection": "ea-home",
+      "siteSection1": "business",
+      "siteSection2": "product"
+    },
+    "qualifier_address": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:what-is-your-new-address",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/business/electricity-and-gas/small-business/plans",
+      "previousPageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/business",
+      "siteSection": "ea-home",
+      "siteSection1": "business",
+      "siteSection2": "product"
+    },
+    "qualifier_connectiondate": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:when-do-you-need-to-be-connected",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/business/electricity-and-gas/small-business/plans",
+      "previousPageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/business",
+      "siteSection": "ea-home",
+      "siteSection1": "business",
+      "siteSection2": "product"
+    },
+    "qualifier_propertytype": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:do-you-own-or-rent-this-property",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/business/electricity-and-gas/small-business/plans",
+      "previousPageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/business",
+      "siteSection": "ea-home",
+      "siteSection1": "business",
+      "siteSection2": "product"
+    },
+    "qualifier_accountdetails": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:please-sign-in",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/business/electricity-and-gas/small-business/plans",
+      "previousPageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/business",
+      "siteSection": "ea-home",
+      "siteSection1": "business",
+      "siteSection2": "product"
+    },
+    "qualifier_idtype": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:to-proceed-please-verify-one-form-of-id",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/business/electricity-and-gas/small-business/plans",
+      "previousPageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/business",
+      "siteSection": "ea-home",
+      "siteSection1": "business",
+      "siteSection2": "product"
+    }
   },
   "offer": {
-    "plans": "ea:offer",
-    "qualifier_are_you_new_to_ea": "ea:home:plans:switch-now:are-you-new-to-energy-australia",
-    "qualifier_moving": "ea:home:plans:switch-now:are-you-moving-home",
-    "qualifier_address": "ea:home:plans:switch-now:what-is-your-new-address",
-    "qualifier_connectiondate": "ea:home:plans:switch-now:when-do-you-need-to-be-connected",
-    "qualifier_propertytype": "ea:home:plans:switch-now:do-you-own-or-rent-this-property",
-    "qualifier_accountdetails": "ea:home:plans:switch-now:please-sign-in",
-    "qualifier_idtype": "ea:home:plans:switch-now:to-proceed-please-verify-one-form-of-id"
+    "plans": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:offer",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/offer?live=disabled",
+      "previousPageURL": "NA",
+      "siteSection": "ea-home",
+      "siteSection1": "residential",
+      "siteSection2": "product"
+    },
+    "cart": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:cart",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/offer?live=disabled",
+      "previousPageURL": "NA",
+      "siteSection": "ea-home",
+      "siteSection1": "residential",
+      "siteSection2": "product"
+    },
+    "qualifier_are_you_new_to_ea": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:are-you-new-to-energy-australia",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/offer?live=disabled",
+      "previousPageURL": "NA",
+      "siteSection": "ea-home",
+      "siteSection1": "residential",
+      "siteSection2": "product"
+    },
+    "qualifier_moving": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:are-you-moving-home",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/offer?live=disabled",
+      "previousPageURL": "NA",
+      "siteSection": "ea-home",
+      "siteSection1": "residential",
+      "siteSection2": "product"
+    },
+    "qualifier_address": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:what-is-your-new-address",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/offer?live=disabled",
+      "previousPageURL": "NA",
+      "siteSection": "ea-home",
+      "siteSection1": "residential",
+      "siteSection2": "product"
+    },
+    "qualifier_connectiondate": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:when-do-you-need-to-be-connected",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/offer?live=disabled",
+      "previousPageURL": "NA",
+      "siteSection": "ea-home",
+      "siteSection1": "residential",
+      "siteSection2": "product"
+    },
+    "qualifier_propertytype": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:do-you-own-or-rent-this-property",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/offer?live=disabled",
+      "previousPageURL": "NA",
+      "siteSection": "ea-home",
+      "siteSection1": "residential",
+      "siteSection2": "product"
+    },
+    "qualifier_accountdetails": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:please-sign-in",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/offer?live=disabled",
+      "previousPageURL": "NA",
+      "siteSection": "ea-home",
+      "siteSection1": "residential",
+      "siteSection2": "product"
+    },
+    "qualifier_idtype": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:to-proceed-please-verify-one-form-of-id",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/offer?live=disabled?live=disabled",
+      "previousPageURL": "NA",
+      "siteSection": "ea-home",
+      "siteSection1": "residential",
+      "siteSection2": "product"
+    }
   },
   "bizreferral": {
-    "plans": "ea:bizreferral",
-    "cart": "ea:bus:plans:cart",
-    "qualifier_are_you_new_to_ea": "ea:bus:plans:switch-now:are-you-new-to-energy-australia",
-    "qualifier_moving": "ea:bus:plans:switch-now:are-you-moving-home",
-    "qualifier_address": "ea:bus:plans:switch-now:what-is-your-new-address",
-    "qualifier_connectiondate": "ea:bus:plans:switch-now:when-do-you-need-to-be-connected",
-    "qualifier_propertytype": "ea:bus:plans:switch-now:do-you-own-or-rent-this-property",
-    "qualifier_accountdetails": "ea:bus:plans:switch-now:please-sign-in",
-    "qualifier_idtype": "ea:bus:plans:switch-now:to-proceed-please-verify-one-form-of-id"
+    "plans": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:bizreferral",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/bizreferral?live=disabled",
+      "previousPageURL": "NA",
+      "siteSection": "ea-home",
+      "siteSection1": "business",
+      "siteSection2": "product"
+    },
+    "cart": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:cart",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/bizreferral?live=disabled",
+      "previousPageURL": "NA",
+      "siteSection": "ea-home",
+      "siteSection1": "business",
+      "siteSection2": "product"
+    },
+    "qualifier_are_you_new_to_ea": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:are-you-new-to-energy-australia",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/bizreferral?live=disabled",
+      "previousPageURL": "NA",
+      "siteSection": "ea-home",
+      "siteSection1": "business",
+      "siteSection2": "product"
+    },
+    "qualifier_moving": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:are-you-moving-home",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/bizreferral?live=disabled",
+      "previousPageURL": "NA",
+      "siteSection": "ea-home",
+      "siteSection1": "business",
+      "siteSection2": "product"
+    },
+    "qualifier_address": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:what-is-your-new-address",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/bizreferral?live=disabled",
+      "previousPageURL": "NA",
+      "siteSection": "ea-home",
+      "siteSection1": "business",
+      "siteSection2": "product"
+    },
+    "qualifier_connectiondate": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:when-do-you-need-to-be-connected",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/bizreferral?live=disabled",
+      "previousPageURL": "NA",
+      "siteSection": "ea-home",
+      "siteSection1": "business",
+      "siteSection2": "product"
+    },
+    "qualifier_propertytype": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:do-you-own-or-rent-this-property",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/bizreferral?live=disabled",
+      "previousPageURL": "NA",
+      "siteSection": "ea-home",
+      "siteSection1": "business",
+      "siteSection2": "product"
+    },
+    "qualifier_accountdetails": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:please-sign-in",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/bizreferral?live=disabled",
+      "previousPageURL": "NA",
+      "siteSection": "ea-home",
+      "siteSection1": "business",
+      "siteSection2": "product"
+    },
+    "qualifier_idtype": {
+      "extCampaign": "NA",
+      "intCampaign": "NA",
+      "pageName": "ea:home:plans:switch-now:to-proceed-please-verify-one-form-of-id",
+      "pageType": "NA",
+      "pageURL": "https://preprod.nonprod.digital.energyaustralia.com.au/bizreferral?live=disabled",
+      "previousPageURL": "NA",
+      "siteSection": "ea-home",
+      "siteSection1": "business",
+      "siteSection2": "product"
+    }
   }
 }
