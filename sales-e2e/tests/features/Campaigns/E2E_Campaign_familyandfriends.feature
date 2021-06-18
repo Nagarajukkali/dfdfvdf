@@ -605,7 +605,7 @@
       Then user is presented with 'You need to provide an EnergyAustralia employee’s email address to proceed' message
       When user provides email "sarita.chakote" and "2000" and clicks on show me plan link
       Then user is presented with 'That email address is invalid, please try again' message
-      When user provides email "avilash.parida@energyaustralia.com.au" and "2000" and clicks on show me plan link
+      When user provides email "ajith.bharathan@energyaustralia.com.au" and "2000" and clicks on show me plan link
       Then user is presented with 'That email address is invalid, please try again' static message
       When user provides email "sarita.chakote@energyaustralia.com.au" and "2000" and clicks on show me plan link
       Then user is presented with the plans

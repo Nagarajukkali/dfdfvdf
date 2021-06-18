@@ -93,8 +93,6 @@ Feature: Scenarios to cover the data layer updates and analytics events trigger 
     Then user is presented with the plans
     And user validates the page name for 'bizreferral' 'plans' page
     When user clicks on Add plan button
-    Then user validates the page name for 'bizreferral' 'cart' page
-    When user moves on to fill the qualifier
     Then user validates the page name for 'bizreferral' 'qualifier_are_you_new_to_ea' page
     When user selects 'New' on qualifier
     Then user validates the page name for 'bizreferral' 'qualifier_moving' page
