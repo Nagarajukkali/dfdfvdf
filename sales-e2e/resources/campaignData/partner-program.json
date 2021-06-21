@@ -19,12 +19,12 @@
             "description": "Get a $25 credit per energy account on your first bill when you sign up online.+"
           },
           "QLD": {
-            "heading": "$50 Sign Up Credit",
-            "description": "Get a $50 credit per energy account on your first bill when you sign up online.+"
+            "heading": "",
+            "description": ""
           },
           "SA": {
-            "heading": "$25 Sign Up Credit",
-            "description": "Get a $25 credit per energy account on your first bill when you sign up online.+"
+            "heading": "",
+            "description": ""
           }
         },
         "carbonNeutral": {
@@ -49,7 +49,7 @@
           "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
           "NSW": "",
           "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
-          "QLD": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
+          "QLD": "",
           "SA" : ""
         },
         "carbonNeutral": "Energy with a bit of good. Opt in for 100% carbon neutral at no extra cost for your home energy.",
@@ -62,39 +62,39 @@
       "newCustomer": {
         "VIC": "Alliance_15%GD",
         "NSW": {
-          "Ausgrid": "Alliance_26%GD",
-          "Essential": "Alliance_26%GD",
-          "Endeavour": "Alliance_26%GD",
-          "default": "Alliance_26%GD"
+          "Ausgrid": "Alliance_18%GD",
+          "Essential": "Alliance_18%GD",
+          "Endeavour": "Alliance_18%GD",
+          "default": "Alliance_18%GD"
         },
         "ACT": "Alliance_14%GD_25",
-        "QLD": "Alliance_22%GD",
-        "SA": "Alliance_16%GD"
+        "QLD": "Alliance_16%GD",
+        "SA": "Alliance_8%GD"
       },
       "existingCustomer": {
         "ENE":{
           "VIC": "Alliance_15%GD",
           "NSW": {
-            "Ausgrid": "Alliance_26%GD",
-            "Essential": "Alliance_26%GD",
-            "Endeavour": "Alliance_26%GD",
-            "default": "Alliance_26%GD"
+            "Ausgrid": "Alliance_18%GD",
+            "Essential": "Alliance_18%GD",
+            "Endeavour": "Alliance_18%GD",
+            "default": "Alliance_18%GD"
           },
           "ACT": "Alliance_14%GD_25",
-          "QLD": "Alliance_22%GD",
-          "SA": "Alliance_16%GD"
+          "QLD": "Alliance_16%GD",
+          "SA": "Alliance_8%GD"
         },
         "PS": {
           "VIC": "Alliance_15%GD",
           "NSW": {
-            "Ausgrid": "Alliance_26%GD",
-            "Essential": "Alliance_26%GD",
-            "Endeavour": "Alliance_26%GD",
-            "default": "Alliance_26%GD"
+            "Ausgrid": "Alliance_18%GD",
+            "Essential": "Alliance_18%GD",
+            "Endeavour": "Alliance_18%GD",
+            "default": "Alliance_18%GD"
           },
           "ACT": "Alliance_14%GD_25",
-          "QLD": "Alliance_22%GD",
-          "SA": "Alliance_16%GD"
+          "QLD": "Alliance_16%GD",
+          "SA": "Alliance_8%GD"
         }
       }
     }
@@ -117,12 +117,12 @@
             "description": "Get a $25 credit per energy account on your first bill when you sign up online.+"
           },
           "QLD": {
-            "heading": "$50 Sign Up Credit",
-            "description": "Get a $50 credit per energy account on your first bill when you sign up.+"
+            "heading": "",
+            "description": ""
           },
           "SA": {
-            "heading": "$25 Sign Up Credit",
-            "description": "Get a $25 credit per energy account on your first bill when you sign up.+"
+            "heading": "",
+            "description": ""
           }
         },
         "carbonNeutral": {
@@ -153,21 +153,21 @@
     "sourceCode": {
       "newCustomer": {
         "VIC": "Alliance_35%GD",
-        "NSW": "Alliance_26%GD",
+        "NSW": "Alliance_18%GD",
         "ACT": "Alliance_18%GD_25",
-        "SA": "Alliance_16%GD"
+        "SA": "Alliance_14%GD"
       },
       "existingCustomer": {
         "VIC": "Alliance_35%GD",
-        "NSW": "Alliance_26%GD",
+        "NSW": "Alliance_18%GD",
         "ACT": "Alliance_18%GD_25",
-        "SA": "Alliance_16%GD"
+        "SA": "Alliance_14%GD"
       },
       "PS": {
         "VIC": "Alliance_35%GD",
-        "NSW": "Alliance_26%GD",
+        "NSW": "Alliance_18%GD",
         "ACT": "Alliance_18%GD_25",
-        "SA": "Alliance_16%GD"
+        "SA": "Alliance_14%GD"
       }
     }
   },

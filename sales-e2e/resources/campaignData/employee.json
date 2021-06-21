@@ -36,13 +36,13 @@
             "heading": "25% discount off total electricity bill"
           },
           "NSW": {
-            "heading": "32% discount off total electricity bill"
-          },
-          "QLD": {
             "heading": "28% discount off total electricity bill"
           },
+          "QLD": {
+            "heading": "22% discount off total electricity bill"
+          },
           "SA": {
-            "heading": "25% discount off total electricity bill"
+            "heading": "20% discount off total electricity bill"
           },
           "description": "Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges."
         },
@@ -66,9 +66,9 @@
         "peaceOfMind": "Priority customer service. Dedicated Family, Friends and You team.",
         "discountOffTotalEnergyBill": {
           "VIC": "25% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
-          "NSW": "32% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
-          "QLD": "28% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
-          "SA" : "25% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges."
+          "NSW": "28% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
+          "QLD": "22% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
+          "SA" : "20% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges."
         },
         "noStandardConnectionFee": "",
         "vipPriorityService": ""
@@ -78,27 +78,27 @@
       "newCustomer": {
         "VIC": "Employee_25%GD",
         "NSW": {
-          "default": "Employee_32%GD"
+          "default": "Employee_28%GD"
         },
-        "QLD": "Employee_28%GD",
-        "SA": "Employee_25%GD"
+        "QLD": "Employee_22%GD",
+        "SA": "Employee_20%GD"
       },
       "existingCustomer": {
         "ENE":{
           "VIC": "Employee_25%GD",
           "NSW": {
-            "default": "Employee_32%GD"
+            "default": "Employee_28%GD"
           },
-          "QLD": "Employee_28%GD",
-          "SA": "Employee_25%GD"
+          "QLD": "Employee_22%GD",
+          "SA": "Employee_20%GD"
         },
         "PS": {
           "VIC": "Employee_25%GD",
           "NSW": {
-            "default": "Employee_32%GD"
+            "default": "Employee_28%GD"
           },
-          "QLD": "Employee_28%GD",
-          "SA": "Employee_25%GD"
+          "QLD": "Employee_22%GD",
+          "SA": "Employee_20%GD"
         }
       }
     }
@@ -141,7 +141,7 @@
             "heading": "28% discount off total gas bill"
           },
           "SA": {
-            "heading": "25% discount off total gas bill"
+            "heading": "20% discount off total gas bill"
           },
           "description": "Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges."
         },
@@ -161,7 +161,7 @@
         "discountOffTotalEnergyBill": {
           "VIC": "37% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
           "NSW": "28% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
-          "SA" : "25% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges."
+          "SA" : "20% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges."
         },
         "vipPriorityService": ""
       }
@@ -169,18 +169,18 @@
       "newCustomer": {
         "VIC": "Employee_37%GD",
         "NSW": "Employee_28%GD",
-        "SA": "Employee_25%GD"
+        "SA": "Employee_20%GD"
       },
       "existingCustomer": {
         "ENE":{
           "VIC": "Employee_37%GD",
           "NSW": "Employee_28%GD",
-          "SA": "Employee_25%GD"
+          "SA": "Employee_20%GD"
         },
         "PS": {
           "VIC": "Employee_37%GD",
           "NSW": "Employee_28%GD",
-          "SA": "Employee_25%GD"
+          "SA": "Employee_20%GD"
         }
       }
     }
