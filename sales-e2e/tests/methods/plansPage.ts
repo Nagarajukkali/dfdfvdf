@@ -202,24 +202,10 @@ export class plansMethod {
   public static async validateRepricePrePositioningText(t: any, data,state) {
       if(data.planName=== PlanType.BASIC_HOME) {
         if(state === AustralianState.QLD){
-          await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, 'Our electricity standing offer rates are under ' +
-            'review and may change from 1 July 2021. If ' +
-            'this happens new rates can be viewed online ' +
-            'from this date. More information on rate ' +
-            'changes here.'
-          );
+          await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, "Our energy usage rates and daily supply charge for this plan are variable. Our rates are generally reviewed around July each year and we'll let you know before this happens.");
         }else{
-          await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, 'Our electricity standing offer rates are under ' +
-            'review and may change from 1 July 2021. If ' +
-            'this happens new rates can be viewed online ' +
-            'from this date. More information on rate ' +
-            'changes here.'
-          );
-          await testFunction.assertText(t, EaHomePage.campaignElements.gasRepriceText, 'Our electricity standing offer rates are under ' +
-            'review and may change from 1 July 2021. If ' +
-            'this happens new rates can be viewed online ' +
-            'from this date. More information on rate ' +
-            'changes here.');
+          await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, "Our energy usage rates and daily supply charge for this plan are variable. Our rates are generally reviewed around July each year and we'll let you know before this happens.");
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasRepriceText, "Our energy usage rates and daily supply charge for this plan are variable. Our rates are generally reviewed around July each year and we'll let you know before this happens.");
         }
       }else if ((data.planName=== PlanType.TOTAL_PLAN) || (data.planName=== PlanType.NO_FRILLS) || (data.planName=== PlanType.TOTAL_PLAN_PLUS)){
         if(state === AustralianState.QLD){
@@ -234,12 +220,7 @@ export class plansMethod {
   public static async validateRepricePrePositioningTextPlansPage(t: any, plan,journey) {
     if(journey=== 'Residential') {
       if(plan === PlanType.BASIC_HOME){
-        await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.repriceText, 'Our electricity standing offer rates are under ' +
-          'review and may change from 1 July 2021. If ' +
-          'this happens new rates can be viewed online ' +
-          'from this date. More information on rate ' +
-          'changes here.'
-        );
+        await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.repriceText,"Our energy usage rates and daily supply charge for this plan are variable. Our rates are generally reviewed around July each year and we'll let you know before this happens.");
       }else if (plan === PlanType.NO_FRILLS){
         await testFunction.assertText(t, EaHomePage.elements.NoFrillsPlanTable.repriceText, "Our rates will generally be adjusted annually, and we'll notify you when this happens.");
       }else if (plan === PlanType.TOTAL_PLAN){
@@ -247,12 +228,7 @@ export class plansMethod {
       }
     }else if(journey=== 'Business'){
       if((plan === PlanType.BASIC_BUSINESS)){
-        await testFunction.assertText(t, EaHomePage.elements.BasicBusinessTable.repriceText, 'Our energy standing offer rates are under ' +
-          'review and may change from 1 July 2021. If ' +
-          'this happens new rates can be viewed online ' +
-          'from this date. More information on rate ' +
-          'changes here.'
-        );
+        await testFunction.assertText(t, EaHomePage.elements.BasicBusinessTable.repriceText,"Our energy usage rates and daily supply charge for this plan are variable. Our rates are generally reviewed around July each year and we'll let you know before this happens.");
       }
     }
     console.log("Reprice text validated for " +plan+ " on " +journey+ " plans page")

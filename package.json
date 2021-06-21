@@ -20,7 +20,7 @@
     "report": "node report-generator.js"
   },
   "config": {
-    "env": "preprod",
+    "env": "mocha",
     "e2e_tags": "@DR21.7.1.campaign,~@failed,~@data-required"
   },
   "private": true,
