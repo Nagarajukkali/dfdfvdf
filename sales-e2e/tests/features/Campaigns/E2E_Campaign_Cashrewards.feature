@@ -604,4 +604,4 @@ Feature:E2E scenario for cashrewards campaign
       | customerStatus | fuelType | eleDiscount | campaign    | folderName                                       | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | ELE      | 14          | cashrewards | E2E_Campaign_cashrewards_QLD_existing_non-moving | QLD   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-s
+
