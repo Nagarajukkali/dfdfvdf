@@ -973,8 +973,8 @@ export class checkoutReviewMethod {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.electricityRepriceText, "Our energy usage rates and daily supply charge for this plan are variable. Our rates are generally reviewed around July each year and we'll let you know before this happens.");
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasRepriceText,"Our energy usage rates and daily supply charge for this plan are variable. Our rates are generally reviewed around July each year and we'll let you know before this happens.");
       }else if ((plan === PlanType.NO_FRILLS) || (plan === PlanType.TOTAL_PLAN)){
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.electricityRepriceText, "Our rates are generally reviewed around July each year and we'll let you know when this happens.");
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasRepriceText, "Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.electricityRepriceText, "Our rates will generally be adjusted annually, and we'll notify you when this happens.");
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasRepriceText, "Our rates will generally be adjusted annually, and we'll notify you when this happens.");
 
       }
     }else if(journey=== 'Business'){
