@@ -1,4 +1,4 @@
-@DR21.6.1.repricetest
+@DR21.6.1.repricetest @DR21.7.1.campaign
 
 Feature:E2E scenario for total plan campaigns
 
