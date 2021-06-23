@@ -209,7 +209,7 @@ Feature:E2E scenario for offer-canstarblue campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-GS  | 5510149276 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign          | folderName                                   | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 14          | 14          | offer-canstarblue | E2E_Campaign_offer-canstarblue_SA_new_moving | SA    | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | BOTH     | 6           | 12          | offer-canstarblue | E2E_Campaign_offer-canstarblue_SA_new_moving | SA    | Quote Tool   | Move Home | No  | No | RES          | New           |
 
   Scenario Outline: Validate complete data for offer-canstarblue campaign for ACT - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
