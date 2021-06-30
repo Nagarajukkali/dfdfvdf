@@ -1230,6 +1230,17 @@ export class plansMethod {
     await t.expect(solarIndicatorValue).eql(expectedFlag);
   }
 
+  public static async validateUniqueCodeData(
+    t: TestController,
+    expectedFlag: ('NA' | 'BIZOFFER5')
+  ): Promise<void> {
+    const uniqueCodeValue = await t.eval(
+      () => window.ead.productInfo.offerCode
+    );
+    await t.expect(uniqueCodeValue).eql(expectedFlag);
+    console.log("Unique code validated as "+expectedFlag)
+  }
+
   public static async validateAnalyticsForStateAndPostcodeUpdate(t: TestController, state: string, postcode: string) {
     const updatedStateData = await t.eval(() => window.ead.productInfo.state);
     await t.expect(updatedStateData).eql(state);

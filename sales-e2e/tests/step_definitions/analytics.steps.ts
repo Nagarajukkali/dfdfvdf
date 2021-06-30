@@ -10,6 +10,9 @@ Then(/^user validates the data layer is updated for solar as '(.*)'$/, async fun
   //const data = await getSpyData();
   await plansMethod.validateAnalyticsSolarData(t, actualSolarIndicatorValue);
 });
+Then(/^user validates the data layer is updated for unique code as '(.*)'$/, async function (t, [uniquecode]) {
+  await plansMethod.validateUniqueCodeData(t, uniquecode);
+});
 Then(/^user closes the spy on datalayer$/, async function (t) {
   await spyOff;
 });
