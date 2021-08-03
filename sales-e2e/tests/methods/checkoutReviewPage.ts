@@ -864,7 +864,7 @@ export class checkoutReviewMethod {
         await testFunction.isElementAbsent(t, eaCheckoutReviewPage.elements.solarPower.tariffSelectableText);
       }
       await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.tooltipText, expectedSolarPowerTooltip);
-      await testFunction.click(t, eaCheckoutReviewPage.elements.solarPower.tooltipClose);
+      await testFunction.click(t, eaCheckoutReviewPage.elements.solarPower.tooltipText);
       if (connectionAddress.includes("VIC") && pageUrl.includes("customerType=RES")) {
         await testFunction.isElementExists(t, eaCheckoutReviewPage.elements.solarPower.singleRateTariff);
         await testFunction.isElementExists(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff);
@@ -925,16 +925,16 @@ export class checkoutReviewMethod {
       await testFunction.click(t, eaCheckoutReviewPage.elements.solarPower.peakRatesToolTip);
       await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.peakRatesToolTipText, "Peak applicable times:");
       await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.peakRatesToolTipText, "(3pm-9pm Weekdays)");
-      await testFunction.click(t, eaCheckoutReviewPage.elements.solarPower.peakRatesToolTipClose);
+      await testFunction.click(t, eaCheckoutReviewPage.elements.solarPower.peakRatesToolTip);
       await testFunction.click(t, eaCheckoutReviewPage.elements.solarPower.shoulderRatesToolTip);
       await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.shoulderRatesToolTipText, "Shoulder applicable times:");
       await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.shoulderRatesToolTipText, "(7am-3pm, 9pm-10pm Weekdays)");
       await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.shoulderRatesToolTipText, "(7am-10pm Weekends)");
-      await testFunction.click(t, eaCheckoutReviewPage.elements.solarPower.shoulderRatesToolTipClose);
+      await testFunction.click(t, eaCheckoutReviewPage.elements.solarPower.shoulderRatesToolTip);
       await testFunction.click(t, eaCheckoutReviewPage.elements.solarPower.offPeakRatesToolTip);
       await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.offPeakRatesToolTipText, "Off peak applicable times:");
       await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.offPeakRatesToolTipText, "(10pm-7am Everyday)");
-      await testFunction.click(t, eaCheckoutReviewPage.elements.solarPower.offPeakRatesToolTipClose);
+      await testFunction.click(t, eaCheckoutReviewPage.elements.solarPower.offPeakRatesToolTip);
     }
 
     await testFunction.click(t, eaCheckoutReviewPage.elements.solarPower.rateFeedInTariffToolTip);
@@ -955,7 +955,7 @@ export class checkoutReviewMethod {
       await t.closeWindow();
     }
     await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.solarFITToolTipGovernmentDisclaimer, "If you qualify for a government scheme, which isn't displayed below. It will be added to your account and reflected in your welcome pack.");
-    await testFunction.click(t, eaCheckoutReviewPage.elements.solarPower.ratesTitleToolTipClose);
+    await testFunction.click(t, eaCheckoutReviewPage.elements.solarPower.rateFeedInTariffToolTip);
     console.log("Validation completed for solar feed in tariff under rates section");
 
   }

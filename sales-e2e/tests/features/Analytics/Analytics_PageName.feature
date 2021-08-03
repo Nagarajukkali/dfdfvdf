@@ -64,7 +64,7 @@ Feature: Scenarios to cover the data layer updates and analytics events trigger 
     Then user validates the page name for 'business' 'qualifier_moving' page
     When user selects 'Moving' for moving question on qualifier
     Then user validates the page name for 'business' 'qualifier_address' page
-    When user enters the address '320 Crown Street, SURRY HILLS NSW 2010' on qualifier
+    When user enters the address '68 Mercer Street, GEELONG VIC 3220' on qualifier
     Then user validates the page name for 'business' 'qualifier_connectiondate' page
     When user selects connection date in qualifier
     And user closes the spy on datalayer
