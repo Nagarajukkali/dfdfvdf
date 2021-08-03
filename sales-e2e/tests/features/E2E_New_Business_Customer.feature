@@ -14,7 +14,7 @@ Feature:E2E scenario for new business moving and non moving customer
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | customerStatus | connectionAddress                      | movingType | propertyType |
-      | BUS          | New            | 320 Crown Street, SURRY HILLS NSW 2010 | Moving     |              |
+      | BUS          | New            | 73-75 Enmore Road, NEWTOWN NSW 2042 | Moving     |              |
     And user provides all details on checkout details page
       | customerType | journey | firstName | lastName | businessType |
       | BUS          | BUS     | test      | test     | ABN          |
@@ -50,11 +50,11 @@ Feature:E2E scenario for new business moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | BSOT-EN  | NCCC005405 | N                              | N                              | Y                       | LSKDM                    | POSTMM        |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | BSOT-EN  | 4102017007 | N                              | N                              | Y                       | LSKDM                    | POSTMM        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | BSOT-GN  | 5240554353 | N                              | N                              | Y                       | GLSMRHAC                 | POSTMM        |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | BSOT-GN  | 5247073457 | N                              | N                              | Y                       | GLSMRHAC                 | POSTMM        |
 
     Examples:
       | customerStatus | fuelType | planName       | folderName         | state | sourceSystem | journey   | AAH | DD  | customerType | newOrExisting |

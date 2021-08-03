@@ -13,7 +13,7 @@ const moveHouse = {
     errorMsgInDateSelection: Selector(".error-business-hint.two-business-days"),
     disclaimerMsg: Selector(".t-emphasize"),
     solarSetUpUnknownError: Selector("#plan-error-SOLAR_SETUP_UNKNOWN"),
-    solarSetUpUnknownErrorForUndetectedNMI: Selector("#hs-solar-power-error-move .static-message-content"),
+    solarSetUpUnknownErrorForUndetectedNMI: Selector("#hs-solar-power-error-move .ea-message__static-message-content"),
     contactUsTextForUndetectedNMI: Selector("#hs-solar-power-error-move .hs-solar-contact-us__text"),
   },
 };
