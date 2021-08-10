@@ -467,7 +467,7 @@ export class checkoutReviewMethod {
   public static async validateFeatures(t: any, dataTable, json: any, numOfExpectedFeatures) {
     console.log("Validating plan features on review page.");
     if (await testFunction.isElectricity(dataTable[0].fuelType)) {
-      await t.expect(await testFunction.sizeOfElement(t, eaCheckoutReviewPage.elements.eleFeatures)).eql(numOfExpectedFeatures);
+       await t.expect(await testFunction.sizeOfElement(t, eaCheckoutReviewPage.elements.eleFeatures)).eql(numOfExpectedFeatures);
       if (dataTable[0].Feature_50Credit === "Y") {
         switch (dataTable[0].state) {
           case AustralianState.VIC:
@@ -970,8 +970,8 @@ export class checkoutReviewMethod {
   public static async validateRepricePrePositioningTextPlansPage(t: any, plan,journey) {
     if(journey=== 'Residential') {
       if((plan === PlanType.BASIC_HOME)){
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.electricityRepriceText, "Our energy usage rates and daily supply charge for this plan are variable. Our rates are generally reviewed around July each year and we'll let you know before this happens.");
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasRepriceText,"Our energy usage rates and daily supply charge for this plan are variable. Our rates are generally reviewed around July each year and we'll let you know before this happens.");
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.electricityRepriceText, "Our electricity standing offer rates are under review and may change from 1 September 2021. If this happens new rates can be viewed online from this date. More information on rate changes here.");
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasRepriceText,"Our usage rates and daily supply charge for this plan are variable and are generally reviewed around January each year. We'll let you know before this happens.");
       }else if ((plan === PlanType.NO_FRILLS) || (plan === PlanType.TOTAL_PLAN)){
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.electricityRepriceText, "Our rates will generally be adjusted annually, and we'll notify you when this happens.");
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasRepriceText, "Our rates will generally be adjusted annually, and we'll notify you when this happens.");

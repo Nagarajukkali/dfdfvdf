@@ -38,7 +38,7 @@
       "newCustomer": {
         "VIC": "Total_7%GD",
         "NSW": {
-          "default": "Total_23%GD"
+          "default": "Total_21%GD"
         },
         "ACT": "Total_12%GD",
         "SA": "Total_5%GD",
@@ -48,7 +48,7 @@
         "ENE": {
           "VIC": "Total_7%GD",
           "NSW": {
-            "default": "Total_23%GD"
+            "default": "Total_21%GD"
           },
           "ACT": "Total_12%GD",
           "SA": "Total_5%GD",
@@ -57,7 +57,7 @@
         "PS": {
           "VIC": "Total_7%GD",
           "NSW": {
-            "default": "Total_23%GD"
+            "default": "Total_21%GD"
           },
           "ACT": "Total_12%GD",
           "SA": "Total_5%GD",
@@ -97,21 +97,21 @@
     "sourceCode": {
       "newCustomer": {
         "VIC": "Total_25%GD",
-        "NSW": "Total_21%GD",
-        "ACT": "Total_21%GD",
+        "NSW": "Total_26%GD",
+        "ACT": "Total_26%GD",
         "SA": "Total_5%GD"
       },
       "existingCustomer": {
         "ENE": {
           "VIC": "Total_25%GD",
-          "NSW": "Total_21%GD",
-          "ACT": "Total_21%GD",
+          "NSW": "Total_26%GD",
+          "ACT": "Total_26%GD",
           "SA": "Total_5%GD"
         },
         "PS": {
           "VIC": "Total_25%GD",
-          "NSW": "Total_21%GD",
-          "ACT": "Total_21%GD",
+          "NSW": "Total_26%GD",
+          "ACT": "Total_26%GD",
           "SA": "Total_5%GD"
         }
       }

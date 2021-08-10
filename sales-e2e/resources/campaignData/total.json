@@ -51,7 +51,7 @@
           "SA": {
             "heading": "14% discount off total electricity bill"
           },
-          "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
+          "description": "Guaranteed discount that applies to our market energy charges."
         },
         "noStandardConnectionFee": {
           "heading": "No standard connection fees",
@@ -69,11 +69,11 @@
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": {
-          "VIC": "13% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges.",
-          "NSW": "24% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges.",
-          "ACT": "12% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges.",
-          "QLD": "20% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges.",
-          "SA" : "14% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges."
+          "VIC": "13% discount off total electricity bill. Guaranteed discount that applies to our market energy charges.",
+          "NSW": "24% discount off total electricity bill. Guaranteed discount that applies to our market energy charges.",
+          "ACT": "12% discount off total electricity bill. Guaranteed discount that applies to our market energy charges.",
+          "QLD": "20% discount off total electricity bill. Guaranteed discount that applies to our market energy charges.",
+          "SA" : "14% discount off total electricity bill. Guaranteed discount that applies to our market energy charges."
         },
         "noStandardConnectionFee": "No standard connection fees. Move with us and we'll waive connection and special meter reads during business hours."
       }
@@ -180,7 +180,7 @@
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": {
-          "VIC": "33% discount off total gas bill. Guaranteed discount that applies to both gas usage rates and daily supply charges.",
+          "VIC": "33% discount off total gas bill. Guaranteed discount that applies to both usage rates and daily supply charges.",
           "NSW": "24% discount off total gas bill. Guaranteed discount that applies to both gas usage rates and daily supply charges.",
           "ACT": "16% discount off total gas bill. Guaranteed discount that applies to both gas usage rates and daily supply charges.",
           "SA" : "14% discount off total gas bill. Guaranteed discount that applies to both gas usage rates and daily supply charges."

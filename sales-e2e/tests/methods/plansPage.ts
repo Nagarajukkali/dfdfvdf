@@ -203,6 +203,8 @@ export class plansMethod {
       if(data.planName=== PlanType.BASIC_HOME) {
         if(state === AustralianState.QLD){
           await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, "Our energy usage rates and daily supply charge for this plan are variable. Our rates are generally reviewed around July each year and we'll let you know before this happens.");
+        }else if(state === AustralianState.VIC){
+          await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, "Our electricity standing offer rates are under review and may change from 1 September 2021. If this happens new rates can be viewed online from this date. More information on rate changes here.");
         }else{
           await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, "Our energy usage rates and daily supply charge for this plan are variable. Our rates are generally reviewed around July each year and we'll let you know before this happens.");
           await testFunction.assertText(t, EaHomePage.campaignElements.gasRepriceText, "Our energy usage rates and daily supply charge for this plan are variable. Our rates are generally reviewed around July each year and we'll let you know before this happens.");
@@ -220,7 +222,7 @@ export class plansMethod {
   public static async validateRepricePrePositioningTextPlansPage(t: any, plan,journey) {
     if(journey=== 'Residential') {
       if(plan === PlanType.BASIC_HOME){
-        await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.repriceText,"Our energy usage rates and daily supply charge for this plan are variable. Our rates are generally reviewed around July each year and we'll let you know before this happens.");
+        await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.repriceText,"Our electricity standing offer rates are under review and may change from 1 September 2021. If this happens new rates can be viewed online from this date. More information on rate changes here.");
       }else if (plan === PlanType.NO_FRILLS){
         await testFunction.assertText(t, EaHomePage.elements.NoFrillsPlanTable.repriceText, "Our rates will generally be adjusted annually, and we'll notify you when this happens.");
       }else if (plan === PlanType.TOTAL_PLAN){
@@ -264,7 +266,7 @@ export class plansMethod {
         }
       }
       if (dataTable[0].Feature_carbonNeutral === "Y") {
-        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('employee') || t.testRun.test.name.includes('partner-program')) {
+        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('employee') || t.testRun.test.name.includes('partner-program')||t.testRun.test.name.includes('carbon-neutral')) {
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNEGTitle, data.electricity.feature.preSelect.carbonNeutral.heading);
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNEGDescription, data.electricity.feature.preSelect.carbonNeutral.description);
         } else {
@@ -334,6 +336,23 @@ export class plansMethod {
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureChanceToWinTitle, data.electricity.feature.preSelect.chanceToWin.QLD.heading);
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureChanceToWinDescription, data.electricity.feature.preSelect.chanceToWin.QLD.description);
         } else {
+          throw Error("Invalid State");
+        }
+      }
+      if (dataTable[0].Feature_variableRates === "Y") {
+        if (dataTable[0].state === 'VIC') {
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesTitle, data.electricity.feature.preSelect.variableRates.VIC.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.electricity.feature.preSelect.variableRates.VIC.description);
+        } else if (dataTable[0].state === 'NSW') {
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesTitle, data.electricity.feature.preSelect.variableRates.NSW.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.electricity.feature.preSelect.variableRates.NSW.description);
+        } else if (dataTable[0].state === 'QLD') {
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesTitle, data.electricity.feature.preSelect.variableRates.QLD.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.electricity.feature.preSelect.variableRates.QLD.description);
+        } else if (dataTable[0].state === 'ACT') {
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesTitle, data.electricity.feature.preSelect.variableRates.ACT.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.electricity.feature.preSelect.variableRates.ACT.description);
+        }else {
           throw Error("Invalid State");
         }
       }
@@ -435,6 +454,17 @@ export class plansMethod {
             throw Error("Invalid State");
           }
         }
+        if (dataTable[0].Feature_variableRates === "Y") {
+          if (dataTable[0].state === 'VIC') {
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureVariableRatesTitle, data.gas.feature.preSelect.variableRates.VIC.heading);
+            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.gas.feature.preSelect.variableRates.VIC.description);
+          } else if (dataTable[0].state === 'NSW') {
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureVariableRatesTitle, data.gas.feature.preSelect.variableRates.NSW.heading);
+            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.gas.feature.preSelect.variableRates.NSW.description);
+          } else {
+            throw Error("Invalid State");
+          }
+        }
       }
     }
   }
@@ -510,7 +540,14 @@ export class plansMethod {
     if (dataTable[0].chanceToWin === 'Y') {
       await this.validateChanceToWin(t, disclaimer, data, state);
     }
-    await this.validatePlanDisclaimer(t,disclaimer,data,planName,state);
+    if (dataTable[0].carbonNeutral === 'Y') {
+      await this.validateCarbonNeutral(t, disclaimer, data, state);
+    }
+    if (dataTable[0].variableRates === 'Y') {
+      await testFunction.assertText(t, disclaimer, data.disclaimers.variableRates.heading);
+      await testFunction.assertText(t, disclaimer, data.disclaimers.variableRates.description);
+      console.log("Variable rates disclaimer validated");
+    }
   }
 
   public static async validateSignUpCredit(t, disclaimer, data, state) {
@@ -559,6 +596,33 @@ export class plansMethod {
         throw Error("Invalid State");
 
     }
+  }
+  public static async validateCarbonNeutral(t, disclaimer, data, state) {
+    switch (state) {
+      case AustralianState.VIC:
+        await testFunction.assertText(t, disclaimer, data.disclaimers.carbonNeutral.VIC.heading);
+        await testFunction.assertText(t, disclaimer, data.disclaimers.carbonNeutral.VIC.description);
+        break;
+      case AustralianState.NSW:
+        await testFunction.assertText(t, disclaimer, data.disclaimers.carbonNeutral.NSW.heading);
+        await testFunction.assertText(t, disclaimer, data.disclaimers.carbonNeutral.NSW.description);
+        break;
+      case AustralianState.ACT:
+        await testFunction.assertText(t, disclaimer, data.disclaimers.carbonNeutral.ACT.heading);
+        await testFunction.assertText(t, disclaimer, data.disclaimers.carbonNeutral.ACT.description);
+        break;
+      case AustralianState.QLD:
+        await testFunction.assertText(t, disclaimer, data.disclaimers.carbonNeutral.QLD.heading);
+        await testFunction.assertText(t, disclaimer, data.disclaimers.carbonNeutral.QLD.description);
+        break;
+      case AustralianState.SA:
+        await testFunction.assertText(t, disclaimer, data.disclaimers.carbonNeutral.SA.heading);
+        await testFunction.assertText(t, disclaimer, data.disclaimers.carbonNeutral.SA.description);
+        break;
+      default:
+        throw Error("Invalid State");
+    }
+    console.log("Carbon Neutral disclaimer validated");
   }
 
   public static async validatePlanDisclaimer(t, disclaimer, data, planName, state) {
@@ -767,6 +831,50 @@ export class plansMethod {
               throw Error("Invalid State");
           }
           break;
+          case PlanType.BUSINESS_CARBON_NEUTRAL:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.businessCarbonNeutral.heading);
+            switch (state) {
+              case AustralianState.VIC:
+                await testFunction.assertText(t, disclaimer, data.disclaimers.businessCarbonNeutral.VIC.description);
+                break;
+              case AustralianState.NSW:
+                await testFunction.assertText(t, disclaimer, data.disclaimers.businessCarbonNeutral.NSW.description);
+                break;
+              case AustralianState.ACT:
+                await testFunction.assertText(t, disclaimer, data.disclaimers.businessCarbonNeutral.ACT.description);
+                break;
+              case AustralianState.SA:
+                await testFunction.assertText(t, disclaimer, data.disclaimers.businessCarbonNeutral.SA.description);
+                break;
+              case AustralianState.QLD:
+                await testFunction.assertText(t, disclaimer, data.disclaimers.businessCarbonNeutral.QLD.description);
+                break;
+              default:
+                throw Error("Invalid State");
+            }
+            break;
+            case PlanType.BUSINESS_BALANCE_PLAN:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.businessBalancePlan.heading);
+            switch (state) {
+              case AustralianState.VIC:
+                await testFunction.assertText(t, disclaimer, data.disclaimers.businessBalancePlan.VIC.description);
+                break;
+              case AustralianState.NSW:
+                await testFunction.assertText(t, disclaimer, data.disclaimers.businessBalancePlan.NSW.description);
+                break;
+              case AustralianState.ACT:
+                await testFunction.assertText(t, disclaimer, data.disclaimers.businessBalancePlan.ACT.description);
+                break;
+              case AustralianState.SA:
+                await testFunction.assertText(t, disclaimer, data.disclaimers.businessBalancePlan.SA.description);
+                break;
+              case AustralianState.QLD:
+                await testFunction.assertText(t, disclaimer, data.disclaimers.businessBalancePlan.QLD.description);
+                break;
+              default:
+                throw Error("Invalid State");
+            }
+            break;
         break;
       default:
         throw Error("Invalid plan");
@@ -1738,16 +1846,25 @@ export class campaignMethod {
   }
 
   public static async enterOfferCodeAndPostcodeOnCampaign(t, offerCode, postcode) {
-    if (await this.isNswSeniors()) {
-      await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCodeSeniorsCard, offerCode);
+    if (await this.isPga()) {
+      await testFunction.click(t, EaHomePage.elements.rbPostcodeOnModal);
+      await t.wait(1000);
+      await testFunction.clearAndEnterText(t, EaHomePage.elements.postcodeOnCampaignPageOnModal, postcode);
+      await testFunction.clearAndEnterText(t, EaHomePage.elements.rbOffercodeOnModal, offerCode);
+      await testFunction.click(t, EaHomePage.elements.btnCampaignSearchOnModal);
     } else {
-      await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCode, offerCode);
+      if (await this.isNswSeniors()) {
+        await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCodeSeniorsCard, offerCode);
+      } else {
+        await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCode, offerCode);
+      }
+      await t.wait(1000);
+      await testFunction.click(t, EaHomePage.elements.rbPostcode);
+      await testFunction.clearAndEnterText(t, EaHomePage.elements.postcodeOnCampaignPage, postcode);
+      await testFunction.click(t, EaHomePage.elements.btnCampaignSearch);
     }
-    await t.wait(1000);
-    await testFunction.click(t, EaHomePage.elements.rbPostcode);
-    await testFunction.clearAndEnterText(t, EaHomePage.elements.postcodeOnCampaignPage, postcode);
-    await testFunction.click(t, EaHomePage.elements.btnCampaignSearch);
     await testFunction.waitForElementToBeDisappeared(t, EaHomePage.elements.eaSpinner);
+
   }
 
   public static async enterEmailEmployeeidAndPostcodeOnCampaign(t, email, employeeId, postcode) {
@@ -1778,5 +1895,11 @@ export class campaignMethod {
     let pageUrl = await testFunction.getPageURL();
     return pageUrl.includes("/nsw-seniors");
   }
+
+  public static async isPga() {
+    let pageUrl = await testFunction.getPageURL();
+    return pageUrl.includes("/pga");
+  }
+
 
 }

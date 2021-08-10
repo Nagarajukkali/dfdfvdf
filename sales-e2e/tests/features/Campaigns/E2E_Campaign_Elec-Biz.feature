@@ -21,7 +21,7 @@ Feature:E2E scenario for elec-biz campaign
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                      |movingType |propertyType |solarOption  |
-      |BUS          |320 Crown Street, SURRY HILLS NSW 2010 |Moving     |Renter       |No           |
+      |BUS          |73-75 Enmore Road, NEWTOWN NSW 2042    |Moving     |Renter       |No           |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -46,7 +46,7 @@ Feature:E2E scenario for elec-biz campaign
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-EN |NCCC005405|                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-EN |4102017007|                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus |fuelType |campaign  |state  |eleDiscount |
       |New            |ELE     |elec-biz     |NSW    |21          |

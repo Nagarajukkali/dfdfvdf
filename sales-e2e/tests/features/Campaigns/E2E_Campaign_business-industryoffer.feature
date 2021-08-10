@@ -13,10 +13,10 @@
 
 Feature:E2E scenario for business-industryoffer campaign
 
-  @campaign21.6.4
+  @DR21.7.5.campaign
   Scenario Outline: Validate complete data for business-industryoffer campaign for NSW
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "NSWCOCOFFER" and "2010" and clicks on show me plan link
+    When user provides "NSWCOCOFFER" and "2042" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -39,7 +39,7 @@ Feature:E2E scenario for business-industryoffer campaign
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                    | movingType | propertyType |
-      | BUS          | 10 Hank Street, HEATHERBRAE NSW 2324 | Moving     | Renter       |
+      | BUS          | 73-75 Enmore Road, NEWTOWN NSW 2042  | Moving     | Renter       |
     And user provides all details on checkout details page
       | customerType | journey | firstName | lastName | businessType |
       | BUS          | BUS     | test      | test     | ABN          |
@@ -79,15 +79,15 @@ Feature:E2E scenario for business-industryoffer campaign
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus   | campaign   |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EN  | 4102013997 |                                |                                | Y                       | OTHER                    | EMAIL         |<customerStatus> | <campaign> |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EN  | 4102017007 |                                |                                | Y                       | OTHER                    | EMAIL         |<customerStatus> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus   | campaign   |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GN  | 5247067723 |                                |                                | Y                       | GLSMRHAC                 | EMAIL         |<customerStatus> | <campaign> |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GN  | 5247073457 |                                |                                | Y                       | GLSMRHAC                 | EMAIL         |<customerStatus> | <campaign> |
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                              | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | BOTH     | 22          | 20          | industryoffer | E2E_Campaign_business-industryoffer_NSW | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
+      | New            | BOTH     | 20          | 25          | industryoffer | E2E_Campaign_business-industryoffer_NSW | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
 
   @campaign21.6.4 
   Scenario Outline: Validate complete data for business-industryoffer campaign for NSW-Essential for new non-moving customer
@@ -392,7 +392,7 @@ Feature:E2E scenario for business-industryoffer campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                             | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 4           | 4           | industryoffer | E2E_Campaign_business-industryoffer_SA | Quote Tool   | Move Home | SA    | BUS          | New           | No  | No |
 
-  @campaign21.6.4
+ @DR21.7.5.campaign
   Scenario Outline: Validate complete data for business-industryoffer campaign for ACT
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "NSWCOCOFFER" and "2605" and clicks on show me plan link
@@ -466,7 +466,7 @@ Feature:E2E scenario for business-industryoffer campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                              | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | BOTH     | 11          | 20          | industryoffer | E2E_Campaign_business-industryoffer_ACT | Quote Tool   | Move Home | ACT   | BUS          | New           | No  | No |
+      | New            | GAS      | 11          | 25          | industryoffer | E2E_Campaign_business-industryoffer_ACT | Quote Tool   | Move Home | ACT   | BUS          | New           | No  | No |
 
   @campaign21.6.4
   Scenario Outline: Validate complete data for business-industryoffer campaign for QLD

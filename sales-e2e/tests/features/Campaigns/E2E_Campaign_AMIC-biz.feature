@@ -1,7 +1,7 @@
 #@E2E
 @campaign
 Feature:E2E scenario for AMIC-BIZ campaign
-  @campaign21.6.4
+ @DR21.7.5.campaign
   Scenario Outline: Validate complete data for amic-biz campaign for NSW Ausgrid for new customer
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_AMIC_NSW_Ausgrid' to save evidences
     When user provides "EABIZ009" and "2010" and clicks on show me plan link
@@ -15,7 +15,7 @@ Feature:E2E scenario for AMIC-BIZ campaign
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |NSW  |
     And user validates disclaimer on plans page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName           |state|signUpCredit|
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName             |state|signUpCredit|
       |Y                        |N          |Y              |Total Plan - Business|NSW  |N           |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
@@ -27,7 +27,7 @@ Feature:E2E scenario for AMIC-BIZ campaign
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                      |movingType |propertyType |solarOption  |
-      |BUS          |320 Crown Street, SURRY HILLS NSW 2010 |Moving     |Renter       |No           |
+      |BUS          |73-75 Enmore Road, NEWTOWN NSW 2042     |Moving     |Renter       |No           |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -56,15 +56,15 @@ Feature:E2E scenario for AMIC-BIZ campaign
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-EN |NCCC005405|                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-EN |4102017007|                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GN |5240554353|                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GN |5247073457|                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
-      |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |
-      |New            |BOTH     |amic-biz     |NSW    |22          |20           |
+      |customerStatus |fuelType |campaign     |state  |eleDiscount |gasDiscount  |
+      |New            |BOTH     |amic-biz     |NSW    |20          |25           |
   @campaign21.6.4
   Scenario Outline: Validate complete data for amic-biz campaign for NSW Essential
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_AMIC_NSW_Essential' to save evidences
@@ -126,7 +126,7 @@ Feature:E2E scenario for AMIC-BIZ campaign
       |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GN |           |                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
-      |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |
+      |customerStatus |fuelType |campaign      |state  |eleDiscount |gasDiscount  |
       |New            |BOTH     |amic-biz      |NSW    |19          |20           |
   @campaign21.6.4
   Scenario Outline: Validate complete data for amic-biz campaign for NSW Endeavour for customer
@@ -366,7 +366,7 @@ Feature:E2E scenario for AMIC-BIZ campaign
     Examples:
       |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |
       |New            |ELE      |amic-biz      |QLD    |14          |15           |
-
+@DR21.7.5.campaign
   Scenario Outline: Validate complete data for AMIC campaign for ACT
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_AMIC_ACT' to save evidences
     When user provides "EABIZ009" and "2914" and clicks on show me plan link
@@ -389,7 +389,7 @@ Feature:E2E scenario for AMIC-BIZ campaign
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                              |movingType |propertyType |solarOption  |
-      |BUS          |216 Northbourne Avenue, BRADDON ACT 2612           |Moving     |Renter       |No           |
+      |BUS          | 7 Sargood Street, O'CONNOR ACT 2602           |Moving     |Renter       |No           |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -415,13 +415,13 @@ Feature:E2E scenario for AMIC-BIZ campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-EA |7001114516|                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
+      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI        |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-EA |7001138899|                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GA |5260021184|                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GA |5260077864|                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
       |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |
-      |New            |BOTH     |amic-biz      |ACT    |11          |20           |
+      |New            |GAS      |amic-biz  |ACT    |11          |25           |

@@ -156,33 +156,33 @@ Feature:E2E scenario for fca-biz campaign
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign         |folderName                                            |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |BOTH    |14         |20         |fca-biz  |E2E_Campaign_fca-biz_NSW_Endeavour_new_moving |Quote Tool  |Move Home|NSW    |BUS          |New            |No  |No  |
 
-  @campaign21.4.3
+  @DR21.7.5.campaign
   Scenario Outline: Validate complete data for fca-biz campaign for NSW for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "FCAOFFER" and "2000" and clicks on show me plan link
+    When user provides "FCAOFFER" and "2042" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates the data on plans page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |chanceToWin|planName               |state|signUpCredit|
-      |Y                        |N          |Y              |N          |Total Plan Plus - Business  |NSW  |Y       |
+      |Y                        |N          |Y              |N          |Total Plan Plus - Business  |NSW  |N       |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                       |movingType |propertyType |
-      |BUS          |320 Crown Street, SURRY HILLS NSW 2010  |Moving     |Renter       |
+      |BUS          |73-75 Enmore Road, NEWTOWN NSW 2042     |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -203,13 +203,13 @@ Feature:E2E scenario for fca-biz campaign
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |chanceToWin|planName              |state|signUpCredit|
-      |Y                        |N          |Y              |N          |Total Plan Plus - Business |<state>  |Y       |
+      |Y                        |N          |Y              |N          |Total Plan Plus - Business |<state>  |N       |
     And user submits the quote
     Then user lands on checkout complete page
     When user has opened the qt2 Reporting website link in a browser
@@ -218,16 +218,16 @@ Feature:E2E scenario for fca-biz campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EN |NCCC005405|                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EN |4102017007|                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GN |5240554353|                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
+      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GN |5247073457|                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign         |folderName                       |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
-      |New           |BOTH    |22         |20         |fca-biz  |E2E_Campaign_fca-biz_NSW_new_moving |Quote Tool  |Move Home|NSW    |BUS          |New            |No  |No  |
+      |New           |BOTH    |20         |24         |fca-biz  |E2E_Campaign_fca-biz_NSW_new_moving |Quote Tool  |Move Home|NSW    |BUS          |New            |No  |No  |
   @campaign21.4.3
   Scenario Outline: Validate complete data for fca-biz campaign for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -365,7 +365,7 @@ Feature:E2E scenario for fca-biz campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|campaign         |folderName                       |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |ELE     |14         |fca-biz  |E2E_Campaign_fca-biz_QLD_new_moving |Quote Tool  |Move Home|QLD    |BUS          |New            |No  |No  |
-@campaign21.6.4
+@DR21.7.5.campaign
   Scenario Outline: Validate complete data for fca-biz campaign for ACT for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "FCAOFFER" and "2600" and clicks on show me plan link
@@ -390,8 +390,8 @@ Feature:E2E scenario for fca-biz campaign
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                       |movingType |propertyType |
-      |BUS          |216 Northbourne Avenue, BRADDON ACT 2612  |Moving     |Renter       |
+      |customerType |connectionAddress                    |movingType |propertyType |
+      |BUS          |7 Sargood Street, O'CONNOR ACT 2602  |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -417,8 +417,8 @@ Feature:E2E scenario for fca-biz campaign
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |Feature_chanceToWin|state|
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |N                  |<state>|
     And user validates disclaimer on review page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |chanceToWin|planName       |state|signUpCredit|
-      |Y                        |N          |Y              |N          |Total Plan Plus - Business |<state>  |N|
+      |referencePriceComparison |goNeutral  |solarBuyBack   |chanceToWin|planName                 |state    |  signUpCredit|
+      |Y                        |N          |Y              |N          |Total Plan Plus Business |<state>  |N             |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -430,16 +430,16 @@ Feature:E2E scenario for fca-biz campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EA  |7001114516|                             |                              |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI        |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EA |7001138899|                             |                              |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GA  |5260021184|                              |                              |N                      |                |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GA |5260077864|                              |                              |N                      |                |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign         |folderName                       |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
-      |New           |BOTH    |11         |20         |fca-biz  |E2E_Campaign_fca-biz_ACT_new_moving |Quote Tool  |Move Home|ACT    |BUS          |New            |No  |No  |
+      |New           |GAS     |11          |24         |fca-biz  |E2E_Campaign_fca-biz_ACT_new_moving |Quote Tool  |Move Home|ACT    |BUS          |New            |No  |No  |
 @campaign21.6.4 @demo3
 Scenario Outline: Validate complete data for fca-biz campaign campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences

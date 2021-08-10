@@ -73,3 +73,9 @@ Feature:E2E scenario for basic-home campaigns
     When user provides "4000" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates the reprice pre-positioning disclaimer for 'Basic Home' 'basichome-finder' for 'QLD' state
+@DR21.8.1.campaign
+Scenario: Validate reprice data for basic-home campaign for VIC
+    Given user has opened the 'basic-home' link in a browser and creates 'Reprice_basicHome_campaign_VIC' to save evidences
+    When user provides "3000" and clicks on show me plan link
+    Then user is presented with the plans
+    And user validates the reprice pre-positioning disclaimer for 'Basic Home' 'basic-home' for 'VIC' state

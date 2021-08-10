@@ -20,7 +20,7 @@ Feature:E2E scenario for gas-biz campaign
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                      |movingType |propertyType |solarOption  |
-      |BUS          |320 Crown Street, SURRY HILLS NSW 2010 |Moving     |Renter       |           |
+      |BUS          |73-75 Enmore Road, NEWTOWN NSW 2042    |Moving     |Renter       |           |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -46,7 +46,7 @@ Feature:E2E scenario for gas-biz campaign
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GN |5240554353|                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GN |5247073457|                              |                              |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
       |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |

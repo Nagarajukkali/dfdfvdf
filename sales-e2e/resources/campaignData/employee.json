@@ -44,7 +44,7 @@
           "SA": {
             "heading": "20% discount off total electricity bill"
           },
-          "description": "Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges."
+          "description": "Guaranteed and exclusive employee-only discount that applies to our market energy charges."
         },
         "noStandardConnectionFee": {
           "heading": "",
@@ -65,10 +65,10 @@
         "carbonNeutral": "Energy with a bit of good. 100% carbon neutral energy at home for no extra cost to you.",
         "peaceOfMind": "Priority customer service. Dedicated Family, Friends and You team.",
         "discountOffTotalEnergyBill": {
-          "VIC": "25% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
-          "NSW": "28% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
-          "QLD": "22% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
-          "SA" : "20% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges."
+          "VIC": "25% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to our market energy charges.",
+          "NSW": "28% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to our market energy charges.",
+          "QLD": "22% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to our market energy charges.",
+          "SA" : "20% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to our market energy charges."
         },
         "noStandardConnectionFee": "",
         "vipPriorityService": ""
@@ -135,7 +135,7 @@
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
-            "heading": "37% discount off total gas bill"
+            "heading": "35% discount off total gas bill"
           },
           "NSW": {
             "heading": "28% discount off total gas bill"
@@ -159,7 +159,7 @@
         "carbonNeutral": "Energy with a bit of good. 100% carbon neutral energy at home for no extra cost to you.",
         "peaceOfMind": "Priority customer service. Dedicated Family, Friends and You team.",
         "discountOffTotalEnergyBill": {
-          "VIC": "37% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
+          "VIC": "35% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
           "NSW": "28% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
           "SA" : "20% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges."
         },
@@ -167,18 +167,18 @@
       }
     },    "sourceCode": {
       "newCustomer": {
-        "VIC": "Employee_37%GD",
+        "VIC": "Employee_35%GD",
         "NSW": "Employee_28%GD",
         "SA": "Employee_20%GD"
       },
       "existingCustomer": {
         "ENE":{
-          "VIC": "Employee_37%GD",
+          "VIC": "Employee_30%GD",
           "NSW": "Employee_28%GD",
           "SA": "Employee_20%GD"
         },
         "PS": {
-          "VIC": "Employee_37%GD",
+          "VIC": "Employee_30%GD",
           "NSW": "Employee_28%GD",
           "SA": "Employee_20%GD"
         }
@@ -238,19 +238,19 @@
     "employeePlan": {
       "heading": "Employee Plan",
       "VIC": {
-        "description": "* Offer only for eligible VIC EnergyAustralia employees and max term contractors. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your rates for this plan may vary but we'll notify you before this happens. If we improve or add features during your benefit period, we'll let you know. Go Neutral is automatically included in your plan and we will offset the carbon emissions from your electricity and/or gas account at no extra cost. We will let you know in advance if we withdraw Go Neutral. We may change or end this offer at any time."
+        "description": "* Offer only for eligible VIC EnergyAustralia employees and max term contractors. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your rates for this plan may vary but we'll notify you before this happens. If we improve or add features during your benefit period, we'll let you know. Go Neutral is automatically included in your plan and we will offset the carbon emissions from your electricity and/or gas account at no extra cost. We will let you know in advance if we withdraw Go Neutral. We may change or end this offer at any time."
       },
       "NSW": {
-        "description": "* Offer only for eligible NSW EnergyAustralia employees and max term contractors. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your rates for this plan may vary but we'll notify you before this happens. If we improve or add features during your benefit period, we'll let you know. Go Neutral is automatically included in your plan and we will offset the carbon emissions from your electricity and/or gas account at no extra cost. We will let you know in advance if we withdraw Go Neutral. We may change or end this offer at any time."
+        "description": "* Offer only for eligible NSW EnergyAustralia employees and max term contractors. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your rates for this plan may vary but we'll notify you before this happens. If we improve or add features during your benefit period, we'll let you know. Go Neutral is automatically included in your plan and we will offset the carbon emissions from your electricity and/or gas account at no extra cost. We will let you know in advance if we withdraw Go Neutral. We may change or end this offer at any time."
       },
       "ACT": {
-        "description": "* Offer only for eligible ACT residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. Go Neutral is automatically included in your plan and we will offset the carbon emissions from your electricity and/or gas account at no extra cost. We will let you know in advance if we withdraw Go Neutral. We may change or end this offer at any time."
+        "description": "* Offer only for eligible ACT EnergyAustralia employees and max term contractors. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your rates for this plan may vary but we'll notify you before this happens. If we improve or add features during your benefit period, we'll let you know. Go Neutral is automatically included in your plan and we will offset the carbon emissions from your electricity and/or gas account at no extra cost. We will let you know in advance if we withdraw Go Neutral. We may change or end this offer at any time."
       },
       "QLD": {
-        "description": "* Offer only for eligible QLD EnergyAustralia employees and max term contractors. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your rates for this plan may vary but we'll notify you before this happens. If we improve or add features during your benefit period, we'll let you know. Go Neutral is automatically included in your plan and we will offset the carbon emissions from your electricity and/or gas account at no extra cost. We will let you know in advance if we withdraw Go Neutral. We may change or end this offer at any time."
+        "description": "* Offer only for eligible QLD EnergyAustralia employees and max term contractors. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your rates for this plan may vary but we'll notify you before this happens. If we improve or add features during your benefit period, we'll let you know. Go Neutral is automatically included in your plan and we will offset the carbon emissions from your electricity and/or gas account at no extra cost. We will let you know in advance if we withdraw Go Neutral. We may change or end this offer at any time."
       },
       "SA": {
-        "description": "* Offer only for eligible SA EnergyAustralia employees and max term contractors. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your rates for this plan may vary but we'll notify you before this happens. If we improve or add features during your benefit period, we'll let you know. Go Neutral is automatically included in your plan and we will offset the carbon emissions from your electricity and/or gas account at no extra cost. We will let you know in advance if we withdraw Go Neutral. We may change or end this offer at any time."
+        "description": "* Offer only for eligible SA EnergyAustralia employees and max term contractors. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your rates for this plan may vary but we'll notify you before this happens. If we improve or add features during your benefit period, we'll let you know. Go Neutral is automatically included in your plan and we will offset the carbon emissions from your electricity and/or gas account at no extra cost. We will let you know in advance if we withdraw Go Neutral. We may change or end this offer at any time."
       }
     }
   }
