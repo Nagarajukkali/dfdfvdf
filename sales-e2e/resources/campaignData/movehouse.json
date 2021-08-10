@@ -7,8 +7,8 @@
       "preSelect": {
         "Credit50": {
           "VIC": {
-            "heading": "$50 Sign Up Credit",
-            "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+            "heading": "$25 Sign Up Credit",
+            "description": "Get a $25 credit per new energy account on your first bill when you sign up.+"
           },
           "NSW": {
             "heading": "",
@@ -37,7 +37,7 @@
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
-            "heading": "13% discount off total electricity bill"
+            "heading": "11% discount off total electricity bill"
           },
           "NSW": {
             "heading": "16% discount off total electricity bill"
@@ -51,7 +51,7 @@
           "SA": {
             "heading": "6% discount off total electricity bill"
           },
-          "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
+          "description": "Guaranteed discount that applies to our market energy charges."
         },
         "noStandardConnectionFee": {
           "heading": "No standard connection fees",
@@ -60,7 +60,7 @@
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
+          "VIC": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up.+",
           "NSW": "",
           "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
           "QLD": "",
@@ -69,18 +69,18 @@
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": {
-          "VIC": "13% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges.",
-          "NSW": "16% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges.",
-          "ACT": "12% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges.",
-          "QLD": "14% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges.",
-          "SA" : "6% discount off total electricity bill. Guaranteed discount that applies to both electricity usage rates and daily supply charges."
+          "VIC": "11% discount off total electricity bill. Guaranteed discount that applies to our market energy charges.",
+          "NSW": "16% discount off total electricity bill. Guaranteed discount that applies to our market energy charges.",
+          "ACT": "12% discount off total electricity bill. Guaranteed discount that applies to our market energy charges.",
+          "QLD": "14% discount off total electricity bill. Guaranteed discount that applies to our market energy charges.",
+          "SA" : "6% discount off total electricity bill. Guaranteed discount that applies to our market energy charges."
         },
         "noStandardConnectionFee": "No standard connection fees. Move with us and we'll waive connection and special meter reads during business hours."
       }
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_13%GD",
+        "VIC": "Total_11%GD_25",
         "NSW": {
           "Ausgrid": "Total_16%GD",
           "Essential": "Total_16%GD",
@@ -93,7 +93,7 @@
       },
       "existingCustomer": {
         "ENE":{
-          "VIC": "Total_13%GD",
+          "VIC": "Total_11%GD",
           "NSW": {
             "Ausgrid": "Total_16%GD",
             "Essential": "Total_16%GD",
@@ -105,7 +105,7 @@
           "SA": "Total_6%GD"
         },
         "PS": {
-          "VIC": "Total_13%GD",
+          "VIC": "Total_11%GD",
           "NSW": {
             "Ausgrid": "Total_16%GD",
             "Essential": "Total_16%GD",
@@ -125,8 +125,8 @@
       "preSelect": {
         "Credit50": {
           "VIC": {
-            "heading": "$50 Sign Up Credit",
-            "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+            "heading": "$25 Sign Up Credit",
+            "description": "Get a $25 credit per new energy account on your first bill when you sign up.+"
           },
           "NSW": {
             "heading": "",
@@ -155,7 +155,7 @@
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
-            "heading": "33% discount off total gas bill"
+            "heading": "26% discount off total gas bill"
           },
           "NSW": {
             "heading": "16% discount off total gas bill"
@@ -171,7 +171,7 @@
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
+          "VIC": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up.+",
           "NSW": "",
           "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
           "SA" : ""
@@ -179,34 +179,34 @@
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": {
-          "VIC": "33% discount off total gas bill. Guaranteed discount that applies to both gas usage rates and daily supply charges.",
-          "NSW": "16% discount off total gas bill. Guaranteed discount that applies to both gas usage rates and daily supply charges.",
-          "ACT": "16% discount off total gas bill. Guaranteed discount that applies to both gas usage rates and daily supply charges.",
-          "SA" : "12% discount off total gas bill. Guaranteed discount that applies to both gas usage rates and daily supply charges."
+          "VIC": "26% discount off total gas bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
+          "NSW": "16% discount off total gas bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
+          "ACT": "16% discount off total gas bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
+          "SA" : "12% discount off total gas bill. Guaranteed discount that applies to both energy usage rates and daily supply charges."
         }
       }
     },
-  "sourceCode": {
-    "newCustomer": {
-      "VIC": "Total_33%GD",
-      "NSW": "Total_16%GD",
-      "ACT": "Total_16%GD_25",
-      "SA": "Total_12%GD"
-    },
-    "existingCustomer": {
-      "ENE":{
-        "VIC": "Total_33%GD",
+    "sourceCode": {
+      "newCustomer": {
+        "VIC": "Total_26%GD_25",
         "NSW": "Total_16%GD",
         "ACT": "Total_16%GD_25",
         "SA": "Total_12%GD"
       },
-      "PS": {
-        "VIC": "Total_33%GD",
-        "NSW": "Total_16%GD",
-        "ACT": "Total_16%GD",
-        "SA": "Total_12%GD"
+      "existingCustomer": {
+        "ENE":{
+          "VIC": "Total_26%GD_25",
+          "NSW": "Total_16%GD",
+          "ACT": "Total_16%GD_25",
+          "SA": "Total_12%GD"
+        },
+        "PS": {
+          "VIC": "Total_26%GD",
+          "NSW": "Total_16%GD",
+          "ACT": "Total_16%GD",
+          "SA": "Total_12%GD"
+        }
       }
-    }
     }
   },
 
@@ -239,8 +239,8 @@
     },
     "Credit50": {
       "VIC": {
-        "heading": "$50 Sign Up Credit",
-        "description": "+ Offer available to VIC residential customers who sign up to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        "heading": "$25 Sign Up Credit",
+        "description": "+ Offer available to VIC residential customers who sign up to an electricity or gas offer. Limit of one $25 credit per new energy account, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       },
       "NSW": {
         "heading": "",
@@ -262,19 +262,19 @@
     "totalPlan": {
       "heading": "Total Plan",
       "VIC": {
-        "description": "* Offer only for eligible VIC residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for eligible VIC residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "NSW": {
-        "description": "* Offer only for eligible NSW residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for eligible NSW residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "ACT": {
-        "description": "* Offer only for eligible ACT residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for eligible ACT residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "QLD": {
-        "description": "* Offer only for eligible QLD residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for eligible QLD residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "SA": {
-        "description": "* Offer only for eligible SA residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for eligible SA residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       }
     }
   }

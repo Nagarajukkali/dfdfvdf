@@ -189,7 +189,7 @@ Feature:E2E scenario for business-energy campaign
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                       |movingType |propertyType |
-      |BUS          |320 Crown Street, SURRY HILLS NSW 2010  |Moving     |Renter       |
+      |BUS          |73-75 Enmore Road, NEWTOWN NSW 2042     |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -229,11 +229,11 @@ Feature:E2E scenario for business-energy campaign
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-EN |NCCC005405|                              |                              |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-EN |4102017007|                              |                              |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GN  |5240554353|                              |                              |N                      |                |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GN  |5247073457|                              |                              |N                      |                |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign         |folderName                       |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
@@ -476,7 +476,7 @@ Feature:E2E scenario for business-energy campaign
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                       |movingType |propertyType |
-      |BUS          |216 Northbourne Avenue, BRADDON ACT 2612  |Moving     |Renter       |
+      |BUS          |7 Sargood Street, O'CONNOR ACT 2602     |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -515,12 +515,12 @@ Feature:E2E scenario for business-energy campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-EA  |7001114516|                             |                              |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI        |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-EA  |7001138899|                             |                              |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GA  |5260021184|                              |                              |N                      |                |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GA  |5260077864|                              |                              |N                      |                |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign         |folderName                       |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |

@@ -12,10 +12,10 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for bizreferral campaign
-
+@DR21.7.5.campaign
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for NSW
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides email "sarita.chakote@energyaustralia.com.au" and "2010" and clicks on show me plan link
+    When user provides email "sarita.chakote@energyaustralia.com.au" and "2042" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -26,8 +26,8 @@ Feature:E2E scenario for bizreferral campaign
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |
     And user validates disclaimer on plans page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName                   |state|
-      |Y                        |N          |Y              |Family and Friends Business|NSW  |
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName                     |state|
+      |Y                        |N          |Y              |Family and Friends - Business|NSW  |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |
@@ -38,7 +38,7 @@ Feature:E2E scenario for bizreferral campaign
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                       |movingType |propertyType |
-      |BUS          |320 Crown Street, SURRY HILLS NSW 2010  |Moving     |Renter       |
+      |BUS          |73-75 Enmore Road, NEWTOWN NSW 2042    |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -54,8 +54,8 @@ Feature:E2E scenario for bizreferral campaign
       |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
       |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     And user provides life support details on review page
-      |lifeSupportOption|fuelType|EleclifeSupportDevices |GaslifeSupportDevices                             |
-      |Yes              |BOTH    |Ele Other              |Medically Required Heating and/or Air Conditioning|
+      |lifeSupportOption|fuelType|EleclifeSupportDevices |GaslifeSupportDevices   |
+      |No               |        |                       |                        |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
@@ -64,11 +64,11 @@ Feature:E2E scenario for bizreferral campaign
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |
     And user validates disclaimer on review page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName                   |state|
-      |Y                        |N          |Y              |Family and Friends Business|NSW  |
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName                        |state|
+      |Y                        |N          |Y              |Family and Friends - Business   |NSW  |
     And user validates source code
-      |fuelType|eleSourceCode|gasSourceCode     |
-      |BOTH    |Total_23%GD  |Total_21%GD  |
+      |fuelType|eleSourceCode     |gasSourceCode     |
+      |BOTH    |Total_21%GD       |Total_26%GD       |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -81,15 +81,15 @@ Feature:E2E scenario for bizreferral campaign
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-EN |NCCC005405|                              |                              |Y                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-EN  |4102017007|                              |                              |N                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-GN  |5240554353|                              |                              |Y                      |GLSMRHAC                |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-GN  |5247073457|                              |                              |N                      |GLSMRHAC                |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
     |customerStatus|fuelType|eleDiscount|gasDiscount|campaign     |folderName                   |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
-    |New           |BOTH    |23         |21         |bizreferral  |E2E_Campaign_bizreferral_NSW |Quote Tool  |Move Home|NSW    |BUS          |New            |No  |No  |
+    |New           |BOTH    |21         |26         |bizreferral  |E2E_Campaign_bizreferral_NSW |Quote Tool  |Move Home|NSW    |BUS          |New            |No  |No  |
 
 
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for VIC
@@ -247,10 +247,10 @@ Feature:E2E scenario for bizreferral campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign     |folderName                   |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |BOTH    |5          |5          |bizreferral  |E2E_Campaign_bizreferral_SA  |Quote Tool  |Move Home|SA     |BUS          |New            |No  |No  |
-
+@DR21.7.5.campaign
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for ACT
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides email "sarita.chakote@energyaustralia.com.au" and "2612" and clicks on show me plan link
+    When user provides email "sarita.chakote@energyaustralia.com.au" and "2602" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -261,8 +261,8 @@ Feature:E2E scenario for bizreferral campaign
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |
     And user validates disclaimer on plans page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName                   |state|
-      |Y                        |N          |Y              |Family and Friends Business|ACT  |
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName                     |state|
+      |Y                        |N          |Y              |Family and Friends - Business|ACT  |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |
@@ -273,7 +273,7 @@ Feature:E2E scenario for bizreferral campaign
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                          |movingType |propertyType |
-      |BUS          |216 Northbourne Avenue, BRADDON ACT 2612   |Moving     |Renter       |
+      |BUS          |7 Sargood Street, O'CONNOR ACT 2602        |Moving     |Renter       |
     And user provides all details on checkout details page
       |customerType|journey    | firstName| lastName|businessType|
       |BUS         |BUS        | test     |test     |ABN         |
@@ -289,8 +289,8 @@ Feature:E2E scenario for bizreferral campaign
       |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
       |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
     And user provides life support details on review page
-      |lifeSupportOption|fuelType|EleclifeSupportDevices |GaslifeSupportDevices                             |
-      |Yes              |BOTH    |Ele Other              |Medically Required Heating and/or Air Conditioning|
+      |lifeSupportOption|fuelType|EleclifeSupportDevices |GaslifeSupportDevices   |
+      |No               |        |                       |                        |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
@@ -299,11 +299,11 @@ Feature:E2E scenario for bizreferral campaign
       |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |
     And user validates disclaimer on review page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName                   |state|
-      |Y                        |N          |Y              |Family and Friends Business|ACT  |
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName                        |state|
+      |N                        |N          |N              |Family and Friends - Business   |ACT  |
     And user validates source code
-      |fuelType|eleSourceCode     |gasSourceCode     |
-      |BOTH    |Total_12%GD        |Total_21%GD        |
+      |fuelType|eleSourceCode     |gasSourceCode         |
+      |GAS     |Total_12%GD        |Total_26%GD          |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -315,16 +315,16 @@ Feature:E2E scenario for bizreferral campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-EA  |7001114516|                              |                              |Y                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI        |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-EA  |7001138899|                              |                              |N                      |OTHER                   |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-GA  |5260021184|                              |                              |Y                      |GLSMRHAC                |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |FFPB-GA  |5260077864|                              |                              |N                      |GLSMRHAC                |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
-      |customerStatus|fuelType|eleDiscount|gasDiscount|campaign     |folderName                   |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
-      |New           |BOTH    |12         |21         |bizreferral  |E2E_Campaign_bizreferral_ACT |Quote Tool  |Move Home|ACT    |BUS          |New            |No  |No  |
+      |customerStatus|fuelType |eleDiscount|gasDiscount|campaign     |folderName                   |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
+      |New           |BOTH     |12         |26         |bizreferral  |E2E_Campaign_bizreferral_ACT |Quote Tool  |Move Home|ACT    |BUS          |New            |No  |No  |
 
 
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for QLD

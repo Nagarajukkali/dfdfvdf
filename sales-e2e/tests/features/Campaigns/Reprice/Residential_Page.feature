@@ -77,6 +77,32 @@ Feature:E2E scenario for Reprice Prepositioning changes on residential plans pag
     And user submits the quote
     Then user lands on checkout complete page
 
+@DR21.8.1.campaign
+    Scenario: Validate reprice data for basic-home plan on residential page
+    Given user has opened the website link in a browser and creates 'BasicHome_Residential_PlansPage' to save evidences
+    And user has navigated to 'RES' plans page
+    And user enters '3000' in 'POSTCODE' field
+    Then user validates the reprice pre-positioning disclaimer for 'Basic Home' on 'Residential' plans page
+    When user selects 'Basic Home'
+    And user moves on to fill the qualifier
+    And user selects 'New' on qualifier
+    And user provides all other details on qualifier page
+      | customerType | connectionAddress                              | movingType | propertyType |
+      | RES          | Unit 5 6 Rosedale Avenue, GLEN HUNTLY VIC 3163 | Non-Moving | Renter       |
+    And user provides all details on checkout details page
+      | customerType | journey | customerStatus | firstName | lastName | idType   |
+      | RES          | RES     | New            | test      | test     | Passport |
+    And user selects mailing address option
+      |addressType       |otherAddress                              |
+      |Connection Address|                                          |
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      |lifeSupportOption|fuelType |EleclifeSupportDevices    |GaslifeSupportDevices  |
+      |No               |         |                          |                       |
+    Then user validates the reprice pre-positioning disclaimer for 'Basic Home' on 'Residential' review page
+    And user submits the quote
+    Then user lands on checkout complete page
+
 
 
 

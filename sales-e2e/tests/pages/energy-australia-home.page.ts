@@ -75,6 +75,7 @@ const eaHomePage = {
     //linkMoveHouse:Selector(".icon-moving"),
     linkMoveHouse: Selector(".svg-icon.truck-fill"),
     rbPostcodeOnModal: Selector("#edit-campaign-modal-location-type-postcode__label"),
+    rbOffercodeOnModal: Selector("#campaign-modal-unique-code-input"),
     rbPostcode: Selector("#edit-campaign-location-type-postcode__label"),
     rbPostcodePlansPage: Selector("#edit-refine-location-type-postcode__label"),
     rbAddressPlansPage: Selector("#edit-refine-location-type-address__label"),
@@ -363,6 +364,8 @@ const eaHomePage = {
     eleFeatureVipPriorityServiceDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("VIP Priority Service").sibling(),
     eleFeatureChanceToWinTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("$2,000"),
     eleFeatureChanceToWinDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("$2,000").sibling(),
+    eleFeatureVariableRatesTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Variable Rates"),
+    eleFeatureVariableRatesDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Variable Rates").sibling(),
     gasFeature50CreditTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText(/[C|c]redit/),
     gasFeature50CreditDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText(/[C|c]redit/).sibling(),
     gasFeatureCNTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral"),
@@ -379,6 +382,8 @@ const eaHomePage = {
     gasFeatureVipPriorityServiceDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("VIP Priority Service").sibling(),
     gasFeatureChanceToWinTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("$2,000"),
     gasFeatureChanceToWinDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("$2,000").sibling(),
+    gasFeatureVariableRatesTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Variable Rates"),
+    gasFeatureVariableRatesDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Variable Rates").sibling(),
   }
 };
 

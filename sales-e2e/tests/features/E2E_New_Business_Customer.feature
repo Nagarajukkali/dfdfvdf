@@ -14,7 +14,7 @@ Feature:E2E scenario for new business moving and non moving customer
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | customerStatus | connectionAddress                      | movingType | propertyType |
-      | BUS          | New            | 73-75 Enmore Road, NEWTOWN NSW 2042 | Moving     |              |
+      | BUS          | New            | 73-75 Enmore Road, NEWTOWN NSW 2042    | Moving     |              |
     And user provides all details on checkout details page
       | customerType | journey | firstName | lastName | businessType |
       | BUS          | BUS     | test      | test     | ABN          |

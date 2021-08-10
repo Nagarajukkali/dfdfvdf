@@ -12,7 +12,7 @@
 
 Feature:E2E scenario for mcc
 
-  @DR21.7.1.campaign
+  @DR21.7.5.campaign
   Scenario Outline: Validate complete data for mcc campaign for NSW for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMCC01" and "2144" and clicks on show me plan link
@@ -91,8 +91,8 @@ Feature:E2E scenario for mcc
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                     | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 18          | 18          | mcc      | E2E_Campaign_mcc_newmoving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
-
+      | New            | BOTH      | 18          | 18          | mcc      | E2E_Campaign_mcc_newmoving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
+  @DR21.7.5.campaign
   Scenario Outline: Validate complete data for mcc campaign for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMCC01" and "3199" and clicks on show me plan link
@@ -101,20 +101,20 @@ Feature:E2E scenario for mcc
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | ELE      | Y                | Y                     | Y                   | Y                                  | N                               | <state> |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | GAS      | Y                | Y                     | Y                   | Y                                  | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                  | <state> |
+      | ELE      | Y                | Y                     | Y                   | Y                                  | <state> |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-      | GAS      | N                | Y                     | Y                   | Y                                  | <state> |
+      | GAS      | Y                | Y                     | Y                   | Y                                  | <state> |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -136,13 +136,13 @@ Feature:E2E scenario for mcc
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               | <state> |
+      | ELE      | Y                | N                     | Y                   | Y                                  | N                               | <state> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> |
+      | GAS      | Y                | N                     | Y                   | Y                                  | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -163,9 +163,9 @@ Feature:E2E scenario for mcc
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                      | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 15          | 35          | mcc      | E2E_Campaign_mcc_new_moving_VIC | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | BOTH     | 13          | 28          | mcc      | E2E_Campaign_mcc_new_moving_VIC | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.7.1.campaign
+@DR21.7.5.campaign
   Scenario Outline: Validate complete data for mcc campaign for SA for new non moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMCC01" and "5076" and clicks on show me plan link
@@ -177,7 +177,7 @@ Feature:E2E scenario for mcc
       | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | GAS      | N                | Y                     | Y                   | N                                  | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Total Plan | <state> | N            |
@@ -187,7 +187,7 @@ Feature:E2E scenario for mcc
       | ELE      | N                | Y                     | Y                   | Y                                  | <state> |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-      | GAS      | N                | Y                     | Y                   | Y                                  | <state> |
+      | GAS      | N                | Y                     | Y                   | N                                  | <state> |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -211,7 +211,7 @@ Feature:E2E scenario for mcc
       | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |
+      | Y                        | Y         | N            | Total Plan | <state> | N            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -233,7 +233,7 @@ Feature:E2E scenario for mcc
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                        | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 8           | 14          | mcc      | E2E_Campaign_mcc_new_nonmoving_SA | SA    | Quote Tool   | COR     | No  | No | RES          | New           |
-
+@DR21.7.5.campaign
   Scenario Outline: Validate complete data for mcc campaign for ACT for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMCC01" and "2615" and clicks on show me plan link
@@ -241,20 +241,20 @@ Feature:E2E scenario for mcc
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | Y                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | Y                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   |
       | Y                        | Y         | Y            | Total Plan | <state> |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-      | ELE      | Y                | Y                     | Y                   | Y                                  | <state> |
+      | ELE      | N                | Y                     | Y                   | Y                                  | <state> |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-      | GAS      | Y                | Y                     | Y                   | Y                                  | <state> |
+      | GAS      | N                | Y                     | Y                   | Y                                  | <state> |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -301,21 +301,21 @@ Feature:E2E scenario for mcc
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName           | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 14          | 18          | mcc      | E2E_Campaign_mcc_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.7.1.campaign
+ @DR21.7.5.campaign
   Scenario Outline: Validate complete data for mcc campaign for QLD for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMCC01" and "4208" and clicks on show me plan link
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | ELE      | N                | N                     | N                   | Y                                  | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |
+      | Y                        | Y         | N            | Total Plan | <state> | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                  | <state> |
+      | ELE      | N                | N                     | N                   | Y                                  | <state> |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -334,10 +334,10 @@ Feature:E2E scenario for mcc
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_discountOffTotalEnergyBill | Feature_peaceOfMind | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | N                     | Y                                  | Y                   | N                               | <state> |
+      | ELE      | N                | N                     | Y                                  | N                   | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | QLD   | N            |
+      | Y                        | Y         | N            | Total Plan | QLD   | N            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page

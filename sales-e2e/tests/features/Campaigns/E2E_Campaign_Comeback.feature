@@ -2,8 +2,8 @@
 
 Feature:E2E scenario for comeback campaign
 
-  @DR21.7.1.campaign
-  Scenario Outline: Validate complete data for comeback campaign for NSW - new movingq
+  @DR21.7.5.campaign
+  Scenario Outline: Validate complete data for comeback campaign for NSW - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" and clicks on show me plan link
     And user validates "ELE" discount to be "<eleDiscount>" percent
@@ -75,8 +75,8 @@ Feature:E2E scenario for comeback campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | SWSR1-GN | 5240524910 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                           | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 17          | 17          | comeback | E2E_Campaign_Comeback_NSW_new_moving | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
-
+      | New            | ELE      | 17          | 17          | comeback | E2E_Campaign_Comeback_NSW_new_moving | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
+  @DR21.7.5.campaign
   Scenario Outline: Validate complete data for comeback campaign for ACT - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2600" and clicks on show me plan link
@@ -150,7 +150,7 @@ Feature:E2E scenario for comeback campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | SWSR1-GA | 5260073228 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                           | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 13          | 17          | comeback | E2E_Campaign_Comeback_ACT_new_moving | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | ELE      | 13          | 17          | comeback | E2E_Campaign_Comeback_ACT_new_moving | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
   Scenario Outline: Validate complete data for comeback campaign for VIC - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -227,7 +227,7 @@ Feature:E2E scenario for comeback campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                           | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 14          | 34          | comeback | E2E_Campaign_Comeback_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.7.1.campaign
+  @DR21.7.5.campaign
   Scenario Outline: Validate complete data for comeback campaign for SA - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" and clicks on show me plan link
@@ -241,7 +241,7 @@ Feature:E2E scenario for comeback campaign
       | GAS      | Y                | Y                     | Y                   | Y                                  | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName        | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan Plus | <state> | N            |
+      | Y                        | Y         | Y            | Total Plan Plus | <state> | Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
@@ -281,7 +281,7 @@ Feature:E2E scenario for comeback campaign
       | GAS      | Y                | N                     | Y                   | Y                                  | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName        | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan Plus | <state> | N            |
+      | Y                        | Y         | Y            | Total Plan Plus | <state> | Y            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -303,7 +303,7 @@ Feature:E2E scenario for comeback campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                          | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting | quoteStatus      |
       | New            | BOTH     | 7           | 13          | comeback | E2E_Campaign_Comeback_SA_new_moving | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | VERBALLYACCEPTED |
 
-  @DR21.7.1.campaign
+  @DR21.7.5.campaign
   Scenario Outline: Validate complete data for comeback campaign for QLD - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4500" and clicks on show me plan link
@@ -366,6 +366,7 @@ Feature:E2E scenario for comeback campaign
       | customerStatus | fuelType | eleDiscount | campaign | folderName                           | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | 15          | comeback | E2E_Campaign_Comeback_QLD_new_moving | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
+@DR21.7.5.campaign
   Scenario Outline: Validate complete data for comeback campaign for VIC - existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3031" for postcode and proceed to view the plans
@@ -436,7 +437,7 @@ Feature:E2E scenario for comeback campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | SWSR1-GV | 5330790589 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                            | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting |
-      | Existing       | BOTH     | 14          | 34          | comeback | E2E_Campaign_Comeback_VIC_exis_nonmov | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing      |
+      | Existing       | BOTH     | 12          | 27          | comeback | E2E_Campaign_Comeback_VIC_exis_nonmov | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing      |
 
   @DR21.7.1.campaign
   Scenario Outline: Validate complete data for comeback campaign for NSW - existing non moving

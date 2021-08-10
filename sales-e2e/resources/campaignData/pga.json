@@ -33,6 +33,46 @@
         "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
         "noStandardConnectionFee": ""
       }
+    },
+    "sourceCode": {
+      "newCustomer": {
+        "VIC": "",
+        "NSW": {
+          "Ausgrid": "Total_20%GD",
+          "Essential": "Total_20%GD",
+          "Endeavour": "Total_20%GD",
+          "default": "Total_20%GD"
+        },
+        "ACT": "Total_Plus_11%GD",
+        "QLD": "",
+        "SA": ""
+      },
+      "existingCustomer": {
+        "ENE":{
+          "VIC": "Total_20%GD",
+          "NSW": {
+            "Ausgrid": "Total_20%GD",
+            "Essential": "Total_20%GD",
+            "Endeavour": "Total_20%GD",
+            "default": "Total_20%GD"
+          },
+          "ACT": "Total_20%GD",
+          "QLD": "Total_20%GD",
+          "SA": "Total_20%GD"
+        },
+        "PS": {
+          "VIC": "Total_20%GD",
+          "NSW": {
+            "Ausgrid": "Total_20%GD",
+            "Essential": "Total_20%GD",
+            "Endeavour": "Total_20%GD",
+            "default": "Total_20%GD"
+          },
+          "ACT": "Total_20%GD",
+          "QLD": "Total_20%GD",
+          "SA": "Total_20%GD"
+        }
+      }
     }
   },
 
@@ -61,6 +101,26 @@
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges."
+      }
+    },
+    "sourceCode": {
+      "newCustomer": {
+        "VIC": "Total_25%GD",
+        "NSW": "Total_25%GD",
+        "ACT": "Total_25%GD",
+        "SA": "Total_25%GD"
+      },
+      "existingCustomer": {
+        "VIC": "Total_25%GD",
+        "NSW": "Total_25%GD",
+        "ACT": "Total_25%GD",
+        "SA": "Total_25%GD"
+      },
+      "PS": {
+        "VIC": "Total_25%GD",
+        "NSW": "Total_25%GD",
+        "ACT": "Total_25%GD",
+        "SA": "Total_25%GD"
       }
     }
   },

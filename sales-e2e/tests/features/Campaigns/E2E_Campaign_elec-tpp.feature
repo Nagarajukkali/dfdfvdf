@@ -36,7 +36,7 @@ Feature:E2E scenario for elec-tpp campaign
     Examples:
       |campaign    |folderName              |
       |elec-tpp    |E2E_Campaign_elec-tpp_ACT   |
-  @campaign21.7.2.dataminion
+  @DR21.7.5.campaign
   Scenario Outline: Validate complete data for elec-tpp campaign for VIC - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
@@ -93,8 +93,8 @@ Feature:E2E scenario for elec-tpp campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-EV |6102221416   |N                             |N                             |N                      |                 |EMAIL        |<customerStatus>  |<campaign>|
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI         |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
+      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-EV |6102221416  |N                             |N                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|campaign            |folderName              |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
       |New           |ELE    |14         |elec-tpp    |E2E_Campaign_elec-tpp_VIC_new_moving    |VIC  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
