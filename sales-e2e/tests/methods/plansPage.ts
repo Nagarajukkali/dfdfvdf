@@ -1855,6 +1855,8 @@ export class campaignMethod {
     } else {
       if (await this.isNswSeniors()) {
         await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCodeSeniorsCard, offerCode);
+      }else if (await this.isVicSeniors()) {
+        await testFunction.clearAndEnterText(t, EaHomePage.elements.txtVicOfferCodeSeniorsCard, offerCode);
       } else {
         await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCode, offerCode);
       }
@@ -1894,6 +1896,11 @@ export class campaignMethod {
   public static async isNswSeniors() {
     let pageUrl = await testFunction.getPageURL();
     return pageUrl.includes("/nsw-seniors");
+  }
+
+  public static async isVicSeniors() {
+    let pageUrl = await testFunction.getPageURL();
+    return pageUrl.includes("/vic-seniors");
   }
 
   public static async isPga() {

@@ -12,10 +12,10 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for pga campaign
-
+    @DR21.8.3.campaign
   Scenario Outline: Validate complete data for pga campaign for NSW
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "PGOFFER" and "2010" and clicks on show me plan link
+    When user provides "2010" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -80,12 +80,12 @@ Feature:E2E scenario for pga campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EN |4102017007|                              |                              |Y                      |OTHER                   |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus   | campaign   |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EN |4102017007|                              |                              |Y                      |OTHER                   |EMAIL        |<customerStatus> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GN |5247073457|                              |                              |Y                      |GLSMRHAC                |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus   | campaign   |
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GN |5247073457|                              |                              |Y                      |GLSMRHAC                |EMAIL        |<customerStatus> | <campaign> |
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign   |folderName           |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
@@ -94,7 +94,7 @@ Feature:E2E scenario for pga campaign
 
   Scenario Outline: Validate complete data for pga campaign for VIC
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "PGOFFER" and "3355" and clicks on show me plan link
+    When user provides "3355" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -159,12 +159,12 @@ Feature:E2E scenario for pga campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EV |6203822385|                              |                              |Y                      |OTHER                   |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus   | campaign   |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EV |6203822385|                              |                              |Y                      |OTHER                   |EMAIL        |<customerStatus> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GV |5330956738|                              |                              |Y                      |GLSMRHAC                |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus   | campaign   |
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GV |5330956738|                              |                              |Y                      |GLSMRHAC                |EMAIL        |<customerStatus> | <campaign> |
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign |folderName           |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
@@ -172,7 +172,7 @@ Feature:E2E scenario for pga campaign
 
   Scenario Outline: Validate complete data for pga campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "PGOFFER" and "5088" and clicks on show me plan link
+    When user provides "5088" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -237,12 +237,12 @@ Feature:E2E scenario for pga campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-ES |2001114983|                              |                              |Y                      |OTHER                   |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus   | campaign   |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-ES |2001114983|                              |                              |Y                      |OTHER                   |EMAIL        |<customerStatus> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GS |5510116718|                              |                              |Y                      |GLSMRHAC                |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus   | campaign   |
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GS |5510116718|                              |                              |Y                      |GLSMRHAC                |EMAIL        |<customerStatus> | <campaign> |
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign |folderName           |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
@@ -250,7 +250,7 @@ Feature:E2E scenario for pga campaign
 
   Scenario Outline: Validate complete data for pga campaign for ACT
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "PGOFFER" and "2602" and clicks on show me plan link
+    When user provides "2602" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -315,12 +315,12 @@ Feature:E2E scenario for pga campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI        |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EA |7001138899|                              |                              |Y                      |OTHER                   |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI        |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus   | campaign   |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EA |7001138899|                              |                              |Y                      |OTHER                   |EMAIL        |<customerStatus> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode  |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GA  |5260077864|                              |                              |Y                      |GLSMRHAC                |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode  |MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus   | campaign   |
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-GA  |5260077864|                              |                              |Y                      |GLSMRHAC                |EMAIL        |<customerStatus> | <campaign> |
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign |folderName           |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
@@ -329,7 +329,7 @@ Feature:E2E scenario for pga campaign
 
   Scenario Outline: Validate complete data for pga campaign for QLD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "PGOFFER" and "4020" and clicks on show me plan link
+    When user provides "4020" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
@@ -385,8 +385,8 @@ Feature:E2E scenario for pga campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EQ |QB02256002|                              |                              |Y                      |OTHER                   |EMAIL        |
+      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus   | campaign   |
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |SWSRB-EQ |QB02256002|                              |                              |Y                      |OTHER                   |EMAIL        |<customerStatus> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
 
     Examples:

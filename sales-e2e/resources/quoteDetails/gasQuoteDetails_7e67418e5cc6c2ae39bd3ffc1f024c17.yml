@@ -1,91 +1,87 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2108119767
+    quoteId: BB2108130052
     sourceCode: Total_24%GD
-    actualQuoteDate: 2021-08-11
+    actualQuoteDate: 2021-08-13
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0361433122
+      phoneNumber: 0352926492
     
-    emailId: dYRagaIPNt@energyaustralia.com.au
+    emailId: MOFiUtNHGt@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: PROPRIETARY LTD
+    businessType: LTDPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 83702521950
+      businessId: 20835230234
     
-    anzsic: UTILITIES
+    anzsic: PROPERTY
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0361433122
+      businessPhoneNumber: 0352926492
     
-    businessEmailId: dYRagaIPNt@energyaustralia.com.au
+    businessEmailId: MOFiUtNHGt@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 73-75
-    streetName: Enmore
-    streetType: R
-    suburb: NEWTOWN
-    state: NSW
+    streetNo: 42
+    streetName: Beauchamp
+    streetType: S
+    suburb: KYNETON
+    state: VIC
     country: AUS
-    postCode: 2042
+    postCode: 3444
     premiseType: COM
     addressType: Premise
-    DPID: 30043939
+    DPID: 68334835
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 73-75
-    streetName: Enmore
-    streetType: R
-    suburb: NEWTOWN
-    state: NSW
+    streetNo: 42
+    streetName: Beauchamp
+    streetType: S
+    suburb: KYNETON
+    state: VIC
     country: AUS
-    postCode: 2042
+    postCode: 3444
     addressType: Mailing
-    DPID: 30043939
+    DPID: 68334835
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2021-08-12
+    proposedStart: 2021-08-17
     offerType: ENE
-    plan: TOPB-GN
-    priceTag: GNAGA_NB2107
-    serviceOrderDate: 2021-08-12
+    plan: TOPB-GV
+    priceTag: GVT3A_NB2101
+    serviceOrderDate: 2021-08-17
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      MIRN: 5247073457
+      MIRN: 5330293713
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
       renovationsInProgressOrPlanned: N
-      customerWithLifeSupport: Y
+      customerWithLifeSupport: N
     
-    lifeSupportEquipment: 
-      lifeSupportEquipmentType: OTHER
-    
-    lifeSupportOtherEquipmentDetails: Sample Other gas device.
   
   offerDetail: 
     fuelType: E

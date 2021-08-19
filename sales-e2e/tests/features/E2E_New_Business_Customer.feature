@@ -1,7 +1,7 @@
 @E2E @newcustomer
 
 Feature:E2E scenario for new business moving and non moving customer
-
+@checking
   Scenario Outline: Submit a quote for new business moving customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
@@ -50,15 +50,15 @@ Feature:E2E scenario for new business moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | BSOT-EN  | 4102017007 | N                              | N                              | Y                       | LSKDM                    | POSTMM        |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EN  | 4102017007 | N                              | N                              | Y                       | LSKDM                    | POSTMM        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | BSOT-GN  | 5247073457 | N                              | N                              | Y                       | GLSMRHAC                 | POSTMM        |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GN  | 5247073457 | N                              | N                              | Y                       | GLSMRHAC                 | POSTMM        |
 
     Examples:
       | customerStatus | fuelType | planName       | folderName         | state | sourceSystem | journey   | AAH | DD  | customerType | newOrExisting |
-      | New            | BOTH     | Basic Business | E2E_New_Bus_Moving | NSW   | Quote Tool   | Move Home | No  | Yes | BUS          | New           |
+      | New            | BOTH     | Total Plan - Business | E2E_New_Bus_Moving | NSW   | Quote Tool   | Move Home | No  | Yes | BUS          | New           |
 
   @deviceCheck @smoke
   Scenario Outline: Submit a quote for new business non moving customer

@@ -64,7 +64,7 @@
           "Ausgrid": "Total_Plus_20%GD",
           "Essential": "Total_Plus_19%GD_100",
           "Endeavour": "Total_Plus_14%GD_100",
-          "default": "Total_Plus_22%GD_100"
+          "default": "Total_Plus_20%GD"
         },
         "ACT": "Total_Plus_11%GD",
         "SA": "Total_Plus_4%GD",
@@ -77,7 +77,7 @@
             "Ausgrid": "Total_Plus_20%GD",
             "Essential": "Total_Plus_19%GD_100",
             "Endeavour": "Total_Plus_14%GD_100",
-            "default": "Total_Plus_22%GD_100"
+            "default": "Total_Plus_20%GD"
           },
           "ACT": "Total_Plus_11%GD",
           "SA": "Total_Plus_4%GD",
@@ -89,7 +89,7 @@
             "Ausgrid": "Total_Plus_20%GD",
             "Essential": "Total_Plus_19%GD",
             "Endeavour": "Total_Plus_14%GD",
-            "default": "Total_Plus_22%GD"
+            "default": "Total_Plus_20%GD"
           },
           "ACT": "Total_Plus_11%GD",
           "SA": "Total_Plus_4%GD",

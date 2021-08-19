@@ -15,7 +15,7 @@ Feature:E2E scenario for biz-australia campaign
   @campaign21.6.4
   Scenario Outline: Validate complete data for biz-australia campaign for NSW-Essential for new non-moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "BIZOFFER5" and "2580" and clicks on show me plan link
+    When user provides "2580" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -90,7 +90,7 @@ Feature:E2E scenario for biz-australia campaign
   @campaign21.6.4
   Scenario Outline: Validate complete data for biz-australia campaign for NSW-Endeavour for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "BIZOFFER5" and "2780" and clicks on show me plan link
+    When user provides "2780" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -162,10 +162,10 @@ Feature:E2E scenario for biz-australia campaign
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign         |folderName                                            |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |BOTH    |14         |20         |biz-australia  |E2E_Campaign_biz-australia_NSW_Endeavour_new_moving |Quote Tool  |Move Home|NSW    |BUS          |New            |No  |No  |
- @DR21.7.5.campaign
+ @DR21.8.3.campaign
   Scenario Outline: Validate complete data for biz-australia campaign for NSW for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "BIZOFFER5" and "2042" and clicks on show me plan link
+   When user provides "2042" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -240,7 +240,7 @@ Feature:E2E scenario for biz-australia campaign
   @campaign21.6.4
   Scenario Outline: Validate complete data for biz-australia campaign for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "BIZOFFER5" and "3000" and clicks on show me plan link
+    When user provides "3000" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -315,7 +315,7 @@ Feature:E2E scenario for biz-australia campaign
   @campaign21.6.4
   Scenario Outline: Validate complete data for biz-australia campaign for QLD for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "BIZOFFER5" and "4500" and clicks on show me plan link
+    When user provides "4500" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
@@ -377,7 +377,7 @@ Feature:E2E scenario for biz-australia campaign
 
   Scenario Outline: Validate complete data for biz-australia campaign for SA for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "BIZOFFER5" and "5000" and clicks on show me plan link
+    When user provides "5000" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -452,7 +452,7 @@ Feature:E2E scenario for biz-australia campaign
 @DR21.7.5.campaign
   Scenario Outline: Validate complete data for biz-australia campaign for ACT for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "BIZOFFER5" and "2600" and clicks on show me plan link
+  When user provides "2600" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent

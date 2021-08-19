@@ -32,8 +32,8 @@ Feature:E2E scenario for new connection
     And user opts for special offer
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
-      | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
-      | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
+      | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |carbonNeutral|
+      | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |N            |
     And user provides life support details on review page
       | lifeSupportOption | fuelType   | EleclifeSupportDevices |
       | Yes               | <fuelType> | Ele Other              |
@@ -77,8 +77,8 @@ Feature:E2E scenario for new connection
     And user sends welcome pack through 'Post'
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
-      | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
-      | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
+      | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |carbonNeutral|
+      | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |N            |
     And user provides life support details on review page
       | lifeSupportOption | fuelType   | GaslifeSupportDevices |
       | No                | <fuelType> | Gas Other             |
