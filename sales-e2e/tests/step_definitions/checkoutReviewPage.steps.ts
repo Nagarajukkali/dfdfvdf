@@ -71,14 +71,14 @@ When(/^user validates details on checkout review page$/, async function (t, [], 
   let isNewCustomer = params[0].newOrExisting.toLowerCase() === "new";
   let isMoving = journey.toLowerCase() === "move home";
   let solarSetup = params[0].solarSetup;
-
+  let carbonNeutral = params[0].carbonNeutral;
   await checkoutDetailsMethod.validateHeader(t, sourceSystem, journey);
   await checkoutReviewMethod.validateProgressbarAndSubheading(t);
   await checkoutReviewMethod.validateConnectionDetails(t, journey, fuelType);
   await checkoutReviewMethod.validateAccountHoldersSection(t, sourceSystem, journey, aah);
   await checkoutReviewMethod.validateBillingAndPaymentPrefSection(t, sourceSystem, journey, dd);
   await checkoutReviewMethod.validateFeesAndChargesSection(t);
-  await checkoutReviewMethod.validateCarbonNeutralSection(t);
+  await checkoutReviewMethod.validateCarbonNeutralSection(t,carbonNeutral);
   await checkoutReviewMethod.validateNavigationButtons(t);
   await checkoutReviewMethod.validateGeneralStateDisclaimer(t, customerType, isNewCustomer, isMoving);
   if (solarSetup !== undefined) {

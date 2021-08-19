@@ -1,56 +1,57 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2103236893
-    sourceCode: Basic
-    actualQuoteDate: 2021-03-23
+    quoteId: BB2108119765
+    sourceCode: Total_24%GD
+    actualQuoteDate: 2021-08-11
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MRS
+    title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0349780449
+      phoneNumber: 0314454145
     
-    emailId: ZOsdpMemEB@energyaustralia.com.au
+    emailId: yhhMFDqYhQ@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: SOLE TRADER
+    businessType: OTHERS
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 85393202820
+      businessId: 42984710750
     
     anzsic: UTILITIES
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0349780449
+      businessPhoneNumber: 0314454145
     
-    businessEmailId: ZOsdpMemEB@energyaustralia.com.au
+    businessEmailId: yhhMFDqYhQ@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 320
-    streetName: Crown
-    streetType: S
-    suburb: SURRY HILLS
+    streetNo: 73-75
+    streetName: Enmore
+    streetType: R
+    suburb: NEWTOWN
     state: NSW
     country: AUS
-    postCode: 2010
+    postCode: 2042
     premiseType: COM
     addressType: Premise
+    DPID: 30043939
     primaryResidence: N
   
   premiseDetail: 
@@ -63,17 +64,18 @@ saleDetail :
     country: AUS
     postCode: 3220
     addressType: Mailing
+    DPID: 46447648
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2021-03-24
+    proposedStart: 2021-08-12
     offerType: ENE
-    plan: BSOT-GN
-    priceTag: GNAGA_GB
-    serviceOrderDate: 2021-03-24
+    plan: TOPB-GN
+    priceTag: GNAGA_NB2107
+    serviceOrderDate: 2021-08-12
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      MIRN: 5240554353
+      MIRN: 5247073457
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N

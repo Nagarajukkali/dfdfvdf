@@ -277,7 +277,7 @@ Feature:E2E scenario for offer-finder campaign
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign     | folderName                               | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 12          | 16          | offer-finder | E2E_Campaign_offer-finder_ACT_new_moving | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
-  @DR21.7.5.campaign
+  @DR21.8.3.campaign
   Scenario Outline: Validate complete data for offer-finder campaign for VIC - new non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
@@ -286,20 +286,20 @@ Feature:E2E scenario for offer-finder campaign
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | Y                | Y                     | Y                   | Y                                     | N                               | <state> |
+      | ELE      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | Y                | Y                     | Y                   | Y                                     | N                               | <state> |
+      | GAS      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | <state> | Y            |
+      | Y                        | Y         | Y            | Total Plan | <state> | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | state   |
-      | ELE      | Y                | Y                     | Y                   | Y                                     | <state> |
+      | ELE      | N                | Y                     | Y                   | Y                                     | <state> |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | state   |
-      | GAS      | Y                | Y                     | Y                   | Y                                     | <state> |
+      | GAS      | N                | Y                     | Y                   | Y                                     | <state> |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                   | movingType | propertyType |
@@ -316,13 +316,13 @@ Feature:E2E scenario for offer-finder campaign
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | Y                | N                     | Y                   | Y                                     | N                               | <state> |
+      | ELE      | N                | N                     | Y                   | Y                                     | N                               | <state> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | Y                | N                     | Y                   | Y                                     | N                               | <state> |
+      | GAS      | N                | N                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | <state> | Y            |
+      | Y                        | Y         | Y            | Total Plan | <state> | N            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -342,8 +342,8 @@ Feature:E2E scenario for offer-finder campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-GV  | 5310425534 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign     | folderName                                  | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 11          | 26          | offer-finder | E2E_Campaign_offer-finder_VIC_new_nonmoving | VIC   | Quote Tool   | COR     | No  | No | RES          | New           |
-  @DR21.7.5.campaign
+      | New            | BOTH     | 12          | 30          | offer-finder | E2E_Campaign_offer-finder_VIC_new_nonmoving | VIC   | Quote Tool   | COR     | No  | No | RES          | New           |
+  @DR21.8.3.campaign
   Scenario Outline: Validate complete data for offer-finder campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
@@ -352,20 +352,20 @@ Feature:E2E scenario for offer-finder campaign
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | Y                | Y                     | Y                   | Y                                     | N                               | <state> |
+      | ELE      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | Y                | Y                     | Y                   | Y                                     | N                               | <state> |
+      | GAS      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | <state> | Y            |
+      | Y                        | Y         | Y            | Total Plan | <state> | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | state   |
-      | ELE      | Y                | Y                     | Y                   | Y                                     | <state> |
+      | ELE      | N                | Y                     | Y                   | Y                                     | <state> |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | state   |
-      | GAS      | Y                | Y                     | Y                   | Y                                     | <state> |
+      | GAS      | N                | Y                     | Y                   | Y                                     | <state> |
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus   | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue   |
@@ -391,7 +391,7 @@ Feature:E2E scenario for offer-finder campaign
       | GAS      | N                | N                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |
-      | N                        | N         | N            | Total Plan | VIC   | Y            |
+      | N                        | N         | N            | Total Plan | VIC   | N            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -411,7 +411,7 @@ Feature:E2E scenario for offer-finder campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-GV  | 5330790589 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign     | folderName                                        | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     | 11          | 26          | offer-finder | E2E_Campaign_offer-finder_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     | 12          | 30          | offer-finder | E2E_Campaign_offer-finder_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
   @DR21.7.1.campaign
   Scenario Outline: Validate complete data for offer-finder campaign for NSW existing non moving

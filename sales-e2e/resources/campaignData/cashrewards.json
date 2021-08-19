@@ -37,7 +37,7 @@
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
-            "heading": "11% discount off total electricity bill"
+            "heading": "12% discount off total electricity bill"
           },
           "NSW": {
             "heading": "16% discount off total electricity bill"
@@ -69,7 +69,7 @@
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": {
-          "VIC": "11% discount off total electricity bill. Guaranteed discount that applies to our market energy charges.",
+          "VIC": "12% discount off total electricity bill. Guaranteed discount that applies to our market energy charges.",
           "NSW": "16% discount off total electricity bill. Guaranteed discount that applies to our market energy charges.",
           "ACT": "12% discount off total electricity bill. Guaranteed discount that applies to our market energy charges.",
           "QLD": "14% discount off total electricity bill. Guaranteed discount that applies to our market energy charges.",
@@ -80,7 +80,7 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_11%GD_25",
+        "VIC": "Total_12%GD",
         "NSW": {
           "Ausgrid": "Total_16%GD",
           "Essential": "Total_16%GD",
@@ -93,7 +93,7 @@
       },
       "existingCustomer": {
         "ENE":{
-          "VIC": "Total_11%GD",
+          "VIC": "Total_12%GD",
           "NSW": {
             "Ausgrid": "Total_16%GD",
             "Essential": "Total_16%GD",
@@ -105,7 +105,7 @@
           "SA": "Total_6%GD"
         },
         "PS": {
-          "VIC": "Total_11%GD",
+          "VIC": "Total_12%GD",
           "NSW": {
             "Ausgrid": "Total_16%GD",
             "Essential": "Total_16%GD",
@@ -155,7 +155,7 @@
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
-            "heading": "26% discount off total gas bill"
+            "heading": "30% discount off total gas bill"
           },
           "NSW": {
             "heading": "16% discount off total gas bill"
@@ -179,7 +179,7 @@
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": {
-          "VIC": "26% discount off total gas bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
+          "VIC": "30% discount off total gas bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
           "NSW": "16% discount off total gas bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
           "ACT": "16% discount off total gas bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
           "SA" : "12% discount off total gas bill. Guaranteed discount that applies to both energy usage rates and daily supply charges."
@@ -188,20 +188,20 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_26%GD_25",
+        "VIC": "Total_30%GD",
         "NSW": "Total_16%GD",
         "ACT": "Total_16%GD",
         "SA": "Total_12%GD"
       },
       "existingCustomer": {
         "ENE":{
-          "VIC": "Total_26%GD",
+          "VIC": "Total_30%GD",
           "NSW": "Total_16%GD",
           "ACT": "Total_16%GD",
           "SA": "Total_12%GD"
         },
         "PS": {
-          "VIC": "Total_26%GD",
+          "VIC": "Total_30%GD",
           "NSW": "Total_16%GD",
           "ACT": "Total_16%GD",
           "SA": "Total_12%GD"

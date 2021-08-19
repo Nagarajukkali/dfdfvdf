@@ -1,7 +1,7 @@
 @E2E @existingcustomerQT
 Feature:E2E scenario for existing business moving and non moving customer
 
-  @deviceCheck @smoke
+  @deviceCheck @smoke @checking
   Scenario Outline: Submit a quote for existing business moving customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
@@ -51,15 +51,15 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | BSOT-EN  | 4102017007 | N                              | N                              | Y                       | LSVFLS                   | EMAIL         |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EN  | 4102017007 | N                              | N                              | Y                       | LSVFLS                   | EMAIL         |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | BSOT-GN  | 5247073457 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GN  | 5247073457 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
 
     Examples:
       | customerStatus | fuelType | planName       | folderName              | state | sourceSystem | journey   | AAH | DD  | customerType | newOrExisting |
-      | Existing       | BOTH     | Basic Business | E2E_Existing_Bus_Moving | NSW   | Quote Tool   | Move Home | Yes | Yes | BUS          | Existing      |
+      | Existing       | BOTH     | Total Plan - Business | E2E_Existing_Bus_Moving | NSW   | Quote Tool   | Move Home | Yes | Yes | BUS          | Existing      |
 
   Scenario Outline: Submit a quote for existing business non moving customer with LS, select dual fuel and verify electricity account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences

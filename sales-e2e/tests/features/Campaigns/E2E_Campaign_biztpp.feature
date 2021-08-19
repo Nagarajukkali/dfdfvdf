@@ -13,10 +13,10 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for biztpp campaign
- @DR21.7.5.campaign
+ @DR21.8.3.campaign
   Scenario Outline: Validate complete data for biztpp campaign for NSW
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "HAIROFFER" and "2042" and clicks on show me plan link
+   When user provides "2042" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -91,7 +91,7 @@ Feature:E2E scenario for biztpp campaign
   @campaign21.6.4
   Scenario Outline: Validate complete data for biztpp campaign for VIC
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "HAIROFFER" and "3355" and clicks on show me plan link
+    When user provides "3355" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -166,7 +166,7 @@ Feature:E2E scenario for biztpp campaign
 
   Scenario Outline: Validate complete data for biztpp campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "HAIROFFER" and "5088" and clicks on show me plan link
+    When user provides "5088" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -241,7 +241,7 @@ Feature:E2E scenario for biztpp campaign
 @DR21.7.5.campaign
   Scenario Outline: Validate complete data for biztpp campaign for ACT
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "HAIROFFER" and "2612" and clicks on show me plan link
+  When user provides "2612" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -316,7 +316,7 @@ Feature:E2E scenario for biztpp campaign
   @campaign21.6.4
   Scenario Outline: Validate complete data for biztpp campaign for QLD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "HAIROFFER" and "4020" and clicks on show me plan link
+    When user provides "4020" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"

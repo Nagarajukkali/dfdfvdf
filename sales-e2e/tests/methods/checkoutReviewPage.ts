@@ -740,9 +740,9 @@ export class checkoutReviewMethod {
     console.log("Validation completed for fees and charges section on checkout review page.");
   }
 
-  public static async validateCarbonNeutralSection(t) {
+  public static async validateCarbonNeutralSection(t,carbonNeutralFlag) {
     let isBusiness = (await testFunction.getElementText(t, eaCheckoutReviewPage.elements.txtPlanTitle)).includes("Business");
-    if (!isBusiness) {
+    if ((!isBusiness)&&(carbonNeutralFlag === 'Y')){
       await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.carbonNeutral.main);
       await t.expect(await testFunction.getElementText(t, eaCheckoutReviewPage.elements.carbonNeutral.heading)).contains("Opt in for carbon neutral");
     }
