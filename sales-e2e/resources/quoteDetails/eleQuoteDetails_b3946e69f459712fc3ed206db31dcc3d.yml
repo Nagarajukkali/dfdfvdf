@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2103226824
+    quoteId: BB2108310294
     sourceCode: Total_5%GD
-    actualQuoteDate: 2021-03-22
+    actualQuoteDate: 2021-08-31
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,42 +15,43 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0378145377
+      phoneNumber: 0365275613
     
-    emailId: OmyEWCqpID@energyaustralia.com.au
+    emailId: wXPEfvSOiH@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: GOVERNMENT
+    businessType: PROPRIETARY LTD
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 19663933458
+      businessId: 51602344274
     
-    anzsic: UNKNOWN
+    anzsic: FINANCE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0378145377
+      businessPhoneNumber: 0365275613
     
-    businessEmailId: OmyEWCqpID@energyaustralia.com.au
+    businessEmailId: wXPEfvSOiH@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 36
-    streetName: Gregory
+    streetNo: 42
+    streetName: Beauchamp
     streetType: S
-    suburb: WENDOUREE
+    suburb: KYNETON
     state: VIC
     country: AUS
-    postCode: 3355
+    postCode: 3444
     premiseType: COM
     addressType: Premise
+    DPID: 68334835
     primaryResidence: N
   
   premiseDetail: 
@@ -63,13 +64,16 @@ saleDetail :
     country: AUS
     postCode: 3355
     addressType: Mailing
+    DPID: 96541244
   
   offerDetail: 
     fuelType: E
     offerType: PS
     plan: TOPB-EV
-    priceTag: EVPOA_NB2101
-    nmiMirnInformation/: 
+    priceTag: EVPO5_NB2108
+    nmiMirnInformation: 
+      NMI: 6203004526
+    
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
       renovationsInProgressOrPlanned: N
@@ -90,5 +94,12 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
+    proposedNTC: NDTOU
+    proposedMC: EASTENMC
+  
+  solarDetail: 
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: GENR13
+    solarTimeOfUse: N
   
 

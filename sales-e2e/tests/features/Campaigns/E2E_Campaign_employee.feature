@@ -143,7 +143,7 @@ Feature:E2E scenario for employee campaign
       | customerStatus | fuelType | eleDiscount | campaign | folderName                           | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | 22          | employee | E2E_Campaign_employee_QLD_new_moving | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-   @DR21.7.5.campaign
+   @DR21.8.2.campaign @DR21.9.2.campaign.1
   Scenario Outline: Validate complete data for employee campaign for SA - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "nathan.glen@energyaustralia.com.au" employee id "10000033" and "5000" and clicks on show me plan link
@@ -152,20 +152,20 @@ Feature:E2E scenario for employee campaign
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
+      | ELE      | Y                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
+      | GAS      | Y                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName      | state   | signUpCredit |
-      | Y                        | N         | Y            | Employee Plan | <state> | N            |
+      | Y                        | N         | Y            | Employee Plan | <state> | Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                     | <state> |
+      | ELE      | Y                | Y                     | Y                   | Y                                     | <state> |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | state   |
-      | GAS      | N                | Y                     | Y                   | Y                                     | <state> |
+      | GAS      | Y                | Y                     | Y                   | Y                                     | <state> |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                 | movingType | propertyType |
@@ -182,13 +182,13 @@ Feature:E2E scenario for employee campaign
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
+      | ELE      | Y                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
+      | GAS      | Y                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName      | state   | signUpCredit |
-      | Y                        | N         | Y            | Employee Plan | <state> | N            |
+      | Y                        | N         | Y            | Employee Plan | <state> | Y            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -276,7 +276,7 @@ Feature:E2E scenario for employee campaign
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                           | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 25          | 35          | employee | E2E_Campaign_employee_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
- 
+
   Scenario Outline: Validate complete data for employee campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "nathan.glen@energyaustralia.com.au" employee id "10000033" and "3000" and clicks on show me plan link
@@ -409,7 +409,7 @@ Feature:E2E scenario for employee campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                                    | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     | 28          | 28          | employee | E2E_Campaign_employee_NSW_existing_non-moving | NSW   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR21.7.1.campaign
+  @DR21.9.2.campaign
   Scenario Outline: Validate complete data for employee campaign for SA existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "nathan.glen@energyaustralia.com.au" employee id "10000033" and "5000" and clicks on show me plan link
@@ -418,20 +418,20 @@ Feature:E2E scenario for employee campaign
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
+      | ELE      | Y                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
+      | GAS      | Y                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName      | state   | signUpCredit |
-      | Y                        | N         | Y            | Employee Plan | <state> | N            |
+      | Y                        | N         | Y            | Employee Plan | <state> | Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                     | <state> |
+      | ELE      | Y                | Y                     | Y                   | Y                                     | <state> |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | state   |
-      | GAS      | N                | Y                     | Y                   | Y                                     | <state> |
+      | GAS      | Y                | Y                     | Y                   | Y                                     | <state> |
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus   | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue   |
@@ -451,10 +451,10 @@ Feature:E2E scenario for employee campaign
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | N                     | Y                   | Y                                     | N                               | <state> |
+      | ELE      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | N                     | Y                   | Y                                     | N                               | <state> |
+      | GAS      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName      | state | signUpCredit |
       | Y                        | N         | Y            | Employee Plan | SA    | N            |

@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2104077781
-    sourceCode: Total_Plus_13%GD_50
-    actualQuoteDate: 2021-04-07
+    quoteId: BB2109030581
+    sourceCode: Total_Plus_11%GD_50
+    actualQuoteDate: 2021-09-03
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: DR
+    title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0338733813
+      phoneNumber: 0380548521
     
-    emailId: sVOGgGZzGY@energyaustralia.com.au
+    emailId: DONpncVyDn@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLSA
-      id: 247256
+      idType: DLQLD
+      id: 159684
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: SA
+          licenseStateOfIssue: QLD
         
       
     
@@ -47,6 +47,7 @@ saleDetail :
     postCode: 2615
     premiseType: DOM
     addressType: Premise
+    DPID: 75543732
     primaryResidence: N
   
   premiseDetail: 
@@ -59,14 +60,15 @@ saleDetail :
     country: AUS
     postCode: 2615
     addressType: Mailing
+    DPID: 75543732
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-04-08
+    proposedStart: 2021-09-07
     offerType: ENE
     plan: SWSR1-EA
-    priceTag: EAACA_NR2007
-    serviceOrderDate: 2021-04-08
+    priceTag: EAACA_NR2107
+    serviceOrderDate: 2021-09-07
     serviceOrderTime: BUSHRS
     nmiMirnInformation/: 
   
@@ -82,6 +84,6 @@ saleDetail :
   creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    reEnergisationJSCCharge: 80.43
+    reEnergisationJSCCharge: 81.92
   
 

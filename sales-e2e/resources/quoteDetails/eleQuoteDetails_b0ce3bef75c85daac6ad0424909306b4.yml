@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2104096918
-    sourceCode: Total_Plus_22%GD_50
-    actualQuoteDate: 2021-04-09
+    quoteId: BB2109030587
+    sourceCode: Total_Plus_21%GD_50
+    actualQuoteDate: 2021-09-03
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0336948225
+      phoneNumber: 0326405109
     
-    emailId: jvTFhzvkSs@energyaustralia.com.au
+    emailId: fJPZdxxkTE@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 819937
+      id: 389170
       primaryIdFlag: Y
     
     authLevel: Y
@@ -42,6 +42,7 @@ saleDetail :
     postCode: 2447
     premiseType: DOM
     addressType: Premise
+    DPID: 59760646
     primaryResidence: N
   
   premiseDetail: 
@@ -56,12 +57,13 @@ saleDetail :
     country: AUS
     postCode: 2447
     addressType: Mailing
+    DPID: 59760646
   
   offerDetail: 
     fuelType: E
     offerType: PS
     plan: SWSR1-EN
-    priceTag: ENCE1_NR2007
+    priceTag: ENCE1_NR2107
     nmiMirnInformation: 
       NMI: 4407376910
     
@@ -77,5 +79,8 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
+  
+  solarDetail: 
+    solarPowerIndicator: N
   
 

@@ -19,8 +19,8 @@
             "description": "Get a $50 credit per new energy account on your first bill when you sign up.+"
           },
           "SA": {
-            "heading": "$25 Sign Up Credit",
-            "description": "Get a $25 credit per new energy account on your first bill when you sign up.+"
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up.+"
           }
         },
         "carbonNeutral": {
@@ -44,7 +44,7 @@
           "SA": {
             "heading": "20% discount off total electricity bill"
           },
-          "description": "Guaranteed and exclusive employee-only discount that applies to our market energy charges."
+          "description": "Guaranteed and exclusive employee-only discount that applies to your energy charges."
         },
         "noStandardConnectionFee": {
           "heading": "",
@@ -60,15 +60,15 @@
           "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
           "NSW": "",
           "QLD": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
-          "SA" : "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up.+"
+          "SA" : "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Energy with a bit of good. 100% carbon neutral energy at home for no extra cost to you.",
         "peaceOfMind": "Priority customer service. Dedicated Family, Friends and You team.",
         "discountOffTotalEnergyBill": {
-          "VIC": "25% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to our market energy charges.",
-          "NSW": "28% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to our market energy charges.",
-          "QLD": "22% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to our market energy charges.",
-          "SA" : "20% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to our market energy charges."
+          "VIC": "25% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to your energy charges.",
+          "NSW": "28% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to your energy charges.",
+          "QLD": "22% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to your energy charges.",
+          "SA" : "20% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to your energy charges."
         },
         "noStandardConnectionFee": "",
         "vipPriorityService": ""
@@ -81,7 +81,7 @@
           "default": "Employee_28%GD"
         },
         "QLD": "Employee_22%GD",
-        "SA": "Employee_20%GD"
+        "SA": "Total_20%GD_50"
       },
       "existingCustomer": {
         "ENE":{
@@ -90,7 +90,7 @@
             "default": "Employee_28%GD"
           },
           "QLD": "Employee_22%GD",
-          "SA": "Employee_20%GD"
+          "SA": "Total_20%GD_50"
         },
         "PS": {
           "VIC": "Employee_25%GD",
@@ -121,8 +121,8 @@
             "description": "Get a $50 credit per new energy account on your first bill when you sign up.+"
           },
           "SA": {
-            "heading": "$25 Sign Up Credit",
-            "description": "Get a $25 credit per new energy account on your first bill when you sign up.+"
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up.+"
           }
         },
         "carbonNeutral": {
@@ -143,7 +143,7 @@
           "SA": {
             "heading": "20% discount off total gas bill"
           },
-          "description": "Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges."
+          "description": "Guaranteed and exclusive employee-only discount that applies to your energy charges."
         },
         "vipPriorityService": {
           "heading": "",
@@ -154,14 +154,14 @@
         "Credit50": {
           "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
           "NSW": "",
-          "SA" : "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up.+"
+          "SA" : "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Energy with a bit of good. 100% carbon neutral energy at home for no extra cost to you.",
         "peaceOfMind": "Priority customer service. Dedicated Family, Friends and You team.",
         "discountOffTotalEnergyBill": {
-          "VIC": "35% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
-          "NSW": "28% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges.",
-          "SA" : "20% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to both energy usage rates and daily supply charges."
+          "VIC": "35% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to your energy charges.",
+          "NSW": "28% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to your energy charges.",
+          "SA" : "20% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to your energy charges."
         },
         "vipPriorityService": ""
       }
@@ -169,13 +169,13 @@
       "newCustomer": {
         "VIC": "Employee_35%GD",
         "NSW": "Employee_28%GD",
-        "SA": "Employee_20%GD"
+        "SA": "Total_20%GD_50"
       },
       "existingCustomer": {
         "ENE":{
           "VIC": "Employee_30%GD",
           "NSW": "Employee_28%GD",
-          "SA": "Employee_20%GD"
+          "SA": "Total_20%GD_50"
         },
         "PS": {
           "VIC": "Employee_30%GD",
@@ -231,8 +231,8 @@
         "description": "+ Offer available to QLD residential customers who sign up to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "SA": {
-        "heading": "$25 Sign Up Credit",
-        "description": "+ Offer available to SA residential customers who sign up to an electricity or gas market offer. Limit of one $25 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+        "heading": "$50 Sign Up Credit",
+        "description": "+ Offer available to SA residential customers who sign up to an electricity or gas market offer. Limit of one $50 credit per new energy account, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       }
     },
     "employeePlan": {

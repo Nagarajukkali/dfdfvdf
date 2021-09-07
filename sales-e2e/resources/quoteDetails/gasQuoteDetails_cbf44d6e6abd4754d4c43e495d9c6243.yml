@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2101145883
+    quoteId: BB2108310301
     sourceCode: NOFRILLS
-    actualQuoteDate: 2021-01-14
+    actualQuoteDate: 2021-08-31
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0377555043
+      phoneNumber: 0393454467
     
-    emailId: qIXIFlxucx@energyaustralia.com.au
+    emailId: RtMNATNBua@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 825968
+      id: 436126
       primaryIdFlag: Y
     
     authLevel: Y
@@ -40,6 +40,7 @@ saleDetail :
     postCode: 2516
     premiseType: DOM
     addressType: Premise
+    DPID: 34566945
     primaryResidence: Y
   
   premiseDetail: 
@@ -52,6 +53,7 @@ saleDetail :
     country: AUS
     postCode: 2516
     addressType: Mailing
+    DPID: 34566945
   
   offerDetail: 
     fuelType: G

@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2104269733
-    sourceCode: Total_Plus_14%GD_50
-    actualQuoteDate: 2021-04-26
+    quoteId: BB2109030583
+    sourceCode: Total_Plus_16%GD_50
+    actualQuoteDate: 2021-09-03
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,20 +15,20 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0333215419
+      phoneNumber: 0386317682
     
-    emailId: QAIfEnnmRS@energyaustralia.com.au
+    emailId: pYwzJJtVrp@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLTAS
-      id: 334575
+      idType: DLACT
+      id: 794329
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: TAS
+          licenseStateOfIssue: ACT
         
       
     
@@ -47,6 +47,7 @@ saleDetail :
     postCode: 3126
     premiseType: DOM
     addressType: Premise
+    DPID: 58161712
     primaryResidence: N
   
   premiseDetail: 
@@ -59,14 +60,15 @@ saleDetail :
     country: AUS
     postCode: 3126
     addressType: Mailing
+    DPID: 58161712
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-04-28
+    proposedStart: 2021-09-07
     offerType: ENE
     plan: SWSR1-EV
-    priceTag: EVCIA_NR2101
-    serviceOrderDate: 2021-04-28
+    priceTag: EVCIA_NR2107
+    serviceOrderDate: 2021-09-07
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 6102221416
@@ -90,7 +92,7 @@ saleDetail :
   meteringDetail: 
     meterExchangeFlag: N
     reEnergisationJSCCode: RCTBH
-    reEnergisationJSCCharge: 37.9
+    reEnergisationJSCCharge: 36.07
   
   solarDetail: 
     solarPowerIndicator: N

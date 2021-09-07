@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2101202502
+    quoteId: BB2108310329
     sourceCode: Total_Plus_15%GD
-    actualQuoteDate: 2021-01-20
+    actualQuoteDate: 2021-08-31
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0395015143
+      phoneNumber: 0326947478
     
-    emailId: vULUZJwLKH@energyaustralia.com.au
+    emailId: CtDyuLDKBx@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 114352
+      id: 619360
       primaryIdFlag: Y
     
     authLevel: Y
@@ -40,6 +40,7 @@ saleDetail :
     postCode: 4558
     premiseType: DOM
     addressType: Premise
+    DPID: 31477735
     primaryResidence: Y
   
   premiseDetail: 
@@ -52,14 +53,15 @@ saleDetail :
     country: AUS
     postCode: 4558
     addressType: Mailing
+    DPID: 31477735
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-01-22
+    proposedStart: 2021-09-02
     offerType: ENE
     plan: SWSR1-EQ
-    priceTag: EQEX1_NR2007
-    serviceOrderDate: 2021-01-22
+    priceTag: EQEX1_NR2107
+    serviceOrderDate: 2021-09-02
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: QB08556016
@@ -86,5 +88,8 @@ saleDetail :
     meterExchangeFlag: N
     reEnergisationJSCCode: RNRRBU
     reEnergisationJSCCharge: 0.0
+  
+  solarDetail: 
+    solarPowerIndicator: N
   
 

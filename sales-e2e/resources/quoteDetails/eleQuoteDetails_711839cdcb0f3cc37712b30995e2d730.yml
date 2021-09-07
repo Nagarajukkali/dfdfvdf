@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2104077783
-    sourceCode: Total_Plus_14%GD_50
-    actualQuoteDate: 2021-04-07
+    quoteId: BB2109030579
+    sourceCode: Total_Plus_8%GD_50
+    actualQuoteDate: 2021-09-03
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0364110709
+      phoneNumber: 0319082211
     
-    emailId: guJgQomVaP@energyaustralia.com.au
+    emailId: IIZPkVqDDp@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLNSW
-      id: 411073
+      idType: DLNT
+      id: 252569
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: NSW
+          licenseStateOfIssue: NT
         
       
     
@@ -39,37 +39,39 @@ saleDetail :
   premiseDetail: 
     addressClass: ST
     streetNo: 3
-    streetName: Newhaven
-    streetType: AV
-    suburb: GLENELG NORTH
+    streetName: River
+    streetType: DR
+    suburb: ATHELSTONE
     state: SA
     country: AUS
-    postCode: 5045
+    postCode: 5076
     premiseType: DOM
     addressType: Premise
+    DPID: 31595230
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
     streetNo: 3
-    streetName: Newhaven
-    streetType: AV
-    suburb: GLENELG NORTH
+    streetName: River
+    streetType: DR
+    suburb: ATHELSTONE
     state: SA
     country: AUS
-    postCode: 5045
+    postCode: 5076
     addressType: Mailing
+    DPID: 31595230
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-04-07
+    proposedStart: 2021-09-06
     offerType: ENE
     plan: SWSR1-ES
-    priceTag: ESSAA_NR2007
-    serviceOrderDate: 2021-04-07
+    priceTag: ESSA7_NR2107
+    serviceOrderDate: 2021-09-06
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 2001649095
+      NMI: 2001245279
     
   
   offerDetail: 
@@ -84,7 +86,13 @@ saleDetail :
   creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    reEnergisationJSCCode: RCFE
-    reEnergisationJSCCharge: 45.68
+    priceTagMeteringCharge: M50761D1E_VE
+    proposedNTC: RTOU
+    proposedMC: ORIGINMC
+    reEnergisationJSCCode: SITERDIRE
+    reEnergisationJSCCharge: 194.93
+  
+  solarDetail: 
+    solarPowerIndicator: N
   
 
