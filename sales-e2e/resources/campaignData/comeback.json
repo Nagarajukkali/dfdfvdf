@@ -33,11 +33,11 @@
         },
         "peaceOfMind": {
           "heading": "Peace of mind",
-          "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+          "description": "Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
         },
         "discountOffTotalEnergyBill": {
           "heading": "VIP discount off total energy bill",
-          "description": "Exclusive VIP guaranteed discount that applies to our market energy charges. Eligible customers only."
+          "description": "Exclusive VIP guaranteed discount that applies to your energy charges. Eligible customers only."
         },
         "noStandardConnectionFee": {
           "heading": "",
@@ -53,48 +53,48 @@
           "SA" : "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
-        "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
-        "discountOffTotalEnergyBill": "VIP discount off total energy bill. Exclusive VIP guaranteed discount that applies to our market energy charges. Eligible customers only.",
+        "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
+        "discountOffTotalEnergyBill": "VIP discount off total energy bill. Exclusive VIP guaranteed discount that applies to your energy charges. Eligible customers only.",
         "noStandardConnectionFee": ""
       }
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_Plus_13%GD_50",
+        "VIC": "Total_Plus_16%GD_50",
         "NSW": {
           "Ausgrid": "Total_Plus_17%GD_50",
           "Essential": "Total_Plus_17%GD_50",
           "Endeavour": "Total_Plus_17%GD_50",
-          "default": "Total_Plus_17%GD_50"
+          "default": "Total_Plus_21%GD_50"
         },
-        "ACT": "Total_Plus_13%GD_50",
+        "ACT": "Total_Plus_11%GD_50",
         "QLD": "Total_Plus_15%GD_50",
-        "SA": "Total_Plus_7%GD_50"
+        "SA": "Total_Plus_8%GD_50"
       },
       "existingCustomer": {
         "ENE":{
-          "VIC": "Total_Plus_13%GD_50",
+          "VIC": "Total_Plus_16%GD_50",
           "NSW": {
             "Ausgrid": "Total_Plus_17%GD_50",
             "Essential": "Total_Plus_17%GD_50",
             "Endeavour": "Total_Plus_17%GD_50",
-            "default": "Total_Plus_17%GD_50"
+            "default": "Total_Plus_21%GD_50"
           },
-          "ACT": "Total_Plus_13%GD_50",
+          "ACT": "Total_Plus_11%GD_50",
           "QLD": "Total_Plus_15%GD_50",
-          "SA": "Total_Plus_7%GD_50"
+          "SA": "Total_Plus_8%GD_50"
         },
         "PS": {
-          "VIC": "Total_Plus_13%GD_50",
+          "VIC": "Total_Plus_16%GD_50",
           "NSW": {
             "Ausgrid": "Total_Plus_17%GD_50",
             "Essential": "Total_Plus_17%GD_50",
             "Endeavour": "Total_Plus_17%GD_50",
-            "default": "Total_Plus_17%GD_50"
+            "default": "Total_Plus_21%GD_50"
           },
-          "ACT": "Total_Plus_13%GD_50",
+          "ACT": "Total_Plus_11%GD_50",
           "QLD": "Total_Plus_15%GD_50",
-          "SA": "Total_Plus_7%GD_50"
+          "SA": "Total_Plus_8%GD_50"
         }
       }
     }
@@ -131,11 +131,11 @@
         },
         "peaceOfMind": {
           "heading": "Peace of mind",
-          "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+          "description": "Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
         },
         "discountOffTotalEnergyBill": {
           "heading": "VIP discount off total energy bill",
-          "description": "Exclusive VIP guaranteed discount that applies to both energy usage rates and daily supply charges. Eligible customers only."
+          "description": "Exclusive VIP guaranteed discount that applies to your energy charges. Eligible customers only."
         }
       },
       "postSelect": {
@@ -147,29 +147,29 @@
           "SA" : "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
-        "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
-        "discountOffTotalEnergyBill": "VIP discount off total energy bill. Exclusive VIP guaranteed discount that applies to both energy usage rates and daily supply charges. Eligible customers only."
+        "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
+        "discountOffTotalEnergyBill": "VIP discount off total energy bill. Exclusive VIP guaranteed discount that applies to your energy charges. Eligible customers only."
       }
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_Plus_31%GD_50",
+        "VIC": "Total_Plus_27%GD_50",
         "NSW": "Total_Plus_17%GD_50",
-        "ACT": "Total_Plus_17%GD_50",
-        "SA": "Total_Plus_13%GD_50"
+        "ACT": "Total_Plus_16%GD_50",
+        "SA": "Total_Plus_16%GD_50"
       },
       "existingCustomer": {
         "ENE":{
-          "VIC": "Total_Plus_31%GD_50",
+          "VIC": "Total_Plus_27%GD_50",
           "NSW": "Total_Plus_17%GD_50",
-          "ACT": "Total_Plus_17%GD_50",
-          "SA": "Total_Plus_13%GD_50"
+          "ACT": "Total_Plus_16%GD_50",
+          "SA": "Total_Plus_16%GD_50"
         },
         "PS": {
-          "VIC": "Total_Plus_31%GD_50",
+          "VIC": "Total_Plus_27%GD_50",
           "NSW": "Total_Plus_17%GD_50",
-          "ACT": "Total_Plus_17%GD_50",
-          "SA": "Total_Plus_13%GD_50"
+          "ACT": "Total_Plus_16%GD_50",
+          "SA": "Total_Plus_16%GD_50"
         }
       }
     }

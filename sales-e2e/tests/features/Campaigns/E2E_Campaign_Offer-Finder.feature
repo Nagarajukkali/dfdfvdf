@@ -1,4 +1,4 @@
-@campaign @campaign21.5.4_2
+@campaign @campaign21.9.2
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
   # 2. Provide Y/N for features as per the change in this step "And user validates the data on plans page for "<campaign>""
@@ -12,7 +12,7 @@
 
 Feature:E2E scenario for offer-finder campaign
 
-  @DR21.7.5.campaign
+  @DR21.9.2.campaign
   Scenario Outline: Validate complete data for offer-finder campaign for NSW - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2516" and clicks on show me plan link
@@ -86,7 +86,7 @@ Feature:E2E scenario for offer-finder campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-GN  | 5240524910 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign     | folderName                               | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 16          | 16          | offer-finder | E2E_Campaign_offer-finder_NSW_new_moving | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | BOTH     | 20          | 16          | offer-finder | E2E_Campaign_offer-finder_NSW_new_moving | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
   @DR21.7.5.campaign
   Scenario Outline: Validate complete data for offer-finder campaign for QLD - new moving customer
@@ -143,7 +143,7 @@ Feature:E2E scenario for offer-finder campaign
       | customerStatus | fuelType | eleDiscount | campaign     | folderName                               | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | 14          | offer-finder | E2E_Campaign_offer-finder_QLD_new_moving | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.7.5.campaign
+  @DR21.9.2.campaign
   Scenario Outline: Validate complete data for offer-finder campaign for SA - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5044" for postcode and proceed to view the plans
@@ -152,20 +152,20 @@ Feature:E2E scenario for offer-finder campaign
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
+      | ELE      | Y                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
+      | GAS      | Y                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                     | <state> |
+      | ELE      | Y                | Y                     | Y                   | Y                                     | <state> |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | state   |
-      | GAS      | N                | Y                     | Y                   | Y                                     | <state> |
+      | GAS      | Y                | Y                     | Y                   | Y                                     | <state> |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                 | movingType | propertyType |
@@ -183,13 +183,13 @@ Feature:E2E scenario for offer-finder campaign
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | N                     | Y                   | Y                                     | N                               | <state> |
+      | ELE      | Y                | N                     | Y                   | Y                                     | N                               | <state> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | N                     | Y                   | Y                                     | N                               | <state> |
+      | GAS      | Y                | N                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -209,8 +209,8 @@ Feature:E2E scenario for offer-finder campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-GS  | 5510149276 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign     | folderName                              | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 6           | 12          | offer-finder | E2E_Campaign_offer-finder_SA_new_moving | SA    | Quote Tool   | Move Home | No  | No | RES          | New           |
-@DR21.7.5.campaign
+      | New            | BOTH     | 7           | 15          | offer-finder | E2E_Campaign_offer-finder_SA_new_moving | SA    | Quote Tool   | Move Home | No  | No | RES          | New           |
+@DR21.9.2.campaign
   Scenario Outline: Validate complete data for offer-finder campaign for ACT - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2600" for postcode and proceed to view the plans
@@ -224,8 +224,8 @@ Feature:E2E scenario for offer-finder campaign
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
       | GAS      | Y                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
-      | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   |
-      | Y                        | Y         | Y            | Total Plan | <state> |
+      | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   |signUpCredit |
+      | Y                        | Y         | Y            | Total Plan | <state> |Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | state   |
@@ -255,8 +255,8 @@ Feature:E2E scenario for offer-finder campaign
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
       | GAS      | Y                | N                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
-      | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   |
-      | Y                        | Y         | Y            | Total Plan | <state> |
+      | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   |signUpCredit |
+      | Y                        | Y         | Y            | Total Plan | <state> |Y            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -276,8 +276,8 @@ Feature:E2E scenario for offer-finder campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-GA  | 5260073228 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign     | folderName                               | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 12          | 16          | offer-finder | E2E_Campaign_offer-finder_ACT_new_moving | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
-  @DR21.8.3.campaign
+      | New            | BOTH     | 10          | 15          | offer-finder | E2E_Campaign_offer-finder_ACT_new_moving | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
+  @DR21.9.2.campaign
   Scenario Outline: Validate complete data for offer-finder campaign for VIC - new non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
@@ -342,8 +342,8 @@ Feature:E2E scenario for offer-finder campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-GV  | 5310425534 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign     | folderName                                  | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 12          | 30          | offer-finder | E2E_Campaign_offer-finder_VIC_new_nonmoving | VIC   | Quote Tool   | COR     | No  | No | RES          | New           |
-  @DR21.8.3.campaign
+      | New            | BOTH     | 15          | 26          | offer-finder | E2E_Campaign_offer-finder_VIC_new_nonmoving | VIC   | Quote Tool   | COR     | No  | No | RES          | New           |
+  @DR21.9.2.campaign
   Scenario Outline: Validate complete data for offer-finder campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
@@ -411,9 +411,9 @@ Feature:E2E scenario for offer-finder campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-GV  | 5330790589 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign     | folderName                                        | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     | 12          | 30          | offer-finder | E2E_Campaign_offer-finder_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     | 15          | 26          | offer-finder | E2E_Campaign_offer-finder_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR21.7.1.campaign
+  @DR21.9.2.campaign
   Scenario Outline: Validate complete data for offer-finder campaign for NSW existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" for postcode and proceed to view the plans
@@ -474,9 +474,9 @@ Feature:E2E scenario for offer-finder campaign
       | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-EN  | 4407376910 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign     | folderName                                        | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     | 16          | 16          | offer-finder | E2E_Campaign_offer-finder_NSW_existing_non-moving | NSW   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     | 20          | 16          | offer-finder | E2E_Campaign_offer-finder_NSW_existing_non-moving | NSW   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR21.7.1.campaign
+  @DR21.9.2.campaign
   Scenario Outline: Validate complete data for offer-finder campaign for SA existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" for postcode and proceed to view the plans
@@ -485,20 +485,20 @@ Feature:E2E scenario for offer-finder campaign
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
+      | ELE      | Y                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
+      | GAS      | Y                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                     | <state> |
+      | ELE      | Y                | Y                     | Y                   | Y                                     | <state> |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | state   |
-      | GAS      | N                | Y                     | Y                   | Y                                     | <state> |
+      | GAS      | Y                | Y                     | Y                   | Y                                     | <state> |
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus   | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue   |
@@ -544,7 +544,7 @@ Feature:E2E scenario for offer-finder campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-GS  | 5510120493 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign     | folderName                                       | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     | 6           | 12          | offer-finder | E2E_Campaign_offer-finder_SA_existing_non-moving | SA    | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     | 7           | 15          | offer-finder | E2E_Campaign_offer-finder_SA_existing_non-moving | SA    | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
   @DR21.7.1.campaign
   Scenario Outline: Validate complete data for offer-finder campaign for QLD existing non moving

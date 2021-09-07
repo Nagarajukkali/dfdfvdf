@@ -7,8 +7,8 @@
       "preSelect": {
         "Credit50": {
           "VIC": {
-            "heading": "$25 Sign Up Credit",
-            "description": "Get a $50 credit per energy account on your first bill when you sign up.+"
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up.+"
           }
         },
         "carbonNeutral": {
@@ -17,11 +17,11 @@
         },
         "peaceOfMind": {
           "heading": "Peace of mind",
-          "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+          "description": "Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
         },
         "discountOffTotalEnergyBill": {
           "heading": "Discount off total energy bill",
-          "description": "Guaranteed discount that applies to our market energy charges."
+          "description": "Guaranteed discount that applies to your energy charges."
         },
         "noStandardConnectionFee": {
           "heading": "",
@@ -30,17 +30,17 @@
       },
       "postSelect": {
         "Credit50":{
-          "VIC": "$25 Sign Up Credit. Get a $50 credit per energy account on your first bill when you sign up.+"
+          "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
-        "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
-        "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to our market energy charges.",
+        "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
+        "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to your energy charges.",
         "noStandardConnectionFee": ""
       }
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Alliance_14%GD"
+        "VIC": "Alliance_17%GD_50"
       },
       "existingCustomer": {
         "ENE": {
@@ -59,7 +59,7 @@
         "Credit50": {
           "VIC": {
             "heading": "$50 Sign Up Credit",
-            "description": "Get a $50 credit per energy account on your first bill when you sign up.+"
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up.+"
           }
         },
         "carbonNeutral": {
@@ -68,11 +68,11 @@
         },
         "peaceOfMind": {
           "heading": "Peace of mind",
-          "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+          "description": "Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
         },
         "discountOffTotalEnergyBill": {
           "heading": "Discount off total energy bill",
-          "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
+          "description": "Guaranteed discount that applies to your energy charges."
         },
         "noStandardConnectionFee": {
           "heading": "",
@@ -81,17 +81,17 @@
       },
       "postSelect": {
         "Credit50":{
-          "VIC": "$25 Sign Up Credit. Get a $50 credit per energy account on your first bill when you sign up.+"
+          "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
-        "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
-        "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
+        "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
+        "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to your energy charges.",
         "noStandardConnectionFee": ""
       }
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Alliance_32%GD"
+        "VIC": "Alliance_28%GD_50"
       },
       "existingCustomer": {
         "ENE": {
@@ -137,8 +137,8 @@
         "description": ""
       },
       "VIC": {
-        "heading": "$25 Sign Up Credit",
-        "description": "+ Offer available to VIC residential customers who sign up to an electricity or gas offer. Limit of one $25 credit, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        "heading": "$50 Sign Up Credit",
+        "description": "+ Offer available to VIC residential customers who sign up to an electricity or gas offer. Limit of one $50 credit per new energy account, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       },
       "ACT": {
         "heading": "",

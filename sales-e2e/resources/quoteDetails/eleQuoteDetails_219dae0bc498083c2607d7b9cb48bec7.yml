@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2104096915
-    sourceCode: Total_Plus_13%GD_50
-    actualQuoteDate: 2021-04-09
+    quoteId: BB2109030588
+    sourceCode: Total_Plus_11%GD_50
+    actualQuoteDate: 2021-09-03
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0361489055
+      phoneNumber: 0334851136
     
-    emailId: KWZZnZAKPB@energyaustralia.com.au
+    emailId: AYeAakXziu@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 524408
+      id: 675671
       primaryIdFlag: Y
     
     authLevel: Y
@@ -40,6 +40,7 @@ saleDetail :
     postCode: 2902
     premiseType: DOM
     addressType: Premise
+    DPID: 71492073
     primaryResidence: N
   
   premiseDetail: 
@@ -52,12 +53,13 @@ saleDetail :
     country: AUS
     postCode: 2902
     addressType: Mailing
+    DPID: 71492073
   
   offerDetail: 
     fuelType: E
     offerType: PS
     plan: SWSR1-EA
-    priceTag: EAACA_NR2007
+    priceTag: EAACA_NR2107
     nmiMirnInformation: 
       NMI: 7001073236
     
@@ -73,5 +75,8 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
+  
+  solarDetail: 
+    solarPowerIndicator: N
   
 

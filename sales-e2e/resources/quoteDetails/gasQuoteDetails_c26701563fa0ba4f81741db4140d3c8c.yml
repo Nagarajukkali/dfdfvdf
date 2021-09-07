@@ -1,56 +1,57 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2103236906
+    quoteId: BB2108310328
     sourceCode: Total_23%GD
-    actualQuoteDate: 2021-03-23
+    actualQuoteDate: 2021-08-31
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0311526422
+      phoneNumber: 0370027069
     
-    emailId: DUkYfXhrYI@energyaustralia.com.au
+    emailId: OdbJsWhAZZ@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: GNRALPARTNERSHIP
+    businessType: GOVERNMENT
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 44893070962
+      businessId: 38462381125
     
-    anzsic: RECREATIONAL
+    anzsic: MINING
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0311526422
+      businessPhoneNumber: 0370027069
     
-    businessEmailId: DUkYfXhrYI@energyaustralia.com.au
+    businessEmailId: OdbJsWhAZZ@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 36
-    streetName: Gregory
+    streetNo: 42
+    streetName: Beauchamp
     streetType: S
-    suburb: WENDOUREE
+    suburb: KYNETON
     state: VIC
     country: AUS
-    postCode: 3355
+    postCode: 3444
     premiseType: COM
     addressType: Premise
+    DPID: 68334835
     primaryResidence: N
   
   premiseDetail: 
@@ -63,17 +64,18 @@ saleDetail :
     country: AUS
     postCode: 3355
     addressType: Mailing
+    DPID: 96541244
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2021-03-25
+    proposedStart: 2021-09-02
     offerType: ENE
     plan: TOPB-GV
     priceTag: GVT3A_NB2101
-    serviceOrderDate: 2021-03-25
+    serviceOrderDate: 2021-09-02
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      MIRN: 5330956738
+      MIRN: 5330293713
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
