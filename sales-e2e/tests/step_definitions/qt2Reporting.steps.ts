@@ -66,6 +66,7 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
     let isCampaignTest = (t.testRun.test.name.includes('campaign'));
     let isOfferType = (actualOfferType === 'ENE' || actualOfferType === 'COR');
     let isStateEligibleFor$25Credit = (actualState === 'ACT');
+    let isStateEligibleFor$50Credit = (actualState === 'SA');
     //let isStateEligibleFor$50Credit = (actualState === 'VIC' || actualState === 'QLD');
     let isStateEligibleForNoCredit = (actualState === 'SA');
     let isBusinessPlanCode = (expectedPlanCode.includes('BSOT') || expectedPlanCode.includes('TOPB') || expectedPlanCode.includes('SWSR'));
@@ -116,6 +117,8 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
         await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualEleSourceCode, data[0].campaign, expectedOfferType, expectedFuelType);
       } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$25Credit) {
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_25');
+      }else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit) {
+        await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_50');
       }
       //   else if (isOfferType && !isBusinessPlanCode && !isResiPlanCode && isStateEligibleFor$50Credit) {
       //   await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_50');
