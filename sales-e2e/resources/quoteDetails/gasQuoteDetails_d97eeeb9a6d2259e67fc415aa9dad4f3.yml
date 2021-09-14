@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106165784
-    sourceCode: Total_Plus_20%GD
-    actualQuoteDate: 2021-06-16
+    quoteId: BB2109142010
+    sourceCode: Total_26%GD
+    actualQuoteDate: 2021-09-14
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,67 +15,67 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0331522790
+      phoneNumber: 0353817413
     
-    emailId: CrhVjYwtya@energyaustralia.com.au
+    emailId: sqocnuyIQa@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: SOLE TRADER
+    businessType: GNRALPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 15189585640
+      businessId: 22634910530
     
-    anzsic: UTILITIES
+    anzsic: CONSTRUCTION
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0331522790
+      businessPhoneNumber: 0353817413
     
-    businessEmailId: CrhVjYwtya@energyaustralia.com.au
+    businessEmailId: sqocnuyIQa@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 320
-    streetName: Crown
-    streetType: S
-    suburb: SURRY HILLS
+    streetNo: 73-75
+    streetName: Enmore
+    streetType: R
+    suburb: NEWTOWN
     state: NSW
     country: AUS
-    postCode: 2010
+    postCode: 2042
     premiseType: COM
     addressType: Premise
-    DPID: 71046817
+    DPID: 30043939
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 320
-    streetName: Crown
-    streetType: S
-    suburb: SURRY HILLS
+    streetNo: 73-75
+    streetName: Enmore
+    streetType: R
+    suburb: NEWTOWN
     state: NSW
     country: AUS
-    postCode: 2010
+    postCode: 2042
     addressType: Mailing
-    DPID: 71046817
+    DPID: 30043939
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2021-06-17
+    proposedStart: 2021-09-15
     offerType: ENE
-    plan: SWSRB-GN
-    priceTag: GNAGA_NB2007
-    serviceOrderDate: 2021-06-17
+    plan: BSPB1-GN
+    priceTag: GNAGA_MB
+    serviceOrderDate: 2021-09-15
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      MIRN: 5240554353
+      MIRN: 5247073457
     
   
   offerDetail: 

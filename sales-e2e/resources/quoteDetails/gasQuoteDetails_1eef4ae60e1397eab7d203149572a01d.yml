@@ -1,68 +1,81 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2009037760
-    sourceCode: Total_20%GD
-    actualQuoteDate: 2020-09-03
+    quoteId: BB2109131537
+    sourceCode: Total_26%GD
+    actualQuoteDate: 2021-09-13
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0377732586
+      phoneNumber: 0328550647
     
-    emailId: VwtKTbYxdx@energyaustralia.com.au
+    emailId: kDekcMOKrU@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: GNRALPARTNERSHIP
+    businessType: PARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 98123875748
+      businessId: 56784118811
     
-    anzsic: FINANCE
+    anzsic: COMMUNITY_SVC
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0377732586
+      businessPhoneNumber: 0328550647
     
-    businessEmailId: VwtKTbYxdx@energyaustralia.com.au
+    businessEmailId: kDekcMOKrU@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 10
-    streetName: Hank
-    streetType: S
-    suburb: HEATHERBRAE
+    streetNo: 73-75
+    streetName: Enmore
+    streetType: R
+    suburb: NEWTOWN
     state: NSW
     country: AUS
-    postCode: 2324
+    postCode: 2042
     premiseType: COM
     addressType: Premise
+    DPID: 30043939
     primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 73-75
+    streetName: Enmore
+    streetType: R
+    suburb: NEWTOWN
+    state: NSW
+    country: AUS
+    postCode: 2042
+    addressType: Mailing
+    DPID: 30043939
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2020-09-04
+    proposedStart: 2021-09-14
     offerType: ENE
-    plan: TOPB-GN
-    priceTag: GNAGA_NB2007
-    serviceOrderDate: 2020-09-04
+    plan: BSPB1-GN
+    priceTag: GNAGA_MB
+    serviceOrderDate: 2021-09-14
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      MIRN: 5247067723
+      MIRN: 5247073457
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N

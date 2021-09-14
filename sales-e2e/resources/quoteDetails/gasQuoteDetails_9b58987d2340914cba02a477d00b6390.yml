@@ -1,82 +1,80 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: FC2106155333
-    sourceCode: Total_Plus_4%GD
-    actualQuoteDate: 2021-06-15
+    quoteId: FC2109142036
+    sourceCode: Total_5%GD
+    actualQuoteDate: 2021-09-14
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MS
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0357413340
+      phoneNumber: 0335260670
     
-    emailId: HdeViFaOSR@energyaustralia.com.au
+    emailId: DqYYXwYkft@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: PROPRIETARY LTD
+    businessType: GNRALPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 90934037020
+      businessId: 18932894444
     
-    anzsic: COMMUNITY_SVC
+    anzsic: CONSTRUCTION
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0357413340
+      businessPhoneNumber: 0335260670
     
-    businessEmailId: HdeViFaOSR@energyaustralia.com.au
+    businessEmailId: DqYYXwYkft@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 6
-    streetName: Peat
-    streetType: AV
-    suburb: HOLDEN HILL
+    streetNo: 277
+    streetName: Glen Osmond
+    streetType: R
+    suburb: GLENUNGA
     state: SA
     country: AUS
-    postCode: 5088
+    postCode: 5064
     premiseType: COM
     addressType: Premise
-    DPID: 41591020
+    DPID: 84458866
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 6
-    streetName: Peat
-    streetType: AV
-    suburb: HOLDEN HILL
+    streetNo: 277
+    streetName: Glen Osmond
+    streetType: R
+    suburb: GLENUNGA
     state: SA
     country: AUS
-    postCode: 5088
+    postCode: 5064
     addressType: Mailing
-    DPID: 41591020
+    DPID: 84458866
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2021-06-16
+    proposedStart: 2021-09-15
     offerType: ENE
-    plan: SWSRB-GS
-    priceTag: GSADA_NB2001
-    serviceOrderDate: 2021-06-16
+    plan: BSPB1-GS
+    priceTag: GSADA_MB
+    serviceOrderDate: 2021-09-15
     serviceOrderTime: BUSHRS
-    nmiMirnInformation: 
-      MIRN: 5510116718
-    
+    nmiMirnInformation/: 
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
       renovationsInProgressOrPlanned: N

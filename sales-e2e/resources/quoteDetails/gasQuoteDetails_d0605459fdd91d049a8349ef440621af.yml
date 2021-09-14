@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2009037758
-    sourceCode: Total_14%GD
-    actualQuoteDate: 2020-09-03
+    quoteId: BB2109131699
+    sourceCode: Total_20%GD
+    actualQuoteDate: 2021-09-13
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,30 +15,30 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0355581020
+      phoneNumber: 0317513524
     
-    emailId: OfFyimaVtT@energyaustralia.com.au
+    emailId: yKqJZkantN@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: CORPORATION
+    businessType: GOVERNMENT
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 97643401830
+      businessId: 33857357063
     
-    anzsic: COMMUNITY_SVC
+    anzsic: MANUFACTURE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0355581020
+      businessPhoneNumber: 0317513524
     
-    businessEmailId: OfFyimaVtT@energyaustralia.com.au
+    businessEmailId: yKqJZkantN@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -51,15 +51,28 @@ saleDetail :
     postCode: 4013
     premiseType: COM
     addressType: Premise
+    DPID: 64086731
     primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 9
+    streetName: Hamilton
+    streetType: S
+    suburb: NORTHGATE
+    state: QLD
+    country: AUS
+    postCode: 4013
+    addressType: Mailing
+    DPID: 64086731
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-09-07
+    proposedStart: 2021-09-15
     offerType: ENE
-    plan: TOPB-EQ
-    priceTag: EQEXA_NB2007
-    serviceOrderDate: 2020-09-07
+    plan: BSPB1-EQ
+    priceTag: EQEXA_MB
+    serviceOrderDate: 2021-09-15
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: QB03807622
@@ -87,5 +100,10 @@ saleDetail :
     meterExchangeFlag: N
     reEnergisationJSCCode: RNRRBU
     reEnergisationJSCCharge: 0.0
+  
+  solarDetail: 
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: 9820
+    solarTimeOfUse: N
   
 

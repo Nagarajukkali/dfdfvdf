@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106165774
-    sourceCode: Total_Plus_20%GD
-    actualQuoteDate: 2021-06-16
+    quoteId: BB2109142005
+    sourceCode: Total_26%GD
+    actualQuoteDate: 2021-09-14
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: DR
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0335329797
+      phoneNumber: 0336846359
     
-    emailId: pfuAiAavFZ@energyaustralia.com.au
+    emailId: qaXuuxjFmu@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: OTHERS
+    businessType: LTDPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 52165947966
+      businessId: 88251742551
     
-    anzsic: HOSPITALITY
+    anzsic: GOVERNMENT
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0335329797
+      businessPhoneNumber: 0336846359
     
-    businessEmailId: pfuAiAavFZ@energyaustralia.com.au
+    businessEmailId: qaXuuxjFmu@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -69,8 +69,8 @@ saleDetail :
   offerDetail: 
     fuelType: G
     offerType: COR
-    plan: SWSRB-GN
-    priceTag: GNRIA_NB2007
+    plan: BSPB1-GN
+    priceTag: GNRIA_MB
     nmiMirnInformation/: 
   
   offerDetail: 

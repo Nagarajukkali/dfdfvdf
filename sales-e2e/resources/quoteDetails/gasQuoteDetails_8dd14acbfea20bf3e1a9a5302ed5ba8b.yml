@@ -1,79 +1,81 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2104086128
-    sourceCode: Total_Plus_19%GD
-    actualQuoteDate: 2021-04-08
+    quoteId: BB2109141975
+    sourceCode: Total_26%GD
+    actualQuoteDate: 2021-09-14
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0320161253
+      phoneNumber: 0312305763
     
-    emailId: RtQDgmgwwU@energyaustralia.com.au
+    emailId: VhBPONGAKu@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: GNRALPARTNERSHIP
+    businessType: INCORPORATED
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 27885816181
+      businessId: 70906053815
     
     anzsic: TRANSPORT
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0320161253
+      businessPhoneNumber: 0312305763
     
-    businessEmailId: RtQDgmgwwU@energyaustralia.com.au
+    businessEmailId: VhBPONGAKu@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 216
-    streetName: Northbourne
-    streetType: AV
-    suburb: BRADDON
+    streetNo: 7
+    streetName: Sargood
+    streetType: S
+    suburb: O'CONNOR
     state: ACT
     country: AUS
-    postCode: 2612
+    postCode: 2602
     premiseType: COM
     addressType: Premise
+    DPID: 96339296
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 216
-    streetName: Northbourne
-    streetType: AV
-    suburb: BRADDON
+    streetNo: 7
+    streetName: Sargood
+    streetType: S
+    suburb: O'CONNOR
     state: ACT
     country: AUS
-    postCode: 2612
+    postCode: 2602
     addressType: Mailing
+    DPID: 96339296
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2021-04-09
+    proposedStart: 2021-09-16
     offerType: ENE
-    plan: SWSRB-GA
-    priceTag: GACTA_NB2001
-    serviceOrderDate: 2021-04-09
+    plan: BSPB1-GA
+    priceTag: GACTA_MB
+    serviceOrderDate: 2021-09-16
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      MIRN: 5260021184
+      MIRN: 5260077864
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N

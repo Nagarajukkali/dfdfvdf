@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: FC2104086135
-    sourceCode: Total_Plus_6%GD_100
-    actualQuoteDate: 2021-04-08
+    quoteId: FC2109142030
+    sourceCode: Total_6%GD
+    actualQuoteDate: 2021-09-14
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MISS
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0320487527
+      phoneNumber: 0325571436
     
-    emailId: wFxskxeIgG@energyaustralia.com.au
+    emailId: QUenitMvOy@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: OTHERS
+    businessType: INCORPORATED
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 79475811604
+      businessId: 47685072033
     
-    anzsic: AGRICULTURE
+    anzsic: RECREATIONAL
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0320487527
+      businessPhoneNumber: 0325571436
     
-    businessEmailId: wFxskxeIgG@energyaustralia.com.au
+    businessEmailId: QUenitMvOy@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -51,6 +51,7 @@ saleDetail :
     postCode: 3355
     premiseType: COM
     addressType: Premise
+    DPID: 96541244
     primaryResidence: N
   
   premiseDetail: 
@@ -63,14 +64,15 @@ saleDetail :
     country: AUS
     postCode: 3355
     addressType: Mailing
+    DPID: 96541244
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-04-09
+    proposedStart: 2021-09-16
     offerType: ENE
-    plan: SWSRB-EV
-    priceTag: EVPO5_NB2101
-    serviceOrderDate: 2021-04-09
+    plan: BSPB1-EV
+    priceTag: EVPOA_MXM
+    serviceOrderDate: 2021-09-16
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 6203822385
@@ -93,6 +95,9 @@ saleDetail :
   meteringDetail: 
     meterExchangeFlag: N
     reEnergisationJSCCode: RCTBH
-    reEnergisationJSCCharge: 55.93
+    reEnergisationJSCCharge: 53.43
+  
+  solarDetail: 
+    solarPowerIndicator: N
   
 

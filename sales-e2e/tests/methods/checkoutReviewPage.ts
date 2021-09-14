@@ -527,7 +527,12 @@ export class checkoutReviewMethod {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureNoStandardConnectionFee, json.electricity.feature.postSelect.noStandardConnectionFee);
       }
       if (dataTable[0].Feature_defaultOffer === "Y") {
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureDefaultOffer, json.electricity.feature.postSelect.defaultOffer);
+        if ( dataTable[0].state ===AustralianState.VIC)
+        {
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureDefaultOffer, json.electricity.feature.postSelect.defaultOffer.VIC);
+        }else {
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureDefaultOffer, json.electricity.feature.postSelect.defaultOffer.NonVIC);
+        }
       }
       if (dataTable[0].Feature_vipPriorityService === "Y") {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureVipPriorityService, json.electricity.feature.postSelect.vipPriorityService);

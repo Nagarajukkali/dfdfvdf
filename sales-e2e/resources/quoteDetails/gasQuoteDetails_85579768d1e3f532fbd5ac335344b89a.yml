@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106165768
-    sourceCode: Total_Plus_23%GD
-    actualQuoteDate: 2021-06-16
+    quoteId: BB2109142001
+    sourceCode: Total_26%GD
+    actualQuoteDate: 2021-09-14
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MISS
+    title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0332502999
+      phoneNumber: 0334083258
     
-    emailId: moyYNoBEbx@energyaustralia.com.au
+    emailId: jaarmvcUWC@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: PARTNERSHIP
+    businessType: LTDPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 37795222727
+      businessId: 70908138984
     
-    anzsic: UNKNOWN
+    anzsic: TRANSPORT
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0332502999
+      businessPhoneNumber: 0334083258
     
-    businessEmailId: moyYNoBEbx@energyaustralia.com.au
+    businessEmailId: jaarmvcUWC@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -68,11 +68,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2021-06-18
+    proposedStart: 2021-09-16
     offerType: ENE
-    plan: SWSRB-GV
-    priceTag: GVT3A_NB2101
-    serviceOrderDate: 2021-06-18
+    plan: BSPB1-GV
+    priceTag: GVT3A_MB
+    serviceOrderDate: 2021-09-16
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5330956738

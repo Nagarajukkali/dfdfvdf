@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106155307
-    sourceCode: Total_Plus_19%GD
-    actualQuoteDate: 2021-06-15
+    quoteId: BB2109142004
+    sourceCode: Total_21%GD
+    actualQuoteDate: 2021-09-14
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0340597662
+      phoneNumber: 0336846359
     
-    emailId: qwdcIqMVDv@energyaustralia.com.au
+    emailId: qaXuuxjFmu@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: PROPRIETARY LTD
+    businessType: LTDPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 47006076648
+      businessId: 88251742551
     
-    anzsic: PROPERTY
+    anzsic: GOVERNMENT
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0340597662
+      businessPhoneNumber: 0336846359
     
-    businessEmailId: qwdcIqMVDv@energyaustralia.com.au
+    businessEmailId: qaXuuxjFmu@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -69,8 +69,8 @@ saleDetail :
   offerDetail: 
     fuelType: E
     offerType: COR
-    plan: SWSRB-EN
-    priceTag: ENCEA_NB2007
+    plan: BSPB1-EN
+    priceTag: ENCEA_MB
     nmiMirnInformation/: 
   
   offerDetail: 

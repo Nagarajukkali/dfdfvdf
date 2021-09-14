@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106155327
+    quoteId: BB2109141983
     sourceCode: Total_6%GD
-    actualQuoteDate: 2021-06-15
+    actualQuoteDate: 2021-09-14
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MS
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0380229960
+      phoneNumber: 0398979724
     
-    emailId: dnRXIKuySJ@energyaustralia.com.au
+    emailId: DOvRVldWuD@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: LTDPARTNERSHIP
+    businessType: LIMITED COMPANY
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 54486702419
+      businessId: 55014869125
     
-    anzsic: TRANSPORT
+    anzsic: MINING
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0380229960
+      businessPhoneNumber: 0398979724
     
-    businessEmailId: dnRXIKuySJ@energyaustralia.com.au
+    businessEmailId: DOvRVldWuD@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -68,11 +68,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-06-17
+    proposedStart: 2021-09-16
     offerType: ENE
-    plan: TOPB-EV
-    priceTag: EVPO7_NB2101
-    serviceOrderDate: 2021-06-17
+    plan: BSPB1-EV
+    priceTag: EVPO5_MB
+    serviceOrderDate: 2021-09-16
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 6203055100
@@ -99,7 +99,7 @@ saleDetail :
   meteringDetail: 
     meterExchangeFlag: N
     reEnergisationJSCCode: RCTBH
-    reEnergisationJSCCharge: 55.93
+    reEnergisationJSCCharge: 53.43
   
   solarDetail: 
     solarPowerIndicator: N

@@ -1,0 +1,95 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2109071243
+    sourceCode: NOFRILLS
+    actualQuoteDate: 2021-09-07
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 2001033000
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0383867780
+    
+    emailId: EYoEIlqaUy@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 131331
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: OWNER
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 5
+    streetName: Wilkies
+    streetType: S
+    suburb: BULLI
+    state: NSW
+    country: AUS
+    postCode: 2516
+    premiseType: DOM
+    addressType: Premise
+    DPID: 34566945
+    primaryResidence: Y
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 5
+    streetName: Wilkies
+    streetType: S
+    suburb: BULLI
+    state: NSW
+    country: AUS
+    postCode: 2516
+    addressType: Mailing
+    DPID: 34566945
+  
+  offerDetail: 
+    fuelType: E
+    offerType: PS
+    plan: RCPP-EN
+    priceTag: ENIEA_ZR2107
+    nmiMirnInformation: 
+      NMI: 4311150544
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: Y
+    
+    lifeSupportEquipment: 
+      lifeSupportEquipmentType: LSIPDM
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: POSTMM
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    priceTagMeteringCharge: M25161DN_IH
+    proposedNTC: N73
+    proposedMC: IHUBMC
+  
+  solarDetail: 
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: NESN
+    solarTimeOfUse: N
+  
+

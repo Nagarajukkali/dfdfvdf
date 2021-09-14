@@ -1,0 +1,96 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2109071231
+    sourceCode: Total_Plus_27%GD
+    actualQuoteDate: 2021-09-07
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0369834138
+    
+    emailId: YmjaQceVJv@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DLNT
+      id: 186088
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlLastName: test
+          licenseStateOfIssue: NT
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    flatNo: 2
+    flatType: U
+    addressClass: ST
+    streetNo: 195
+    streetName: Grange
+    streetType: R
+    suburb: GLEN HUNTLY
+    state: VIC
+    country: AUS
+    postCode: 3163
+    premiseType: DOM
+    addressType: Premise
+    DPID: 64911233
+    primaryResidence: N
+  
+  premiseDetail: 
+    flatNo: 2
+    flatType: U
+    addressClass: ST
+    streetNo: 195
+    streetName: Grange
+    streetType: R
+    suburb: GLEN HUNTLY
+    state: VIC
+    country: AUS
+    postCode: 3163
+    addressType: Mailing
+    DPID: 64911233
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2021-09-08
+    offerType: ENE
+    plan: SWSR1-GV
+    priceTag: GVA2A_NR2101
+    serviceOrderDate: 2021-09-08
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5310508418
+    
+    energySafeVicQuestions: 
+      renovationsSinceDeenergisation: N
+      renovationsInProgressOrPlanned: N
+      customerWithLifeSupport: N
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+

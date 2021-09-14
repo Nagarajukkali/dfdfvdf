@@ -1,69 +1,80 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2009037761
-    sourceCode: Total_4%GD
-    actualQuoteDate: 2020-09-03
+    quoteId: BB2109142022
+    sourceCode: Total_15%GD
+    actualQuoteDate: 2021-09-14
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0321155938
+      phoneNumber: 0334976761
     
-    emailId: KgALSpivEE@energyaustralia.com.au
+    emailId: YfxTblmfSZ@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: CORPORATION
+    businessType: GNRALPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 85512540870
+      businessId: 30483167562
     
-    anzsic: MANUFACTURE
+    anzsic: HOSPITALITY
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0321155938
+      businessPhoneNumber: 0334976761
     
-    businessEmailId: KgALSpivEE@energyaustralia.com.au
+    businessEmailId: YfxTblmfSZ@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 44
-    streetName: Windsor
-    streetType: AV
-    suburb: MAGILL
+    streetNo: 277
+    streetName: Glen Osmond
+    streetType: R
+    suburb: GLENUNGA
     state: SA
     country: AUS
-    postCode: 5072
+    postCode: 5064
     premiseType: COM
     addressType: Premise
+    DPID: 84458866
     primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 277
+    streetName: Glen Osmond
+    streetType: R
+    suburb: GLENUNGA
+    state: SA
+    country: AUS
+    postCode: 5064
+    addressType: Mailing
+    DPID: 84458866
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-09-04
+    proposedStart: 2021-09-15
     offerType: ENE
-    plan: TOPB-ES
-    priceTag: ESSAA_NB2007
-    serviceOrderDate: 2020-09-04
+    plan: BSPB1-ES
+    priceTag: ESSAA_MB
+    serviceOrderDate: 2021-09-15
     serviceOrderTime: BUSHRS
-    nmiMirnInformation: 
-      NMI: 2001077362
-    
+    nmiMirnInformation/: 
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N
       renovationsInProgressOrPlanned: N
@@ -85,7 +96,6 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    reEnergisationJSCCode: RCFE
-    reEnergisationJSCCharge: 45.68
+    reEnergisationJSCCharge: 46.48
   
 

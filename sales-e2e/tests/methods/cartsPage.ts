@@ -84,7 +84,14 @@ export class cartsMethod {
         await testFunction.assertText(t, cartsPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill);
       }
       if (dataTable[0].Feature_defaultOffer === "Y") {
-        await testFunction.assertText(t, cartsPage.elements.eleFeatureDefaultOffer, json.electricity.feature.postSelect.defaultOffer);
+        if ( dataTable[0].state ===AustralianState.VIC)
+        {await testFunction.assertText(t, cartsPage.elements.eleFeatureDefaultOffer, json.electricity.feature.postSelect.defaultOffer.VIC);
+        }else {
+          await testFunction.assertText(t, cartsPage.elements.eleFeatureDefaultOffer, json.electricity.feature.postSelect.defaultOffer.NonVIC);
+        }
+
+
+
       }
       if (dataTable[0].Feature_vipPriorityService === "Y") {
         await testFunction.assertText(t, cartsPage.elements.eleFeatureVipPriorityService, json.electricity.feature.postSelect.vipPriorityService);
@@ -133,7 +140,7 @@ export class cartsMethod {
       }
       if (dataTable[0].Feature_peaceOfMind === "Y") {
         if (t.testRun.test.name.includes('employee')){
-          await testFunction.assertText(t, cartsPage.elements.gasFeaturePeaceOfMindEE, json.gas.feature.postSelect.peaceOfMind);  
+          await testFunction.assertText(t, cartsPage.elements.gasFeaturePeaceOfMindEE, json.gas.feature.postSelect.peaceOfMind);
         } else {
           await testFunction.assertText(t, cartsPage.elements.gasFeaturePeaceOfMind, json.gas.feature.postSelect.peaceOfMind);
         }

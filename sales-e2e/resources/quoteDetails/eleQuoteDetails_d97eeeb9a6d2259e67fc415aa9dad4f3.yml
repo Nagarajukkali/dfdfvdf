@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106155311
-    sourceCode: Total_Plus_22%GD
-    actualQuoteDate: 2021-06-15
+    quoteId: BB2109142009
+    sourceCode: Total_28%GD
+    actualQuoteDate: 2021-09-14
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,67 +15,67 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0379102411
+      phoneNumber: 0353817413
     
-    emailId: DyrSaZCteo@energyaustralia.com.au
+    emailId: sqocnuyIQa@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: SOLE TRADER
+    businessType: GNRALPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 73083781110
+      businessId: 22634910530
     
-    anzsic: RETAIL_TRD
+    anzsic: CONSTRUCTION
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0379102411
+      businessPhoneNumber: 0353817413
     
-    businessEmailId: DyrSaZCteo@energyaustralia.com.au
+    businessEmailId: sqocnuyIQa@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 320
-    streetName: Crown
-    streetType: S
-    suburb: SURRY HILLS
+    streetNo: 73-75
+    streetName: Enmore
+    streetType: R
+    suburb: NEWTOWN
     state: NSW
     country: AUS
-    postCode: 2010
+    postCode: 2042
     premiseType: COM
     addressType: Premise
-    DPID: 71046817
+    DPID: 30043939
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 320
-    streetName: Crown
-    streetType: S
-    suburb: SURRY HILLS
+    streetNo: 73-75
+    streetName: Enmore
+    streetType: R
+    suburb: NEWTOWN
     state: NSW
     country: AUS
-    postCode: 2010
+    postCode: 2042
     addressType: Mailing
-    DPID: 71046817
+    DPID: 30043939
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-06-16
+    proposedStart: 2021-09-15
     offerType: ENE
-    plan: SWSRB-EN
-    priceTag: ENEA5_NT2007
-    serviceOrderDate: 2021-06-16
+    plan: BSPB1-EN
+    priceTag: ENEAA_MB
+    serviceOrderDate: 2021-09-15
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: NCCC005405
+      NMI: 4102017007
     
   
   offerDetail: 
@@ -89,10 +89,13 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    reEnergisationJSCCode: RE-EN
-    reEnergisationJSCCharge: 11.41
+    proposedNTC: EA051
+    proposedMC: MYMC
+    reEnergisationJSCCharge: 0
   
   solarDetail: 
-    solarPowerIndicator: N
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: GENR
+    solarTimeOfUse: N
   
 
