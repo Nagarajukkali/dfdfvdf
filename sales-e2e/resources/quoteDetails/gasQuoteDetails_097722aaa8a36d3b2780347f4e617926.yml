@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106165846
-    sourceCode: Total_20%GD
-    actualQuoteDate: 2021-06-16
+    quoteId: BB2109142019
+    sourceCode: Total_26%GD
+    actualQuoteDate: 2021-09-14
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MISS
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0332794273
+      phoneNumber: 0330333816
     
-    emailId: vpKWkcqCqo@energyaustralia.com.au
+    emailId: jquZZJYfgI@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: LIMITED COMPANY
+    businessType: OTHERS
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 57118852207
+      businessId: 42313716998
     
-    anzsic: COMMUNITY_SVC
+    anzsic: GOVERNMENT
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0332794273
+      businessPhoneNumber: 0330333816
     
-    businessEmailId: vpKWkcqCqo@energyaustralia.com.au
+    businessEmailId: jquZZJYfgI@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -68,11 +68,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2021-06-18
+    proposedStart: 2021-09-16
     offerType: ENE
-    plan: TOPB-GN
-    priceTag: GNAGA_NB2007
-    serviceOrderDate: 2021-06-18
+    plan: BSPB1-GN
+    priceTag: GNAGA_MB
+    serviceOrderDate: 2021-09-16
     serviceOrderTime: BUSHRS
     nmiMirnInformation/: 
   

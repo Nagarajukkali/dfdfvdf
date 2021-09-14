@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2009037763
-    sourceCode: Total_11%GD
-    actualQuoteDate: 2020-09-03
+    quoteId: BB2109141985
+    sourceCode: Total_13%GD
+    actualQuoteDate: 2021-09-14
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,30 +15,30 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0389795010
+      phoneNumber: 0397974885
     
-    emailId: aDyxRxEqaK@energyaustralia.com.au
+    emailId: gdUDIltrOT@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: SOLE TRADER
+    businessType: LIMITED COMPANY
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 68647474639
+      businessId: 55800326536
     
-    anzsic: PERSONAL
+    anzsic: UTILITIES
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0389795010
+      businessPhoneNumber: 0397974885
     
-    businessEmailId: aDyxRxEqaK@energyaustralia.com.au
+    businessEmailId: gdUDIltrOT@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -51,15 +51,28 @@ saleDetail :
     postCode: 2605
     premiseType: COM
     addressType: Premise
+    DPID: 49581163
     primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 134
+    streetName: Carruthers
+    streetType: S
+    suburb: CURTIN
+    state: ACT
+    country: AUS
+    postCode: 2605
+    addressType: Mailing
+    DPID: 49581163
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2020-09-07
+    proposedStart: 2021-09-16
     offerType: ENE
-    plan: TOPB-EA
-    priceTag: EAACA_NB2007
-    serviceOrderDate: 2020-09-07
+    plan: BSPB1-EA
+    priceTag: EAACA_MB
+    serviceOrderDate: 2021-09-16
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 7001026074
@@ -86,6 +99,9 @@ saleDetail :
   meteringDetail: 
     meterExchangeFlag: N
     reEnergisationJSCCode: 501
-    reEnergisationJSCCharge: 80.43
+    reEnergisationJSCCharge: 81.92
+  
+  solarDetail: 
+    solarPowerIndicator: N
   
 

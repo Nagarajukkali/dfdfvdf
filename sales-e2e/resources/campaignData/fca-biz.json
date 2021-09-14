@@ -1,5 +1,5 @@
 {
-  "planName": "Total Plan Plus - Business",
+  "planName": "Business Balance Plan",
   "planDescription": "Great discount on your total energy bill guaranteed - every time.",
   "electricity": {
     "feature": {
@@ -34,9 +34,13 @@
           "heading": "Peace of mind",
           "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
         },
+        "VariableRates": {
+          "heading": "Variable Rates",
+          "description": "Your market energy charges are variable for the benefit period. We'll let you know in advance before your market energy charges change."
+        },
         "discountOffTotalEnergyBill": {
-          "heading": "Discount off total energy bill",
-          "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
+          "heading": "discount off total electricity bill",
+          "description": "Guaranteed discount that applies to your market energy charges."
         },
         "noStandardConnectionFee": {
           "heading": "",
@@ -53,51 +57,50 @@
         },
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
-        "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
+        "discountOffTotalEnergyBill": "discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
         "noStandardConnectionFee": ""
       }
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_Plus_6%GD_100",
+        "VIC": "Total_6%GD",
         "NSW": {
-          "Ausgrid": "Total_Plus_20%GD",
-          "Essential": "Total_Plus_19%GD_100",
-          "Endeavour": "Total_Plus_14%GD_100",
-          "default": "Total_Plus_20%GD"
+          "Ausgrid": "Total_28%GD",
+          "Essential": "Total_21%GD",
+          "Endeavour": "Total_19%GD",
+          "default": "Total_28%GD"
         },
-        "ACT": "Total_Plus_11%GD",
-        "SA": "Total_Plus_4%GD",
-        "QLD": "Total_Plus_14%GD_100"
+        "ACT": "Total_13%GD",
+        "QLD": "Total_20%GD",
+        "SA": "Total_15%GD"
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_Plus_6%GD_100",
+          "VIC": "Total_6%GD",
           "NSW": {
-            "Ausgrid": "Total_Plus_20%GD",
-            "Essential": "Total_Plus_19%GD_100",
-            "Endeavour": "Total_Plus_14%GD_100",
-            "default": "Total_Plus_20%GD"
+            "Ausgrid": "Total_28%GD",
+            "Essential": "Total_21%GD",
+            "Endeavour": "Total_19%GD",
+            "default": "Total_28%GD"
           },
-          "ACT": "Total_Plus_11%GD",
-          "SA": "Total_Plus_4%GD",
-          "QLD": "Total_Plus_14%GD_100"
+          "ACT": "Total_13%GD",
+          "QLD": "Total_20%GD",
+          "SA": "Total_15%GD"
         },
         "PS": {
-          "VIC": "Total_Plus_6%GD",
+          "VIC": "Total_6%GD",
           "NSW": {
-            "Ausgrid": "Total_Plus_20%GD",
-            "Essential": "Total_Plus_19%GD",
-            "Endeavour": "Total_Plus_14%GD",
-            "default": "Total_Plus_20%GD"
+            "Ausgrid": "Total_28%GD",
+            "Essential": "Total_21%GD",
+            "Endeavour": "Total_19%GD",
+            "default": "Total_28%GD"
           },
-          "ACT": "Total_Plus_11%GD",
-          "SA": "Total_Plus_4%GD",
-          "QLD": "Total_Plus_14%GD"
+          "ACT": "Total_13%GD",
+          "QLD": "Total_20%GD",
+          "SA": "Total_15%GD"
         }
       }
     }
-
   },
   "gas": {
     "feature": {
@@ -128,9 +131,13 @@
           "heading": "Peace of mind",
           "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
         },
+        "VariableRates": {
+          "heading": "Variable Rates",
+          "description": "Your market energy charges are variable for the benefit period. We'll let you know in advance before your market energy charges change."
+        },
         "discountOffTotalEnergyBill": {
-          "heading": "Discount off total energy bill",
-          "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
+          "heading": "discount off total gas bill",
+          "description": "Guaranteed discount that applies to your market energy charges."
         }
       },
       "postSelect": {
@@ -142,29 +149,29 @@
         },
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
-        "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
+        "discountOffTotalEnergyBill": "discount off total gas bill. Guaranteed discount that applies to your market energy charges.",
         "noStandardConnectionFee": ""
       }
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_Plus_24%GD_100",
-        "NSW": "Total_Plus_24%GD",
-        "ACT": "Total_Plus_24%GD",
-        "SA": "Total_Plus_4%GD"
+        "VIC": "Total_26%GD",
+        "NSW": "Total_26%GD",
+        "ACT": "Total_26%GD",
+        "SA": "Total_5%GD"
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_Plus_24%GD_100",
-          "NSW": "Total_Plus_24%GD",
-          "ACT": "Total_Plus_24%GD",
-          "SA": "Total_Plus_4%GD"
+          "VIC": "Total_26%GD",
+          "NSW": "Total_26%GD",
+          "ACT": "Total_26%GD",
+          "SA": "Total_5%GD"
         },
         "PS": {
-          "VIC": "Total_Plus_23%GD",
-          "NSW": "Total_Plus_24%GD",
-          "ACT": "Total_Plus_24%GD",
-          "SA": "Total_Plus_4%GD"
+          "VIC": "Total_26%GD",
+          "NSW": "Total_26%GD",
+          "ACT": "Total_26%GD",
+          "SA": "Total_5%GD"
         }
       }
     }
@@ -181,10 +188,10 @@
     "solarBuyBack": {
       "heading": "Solar feed-in tariffs",
       "VIC": {
-        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. For more information about the Victorian FiT scheme see www.energy.vic.gov.au/renewable-energy/victorian-feed-in-tariff."
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
       },
       "NonVIC": {
-        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
       }
     },
     "noStandardConnectionFee": {
@@ -214,21 +221,21 @@
       }
     },
     "totalPlanPlusBusiness": {
-      "heading": "Total Plan Plus - Business",
+      "heading": "Business Balance Plan",
       "VIC": {
-        "description": "* Offer only for existing VIC business customers who have had an active, eligible energy account with us for at least 6 consecutive months. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 24-month benefit period. Your usage and supply charges won't increase during the 24-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for existing VIC business customers. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
       },
       "NSW": {
-        "description": "* Offer only for existing NSW business customers who have had an active, eligible energy account with us for at least 6 consecutive months. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 24-month benefit period. Your usage and supply charges won't increase during the 24-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for existing NSW business customers. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
       },
       "ACT": {
-        "description": "* Offer only for existing ACT business customers who have had an active, eligible energy account with us for at least 6 consecutive months. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 24-month benefit period. Your usage and supply charges won't increase during the 24-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for existing ACT business customers. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
       },
       "QLD": {
-        "description": "* Offer only for existing QLD business customers who have had an active, eligible energy account with us for at least 6 consecutive months. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 24-month benefit period. Your usage and supply charges won't increase during the 24-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for existing QLD business customers. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
       },
       "SA": {
-        "description": "* Offer only for existing SA business customers who have had an active, eligible energy account with us for at least 6 consecutive months. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 24-month benefit period. Your usage and supply charges won't increase during the 24-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for existing SA business customers. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
       }
     }
   }

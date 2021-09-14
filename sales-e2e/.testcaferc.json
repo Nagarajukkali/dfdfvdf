@@ -6,7 +6,7 @@
   "browsers": [
     "chrome:headless --allow-insecure-localhost"
   ],
-  "concurrency": 5,
+  "concurrency": 2,
   "reporter": [
     {
       "name": "cucumber-json",

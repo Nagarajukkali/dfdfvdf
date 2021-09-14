@@ -1,79 +1,81 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2104096906
-    sourceCode: Total_11%GD
-    actualQuoteDate: 2021-04-09
+    quoteId: BB2109131814
+    sourceCode: Total_13%GD
+    actualQuoteDate: 2021-09-13
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MS
+    title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0345973708
+      phoneNumber: 0322362713
     
-    emailId: kTTHcPwMKk@energyaustralia.com.au
+    emailId: ilbuFKlPYF@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: LTDPARTNERSHIP
+    businessType: OTHERS
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 86913146695
+      businessId: 28011962684
     
-    anzsic: HOSPITALITY
+    anzsic: FINANCE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0345973708
+      businessPhoneNumber: 0322362713
     
-    businessEmailId: kTTHcPwMKk@energyaustralia.com.au
+    businessEmailId: ilbuFKlPYF@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 216
-    streetName: Northbourne
-    streetType: AV
-    suburb: BRADDON
+    streetNo: 7
+    streetName: Sargood
+    streetType: S
+    suburb: O'CONNOR
     state: ACT
     country: AUS
-    postCode: 2612
+    postCode: 2602
     premiseType: COM
     addressType: Premise
+    DPID: 96339296
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 216
-    streetName: Northbourne
-    streetType: AV
-    suburb: BRADDON
+    streetNo: 7
+    streetName: Sargood
+    streetType: S
+    suburb: O'CONNOR
     state: ACT
     country: AUS
-    postCode: 2612
+    postCode: 2602
     addressType: Mailing
+    DPID: 96339296
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-04-13
+    proposedStart: 2021-09-15
     offerType: ENE
-    plan: TOPB-EA
-    priceTag: EAAC5_NB2007
-    serviceOrderDate: 2021-04-13
+    plan: BSPB1-EA
+    priceTag: EAACA_MB
+    serviceOrderDate: 2021-09-15
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
-      NMI: 7001114516
+      NMI: 7001138899
     
   
   offerDetail: 
@@ -87,8 +89,10 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    proposedNTC: 091
-    proposedMC: MYMC
-    reEnergisationJSCCharge: 0
+    reEnergisationJSCCode: 501
+    reEnergisationJSCCharge: 81.92
+  
+  solarDetail: 
+    solarPowerIndicator: N
   
 

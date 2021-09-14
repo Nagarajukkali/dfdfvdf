@@ -1,0 +1,88 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: FC2109142029
+    sourceCode: Total_26%GD
+    actualQuoteDate: 2021-09-14
+    quoteStatus: VERBALLYACCEPTED
+    customerType: BUSINESS
+    paymentMethod: AUSPOST
+    customerClass: BSME
+  
+  personDetail: 
+    title: DR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0334078383
+    
+    emailId: pTtDTJkWDR@energyaustralia.com.au
+    authLevel: BUSC
+    personAccountRelationship: CUSCON
+    seqNo: 1
+  
+  businessDetail: 
+    businessType: PROPRIETARY LTD
+    businessNameDetail: 
+      businessName: NA
+      nameType: PRIM
+    
+    businessIdDetail: 
+      businessIdType: ABN
+      businessId: 44038024163
+    
+    anzsic: MANUFACTURE
+    businessCommMethod: EMAIL
+    businessPhone: 
+      businessPhoneType: MOBILE
+      businessPhoneNumber: 0334078383
+    
+    businessEmailId: pTtDTJkWDR@energyaustralia.com.au
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 13
+    streetName: Station
+    streetType: S
+    suburb: WENTWORTH FALLS
+    state: NSW
+    country: AUS
+    postCode: 2782
+    premiseType: COM
+    addressType: Premise
+    DPID: 83542571
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 13
+    streetName: Station
+    streetType: S
+    suburb: WENTWORTH FALLS
+    state: NSW
+    country: AUS
+    postCode: 2782
+    addressType: Mailing
+    DPID: 83542571
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2021-09-16
+    offerType: ENE
+    plan: BSPB1-GN
+    priceTag: GNAGA_MB
+    serviceOrderDate: 2021-09-16
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation/: 
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+
