@@ -161,7 +161,7 @@ Feature:E2E scenario for nofrills-canstarblue campaign for new moving
       |customerStatus|fuelType|campaign     |folderName                            |state|sourceSystem  |journey  |AAH  |DD  |customerType |newOrExisting  |
       |New           |BOTH    |nofrills-canstarblue     |E2E_Campaign_nofrills-canstarblue_VIC_New_Moving  |VIC  |Quote Tool    |Move Home|No   |No  |RES          |New            |
 
-  @campaign21.2.3
+  @campaign21.9.5.campaign
   Scenario Outline: Validate complete data for nofrills-canstarblue campaign for QLD new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4500" and clicks on show me plan link

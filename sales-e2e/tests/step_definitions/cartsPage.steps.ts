@@ -19,6 +19,14 @@ Then(/^user validates plan details on cart page for "([^"]*)"$/, async function 
   await cartsMethod.validateFeatures(t, dataTable, json, numOfExpectedFeatures);
   //await testFunction.takeScreenshot(t, 'validated plan details on carts page');//disabled UI Validation
 });
+Then(/^user validates the data on carts page for "([^"]*)" plan$/, async function (t, [campaignName], dataTable) {
+  let numOfExpectedFeatures = await testFunction.getExpectedFeatureCount(dataTable.rows());
+  dataTable = dataTable.hashes();
+  let json = await FileUtils.getJSONfile(campaignName);
+  await cartsMethod.validatePlanName(t, json, dataTable);
+  await cartsMethod.validateFeatures(t, dataTable, json, numOfExpectedFeatures);
+  //await testFunction.takeScreenshot(t, 'validated plan details on carts page');//disabled UI Validation
+});
 When(/^user closes the cart page$/, async function (t) {
   await testFunction.click(t, cartsPage.elements.btnCartClose);
 });

@@ -1,0 +1,241 @@
+{
+  "planName": "Balance Plan",
+  "planDescription": "Variable rates and no lock-in contracts",
+
+  "electricity": {
+    "feature": {
+      "preSelect": {
+        "carbonNeutral": {
+          "heading": "Carbon neutral option",
+          "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
+        },
+        "variableRates": {
+          "heading": "Variable Rates",
+          "description": "Your energy charges are variable for the benefit period. We’ll let you know in advance before your rates change."
+        },
+        "discountOffTotalEnergyBill": {
+          "VIC": {
+            "heading": "6% discount off total electricity bill"
+          },
+          "NSW": {
+            "heading": "9% discount off total electricity bill"
+          },
+          "ACT": {
+            "heading": "5% discount off total electricity bill"
+          },
+          "QLD": {
+            "heading": "7% discount off total electricity bill"
+          },
+          "SA": {
+            "heading": "3% discount off total electricity bill"
+          },
+          "description": "Guaranteed discount that applies to your energy charges"
+        }
+      },
+      "postSelect": {
+        "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
+        "variableRates": "Variable Rates. Your energy charges are variable for the benefit period. We’ll let you know in advance before your rates change.",
+        "discountOffTotalEnergyBill": {
+          "VIC": "6% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+          "NSW": "9% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+          "ACT": "5% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+          "QLD": "7% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+          "SA" : "3% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
+        }
+      }
+    },
+    "sourceCode": {
+      "newCustomer": {
+        "VIC": "Total_6%GD",
+        "NSW": {
+          "Ausgrid": "Total_9%GD",
+          "Essential": "Total_9%GD",
+          "Endeavour": "Total_9%GD",
+          "default": "Total_9%GD"
+        },
+        "ACT": "Total_5%GD",
+        "QLD": "Total_7%GD",
+        "SA": "Total_3%GD"
+      },
+      "existingCustomer": {
+        "ENE":{
+          "VIC": "Total_6%GD",
+          "NSW": {
+            "Ausgrid": "Total_9%GD",
+            "Essential": "Total_9%GD",
+            "Endeavour": "Total_9%GD",
+            "default": "Total_9%GD"
+          },
+          "ACT": "Total_5%GD",
+          "QLD": "Total_7%GD",
+          "SA": "Total_3%GD"
+        },
+        "PS": {
+          "VIC": "Total_6%GD",
+          "NSW": {
+            "Ausgrid": "Total_9%GD",
+            "Essential": "Total_9%GD",
+            "Endeavour": "Total_9%GD",
+            "default": "Total_9%GD"
+          },
+          "ACT": "Total_5%GD",
+          "QLD": "Total_7%GD",
+          "SA": "Total_3%GD"
+        }
+      }
+    }
+  },
+
+  "gas": {
+    "feature": {
+      "preSelect": {
+        "carbonNeutral": {
+          "heading": "Carbon neutral option",
+          "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
+        },
+        "variableRates": {
+          "heading": "Variable Rates",
+          "description": "Your energy charges are variable for the benefit period. We’ll let you know in advance before your rates change."
+        },
+        "discountOffTotalEnergyBill": {
+          "VIC": {
+            "heading": "13% discount off total gas bill"
+          },
+          "NSW": {
+            "heading": "8% discount off total gas bill"
+          },
+          "ACT": {
+            "heading": "7% discount off total gas bill"
+          },
+          "SA": {
+            "heading": "7% discount off total gas bill"
+          },
+          "description": "Guaranteed discount that applies to your energy charges"
+        }
+      },
+      "postSelect": {
+        "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
+        "variableRates": "Variable Rates. Your energy charges are variable for the benefit period. We’ll let you know in advance before your rates change.",
+        "discountOffTotalEnergyBill": {
+          "VIC": "13% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
+          "NSW": "8% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
+          "ACT": "7% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
+          "SA" : "7% discount off total gas bill. Guaranteed discount that applies to your energy charges."
+        }
+      }
+    },
+    "sourceCode": {
+      "newCustomer": {
+        "VIC": "Total_13%GD",
+        "NSW": {
+          "Ausgrid": "Total_8%GD",
+          "Essential": "Total_8%GD",
+          "Endeavour": "Total_8%GD",
+          "default": "Total_8%GD"
+        },
+        "ACT": "Total_7%GD",
+        "SA": "Total_7%GD"
+      },
+      "existingCustomer": {
+        "ENE":{
+          "VIC": "Total_13%GD",
+          "NSW": {
+            "Ausgrid": "Total_8%GD",
+            "Essential": "Total_8%GD",
+            "Endeavour": "Total_8%GD",
+            "default": "Total_8%GD"
+          },
+          "ACT": "Total_7%GD",
+          "SA": "Total_7%GD"
+        },
+        "PS": {
+          "VIC": "Total_13%GD",
+          "NSW": {
+            "Ausgrid": "Total_8%GD",
+            "Essential": "Total_8%GD",
+            "Endeavour": "Total_8%GD",
+            "default": "Total_8%GD"
+          },
+          "ACT": "Total_7%GD",
+          "SA": "Total_7%GD"
+        }
+      }
+    }
+  },
+
+  "both": {
+    "feature": {
+      "preSelect": {
+        "carbonNeutral": {
+          "heading": "Carbon neutral option",
+          "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
+        },
+        "variableRates": {
+          "heading": "Variable Rates",
+          "description": "Your energy charges are variable for the benefit period. We'll let you know in advance before your rates change."
+        }
+      },
+      "postSelect": {
+        "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
+        "variableRates": "Variable Rates. Your energy charges are variable for the benefit period. We’ll let you know in advance before your rates change."
+      }
+    }
+  },
+
+  "disclaimers": {
+    "referencePriceComparison": {
+      "heading": "Reference price comparison and estimated annual cost",
+      "VIC": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      },
+      "NSW": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      },
+      "ACT": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      },
+      "QLD": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      },
+      "SA": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      }
+    },
+    "goNeutral": {
+      "heading": "Go Neutral",
+      "QLD": {
+        "description": "^ Opt in and we will offset the carbon emissions from your electricity usage from the 6-month anniversary of the date your EnergyAustralia account is established. We will let you know in advance if we withdraw Go Neutral. For more info and full terms visit energyaustralia.com.au/carbon-neutral."
+      },
+      "NonQLD": {
+        "description": "^ Opt in and we will offset the carbon emissions from your electricity and/or gas usage from the 6-month anniversary of the date your EnergyAustralia account is established. We will let you know in advance if we withdraw Go Neutral. For more info and full terms visit energyaustralia.com.au/carbon-neutral."
+      }
+    },
+    "solarBuyBack": {
+      "heading": "Solar feed-in tariffs",
+      "VIC": {
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. For more information about the Victorian FiT scheme see www.energy.vic.gov.au/renewable-energy/victorian-feed-in-tariff."
+      },
+      "NonVIC": {
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
+      }
+    },
+    "plandisclaimer": {
+      "heading": "Balance Plan",
+      "VIC": {
+        "description": "* Offer only for eligible VIC residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your energy charges will be variable, but we’ll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+      },
+      "NSW": {
+        "description": "* Offer only for eligible NSW residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your energy charges will be variable, but we’ll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+      },
+      "ACT": {
+        "description": "* Offer only for eligible ACT residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your energy charges will be variable, but we’ll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+      },
+      "QLD": {
+        "description": "* Offer only for eligible QLD residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your energy charges will be variable, but we’ll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+      },
+      "SA": {
+        "description": "* Offer only for eligible SA residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your energy charges will be variable, but we’ll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+      }
+    }
+  }
+}

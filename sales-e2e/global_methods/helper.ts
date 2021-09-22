@@ -41,6 +41,7 @@ export enum BusinessType {
 
 export enum PlanType {
   BASIC_HOME = 'Basic Home',
+  RESIDENTIAL_BALANCE_PLAN = 'Balance Plan',
   BASIC_HOME_QLD = 'Basic Home QLD',
   NO_FRILLS = 'No Frills',
   TOTAL_PLAN = 'Total Plan',
@@ -584,6 +585,9 @@ export class testFunction {
         break;
       case "business-home-page":
         campaignPageURL = `${eaHomePage}/business/electricity-and-gas/small-business/plans`;
+        break;
+      case "residential-home-page":
+        campaignPageURL = `${eaHomePage}/`;
         break;
       default:
         campaignPageURL = `${eaHomePage}${campaign}?live=disabled`;

@@ -1,0 +1,95 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2109223750
+    sourceCode: Total_9%GD
+    actualQuoteDate: 2021-09-22
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0320472180
+    
+    emailId: qCvmZrGYdF@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DLACT
+      id: 113293
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlLastName: test
+          licenseStateOfIssue: ACT
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 74
+    streetName: Yillowra
+    streetType: S
+    suburb: AUBURN
+    state: NSW
+    country: AUS
+    postCode: 2144
+    premiseType: DOM
+    addressType: Premise
+    DPID: 85507214
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 74
+    streetName: Yillowra
+    streetType: S
+    suburb: AUBURN
+    state: NSW
+    country: AUS
+    postCode: 2144
+    addressType: Mailing
+    DPID: 85507214
+  
+  offerDetail: 
+    fuelType: E
+    proposedStart: 2021-09-23
+    offerType: ENE
+    plan: TAPR1-EN
+    priceTag: ENEA1_MR
+    serviceOrderDate: 2021-09-23
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      NMI: 4102681649
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+    reEnergisationJSCCode: RE-EN
+    reEnergisationJSCCharge: 11.63
+  
+  solarDetail: 
+    solarPowerIndicator: N
+  
+

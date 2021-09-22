@@ -211,7 +211,7 @@ Feature:E2E scenario for cashrewards campaign
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign    | folderName                             | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | 7          | 15          | cashrewards | E2E_Campaign_cashrewards_SA_new_moving | SA    | Quote Tool   | Move Home | No  | No | RES          | New           |
-@DR21.9.2.campaign
+@DR21.9.5.campaign
   Scenario Outline: Validate complete data for cashrewards campaign for ACT - new non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2600" for postcode and proceed to view the plans

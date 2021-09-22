@@ -12,7 +12,7 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for nofrills campaign
-  @campaign21.4.3
+  @campaign21.9.5.campaign
   Scenario Outline: Validate complete data for nofrills campaign for NSW new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2516" and clicks on show me plan link

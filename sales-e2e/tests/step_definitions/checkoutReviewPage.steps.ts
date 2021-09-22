@@ -46,6 +46,13 @@ Then(/^user validates plan details on review page for "([^"]*)"$/, async functio
   await checkoutReviewMethod.validatePlanName(t, json, dataTable);
   await checkoutReviewMethod.validateFeatures(t, dataTable, json, numOfExpectedFeatures);
 });
+Then(/^user validates plan details on review page for "([^"]*)" plan$/, async function (t, [campaignName], dataTable) {
+  let numOfExpectedFeatures = await testFunction.getExpectedFeatureCount(dataTable.rows());
+  dataTable = dataTable.hashes();
+  let json = await FileUtils.getJSONfile(campaignName);
+  await checkoutReviewMethod.validatePlanName(t, json, dataTable);
+  await checkoutReviewMethod.validateFeatures(t, dataTable, json, numOfExpectedFeatures);
+});
 Then(/^identification verification pop up is displayed$/, async function (t) {
   await checkoutReviewMethod.verifyIDVPopup(t);
   await testFunction.takeScreenshot(t, 'IDV_Popup');//disabled UI Validation

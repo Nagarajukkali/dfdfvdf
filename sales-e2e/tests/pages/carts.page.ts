@@ -28,7 +28,25 @@ const cartsPage = {
     gasFeatureVipPriorityService: Selector("#cart-plan-GAS .cart-plan__details-text").withText("VIP Priority Service"),
     addDifferentGasPlan: Selector("#cart-plan-GAS+button"),
     addDifferentElePlan: Selector("#cart-plan-ELE+button"),
-
+    ResidentialBalanceTable: {
+      residentialBalancePlanName: Selector("[id*='plan-heading-title-BASE_RSOT-']"),
+      residentialBalanceFuel: Selector("[id*='plan-heading-fuel-BASE_RSOT-']"),
+      residentialBalanceEleDiscount: Selector("[id*='plan-heading-title-BASE_RSOT-']"),
+      residentialBalanceGasDiscount: Selector("[id*='plan-heading-fuel-BASE_RSOT-']"),
+      residentialBalanceHeadingDescription : Selector("[id*='plan-heading-description-BASE_RSOT-']"),
+      cNTitle: Selector("[id*='plan-feature'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral"),
+      cNNDescription: Selector("[id*='plan-feature'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral").sibling(),
+      cNTitleQLD: Selector("[id*='plan-feature'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral"),
+      cNNDescriptionQLD: Selector("[id*='plan-feature'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral").sibling(),
+      peaceOfMindTitle: Selector("[id*='plan-feature'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral"),
+      peaceOfMindDescription: Selector("[id*='plan-feature'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral").sibling(),
+      peaceOfMindTitleQLD: Selector("[id*='plan-feature'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral"),
+      peaceOfMindDescriptionQLD: Selector("[id*='plan-feature'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral").sibling(),
+      discountOffTitle: Selector("[id*='plan-feature'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral"),
+      discountOffNDescription: Selector("[id*='plan-feature'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral").sibling(),
+      discountOffTitleQLD: Selector("[id*='plan-feature'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral"),
+      discountOffNDescriptionQLD: Selector("[id*='plan-feature'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral").sibling(),
+    },
 
   },
 };
