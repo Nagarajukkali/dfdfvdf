@@ -126,6 +126,12 @@ export class plansMethod {
         }
         await testFunction.click(t, EaHomePage.elements.businessBalancePlan);
         break;
+      case PlanType.RESIDENTIAL_BALANCE_PLAN:
+        if (testFunction.isMobile() || testFunction.isTablet()) {
+          await scrollTo(EaHomePage.elements.residentialBalancePlan);
+        }
+        await testFunction.click(t, EaHomePage.elements.residentialBalancePlan);
+        break;
       default:
         console.error("Invalid plan is selected");
     }
@@ -171,6 +177,34 @@ export class plansMethod {
           await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.basicHomeTitle, data.planName);
           await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.basicHomeFuel, "Electricity & gas");
           await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.basicHomePlanHeadingDescription, data.planDescription);
+        case PlanType.RESIDENTIAL_BALANCE_PLAN :
+          if(dataTable[0].fuelType==="BOTH") {
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceTitle, data.planName);
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceFuel, "Electricity & gas");
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceHeadingDescription, data.planDescription);
+          }else if(dataTable[0].fuelType==="ELE") {
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceTitle, data.planName);
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceFuel, "Electricity");
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceHeadingDescription, data.planDescription);
+          }else{
+            console.log("Invalid fueltype");
+          }
+          break;
+        case PlanType.TOTAL_PLAN :
+          if(dataTable[0].fuelType==="BOTH") {
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanTitle, data.planName);
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanFuel, "Electricity & gas");
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanHeadingDescription, data.planDescription);
+          }else if(dataTable[0].fuelType==="ELE") {
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanTitle, data.planName);
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanFuel, "Electricity");
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanHeadingDescription, data.planDescription);
+          }else{
+            console.log("Invalid fueltype");
+          }
+          break;
+        default:
+          throw Error("Invalid Plan");
       }
     } else if (page === 'Business') {
       await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingTitle, data.planName);
@@ -182,17 +216,99 @@ export class plansMethod {
   public static async validateFeaturesPlanPage(t: any, dataTable, data: any, page) {
     console.log("Validating plan features on plans page page.");
     if (page === "Residential") {
-      if (data.planName=== PlanType.BASIC_HOME) {
+      if (data.planName=== PlanType.TOTAL_PLAN) {
         if (dataTable[0].Feature_carbonNeutral === "Y") {
-          await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.cNTitle, data.both.feature.preSelect.carbonNeutral.heading);
-          await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.cNNDescription, data.both.feature.preSelect.carbonNeutral.description);
+          if (dataTable[0].fuelType === "BOTH" || dataTable[0].fuelType === "ELE") {
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.cNTotalTitle, data.both.feature.preSelect.carbonNeutral.heading);
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.cNTotalDescription, data.both.feature.preSelect.carbonNeutral.description);
+          }
         }
-        if (dataTable[0].Feature_defaultOffer === "Y") {
-          await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.defaultOfferTitle, data.both.feature.preSelect.defaultOffer.heading);
-          if (dataTable[0].state === 'VIC') {
-            await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.defaultOfferDescription, data.both.feature.preSelect.defaultOffer.VIC.description);
-          } else {
-            await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.defaultOfferDescription, data.both.feature.preSelect.defaultOffer.NonVIC.description);
+        if (dataTable[0].Feature_peaceOfMind === "Y") {
+          if (dataTable[0].fuelType === "BOTH" || dataTable[0].fuelType === "ELE") {
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.peaceOfMindTotalTitle, data.both.feature.preSelect.peaceOfMind.heading);
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.peaceOfMindTotalDescription, data.both.feature.preSelect.peaceOfMind.description);
+          }
+        }
+        if (dataTable[0].Feature_XX_discountOffTotalEnergyBill === "Y") {
+            switch (dataTable[0].state) {
+            case AustralianState.VIC:
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffTotalTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.VIC.heading);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffTotalDescription, data.electricity.feature.preSelect.discountOffTotalEnergyBill.description);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.gasdiscountOffTotalTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.VIC.heading);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.gasdiscountOffTotalDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
+              break;
+            case AustralianState.NSW:
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffTotalTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.NSW.heading);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffTotalDescription, data.electricity.feature.preSelect.discountOffTotalEnergyBill.description);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.gasdiscountOffTotalTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.NSW.heading);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.gasdiscountOffTotalDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
+              break;
+            case AustralianState.ACT:
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffTotalTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.ACT.heading);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffTotalDescription, data.electricity.feature.preSelect.discountOffTotalEnergyBill.description);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.gasdiscountOffTotalTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.ACT.heading);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.gasdiscountOffTotalDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
+              break;
+            case AustralianState.QLD:
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffTotalTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.QLD.heading);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffTotalDescription, data.electricity.feature.preSelect.discountOffTotalEnergyBill.description);
+              break;
+            case AustralianState.SA:
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffTotalTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.SA.heading);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffTotalDescription, data.electricity.feature.preSelect.discountOffTotalEnergyBill.description);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.gasdiscountOffTotalTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.SA.heading);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.gasdiscountOffTotalDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
+              break;
+            default:
+              throw Error("Invalid State");
+            }
+        }
+      }
+      if (data.planName=== PlanType.RESIDENTIAL_BALANCE_PLAN) {
+        if (dataTable[0].Feature_carbonNeutral === "Y") {
+          if (dataTable[0].fuelType === "BOTH" || dataTable[0].fuelType === "ELE") {
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.cNBalanceTitle, data.both.feature.preSelect.carbonNeutral.heading);
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.cNBalanceDescription, data.both.feature.preSelect.carbonNeutral.description);
+          }
+        }
+        if (dataTable[0].Feature_variableRates === "Y") {
+          if (dataTable[0].fuelType === "BOTH" || dataTable[0].fuelType === "ELE") {
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.peaceOfMindBalanceTitle, data.both.feature.preSelect.variableRates.heading);
+            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.peaceOfMindBalanceDescription, data.both.feature.preSelect.variableRates.description);
+          }
+        }
+        if (dataTable[0].Feature_XX_discountOffTotalEnergyBill === "Y") {
+          switch (dataTable[0].state) {
+            case AustralianState.VIC:
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffBalanceTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.VIC.heading);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffBalanceDescription, data.electricity.feature.preSelect.discountOffTotalEnergyBill.description);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.gasdiscountOffBalanceTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.VIC.heading);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.gasdiscountOffBalanceDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
+              break;
+            case AustralianState.NSW:
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffBalanceTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.NSW.heading);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffBalanceDescription, data.electricity.feature.preSelect.discountOffTotalEnergyBill.description);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.gasdiscountOffBalanceTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.NSW.heading);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.gasdiscountOffBalanceDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
+              break;
+            case AustralianState.ACT:
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffBalanceTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.ACT.heading);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffBalanceDescription, data.electricity.feature.preSelect.discountOffTotalEnergyBill.description);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.gasdiscountOffBalanceTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.ACT.heading);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.gasdiscountOffBalanceDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
+              break;
+            case AustralianState.QLD:
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffBalanceTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.QLD.heading);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffBalanceDescription, data.electricity.feature.preSelect.discountOffTotalEnergyBill.description);
+              break;
+            case AustralianState.SA:
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffBalanceTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.SA.heading);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffBalanceDescription, data.electricity.feature.preSelect.discountOffTotalEnergyBill.description);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.gasdiscountOffBalanceTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.SA.heading);
+              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.gasdiscountOffBalanceDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
+              break;
+            default:
+              throw Error("Invalid State");
           }
         }
       }
@@ -550,6 +666,83 @@ export class plansMethod {
     }
   }
 
+  public static async validateDisclaimerPlansPage(t: any, dataTable, data: any) {
+    const disclaimer = Selector(() => document.getElementById("condiDisclaimer"));
+    const disclaimerText = await disclaimer().innerText;
+    if (dataTable[0].referencePriceComparison === 'Y') {
+      await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.heading);
+      if (dataTable[0].state === 'QLD') {
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.QLD.description);
+      } else if (dataTable[0].state === 'VIC'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.VIC.description);
+      }else if (dataTable[0].state === 'NSW'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.NSW.description);
+      }else if (dataTable[0].state === 'SA'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.SA.description);
+      }else if (dataTable[0].state === 'ACT'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.ACT.description);
+      }
+      //await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.description);
+      console.log("Reference disclaimer validated");
+    }
+    if (dataTable[0].goNeutral === 'Y') {
+      await testFunction.assertText(t, disclaimer, data.disclaimers.goNeutral.heading);
+      if (dataTable[0].state === 'QLD') {
+        await testFunction.assertText(t, disclaimer, data.disclaimers.goNeutral.QLD.description);
+      } else {
+        await testFunction.assertText(t, disclaimer, data.disclaimers.goNeutral.NonQLD.description);
+      }
+      console.log("Go neutral disclaimer validated");
+    }
+    if (dataTable[0].solarBuyBack === 'Y') {
+      await testFunction.assertText(t, disclaimer, data.disclaimers.solarBuyBack.heading);
+      if (dataTable[0].state === 'VIC') {
+        await testFunction.assertText(t, disclaimer, data.disclaimers.solarBuyBack.VIC.description);
+      } else {
+        await testFunction.assertText(t, disclaimer, data.disclaimers.solarBuyBack.NonVIC.description);
+      }
+      console.log("Solar buyback disclaimer validated");
+    }
+    let planName = dataTable[0].planName;
+    let state = dataTable[0].state;
+    if(planName===PlanType.RESIDENTIAL_BALANCE_PLAN || planName===PlanType.TOTAL_PLAN){
+      await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.heading);
+      switch (state) {
+        case AustralianState.NSW:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.NSW.description);
+          break;
+        case AustralianState.VIC:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.VIC.description);
+          break;
+        case AustralianState.SA:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.SA.description);
+          break;
+        case AustralianState.ACT:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.ACT.description);
+          break;
+        case AustralianState.QLD:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.QLD.description);
+          break;
+        default:
+          console.log("Invalid state disclaimer");
+      }
+    }
+    if (dataTable[0].signUpCredit === 'Y') {
+      await this.validateSignUpCredit(t, disclaimer, data, state);
+    }
+    if (dataTable[0].chanceToWin === 'Y') {
+      await this.validateChanceToWin(t, disclaimer, data, state);
+    }
+    if (dataTable[0].carbonNeutral === 'Y') {
+      await this.validateCarbonNeutral(t, disclaimer, data, state);
+    }
+    if (dataTable[0].variableRates === 'Y') {
+      await testFunction.assertText(t, disclaimer, data.disclaimers.variableRates.heading);
+      await testFunction.assertText(t, disclaimer, data.disclaimers.variableRates.description);
+      console.log("Variable rates disclaimer validated");
+    }
+  }
+
   public static async validateSignUpCredit(t, disclaimer, data, state) {
     switch (state) {
       case AustralianState.VIC:
@@ -886,6 +1079,27 @@ export class plansMethod {
       await testFunction.assertText(t, EaHomePage.elements.eleDiscount, discount);
     } else if (await testFunction.isElectricity(fuelType)) {
       await testFunction.assertText(t, EaHomePage.elements.gasDiscount, discount);
+    }
+  }
+
+  public static async validateDiscountPlansPage(t, fuelType, discount,planName) {
+    switch (planName) {
+      case PlanType.RESIDENTIAL_BALANCE_PLAN:
+        if (await testFunction.isElectricity(fuelType)) {
+          await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceEleDiscount, discount);
+        } else if (await testFunction.isGas(fuelType)) {
+          await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceGasDiscount, discount);
+        }
+        break;
+      case PlanType.TOTAL_PLAN:
+        if (await testFunction.isElectricity(fuelType)) {
+          await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanEleDiscount, discount);
+        } else if (await testFunction.isGas(fuelType)) {
+          await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanGasDiscount, discount);
+        }
+        break;
+      default:
+        throw Error("Invalid plan");
     }
   }
 

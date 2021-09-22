@@ -12,7 +12,7 @@
 
 Feature:E2E scenario for basic business campaign
 
-  @DR21.9.3.campaign
+  @DR21.9.5.campaign
   Scenario Outline: Validate complete data for basic-business campaign for NSW-Ausgrid new non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2144" and clicks on show me plan link

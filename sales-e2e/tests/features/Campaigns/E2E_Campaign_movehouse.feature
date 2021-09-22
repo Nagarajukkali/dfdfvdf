@@ -13,7 +13,7 @@
 
 Feature:E2E scenario for movehouse campaign
 
-  @DR21.9.2.campaign
+  @DR21.9.5.campaign
   Scenario Outline: Validate complete data for movehouse campaign for NSW - new non moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2516" and clicks on show me plan link

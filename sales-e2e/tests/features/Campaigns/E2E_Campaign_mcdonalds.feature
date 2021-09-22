@@ -165,7 +165,7 @@ Feature:E2E scenario for mcdonalds
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign  | folderName                 | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 17          | 28          | mcdonalds | E2E_Campaign_mcdonalds_VIC | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.9.2.campaign
+  @DR21.9.5.campaign
   Scenario Outline: Validate complete data for mcdonalds campaign for SA for new non moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMAC01" and "5076" and clicks on show me plan link

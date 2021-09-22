@@ -115,10 +115,22 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
       let expectedEleSourceCode = checkoutDetailsMethod.map.get('ele source code_' + checkoutDetailsMethod.getScenarioId(t));
       if (isCampaignTest) {
         await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualEleSourceCode, data[0].campaign, expectedOfferType, expectedFuelType);
-      } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$25Credit) {
+      } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$25Credit &&(!(data[0].campaign === "Balance Plan"))) {
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_25');
-      }else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit) {
+      }else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit &&(!(data[0].campaign === "Balance Plan"))) {
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_50');
+      }else if(data[0].campaign === "Balance Plan"){
+        if(data[0].state === "NSW"){
+          await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "Total_9%GD");
+        }else if(data[0].state === "VIC"){
+          await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "Total_6%GD");
+        }else if(data[0].state === "SA"){
+          await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "Total_3%GD");
+        }else if(data[0].state === "ACT"){
+          await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "Total_5%GD");
+        }else if(data[0].state === "QLD"){
+          await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "Total_7%GD");
+        }
       }
       //   else if (isOfferType && !isBusinessPlanCode && !isResiPlanCode && isStateEligibleFor$50Credit) {
       //   await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_50');
@@ -166,10 +178,20 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
       let expectedGasSourceCode = checkoutDetailsMethod.map.get('gas source code_' + checkoutDetailsMethod.getScenarioId(t));
       if (isCampaignTest) {
         await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualGasSourceCode, data[0].campaign, expectedGasSourceCode, expectedFuelType);
-      } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$25Credit) {
+      } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$25Credit &&(!(data[0].campaign === "Balance Plan"))) {
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_25');
-      }else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit) {
+      }else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit &&(!(data[0].campaign === "Balance Plan"))) {
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_50');
+      }else if(data[0].campaign === "Balance Plan"){
+        if(data[0].state === "NSW"){
+          await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, "Total_8%GD");
+        }else if(data[0].state === "VIC"){
+          await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, "Total_13%GD");
+        }else if(data[0].state === "SA"){
+          await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, "Total_7%GD");
+        }else if(data[0].state === "ACT"){
+          await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, "Total_7%GD");
+        }
       }
       //   else if (isOfferType && !isBusinessPlanCode && !isResiPlanCode && isStateEligibleFor$50Credit) {
       //   await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_50');

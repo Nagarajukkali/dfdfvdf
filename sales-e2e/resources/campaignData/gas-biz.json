@@ -59,9 +59,23 @@
 
   "disclaimers": {
     "referencePriceComparison": {
-      "heading": "Reference price comparison and estimated annual cost",
-      "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
-    },
+  "heading": "Reference price comparison and estimated annual cost",
+  "VIC": {
+    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+  },
+  "NSW": {
+    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+  },
+  "ACT": {
+    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+  },
+  "QLD": {
+    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+  },
+  "SA": {
+    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+  }
+},
     "goNeutral": {
       "heading": "",
       "description": ""

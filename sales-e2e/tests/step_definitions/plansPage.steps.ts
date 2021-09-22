@@ -154,6 +154,13 @@ Then(/^user validates "([^"]*)" discount to be "([^"]*)" percent$/, async functi
   await plansMethod.validateDiscount(t, fuelType, expectedDiscount);
   //await testFunction.takeScreenshot(t, 'validating discount'+fuelType);//disabled UI Validation
 });
+Then(/^user validates "([^"]*)" discount to be "([^"]*)" percent for "([^"]*)" plan$/, async function (t, [fuelType, expectedDiscount,planName]) {
+  /*
+  Example:     And user validates "ELE" discount to be "16" percent
+   */
+  await plansMethod.validateDiscountPlansPage(t, fuelType, expectedDiscount, planName);
+  //await testFunction.takeScreenshot(t, 'validating discount'+fuelType);//disabled UI Validation
+});
 When(/^user provides "([^"]*)" for postcode and proceed to view the plans$/, async function (t, [postcode]) {
   await campaignMethod.enterPostcodeOnCampaign(t, postcode);
   await testFunction.takeScreenshot(t, 'providing postcode');//disabled UI Validation
@@ -239,6 +246,14 @@ Then(/^user validates disclaimer on plans page for "([^"]*)"$/, async function (
   dataTable = dataTable.hashes();
   let data = await FileUtils.getJSONfile(campaignName);
   await plansMethod.validateDisclaimer(t, dataTable, data);
+  //await testFunction.takeScreenshot(t, 'validated disclaimers for the plans page');//disabled UI Validation
+  console.log("Validation completed for disclaimers on plans page.");
+});
+
+Then(/^user validates disclaimer on plans page for "([^"]*)" plan$/, async function (t, [campaignName], dataTable) {
+  dataTable = dataTable.hashes();
+  let data = await FileUtils.getJSONfile(campaignName);
+  await plansMethod.validateDisclaimerPlansPage(t, dataTable, data);
   //await testFunction.takeScreenshot(t, 'validated disclaimers for the plans page');//disabled UI Validation
   console.log("Validation completed for disclaimers on plans page.");
 });
@@ -607,7 +622,7 @@ When(/^user selects '(.*)' fact sheet$/, async function (t, [planName]) {
   await plansMethod.selectBPIDPlan(t, planName);
 });
 
-Then(/^user validates the data on '(.*)' plans page for "([^"]*)"$/, async function (t, [page,campaignName], dataTable) {
+Then(/^user validates the data on '(.*)' plans page for "([^"]*)" plan$/, async function (t, [page,campaignName], dataTable) {
   dataTable = dataTable.hashes();
   let data = await FileUtils.getJSONfile(campaignName);
   await plansMethod.validatePlanHeadingPlanPage(t, dataTable, data, page);

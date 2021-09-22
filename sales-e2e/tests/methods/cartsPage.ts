@@ -1,6 +1,5 @@
 import {AustralianState} from '@ea/ea-commons-models';
-import {testFunction} from '../../global_methods/helper';
-
+import {PlanType, testFunction} from '../../global_methods/helper';
 
 const cartsPage = require('../pages/carts.page');
 
