@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2109071212
+    quoteId: BB2109203456
     sourceCode: Total_15%GD
-    actualQuoteDate: 2021-09-07
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0355372466
+      phoneNumber: 0318399456
     
-    emailId: MYtdyZsdYH@energyaustralia.com.au
+    emailId: IJXCbZNSba@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 850110
+      id: 765761
       primaryIdFlag: Y
     
     authLevel: Y

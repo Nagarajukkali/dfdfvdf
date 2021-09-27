@@ -315,41 +315,49 @@ export class plansMethod {
     }
   }
 
-  public static async validateRepricePrePositioningText(t: any, data,state) {
-      if(data.planName=== PlanType.BASIC_HOME) {
-        if(state === AustralianState.QLD){
-          await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, "Our energy usage rates and daily supply charge for this plan are variable. Our rates are generally reviewed around July each year and we'll let you know before this happens.");
-        }else if(state === AustralianState.VIC){
-          await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, "Our electricity standing offer rates are under review and may change from 1 September 2021. If this happens new rates can be viewed online from this date. More information on rate changes here.");
-        }else{
-          await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, "Our energy usage rates and daily supply charge for this plan are variable. Our rates are generally reviewed around July each year and we'll let you know before this happens.");
-          await testFunction.assertText(t, EaHomePage.campaignElements.gasRepriceText, "Our energy usage rates and daily supply charge for this plan are variable. Our rates are generally reviewed around July each year and we'll let you know before this happens.");
-        }
-      }else if ((data.planName=== PlanType.TOTAL_PLAN) || (data.planName=== PlanType.NO_FRILLS) || (data.planName=== PlanType.TOTAL_PLAN_PLUS)){
-        if(state === AustralianState.QLD){
-          await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, "Our rates will generally be adjusted annually, and we'll notify you when this happens.");
-        }else{
-          await testFunction.assertText(t, EaHomePage.campaignElements.gasRepriceText, "Our rates will generally be adjusted annually, and we'll notify you when this happens.");
-          }
-        }
-      console.log("Reprice text validated for "+data.planName)
-  }
-
-  public static async validateRepricePrePositioningTextPlansPage(t: any, plan,journey) {
-    if(journey=== 'Residential') {
-      if(plan === PlanType.BASIC_HOME){
-        await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.repriceText,"Our electricity standing offer rates are under review and may change from 1 September 2021. If this happens new rates can be viewed online from this date. More information on rate changes here.");
-      }else if (plan === PlanType.NO_FRILLS){
-        await testFunction.assertText(t, EaHomePage.elements.NoFrillsPlanTable.repriceText, "Our rates will generally be adjusted annually, and we'll notify you when this happens.");
-      }else if (plan === PlanType.TOTAL_PLAN){
-        await testFunction.assertText(t, EaHomePage.elements.TotalPlanTable.repriceText, "Our rates will generally be adjusted annually, and we'll notify you when this happens.");
+  public static async validateRepricePrePositioningText(t: any, data, state) {
+    if (data.planName === PlanType.BASIC_HOME) {
+      if (state === AustralianState.QLD) {
+        await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, "Our rates will generally be adjusted annually & we'll notify you when this happens.");
+      } else if (state === AustralianState.VIC) {
+        await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, "Our rates will generally be adjusted annually & we'll notify you when this happens.");
+      } else {
+        await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, "Our rates will generally be adjusted annually & we'll notify you when this happens.");
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasRepriceText, "Our rates will generally be adjusted annually & we'll notify you when this happens.");
       }
-    }else if(journey=== 'Business'){
-      if((plan === PlanType.BASIC_BUSINESS)){
-        await testFunction.assertText(t, EaHomePage.elements.BasicBusinessTable.repriceText,"Our energy usage rates and daily supply charge for this plan are variable. Our rates are generally reviewed around July each year and we'll let you know before this happens.");
+    } else if ((data.planName === PlanType.TOTAL_PLAN) || (data.planName === PlanType.NO_FRILLS) || (data.planName === PlanType.TOTAL_PLAN_PLUS) || (data.planName === PlanType.EMPLOYEE_PLAN)) {
+      if (state === AustralianState.QLD) {
+        await testFunction.assertText(t, EaHomePage.campaignElements.electrciityRepriceText, "Our rates will generally be adjusted annually & we'll notify you when this happens.");
+      } else {
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasRepriceText, "Our rates will generally be adjusted annually & we'll notify you when this happens.");
       }
     }
-    console.log("Reprice text validated for " +plan+ " on " +journey+ " plans page")
+    console.log("Reprice text validated for " + data.planName)
+  }
+
+  public static async validateRepricePrePositioningTextPlansPage(t: any, plan, journey) {
+    if (journey === 'Residential') {
+      if (plan === PlanType.BASIC_HOME) {
+        await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.repriceText, "Our rates will generally be adjusted annually & we'll notify you when this happens.");
+      } else if (plan === PlanType.NO_FRILLS) {
+        await testFunction.assertText(t, EaHomePage.elements.NoFrillsPlanTable.repriceText, "Our rates will generally be adjusted annually & we'll notify you when this happens.");
+      } else if (plan === PlanType.TOTAL_PLAN) {
+        await testFunction.assertText(t, EaHomePage.elements.TotalPlanTable.repriceText, "Our rates will generally be adjusted annually & we'll notify you when this happens.");
+      }else if (plan === PlanType.EMPLOYEE_PLAN) {
+        await testFunction.assertText(t, EaHomePage.elements.EmployeePlanTable.repriceText, "Our rates will generally be adjusted annually & we'll notify you when this happens.");
+      }else if (plan === PlanType.RESIDENTIAL_BALANCE_PLAN) {
+        await testFunction.assertText(t, EaHomePage.elements.BalancePlanTable.repriceText, "Our rates will generally be adjusted annually & we'll notify you when this happens.");
+      }
+    } else if (journey === 'Business') {
+      if ((plan === PlanType.BASIC_BUSINESS)) {
+        await testFunction.assertText(t, EaHomePage.elements.BasicBusinessTable.repriceText, "Our rates will generally be adjusted annually & we'll notify you when this happens.");
+      }else if((plan === PlanType.TOTAL_BUSINESS) || (plan === PlanType.FAMILY_AND_FRIENDS_BUSINESS)){
+        await testFunction.assertText(t, EaHomePage.elements.TotalPlanTable.repriceText, "Our rates will generally be adjusted annually & we'll notify you when this happens.");
+      }else if((plan === PlanType.BUSINESS_BALANCE_PLAN)){
+        await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.repriceText, "Our rates will generally be adjusted annually & we'll notify you when this happens.");
+      }
+    }
+    console.log("Reprice text validated for " + plan + " on " + journey + " plans page")
   }
 
   public static async validateFeatures(t: any, dataTable, data: any) {
@@ -456,21 +464,23 @@ export class plansMethod {
         }
       }
       if (dataTable[0].Feature_variableRates === "Y") {
-        if (dataTable[0].state === 'VIC') {
-          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesTitle, data.electricity.feature.preSelect.variableRates.VIC.heading);
-          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.electricity.feature.preSelect.variableRates.VIC.description);
-        } else if (dataTable[0].state === 'NSW') {
-          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesTitle, data.electricity.feature.preSelect.variableRates.NSW.heading);
-          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.electricity.feature.preSelect.variableRates.NSW.description);
-        } else if (dataTable[0].state === 'QLD') {
-          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesTitle, data.electricity.feature.preSelect.variableRates.QLD.heading);
-          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.electricity.feature.preSelect.variableRates.QLD.description);
-        } else if (dataTable[0].state === 'ACT') {
-          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesTitle, data.electricity.feature.preSelect.variableRates.ACT.heading);
-          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.electricity.feature.preSelect.variableRates.ACT.description);
-        }else {
-          throw Error("Invalid State");
-        }
+        // if (dataTable[0].state === 'VIC') {
+        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesTitle, data.electricity.feature.preSelect.variableRates.VIC.heading);
+        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.electricity.feature.preSelect.variableRates.VIC.description);
+        // } else if (dataTable[0].state === 'NSW') {
+        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesTitle, data.electricity.feature.preSelect.variableRates.NSW.heading);
+        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.electricity.feature.preSelect.variableRates.NSW.description);
+        // } else if (dataTable[0].state === 'QLD') {
+        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesTitle, data.electricity.feature.preSelect.variableRates.QLD.heading);
+        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.electricity.feature.preSelect.variableRates.QLD.description);
+        // } else if (dataTable[0].state === 'ACT') {
+        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesTitle, data.electricity.feature.preSelect.variableRates.ACT.heading);
+        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.electricity.feature.preSelect.variableRates.ACT.description);
+        // }else {
+        //   throw Error("Invalid State");
+        // }
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesTitle, data.electricity.feature.preSelect.variableRates.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.electricity.feature.preSelect.variableRates.description);
       }
     } else if (dataTable[0].fuelType === "GAS") {
       if (dataTable[0].Feature_50Credit === "Y") {
@@ -521,66 +531,68 @@ export class plansMethod {
           await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNTitle, data.gas.feature.preSelect.carbonNeutral.heading);
           await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNDescription, data.gas.feature.preSelect.carbonNeutral.description);
         }
-        if (dataTable[0].Feature_peaceOfMind === "Y") {
-          if (t.testRun.test.name.includes('employee')){
-            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindEETitle, data.gas.feature.preSelect.peaceOfMind.heading);
-            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindEEDescription, data.gas.feature.preSelect.peaceOfMind.description);
-          } else {
-            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindTitle, data.gas.feature.preSelect.peaceOfMind.heading);
-            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindDescription, data.gas.feature.preSelect.peaceOfMind.description);
-          }
+      }
+      if (dataTable[0].Feature_peaceOfMind === "Y") {
+        if (t.testRun.test.name.includes('employee')) {
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindEETitle, data.gas.feature.preSelect.peaceOfMind.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindEEDescription, data.gas.feature.preSelect.peaceOfMind.description);
+        } else {
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindTitle, data.gas.feature.preSelect.peaceOfMind.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindDescription, data.gas.feature.preSelect.peaceOfMind.description);
         }
-        if (dataTable[0].Feature_XX_discountOffTotalEnergyBill === "Y") {
-          switch (dataTable[0].state) {
-            case AustralianState.VIC:
-              await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.VIC.heading);
-              break;
-            case AustralianState.NSW:
-              await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.NSW.heading);
-              break;
-            case AustralianState.ACT:
-              await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.ACT.heading);
-              break;
-            case AustralianState.QLD:
-              await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.QLD.heading);
-              break;
-            case AustralianState.SA:
-              await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.SA.heading);
-              break;
-            default:
-              throw Error("Invalid State");
-          }
-          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
-        }
-        if (dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
-          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.heading);
-          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
-        }
-        if (dataTable[0].Feature_vipPriorityService === "Y") {
-          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureVipPriorityServiceTitle, data.electricity.feature.preSelect.vipPriorityService.heading);
-        }
-        if (dataTable[0].Feature_chanceToWin === "Y") {
-          if (dataTable[0].state === 'VIC') {
-            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinTitle, data.gas.feature.preSelect.chanceToWin.VIC.heading);
-            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinDescription, data.gas.feature.preSelect.chanceToWin.VIC.description);
-          } else if (dataTable[0].state === 'NSW') {
-            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinTitle, data.gas.feature.preSelect.chanceToWin.NSW.heading);
-            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinDescription, data.gas.feature.preSelect.chanceToWin.NSW.description);
-          } else {
+      }
+      if (dataTable[0].Feature_XX_discountOffTotalEnergyBill === "Y") {
+        switch (dataTable[0].state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.VIC.heading);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.NSW.heading);
+            break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.ACT.heading);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.QLD.heading);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.SA.heading);
+            break;
+          default:
             throw Error("Invalid State");
-          }
         }
-        if (dataTable[0].Feature_variableRates === "Y") {
-          if (dataTable[0].state === 'VIC') {
-            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureVariableRatesTitle, data.gas.feature.preSelect.variableRates.VIC.heading);
-            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.gas.feature.preSelect.variableRates.VIC.description);
-          } else if (dataTable[0].state === 'NSW') {
-            await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureVariableRatesTitle, data.gas.feature.preSelect.variableRates.NSW.heading);
-            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.gas.feature.preSelect.variableRates.NSW.description);
-          } else {
-            throw Error("Invalid State");
-          }
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
+      }
+      if (dataTable[0].Feature_discountOffTotalEnergyBill === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureDiscountOffTotalBillDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
+      }
+      if (dataTable[0].Feature_vipPriorityService === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureVipPriorityServiceTitle, data.electricity.feature.preSelect.vipPriorityService.heading);
+      }
+      if (dataTable[0].Feature_chanceToWin === "Y") {
+        if (dataTable[0].state === 'VIC') {
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinTitle, data.gas.feature.preSelect.chanceToWin.VIC.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinDescription, data.gas.feature.preSelect.chanceToWin.VIC.description);
+        } else if (dataTable[0].state === 'NSW') {
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinTitle, data.gas.feature.preSelect.chanceToWin.NSW.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinDescription, data.gas.feature.preSelect.chanceToWin.NSW.description);
+        } else {
+          throw Error("Invalid State");
         }
+      }
+      if (dataTable[0].Feature_variableRates === "Y") {
+        // if (dataTable[0].state === 'VIC') {
+        //   await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureVariableRatesTitle, data.gas.feature.preSelect.variableRates.VIC.heading);
+        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.gas.feature.preSelect.variableRates.VIC.description);
+        // } else if (dataTable[0].state === 'NSW') {
+        //   await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureVariableRatesTitle, data.gas.feature.preSelect.variableRates.NSW.heading);
+        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.gas.feature.preSelect.variableRates.NSW.description);
+        // } else {
+        //   throw Error("Invalid State");
+        // }
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureVariableRatesTitle, data.gas.feature.preSelect.variableRates.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.gas.feature.preSelect.variableRates.description);
       }
     }
   }
@@ -1002,72 +1014,72 @@ export class plansMethod {
             throw Error("Invalid State");
         }
         break;
-        case PlanType.EMPLOYEE_PLAN:
-          await testFunction.assertText(t, disclaimer, data.disclaimers.employeePlan.heading);
-          switch (state) {
-            case AustralianState.VIC:
-              await testFunction.assertText(t, disclaimer, data.disclaimers.employeePlan.VIC.description);
-              break;
-            case AustralianState.NSW:
-              await testFunction.assertText(t, disclaimer, data.disclaimers.employeePlan.NSW.description);
-              break;
-            case AustralianState.ACT:
-              await testFunction.assertText(t, disclaimer, data.disclaimers.employeePlan.ACT.description);
-              break;
-            case AustralianState.SA:
-              await testFunction.assertText(t, disclaimer, data.disclaimers.employeePlan.SA.description);
-              break;
-            case AustralianState.QLD:
-              await testFunction.assertText(t, disclaimer, data.disclaimers.employeePlan.QLD.description);
-              break;
-            default:
-              throw Error("Invalid State");
-          }
-          break;
-          case PlanType.BUSINESS_CARBON_NEUTRAL:
-            await testFunction.assertText(t, disclaimer, data.disclaimers.businessCarbonNeutral.heading);
-            switch (state) {
-              case AustralianState.VIC:
-                await testFunction.assertText(t, disclaimer, data.disclaimers.businessCarbonNeutral.VIC.description);
-                break;
-              case AustralianState.NSW:
-                await testFunction.assertText(t, disclaimer, data.disclaimers.businessCarbonNeutral.NSW.description);
-                break;
-              case AustralianState.ACT:
-                await testFunction.assertText(t, disclaimer, data.disclaimers.businessCarbonNeutral.ACT.description);
-                break;
-              case AustralianState.SA:
-                await testFunction.assertText(t, disclaimer, data.disclaimers.businessCarbonNeutral.SA.description);
-                break;
-              case AustralianState.QLD:
-                await testFunction.assertText(t, disclaimer, data.disclaimers.businessCarbonNeutral.QLD.description);
-                break;
-              default:
-                throw Error("Invalid State");
-            }
+      case PlanType.EMPLOYEE_PLAN:
+        await testFunction.assertText(t, disclaimer, data.disclaimers.employeePlan.heading);
+        switch (state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.employeePlan.VIC.description);
             break;
-            case PlanType.BUSINESS_BALANCE_PLAN:
-            await testFunction.assertText(t, disclaimer, data.disclaimers.businessBalancePlan.heading);
-            switch (state) {
-              case AustralianState.VIC:
-                await testFunction.assertText(t, disclaimer, data.disclaimers.businessBalancePlan.VIC.description);
-                break;
-              case AustralianState.NSW:
-                await testFunction.assertText(t, disclaimer, data.disclaimers.businessBalancePlan.NSW.description);
-                break;
-              case AustralianState.ACT:
-                await testFunction.assertText(t, disclaimer, data.disclaimers.businessBalancePlan.ACT.description);
-                break;
-              case AustralianState.SA:
-                await testFunction.assertText(t, disclaimer, data.disclaimers.businessBalancePlan.SA.description);
-                break;
-              case AustralianState.QLD:
-                await testFunction.assertText(t, disclaimer, data.disclaimers.businessBalancePlan.QLD.description);
-                break;
-              default:
-                throw Error("Invalid State");
-            }
+          case AustralianState.NSW:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.employeePlan.NSW.description);
             break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.employeePlan.ACT.description);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.employeePlan.SA.description);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.employeePlan.QLD.description);
+            break;
+          default:
+            throw Error("Invalid State");
+        }
+        break;
+      case PlanType.BUSINESS_CARBON_NEUTRAL:
+        await testFunction.assertText(t, disclaimer, data.disclaimers.businessCarbonNeutral.heading);
+        switch (state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.businessCarbonNeutral.VIC.description);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.businessCarbonNeutral.NSW.description);
+            break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.businessCarbonNeutral.ACT.description);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.businessCarbonNeutral.SA.description);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.businessCarbonNeutral.QLD.description);
+            break;
+          default:
+            throw Error("Invalid State");
+        }
+        break;
+      case PlanType.BUSINESS_BALANCE_PLAN:
+        await testFunction.assertText(t, disclaimer, data.disclaimers.businessBalancePlan.heading);
+        switch (state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.businessBalancePlan.VIC.description);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.businessBalancePlan.NSW.description);
+            break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.businessBalancePlan.ACT.description);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.businessBalancePlan.SA.description);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.businessBalancePlan.QLD.description);
+            break;
+          default:
+            throw Error("Invalid State");
+        }
+        break;
         break;
       default:
         throw Error("Invalid plan");

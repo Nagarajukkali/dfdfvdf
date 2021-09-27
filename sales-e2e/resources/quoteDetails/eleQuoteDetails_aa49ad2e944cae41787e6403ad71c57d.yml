@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: FR2102114222
-    sourceCode: Total_18%GD
-    actualQuoteDate: 2021-02-11
+    quoteId: FR2109173213
+    sourceCode: Total_20%GD
+    actualQuoteDate: 2021-09-17
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0313994788
+      phoneNumber: 0351196165
     
-    emailId: UXHsXJDRbJ@energyaustralia.com.au
+    emailId: HbDUHQtMUt@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 288432
+      id: 477776
       primaryIdFlag: Y
     
     authLevel: Y
@@ -42,6 +42,7 @@ saleDetail :
     postCode: 2447
     premiseType: DOM
     addressType: Premise
+    DPID: 59760646
     primaryResidence: N
   
   premiseDetail: 
@@ -56,12 +57,13 @@ saleDetail :
     country: AUS
     postCode: 2447
     addressType: Mailing
+    DPID: 59760646
   
   offerDetail: 
     fuelType: E
     offerType: PS
     plan: TOPH-EN
-    priceTag: ENCE1_NR2007
+    priceTag: ENCE1_NR2107
     nmiMirnInformation: 
       NMI: 4407376910
     
@@ -77,5 +79,8 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
+  
+  solarDetail: 
+    solarPowerIndicator: N
   
 

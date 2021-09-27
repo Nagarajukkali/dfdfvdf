@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2109141998
+    quoteId: BB2109203274
     sourceCode: Total_28%GD
-    actualQuoteDate: 2021-09-14
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MRS
+    title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0399915883
+      phoneNumber: 0326546665
     
-    emailId: iEMmZLqnOf@energyaustralia.com.au
+    emailId: zdeADrJakm@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: CORPORATION
+    businessType: SOLE TRADER
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 71200534608
+      businessId: 36057400779
     
-    anzsic: CONSTRUCTION
+    anzsic: PROPERTY
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0399915883
+      businessPhoneNumber: 0326546665
     
-    businessEmailId: iEMmZLqnOf@energyaustralia.com.au
+    businessEmailId: zdeADrJakm@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -68,11 +68,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-09-15
+    proposedStart: 2021-09-20
     offerType: ENE
     plan: BSPB1-EN
     priceTag: ENEAA_MB
-    serviceOrderDate: 2021-09-15
+    serviceOrderDate: 2021-09-20
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 4102017007

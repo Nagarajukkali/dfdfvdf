@@ -2,7 +2,7 @@
 @campaign
 Feature:E2E scenario for AMIC-BIZ campaign
 
-  @DR21.9.3.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for amic-biz campaign for NSW Ausgrid for new customer
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_AMIC_NSW_Ausgrid' to save evidences
     When user provides "2010" for postcode and proceed to view the plans
@@ -10,20 +10,20 @@ Feature:E2E scenario for AMIC-BIZ campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | NSW   |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | NSW   |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName         | state | signUpCredit |
       | N                        | N         | N            | Business Balance | NSW   | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | NSW   |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | state |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | NSW   |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -42,10 +42,10 @@ Feature:E2E scenario for AMIC-BIZ campaign
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | NSW   |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | NSW   |
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
@@ -67,7 +67,7 @@ Feature:E2E scenario for AMIC-BIZ campaign
       | customerStatus | fuelType | campaign | state | eleDiscount | gasDiscount |
       | New            | BOTH     | amic-biz | NSW   | 28          | 26          |
 
-  @DR21.9.3.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for amic-biz campaign for NSW Essential
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_AMIC_NSW_Essential' to save evidences
     When user provides "2580" for postcode and proceed to view the plans
@@ -75,20 +75,20 @@ Feature:E2E scenario for AMIC-BIZ campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | NSW   |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | NSW   |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName         | state | signUpCredit |
       | N                        | N         | N            | Business Balance | NSW   | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | NSW   |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | state |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | NSW   |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -106,10 +106,10 @@ Feature:E2E scenario for AMIC-BIZ campaign
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | NSW   |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | NSW   |
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
@@ -131,7 +131,7 @@ Feature:E2E scenario for AMIC-BIZ campaign
       | customerStatus | fuelType | campaign | state | eleDiscount | gasDiscount |
       | New            | BOTH     | amic-biz | NSW   | 21          | 26          |
 
-  @DR21.9.3.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for amic-biz campaign for NSW Endeavour for customer
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_AMIC_NSW_Endeavour' to save evidences
     When user provides "2163" for postcode and proceed to view the plans
@@ -139,20 +139,20 @@ Feature:E2E scenario for AMIC-BIZ campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | NSW   |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | NSW   |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName         | state | signUpCredit |
       | N                        | N         | N            | Business Balance | NSW   | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | NSW   |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | state |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | NSW   |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -170,10 +170,10 @@ Feature:E2E scenario for AMIC-BIZ campaign
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | NSW   |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | NSW   |
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
@@ -195,7 +195,7 @@ Feature:E2E scenario for AMIC-BIZ campaign
       | customerStatus | fuelType | campaign | state | eleDiscount | gasDiscount |
       | New            | BOTH     | amic-biz | NSW   | 19          | 26          |
 
-  @DR21.9.3.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for amic-biz campaign for VIC for new customer
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_AMIC_biz_VIC' to save evidences
     When user provides "3031" for postcode and proceed to view the plans
@@ -203,20 +203,20 @@ Feature:E2E scenario for AMIC-BIZ campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | VIC   |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | VIC   |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName         | state | signUpCredit |
       | N                        | N         | N            | Business Balance | VIC   | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | VIC   |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | state |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | VIC   |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -237,10 +237,10 @@ Feature:E2E scenario for AMIC-BIZ campaign
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | VIC   |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | VIC   |
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
@@ -262,7 +262,7 @@ Feature:E2E scenario for AMIC-BIZ campaign
       | customerStatus | fuelType | campaign | state | eleDiscount | gasDiscount |
       | New            | BOTH     | amic-biz | VIC   | 6           | 26          |
 
-  @DR21.9.3.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for amic-biz campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_AMIC_SA' to save evidences
     When user provides "5044" for postcode and proceed to view the plans
@@ -270,21 +270,21 @@ Feature:E2E scenario for AMIC-BIZ campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | SA    |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | SA    |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | SA    |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | state |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | SA    |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      | customerType | connectionAddress                 | movingType | propertyType | solarOption |
+      | customerType | connectionAddress                      | movingType | propertyType | solarOption |
       | BUS          | 277 Glen Osmond Road, GLENUNGA SA 5064 | Moving     | Renter       | No          |
     And user provides all details on checkout details page
       | customerType | journey | firstName | lastName | businessType |
@@ -298,10 +298,10 @@ Feature:E2E scenario for AMIC-BIZ campaign
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | SA    |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | SA    |
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
@@ -323,21 +323,21 @@ Feature:E2E scenario for AMIC-BIZ campaign
       | customerStatus | fuelType | campaign | state | eleDiscount | gasDiscount |
       | New            | BOTH     | amic-biz | SA    | 15          | 5           |
 
-  @DR21.9.3.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for AMIC campaign for QLD
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_AMIC_QLD' to save evidences
     When user provides "4506" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | QLD   |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName         | state | signUpCredit |
       | N                        | N         | N            | Business Balance | QLD   | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | QLD   |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
@@ -355,7 +355,7 @@ Feature:E2E scenario for AMIC-BIZ campaign
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | QLD   |
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
@@ -373,7 +373,7 @@ Feature:E2E scenario for AMIC-BIZ campaign
       | customerStatus | fuelType | campaign | state | eleDiscount | gasDiscount |
       | New            | ELE      | amic-biz | QLD   | 20          | 15          |
 
-  @DR21.9.3.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for AMIC campaign for ACT
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_AMIC_ACT' to save evidences
     When user provides "2914" for postcode and proceed to view the plans
@@ -381,17 +381,17 @@ Feature:E2E scenario for AMIC-BIZ campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | ACT   |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | ACT   |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | ACT   |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | state |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | ACT   |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -408,10 +408,10 @@ Feature:E2E scenario for AMIC-BIZ campaign
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | ACT   |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | ACT   |
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote

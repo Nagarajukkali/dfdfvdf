@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CR2104269732
-    sourceCode: Total_20%GD
-    actualQuoteDate: 2021-04-26
+    quoteId: CR2109172664
+    sourceCode: Total_14%GD
+    actualQuoteDate: 2021-09-17
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0390321750
+      phoneNumber: 0373012104
     
-    emailId: QQZPNjIRZv@energyaustralia.com.au
+    emailId: lCWzpfZoey@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 484858
+      id: 474872
       primaryIdFlag: Y
     
     authLevel: Y
@@ -40,6 +40,7 @@ saleDetail :
     postCode: 4215
     premiseType: DOM
     addressType: Premise
+    DPID: 42197038
     primaryResidence: N
   
   premiseDetail: 
@@ -52,12 +53,13 @@ saleDetail :
     country: AUS
     postCode: 4215
     addressType: Mailing
+    DPID: 42197038
   
   offerDetail: 
     fuelType: E
     offerType: PS
     plan: TOPH-EQ
-    priceTag: EQEXA_NR2007
+    priceTag: EQEXA_XR2107
     nmiMirnInformation: 
       NMI: QB01405934
     
@@ -74,7 +76,7 @@ saleDetail :
   meteringDetail: 
     meterExchangeFlag: N
     priceTagMeteringCharge: M42151D1E_VE
-    proposedNTC: 8470
+    proposedNTC: 3970
     proposedMC: VECTORMC
   
   solarDetail: 

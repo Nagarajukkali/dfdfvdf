@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2109061161
+    quoteId: BB2109203324
     sourceCode: Total_Plus_11%GD_50
-    actualQuoteDate: 2021-09-06
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: DR
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0314095068
+      phoneNumber: 0330267858
     
-    emailId: QuUfCpBtGA@energyaustralia.com.au
+    emailId: YHxCkqYdGD@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLSA
-      id: 66037
+      idType: DLWA
+      id: 124567
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: SA
+          licenseStateOfIssue: WA
         
       
     
@@ -64,11 +64,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-09-08
+    proposedStart: 2021-09-21
     offerType: ENE
     plan: SWSR1-EA
     priceTag: EAACA_NR2107
-    serviceOrderDate: 2021-09-08
+    serviceOrderDate: 2021-09-21
     serviceOrderTime: BUSHRS
     nmiMirnInformation/: 
   

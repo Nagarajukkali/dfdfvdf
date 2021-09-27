@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2109142044
+    quoteId: BB2109203565
     sourceCode: Basic
-    actualQuoteDate: 2021-09-14
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MS
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0317069059
+      phoneNumber: 0392639641
     
-    emailId: uLxSkBcHXY@energyaustralia.com.au
+    emailId: BwBNhUcLKE@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: CORPORATION
+    businessType: LIMITED COMPANY
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 53575264448
+      businessId: 99633810530
     
-    anzsic: CONSTRUCTION
+    anzsic: PROPERTY
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0317069059
+      businessPhoneNumber: 0392639641
     
-    businessEmailId: uLxSkBcHXY@energyaustralia.com.au
+    businessEmailId: BwBNhUcLKE@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST

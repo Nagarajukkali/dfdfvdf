@@ -1,7 +1,6 @@
 {
   "planName": "Family and Friends Business",
   "planDescription": "Great discount on your total energy bill guaranteed - every time.",
-
   "electricity": {
     "feature": {
       "preSelect": {
@@ -66,7 +65,6 @@
       }
     }
   },
-
   "gas": {
     "feature": {
       "preSelect": {
@@ -117,7 +115,6 @@
       }
     }
   },
-
   "disclaimers": {
     "referencePriceComparison": {
   "heading": "Reference price comparison and estimated annual cost",

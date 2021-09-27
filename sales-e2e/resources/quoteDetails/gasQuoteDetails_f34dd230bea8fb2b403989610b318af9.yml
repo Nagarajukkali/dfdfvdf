@@ -1,44 +1,44 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: FC2109142034
+    quoteId: FC2109173115
     sourceCode: Total_26%GD
-    actualQuoteDate: 2021-09-14
+    actualQuoteDate: 2021-09-17
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MR
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0354650348
+      phoneNumber: 0391694812
     
-    emailId: NnbUNvthnD@energyaustralia.com.au
+    emailId: ALwrJXkwIM@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: LIMITED COMPANY
+    businessType: GNRALPARTNERSHIP
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 15018605704
+      businessId: 77279808870
     
-    anzsic: MINING
+    anzsic: WHOLESALE_TRD
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0354650348
+      businessPhoneNumber: 0391694812
     
-    businessEmailId: NnbUNvthnD@energyaustralia.com.au
+    businessEmailId: ALwrJXkwIM@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -68,11 +68,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2021-09-16
+    proposedStart: 2021-09-21
     offerType: ENE
     plan: BSPB1-GA
     priceTag: GACTA_MB
-    serviceOrderDate: 2021-09-16
+    serviceOrderDate: 2021-09-21
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5260077864

@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CA2102114167
+    quoteId: CA2109203397
     sourceCode: NOFRILLS
-    actualQuoteDate: 2021-02-11
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0360384500
+      phoneNumber: 0345802879
     
-    emailId: IViyhlWLCb@energyaustralia.com.au
+    emailId: fhRVEcLghO@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 102510
+      id: 537121
       primaryIdFlag: Y
     
     authLevel: Y
@@ -40,6 +40,7 @@ saleDetail :
     postCode: 5109
     premiseType: DOM
     addressType: Premise
+    DPID: 48985820
     primaryResidence: N
   
   premiseDetail: 
@@ -52,12 +53,13 @@ saleDetail :
     country: AUS
     postCode: 5109
     addressType: Mailing
+    DPID: 48985820
   
   offerDetail: 
     fuelType: E
     offerType: PS
     plan: RCPP-ES
-    priceTag: ESSAA_ZR2007
+    priceTag: ESSAA_ZR2107
     nmiMirnInformation: 
       NMI: 2001473900
     
@@ -73,5 +75,10 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
+  
+  solarDetail: 
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: GENR2016
+    solarTimeOfUse: N
   
 

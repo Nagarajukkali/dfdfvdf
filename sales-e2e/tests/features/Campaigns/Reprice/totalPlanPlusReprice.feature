@@ -1,4 +1,4 @@
-@DR21.6.1.repricetest @DR21.7.1.campaign
+@DR21.6.1.repricetest @DR21.7.1.campaign @DR21.9.5.campaign
 
 Feature:E2E scenario for total plan plus campaigns
 
@@ -49,3 +49,28 @@ Feature:E2E scenario for total plan plus campaigns
     When user provides "4000" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates the reprice pre-positioning disclaimer for 'Total Plan Plus' 'total-plan-plus' for 'QLD' state
+
+  Scenario: Validate reprice data for elec-tpp campaign for NSW
+    Given user has opened the 'elec-tpp' link in a browser and creates 'Reprice_elec_tpp_campaign_NSW' to save evidences
+    When user provides "2000" and clicks on show me plan link
+    Then user is presented with the plans
+    And user validates the reprice pre-positioning disclaimer for 'Total Plan Plus' 'elec-tpp' for 'NSW' state
+
+  Scenario: Validate reprice data for elec-tpp campaign for VIC
+    Given user has opened the 'elec-tpp' link in a browser and creates 'Reprice_elec_tpp_campaign_VIC' to save evidences
+    When user provides "3000" for postcode and proceed to view the plans
+    Then user is presented with the plans
+    And user validates the reprice pre-positioning disclaimer for 'Total Plan Plus' 'elec-tpp' for 'VIC' state
+
+  Scenario: Validate reprice data for gas-tpp campaign for NSW
+    Given user has opened the 'gas-tpp' link in a browser and creates 'Reprice_gas_tpp_campaign_NSW' to save evidences
+    When user provides "2000" and clicks on show me plan link
+    Then user is presented with the plans
+    And user validates the reprice pre-positioning disclaimer for 'Total Plan Plus' 'gas-tpp' for 'NSW' state
+
+  Scenario: Validate reprice data for gas-tpp campaign for VIC
+    Given user has opened the 'gas-tpp' link in a browser and creates 'Reprice_gas_tpp_campaign_VIC' to save evidences
+    When user provides "3000" for postcode and proceed to view the plans
+    Then user is presented with the plans
+    And user validates the reprice pre-positioning disclaimer for 'Total Plan Plus' 'gas-tpp' for 'VIC' state
+

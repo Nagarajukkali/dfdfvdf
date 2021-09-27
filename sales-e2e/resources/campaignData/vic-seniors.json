@@ -1,7 +1,6 @@
 {
   "planName": "Total Plan",
   "planDescription": "Great discount on your total energy bill guaranteed - every time.",
-
   "electricity": {
     "feature": {
       "preSelect": {
@@ -29,7 +28,7 @@
         }
       },
       "postSelect": {
-        "Credit50":{
+        "Credit50": {
           "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
@@ -52,7 +51,6 @@
       }
     }
   },
-
   "gas": {
     "feature": {
       "preSelect": {
@@ -80,7 +78,7 @@
         }
       },
       "postSelect": {
-        "Credit50":{
+        "Credit50": {
           "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
@@ -103,7 +101,6 @@
       }
     }
   },
-
   "disclaimers": {
     "referencePriceComparison": {
   "heading": "Reference price comparison and estimated annual cost",

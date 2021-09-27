@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2104077827
-    sourceCode: Total_12%GD_25
-    actualQuoteDate: 2021-04-07
+    quoteId: BB2109203378
+    sourceCode: Total_10%GD_50
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: DR
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0326698967
+      phoneNumber: 0331259875
     
-    emailId: RpvkcPHLHm@energyaustralia.com.au
+    emailId: pfvUyDCIaG@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLQLD
-      id: 905992
+      idType: DLNT
+      id: 362216
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: QLD
+          licenseStateOfIssue: NT
         
       
     
@@ -47,6 +47,7 @@ saleDetail :
     postCode: 2615
     premiseType: DOM
     addressType: Premise
+    DPID: 75543732
     primaryResidence: N
   
   premiseDetail: 
@@ -59,14 +60,15 @@ saleDetail :
     country: AUS
     postCode: 2615
     addressType: Mailing
+    DPID: 75543732
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-04-08
+    proposedStart: 2021-09-22
     offerType: ENE
     plan: TOPH-EA
-    priceTag: EAACA_NR2007
-    serviceOrderDate: 2021-04-08
+    priceTag: EAACA_NR2107
+    serviceOrderDate: 2021-09-22
     serviceOrderTime: BUSHRS
     nmiMirnInformation/: 
   
@@ -82,6 +84,6 @@ saleDetail :
   creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
-    reEnergisationJSCCharge: 80.43
+    reEnergisationJSCCharge: 81.92
   
 

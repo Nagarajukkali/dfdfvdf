@@ -1,7 +1,6 @@
 {
   "planName": "Total Plan Plus",
   "planDescription": "VIP discount on your total energy bill guaranteed - every time.",
-
   "electricity": {
     "feature": {
       "preSelect": {
@@ -50,7 +49,7 @@
           "NSW": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
           "ACT": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
           "QLD": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
-          "SA" : "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
+          "SA": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
@@ -72,7 +71,7 @@
         "SA": "Total_Plus_8%GD_50"
       },
       "existingCustomer": {
-        "ENE":{
+        "ENE": {
           "VIC": "Total_Plus_16%GD_50",
           "NSW": {
             "Ausgrid": "Total_Plus_17%GD_50",
@@ -99,7 +98,6 @@
       }
     }
   },
-
   "gas": {
     "feature": {
       "preSelect": {
@@ -144,7 +142,7 @@
           "NSW": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
           "ACT": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
           "QLD": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
-          "SA" : "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
+          "SA": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
@@ -159,7 +157,7 @@
         "SA": "Total_Plus_16%GD_50"
       },
       "existingCustomer": {
-        "ENE":{
+        "ENE": {
           "VIC": "Total_Plus_27%GD_50",
           "NSW": "Total_Plus_17%GD_50",
           "ACT": "Total_Plus_16%GD_50",
@@ -174,7 +172,6 @@
       }
     }
   },
-
   "disclaimers": {
     "referencePriceComparison": {
   "heading": "Reference price comparison and estimated annual cost",

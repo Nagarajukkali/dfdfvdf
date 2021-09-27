@@ -1,7 +1,6 @@
 {
   "planName": "Employee Plan",
   "planDescription": "Guaranteed total energy bill discount on every bill, every time.",
-
   "electricity": {
     "feature": {
       "preSelect": {
@@ -60,7 +59,7 @@
           "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
           "NSW": "",
           "QLD": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
-          "SA" : "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
+          "SA": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Energy with a bit of good. 100% carbon neutral energy at home for no extra cost to you.",
         "peaceOfMind": "Priority customer service. Dedicated Family, Friends and You team.",
@@ -68,7 +67,7 @@
           "VIC": "25% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to your energy charges.",
           "NSW": "28% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to your energy charges.",
           "QLD": "22% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to your energy charges.",
-          "SA" : "20% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to your energy charges."
+          "SA": "20% discount off total electricity bill. Guaranteed and exclusive employee-only discount that applies to your energy charges."
         },
         "noStandardConnectionFee": "",
         "vipPriorityService": ""
@@ -84,7 +83,7 @@
         "SA": "Total_20%GD_50"
       },
       "existingCustomer": {
-        "ENE":{
+        "ENE": {
           "VIC": "Employee_25%GD",
           "NSW": {
             "default": "Employee_28%GD"
@@ -103,7 +102,6 @@
       }
     }
   },
-
   "gas": {
     "feature": {
       "preSelect": {
@@ -154,25 +152,26 @@
         "Credit50": {
           "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
           "NSW": "",
-          "SA" : "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
+          "SA": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Energy with a bit of good. 100% carbon neutral energy at home for no extra cost to you.",
         "peaceOfMind": "Priority customer service. Dedicated Family, Friends and You team.",
         "discountOffTotalEnergyBill": {
           "VIC": "35% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to your energy charges.",
           "NSW": "28% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to your energy charges.",
-          "SA" : "20% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to your energy charges."
+          "SA": "20% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to your energy charges."
         },
         "vipPriorityService": ""
       }
-    },    "sourceCode": {
+    },
+    "sourceCode": {
       "newCustomer": {
         "VIC": "Employee_35%GD",
         "NSW": "Employee_28%GD",
         "SA": "Total_20%GD_50"
       },
       "existingCustomer": {
-        "ENE":{
+        "ENE": {
           "VIC": "Employee_30%GD",
           "NSW": "Employee_28%GD",
           "SA": "Total_20%GD_50"
@@ -185,7 +184,6 @@
       }
     }
   },
-
   "disclaimers": {
     "referencePriceComparison": {
   "heading": "Reference price comparison and estimated annual cost",
@@ -208,7 +206,7 @@
     "goNeutral": {
       "heading": "",
       "QLD": {
-      "description": ""
+        "description": ""
       },
       "NonQLD": {
         "description": ""

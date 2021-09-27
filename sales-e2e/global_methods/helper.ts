@@ -212,6 +212,9 @@ export class testFunction {
     let count = await this.sizeOfElement(t, element);
     return count > 0;
   }
+  public static async isElementNotExists(t, element) {
+    await t.expect(Selector(element).exists).notOk();
+  }
 
   public static async enterText(t, element, value) {
     try {

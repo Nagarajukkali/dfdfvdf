@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CA2102114001
+    quoteId: CA2109203539
     sourceCode: Basic
-    actualQuoteDate: 2021-02-11
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MS
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0373821150
+      phoneNumber: 0343959101
     
-    emailId: sVYZGtifMV@energyaustralia.com.au
+    emailId: cOiqUBWFSv@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLQLD
-      id: 421122
+      idType: DLSA
+      id: 217305
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: QLD
+          licenseStateOfIssue: SA
         
       
     
@@ -47,6 +47,7 @@ saleDetail :
     postCode: 2144
     premiseType: DOM
     addressType: Premise
+    DPID: 85507214
     primaryResidence: N
   
   premiseDetail: 
@@ -59,6 +60,7 @@ saleDetail :
     country: AUS
     postCode: 2144
     addressType: Mailing
+    DPID: 85507214
   
   offerDetail: 
     fuelType: G

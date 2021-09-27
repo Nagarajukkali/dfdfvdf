@@ -1,7 +1,6 @@
 {
   "planName": "Total Plan Plus",
   "planDescription": "VIP discount on your total energy bill guaranteed - every time.",
-
   "electricity": {
     "feature": {
       "preSelect": {
@@ -45,7 +44,7 @@
           "VIC": "$50 Second Energy Account Credit. Get a $50 credit on your first bill when you sign up your second energy account.+",
           "NSW": "",
           "ACT": "$25 Second Energy Account Credit. Get a $25 credit on your first bill when you sign up your second energy account online.+",
-          "SA" : "$50 Second Energy Account Credit. Get a $50 credit on your first bill when you sign up your second energy account.+"
+          "SA": "$50 Second Energy Account Credit. Get a $50 credit on your first bill when you sign up your second energy account.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
@@ -67,7 +66,7 @@
         "SA": "Total_Plus_15%GD"
       },
       "existingCustomer": {
-        "ENE":{
+        "ENE": {
           "VIC": "Total_Plus_14%GD",
           "NSW": {
             "Ausgrid": "Total_Plus_25%GD",
@@ -94,7 +93,6 @@
       }
     }
   },
-
   "gas": {
     "feature": {
       "preSelect": {
@@ -138,7 +136,7 @@
           "VIC": "$50 Second Energy Account Credit. Get a $50 credit on your first bill when you sign up your second energy account.+",
           "NSW": "",
           "ACT": "$25 Second Energy Account Credit. Get a $25 credit on your first bill when you sign up your second energy account online.+",
-          "SA" : "$50 Second Energy Account Credit. Get a $50 credit on your first bill when you sign up your second energy account.+"
+          "SA": "$50 Second Energy Account Credit. Get a $50 credit on your first bill when you sign up your second energy account.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
@@ -155,7 +153,7 @@
         "SA": "Total_Plus_15%GD"
       },
       "existingCustomer": {
-        "ENE":{
+        "ENE": {
           "VIC": "Total_Plus_34%GD",
           "NSW": "Total_Plus_25%GD",
           "ACT": "Total_Plus_17%GD_25",
@@ -172,8 +170,6 @@
       }
     }
   },
-
-
   "disclaimers": {
     "referencePriceComparison": {
   "heading": "Reference price comparison and estimated annual cost",
@@ -240,7 +236,7 @@
     "totalPlanPlus": {
       "heading": "Total Plan Plus",
       "VIC": {
-        "description":  "* Offer only for existing VIC residential customers who sign up to a gas offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for existing VIC residential customers who sign up to a gas offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "NSW": {
         "description": "* Offer only for existing NSW residential customers who sign up to a gas offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."

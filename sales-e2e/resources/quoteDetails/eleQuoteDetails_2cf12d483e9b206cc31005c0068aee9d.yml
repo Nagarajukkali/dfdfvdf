@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: FR2102114223
-    sourceCode: Total_13%GD
-    actualQuoteDate: 2021-02-11
+    quoteId: FR2109203446
+    sourceCode: Total_7%GD
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0325403718
+      phoneNumber: 0359405852
     
-    emailId: GtSEeyWtCI@energyaustralia.com.au
+    emailId: MfTzQMkmXk@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 264745
+      id: 228408
       primaryIdFlag: Y
     
     authLevel: Y
@@ -40,6 +40,7 @@ saleDetail :
     postCode: 5109
     premiseType: DOM
     addressType: Premise
+    DPID: 48985820
     primaryResidence: N
   
   premiseDetail: 
@@ -52,12 +53,13 @@ saleDetail :
     country: AUS
     postCode: 5109
     addressType: Mailing
+    DPID: 48985820
   
   offerDetail: 
     fuelType: E
     offerType: PS
     plan: TOPH-ES
-    priceTag: ESSAA_NR2007
+    priceTag: ESSAA_NR2107
     nmiMirnInformation: 
       NMI: 2001473900
     
@@ -73,5 +75,10 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
+  
+  solarDetail: 
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: GENR2016
+    solarTimeOfUse: N
   
 

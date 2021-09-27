@@ -1,7 +1,6 @@
 {
   "planName": "Business Balance Plan",
   "planDescription": "Great discount on your total energy bill guaranteed - every time.",
-
   "electricity": {
     "feature": {
       "preSelect": {
@@ -17,7 +16,7 @@
           "heading": "Peace of mind",
           "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
         },
-        "VariableRates": {
+        "variableRates": {
           "heading": "Variable Rates",
           "description": "Your market energy charges are variable for the benefit period. We'll let you know in advance before your market energy charges change."
         },
@@ -35,7 +34,8 @@
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
-        "noStandardConnectionFee": ""
+        "noStandardConnectionFee": "",
+        "variableRates": "Variable Rates. Your market energy charges are variable for the benefit period. We'll let you know in advance before your market energy charges change."
       }
     },
     "sourceCode": {
@@ -52,7 +52,7 @@
         "SA": "Total_15%GD"
       },
       "existingCustomer": {
-        "ENE":{
+        "ENE": {
           "VIC": "Total_6%GD",
           "NSW": {
             "Ausgrid": "Total_28%GD",
@@ -94,7 +94,7 @@
           "heading": "Peace of mind",
           "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
         },
-        "VariableRates": {
+        "variableRates": {
           "heading": "Variable Rates",
           "description": "Your market energy charges are variable for the benefit period. We'll let you know in advance before your market energy charges change."
         },
@@ -107,7 +107,8 @@
         "Credit50": "",
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
-        "discountOffTotalEnergyBill": "discount off total gas bill. Guaranteed discount that applies to your market energy charges."
+        "discountOffTotalEnergyBill": "discount off total gas bill. Guaranteed discount that applies to your market energy charges.",
+        "variableRates": "Variable Rates. Your market energy charges are variable for the benefit period. We'll let you know in advance before your market energy charges change."
       }
     },
     "sourceCode": {
@@ -118,7 +119,7 @@
         "SA": "Total_5%GD"
       },
       "existingCustomer": {
-        "ENE":{
+        "ENE": {
           "VIC": "Total_26%GD",
           "NSW": "Total_26%GD",
           "ACT": "Total_26%GD",
@@ -133,7 +134,6 @@
       }
     }
   },
-
   "disclaimers": {
     "referencePriceComparison": {
   "heading": "Reference price comparison and estimated annual cost",

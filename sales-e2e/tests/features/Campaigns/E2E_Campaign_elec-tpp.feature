@@ -12,97 +12,102 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for elec-tpp campaign
+
   @campaign21.7.2.dataminion
   Scenario Outline: Validate complete data for elec-tpp campaign for NSW
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" and clicks on show me plan link
     Then plans page load according to the type of 'CAMPAIGN_NOT_SERVICED'
     Examples:
-      |campaign    |folderName              |
-      |elec-tpp    |E2E_Campaign_elec-tpp_NSW    |
+      | campaign | folderName                |
+      | elec-tpp | E2E_Campaign_elec-tpp_NSW |
+
   @campaign21.7.2.dataminion
   Scenario Outline: Validate complete data for elec-tpp campaign for QLD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4500" and clicks on show me plan link
     Then plans page load according to the type of 'CAMPAIGN_NOT_SERVICED'
     Examples:
-      |campaign    |folderName              |
-      |elec-tpp    |E2E_Campaign_elec-tpp_QLD    |
+      | campaign | folderName                |
+      | elec-tpp | E2E_Campaign_elec-tpp_QLD |
+
   @campaign21.7.2.dataminion
   Scenario Outline: Validate complete data for elec-tpp campaign for ACT
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2600" and clicks on show me plan link
     Then plans page load according to the type of 'CAMPAIGN_NOT_SERVICED'
     Examples:
-      |campaign    |folderName              |
-      |elec-tpp    |E2E_Campaign_elec-tpp_ACT   |
+      | campaign | folderName                |
+      | elec-tpp | E2E_Campaign_elec-tpp_ACT |
+
   @DR21.7.5.campaign
   Scenario Outline: Validate complete data for elec-tpp campaign for VIC - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |N                 |Y                       |Y                    |Y                                    |N                                |<state>|
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
+      | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName       |state|signUpCredit|
-      |Y                        |Y          |Y              |Total Plan Plus|<state>  |N           |
+      | referencePriceComparison | goNeutral | solarBuyBack | planName        | state   | signUpCredit |
+      | Y                        | Y         | Y            | Total Plan Plus | <state> | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state  |
-      |ELE      |N                 |Y                       |Y                    |Y                                    |<state>|
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
+      | ELE      | N                | Y                     | Y                   | Y                                  | <state> |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      |customerType |connectionAddress                    |movingType |propertyType |
-      |RES          |31 Balwyn Road, CANTERBURY VIC 3126 |Moving     |Renter       |
+      | customerType | connectionAddress                   | movingType | propertyType |
+      | RES          | 31 Balwyn Road, CANTERBURY VIC 3126 | Moving     | Renter       |
     And user provides all details on checkout details page
-      |customerType |journey    |customerStatus |firstName  |lastName |idType         |medicareType |
-      |RES          |RES        |New            |test       |test     |Driver License |             |
+      | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
+      | RES          | RES     | New            | test      | test     | Driver License |              |
     And user selects mailing address option
-      |addressType       |otherAddress                              |
-      |Connection Address|                                          |
+      | addressType        | otherAddress |
+      | Connection Address |              |
     And user validates details on checkout details page
-      |sourceSystem   |journey    |fuelType   |
-      |<sourceSystem> |<journey>  |<fuelType> |
+      | sourceSystem   | journey   | fuelType   |
+      | <sourceSystem> | <journey> | <fuelType> |
     And user opts for AAH and DD
-      |optAAHOption|optDDOption|directDebitType|
-      |<AAH>       |<DD>       |Bank           |
+      | optAAHOption | optDDOption | directDebitType |
+      | <AAH>        | <DD>        | Bank            |
     And user selects answer for property renovation question for '<state>'
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
+      | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
+      | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user provides life support details on review page
-      |lifeSupportOption|fuelType |EleclifeSupportDevices    |GaslifeSupportDevices  |
-      |No               |         |                          |                       |
+      | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
+      | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |N                 |N                      |Y                    |Y                                    |N                                |<state>|
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
+      | ELE      | N                | N                     | Y                   | Y                                  | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName       |state|signUpCredit|
-      |Y                        |Y          |Y              |Total Plan Plus|<state>  |N           |
+      | referencePriceComparison | goNeutral | solarBuyBack | planName        | state   | signUpCredit |
+      | Y                        | Y         | Y            | Total Plan Plus | <state> | N            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
-      |sourceSystem   |journey    |fuelType   |AAH  |DD   |customerType   |newOrExisting  |
-      |<sourceSystem> |<journey>  |<fuelType> |<AAH>|<DD> |<customerType> |<newOrExisting>|
+      | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
+      | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     When user has opened the qt2 Reporting website link in a browser
     And user logs in to qt2 reporting
     And user search quote on the basis of 'Email'
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      |fuelType|quoteStatus     |customerType|offerType|planCode |NMI         |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-EV |6102221416  |N                             |N                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | SWSR1-EV | 6102221416 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
-      |customerStatus|fuelType|eleDiscount|campaign            |folderName              |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
-      |New           |ELE    |14         |elec-tpp    |E2E_Campaign_elec-tpp_VIC_new_moving    |VIC  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
+      | customerStatus | fuelType | eleDiscount | campaign | folderName                           | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
+      | New            | ELE      | 14          | elec-tpp | E2E_Campaign_elec-tpp_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
+
   @campaign21.7.2.dataminion
   Scenario Outline: Validate complete data for elec-tpp campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" and clicks on show me plan link
     Then plans page load according to the type of 'CAMPAIGN_NOT_SERVICED'
     Examples:
-      |campaign    |folderName              |
-      |elec-tpp    |E2E_Campaign_elec-tpp_SA    |
+      | campaign | folderName               |
+      | elec-tpp | E2E_Campaign_elec-tpp_SA |

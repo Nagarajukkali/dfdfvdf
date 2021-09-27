@@ -1,0 +1,87 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: SR2109203464
+    sourceCode: Total_16%GD
+    actualQuoteDate: 2021-09-20
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    title: DR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0330763278
+    
+    emailId: ASvCwnoZZU@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DLVIC
+      id: 861838
+      primaryIdFlag: Y
+      idValidationInformation: 
+        consentForIdValidation: Y
+        idValidationDriversLicenseDetail: 
+          dlFirstName: test
+          dlLastName: test
+          licenseStateOfIssue: VIC
+        
+      
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 74
+    streetName: Yillowra
+    streetType: S
+    suburb: AUBURN
+    state: NSW
+    country: AUS
+    postCode: 2144
+    premiseType: DOM
+    addressType: Premise
+    DPID: 85507214
+    primaryResidence: N
+  
+  premiseDetail: 
+    addressClass: ST
+    streetNo: 74
+    streetName: Yillowra
+    streetType: S
+    suburb: AUBURN
+    state: NSW
+    country: AUS
+    postCode: 2144
+    addressType: Mailing
+    DPID: 85507214
+  
+  offerDetail: 
+    fuelType: G
+    proposedStart: 2021-09-21
+    offerType: ENE
+    plan: TOPH-GN
+    priceTag: GNAGA_NR2107
+    serviceOrderDate: 2021-09-21
+    serviceOrderTime: BUSHRS
+    nmiMirnInformation: 
+      MIRN: 5240524910
+    
+  
+  offerDetail: 
+    fuelType: E
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  creditAssessmentReasonCode: Accept
+

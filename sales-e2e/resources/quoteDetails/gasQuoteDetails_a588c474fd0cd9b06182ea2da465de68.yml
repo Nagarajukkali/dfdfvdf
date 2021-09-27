@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CA2102114008
+    quoteId: CA2109203575
     sourceCode: Basic
-    actualQuoteDate: 2021-02-11
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: DR
+    title: MRS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0378672322
+      phoneNumber: 0397997891
     
-    emailId: IIzymPaJwT@energyaustralia.com.au
+    emailId: tRPqTkpkrT@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLQLD
-      id: 859427
+      idType: DLNT
+      id: 302391
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: QLD
+          licenseStateOfIssue: NT
         
       
     
@@ -38,7 +38,7 @@ saleDetail :
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 9
+    streetNo: 8
     streetName: Charming
     streetType: S
     suburb: HAMPTON EAST
@@ -47,11 +47,12 @@ saleDetail :
     postCode: 3188
     premiseType: DOM
     addressType: Premise
+    DPID: 78940199
     primaryResidence: N
   
   premiseDetail: 
     addressClass: ST
-    streetNo: 9
+    streetNo: 8
     streetName: Charming
     streetType: S
     suburb: HAMPTON EAST
@@ -59,6 +60,7 @@ saleDetail :
     country: AUS
     postCode: 3188
     addressType: Mailing
+    DPID: 78940199
   
   offerDetail: 
     fuelType: G
@@ -66,7 +68,7 @@ saleDetail :
     plan: RSOT-GV
     priceTag: GVA2A_S03N
     nmiMirnInformation: 
-      MIRN: 5310571404
+      MIRN: 5310571403
     
     energySafeVicQuestions: 
       renovationsSinceDeenergisation: N

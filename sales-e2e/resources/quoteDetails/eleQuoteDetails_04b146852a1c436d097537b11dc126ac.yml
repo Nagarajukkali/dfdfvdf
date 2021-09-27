@@ -1,0 +1,86 @@
+saleDetail : 
+  saleDetailHeader: 
+    quoteId: BB2109173171
+    sourceCode: NOFRILLS
+    actualQuoteDate: 2021-09-17
+    quoteStatus: VERBALLYACCEPTED
+    customerType: RESIDENTIAL
+    paymentMethod: AUSPOST
+    customerClass: RESI
+  
+  personDetail: 
+    personId: 8234554000
+    title: MR
+    firstName: test
+    lastName: test
+    commMethod: EMAIL
+    phone: 
+      phoneType: MOBILE
+      phoneNumber: 0391331161
+    
+    emailId: sgVPwtsLIH@energyaustralia.com.au
+    dob: 1980-01-01
+    personIdDetail: 
+      idType: DL
+      id: 675648
+      primaryIdFlag: Y
+    
+    authLevel: Y
+    personPremiseRelationship: TENANT
+    seqNo: 2
+  
+  premiseDetail: 
+    flatNo: 1
+    flatType: U
+    addressClass: ST
+    streetNo: 57
+    streetName: Wallace
+    streetType: S
+    suburb: MACKSVILLE
+    state: NSW
+    country: AUS
+    postCode: 2447
+    premiseType: DOM
+    addressType: Premise
+    DPID: 59760646
+    primaryResidence: N
+  
+  premiseDetail: 
+    flatNo: 1
+    flatType: U
+    addressClass: ST
+    streetNo: 57
+    streetName: Wallace
+    streetType: S
+    suburb: MACKSVILLE
+    state: NSW
+    country: AUS
+    postCode: 2447
+    addressType: Mailing
+    DPID: 59760646
+  
+  offerDetail: 
+    fuelType: E
+    offerType: PS
+    plan: RCPP-EN
+    priceTag: ENCED_ZR2107
+    nmiMirnInformation: 
+      NMI: 4407376910
+    
+  
+  offerDetail: 
+    fuelType: G
+    offerType: N/A
+    fuelTypeNaReasonCode: NOINTEREST
+  
+  billDeliveryDetail: 
+    billRouteType: EMAIL
+  
+  creditAssessmentDecision: Accept
+  meteringDetail: 
+    meterExchangeFlag: N
+  
+  solarDetail: 
+    solarPowerIndicator: N
+  
+

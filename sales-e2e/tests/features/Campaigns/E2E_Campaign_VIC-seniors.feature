@@ -12,7 +12,7 @@
 
 Feature:E2E scenario for vic-seniors campaign
 
-  @DR21.9.2.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for vic-seniors campaign for VIC - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "3000" and clicks on show me plan link
@@ -21,20 +21,20 @@ Feature:E2E scenario for vic-seniors campaign
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      |  Y               | Y                     | Y                   | Y                                     | N                               | <state> |
+      | ELE      | Y                | Y                     | Y                   | Y                                  | N                               | <state> |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | Y                | Y                     | Y                   | Y                                     | N                               | <state> |
+      | GAS      | Y                | Y                     | Y                   | Y                                  | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Total Plan | <state> | Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-      | ELE      | Y                | Y                     | Y                   | Y                                     | <state> |
+      | ELE      | Y                | Y                     | Y                   | Y                                  | <state> |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-      | GAS      | Y                | Y                     | Y                   | Y                                     | <state> |
+      | GAS      | Y                | Y                     | Y                   | Y                                  | <state> |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                   | movingType | propertyType |
@@ -52,10 +52,10 @@ Feature:E2E scenario for vic-seniors campaign
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | Y                | N                     | Y                   | Y                                     | N                               | <state> |
+      | ELE      | Y                | N                     | Y                   | Y                                  | N                               | <state> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | Y                | N                     | Y                   | Y                                     | N                               | <state> |
+      | GAS      | Y                | N                     | Y                   | Y                                  | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Total Plan | <state> | Y            |

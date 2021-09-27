@@ -1,7 +1,6 @@
 {
   "planName": "Business Balance Plan",
   "planDescription": "Great discount on your total energy bill guaranteed - every time.",
-
   "electricity": {
     "feature": {
       "preSelect": {
@@ -57,7 +56,7 @@
           "heading": "Peace of mind",
           "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
         },
-        "VariableRates": {
+        "variableRates": {
           "heading": "Variable Rates",
           "description": "Your market energy charges are variable for the benefit period. We'll let you know in advance before your market energy charges change."
         },
@@ -76,19 +75,20 @@
           "NSW": "Get a $200 credit. Credits applied to first bill. $100 to electricity. $100 to gas.",
           "ACT": "",
           "QLD": "",
-          "SA" : ""
+          "SA": ""
         },
         "chanceToWin": {
           "VIC": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.",
           "NSW": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.",
           "ACT": "",
           "QLD": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.",
-          "SA" : ""
+          "SA": ""
         },
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
-        "noStandardConnectionFee": ""
+        "noStandardConnectionFee": "",
+        "variableRates": "Variable Rates. Your market energy charges are variable for the benefit period. We'll let you know in advance before your market energy charges change."
       }
     },
     "sourceCode": {
@@ -105,7 +105,7 @@
         "SA": "Total_15%GD"
       },
       "existingCustomer": {
-        "ENE":{
+        "ENE": {
           "VIC": "Total_6%GD",
           "NSW": {
             "Ausgrid": "Total_28%GD",
@@ -132,7 +132,6 @@
       }
     }
   },
-
   "gas": {
     "feature": {
       "preSelect": {
@@ -188,7 +187,7 @@
           "heading": "Peace of mind",
           "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
         },
-        "VariableRates": {
+        "variableRates": {
           "heading": "Variable Rates",
           "description": "Your market energy charges are variable for the benefit period. We'll let you know in advance before your market energy charges change."
         },
@@ -207,19 +206,20 @@
           "NSW": "Get a $400 credit. Credits applied to first bill. $200 to electricity. $200 to gas.",
           "ACT": "",
           "QLD": "",
-          "SA" : ""
+          "SA": ""
         },
         "chanceToWin": {
           "VIC": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.+",
           "NSW": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.+",
           "ACT": "",
           "QLD": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.+",
-          "SA" : ""
+          "SA": ""
         },
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "discount off total gas bill. Guaranteed discount that applies to your market energy charges.",
-        "noStandardConnectionFee": ""
+        "noStandardConnectionFee": "",
+        "variableRates": "Variable Rates. Your market energy charges are variable for the benefit period. We'll let you know in advance before your market energy charges change."
       }
     },
     "sourceCode": {
@@ -230,7 +230,7 @@
         "SA": "Total_5%GD"
       },
       "existingCustomer": {
-        "ENE":{
+        "ENE": {
           "VIC": "Total_26%GD",
           "NSW": "Total_26%GD",
           "ACT": "Total_26%GD",
@@ -245,7 +245,6 @@
       }
     }
   },
-
   "disclaimers": {
     "referencePriceComparison": {
   "heading": "Reference price comparison and estimated annual cost",
