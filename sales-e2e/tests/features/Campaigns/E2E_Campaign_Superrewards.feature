@@ -13,7 +13,7 @@
 
 Feature:E2E scenario for super-rewards campaign
 
-  @DR21.9.2.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for super-rewards campaign for NSW - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2516" and clicks on show me plan link
@@ -143,7 +143,7 @@ Feature:E2E scenario for super-rewards campaign
       | customerStatus | fuelType | eleDiscount | campaign      | folderName                                | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 14          | super-rewards | E2E_Campaign_super-rewards_QLD_new_moving | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.9.2.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for super-rewards campaign for SA - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5044" for postcode and proceed to view the plans
@@ -210,7 +210,8 @@ Feature:E2E scenario for super-rewards campaign
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                               | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 7           | 15          | super-rewards | E2E_Campaign_super-rewards_SA_new_moving | SA    | Quote Tool   | Move Home | No  | No | RES          | New           |
-@DR21.9.2.campaign
+
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for super-rewards campaign for ACT - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2600" for postcode and proceed to view the plans
@@ -224,8 +225,8 @@ Feature:E2E scenario for super-rewards campaign
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
       | GAS      | Y                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
-      | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   |signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | <state> |Y            |
+      | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | state   |
@@ -255,8 +256,8 @@ Feature:E2E scenario for super-rewards campaign
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
       | GAS      | Y                | N                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
-      | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   |signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | <state> |Y            |
+      | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -277,7 +278,8 @@ Feature:E2E scenario for super-rewards campaign
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                             | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 10          | 15          | super-rewards | E2E_Campaign_cashreward_ACT_new_moving | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
-  @DR21.9.2.campaign
+
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for super-rewards campaign for VIC - new non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
@@ -343,7 +345,8 @@ Feature:E2E scenario for super-rewards campaign
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                                   | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 15          | 26          | super-rewards | E2E_Campaign_super-rewards_VIC_new_nonmoving | VIC   | Quote Tool   | COR     | No  | No | RES          | New           |
-  @DR21.9.2.campaign
+
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for super-rewards campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
@@ -413,7 +416,7 @@ Feature:E2E scenario for super-rewards campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                                         | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     | 15          | 26          | super-rewards | E2E_Campaign_super-rewards_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR21.9.2.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for super-rewards campaign for NSW existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" for postcode and proceed to view the plans
@@ -476,7 +479,7 @@ Feature:E2E scenario for super-rewards campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                                         | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     | 20          | 16          | super-rewards | E2E_Campaign_super-rewards_NSW_existing_non-moving | NSW   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR21.9.2.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for super-rewards campaign for SA existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" for postcode and proceed to view the plans

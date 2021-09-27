@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2109061179
+    quoteId: BB2109203629
     sourceCode: Total_16%GD
-    actualQuoteDate: 2021-09-06
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MISS
+    title: MR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0334585657
+      phoneNumber: 0379592998
     
-    emailId: lgHNZlXLdb@energyaustralia.com.au
+    emailId: eCxujfAwcd@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLACT
-      id: 279495
+      idType: DLSA
+      id: 695202
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: ACT
+          licenseStateOfIssue: SA
         
       
     
@@ -64,11 +64,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2021-09-07
+    proposedStart: 2021-09-21
     offerType: ENE
     plan: TOPH-GN
     priceTag: GNAGA_NR2107
-    serviceOrderDate: 2021-09-07
+    serviceOrderDate: 2021-09-21
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5240524910

@@ -12,7 +12,8 @@
   # 9. If journey change to Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for total-plan-plus campaign
-  @DR21.9.2.campaign
+
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for total-plan-plus campaign for VIC - existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3031" for postcode and proceed to view the plans
@@ -85,7 +86,7 @@ Feature:E2E scenario for total-plan-plus campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                   | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting |
       | Existing       | BOTH     | 16          | 27          | total-plan-plus | E2E_Campaign_total-plan-plus_VIC_exis_nonmov | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing      |
 
-  @DR21.9.2.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for total-plan-plus campaign for NSW - existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" for postcode and proceed to view the plans
@@ -152,7 +153,7 @@ Feature:E2E scenario for total-plan-plus campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                   | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting |
       | Existing       | ELE      | 21          | 17          | total-plan-plus | E2E_Campaign_total-plan-plus_NSW_exis_nonmov | NSW   | Quote Tool   | Plan Switch | No  | No | RES          | Existing      |
 
-  @DR21.9.2.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for total-plan-plus campaign for SA - existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" for postcode and proceed to view the plans
@@ -225,7 +226,8 @@ Feature:E2E scenario for total-plan-plus campaign
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                  | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting |
       | Existing       | ELE      | 8           | 16          | total-plan-plus | E2E_Campaign_total-plan-plus_SA_exis_nonmov | SA    | Quote Tool   | Plan Switch | No  | No | RES          | Existing      |
-  @DR21.9.2.campaign
+
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for total-plan-plus campaign for ACT - existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2600" for postcode and proceed to view the plans
@@ -299,7 +301,7 @@ Feature:E2E scenario for total-plan-plus campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                   | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting |
       | Existing       | ELE      | 11          | 16          | total-plan-plus | E2E_Campaign_total-plan-plus_ACT_exis_nonmov | ACT   | Quote Tool   | Plan Switch | No  | No | RES          | Existing      |
 
-  @DR21.9.2.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for total-plan-plus campaign for NSW - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2516" and clicks on show me plan link
@@ -375,7 +377,7 @@ Feature:E2E scenario for total-plan-plus campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                  | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 21          | 17          | total-plan-plus | E2E_Campaign_total-plan-plus_NSW_new_moving | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.9.2.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for total-plan-plus campaign for VIC - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3163" and clicks on show me plan link

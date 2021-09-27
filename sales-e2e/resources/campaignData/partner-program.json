@@ -1,7 +1,6 @@
 {
   "planName": "Total Plan",
   "planDescription": "Great discount on your total energy bill guaranteed - every time.",
-
   "electricity": {
     "feature": {
       "preSelect": {
@@ -50,7 +49,7 @@
           "NSW": "",
           "ACT": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
           "QLD": "",
-          "SA" : "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
+          "SA": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Energy with a bit of good. Opt in for 100% carbon neutral at no extra cost for your home energy.",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
@@ -72,7 +71,7 @@
         "SA": "Alliance_9%GD_50"
       },
       "existingCustomer": {
-        "ENE":{
+        "ENE": {
           "VIC": "Alliance_17%GD",
           "NSW": {
             "Ausgrid": "Alliance_22%GD",
@@ -99,7 +98,6 @@
       }
     }
   },
-
   "gas": {
     "feature": {
       "preSelect": {
@@ -143,7 +141,7 @@
           "VIC": "",
           "NSW": "",
           "ACT": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
-          "SA" : "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
+          "SA": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Energy with a bit of good. Opt in for 100% carbon neutral at no extra cost for your home energy.",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
@@ -171,7 +169,6 @@
       }
     }
   },
-
   "disclaimers": {
     "referencePriceComparison": {
   "heading": "Reference price comparison and estimated annual cost",

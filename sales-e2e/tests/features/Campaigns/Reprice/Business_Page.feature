@@ -1,4 +1,4 @@
-@DR21.6.1.repricetest @DR21.7.1.campaign
+@DR21.6.1.repricetest @DR21.7.1.campaign @DR21.9.5.campaign-R
 
 Feature:E2E scenario for Reprice Prepositioning changes on business plans page
 

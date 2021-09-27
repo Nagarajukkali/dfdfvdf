@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2102114022
+    quoteId: BB2109203520
     sourceCode: Basic_25
-    actualQuoteDate: 2021-02-11
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0350691040
+      phoneNumber: 0310858138
     
-    emailId: ZZAIWagOda@energyaustralia.com.au
+    emailId: hJUPcbhvSX@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLSA
-      id: 295323
+      idType: DLNSW
+      id: 59777
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: SA
+          licenseStateOfIssue: NSW
         
       
     
@@ -47,6 +47,7 @@ saleDetail :
     postCode: 2615
     premiseType: DOM
     addressType: Premise
+    DPID: 34123756
     primaryResidence: N
   
   premiseDetail: 
@@ -59,14 +60,15 @@ saleDetail :
     country: AUS
     postCode: 2615
     addressType: Mailing
+    DPID: 34123756
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-02-15
+    proposedStart: 2021-09-22
     offerType: ENE
     plan: RSOT-EA
     priceTag: EAACA_GRA
-    serviceOrderDate: 2021-02-15
+    serviceOrderDate: 2021-09-22
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 7001068488
@@ -85,6 +87,11 @@ saleDetail :
   meteringDetail: 
     meterExchangeFlag: N
     reEnergisationJSCCode: 501
-    reEnergisationJSCCharge: 80.43
+    reEnergisationJSCCharge: 81.92
+  
+  solarDetail: 
+    solarPowerIndicator: Y
+    solarNetworkTariffCode: 302
+    solarTimeOfUse: N
   
 

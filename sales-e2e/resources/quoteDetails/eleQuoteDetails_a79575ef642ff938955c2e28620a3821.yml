@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2109141953
+    quoteId: BB2109203294
     sourceCode: Total_13%GD
-    actualQuoteDate: 2021-09-14
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,30 +15,30 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0362225093
+      phoneNumber: 0327123446
     
-    emailId: nqabfaYBsb@energyaustralia.com.au
+    emailId: XSvAsUAxxB@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: PARTNERSHIP
+    businessType: GOVERNMENT
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 73159947112
+      businessId: 76571944075
     
-    anzsic: FINANCE
+    anzsic: RETAIL_TRD
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0362225093
+      businessPhoneNumber: 0327123446
     
-    businessEmailId: nqabfaYBsb@energyaustralia.com.au
+    businessEmailId: XSvAsUAxxB@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -68,11 +68,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-09-15
+    proposedStart: 2021-09-21
     offerType: ENE
     plan: BSPB1-EA
     priceTag: EAACA_MB
-    serviceOrderDate: 2021-09-15
+    serviceOrderDate: 2021-09-21
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: 7001138899

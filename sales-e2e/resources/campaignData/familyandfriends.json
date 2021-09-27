@@ -1,7 +1,6 @@
 {
   "planName": "Family and Friends",
   "planDescription": "Great discount on your total energy bill guaranteed - every time.",
-
   "electricity": {
     "feature": {
       "preSelect": {
@@ -54,7 +53,7 @@
           "NSW": "",
           "ACT": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
           "QLD": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
-          "SA" : "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
+          "SA": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Energy with a bit of good. 100% carbon neutral at no extra cost for your home energy.",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
@@ -77,7 +76,7 @@
         "SA": "Total_10%GD_50"
       },
       "existingCustomer": {
-        "ENE":{
+        "ENE": {
           "VIC": "Total_18%GD",
           "NSW": {
             "Ausgrid": "Total_23%GD",
@@ -104,7 +103,6 @@
       }
     }
   },
-
   "gas": {
     "feature": {
       "preSelect": {
@@ -152,14 +150,15 @@
           "VIC": "",
           "NSW": "",
           "ACT": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
-          "SA" : "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
+          "SA": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Energy with a bit of good. 100% carbon neutral at no extra cost for your home energy.",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "VIP discount off total energy bill. Exclusive VIP guaranteed discount that applies to your energy charges. Eligible customers only.",
         "vipPriorityService": ""
       }
-    },    "sourceCode": {
+    },
+    "sourceCode": {
       "newCustomer": {
         "VIC": "Total_29%GD",
         "NSW": "Total_19%GD",
@@ -167,7 +166,7 @@
         "SA": "Total_18%GD_50"
       },
       "existingCustomer": {
-        "ENE":{
+        "ENE": {
           "VIC": "Total_29%GD",
           "NSW": "Total_19%GD",
           "ACT": "Total_18%GD_50",
@@ -182,7 +181,6 @@
       }
     }
   },
-
   "disclaimers": {
     "referencePriceComparison": {
   "heading": "Reference price comparison and estimated annual cost",
@@ -205,7 +203,7 @@
     "goNeutral": {
       "heading": "",
       "QLD": {
-      "description": ""
+        "description": ""
       },
       "NonQLD": {
         "description": ""

@@ -1,7 +1,6 @@
 {
   "planName": "No Frills",
   "planDescription": "Simple low rates and built-in savings for 12 months.",
-
   "electricity": {
     "feature": {
       "preSelect": {
@@ -50,7 +49,7 @@
           "NSW": "",
           "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
           "QLD": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
-          "SA" : "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+"
+          "SA": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
@@ -72,7 +71,7 @@
         "SA": "NOFRILLS"
       },
       "existingCustomer": {
-        "ENE":{
+        "ENE": {
           "VIC": "NOFRILLS",
           "NSW": {
             "Ausgrid": "NOFRILLS",
@@ -99,7 +98,6 @@
       }
     }
   },
-
   "gas": {
     "feature": {
       "preSelect": {
@@ -143,7 +141,7 @@
           "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
           "NSW": "",
           "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
-          "SA" : "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+"
+          "SA": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",

@@ -1,7 +1,6 @@
 {
   "planName": "Total Plan - Business",
   "planDescription": "Great discount on your total energy bill guaranteed - every time.",
-
   "gas": {
     "feature": {
       "preSelect": {
@@ -38,16 +37,15 @@
         "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges."
       }
     },
-
     "sourceCode": {
       "newCustomer": {
         "VIC": "Total_23%GD_100",
-        "NSW":  "Total_19%GD_200"
+        "NSW": "Total_19%GD_200"
       },
       "existingCustomer": {
-        "ENE":{
+        "ENE": {
           "VIC": "Total_23%GD_100",
-          "NSW":  "Total_19%GD_200"
+          "NSW": "Total_19%GD_200"
         },
         "PS": {
           "VIC": "Total_23%GD",
@@ -56,7 +54,6 @@
       }
     }
   },
-
   "disclaimers": {
     "referencePriceComparison": {
   "heading": "Reference price comparison and estimated annual cost",

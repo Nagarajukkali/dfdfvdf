@@ -1,7 +1,6 @@
 {
   "planName": "Basic Business",
   "planDescription": "Standard rates with no discounts.",
-
   "electricity": {
     "feature": {
       "preSelect": {
@@ -132,7 +131,7 @@
           "VIC": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
           "NSW": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
           "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
-          "SA" : "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+"
+          "SA": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "",
@@ -162,7 +161,6 @@
       }
     }
   },
-
   "disclaimers": {
     "solarBuyBack": {
       "heading": "Solar feed-in tariffs",

@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: MA2109030927
+    quoteId: MA2109203364
     sourceCode: Alliance_9%GD_50
-    actualQuoteDate: 2021-09-03
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,20 +15,20 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0342532115
+      phoneNumber: 0324609149
     
-    emailId: BkaujIyIAF@energyaustralia.com.au
+    emailId: GSPNnddYLa@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLTAS
-      id: 724086
+      idType: DLACT
+      id: 873680
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: TAS
+          licenseStateOfIssue: ACT
         
       
     

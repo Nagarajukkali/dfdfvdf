@@ -1,7 +1,6 @@
 {
   "planName": "Total Plan",
   "planDescription": "Great discount on your total energy bill guaranteed - every time.",
-
   "electricity": {
     "feature": {
       "preSelect": {
@@ -29,9 +28,9 @@
         }
       },
       "postSelect": {
-        "Credit50":{
+        "Credit50": {
           "NSW": ""
-          },
+        },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to your energy charges.",
@@ -52,7 +51,6 @@
       }
     }
   },
-
   "gas": {
     "feature": {
       "preSelect": {
@@ -80,7 +78,7 @@
         }
       },
       "postSelect": {
-        "Credit50":{
+        "Credit50": {
           "NSW": ""
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
@@ -91,7 +89,7 @@
     },
     "sourceCode": {
       "newCustomer": {
-          "NSW": "Total_22%GD"
+        "NSW": "Total_22%GD"
       },
       "existingCustomer": {
         "ENE": {
@@ -103,7 +101,6 @@
       }
     }
   },
-
   "disclaimers": {
     "referencePriceComparison": {
   "heading": "Reference price comparison and estimated annual cost",

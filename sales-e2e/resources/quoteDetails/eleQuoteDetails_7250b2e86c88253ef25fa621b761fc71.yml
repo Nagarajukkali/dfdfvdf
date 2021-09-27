@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CA2102114161
-    sourceCode: NOFRILLS_50
-    actualQuoteDate: 2021-02-11
+    quoteId: CA2109203391
+    sourceCode: NOFRILLS
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: DR
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0379780856
+      phoneNumber: 0335827324
     
-    emailId: TbhwQzPKdj@energyaustralia.com.au
+    emailId: TEeKuXdNII@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLTAS
-      id: 782687
+      idType: DLSA
+      id: 824858
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: TAS
+          licenseStateOfIssue: SA
         
       
     
@@ -47,6 +47,7 @@ saleDetail :
     postCode: 4558
     premiseType: DOM
     addressType: Premise
+    DPID: 31477735
     primaryResidence: N
   
   premiseDetail: 
@@ -59,14 +60,15 @@ saleDetail :
     country: AUS
     postCode: 4558
     addressType: Mailing
+    DPID: 31477735
   
   offerDetail: 
     fuelType: E
-    proposedStart: 2021-02-15
+    proposedStart: 2021-09-22
     offerType: ENE
     plan: RCPP-EQ
-    priceTag: EQEXD_ZR2101
-    serviceOrderDate: 2021-02-15
+    priceTag: EQEXD_ZR2107
+    serviceOrderDate: 2021-09-22
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       NMI: QB08556016
@@ -86,5 +88,8 @@ saleDetail :
     meterExchangeFlag: N
     reEnergisationJSCCode: RNRRBU
     reEnergisationJSCCharge: 0.0
+  
+  solarDetail: 
+    solarPowerIndicator: N
   
 

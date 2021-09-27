@@ -13,7 +13,7 @@
 
 Feature:E2E scenario for fca-biz campaign
 
-  @DR21.9.3.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for fca-biz campaign for NSW-Essential for new non-moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2580" for postcode and proceed to view the plans
@@ -21,20 +21,20 @@ Feature:E2E scenario for fca-biz campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName         | state | signUpCredit |
       | N                        | N         | N            | N           | Business Balance | NSW   | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -59,10 +59,10 @@ Feature:E2E scenario for fca-biz campaign
       | No                |          |                        |                       |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName         | state   | signUpCredit |
@@ -85,7 +85,7 @@ Feature:E2E scenario for fca-biz campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                                       | sourceSystem | journey     | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 21          | 26          | fca-biz  | E2E_Campaign_fca-biz_NSW-essential_new_nonmoving | Quote Tool   | Plan Switch | NSW   | BUS          | New           | No  | No |
 
-  @DR21.9.3.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for fca-biz campaign for NSW-Endeavour for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2780" for postcode and proceed to view the plans
@@ -93,20 +93,20 @@ Feature:E2E scenario for fca-biz campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName         | state | signUpCredit |
       | N                        | N         | N            | N           | Business Balance | NSW   | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -131,10 +131,10 @@ Feature:E2E scenario for fca-biz campaign
       | No                |          |                        |                       |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName         | state   | signUpCredit |
@@ -158,7 +158,7 @@ Feature:E2E scenario for fca-biz campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                                    | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 19          | 26          | fca-biz  | E2E_Campaign_fca-biz_NSW_Endeavour_new_moving | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
 
-  @DR21.9.3.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for fca-biz campaign for NSW-Ausgrid for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2042" for postcode and proceed to view the plans
@@ -166,20 +166,20 @@ Feature:E2E scenario for fca-biz campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName         | state | signUpCredit |
       | N                        | N         | N            | N           | Business Balance | NSW   | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -204,10 +204,10 @@ Feature:E2E scenario for fca-biz campaign
       | No                |          |                        |                       |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName         | state   | signUpCredit |
@@ -231,7 +231,7 @@ Feature:E2E scenario for fca-biz campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                          | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 28          | 26          | fca-biz  | E2E_Campaign_fca-biz_NSW_new_moving | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
 
-  @DR21.9.3.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for fca-biz campaign for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
@@ -239,20 +239,20 @@ Feature:E2E scenario for fca-biz campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName                   | state | signUpCredit |
       | N                        | N         | Y            | N           | Total Plan Plus - Business | VIC   | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -277,10 +277,10 @@ Feature:E2E scenario for fca-biz campaign
       | No                |          |                        |                       |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName         | state   | signUpCredit |
@@ -307,21 +307,21 @@ Feature:E2E scenario for fca-biz campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                          | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 6           | 26          | fca-biz  | E2E_Campaign_fca-biz_VIC_new_moving | Quote Tool   | Move Home | VIC   | BUS          | New           | No  | No |
 
-  @DR21.9.3.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for fca-biz campaign for QLD for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4500" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName         | state | signUpCredit |
       | N                        | N         | Y            | N           | Business Balance | QLD   | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
@@ -347,7 +347,7 @@ Feature:E2E scenario for fca-biz campaign
       | No                |          |                        |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName         | state   | signUpCredit |
@@ -370,7 +370,7 @@ Feature:E2E scenario for fca-biz campaign
       | customerStatus | fuelType | eleDiscount | campaign | folderName                          | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | ELE      | 20          | fca-biz  | E2E_Campaign_fca-biz_QLD_new_moving | Quote Tool   | Move Home | QLD   | BUS          | New           | No  | No |
 
-  @DR21.9.3.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for fca-biz campaign for ACT for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2600" for postcode and proceed to view the plans
@@ -378,20 +378,20 @@ Feature:E2E scenario for fca-biz campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName         | state | signUpCredit |
       | N                        | N         | N            | N           | Business Balance | ACT   | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -416,10 +416,10 @@ Feature:E2E scenario for fca-biz campaign
       | No                |          |                        |                       |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName         | state   | signUpCredit |
@@ -446,7 +446,7 @@ Feature:E2E scenario for fca-biz campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                          | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | GAS      | 13          | 26          | fca-biz  | E2E_Campaign_fca-biz_ACT_new_moving | Quote Tool   | Move Home | ACT   | BUS          | New           | No  | No |
 
-  @DR21.9.3.campaign
+  @DR21.9.5.campaign-R
   Scenario Outline: Validate complete data for fca-biz campaign campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5088" for postcode and proceed to view the plans
@@ -454,20 +454,20 @@ Feature:E2E scenario for fca-biz campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName         | state |
       | N                        | N         | N            | Business Balance | SA    |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -492,10 +492,10 @@ Feature:E2E scenario for fca-biz campaign
       | Yes               | BOTH     | Ele Other              | Medically Required Heating and/or Air Conditioning |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
       | ELE      | N                | N                     | N                   | Y                     | Y                                  | N                               |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_VariableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
       | GAS      | N                | N                     | N                   | Y                     | Y                                  | N                               |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName         | state |

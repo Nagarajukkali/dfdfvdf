@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2109141986
+    quoteId: BB2109203307
     sourceCode: Total_26%GD
-    actualQuoteDate: 2021-09-14
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
@@ -15,30 +15,30 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0397974885
+      phoneNumber: 0370272347
     
-    emailId: gdUDIltrOT@energyaustralia.com.au
+    emailId: cXqlpdSGvO@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
   
   businessDetail: 
-    businessType: LIMITED COMPANY
+    businessType: SOLE TRADER
     businessNameDetail: 
       businessName: NA
       nameType: PRIM
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 55800326536
+      businessId: 57283549840
     
-    anzsic: UTILITIES
+    anzsic: AGRICULTURE
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0397974885
+      businessPhoneNumber: 0370272347
     
-    businessEmailId: gdUDIltrOT@energyaustralia.com.au
+    businessEmailId: cXqlpdSGvO@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST
@@ -68,11 +68,11 @@ saleDetail :
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2021-09-16
+    proposedStart: 2021-09-21
     offerType: ENE
     plan: BSPB1-GA
     priceTag: GACTA_MB
-    serviceOrderDate: 2021-09-16
+    serviceOrderDate: 2021-09-21
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5260024970

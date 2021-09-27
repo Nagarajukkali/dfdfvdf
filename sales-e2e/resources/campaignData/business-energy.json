@@ -8,11 +8,11 @@
         "Credit50": {
           "VIC": {
             "heading": "Get up to $200 credit",
-            "description": "Credits applied to first bill. $100 to electricity. $100 to gas."
+            "description": "Credits applied to first bill. $200 to electricity."
           },
           "NSW": {
-            "heading": "Get up to $400 credit",
-            "description": "Credits applied to first bill. $200 to electricity. $200 to gas."
+            "heading": "Get up to $200 credit",
+            "description": "Credits applied to first bill. $200 to electricity."
           },
           "ACT": {
             "heading": "",
@@ -68,18 +68,18 @@
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "Get up to $200 credit. Credits applied to first bill. $100 to electricity. $100 to gas.",
-          "NSW": "Get up to $400 credit. Credits applied to first bill. $200 to electricity. $200 to gas.",
+          "VIC": "Get up to $200 credit. Credits applied to first bill. $200 to electricity.",
+          "NSW": "Get up to $200 credit. Credits applied to first bill. $200 to electricity.",
           "ACT": "",
           "QLD": "Get a $200 credit. Credits applied to first bill. $200 to electricity.",
-          "SA" : ""
+          "SA": ""
         },
         "chanceToWin": {
           "VIC": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.",
           "NSW": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.",
           "ACT": "",
           "QLD": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.",
-          "SA" : ""
+          "SA": ""
         },
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
@@ -89,57 +89,56 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_5%GD",
+        "VIC": "Total_5%GD_200",
         "NSW": {
-          "Ausgrid": "Total_21%GD",
-          "Essential": "Total_18%GD",
-          "Endeavour": "Total_13%GD",
-          "default": "Total_21%GD"
+          "Ausgrid": "Total_19%GD_200",
+          "Essential": "Total_18%GD_200",
+          "Endeavour": "Total_13%GD_200",
+          "default": "Total_19%GD_200"
         },
         "ACT": "Total_10%GD",
-        "QLD": "Total_13%GD",
+        "QLD": "Total_20%GD",
         "SA": "Total_3%GD"
       },
       "existingCustomer": {
-        "ENE":{
-          "VIC": "Total_5%GD",
+        "ENE": {
+          "VIC": "Total_5%GD_200",
           "NSW": {
-            "Ausgrid": "Total_21%GD",
-            "Essential": "Total_18%GD",
-            "Endeavour": "Total_13%GD",
-            "default": "Total_21%GD"
+            "Ausgrid": "Total_19%GD_200",
+            "Essential": "Total_18%GD_200",
+            "Endeavour": "Total_13%GD_200",
+            "default": "Total_19%GD_200"
           },
           "ACT": "Total_10%GD",
-          "QLD": "Total_13%GD",
+          "QLD": "Total_20%GD",
           "SA": "Total_3%GD"
         },
         "PS": {
           "VIC": "Total_5%GD",
           "NSW": {
-            "Ausgrid": "Total_21%GD",
+            "Ausgrid": "Total_19%GD",
             "Essential": "Total_18%GD",
             "Endeavour": "Total_13%GD",
-            "default": "Total_21%GD"
+            "default": "Total_19%GD"
           },
           "ACT": "Total_10%GD",
-          "QLD": "Total_13%GD",
+          "QLD": "Total_20%GD",
           "SA": "Total_3%GD"
         }
       }
     }
   },
-
   "gas": {
     "feature": {
       "preSelect": {
         "Credit50": {
           "VIC": {
             "heading": "Get up to $200 credit",
-            "description": "Credits applied to first bill. $100 to electricity. $100 to gas."
+            "description": "Credits applied to first bill. $200 to gas."
           },
           "NSW": {
-            "heading": "Get up to $400 credit",
-            "description": "Credits applied to first bill. $200 to electricity. $200 to gas."
+            "heading": "Get up to $200 credit",
+            "description": "Credits applied to first bill. $200 to gas."
           },
           "ACT": {
             "heading": "",
@@ -195,18 +194,18 @@
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "Get up to $200 credit. Credits applied to first bill. $100 to electricity. $100 to gas.",
-          "NSW": "Get up to $400 credit. Credits applied to first bill. $200 to electricity. $200 to gas.",
+          "VIC": "Get up to $200 credit. Credits applied to first bill. $200 to gas.",
+          "NSW": "Get up to $200 credit. Credits applied to first bill. $200 to gas.",
           "ACT": "",
           "QLD": "",
-          "SA" : ""
+          "SA": ""
         },
         "chanceToWin": {
           "VIC": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.+",
           "NSW": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.+",
           "ACT": "",
           "QLD": "Chance to win $2,000. Go into the draw to win $2,000. Entrants will receive one (1) entry per business meter on their new electricity/gas business account. One prize only per business.+",
-          "SA" : ""
+          "SA": ""
         },
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
@@ -216,20 +215,20 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_30%GD",
+        "VIC": "Total_23%GD_200",
         "NSW": "Total_19%GD",
         "ACT": "Total_19%GD",
         "SA": "Total_3%GD"
       },
       "existingCustomer": {
-        "ENE":{
-          "VIC": "Total_30%GD",
+        "ENE": {
+          "VIC": "Total_23%GD_200",
           "NSW": "Total_19%GD",
           "ACT": "Total_19%GD",
           "SA": "Total_3%GD"
         },
         "PS": {
-          "VIC": "Total_30%GD",
+          "VIC": "Total_23%GD",
           "NSW": "Total_19%GD",
           "ACT": "Total_19%GD",
           "SA": "Total_3%GD"
@@ -264,10 +263,10 @@
     "solarBuyBack": {
       "heading": "Solar feed-in tariffs",
       "VIC": {
-        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. For more information about the Victorian FiT scheme see www.energy.vic.gov.au/renewable-energy/victorian-feed-in-tariff."
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
       },
       "NonVIC": {
-        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
       }
     },
     "chanceToWin": {
@@ -295,11 +294,11 @@
     "Credit50": {
       "VIC": {
         "heading": "Account Credits",
-        "description": "* Offer available to new VIC business accounts only who sign up to Total Plan Business electricity or gas offer. Credits applied to first bill - $100 to new electricity account, $100 to new gas account. $200 credit if you sign up both your electricity and gas as new accounts. Credits are not transferable or redeemable for cash. We may change or end this offer at any time."
+        "description": "+ Offer available to new Vic business accounts only who sign up to Total Plan Business electricity/gas offer. Credits applied to first bill, $200 to new electricity/gas account. Credits are not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "NSW": {
         "heading": "Account Credits",
-        "description": "* Offer available to new NSW business accounts only who sign up to Total Plan Business electricity or gas offer. Credits applied to first bill - $200 to new electricity account, $200 to new gas account. $400 credit if you sign up both your electricity and gas as new accounts. Credits are not transferable or redeemable for cash. We may change or end this offer at any time."
+        "description": "+ Offer available to new NSW business accounts only who sign up to Total Plan Business electricity offer. Credits applied to first bill, $200 to new electricity account. Credits are not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "ACT": {
         "heading": "",

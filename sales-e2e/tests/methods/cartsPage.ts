@@ -88,12 +88,12 @@ export class cartsMethod {
         }else {
           await testFunction.assertText(t, cartsPage.elements.eleFeatureDefaultOffer, json.electricity.feature.postSelect.defaultOffer.NonVIC);
         }
-
-
-
       }
       if (dataTable[0].Feature_vipPriorityService === "Y") {
         await testFunction.assertText(t, cartsPage.elements.eleFeatureVipPriorityService, json.electricity.feature.postSelect.vipPriorityService);
+      }
+      if (dataTable[0].Feature_variableRates === "Y") {
+        await testFunction.assertText(t, cartsPage.elements.eleFeatureVariableRates, json.electricity.feature.postSelect.variableRates);
       }
       if (dataTable[0].Feature_chanceToWin === "Y") {
         if (dataTable[0].state === 'VIC') {
@@ -170,6 +170,9 @@ export class cartsMethod {
       }
       if (dataTable[0].Feature_vipPriorityService === "Y") {
         await testFunction.assertText(t, cartsPage.elements.gasFeatureVipPriorityService, json.gas.feature.postSelect.vipPriorityService);
+      }
+      if (dataTable[0].Feature_variableRates === "Y") {
+        await testFunction.assertText(t, cartsPage.elements.gasFeatureVariableRates, json.gas.feature.postSelect.variableRates);
       }
       if (dataTable[0].Feature_chanceToWin === "Y") {
         if (dataTable[0].state === 'VIC') {

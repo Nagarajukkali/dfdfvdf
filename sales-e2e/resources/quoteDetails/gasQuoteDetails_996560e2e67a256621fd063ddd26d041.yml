@@ -1,27 +1,27 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: CR2109030955
+    quoteId: CR2109203312
     sourceCode: Total_15%GD
-    actualQuoteDate: 2021-09-03
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MS
+    title: DR
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0318528580
+      phoneNumber: 0373935708
     
-    emailId: ggPlxYNGxy@energyaustralia.com.au
+    emailId: eKHABacwaU@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DLWA
-      id: 894237
+      id: 283469
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y

@@ -34,7 +34,7 @@
           "heading": "Peace of mind",
           "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
         },
-        "VariableRates": {
+        "variableRates": {
           "heading": "Variable Rates",
           "description": "Your market energy charges are variable for the benefit period. We'll let you know in advance before your market energy charges change."
         },
@@ -58,7 +58,8 @@
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
-        "noStandardConnectionFee": ""
+        "noStandardConnectionFee": "",
+        "variableRates": "Variable Rates. Your market energy charges are variable for the benefit period. We'll let you know in advance before your market energy charges change."
       }
     },
     "sourceCode": {
@@ -131,7 +132,7 @@
           "heading": "Peace of mind",
           "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
         },
-        "VariableRates": {
+        "variableRates": {
           "heading": "Variable Rates",
           "description": "Your market energy charges are variable for the benefit period. We'll let you know in advance before your market energy charges change."
         },
@@ -150,7 +151,8 @@
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "discount off total gas bill. Guaranteed discount that applies to your market energy charges.",
-        "noStandardConnectionFee": ""
+        "noStandardConnectionFee": "",
+        "variableRates": "Variable Rates. Your market energy charges are variable for the benefit period. We'll let you know in advance before your market energy charges change."
       }
     },
     "sourceCode": {

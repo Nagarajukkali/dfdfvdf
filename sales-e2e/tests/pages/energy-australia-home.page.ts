@@ -64,6 +64,7 @@ const eaHomePage = {
     totalPlanBusiness: Selector("[id*='plan-select-button-TOPB']"),
     businessCNPlan: Selector("[id*='plan-select-button-BCNP']"),
     businessBalancePlan: Selector("[id*='plan-select-button-BSPB2']"),
+    balancePlan: Selector("[id*='plan-select-button-TAPR1']"),
     totalPlanBusinessEleDiscount: Selector("#plan-rate-summary-TOPB-0 span.hs-plan-rate-summary__title-amount"),
     totalPlanBusinessGasDiscount: Selector("#plan-rate-summary-TOPB-1 span.hs-plan-rate-summary__title-amount"),
     totalPlanPlusBusiness: Selector("[id*='plan-select-button-SWSRB']"),
@@ -323,6 +324,15 @@ const eaHomePage = {
     TotalPlanTable: {
       repriceText: Selector("[id*='plan-rates-description-'][id*='TOP'] [class*='hs-plan-rates-heading__reprice']"),
     },
+    BusinessBalancePlanTable: {
+      repriceText: Selector("[id*='plan-rates-description-'][id*='SPB'] [class*='hs-plan-rates-heading__reprice']"),
+    },
+    BalancePlanTable: {
+      repriceText: Selector("[id*='plan-rates-description-'][id*='APR'] [class*='hs-plan-rates-heading__reprice']"),
+    },
+    EmployeePlanTable: {
+      repriceText: Selector("[id*='plan-rates-description-'][id*='GED'] [class*='hs-plan-rates-heading__reprice']"),
+    },
     NoFrillsPlanTable: {
       repriceText: Selector("[id*='plan-rates-description-'][id*='CPP'] [class*='hs-plan-rates-heading__reprice']"),
     },
@@ -426,7 +436,9 @@ const eaHomePage = {
     gasFeatureChanceToWinTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("$2,000"),
     gasFeatureChanceToWinDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("$2,000").sibling(),
     gasFeatureVariableRatesTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Variable Rates"),
-    gasFeatureVariableRatesDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Variable Rates").sibling(),
+    gasFeatureVariableRatesDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Variable Rates").sibling()
+    // electricityRateRepriceText: Selector("#plan-rates-description-RCPP-EN .hs-plan-rates-heading__reprice"),
+    // gasRateRepriceText: Selector("#plan-rates-description-RCPP-GN .hs-plan-rates-heading__reprice")
   }
 };
 

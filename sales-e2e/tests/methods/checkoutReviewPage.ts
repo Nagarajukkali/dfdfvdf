@@ -975,17 +975,17 @@ export class checkoutReviewMethod {
   public static async validateRepricePrePositioningTextPlansPage(t: any, plan,journey) {
     if(journey=== 'Residential') {
       if((plan === PlanType.BASIC_HOME)){
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.electricityRepriceText, "Our electricity standing offer rates are under review and may change from 1 September 2021. If this happens new rates can be viewed online from this date. More information on rate changes here.");
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasRepriceText,"Our usage rates and daily supply charge for this plan are variable and are generally reviewed around January each year. We'll let you know before this happens.");
-      }else if ((plan === PlanType.NO_FRILLS) || (plan === PlanType.TOTAL_PLAN)){
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.electricityRepriceText, "Our rates will generally be adjusted annually, and we'll notify you when this happens.");
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasRepriceText, "Our rates will generally be adjusted annually, and we'll notify you when this happens.");
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.electricityRepriceText, "Our rates will generally be adjusted annually & we'll notify you when this happens.");
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasRepriceText,"Our rates will generally be adjusted annually & we'll notify you when this happens.");
+      }else if ((plan === PlanType.NO_FRILLS) || (plan === PlanType.TOTAL_PLAN) || (plan === PlanType.RESIDENTIAL_BALANCE_PLAN)){
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.electricityRepriceText, "Our rates will generally be adjusted annually & we'll notify you when this happens.");
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasRepriceText, "Our rates will generally be adjusted annually & we'll notify you when this happens.");
 
       }
     }else if(journey=== 'Business'){
       if((plan === PlanType.BASIC_BUSINESS)){
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.electricityRepriceText,"Our energy usage rates and daily supply charge for this plan are variable. Our rates are generally reviewed around July each year and we'll let you know before this happens.");
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasRepriceText,"Our energy usage rates and daily supply charge for this plan are variable. Our rates are generally reviewed around July each year and we'll let you know before this happens.");
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.electricityRepriceText,"Our rates will generally be adjusted annually & we'll notify you when this happens.");
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasRepriceText,"Our rates will generally be adjusted annually & we'll notify you when this happens.");
       }
     }
       console.log("Reprice text validated for " +plan+ " on " +journey+ " review page")

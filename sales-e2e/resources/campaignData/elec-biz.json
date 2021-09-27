@@ -1,7 +1,6 @@
 {
   "planName": "Total Plan - Business",
   "planDescription": "Great discount on your total energy bill guaranteed - every time.",
-
   "electricity": {
     "feature": {
       "preSelect": {
@@ -50,7 +49,7 @@
           "NSW": "Get up to $200 credit. Credits applied to first bill. $200 to electricity.",
           "ACT": "",
           "QLD": "Get up to $200 credit. Credits applied to first bill. $200 to electricity.",
-          "SA" : ""
+          "SA": ""
         },
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
@@ -58,11 +57,10 @@
         "noStandardConnectionFee": ""
       }
     },
-
     "sourceCode": {
       "newCustomer": {
         "VIC": "Total_5%GD_100",
-        "NSW":  {
+        "NSW": {
           "Ausgrid": "Total_21%GD_200",
           "Essential": "Total_18%GD_200",
           "Endeavour": "Total_13%GD_200",
@@ -70,9 +68,9 @@
         }
       },
       "existingCustomer": {
-        "ENE":{
+        "ENE": {
           "VIC": "Total_5%GD_100",
-          "NSW":  {
+          "NSW": {
             "Ausgrid": "Total_21%GD_200",
             "Essential": "Total_18%GD_200",
             "Endeavour": "Total_13%GD_200",
@@ -81,7 +79,7 @@
         },
         "PS": {
           "VIC": "Total_5%GD",
-          "NSW":  {
+          "NSW": {
             "Ausgrid": "Total_21%GD",
             "Essential": "Total_18%GD",
             "Endeavour": "Total_13%GD",
@@ -91,7 +89,6 @@
       }
     }
   },
-
   "disclaimers": {
     "referencePriceComparison": {
   "heading": "Reference price comparison and estimated annual cost",

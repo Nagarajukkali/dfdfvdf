@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: MK2104096604
-    sourceCode: Alliance_23%GD
-    actualQuoteDate: 2021-04-09
+    quoteId: MK2109203363
+    sourceCode: Alliance_22%GD
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -16,13 +16,13 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0395250733
+      phoneNumber: 0335939118
     
-    emailId: bkmbaCboll@energyaustralia.com.au
+    emailId: cOqdBJBQhc@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: DL
-      id: 181390
+      id: 477295
       primaryIdFlag: Y
     
     authLevel: Y
@@ -42,6 +42,7 @@ saleDetail :
     postCode: 2447
     premiseType: DOM
     addressType: Premise
+    DPID: 59760646
     primaryResidence: N
   
   premiseDetail: 
@@ -56,12 +57,13 @@ saleDetail :
     country: AUS
     postCode: 2447
     addressType: Mailing
+    DPID: 59760646
   
   offerDetail: 
     fuelType: E
     offerType: PS
     plan: TOPH-EN
-    priceTag: ENCE1_NR2007
+    priceTag: ENCE1_NR2107
     nmiMirnInformation: 
       NMI: 4407376910
     
@@ -77,5 +79,8 @@ saleDetail :
   creditAssessmentDecision: Accept
   meteringDetail: 
     meterExchangeFlag: N
+  
+  solarDetail: 
+    solarPowerIndicator: N
   
 

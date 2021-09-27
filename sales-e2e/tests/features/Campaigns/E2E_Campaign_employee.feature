@@ -13,7 +13,7 @@
 
 Feature:E2E scenario for employee campaign
 
- @DR21.7.5.campaign
+  @DR21.7.5.campaign
   Scenario Outline: Validate complete data for employee campaign for NSW - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "nathan.glen@energyaustralia.com.au" employee id "10000033" and "2000" and clicks on show me plan link
@@ -87,9 +87,9 @@ Feature:E2E scenario for employee campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | AGED-GN  | 5240524910 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                           | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | ELE     | 28          | 28          | employee | E2E_Campaign_employee_NSW_new_moving | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | ELE      | 28          | 28          | employee | E2E_Campaign_employee_NSW_new_moving | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-   @DR21.7.5.campaign
+  @DR21.7.5.campaign
   Scenario Outline: Validate complete data for employee campaign for QLD - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "nathan.glen@energyaustralia.com.au" employee id "10000033" and "4000" and clicks on show me plan link
@@ -143,7 +143,7 @@ Feature:E2E scenario for employee campaign
       | customerStatus | fuelType | eleDiscount | campaign | folderName                           | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | 22          | employee | E2E_Campaign_employee_QLD_new_moving | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-   @DR21.8.2.campaign @DR21.9.2.campaign.1
+  @DR21.8.2.campaign @DR21.9.2.campaign.1
   Scenario Outline: Validate complete data for employee campaign for SA - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "nathan.glen@energyaustralia.com.au" employee id "10000033" and "5000" and clicks on show me plan link
@@ -209,6 +209,7 @@ Feature:E2E scenario for employee campaign
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                          | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | 20          | 20          | employee | E2E_Campaign_employee_SA_new_moving | SA    | Quote Tool   | Move Home | No  | No | RES          | New           |
+
   @DR21.7.5.campaign
   Scenario Outline: Validate complete data for employee campaign for VIC - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -252,7 +253,7 @@ Feature:E2E scenario for employee campaign
       | ELE      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | Y                     | Y                  | Y                                     | N                               | <state> |
+      | GAS      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName      | state   | signUpCredit |
       | Y                        | N         | Y            | Employee Plan | <state> | N            |

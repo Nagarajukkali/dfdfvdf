@@ -1,8 +1,8 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: FR2102114013
+    quoteId: FR2109203552
     sourceCode: Basic_25
-    actualQuoteDate: 2021-02-11
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
@@ -15,20 +15,20 @@ saleDetail :
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0350952370
+      phoneNumber: 0388401808
     
-    emailId: ufYqQuHVkj@energyaustralia.com.au
+    emailId: SdhAJGNTMl@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLWA
-      id: 221530
+      idType: DLTAS
+      id: 106817
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: WA
+          licenseStateOfIssue: TAS
         
       
     
@@ -47,6 +47,7 @@ saleDetail :
     postCode: 2615
     premiseType: DOM
     addressType: Premise
+    DPID: 34123756
     primaryResidence: N
   
   premiseDetail: 
@@ -59,14 +60,15 @@ saleDetail :
     country: AUS
     postCode: 2615
     addressType: Mailing
+    DPID: 34123756
   
   offerDetail: 
     fuelType: G
-    proposedStart: 2021-02-15
+    proposedStart: 2021-09-22
     offerType: ENE
     plan: RSOT-GA
     priceTag: GACTA_GRA
-    serviceOrderDate: 2021-02-15
+    serviceOrderDate: 2021-09-22
     serviceOrderTime: BUSHRS
     nmiMirnInformation: 
       MIRN: 5261512002

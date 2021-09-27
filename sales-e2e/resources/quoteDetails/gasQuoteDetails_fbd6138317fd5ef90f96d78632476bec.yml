@@ -1,34 +1,34 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: FR2104269770
-    sourceCode: Total_27%GD_50
-    actualQuoteDate: 2021-04-26
+    quoteId: FR2109203443
+    sourceCode: Total_26%GD
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: DR
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0382473491
+      phoneNumber: 0360791402
     
-    emailId: HpuWDkEoJM@energyaustralia.com.au
+    emailId: KBiFRnwImQ@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
-      idType: DLNT
-      id: 740877
+      idType: DLSA
+      id: 512474
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
         idValidationDriversLicenseDetail: 
           dlFirstName: test
           dlLastName: test
-          licenseStateOfIssue: NT
+          licenseStateOfIssue: SA
         
       
     
@@ -47,6 +47,7 @@ saleDetail :
     postCode: 3126
     premiseType: DOM
     addressType: Premise
+    DPID: 58161712
     primaryResidence: N
   
   premiseDetail: 
@@ -59,6 +60,7 @@ saleDetail :
     country: AUS
     postCode: 3126
     addressType: Mailing
+    DPID: 58161712
   
   offerDetail: 
     fuelType: G

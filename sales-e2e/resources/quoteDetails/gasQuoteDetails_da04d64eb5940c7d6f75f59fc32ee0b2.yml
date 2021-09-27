@@ -1,23 +1,23 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2109142015
+    quoteId: BB2109203299
     sourceCode: Total_26%GD
-    actualQuoteDate: 2021-09-14
+    actualQuoteDate: 2021-09-20
     quoteStatus: VERBALLYACCEPTED
     customerType: BUSINESS
     paymentMethod: AUSPOST
     customerClass: BSME
   
   personDetail: 
-    title: MISS
+    title: MS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0343010759
+      phoneNumber: 0346695569
     
-    emailId: lSKxxenanb@energyaustralia.com.au
+    emailId: jPYlmuvVLM@energyaustralia.com.au
     authLevel: BUSC
     personAccountRelationship: CUSCON
     seqNo: 1
@@ -30,15 +30,15 @@ saleDetail :
     
     businessIdDetail: 
       businessIdType: ABN
-      businessId: 46096657252
+      businessId: 78047368538
     
-    anzsic: UNKNOWN
+    anzsic: MINING
     businessCommMethod: EMAIL
     businessPhone: 
       businessPhoneType: MOBILE
-      businessPhoneNumber: 0343010759
+      businessPhoneNumber: 0346695569
     
-    businessEmailId: lSKxxenanb@energyaustralia.com.au
+    businessEmailId: jPYlmuvVLM@energyaustralia.com.au
   
   premiseDetail: 
     addressClass: ST

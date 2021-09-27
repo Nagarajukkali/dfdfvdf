@@ -1,7 +1,6 @@
 {
   "planName": "Total Plan",
   "planDescription": "Great discount on your total energy bill guaranteed - every time.",
-
   "electricity": {
     "feature": {
       "preSelect": {
@@ -64,7 +63,7 @@
           "NSW": "",
           "ACT": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
           "QLD": "",
-          "SA" : "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
+          "SA": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
@@ -73,7 +72,7 @@
           "NSW": "20% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
           "ACT": "10% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
           "QLD": "14% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
-          "SA" : "7% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
+          "SA": "7% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
         },
         "noStandardConnectionFee": "No standard connection fees. Move with us and we'll waive connection and special meter reads during business hours."
       }
@@ -92,7 +91,7 @@
         "SA": "Total_7%GD_50"
       },
       "existingCustomer": {
-        "ENE":{
+        "ENE": {
           "VIC": "Total_15%GD",
           "NSW": {
             "Ausgrid": "Total_16%GD",
@@ -119,7 +118,6 @@
       }
     }
   },
-
   "gas": {
     "feature": {
       "preSelect": {
@@ -174,7 +172,7 @@
           "VIC": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up.+",
           "NSW": "",
           "ACT": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
-          "SA" : "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
+          "SA": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
@@ -182,7 +180,7 @@
           "VIC": "26% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
           "NSW": "16% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
           "ACT": "15% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
-          "SA" : "15% discount off total gas bill. Guaranteed discount that applies to your energy charges."
+          "SA": "15% discount off total gas bill. Guaranteed discount that applies to your energy charges."
         }
       }
     },
@@ -194,7 +192,7 @@
         "SA": "Total_15%GD_50"
       },
       "existingCustomer": {
-        "ENE":{
+        "ENE": {
           "VIC": "Total_26%GD",
           "NSW": "Total_16%GD",
           "ACT": "Total_15%GD_50",
@@ -209,7 +207,6 @@
       }
     }
   },
-
   "disclaimers": {
     "referencePriceComparison": {
   "heading": "Reference price comparison and estimated annual cost",
