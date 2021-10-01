@@ -54,16 +54,16 @@ Feature:E2E scenario for existing residential moving and non moving customer
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | RSOT-EV  | 6407557087 | N                              | N                              | Y                       | OTHER                    | POSTMM        |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |campaign   |state|
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TAPR1-EV  | 6407557087 | N                              | N                              | Y                       | OTHER                    | POSTMM        |Balance Plan |<state>  |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | RSOT-GV  | 5321574765 | N                              | N                              | Y                       | OTHER                    | POSTMM        |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |campaign   |state|
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TAPR1-GV  | 5321574765 | N                              | N                              | Y                       | OTHER                    | POSTMM        |Balance Plan |<state>  |
 
     Examples:
       | customerStatus | fuelType | planName   | folderName               | state | optDisconnection | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | Existing       | BOTH     | Basic Home | E2E_Existing_Resi_Moving | VIC   | Yes              | Quote Tool   | Move Home | Yes | No | RES          | Existing      |
+      | Existing       | BOTH     | Balance Plan | E2E_Existing_Resi_Moving | VIC   | Yes              | Quote Tool   | Move Home | Yes | No | RES          | Existing      |
 
   @deviceCheck @smoke
   Scenario Outline: Submit a quote for existing residential non moving customer with LS, select dual fuel and verify gas account
