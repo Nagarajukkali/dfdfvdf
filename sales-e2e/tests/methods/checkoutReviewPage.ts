@@ -880,11 +880,11 @@ export class checkoutReviewMethod {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "11.6c/kWh");
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "(3pm-9pm Weekdays)");
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "Shoulder:");
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "7.1c/kWh");
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "6.5c/kWh");
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "(7am-3pm, 9pm-10pm Weekdays)");
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "(7am-10pm Weekends)");
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "Off Peak:");
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "6.5c/kWh");
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "7.1c/kWh");
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "(10pm-7am Everyday)");
         await testFunction.click(t, eaCheckoutReviewPage.elements.agreeAndConfirm);
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.errorMessage, "You must select tariff type");
