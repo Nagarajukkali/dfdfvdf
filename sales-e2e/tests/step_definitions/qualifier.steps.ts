@@ -99,6 +99,14 @@ Then(/^Relevant error message is presented for customers marked with safety flag
   await qualifierMethod.validateErrorMessageForBlockerAccounts(t);
   await testFunction.takeScreenshot(t, 'qualifier_page');//disabled UI Validation
 });
+Then(/^relevant error message is presented for customers marked with NSW remote meter risk on qualifier$/, async function (t) {
+  await qualifierMethod.validateErrorMessageForNSWRemoteMeterRiskAccounts(t);
+  await testFunction.takeScreenshot(t, 'qualifier_page');//disabled UI Validation
+});
+Then(/^relevant error message is presented for customers marked with NSW remote meter risk on qualifier address component$/, async function (t) {
+  await qualifierMethod.validateErrorMessageForNSWRemoteMeterRiskAccountsAddressComponent(t);
+  await testFunction.takeScreenshot(t, 'qualifier_page');//disabled UI Validation
+});
 When(/^user navigates back to account verification section and clears all the previously provided details$/, async function (t) {
   await qualifierMethod.navigateBackToAccountVerification(t);
 });
@@ -114,6 +122,9 @@ When(/^user selects '(.*)' for moving question on qualifier$/, async function (t
 });
 When(/^user enters the address '(.*)' on qualifier$/, async function (t,[address]) {
   await qualifierMethod.provideAddress(t,address);
+});
+When(/^user enters the address '(.*)' on qualifier for NSW$/, async function (t,[address]) {
+  await qualifierMethod.provideAddressNswRemote(t,address);
 });
 Then(/^relevant popup displays for provided '(.*)'$/, async function (t,[addressType]) {
   await  qualifierMethod.verifyLookupOnQualifier(t,addressType);
@@ -171,6 +182,33 @@ Then(/^Address field is '(.*)'$/, async function (t,[addressField]) {
 Then(/^user clicks on continue button after providing address$/, async function (t) {
   await qualifierMethod.clickOnContinueAddress(t);
 });
+Then(/^the verify identity section continue button has the text as "([^"]*)"$/, async function (t, [buttontext]) {
+  let buttonText = buttontext;
+  await testFunction.assertText(t, eaQualifierPage.elements.verifyIdentityContinueWithGas, buttonText);
+  console.log("Continue with gas button validated");
+});
+
+Then(/^the verify identity section continue button has the text as "([^"]*)" is not visible$/, async function (t, []) {
+  let y = await testFunction.getElementAttribute(t, eaQualifierPage.elements.verifyIdentityContinueWithGas, "class");
+  await testFunction.assertPartialTextValue(t, y, "ng-hide");
+  console.log("Continue with Gas is not visible");
+});
+
+Then(/^the verify identity section continue button has the text as "([^"]*)" on address component$/, async function (t, [buttontext]) {
+  let buttonText = buttontext;
+  await testFunction.assertText(t, eaQualifierPage.elements.verifyIdentityContinueWithGasAddress, buttonText);
+  console.log("Continue with gas button validated");
+});
+
+Then(/^the details not handy link and verify identity dropdown is not visible$/, async function (t, []) {
+  let y = await testFunction.getElementAttribute(t, eaQualifierPage.elements.linkDetailsNotHandyID, "class");
+  await testFunction.assertPartialTextValue(t, y, "ng-hide");
+  console.log("Details not handy not visible on verify identity page on qualifer");
+  let x = await testFunction.getElementAttribute(t, eaQualifierPage.elements.idSelectOptionNswRemote, "class");
+  await testFunction.assertPartialTextValue(t, x, "sui-disabled");
+  console.log("Dropdown validated that is not visible after user have clicked on continue button for NSW remote risk");
+});
+
 When(/^user clicks on back button$/, async function (t) {
   await testFunction.click(t, eaQualifierPage.elements.btnBackOnQualifier);
 });
@@ -182,5 +220,4 @@ When(/^user selects property type as '(.*)'$/, async function (t, [propertyType]
 When(/^user selects connection date in qualifier$/, async function (t, []) {
   await qualifierMethod.selectDateFromCalendar(t);
 });
-
 

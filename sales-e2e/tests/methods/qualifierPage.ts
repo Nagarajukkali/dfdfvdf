@@ -179,6 +179,31 @@ export class qualifierMethod {
     console.log(`${address} is provided`);
   }
 
+  public static async provideAddressNswRemote(t, address) {
+    const actualAddress = Selector(() => document.getElementById("connection-address-auto-input"));
+    const actualAddressText = await actualAddress().value;
+    const expectedAddressText = testFunction.formatAddress(address);
+    if (actualAddressText.toLowerCase() !== expectedAddressText.toLowerCase()) {
+      await testFunction.clearAndEnterText(t, eaQualifierPage.elements.serviceAddress, address);
+      await t.wait(2000);
+      await testFunction.isElementVisible(t, eaQualifierPage.elements.serviceAddressList);
+      await testFunction.clickElementFromList(t, eaQualifierPage.elements.serviceAddressList, address);
+      // if((await testFunction.sizeOfElement(t,eaQualifierPage.elements.addressLoadingIcon))>0)
+      //   await testFunction.isElementVisible(t, eaQualifierPage.elements.addressLoadingIcon);
+      await testFunction.waitForLoadingIconToClose();
+      await t.wait(3000);
+      if (await testFunction.sizeOfElement(t, eaQualifierPage.elements.planSelectionPopup) > 0) {
+        await testFunction.click(t, eaQualifierPage.elements.planSelectionPopup);
+      }
+    }
+    if ((await testFunction.sizeOfElement(t, eaQualifierPage.elements.solarDetectionErrorLink) > 0) && validateAnalyticsEvent==='Y') {
+      await testFunction.click(t,eaQualifierPage.elements.solarDetectionErrorLink);
+      await t.closeWindow();
+      await plansMethod.validateComponentLibraryEvent(t, "qualifier_page", "solar_detection_error_link");
+    }
+    console.log(`${address} is provided`);
+  }
+
   public static async enterAddress(t, address) {
     await testFunction.clearAndEnterText(t, eaQualifierPage.elements.serviceAddress, address);
     await testFunction.isElementVisible(t, eaQualifierPage.elements.serviceAddressList);
@@ -237,8 +262,33 @@ export class qualifierMethod {
 
   public static async validateErrorMessageForBlockerAccounts(t) {
     await testFunction.waitForElementToBeAppeared(t, eaQualifierPage.elements.safetyFlagMsgOnQualifier);
-    let expectedErrorMessage = "We are currently unable to retrieve your information. Please call 133 466 (Monday – Friday, 8am – 8pm AEST)";
+    let expectedErrorMessage = "We are currently unable to retrieve your information. Please call 133 466 (Monday – Friday, 8am – 8pm AEDT)";
     await testFunction.assertText(t, eaQualifierPage.elements.safetyFlagMsgOnQualifier, expectedErrorMessage);
+  }
+
+  public static async validateErrorMessageForNSWRemoteMeterRiskAccounts(t) {
+    await testFunction.waitForElementToBeAppeared(t, eaQualifierPage.elements.nswRemoterMeterMsgOnQualifier);
+    let expectedErrorMessage = "You have a remotely capable meter, so we're unable to proceed with your request online. Please call us on 133 466 to discuss your options.";
+    let actualMessage = await testFunction.getElementText(t, eaQualifierPage.elements.nswRemoterMeterMsgOnQualifier);
+    await testFunction.assertText(t, eaQualifierPage.elements.nswRemoterMeterMsgOnQualifier,actualMessage);
+    console.log("NSW remote meter risk message validated on qualifier");
+  }
+
+  public static async validateErrorMessageForNSWRemoteMeterRiskAccountsCheckouit(t) {
+    await testFunction.waitForElementToBeAppeared(t, eaQualifierPage.elements.nswRemoterMeterMsgOnCheckoutPage);
+    let expectedErrorMessage = "You have a remotely capable meter, so we're unable to proceed with your request online. Please call us on 133 466 to discuss your options.";
+    let actualMessage = await testFunction.getElementText(t, eaQualifierPage.elements.nswRemoterMeterMsgOnCheckoutPage);
+    await testFunction.assertText(t, eaQualifierPage.elements.nswRemoterMeterMsgOnCheckoutPage,actualMessage);
+    console.log("NSW remote meter risk message validated on qualifier");
+  }
+
+  public static async validateErrorMessageForNSWRemoteMeterRiskAccountsAddressComponent(t) {
+    await testFunction.waitForElementToBeAppeared(t, eaQualifierPage.elements.nswRemoterMeterMsgOnQualifierAddressComponent);
+    let expectedErrorMessage = "You have a remotely capable meter, so we're unable to proceed with your request online. Please call us on 133 466 to discuss your options.";
+    let actualMessage = await testFunction.getElementText(t, eaQualifierPage.elements.nswRemoterMeterMsgOnQualifierAddressComponent);
+    console.log(actualMessage);
+    await testFunction.assertText(t, eaQualifierPage.elements.nswRemoterMeterMsgOnQualifierAddressComponent,actualMessage);
+    console.log("NSW remote meter risk message validated after verify identity");
   }
 
   public static async navigateBackToAccountVerification(t) {

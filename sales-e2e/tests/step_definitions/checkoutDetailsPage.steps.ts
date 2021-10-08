@@ -4,6 +4,7 @@ import {testFunction} from '../../global_methods/helper';
 import {CustomerType} from '@ea/ea-commons-models';
 import {checkoutReviewMethod} from '../methods/checkoutReviewPage';
 import {plansMethod} from '../methods/plansPage';
+import {qualifierMethod} from "../methods/qualifierPage";
 
 const eaCheckoutDetailsPage = require('../pages/checkOutDetails.page');
 
@@ -73,6 +74,12 @@ When(/^user selects plans on checkout details page$/, async function (t, [], dat
   await t.wait(2000);
   await checkoutDetailsMethod.selectPlan(t, data[0].fuelType, data[0].planName);
   console.log("Plan Selected successfully.");
+});
+When(/^user validates the nsw remote meter risk on checkout$/, async function (t, []) {
+  await testFunction.waitForElementToBeDisappeared(t, eaCheckoutDetailsPage.elements.eaSpinner);
+  //await testFunction.click(t,eaCheckoutDetailsPage.elements.connectionAddress);
+  await t.wait(2000);
+  await qualifierMethod.validateErrorMessageForNSWRemoteMeterRiskAccountsCheckouit(t);
 });
 When(/^user provides dob and id details$/, async function (t, [], dataTable) {
   let data = dataTable.hashes();

@@ -5,6 +5,7 @@ import {PlanType, testFunction} from '../../global_methods/helper';
 import {AustralianState, CustomerType} from '@ea/ea-commons-models';
 import {Workbook} from 'exceljs';
 import { Console } from 'console';
+import {qualifierMethod} from "../methods/qualifierPage";
 
 const EaHomePage = require('../pages/energy-australia-home.page');
 const {config} = require('../../resources/resource');
@@ -50,7 +51,9 @@ When(/^user selects '(.*)'$/, async function (t, [planName]) {
 Given(/^user have selected fuel as "([^"]*)"$/, async function (t, [fuelType]) {
   await plansMethod.selectFuel(t, fuelType);
 });
-
+Then(/^relevant error message is presented for customers marked with NSW remote meter risk on plans page$/, async function (t) {
+  await plansMethod.validateErrorMessageForNSWRemoteMeterRiskAccountsPlansPage(t);
+});
 When(/^user verifies the account through verify account journey for residential customer$/, async function (t, [], dataTable) {
   let data = dataTable.hashes();
   await testFunction.takeScreenshot(t, 'verify_account_main');//disabled UI Validation
@@ -586,7 +589,11 @@ When(/^user verifies the account through verify account journey for residential 
 When(/^user enters the address "([^"]*)" on plans page$/, async function (t, [address]) {
   await plansMethod.provideAddressOnPlansPage(t, address);
 });
-
+When(/^user enters the address "([^"]*)" on campaign and click show me link$/, async function (t, [address]) {
+  await plansMethod.provideAddressOnPlansPage(t, address);
+  await testFunction.click(t, EaHomePage.elements.btnCampaignSearchOnModal);
+  await testFunction.waitForElementToBeDisappeared(t, EaHomePage.elements.eaSpinner);
+});
 Then(/^user validates the solar disclaimer on the page$/, async function (t, dataTable) {
   dataTable = dataTable.hashes();
   await plansMethod.verifySolarDisclaimer(t, dataTable);
