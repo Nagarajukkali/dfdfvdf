@@ -1,4 +1,4 @@
-@campaign @campaign21.5.4_1
+@campaign
 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
@@ -22,7 +22,7 @@ Feature:E2E scenario for elec-tpp campaign
       | campaign | folderName                |
       | elec-tpp | E2E_Campaign_elec-tpp_NSW |
 
-  @campaign21.7.2.dataminion
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for elec-tpp campaign for QLD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4500" and clicks on show me plan link
@@ -31,7 +31,7 @@ Feature:E2E scenario for elec-tpp campaign
       | campaign | folderName                |
       | elec-tpp | E2E_Campaign_elec-tpp_QLD |
 
-  @campaign21.7.2.dataminion
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for elec-tpp campaign for ACT
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2600" and clicks on show me plan link
@@ -40,22 +40,21 @@ Feature:E2E scenario for elec-tpp campaign
       | campaign | folderName                |
       | elec-tpp | E2E_Campaign_elec-tpp_ACT |
 
-  @DR21.7.5.campaign
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for elec-tpp campaign for VIC - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_vipDiscount| Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
+      | ELE      | N                | N                     | Y                   |Y                  | Y                                  | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName        | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan Plus | <state> | N            |
+      | Y                        | N         | Y            | Total Plan Plus | <state> | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                  | <state> |
-    And user moves on to fill the qualifier
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_vipDiscount| Feature_discountOffTotalEnergyBill | state   |
+      | ELE      | N                | N                     | Y                   | Y                 | Y                                  | <state> |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                   | movingType | propertyType |
@@ -81,8 +80,8 @@ Feature:E2E scenario for elec-tpp campaign
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_vipDiscount| Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
+      | ELE      | N                | N                     | Y                   | Y                 | Y                                  | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName        | state   | signUpCredit |
       | Y                        | Y         | Y            | Total Plan Plus | <state> | N            |
@@ -101,9 +100,9 @@ Feature:E2E scenario for elec-tpp campaign
       | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | SWSR1-EV | 6102221416 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | campaign | folderName                           | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | ELE      | 14          | elec-tpp | E2E_Campaign_elec-tpp_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | ELE      | 16          | elec-tpp | E2E_Campaign_elec-tpp_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @campaign21.7.2.dataminion
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for elec-tpp campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" and clicks on show me plan link

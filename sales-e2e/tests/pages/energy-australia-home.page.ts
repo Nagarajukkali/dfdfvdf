@@ -322,11 +322,27 @@ const eaHomePage = {
       gasdiscountOffTotalDescription: Selector("[id*='plan-feature-TOPH'] [class*='hs-plan-feature__item-title']").withText("discount off total gas bill").sibling(),
 
     },
+    BusinessCarbonNeutralPlanTable: {
+      businessCarbonNeutralPlanEleDiscount: Selector("[id*='plan-rate-summary-BCNP'][id*='-E'] [class*='title-amount']"),
+      businessCarbonNeutralPlanTitle: Selector("[id*='plan-heading-title-BASE_BCNP-']"),
+      businessCarbonNeutralPlanFuel: Selector("[id*='plan-heading-fuel-BASE_BCNP-']"),
+      businessCarbonNeutralPlanHeadingDescription : Selector("[id*='plan-heading-description-BASE_BCNP-']"),
+    },
     TotalPlanTable: {
       repriceText: Selector("[id*='plan-rates-description-'][id*='TOP'] [class*='hs-plan-rates-heading__reprice']"),
     },
+    BusinessTotalPlanTable: {
+      businessTotalPlanEleDiscount: Selector("[id*='plan-rate-summary-TOPB'][id*='-E'] [class*='title-amount']"),
+      businessTotalPlanTitle: Selector("[id*='plan-heading-title-BASE_TOPB-']"),
+      businessTotalPlanFuel: Selector("[id*='plan-heading-fuel-BASE_TOPB-']"),
+      businessTotalPlanHeadingDescription : Selector("[id*='plan-heading-description-BASE_TOPB-']"),
+    },
     BusinessBalancePlanTable: {
       repriceText: Selector("[id*='plan-rates-description-'][id*='SPB'] [class*='hs-plan-rates-heading__reprice']"),
+      businessBalancePlanEleDiscount: Selector("[id*='plan-rate-summary-BSPB2'][id*='-E'] [class*='title-amount']"),
+      businessBalancePlanTitle: Selector("[id*='plan-heading-title-BASE_BSPB2-']"),
+      businessBalancePlanFuel: Selector("[id*='plan-heading-fuel-BASE_BSPB2-']"),
+      businessBalancePlanHeadingDescription : Selector("[id*='plan-heading-description-BASE_BSPB2-']"),
     },
     BalancePlanTable: {
       repriceText: Selector("[id*='plan-rates-description-'][id*='APR'] [class*='hs-plan-rates-heading__reprice']"),
@@ -412,6 +428,8 @@ const eaHomePage = {
     eleFeatureDiscountOffTotalBillDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText(/[D|d]iscount off/).sibling(),
     eleFeatureNoStandardConnectionFeeTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("No standard"),
     eleFeatureNoStandardConnectionFeeDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("No standard").sibling(),
+    eleFeatureVipDiscountTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("VIP discount off total energy bill"),
+    eleFeatureVipDiscountDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("VIP discount off total energy bill").sibling(),
     eleFeatureDefaultOfferTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Default offer"),
     eleFeatureDefaultOfferDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Default offer").sibling(),
     eleFeatureVipPriorityServiceTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("VIP Priority Service"),
@@ -430,6 +448,8 @@ const eaHomePage = {
     gasFeaturePeaceOfMindEETitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Priority customer service"),
     gasFeaturePeaceOfMindDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Peace of mind").sibling(),
     gasFeaturePeaceOfMindEEDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Priority customer service").sibling(),
+    gasFeatureVipDiscountTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("VIP discount off total energy bill"),
+    gasFeatureVipDiscountDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("VIP discount off total energy bill").sibling(),
     gasFeatureDiscountOffTotalBillTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText(/[D|d]iscount off/),
     gasFeatureDiscountOffTotalBillDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText(/[D|d]iscount off/).sibling(),
     gasFeatureVipPriorityServiceTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("VIP Priority Service"),

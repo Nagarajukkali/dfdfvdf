@@ -12,7 +12,7 @@
 
 Feature:E2E scenario for vic-seniors campaign
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for vic-seniors campaign for VIC - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "3000" and clicks on show me plan link

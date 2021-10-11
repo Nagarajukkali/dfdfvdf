@@ -321,22 +321,22 @@
         "description": ""
       }
     },
-    "totalPlanBusiness": {
+    "plandisclaimer": {
       "heading": "Business Balance Plan",
       "VIC": {
-        "description": "**Offer only for eligible VIC business customers. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
+        "description": "* Offer only for eligible VIC business customers. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
       },
       "NSW": {
-        "description": "**Offer only for eligible NSW business customers. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
+        "description": "* Offer only for eligible NSW business customers. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
       },
       "ACT": {
-        "description": "**Offer only for eligible ACT business customers. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
+        "description": "* Offer only for eligible ACT business customers. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
       },
       "QLD": {
-        "description": "**Offer only for eligible QLD business customers. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
+        "description": "* Offer only for eligible QLD business customers. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
       },
       "SA": {
-        "description": "**Offer only for eligible SA business customers. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
+        "description": "* Offer only for eligible SA business customers. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
       }
     }
   }

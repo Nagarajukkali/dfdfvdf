@@ -260,7 +260,13 @@ Then(/^user validates disclaimer on plans page for "([^"]*)" plan$/, async funct
   //await testFunction.takeScreenshot(t, 'validated disclaimers for the plans page');//disabled UI Validation
   console.log("Validation completed for disclaimers on plans page.");
 });
-
+Given(/^user validates disclaimer on review page for "([^"]*)" plan$/, async function (t, [campaignName], dataTable) {
+  dataTable = dataTable.hashes();
+  let data = await FileUtils.getJSONfile(campaignName);
+  await plansMethod.validateDisclaimerPlansPage(t, dataTable, data);
+  //await testFunction.takeScreenshot(t, 'validated disclaimers for the plans page');//disabled UI Validation
+  console.log("Validation completed for disclaimers on review page.");
+});
 Then(/^user validates verify account journey's UI for '(.*)' plans page$/, async function (t, [customerType]) {
   await plansMethod.clickPlansPageModal(t, customerType);
   await testFunction.compareImages(t, customerType + "_CTA_MODAL_MAIN");

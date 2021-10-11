@@ -13,7 +13,7 @@
 
 Feature:E2E scenario for biz-australia campaign
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for biz-australia campaign for NSW-Essential for new non-moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2580" for postcode and proceed to view the plans
@@ -89,7 +89,7 @@ Feature:E2E scenario for biz-australia campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                                             | sourceSystem | journey     | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 21          | 26          | biz-australia | E2E_Campaign_biz-australia_NSW-essential_new_nonmoving | Quote Tool   | Plan Switch | NSW   | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for biz-australia campaign for NSW-Endeavour for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2780" for postcode and proceed to view the plans
@@ -165,7 +165,7 @@ Feature:E2E scenario for biz-australia campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                                          | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 19          | 26          | biz-australia | E2E_Campaign_biz-australia_NSW_Endeavour_new_moving | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for biz-australia campaign for NSW for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2042" for postcode and proceed to view the plans
@@ -241,7 +241,7 @@ Feature:E2E scenario for biz-australia campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                                | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 28          | 26          | biz-australia | E2E_Campaign_biz-australia_NSW_new_moving | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for biz-australia campaign for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
@@ -317,7 +317,7 @@ Feature:E2E scenario for biz-australia campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                                | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 6           | 26          | biz-australia | E2E_Campaign_biz-australia_VIC_new_moving | Quote Tool   | Move Home | VIC   | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for biz-australia campaign for QLD for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4500" for postcode and proceed to view the plans
@@ -380,7 +380,7 @@ Feature:E2E scenario for biz-australia campaign
       | customerStatus | fuelType | eleDiscount | campaign      | folderName                                | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | ELE      | 20          | biz-australia | E2E_Campaign_biz-australia_QLD_new_moving | Quote Tool   | Move Home | QLD   | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for biz-australia campaign for SA for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" for postcode and proceed to view the plans
@@ -456,7 +456,7 @@ Feature:E2E scenario for biz-australia campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                               | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 15          | 5           | biz-australia | E2E_Campaign_biz-australia_SA_new_moving | Quote Tool   | Move Home | SA    | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for biz-australia campaign for ACT for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2600" for postcode and proceed to view the plans

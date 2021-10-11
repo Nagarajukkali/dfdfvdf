@@ -1,4 +1,4 @@
-@campaign  @campaign21.5.4_1
+@campaign
 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
@@ -13,7 +13,7 @@
 
 Feature:E2E scenario for employee campaign
 
-  @DR21.7.5.campaign
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for employee campaign for NSW - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "nathan.glen@energyaustralia.com.au" employee id "10000033" and "2000" and clicks on show me plan link
@@ -89,7 +89,7 @@ Feature:E2E scenario for employee campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                           | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | 28          | 28          | employee | E2E_Campaign_employee_NSW_new_moving | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.7.5.campaign
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for employee campaign for QLD - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "nathan.glen@energyaustralia.com.au" employee id "10000033" and "4000" and clicks on show me plan link
@@ -122,7 +122,7 @@ Feature:E2E scenario for employee campaign
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | N                     | Y                   | Y                                     | N                               | <state> |
+      | ELE      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName      | state   | signUpCredit |
       | Y                        | N         | Y            | Employee Plan | <state> | N            |
@@ -143,7 +143,7 @@ Feature:E2E scenario for employee campaign
       | customerStatus | fuelType | eleDiscount | campaign | folderName                           | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | 22          | employee | E2E_Campaign_employee_QLD_new_moving | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.8.2.campaign @DR21.9.2.campaign.1
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for employee campaign for SA - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "nathan.glen@energyaustralia.com.au" employee id "10000033" and "5000" and clicks on show me plan link
@@ -210,7 +210,7 @@ Feature:E2E scenario for employee campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                          | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | 20          | 20          | employee | E2E_Campaign_employee_SA_new_moving | SA    | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.7.5.campaign
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for employee campaign for VIC - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "nathan.glen@energyaustralia.com.au" employee id "10000033" and "3000" and clicks on show me plan link
@@ -277,7 +277,7 @@ Feature:E2E scenario for employee campaign
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                           | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 25          | 35          | employee | E2E_Campaign_employee_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
-
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for employee campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "nathan.glen@energyaustralia.com.au" employee id "10000033" and "3000" and clicks on show me plan link
@@ -319,10 +319,10 @@ Feature:E2E scenario for employee campaign
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | N                     | Y                   | Y                                     | N                               | <state> |
+      | ELE      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | N                     | Y                   | Y                                     | N                               | <state> |
+      | GAS      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName      | state | signUpCredit |
       | Y                        | N         | Y            | Employee Plan | VIC   | N            |
@@ -345,9 +345,9 @@ Feature:E2E scenario for employee campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | AGED-GV  | 5330790589 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                                    | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     | 22          | 30          | employee | E2E_Campaign_employee_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     | 25          | 30          | employee | E2E_Campaign_employee_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR21.7.1.campaign
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for employee campaign for NSW existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "nathan.glen@energyaustralia.com.au" employee id "10000033" and "2000" and clicks on show me plan link
@@ -389,7 +389,7 @@ Feature:E2E scenario for employee campaign
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | N                     | Y                   | Y                                     | N                               | <state> |
+      | ELE      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName      | state   | signUpCredit |
       | Y                        | N         | Y            | Employee Plan | <state> | N            |
@@ -410,7 +410,7 @@ Feature:E2E scenario for employee campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                                    | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     | 28          | 28          | employee | E2E_Campaign_employee_NSW_existing_non-moving | NSW   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR21.9.2.campaign
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for employee campaign for SA existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "nathan.glen@energyaustralia.com.au" employee id "10000033" and "5000" and clicks on show me plan link
@@ -480,7 +480,7 @@ Feature:E2E scenario for employee campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                                   | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     | 20          | 20          | employee | E2E_Campaign_employee_SA_existing_non-moving | SA    | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR21.7.1.campaign
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for employee campaign for QLD existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "nathan.glen@energyaustralia.com.au" employee id "10000033" and "4000" and clicks on show me plan link
@@ -516,7 +516,7 @@ Feature:E2E scenario for employee campaign
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | N                     | Y                   | Y                                     | N                               | <state> |
+      | ELE      | N                | Y                     | Y                   | Y                                     | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName      | state | signUpCredit |
       | Y                        | N         | Y            | Employee Plan | QLD   | N            |

@@ -29,7 +29,7 @@ const cartsPage = {
     gasFeatureVipPriorityService: Selector("#cart-plan-GAS .cart-plan__details-text").withText("VIP Priority Service"),
     addDifferentGasPlan: Selector("#cart-plan-GAS+button"),
     addDifferentElePlan: Selector("#cart-plan-ELE+button"),
-    gasFeatureVariableRates: Selector("#cart-plan-ELE .cart-plan__details-text").withText("Variable Rates"),
+    gasFeatureVariableRates: Selector("#cart-plan-GAS .cart-plan__details-text").withText("Variable Rates"),
     ResidentialBalanceTable: {
       residentialBalancePlanName: Selector("[id*='plan-heading-title-BASE_RSOT-']"),
       residentialBalanceFuel: Selector("[id*='plan-heading-fuel-BASE_RSOT-']"),

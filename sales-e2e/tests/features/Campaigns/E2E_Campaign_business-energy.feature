@@ -13,7 +13,7 @@
 
 Feature:E2E scenario for business-energy campaign
 
-  @DR21.9.5.campaign
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for business-energy campaign for NSW-Essential for new non-moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2580" and clicks on show me plan link
@@ -89,7 +89,7 @@ Feature:E2E scenario for business-energy campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                               | sourceSystem | journey     | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 18          | 19          | business-energy | E2E_Campaign_business-energy_NSW-essential_new_nonmoving | Quote Tool   | Plan Switch | NSW   | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for business-energy campaign for NSW-Endeavour for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2780" and clicks on show me plan link
@@ -165,7 +165,7 @@ Feature:E2E scenario for business-energy campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                            | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 13          | 19          | business-energy | E2E_Campaign_business-energy_NSW_Endeavour_new_moving | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for business-energy campaign for NSW-Ausgrid for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" and clicks on show me plan link
@@ -241,7 +241,7 @@ Feature:E2E scenario for business-energy campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                  | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 19          | 19          | business-energy | E2E_Campaign_business-energy_NSW_new_moving | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for business-energy campaign for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
@@ -317,7 +317,7 @@ Feature:E2E scenario for business-energy campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                  | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 5           | 23          | business-energy | E2E_Campaign_business-energy_VIC_new_moving | Quote Tool   | Move Home | VIC   | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for business-energy campaign for QLD for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4500" and clicks on show me plan link

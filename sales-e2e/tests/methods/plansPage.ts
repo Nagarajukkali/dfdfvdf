@@ -207,9 +207,43 @@ export class plansMethod {
           throw Error("Invalid Plan");
       }
     } else if (page === 'Business') {
-      await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingTitle, data.planName);
-      await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingFuel, "Gas");
-      await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingDescription, data.planDescription);
+      if (data.planName === PlanType.BUSINESS_CARBON_NEUTRAL) {
+        if (dataTable[0].fuelType === "ELE") {
+          await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralPlanTable.businessCarbonNeutralPlanTitle, data.planName);
+          await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralPlanTable.businessCarbonNeutralPlanFuel, "Electricity");
+          await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralPlanTable.businessCarbonNeutralPlanHeadingDescription, data.planDescription);
+        } else if (dataTable[0].fuelType === 'GAS') {
+          await testFunction.assertText(t, EaHomePage.BusinessCarbonNeutralPlanTable.businessCarbonNeutralPlanTitle, data.planName);
+          await testFunction.assertText(t, EaHomePage.BusinessCarbonNeutralPlanTable.businessCarbonNeutralPlanFuel, "Gas");
+          await testFunction.assertText(t, EaHomePage.BusinessCarbonNeutralPlanTable.businessCarbonNeutralPlanHeadingDescription, data.planDescription);
+        }
+      } else if (data.planName === PlanType.BUSINESS_BALANCE_PLAN) {
+        if (dataTable[0].fuelType === "ELE") {
+          await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanTitle, data.planName);
+          await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanFuel, "Electricity");
+          await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanHeadingDescription, data.planDescription);
+        } else if (dataTable[0].fuelType === 'GAS') {
+          await testFunction.assertText(t, EaHomePage.BusinessBalancePlanTable.businessBalancePlanTitle, data.planName);
+          await testFunction.assertText(t, EaHomePage.BusinessBalancePlanTable.businessBalancePlanFuel, "Gas");
+          await testFunction.assertText(t, EaHomePage.BusinessBalancePlanTable.businessBalancePlanHeadingDescription, data.planDescription);
+        }
+      }
+      else if (data.planName === PlanType.TOTAL_BUSINESS) {
+        if (dataTable[0].fuelType === "ELE") {
+          await testFunction.assertText(t, EaHomePage.elements.BusinessTotalPlanTable.businessTotalPlanTitle, data.planName);
+          await testFunction.assertText(t, EaHomePage.elements.BusinessTotalPlanTable.businessTotalPlanFuel, "Electricity");
+          await testFunction.assertText(t, EaHomePage.elements.BusinessTotalPlanTable.businessTotalPlanHeadingDescription, data.planDescription);
+        } else if (dataTable[0].fuelType === 'GAS') {
+          await testFunction.assertText(t, EaHomePage.BusinessTotalPlanTable.businessTotalPlanTitle, data.planName);
+          await testFunction.assertText(t, EaHomePage.BusinessTotalPlanTable.businessTotalPlanFuel, "Gas");
+          await testFunction.assertText(t, EaHomePage.BusinessTotalPlanTable.businessTotalPlanHeadingDescription, data.planDescription);
+        }
+      }
+      else {
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingTitle, data.planName);
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingFuel, "Gas");
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingDescription, data.planDescription);
+      }
     }
   }
 
@@ -438,6 +472,10 @@ export class plansMethod {
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureNoStandardConnectionFeeTitle, data.electricity.feature.preSelect.noStandardConnectionFee.heading);
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureNoStandardConnectionFeeDescription, data.electricity.feature.preSelect.noStandardConnectionFee.description);
       }
+      if (dataTable[0].Feature_vipDiscount === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVipDiscountTitle, data.electricity.feature.preSelect.vipDiscount.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVipDiscountDescription, data.electricity.feature.preSelect.vipDiscount.description);
+      }
       if (dataTable[0].Feature_defaultOffer === "Y") {
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDefaultOfferTitle, data.electricity.feature.preSelect.defaultOffer.heading);
         if (dataTable[0].state === 'VIC') {
@@ -570,6 +608,10 @@ export class plansMethod {
       if (dataTable[0].Feature_vipPriorityService === "Y") {
         await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureVipPriorityServiceTitle, data.electricity.feature.preSelect.vipPriorityService.heading);
       }
+      if (dataTable[0].Feature_vipDiscount === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureVipDiscountTitle, data.gas.feature.preSelect.vipDiscount.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureVipDiscountDescription, data.gas.feature.preSelect.vipDiscount.description);
+      }
       if (dataTable[0].Feature_chanceToWin === "Y") {
         if (dataTable[0].state === 'VIC') {
           await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureChanceToWinTitle, data.gas.feature.preSelect.chanceToWin.VIC.heading);
@@ -635,11 +677,28 @@ export class plansMethod {
   }
 
   public static async validateDisclaimer(t: any, dataTable, data: any) {
+    console.log("Validating disclaimers on campaign page");
     const disclaimer = Selector(() => document.getElementById("condiDisclaimer"));
     const disclaimerText = await disclaimer().innerText;
+    // if (dataTable[0].referencePriceComparison === 'Y') {
+    //   await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.heading);
+    //   await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.description);
+    //   console.log("Reference disclaimer validated");
+    // }
     if (dataTable[0].referencePriceComparison === 'Y') {
       await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.heading);
-      await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.description);
+      if (dataTable[0].state === 'QLD') {
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.QLD.description);
+      } else if (dataTable[0].state === 'VIC'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.VIC.description);
+      }else if (dataTable[0].state === 'NSW'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.NSW.description);
+      }else if (dataTable[0].state === 'SA'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.SA.description);
+      }else if (dataTable[0].state === 'ACT'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.ACT.description);
+      }
+      //await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.description);
       console.log("Reference disclaimer validated");
     }
     if (dataTable[0].goNeutral === 'Y') {
@@ -675,6 +734,28 @@ export class plansMethod {
       await testFunction.assertText(t, disclaimer, data.disclaimers.variableRates.heading);
       await testFunction.assertText(t, disclaimer, data.disclaimers.variableRates.description);
       console.log("Variable rates disclaimer validated");
+    }
+    if( planName===PlanType.TOTAL_PLAN || planName===PlanType.TOTAL_PLAN_PLUS || planName===PlanType.FAMILY_AND_FRIENDS || planName===PlanType.EMPLOYEE_PLAN || planName===PlanType.BUSINESS_BALANCE_PLAN || planName===PlanType.TOTAL_BUSINESS || planName===PlanType.FAMILY_AND_FRIENDS_BUSINESS){
+    await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.heading);
+      switch (state) {
+        case AustralianState.NSW:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.NSW.description);
+          break;
+        case AustralianState.VIC:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.VIC.description);
+          break;
+        case AustralianState.SA:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.SA.description);
+          break;
+        case AustralianState.ACT:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.ACT.description);
+          break;
+        case AustralianState.QLD:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.QLD.description);
+          break;
+        default:
+          console.log("Invalid state disclaimer");
+      }
     }
   }
 
@@ -717,7 +798,7 @@ export class plansMethod {
     }
     let planName = dataTable[0].planName;
     let state = dataTable[0].state;
-    if(planName===PlanType.RESIDENTIAL_BALANCE_PLAN || planName===PlanType.TOTAL_PLAN){
+    if(planName===PlanType.RESIDENTIAL_BALANCE_PLAN || planName===PlanType.TOTAL_PLAN || planName===PlanType.BUSINESS_CARBON_NEUTRAL || planName===PlanType.TOTAL_BUSINESS || planName===PlanType.BUSINESS_BALANCE_PLAN){
       await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.heading);
       switch (state) {
         case AustralianState.NSW:
@@ -1108,6 +1189,21 @@ export class plansMethod {
           await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanEleDiscount, discount);
         } else if (await testFunction.isGas(fuelType)) {
           await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanGasDiscount, discount);
+        }
+        break;
+      case PlanType.BUSINESS_CARBON_NEUTRAL:
+        if (await testFunction.isElectricity(fuelType)) {
+          await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralPlanTable.businessCarbonNeutralPlanEleDiscount, discount);
+        }
+        break;
+      case PlanType.BUSINESS_BALANCE_PLAN:
+        if (await testFunction.isElectricity(fuelType)) {
+          await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanEleDiscount, discount);
+        }
+        break;
+      case PlanType.TOTAL_BUSINESS:
+        if (await testFunction.isElectricity(fuelType)) {
+          await testFunction.assertText(t, EaHomePage.elements.BusinessTotalPlanTable.businessTotalPlanEleDiscount, discount);
         }
         break;
       default:

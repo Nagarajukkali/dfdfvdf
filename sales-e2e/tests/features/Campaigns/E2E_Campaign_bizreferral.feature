@@ -13,7 +13,7 @@
 
 Feature:E2E scenario for bizreferral campaign
 
-  @DR21.7.5.campaign
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for NSW
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "sarita.chakote@energyaustralia.com.au" and "2042" and clicks on show me plan link
@@ -92,7 +92,7 @@ Feature:E2E scenario for bizreferral campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign    | folderName                   | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 21          | 26          | bizreferral | E2E_Campaign_bizreferral_NSW | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
 
-
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for VIC
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "sarita.chakote@energyaustralia.com.au" and "3355" and clicks on show me plan link
@@ -170,7 +170,7 @@ Feature:E2E scenario for bizreferral campaign
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign    | folderName                   | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 7           | 25          | bizreferral | E2E_Campaign_bizreferral_VIC | Quote Tool   | Move Home | VIC   | BUS          | New           | No  | No |
-
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "sarita.chakote@energyaustralia.com.au" and "5088" and clicks on show me plan link
@@ -249,7 +249,7 @@ Feature:E2E scenario for bizreferral campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign    | folderName                  | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 5           | 5           | bizreferral | E2E_Campaign_bizreferral_SA | Quote Tool   | Move Home | SA    | BUS          | New           | No  | No |
 
-  @DR21.7.5.campaign
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for ACT
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "sarita.chakote@energyaustralia.com.au" and "2602" and clicks on show me plan link
@@ -328,7 +328,7 @@ Feature:E2E scenario for bizreferral campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign    | folderName                   | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 12          | 26          | bizreferral | E2E_Campaign_bizreferral_ACT | Quote Tool   | Move Home | ACT   | BUS          | New           | No  | No |
 
-
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for QLD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "sarita.chakote@energyaustralia.com.au" and "4020" and clicks on show me plan link

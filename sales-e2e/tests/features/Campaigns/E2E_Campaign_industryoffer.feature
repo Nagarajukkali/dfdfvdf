@@ -63,7 +63,7 @@ Feature:E2E scenario for industryoffer campaign
 
     Examples:
       |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |
-      |New            |BOTH     |industryoffer     |NSW    |22          |20           |
+      |New            |BOTH     |industryoffer     |NSW    |28          |26           |
   @campaign21.4.3
   Scenario Outline: Validate complete data for industryoffer campaign for NSW Essential
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_industryoffer_NSW_Essential' to save evidences
@@ -126,7 +126,7 @@ Feature:E2E scenario for industryoffer campaign
 
     Examples:
       |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |
-      |New            |BOTH     |industryoffer      |NSW    |19          |20           |
+      |New            |BOTH     |industryoffer      |NSW    |21          |26           |
   @campaign21.4.3
   Scenario Outline: Validate complete data for industryoffer campaign for NSW Endeavour for customer
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_industryoffer_NSW_Endeavour' to save evidences
@@ -189,7 +189,7 @@ Feature:E2E scenario for industryoffer campaign
 
     Examples:
       |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |
-      |New            |BOTH     |industryoffer      |NSW    |14          |20           |
+      |New            |BOTH     |industryoffer      |NSW    |19          |26           |
   @DR21.8.3.campaign
   Scenario Outline: Validate complete data for industryoffer campaign for VIC
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_industryoffer_VIC' to save evidences
@@ -253,7 +253,7 @@ Feature:E2E scenario for industryoffer campaign
 
     Examples:
       |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |
-      |New            |BOTH     |industryoffer      |VIC    |6           |24           |
+      |New            |BOTH     |industryoffer      |VIC    |6           |26           |
 
 
   Scenario Outline: Validate complete data for industryoffer campaign for SA
@@ -314,7 +314,7 @@ Feature:E2E scenario for industryoffer campaign
 
     Examples:
       |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |
-      |New            |BOTH     |industryoffer    |SA     |4           |4           |
+      |New            |BOTH     |industryoffer    |SA     |15           |5           |
 
   @campaign21.4.3
   Scenario Outline: Validate complete data for industryoffer campaign for QLD
@@ -364,7 +364,7 @@ Feature:E2E scenario for industryoffer campaign
 
     Examples:
       |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |
-      |New            |ELE      |industryoffer      |QLD    |14          |15           |
+      |New            |ELE      |industryoffer      |QLD    |20          |15           |
 
 
   Scenario Outline: Validate complete data for industryoffer campaign for ACT
@@ -426,4 +426,4 @@ Feature:E2E scenario for industryoffer campaign
 
     Examples:
       |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |
-      |New            |BOTH     |industryoffer      |ACT    |11          |19           |
+      |New            |BOTH     |industryoffer      |ACT    |13          |26           |

@@ -1,4 +1,4 @@
-@campaign21.4.3 @campaign @campaign
+@campaign21.4.3 @campaign
 Feature:E2E scenario for gas-biz campaign
 
   Scenario Outline: Validate complete data for gas-biz campaign for NSW Ausgrid for new customer

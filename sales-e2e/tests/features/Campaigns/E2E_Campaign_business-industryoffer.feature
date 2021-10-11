@@ -12,7 +12,7 @@
 
 Feature:E2E scenario for business-industryoffer campaign
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
 
   Scenario Outline: Validate complete data for business-industryoffer campaign for NSW-Ausgrid
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -90,7 +90,7 @@ Feature:E2E scenario for business-industryoffer campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                              | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 28          | 26          | industryoffer | E2E_Campaign_business-industryoffer_NSW | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for business-industryoffer campaign for NSW-Essential for new non-moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2580" and clicks on show me plan link
@@ -166,7 +166,7 @@ Feature:E2E scenario for business-industryoffer campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                                                      | sourceSystem | journey     | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 21          | 26          | industryoffer | E2E_Campaign_business-industryoffer_NSW-essential_new_nonmoving | Quote Tool   | Plan Switch | NSW   | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for business-industryoffer campaign for NSW-Endeavour for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2780" and clicks on show me plan link
@@ -242,7 +242,7 @@ Feature:E2E scenario for business-industryoffer campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                                                   | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 19          | 26          | industryoffer | E2E_Campaign_business-industryoffer_NSW_Endeavour_new_moving | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for business-industryoffer campaign for VIC
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3020" and clicks on show me plan link
@@ -318,7 +318,7 @@ Feature:E2E scenario for business-industryoffer campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                              | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 6           | 26          | industryoffer | E2E_Campaign_business-industryoffer_VIC | Quote Tool   | Move Home | VIC   | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for business-industryoffer campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5072" and clicks on show me plan link
@@ -394,7 +394,7 @@ Feature:E2E scenario for business-industryoffer campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                             | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 15          | 5           | industryoffer | E2E_Campaign_business-industryoffer_SA | Quote Tool   | Move Home | SA    | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for business-industryoffer campaign for ACT
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2605" and clicks on show me plan link
@@ -470,7 +470,7 @@ Feature:E2E scenario for business-industryoffer campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign      | folderName                              | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | GAS      | 13          | 26          | industryoffer | E2E_Campaign_business-industryoffer_ACT | Quote Tool   | Move Home | ACT   | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for business-industryoffer campaign for QLD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4013" and clicks on show me plan link

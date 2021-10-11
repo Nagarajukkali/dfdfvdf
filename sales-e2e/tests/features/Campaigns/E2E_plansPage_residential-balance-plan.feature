@@ -1,4 +1,4 @@
-@DR21.9.5.balanceplan
+@DR21.10.2.campaign
 Feature:E2E scenario for residential-balance-plan
 
   Scenario Outline: Validate complete data for residential-balance-plan for NSW for new moving customer
