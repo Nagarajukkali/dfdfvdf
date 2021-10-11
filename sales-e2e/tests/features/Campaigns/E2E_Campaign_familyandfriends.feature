@@ -1,4 +1,4 @@
-@campaign  @campaign21.9.2
+@campaign
 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
@@ -13,7 +13,7 @@
 
 Feature:E2E scenario for familyandfriends campaign
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for familyandfriends campaign for NSW - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "sarita.chakote@energyaustralia.com.au" and "2000" and clicks on show me plan link
@@ -89,7 +89,7 @@ Feature:E2E scenario for familyandfriends campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign         | folderName                                   | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | 23          | 19          | familyandfriends | E2E_Campaign_familyandfriends_NSW_new_moving | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.7.5.campaign
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for familyandfriends campaign for QLD - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "sarita.chakote@energyaustralia.com.au" and "4500" and clicks on show me plan link
@@ -104,7 +104,7 @@ Feature:E2E scenario for familyandfriends campaign
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-      | ELE      | N                | N                     | N                   | Y                                  | <state> |
+      | ELE      | N                | Y                     | Y                   | Y                                  | <state> |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -122,7 +122,7 @@ Feature:E2E scenario for familyandfriends campaign
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | Y                     | N                   | Y                                  | N                               | <state> |
+      | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName           | state   | signUpCredit |
       | Y                        | N         | Y            | Family and Friends | <state> | N            |
@@ -143,7 +143,7 @@ Feature:E2E scenario for familyandfriends campaign
       | customerStatus | fuelType | eleDiscount | campaign         | folderName                                   | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | 17          | familyandfriends | E2E_Campaign_familyandfriends_QLD_new_moving | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for familyandfriends campaign for SA - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "sarita.chakote@energyaustralia.com.au" and "5000" and clicks on show me plan link
@@ -210,7 +210,7 @@ Feature:E2E scenario for familyandfriends campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign         | folderName                                  | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | 10          | 18          | familyandfriends | E2E_Campaign_familyandfriends_SA_new_moving | SA    | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for familyandfriends campaign for ACT - new non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "sarita.chakote@energyaustralia.com.au" and "2600" and clicks on show me plan link
@@ -277,7 +277,7 @@ Feature:E2E scenario for familyandfriends campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign         | folderName                                      | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | 13          | 18          | familyandfriends | E2E_Campaign_familyandfriends_ACT_new_nonmoving | ACT   | Quote Tool   | COR     | No  | No | RES          | New           |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for familyandfriends campaign for VIC - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "pratiksha.kasaliwal@energyaustralia.com.au" and "3000" and clicks on show me plan link
@@ -345,7 +345,7 @@ Feature:E2E scenario for familyandfriends campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign         | folderName                                   | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 18          | 29          | familyandfriends | E2E_Campaign_familyandfriends_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for familyandfriends campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "sarita.chakote@energyaustralia.com.au" and "3000" and clicks on show me plan link
@@ -415,7 +415,7 @@ Feature:E2E scenario for familyandfriends campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign         | folderName                                            | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     | 18          | 29          | familyandfriends | E2E_Campaign_familyandfriends_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for familyandfriends campaign for NSW existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "sarita.chakote@energyaustralia.com.au" and "2000" and clicks on show me plan link
@@ -478,7 +478,7 @@ Feature:E2E scenario for familyandfriends campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign         | folderName                                            | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     | 23          | 19          | familyandfriends | E2E_Campaign_familyandfriends_NSW_existing_non-moving | NSW   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for familyandfriends campaign for SA existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "sarita.chakote@energyaustralia.com.au" and "5000" and clicks on show me plan link
@@ -548,7 +548,7 @@ Feature:E2E scenario for familyandfriends campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign         | folderName                                           | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     | 10          | 18          | familyandfriends | E2E_Campaign_familyandfriends_SA_existing_non-moving | SA    | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR21.7.1.campaign
+  @DR21.10.2.campaign2
   Scenario Outline: Validate complete data for familyandfriends campaign for QLD existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "sarita.chakote@energyaustralia.com.au" and "4500" and clicks on show me plan link
@@ -584,7 +584,7 @@ Feature:E2E scenario for familyandfriends campaign
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               | <state> |
+      | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName           | state | signUpCredit |
       | Y                        | N         | Y            | Family and Friends | QLD   | N            |
@@ -605,7 +605,7 @@ Feature:E2E scenario for familyandfriends campaign
       | customerStatus | fuelType | eleDiscount | campaign         | folderName                                            | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | ELE      | 17          | familyandfriends | E2E_Campaign_familyandfriends_QLD_existing_non-moving | QLD   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @21.6.4.familyandfriends
+
   Scenario: Validate family and friends residential campaign referee email validation rules
     Given user has opened the 'familyandfriends' link in a browser and creates 'E2E_FamilyAndFriends_EmailCodeValidation' to save evidences
     Then user validates the label for Referee email address as the offer code

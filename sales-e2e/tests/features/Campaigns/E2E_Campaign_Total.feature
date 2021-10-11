@@ -1,4 +1,4 @@
-@campaign @campaign21.5.4_2
+@campaign
 
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
@@ -13,7 +13,7 @@
 
 Feature:E2E scenario for total campaign
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for total campaign for QLD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4506" for postcode and proceed to view the plans
@@ -22,7 +22,7 @@ Feature:E2E scenario for total campaign
       | campaign | folderName             |
       | total    | E2E_Campaign_total_QLD |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for total campaign for SA - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5044" for postcode and proceed to view the plans
@@ -31,7 +31,7 @@ Feature:E2E scenario for total campaign
       | campaign | folderName            |
       | total    | E2E_Campaign_total_SA |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for total campaign for ACT - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2600" for postcode and proceed to view the plans
@@ -40,7 +40,7 @@ Feature:E2E scenario for total campaign
       | campaign | folderName             |
       | total    | E2E_Campaign_total_ACT |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for total campaign for VIC - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
@@ -108,7 +108,7 @@ Feature:E2E scenario for total campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                             | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 15          | 26          | total    | E2E_Campaign_cashreward_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for total campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans

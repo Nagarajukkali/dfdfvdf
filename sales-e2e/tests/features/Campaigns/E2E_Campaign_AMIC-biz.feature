@@ -2,7 +2,7 @@
 @campaign
 Feature:E2E scenario for AMIC-BIZ campaign
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for amic-biz campaign for NSW Ausgrid for new customer
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_AMIC_NSW_Ausgrid' to save evidences
     When user provides "2010" for postcode and proceed to view the plans
@@ -67,7 +67,7 @@ Feature:E2E scenario for AMIC-BIZ campaign
       | customerStatus | fuelType | campaign | state | eleDiscount | gasDiscount |
       | New            | BOTH     | amic-biz | NSW   | 28          | 26          |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for amic-biz campaign for NSW Essential
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_AMIC_NSW_Essential' to save evidences
     When user provides "2580" for postcode and proceed to view the plans
@@ -131,7 +131,7 @@ Feature:E2E scenario for AMIC-BIZ campaign
       | customerStatus | fuelType | campaign | state | eleDiscount | gasDiscount |
       | New            | BOTH     | amic-biz | NSW   | 21          | 26          |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for amic-biz campaign for NSW Endeavour for customer
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_AMIC_NSW_Endeavour' to save evidences
     When user provides "2163" for postcode and proceed to view the plans
@@ -195,7 +195,7 @@ Feature:E2E scenario for AMIC-BIZ campaign
       | customerStatus | fuelType | campaign | state | eleDiscount | gasDiscount |
       | New            | BOTH     | amic-biz | NSW   | 19          | 26          |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for amic-biz campaign for VIC for new customer
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_AMIC_biz_VIC' to save evidences
     When user provides "3031" for postcode and proceed to view the plans
@@ -262,7 +262,7 @@ Feature:E2E scenario for AMIC-BIZ campaign
       | customerStatus | fuelType | campaign | state | eleDiscount | gasDiscount |
       | New            | BOTH     | amic-biz | VIC   | 6           | 26          |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for amic-biz campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_AMIC_SA' to save evidences
     When user provides "5044" for postcode and proceed to view the plans
@@ -323,7 +323,7 @@ Feature:E2E scenario for AMIC-BIZ campaign
       | customerStatus | fuelType | campaign | state | eleDiscount | gasDiscount |
       | New            | BOTH     | amic-biz | SA    | 15          | 5           |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for AMIC campaign for QLD
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_AMIC_QLD' to save evidences
     When user provides "4506" for postcode and proceed to view the plans
@@ -373,7 +373,7 @@ Feature:E2E scenario for AMIC-BIZ campaign
       | customerStatus | fuelType | campaign | state | eleDiscount | gasDiscount |
       | New            | ELE      | amic-biz | QLD   | 20          | 15          |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for AMIC campaign for ACT
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_AMIC_ACT' to save evidences
     When user provides "2914" for postcode and proceed to view the plans

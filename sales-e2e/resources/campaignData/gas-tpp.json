@@ -28,15 +28,19 @@
         },
         "peaceOfMind": {
           "heading": "Peace of mind",
-          "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+          "description": "Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
         },
         "discountOffTotalEnergyBill": {
-          "heading": "VIP discount off total energy bill",
-          "description": "Exclusive VIP guaranteed discount that applies to both energy usage rates and daily supply charges. Eligible customers only."
+          "heading": "discount off total electricity bill",
+          "description": "Guaranteed discount that applies to your energy charges."
         },
         "noStandardConnectionFee": {
           "heading": "No standard connection fees",
           "description": "Move with us and we'll waive connection and special meter reads during business hours."
+        },
+        "vipDiscount": {
+          "heading": "VIP discount off total energy bill",
+          "description": "Exclusive VIP guaranteed discount that applies to your energy charges. Eligible customers only."
         }
       },
       "postSelect": {
@@ -47,19 +51,20 @@
           "SA": "$50 Second Energy Account Credit. Get a $50 credit on your first bill when you sign up your second energy account.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
-        "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
-        "discountOffTotalEnergyBill": "Exclusive VIP guaranteed discount that applies to both energy usage rates and daily supply charges. Eligible customers only.",
-        "noStandardConnectionFee": "No standard connection fees. Move with us and we'll waive connection and special meter reads during business hours."
+        "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
+        "discountOffTotalEnergyBill": "discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+        "noStandardConnectionFee": "No standard connection fees. Move with us and we'll waive connection and special meter reads during business hours.",
+        "vipDiscount": "VIP discount off total energy bill. Exclusive VIP guaranteed discount that applies to your energy charges. Eligible customers only."
       }
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_Plus_14%GD",
+        "VIC": "Total_Plus_16%GD",
         "NSW": {
-          "Ausgrid": "Total_Plus_25%GD",
-          "Essential": "Total_Plus_25%GD",
-          "Endeavour": "Total_Plus_25%GD",
-          "default": "Total_Plus_25%GD"
+          "Ausgrid": "Total_Plus_21%GD",
+          "Essential": "Total_Plus_21%GD",
+          "Endeavour": "Total_Plus_21%GD",
+          "default": "Total_Plus_21%GD"
         },
         "ACT": "Total_Plus_13%GD_25",
         "QLD": "Total_Plus_21%GD_50",
@@ -67,24 +72,24 @@
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_Plus_14%GD",
+          "VIC": "Total_Plus_16%GD",
           "NSW": {
-            "Ausgrid": "Total_Plus_25%GD",
-            "Essential": "Total_Plus_25%GD",
-            "Endeavour": "Total_Plus_25%GD",
-            "default": "Total_Plus_25%GD"
+            "Ausgrid": "Total_Plus_21%GD",
+            "Essential": "Total_Plus_21%GD",
+            "Endeavour": "Total_Plus_21%GD",
+            "default": "Total_Plus_21%GD"
           },
           "ACT": "Total_Plus_13%GD_25",
           "QLD": "Total_Plus_21%GD_50",
           "SA": "Total_Plus_15%GD"
         },
         "PS": {
-          "VIC": "Total_Plus_14%GD",
+          "VIC": "Total_Plus_16%GD",
           "NSW": {
-            "Ausgrid": "Total_Plus_25%GD",
-            "Essential": "Total_Plus_25%GD",
-            "Endeavour": "Total_Plus_25%GD",
-            "default": "Total_Plus_25%GD"
+            "Ausgrid": "Total_Plus_21%GD",
+            "Essential": "Total_Plus_21%GD",
+            "Endeavour": "Total_Plus_21%GD",
+            "default": "Total_Plus_21%GD"
           },
           "ACT": "Total_Plus_13%GD_25",
           "QLD": "Total_Plus_21%GD_50",
@@ -120,15 +125,19 @@
         },
         "peaceOfMind": {
           "heading": "Peace of mind",
-          "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+          "description": "Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
         },
         "discountOffTotalEnergyBill": {
-          "heading": "VIP discount off total energy bill",
-          "description": "Exclusive VIP guaranteed discount that applies to both energy usage rates and daily supply charges. Eligible customers only."
+          "heading": "discount off total gas bill",
+          "description": "Guaranteed discount that applies to your energy charges."
         },
         "noStandardConnectionFee": {
           "heading": "No standard connection fees",
           "description": "Move with us and we'll waive connection and special meter reads during business hours."
+        },
+        "vipDiscount": {
+          "heading": "VIP discount off total energy bill",
+          "description": "Exclusive VIP guaranteed discount that applies to your energy charges. Eligible customers only."
         }
       },
       "postSelect": {
@@ -139,30 +148,31 @@
           "SA": "$50 Second Energy Account Credit. Get a $50 credit on your first bill when you sign up your second energy account.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
-        "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
-        "discountOffTotalEnergyBill": "Exclusive VIP guaranteed discount that applies to both energy usage rates and daily supply charges. Eligible customers only.",
-        "noStandardConnectionFee": "No standard connection fees. Move with us and we'll waive connection and special meter reads during business hours."
+        "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
+        "discountOffTotalEnergyBill": "discount off total gas bill. Guaranteed discount that applies to your energy charges.",
+        "noStandardConnectionFee": "No standard connection fees. Move with us and we'll waive connection and special meter reads during business hours.",
+        "vipDiscount": "VIP discount off total energy bill. Exclusive VIP guaranteed discount that applies to your energy charges. Eligible customers only."
       }
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_Plus_34%GD",
-        "NSW": "Total_Plus_25%GD",
+        "VIC": "Total_Plus_27%GD",
+        "NSW": "Total_Plus_17%GD",
         "ACT": "Total_Plus_17%GD_25",
         "QLD": "",
         "SA": "Total_Plus_15%GD"
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_Plus_34%GD",
-          "NSW": "Total_Plus_25%GD",
+          "VIC": "Total_Plus_27%GD",
+          "NSW": "Total_Plus_17%GD",
           "ACT": "Total_Plus_17%GD_25",
           "QLD": "",
           "SA": "Total_Plus_15%GD"
         },
         "PS": {
-          "VIC": "Total_Plus_34%GD",
-          "NSW": "Total_Plus_25%GD",
+          "VIC": "Total_Plus_27%GD",
+          "NSW": "Total_Plus_17%GD",
           "ACT": "Total_Plus_17%GD_25",
           "QLD": "",
           "SA": "Total_Plus_15%GD"
@@ -233,22 +243,22 @@
         "description": "+ Offer available to existing residential customers who sign up a second energy account to Total Plan Plus gas. Limit of one $50 credit per customer address. Available to customers in SA only. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       }
     },
-    "totalPlanPlus": {
+    "plandisclaimer": {
       "heading": "Total Plan Plus",
       "VIC": {
-        "description": "* Offer only for existing VIC residential customers who sign up to a gas offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for existing VIC residential customers who sign up to a gas offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "NSW": {
-        "description": "* Offer only for existing NSW residential customers who sign up to a gas offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for existing NSW residential customers who sign up to a gas offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "ACT": {
-        "description": "* Offer only for existing ACT residential customers who sign up to a gas offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for existing ACT residential customers who sign up to a gas offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "QLD": {
         "description": ""
       },
       "SA": {
-        "description": "* Offer only for existing SA residential customers who sign up to a gas offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for existing SA residential customers who sign up to a gas offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       }
     }
   }

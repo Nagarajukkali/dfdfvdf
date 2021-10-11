@@ -33,11 +33,25 @@
           },
           "peaceOfMind": {
             "heading": "Peace of mind",
-            "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+            "description": "Your market energy charges won't increase for the fixed rate period. We'll let you know in advance before your market energy rates change."
           },
           "discountOffTotalEnergyBill": {
-            "heading": "Discount off total energy bill",
-            "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
+            "VIC": {
+              "heading": "2% discount off total electricity bill"
+            },
+            "NSW": {
+              "heading": "17% discount off total electricity bill"
+            },
+            "ACT": {
+              "heading": "8% discount off total electricity bill"
+            },
+            "QLD": {
+              "heading": "11% discount off total electricity bill"
+            },
+            "SA": {
+              "heading": "1% discount off total electricity bill"
+            },
+            "description": "Guaranteed discount that applies to your market energy charges."
           },
           "noStandardConnectionFee": {
             "heading": "",
@@ -53,48 +67,54 @@
             "SA" : ""
           },
           "carbonNeutral": "Carbon Neutral. Carbon neutral electricity for your business premises.",
-          "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
-          "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
+          "peaceOfMind": "Peace of mind. Your market energy charges won't increase for the fixed rate period. We'll let you know in advance before your market energy rates change.",
+          "discountOffTotalEnergyBill": {
+            "VIC": "2% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
+            "NSW": "17% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
+            "ACT": "8% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
+            "QLD": "11% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
+            "SA": "1% discount off total electricity bill. Guaranteed discount that applies to your market energy charges."
+          },
           "noStandardConnectionFee": ""
         }
       },
       "sourceCode": {
         "newCustomer": {
-          "VIC": "Total_5%GD",
+          "VIC": "Total_2%GD",
           "NSW": {
             "Ausgrid": "Total_17%GD",
             "Essential": "Total_18%GD",
             "Endeavour": "Total_13%GD",
             "default": "Total_21%GD"
           },
-          "ACT": "Total_10%GD",
-          "QLD": "Total_13%GD",
-          "SA": "Total_3%GD"
+          "ACT": "Total_8%GD",
+          "QLD": "Total_11%GD",
+          "SA": "Total_1%GD"
         },
         "existingCustomer": {
           "ENE":{
-            "VIC": "Total_5%GD",
+            "VIC": "Total_2%GD",
             "NSW": {
               "Ausgrid": "Total_17%GD",
               "Essential": "Total_18%GD",
-              "Endeavour": "Total_13%GD",
+              "Endeavour": "Total_11%GD",
               "default": "Total_21%GD"
             },
-            "ACT": "Total_10%GD",
-            "QLD": "Total_13%GD",
-            "SA": "Total_3%GD"
+            "ACT": "Total_8%GD",
+            "QLD": "Total_11%GD",
+            "SA": "Total_1%GD"
           },
           "PS": {
-            "VIC": "Total_5%GD",
+            "VIC": "Total_2%GD",
             "NSW": {
               "Ausgrid": "Total_17%GD",
               "Essential": "Total_18%GD",
               "Endeavour": "Total_13%GD",
               "default": "Total_21%GD"
             },
-            "ACT": "Total_10%GD",
-            "QLD": "Total_13%GD",
-            "SA": "Total_3%GD"
+            "ACT": "Total_8%GD",
+            "QLD": "Total_11%GD",
+            "SA": "Total_1ss%GD"
           }
         }
       }
@@ -131,11 +151,25 @@
           },
           "peaceOfMind": {
             "heading": "Peace of mind",
-            "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+            "description": "Your market energy charges won't increase for the fixed rate period. We'll let you know in advance before your market energy rates change."
           },
           "discountOffTotalEnergyBill": {
-            "heading": "Discount off total energy bill",
-            "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
+            "VIC": {
+              "heading": "5% discount off total electricity bill"
+            },
+            "NSW": {
+              "heading": "19% discount off total electricity bill"
+            },
+            "ACT": {
+              "heading": "10% discount off total electricity bill"
+            },
+            "QLD": {
+              "heading": "20% discount off total electricity bill"
+            },
+            "SA": {
+              "heading": "3% discount off total electricity bill"
+            },
+            "description": "Guaranteed discount that applies to your market energy charges."
           },
           "noStandardConnectionFee": {
             "heading": "",
@@ -151,8 +185,14 @@
             "SA" : ""
           },
           "carbonNeutral": "",
-          "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
-          "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
+          "peaceOfMind": "Peace of mind. Your market energy charges won't increase for the fixed rate period. We'll let you know in advance before your market energy rates change.",
+          "discountOffTotalEnergyBill": {
+            "VIC": "2% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
+            "NSW": "17% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
+            "ACT": "8% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
+            "QLD": "11% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
+            "SA": "1% discount off total electricity bill. Guaranteed discount that applies to your market energy charges."
+          },
           "noStandardConnectionFee": ""
         }
       },
@@ -206,10 +246,10 @@
       "solarBuyBack": {
         "heading": "Solar feed-in tariffs",
         "VIC": {
-          "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. For more information about the Victorian FiT scheme see www.energy.vic.gov.au/renewable-energy/victorian-feed-in-tariff."
+          "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
         },
         "NonVIC": {
-          "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
+          "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
         }
       },
       "noStandardConnectionFee": {
@@ -238,22 +278,22 @@
           "description": ""
         }
       },
-      "businessCarbonNeutral": {
+      "plandisclaimer": {
         "heading": "Business Carbon Neutral",
         "VIC": {
-          "description": "* Offer only for eligible VIC business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We will offset the carbon emissions from your electricity consumption under your eligible account on and from the supply start date. We may change or end this offer at any time. For more information on Business Carbon Neutral and for full terms visit https://www.energyaustralia.com.au/business/electricity-and-gas/business-carbon-neutral."
+          "description": "* Offer only for eligible VIC business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time. We will offset the carbon emissions from your electricity consumption under your eligible account on and from the supply start date. For more information on Business Carbon Neutral and for full terms visit https://www.energyaustralia.com.au/business/electricity-and-gas/business-carbon-neutral."
         },
         "NSW": {
-          "description": "* Offer only for eligible NSW business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We will offset the carbon emissions from your electricity consumption under your eligible account on and from the supply start date. We may change or end this offer at any time. For more information on Business Carbon Neutral and for full terms visit https://www.energyaustralia.com.au/business/electricity-and-gas/business-carbon-neutral."
+          "description": "* Offer only for eligible NSW business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time. We will offset the carbon emissions from your electricity consumption under your eligible account on and from the supply start date. We may change or end this offer at any time. For more information on Business Carbon Neutral and for full terms visit https://www.energyaustralia.com.au/business/electricity-and-gas/business-carbon-neutral."
         },
         "ACT": {
-          "description": "* Offer only for eligible ACT business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We will offset the carbon emissions from your electricity consumption under your eligible account on and from the supply start date. We may change or end this offer at any time. For more information on Business Carbon Neutral and for full terms visit https://www.energyaustralia.com.au/business/electricity-and-gas/business-carbon-neutral."
+          "description": "* Offer only for eligible ACT business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time. We will offset the carbon emissions from your electricity consumption under your eligible account on and from the supply start date. We may change or end this offer at any time. For more information on Business Carbon Neutral and for full terms visit https://www.energyaustralia.com.au/business/electricity-and-gas/business-carbon-neutral."
         },
         "QLD": {
-          "description": "* Offer only for eligible QLD business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We will offset the carbon emissions from your electricity consumption under your eligible account on and from the supply start date. We may change or end this offer at any time. For more information on Business Carbon Neutral and for full terms visit https://www.energyaustralia.com.au/business/electricity-and-gas/business-carbon-neutral."
+          "description": "* Offer only for eligible QLD business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time. We will offset the carbon emissions from your electricity consumption under your eligible account on and from the supply start date. We may change or end this offer at any time. For more information on Business Carbon Neutral and for full terms visit https://www.energyaustralia.com.au/business/electricity-and-gas/business-carbon-neutral."
         },
         "SA": {
-          "description": "* Offer only for eligible SA business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We will offset the carbon emissions from your electricity consumption under your eligible account on and from the supply start date. We may change or end this offer at any time. For more information on Business Carbon Neutral and for full terms visit https://www.energyaustralia.com.au/business/electricity-and-gas/business-carbon-neutral."
+          "description": "* Offer only for eligible SA business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time. We will offset the carbon emissions from your electricity consumption under your eligible account on and from the supply start date. We may change or end this offer at any time. For more information on Business Carbon Neutral and for full terms visit https://www.energyaustralia.com.au/business/electricity-and-gas/business-carbon-neutral."
         }
       }
     }

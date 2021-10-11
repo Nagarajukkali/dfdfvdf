@@ -14,7 +14,7 @@
 
 Feature:E2E scenario for biztpp campaign
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for biztpp campaign for NSW-Ausgrid
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2042" for postcode and proceed to view the plans
@@ -90,7 +90,7 @@ Feature:E2E scenario for biztpp campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName              | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 28          | 26          | biztpp   | E2E_Campaign_biztpp_NSW | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for biztpp campaign for VIC
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3355" for postcode and proceed to view the plans
@@ -166,7 +166,7 @@ Feature:E2E scenario for biztpp campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName              | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 6           | 26          | biztpp   | E2E_Campaign_biztpp_VIC | Quote Tool   | Move Home | VIC   | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for biztpp campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5088" for postcode and proceed to view the plans
@@ -242,7 +242,7 @@ Feature:E2E scenario for biztpp campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName             | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 15          | 5           | biztpp   | E2E_Campaign_biztpp_SA | Quote Tool   | Move Home | SA    | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for biztpp campaign for ACT
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2612" for postcode and proceed to view the plans
@@ -318,7 +318,7 @@ Feature:E2E scenario for biztpp campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName              | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 13          | 26          | biztpp   | E2E_Campaign_biztpp_ACT | Quote Tool   | Move Home | ACT   | BUS          | New           | No  | No |
 
-  @DR21.9.5.campaign-R
+  @DR21.10.2.campaign
   Scenario Outline: Validate complete data for biztpp campaign for QLD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4020" for postcode and proceed to view the plans
