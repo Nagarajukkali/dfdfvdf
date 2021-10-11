@@ -1632,6 +1632,13 @@ export class plansMethod {
       }
     }
   }
+  public static async validateErrorMessageForNSWRemoteMeterRiskAccountsPlansPage(t) {
+    await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.nswRemoterMeterMsgOnPlanPage);
+    let expectedErrorMessage = "You have a remotely capable meter, so we're unable to proceed with your request online. Please call us on 133 466 to discuss your options.";
+    let actualMessage = await testFunction.getElementText(t, EaHomePage.elements.nswRemoterMeterMsgOnPlanPage);
+    await testFunction.assertText(t, EaHomePage.elements.nswRemoterMeterMsgOnPlanPage,actualMessage);
+    console.log("NSW remote meter risk message validated on plans page");
+  }
 
   public static async selectGreenEnergy(t, greenEnergyPercentage: string){
     await testFunction.click(t, EaHomePage.elements.refineGreenEnergy);

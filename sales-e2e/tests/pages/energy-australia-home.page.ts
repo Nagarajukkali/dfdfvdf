@@ -10,6 +10,7 @@ const eaHomePage = {
   eaHomePageBusinessABTest: config.eaHomePageBusinessABTest,
   savedQuoteURL: config.savedQuoteURL,
   elements: {
+    nswRemoterMeterMsgOnPlanPage: Selector("#plan-error-REMOTE_METERING_RISK"),
     residentialBalancePlan: Selector("[id*='plan-select-button-TAPR1']"),
     selectedState: Selector("#navbar div[class*='state-value']"),
     //residentialComparePlansButton: Selector('.icon-GasElectricity'),
