@@ -24,7 +24,7 @@ module.exports = {
     },
     qt2ReportingCreds: {
       username: 'aparid',
-      password: 'U2FsdGVkX19rUdxjOUEWGYeras0MT+iVvpY6aktiTR0='
+      password: 'U2FsdGVkX1+3mTkaSv2Vn7OdQOGvMcra+seRqRJbEaY='
     },
     ghostingUserCreds: {
       username: 'eacsr@ea.com',
