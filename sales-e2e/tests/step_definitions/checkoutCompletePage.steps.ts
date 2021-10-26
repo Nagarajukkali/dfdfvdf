@@ -1,6 +1,6 @@
 import {checkoutCompleteMethod} from '../methods/checkoutCompletePage';
 import {testFunction} from '../../global_methods/helper';
-import {Then, When} from 'cucumber';
+import {Given, Then, When} from 'cucumber';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 import {checkoutReviewMethod} from '../methods/checkoutReviewPage';
 import {getPackage} from './hooks';
@@ -48,3 +48,7 @@ Then(/^user validates details on checkout complete page$/, async function (t, []
 When(/^user navigate back to plans page$/, async function (t) {
   await checkoutCompleteMethod.navigateBackToPlansPage(t);
 });
+Then(/^user verify the analytics for feedback section for "([^"]*)"$/, async function (t,[reviewType]) {
+  await checkoutCompleteMethod.validateFeedbackAnalytics(t, reviewType);
+});
+

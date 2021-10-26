@@ -6,6 +6,9 @@ import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 import {plansMethod} from '../methods/plansPage';
 import {FuelType} from '@ea/ea-commons-models';
 
+const { config }=require('../../resources/resource');
+const validateAnalyticsEvent=config.validateAnalytics;
+
 When(/^user provides life support details$/, async function (t, [], dataTable) {
   let data = dataTable.hashes();
   await checkoutReviewMethod.answerLifeSupportQuestion(t, data[0].lifeSupportOption);
@@ -24,6 +27,9 @@ When(/^user provides life support details on review page$/, async function (t, [
   await checkoutReviewMethod.answerLifeSupportQuestion(t, lifeSupportOption);
   if (lifeSupportOption === 'Yes') {
     await checkoutReviewMethod.clickOnRegisterDeviceBtn(t, fuelType);
+    if(validateAnalyticsEvent==='Y') {
+      await plansMethod.validateComponentLibraryEvent(t, "review_page", "lifesupport_register");
+    }
     if (testFunction.isElectricity(fuelType)) {
       await checkoutReviewMethod.selectElecLSEquipment(t, data[0].EleclifeSupportDevices, fuelType);
     }

@@ -1,6 +1,7 @@
 import {testFunction} from '../../global_methods/helper';
 import {CustomerType, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 import {checkoutDetailsMethod} from './checkoutDetailsPage';
+import {plansMethod} from "./plansPage";
 const { config }=require('../../resources/resource');
 const validateAnalyticsEvent=config.validateAnalytics;
 
@@ -122,6 +123,28 @@ export class checkoutCompleteMethod {
       await testFunction.assertText(t, eaCheckoutCompletePage.elements.bannerIntroducingMA.feature3, "Monitor your usage");
     }
     console.log("Validation completed for introducing my account banner for " + sourceSystem);
+  }
+
+  public static async validateFeedbackAnalytics(t, reviewType) {
+    if (reviewType==='PRODUCT_REVIEW'){
+      await plansMethod.validateComponentLibraryEvent(t, "complete_page", "product_review");
+      await testFunction.click(t, eaCheckoutCompletePage.elements.productReviewFeedbackLink);
+      await t.closeWindow();
+      await plansMethod.validateComponentLibraryEvent(t, "complete_page", "product_review_link");
+    }else if(reviewType==='GOOGLE_REVIEW'){
+      await plansMethod.validateComponentLibraryEvent(t, "complete_page", "google_review");
+      await testFunction.click(t, eaCheckoutCompletePage.elements.googleReviewFeedbackLink);
+      await t.closeWindow();
+      await plansMethod.validateComponentLibraryEvent(t, "complete_page", "google_review_submit");
+    }else if(reviewType==='NPS_FEEDBACK'){
+      await plansMethod.validateComponentLibraryEvent(t, "complete_page", "customer_feedback");
+      await testFunction.click(t, eaCheckoutCompletePage.elements.customerReviewRadio);
+      await testFunction.click(t, eaCheckoutCompletePage.elements.customerReviewSubmit);
+      await plansMethod.validateComponentLibraryEvent(t, "complete_page", "customer_feedback_submit");
+    }else if(reviewType==='TRUSTPILOT'){
+      await plansMethod.validateComponentLibraryEvent(t, "complete_page", "trust_pilot_feedback");
+    }
+    console.log("Analytics validation completed for Feedback component");
   }
 
   public static async validateNavigationButton(t, sourceSystem) {

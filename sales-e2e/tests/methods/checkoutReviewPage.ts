@@ -1,10 +1,13 @@
 import {AustralianState, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 import {LSDevices, PlanType, scrollTo, SelectionType, testFunction} from '../../global_methods/helper';
 import {checkoutDetailsMethod} from './checkoutDetailsPage';
+import {plansMethod} from "./plansPage";
 
+const { config }=require('../../resources/resource');
 const eaCheckoutDetailsPage = require('../pages/checkOutDetails.page');
 const eaCheckoutReviewPage = require('../pages/checkoutReview.page');
 const EaHomePage = require('../pages/energy-australia-home.page');
+const validateAnalyticsEvent=config.validateAnalytics;
 
 
 export class checkoutReviewMethod {
@@ -117,8 +120,14 @@ export class checkoutReviewMethod {
   public static async answerLifeSupportQuestion(t, option) {
     if (option === "Yes") {
       await testFunction.click(t, eaCheckoutReviewPage.elements.lifeSupportQuestionYes);
+      if(validateAnalyticsEvent==='Y') {
+        await plansMethod.validateComponentLibraryEvent(t, "review_page", "lifesupport_radio_yes");
+      }
     } else if (option === "No") {
       await testFunction.click(t, eaCheckoutReviewPage.elements.lifeSupportQuestionNo);
+      if(validateAnalyticsEvent==='Y') {
+        await plansMethod.validateComponentLibraryEvent(t, "review_page", "lifesupport_radio_no");
+      }
     } else {
       console.error("Invalid option selected.");
     }
@@ -403,6 +412,9 @@ export class checkoutReviewMethod {
       case LSDevices.ELE_OTHER:
         await this.selectLSDevice(t, eaCheckoutReviewPage.elements.cbEleDevice_OTHER);
         await testFunction.clearAndEnterText(t, eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsElec, "Sample Other electricity device.");
+        if(validateAnalyticsEvent==='Y') {
+          await plansMethod.validateComponentLibraryEvent(t, "review_page", "lifesupport_other");
+        }
         break;
       default:
         console.error("Invalid Electricity Equipment.");
@@ -414,6 +426,9 @@ export class checkoutReviewMethod {
     switch (equipmentName) {
       case LSDevices.GAS_GLSMRHAC:
         await this.selectLSDevice(t, eaCheckoutReviewPage.elements.cbGasDevice_GLSMRHAC);
+        if(validateAnalyticsEvent==='Y') {
+          await plansMethod.validateComponentLibraryEvent(t, "review_page", "lifesupport_glsmrhac");
+        }
         break;
       case LSDevices.GAS_GLSMRHW:
         await this.selectLSDevice(t, eaCheckoutReviewPage.elements.cbGasDevice_GLSMRHW);

@@ -216,20 +216,20 @@
     "sourceCode": {
       "newCustomer": {
         "VIC": "Total_23%GD_200",
-        "NSW": "Total_19%GD",
+        "NSW": "Total_24%GD",
         "ACT": "Total_24%GD",
         "SA": "Total_3%GD"
       },
       "existingCustomer": {
         "ENE": {
           "VIC": "Total_23%GD_200",
-          "NSW": "Total_19%GD",
+          "NSW": "Total_24%GD",
           "ACT": "Total_24%GD",
           "SA": "Total_3%GD"
         },
         "PS": {
           "VIC": "Total_23%GD",
-          "NSW": "Total_19%GD",
+          "NSW": "Total_24%GD",
           "ACT": "Total_24%GD",
           "SA": "Total_3%GD"
         }

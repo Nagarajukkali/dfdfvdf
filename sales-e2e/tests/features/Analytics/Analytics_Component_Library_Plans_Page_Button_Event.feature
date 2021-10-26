@@ -1,19 +1,18 @@
-@componentlibrary @analytics
+@componentlibrary
 Feature: Scenarios to cover the data layer updates and analytics events trigger on plan page
 
   Scenario: Validate the component library events for button on plans page
     Given user has opened the website link in a browser and creates 'E2E_Analytics_Plans_Page_Button_Event' to save evidences
     And user has navigated to 'RES' plans page
     And user initiates the call to capture analytics events
-    When user enters the address "271 Heatherhill Road, FRANKSTON VIC 3199" on plans page
-    And user selects 'Total Plan'
+    When user selects 'Total Plan'
     Then user validates the 'plans_page' 'Total_Select_Plan_Button' event
     When user closes the cart page
     Then user validates the 'cart_page' 'close_button' event
     When user selects 'No Frills'
     Then user validates the 'plans_page' 'NoFrills_Select_Plan_Button' event
     When user moves on to fill the qualifier
-    Then user validates the 'cart_page' 'continue_button' event
+    #Then user validates the 'cart_page' 'continue_button' event
     And user selects 'New' on qualifier
     And user provides all other details on qualifier page
       |customerType|connectionAddress                | movingType|propertyType|
@@ -34,12 +33,12 @@ Feature: Scenarios to cover the data layer updates and analytics events trigger 
     And user selects 'Total Plan'
     Then user validates the 'plans_page' 'Total_Select_Plan_Button' event
     And user moves on to fill the qualifier
-    Then user validates the 'cart_page' 'continue_button' event
+    #Then user validates the 'cart_page' 'continue_button' event
     And user provides all other details on qualifier page for Existing customer
       |customerType|movingType |connectionAddress                          |propertyType |
       |RES         |Moving     |10 Keswick Crescent, BAYSWATER NORTH VIC 3153   |Renter       |
     And user closes the spy on datalayer
-
+  @analytics1
   Scenario: Validate the component library events for button for existing residential customer verified through qualifier
     Given user has opened the website link in a browser and creates 'E2E_Analytics_Existing_Residential_Customer_Qualifier_Button' to save evidences
     And user has navigated to 'RES' plans page
@@ -48,7 +47,7 @@ Feature: Scenarios to cover the data layer updates and analytics events trigger 
     When user selects 'Total Plan'
     Then user validates the 'plans_page' 'Total_Select_Plan_Button' event
     When user moves on to fill the qualifier
-    Then user validates the 'cart_page' 'continue_button' event
+    #Then user validates the 'cart_page' 'continue_button' event
     And user selects 'Existing' on qualifier
     And user verifies account on qualifier
       | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |

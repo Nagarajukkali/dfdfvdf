@@ -194,6 +194,12 @@ export class testFunction {
     return url;
   }
 
+  public static async getPageURLCheckout() {
+    const getURL = ClientFunction(() => window.location.href);
+    const url = await getURL().then(result => result)
+    return url;
+  }
+
   public static async clearAndEnterText(t, element, value) {
     try {
       await this.isElementDisplayed(t, element);
@@ -585,6 +591,12 @@ export class testFunction {
         break;
       case "industryoffer":
         campaignPageURL = `${eaHomePage}/business/${campaign}`;
+        break;
+      case "business-total-canstarblue":
+        campaignPageURL = `${eaHomePage}/business/total-canstarblue`;
+        break;
+      case "business-carbon-neutral":
+        campaignPageURL = `${eaHomePage}/business/carbon-neutral`;
         break;
       case "business-home-page":
         campaignPageURL = `${eaHomePage}/business/electricity-and-gas/small-business/plans`;

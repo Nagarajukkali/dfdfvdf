@@ -1,27 +1,27 @@
 saleDetail : 
   saleDetailHeader: 
-    quoteId: BB2106074924
-    sourceCode: Total_14%GD
-    actualQuoteDate: 2021-06-07
+    quoteId: BB2110149288
+    sourceCode: Total_6%GD
+    actualQuoteDate: 2021-10-14
     quoteStatus: VERBALLYACCEPTED
     customerType: RESIDENTIAL
     paymentMethod: AUSPOST
     customerClass: RESI
   
   personDetail: 
-    title: MR
+    title: MISS
     firstName: test
     lastName: test
     commMethod: EMAIL
     phone: 
       phoneType: MOBILE
-      phoneNumber: 0399191252
+      phoneNumber: 0317709515
     
-    emailId: tklhuittMo@energyaustralia.com.au
+    emailId: GRztNzgvbS@energyaustralia.com.au
     dob: 1980-01-01
     personIdDetail: 
       idType: PASSPORT
-      id: 367156
+      id: 451230
       primaryIdFlag: Y
       idValidationInformation: 
         consentForIdValidation: Y
@@ -66,7 +66,7 @@ saleDetail :
     fuelType: E
     offerType: COR
     plan: TOPH-ES
-    priceTag: ESSAD_NR2007
+    priceTag: ESSA7_NR2107
     nmiMirnInformation: 
       NMI: 2001245279
     
@@ -92,6 +92,9 @@ saleDetail :
   creditAssessmentReasonCode: Accept
   meteringDetail: 
     meterExchangeFlag: N
+    priceTagMeteringCharge: M50761D1E_VE
+    proposedNTC: RTOU
+    proposedMC: ORIGINMC
   
   solarDetail: 
     solarPowerIndicator: N

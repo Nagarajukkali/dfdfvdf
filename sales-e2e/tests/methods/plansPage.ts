@@ -398,6 +398,7 @@ export class plansMethod {
     console.log("Validating plan features on campaign page.");
     if (dataTable[0].fuelType === "ELE") {
       if (dataTable[0].Feature_50Credit === "Y") {
+        console.log("(dataTable[0].state)"+(dataTable[0].state));
         switch (dataTable[0].state) {
           case AustralianState.VIC:
             await testFunction.assertText(t, EaHomePage.campaignElements.eleFeature50CreditTitle, data.electricity.feature.preSelect.Credit50.VIC.heading);
@@ -424,10 +425,13 @@ export class plansMethod {
         }
       }
       if (dataTable[0].Feature_carbonNeutral === "Y") {
-        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('employee') || t.testRun.test.name.includes('partner-program')||t.testRun.test.name.includes('carbon-neutral')) {
+        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('employee') || t.testRun.test.name.includes('partner-program')) {
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNEGTitle, data.electricity.feature.preSelect.carbonNeutral.heading);
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNEGDescription, data.electricity.feature.preSelect.carbonNeutral.description);
-        } else {
+        } else if (t.testRun.test.name.includes('business-carbon-neutral')){
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNCampaignTitle, data.electricity.feature.preSelect.carbonNeutral.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNCampaignDescription, data.electricity.feature.preSelect.carbonNeutral.description);
+        }else {
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNTitle, data.electricity.feature.preSelect.carbonNeutral.heading);
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNDescription, data.electricity.feature.preSelect.carbonNeutral.description);
         }
@@ -735,7 +739,7 @@ export class plansMethod {
       await testFunction.assertText(t, disclaimer, data.disclaimers.variableRates.description);
       console.log("Variable rates disclaimer validated");
     }
-    if( planName===PlanType.TOTAL_PLAN || planName===PlanType.TOTAL_PLAN_PLUS || planName===PlanType.FAMILY_AND_FRIENDS || planName===PlanType.EMPLOYEE_PLAN || planName===PlanType.BUSINESS_BALANCE_PLAN || planName===PlanType.TOTAL_BUSINESS || planName===PlanType.FAMILY_AND_FRIENDS_BUSINESS){
+    if( planName===PlanType.TOTAL_PLAN || planName===PlanType.TOTAL_PLAN_PLUS || planName===PlanType.FAMILY_AND_FRIENDS || planName===PlanType.EMPLOYEE_PLAN || planName===PlanType.BUSINESS_BALANCE_PLAN || planName===PlanType.TOTAL_BUSINESS || planName===PlanType.FAMILY_AND_FRIENDS_BUSINESS || planName===PlanType.BUSINESS_CARBON_NEUTRAL){
     await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.heading);
       switch (state) {
         case AustralianState.NSW:
@@ -840,7 +844,7 @@ export class plansMethod {
     switch (state) {
       case AustralianState.VIC:
         await testFunction.assertText(t, disclaimer, data.disclaimers.Credit50.VIC.heading);
-        await testFunction.assertText(t, disclaimer, data.disclaimers.Credit50.VIC.description);
+        // await testFunction.assertText(t, disclaimer, data.disclaimers.Credit50.VIC.description);
         break;
       case AustralianState.NSW:
         await testFunction.assertText(t, disclaimer, data.disclaimers.Credit50.NSW.heading);
@@ -1660,6 +1664,38 @@ export class plansMethod {
     await t.expect(solarIndicatorValue).eql(expectedFlag);
   }
 
+  public static async validateAnalyticsbillingPref(
+    t: TestController,
+    expectedFlag: ('post' | 'email')
+  ): Promise<void> {
+    const billdeliveryPref = await t.eval(
+      () => window.ead.user.billDelMethod
+    );
+    await t.expect(billdeliveryPref).eql(expectedFlag);
+  }
+
+  public static async validateAnalyticscontacttype(
+    t: TestController,
+    expectedFlag: ('post' | 'email')
+  ): Promise<void> {
+    const otherComPref = await t.eval(
+      () => window.ead.user.otherComPref
+    );
+    await t.expect(otherComPref).eql(expectedFlag);
+  }
+
+  public static async validateAnalyticsCarbonNeutral(
+    t: TestController,
+    expectedFlag: (false | true)
+  ): Promise<void> {
+    let carbonNeutral = await t.eval(
+      () => window.ead.user.isCarbonNeutralCurious
+    );
+    carbonNeutral=JSON.stringify(carbonNeutral);
+    await t.expect(carbonNeutral).eql(expectedFlag);
+    console.log("Carbon neutral sign up customer data validated "+carbonNeutral);
+  }
+
   public static async validateUniqueCodeData(
     t: TestController,
     expectedFlag: ('NA' | 'BIZOFFER5')
@@ -1707,6 +1743,32 @@ export class plansMethod {
     const pageStatus=await t.eval(()=>window.ead.page);
     await t.expect(pageStatus).eql(page_JSONObj[journey][page]);
     console.log("Analytics Event validated for " +journey+ " " +page);
+  }
+
+  public static async validatePageNameCheckout(t:TestController,journey:string, page:string){
+    journey = journey.toLowerCase();
+    page = page.toLowerCase();
+    let page_JSONObj;
+    const pageFilePath='resources/AnalyticsData/analytics_PageName.json';
+    const doc = fs.readFileSync(pageFilePath,'utf8');
+    page_JSONObj = JSON.parse(doc);
+    const pageStatus=await t.eval(()=>window.ead.page.pageName);
+    if(page==='checkout_details'){
+      await t.expect(pageStatus).eql("ea:home:checkout:mydetails");
+    }else if(page==='checkout_review'){
+      await t.expect(pageStatus).eql("ea:home:checkout:review-order");
+    }else if(page==='checkout_complete'){
+      await t.expect(pageStatus).eql("ea:home:checkout:complete");
+    }else if(page==='business-checkout_details'){
+      await t.expect(pageStatus).eql("ea:business:checkout:mydetails");
+    }else if(page==='business-checkout_review'){
+      await t.expect(pageStatus).eql("ea:business:checkout:review-order");
+    }else if(page==='business-checkout_complete'){
+      await t.expect(pageStatus).eql("ea:business:checkout:complete");
+    }else if(page==='ma_move_checkout_details'){
+      await t.expect(pageStatus).eql("ea:ma-move-home");
+    }
+    console.log("Analytics pagename validated for " +page);
   }
 
   public static async enterCostEstimatePeriod( t, period: any) {
@@ -1795,6 +1857,42 @@ export class plansMethod {
       }
       console.log("Analytics data validated for " + journey + " page for available plans for " +fuelType);
     }
+  }
+
+  public static async validateQuoteStartPage(t: TestController, page: string){
+    let quoteStartPage = await t.eval(() => window.ead.productInfo.quoteStartPage);
+    if(page==='Residential Page') {
+      await t.expect(quoteStartPage).eql('/home/electricity-and-gas/plans');
+    }else if(page==='Business Page') {
+      await t.expect(quoteStartPage).eql('/business/electricity-and-gas/small-business/plans');
+    }else if(page==='Offer Page') {
+      await t.expect(quoteStartPage).eql('/offer');
+    }else if(page==='movingHome Page') {
+      await t.expect(quoteStartPage).eql('/home/moving-house/move-home');
+    }
+      console.log("Analytics data validated for " + page + " page for quote start page");
+  }
+
+  public static async validateQuoteTrackStatus(t: TestController, page: string){
+    let quoteStatus = await t.eval(() => window.ead.productInfo.quoteStatus);
+    if(page==='Plan View') {
+      await t.expect(quoteStatus).eql('viewed');
+    }else if(page==='Plan selected') {
+      await t.expect(quoteStatus).eql('in_cart');
+    }else if(page==='in qualifier') {
+      await t.expect(quoteStatus).eql('in_qual');
+    }else if(page==='in checkout') {
+      await t.expect(quoteStatus).eql('in_checkout');
+    }else if(page==='in review') {
+      await t.expect(quoteStatus).eql('in_review');
+    }else if(page==='in complete') {
+      await t.expect(quoteStatus).eql('complete');
+    }else if(page==='email') {
+      await t.expect(quoteStatus).eql('emailed');
+    }else if(page==='quote decline') {
+      await t.expect(quoteStatus).eql('declined');
+    }
+    console.log("Analytics data validated for " + page + " page for quote start page");
   }
 
   public static async validateAnalyticsSelectedPlanDetails(t: TestController, plan: string, fuelType: string){
@@ -2027,6 +2125,13 @@ export class verifyAccountMethod {
         await plansMethod.validateComponentLibraryEvent(t,"refine_modal","verify_account_next_button");
       }
     }
+  public static async verifyAccountDetailsIdentity(t){
+    await testFunction.click(t, EaHomePage.elements.nextAccountNumber);
+    await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
+    /*if(validateAnalyticsEvent==='Y'){
+      await plansMethod.validateComponentLibraryEvent(t,"refine_modal","verify_account_next_button");
+    }*/
+  }
   public static async verifyAccountNext(t){
     await testFunction.click(t, EaHomePage.elements.croCustomiseEstimateSideBar.existingCustomerAccordion.nextButton);
     await testFunction.waitForElementToBeDisappeared(t, EaHomePage.elements.eaSpinner);

@@ -8,6 +8,7 @@ Feature: Scenarios to cover the data layer updates and analytics events trigger 
     Then user validates the state and postcode of data layer is updated for the provided address
       | state | postcode |
       | NSW   | 2000     |
+    And user validates the 'plans_page' 'plan_table' event
     When user selects "QLD" state from the state dropdown on plans page
     Then user validates the state and postcode of data layer is updated for the provided address
       | state | postcode |
@@ -79,3 +80,41 @@ Feature: Scenarios to cover the data layer updates and analytics events trigger 
     Examples:
       | folderName                                         | planName   |
       | E2E_Analytics_Existing_customer_MovingState_PersonState | Total Plan |
+
+
+
+  @plantableevent
+  Scenario Outline: Validate the updated data layer for plan table event
+    Given user has opened the website link in a browser and creates '<folderName>' to save evidences
+    And user initiates the call to capture analytics events
+    And user has navigated to 'RES' plans page
+    Then user validates the 'plans_page' 'plan_table' event
+    And user validates the state and postcode of data layer is updated for the provided address
+      | state | postcode |
+      | NSW   | 2000     |
+    And user validates the 'plans_page' 'plan_table' event
+    When user selects "QLD" state from the state dropdown on plans page
+    Then user validates the 'plans_page' 'plan_table' event
+    When user enters the address "12 Abattoir Lane, AVOCA VIC 3467" on plans page
+    Then user validates the 'plans_page' 'plan_table' event
+    And user closes the spy on datalayer
+
+    Examples:
+      | folderName                                  |
+      | E2E_Analytics_Plans_Page_Plan_Table_Event|
+
+  @plantableevent
+  Scenario Outline: Validate the updated data layer for plan table event for business customer
+    Given user has opened the website link in a browser and creates '<folderName>' to save evidences
+    And user initiates the call to capture analytics events
+    And user has navigated to 'BUS' plans page
+    Then user validates the 'plans_page' 'plan_table' event
+    When user selects "QLD" state from the state dropdown on plans page
+    Then user validates the 'plans_page' 'plan_table' event
+    When user enters the address "68 Mercer Street, GEELONG VIC 3220" on plans page
+    Then user validates the 'plans_page' 'plan_table' event
+    And user closes the spy on datalayer
+
+    Examples:
+      | folderName                                  |
+      | E2E_Analytics_Plans_Page_Plan_Table_Event_Bus|

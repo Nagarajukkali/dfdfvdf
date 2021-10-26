@@ -78,3 +78,26 @@ Then(/^user validates the page name for '(.*)' '(.*)' page$/, async function (t,
   await plansMethod.validatePageName(t, journey, page);
 });
 
+Then(/^user validates the page name for '(.*)' '(.*)' checkout page$/, async function (t,[journey,page]) {
+  await plansMethod.validatePageNameCheckout(t, journey, page);
+});
+
+Then(/^user validates the quote start page for "([^"]*)"$/, async function (t, [page]) {
+  await plansMethod.validateQuoteStartPage(t, page);
+});
+
+Then(/^user validates the quote status for "([^"]*)"$/, async function (t, [page]) {
+  await plansMethod.validateQuoteTrackStatus(t, page);
+});
+
+Then(/^user validates the data layer is updated for Bill Delivery Preference as '(.*)'$/, async function (t, [billPref]) {
+  await plansMethod.validateAnalyticsbillingPref(t, billPref);
+});
+
+Then(/^user validates the data layer is updated for Contact Preference as '(.*)'$/, async function (t, [contacttype]) {
+  await plansMethod.validateAnalyticscontacttype(t, contacttype);
+});
+
+Then(/^user validates the data layer is updated for Carbon neutral as '(.*)'$/, async function (t, [carbonneutral]) {
+  await plansMethod.validateAnalyticsCarbonNeutral(t, carbonneutral);
+});
