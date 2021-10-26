@@ -271,8 +271,8 @@ export class newConnectionMethod {
 
   public static async isPlansPageDisplayed(t, expectedPage) {
     if (expectedPage === "plans") {
-      await testFunction.waitForElementToBeAppeared(t, eaNewConnectionPage.elements.feedbackForm);
-      await testFunction.isElementDisplayed(t, eaNewConnectionPage.elements.feedbackForm);
+      // await testFunction.waitForElementToBeAppeared(t, eaNewConnectionPage.elements.feedbackForm);
+      // await testFunction.isElementDisplayed(t, eaNewConnectionPage.elements.feedbackForm);
       await testFunction.isElementVisible(t, eaNewConnectionPage.elements.plansTable);
       await testFunction.takeScreenshot(t, "plans_page");
     } else if (expectedPage === "my account") {

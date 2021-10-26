@@ -1,10 +1,10 @@
 {
   "refine_modal": {
     "refine_modal_button": {
-      "eventAction": "buttonClick",
-      "eventLabel": "Get cost estimates based on your current household energy usage. Start now",
+      "eventAction": "modalOpened",
+      "eventLabel": "Get cost estimates based on your household energy usage",
       "eventLocation": "NA",
-      "eventName": "click",
+      "eventName": "popup",
       "eventValue": "NA"
     },
     "enter_usage_button": {
@@ -36,10 +36,10 @@
       "eventValue": "NA"
     },
     "verify_account_show_estimates_button": {
-      "eventAction": "buttonClick",
-      "eventLabel": "Show estimates",
+      "eventAction": "modalClosed",
+      "eventLabel": "Get cost estimates based on your household energy usage",
       "eventLocation": "NA",
-      "eventName": "click",
+      "eventName": "popup",
       "eventValue": "NA"
     },
     "verify_account_change_button": {
@@ -66,7 +66,7 @@
     "bill_upload_link": {
       "eventAction": "linkClick",
       "eventLabel": "Upload bill",
-      "eventLocation": "https://preprod.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/compare-electricity-and-gas-plans/upload-your-electricity-bill",
+      "eventLocation": "https://latte.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/compare-electricity-and-gas-plans/upload-your-electricity-bill",
       "eventName": "click",
       "eventValue": "NA"
     }
@@ -74,42 +74,49 @@
   "plans_page": {
     "total_select_plan_button": {
       "eventAction": "buttonClick",
-      "eventLabel": "Selected",
+      "eventLabel": "Select plan",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "nofrills_select_plan_button": {
       "eventAction": "buttonClick",
-      "eventLabel": "Selected",
+      "eventLabel": "Select plan",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
+    "plan_table": {
+      "eventAction": "planTableViewed",
+      "eventLabel": "plans table loaded",
+      "eventLocation": "NA",
+      "eventName": "prodView",
+      "eventValue": "NA"
+    },
     "basic_business_electricity_select_plan_button": {
       "eventAction": "buttonClick",
-      "eventLabel": "Selected",
+      "eventLabel": "Select plan",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "basic_business_gas_select_plan_button": {
       "eventAction": "buttonClick",
-      "eventLabel": "Selected",
+      "eventLabel": "Select plan",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "total_business_electricity_select_plan_button": {
       "eventAction": "buttonClick",
-      "eventLabel": "Selected",
+      "eventLabel": "Select plan",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "total_business_gas_select_plan_button": {
       "eventAction": "buttonClick",
-      "eventLabel": "Selected",
+      "eventLabel": "Select plan",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
@@ -117,28 +124,28 @@
     "basic_plan_bpid_link": {
       "eventAction": "linkClick",
       "eventLabel": "Basic plan information and energy fact sheets",
-      "eventLocation": "https://preprod.nonprod.digital.energyaustralia.com.au/bpid/?ct=RES&ft=BOTH&pc=RSOT&on=Basic%20Home",
+      "eventLocation": "https://latte.nonprod.digital.energyaustralia.com.au/bpid/?ct=RES&ft=BOTH&pc=RSOT&on=Basic%20Home",
       "eventName": "click",
       "eventValue": "NA"
     },
     "nofrills_plan_bpid_link": {
       "eventAction": "linkClick",
       "eventLabel": "Basic plan information and energy fact sheets",
-      "eventLocation": "https://preprod.nonprod.digital.energyaustralia.com.au/bpid/?ct=RES&ft=BOTH&pc=RCPP&on=No%20Frills",
+      "eventLocation": "https://latte.nonprod.digital.energyaustralia.com.au/bpid/?ct=RES&ft=BOTH&pc=RCPP&on=No%20Frills",
       "eventName": "click",
       "eventValue": "NA"
     },
     "total_plan_bpid_link": {
       "eventAction": "linkClick",
       "eventLabel": "Basic plan information and energy fact sheets",
-      "eventLocation": "https://preprod.nonprod.digital.energyaustralia.com.au/bpid/?ct=RES&ft=BOTH&pc=TOPH&on=Total%20Plan",
+      "eventLocation": "https://latte.nonprod.digital.energyaustralia.com.au/bpid/?ct=RES&ft=BOTH&pc=TOPH&on=Total%20Plan",
       "eventName": "click",
       "eventValue": "NA"
     },
     "best_electricity_offer_link": {
       "eventAction": "linkClick",
       "eventLabel": "best electricity deals",
-      "eventLocation": "https://preprod.nonprod.digital.energyaustralia.com.au/offer",
+      "eventLocation": "https://latte.nonprod.digital.energyaustralia.com.au/offer",
       "eventName": "click",
       "eventValue": "NA"
     },
@@ -729,7 +736,7 @@
     },
     "address_continue_button": {
       "eventAction": "buttonClick",
-      "eventLabel": "Continue Loading",
+      "eventLabel": "Continue",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
@@ -764,7 +771,7 @@
     },
     "verify_account_submit_button": {
       "eventAction": "buttonClick",
-      "eventLabel": "Submit Loading",
+      "eventLabel": "Submit",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
@@ -772,7 +779,7 @@
     "solar_detection_error_link" : {
       "eventAction": "linkClick",
       "eventLabel": "contact us",
-      "eventLocation": "https://preprod.nonprod.digital.energyaustralia.com.au/home/help-and-support/contact-us",
+      "eventLocation": "https://latte.nonprod.digital.energyaustralia.com.au/home/help-and-support/contact-us",
       "eventName": "click",
       "eventValue": "NA"
     },
@@ -790,6 +797,215 @@
       "eventLabel": " This electricity meter has been remotely disconnected and can't be reconnected by us (you need a retailer that can remotely connect meters). Contact Endeavour Energy on 133 718 for the retailer's details. ",
       "eventLocation": "NA",
       "eventName": "error",
+      "eventValue": "NA"
+    }
+  },
+  "complete_page": {
+    "product_review": {
+      "eventAction": "FeedbackDisplayed",
+      "eventLabel": "Product Review Link",
+      "eventLocation": "NA",
+      "eventName": "NA",
+      "eventValue": "NA"
+    },
+    "product_review_link": {
+      "eventAction": "linkClick",
+      "eventLabel": "Leave a review",
+      "eventLocation": "https://www.productreview.com.au/listings/energyaustralia/write-review",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "customer_feedback": {
+      "eventAction": "FeedbackDisplayed",
+      "eventLabel": "NPS Review Form",
+      "eventLocation": "NA",
+      "eventName": "NA",
+      "eventValue": "NA"
+    },
+    "customer_feedback_submit": {
+      "eventAction": "message",
+      "eventLabel": "Thanks, feedback sent",
+      "eventLocation": "NA",
+      "eventName": "success",
+      "eventValue": "NA"
+    },
+    "trust_pilot_feedback": {
+      "eventAction": "FeedbackDisplayed",
+      "eventLabel": "Trustpilot Review Form",
+      "eventLocation": "NA",
+      "eventName": "NA",
+      "eventValue": "NA"
+    },
+    "google_review": {
+      "eventAction": "FeedbackDisplayed",
+      "eventLabel": "Google Reviews Link",
+      "eventLocation": "NA",
+      "eventName": "NA",
+      "eventValue": "NA"
+    },
+    "google_review_submit": {
+      "eventAction": "linkClick",
+      "eventLabel": "Leave a review",
+      "eventLocation": "https://bit.ly/2GB5Jvg",
+      "eventName": "click",
+      "eventValue": "NA"
+    }
+  },
+  "review_page": {
+    "lifesupport_radio_yes": {
+      "eventAction": "radioButton",
+      "eventLabel": "Yes",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "lifesupport_radio_no": {
+      "eventAction": "radioButton",
+      "eventLabel": "No",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "lifesupport_register": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Register device",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "lifesupport_other": {
+      "eventAction": "checkboxChecked",
+      "eventLabel": "Crigler Najjar Syndrome Phototherapy Equipment",
+      "eventLocation": "NA",
+      "eventName": "checkbox",
+      "eventValue": "NA"
+    },
+    "lifesupport_glsmrhac": {
+      "eventAction": "checkboxChecked",
+      "eventLabel": "Medically Required Heating and/or Air Conditioning",
+      "eventLocation": "NA",
+      "eventName": "checkbox",
+      "eventValue": "NA"
+    }
+  },
+  "checkout_details_page": {
+    "mailing_addr_as_connaddr": {
+      "eventAction": "radioButton",
+      "eventLabel": "Same as connection address",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "different_mailing_address": {
+      "eventAction": "addressPicker",
+      "eventLabel": "auto",
+      "eventLocation": "NA",
+      "eventName": "addressEntered",
+      "eventValue": "NA"
+    },
+    "address_picker": {
+      "eventAction": "radioButton",
+      "eventLabel": "Enter new address",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "passport": {
+      "eventAction": "dropDown",
+      "eventLabel": "Passport",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "additional_account_holder_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Add additional account holder",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "direct_debit_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Set up direct debit",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "concession_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Add concession card",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "concession_terms_conditions": {
+      "eventAction": "checkboxChecked",
+      "eventLabel": "I understand and agree with everything that has been listed above",
+      "eventLocation": "NA",
+      "eventName": "checkbox",
+      "eventValue": "NA"
+    },
+    "additional_account_holder_button_access_type_3": {
+      "eventAction": "radioButton",
+      "eventLabel": "Responsible for debt",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "additional_account_holder_button_access_type_2": {
+      "eventAction": "radioButton",
+      "eventLabel": "Make changes to the account",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "additional_account_holder_button_access_type_1": {
+      "eventAction": "radioButton",
+      "eventLabel": "Access to account information",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "dd_terms_conditions_checkbox": {
+      "eventAction": "checkboxChecked",
+      "eventLabel": "I have read and agree to the terms and conditions for direct debit",
+      "eventLocation": "NA",
+      "eventName": "checkbox",
+      "eventValue": "NA"
+    },
+    "post_billing_pref_button": {
+      "eventAction": "radioButton",
+      "eventLabel": "By post ($1.69 fee per paper bill may apply)*",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "email_billing_pref_button": {
+      "eventAction": "radioButton",
+      "eventLabel": "Email",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "post_welcome_pack_button": {
+      "eventAction": "radioButton",
+      "eventLabel": "By post",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "email_welcome_pack_button": {
+      "eventAction": "radioButton",
+      "eventLabel": "Email",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "review_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Review your order",
+      "eventLocation": "NA",
+      "eventName": "click",
       "eventValue": "NA"
     }
   }

@@ -50,6 +50,11 @@ const eaCheckoutCompletePage = {
     powerResponseSection: Selector("section.power-response-rewards"),
     btnBackToHome: Selector("#complete-home-link"),
     iconHomePage: Selector(".svg-icon.elec-and-gas"),
+    customerFeedback: Selector("#customer-feedback"),
+    productReviewFeedbackLink: Selector("#customer-feedback-product-review"),
+    googleReviewFeedbackLink: Selector("#customer-feedback-google-reviews"),
+    customerReviewRadio : Selector("[class*='hs-feedback__radio-outer']").nth(9),
+    customerReviewSubmit : Selector("#submitFeedback")
   }
 };
 

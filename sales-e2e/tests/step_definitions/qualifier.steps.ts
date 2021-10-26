@@ -91,6 +91,10 @@ When(/^user verifies identity in c1 on qualifier$/, async function (t,[],dataTab
   let data=dataTable.hashes();
   await qualifierMethod.verifyIdentity(t,data[0].idType,data[0].idValue);
 });
+When(/^user verifies identity in c1 on qualifier for resi$/, async function (t,[],dataTable) {
+  let data=dataTable.hashes();
+  await qualifierMethod.verifyIdentitySales(t,data[0].idType,data[0].idValue);
+});
 When(/^user selects '(.*)' on qualifier$/, async function (t,[customerStatus]) {
   await testFunction.takeScreenshot(t, 'qualifier_page');//disabled UI Validation
   await qualifierMethod.selectCustomerStatus(t,customerStatus);

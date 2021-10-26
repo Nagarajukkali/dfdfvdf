@@ -71,7 +71,7 @@ When(/^user verifies the account through verify account journey for residential 
   await verifyAccountMethod.provideIdentityDetails(t, data[0].idType, data[0].idNumber);
   await testFunction.takeScreenshot(t, 'verify_account_modal_id_with_data');//disabled UI Validation
   //await testFunction.captureNetworkCall(t,'/qt2/app/account/retrieve');
-  await verifyAccountMethod.verifyAccountDetails(t);
+  await verifyAccountMethod.verifyAccountDetailsIdentity(t);
   //await testFunction.validateNetworkCall(t);
   await testFunction.takeScreenshot(t, 'verify_account_modal_final');//disabled UI Validation
   await verifyAccountMethod.showCostEstimates(t);
@@ -250,7 +250,7 @@ Then(/^user validates disclaimer on plans page for "([^"]*)"$/, async function (
   let data = await FileUtils.getJSONfile(campaignName);
   await plansMethod.validateDisclaimer(t, dataTable, data);
   //await testFunction.takeScreenshot(t, 'validated disclaimers for the plans page');//disabled UI Validation
-  console.log("Validation completed for disclaimers on plans page.");
+  console.log("Validation completed for disclaimers on campaign page.");
 });
 
 Then(/^user validates disclaimer on plans page for "([^"]*)" plan$/, async function (t, [campaignName], dataTable) {
@@ -824,11 +824,11 @@ Given(/^user clicks '(.*)' features plan toggle button$/, async function (t, [pl
 });
 Then(/^user validates the label for Referee email address as the offer code$/, async function (t) {
   await testFunction.isElementDisplayed(t,EaHomePage.elements.familyAndFriendsRefereeEmailLabel);
-  await testFunction.assertText(t, EaHomePage.elements.familyAndFriendsRefereeEmailLabel, "Referee’s EnergyAustralia email address");
+  await testFunction.assertText(t, EaHomePage.elements.familyAndFriendsRefereeEmailLabel, "EnergyAustralia team member email");
 });
-Then(/^user validates the banner test for Referee email address instead of offer code$/, async function (t) {
+Then( /^user validates the banner test for Referee email address instead of offer code$/, async function (t) {
   await testFunction.isElementDisplayed(t,EaHomePage.elements.familyAndFriendsRefereeEmailBanner);
-  await testFunction.assertText(t, EaHomePage.elements.familyAndFriendsRefereeEmailBanner, "Enter your referee’s EnergyAustralia email and your connection address or postcode to begin");
+  await testFunction.assertText(t, EaHomePage.elements.familyAndFriendsRefereeEmailBanner, "Enter the EnergyAustralia email address of the team member who referred you and your address or postcode to begin");
 });
 Then(/^user is presented with '(.*)' message$/, async function (t,[dynamicMessage]){
   await testFunction.isElementDisplayed(t,EaHomePage.elements.familyAndFriendsRefereeEmailDynamicError);

@@ -5,7 +5,8 @@ import {CustomerType} from '@ea/ea-commons-models';
 import {checkoutReviewMethod} from '../methods/checkoutReviewPage';
 import {plansMethod} from '../methods/plansPage';
 import {qualifierMethod} from "../methods/qualifierPage";
-
+const { config }=require('../../resources/resource');
+const validateAnalyticsEvent=config.validateAnalytics;
 const eaCheckoutDetailsPage = require('../pages/checkOutDetails.page');
 
 When(/^user provides all details for existing customer on checkout details page$/, async function (t, [], dataTable) {
@@ -17,6 +18,16 @@ When(/^user provides all details for existing customer on checkout details page$
   await checkoutDetailsMethod.checkoutExistingCustomerIdentification(t, data[0].identificationType);
   await checkoutDetailsMethod.accessRestriction(t, data[0].electricityAccess, data[0].gasAccess);
   await checkoutDetailsMethod.clickOnReviewYourOrderBtn(t);
+});
+
+When(/^user captures the browser url and provides the url for "([^"]*)"$/, async function (t,[review]) {
+  const browserUrl = await testFunction.getPageURLCheckout();
+  let sentences = browserUrl.split(/[?]/);
+  console.log(sentences);
+  console.log(sentences[0]);
+  console.log(sentences[1]);
+  let browserUrl1=sentences[0]+review+sentences[1];
+  await t.navigateTo(browserUrl1);
 });
 
 When(/^user provides all details on checkout details page$/, async function (t, [], dataTable) {
@@ -174,19 +185,31 @@ When(/^user sends welcome pack through '(.*)'$/, async function (t, [option]) {
   }
   if (option === 'Post') {
     await testFunction.click(t, eaCheckoutDetailsPage.elements.preferredCommPost);
+    if(validateAnalyticsEvent==='Y') {
+      await plansMethod.validateComponentLibraryEvent(t, "checkout_details_page", "post_welcome_pack_button");
+    }
   }
 });
 When(/^user selects mailing address option$/, async function (t, [], dataTable) {
   let option = dataTable.hashes();
   if (option[0].addressType === "Connection Address") {
     await testFunction.click(t, eaCheckoutDetailsPage.elements.mailingAddrAsConnAddr);
+    if(validateAnalyticsEvent==='Y') {
+      await plansMethod.validateComponentLibraryEvent(t, "checkout_details_page", "mailing_addr_as_connaddr");
+    }
   } else if (option[0].addressType === 'Other Address') {
     const otherAddress = option[0].otherAddress;
     await testFunction.click(t, eaCheckoutDetailsPage.elements.mailingAddrAsOtherAddr);
+    if(validateAnalyticsEvent==='Y') {
+      await plansMethod.validateComponentLibraryEvent(t, "checkout_details_page", "address_picker");
+    }
     await testFunction.enterText(t, eaCheckoutDetailsPage.elements.inputMailingAddrAsOtherAddr, otherAddress);
     await t.wait(2000);
     await testFunction.isElementVisible(t, eaCheckoutDetailsPage.elements.serviceAddressList);
     await testFunction.clickElementFromList(t, eaCheckoutDetailsPage.elements.serviceAddressList, otherAddress);
+    if(validateAnalyticsEvent==='Y') {
+      await plansMethod.validateComponentLibraryEvent(t, "checkout_details_page", "different_mailing_address");
+    }
     await t.wait(1000);
   } else {
     console.error("Invalid mailing address provided");
@@ -217,3 +240,4 @@ Then(/^user validates solar disclaimer for QLD COR customer on PFIT NTC$/, async
 Then(/^user validates the analytics data for user age for the customer$/, async function (t, []) {
   await checkoutDetailsMethod.validateAge(t);
 });
+

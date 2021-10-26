@@ -12,29 +12,29 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for business/total-canstarblue campaign
-
-  Scenario Outline: Validate complete data for business/total-canstarblue campaign for NSW
+  @DR21.10.4.campaign
+  Scenario Outline: Validate complete data for business/total-canstarblue campaign for NSW-Ausgrid
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2010" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state   |
+      | ELE      | Y                | N                     | N                   | Y                                  | N                               |<state> |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state   |
+      | GAS      | N                | N                     | Y                   | Y                                  | N                               |<state> |
     And user validates disclaimer on plans page for "<campaign>"
-      | referencePriceComparison | goNeutral | solarBuyBack | planName              | state |
-      | Y                        | N         | Y            | Total Plan - Business | NSW   |
+      | referencePriceComparison | goNeutral | solarBuyBack | planName              | state |signUpCredit |
+      | Y                        | N         | Y            | Total Plan - Business | NSW   |Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | ELE      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |state   |
+      | ELE      | Y                | N                     | Y                   | Y                                  |<state> |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | GAS      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |state   |
+      | GAS      | N                | N                     | Y                   | Y                                  |<state> |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                   | movingType | propertyType |
@@ -58,17 +58,14 @@ Feature:E2E scenario for business/total-canstarblue campaign
       | Yes               | BOTH     | Ele Other              | Medically Required Heating and/or Air Conditioning |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state   |
+      | ELE      | Y                | N                     | Y                   | Y                                  | N                               |<state> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state   |
+      | GAS      | N                | N                     | Y                   | Y                                  | N                               |<state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName              | state |
       | Y                        | N         | Y            | Total Plan - Business | NSW   |
-    And user validates source code
-      | fuelType | eleSourceCode | gasSourceCode |
-      | BOTH     | Total_21%GD   | Total_19%GD   |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -80,18 +77,18 @@ Feature:E2E scenario for business/total-canstarblue campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EN  | 4102017007 |                                |                                | Y                       | OTHER                    | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EN  | 4102017007 |                                |                                | Y                       | OTHER                    | EMAIL         | <customerStatus> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GN  | 5247073457 |                                |                                | Y                       | GLSMRHAC                 | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GN  | 5247073457 |                                |                                | Y                       | GLSMRHAC                 | EMAIL         | <customerStatus> | <campaign> |
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign                   | folderName                                  | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | BOTH     | 21          | 19          | business-total-canstarblue | E2E_Campaign_business-total-canstarblue_NSW | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
+      | New            | BOTH     | 19          | 19          | business-total-canstarblue | E2E_Campaign_business-total-canstarblue_NSW | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
 
-
+  @DR21.10.4.campaign @DR21.10.4.campaign-AM
   Scenario Outline: Validate complete data for business/total-canstarblue campaign for VIC
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3355" and clicks on show me plan link
@@ -99,25 +96,25 @@ Feature:E2E scenario for business/total-canstarblue campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state   |
+      | ELE      | Y                | N                     | Y                   | Y                                  | N                               |<state> |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state   |
+      | GAS      | Y                | N                     | Y                   | Y                                  | N                               |<state> |
     And user validates disclaimer on plans page for "<campaign>"
-      | referencePriceComparison | goNeutral | solarBuyBack | planName              | state |
-      | Y                        | N         | Y            | Total Plan - Business | VIC   |
+      | referencePriceComparison | goNeutral | solarBuyBack | planName              | state |signUpCredit |
+      | Y                        | N         | Y            | Total Plan - Business | VIC   |Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | ELE      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |state   |
+      | ELE      | Y                | N                     | Y                   | Y                                  |<state> |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | GAS      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |state   |
+      | GAS      | Y                | N                     | Y                   | Y                                  |<state> |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                          | movingType | propertyType |
-      | BUS          | 36 Gregory Street West, WENDOUREE VIC 3355 | Moving     | Renter       |
+      | BUS          | 1a Bell Street, SUNSHINE WEST VIC 3020 | Moving     | Renter       |
     And user provides all details on checkout details page
       | customerType | journey | firstName | lastName | businessType |
       | BUS          | BUS     | test      | test     | ABN          |
@@ -137,17 +134,14 @@ Feature:E2E scenario for business/total-canstarblue campaign
       | Yes               | BOTH     | Ele Other              | Medically Required Heating and/or Air Conditioning |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state   |
+      | ELE      | Y                | N                     | Y                   | Y                                  | N                               |<state> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state   |
+      | GAS      | Y                | N                     | Y                   | Y                                  | N                               |<state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName              | state |
       | Y                        | N         | Y            | Total Plan - Business | VIC   |
-    And user validates source code
-      | fuelType | eleSourceCode | gasSourceCode |
-      | BOTH     | Total_5%GD    | Total_23%GD   |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -159,17 +153,17 @@ Feature:E2E scenario for business/total-canstarblue campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EV  | 6203822385 |                                |                                | Y                       | OTHER                    | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EV  | 6203055100 |                                |                                | Y                       | OTHER                    | EMAIL         |<customerStatus> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GV  | 5330956738 |                                |                                | Y                       | GLSMRHAC                 | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GV  | 5330460199 |                                |                                | Y                       | GLSMRHAC                 | EMAIL         |<customerStatus> | <campaign> |
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign                   | folderName                                  | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 5           | 23          | business-total-canstarblue | E2E_Campaign_business-total-canstarblue_VIC | Quote Tool   | Move Home | VIC   | BUS          | New           | No  | No |
-
+  @DR21.10.4.campaign
   Scenario Outline: Validate complete data for business/total-canstarblue campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5088" and clicks on show me plan link
@@ -177,21 +171,21 @@ Feature:E2E scenario for business/total-canstarblue campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state   |
+      | ELE      | N                | N                     | Y                   | Y                                  | N                               |<state> |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state   |
+      | GAS      | N                | N                     | Y                   | Y                                  | N                               |<state> |
     And user validates disclaimer on plans page for "<campaign>"
-      | referencePriceComparison | goNeutral | solarBuyBack | planName              | state |
-      | Y                        | N         | Y            | Total Plan - Business | SA    |
+      | referencePriceComparison | goNeutral | solarBuyBack | planName              | state |signUpCredit |
+      | Y                        | N         | Y            | Total Plan - Business | SA    |N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | ELE      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |state   |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state> |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | GAS      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |state   |
+      | GAS      | N                | N                     | Y                   | Y                                  |<state> |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                  | movingType | propertyType |
@@ -215,17 +209,14 @@ Feature:E2E scenario for business/total-canstarblue campaign
       | Yes               | BOTH     | Ele Other              | Medically Required Heating and/or Air Conditioning |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state   |
+      | ELE      | N                | N                     | Y                   | Y                                  | N                               |<state> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state   |
+      | GAS      | N                | N                     | Y                   | Y                                  | N                               |<state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName              | state |
       | Y                        | N         | Y            | Total Plan - Business | SA    |
-    And user validates source code
-      | fuelType | eleSourceCode | gasSourceCode |
-      | BOTH     | Total_3%GD    | Total_3%GD    |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -237,17 +228,17 @@ Feature:E2E scenario for business/total-canstarblue campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-ES  | 2001114983 |                                |                                | Y                       | OTHER                    | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-ES  | 2001114983 |                                |                                | Y                       | OTHER                    | EMAIL         |<customerStatus> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GS  | 5510116718 |                                |                                | Y                       | GLSMRHAC                 | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GS  | 5510116718 |                                |                                | Y                       | GLSMRHAC                 | EMAIL         |<customerStatus> | <campaign> |
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign                   | folderName                                 | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 3           | 3           | business-total-canstarblue | E2E_Campaign_business-total-canstarblue_SA | Quote Tool   | Move Home | SA    | BUS          | New           | No  | No |
-
+  @DR21.10.4.campaign
   Scenario Outline: Validate complete data for business/total-canstarblue campaign for ACT
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2612" and clicks on show me plan link
@@ -255,21 +246,21 @@ Feature:E2E scenario for business/total-canstarblue campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state   |
+      | ELE      | N                | N                     | Y                   | Y                                  | N                               |<state> |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state   |
+      | GAS      | N                | N                     | Y                   | Y                                  | N                               |<state> |
     And user validates disclaimer on plans page for "<campaign>"
-      | referencePriceComparison | goNeutral | solarBuyBack | planName              | state |
-      | Y                        | N         | Y            | Total Plan - Business | ACT   |
+      | referencePriceComparison | goNeutral | solarBuyBack | planName              | state |signUpCredit |
+      | Y                        | N         | Y            | Total Plan - Business | ACT   |N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | ELE      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |state   |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state> |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | GAS      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |state   |
+      | GAS      | N                | N                     | Y                   | Y                                  |<state> |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                   | movingType | propertyType |
@@ -293,17 +284,14 @@ Feature:E2E scenario for business/total-canstarblue campaign
       | Yes               | BOTH     | Ele Other              | Medically Required Heating and/or Air Conditioning |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state   |
+      | ELE      | N                | N                     | Y                   | Y                                  | N                               |<state> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state   |
+      | GAS      | N                | N                     | Y                   | Y                                  | N                               |<state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName              | state |
       | Y                        | N         | Y            | Total Plan - Business | ACT   |
-    And user validates source code
-      | fuelType | eleSourceCode | gasSourceCode |
-      | BOTH     | Total_10%GD   | Total_19%GD   |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -315,32 +303,32 @@ Feature:E2E scenario for business/total-canstarblue campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EA  | 7001138899 |                                |                                | Y                       | OTHER                    | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EA  | 7001138899 |                                |                                | Y                       | OTHER                    | EMAIL         |<customerStatus> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GA  | 5260077864 |                                |                                | Y                       | GLSMRHAC                 | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GA  | 5260077864 |                                |                                | Y                       | GLSMRHAC                 | EMAIL         |<customerStatus> | <campaign> |
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign                   | folderName                                  | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 10          | 19          | business-total-canstarblue | E2E_Campaign_business-total-canstarblue_ACT | Quote Tool   | Move Home | ACT   | BUS          | New           | No  | No |
-
+  @DR21.10.4.campaign
   Scenario Outline: Validate complete data for business/total-canstarblue campaign for QLD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4020" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state   |
+      | ELE      | N                | N                     | Y                   | Y                                  | N                               |<state> |
     And user validates disclaimer on plans page for "<campaign>"
-      | referencePriceComparison | goNeutral | solarBuyBack | planName              | state |
-      | Y                        | N         | Y            | Total Plan - Business | QLD   |
+      | referencePriceComparison | goNeutral | solarBuyBack | planName              | state |signUpCredit |
+      | Y                        | N         | Y            | Total Plan - Business | QLD   |N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | ELE      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |state   |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state> |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -365,14 +353,11 @@ Feature:E2E scenario for business/total-canstarblue campaign
       | Yes               | ELE      | Ele Other              |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |state   |
+      | ELE      | N                | N                     | Y                   | Y                                  | N                               |<state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName              | state |
       | Y                        | N         | Y            | Total Plan - Business | QLD   |
-    And user validates source code
-      | fuelType | eleSourceCode |
-      | ELE      | Total_13%GD   |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -384,10 +369,10 @@ Feature:E2E scenario for business/total-canstarblue campaign
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EQ  | QB02256002 |                                |                                | Y                       | OTHER                    | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EQ  | QB02256002 |                                |                                | Y                       | OTHER                    | EMAIL         |<customerStatus> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
 
     Examples:
       | customerStatus | fuelType | eleDiscount | campaign                   | folderName                                  | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | ELE      | 13          | business-total-canstarblue | E2E_Campaign_business-total-canstarblue_QLD | Quote Tool   | Move Home | QLD   | BUS          | New           | No  | No |
+      | New            | ELE      | 20          | business-total-canstarblue | E2E_Campaign_business-total-canstarblue_QLD | Quote Tool   | Move Home | QLD   | BUS          | New           | No  | No |

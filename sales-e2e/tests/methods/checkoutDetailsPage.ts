@@ -13,6 +13,7 @@ import {AustralianState, CustomerType} from '@ea/ea-commons-models';
 import {myAccountMethod} from '../methods/myAccountPage';
 import {ClientFunction} from 'testcafe';
 import {assertNotNull} from '@angular/compiler/src/output/output_ast';
+import {plansMethod} from "./plansPage";
 
 const eaCheckoutDetailsPage = require('../pages/checkOutDetails.page');
 const eaCheckoutReviewPage = require('../pages/checkoutReview.page');
@@ -187,6 +188,9 @@ export class checkoutDetailsMethod {
     let passportNo = await testFunction.isValidatingUI() ? "PPTest" : testFunction.getRandomNumber(999999);
     await testFunction.click(t, eaCheckoutDetailsPage.elements.idDrop);
     await testFunction.click(t, eaCheckoutDetailsPage.elements.idValuePassport);
+    if(validateAnalyticsEvent==='Y') {
+      await plansMethod.validateComponentLibraryEvent(t, "checkout_details_page", "passport");
+    }
     await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.idPassportNumber, passportNo);
     await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.idCountry, 'Australia');
     console.log("New customer passport details provided");
@@ -218,6 +222,9 @@ export class checkoutDetailsMethod {
     await t.wait(7000);
     await testFunction.click(t, eaCheckoutDetailsPage.elements.reviewYourOrderBtn);
     await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.reviewYourOfferTxt);
+    if(validateAnalyticsEvent==='Y') {
+      await plansMethod.validateComponentLibraryEvent(t, "checkout_details_page", "review_button");
+    }
     console.log("Navigated to review page");
   }
 
@@ -316,6 +323,9 @@ export class checkoutDetailsMethod {
     let lName = "LNAME" + testFunction.generateRandomText(5);
     let email = testFunction.generateRandomText(5) + "@test.com";
     await testFunction.click(t, eaCheckoutDetailsPage.elements.addAAH);
+    if(validateAnalyticsEvent==='Y') {
+      await plansMethod.validateComponentLibraryEvent(t, "checkout_details_page", "additional_account_holder_button");
+    }
     await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.aahFirstName, fName);
     await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.aahLastName, lName);
     await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.aahEmail, email);
@@ -327,12 +337,21 @@ export class checkoutDetailsMethod {
       switch (indexForAccessLevel) {
         case 0:
           await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl1);
+          if(validateAnalyticsEvent==='Y') {
+            await plansMethod.validateComponentLibraryEvent(t, "checkout_details_page", "additional_account_holder_button_access_type_1");
+          }
           break;
         case 1:
           await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl2);
+          if(validateAnalyticsEvent==='Y') {
+            await plansMethod.validateComponentLibraryEvent(t, "checkout_details_page", "additional_account_holder_button_access_type_2");
+          }
           break;
         case 2:
           await testFunction.click(t, eaCheckoutDetailsPage.elements.aahPermissionLvl3);
+          if(validateAnalyticsEvent==='Y') {
+            await plansMethod.validateComponentLibraryEvent(t, "checkout_details_page", "additional_account_holder_button_access_type_3");
+          }
           break;
         default:
           console.error("Invalid access level selected.");
@@ -343,12 +362,18 @@ export class checkoutDetailsMethod {
 
   public static async addDirectDebit(t, DDType) {
     await testFunction.click(t, eaCheckoutDetailsPage.elements.addDirectDebit);
+    if(validateAnalyticsEvent==='Y') {
+      await plansMethod.validateComponentLibraryEvent(t, "checkout_details_page", "direct_debit_button");
+    }
     if (DDType === directDebitType.BANK_ACCOUNT) {
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfBankAccountName, "AccountName_" + testFunction.generateRandomText(5));
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfBsb, "123456");
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfBankAccountNumber, testFunction.getRandomNumber(9999999999));
       await t.wait(3000);
       await testFunction.click(t, eaCheckoutDetailsPage.elements.cbBankAccountAgreeTermsAndCond);
+      if(validateAnalyticsEvent==='Y') {
+        await plansMethod.validateComponentLibraryEvent(t, "checkout_details_page", "dd_terms_conditions_checkbox");
+      }
       console.log("Bank details provided");
     } else if (DDType === directDebitType.CREDIT_CARD) {
       // if(testFunction.isTablet()){
@@ -363,6 +388,9 @@ export class checkoutDetailsMethod {
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCNumber, "4111111111111111");
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfCCExpiry, "0130");
       await testFunction.click(t, eaCheckoutDetailsPage.elements.cbCCAgreeTermsAndCond);
+      if(validateAnalyticsEvent==='Y') {
+        await plansMethod.validateComponentLibraryEvent(t, "checkout_details_page", "dd_terms_conditions_checkbox");
+      }
       console.log("CC details provided");
     }
 
@@ -631,9 +659,13 @@ export class checkoutDetailsMethod {
       } else {
         await t.expect(await testFunction.getElementAttribute(t, eaCheckoutDetailsPage.elements.rbBillPrefEmail, 'class')).contains('ea-state-active');
       }
+
     }
     if (option === 'Post') {
       await testFunction.click(t, eaCheckoutDetailsPage.elements.rbBillPrefPost);
+      if(validateAnalyticsEvent==='Y') {
+        await plansMethod.validateComponentLibraryEvent(t, "checkout_details_page", "post_billing_pref_button");
+      }
     }
     if (finalBill) {
       if (option === 'Other Address') {
@@ -662,8 +694,11 @@ export class checkoutDetailsMethod {
   }
 
   public static async addConcessionCardDetails(t) {
-    const indexForConcessionCard = testFunction.getRandomInt(0, 5);
+    let indexForConcessionCard = testFunction.getRandomInt(0, 5);
     await testFunction.click(t, eaCheckoutDetailsPage.elements.addConcession);
+    if(validateAnalyticsEvent==='Y') {
+      await plansMethod.validateComponentLibraryEvent(t, "checkout_details_page", "concession_button");
+    }
     await testFunction.click(t, eaCheckoutDetailsPage.elements.concessionCardTypeDropDown);
     await testFunction.click(t, eaCheckoutDetailsPage.elements.concessionCardTypeOption.nth(indexForConcessionCard));
     const concessionCardSelectedOption = await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.concessionCardTypeDropDown);
@@ -675,6 +710,9 @@ export class checkoutDetailsMethod {
       await testFunction.clearAndEnterText(t, eaCheckoutDetailsPage.elements.tfConcessionCardNumber, "V123456");
     }
     await testFunction.click(t, eaCheckoutDetailsPage.elements.cbConcessionAgreeTerms);
+    if(validateAnalyticsEvent==='Y') {
+      await plansMethod.validateComponentLibraryEvent(t, "checkout_details_page", "concession_terms_conditions");
+    }
   }
 
   public static async enterDetailsToMockCDE(t, cdeResponse: string, customerType: string) {
@@ -793,7 +831,7 @@ export class checkoutDetailsMethod {
     let actualDisclaimerText = await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.contactPreference.disclaimer);
     await testFunction.assertTextValue(t, actualDisclaimerText, expectedDisclaimerText);
     if(validateAnalyticsEvent==='Y'){
-     const updatedContactPreference = await t.eval(() => window.ead.user.contactPrefence);
+     const updatedContactPreference = await t.eval(() => window.ead.user.contactPreference);
      await t.expect(updatedContactPreference).eql("optIn");
     }
 
@@ -813,7 +851,7 @@ export class checkoutDetailsMethod {
     await testFunction.click(t, eaCheckoutDetailsPage.elements.chkboxContactPreference);
     await testFunction.click(t, eaCheckoutDetailsPage.elements.contactPreference.btnSubmit);
     if(validateAnalyticsEvent==='Y'){
-      const updatedContactPreference = await t.eval(() => window.ead.user.contactPrefence);
+      const updatedContactPreference = await t.eval(() => window.ead.user.contactPreference);
       await t.expect(updatedContactPreference).eql("optOut");
     }
 

@@ -108,6 +108,48 @@ export class qualifierMethod {
     await testFunction.waitForLoadingIconToClose();
     await t.wait(3000);
     if(validateAnalyticsEvent==='Y') {
+      //await testFunction.isElementDisplayed(t,eaQualifierPage.elements.moving);
+      await plansMethod.validateComponentLibraryEvent(t, "qualifier_page", "verify_account_submit_button");
+      const personID = await t.eval(() => window.ead.user.crn);
+      await t.expect(personID).notEql("");
+      console.log("Existing customer person ID details are verified in analytics logs");
+    }
+    console.log("Existing customer ID details are verified");
+  }
+
+  public static async verifyIdentitySales(t, idType, idValue) {
+    switch (idType) {
+      case IdType.DOB:
+        await testFunction.clearTextField(t, eaQualifierPage.elements.idTypeDOBValue);
+        await testFunction.clearTextField(t, eaQualifierPage.elements.idTypeDOBMonthValue);
+        await testFunction.clearTextField(t, eaQualifierPage.elements.idTypeDOBYearValue);
+        await this.provideIdValue(t, idValue, eaQualifierPage.elements.idTypeDOBValue);
+        break;
+      case IdType.DL:
+        await this.selectIdTypeQualifier(t, 'Driver Licence');
+        await this.provideIdValue(t, idValue, eaQualifierPage.elements.idTypeValue);
+        break;
+      case IdType.PIN:
+        await this.selectIdTypeQualifier(t, 'Pin');
+        await this.provideIdValue(t, idValue, eaQualifierPage.elements.idTypeValue);
+        break;
+      case IdType.MEDICARE:
+        await this.selectIdTypeQualifier(t, 'Medicare');
+        await this.provideIdValue(t, idValue, eaQualifierPage.elements.idTypeValue);
+        break;
+      case IdType.PASSPORT:
+        await this.selectIdTypeQualifier(t, 'Passport');
+        await this.provideIdValue(t, idValue, eaQualifierPage.elements.idTypeValue);
+        break;
+      default:
+        console.log('Invalid id type');
+    }
+    await testFunction.takeScreenshot(t, "qualifier_page");//disabled UI Validation
+    await t.wait(1000);
+    await testFunction.click(t, eaQualifierPage.elements.verifyIdentitySubmit);
+    await testFunction.waitForLoadingIconToClose();
+    await t.wait(3000);
+    if(validateAnalyticsEvent==='Y') {
       await testFunction.isElementDisplayed(t,eaQualifierPage.elements.moving);
       await plansMethod.validateComponentLibraryEvent(t, "qualifier_page", "verify_account_submit_button");
       const personID = await t.eval(() => window.ead.user.crn);
@@ -126,6 +168,7 @@ export class qualifierMethod {
   }
 
   public static async provideMovingType(t, movingType) {
+
     if(movingType===Moving.NON_MOVING){
         await testFunction.click(t,eaQualifierPage.elements.nonMoving);
       if(validateAnalyticsEvent==='Y'){

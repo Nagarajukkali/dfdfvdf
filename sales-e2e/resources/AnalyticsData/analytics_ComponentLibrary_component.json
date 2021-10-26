@@ -1,7 +1,7 @@
 {
   "refine_modal": {
     "refine_modal_button": {
-      "componentLocation": "button:refine modal cta:Get cost estimates based on your current household energy usage. Start now",
+      "componentLocation": "modalOpened:refine modal:Get cost estimates based on your household energy usage",
       "componentName": "NA",
       "platform": "angular"
     },
@@ -26,7 +26,7 @@
       "platform": "angular"
     },
     "verify_account_show_estimates_button": {
-      "componentLocation": "button:Get cost estimates based on your household energy usage:Show estimates",
+      "componentLocation": "modalClosed:refine modal:Get cost estimates based on your household energy usage",
       "componentName": "NA",
       "platform": "angular"
     },
@@ -53,32 +53,37 @@
   },
   "plans_page": {
     "total_select_plan_button": {
-      "componentLocation": "button:Total Plan - Electricity & gas:Selected",
+      "componentLocation": "button:Total Plan - Electricity & gas:Select plan",
       "componentName": "NA",
       "platform": "angular"
     },
     "nofrills_select_plan_button": {
-      "componentLocation": "button:No Frills - Electricity & gas:Selected",
+      "componentLocation": "button:No Frills - Electricity & gas:Select plan",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "plan_table": {
+      "componentLocation": "planTableViewed:plans app plans table:plans table loaded",
       "componentName": "NA",
       "platform": "angular"
     },
     "basic_business_electricity_select_plan_button": {
-      "componentLocation": "button:Basic Business - Electricity:Selected",
+      "componentLocation": "button:Basic Business - Electricity:Select plan",
       "componentName": "NA",
       "platform": "angular"
     },
     "basic_business_gas_select_plan_button": {
-      "componentLocation": "button:Basic Business - Gas:Selected",
+      "componentLocation": "button:Basic Business - Gas:Select plan",
       "componentName": "NA",
       "platform": "angular"
     },
     "total_business_electricity_select_plan_button": {
-      "componentLocation": "button:Total Plan - Business - Electricity:Selected",
+      "componentLocation": "button:Total Plan - Business - Electricity:Select plan",
       "componentName": "NA",
       "platform": "angular"
     },
     "total_business_gas_select_plan_button": {
-      "componentLocation": "button:Total Plan - Business - Gas:Selected",
+      "componentLocation": "button:Total Plan - Business - Gas:Select plan",
       "componentName": "NA",
       "platform": "angular"
     },
@@ -522,7 +527,7 @@
       "platform": "angular"
     },
     "address_continue_button": {
-      "componentLocation": "button:qualifier address:Continue Loading",
+      "componentLocation": "button:qualifier address:Continue",
       "componentName": "NA",
       "platform": "angular"
     },
@@ -547,7 +552,7 @@
       "platform": "angular"
     },
     "verify_account_submit_button": {
-      "componentLocation": "button:qualifier new or existing:Submit Loading",
+      "componentLocation": "button:qualifier new or existing:Submit",
       "componentName": "NA",
       "platform": "angular"
   },
@@ -565,6 +570,157 @@
   "movehouse_page": {
     "nsw_remote_meter_movehouse_error": {
       "componentLocation": "message:plans app plan messages: This electricity meter has been remotely disconnected and can't be reconnected by us (you need a retailer that can remotely connect meters). Contact Endeavour Energy on 133 718 for the retailer's details. ",
+      "componentName": "NA",
+      "platform": "angular"
+    }
+  },
+  "complete_page": {
+    "product_review": {
+      "componentLocation": "FeedbackDisplayed:checkout complete customer feedback:Product Review Link",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "product_review_link": {
+      "componentLocation": "link:checkout complete customer feedback:Leave a review",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "customer_feedback": {
+      "componentLocation": "FeedbackDisplayed:checkout complete customer feedback:NPS Review Form",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "customer_feedback_submit": {
+      "componentLocation": "message:checkout complete customer feedback:Thanks, feedback sent",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "trust_pilot_feedback": {
+      "componentLocation": "FeedbackDisplayed:checkout complete customer feedback:Trustpilot Review Form",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "google_review": {
+      "componentLocation": "FeedbackDisplayed:checkout complete customer feedback:Google Reviews Link",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "google_review_submit": {
+      "componentLocation": "link:checkout complete customer feedback:Leave a review",
+      "componentName": "NA",
+      "platform": "angular"
+    }
+  },
+  "review_page": {
+    "lifesupport_radio_yes": {
+      "componentLocation": "radioButton:checkout review life support:Yes",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "lifesupport_radio_no": {
+      "componentLocation": "radioButton:checkout review life support:No",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "lifesupport_register": {
+      "componentLocation": "button:checkout review life support:Register device",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "lifesupport_other": {
+      "componentLocation": "checkboxChecked:checkout review life support:Crigler Najjar Syndrome Phototherapy Equipment",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "lifesupport_glsmrhac": {
+      "componentLocation": "checkboxChecked:checkout review life support:Medically Required Heating and/or Air Conditioning",
+      "componentName": "NA",
+      "platform": "angular"
+    }
+  },
+  "checkout_details_page": {
+    "mailing_addr_as_connaddr": {
+      "componentLocation": "radioButton:checkout details contact details:Same as connection address",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "different_mailing_address": {
+      "componentLocation": "addressPicker:checkout details contact details:auto",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "address_picker": {
+      "componentLocation": "radioButton:checkout details contact details:Enter new address",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "passport": {
+      "componentLocation": "dropDown:checkout details identification:Passport",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "additional_account_holder_button": {
+      "componentLocation": "button:checkout details additional account holder:Add additional account holder",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "direct_debit_button": {
+      "componentLocation": "button:checkout details direct debit:Set up direct debit",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "concession_button": {
+      "componentLocation": "button:checkout details concession:Add concession card",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "concession_terms_conditions": {
+      "componentLocation": "checkboxChecked:checkout details concession:I understand and agree with everything that has been listed above",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "additional_account_holder_button_access_type_3": {
+      "componentLocation": "radioButton:checkout details additional account holder:Responsible for debt",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "additional_account_holder_button_access_type_2": {
+      "componentLocation": "radioButton:checkout details additional account holder:Make changes to the account",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "additional_account_holder_button_access_type_1": {
+      "componentLocation": "radioButton:checkout details additional account holder:Access to account information",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "dd_terms_conditions_checkbox": {
+      "componentLocation": "checkboxChecked:checkout details direct debit:I have read and agree to the terms and conditions for direct debit",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "post_billing_pref_button": {
+      "componentLocation": "radioButton:checkout details billing delivery preferences:By post ($1.69 fee per paper bill may apply)*",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "email_billing_pref_button": {
+      "componentLocation": "radioButton:checkout details billing delivery preferences:Email",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "post_welcome_pack_button": {
+      "componentLocation": "radioButton:checkout details billing delivery preferences:By post",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "email_welcome_pack_button": {
+      "componentLocation": "radioButton:checkout details billing delivery preferences:Email",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "review_button": {
+      "componentLocation": "button:checkout details submit:Review your order",
       "componentName": "NA",
       "platform": "angular"
     }

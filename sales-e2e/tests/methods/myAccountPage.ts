@@ -12,7 +12,7 @@ export class myAccountMethod {
 
   public static async loginToMyAccount(t, username, password) {
     await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfUsername, username);
-    //console.log(cryptoJS.AES.encrypt("TestPass1", username).toString());
+    console.log(cryptoJS.AES.encrypt("Energy@102", "aparid").toString());
     await testFunction.clearAndEnterText(t, eaMyAccount.elements.tfPassword, cryptoJS.AES.decrypt(password, username).toString(cryptoJS.enc.Utf8));
     await testFunction.click(t, eaMyAccount.elements.btnSignIn);
     await testFunction.waitForElementToBeAppeared(t, eaMyAccount.elements.eaSpinner);
