@@ -1,4 +1,4 @@
-@feedbackanalytics @21.10.4.analytics
+@feedbackanalytics @21.10.4.analytics @analytics
 Feature: Scenarios to cover the data layer updates and analytics events trigger for feedback analytics
 
   Scenario Outline: Validate the product review analytics on checkout complete page

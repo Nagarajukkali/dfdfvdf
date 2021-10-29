@@ -49,7 +49,7 @@ Feature: Analytics Events for Solar panel validation on plans page
     And user has navigated to 'BUS' plans page
     Then user validates details on plans page for 'BUS'
     And user initiates the call to capture analytics events
-    When user enters the address "6 Kultarr Lane, THROSBY ACT 2914" on plans page
+    When user enters the address "1 Reads Road, WAMBERAL NSW 2260" on plans page
     Then user validates the data layer is updated for solar as 'yes'
     And user closes the spy on datalayer
 

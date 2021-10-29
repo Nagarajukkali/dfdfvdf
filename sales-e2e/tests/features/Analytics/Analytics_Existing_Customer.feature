@@ -2,7 +2,7 @@
 Feature: Scenarios to cover the data layer analytics for existing customer
 
   Scenario: Validate the account state analytics for a residential existing dual fuel customer through verify account journey
-    Given user has opened the website link in a browser and creates 'E2E_Analytics_Verify_Account_AccountState' to save evidences
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Verify_Account_AccountState1' to save evidences
     And user has navigated to 'RES' plans page
     And user initiates the call to capture analytics events
     Then user validates details on plans page for 'RES'
@@ -17,7 +17,7 @@ Feature: Scenarios to cover the data layer analytics for existing customer
     And user closes the spy on datalayer
 
   Scenario: Validate the account state analytics for a residential existing electricity fuel customer through verify account journey
-    Given user has opened the website link in a browser and creates 'E2E_Analytics_Verify_Account_AccountState' to save evidences
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Verify_Account_AccountState2' to save evidences
     And user has navigated to 'RES' plans page
     And user initiates the call to capture analytics events
     Then user validates details on plans page for 'RES'
@@ -32,7 +32,7 @@ Feature: Scenarios to cover the data layer analytics for existing customer
     And user closes the spy on datalayer
 
   Scenario: Validate the account state analytics for a residential existing gas fuel customer through verify account journey
-    Given user has opened the website link in a browser and creates 'E2E_Analytics_Verify_Account_AccountState' to save evidences
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Verify_Account_AccountState3' to save evidences
     And user has navigated to 'RES' plans page
     And user initiates the call to capture analytics events
     Then user validates details on plans page for 'RES'
@@ -47,7 +47,7 @@ Feature: Scenarios to cover the data layer analytics for existing customer
     And user closes the spy on datalayer
 
   Scenario: Validate the updated data layer for moving state and person state on existing customer residential journey
-    Given user has opened the website link in a browser and creates 'E2E_Analytics_Qualifier_AccountState' to save evidences
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Qualifier_AccountState1' to save evidences
     And user has navigated to 'RES' plans page
     Then user validates details on plans page for 'RES'
     When user selects 'Total Plan'
@@ -61,7 +61,7 @@ Feature: Scenarios to cover the data layer analytics for existing customer
     And user closes the spy on datalayer
 
   Scenario: Validate the updated data layer for moving state and person state on existing customer residential journey when gas account number is provided
-    Given user has opened the website link in a browser and creates 'E2E_Analytics_Qualifier_AccountState' to save evidences
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Qualifier_AccountState2' to save evidences
     And user has navigated to 'RES' plans page
     Then user validates details on plans page for 'RES'
     When user selects 'Total Plan'
@@ -79,10 +79,10 @@ Feature: Scenarios to cover the data layer analytics for existing customer
     And user has navigated to 'BUS' plans page
     And user initiates the call to capture analytics events
     Then user validates details on plans page for 'BUS'
-    When user selects 'Basic Business'
-    Then user validates the 'plans_page' 'Basic_Business_Electricity_Select_Plan_Button' event
-    When user selects gas 'Basic Business'
-    Then user validates the 'plans_page' 'Basic_Business_Gas_Select_Plan_Button' event
+    When user selects 'Business Balance Plan'
+    Then user validates the 'plans_page' 'business_balance_electricity_select_plan_button' event
+    When user selects gas 'Business Balance Plan'
+    Then user validates the 'plans_page' 'business_balance_gas_select_plan_button' event
     And user moves on to fill the qualifier
     Then user validates the 'cart_page' 'continue_button' event
     And user selects 'Existing' on qualifier

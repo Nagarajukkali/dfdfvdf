@@ -389,9 +389,12 @@ const eaHomePage = {
     basicHomeToggleButton:Selector("[id*='plan-rates-title-'][id*='SOT'] button"),
     noFrillsToggleButton:Selector("[id*='plan-rates-title-'][id*='CPP'] button"),
     totalPlanToggleButton:Selector("[id*='plan-rates-title-'][id*='TOP'] button"),
+    resiBalanceToggleButton:Selector("[id*='plan-rates-title-'][id*='TAPR'] button"),
+    bsmeBalanceToggleButton:Selector("[id*='plan-rates-title-'][id*='BSPB'] button"),
 
     basicHomeEleRatesAccordion: Selector("[id*='plan-ELE-rate-accordion-heading-'][id*='SOT'] img"),
     noFrillsEleRatesAccordion: Selector("[id*='plan-ELE-rate-accordion-heading-'][id*='CPP'] img"),
+    bsmeBalanceEleRatesAccordion: Selector("[id*='plan-ELE-rate-accordion-heading-'][id*='BSPB'] img"),
     totalPlanEleRatesAccordion: Selector("[id*='plan-ELE-rate-accordion-heading-'][id*='TOP'] img"),
     basicHomeGasRatesAccordion: Selector("[id*='plan-GAS-rate-accordion-heading-'][id*='SOT'] img"),
     noFrillsGasRatesAccordion: Selector("[id*='plan-GAS-rate-accordion-heading-'][id*='CPP'] img"),

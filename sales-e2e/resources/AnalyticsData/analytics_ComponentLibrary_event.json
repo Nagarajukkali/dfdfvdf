@@ -66,7 +66,7 @@
     "bill_upload_link": {
       "eventAction": "linkClick",
       "eventLabel": "Upload bill",
-      "eventLocation": "https://latte.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/compare-electricity-and-gas-plans/upload-your-electricity-bill",
+      "eventLocation": "https://preprod.nonprod.digital.energyaustralia.com.au/home/electricity-and-gas/compare-electricity-and-gas-plans/upload-your-electricity-bill",
       "eventName": "click",
       "eventValue": "NA"
     }
@@ -93,14 +93,28 @@
       "eventName": "prodView",
       "eventValue": "NA"
     },
-    "basic_business_electricity_select_plan_button": {
+    "business_balance_electricity_select_plan_button": {
       "eventAction": "buttonClick",
       "eventLabel": "Select plan",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
-    "basic_business_gas_select_plan_button": {
+    "business_balance_gas_select_plan_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Select plan",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "business_carbon_electricity_select_plan_button": {
+      "eventAction": "buttonClick",
+      "eventLabel": "Select plan",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "business_carbon_gas_select_plan_button": {
       "eventAction": "buttonClick",
       "eventLabel": "Select plan",
       "eventLocation": "NA",
@@ -124,28 +138,28 @@
     "basic_plan_bpid_link": {
       "eventAction": "linkClick",
       "eventLabel": "Basic plan information and energy fact sheets",
-      "eventLocation": "https://latte.nonprod.digital.energyaustralia.com.au/bpid/?ct=RES&ft=BOTH&pc=RSOT&on=Basic%20Home",
+      "eventLocation": "https://preprod.nonprod.digital.energyaustralia.com.au/bpid/?ct=RES&ft=BOTH&pc=RSOT&on=Basic%20Home",
       "eventName": "click",
       "eventValue": "NA"
     },
     "nofrills_plan_bpid_link": {
       "eventAction": "linkClick",
       "eventLabel": "Basic plan information and energy fact sheets",
-      "eventLocation": "https://latte.nonprod.digital.energyaustralia.com.au/bpid/?ct=RES&ft=BOTH&pc=RCPP&on=No%20Frills",
+      "eventLocation": "https://preprod.nonprod.digital.energyaustralia.com.au/bpid/?ct=RES&ft=BOTH&pc=RCPP&on=No%20Frills",
       "eventName": "click",
       "eventValue": "NA"
     },
     "total_plan_bpid_link": {
       "eventAction": "linkClick",
       "eventLabel": "Basic plan information and energy fact sheets",
-      "eventLocation": "https://latte.nonprod.digital.energyaustralia.com.au/bpid/?ct=RES&ft=BOTH&pc=TOPH&on=Total%20Plan",
+      "eventLocation": "https://preprod.nonprod.digital.energyaustralia.com.au/bpid/?ct=RES&ft=BOTH&pc=TOPH&on=Total%20Plan",
       "eventName": "click",
       "eventValue": "NA"
     },
     "best_electricity_offer_link": {
       "eventAction": "linkClick",
       "eventLabel": "best electricity deals",
-      "eventLocation": "https://latte.nonprod.digital.energyaustralia.com.au/offer",
+      "eventLocation": "https://preprod.nonprod.digital.energyaustralia.com.au/offer",
       "eventName": "click",
       "eventValue": "NA"
     },
@@ -191,176 +205,183 @@
       "eventName": "error",
       "eventValue": "NA"
     },
+    "nsw_remote_meter_error_campaign": {
+      "eventAction": "message",
+      "eventLabel": " This electricity meter has been remotely disconnected and can't be reconnected by us (you need a retailer that can remotely connect meters). Contact Endeavour Energy on 133 718 for the retailer's details. ",
+      "eventLocation": "NA",
+      "eventName": "error",
+      "eventValue": "NA"
+    },
     "green_energy_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": " GreenPower enables Australian households and busi",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "estimate_cost_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": " View your estimate using different usage periods ",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "basic_home_estimate_cost_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": "Annual usage for an average customer in your distr",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "basic_home_benefit_period_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": "You'll receive your plan benefits for the duration",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "basic_home_exitfees_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": "No exit fees apply if you leave us during the bene",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "basic_home_fees_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": "This fee is determined by your distributor. It onl",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "basic_home_rates_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": "Our electricity standing offer rates are under rev",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "basic_home_late_payment_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": "A late payment fee does not apply to this plan.",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "basic_home_solar_buyback_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": " If you are eligible for a government solar rebate",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "nofrills_estimate_cost_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": "Annual usage for an average customer in your distr",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "nofrills_benefit_period_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": "You'll receive your plan benefits for at least the",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "nofrills_exitfees_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": "No exit fees apply if you leave us during the bene",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "nofrills_fees_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": "This fee is determined by your distributor. It onl",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "nofrills_rates_tooltip": {
-      "eventAction": "tooltipClick",
-      "eventLabel": "Our rates will generally be adjusted annually, and",
+      "eventAction": "tooltip",
+      "eventLabel": "Your energy rates won't increase for the 1 year fi",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "nofrills_late_payment_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": "A late payment fee applies if you pay your bill af",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "nofrills_solar_buyback_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": " If you are eligible for a government solar rebate",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "total_plan_estimate_cost_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": "Annual usage for an average customer in your distr",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "total_plan_benefit_period_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": "You'll receive your plan benefits for at least the",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "total_plan_exitfees_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": "No exit fees apply if you leave us during the bene",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "total_plan_fees_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": "This fee is determined by your distributor. It onl",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "total_plan_rates_tooltip": {
-      "eventAction": "tooltipClick",
-      "eventLabel": "Our rates will generally be adjusted annually, and",
+      "eventAction": "tooltip",
+      "eventLabel": "Your energy rates won't increase for the 1 year fi",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "total_plan_late_payment_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": "A late payment fee applies if you pay your bill af",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "total_plan_solar_buyback_tooltip": {
-      "eventAction": "tooltipClick",
+      "eventAction": "tooltip",
       "eventLabel": " If you are eligible for a government solar rebate",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
     "elec_usage_tooltip": {
-      "eventAction": "modalOpen",
+      "eventAction": "modalOpened",
       "eventLabel": "Update your electricity estimate* by selecting a matching usage.",
       "eventLocation": "NA",
       "eventName": "popup",
       "eventValue": "NA"
     },
     "gas_usage_tooltip": {
-      "eventAction": "modalOpen",
+      "eventAction": "modalOpened",
       "eventLabel": "Update your gas estimate* by selecting a matching usage.",
       "eventLocation": "NA",
       "eventName": "popup",
@@ -390,6 +411,20 @@
     "total_plan_toggle_off": {
       "eventAction": "toggleButton",
       "eventLabel": "off",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "balance_plan_toggle_off": {
+      "eventAction": "toggleButton",
+      "eventLabel": "off",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "balance_plan_toggle_on": {
+      "eventAction": "toggleButton",
+      "eventLabel": "on",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
@@ -443,14 +478,14 @@
       "eventName": "click",
       "eventValue": "NA"
     },
-    "basic_business_toggle_on": {
+    "bsme_balance_toggle_on": {
       "eventAction": "toggleButton",
       "eventLabel": "on",
       "eventLocation": "NA",
       "eventName": "click",
       "eventValue": "NA"
     },
-    "basic_business_toggle_off": {
+    "bsme_balance_toggle_off": {
       "eventAction": "toggleButton",
       "eventLabel": "off",
       "eventLocation": "NA",
@@ -555,6 +590,20 @@
       "eventName": "click",
       "eventValue": "NA"
     },
+    "bsme_balance_electricity_accordion_on": {
+      "eventAction": "accordionOpened",
+      "eventLabel": "Show electricity rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "bsme_balance_electricity_accordion_off": {
+      "eventAction": "accordionClosed",
+      "eventLabel": "Show electricity rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
     "total_business_gas_accordion_on": {
       "eventAction": "accordionOpened",
       "eventLabel": "Show gas rates",
@@ -563,6 +612,20 @@
       "eventValue": "NA"
     },
     "total_business_gas_accordion_off": {
+      "eventAction": "accordionClosed",
+      "eventLabel": "Show gas rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "bsme_balance_gas_accordion_on": {
+      "eventAction": "accordionOpened",
+      "eventLabel": "Show gas rates",
+      "eventLocation": "NA",
+      "eventName": "click",
+      "eventValue": "NA"
+    },
+    "bsme_balance_gas_accordion_off": {
       "eventAction": "accordionClosed",
       "eventLabel": "Show gas rates",
       "eventLocation": "NA",
@@ -779,7 +842,7 @@
     "solar_detection_error_link" : {
       "eventAction": "linkClick",
       "eventLabel": "contact us",
-      "eventLocation": "https://latte.nonprod.digital.energyaustralia.com.au/home/help-and-support/contact-us",
+      "eventLocation": "https://preprod.nonprod.digital.energyaustralia.com.au/home/help-and-support/contact-us",
       "eventName": "click",
       "eventValue": "NA"
     },
