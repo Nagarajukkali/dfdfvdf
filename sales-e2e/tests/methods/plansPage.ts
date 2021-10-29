@@ -1837,16 +1837,16 @@ export class plansMethod {
     availableGasPlans=availableGasPlans.toString();
     if(journey==='Residential'){
       if(fuelType==='Electricity') {
-        await t.expect(availableElectricityPlans).eql("BASE_RSOT-EN,BASE_RCPP-EN,BASE_TOPH-EN-AUSGRID");
+        await t.expect(availableElectricityPlans).eql("BASE_TAPR1-EN,BASE_RCPP-EN,BASE_TOPH-EN-AUSGRID");
       }else if(fuelType==='Gas'){
-        await t.expect(availableGasPlans).eql("BASE_RSOT-GN,BASE_RCPP-GN,BASE_TOPH-GN");
+        await t.expect(availableGasPlans).eql("BASE_TAPR1-GN,BASE_RCPP-GN,BASE_TOPH-GN");
       }
       console.log("Analytics data validated for " + journey + " page for available plans for " +fuelType);
     }else if (journey==='Business'){
       if(fuelType==='Electricity') {
-        await t.expect(availableElectricityPlans).eql("BASE_TOPB-EN-AUSGRID,BASE_BCNP-EN-AUSGRID,BASE_BSPB2-EN-AUSGRID,BASE_BSOT-EN");
+        await t.expect(availableElectricityPlans).eql("BASE_TOPB-EN-AUSGRID,BASE_BCNP-EN-AUSGRID,BASE_BSPB2-EN-AUSGRID");
       }else if(fuelType==='Gas'){
-        await t.expect(availableGasPlans).eql("BASE_TOPB-GN,BASE_BSPB2-GN,BASE_BSOT-GN");
+        await t.expect(availableGasPlans).eql("BASE_TOPB-GN,BASE_BSPB2-GN");
       }
       console.log("Analytics data validated for " + journey + " page for available plans for " +fuelType);
     }else if (journey==='Campaign'){
@@ -2272,7 +2272,7 @@ export class verifyAccountMethod {
 
 export class campaignMethod {
   public static async enterPostcodeOnCampaign(t, postcode) {
-    await testFunction.click(t, EaHomePage.elements.rbPostcodeOnModal);
+    //await testFunction.click(t, EaHomePage.elements.rbPostcodeOnModal);
     await t.wait(1000);
     await testFunction.clearAndEnterText(t, EaHomePage.elements.postcodeOnCampaignPageOnModal, postcode);
     await testFunction.click(t, EaHomePage.elements.btnCampaignSearchOnModal);

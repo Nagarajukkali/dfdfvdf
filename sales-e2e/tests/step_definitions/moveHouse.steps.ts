@@ -12,6 +12,11 @@ When(/^user enters '(.*)' in address field$/, async function (t, [movingAddress]
   await moveHouseMethod.enterYourAddress(t, movingAddress);
   await testFunction.takeScreenshot(t, "move_house");//disabled UI Validation
 });
+
+When(/^user waits for few seconds$/, async function (t, [time]) {
+  await t.wait(3000);
+});
+
 Then(/^error message is displayed for missing solar tariff in MSATS$/, async function (t) {
   await moveHouseMethod.validateSolarSetupUnknownError(t);
 });
@@ -24,4 +29,4 @@ Then(/^error message is displayed for undetected NMI in MSATS$/, async function 
 //When(/^user enters '(.*)' in address field$/, async function (t, [movingAddress]) {
  // await moveHouseMethod.enterYourAddress(t, movingAddress);
   //await testFunction.takeScreenshot(t, "move_house");
-//}); 
+//});

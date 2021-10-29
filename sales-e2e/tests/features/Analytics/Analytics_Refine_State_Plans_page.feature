@@ -3,7 +3,7 @@
 Feature: Analytics Events for Refine State validation on plans page
 
   Scenario: Validate Analytics event for refine state on Residential plans page
-    Given user has opened the website link in a browser and creates 'E2E_Analytics_Resi_Refine_State' to save evidences
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Resi_Refine_State1' to save evidences
     And user has navigated to 'RES' plans page
     And user initiates the call to capture analytics events
     When user selects 'Postcode' location type
@@ -25,7 +25,7 @@ Feature: Analytics Events for Refine State validation on plans page
     And user closes the spy on datalayer
 
   Scenario: Validate Analytics event for refine state when Residential plans page is loaded(default values)
-    Given user has opened the website link in a browser and creates 'E2E_Analytics_Resi_Refine_State' to save evidences
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_Resi_Refine_State2' to save evidences
     And user has navigated to 'RES' plans page
     And user initiates the call to capture analytics events
     Then user validates the data layer is updated for location type as 'address'
@@ -40,7 +40,7 @@ Feature: Analytics Events for Refine State validation on plans page
     And user closes the spy on datalayer
 
   Scenario: Validate Analytics event for refine state on Business plans page
-    Given user has opened the website link in a browser and creates 'E2E_Analytics_BSME_Refine_State' to save evidences
+    Given user has opened the website link in a browser and creates 'E2E_Analytics_BSME_Refine_State3' to save evidences
     And user has navigated to 'BUS' plans page
     And user initiates the call to capture analytics events
     When user selects 'Postcode' location type
@@ -61,7 +61,7 @@ Feature: Analytics Events for Refine State validation on plans page
     And user closes the spy on datalayer
 
   Scenario: Validate Analytics event for refine state on offer campaign page
-    Given user has opened the 'offer' link in a browser and creates 'E2E_Analytics_Resi_Refine_State' to save evidences
+    Given user has opened the 'offer' link in a browser and creates 'E2E_Analytics_Resi_Refine_State4' to save evidences
     When user provides "2000" and clicks on show me plan link
     And user initiates the call to capture analytics events
     When user selects 'Address' location type

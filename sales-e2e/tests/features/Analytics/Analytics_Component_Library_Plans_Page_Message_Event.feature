@@ -1,5 +1,5 @@
 @componentlibrary @analytics
-Feature: Scenarios to cover the data layer updates and analytics events trigger on plan page
+Feature: Scenarios to cover the data layer updates and analytics events trigger on plan page for messages
 
   Scenario Outline: Validate the component library events for message on plans page
     Given user has opened the website link in a browser and creates 'E2E_Analytics_Verify_Modal_Message_Event' to save evidences
@@ -27,7 +27,7 @@ Feature: Scenarios to cover the data layer updates and analytics events trigger 
     When user enters the address "20-30 Bourke Street, MELBOURNE VIC 3000" on plans page
     Then user validates the 'plans_page' 'NMI_Blocked_Error_Message' event
     When user enters the address "12 Abattoir Lane, AVOCA VIC 3467" on plans page
-    When user selects 'Basic Home'
+    When user selects 'Balance Plan'
     And user moves on to fill the qualifier
     And user selects 'New' on qualifier
     And user provides all other details on qualifier page

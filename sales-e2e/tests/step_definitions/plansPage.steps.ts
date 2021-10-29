@@ -690,6 +690,10 @@ When(/^user clicks '(.*)' toggle button$/, async function (t,[planName]) {
     await testFunction.click(t, EaHomePage.elements.noFrillsToggleButton);
   }else if((planName===PlanType.TOTAL_PLAN)||(planName===PlanType.TOTAL_BUSINESS)){
     await testFunction.click(t, EaHomePage.elements.totalPlanToggleButton);
+  }else if((planName===PlanType.RESIDENTIAL_BALANCE_PLAN)){
+    await testFunction.click(t, EaHomePage.elements.resiBalanceToggleButton);
+  }else if((planName===PlanType.BUSINESS_BALANCE_PLAN)){
+    await testFunction.click(t, EaHomePage.elements.bsmeBalanceToggleButton);
   }
 });
 
@@ -700,6 +704,8 @@ When(/^user clicks '(.*)' electricity accordion button$/, async function (t,[pla
     await testFunction.click(t, EaHomePage.elements.noFrillsEleRatesAccordion);
   }else if((planName===PlanType.TOTAL_PLAN)||(planName===PlanType.TOTAL_BUSINESS)){
     await testFunction.click(t, EaHomePage.elements.totalPlanEleRatesAccordion);
+  }else if(planName===PlanType.BUSINESS_BALANCE_PLAN){
+    await testFunction.click(t, EaHomePage.elements.bsmeBalanceEleRatesAccordion);
   }
 });
 

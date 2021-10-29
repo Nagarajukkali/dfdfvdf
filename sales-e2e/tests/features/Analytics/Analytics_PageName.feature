@@ -1,5 +1,5 @@
 @pageNameValidation @quotestart @analytics @21.10.4.analytics
-Feature: Scenarios to cover the data layer updates and analytics events trigger on plan page
+Feature: Scenarios to cover the data layer updates and analytics events trigger on plan page for pagename and quote start page events
 
   Scenario: Validate the page name and quote start page events on plans page
     Given user has opened the website link in a browser and creates 'E2E_Analytics_Residential_PageName' to save evidences

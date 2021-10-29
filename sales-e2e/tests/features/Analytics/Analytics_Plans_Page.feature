@@ -17,10 +17,10 @@ Feature: Scenarios to cover the data layer updates and analytics events trigger 
     Then user validates the state and postcode of data layer is updated for the provided address
       | state | postcode |
       | VIC   | 3199     |
-    When user enters the postcode "5000" on plans page
-    Then user validates the state and postcode of data layer is updated for the provided address
-      | state | postcode |
-      | SA    | 5000     |
+    #When user enters the postcode "5000" on plans page
+    #Then user validates the state and postcode of data layer is updated for the provided address
+      #| state | postcode |
+      #| SA    | 5000     |
     When user enters the address "21 Tarrant Crescent, DUNLOP ACT 2615" on plans page
     When user selects '<planName>'
     And user moves on to fill the qualifier

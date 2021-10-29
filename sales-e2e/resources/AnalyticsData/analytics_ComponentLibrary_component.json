@@ -67,13 +67,23 @@
       "componentName": "NA",
       "platform": "angular"
     },
-    "basic_business_electricity_select_plan_button": {
-      "componentLocation": "button:Basic Business - Electricity:Select plan",
+    "business_balance_electricity_select_plan_button": {
+      "componentLocation": "button:Business Balance Plan - Electricity:Select plan",
       "componentName": "NA",
       "platform": "angular"
     },
-    "basic_business_gas_select_plan_button": {
-      "componentLocation": "button:Basic Business - Gas:Select plan",
+    "business_balance_gas_select_plan_button": {
+      "componentLocation": "button:Business Balance Plan - Gas:Select plan",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "business_carbon_electricity_select_plan_button": {
+      "componentLocation": "button:Business Carbon Neutral - Electricity:Select plan",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "business_carbon_gas_select_plan_button": {
+      "componentLocation": "button:Business Carbon Neutral - Gas:Select plan",
       "componentName": "NA",
       "platform": "angular"
     },
@@ -137,6 +147,16 @@
       "componentName": "NA",
       "platform": "angular"
     },
+    "nsw_remote_meter_campaign": {
+      "componentLocation": "message:campaign page content: This electricity meter has been remotely disconnected and can't be reconnected by us (you need a retailer that can remotely connect meters). Contact Endeavour Energy on 133 718 for the retailer's details. ",
+      "componentName": "NA",
+      "platform": "angular"
+    },
+    "nsw_remote_meter_error_campaign": {
+      "componentLocation": "message:campaign page content: This electricity meter has been remotely disconnected and can't be reconnected by us (you need a retailer that can remotely connect meters). Contact Endeavour Energy on 133 718 for the retailer's details. ",
+      "componentName": "NA",
+      "platform": "angular"
+    },
     "estimate_cost_tooltip": {
       "componentLocation": "tooltip:refine period: View your estimate using different usage periods ",
       "componentName": "NA",
@@ -168,7 +188,7 @@
       "platform": "angular"
     },
     "total_plan_rates_tooltip": {
-      "componentLocation": "tooltip:Total Plan - Electricity & gas:Our rates will generally be adjusted annually, and",
+      "componentLocation": "tooltip:Total Plan - Electricity & gas:Your energy rates won't increase for the 1 year fi",
       "componentName": "NA",
       "platform": "angular"
     },
@@ -203,7 +223,7 @@
       "platform": "angular"
     },
     "nofrills_rates_tooltip": {
-      "componentLocation": "tooltip:No Frills - Electricity & gas:Our rates will generally be adjusted annually, and",
+      "componentLocation": "tooltip:No Frills - Electricity & gas:Your energy rates won't increase for the 1 year fi",
       "componentName": "NA",
       "platform": "angular"
     },
@@ -253,12 +273,12 @@
       "platform": "angular"
     },
     "elec_usage_tooltip": {
-      "componentLocation": "modal:refine electricity usage per day:Update your electricity estimate* by selecting a matching usage.",
+      "componentLocation": "modalOpened:refine electricity usage per day:Update your electricity estimate* by selecting a matching usage.",
       "componentName": "NA",
       "platform": "angular"
     },
     "gas_usage_tooltip": {
-      "componentLocation": "modal:refine gas usage per day:Update your gas estimate* by selecting a matching usage.",
+      "componentLocation": "modalOpened:refine gas usage per day:Update your gas estimate* by selecting a matching usage.",
       "componentName": "NA",
       "platform": "angular"
     },
@@ -292,8 +312,8 @@
       "componentName": "NA",
       "platform": "angular"
     },
-    "basic_home_toggle_off": {
-      "componentLocation": "toggleButton:Basic Home - Electricity & gas:off",
+    "balance_plan_toggle_off": {
+      "componentLocation": "toggleButton:Balance Plan - Electricity & gas:off",
       "componentName": "NA",
       "platform": "angular"
     },
@@ -302,8 +322,8 @@
       "componentName": "NA",
       "platform": "angular"
     },
-    "basic_home_toggle_on": {
-      "componentLocation": "toggleButton:Basic Home - Electricity & gas:on",
+    "balance_plan_toggle_on": {
+      "componentLocation": "toggleButton:Balance Plan - Electricity & gas:on",
       "componentName": "NA",
       "platform": "angular"
     },
@@ -312,8 +332,8 @@
       "componentName": "NA",
       "platform": "angular"
     },
-    "basic_business_toggle_on": {
-      "componentLocation": "toggleButton:Basic Business - Electricity:on",
+    "bsme_balance_toggle_on": {
+      "componentLocation": "toggleButton:Business Balance Plan - Electricity:on",
       "componentName": "NA",
       "platform": "angular"
     },
@@ -322,8 +342,8 @@
       "componentName": "NA",
       "platform": "angular"
     },
-    "basic_business_toggle_off": {
-      "componentLocation": "toggleButton:Basic Business - Electricity:off",
+    "bsme_balance_toggle_off": {
+      "componentLocation": "toggleButton:Business Balance Plan - Electricity:off",
       "componentName": "NA",
       "platform": "angular"
     },
@@ -407,23 +427,23 @@
       "componentName": "NA",
       "platform": "angular"
     },
-    "basic_business_electricity_accordion_on": {
-      "componentLocation": "accordionOpened:Basic Business - Electricity:Show electricity rates",
+    "bsme_balance_electricity_accordion_on": {
+      "componentLocation": "accordionOpened:Business Balance Plan - Electricity:Show electricity rates",
       "componentName": "NA",
       "platform": "angular"
     },
-    "basic_business_electricity_accordion_off": {
-      "componentLocation": "accordionClosed:Basic Business - Electricity:Show electricity rates",
+    "bsme_balance_electricity_accordion_off": {
+      "componentLocation": "accordionClosed:Business Balance Plan - Electricity:Show electricity rates",
       "componentName": "NA",
       "platform": "angular"
     },
-    "basic_business_gas_accordion_on": {
-      "componentLocation": "accordionOpened:Basic Business - Gas:Show gas rates",
+    "bsme_balance_gas_accordion_on": {
+      "componentLocation": "accordionOpened:Business Balance Plan - Gas:Show gas rates",
       "componentName": "NA",
       "platform": "angular"
     },
-    "basic_business_gas_accordion_off": {
-      "componentLocation": "accordionClosed:Basic Business - Gas:Show gas rates",
+    "bsme_balance_gas_accordion_off": {
+      "componentLocation": "accordionClosed:Business Balance Plan - Gas:Show gas rates",
       "componentName": "NA",
       "platform": "angular"
     },
@@ -562,16 +582,16 @@
       "platform": "angular"
   },
     "nsw_remote_meter_qualifier_error": {
-      "componentLocation": "message:plans app plan messages: This electricity meter has been remotely disconnected and can't be reconnected by us (you need a retailer that can remotely connect meters). Contact Endeavour Energy on 133 718 for the retailer's details. ",
+      "componentLocation": "message:qualifier address: This electricity meter has been remotely disconnected and can't be reconnected by us (you need a retailer that can remotely connect meters). Contact Endeavour Energy on 133 718 for the retailer's details. ",
       "componentName": "NA",
       "platform": "angular"
     }
   },
   "movehouse_page": {
     "nsw_remote_meter_movehouse_error": {
-      "componentLocation": "message:plans app plan messages: This electricity meter has been remotely disconnected and can't be reconnected by us (you need a retailer that can remotely connect meters). Contact Endeavour Energy on 133 718 for the retailer's details. ",
+      "componentLocation": "message:NA: This electricity meter has been remotely disconnected and can't be reconnected by us (you need a retailer that can remotely connect meters). Contact Endeavour Energy on 133 718 for the retailer's details. ",
       "componentName": "NA",
-      "platform": "angular"
+      "platform": "NA"
     }
   },
   "complete_page": {
