@@ -500,7 +500,7 @@ Feature:E2E scenario for employee campaign
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus   | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue   |
-      | <customerStatus> | 9485951606    | Postcode            | 4215             | dl     | 139955532 |
+      | <customerStatus> | 2704075020    | Postcode            | 4053             | dl     | 678351290 |
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | propertyType |
       | RES          | Non-Moving | Renter       |
@@ -532,7 +532,7 @@ Feature:E2E scenario for employee campaign
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | AGED-EQ  | QB01405934 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | AGED-EQ  | QB11787872 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | campaign | folderName                                    | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | ELE      | 22          | employee | E2E_Campaign_employee_QLD_existing_non-moving | QLD   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |

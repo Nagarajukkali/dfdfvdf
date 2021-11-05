@@ -14,7 +14,7 @@
 Feature:E2E scenario for offer campaign
 
   @DR21.10.2.campaign
-  Scenario Outline: Validate complete data for offer campaign for NSW - new moving customer
+  Scenario Outline: Validate complete data for offer campaign for NSW-Ausgrid - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2516" and clicks on show me plan link
     And user validates "ELE" discount to be "<eleDiscount>" percent
@@ -347,7 +347,7 @@ Feature:E2E scenario for offer campaign
       | New            | BOTH     | 15          | 26          | offer    | E2E_Campaign_offer_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
   @DR21.10.2.campaign
-  Scenario Outline: Validate complete data for offer campaign for NSW - new non moving customer
+  Scenario Outline: Validate complete data for offer campaign for NSW-Ausgrid - new non moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2516" and clicks on show me plan link
     And user validates "ELE" discount to be "<eleDiscount>" percent
@@ -489,7 +489,7 @@ Feature:E2E scenario for offer campaign
       | Existing       | BOTH     | 15          | 26          | offer    | E2E_Campaign_offer_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
   @DR21.10.2.campaign
-  Scenario Outline: Validate complete data for offer campaign for NSW existing non moving
+  Scenario Outline: Validate complete data for offer campaign for NSW-Ausgrid existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" for postcode and proceed to view the plans
     Then user is presented with the plans
@@ -624,7 +624,7 @@ Feature:E2E scenario for offer campaign
   @DR21.10.2.campaign
   Scenario Outline: Validate complete data for offer campaign for QLD existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "4500" for postcode and proceed to view the plans
+    When user provides "4053" for postcode and proceed to view the plans
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
@@ -641,7 +641,7 @@ Feature:E2E scenario for offer campaign
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus   | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue   |
-      | <customerStatus> | 9485951606    | Postcode            | 4215             | dl     | 139955532 |
+      | <customerStatus> | 2704075020    | Postcode            | 4053             | dl     | 678351290 |
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | propertyType |
       | RES          | Non-Moving | Renter       |
@@ -673,7 +673,7 @@ Feature:E2E scenario for offer campaign
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-EQ  | QB01405934 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-EQ  | QB11787872 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | campaign | folderName                                 | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | ELE      | 14          | offer    | E2E_Campaign_offer_QLD_existing_non-moving | QLD   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |

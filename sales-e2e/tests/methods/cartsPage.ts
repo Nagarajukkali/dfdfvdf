@@ -64,7 +64,15 @@ export class cartsMethod {
             await testFunction.assertText(t, cartsPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill.VIC);
             break;
           case AustralianState.NSW:
-            await testFunction.assertText(t, cartsPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill.NSW);
+            if (t.testRun.test.name.includes('Essential')) {
+              await testFunction.assertText(t, cartsPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill.NSW.Essential);
+            } else if (t.testRun.test.name.includes('Endeavour')) {
+              await testFunction.assertText(t, cartsPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill.NSW.Endeavour);
+            } else if (t.testRun.test.name.includes('Ausgrid')) {
+              await testFunction.assertText(t, cartsPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill.NSW.Ausgrid);
+            } else {
+              await testFunction.assertText(t, cartsPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill.NSW);
+            }
             break;
           case AustralianState.ACT:
             await testFunction.assertText(t, cartsPage.elements.eleFeatureDiscountOffTotal, json.electricity.feature.postSelect.discountOffTotalEnergyBill.ACT);

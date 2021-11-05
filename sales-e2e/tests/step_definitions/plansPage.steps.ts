@@ -846,3 +846,6 @@ Then(/^user is presented with '(.*)' static message$/, async function (t,[static
   const error = testFunction.getElementText(t, EaHomePage.elements.familyAndFriendsRefereeEmailStaticError);
   await testFunction.assertTextValue(t, error, staticMessage);
 });
+Then(/^user click on Rates tooltip for '(.*)' and validates the rate type text for '(.*)' on '(.*)' plans page for '(.*)'$/, async function (t, [fuelType,plan, journey,state]) {
+  await plansMethod.validateRateTypeTextPlansPage(t, fuelType,plan, journey,state);
+});

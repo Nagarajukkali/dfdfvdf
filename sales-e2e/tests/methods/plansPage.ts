@@ -320,7 +320,15 @@ export class plansMethod {
               await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.gasdiscountOffBalanceDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
               break;
             case AustralianState.NSW:
-              await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffBalanceTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.NSW.heading);
+              if (t.testRun.test.name.includes('Essential')) {
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffBalanceTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.NSW.Essential.heading);
+              } else if (t.testRun.test.name.includes('Endeavour')) {
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffBalanceTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.NSW.Endeavour.heading);
+              } else if (t.testRun.test.name.includes('Ausgrid')) {
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffBalanceTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.NSW.Ausgrid.heading);
+              } else {
+                await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.NSW.heading);
+              }
               await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.elediscountOffBalanceDescription, data.electricity.feature.preSelect.discountOffTotalEnergyBill.description);
               await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.gasdiscountOffBalanceTitle, data.gas.feature.preSelect.discountOffTotalEnergyBill.NSW.heading);
               await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.gasdiscountOffBalanceDescription, data.gas.feature.preSelect.discountOffTotalEnergyBill.description);
@@ -393,12 +401,85 @@ export class plansMethod {
     }
     console.log("Reprice text validated for " + plan + " on " + journey + " plans page")
   }
-
+  public static async validateRateTypeTextPlansPage(t: any, fuelType,plan, journey,state) {
+    if (journey === 'Residential') {
+      if (plan === PlanType.RESIDENTIAL_BALANCE_PLAN) {
+        //For campaign page ELE
+        if(fuelType==='Electricity'){
+          await testFunction.click(t, EaHomePage.elements.BalancePlanTable.balancePlanEleRatesTooltip);
+          if(state==='VIC'){
+            await testFunction.assertText(t, EaHomePage.elements.BalancePlanTable.balancePlanEleRatesTooltipText, "The Electricity market usage rates and daily supply charge are variable. Our rates are generally reviewed around January each year and we'll let you know when this happens.");
+          }else{
+            await testFunction.assertText(t, EaHomePage.elements.BalancePlanTable.balancePlanEleRatesTooltipText, "The Electricity market usage rates and daily supply charge are variable. Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+          }
+        }
+        //For campaign page GAS
+        else if(fuelType==='Gas'){
+          await testFunction.click(t, EaHomePage.elements.BalancePlanTable.balancePlanGasRatesTooltip);
+          if(state==='VIC'){
+            await testFunction.assertText(t, EaHomePage.elements.BalancePlanTable.balancePlanGasRatesTooltipText, "The Gas market usage rates and daily supply charge are variable. Our rates are generally reviewed around January each year and we'll let you know when this happens.");
+          }else{
+            await testFunction.assertText(t, EaHomePage.elements.BalancePlanTable.balancePlanGasRatesTooltipText, "The Gas market usage rates and daily supply charge are variable. Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+          }
+        }
+        //For campaign page Both
+        else if(fuelType==='Both'){
+          await testFunction.click(t, EaHomePage.elements.BalancePlanTable.balancePlanRatesTooltip);
+          if(state==='VIC'){
+            await testFunction.assertText(t, EaHomePage.elements.BalancePlanTable.balancePlanRatesTooltipText, "The Electricity market usage rates and daily supply charge are variable. The Gas market usage rates and daily supply charge are variable. Our rates are generally reviewed around January each year and we'll let you know when this happens.");
+          }else{
+            await testFunction.assertText(t, EaHomePage.elements.BalancePlanTable.balancePlanRatesTooltipText, "The Electricity market usage rates and daily supply charge are variable. The Gas market usage rates and daily supply charge are variable. Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+          }
+        }
+      }
+    } else if (journey === 'Business') {
+      if((plan === PlanType.BUSINESS_BALANCE_PLAN)){
+        //For campaign page ELE
+        if(fuelType==='Electricity'){
+          await testFunction.click(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanEleRatesTooltip);
+          if(state==='VIC'){
+            await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanEleRatesTooltipText, "The Electricity market usage rates and daily supply charge are variable. Our rates are generally reviewed around January each year and we'll let you know when this happens.");
+          }else{
+            await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanEleRatesTooltipText, "The Electricity market usage rates and daily supply charge are variable. Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+          }
+        }
+        //For campaign page GAS
+        else if(fuelType==='Gas'){
+          await testFunction.click(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanGasRatesTooltip);
+          if(state==='VIC'){
+            await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanGasRatesTooltipText, "The Gas market usage rates and daily supply charge are variable. Our rates are generally reviewed around January each year and we'll let you know when this happens.");
+          }else{
+            await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanGasRatesTooltipText, "The Gas market usage rates and daily supply charge are variable. Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+          }
+        }
+        //For plans page ELE
+        else if(fuelType==='ELE'){
+          await plansMethod.selectFuel(t, fuelType);
+          await testFunction.click(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanRatesTooltip);
+          if(state==='VIC'){
+            await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanRatesTooltipText, "The Electricity market usage rates and daily supply charge are variable. Our rates are generally reviewed around January each year and we'll let you know when this happens.");
+          }else{
+            await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanRatesTooltipText, "The Electricity market usage rates and daily supply charge are variable. Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+          }
+        }
+        //For plans page GAS
+        else if(fuelType==='GAS'){
+          await plansMethod.selectFuel(t, fuelType);
+          await testFunction.click(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanRatesTooltip);
+          if(state==='VIC'){
+            await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanRatesTooltipText, "The Gas market usage rates and daily supply charge are variable. Our rates are generally reviewed around January each year and we'll let you know when this happens.");
+          }else{
+            await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanRatesTooltipText, "The Gas market usage rates and daily supply charge are variable. Our rates are generally reviewed around July each year and we'll let you know when this happens.");
+          }
+        }
+      }
+    }
+    console.log("Rate type text validated for " + plan + " on " + journey + " plans page")
+  }
   public static async validateFeatures(t: any, dataTable, data: any) {
     console.log("Validating plan features on campaign page.");
     if (dataTable[0].fuelType === "ELE") {
       if (dataTable[0].Feature_50Credit === "Y") {
-        console.log("(dataTable[0].state)"+(dataTable[0].state));
         switch (dataTable[0].state) {
           case AustralianState.VIC:
             await testFunction.assertText(t, EaHomePage.campaignElements.eleFeature50CreditTitle, data.electricity.feature.preSelect.Credit50.VIC.heading);
@@ -452,7 +533,15 @@ export class plansMethod {
             await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.VIC.heading);
             break;
           case AustralianState.NSW:
-            await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.NSW.heading);
+            if (t.testRun.test.name.includes('Essential')) {
+              await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.NSW.Essential.heading);
+            } else if (t.testRun.test.name.includes('Endeavour')) {
+              await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.NSW.Endeavour.heading);
+            } else if (t.testRun.test.name.includes('Ausgrid')) {
+              await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.NSW.Ausgrid.heading);
+            } else {
+              await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.NSW.heading);
+            }
             break;
           case AustralianState.ACT:
             await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureDiscountOffTotalBillTitle, data.electricity.feature.preSelect.discountOffTotalEnergyBill.ACT.heading);
@@ -2272,7 +2361,7 @@ export class verifyAccountMethod {
 
 export class campaignMethod {
   public static async enterPostcodeOnCampaign(t, postcode) {
-    //await testFunction.click(t, EaHomePage.elements.rbPostcodeOnModal);
+    // await testFunction.click(t, EaHomePage.elements.rbPostcodeOnModal);
     await t.wait(1000);
     await testFunction.clearAndEnterText(t, EaHomePage.elements.postcodeOnCampaignPageOnModal, postcode);
     await testFunction.click(t, EaHomePage.elements.btnCampaignSearchOnModal);
