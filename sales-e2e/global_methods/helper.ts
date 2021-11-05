@@ -586,6 +586,9 @@ export class testFunction {
       case "cashrewards":
         campaignPageURL = `${eaHomePage}${campaign}?rewardcode=test&live=disabled`;
         break;
+      case "loyalty-boomerang":
+        campaignPageURL = `${eaHomePage}${campaign}?rewardcode=test&live=disabled`;
+        break;
       case "super-rewards":
         campaignPageURL = `${eaHomePage}${campaign}?rewardcode=test&live=disabled`;
         break;

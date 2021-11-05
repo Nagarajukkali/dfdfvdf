@@ -135,7 +135,7 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue   |
-      | Existing       | 9485951606    | Postcode            | 4215             | dl     | 139955532 |
+      | Existing       | 2704075020    | Postcode            | 4053             | dl     | 678351290 |
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | propertyType |
       | RES          | Non-Moving | Owner        |
@@ -147,7 +147,7 @@ Feature:E2E scenario for existing residential moving and non moving customer
       | <sourceSystem> | <journey> | <fuelType> |
     And user selects mailing address option
       | addressType   | otherAddress                          |
-      | Other Address | 13 Jacobs Ridge Road, ORMEAU QLD 4208 |
+      | Other Address | 1 Ford Close, MCDOWALL QLD 4053 |
     And user opts for AAH and DD
       | optAAHOption | optDDOption | directDebitType |
       | No           | Yes         | Bank            |
@@ -174,7 +174,7 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-EQ  | QB01405934 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-EQ  | QB11787872 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
 
 
     Examples:

@@ -40,7 +40,15 @@
               "heading": "2% discount off total electricity bill"
             },
             "NSW": {
-              "heading": "17% discount off total electricity bill"
+              "Ausgrid": {
+                "heading": "17% discount off total electricity bill"
+              },
+              "Essential": {
+                "heading": "18% discount off total electricity bill"
+              },
+              "Endeavour": {
+                "heading": "13% discount off total electricity bill"
+              }
             },
             "ACT": {
               "heading": "8% discount off total electricity bill"
@@ -70,7 +78,11 @@
           "peaceOfMind": "Peace of mind. Your market energy charges won't increase for the fixed rate period. We'll let you know in advance before your market energy rates change.",
           "discountOffTotalEnergyBill": {
             "VIC": "2% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
-            "NSW": "17% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
+            "NSW": {
+              "Ausgrid": "17% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
+              "Essential": "18% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
+              "Endeavour": "13% discount off total electricity bill. Guaranteed discount that applies to your market energy charges."
+            },
             "ACT": "8% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
             "QLD": "11% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
             "SA": "1% discount off total electricity bill. Guaranteed discount that applies to your market energy charges."

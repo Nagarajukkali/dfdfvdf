@@ -18,7 +18,15 @@
             "heading": "6% discount off total electricity bill"
           },
           "NSW": {
-            "heading": "9% discount off total electricity bill"
+            "Ausgrid": {
+              "heading": "9% discount off total electricity bill"
+            },
+            "Essential": {
+              "heading": "9% discount off total electricity bill"
+            },
+            "Endeavour": {
+              "heading": "9% discount off total electricity bill"
+            }
           },
           "ACT": {
             "heading": "5% discount off total electricity bill"
@@ -37,7 +45,11 @@
         "variableRates": "Variable Rates. Your energy charges are variable for the benefit period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": {
           "VIC": "6% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
-          "NSW": "9% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+          "NSW": {
+            "Ausgrid": "9% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+            "Essential": "9% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+            "Endeavour": "9% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
+          },
           "ACT": "5% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
           "QLD": "7% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
           "SA" : "3% discount off total electricity bill. Guaranteed discount that applies to your energy charges."

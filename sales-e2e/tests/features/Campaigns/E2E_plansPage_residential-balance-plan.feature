@@ -1,7 +1,7 @@
 @DR21.10.2.campaign
 Feature:E2E scenario for residential-balance-plan
 
-  Scenario Outline: Validate complete data for residential-balance-plan for NSW for new moving customer
+  Scenario Outline: Validate complete data for residential-balance-plan for NSW-Ausgrid for new moving customer
     Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
     And user enters '2000' in 'POSTCODE' field
