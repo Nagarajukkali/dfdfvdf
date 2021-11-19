@@ -1,20 +1,20 @@
-@campaign21.4.3 @campaign
+@DR21.11.4.campaign
 Feature:E2E scenario for gas-biz campaign
 
   Scenario Outline: Validate complete data for gas-biz campaign for NSW Ausgrid for new customer
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_gas-biz_NSW_Ausgrid' to save evidences
-    When user provides "BIZOFFER5" and "2042" and clicks on show me plan link
+    When user provides "2042" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
       | GAS      | Y                | N                     | Y                   | Y                                  | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName              | state | signUpCredit |
       | Y                        | N         | Y            | Total Plan - Business | NSW   | Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | state   |
       | GAS      | Y                | N                     | Y                   | Y                                  | <state> |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
@@ -34,7 +34,7 @@ Feature:E2E scenario for gas-biz campaign
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
       | GAS      | Y                | N                     | Y                   | Y                                  | N                               | <state> |
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
@@ -50,23 +50,22 @@ Feature:E2E scenario for gas-biz campaign
 
     Examples:
       | customerStatus | fuelType | campaign | state | eleDiscount | gasDiscount |
-      | New            | GAS      | gas-biz  | NSW   | 22          | 19          |
+      | New            | GAS      | gas-biz  | NSW   | 22          | 25          |
 
-  Scenario Outline: Validate complete data for gas-biz campaign for VIC
+  Scenario Outline: Validate complete data for gas-biz campaign for VIC for new customer
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_gas-biz_VIC' to save evidences
-    When user provides "BIZOFFER5" and "3031" and clicks on show me plan link
+    When user provides "3031" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "GAS" discount to be "<gasDiscount>" percent
-      | ELE | Y | N | Y | Y | N | <state> |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
       | GAS      | Y                | N                     | Y                   | Y                                  | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName              | state   | signUpCredit |
       | Y                        | N         | Y            | Total Plan - Business | <state> | Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | state   |
       | GAS      | Y                | N                     | Y                   | Y                                  | <state> |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
@@ -85,7 +84,7 @@ Feature:E2E scenario for gas-biz campaign
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
       | GAS      | Y                | N                     | Y                   | Y                                  | N                               | <state> |
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
@@ -101,4 +100,4 @@ Feature:E2E scenario for gas-biz campaign
 
     Examples:
       | customerStatus | fuelType | campaign | state | eleDiscount | gasDiscount |
-      | New            | GAS      | gas-biz  | VIC   | 6           | 23          |
+      | New            | GAS      | gas-biz  | VIC   | 6           | 24          |

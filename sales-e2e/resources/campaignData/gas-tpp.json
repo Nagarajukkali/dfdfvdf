@@ -59,12 +59,12 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_Plus_16%GD",
+        "VIC": "Total_Plus_13%GD",
         "NSW": {
-          "Ausgrid": "Total_Plus_21%GD",
-          "Essential": "Total_Plus_21%GD",
-          "Endeavour": "Total_Plus_21%GD",
-          "default": "Total_Plus_21%GD"
+          "Ausgrid": "Total_Plus_19%GD",
+          "Essential": "Total_Plus_17%GD",
+          "Endeavour": "Total_Plus_17%GD",
+          "default": "Total_Plus_19%GD"
         },
         "ACT": "Total_Plus_13%GD_25",
         "QLD": "Total_Plus_21%GD_50",
@@ -72,24 +72,24 @@
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_Plus_16%GD",
+          "VIC": "Total_Plus_13%GD",
           "NSW": {
-            "Ausgrid": "Total_Plus_21%GD",
-            "Essential": "Total_Plus_21%GD",
-            "Endeavour": "Total_Plus_21%GD",
-            "default": "Total_Plus_21%GD"
+            "Ausgrid": "Total_Plus_19%GD",
+            "Essential": "Total_Plus_17%GD",
+            "Endeavour": "Total_Plus_17%GD",
+            "default": "Total_Plus_19%GD"
           },
           "ACT": "Total_Plus_13%GD_25",
           "QLD": "Total_Plus_21%GD_50",
           "SA": "Total_Plus_15%GD"
         },
         "PS": {
-          "VIC": "Total_Plus_16%GD",
+          "VIC": "Total_Plus_13%GD",
           "NSW": {
-            "Ausgrid": "Total_Plus_21%GD",
-            "Essential": "Total_Plus_21%GD",
-            "Endeavour": "Total_Plus_21%GD",
-            "default": "Total_Plus_21%GD"
+            "Ausgrid": "Total_Plus_19%GD",
+            "Essential": "Total_Plus_17%GD",
+            "Endeavour": "Total_Plus_17%GD",
+            "default": "Total_Plus_19%GD"
           },
           "ACT": "Total_Plus_13%GD_25",
           "QLD": "Total_Plus_21%GD_50",
@@ -156,7 +156,7 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_Plus_27%GD",
+        "VIC": "Total_Plus_25%GD",
         "NSW": "Total_Plus_17%GD",
         "ACT": "Total_Plus_17%GD_25",
         "QLD": "",
@@ -164,14 +164,14 @@
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_Plus_27%GD",
+          "VIC": "Total_Plus_25%GD",
           "NSW": "Total_Plus_17%GD",
           "ACT": "Total_Plus_17%GD_25",
           "QLD": "",
           "SA": "Total_Plus_15%GD"
         },
         "PS": {
-          "VIC": "Total_Plus_27%GD",
+          "VIC": "Total_Plus_25%GD",
           "NSW": "Total_Plus_17%GD",
           "ACT": "Total_Plus_17%GD_25",
           "QLD": "",
@@ -246,19 +246,19 @@
     "plandisclaimer": {
       "heading": "Total Plan Plus",
       "VIC": {
-        "description": "* Offer only for existing VIC residential customers who sign up to a gas offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for existing VIC residential customers who have had an active, eligible energy account with us for 6 consecutive months. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "NSW": {
-        "description": "* Offer only for existing NSW residential customers who sign up to a gas offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for existing NSW residential customers who have had an active, eligible energy account with us for 6 consecutive months. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "ACT": {
-        "description": "* Offer only for existing ACT residential customers who sign up to a gas offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for existing ACT residential customers who have had an active, eligible energy account with us for 6 consecutive months. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "QLD": {
-        "description": ""
+        "description": "* Offer only for existing QLD residential customers who have had an active, eligible energy account with us for 6 consecutive months. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "SA": {
-        "description": "* Offer only for existing SA residential customers who sign up to a gas offer via invitation. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for existing SA residential customers who have had an active, eligible energy account with us for 6 consecutive months. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       }
     }
   }
