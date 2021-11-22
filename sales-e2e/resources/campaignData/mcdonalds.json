@@ -59,41 +59,41 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Alliance_17%GD",
+        "VIC": "Alliance_14%GD",
         "NSW": {
-          "Ausgrid": "Alliance_22%GD",
-          "Essential": "Alliance_22%GD",
-          "Endeavour": "Alliance_22%GD",
+          "Ausgrid": "Alliance_20%GD",
+          "Essential": "Alliance_18%GD",
+          "Endeavour": "Alliance_18%GD",
           "default": "Alliance_22%GD"
         },
         "ACT": "Alliance_12%GD_50",
-        "QLD": "Alliance_16%GD",
-        "SA": "Alliance_9%GD_50"
+        "QLD": "Alliance_14%GD",
+        "SA": "Alliance_8%GD_50"
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Alliance_17%GD",
+          "VIC": "Alliance_14%GD",
           "NSW": {
-            "Ausgrid": "Alliance_22%GD",
-            "Essential": "Alliance_22%GD",
-            "Endeavour": "Alliance_22%GD",
+            "Ausgrid": "Alliance_20%GD",
+            "Essential": "Alliance_18%GD",
+            "Endeavour": "Alliance_18%GD",
             "default": "Alliance_22%GD"
           },
           "ACT": "Alliance_12%GD_50",
-          "QLD": "Alliance_16%GD",
-          "SA": "Alliance_9%GD_50"
+          "QLD": "Alliance_14%GD",
+          "SA": "Alliance_8%GD_50"
         },
         "PS": {
-          "VIC": "Alliance_17%GD",
+          "VIC": "Alliance_14%GD",
           "NSW": {
-            "Ausgrid": "Alliance_22%GD",
-            "Essential": "Alliance_22%GD",
-            "Endeavour": "Alliance_22%GD",
+            "Ausgrid": "Alliance_20%GD",
+            "Essential": "Alliance_18%GD",
+            "Endeavour": "Alliance_18%GD",
             "default": "Alliance_22%GD"
           },
-          "ACT": "Alliance_12%GD",
-          "QLD": "Alliance_16%GD",
-          "SA": "Alliance_9%GD"
+          "ACT": "Alliance_12%GD_50",
+          "QLD": "Alliance_14%GD",
+          "SA": "Alliance_8%GD"
         }
       }
     }
@@ -150,19 +150,19 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Alliance_28%GD",
+        "VIC": "Alliance_26%GD",
         "NSW": "Alliance_18%GD",
         "ACT": "Alliance_17%GD_50",
         "SA": "Alliance_17%GD_50"
       },
       "existingCustomer": {
-        "VIC": "Alliance_28%GD",
+        "VIC": "Alliance_26%GD",
         "NSW": "Alliance_18%GD",
         "ACT": "Alliance_17%GD_50",
         "SA": "Alliance_17%GD_50"
       },
       "PS": {
-        "VIC": "Alliance_28%GD",
+        "VIC": "Alliance_26%GD",
         "NSW": "Alliance_18%GD",
         "ACT": "Alliance_17%GD",
         "SA": "Alliance_17%GD"

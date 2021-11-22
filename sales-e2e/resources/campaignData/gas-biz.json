@@ -6,12 +6,12 @@
       "preSelect": {
         "Credit50": {
           "VIC": {
-            "heading": "Get up to $100 credit",
-            "description": "Credits applied to first bill. $100 to gas."
+            "heading": "Get up to $200 credit",
+            "description": "Credit applied to first bill. $200 to gas."
           },
           "NSW": {
             "heading": "Get up to $200 credit",
-            "description": "Credits applied to first bill. $200 to gas."
+            "description": "Credit applied to first bill. $200 to gas."
           }
         },
         "carbonNeutral": {
@@ -20,36 +20,52 @@
         },
         "peaceOfMind": {
           "heading": "Peace of mind",
-          "description": "Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+          "description": "Your market energy charges won't increase for the fixed rate period. We'll let you know in advance before your market energy rates change."
         },
         "discountOffTotalEnergyBill": {
-          "heading": "Discount off total energy bill",
-          "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
+          "VIC": {
+            "heading": "24% discount off total gas bill"
+          },
+          "NSW": {
+            "heading": "25% discount off total gas bill"
+          },
+          "ACT": {
+            "heading": "% discount off total gas bill"
+          },
+          "SA": {
+            "heading": "% discount off total gas bill"
+          },
+          "description": "Guaranteed discount that applies to your market energy charges."
         }
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "Get up to $100 credit. Credits applied to first bill. $100 to gas.",
-          "NSW": "Get up to $200 credit. Credits applied to first bill. $200 to gas."
+          "VIC": "Get up to $200 credit. Credit applied to first bill. $200 to gas.",
+          "NSW": "Get up to $200 credit. Credit applied to first bill. $200 to gas."
         },
         "carbonNeutral": "",
-        "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
-        "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges."
+        "peaceOfMind": "Peace of mind. Your market energy charges won't increase for the fixed rate period. We'll let you know in advance before your market energy rates change.",
+        "discountOffTotalEnergyBill": {
+          "VIC": "24% discount off total gas bill. Guaranteed discount that applies to your market energy charges.",
+          "NSW": "25% discount off total gas bill. Guaranteed discount that applies to your market energy charges.",
+          "ACT": "% discount off total gas bill. Guaranteed discount that applies to your market energy charges.",
+          "SA": "% discount off total gas bill. Guaranteed discount that applies to your market energy charges."
+        }
       }
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_23%GD_100",
-        "NSW": "Total_19%GD_200"
+        "VIC": "Total_24%GD_200",
+        "NSW": "Total_25%GD_200"
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_23%GD_100",
-          "NSW": "Total_19%GD_200"
+          "VIC": "Total_24%GD_200",
+          "NSW": "Total_25%GD_200"
         },
         "PS": {
-          "VIC": "Total_23%GD",
-          "NSW": "Total_19%GD"
+          "VIC": "Total_24%GD",
+          "NSW": "Total_25%GD"
         }
       }
     }
@@ -80,10 +96,10 @@
     "solarBuyBack": {
       "heading": "Solar feed-in tariffs",
       "VIC": {
-        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. For more information about the Victorian FiT scheme see www.energy.vic.gov.au/renewable-energy/victorian-feed-in-tariff."
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
       },
       "NonVIC": {
-        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
       }
     },
     "noStandardConnectionFee": {
@@ -93,20 +109,20 @@
     "Credit50": {
       "VIC": {
         "heading": "Account Credits",
-        "description": "+ Offer available to new VIC business accounts only who sign up to Total Plan Business electricity offer. Credits applied to first bill - $100 to new electricity account. Credits are not transferable or redeemable for cash. We may change or end this offer at any time."
+        "description": "+ Offer available to new VIC business accounts only who sign up to Total Plan Business gas offer. Credit applied to first bill, $200 for new gas account. Credit not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "NSW": {
         "heading": "Account Credits",
-        "description": "+ Offer available to new NSW business accounts only who sign up to Total Plan Business electricity offer. Credits applied to first bill - $200 to new electricity account. Credits are not transferable or redeemable for cash. We may change or end this offer at any time."
+        "description": "+ Offer available to new NSW business accounts only who sign up to Total Plan Business gas offer. Credit applied to first bill, $200 for new gas account. Credit not transferable or redeemable for cash. We may change or end this offer at any time."
       }
     },
     "plandisclaimer": {
       "heading": "Total Plan - Business",
       "VIC": {
-        "description": "* Offer only for eligible VIC business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for eligible VIC business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "NSW": {
-        "description": "* Offer only for eligible NSW business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "description": "* Offer only for eligible NSW business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       }
     }
   }

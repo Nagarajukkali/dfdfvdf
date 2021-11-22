@@ -11,7 +11,7 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for nsw-seniors campaign
-  @DR21.10.2.campaign
+  @DR21.11.4.campaign
   Scenario Outline: Validate complete data for nsw-seniors campaign
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "2516" and clicks on show me plan link
@@ -96,4 +96,4 @@ Feature:E2E scenario for nsw-seniors campaign
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign     |folderName               |sourceSystem|journey   |state  |customerType |newOrExisting  |AAH |DD  |
-      |New           |BOTH    |22         |18         |nsw-seniors  |E2E_Campaign_NSW_seniors |Quote Tool  |Move Home |NSW    |RES          |New            |No  |No  |
+      |New           |BOTH    |18         |18         |nsw-seniors  |E2E_Campaign_NSW_seniors |Quote Tool  |Move Home |NSW    |RES          |New            |No  |No  |

@@ -222,26 +222,26 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
       | customerStatus | fuelType | campaign        | folderName                                  | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | nofrills-finder | E2E_Campaign_nofrills-finder_QLD_New_Moving | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.9.5.campaign-R
+  @DR21.11.4.campaign
   Scenario Outline: Validate complete data for nofrills-finder campaign for ACT for new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2911" for postcode and proceed to view the plans
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | Y                | Y                     | Y                   | N                                  | N                               | <state> |
+      | ELE      | N                | Y                     | Y                   | N                                  | N                               | <state> |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | Y                | Y                     | Y                   | N                                  | N                               | <state> |
+      | GAS      | N                | Y                     | Y                   | N                                  | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName  | state   |
       | Y                        | Y         | Y            | No Frills | <state> |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-      | ELE      | Y                | Y                     | Y                   | N                                  | <state> |
+      | ELE      | N                | Y                     | Y                   | N                                  | <state> |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-      | GAS      | Y                | Y                     | Y                   | N                                  | <state> |
+      | GAS      | N                | Y                     | Y                   | N                                  | <state> |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                 | movingType | propertyType |
@@ -259,10 +259,10 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | Y                | N                     | Y                   | N                                  | N                               | <state> |
+      | ELE      | N                | N                     | Y                   | N                                  | N                               | <state> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | Y                | N                     | Y                   | N                                  | N                               | <state> |
+      | GAS      | N                | N                     | Y                   | N                                  | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName  | state   |
       | Y                        | Y         | Y            | No Frills | <state> |

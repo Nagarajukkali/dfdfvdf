@@ -13,7 +13,7 @@
 
 Feature:E2E scenario for gas-tpp campaign
 
-  @DR21.10.2.campaign
+  @DR21.11.4.campaign
 #  Scenario Outline: Validate complete data for gas-tpp campaign for NSW
 #    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
 #    When user provides "2000" and clicks on show me plan link
@@ -93,11 +93,11 @@ Feature:E2E scenario for gas-tpp campaign
       |GAS     |VERBALLYACCEPTED|RESIDENTIAL |ENE      |SWSR1-GN |5240524910|                             |                             |N                      |                   |EMAIL        |<customerStatus>  |<campaign>|
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign    |folderName              |state|sourceSystem  |journey     |AAH  |DD  |customerType |newOrExisting  |
-      |New           |BOTH   |21      |17         |gas-tpp    |E2E_Campaign_gas-tpp_NSW_new_moving    |NSW  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
+      |New           |BOTH   |19      |17         |gas-tpp    |E2E_Campaign_gas-tpp_NSW_new_moving    |NSW  |Quote Tool    |Move Home         |No   |No  |RES          |New            |
 
 
 
-  @DR21.10.2.campaign
+  @DR21.11.4.campaign
   Scenario Outline: Validate complete data for gas-tpp campaign for ACT - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2600" and clicks on show me plan link
@@ -106,7 +106,7 @@ Feature:E2E scenario for gas-tpp campaign
       | campaign | folderName               |
       | gas-tpp  | E2E_Campaign_gas-tpp_ACT |
 
-  @DR21.10.2.campaign
+  @DR21.11.4.campaign
   Scenario Outline: Validate complete data for gas-tpp campaign for VIC - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
@@ -180,9 +180,9 @@ Feature:E2E scenario for gas-tpp campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | SWSR1-GV | 5310425534 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                          | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 16          | 27          | gas-tpp  | E2E_Campaign_gas-tpp_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | BOTH     | 13          | 25          | gas-tpp  | E2E_Campaign_gas-tpp_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.10.2.campaign
+  @DR21.11.4.campaign
   Scenario Outline: Validate complete data for gas-tpp campaign for SA - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" and clicks on show me plan link
@@ -190,3 +190,12 @@ Feature:E2E scenario for gas-tpp campaign
     Examples:
       | campaign | folderName              |
       | gas-tpp  | E2E_Campaign_gas-tpp_SA |
+
+  @DR21.11.4.campaign
+  Scenario Outline: Validate complete data for gas-tpp campaign for QLD
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "4500" and clicks on show me plan link
+    Then plans page load according to the type of 'CAMPAIGN_NOT_SERVICED'
+    Examples:
+      | campaign | folderName              |
+      | gas-tpp | E2E_Campaign_gas-tpp_QLD |

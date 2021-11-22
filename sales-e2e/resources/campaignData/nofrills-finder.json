@@ -66,7 +66,7 @@
           "Endeavour": "NOFRILLS",
           "default": "NOFRILLS"
         },
-        "ACT": "NOFRILLS_25",
+        "ACT": "NOFRILLS",
         "QLD": "NOFRILLS",
         "SA": "NOFRILLS"
       },
@@ -79,7 +79,7 @@
             "Endeavour": "NOFRILLS_50",
             "default": "NOFRILLS_50"
           },
-          "ACT": "NOFRILLS_25",
+          "ACT": "NOFRILLS",
           "QLD": "NOFRILLS",
           "SA": "NOFRILLS"
         },
@@ -152,14 +152,14 @@
       "newCustomer": {
         "VIC": "NOFRILLS",
         "NSW": "NOFRILLS",
-        "ACT": "NOFRILLS_25",
+        "ACT": "NOFRILLS",
         "SA": "NOFRILLS"
       },
       "existingCustomer": {
         "ENE": {
           "VIC": "NOFRILLS",
           "NSW": "NOFRILLS_50",
-          "ACT": "NOFRILLS_25",
+          "ACT": "NOFRILLS",
           "SA": "NOFRILLLS"
         },
         "PS": {
