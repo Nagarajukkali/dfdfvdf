@@ -13,7 +13,7 @@ export class moveHouseMethod {
   }
 
   public static async selectMovingDate(t) {
-    await testFunction.selectDateFromCalendar(t, moveHouse.elements.tableCalendar);
+    await testFunction.selectDateFromCalendarMoveHome(t, moveHouse.elements.tableCalendar);
     await testFunction.takeScreenshot(t, "move_house");//disabled UI Validation
     await testFunction.click(t, moveHouse.elements.btnMoving);
   }
