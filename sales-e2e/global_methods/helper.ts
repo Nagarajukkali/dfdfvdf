@@ -1,4 +1,4 @@
-import {ClientFunction, RequestLogger, Selector} from 'testcafe';
+import {ClientFunction, RequestLogger, Selector, t} from 'testcafe';
 import {AustralianState, CustomerType, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 import {fetchBrowser, getDateTime, screenshotFolder, width} from '../tests/step_definitions/hooks';
 import {FileUtils} from '../libs/FileUtils';
@@ -375,6 +375,33 @@ export class testFunction {
         const dateBtn = cols.child(0);
         const backgroundColor = await dateBtn.getStyleProperty("background-color").then(result => result);
         if (backgroundColor.includes("rgba(110, 178, 20, 0.45)")) {
+          dateValue=await testFunction.getElementText(t,cols);
+          await testFunction.click(t, cols);
+          flag = true;
+          break;
+        }
+      }
+      if (flag) {
+        break;
+      }
+    }
+    return dateValue;
+  }
+
+  public static async selectDateFromCalendarMoveHome(t, element) {
+    const table = element;
+    const tableElement = await element();
+    const rowCount = tableElement.childElementCount;
+    let dateValue;
+    let flag = false;
+    for (let i = 0; i < rowCount; i++) {
+      const rows = table.child(i);
+      const row = await rows();
+      const colCount = row.childElementCount;
+      for (let j = 1; j < colCount; j++) {
+        const cols = rows.child(j);
+        const dateBtn = cols.child(0);
+        if (!(await dateBtn.hasAttribute("disabled"))) {
           dateValue=await testFunction.getElementText(t,cols);
           await testFunction.click(t, cols);
           flag = true;

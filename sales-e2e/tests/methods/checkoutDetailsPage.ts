@@ -537,10 +537,10 @@ export class checkoutDetailsMethod {
       if (getTestCafeRC.browsers[0].includes('emulation')) {
         await testFunction.assertText(t, element, "Switch");
       } else {
-        await testFunction.assertText(t, element, "Switch to this plan");
+        await testFunction.assertText(t, element, "Select plan");
       }
       await testFunction.click(t, element);
-      await testFunction.assertText(t, element, "Selected");
+      //await testFunction.assertText(t, element, "Selected");
     } else {
       await testFunction.isElementVisible(t, eaCheckoutDetailsPage.elements.elePlansExpand);
       await testFunction.click(t, element);
@@ -638,10 +638,10 @@ export class checkoutDetailsMethod {
       if (getTestCafeRC.browsers[0].includes('emulation')) {
         await testFunction.assertText(t, element, "Switch");
       } else {
-        await testFunction.assertText(t, element, "Switch to this plan");
+        await testFunction.assertText(t, element, "Select plan");
       }
       await testFunction.click(t, element);
-      await testFunction.assertText(t, element, "Selected");
+      //await testFunction.assertText(t, element, "Selected");
     } else {
       await testFunction.isElementVisible(t, eaCheckoutDetailsPage.elements.gasPlansExpand);
       await testFunction.click(t, element);
