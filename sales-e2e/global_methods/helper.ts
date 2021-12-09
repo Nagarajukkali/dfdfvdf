@@ -389,6 +389,7 @@ export class testFunction {
   }
 
   public static async selectDateFromCalendarMoveHome(t, element) {
+    await testFunction.waitForElementToBeAppeared(t, element)
     const table = element;
     const tableElement = await element();
     const rowCount = tableElement.childElementCount;
@@ -401,11 +402,15 @@ export class testFunction {
       for (let j = 1; j < colCount; j++) {
         const cols = rows.child(j);
         const dateBtn = cols.child(0);
-        if (!(await dateBtn.hasAttribute("disabled"))) {
-          dateValue=await testFunction.getElementText(t,cols);
-          await testFunction.click(t, cols);
-          flag = true;
-          break;
+        const dateCount = await dateBtn.childElementCount.then(result => result);
+        if(dateCount===1) {
+          const date=dateBtn.child(0);
+          if (!(await date.hasAttribute("disabled"))) {
+            dateValue = await testFunction.getElementText(t, cols);
+            await testFunction.click(t, cols);
+            flag = true;
+            break;
+          }
         }
       }
       if (flag) {
