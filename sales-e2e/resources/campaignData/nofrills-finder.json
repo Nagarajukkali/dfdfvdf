@@ -30,6 +30,10 @@
           "heading": "Carbon neutral option",
           "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
         },
+        "moveHomeCredit": {
+          "heading": "$25 Move Home Credit",
+          "description": "Get a $25 credit on each energy account when you move home online.+"
+        },
         "peaceOfMind": {
           "heading": "Peace of mind",
           "description": "Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
@@ -52,6 +56,7 @@
           "SA" : "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
+        "moveHomeCredit": "$25 Move Home Credit. Get a $25 credit on each energy account when you move home online.+",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
         "noStandardConnectionFee": ""
@@ -59,29 +64,43 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "NOFRILLS",
-        "NSW": {
-          "Ausgrid": "NOFRILLS",
-          "Essential": "NOFRILLS",
-          "Endeavour": "NOFRILLS",
-          "default": "NOFRILLS"
+        "ENE": {
+          "VIC": "NOFRILLS_25",
+          "NSW": {
+            "Ausgrid": "NOFRILLS_25",
+            "Essential": "NOFRILLS_25",
+            "Endeavour": "NOFRILLS_25",
+            "default": "NOFRILLS_25"
+          },
+          "ACT": "NOFRILLS_25",
+          "QLD": "NOFRILLS_25",
+          "SA": "NOFRILLS_25"
         },
-        "ACT": "NOFRILLS",
-        "QLD": "NOFRILLS",
-        "SA": "NOFRILLS"
-      },
-      "existingCustomer": {
-        "ENE":{
+        "COR": {
           "VIC": "NOFRILLS",
           "NSW": {
-            "Ausgrid": "NOFRILLS_50",
-            "Essential": "NOFRILLS_50",
-            "Endeavour": "NOFRILLS_50",
-            "default": "NOFRILLS_50"
+            "Ausgrid": "NOFRILLS",
+            "Essential": "NOFRILLS",
+            "Endeavour": "NOFRILLS",
+            "default": "NOFRILLS"
           },
           "ACT": "NOFRILLS",
           "QLD": "NOFRILLS",
           "SA": "NOFRILLS"
+        }
+      },
+      "existingCustomer": {
+        "ENE": {
+          "VIC": "NOFRILLS_25",
+          "NSW": {
+            "Ausgrid": "NOFRILLS_25",
+            "Essential": "NOFRILLS_25",
+            "Endeavour": "NOFRILLS_25",
+            "default": "NOFRILLS_25"
+          },
+          "ACT": "NOFRILLS_25",
+          "QLD": "NOFRILLS_25",
+          "SA": "NOFRILLS_25"
         },
         "PS": {
           "VIC": "NOFRILLS",
@@ -127,6 +146,10 @@
           "heading": "Carbon neutral option",
           "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
         },
+        "moveHomeCredit": {
+          "heading": "$25 Move Home Credit",
+          "description": "Get a $25 credit on each energy account when you move home online.+"
+        },
         "peaceOfMind": {
           "heading": "Peace of mind",
           "description": "Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
@@ -144,23 +167,32 @@
           "SA" : "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
+        "moveHomeCredit": "$25 Move Home Credit. Get a $25 credit on each energy account when you move home online.+",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": ""
       }
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "NOFRILLS",
-        "NSW": "NOFRILLS",
-        "ACT": "NOFRILLS",
-        "SA": "NOFRILLS"
+        "ENE": {
+          "VIC": "NOFRILLS_25",
+          "NSW": "NOFRILLS_25",
+          "ACT": "NOFRILLS_25",
+          "SA": "NOFRILLS_25"
+        },
+        "COR": {
+          "VIC": "NOFRILLS",
+          "NSW": "NOFRILLS",
+          "ACT": "NOFRILLS",
+          "SA": "NOFRILLS"
+        }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "NOFRILLS",
-          "NSW": "NOFRILLS_50",
-          "ACT": "NOFRILLS",
-          "SA": "NOFRILLLS"
+          "VIC": "NOFRILLS_25",
+          "NSW": "NOFRILLS_25",
+          "ACT": "NOFRILLS_25",
+          "SA": "NOFRILLS_25"
         },
         "PS": {
           "VIC": "NOFRILLS",
@@ -232,6 +264,24 @@
         "SA": {
           "heading": "$25 Sign Up Credit",
           "description": "+ Offer available to SA residential customers only who sign up via energyaustralia.com.au to an electricity or gas market offer. Limit of one $25 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
+        }
+      },
+      "moveHomeCredit": {
+        "heading": "$25 Move Home Credit",
+        "VIC": {
+          "description": "+ Offer available to eligible VIC residential customers who move home via energyaustralia.com.au to an electricity or gas offer. Limit of one $25 credit per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        },
+        "NSW": {
+          "description": "+ Offer available to eligible NSW residential customers who move home via energyaustralia.com.au to an electricity or gas offer. Limit of one $25 credit per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        },
+        "ACT": {
+          "description": "+ Offer available to eligible ACT residential customers who move home via energyaustralia.com.au to an electricity or gas offer. Limit of one $25 credit per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        },
+        "QLD": {
+          "description": "+ Offer available to eligible QLD residential customers who move home via energyaustralia.com.au to an electricity or gas offer. Limit of one $25 credit per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        },
+        "SA": {
+          "description": "+ Offer available to eligible SA residential customers who move home via energyaustralia.com.au to an electricity or gas offer. Limit of one $25 credit per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
         }
       },
       "noFrills": {

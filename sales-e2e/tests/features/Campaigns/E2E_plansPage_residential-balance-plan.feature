@@ -1,4 +1,4 @@
-@DR21.10.2.campaign
+
 Feature:E2E scenario for residential-balance-plan
 
   Scenario Outline: Validate complete data for residential-balance-plan for NSW-Ausgrid for new moving customer
@@ -8,18 +8,18 @@ Feature:E2E scenario for residential-balance-plan
     And user validates "ELE" discount to be "<eleDiscount>" percent for "Balance Plan" plan
     And user validates "GAS" discount to be "<gasDiscount>" percent for "Balance Plan" plan
     And user validates the data on 'Residential' plans page for "Balance Plan" plan
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  | state |
-      | BOTH      |Y                     | Y                     |Y                                      | <state>   |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  | state |Feature_moveHomeCredit|
+      | BOTH      |Y                     | Y                     |Y                                      | <state>   |    Y                 |
     And user validates disclaimer on plans page for "Balance Plan" plan
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName                 |state  |signUpCredit|
-      |Y                        |Y          |Y              |Business Balance Plan    |<state>|N           |
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName                 |state  |signUpCredit|moveHomeCredit|
+      |Y                        |Y          |Y              |Business Balance Plan    |<state>|N           |    Y         |
     When user selects '<planName>'
     And user validates the data on carts page for "Balance Plan" plan
-       |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |
-       |ELE      |Y                       |Y                    |Y                                       |<state>|
+       |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_moveHomeCredit|
+       |ELE      |Y                       |Y                    |Y                                       |<state>|    Y                 |
     And user validates the data on carts page for "Balance Plan" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |
-      |GAS      |Y                       |Y                    |Y                                       |<state>|
+      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_moveHomeCredit|
+      |GAS      |Y                       |Y                    |Y                                       |<state>|    Y                 |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -43,11 +43,11 @@ Feature:E2E scenario for residential-balance-plan
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |
-      |ELE      |N                       |Y                    |Y                                       |<state>|
+      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_moveHomeCredit|
+      |ELE      |N                       |Y                    |Y                                       |<state>|    Y                 |
     And user validates plan details on review page for "<campaign>" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |
-      |GAS      |N                       |Y                    |Y                                       |<state>|
+      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_moveHomeCredit|
+      |GAS      |N                       |Y                    |Y                                       |<state>|    Y                 |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -77,18 +77,18 @@ Feature:E2E scenario for residential-balance-plan
     And user validates "ELE" discount to be "<eleDiscount>" percent for "Balance Plan" plan
     And user validates "GAS" discount to be "<gasDiscount>" percent for "Balance Plan" plan
     And user validates the data on 'Residential' plans page for "Balance Plan" plan
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  | state |
-      | BOTH      |Y                     | Y                     |Y                                      | <state>   |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  | state |Feature_moveHomeCredit|
+      | BOTH      |Y                     | Y                     |Y                                      | <state>   |    Y                 |
     And user validates disclaimer on plans page for "Balance Plan" plan
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName                 |state  |signUpCredit|
-      |Y                        |Y          |Y              |Business Balance Plan    |<state>|N           |
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName                 |state  |signUpCredit|moveHomeCredit|
+      |Y                        |Y          |Y              |Business Balance Plan    |<state>|N           |    Y         |
     When user selects '<planName>'
     And user validates the data on carts page for "Balance Plan" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |
-      |ELE      |Y                       |Y                    |Y                                       |<state>|
+      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_moveHomeCredit|
+      |ELE      |Y                       |Y                    |Y                                       |<state>|    Y                 |
     And user validates the data on carts page for "Balance Plan" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |
-      |GAS      |Y                       |Y                    |Y                                       |<state>|
+      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_moveHomeCredit|
+      |GAS      |Y                       |Y                    |Y                                       |<state>|    Y                 |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -112,11 +112,11 @@ Feature:E2E scenario for residential-balance-plan
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |
-      |ELE      |N                       |Y                    |Y                                       |<state>|
+      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_moveHomeCredit|
+      |ELE      |N                       |Y                    |Y                                       |<state>|    Y                 |
     And user validates plan details on review page for "<campaign>" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |
-      |GAS      |N                       |Y                    |Y                                       |<state>|
+      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_moveHomeCredit|
+      |GAS      |N                       |Y                    |Y                                       |<state>|    Y                 |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -146,18 +146,18 @@ Feature:E2E scenario for residential-balance-plan
     And user validates "ELE" discount to be "<eleDiscount>" percent for "Balance Plan" plan
     And user validates "GAS" discount to be "<gasDiscount>" percent for "Balance Plan" plan
     And user validates the data on 'Residential' plans page for "Balance Plan" plan
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  | state |
-      | BOTH      |Y                     | Y                     |Y                                      | <state>   |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  | state |Feature_moveHomeCredit|
+      | BOTH      |Y                     | Y                     |Y                                      | <state>   |    Y                 |
     And user validates disclaimer on plans page for "Balance Plan" plan
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName                 |state  |signUpCredit|
-      |Y                        |Y          |Y              |Business Balance Plan    |<state>|N           |
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName                 |state  |signUpCredit|moveHomeCredit|
+      |Y                        |Y          |Y              |Business Balance Plan    |<state>|N           |    Y         |
     When user selects '<planName>'
     And user validates the data on carts page for "Balance Plan" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |
-      |ELE      |Y                       |Y                    |Y                                       |<state>|
+      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_moveHomeCredit|
+      |ELE      |Y                       |Y                    |Y                                       |<state>|    Y                 |
     And user validates the data on carts page for "Balance Plan" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |
-      |GAS      |Y                       |Y                    |Y                                       |<state>|
+      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_moveHomeCredit|
+      |GAS      |Y                       |Y                    |Y                                       |<state>|    Y                 |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -181,11 +181,11 @@ Feature:E2E scenario for residential-balance-plan
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |
-      |ELE      |N                       |Y                    |Y                                       |<state>|
+      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_moveHomeCredit|
+      |ELE      |N                       |Y                    |Y                                       |<state>|    Y                 |
     And user validates plan details on review page for "<campaign>" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |
-      |GAS      |N                       |Y                    |Y                                       |<state>|
+      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_moveHomeCredit|
+      |GAS      |N                       |Y                    |Y                                       |<state>|    Y                 |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -215,18 +215,18 @@ Feature:E2E scenario for residential-balance-plan
     And user validates "ELE" discount to be "<eleDiscount>" percent for "Balance Plan" plan
     And user validates "GAS" discount to be "<gasDiscount>" percent for "Balance Plan" plan
     And user validates the data on 'Residential' plans page for "Balance Plan" plan
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  | state |
-      | BOTH      |Y                     | Y                     |Y                                      | <state>   |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  | state |Feature_moveHomeCredit|
+      | BOTH      |Y                     | Y                     |Y                                      | <state>   |    Y                 |
     And user validates disclaimer on plans page for "Balance Plan" plan
-      |referencePriceComparison |goNeutral  |solarBuyBack   |planName                 |state  |signUpCredit|
-      |Y                        |Y          |Y              |Business Balance Plan    |<state>|N           |
+      |referencePriceComparison |goNeutral  |solarBuyBack   |planName                 |state  |signUpCredit|moveHomeCredit|
+      |Y                        |Y          |Y              |Business Balance Plan    |<state>|N           |    Y         |
     When user selects '<planName>'
     And user validates the data on carts page for "Balance Plan" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |
-      |ELE      |Y                       |Y                    |Y                                       |<state>|
+      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_moveHomeCredit|
+      |ELE      |Y                       |Y                    |Y                                       |<state>|    Y                 |
     And user validates the data on carts page for "Balance Plan" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |
-      |GAS      |Y                       |Y                    |Y                                       |<state>|
+      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_moveHomeCredit|
+      |GAS      |Y                       |Y                    |Y                                       |<state>|    Y                 |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -250,11 +250,11 @@ Feature:E2E scenario for residential-balance-plan
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |
-      |ELE      |N                       |Y                    |Y                                       |<state>|
+      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_moveHomeCredit|
+      |ELE      |N                       |Y                    |Y                                       |<state>|    Y                 |
     And user validates plan details on review page for "<campaign>" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |
-      |GAS      |N                       |Y                    |Y                                       |<state>|
+      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_moveHomeCredit|
+      |GAS      |N                       |Y                    |Y                                       |<state>|    Y                 |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page

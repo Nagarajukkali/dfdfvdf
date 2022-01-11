@@ -55,8 +55,14 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_24%GD_200",
-        "NSW": "Total_25%GD_200"
+        "ENE": {
+          "VIC": "Total_24%GD_200",
+          "NSW": "Total_25%GD_200"
+        },
+        "COR": {
+          "VIC": "Total_24%GD_200",
+          "NSW": "Total_25%GD_200"
+        }
       },
       "existingCustomer": {
         "ENE": {

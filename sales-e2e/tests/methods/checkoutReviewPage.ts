@@ -507,6 +507,9 @@ export class checkoutReviewMethod {
       if (dataTable[0].Feature_carbonNeutral === "Y") {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureCN, json.electricity.feature.postSelect.carbonNeutral);
       }
+      if (dataTable[0].Feature_moveHomeCredit === "Y") {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureMoveHome, json.electricity.feature.postSelect.moveHomeCredit);
+      }
       if (dataTable[0].Feature_peaceOfMind === "Y") {
         if (t.testRun.test.name.includes('employee')){
           await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeaturePeaceOfMindEE, json.electricity.feature.postSelect.peaceOfMind);
@@ -598,6 +601,9 @@ export class checkoutReviewMethod {
       }
       if (dataTable[0].Feature_carbonNeutral === "Y") {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasFeatureCN, json.gas.feature.postSelect.carbonNeutral);
+      }
+      if (dataTable[0].Feature_moveHomeCredit === "Y") {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasFeatureMoveHome, json.gas.feature.postSelect.moveHomeCredit);
       }
       if (dataTable[0].Feature_peaceOfMind === "Y") {
         if (t.testRun.test.name.includes('employee')){

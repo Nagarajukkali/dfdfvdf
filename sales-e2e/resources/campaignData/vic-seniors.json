@@ -39,7 +39,12 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Alliance_14%GD"
+        "ENE": {
+          "VIC": "Alliance_14%GD"
+        },
+        "COR": {
+          "VIC": "Alliance_14%GD"
+        }
       },
       "existingCustomer": {
         "ENE": {
@@ -89,7 +94,12 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Alliance_26%GD"
+        "ENE": {
+          "VIC": "Alliance_26%GD"
+        },
+        "COR": {
+          "VIC": "Alliance_26%GD"
+        }
       },
       "existingCustomer": {
         "ENE": {

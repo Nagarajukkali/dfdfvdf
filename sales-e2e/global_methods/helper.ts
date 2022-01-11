@@ -402,15 +402,11 @@ export class testFunction {
       for (let j = 1; j < colCount; j++) {
         const cols = rows.child(j);
         const dateBtn = cols.child(0);
-        const dateCount = await dateBtn.childElementCount.then(result => result);
-        if(dateCount===1) {
-          const date=dateBtn.child(0);
-          if (!(await date.hasAttribute("disabled"))) {
-            dateValue = await testFunction.getElementText(t, cols);
-            await testFunction.click(t, cols);
-            flag = true;
-            break;
-          }
+        if (!(await dateBtn.hasAttribute("disabled"))) {
+          dateValue=await testFunction.getElementText(t,cols);
+          await testFunction.click(t, cols);
+          flag = true;
+          break;
         }
       }
       if (flag) {
