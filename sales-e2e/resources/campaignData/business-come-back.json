@@ -91,16 +91,30 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_6%GD_200",
-        "NSW": {
-          "Ausgrid": "Total_20%GD_200",
-          "Essential": "Total_19%GD_200",
-          "Endeavour": "Total_14%GD_200",
-          "default": ""
+        "ENE": {
+          "VIC": "Total_6%GD_200",
+          "NSW": {
+            "Ausgrid": "Total_20%GD_200",
+            "Essential": "Total_19%GD_200",
+            "Endeavour": "Total_14%GD_200",
+            "default": ""
+          },
+          "ACT": "",
+          "QLD": "Total_20%GD",
+          "SA": ""
         },
-        "ACT": "",
-        "QLD": "Total_20%GD",
-        "SA": ""
+        "COR": {
+          "VIC": "Total_6%GD_200",
+          "NSW": {
+            "Ausgrid": "Total_20%GD_200",
+            "Essential": "Total_19%GD_200",
+            "Endeavour": "Total_14%GD_200",
+            "default": ""
+          },
+          "ACT": "",
+          "QLD": "Total_20%GD",
+          "SA": ""
+        }
       },
       "existingCustomer": {
         "ENE": {
@@ -203,10 +217,18 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_24%GD_200",
-        "NSW": "Total_25%GD_200",
-        "ACT": "",
-        "SA": ""
+        "ENE": {
+          "VIC": "Total_24%GD_200",
+          "NSW": "Total_25%GD_200",
+          "ACT": "",
+          "SA": ""
+        },
+        "COR": {
+          "VIC": "Total_24%GD_200",
+          "NSW": "Total_25%GD_200",
+          "ACT": "",
+          "SA": ""
+        }
       },
       "existingCustomer": {
         "ENE": {

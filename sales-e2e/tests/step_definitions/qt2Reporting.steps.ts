@@ -184,7 +184,8 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
       let actualGasSourceCode = jsonObj.saleDetail.saleDetailHeader.sourceCode;
       let expectedGasSourceCode = checkoutDetailsMethod.map.get('gas source code_' + checkoutDetailsMethod.getScenarioId(t));
       if (isCampaignTest || data[0].campaign === "balance-canstarblue") {
-        await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualGasSourceCode, data[0].campaign, expectedGasSourceCode, expectedFuelType);
+        await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualGasSourceCode, data[0].campaign, expectedOfferType, expectedFuelType);
+        // await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualGasSourceCode, data[0].campaign, expectedGasSourceCode, expectedFuelType);
       } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$25Credit &&(!(data[0].campaign === "Balance Plan"))) {
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_25');
       }else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit &&(!(data[0].campaign === "Balance Plan"))) {

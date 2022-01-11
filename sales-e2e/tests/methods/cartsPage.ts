@@ -50,6 +50,9 @@ export class cartsMethod {
         await testFunction.assertText(t, cartsPage.elements.eleFeatureCN, json.electricity.feature.postSelect.carbonNeutral);
         }
       }
+      if (dataTable[0].Feature_moveHomeCredit === "Y") {
+        await testFunction.assertText(t, cartsPage.elements.eleFeatureMoveHome, json.electricity.feature.postSelect.moveHomeCredit);
+      }
       if (dataTable[0].Feature_peaceOfMind === "Y") {
         if (t.testRun.test.name.includes('employee')){
           await testFunction.assertText(t, cartsPage.elements.eleFeaturePeaceOfMindEE, json.electricity.feature.postSelect.peaceOfMind);
@@ -144,6 +147,9 @@ export class cartsMethod {
         else {
         await testFunction.assertText(t, cartsPage.elements.gasFeatureCN, json.gas.feature.postSelect.carbonNeutral);
         }
+      }
+      if (dataTable[0].Feature_moveHomeCredit === "Y") {
+        await testFunction.assertText(t, cartsPage.elements.gasFeatureMoveHome, json.gas.feature.postSelect.moveHomeCredit);
       }
       if (dataTable[0].Feature_peaceOfMind === "Y") {
         if (t.testRun.test.name.includes('employee')){

@@ -49,7 +49,12 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_5%GD_100"
+        "ENE": {
+          "VIC": "Total_5%GD_100"
+        },
+        "COR": {
+          "VIC": "Total_5%GD_100"
+        }
       },
       "existingCustomer": {
         "ENE":{
@@ -109,7 +114,12 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Total_23%GD_100"
+        "ENE": {
+          "VIC": "Total_23%GD_100"
+        },
+        "COR": {
+          "VIC": "Total_23%GD_100"
+        }
       },
       "existingCustomer": {
         "ENE":{

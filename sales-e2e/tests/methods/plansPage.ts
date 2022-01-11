@@ -518,6 +518,10 @@ export class plansMethod {
         }
 
       }
+      if (dataTable[0].Feature_moveHomeCredit === "Y") {
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureMoveHomeTitle, data.electricity.feature.preSelect.moveHomeCredit.heading);
+          await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureMoveHomeDescription, data.electricity.feature.preSelect.moveHomeCredit.description);
+      }
       if (dataTable[0].Feature_peaceOfMind === "Y") {
         if (t.testRun.test.name.includes('employee')){
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeaturePeaceOfMindEETitle, data.electricity.feature.preSelect.peaceOfMind.heading);
@@ -663,6 +667,10 @@ export class plansMethod {
           await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNDescription, data.gas.feature.preSelect.carbonNeutral.description);
         }
       }
+      if (dataTable[0].Feature_moveHomeCredit === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureMoveHomeTitle, data.gas.feature.preSelect.moveHomeCredit.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureMoveHomeDescription, data.gas.feature.preSelect.moveHomeCredit.description);
+      }
       if (dataTable[0].Feature_peaceOfMind === "Y") {
         if (t.testRun.test.name.includes('employee')) {
           await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindEETitle, data.gas.feature.preSelect.peaceOfMind.heading);
@@ -802,6 +810,21 @@ export class plansMethod {
         await testFunction.assertText(t, disclaimer, data.disclaimers.goNeutral.NonQLD.description);
       }
       console.log("Go neutral disclaimer validated");
+    }
+    if (dataTable[0].moveHomeCredit === 'Y') {
+      await testFunction.assertText(t, disclaimer, data.disclaimers.moveHomeCredit.heading);
+      if (dataTable[0].state === 'QLD') {
+        await testFunction.assertText(t, disclaimer, data.disclaimers.moveHomeCredit.QLD.description);
+      } else if (dataTable[0].state === 'VIC'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.moveHomeCredit.VIC.description);
+      }else if (dataTable[0].state === 'NSW'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.moveHomeCredit.NSW.description);
+      }else if (dataTable[0].state === 'SA'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.moveHomeCredit.SA.description);
+      }else if (dataTable[0].state === 'ACT'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.moveHomeCredit.ACT.description);
+      }
+      console.log("Move Home Credit disclaimer validated");
     }
     if (dataTable[0].solarBuyBack === 'Y') {
       await testFunction.assertText(t, disclaimer, data.disclaimers.solarBuyBack.heading);
@@ -2414,6 +2437,9 @@ export class campaignMethod {
 
   public static async addPlanOnCampaign(t) {
     await testFunction.click(t, EaHomePage.elements.selectCampaignPlans);
+  }
+  public static async selectPlanOnCampaign(t) {
+    await testFunction.click(t, EaHomePage.elements.selectCampaignPlan);
   }
 
   public static async isNswSeniors() {

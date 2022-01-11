@@ -47,9 +47,9 @@
         "Credit50": {
           "VIC": "",
           "NSW": "",
-          "ACT": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
+          "ACT": "$50 Sign Up Credit. Get a $50 credit per energy account on your first bill when you sign up.+",
           "QLD": "",
-          "SA": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
+          "SA": "$50 Sign Up Credit. Get a $50 credit per energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Energy with a bit of good. Opt in for 100% carbon neutral at no extra cost for your home energy.",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
@@ -59,16 +59,30 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Alliance_14%GD",
-        "NSW": {
-          "Ausgrid": "Alliance_20%GD",
-          "Essential": "Alliance_18%GD",
-          "Endeavour": "Alliance_18%GD",
-          "default": "Alliance_22%GD"
+        "ENE": {
+          "VIC": "Alliance_14%GD",
+          "NSW": {
+            "Ausgrid": "Alliance_22%GD",
+            "Essential": "Alliance_18%GD",
+            "Endeavour": "Alliance_18%GD",
+            "default": "Alliance_22%GD"
+          },
+          "ACT": "Alliance_12%GD_50",
+          "QLD": "Alliance_14%GD",
+          "SA": "Alliance_8%GD_50"
         },
-        "ACT": "Alliance_12%GD_50",
-        "QLD": "Alliance_14%GD",
-        "SA": "Alliance_8%GD_50"
+        "COR": {
+          "VIC": "Alliance_14%GD",
+          "NSW": {
+            "Ausgrid": "Alliance_22%GD",
+            "Essential": "Alliance_18%GD",
+            "Endeavour": "Alliance_18%GD",
+            "default": "Alliance_22%GD"
+          },
+          "ACT": "Alliance_12%GD_50",
+          "QLD": "Alliance_14%GD",
+          "SA": "Alliance_8%GD_50"
+        }
       },
       "existingCustomer": {
         "ENE": {
@@ -140,8 +154,8 @@
         "Credit50": {
           "VIC": "",
           "NSW": "",
-          "ACT": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+",
-          "SA": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
+          "ACT": "$50 Sign Up Credit. Get a $50 credit per energy account on your first bill when you sign up.+",
+          "SA": "$50 Sign Up Credit. Get a $50 credit per energy account on your first bill when you sign up.+"
         },
         "carbonNeutral": "Energy with a bit of good. Opt in for 100% carbon neutral at no extra cost for your home energy.",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
@@ -150,22 +164,32 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "VIC": "Alliance_26%GD",
-        "NSW": "Alliance_18%GD",
-        "ACT": "Alliance_17%GD_50",
-        "SA": "Alliance_17%GD_50"
+        "ENE": {
+          "VIC": "Alliance_26%GD",
+          "NSW": "Alliance_18%GD",
+          "ACT": "Alliance_17%GD_50",
+          "SA": "Alliance_17%GD_50"
+        },
+        "COR": {
+          "VIC": "Alliance_26%GD",
+          "NSW": "Alliance_18%GD",
+          "ACT": "Alliance_17%GD_50",
+          "SA": "Alliance_17%GD_50"
+        }
       },
       "existingCustomer": {
-        "VIC": "Alliance_26%GD",
-        "NSW": "Alliance_18%GD",
-        "ACT": "Alliance_17%GD_50",
-        "SA": "Alliance_17%GD_50"
-      },
-      "PS": {
-        "VIC": "Alliance_26%GD",
-        "NSW": "Alliance_18%GD",
-        "ACT": "Alliance_17%GD",
-        "SA": "Alliance_17%GD"
+        "ENE": {
+          "VIC": "Alliance_26%GD",
+          "NSW": "Alliance_18%GD",
+          "ACT": "Alliance_17%GD_50",
+          "SA": "Alliance_17%GD_50"
+        },
+        "PS": {
+          "VIC": "Alliance_26%GD",
+          "NSW": "Alliance_18%GD",
+          "ACT": "Alliance_17%GD",
+          "SA": "Alliance_17%GD"
+        }
       }
     }
   },

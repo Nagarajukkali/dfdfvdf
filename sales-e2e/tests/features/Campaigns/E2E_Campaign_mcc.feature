@@ -12,7 +12,7 @@
 
 Feature:E2E scenario for mcc
 
-  @DR21.11.4.campaign
+  @DR22.1.2.campaign
   Scenario Outline: Validate complete data for mcc campaign for NSW-Ausgrid for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMCC01" and "2144" and clicks on show me plan link
@@ -91,8 +91,8 @@ Feature:E2E scenario for mcc
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                     | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH      | 20          | 18          | mcc      | E2E_Campaign_mcc_newmoving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
-  @DR21.11.4.campaign
+      | New            | BOTH      | 22          | 18          | mcc      | E2E_Campaign_mcc_newmoving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
+  @DR22.1.2.campaign
   Scenario Outline: Validate complete data for mcc campaign for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMCC01" and "3199" and clicks on show me plan link
@@ -165,7 +165,7 @@ Feature:E2E scenario for mcc
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                      | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 14          | 26          | mcc      | E2E_Campaign_mcc_new_moving_VIC | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.11.4.campaign
+  @DR22.1.2.campaign
   Scenario Outline: Validate complete data for mcc campaign for SA for new non moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMCC01" and "5076" and clicks on show me plan link
@@ -233,7 +233,7 @@ Feature:E2E scenario for mcc
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                        | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 8           | 17          | mcc      | E2E_Campaign_mcc_new_nonmoving_SA | SA    | Quote Tool   | COR     | No  | No | RES          | New           |
-  @DR21.10.2.campaign
+  @DR22.1.2.campaign
   Scenario Outline: Validate complete data for mcc campaign for ACT for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMCC01" and "2615" and clicks on show me plan link
@@ -301,7 +301,7 @@ Feature:E2E scenario for mcc
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName           | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 12          | 17          | mcc      | E2E_Campaign_mcc_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.11.4.campaign
+  @DR22.1.2.campaign
   Scenario Outline: Validate complete data for mcc campaign for QLD for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMCC01" and "4208" and clicks on show me plan link
@@ -312,7 +312,7 @@ Feature:E2E scenario for mcc
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | N            | Total Plan | <state> | N            |
-    And user clicks on Add plan button
+    And user clicks on Select plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
       | ELE      | N                | Y                     | Y                   | Y                                  | <state> |
@@ -356,19 +356,19 @@ Feature:E2E scenario for mcc
       | customerStatus | fuelType | eleDiscount | campaign | folderName           | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | 14          | mcc      | E2E_Campaign_mcc_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR21.11.4.campaign
-  Scenario Outline: Validate complete data for mcc campaign for NSW-Essential existing non moving
+  @DR22.1.2.campaign
+  Scenario Outline: Validate complete data for mcc campaign for NSW-Endeavour existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "PPMCC01" and "2447" and clicks on show me plan link
+    When user provides "PPMCC01" and "2529" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
-#    And user validates "GAS" discount to be "<gasDiscount>" percent
+    And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
       | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
-#    And user validates the data on plans page for "<campaign>"
-#      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-#      | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
+    And user validates the data on plans page for "<campaign>"
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
+      | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Total Plan | <state> | N            |
@@ -376,14 +376,14 @@ Feature:E2E scenario for mcc
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
       | ELE      | N                | Y                     | Y                   | Y                                  | <state> |
-#    And user validates plan details on cart page for "<campaign>"
-#      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-#      | GAS      | N                | Y                     | Y                   | Y                                  | <state> |
+    And user validates plan details on cart page for "<campaign>"
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
+      | GAS      | N                | Y                     | Y                   | Y                                  | <state> |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus   | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
-      | <customerStatus> | 6437229177    | Postcode            | 2447             | dob    | 01011980 |
+      | <customerStatus> | 6942134043    | Postcode            | 2529             | dob    | 01011980 |
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | propertyType |
       | RES          | Non-Moving | Renter       |
@@ -415,7 +415,12 @@ Feature:E2E scenario for mcc
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-EN  | 4407376910 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-EN  | 4310882164 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
+    And user validates all the details for 'GAS' submitted quote
+    And user validates below mandatory fields
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS       | TOPH-GN  | 5240869476 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
+
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                               | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     | 18          | 18          | mcc      | E2E_Campaign_mcc_NSW_existing_non-moving | NSW   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |

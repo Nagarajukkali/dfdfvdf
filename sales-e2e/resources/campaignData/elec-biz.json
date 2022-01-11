@@ -91,12 +91,23 @@
     },
     "sourceCode": {
       "newCustomer": {
+        "ENE": {
         "VIC": "Total_6%GD_200",
         "NSW": {
           "Ausgrid": "Total_20%GD_200",
           "Essential": "Total_19%GD_200",
           "Endeavour": "Total_14%GD_200",
           "default": ""
+          }
+        },
+        "COR": {
+          "VIC": "Total_6%GD_200",
+          "NSW": {
+            "Ausgrid": "Total_20%GD_200",
+            "Essential": "Total_19%GD_200",
+            "Endeavour": "Total_14%GD_200",
+            "default": ""
+          }
         }
       },
       "existingCustomer": {

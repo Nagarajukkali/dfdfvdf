@@ -39,7 +39,22 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "NSW": "Total_18%GD"
+        "ENE": {
+          "NSW": {
+            "Ausgrid": "Alliance_22%GD",
+            "Essential": "Alliance_18%GD",
+            "Endeavour": "Alliance_18%GD",
+            "default": "Alliance_18%GD"
+          }
+        },
+        "COR": {
+          "NSW": {
+            "Ausgrid": "Alliance_22%GD",
+            "Essential": "Alliance_18%GD",
+            "Endeavour": "Alliance_18%GD",
+            "default": "Alliance_18%GD"
+          }
+        }
       },
       "existingCustomer": {
         "ENE": {
@@ -89,7 +104,12 @@
     },
     "sourceCode": {
       "newCustomer": {
-        "NSW": "Total_22%GD"
+        "ENE": {
+          "NSW": "Alliance_18%GD"
+        },
+        "COR": {
+          "NSW": "Alliance_18%GD"
+        }
       },
       "existingCustomer": {
         "ENE": {

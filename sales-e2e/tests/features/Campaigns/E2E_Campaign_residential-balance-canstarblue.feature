@@ -1,24 +1,24 @@
 
 Feature:E2E scenario for residential-balance-canstarblue-plan
-  @DR21.10.4.campaign
+  @DR22.1.2.campaign
   Scenario Outline: Validate complete data for residential-balance-plan for NSW-Ausgrid for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" and clicks on show me plan link
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | BOTH     | Y                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | BOTH     | Y                     | Y                     | Y                                     | <state> |    Y                 |
     And user validates disclaimer on plans page for "<campaign>"
-      | referencePriceComparison | goNeutral | solarBuyBack | planName              | state   | signUpCredit |
-      | Y                        | Y         | Y            | Business Balance Plan | <state> | N            |
+      | referencePriceComparison | goNeutral | solarBuyBack | planName              | state   | signUpCredit |moveHomeCredit|
+      | Y                        | Y         | Y            | Business Balance Plan | <state> | N            |    Y         |
      And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | ELE      | Y                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | ELE      | Y                     | Y                     | Y                                     | <state> |    Y                 |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | GAS      | Y                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | GAS      | Y                     | Y                     | Y                                     | <state> |    Y                 |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                   | movingType | propertyType |
@@ -41,11 +41,11 @@ Feature:E2E scenario for residential-balance-canstarblue-plan
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | ELE      | N                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | ELE      | N                     | Y                     | Y                                     | <state> |    Y                 |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | GAS      | N                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | GAS      | N                     | Y                     | Y                                     | <state> |    Y                 |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -67,25 +67,25 @@ Feature:E2E scenario for residential-balance-canstarblue-plan
     Examples:
       | customerStatus | fuelType | planName     | eleDiscount | gasDiscount | campaign            | folderName                                  | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | Balance Plan | 9           | 8           | balance-canstarblue | E2E_residential-balance-canstarblue_NSW_new_moving | Quote Tool   | Move Home | NSW   | RES          | New           | No  | No |
-  @DR21.10.4.campaign
+  @DR22.1.2.campaign
   Scenario Outline: Validate complete data for residential-balance-plan for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | BOTH     | Y                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | BOTH     | Y                     | Y                     | Y                                     | <state> |    Y                 |
     And user validates disclaimer on plans page for "<campaign>"
-      | referencePriceComparison | goNeutral | solarBuyBack | planName              | state   | signUpCredit |
-      | Y                        | Y         | Y            | Business Balance Plan | <state> | N            |
+      | referencePriceComparison | goNeutral | solarBuyBack | planName              | state   | signUpCredit |moveHomeCredit|
+      | Y                        | Y         | Y            | Business Balance Plan | <state> | N            |    Y         |
      And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | ELE      | Y                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | ELE      | Y                     | Y                     | Y                                     | <state> |    Y                 |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | GAS      | Y                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | GAS      | Y                     | Y                     | Y                                     | <state> |    Y                 |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                   | movingType | propertyType |
@@ -108,11 +108,11 @@ Feature:E2E scenario for residential-balance-canstarblue-plan
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | ELE      | N                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | ELE      | N                     | Y                     | Y                                     | <state> |    Y                 |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | GAS      | N                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | GAS      | N                     | Y                     | Y                                     | <state> |    Y                 |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -134,25 +134,25 @@ Feature:E2E scenario for residential-balance-canstarblue-plan
     Examples:
       | customerStatus | fuelType | planName     | eleDiscount | gasDiscount | campaign            | folderName                                  | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | Balance Plan | 6           | 13          | balance-canstarblue | E2E_residential-balance-canstarblue_VIC_new_moving | Quote Tool   | Move Home | VIC   | RES          | New           | No  | No |
-  @DR21.10.4.campaign
+  @DR22.1.2.campaign
   Scenario Outline: Validate complete data for residential-balance-plan for SA for new non-moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" and clicks on show me plan link
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | BOTH     | Y                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | BOTH     | Y                     | Y                     | Y                                     | <state> |    Y                 |
     And user validates disclaimer on plans page for "<campaign>"
-      | referencePriceComparison | goNeutral | solarBuyBack | planName              | state   | signUpCredit |
-      | Y                        | Y         | Y            | Business Balance Plan | <state> | N            |
+      | referencePriceComparison | goNeutral | solarBuyBack | planName              | state   | signUpCredit |moveHomeCredit|
+      | Y                        | Y         | Y            | Business Balance Plan | <state> | N            |    Y         |
      And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | ELE      | Y                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | ELE      | Y                     | Y                     | Y                                     | <state> |    Y                 |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | GAS      | Y                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | GAS      | Y                     | Y                     | Y                                     | <state> |    Y                 |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                 | movingType | propertyType |
@@ -175,11 +175,11 @@ Feature:E2E scenario for residential-balance-canstarblue-plan
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | ELE      | N                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | ELE      | N                     | Y                     | Y                                     | <state> |    N                 |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | GAS      | N                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | GAS      | N                     | Y                     | Y                                     | <state> |    N                 |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -201,25 +201,25 @@ Feature:E2E scenario for residential-balance-canstarblue-plan
     Examples:
       | customerStatus | fuelType | planName     | eleDiscount | gasDiscount | campaign            | folderName                                     | sourceSystem | journey | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | Balance Plan | 3           | 7           | balance-canstarblue | E2E_residential-balance-canstarblue_SA_new_non_moving | Quote Tool   | COR     | SA    | RES          | New           | No  | No |
-  @DR21.10.4.campaign
+  @DR22.1.2.campaign
   Scenario Outline: Validate complete data for residential-balance-plan for ACT for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2600" and clicks on show me plan link
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | BOTH     | Y                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | BOTH     | Y                     | Y                     | Y                                     | <state> |    Y                 |
     And user validates disclaimer on plans page for "<campaign>"
-      | referencePriceComparison | goNeutral | solarBuyBack | planName              | state   | signUpCredit |
-      | Y                        | Y         | Y            | Business Balance Plan | <state> | N            |
+      | referencePriceComparison | goNeutral | solarBuyBack | planName              | state   | signUpCredit |moveHomeCredit|
+      | Y                        | Y         | Y            | Business Balance Plan | <state> | N            |    Y         |
      And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | ELE      | Y                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | ELE      | Y                     | Y                     | Y                                     | <state> |    Y                 |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | GAS      | Y                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | GAS      | Y                     | Y                     | Y                                     | <state> |    Y                 |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                    | movingType | propertyType |
@@ -242,11 +242,11 @@ Feature:E2E scenario for residential-balance-canstarblue-plan
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | ELE      | N                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | ELE      | N                     | Y                     | Y                                     | <state> |    Y                 |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | GAS      | N                     | Y                     | Y                                     | <state> |
+      | fuelType | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+      | GAS      | N                     | Y                     | Y                                     | <state> |    Y                 |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page

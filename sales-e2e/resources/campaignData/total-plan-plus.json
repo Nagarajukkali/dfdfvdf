@@ -32,6 +32,10 @@
             "heading": "Carbon neutral option",
             "description": "100% carbon neutral at no extra cost for your home energy when you opt in.~"
           },
+          "moveHomeCredit": {
+            "heading": "$25 Move Home Credit",
+            "description": "Get a $25 credit on each energy account when you move home online.+"
+          },
           "peaceOfMind": {
             "heading": "Peace of mind",
             "description": "Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
@@ -54,40 +58,55 @@
             "SA" : "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
           },
           "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.~",
+          "moveHomeCredit": "$25 Move Home Credit. Get a $25 credit on each energy account when you move home online.+",
           "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
           "discountOffTotalEnergyBill": "VIP discount off total energy bill. Exclusive VIP guaranteed discount that applies to our market energy charges. Eligible customers only."
         }
       },
       "sourceCode": {
         "newCustomer": {
-          "VIC": "Total_Plus_13%GD",
-          "NSW": {
-            "Ausgrid": "Total_Plus_19%GD",
-            "Essential": "Total_Plus_17%GD",
-            "Endeavour": "Total_Plus_17%GD",
-            "default": "Total_Plus_1%GD"
+          "ENE": {
+            "VIC": "Total_Plus_13%GD_25",
+            "NSW": {
+              "Ausgrid": "Total_Plus_21%GD_25",
+              "Essential": "Total_Plus_17%GD_25",
+              "Endeavour": "Total_Plus_17%GD_25",
+              "default": "Total_Plus_1%GD_25"
+            },
+            "ACT": "Total_Plus_11%GD_50",
+            "QLD": "Total_Plus_13%GD_25",
+            "SA": "Total_Plus_7%GD_50"
           },
-          "ACT": "Total_Plus_11%GD_50",
-          "QLD": "Total_Plus_13%GD",
-          "SA": "Total_Plus_7%GD_50"
-        },
-        "existingCustomer": {
-          "ENE":{
+          "COR": {
             "VIC": "Total_Plus_13%GD",
             "NSW": {
-              "Ausgrid": "Total_Plus_19%GD",
+              "Ausgrid": "Total_Plus_21%GD",
               "Essential": "Total_Plus_17%GD",
               "Endeavour": "Total_Plus_17%GD",
-              "default": "Total_Plus_9%GD"
+              "default": "Total_Plus_1%GD"
             },
             "ACT": "Total_Plus_11%GD_50",
             "QLD": "Total_Plus_13%GD",
+            "SA": "Total_Plus_7%GD_50"
+          }
+        },
+        "existingCustomer": {
+          "ENE":{
+            "VIC": "Total_Plus_13%GD_25",
+            "NSW": {
+              "Ausgrid": "Total_Plus_21%GD_25",
+              "Essential": "Total_Plus_17%GD_25",
+              "Endeavour": "Total_Plus_17%GD_25",
+              "default": "Total_Plus_9%GD_25"
+            },
+            "ACT": "Total_Plus_11%GD_50",
+            "QLD": "Total_Plus_13%GD_25",
             "SA": "Total_Plus_7%GD_50"
           },
           "PS": {
             "VIC": "Total_Plus_13%GD",
             "NSW": {
-              "Ausgrid": "Total_Plus_19%GD",
+              "Ausgrid": "Total_Plus_21%GD",
               "Essential": "Total_Plus_17%GD",
               "Endeavour": "Total_Plus_17%GD",
               "default": "Total_Plus_9%GD"
@@ -130,6 +149,10 @@
             "heading": "Carbon neutral option",
             "description": "100% carbon neutral at no extra cost for your home energy when you opt in.~"
           },
+          "moveHomeCredit": {
+            "heading": "$25 Move Home Credit",
+            "description": "Get a $25 credit on each energy account when you move home online.+"
+          },
           "peaceOfMind": {
             "heading": "Peace of mind",
             "description": "Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
@@ -147,6 +170,7 @@
             "QLD": "",
             "SA" : "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up.+"
           },
+          "moveHomeCredit": "$25 Move Home Credit. Get a $25 credit on each energy account when you move home online.+",
           "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.~",
           "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
           "discountOffTotalEnergyBill": "VIP discount off total energy bill. Exclusive VIP guaranteed discount that applies to our market energy charges. Eligible customers only."
@@ -154,15 +178,23 @@
       },
       "sourceCode": {
         "newCustomer": {
-          "VIC": "Total_Plus_25%GD",
-          "NSW": "Total_Plus_17%GD",
-          "ACT": "Total_Plus_16%GD_50",
-          "SA": "Total_Plus_16%GD_50"
+          "ENE": {
+            "VIC": "Total_Plus_25%GD_25",
+            "NSW": "Total_Plus_17%GD_25",
+            "ACT": "Total_Plus_16%GD_50",
+            "SA": "Total_Plus_16%GD_50"
+          },
+          "COR": {
+            "VIC": "Total_Plus_25%GD",
+            "NSW": "Total_Plus_17%GD",
+            "ACT": "Total_Plus_16%GD_50",
+            "SA": "Total_Plus_16%GD_50"
+          }
         },
         "existingCustomer": {
           "ENE":{
-            "VIC": "Total_Plus_25%GD",
-            "NSW": "Total_Plus_17%GD",
+            "VIC": "Total_Plus_25%GD_25",
+            "NSW": "Total_Plus_17%GD_25",
             "ACT": "Total_Plus_16%GD_50",
             "SA": "Total_Plus_16%GD_50"
           },
@@ -237,6 +269,24 @@
         "SA": {
           "heading": "$50 Sign Up Credit",
           "description": "+ Offer available to XXX residential customers who sign up to an electricity or gas offer. Limit of one $50 credit per new energy account, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        }
+      },
+      "moveHomeCredit": {
+        "heading": "$25 Move Home Credit",
+        "VIC": {
+          "description": "+ Offer available to eligible VIC residential customers who move home via energyaustralia.com.au to an electricity or gas offer. Limit of one $25 credit per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        },
+        "NSW": {
+          "description": "+ Offer available to eligible NSW residential customers who move home via energyaustralia.com.au to an electricity or gas offer. Limit of one $25 credit per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        },
+        "ACT": {
+          "description": "+ Offer available to eligible ACT residential customers who move home via energyaustralia.com.au to an electricity or gas offer. Limit of one $25 credit per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        },
+        "QLD": {
+          "description": "+ Offer available to eligible QLD residential customers who move home via energyaustralia.com.au to an electricity or gas offer. Limit of one $25 credit per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        },
+        "SA": {
+          "description": "+ Offer available to eligible SA residential customers who move home via energyaustralia.com.au to an electricity or gas offer. Limit of one $25 credit per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
         }
       },
       "plandisclaimer": {
