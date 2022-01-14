@@ -401,12 +401,15 @@ export class testFunction {
       const colCount = row.childElementCount;
       for (let j = 1; j < colCount; j++) {
         const cols = rows.child(j);
-        const dateBtn = cols.child(0);
-        if (!(await dateBtn.hasAttribute("disabled"))) {
-          dateValue=await testFunction.getElementText(t,cols);
-          await testFunction.click(t, cols);
-          flag = true;
-          break;
+        const colCount = await cols.childElementCount.then(result => result);
+        if(colCount===1) {
+          let dateBtn = cols.child(0);
+          if (!(await dateBtn.hasAttribute("disabled"))) {
+            dateValue = await testFunction.getElementText(t, cols);
+            await testFunction.click(t, cols);
+            flag = true;
+            break;
+          }
         }
       }
       if (flag) {

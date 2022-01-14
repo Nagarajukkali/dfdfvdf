@@ -14,7 +14,7 @@ Feature:E2E scenario for new business moving and non moving customer
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | customerStatus | connectionAddress                      | movingType | propertyType |
-      | BUS          | New            | 73-75 Enmore Road, NEWTOWN NSW 2042    | Moving     |              |
+      | BUS          | New            | 39 Orsmond Street, HINDMARSH SA 5007   | Moving     |              |
     And user provides all details on checkout details page
       | customerType | journey | firstName | lastName | businessType |
       | BUS          | BUS     | test      | test     | ABN          |
@@ -50,11 +50,11 @@ Feature:E2E scenario for new business moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EN  | 4102017007 | N                              | N                              | Y                       | LSKDM                    | POSTMM        |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-ES  | 2002158569 | N                              | N                              | Y                       | LSKDM                    | POSTMM        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GN  | 5247073457 | N                              | N                              | Y                       | GLSMRHAC                 | POSTMM        |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GS  | 5510225663 | N                              | N                              | Y                       | GLSMRHAC                 | POSTMM        |
 
     Examples:
       | customerStatus | fuelType | planName       | folderName         | state | sourceSystem | journey   | AAH | DD  | customerType | newOrExisting |
@@ -72,8 +72,8 @@ Feature:E2E scenario for new business moving and non moving customer
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      | customerType | connectionAddress                  | movingType | propertyType |
-      | BUS          | 68 Mercer Street, GEELONG VIC 3220 | Non-Moving |              |
+      | customerType | connectionAddress                    | movingType | propertyType |
+      | BUS          | 39 Orsmond Street, HINDMARSH SA 5007 | Non-Moving |              |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | businessType |
       | BUS          | BUS     | New            | test      | test     | ACN          |
@@ -109,11 +109,11 @@ Feature:E2E scenario for new business moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | COR       | TOPB-EV  | 6203142753 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | COR       | TOPB-ES  | 2002158569 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | COR       | TOPB-GV  | 5330726895 | N                              | N                              | Y                       | GLSMRHAC                 | EMAIL         |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | COR       | TOPB-GS  | 5510225663 | N                              | N                              | Y                       | GLSMRHAC                 | EMAIL         |
 
     Examples:
       | customerStatus | fuelType | planName              | folderName            | sourceSystem | journey     | AAH | DD | customerType | newOrExisting |

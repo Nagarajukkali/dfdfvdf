@@ -55,18 +55,18 @@ Feature:E2E scenario for new residential moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-EV  | 6203778288 | N                              | N                              | Y                       | LSCNSPE                  | POSTMM        |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | RCPP-EV  | 6203778288 | N                              | N                              | Y                       | LSCNSPE                  | POSTMM        |
     And user validates the solar details
       | fuelType | solarPowerIndicator | solarNetworkTariffCode | solarTimeOfUse |
       | ELE      | Y                   | GENR13                 | Y              |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-GV  | 5330733757 | N                              | N                              | Y                       | OTHER                    | POSTMM        |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | RCPP-GV  | 5330733757 | N                              | N                              | Y                       | OTHER                    | POSTMM        |
 
     Examples:
       | customerStatus | fuelType | planName   | folderName          | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | Total Plan | E2E_New_Resi_Moving | VIC   | Quote Tool   | Move Home | Yes | No | RES          | New           |
+      | New            | BOTH     | No Frills  | E2E_New_Resi_Moving | VIC   | Quote Tool   | Move Home | Yes | No | RES          | New           |
 
 
   Scenario Outline: Submit a quote for new residential non moving customer
@@ -116,13 +116,13 @@ Feature:E2E scenario for new residential moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-ES  | 2001245279 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | RCPP-ES  | 2001245279 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-GS  | 5510149276 | N                              | N                              | Y                       | GLSMRHAC                 | EMAIL         |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | RCPP-GS  | 5510149276 | N                              | N                              | Y                       | GLSMRHAC                 | EMAIL         |
 
     Examples:
       | customerStatus | fuelType | planName   | folderName             | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
-      | New            | BOTH     | Total Plan | E2E_New_Resi_NonMoving | Quote Tool   | Plan Switch | No  | Yes | RES          | New           |
+      | New            | BOTH     | No Frills  | E2E_New_Resi_NonMoving | Quote Tool   | Plan Switch | No  | Yes | RES          | New           |
 
