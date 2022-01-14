@@ -10,7 +10,7 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
-      | Existing       | 8372937428    | Postcode            | 3024             | dob    | 01011980 |
+      | Existing       | 0010462063    | Postcode            | 3030             | dob    | 01011980 |
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | connectionAddress                        | propertyType |
       | RES          | Moving     | 271 Heatherhill Road, FRANKSTON VIC 3199 | Renter       |
@@ -54,12 +54,12 @@ Feature:E2E scenario for existing residential moving and non moving customer
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |campaign     |state|
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TAPR1-EV  | 6407557087 | N                              | N                              | Y                       | OTHER                    | POSTMM        |Balance Plan|<state>  |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |state|
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TAPR1-EV  | 6407557087 | N                              | N                              | Y                       | OTHER                    | POSTMM       |<state>  |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |campaign     |state|
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TAPR1-GV  | 5321574765 | N                              | N                              | Y                       | OTHER                    | POSTMM        |Balance Plan|<state>  |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |state|
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TAPR1-GV  | 5321574765 | N                              | N                              | Y                       | OTHER                    | POSTMM       |<state>  |
 
     Examples:
       | customerStatus | fuelType | planName   | folderName               | state | optDisconnection | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
@@ -75,7 +75,7 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
-      | Existing       | 5134624952    | Postcode            | 2516             | dob    | 01011980 |
+      | Existing       | 2085501655    | Postcode            | 3146             | dob    | 01011980 |
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | propertyType |
       | RES          | Non-Moving | Owner        |
@@ -114,11 +114,11 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | RCPP-EN  | 4311150544 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | RCPP-EV  | 6407795565 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | RCPP-GN  | 5240924834 | N                              | N                              | Y                       | GLSMRHW                  | POSTMM        |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | RCPP-GV  | 5310805740 | N                              | N                              | Y                       | GLSMRHW                  | POSTMM        |
 
     Examples:
       | customerStatus | planName  | folderName                  | fuelType | accountType | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
@@ -135,7 +135,7 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue   |
-      | Existing       | 2704075020    | Postcode            | 4053             | dl     | 678351290 |
+      | Existing       | 2380726412    | Postcode            | 4285             | dl     | 191872476 |
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | propertyType |
       | RES          | Non-Moving | Owner        |
@@ -174,7 +174,7 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-EQ  | QB11787872 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-EQ  | QB06882633 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
 
 
     Examples:

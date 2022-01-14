@@ -12,7 +12,7 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
-      | Existing       | 8541728674    | ABN                 | 13756067200      | dob    | 01011980 |
+      | Existing       | 7185109615    | ABN                 | 33499936800      | dob    | 01011980 |
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | connectionAddress                      |
       | BUS          | Moving     | 73-75 Enmore Road, NEWTOWN NSW 2042 |
@@ -71,7 +71,7 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
-      | Existing       | 3212973722    | ABN                 | 28043897900      | dob    | 01011980 |
+      | Existing       | 2394508360    | ABN                 | 39642303200      | dob    | 01011980 |
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType |
       | BUS          | Non-Moving |
@@ -107,11 +107,11 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | PS        | TOPB-EV  | 6203004526 | N                              | N                              | Y                       | LSOC                     | POSTMM        |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | PS        | TOPB-EV  | 6203570918 | N                              | N                              | Y                       | LSOC                     | POSTMM        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | PS        | TOPB-GV  | 5330293713 | N                              | N                              | N                       |                          | POSTMM        |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | PS        | TOPB-GV  | 5330045398 | N                              | N                              | N                       |                          | POSTMM        |
 
     Examples:
       | customerStatus | planName              | folderName                 | fuelType | accountType | sourceSystem | journey     | AAH | DD | customerType | newOrExisting |

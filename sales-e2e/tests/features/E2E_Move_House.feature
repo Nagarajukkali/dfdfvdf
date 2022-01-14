@@ -7,7 +7,7 @@ Feature:E2E scenario for existing residential moving customer through move house
     And user enters '<movingAddress>' in address field and selects any available moving date
     And user verifies account on qualifier
       | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
-      | Existing       | 7810021000    | Postcode            | 3672             | dob    | 01011980 |
+      | Existing       | 0319790827    | Postcode            | 3146             | dob    | 01011980 |
     And user provides all other details on qualifier page
       | customerType | movingType | connectionAddress                | propertyType |
       | RES          | NA         | 5 Wilkies Street, BULLI NSW 2516 | Renter       |
@@ -71,7 +71,7 @@ Feature:E2E scenario for existing residential moving customer through move house
     And user enters '<movingAddress>' in address field and selects any available moving date
     And user verifies account on qualifier
       | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
-      | Existing       | 8372937428    | Postcode            | 3024             | dob    | 01011980 |
+      | Existing       | 0316864510    | Postcode            | 3630             | dob    | 01011980 |
     And user provides all other details on qualifier page
       | customerType | movingType | connectionAddress                | propertyType |
       | RES          | NA         | 5 Wilkies Street, BULLI NSW 2516 | Renter       |
@@ -135,7 +135,7 @@ Feature:E2E scenario for existing residential moving customer through move house
     And user enters '<movingAddress>' in address field and selects any available moving date
     And user verifies account on qualifier
       | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
-      | Existing       | 7810021000    | Postcode            | 3672             | dob    | 01011980 |
+      | Existing       | 0047102000    | Postcode            | 3028             | dob    | 01011980 |
     And user provides all other details on qualifier page
       | customerType | movingType | connectionAddress | propertyType |
       | RES          | NA         |                   | Renter       |
@@ -204,7 +204,7 @@ Feature:E2E scenario for existing residential moving customer through move house
     When user selects moving date
     And user verifies account on qualifier
       | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
-      | Existing       | 8372937428    | Postcode            | 3024             | dob    | 01011980 |
+      | Existing       | 2392282522    | Postcode            | 3155             | dob    | 01011980 |
     And user provides all other details on qualifier page
       | customerType | movingType | connectionAddress | propertyType |
       | RES          | NA         |                   | Renter       |

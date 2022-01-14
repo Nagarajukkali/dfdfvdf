@@ -166,8 +166,11 @@ export class checkoutReviewMethod {
         eleSourceCode = 'NOFRILLS';
       } else if (elePlanName === PlanType.BASIC_BUSINESS || elePlanName === PlanType.BASIC_HOME) {
         eleSourceCode = 'Basic';
+      }else if (elePlanName === PlanType.RESIDENTIAL_BALANCE_PLAN) {
+        eleDiscount = await testFunction.getElementText(t, eaCheckoutReviewPage.elements.txtEleDiscount);
+        eleSourceCode = 'Total_' + eleDiscount.split(" ")[1] + 'GD';
       }
-      checkoutDetailsMethod.map.set('ele source code_' + checkoutDetailsMethod.getScenarioId(t), eleSourceCode);
+        checkoutDetailsMethod.map.set('ele source code_' + checkoutDetailsMethod.getScenarioId(t), eleSourceCode);
     }
     if (testFunction.isGas(fuelType)) {
       let gasPlanName = await testFunction.getElementText(t, eaCheckoutReviewPage.elements.txtGasPlanName);
@@ -198,6 +201,9 @@ export class checkoutReviewMethod {
         gasSourceCode = 'NOFRILLS';
       } else if (gasPlanName === PlanType.BASIC_BUSINESS || gasPlanName === PlanType.BASIC_HOME) {
         gasSourceCode = 'Basic';
+      } else if (gasPlanName === PlanType.RESIDENTIAL_BALANCE_PLAN) {
+        gasDiscount = await testFunction.getElementText(t, eaCheckoutReviewPage.elements.txtGasDiscount);
+        gasSourceCode = 'Total_' + gasDiscount.split(" ")[1] + 'GD';
       }
       checkoutDetailsMethod.map.set('gas source code_' + checkoutDetailsMethod.getScenarioId(t), gasSourceCode);
     }

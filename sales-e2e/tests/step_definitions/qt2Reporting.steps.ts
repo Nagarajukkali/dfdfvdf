@@ -65,14 +65,15 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
     let actualState = jsonObj.saleDetail.premiseDetail.state;
     let actualBillRouteType = jsonObj.saleDetail.billDeliveryDetail.billRouteType;
     let isCampaignTest = (t.testRun.test.name.includes('campaign'));
-    let isOfferType = (actualOfferType === 'ENE' || actualOfferType === 'COR');
-    let isStateEligibleFor$25Credit = (actualState === 'ACT');
+    let isOfferType = (actualOfferType === 'ENE');
+    let isStateEligibleFor$25Credit = (actualState === 'VIC' || 'NSW');
     let isStateEligibleFor$50Credit = (actualState === 'SA');
     let isStateEligibleFor$200Credit = (actualState === 'NSW' || actualState === 'VIC');
     //let isStateEligibleFor$50Credit = (actualState === 'VIC' || actualState === 'QLD');
     let isStateEligibleForNoCredit = (actualState === 'SA');
     let isBusinessPlanCode = (expectedPlanCode.includes('BSOT') || expectedPlanCode.includes('TOPB') || expectedPlanCode.includes('SWSR'));
     let isResiPlanCode = (expectedPlanCode.includes('RSOT'));
+    let isCustomerType = actualCustomerType.includes('RESIDENTIAL');
 
     //Comparison
     await qt2Reporting.validateMandatoryField(t, actualQuoteStatus, expectedQuoteStatus);
@@ -107,9 +108,9 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
 
       //updated conditions for $50 extensions
 
-      if(validateAnalyticsEvent==='Y') {
+      if (validateAnalyticsEvent === 'Y') {
         let expectedElecQuoteId = jsonObj.saleDetail.saleDetailHeader.quoteId;
-        let actualElecQuoteId = checkoutDetailsMethod.map.get('elecQuoteId'+checkoutDetailsMethod.getScenarioId(t));
+        let actualElecQuoteId = checkoutDetailsMethod.map.get('elecQuoteId' + checkoutDetailsMethod.getScenarioId(t));
         await t.expect(actualElecQuoteId).eql(expectedElecQuoteId);
       }
 
@@ -117,32 +118,35 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
       let expectedEleSourceCode = checkoutDetailsMethod.map.get('ele source code_' + checkoutDetailsMethod.getScenarioId(t));
       if (isCampaignTest || data[0].campaign === "balance-canstarblue") {
         await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualEleSourceCode, data[0].campaign, expectedOfferType, expectedFuelType);
-      } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$25Credit &&(!(data[0].campaign === "Balance Plan"))) {
+      } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$25Credit && (!(data[0].campaign === "Balance Plan"))) {
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_25');
-      }else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit &&(!(data[0].campaign === "Balance Plan"))) {
+      } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit && (!(data[0].campaign === "Balance Plan"))) {
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_50');
-      }else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$200Credit && (expectedPlanCode === "TOPB-EN" || expectedPlanCode === "TOPB-EV")&&(!(data[0].campaign === "Balance Plan"))) {
+      } else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$200Credit && (expectedPlanCode === "TOPB-EN" || expectedPlanCode === "TOPB-EV") && (!(data[0].campaign === "Balance Plan"))) {
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_200');
-      } else if(data[0].campaign === "Balance Plan"){
-        if(data[0].state === "NSW"){
+      } else if (data[0].campaign === "Balance Plan") {
+        if (data[0].state === "NSW") {
           await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "Total_9%GD");
-        }else if(data[0].state === "VIC"){
+        } else if (data[0].state === "VIC") {
           await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "Total_6%GD");
-        }else if(data[0].state === "SA"){
+        } else if (data[0].state === "SA") {
           await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "Total_3%GD");
-        }else if(data[0].state === "ACT"){
+        } else if (data[0].state === "ACT") {
           await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "Total_5%GD");
-        }else if(data[0].state === "QLD"){
+        } else if (data[0].state === "QLD") {
           await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "Total_7%GD");
         }
       }
-      //   else if (isOfferType && !isBusinessPlanCode && !isResiPlanCode && isStateEligibleFor$50Credit) {
-      //   await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_50');
+        //   else if (isOfferType && !isBusinessPlanCode && !isResiPlanCode && isStateEligibleFor$50Credit) {
+        //   await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_50');
       // }
-      else if(data[0].campaign===undefined ){
-        await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode);
-      }
-      else {
+      else if (data[0].campaign === undefined) {
+        if (isOfferType && isCustomerType && isStateEligibleFor$25Credit) {
+          await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_25');
+        } else {
+          await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode);
+        }
+      } else {
         // await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode);
         await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualEleSourceCode, data[0].campaign, expectedOfferType, expectedFuelType);
       }
@@ -174,11 +178,13 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
       //     await qt2Reporting.validateMandatoryField(t,actualGasSourceCode,expectedGasSourceCode);
       // }
 
-      if(validateAnalyticsEvent==='Y') {
+      if (validateAnalyticsEvent === 'Y') {
         let expectedGasQuoteId = jsonObj.saleDetail.saleDetailHeader.quoteId;
-        let actualGasQuoteId = checkoutDetailsMethod.map.get('gasQuoteId'+checkoutDetailsMethod.getScenarioId(t));
+        let actualGasQuoteId = checkoutDetailsMethod.map.get('gasQuoteId' + checkoutDetailsMethod.getScenarioId(t));
         await t.expect(actualGasQuoteId).eql(expectedGasQuoteId);
       }
+      let isOfferType = actualOfferType.includes('ENE');
+      let isCustomerType = actualCustomerType.includes('RESIDENTIAL');
 
       //updated conditions for $50 extensions
       let actualGasSourceCode = jsonObj.saleDetail.saleDetailHeader.sourceCode;
@@ -186,74 +192,75 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
       if (isCampaignTest || data[0].campaign === "balance-canstarblue") {
         await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualGasSourceCode, data[0].campaign, expectedOfferType, expectedFuelType);
         // await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualGasSourceCode, data[0].campaign, expectedGasSourceCode, expectedFuelType);
-      } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$25Credit &&(!(data[0].campaign === "Balance Plan"))) {
+      } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$25Credit && (!(data[0].campaign === "Balance Plan"))) {
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_25');
-      }else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit &&(!(data[0].campaign === "Balance Plan"))) {
+      } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit && (!(data[0].campaign === "Balance Plan"))) {
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_50');
-      }else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$200Credit && (expectedPlanCode === "TOPB-GV")&&(!(data[0].campaign === "Balance Plan"))) {
+      } else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$200Credit && (expectedPlanCode === "TOPB-GV") && (!(data[0].campaign === "Balance Plan"))) {
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_200');
-      }else if(data[0].campaign === "Balance Plan"){
-        if(data[0].state === "NSW"){
+      } else if (data[0].campaign === "Balance Plan") {
+        if (data[0].state === "NSW") {
           await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, "Total_8%GD");
-        }else if(data[0].state === "VIC"){
+        } else if (data[0].state === "VIC") {
           await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, "Total_13%GD");
-        }else if(data[0].state === "SA"){
+        } else if (data[0].state === "SA") {
           await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, "Total_7%GD");
-        }else if(data[0].state === "ACT"){
+        } else if (data[0].state === "ACT") {
           await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, "Total_7%GD");
         }
       }
-      //   else if (isOfferType && !isBusinessPlanCode && !isResiPlanCode && isStateEligibleFor$50Credit) {
-      //   await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_50');
+        //   else if (isOfferType && !isBusinessPlanCode && !isResiPlanCode && isStateEligibleFor$50Credit) {
+        //   await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_50');
       // }
-        else {
+      else if (isOfferType && isCustomerType && isStateEligibleFor$25Credit) {
+        await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_25');
+      } else {
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode);
       }
+
+      if (expectedRenovationsSinceDeEnergisation.length !== 0) {
+        let actualRenovationsSinceDeEnergisation = jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsSinceDeenergisation;
+        let actualRenovationsInProgressOrPlanned = jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsInProgressOrPlanned;
+        await qt2Reporting.validateMandatoryField(t, actualRenovationsSinceDeEnergisation, expectedRenovationsSinceDeEnergisation);
+        await qt2Reporting.validateMandatoryField(t, actualRenovationsInProgressOrPlanned, expectedRenovationsInProgressOrPlanned);
+      }
+      if (expectedCustomerWithLifeSupport === 'Y') {
+        let actualCustomerWithLifeSupport = jsonObj.saleDetail.offerDetail.energySafeVicQuestions.customerWithLifeSupport;
+        await qt2Reporting.validateMandatoryField(t, actualCustomerWithLifeSupport, expectedCustomerWithLifeSupport);
+        let expectedLifeSupportEquipmentType = data[0].lifeSupportEquipmentType;
+        let actualLifeSupportEquipmentType = jsonObj.saleDetail.offerDetail.lifeSupportEquipment.lifeSupportEquipmentType;
+        await qt2Reporting.validateMandatoryField(t, actualLifeSupportEquipmentType, expectedLifeSupportEquipmentType);
+      }
+
+      await qt2Reporting.validateMandatoryField(t, actualBillRouteType, expectedBillRouteType);
+      if (expectedCustomerType === 'RESIDENTIAL') {
+        let expectedPrimaryIdFlag = 'Y';
+        let actualPrimaryIdFlag = jsonObj.saleDetail.personDetail.personIdDetail.primaryIdFlag;
+        await qt2Reporting.validateMandatoryField(t, actualPrimaryIdFlag, expectedPrimaryIdFlag);
+      }
+      if (expectedCustomerType === 'BUSINESS') {
+        let expectedPersonAccountRelationship = 'CUSCON';
+        let actualPersonAccountRelationship = jsonObj.saleDetail.personDetail.personAccountRelationship;
+        let expectedBusinessNameType = 'PRIM';
+        let actualBusinessNameType = jsonObj.saleDetail.businessDetail.businessNameDetail.nameType;
+        await qt2Reporting.validateMandatoryField(t, actualPersonAccountRelationship, expectedPersonAccountRelationship);
+        await qt2Reporting.validateMandatoryField(t, actualBusinessNameType, expectedBusinessNameType);
+      }
+      if ((expectedOfferType === 'COR' || expectedOfferType === 'ENE') && expectedCustomerType === 'RESIDENTIAL' && t.testRun.test.name.includes('new')) {
+        let expectedConsentForIdValidation = 'Y';
+        let actualConsentForIdValidation = jsonObj.saleDetail.personDetail.personIdDetail.idValidationInformation.consentForIdValidation;
+        let expectedCreditAssessmentReasonCode = qt2Reporting.getCreditAssessmentValue(t.testRun.test.name.toString());
+        let actualCreditAssessmentReasonCode = jsonObj.saleDetail.creditAssessmentReasonCode;
+        await qt2Reporting.validateMandatoryField(t, actualConsentForIdValidation, expectedConsentForIdValidation);
+        await qt2Reporting.validateMandatoryField(t, actualCreditAssessmentReasonCode, expectedCreditAssessmentReasonCode);
+      }
+      let expectedCreditAssessmentDecision = qt2Reporting.getCreditAssessmentValue(t.testRun.test.name.toString());
+      let actualCreditAssessmentDecision = jsonObj.saleDetail.creditAssessmentDecision;
+      await qt2Reporting.validateMandatoryField(t, actualCreditAssessmentDecision, expectedCreditAssessmentDecision);
+
     }
 
-    if (expectedRenovationsSinceDeEnergisation.length !== 0) {
-      let actualRenovationsSinceDeEnergisation = jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsSinceDeenergisation;
-      let actualRenovationsInProgressOrPlanned = jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsInProgressOrPlanned;
-      await qt2Reporting.validateMandatoryField(t, actualRenovationsSinceDeEnergisation, expectedRenovationsSinceDeEnergisation);
-      await qt2Reporting.validateMandatoryField(t, actualRenovationsInProgressOrPlanned, expectedRenovationsInProgressOrPlanned);
-    }
-    if (expectedCustomerWithLifeSupport === 'Y') {
-      let actualCustomerWithLifeSupport = jsonObj.saleDetail.offerDetail.energySafeVicQuestions.customerWithLifeSupport;
-      await qt2Reporting.validateMandatoryField(t, actualCustomerWithLifeSupport, expectedCustomerWithLifeSupport);
-      let expectedLifeSupportEquipmentType = data[0].lifeSupportEquipmentType;
-      let actualLifeSupportEquipmentType = jsonObj.saleDetail.offerDetail.lifeSupportEquipment.lifeSupportEquipmentType;
-      await qt2Reporting.validateMandatoryField(t, actualLifeSupportEquipmentType, expectedLifeSupportEquipmentType);
-    }
-
-    await qt2Reporting.validateMandatoryField(t, actualBillRouteType, expectedBillRouteType);
-    if (expectedCustomerType === 'RESIDENTIAL') {
-      let expectedPrimaryIdFlag = 'Y';
-      let actualPrimaryIdFlag = jsonObj.saleDetail.personDetail.personIdDetail.primaryIdFlag;
-      await qt2Reporting.validateMandatoryField(t, actualPrimaryIdFlag, expectedPrimaryIdFlag);
-    }
-    if (expectedCustomerType === 'BUSINESS') {
-      let expectedPersonAccountRelationship = 'CUSCON';
-      let actualPersonAccountRelationship = jsonObj.saleDetail.personDetail.personAccountRelationship;
-      let expectedBusinessNameType = 'PRIM';
-      let actualBusinessNameType = jsonObj.saleDetail.businessDetail.businessNameDetail.nameType;
-      await qt2Reporting.validateMandatoryField(t, actualPersonAccountRelationship, expectedPersonAccountRelationship);
-      await qt2Reporting.validateMandatoryField(t, actualBusinessNameType, expectedBusinessNameType);
-    }
-    if ((expectedOfferType === 'COR' || expectedOfferType === 'ENE') && expectedCustomerType === 'RESIDENTIAL' && t.testRun.test.name.includes('new')) {
-      let expectedConsentForIdValidation = 'Y';
-      let actualConsentForIdValidation = jsonObj.saleDetail.personDetail.personIdDetail.idValidationInformation.consentForIdValidation;
-      let expectedCreditAssessmentReasonCode = qt2Reporting.getCreditAssessmentValue(t.testRun.test.name.toString());
-      let actualCreditAssessmentReasonCode = jsonObj.saleDetail.creditAssessmentReasonCode;
-      await qt2Reporting.validateMandatoryField(t, actualConsentForIdValidation, expectedConsentForIdValidation);
-      await qt2Reporting.validateMandatoryField(t, actualCreditAssessmentReasonCode, expectedCreditAssessmentReasonCode);
-    }
-    let expectedCreditAssessmentDecision = qt2Reporting.getCreditAssessmentValue(t.testRun.test.name.toString());
-    let actualCreditAssessmentDecision = jsonObj.saleDetail.creditAssessmentDecision;
-    await qt2Reporting.validateMandatoryField(t, actualCreditAssessmentDecision, expectedCreditAssessmentDecision);
-
-  }
-
-});
+  }});
 
 Then(/^user validates the mailing address fields$/, async function (t, [], dataTable) {
   if (!getTestCafeRC.browsers[0].includes('emulation') && !envToExclude.includes(getPackage.config.env)) {

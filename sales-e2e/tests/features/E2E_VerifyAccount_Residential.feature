@@ -9,7 +9,7 @@ Feature: This feature is to test the verify account scenarios for existing resid
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for residential customer
       | customer_type | modal_option   | elecAccountNumber | gasAccountNumber | postcode | idType | idNumber |
-      | RES           | verify account | 8373520946        | 2816302453       | 3153     | dob    | 01011980 |
+      | RES           | verify account | 8146713614        | 4931329359       | 3218     | dob    | 01011980 |
     And user selects '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
@@ -49,11 +49,11 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | SWSR1-EV | 6305325960 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | SWSR1-EV | 6203138450 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | SWSR1-GV | 5310602455 | N                              | N                              | Y                       | OTHER                    | POSTMM        |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | SWSR1-GV | 5330236561 | N                              | N                              | Y                       | OTHER                    | POSTMM        |
 
     Examples:
       | folderName                              | customer_type | fuelType | planName        | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
@@ -68,7 +68,7 @@ Feature: This feature is to test the verify account scenarios for existing resid
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for residential customer
       | customer_type | modal_option   | elecAccountNumber | gasAccountNumber | postcode | idType | idNumber |
-      | RES           | verify account | 7810021000        | 3720611000       | 3672     | dob    | 01011980 |
+      | RES           | verify account | 2386979578        | 7042410627       | 3029     | dob    | 01011980 |
     And user selects '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
@@ -133,7 +133,7 @@ Feature: This feature is to test the verify account scenarios for existing resid
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for residential customer
       | customer_type | modal_option   | elecAccountNumber | postcode | idType | idNumber  |
-      | RES           | verify account | 9485951606        | 4215     | dl     | 139955532 |
+      | RES           | verify account | 2387508323        | 4035     | dl     | 605788663 |
     And user selects '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer

@@ -13,7 +13,7 @@ Feature: This feature is to test the verify account scenarios for existing busin
 #      |BUS          |verify account |2870412120       |3231348465       |78538656400  |dob    |01011980  |
     And user verifies the account through verify account journey for business customer
       | customer_type | modal_option   | elecAccountNumber | gasAccountNumber | ABNOrACN    | idType | idNumber |
-      | BUS           | verify account | 2870412120        |                  | 78538656400 | dob    | 01011980 |
+      | BUS           | verify account | 6776337470        |                  | 79381111000 | dob    | 01011980 |
     And user selects '<planName>'
     And user selects gas '<planName>'
     And user moves on to fill the qualifier
@@ -55,11 +55,11 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | PS        | SWSRB-EV | 6305402728 | N                              | N                              | Y                       | LSVFLS                   | POSTMM        |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | PS        | SWSRB-EV | 6102599013 | N                              | N                              | Y                       | LSVFLS                   | POSTMM        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | PS        | SWSRB-GV | 5323580662 | N                              | N                              | Y                       | OTHER                    | POSTMM        |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | PS        | SWSRB-GV | 5320082919 | N                              | N                              | Y                       | OTHER                    | POSTMM        |
 
     Examples:
       | folderName                           | customer_type | fuelType | planName                   | accountType | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
@@ -76,7 +76,7 @@ Feature: This feature is to test the verify account scenarios for existing busin
 #      |BUS          |verify account |5802060000       |7745301000       |30179084300|dob    |01011980  |
     And user verifies the account through verify account journey for business customer
       | customer_type | modal_option   | elecAccountNumber | gasAccountNumber | ABNOrACN    | idType | idNumber |
-      | BUS           | verify account |                   | 3289236299       | 28043897900 | dob    | 01011980 |
+      | BUS           | verify account |                   | 8884398267       | 26857513900 | dob    | 01011980 |
     And user selects '<planName>'
     And user selects ele '<planName>'
     And user moves on to fill the qualifier

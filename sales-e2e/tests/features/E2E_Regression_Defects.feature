@@ -9,7 +9,7 @@ Feature:This feature file is to add scenarios for regression defects
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for residential customer
       | customer_type | modal_option   | elecAccountNumber | gasAccountNumber | postcode | idType | idNumber |
-      | RES           | verify account | 8373520946        | 2816302453       | 3153     | dob    | 01011980 |
+      | RES           | verify account | 8146713614        | 4931329359       | 3218     | dob    | 01011980 |
     And user selects '<planName>'
     And user moves on to fill the qualifier
     And user selects 'Non-Moving' for moving question on qualifier
@@ -36,10 +36,10 @@ Feature:This feature file is to add scenarios for regression defects
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for residential customer
       | customer_type | modal_option   | elecAccountNumber | gasAccountNumber | postcode | idType | idNumber |
-      | RES           | verify account | 2174217496        | 8502057105       | 3075     | dob    | 05071969 |
+      | RES           | verify account | 8146713614        | 4931329359       | 3218     | dob    | 01011980 |
     Then user verifies retrieved account details on plans page
-      | address                  | NMI         | MIRN       |
-      | 7 Ella Ct LALOR VIC 3075 | 63052151664 | 5321275791 |
+      | address                               | NMI         | MIRN       |
+      | 172 Aberdeen St GEELONG WEST VIC 3218 | 62031384500 | 5330236561 |
     When user selects '<planName>'
     And user moves on to fill the qualifier
     And user selects 'Moving' for moving question on qualifier
@@ -60,7 +60,7 @@ Feature:This feature file is to add scenarios for regression defects
     And user enters '<movingAddress>' in address field and selects any available moving date
     And user verifies account on qualifier
       | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue   |
-      | Existing       | 0058120000    | Postcode            | 2018             | dl     | 248508352 |
+      | Existing       | 4137019650    | Postcode            | 2444             | dl     | 230012125 |
     And user provides all other details on qualifier page
       | customerType | movingType | connectionAddress                | propertyType |
       | RES          | NA         | 5 Wilkies Street, BULLI NSW 2516 | Renter       |
