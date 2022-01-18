@@ -5,7 +5,6 @@ import * as assert from 'assert';
 import {FileUtils} from '../../libs/FileUtils';
 
 const eaQt2Reporting = require('../pages/eaQt2Reporting.page');
-const cryptoJS = require('crypto-js');
 const {config} = require('../../resources/resource');
 
 
@@ -14,8 +13,9 @@ export class qt2Reporting {
   public static async loginToqt2Reporting(t) {
     let username = config.qt2ReportingCreds.username;
     let password = config.qt2ReportingCreds.password;
+    console.log(`Using qt2reporting username: ${username}`);
     await testFunction.clearAndEnterText(t, eaQt2Reporting.elements.txtUsername, username);
-    await testFunction.clearAndEnterText(t, eaQt2Reporting.elements.txtPassword, cryptoJS.AES.decrypt(password, username).toString(cryptoJS.enc.Utf8));
+    await testFunction.clearAndEnterText(t, eaQt2Reporting.elements.txtPassword, password);
     await testFunction.click(t, eaQt2Reporting.elements.btnSubmit);
   }
 
