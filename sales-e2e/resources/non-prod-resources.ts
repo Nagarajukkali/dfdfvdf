@@ -23,8 +23,8 @@ module.exports = {
       currentDir: 'screenshots/Current',
     },
     qt2ReportingCreds: {
-      username: 'aparid',
-      password: 'U2FsdGVkX1+3mTkaSv2Vn7OdQOGvMcra+seRqRJbEaY='
+      username: process.env.reporting_username,
+      password: process.env.reporting_password
     },
     ghostingUserCreds: {
       username: 'eacsr@ea.com',
