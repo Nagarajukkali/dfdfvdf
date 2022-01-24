@@ -26,8 +26,8 @@ This will start the testcafe server and run our scripts according to the provide
   
   To change the concurrency of test run
   - Change the value of `concurrency` in `.testcafetc.json`
-  
-  #### To run tests in remote device
+
+#### To run tests in remote device
   - Make sure remote device and system both are connected in same network
   ```
     npm run e2e:remote
@@ -36,7 +36,7 @@ This will start the testcafe server and run our scripts according to the provide
   - Scan the qr code or type the url in browser
   - Tests will get trigger in remote device
   
-  #### To run tests in Jenkins
+#### To run tests in Jenkins
   Job name : Quotetool_Level_4_E2E
   We can trigger tests using below options
   - Branch
@@ -44,3 +44,14 @@ This will start the testcafe server and run our scripts according to the provide
   - Tag
   - Browser
 
+### Configuring qt2reporting credentials
+
+In order to successfully run the test suite locally, qt2reporting credentials must be configured
+
+To do so:
+  - Create a file called `.env` in the top-level folder of the project
+  - Insert the following content, replacing `<username>` and `<password>` with the username/password of an account which has access to nonprod qt2reporting:
+  ```
+  reporting_username=<username>
+  reporting_password=<password>
+  ```
