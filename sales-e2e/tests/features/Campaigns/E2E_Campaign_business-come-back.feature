@@ -1,7 +1,7 @@
 @campaign
 
 Feature:E2E scenario for business-come-back campaign
-  @DR21.11.2.campaign
+  @DR22.2.1.campaign
   Scenario Outline: Validate complete data for business-come-back campaign for NSW-Essential for new non-moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2580" and clicks on show me plan link
@@ -75,8 +75,8 @@ Feature:E2E scenario for business-come-back campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign           | folderName                                                  | sourceSystem | journey     | state | customerType | newOrExisting | AAH | DD |
-      | New            | BOTH     | 19          | 25          | business-come-back | E2E_Campaign_business-come-back_NSW-essential_new_nonmoving | Quote Tool   | Plan Switch | NSW   | BUS          | New           | No  | No |
-  @DR21.11.2.campaign
+      | New            | BOTH     | 17          | 21          | business-come-back | E2E_Campaign_business-come-back_NSW-essential_new_nonmoving | Quote Tool   | Plan Switch | NSW   | BUS          | New           | No  | No |
+  @DR22.2.1.campaign
   Scenario Outline: Validate complete data for business-come-back campaign for NSW-Endeavour for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2780" and clicks on show me plan link
@@ -150,9 +150,9 @@ Feature:E2E scenario for business-come-back campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign           | folderName                                               | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | BOTH     | 14          | 25          | business-come-back | E2E_Campaign_business-come-back_NSW_Endeavour_new_moving | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
+      | New            | BOTH     | 14          | 21          | business-come-back | E2E_Campaign_business-come-back_NSW_Endeavour_new_moving | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
 
-  @DR21.11.2.campaign
+  @DR22.2.1.campaign
   Scenario Outline: Validate complete data for business-come-back campaign for NSW-Ausgrid for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" and clicks on show me plan link
@@ -226,8 +226,8 @@ Feature:E2E scenario for business-come-back campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign           | folderName                                     | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | BOTH     | 20          | 25          | business-come-back | E2E_Campaign_business-come-back_NSW_Ausgrid_new_moving | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
-  @DR21.11.2.campaign
+      | New            | BOTH     | 20          | 21          | business-come-back | E2E_Campaign_business-come-back_NSW_Ausgrid_new_moving | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
+  @DR22.2.1.campaign
   Scenario Outline: Validate complete data for business-come-back campaign for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
@@ -301,8 +301,8 @@ Feature:E2E scenario for business-come-back campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign           | folderName                                     | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | BOTH     | 6           | 24          | business-come-back | E2E_Campaign_business-come-back_VIC_new_moving | Quote Tool   | Move Home | VIC   | BUS          | New           | No  | No |
-  @DR21.11.2.campaign
+      | New            | BOTH     | 4           | 22          | business-come-back | E2E_Campaign_business-come-back_VIC_new_moving | Quote Tool   | Move Home | VIC   | BUS          | New           | No  | No |
+  @DR22.2.1.campaign
   Scenario Outline: Validate complete data for business-come-back campaign for QLD for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4500" and clicks on show me plan link
@@ -314,10 +314,10 @@ Feature:E2E scenario for business-come-back campaign
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName              | state   | signUpCredit |
       | Y                        | N         | Y            | N           | Total Plan - Business | <state> | N            |
-    And user clicks on Add plan button
+    And user clicks on Select plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+      | ELE      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -343,7 +343,7 @@ Feature:E2E scenario for business-come-back campaign
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+      | ELE      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName              | state   | signUpCredit |
       | Y                        | N         | Y            | N           | Total Plan - Business | <state> | N            |
@@ -363,4 +363,4 @@ Feature:E2E scenario for business-come-back campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign           | folderName                                     | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | ELE     | 20           | 0          | business-come-back | E2E_Campaign_business-come-back_QLD_new_moving | Quote Tool   | Move Home | QLD   | BUS          | New           | No  | No |
+      | New            | ELE     | 14           | 0          | business-come-back | E2E_Campaign_business-come-back_QLD_new_moving | Quote Tool   | Move Home | QLD   | BUS          | New           | No  | No |
