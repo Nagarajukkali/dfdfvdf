@@ -39,123 +39,101 @@ export class qualifierMethod {
     await testFunction.clearAndEnterText(t, eaQualifierPage.elements.accountNumber, accountNumber);
     switch (accountIdentityType) {
       case BusinessType.ABN:
-        await testFunction.click(t, eaQualifierPage.elements.existingCustomerAbn);
         await testFunction.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, postcodeOrABNACN);
         await t.wait(2000);
         break;
       case BusinessType.ACN:
-        await testFunction.click(t, eaQualifierPage.elements.existingCustomerAcn);
         await testFunction.clearAndEnterText(t, eaQualifierPage.elements.abnAcnField, postcodeOrABNACN);
         await t.wait(2000);
         break;
       case 'Postcode':
         await testFunction.clearAndEnterText(t, eaQualifierPage.elements.accountDetail, postcodeOrABNACN);
-        await testFunction.isElementVisible(t, eaQualifierPage.elements.accountDetailValidate);
         break;
       default:
         console.log('account identity type is not valid');
     }
     await testFunction.takeScreenshot(t, "qualifier_page");//disabled UI Validation
     await testFunction.click(t, eaQualifierPage.elements.verifyAccountSubmit);
-    await testFunction.waitForElementPropertyToBeChanged(t, eaQualifierPage.elements.verifyAccountSubmit, 'wg-processing', "false");
-    if(validateAnalyticsEvent==='Y') {
-      await plansMethod.validateComponentLibraryEvent(t, "qualifier_page", "verify_account_submit_button");
-    }
     console.log("account is verified");
   }
 
-  public static async selectIdTypeQualifier(t, itemToClick) {
-    if (await testFunction.isElementExists(t, eaQualifierPage.elements.idTypeDropDown)) {
-      let val = await testFunction.sizeOfElement(t, eaQualifierPage.elements.idTypeDropDown);
-      if (val > 1) {
-        await testFunction.click(t, eaQualifierPage.elements.idTypeSelectedOption);
-        await testFunction.click(t, eaQualifierPage.elements.idTypeDropDown.withText(itemToClick));
-        // await testFunction.click(t, itemToClick);
-      }
+  public static async selectIdTypeQualifier(t, idType) {
+    switch (idType) {
+      case IdType.DOB:
+        await testFunction.click(t, eaQualifierPage.elements.idTypeDOBRadio);
+        break;
+      case IdType.DL:
+        await testFunction.click(t, eaQualifierPage.elements.idTypeDLRadio);
+        break;
+      case IdType.PIN:
+        await testFunction.click(t, eaQualifierPage.elements.idTypePinRadio);
+        break;
+      case IdType.MEDICARE:
+        await testFunction.click(t, eaQualifierPage.elements.idTypeMedicareRadio);
+        break;
+      case IdType.PASSPORT:
+        await testFunction.click(t, eaQualifierPage.elements.idTypePassportRadio);
+        break;
+      default:
+        console.log('Invalid id type');
     }
   }
 
   public static async verifyIdentity(t, idType, idValue) {
     switch (idType) {
       case IdType.DOB:
-        await testFunction.clearTextField(t, eaQualifierPage.elements.idTypeDOBValue);
-        await testFunction.clearTextField(t, eaQualifierPage.elements.idTypeDOBMonthValue);
-        await testFunction.clearTextField(t, eaQualifierPage.elements.idTypeDOBYearValue);
-        await this.provideIdValue(t, idValue, eaQualifierPage.elements.idTypeDOBValue);
+        await this.selectIdTypeQualifier(t, 'dob');
         break;
       case IdType.DL:
-        await this.selectIdTypeQualifier(t, 'Driver Licence');
-        await this.provideIdValue(t, idValue, eaQualifierPage.elements.idTypeValue);
+        await this.selectIdTypeQualifier(t, 'dl');
         break;
       case IdType.PIN:
-        await this.selectIdTypeQualifier(t, 'Pin');
-        await this.provideIdValue(t, idValue, eaQualifierPage.elements.idTypeValue);
+        await this.selectIdTypeQualifier(t, 'pin');
         break;
       case IdType.MEDICARE:
-        await this.selectIdTypeQualifier(t, 'Medicare');
-        await this.provideIdValue(t, idValue, eaQualifierPage.elements.idTypeValue);
+        await this.selectIdTypeQualifier(t, 'medicare');
         break;
       case IdType.PASSPORT:
-        await this.selectIdTypeQualifier(t, 'Passport');
-        await this.provideIdValue(t, idValue, eaQualifierPage.elements.idTypeValue);
+        await this.selectIdTypeQualifier(t, 'passport');
         break;
       default:
         console.log('Invalid id type');
     }
+    await this.provideIdValue(t, idValue, eaQualifierPage.elements.idValue);
     await testFunction.takeScreenshot(t, "qualifier_page");//disabled UI Validation
     await t.wait(1000);
     await testFunction.click(t, eaQualifierPage.elements.verifyIdentitySubmit);
     await testFunction.waitForLoadingIconToClose();
     await t.wait(3000);
-    if(validateAnalyticsEvent==='Y') {
-      //await testFunction.isElementDisplayed(t,eaQualifierPage.elements.moving);
-      await plansMethod.validateComponentLibraryEvent(t, "qualifier_page", "verify_account_submit_button");
-      const personID = await t.eval(() => window.ead.user.crn);
-      await t.expect(personID).notEql("");
-      console.log("Existing customer person ID details are verified in analytics logs");
-    }
     console.log("Existing customer ID details are verified");
   }
 
   public static async verifyIdentitySales(t, idType, idValue) {
     switch (idType) {
       case IdType.DOB:
-        await testFunction.clearTextField(t, eaQualifierPage.elements.idTypeDOBValue);
-        await testFunction.clearTextField(t, eaQualifierPage.elements.idTypeDOBMonthValue);
-        await testFunction.clearTextField(t, eaQualifierPage.elements.idTypeDOBYearValue);
-        await this.provideIdValue(t, idValue, eaQualifierPage.elements.idTypeDOBValue);
+        await this.selectIdTypeQualifier(t, 'dob');
         break;
       case IdType.DL:
-        await this.selectIdTypeQualifier(t, 'Driver Licence');
-        await this.provideIdValue(t, idValue, eaQualifierPage.elements.idTypeValue);
+        await this.selectIdTypeQualifier(t, 'dl');
         break;
       case IdType.PIN:
-        await this.selectIdTypeQualifier(t, 'Pin');
-        await this.provideIdValue(t, idValue, eaQualifierPage.elements.idTypeValue);
+        await this.selectIdTypeQualifier(t, 'pin');
         break;
       case IdType.MEDICARE:
-        await this.selectIdTypeQualifier(t, 'Medicare');
-        await this.provideIdValue(t, idValue, eaQualifierPage.elements.idTypeValue);
+        await this.selectIdTypeQualifier(t, 'medicare');
         break;
       case IdType.PASSPORT:
-        await this.selectIdTypeQualifier(t, 'Passport');
-        await this.provideIdValue(t, idValue, eaQualifierPage.elements.idTypeValue);
+        await this.selectIdTypeQualifier(t, 'passport');
         break;
       default:
         console.log('Invalid id type');
     }
+    await this.provideIdValue(t, idValue, eaQualifierPage.elements.idValue);
     await testFunction.takeScreenshot(t, "qualifier_page");//disabled UI Validation
     await t.wait(1000);
     await testFunction.click(t, eaQualifierPage.elements.verifyIdentitySubmit);
     await testFunction.waitForLoadingIconToClose();
     await t.wait(3000);
-    if(validateAnalyticsEvent==='Y') {
-      await testFunction.isElementDisplayed(t,eaQualifierPage.elements.moving);
-      await plansMethod.validateComponentLibraryEvent(t, "qualifier_page", "verify_account_submit_button");
-      const personID = await t.eval(() => window.ead.user.crn);
-      await t.expect(personID).notEql("");
-      console.log("Existing customer person ID details are verified in analytics logs");
-    }
     console.log("Existing customer ID details are verified");
   }
 
@@ -189,7 +167,7 @@ export class qualifierMethod {
   }
 
   public static async provideAddress(t, address) {
-    const actualAddress = Selector(() => document.getElementById("connection-address-auto-input"));
+    const actualAddress = Selector(() => document.getElementById("qualifier-connection-address-auto-input"));
     const actualAddressText = await actualAddress().value;
     const expectedAddressText = testFunction.formatAddress(address);
     if (actualAddressText.toLowerCase() !== expectedAddressText.toLowerCase()) {
@@ -197,27 +175,13 @@ export class qualifierMethod {
       await t.wait(2000);
       await testFunction.isElementVisible(t, eaQualifierPage.elements.serviceAddressList);
       await testFunction.clickElementFromList(t, eaQualifierPage.elements.serviceAddressList, address);
-      // if((await testFunction.sizeOfElement(t,eaQualifierPage.elements.addressLoadingIcon))>0)
-      //   await testFunction.isElementVisible(t, eaQualifierPage.elements.addressLoadingIcon);
       await testFunction.waitForLoadingIconToClose();
       await t.wait(3000);
-      if (await testFunction.sizeOfElement(t, eaQualifierPage.elements.planSelectionPopup) > 0) {
-        await testFunction.click(t, eaQualifierPage.elements.planSelectionPopup);
-      }
     }
     if ((await testFunction.sizeOfElement(t, eaQualifierPage.elements.solarDetectionErrorLink) > 0) && validateAnalyticsEvent==='Y') {
       await testFunction.click(t,eaQualifierPage.elements.solarDetectionErrorLink);
       await t.closeWindow();
       await plansMethod.validateComponentLibraryEvent(t, "qualifier_page", "solar_detection_error_link");
-    }
-    let continuebutton =await testFunction.getElementText(t, eaQualifierPage.elements.addressContinue);
-    await testFunction.click(t, eaQualifierPage.elements.addressContinue);
-    if(validateAnalyticsEvent==='Y'){
-      if(continuebutton.includes('Continue')){
-        await plansMethod.validateComponentLibraryEvent(t,"qualifier_page","address_continue_button");
-      }else{
-        await plansMethod.validateComponentLibraryEvent(t,"qualifier_page","address_continue_no_solar_button");
-      }
     }
     console.log(`${address} is provided`);
   }
@@ -231,13 +195,8 @@ export class qualifierMethod {
       await t.wait(2000);
       await testFunction.isElementVisible(t, eaQualifierPage.elements.serviceAddressList);
       await testFunction.clickElementFromList(t, eaQualifierPage.elements.serviceAddressList, address);
-      // if((await testFunction.sizeOfElement(t,eaQualifierPage.elements.addressLoadingIcon))>0)
-      //   await testFunction.isElementVisible(t, eaQualifierPage.elements.addressLoadingIcon);
       await testFunction.waitForLoadingIconToClose();
       await t.wait(3000);
-      if (await testFunction.sizeOfElement(t, eaQualifierPage.elements.planSelectionPopup) > 0) {
-        await testFunction.click(t, eaQualifierPage.elements.planSelectionPopup);
-      }
     }
     if ((await testFunction.sizeOfElement(t, eaQualifierPage.elements.solarDetectionErrorLink) > 0) && validateAnalyticsEvent==='Y') {
       await testFunction.click(t,eaQualifierPage.elements.solarDetectionErrorLink);
@@ -251,14 +210,13 @@ export class qualifierMethod {
     await testFunction.clearAndEnterText(t, eaQualifierPage.elements.serviceAddress, address);
     await testFunction.isElementVisible(t, eaQualifierPage.elements.serviceAddressList);
     await testFunction.clickElementFromList(t, eaQualifierPage.elements.serviceAddressList, address);
-    //await testFunction.isElementVisible(t, eaQualifierPage.elements.addressLoadingIcon);
     await testFunction.waitForLoadingIconToClose();
     await t.wait(3000);
     console.log(`${address} is provided`);
   }
 
   public static async clickOnContinueAddress(t) {
-    await testFunction.click(t, eaQualifierPage.elements.addressContinue);
+    //await testFunction.click(t, eaQualifierPage.elements.addressContinue);
   }
 
   public static async selectDateFromCalendar(t,) {
@@ -283,6 +241,7 @@ export class qualifierMethod {
   }
 
   public static async selectPropertyType(t,propertyType){
+    await testFunction.isElementDisplayed(t,eaQualifierPage.elements.owner);
     if(propertyType ===Property.OWNER){
       await testFunction.click(t,eaQualifierPage.elements.owner);
       if(validateAnalyticsEvent==='Y') {
