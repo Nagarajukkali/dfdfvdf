@@ -201,7 +201,7 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_25');
       } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit && (!(data[0].campaign === "Balance Plan"))) {
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_50');
-      } else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$200CreditGas && (expectedPlanCode === "TOPB-GV") && (!(data[0].campaign === "Balance Plan"))) {
+      } else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$200CreditGas && (expectedPlanCode === "TOPB-GV"|| expectedPlanCode === "TOPB-GN")  && (!(data[0].campaign === "Balance Plan"))) {
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_200');
       } else if (data[0].campaign === "Balance Plan") {
         if (data[0].state === "NSW") {
