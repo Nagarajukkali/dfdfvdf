@@ -10,7 +10,7 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
-      | Existing       | 0010462063    | Postcode            | 3030             | dob    | 01011980 |
+      | Existing       | 2390260226    | Postcode            | 3195         | dob    | 14121974 |
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | connectionAddress                        | propertyType |
       | RES          | Moving     | 271 Heatherhill Road, FRANKSTON VIC 3199 | Renter       |

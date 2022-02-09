@@ -93,7 +93,7 @@ When(/^user validates details on checkout review page$/, async function (t, [], 
   await checkoutReviewMethod.validateFeesAndChargesSection(t);
   await checkoutReviewMethod.validateCarbonNeutralSection(t,carbonNeutral);
   await checkoutReviewMethod.validateNavigationButtons(t);
-  await checkoutReviewMethod.validateGeneralStateDisclaimer(t, customerType, isNewCustomer, isMoving);
+  //await checkoutReviewMethod.validateGeneralStateDisclaimer(t, customerType, isNewCustomer, isMoving);
   if (solarSetup !== undefined) {
     await checkoutReviewMethod.validateSolarComponent(t, solarSetup);
   }

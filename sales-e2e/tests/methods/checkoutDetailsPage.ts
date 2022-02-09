@@ -24,8 +24,8 @@ export class checkoutDetailsMethod {
 
   public static map = new Map();
 
-  public static async provideDetailsInAboutMeSection(t, journey, firstName, lastName, customerStatus) {
-    let titleValue,titleValue1;
+  public static async provideDetailsInAboutMeSection(t, journey, firstName, lastName, customerStatus: CustomerStatus) {
+    let titleValue;
     if ((await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.titleDropdown)).includes('Please select')) {
       await t.wait(1000);
       await testFunction.click(t, eaCheckoutDetailsPage.elements.titleDropdown);
@@ -73,6 +73,11 @@ export class checkoutDetailsMethod {
       let age = Math.floor((timeDiff / (1000 * 3600 * 24))/365.25);
       await t.expect(dateOfBirth).eql(age);
       }
+  }
+
+  public static async validateConnectionAddress(t, address){
+    await testFunction.assertText(t, eaCheckoutDetailsPage.elements.connectionAddress, address)
+    console.log("Connection address validated on checkout page");
   }
 
 

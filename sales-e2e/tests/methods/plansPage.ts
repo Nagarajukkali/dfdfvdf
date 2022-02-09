@@ -2155,7 +2155,7 @@ export class plansMethod {
           await qualifierMethod.selectCustomerStatus(t, 'New');
           await qualifierMethod.provideMovingType(t, 'Non-Moving');
           await testFunction.takeScreenshot(t, 'plans_page');//disabled UI Validation
-          await testFunction.click(t, eaQualifierPage.elements.addressContinue);
+          //await testFunction.click(t, eaQualifierPage.elements.addressContinue);
           await testFunction.isElementDisplayed(t, eaQualifierPage.elements.owner);
           break;
         default:

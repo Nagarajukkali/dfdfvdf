@@ -14,8 +14,7 @@ Feature:This feature file is to add scenarios for regression defects
     And user moves on to fill the qualifier
     And user selects 'Non-Moving' for moving question on qualifier
     Then Address field is 'auto_populated'
-    When user closes the qualifier
-    And user closes the cart page
+    When user refresh the qualifier
     And user reset the verified account
     And user selects 'No Frills'
     And user moves on to fill the qualifier
@@ -36,19 +35,18 @@ Feature:This feature file is to add scenarios for regression defects
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for residential customer
       | customer_type | modal_option   | elecAccountNumber | gasAccountNumber | postcode | idType | idNumber |
-      | RES           | verify account | 8146713614        | 4931329359       | 3218     | dob    | 01011980 |
+      | RES           | verify account |  8146713614        | 4931329359       | 3218     | dob    | 01011980 |
     Then user verifies retrieved account details on plans page
-      | address                               | NMI         | MIRN       |
-      | 172 Aberdeen St GEELONG WEST VIC 3218 | 62031384500 | 5330236561 |
+      | address                  | NMI         | MIRN       |
+      | 172 Aberdeen St, GEELONG WEST VIC 3218 | 62031384500 | 5330236561 |
     When user selects '<planName>'
     And user moves on to fill the qualifier
-    And user selects 'Moving' for moving question on qualifier
-    And user enters the address '<address>' on qualifier
-    And user closes the qualifier
-    And user closes the cart page
-    Then user verifies retrieved account details on plans page
-      | address                               | NMI         | MIRN       |
-      | 271 Heatherhill Rd FRANKSTON VIC 3199 | 64075570879 | 5321574765 |
+    And user provides all details on qualifier page
+    | customerType | movingType  | connectionAddress                | propertyType |
+    | RES          | Moving         |  271 Heatherhill Road, FRANKSTON VIC 3199 | Renter       |
+    Then user validates the connection address on checkout page
+      | address                               | 
+      | 271 Heatherhill Rd, FRANKSTON VIC 3199 |
 
     Examples:
       | folderName                             | customer_type | fuelType | planName        | address                                  |
@@ -60,7 +58,7 @@ Feature:This feature file is to add scenarios for regression defects
     And user enters '<movingAddress>' in address field and selects any available moving date
     And user verifies account on qualifier
       | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue   |
-      | Existing       | 4137019650    | Postcode            | 2444             | dl     | 230012125 |
+      | Existing       | 2383080000    | Postcode            | 2229             | dob     | 10091943 |
     And user provides all other details on qualifier page
       | customerType | movingType | connectionAddress                | propertyType |
       | RES          | NA         | 5 Wilkies Street, BULLI NSW 2516 | Renter       |
