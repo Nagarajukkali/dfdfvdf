@@ -9,6 +9,7 @@ const moveHouse = {
     listOfAddresses: Selector("#ui-id-3 li"),
     btnSelectMoveDate: Selector("#edit-submit"),
     tableCalendar: Selector("#energisation-calendar table > tbody"),
+    btnNextMonth: Selector("#energisation-calendar > span > div > div > div > button"),
     btnMoving: Selector("hs-moving-datepicker > form > div:nth-child(2) > button"),
     errorMsgInDateSelection: Selector(".error-business-hint.two-business-days"),
     disclaimerMsg: Selector(".t-emphasize"),

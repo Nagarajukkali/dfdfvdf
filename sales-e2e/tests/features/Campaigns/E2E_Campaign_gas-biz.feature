@@ -1,4 +1,4 @@
-@DR21.11.4.campaign
+@DR22.2.1.campaign
 Feature:E2E scenario for gas-biz campaign
 
   Scenario Outline: Validate complete data for gas-biz campaign for NSW Ausgrid for new customer
@@ -12,7 +12,7 @@ Feature:E2E scenario for gas-biz campaign
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName              | state | signUpCredit |
       | Y                        | N         | Y            | Total Plan - Business | NSW   | Y            |
-    And user clicks on Add plan button
+    And user clicks on Select plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | state   |
       | GAS      | Y                | N                     | Y                   | Y                                  | <state> |
@@ -50,7 +50,61 @@ Feature:E2E scenario for gas-biz campaign
 
     Examples:
       | customerStatus | fuelType | campaign | state | eleDiscount | gasDiscount |
-      | New            | GAS      | gas-biz  | NSW   | 22          | 25          |
+      | New            | GAS      | gas-biz  | NSW   | 22          | 21          |
+
+  Scenario Outline: Validate complete data for gas-biz campaign for NSW Ausgrid for existing customer
+    Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_gas-biz_Ex_NSW_Ausgrid' to save evidences
+    When user provides "2042" and clicks on show me plan link
+    Then user is presented with the plans
+    And user validates "GAS" discount to be "<gasDiscount>" percent
+    And user validates the data on plans page for "<campaign>"
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
+      | GAS      | Y                | N                     | Y                   | Y                                  | N                               | <state> |
+    And user validates disclaimer on plans page for "<campaign>"
+      | referencePriceComparison | goNeutral | solarBuyBack | planName              | state | signUpCredit |
+      | Y                        | N         | Y            | Total Plan - Business | NSW   | Y            |
+    And user clicks on Select plan button
+    And user validates plan details on cart page for "<campaign>"
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | state   |
+      | GAS      | Y                | N                     | Y                   | Y                                  | <state> |
+    And user moves on to fill the qualifier
+    And user selects '<customerStatus>' on qualifier
+    And user verifies account on qualifier
+      | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
+      | Existing       | 7185109615    | ABN                 | 33499936800      | dob    | 01011980 |
+    And user provides all other details on qualifier page
+      | customerType | connectionAddress                   | movingType | propertyType | solarOption |
+      | BUS          | 73-75 Enmore Road, NEWTOWN NSW 2042 | Non-Moving | Renter       |             |
+    And user provides all details on checkout details page
+      | customerType | journey | firstName | lastName | businessType |
+      | BUS          | BUS     | test      | test     | ABN          |
+    And user selects mailing address option
+      | addressType        | otherAddress |
+      | Connection Address |              |
+    And user selects answer for property renovation question for '<state>'
+    #And user opts in for Carbon Neutral
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
+      | No                |          |                        |                       |
+    And user validates plan details on review page for "<campaign>"
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
+      | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> |
+    And user verifies selected plan details for '<fuelType>'
+    And user submits the quote
+    Then user lands on checkout complete page
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'GAS' submitted quote
+    And user validates below mandatory fields
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | PS       | TOPB-GN  | 5247073457 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
+
+    Examples:
+      | customerStatus | fuelType | campaign | state | eleDiscount | gasDiscount |
+      | Existing            | GAS      | gas-biz  | NSW   | 22          | 21          |
 
   Scenario Outline: Validate complete data for gas-biz campaign for VIC for new customer
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_gas-biz_VIC' to save evidences
@@ -63,7 +117,7 @@ Feature:E2E scenario for gas-biz campaign
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName              | state   | signUpCredit |
       | Y                        | N         | Y            | Total Plan - Business | <state> | Y            |
-    And user clicks on Add plan button
+    And user clicks on Select plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | state   |
       | GAS      | Y                | N                     | Y                   | Y                                  | <state> |
@@ -100,4 +154,4 @@ Feature:E2E scenario for gas-biz campaign
 
     Examples:
       | customerStatus | fuelType | campaign | state | eleDiscount | gasDiscount |
-      | New            | GAS      | gas-biz  | VIC   | 6           | 24          |
+      | New            | GAS      | gas-biz  | VIC   | 6           | 22          |

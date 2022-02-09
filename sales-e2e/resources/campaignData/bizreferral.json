@@ -36,11 +36,11 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_7%GD",
+          "VIC": "Total_5%GD",
           "NSW": {
             "Ausgrid": "Total_21%GD",
-            "Essential": "Total_21%GD",
-            "Endeavour": "Total_21%GD",
+            "Essential": "Total_20%GD",
+            "Endeavour": "Total_15%GD",
             "default": "Total_21%GD"
           },
           "ACT": "Total_12%GD",
@@ -48,11 +48,11 @@
           "QLD": "Total_15%GD"
         },
         "COR": {
-          "VIC": "Total_7%GD",
+          "VIC": "Total_5%GD",
           "NSW": {
             "Ausgrid": "Total_21%GD",
-            "Essential": "Total_21%GD",
-            "Endeavour": "Total_21%GD",
+            "Essential": "Total_20%GD",
+            "Endeavour": "Total_15%GD",
             "default": "Total_21%GD"
           },
           "ACT": "Total_12%GD",
@@ -62,8 +62,11 @@
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_7%GD",
+          "VIC": "Total_5%GD",
           "NSW": {
+            "Ausgrid": "Total_21%GD",
+            "Essential": "Total_20%GD",
+            "Endeavour": "Total_15%GD",
             "default": "Total_21%GD"
           },
           "ACT": "Total_12%GD",
@@ -71,8 +74,11 @@
           "QLD": "Total_15%GD"
         },
         "PS": {
-          "VIC": "Total_7%GD",
+          "VIC": "Total_5%GD",
           "NSW": {
+            "Ausgrid": "Total_21%GD",
+            "Essential": "Total_20%GD",
+            "Endeavour": "Total_15%GD",
             "default": "Total_21%GD"
           },
           "ACT": "Total_12%GD",
@@ -112,29 +118,29 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_25%GD",
-          "NSW": "Total_26%GD",
-          "ACT": "Total_26%GD",
+          "VIC": "Total_23%GD",
+          "NSW": "Total_22%GD",
+          "ACT": "Total_22%GD",
           "SA": "Total_5%GD"
         },
         "COR": {
-          "VIC": "Total_25%GD",
-          "NSW": "Total_26%GD",
-          "ACT": "Total_26%GD",
+          "VIC": "Total_23%GD",
+          "NSW": "Total_22%GD",
+          "ACT": "Total_22%GD",
           "SA": "Total_5%GD"
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_25%GD",
-          "NSW": "Total_26%GD",
-          "ACT": "Total_26%GD",
+          "VIC": "Total_23%GD",
+          "NSW": "Total_22%GD",
+          "ACT": "Total_22%GD",
           "SA": "Total_5%GD"
         },
         "PS": {
-          "VIC": "Total_25%GD",
-          "NSW": "Total_26%GD",
-          "ACT": "Total_26%GD",
+          "VIC": "Total_23%GD",
+          "NSW": "Total_22%GD",
+          "ACT": "Total_22%GD",
           "SA": "Total_5%GD"
         }
       }
@@ -144,19 +150,19 @@
     "referencePriceComparison": {
   "heading": "Reference price comparison and estimated annual cost",
   "VIC": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual business usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
   },
   "NSW": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual business usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
   },
   "ACT": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual business usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
   },
   "QLD": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual business usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
   },
   "SA": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual business usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
   }
 },
     "goNeutral": {

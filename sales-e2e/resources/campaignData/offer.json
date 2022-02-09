@@ -57,7 +57,7 @@
             "heading": "10% discount off total electricity bill"
           },
           "QLD": {
-            "heading": "12% discount off total electricity bill"
+            "heading": "14% discount off total electricity bill"
           },
           "SA": {
             "heading": "6% discount off total electricity bill"
@@ -88,7 +88,7 @@
             "Endeavour": "16% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
           },
           "ACT": "10% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
-          "QLD": "12% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+          "QLD": "14% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
           "SA": "6% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
         },
         "noStandardConnectionFee": "No standard connection fees. Move with us and we'll waive connection and special meter reads during business hours."
@@ -105,19 +105,19 @@
             "default": "Total_18%GD_25"
           },
           "ACT": "Total_10%GD_50",
-          "QLD": "Total_12%GD_25",
+          "QLD": "Total_14%GD_25",
           "SA": "Total_6%GD_50"
         },
         "COR": {
           "VIC": "Total_12%GD",
           "NSW": {
-            "Ausgrid": "Total_18%GD",
+            "Ausgrid": "Total_20%GD",
             "Essential": "Total_16%GD",
             "Endeavour": "Total_16%GD",
             "default": "Total_18%GD"
           },
           "ACT": "Total_10%GD_50",
-          "QLD": "Total_12%GD",
+          "QLD": "Total_14%GD",
           "SA": "Total_6%GD_50"
         }
       },
@@ -131,19 +131,19 @@
             "default": "Total_18%GD_25"
           },
           "ACT": "Total_10%GD_50",
-          "QLD": "Total_12%GD_25",
+          "QLD": "Total_14%GD_25",
           "SA": "Total_6%GD_50"
         },
         "PS": {
           "VIC": "Total_12%GD",
           "NSW": {
-            "Ausgrid": "Total_18%GD",
+            "Ausgrid": "Total_20%GD",
             "Essential": "Total_16%GD",
             "Endeavour": "Total_16%GD",
             "default": "Total_18%GD"
           },
           "ACT": "Total_10%GD",
-          "QLD": "Total_12%GD",
+          "QLD": "Total_14%GD",
           "SA": "Total_6%GD"
         }
       }
@@ -188,7 +188,7 @@
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
-            "heading": "24% discount off total gas bill"
+            "heading": "22% discount off total gas bill"
           },
           "NSW": {
             "heading": "16% discount off total gas bill"
@@ -213,7 +213,7 @@
         "moveHomeCredit": "$25 Move Home Credit. Get a $25 credit on each energy account when you move home online.+",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": {
-          "VIC": "24% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
+          "VIC": "22% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
           "NSW": "16% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
           "ACT": "15% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
           "SA": "15% discount off total gas bill. Guaranteed discount that applies to your energy charges."
@@ -223,13 +223,13 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_24%GD_25",
+          "VIC": "Total_22%GD_25",
           "NSW": "Total_16%GD_25",
           "ACT": "Total_15%GD_50",
           "SA": "Total_15%GD_50"
         },
         "COR": {
-          "VIC": "Total_24%GD",
+          "VIC": "Total_22%GD",
           "NSW": "Total_16%GD",
           "ACT": "Total_15%GD_50",
           "SA": "Total_15%GD_50"

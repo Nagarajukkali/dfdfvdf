@@ -6,8 +6,8 @@
       "preSelect": {
         "Credit50": {
           "VIC": {
-            "heading": "Get up to $400 credit",
-            "description": "Credits applied to first bill. $200 to electricity. $200 to gas."
+            "heading": "Get up to $200 credit",
+            "description": "Credits applied to first bill. $100 to electricity. $100 to gas."
           },
           "NSW": {
             "heading": "Get up to $400 credit",
@@ -36,14 +36,14 @@
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
-            "heading": "6% discount off total electricity bill"
+            "heading": "4% discount off total electricity bill"
           },
           "NSW": {
             "Ausgrid": {
               "heading": "20% discount off total electricity bill"
             },
             "Essential": {
-              "heading": "19% discount off total electricity bill"
+              "heading": "17% discount off total electricity bill"
             },
             "Endeavour": {
               "heading": "14% discount off total electricity bill"
@@ -53,7 +53,7 @@
             "heading": ""
           },
           "QLD": {
-            "heading": "20% discount off total electricity bill"
+            "heading": "14% discount off total electricity bill"
           },
           "SA": {
             "heading": ""
@@ -67,7 +67,7 @@
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "Get up to $400 credit. Credits applied to first bill. $200 to electricity. $200 to gas.",
+          "VIC": "Get up to $200 credit. Credits applied to first bill. $100 to electricity. $100 to gas.",
           "NSW": "Get up to $400 credit. Credits applied to first bill. $200 to electricity. $200 to gas.",
           "ACT": "",
           "QLD": "",
@@ -76,14 +76,14 @@
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your market energy charges won't increase for the fixed rate period. We'll let you know in advance before your market energy rates change.",
         "discountOffTotalEnergyBill": {
-          "VIC": "6% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
+          "VIC": "4% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
           "NSW": {
             "Ausgrid": "20% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
-            "Essential": "19% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
+            "Essential": "17% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
             "Endeavour": "14% discount off total electricity bill. Guaranteed discount that applies to your market energy charges."
           },
           "ACT": "",
-          "QLD": "20% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
+          "QLD": "14% discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
           "SA": ""
         },
         "noStandardConnectionFee": ""
@@ -92,41 +92,41 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_6%GD_200",
+          "VIC": "Total_4%GD_100",
           "NSW": {
             "Ausgrid": "Total_20%GD_200",
-            "Essential": "Total_19%GD_200",
+            "Essential": "Total_17%GD_200",
             "Endeavour": "Total_14%GD_200",
             "default": ""
           },
           "ACT": "",
-          "QLD": "Total_20%GD",
+          "QLD": "Total_14%GD_200",
           "SA": ""
         },
         "COR": {
-          "VIC": "Total_6%GD_200",
+          "VIC": "Total_4%GD_100",
           "NSW": {
             "Ausgrid": "Total_20%GD_200",
-            "Essential": "Total_19%GD_200",
+            "Essential": "Total_17%GD_200",
             "Endeavour": "Total_14%GD_200",
             "default": ""
           },
           "ACT": "",
-          "QLD": "Total_20%GD",
+          "QLD": "Total_14%GD_200",
           "SA": ""
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_6%GD_200",
+          "VIC": "Total_4%GD_100",
           "NSW": {
             "Ausgrid": "Total_20%GD_200",
-            "Essential": "Total_19%GD_200",
+            "Essential": "Total_17%GD_200",
             "Endeavour": "Total_14%GD_200",
             "default": ""
           },
           "ACT": "",
-          "QLD": "Total_20%GD",
+          "QLD": "Total_14%GD_200",
           "SA": ""
         },
         "PS": {
@@ -149,8 +149,8 @@
       "preSelect": {
         "Credit50": {
           "VIC": {
-            "heading": "Get up to $400 credit",
-            "description": "Credits applied to first bill. $200 to electricity. $200 to gas."
+            "heading": "Get up to $200 credit",
+            "description": "Credits applied to first bill. $100 to electricity. $100 to gas."
           },
           "NSW": {
             "heading": "Get up to $400 credit",
@@ -179,10 +179,10 @@
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
-            "heading": "24% discount off total gas bill"
+            "heading": "22% discount off total gas bill"
           },
           "NSW": {
-            "heading": "25% discount off total gas bill"
+            "heading": "21% discount off total gas bill"
           },
           "ACT": {
             "heading": ""
@@ -198,7 +198,7 @@
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "Get up to $400 credit. Credits applied to first bill. $200 to electricity. $200 to gas.",
+          "VIC": "Get up to $200 credit. Credits applied to first bill. $100 to electricity. $100 to gas.",
           "NSW": "Get up to $400 credit. Credits applied to first bill. $200 to electricity. $200 to gas.",
           "ACT": "",
           "QLD": "",
@@ -207,8 +207,8 @@
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your market energy charges won't increase for the fixed rate period. We'll let you know in advance before your market energy rates change.",
         "discountOffTotalEnergyBill": {
-          "VIC": "24% discount off total gas bill. Guaranteed discount that applies to your market energy charges.",
-          "NSW": "25% discount off total gas bill. Guaranteed discount that applies to your market energy charges.",
+          "VIC": "22% discount off total gas bill. Guaranteed discount that applies to your market energy charges.",
+          "NSW": "21% discount off total gas bill. Guaranteed discount that applies to your market energy charges.",
           "ACT": "",
           "QLD": "",
           "SA": ""
@@ -218,22 +218,22 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_24%GD_200",
-          "NSW": "Total_25%GD_200",
+          "VIC": "Total_22%GD_100",
+          "NSW": "Total_21%GD_200",
           "ACT": "",
           "SA": ""
         },
         "COR": {
-          "VIC": "Total_24%GD_200",
-          "NSW": "Total_25%GD_200",
+          "VIC": "Total_22%GD_100",
+          "NSW": "Total_21%GD_200",
           "ACT": "",
           "SA": ""
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_24%GD_200",
-          "NSW": "Total_25%GD_200",
+          "VIC": "Total_22%GD_100",
+          "NSW": "Total_21%GD_200",
           "ACT": "",
           "SA": ""
         },
@@ -250,16 +250,16 @@
     "referencePriceComparison": {
   "heading": "Reference price comparison and estimated annual cost",
   "VIC": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual business usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
   },
   "NSW": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual business usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
   },
   "ACT": {
     "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
   },
   "QLD": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual business usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
   },
   "SA": {
     "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
@@ -281,7 +281,7 @@
     "Credit50": {
       "VIC": {
         "heading": "Account Credits",
-        "description": "+ Offer available to new VIC business accounts only who sign up to Total Plan Business electricity/gas offer. Credits applied to first bill, $200 to new electricity/gas account. Credits are not transferable or redeemable for cash. We may change or end this offer at any time."
+        "description": "+ Offer available to new VIC business accounts only who sign up to Total Plan Business electricity/gas offer. Credits applied to first bill, $100 to new electricity/gas account. Credits are not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "NSW": {
         "heading": "Account Credits",
