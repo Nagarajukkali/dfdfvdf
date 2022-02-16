@@ -13,7 +13,7 @@
 
 Feature:E2E scenario for business-energy campaign
 
-  @DR21.10.2.campaign
+  @DR22.2.1.campaign
   Scenario Outline: Validate complete data for business-energy campaign for NSW-Essential for new non-moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2580" and clicks on show me plan link
@@ -25,7 +25,7 @@ Feature:E2E scenario for business-energy campaign
       | ELE      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+      | GAS      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName              | state   | signUpCredit |
       | Y                        | N         | Y            | N           | Total Plan - Business | <state> | Y            |
@@ -35,7 +35,7 @@ Feature:E2E scenario for business-energy campaign
       | ELE      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+      | GAS      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                         | movingType | propertyType |
@@ -63,7 +63,7 @@ Feature:E2E scenario for business-energy campaign
       | ELE      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+      | GAS      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName              | state   | signUpCredit |
       | Y                        | N         | Y            | N           | Total Plan - Business | <state> | Y            |
@@ -87,9 +87,9 @@ Feature:E2E scenario for business-energy campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                               | sourceSystem | journey     | state | customerType | newOrExisting | AAH | DD |
-      | New            | BOTH     | 18          | 19          | business-energy | E2E_Campaign_business-energy_NSW-essential_new_nonmoving | Quote Tool   | Plan Switch | NSW   | BUS          | New           | No  | No |
+      | New            | BOTH     | 16          | 20          | business-energy | E2E_Campaign_business-energy_NSW-essential_new_nonmoving | Quote Tool   | Plan Switch | NSW   | BUS          | New           | No  | No |
 
-  @DR21.10.2.campaign
+  @DR22.2.1.campaign
   Scenario Outline: Validate complete data for business-energy campaign for NSW-Endeavour for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2780" and clicks on show me plan link
@@ -101,7 +101,7 @@ Feature:E2E scenario for business-energy campaign
       | ELE      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+      | GAS      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName              | state   | signUpCredit |
       | Y                        | N         | Y            | N           | Total Plan - Business | <state> | Y            |
@@ -111,7 +111,7 @@ Feature:E2E scenario for business-energy campaign
       | ELE      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+      | GAS      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                           | movingType | propertyType |
@@ -139,7 +139,7 @@ Feature:E2E scenario for business-energy campaign
       | ELE      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+      | GAS      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName              | state   | signUpCredit |
       | Y                        | N         | Y            | N           | Total Plan - Business | <state> | Y            |
@@ -163,9 +163,9 @@ Feature:E2E scenario for business-energy campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                            | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | BOTH     | 13          | 19          | business-energy | E2E_Campaign_business-energy_NSW_Endeavour_new_moving | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
+      | New            | BOTH     | 13          | 20          | business-energy | E2E_Campaign_business-energy_NSW_Endeavour_new_moving | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
 
-  @DR21.10.2.campaign
+  @DR22.2.1.campaign
   Scenario Outline: Validate complete data for business-energy campaign for NSW-Ausgrid for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" and clicks on show me plan link
@@ -177,7 +177,7 @@ Feature:E2E scenario for business-energy campaign
       | ELE      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+      | GAS      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName              | state   | signUpCredit |
       | Y                        | N         | Y            | N           | Total Plan - Business | <state> | Y            |
@@ -187,7 +187,7 @@ Feature:E2E scenario for business-energy campaign
       | ELE      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+      | GAS      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                   | movingType | propertyType |
@@ -215,7 +215,7 @@ Feature:E2E scenario for business-energy campaign
       | ELE      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+      | GAS      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName              | state   | signUpCredit |
       | Y                        | N         | Y            | N           | Total Plan - Business | <state> | Y            |
@@ -239,9 +239,87 @@ Feature:E2E scenario for business-energy campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                  | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | BOTH     | 19          | 19          | business-energy | E2E_Campaign_business-energy_NSW_new_moving | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
+      | New            | BOTH     | 19          | 20          | business-energy | E2E_Campaign_business-energy_NSW_new_moving | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
 
-  @DR21.10.2.campaign
+  @DR22.2.1.campaign
+  Scenario Outline: Validate complete data for business-energy campaign for NSW-Ausgrid for existing non-moving customer
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "2000" and clicks on show me plan link
+    Then user is presented with the plans
+    And user validates "ELE" discount to be "<eleDiscount>" percent
+    And user validates "GAS" discount to be "<gasDiscount>" percent
+    And user validates the data on plans page for "<campaign>"
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | ELE      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+    And user validates the data on plans page for "<campaign>"
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | GAS      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+    And user validates disclaimer on plans page for "<campaign>"
+      | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName              | state   | signUpCredit |
+      | Y                        | N         | Y            | N           | Total Plan - Business | <state> | Y            |
+    And user clicks on Add plan button
+    And user validates plan details on cart page for "<campaign>"
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | ELE      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+    And user validates plan details on cart page for "<campaign>"
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | GAS      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+    And user selects '<customerStatus>' on qualifier
+    And user verifies account on qualifier
+      | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
+      | Existing       | 7185109615    | ABN                 | 33499936800      | dob    | 01011980 |
+    And user provides all other details on qualifier page
+      | customerType |  connectionAddress                   | movingType | propertyType |
+      | BUS          | 73-75 Enmore Road, NEWTOWN NSW 2042| Non-Moving | Renter       |
+    And user provides all details on checkout details page
+      | customerType | journey | firstName | lastName | businessType |
+      | BUS          | BUS     | test      | test     | ABN          |
+    And user selects mailing address option
+      | addressType        | otherAddress |
+      | Connection Address |              |
+    And user validates details on checkout details page
+      | sourceSystem   | journey   | fuelType   |
+      | <sourceSystem> | <journey> | <fuelType> |
+    And user clicks on 'Review your order' button and navigates to review page
+    And user validates details on checkout review page
+      | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
+      | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
+    And user provides life support details on review page
+      | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
+      | No                |          |                        |                       |
+    And user verifies selected plan details for '<fuelType>'
+    And user validates plan details on review page for "<campaign>"
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | ELE      | N                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+    And user validates plan details on review page for "<campaign>"
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
+      | GAS      | N                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+    And user validates disclaimer on review page for "<campaign>"
+      | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName              | state   | signUpCredit |
+      | Y                        | N         | Y            | N           | Total Plan - Business | <state> | Y            |
+    And user submits the quote
+    Then user lands on checkout complete page
+    And user validates details on checkout complete page
+      | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
+      | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'ELE' submitted quote
+    And user validates below mandatory fields
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | PS       | TOPB-EN  | 4102017007 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
+    And user validates all the details for 'GAS' submitted quote
+    And user validates below mandatory fields
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | PS       | TOPB-GN  | 5247073457 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
+
+    Examples:
+      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                  | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
+      | Existing            | BOTH     | 19          | 20          | business-energy | E2E_Campaign_business-energy_NSW_existing_nonmoving | Quote Tool   | Plan Switch | NSW   | BUS          | Existing           | No  | No |
+
+  @DR22.2.1.campaign
   Scenario Outline: Validate complete data for business-energy campaign for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
@@ -315,9 +393,9 @@ Feature:E2E scenario for business-energy campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                  | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | BOTH     | 5           | 23          | business-energy | E2E_Campaign_business-energy_VIC_new_moving | Quote Tool   | Move Home | VIC   | BUS          | New           | No  | No |
+      | New            | BOTH     | 3           | 21          | business-energy | E2E_Campaign_business-energy_VIC_new_moving | Quote Tool   | Move Home | VIC   | BUS          | New           | No  | No |
 
-  @DR21.10.2.campaign
+  @DR22.2.1.campaign
   Scenario Outline: Validate complete data for business-energy campaign for QLD for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4500" and clicks on show me plan link
@@ -325,14 +403,14 @@ Feature:E2E scenario for business-energy campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+      | ELE      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName              | state   | signUpCredit |
       | Y                        | N         | Y            | N           | Total Plan - Business | <state> | N            |
-    And user clicks on Add plan button
+    And user clicks on Select plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+      | ELE      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -358,7 +436,7 @@ Feature:E2E scenario for business-energy campaign
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_chanceToWin | state   |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
+      | ELE      | Y                | N                     | Y                   | Y                                  | N                               | N                   | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | chanceToWin | planName              | state   | signUpCredit |
       | Y                        | N         | Y            | N           | Total Plan - Business | <state> | N            |
@@ -378,7 +456,7 @@ Feature:E2E scenario for business-energy campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | campaign        | folderName                                  | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | ELE      | 20          | business-energy | E2E_Campaign_business-energy_QLD_new_moving | Quote Tool   | Move Home | QLD   | BUS          | New           | No  | No |
+      | New            | ELE      | 13          | business-energy | E2E_Campaign_business-energy_QLD_new_moving | Quote Tool   | Move Home | QLD   | BUS          | New           | No  | No |
 
   Scenario Outline: Validate complete data for business-energy campaign for SA for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
@@ -454,7 +532,7 @@ Feature:E2E scenario for business-energy campaign
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                 | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | BOTH     | 3           | 3           | business-energy | E2E_Campaign_business-energy_SA_new_moving | Quote Tool   | Move Home | SA    | BUS          | New           | No  | No |
-
+  @DR22.2.1.campaign
   Scenario Outline: Validate complete data for business-energy campaign for ACT for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2600" and clicks on show me plan link
@@ -528,5 +606,5 @@ Feature:E2E scenario for business-energy campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                  | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | BOTH     | 10          | 19          | business-energy | E2E_Campaign_business-energy_ACT_new_moving | Quote Tool   | Move Home | ACT   | BUS          | New           | No  | No |
+      | New            | BOTH     | 10          | 20          | business-energy | E2E_Campaign_business-energy_ACT_new_moving | Quote Tool   | Move Home | ACT   | BUS          | New           | No  | No |
 

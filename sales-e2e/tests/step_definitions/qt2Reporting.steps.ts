@@ -120,10 +120,20 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
       if (isCampaignTest || data[0].campaign === "balance-canstarblue") {
         await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualEleSourceCode, data[0].campaign, expectedOfferType, expectedFuelType);
       } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$25Credit && (!(data[0].campaign === "Balance Plan"))) {
+        console.log("On 25Credit-Resi");
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_25');
       } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit && (!(data[0].campaign === "Balance Plan"))) {
+        console.log("On 50Credit-Resi");
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_50');
-      } else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$200Credit && (expectedPlanCode === "TOPB-EN" || expectedPlanCode === "TOPB-EV") && (!(data[0].campaign === "Balance Plan"))) {
+      }else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$100Credit && (expectedPlanCode === "TOPB-EV") && (!(data[0].campaign === "Balance Plan"))) {
+        console.log("On 100Credit-Bus");
+        console.log("actualEleSourceCode:"+actualEleSourceCode);
+        console.log("expectedEleSourceCode:"+expectedEleSourceCode);
+        await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_100');
+      } else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$200Credit && (expectedPlanCode === "TOPB-EN") && (!(data[0].campaign === "Balance Plan"))) {
+        console.log("On 200Credit-Bus");
+        console.log("actualEleSourceCode:"+actualEleSourceCode);
+        console.log("expectedEleSourceCode:"+expectedEleSourceCode);
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_200');
       } 
       else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$100Credit && (expectedPlanCode === "TOPB-EV") && (!(data[0].campaign === "Balance Plan"))) {
@@ -147,6 +157,7 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
       // }
       else if (data[0].campaign === undefined) {
         if (isOfferType && isCustomerType && isStateEligibleFor$25Credit) {
+          console.log("On 25Credit-undefined");
           await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_25');
         } else {
           await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode);
@@ -198,8 +209,10 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
         await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualGasSourceCode, data[0].campaign, expectedOfferType, expectedFuelType);
         // await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualGasSourceCode, data[0].campaign, expectedGasSourceCode, expectedFuelType);
       } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$25Credit && (!(data[0].campaign === "Balance Plan"))) {
+        console.log("On 25Credit-Resi-gas");
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_25');
       } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit && (!(data[0].campaign === "Balance Plan"))) {
+        console.log("On 50Credit-Resi-gas");
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_50');
       } else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$200CreditGas && (expectedPlanCode === "TOPB-GV"|| expectedPlanCode === "TOPB-GN")  && (!(data[0].campaign === "Balance Plan"))) {
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_200');
@@ -218,6 +231,7 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
         //   await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_50');
       // }
       else if (isOfferType && isCustomerType && isStateEligibleFor$25Credit) {
+        console.log("On 25Credit--gas");
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_25');
       } else {
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode);
