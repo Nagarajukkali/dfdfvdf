@@ -3,6 +3,7 @@ import {BusinessType, Moving, Property, testFunction} from '../../global_methods
 import {Then, When} from 'cucumber';
 import {CustomerType} from '@ea/ea-commons-models';
 import {plansMethod} from '../methods/plansPage';
+import {Selector} from "testcafe";
 const eaQualifierPage=require('../pages/qualifier.page');
 const { config }=require('../../resources/resource');
 const validateAnalyticsEvent=config.validateAnalytics;
@@ -25,6 +26,7 @@ When(/^user provides all details on qualifier page$/, async function(t,[],dataTa
   await qualifierMethod.provideAddress(t, data[0].connectionAddress);
   await qualifierMethod.selectDateFromCalendar(t);
   await qualifierMethod.selectPropertyType(t, data[0].propertyType);
+  await testFunction.click(t, eaQualifierPage.elements.btnContinueOnQualifier);
 });
 
 When(/^user selects moving date in the qualifier for '(.*)' customer$/, async function(t,[movingType]){
@@ -42,19 +44,17 @@ When(/^user provides all other details on qualifier page for Existing customer$/
   if(movingType === Moving.MOVING){
     await qualifierMethod.provideAddress(t, data[0].connectionAddress);
     if(state==='QLD'){
-      await testFunction.click(t,eaQualifierPage.elements.moveElecQLDQuestion);
+      await testFunction.click(t,eaQualifierPage.elements.qldenenergisedyes);
     }
     await testFunction.takeScreenshot(t, "qualifier_page_calendar");//disabled UI Validation
     await qualifierMethod.selectDateFromCalendar(t);
-  } else if (movingType === Moving.NON_MOVING) {
-    await testFunction.click(t, eaQualifierPage.elements.addressContinue);
-    if(validateAnalyticsEvent==='Y'){
-      await plansMethod.validateComponentLibraryEvent(t,"qualifier_page","address_continue_button");
-    }
   }
   if(customerType===CustomerType.RESIDENTIAL){
-    await qualifierMethod.selectPropertyType(t, data[0].propertyType);
+    await qualifierMethod.selectPropertyType(t, data[0].propertyType)
   }
+  await t.wait(3000);
+  await testFunction.isElementDisplayed(t, eaQualifierPage.elements.btnContinueOnQualifier)
+  await testFunction.click(t, eaQualifierPage.elements.btnContinueOnQualifier);
 });
 
 When(/^user provides all other details on qualifier page$/, async function (t,[],dataTable) {
@@ -76,6 +76,7 @@ When(/^user provides all other details on qualifier page$/, async function (t,[]
   if(customerType===CustomerType.RESIDENTIAL){
     await qualifierMethod.selectPropertyType(t, data[0].propertyType);
   }
+  await testFunction.click(t, eaQualifierPage.elements.btnContinueOnQualifier);
 });
 
 When(/^user verifies account on qualifier$/, async function (t,[],dataTable) {
@@ -175,6 +176,8 @@ Then(/^New\/Existing customer qualifier question is displayed$/, async function 
   await testFunction.isElementVisible(t,eaQualifierPage.elements.existingCustomerBtn);
 });
 Then(/^Address field is '(.*)'$/, async function (t,[addressField]) {
+  await testFunction.isElementDisplayed(t, eaQualifierPage.elements.serviceAddress);
+  await t.wait(5000);
   let serviceAddress=await eaQualifierPage.elements.serviceAddress.value;
   if(addressField==='auto_populated'){
     await t.expect(serviceAddress.length).notEql(0);
@@ -225,3 +228,6 @@ When(/^user selects connection date in qualifier$/, async function (t, []) {
   await qualifierMethod.selectDateFromCalendar(t);
 });
 
+When(/^user refresh the qualifier$/, async function (t,[]) {
+  await t.eval(() => location.reload());
+});

@@ -8,12 +8,9 @@ Feature: This feature is to test the verify account scenarios for existing busin
     Then user validates details on plans page for '<customer_type>'
     And user have selected fuel as "ELE"
     When user clicks on the verify modal window on '<customer_type>' page
-#    And user verifies the account through verify account journey for business customer
-#      |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |ABNOrACN     |idType |idNumber  |
-#      |BUS          |verify account |2870412120       |3231348465       |78538656400  |dob    |01011980  |
     And user verifies the account through verify account journey for business customer
-      | customer_type | modal_option   | elecAccountNumber | gasAccountNumber | ABNOrACN    | idType | idNumber |
-      | BUS           | verify account | 6776337470        |                  | 79381111000 | dob    | 01011980 |
+      | customer_type | modal_option   | elecAccountNumber | ABNOrACN    | idType | idNumber |
+      | BUS           | verify account | 2394508360        | 39642303200 | dob    | 01011980 |
     And user selects '<planName>'
     And user selects gas '<planName>'
     And user moves on to fill the qualifier
@@ -55,11 +52,11 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | PS        | SWSRB-EV | 6102599013 | N                              | N                              | Y                       | LSVFLS                   | POSTMM        |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | PS        | SWSRB-EV | 6203570918 | N                              | N                              | Y                       | LSVFLS                   | POSTMM        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | PS        | SWSRB-GV | 5320082919 | N                              | N                              | Y                       | OTHER                    | POSTMM        |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | PS        | SWSRB-GV | 5330045398 | N                              | N                              | Y                       | OTHER                    | POSTMM        |
 
     Examples:
       | folderName                           | customer_type | fuelType | planName                   | accountType | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
@@ -71,9 +68,6 @@ Feature: This feature is to test the verify account scenarios for existing busin
     Then user validates details on plans page for '<customer_type>'
     And user have selected fuel as "GAS"
     When user clicks on the verify modal window on '<customer_type>' page
-#    And user verifies the account through verify account journey for business customer
-#      |customer_type|modal_option   |elecAccountNumber|gasAccountNumber |ABNOrACN   |idType |idNumber  |
-#      |BUS          |verify account |5802060000       |7745301000       |30179084300|dob    |01011980  |
     And user verifies the account through verify account journey for business customer
       | customer_type | modal_option   | elecAccountNumber | gasAccountNumber | ABNOrACN    | idType | idNumber |
       | BUS           | verify account |                   | 8884398267       | 26857513900 | dob    | 01011980 |
@@ -92,7 +86,7 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user selects mailing address option
       | addressType   | otherAddress                               |
       | Other Address | 36 Gregory Street West, WENDOUREE VIC 3355 |
-    #And user selects answer for property renovation question for '<state>'
+    # And user selects answer for property renovation question for '<state>'
     And user selects "Email" billing preference option
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page

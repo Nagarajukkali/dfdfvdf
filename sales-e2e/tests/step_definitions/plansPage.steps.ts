@@ -245,8 +245,8 @@ Then(/^plans page load according to the type of '(.*)' on plans page$/, async fu
   await testFunction.takeScreenshot(t, 'plans_page');//disabled UI Validation
 });
 Then(/^user validates details on plans page for '(.*)'$/, async function (t, [customerType]) {
-  await plansMethod.validateGeneralStateDisclaimer(t, customerType);
-  await plansMethod.validateSolarGovernmentSchemeDisclaimer(t);
+  //await plansMethod.validateGeneralStateDisclaimer(t, customerType);
+  //await plansMethod.validateSolarGovernmentSchemeDisclaimer(t);
   await testFunction.takeScreenshot(t, 'ABTest_plans_page');
 });
 Then(/^user validates disclaimer on plans page for "([^"]*)"$/, async function (t, [campaignName], dataTable) {

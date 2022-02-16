@@ -241,3 +241,10 @@ Then(/^user validates the analytics data for user age for the customer$/, async 
   await checkoutDetailsMethod.validateAge(t);
 });
 
+Then(/^user validates the connection address on checkout page$/, async function (t,[], dataTable) {
+  let data = dataTable.hashes()
+  let address = data[0].address
+  await checkoutDetailsMethod.validateConnectionAddress(t, address);
+});
+
+

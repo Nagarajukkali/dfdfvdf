@@ -361,6 +361,7 @@ export class testFunction {
   }
 
   public static async selectDateFromCalendar(t, element) {
+    await testFunction.waitForElementToBeAppeared(t, element)
     const table = element;
     const tableElement = await element();
     const rowCount = tableElement.childElementCount;
@@ -372,13 +373,15 @@ export class testFunction {
       const colCount = row.childElementCount;
       for (let j = 1; j < colCount; j++) {
         const cols = rows.child(j);
-        const dateBtn = cols.child(0);
-        const backgroundColor = await dateBtn.getStyleProperty("background-color").then(result => result);
-        if (backgroundColor.includes("rgba(110, 178, 20, 0.45)")) {
-          dateValue=await testFunction.getElementText(t,cols);
-          await testFunction.click(t, cols);
-          flag = true;
-          break;
+        const colCount = await cols.childElementCount.then(result => result);
+        if(colCount===1) {
+          let dateBtn = cols.child(0);
+          if (!(await dateBtn.hasAttribute("disabled"))) {
+            dateValue = await testFunction.getElementText(t, cols);
+            await testFunction.click(t, cols);
+            flag = true;
+            break;
+          }
         }
       }
       if (flag) {
@@ -386,7 +389,7 @@ export class testFunction {
       }
     }
     return dateValue;
-  }
+        }
 
   public static async selectDateFromCalendarMoveHome(t, element,btnNextMonth) {
     await testFunction.waitForElementToBeAppeared(t, element)

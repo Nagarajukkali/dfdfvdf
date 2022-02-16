@@ -68,9 +68,9 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
     let isOfferType = (actualOfferType === 'ENE');
     let isStateEligibleFor$25Credit = (actualState === 'VIC' || 'NSW');
     let isStateEligibleFor$50Credit = (actualState === 'SA');
+    let isStateEligibleFor$200Credit = (actualState === 'NSW');
     let isStateEligibleFor$100Credit = (actualState === 'VIC');
-    let isStateEligibleFor$200Credit = (actualState === 'NSW' || actualState === 'VIC');
-    //let isStateEligibleFor$50Credit = (actualState === 'VIC' || actualState === 'QLD');
+    let isStateEligibleFor$200CreditGas = (actualState === 'VIC' || 'NSW')
     let isStateEligibleForNoCredit = (actualState === 'SA');
     let isBusinessPlanCode = (expectedPlanCode.includes('BSOT') || expectedPlanCode.includes('TOPB') || expectedPlanCode.includes('SWSR'));
     let isResiPlanCode = (expectedPlanCode.includes('RSOT'));
@@ -135,7 +135,11 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
         console.log("actualEleSourceCode:"+actualEleSourceCode);
         console.log("expectedEleSourceCode:"+expectedEleSourceCode);
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_200');
-      } else if (data[0].campaign === "Balance Plan") {
+      } 
+      else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$100Credit && (expectedPlanCode === "TOPB-EV") && (!(data[0].campaign === "Balance Plan"))) {
+        await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_100');
+      }
+      else if (data[0].campaign === "Balance Plan") {
         if (data[0].state === "NSW") {
           await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "Total_9%GD");
         } else if (data[0].state === "VIC") {
@@ -210,8 +214,7 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
       } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit && (!(data[0].campaign === "Balance Plan"))) {
         console.log("On 50Credit-Resi-gas");
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_50');
-      } else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$200Credit && (expectedPlanCode === "TOPB-GN" || expectedPlanCode === "TOPB-GV") && (!(data[0].campaign === "Balance Plan"))) {
-        console.log("On 200Credit-bus-gas");
+      } else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$200CreditGas && (expectedPlanCode === "TOPB-GV"|| expectedPlanCode === "TOPB-GN")  && (!(data[0].campaign === "Balance Plan"))) {
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_200');
       } else if (data[0].campaign === "Balance Plan") {
         if (data[0].state === "NSW") {
