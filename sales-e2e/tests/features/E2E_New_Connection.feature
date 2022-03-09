@@ -98,8 +98,8 @@ Feature:E2E scenario for new connection
       | fuelType   | customerType | premiseType | state    | postcode |
       | <fuelType> | BUS          | Single      | Victoria | 3008     |
     And user provides property details for electricity connection
-      | customerType | optionForPoleInstallation | optionForOffPeakLoad | optionForAMPS |
-      | BUS          | No                        | No                   | Below         |
+      | customerType | optionForPoleInstallation | optionForOffPeakLoad | optionForAMPS |state |
+      | BUS          | No                        | No                   | Below         |VIC   |
     And user provides property contacts
       | idType           | state |
       | Driver's Licence | VIC   |
@@ -183,6 +183,60 @@ Feature:E2E scenario for new connection
     Examples:
       | folderName                              | fuelType |
       | E2E_New_Resi_NC_Error_Energy_Not_Supply | ELE      |
+  @JMJ1
+  Scenario Outline: Submit a quote for electricity new connection for <state> distributor <distributor> residential customer
+    Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
+    When user provides connection details
+      | fuelType   | customerType  | premiseType | state           | postcode |
+      | <fuelType> | <customerType>| Single      | New South Wales | 2000     |
+    And user provides distributor details for electricity connection
+      | distributor  |state   |
+      | <distributor>|<state> |
+    And user provides property details for electricity connection
+      | customerType  | optionForPoleInstallation | optionForOffPeakLoad |optionForAMPS |
+      | <customerType>| No                        | No                   |Below         |
+    And user provides property supply type and phase for electricity connection
+      | supplyType  |supplyPhases  |meterPhases  |ctDetails  |state   |
+      | <supplyType>|<supplyPhases>|<meterPhases>|<ctDetails>|<state> |
+#    And user provides property contacts
+#      | idType           | state |
+#      | Driver's Licence | NSW   |
+#    And user submit the request
+#    And user clicks on proceed to quote
+#    And user validates details on checkout details page
+#      | sourceSystem   | journey   | fuelType   |
+#      | <sourceSystem> | <journey> | <fuelType> |
+#    And user selects plans on checkout details page
+#      | fuelType   | planName   |
+#      | <fuelType> | Total Plan |
+#    And user provides dob and id details
+#      | customerStatus | idType   | medicareType |
+#      | New            | Medicare | green        |
+#    And user selects mailing address option
+#      | addressType   | otherAddress                           |
+#      | Other Address | 42 Brownlow Drive, POINT COOK VIC 3030 |
+#    And user selects "Post" billing preference option
+#    And user sends welcome pack through 'Email'
+#    And user opts for special offer
+#    And user clicks on 'Review your order' button and navigates to review page
+#    And user validates details on checkout review page
+#      | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |carbonNeutral|
+#      | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |N            |
+#    And user provides life support details on review page
+#      | lifeSupportOption | fuelType   | EleclifeSupportDevices |
+#      | Yes               | <fuelType> | Ele Other              |
+#    And user submits the quote
+#    Then user lands on checkout complete page
+#    And user validates details on checkout complete page
+#      | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
+#      | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
+
+    Examples:
+      | folderName                        | fuelType | sourceSystem   | journey     | AAH | DD | customerType | newOrExisting |distributor|state|supplyType|supplyPhases|meterPhases|ctDetails|
+      | E2E_New_Resi_NC_NSW_Ausgrid_ELE   | ELE      | New Connection | Plan Switch | NO  | No | BUS          | New           |  Ausgrid  | NSW |Overhead  |One         |One        |Yes      |
+#      | E2E_New_Resi_NC_NSW_Essential_ELE | ELE      | New Connection | Plan Switch | NO  | No | RES          | New           |  Essential| NSW |Underground|Two        |Two        |No      |
+#      | E2E_New_Resi_NC_NSW_Endeavour_ELE | ELE      | New Connection | Plan Switch | NO  | No | RES          | New           |  Endeavour| NSW |Overhead_Underground|Three|Three   |Yes      |
+#      | E2E_New_Resi_NC_NSW_Unknown_ELE   | ELE      | New Connection | Plan Switch | NO  | No | RES          | New           |  Unknown  | NSW |Overhead   |One        |Two        |No      |
 
 
 

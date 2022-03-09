@@ -40,6 +40,90 @@ export class newConnectionMethod {
     await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtPostcode, postcode);
   }
 
+  public static async enterDistributorDetails(t, state, distributor) {
+    if (state=== 'NSW') {
+      // await testFunction.click(t, eaNewConnectionPage.elements.inputDistributorAusgrid);
+      await testFunction.click(t, eaNewConnectionPage.elements.btnNext);
+      switch (distributor) {
+        case "Ausgrid":
+          await testFunction.click(t, eaNewConnectionPage.elements.inputDistributorAusgrid);
+          break;
+        case "Essential":
+          await testFunction.click(t, eaNewConnectionPage.elements.inputDistributorEssential);
+          await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtLotNo, testFunction.getRandomNumber(100));
+          break;
+        case "Endeavour":
+          await testFunction.click(t, eaNewConnectionPage.elements.inputDistributorEndeavour);
+          await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtLotNo, testFunction.getRandomNumber(100));
+          break;
+        case "Unknown":
+          await testFunction.click(t, eaNewConnectionPage.elements.inputDistributorUnknown);
+          await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtLotNo, testFunction.getRandomNumber(100));
+          break;
+      }
+    await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtNMI, "61021362139");
+    await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtDPId, testFunction.getRandomNumber(100));
+    await testFunction.isElementDisplayed(t, eaNewConnectionPage.elements.inputInstallingPoleNo);
+  }
+  }
+
+  public static async enterSupplyType(t, supplyType) {
+    console.log("supplyType:"+supplyType);
+    await testFunction.assertText(t,eaNewConnectionPage.elements.lblPropertySupplyType,"Property Supply Type");
+      switch (supplyType) {
+        case "Overhead":
+          await testFunction.click(t, eaNewConnectionPage.elements.inputSupplyTypeOverhead);
+          break;
+        case "Underground":
+          await testFunction.click(t, eaNewConnectionPage.elements.inputSupplyTypeUnderground);
+          break;
+        case "Overhead_Underground":
+          await testFunction.click(t, eaNewConnectionPage.elements.inputSupplyTypeMix);
+          break;
+      }
+    }
+  public static async enterSupplyPhases(t, supplyPhases) {
+    console.log("supplyPhases:"+supplyPhases);
+    switch (supplyPhases) {
+      case "One":
+        await testFunction.click(t, eaNewConnectionPage.elements.inputSupplyPhaseOne);
+        break;
+      case "Two":
+        await testFunction.click(t, eaNewConnectionPage.elements.inputSupplyPhaseTwo);
+        break;
+      case "Three":
+        await testFunction.click(t, eaNewConnectionPage.elements.inputSupplyPhaseThree);
+        break;
+    }
+  }
+  public static async enterMeterPhases(t, meterPhases) {
+    console.log("meterPhases:"+meterPhases);
+    switch (meterPhases) {
+      case "One":
+        await testFunction.click(t, eaNewConnectionPage.elements.inputMeterPhaseOne);
+        break;
+      case "Two":
+        await testFunction.click(t, eaNewConnectionPage.elements.inputMeterPhaseTwo);
+        break;
+      case "Three":
+        await testFunction.click(t, eaNewConnectionPage.elements.inputMeterPhaseThree);
+        break;
+    }
+  }
+  public static async enterCTDetails(t, ctDetails) {
+    console.log("ctDetails:"+ctDetails);
+    switch (ctDetails) {
+      case "Yes":
+        await testFunction.click(t, eaNewConnectionPage.elements.inputCTYes);
+        break;
+      case "No":
+        await testFunction.click(t, eaNewConnectionPage.elements.inputCTNo);
+        break;
+    }
+    await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtMaxDemandOfInstallation, testFunction.getRandomNumber(25));
+    await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtMaxDemandOfTotalSite, "250");
+    await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtAdditionalComments, "Additional comments test.");
+  }
   public static async selectStateFromDropdown(t, state) {
     await testFunction.click(t, eaNewConnectionPage.elements.listActiveState);
     await testFunction.click(t, eaNewConnectionPage.elements.selectStateFromDropdown.withText(state));
@@ -82,11 +166,22 @@ export class newConnectionMethod {
     }
   }
 
-  public static async selectOptionForAMPS(t, option) {
-    if (option === 'Below') {
-      await testFunction.click(t, eaNewConnectionPage.elements.inputBelowAMPS);
-    } else if (option === 'Above') {
-      await testFunction.click(t, eaNewConnectionPage.elements.inputAboveAMPS);
+  public static async selectOptionForAMPS(t, option,state) {
+    console.log("selectOptionForAMPS"+option);
+    if (state === "VIC") {
+      if (option === 'Below') {
+        await testFunction.isElementExists(t, eaNewConnectionPage.elements.inputBelowAMPS);
+        await testFunction.click(t, eaNewConnectionPage.elements.inputVicBelowAMPS);
+      } else if (option === 'Above') {
+        await testFunction.click(t, eaNewConnectionPage.elements.inputVicAboveAMPS);
+      }
+    }else {
+      if (option === 'Below') {
+        await testFunction.isElementExists(t, eaNewConnectionPage.elements.inputBelowAMPS);
+        await testFunction.click(t, eaNewConnectionPage.elements.inputBelowAMPS);
+      } else if (option === 'Above') {
+        await testFunction.click(t, eaNewConnectionPage.elements.inputAboveAMPS);
+      }
     }
   }
 

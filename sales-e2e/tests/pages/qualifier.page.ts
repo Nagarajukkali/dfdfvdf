@@ -22,6 +22,7 @@ const eaQualifierPage = {
     serviceAddress: Selector('#qualifier-connection-address-auto-input'),
     serviceAddressList: Selector('#qualifier-connection-address-auto-autocomplete>ul>li'),
     calendarTable: Selector(' #qualifier-connection-datepicker table > tbody'),
+    btnNextMonth: Selector("#qualifier-connection-datepicker > span > div > div > div > button"),
     familyViolenceMessage: Selector('#VerifyID > .wg-alert-error'),
     owner: Selector('#edit-customer-property-relationship-owner__label > span'),
     renter: Selector('#edit-customer-property-relationship-renter__label > span'),

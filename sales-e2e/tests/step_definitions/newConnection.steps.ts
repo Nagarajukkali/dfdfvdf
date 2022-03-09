@@ -18,6 +18,35 @@ When(/^user provides connection details$/, async function (t, [], dataTable) {
   await testFunction.takeScreenshot(t, "new_connections_connectionDetails_with_data");
   await newConnectionMethod.proceedToStep2(t);
 });
+When(/^user provides distributor details for electricity connection$/, async function (t, [], dataTable) {
+  let data = dataTable.hashes();
+  let customerType = data[0].customerType;
+  let distributor = data[0].distributor;
+  await testFunction.takeScreenshot(t, "new_connections_distributorDetails");//disabled UI Validation
+  await newConnectionMethod.enterDistributorDetails(t, data[0].state,distributor);
+  await testFunction.takeScreenshot(t, "new_connections_distributorDetails_withData");
+});
+When(/^user provides property supply type and phase for electricity connection$/, async function (t, [], dataTable) {
+  let data = dataTable.hashes();
+  let customerType = data[0].customerType;
+  let state = data[0].state;
+  let supplyType=data[0].supplyType;
+  let supplyPhases=data[0].supplyPhases;
+  let meterPhases=data[0].meterPhases;
+  let ctDetails=data[0].ctDetails;
+  await testFunction.takeScreenshot(t, "new_connections_supplyTypeDetails");//disabled UI Validation
+  // if (customerType === CustomerType.BUSINESS) {
+  //   await newConnectionMethod.selectOptionForAMPS(t, data[0].optionForAMPS);
+  // }
+  if (state !== "VIC"){
+    await newConnectionMethod.enterSupplyType(t, supplyType);
+    await newConnectionMethod.enterSupplyPhases(t, supplyPhases);
+    await newConnectionMethod.enterMeterPhases(t, meterPhases);
+    await newConnectionMethod.enterCTDetails(t, ctDetails);
+  }
+  await testFunction.takeScreenshot(t, "new_connections_supplyTypeDetails_withData");
+  await newConnectionMethod.proceedToStep3(t);
+});
 When(/^user provides property details for electricity connection$/, async function (t, [], dataTable) {
   let data = dataTable.hashes();
   let customerType = data[0].customerType;
@@ -25,10 +54,13 @@ When(/^user provides property details for electricity connection$/, async functi
   await newConnectionMethod.selectOptionForPoleInstallation(t, data[0].optionForPoleInstallation);
   await newConnectionMethod.selectOptionForOffPeakLoad(t, data[0].optionForOffPeakLoad);
   if (customerType === CustomerType.BUSINESS) {
-    await newConnectionMethod.selectOptionForAMPS(t, data[0].optionForAMPS);
+    await newConnectionMethod.selectOptionForAMPS(t, data[0].optionForAMPS,data[0].state);
   }
   await testFunction.takeScreenshot(t, "new_connections_propertyDetails_withData");
-  await newConnectionMethod.proceedToStep3(t);
+  if (data[0].state === "VIC") {
+    console.log("VIC");
+    await newConnectionMethod.proceedToStep3(t);
+  }
 });
 When(/^user provides property contacts$/, async function (t, [], dataTable) {
   let data = dataTable.hashes();
