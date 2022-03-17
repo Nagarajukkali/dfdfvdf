@@ -65,7 +65,7 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
     let actualState = jsonObj.saleDetail.premiseDetail.state;
     let actualBillRouteType = jsonObj.saleDetail.billDeliveryDetail.billRouteType;
     let isCampaignTest = (t.testRun.test.name.includes('campaign'));
-    let isOfferType = (actualOfferType === 'ENE');
+    let isOfferType = (actualOfferType === 'ENE' || actualOfferType === 'COR');
     let isStateEligibleFor$25Credit = (actualState === 'VIC' || 'NSW');
     let isStateEligibleFor$50Credit = (actualState === 'SA');
     let isStateEligibleFor$200Credit = (actualState === 'NSW');
@@ -135,7 +135,7 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
         console.log("actualEleSourceCode:"+actualEleSourceCode);
         console.log("expectedEleSourceCode:"+expectedEleSourceCode);
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_200');
-      } 
+      }
       else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$100Credit && (expectedPlanCode === "TOPB-EV") && (!(data[0].campaign === "Balance Plan"))) {
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_100');
       }
@@ -199,7 +199,7 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
         let actualGasQuoteId = checkoutDetailsMethod.map.get('gasQuoteId' + checkoutDetailsMethod.getScenarioId(t));
         await t.expect(actualGasQuoteId).eql(expectedGasQuoteId);
       }
-      let isOfferType = actualOfferType.includes('ENE');
+      let isOfferType = (actualOfferType === 'ENE' || actualOfferType === 'COR');
       let isCustomerType = actualCustomerType.includes('RESIDENTIAL');
 
       //updated conditions for $50 extensions
@@ -234,6 +234,7 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
         console.log("On 25Credit--gas");
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_25');
       } else {
+        console.log("On else--gas");
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode);
       }
 

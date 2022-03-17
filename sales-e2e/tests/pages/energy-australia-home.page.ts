@@ -432,8 +432,8 @@ const eaHomePage = {
 
     eleFeature50CreditTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText(/[C|c]redit/),
     eleFeature50CreditDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText(/[C|c]redit/).sibling(),
-    eleFeatureMoveHomeTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Move Home Credit"),
-    eleFeatureMoveHomeDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Move Home Credit").sibling(),
+    eleFeatureMoveHomeTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("online sign up credit"),
+    eleFeatureMoveHomeDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("online sign up credit").sibling(),
     eleFeatureCNTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral"),
     eleFeatureCNEGTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Energy with a bit of good"),
     eleFeatureCNCampaignTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Carbon Neutral"),
@@ -456,8 +456,8 @@ const eaHomePage = {
     eleFeatureVipPriorityServiceDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("VIP Priority Service").sibling(),
     eleFeatureChanceToWinTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("$2,000"),
     eleFeatureChanceToWinDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("$2,000").sibling(),
-    eleFeatureVariableRatesTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Variable Rates"),
-    eleFeatureVariableRatesDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Variable Rates").sibling(),
+    eleFeatureVariableRatesTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText(/Variable [R|r]ates/),
+    eleFeatureVariableRatesDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText(/Variable [R|r]ates/).sibling(),
     gasFeature50CreditTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText(/[C|c]redit/),
     gasFeature50CreditDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText(/[C|c]redit/).sibling(),
     gasFeatureCNTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral"),
@@ -476,10 +476,10 @@ const eaHomePage = {
     gasFeatureVipPriorityServiceDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("VIP Priority Service").sibling(),
     gasFeatureChanceToWinTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("$2,000"),
     gasFeatureChanceToWinDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("$2,000").sibling(),
-    gasFeatureVariableRatesTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Variable Rates"),
-    gasFeatureVariableRatesDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Variable Rates").sibling(),
-    gasFeatureMoveHomeTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Move Home Credit"),
-    gasFeatureMoveHomeDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Move Home Credit").sibling()
+    gasFeatureVariableRatesTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText(/Variable [R|r]ates/),
+    gasFeatureVariableRatesDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText(/Variable [R|r]ates/).sibling(),
+    gasFeatureMoveHomeTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("online sign up credit"),
+    gasFeatureMoveHomeDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("online sign up credit").sibling()
 
     // electricityRateRepriceText: Selector("#plan-rates-description-RCPP-EN .hs-plan-rates-heading__reprice"),
     // gasRateRepriceText: Selector("#plan-rates-description-RCPP-GN .hs-plan-rates-heading__reprice")
