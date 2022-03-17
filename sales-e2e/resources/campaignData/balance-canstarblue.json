@@ -10,12 +10,12 @@
           "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
         },
         "moveHomeCredit": {
-          "heading": "$25 Move Home Credit",
-          "description": "Get a $25 credit on each energy account when you move home online.+"
+          "heading": "$25 online sign up credit",
+          "description": "Get a $25 credit on each new energy account when you sign up online.+"
         },
         "variableRates": {
-          "heading": "Variable Rates",
-          "description": "Your energy charges are variable for the benefit period. We’ll let you know in advance before your rates change."
+          "heading": "Variable rates",
+          "description": "Your energy charges are variable for the benefit period. We'll let you know in advance before your rates change."
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
@@ -23,13 +23,13 @@
           },
           "NSW": {
             "Ausgrid": {
-              "heading": "9% discount off total electricity bill"
+              "heading": "10% discount off total electricity bill"
             },
             "Essential": {
-              "heading": "9% discount off total electricity bill"
+              "heading": "8% discount off total electricity bill"
             },
             "Endeavour": {
-              "heading": "9% discount off total electricity bill"
+              "heading": "8% discount off total electricity bill"
             }
           },
           "ACT": {
@@ -46,14 +46,14 @@
       },
       "postSelect": {
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
-        "moveHomeCredit": "$25 Move Home Credit. Get a $25 credit on each energy account when you move home online.+",
-        "variableRates": "Variable Rates. Your energy charges are variable for the benefit period. We'll let you know in advance before your rates change.",
+        "moveHomeCredit": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
+        "variableRates": "Variable rates. Your energy charges are variable for the benefit period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": {
           "VIC": "6% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
           "NSW": {
-            "Ausgrid": "9% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
-            "Essential": "9% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
-            "Endeavour": "9% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
+            "Ausgrid": "10% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+            "Essential": "8% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+            "Endeavour": "8% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
           },
           "ACT": "5% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
           "QLD": "7% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
@@ -66,9 +66,9 @@
         "ENE": {
           "VIC": "Total_6%GD_25",
           "NSW": {
-            "Ausgrid": "Total_9%GD_25",
-            "Essential": "Total_9%GD_25",
-            "Endeavour": "Total_9%GD_25",
+            "Ausgrid": "Total_10%GD_25",
+            "Essential": "Total_8%GD_25",
+            "Endeavour": "Total_8%GD_25",
             "default": "Total_9%GD_25"
           },
           "ACT": "Total_5%GD_25",
@@ -76,25 +76,25 @@
           "SA": "Total_3%GD_25"
         },
         "COR": {
-          "VIC": "Total_6%GD",
+          "VIC": "Total_6%GD_25",
           "NSW": {
-            "Ausgrid": "Total_9%GD",
-            "Essential": "Total_9%GD",
-            "Endeavour": "Total_9%GD",
-            "default": "Total_9%GD"
+            "Ausgrid": "Total_10%GD_25",
+            "Essential": "Total_8%GD_25",
+            "Endeavour": "Total_8%GD_25",
+            "default": "Total_9%GD_25"
           },
-          "ACT": "Total_5%GD",
-          "QLD": "Total_7%GD",
-          "SA": "Total_3%GD"
+          "ACT": "Total_5%GD_25",
+          "QLD": "Total_7%GD_25",
+          "SA": "Total_3%GD_25"
         }
       },
       "existingCustomer": {
         "ENE":{
           "VIC": "Total_6%GD_25",
           "NSW": {
-            "Ausgrid": "Total_9%GD_25",
-            "Essential": "Total_9%GD_25",
-            "Endeavour": "Total_9%GD_25",
+            "Ausgrid": "Total_10%GD_25",
+            "Essential": "Total_8%GD_25",
+            "Endeavour": "Total_8%GD_25",
             "default": "Total_9%GD_25"
           },
           "ACT": "Total_5%GD_25",
@@ -104,9 +104,9 @@
         "PS": {
           "VIC": "Total_6%GD",
           "NSW": {
-            "Ausgrid": "Total_9%GD",
-            "Essential": "Total_9%GD",
-            "Endeavour": "Total_9%GD",
+            "Ausgrid": "Total_10%GD",
+            "Essential": "Total_8%GD",
+            "Endeavour": "Total_8%GD",
             "default": "Total_9%GD"
           },
           "ACT": "Total_5%GD",
@@ -125,68 +125,68 @@
           "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
         },
         "moveHomeCredit": {
-          "heading": "$25 Move Home Credit",
-          "description": "Get a $25 credit on each energy account when you move home online.+"
+          "heading": "$25 online sign up credit",
+          "description": "Get a $25 credit on each new energy account when you sign up online.+"
         },
         "variableRates": {
-          "heading": "Variable Rates",
-          "description": "Your energy charges are variable for the benefit period. We’ll let you know in advance before your rates change."
+          "heading": "Variable rates",
+          "description": "Your energy charges are variable for the benefit period. We'll let you know in advance before your rates change."
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
-            "heading": "13% discount off total gas bill"
+            "heading": "11% discount off total gas bill"
           },
           "NSW": {
             "heading": "8% discount off total gas bill"
           },
           "ACT": {
-            "heading": "7% discount off total gas bill"
+            "heading": "8% discount off total gas bill"
           },
           "SA": {
-            "heading": "7% discount off total gas bill"
+            "heading": "8% discount off total gas bill"
           },
           "description": "Guaranteed discount that applies to your energy charges"
         }
       },
       "postSelect": {
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
-        "moveHomeCredit": "$25 Move Home Credit. Get a $25 credit on each energy account when you move home online.+",
-        "variableRates": "Variable Rates. Your energy charges are variable for the benefit period. We'll let you know in advance before your rates change.",
+        "moveHomeCredit": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
+        "variableRates": "Variable rates. Your energy charges are variable for the benefit period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": {
-          "VIC": "13% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
+          "VIC": "11% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
           "NSW": "8% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
-          "ACT": "7% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
-          "SA" : "7% discount off total gas bill. Guaranteed discount that applies to your energy charges."
+          "ACT": "8% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
+          "SA" : "8% discount off total gas bill. Guaranteed discount that applies to your energy charges."
         }
       }
     },
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_13%GD_25",
+          "VIC": "Total_11%GD_25",
           "NSW": "Total_8%GD_25",
-          "ACT": "Total_7%GD_25",
-          "SA": "Total_7%GD_25"
+          "ACT": "Total_8%GD_25",
+          "SA": "Total_8%GD_25"
         },
         "COR": {
-          "VIC": "Total_13%GD",
-          "NSW": "Total_8%GD",
-          "ACT": "Total_7%GD",
-          "SA": "Total_7%GD"
+          "VIC": "Total_11%GD_25",
+          "NSW": "Total_8%GD_25",
+          "ACT": "Total_8%GD_25",
+          "SA": "Total_8%GD_25"
         }
       },
       "existingCustomer": {
         "ENE":{
-          "VIC": "Total_13%GD_25",
+          "VIC": "Total_11%GD_25",
           "NSW": "Total_8%GD_25",
-          "ACT": "Total_7%GD_25",
-          "SA": "Total_7%GD_25"
+          "ACT": "Total_8%GD_25",
+          "SA": "Total_8%GD_25"
         },
         "PS": {
-          "VIC": "Total_13%GD",
+          "VIC": "Total_11%GD",
           "NSW": "Total_8%GD",
-          "ACT": "Total_7%GD",
-          "SA": "Total_7%GD"
+          "ACT": "Total_8%GD",
+          "SA": "Total_8%GD"
         }
       }
     }
@@ -206,6 +206,7 @@
       },
       "postSelect": {
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
+        "moveHomeCredit": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
         "variableRates": "Variable Rates. Your energy charges are variable for the benefit period. We’ll let you know in advance before your rates change."
       }
     }
@@ -231,21 +232,21 @@
       }
     },
     "moveHomeCredit": {
-      "heading": "$25 Move Home Credit",
+      "heading": "$25 online sign up credit",
       "VIC": {
-        "description": "+ Offer available to eligible VIC residential customers who move home via energyaustralia.com.au to an electricity or gas offer. Limit of one $25 credit per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        "description": "+ Offer available to eligible VIC residential customers who sign up to an electricity or gas offer online. Limit of one $25 credit per new energy account, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       },
       "NSW": {
-        "description": "+ Offer available to eligible NSW residential customers who move home via energyaustralia.com.au to an electricity or gas offer. Limit of one $25 credit per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        "description": "+ Offer available to eligible NSW residential customers who sign up to an electricity or gas offer online. Limit of one $25 credit per new energy account, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       },
       "ACT": {
-        "description": "+ Offer available to eligible ACT residential customers who move home via energyaustralia.com.au to an electricity or gas offer. Limit of one $25 credit per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        "description": "+ Offer available to eligible ACT residential customers who sign up to an electricity or gas offer online. Limit of one $25 credit per new energy account, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       },
       "QLD": {
-        "description": "+ Offer available to eligible QLD residential customers who move home via energyaustralia.com.au to an electricity or gas offer. Limit of one $25 credit per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        "description": "+ Offer available to eligible QLD residential customers who sign up to an electricity or gas offer online. Limit of one $25 credit per new energy account, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       },
       "SA": {
-        "description": "+ Offer available to eligible SA residential customers who move home via energyaustralia.com.au to an electricity or gas offer. Limit of one $25 credit per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        "description": "+ Offer available to eligible SA residential customers who sign up to an electricity or gas offer online. Limit of one $25 credit per new energy account, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       }
     },
     "goNeutral": {
