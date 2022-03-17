@@ -13,7 +13,7 @@
 
 Feature:E2E scenario for nofrills-finder campaign for new moving
 
-  @DR22.1.2.campaign
+  @DR22.3.3.campaign
   Scenario Outline: Validate complete data for nofrills-finder campaign for NSW new non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2516" and clicks on show me plan link
@@ -27,12 +27,12 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
       | referencePriceComparison | goNeutral | solarBuyBack | planName  | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | No Frills | <state> | N            |    Y         |
     And user clicks on Add plan button
-    And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                   | N                                  | <state> |    Y                 |
-    And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | Y                   | N                                  | <state> |    Y                 |
+#    And user validates plan details on cart page for "<campaign>"
+#      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+#      | ELE      | N                | Y                     | Y                   | N                                  | <state> |    Y                 |
+#    And user validates plan details on cart page for "<campaign>"
+#      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+#      | GAS      | N                | Y                     | Y                   | N                                  | <state> |    Y                 |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                | movingType | propertyType |
@@ -86,7 +86,7 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
       | customerStatus | fuelType | campaign        | folderName                                     | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | nofrills-finder | E2E_Campaign_nofrills-finder_NSW_New_NonMoving | NSW   | Quote Tool   | COR     | No  | No | RES          | New           |
 
-  @DR22.1.2.campaign
+  @DR22.3.3.campaign
   Scenario Outline: Validate complete data for nofrills-finder campaign for VIC new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
@@ -100,12 +100,12 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
       | referencePriceComparison | goNeutral | solarBuyBack | planName  | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | No Frills | <state> | N            |    Y         |
     And user clicks on Add plan button
-    And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                   | N                                  | <state> |    Y                 |
-    And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | Y                   | N                                  | <state> |    Y                 |
+#    And user validates plan details on cart page for "<campaign>"
+#      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+#      | ELE      | N                | Y                     | Y                   | N                                  | <state> |    Y                 |
+#    And user validates plan details on cart page for "<campaign>"
+#      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+#      | GAS      | N                | Y                     | Y                   | N                                  | <state> |    Y                 |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                   | movingType | propertyType |
@@ -160,7 +160,7 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
       | customerStatus | fuelType | campaign        | folderName                                  | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | nofrills-finder | E2E_Campaign_nofrills-finder_VIC_New_Moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.1.2.campaign
+  @DR22.3.3.campaign
   Scenario Outline: Validate complete data for nofrills-finder campaign for QLD new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4500" and clicks on show me plan link
@@ -171,9 +171,9 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
       | referencePriceComparison | goNeutral | solarBuyBack | planName  | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | No Frills | <state> | N            |    Y         |
     And user clicks on Select plan button
-    And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                   | N                                  | <state> |    Y                 |
+#    And user validates plan details on cart page for "<campaign>"
+#      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+#      | ELE      | N                | Y                     | Y                   | N                                  | <state> |    Y                 |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -222,7 +222,7 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
       | customerStatus | fuelType | campaign        | folderName                                  | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | nofrills-finder | E2E_Campaign_nofrills-finder_QLD_New_Moving | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.1.2.campaign
+  @DR22.3.3.campaign
   Scenario Outline: Validate complete data for nofrills-finder campaign for ACT for new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2911" for postcode and proceed to view the plans
@@ -236,12 +236,12 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
       | referencePriceComparison | goNeutral | solarBuyBack | planName  | state   |moveHomeCredit|
       | Y                        | Y         | Y            | No Frills | <state> |    Y         |
     And user clicks on Add plan button
-    And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                   | N                                  | <state> |    Y                 |
-    And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | Y                   | N                                  | <state> |    Y                 |
+#    And user validates plan details on cart page for "<campaign>"
+#      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+#      | ELE      | N                | Y                     | Y                   | N                                  | <state> |    Y                 |
+#    And user validates plan details on cart page for "<campaign>"
+#      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
+#      | GAS      | N                | Y                     | Y                   | N                                  | <state> |    Y                 |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                 | movingType | propertyType |
@@ -289,7 +289,7 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
       | customerStatus | fuelType | campaign        | folderName                                  | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | nofrills-finder | E2E_Campaign_nofrills-finder_ACT_New_moving | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.1.2.campaign @Acquisition_ATL_Total_nofrills-finder
+  @DR22.3.3.campaign @Acquisition_ATL_Total_nofrills-finder
   Scenario Outline: Validate complete data for nofrills-finder campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
@@ -303,12 +303,12 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|moveHomeCredit|
       |Y                        |Y          |Y              |No Frills |<state>  |N           |    Y         |
     And user clicks on Add plan button
-    And user validates plan details on cart page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|Feature_moveHomeCredit|
-      |ELE      |N                 |Y                       |Y                    |N                                    |<state>|    Y                 |
-    And user validates plan details on cart page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|Feature_moveHomeCredit|
-      |GAS      |N                 |Y                       |Y                    |N                                    |<state>|    Y                 |
+#    And user validates plan details on cart page for "<campaign>"
+#      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|Feature_moveHomeCredit|
+#      |ELE      |N                 |Y                       |Y                    |N                                    |<state>|    Y                 |
+#    And user validates plan details on cart page for "<campaign>"
+#      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|Feature_moveHomeCredit|
+#      |GAS      |N                 |Y                       |Y                    |N                                    |<state>|    Y                 |
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       |customerStatus   |accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
@@ -356,7 +356,7 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
       | customerStatus | fuelType | campaign        | folderName                                           | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     | nofrills-finder | E2E_Campaign_nofrills-finder_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR22.1.2.campaign @Acquisition_ATL_Total_nofrills-finder
+  @DR22.3.3.campaign @Acquisition_ATL_Total_nofrills-finder
   Scenario Outline: Validate complete data for nofrills-finder campaign for NSW existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" and clicks on show me plan link
@@ -370,12 +370,12 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|moveHomeCredit|
       |Y                        |Y          |Y              |No Frills |<state>  |N           |    Y         |
     And user clicks on Add plan button
-    And user validates plan details on cart page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|Feature_moveHomeCredit|
-      |ELE      |N                 |Y                       |Y                    |N                                    |<state>|    Y                 |
-    And user validates plan details on cart page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|Feature_moveHomeCredit|
-      |GAS      |N                 |Y                       |Y                    |N                                    |<state>|    Y                 |
+#    And user validates plan details on cart page for "<campaign>"
+#      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|Feature_moveHomeCredit|
+#      |ELE      |N                 |Y                       |Y                    |N                                    |<state>|    Y                 |
+#    And user validates plan details on cart page for "<campaign>"
+#      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|Feature_moveHomeCredit|
+#      |GAS      |N                 |Y                       |Y                    |N                                    |<state>|    Y                 |
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       |customerStatus   |accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
@@ -422,7 +422,7 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
       | customerStatus | fuelType | campaign        | folderName                                           | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     | nofrills-finder | E2E_Campaign_nofrills-finder_NSW_existing_non-moving | NSW   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR22.1.2.campaign @Acquisition_ATL_Total_nofrills-finder
+  @DR22.3.3.campaign @Acquisition_ATL_Total_nofrills-finder
   Scenario Outline: Validate complete data for nofrills-finder campaign for SA existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5000" and clicks on show me plan link
@@ -436,12 +436,12 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|moveHomeCredit|
       |Y                        |Y          |Y              |No Frills |<state>  |N           |    Y         |
     And user clicks on Add plan button
-    And user validates plan details on cart page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|Feature_moveHomeCredit|
-      |ELE      |N                 |Y                       |Y                    |N                                    |<state>|    Y                 |
-    And user validates plan details on cart page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|Feature_moveHomeCredit|
-      |GAS      |N                 |Y                       |Y                    |N                                    |<state>|    Y                 |
+#    And user validates plan details on cart page for "<campaign>"
+#      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|Feature_moveHomeCredit|
+#      |ELE      |N                 |Y                       |Y                    |N                                    |<state>|    Y                 |
+#    And user validates plan details on cart page for "<campaign>"
+#      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|Feature_moveHomeCredit|
+#      |GAS      |N                 |Y                       |Y                    |N                                    |<state>|    Y                 |
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       |customerStatus   |accountNumber|accountIdentityType|postcodeOrABNACN|idType|idValue |
@@ -489,7 +489,7 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
       | customerStatus | fuelType | campaign        | folderName                                          | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     | nofrills-finder | E2E_Campaign_nofrills-finder_SA_existing_non-moving | SA    | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR22.1.2.campaign @Acquisition_ATL_Total_nofrills-finder
+  @DR22.3.3.campaign @Acquisition_ATL_Total_nofrills-finder
   Scenario Outline: Validate complete data for nofrills-finder campaign for QLD existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4500" and clicks on show me plan link
@@ -500,9 +500,9 @@ Feature:E2E scenario for nofrills-finder campaign for new moving
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName  |state|signUpCredit|moveHomeCredit|
       |Y                        |Y          |Y              |No Frills |<state>  |N           |    Y         |
     And user clicks on Select plan button
-    And user validates plan details on cart page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|Feature_moveHomeCredit|
-      |ELE      |N                 |Y                       |Y                    |N                                    |<state>|    Y                 |
+#    And user validates plan details on cart page for "<campaign>"
+#      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|Feature_moveHomeCredit|
+#      |ELE      |N                 |Y                       |Y                    |N                                    |<state>|    Y                 |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
