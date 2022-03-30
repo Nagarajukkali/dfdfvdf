@@ -35,9 +35,6 @@ When(/^user provides property supply type and phase for electricity connection$/
   let meterPhases=data[0].meterPhases;
   let ctDetails=data[0].ctDetails;
   await testFunction.takeScreenshot(t, "new_connections_supplyTypeDetails");//disabled UI Validation
-  // if (customerType === CustomerType.BUSINESS) {
-  //   await newConnectionMethod.selectOptionForAMPS(t, data[0].optionForAMPS);
-  // }
   if (state !== "VIC"){
     await newConnectionMethod.enterSupplyType(t, supplyType);
     await newConnectionMethod.enterSupplyPhases(t, supplyPhases);
@@ -50,17 +47,40 @@ When(/^user provides property supply type and phase for electricity connection$/
 When(/^user provides property details for electricity connection$/, async function (t, [], dataTable) {
   let data = dataTable.hashes();
   let customerType = data[0].customerType;
-  await testFunction.takeScreenshot(t, "new_connections_propertyDetails");//disabled UI Validation
+  await testFunction.takeScreenshot(t, "new_connections_propertyDetails");
+  if (data[0].state === "SA" || data[0].state === "QLD") {
+    await newConnectionMethod.selectOptionForPaperwork(t, data[0].optionForPaperwork);
+  }
   await newConnectionMethod.selectOptionForPoleInstallation(t, data[0].optionForPoleInstallation);
   await newConnectionMethod.selectOptionForOffPeakLoad(t, data[0].optionForOffPeakLoad);
   if (customerType === CustomerType.BUSINESS) {
     await newConnectionMethod.selectOptionForAMPS(t, data[0].optionForAMPS,data[0].state);
   }
   await testFunction.takeScreenshot(t, "new_connections_propertyDetails_withData");
-  if (data[0].state === "VIC") {
-    console.log("VIC");
+  if (data[0].state === "VIC" ) {
     await newConnectionMethod.proceedToStep3(t);
   }
+});
+When(/^user select applicant type and provides applicant and electrician details$/, async function (t, [], dataTable) {
+  let data = dataTable.hashes();
+  let applicantType = data[0].applicantType;
+  let state = data[0].state;
+  await testFunction.takeScreenshot(t, "new_connections_applicantDetails");
+  await newConnectionMethod.applicantTypeAndDetails(t, applicantType, state);
+  await testFunction.takeScreenshot(t, "new_connections_applicantDetails_withData");
+});
+When(/^user provides Level2 Accredited Service Provider details$/, async function (t,[],dataTable) {
+  let data = dataTable.hashes();
+  let state = data[0].state;
+  await testFunction.takeScreenshot(t, "new_connections_level2ASPDetails");
+  await newConnectionMethod.enterLevel2ASPDetails(t,state);
+  await testFunction.takeScreenshot(t, "new_connections_level2ASPDetails_withData");
+});
+When(/^user provides account setup and mailing details$/, async function (t,[],dataTable) {
+  let data = dataTable.hashes();
+  let state = data[0].state;
+  let idType=data[0].idType;
+  await newConnectionMethod.accountSetupAndMailingDetails(t,idType,state);
 });
 When(/^user provides property contacts$/, async function (t, [], dataTable) {
   let data = dataTable.hashes();

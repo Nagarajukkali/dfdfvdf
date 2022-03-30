@@ -218,8 +218,79 @@ export class newConnectionMethod {
     await this.selectId(t, idType, state);
     await testFunction.click(t, eaNewConnectionPage.elements.inputSameAsSiteAddress);
   }
+  public static async applicantTypeAndDetails(t, applicantType,state) {
+    switch (applicantType) {
+      case "EndUser":
+      await testFunction.click(t, eaNewConnectionPage.elements.inputApplicantTypeEndUser);
+      break;
+      case "Electrician":
+        await testFunction.click(t, eaNewConnectionPage.elements.inputApplicantTypeElectrician);
+        await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtApplicantBusinessName, testFunction.generateRandomText(5));
+        await testFunction.click(t, eaNewConnectionPage.elements.inputApplicantBusinessIDABN);
+        await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtApplicantABN, (testFunction.getRandomNumber(99999999)).padEnd(11, "0"));
+        await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtApplicantLicenceNo, ("GM" +testFunction.getRandomNumber(99999999)).padEnd(5, "0"));
+        break;
+      case "Builder":
+        await testFunction.click(t, eaNewConnectionPage.elements.inputApplicantTypeBuilder);
+        await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtApplicantBusinessName, testFunction.generateRandomText(5));
+        await testFunction.click(t, eaNewConnectionPage.elements.inputApplicantBusinessIDACN);
+        await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtApplicantACN, (testFunction.getRandomNumber(99999999)).padEnd(9, "0"));
+        break;
+      case "Other":
+        await testFunction.click(t, eaNewConnectionPage.elements.inputApplicantTypeOther);
+        break;
+    }
+    await testFunction.click(t, eaNewConnectionPage.elements.applicantTitleActive);
+    await testFunction.isElementVisible(t, eaNewConnectionPage.elements.applicantTitle);
+    await testFunction.click(t, eaNewConnectionPage.elements.applicantTitle);
+    await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtFirstname, testFunction.generateRandomText(5));
+    await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtLastname, testFunction.generateRandomText(5));
+    await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtMobileNo, ("04" + testFunction.getRandomNumber(99999999)).padEnd(10, "0"));
+    await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtAltPhoneNo, ("03" + testFunction.getRandomNumber(99999999)).padEnd(10, "0"));
+    await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtEmail, testFunction.generateRandomText(5) + "@gmail.com");
+    if(applicantType!=='Electrician'){
+      await this.enterElectricianDetails(t, state);
+    }
+  }
 
-
+  public static async enterElectricianDetails(t, state) {
+    if(state!=='VIC'){
+      await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtElectricianFirstname, testFunction.generateRandomText(5));
+      await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtElectricianLastname, testFunction.generateRandomText(5));
+      await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtElectricianMobileNo, ("04" + testFunction.getRandomNumber(99999999)).padEnd(10, "0"));
+      await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtElectricianAltPhoneNo, ("03" + testFunction.getRandomNumber(99999999)).padEnd(10, "0"));
+      await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtElectricianEmail, testFunction.generateRandomText(5) + "@gmail.com");
+      await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtElectricianLicenceNo, ("GM" +testFunction.getRandomNumber(99999999)).padEnd(5, "0"));
+      await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtElectricianBusinessName, testFunction.generateRandomText(5));
+      await testFunction.click(t, eaNewConnectionPage.elements.inputElectricianBusinessIDABN);
+      await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtElectricianABN, (testFunction.getRandomNumber(99999999)).padEnd(11, "0"));
+    }
+  }
+  public static async enterLevel2ASPDetails(t,state) {
+    if(state==='NSW'){
+      await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtASPFirstname, testFunction.generateRandomText(5));
+      await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtASPLastname, testFunction.generateRandomText(5));
+      await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtASPLicenceNo, ("GM" +testFunction.getRandomNumber(99999999)).padEnd(5, "0"));
+      await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtASPMobileNo, ("04" + testFunction.getRandomNumber(99999999)).padEnd(10, "0"));
+      await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtASPBusinessName, testFunction.generateRandomText(5));
+      await testFunction.click(t, eaNewConnectionPage.elements.inputASPVectorMeteringYes);
+      await testFunction.click(t, eaNewConnectionPage.elements.inputASPCompleteMeterInstallYes);
+    }
+  }
+  public static async selectOptionForPaperwork(t,optionForPaperwork) {
+    if(optionForPaperwork==='Yes'){
+      await testFunction.click(t, eaNewConnectionPage.elements.inputDistributorPaperWorkYes);
+      await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtRexIdEWRNo, (testFunction.getRandomNumber(99999999)).padEnd(10, "0"));
+    }else if (optionForPaperwork==='No'){
+      await testFunction.click(t, eaNewConnectionPage.elements.inputDistributorPaperWorkYes);
+    }
+  }
+  public static async accountSetupAndMailingDetails(t, idType,state) {
+    await testFunction.click(t, eaNewConnectionPage.elements.inputSameAsApplicant);
+    await testFunction.clearAndEnterText(t, eaNewConnectionPage.elements.txtDOB, "01011980");
+    await this.selectId(t, idType, state);
+    await testFunction.click(t, eaNewConnectionPage.elements.inputSameAsSiteAddress);
+  }
   public static async selectId(t, idType, state) {
     await testFunction.click(t, eaNewConnectionPage.elements.applicantIdTypeActive);
     switch (idType) {
@@ -254,6 +325,7 @@ export class newConnectionMethod {
       case "QLD":
         await testFunction.isElementVisible(t, eaNewConnectionPage.elements.idStateQLD);
         await testFunction.click(t, eaNewConnectionPage.elements.idStateQLD);
+        break;
       case "TAS":
         await testFunction.isElementVisible(t, eaNewConnectionPage.elements.idStateTAS);
         await testFunction.click(t, eaNewConnectionPage.elements.idStateTAS);
