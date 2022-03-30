@@ -46,6 +46,7 @@ export enum PlanType {
   NO_FRILLS = 'No Frills',
   TOTAL_PLAN = 'Total Plan',
   TOTAL_PLAN_PLUS = 'Total Plan Plus',
+  SOLAR_MAX = 'Solar Max',
   BASIC_BUSINESS = 'Basic Business',
   BASIC_BUSINESS_QLD = 'Basic Business QLD',
   NO_FRILLS_BUSINESS = 'No Frills Business',
