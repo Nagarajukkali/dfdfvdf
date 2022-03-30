@@ -66,6 +66,7 @@ const eaHomePage = {
     businessCNPlan: Selector("[id*='plan-select-button-BCNP']"),
     businessBalancePlan: Selector("[id*='plan-select-button-BSPB2']"),
     balancePlan: Selector("[id*='plan-select-button-TAPR1']"),
+    solarmax: Selector("#plan-select-button-SMAX"),
     totalPlanBusinessEleDiscount: Selector("#plan-rate-summary-TOPB-0 span.hs-plan-rate-summary__title-amount"),
     totalPlanBusinessGasDiscount: Selector("#plan-rate-summary-TOPB-1 span.hs-plan-rate-summary__title-amount"),
     totalPlanPlusBusiness: Selector("[id*='plan-select-button-SWSRB']"),

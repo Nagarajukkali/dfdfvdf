@@ -75,6 +75,7 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
     let isBusinessPlanCode = (expectedPlanCode.includes('BSOT') || expectedPlanCode.includes('TOPB') || expectedPlanCode.includes('SWSR'));
     let isResiPlanCode = (expectedPlanCode.includes('RSOT'));
     let isCustomerType = actualCustomerType.includes('RESIDENTIAL');
+    let isSolar = expectedPlanCode.includes('SMAX');
 
     //Comparison
     await qt2Reporting.validateMandatoryField(t, actualQuoteStatus, expectedQuoteStatus);
@@ -118,7 +119,11 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
       let actualEleSourceCode = jsonObj.saleDetail.saleDetailHeader.sourceCode;
       let expectedEleSourceCode = checkoutDetailsMethod.map.get('ele source code_' + checkoutDetailsMethod.getScenarioId(t));
       if (isCampaignTest || data[0].campaign === "balance-canstarblue") {
-        await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualEleSourceCode, data[0].campaign, expectedOfferType, expectedFuelType);
+          await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualEleSourceCode, data[0].campaign, expectedOfferType, expectedFuelType);
+      } else if (isOfferType && isSolar ) {
+        await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "SolarMax" + '_25');
+      } else if (!isOfferType && isSolar ) {
+        await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "SolarMax");
       } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$25Credit && (!(data[0].campaign === "Balance Plan"))) {
         console.log("On 25Credit-Resi");
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_25');
@@ -152,9 +157,6 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
           await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "Total_7%GD");
         }
       }
-        //   else if (isOfferType && !isBusinessPlanCode && !isResiPlanCode && isStateEligibleFor$50Credit) {
-        //   await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_50');
-      // }
       else if (data[0].campaign === undefined) {
         if (isOfferType && isCustomerType && isStateEligibleFor$25Credit) {
           console.log("On 25Credit-undefined");

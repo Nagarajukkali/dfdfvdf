@@ -87,6 +87,12 @@ export class plansMethod {
         }
         await testFunction.click(t, EaHomePage.elements.totalPlanPlus);
         break;
+      case PlanType.SOLAR_MAX:
+        if (testFunction.isMobile() || testFunction.isTablet()) {
+          await scrollTo(EaHomePage.elements.solarmax);
+        }
+        await testFunction.click(t, EaHomePage.elements.solarmax);
+        break;
       case PlanType.BASIC_BUSINESS:
         if (testFunction.isMobile() || testFunction.isTablet()) {
           await scrollTo(EaHomePage.elements.basicBusiness);
