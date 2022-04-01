@@ -95,12 +95,12 @@
             "VIC": "Total_Plus_13%GD_25",
             "NSW": {
               "Ausgrid": "Total_Plus_21%GD_25",
-              "Essential": "Total_Plus_17%GD_25",
-              "Endeavour": "Total_Plus_17%GD_25",
+              "Essential": "Total_Plus_17%GD_50",
+              "Endeavour": "Total_Plus_17%GD_50",
               "default": "Total_Plus_9%GD_25"
             },
             "ACT": "Total_Plus_11%GD_50",
-            "QLD": "Total_Plus_15%GD_25",
+            "QLD": "Total_Plus_15%GD_50",
             "SA": "Total_Plus_7%GD_50"
           },
           "PS": {
