@@ -11,8 +11,8 @@ Feature:E2E scenario for new residential moving and non moving customer
       | customerType | connectionAddress                      | movingType | propertyType |
       | RES          | 15 White Street, MOUNT WAVERLEY VIC 3149      | Moving     | Renter       |
     And user validates details on checkout details page
-      | sourceSystem   | journey   | fuelType   | solarSetup |
-      | <sourceSystem> | <journey> | <fuelType> | Yes        |
+      | sourceSystem   | journey   | fuelType   | solarSetup |planName|
+      | <sourceSystem> | <journey> | <fuelType> | Yes        |<planName>|
     And user validates solar indicator on checkout details page
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
@@ -50,8 +50,8 @@ Feature:E2E scenario for new residential moving and non moving customer
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planName |  planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       |   <planName>     | SMAX-EV  | 6407743654 | N                              | N                              | Y                       | LSCNSPE                  | POSTMM        |
+      | fuelType | quoteStatus      | customerType | offerType |  planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | SMAX-EV  | 6407743654 | N                              | N                              | Y                       | LSCNSPE                  | POSTMM        |
     And user validates the solar details
       | fuelType | solarPowerIndicator | solarNetworkTariffCode | solarTimeOfUse |
       | ELE      | Y                   | FURTOU                 | Y              |
@@ -76,8 +76,8 @@ Feature:E2E scenario for new residential moving and non moving customer
       | customerType | connectionAddress                      | movingType | propertyType |
       | RES          | 26 Pinehill Drive, PAKENHAM VIC 3810      | Non-Moving     | Renter       |
     And user validates details on checkout details page
-      | sourceSystem   | journey   | fuelType   | solarSetup |
-      | <sourceSystem> | <journey> | <fuelType> | Yes        |
+      | sourceSystem   | journey   | fuelType   | solarSetup |planName|
+      | <sourceSystem> | <journey> | <fuelType> | Yes        |<planName>|
     And user validates solar indicator on checkout details page
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
@@ -114,8 +114,8 @@ Feature:E2E scenario for new residential moving and non moving customer
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planName |  planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       |   <planName>     | SMAX-EV  | 6305573545 | N                              | N                              | Y                       | LSCNSPE                  | POSTMM        |
+      | fuelType | quoteStatus      | customerType | offerType |  planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       |  SMAX-EV  | 6305573545 | N                              | N                              | Y                       | LSCNSPE                  | POSTMM        |
     And user validates the solar details
       | fuelType | solarPowerIndicator | solarNetworkTariffCode | solarTimeOfUse |
       | ELE      | Y                   | NAST11S                 | N              |
@@ -132,8 +132,6 @@ Feature:E2E scenario for new residential moving and non moving customer
   Scenario Outline: Submit a quote for new residential moving customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
-#  And user enters '2516' in 'POSTCODE' field
-#  Then user validates reference price for '<planName>'
     Then user validates details on plans page for 'RES'
     When user selects '<planName>'
     And user moves on to fill the qualifier
@@ -142,8 +140,8 @@ Feature:E2E scenario for new residential moving and non moving customer
       | customerType | connectionAddress                      | movingType | propertyType |
       | RES          | 42 Brownlow Drive, POINT COOK VIC 3030 | Moving     | Renter       |
     And user validates details on checkout details page
-      | sourceSystem   | journey   | fuelType   | solarSetup |
-      | <sourceSystem> | <journey> | <fuelType> | Yes        |
+      | sourceSystem   | journey   | fuelType   | solarSetup | planName|
+      | <sourceSystem> | <journey> | <fuelType> | Yes        |<planName>|
     And user validates solar indicator on checkout details page
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |

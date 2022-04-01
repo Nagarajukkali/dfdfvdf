@@ -179,6 +179,6 @@ Feature:E2E scenario for existing residential moving and non moving customer
 
     Examples:
       | customerStatus | planName   | folderName                      | fuelType | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
-      | Existing       | Total Plan | E2E_Existing_Resi_QLD_NonMoving | ELE      | Quote Tool   | Plan Switch | No  | Yes | RES          | Existing      |
+      | Existing       | Total Plan Plus | E2E_Existing_Resi_QLD_NonMoving | ELE      | Quote Tool   | Plan Switch | No  | Yes | RES          | Existing      |
 
 

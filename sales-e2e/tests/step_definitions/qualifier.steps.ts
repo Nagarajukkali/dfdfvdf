@@ -77,6 +77,10 @@ When(/^user provides all other details on qualifier page$/, async function (t,[]
     await qualifierMethod.selectPropertyType(t, data[0].propertyType);
   }
   await testFunction.click(t, eaQualifierPage.elements.btnContinueOnQualifier);
+  if (movingType === Moving.MOVING && Selector('div.ea-field-errors').exists) {
+    await  testFunction.selectDateFromCalendar(t, eaQualifierPage.elements.calendarTable);
+    await  testFunction.click(t, eaQualifierPage.elements.btnContinueOnQualifier);
+  }
 });
 
 When(/^user verifies account on qualifier$/, async function (t,[],dataTable) {

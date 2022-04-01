@@ -97,7 +97,7 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_12%GD_25",
+          "VIC": "Total_12%GD_50",
           "NSW": {
             "Ausgrid": "Total_20%GD_25",
             "Essential": "Total_16%GD_25",
@@ -109,7 +109,7 @@
           "SA": "Total_6%GD_50"
         },
         "COR": {
-          "VIC": "Total_12%GD_25",
+          "VIC": "Total_12%GD_50",
           "NSW": {
             "Ausgrid": "Total_20%GD_25",
             "Essential": "Total_16%GD",
@@ -123,7 +123,7 @@
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_12%GD_25",
+          "VIC": "Total_12%GD_50",
           "NSW": {
             "Ausgrid": "Total_20%GD_25",
             "Essential": "Total_16%GD_25",
