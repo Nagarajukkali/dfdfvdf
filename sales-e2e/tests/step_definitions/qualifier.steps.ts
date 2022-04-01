@@ -55,6 +55,10 @@ When(/^user provides all other details on qualifier page for Existing customer$/
   await t.wait(3000);
   await testFunction.isElementDisplayed(t, eaQualifierPage.elements.btnContinueOnQualifier)
   await testFunction.click(t, eaQualifierPage.elements.btnContinueOnQualifier);
+  if (await (eaQualifierPage.elements.movingOptionSelected).exists && await testFunction.getElementText(t,eaQualifierPage.elements.datePickerSelected)=== '') {
+    await  qualifierMethod.selectDateFromCalendar(t);
+  }
+  await  testFunction.click(t, eaQualifierPage.elements.btnContinueOnQualifier);
 });
 
 When(/^user provides all other details on qualifier page$/, async function (t,[],dataTable) {
@@ -76,11 +80,10 @@ When(/^user provides all other details on qualifier page$/, async function (t,[]
   if(customerType===CustomerType.RESIDENTIAL){
     await qualifierMethod.selectPropertyType(t, data[0].propertyType);
   }
-  await testFunction.click(t, eaQualifierPage.elements.btnContinueOnQualifier);
-  if (movingType === Moving.MOVING && Selector('div.ea-field-errors').exists) {
-    await  testFunction.selectDateFromCalendar(t, eaQualifierPage.elements.calendarTable);
-    await  testFunction.click(t, eaQualifierPage.elements.btnContinueOnQualifier);
+  if (await (eaQualifierPage.elements.movingOptionSelected).exists && await testFunction.getElementText(t,eaQualifierPage.elements.datePickerSelected)=== '') {
+    await  qualifierMethod.selectDateFromCalendar(t);
   }
+  await  testFunction.click(t, eaQualifierPage.elements.btnContinueOnQualifier);
 });
 
 When(/^user verifies account on qualifier$/, async function (t,[],dataTable) {
