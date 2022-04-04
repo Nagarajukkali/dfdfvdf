@@ -139,6 +139,9 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | propertyType |
       | RES          | Non-Moving | Owner        |
+    And user selects new plan from plan unavailable page
+     |customerType|planName| propertyType |
+     |RES   | Total Plan Plus | Owner |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType   |
       | RES          | RES     | Existing       | test      | test     | Passport |
@@ -174,11 +177,11 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-EQ  | QB06882633 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | SWSR1-EQ  | QB06882633 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
 
 
     Examples:
       | customerStatus | planName   | folderName                      | fuelType | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
-      | Existing       | Total Plan Plus | E2E_Existing_Resi_QLD_NonMoving | ELE      | Quote Tool   | Plan Switch | No  | Yes | RES          | Existing      |
+      | Existing       | Total Plan | E2E_Existing_Resi_QLD_NonMoving | ELE      | Quote Tool   | Plan Switch | No  | Yes | RES          | Existing      |
 
 

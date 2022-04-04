@@ -4,6 +4,7 @@ import {Then, When} from 'cucumber';
 import {CustomerType} from '@ea/ea-commons-models';
 import {plansMethod} from '../methods/plansPage';
 import {Selector} from "testcafe";
+import {cartsMethod} from "../methods/cartsPage";
 const eaQualifierPage=require('../pages/qualifier.page');
 const { config }=require('../../resources/resource');
 const validateAnalyticsEvent=config.validateAnalytics;
@@ -49,16 +50,17 @@ When(/^user provides all other details on qualifier page for Existing customer$/
     await testFunction.takeScreenshot(t, "qualifier_page_calendar");//disabled UI Validation
     await qualifierMethod.selectDateFromCalendar(t);
   }
-  if(customerType===CustomerType.RESIDENTIAL){
+  await t.wait(3000)
+  const planUnavailable : boolean = await (eaQualifierPage.elements.selectNewPlan).exists;
+  if(!planUnavailable && customerType===CustomerType.RESIDENTIAL ){
     await qualifierMethod.selectPropertyType(t, data[0].propertyType)
   }
-  await t.wait(3000);
-  await testFunction.isElementDisplayed(t, eaQualifierPage.elements.btnContinueOnQualifier)
-  await testFunction.click(t, eaQualifierPage.elements.btnContinueOnQualifier);
   if (await (eaQualifierPage.elements.movingOptionSelected).exists && await testFunction.getElementText(t,eaQualifierPage.elements.datePickerSelected)=== '') {
     await  qualifierMethod.selectDateFromCalendar(t);
   }
-  await  testFunction.click(t, eaQualifierPage.elements.btnContinueOnQualifier);
+  if( !planUnavailable && await (eaQualifierPage.elements.btnContinueOnQualifier).exists) {
+    await testFunction.click(t, eaQualifierPage.elements.btnContinueOnQualifier);
+  }
 });
 
 When(/^user provides all other details on qualifier page$/, async function (t,[],dataTable) {
@@ -83,7 +85,9 @@ When(/^user provides all other details on qualifier page$/, async function (t,[]
   if (await (eaQualifierPage.elements.movingOptionSelected).exists && await testFunction.getElementText(t,eaQualifierPage.elements.datePickerSelected)=== '') {
     await  qualifierMethod.selectDateFromCalendar(t);
   }
-  await  testFunction.click(t, eaQualifierPage.elements.btnContinueOnQualifier);
+  if(await eaQualifierPage.elements.btnContinueOnQualifier.exists) {
+    await testFunction.click(t, eaQualifierPage.elements.btnContinueOnQualifier);
+  }
 });
 
 When(/^user verifies account on qualifier$/, async function (t,[],dataTable) {
@@ -238,3 +242,19 @@ When(/^user selects connection date in qualifier$/, async function (t, []) {
 When(/^user refresh the qualifier$/, async function (t,[]) {
   await t.eval(() => location.reload());
 });
+
+When ( /^user selects new plan from plan unavailable page$/, async function (t, [], dataTable){
+  let data=dataTable.hashes();
+  let planName = data[0].planName
+  let propertyType = data[0].propertyType
+  let customerType = data[0].customerType
+    await testFunction.click(t, eaQualifierPage.elements.selectNewPlan)
+    await testFunction.takeScreenshot(t, 'plans_page');
+    await plansMethod.selectPlan(t, planName);
+    await cartsMethod.clickContinueCartsPage(t);
+  const planUnavailable : boolean = await (eaQualifierPage.elements.selectNewPlan).exists;
+  if(!planUnavailable && customerType===CustomerType.RESIDENTIAL ){
+    await qualifierMethod.selectPropertyType(t, propertyType)
+  }
+    await testFunction.click(t, eaQualifierPage.elements.btnContinueOnQualifier);
+})
