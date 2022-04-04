@@ -48,7 +48,8 @@ const eaQualifierPage = {
     btnContinueOnQualifier: Selector("div.hs-qualifier__navigation >button.hs-qualifier__submit"),
     qldenenergisedyes: Selector("#edit-queensland-energised-questions-yes__label"),
     movingOptionSelected: Selector("#edit-moving-or-not-yes__label.ea-radio-button-group__label.ea-state-active"),
-    datePickerSelected: Selector("div.ea-datepicker-selected")
+    datePickerSelected: Selector("div.ea-datepicker-selected"),
+    selectNewPlan: Selector("button#ea-modal-primary-action-CHANGE_PLAN_SELECTION_MODAL"),
   },
 };
 
