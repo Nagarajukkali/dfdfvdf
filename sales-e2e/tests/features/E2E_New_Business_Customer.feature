@@ -64,8 +64,6 @@ Feature:E2E scenario for new business moving and non moving customer
   Scenario Outline: Submit a quote for new business non moving customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
-  #And user enters '3220' in 'POSTCODE' field
-  #Then user validates reference price for '<planName>'
     Then user validates details on plans page for 'BUS'
     When user selects '<planName>'
     And user selects gas '<planName>'

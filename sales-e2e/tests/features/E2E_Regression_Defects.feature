@@ -25,7 +25,7 @@ Feature:This feature file is to add scenarios for regression defects
 
     Examples:
       | folderName                     | customer_type | fuelType | planName   |
-      | E2E_Reg_Reset_Verified_Account | RES           | BOTH     | Total Plan |
+      | E2E_Reg_Reset_Verified_Account | RES           | BOTH     | Total Plan Plus |
 
   Scenario Outline: Verify Service address should be replaced by moving address when user provides moving address
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -41,11 +41,11 @@ Feature:This feature file is to add scenarios for regression defects
       | 172 Aberdeen St, GEELONG WEST VIC 3218 | 62031384500 | 5330236561 |
     When user selects '<planName>'
     And user moves on to fill the qualifier
-    And user provides all details on qualifier page
+    And user provides all other details on qualifier page
     | customerType | movingType  | connectionAddress                | propertyType |
     | RES          | Moving         |  271 Heatherhill Road, FRANKSTON VIC 3199 | Renter       |
     Then user validates the connection address on checkout page
-      | address                               | 
+      | address                               |
       | 271 Heatherhill Rd, FRANKSTON VIC 3199 |
 
     Examples:

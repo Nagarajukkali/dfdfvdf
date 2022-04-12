@@ -79,7 +79,7 @@ When(/^user validates details on checkout details page$/, async function (t, [],
   await checkoutDetailsMethod.validateNavigationButtons(t, params[0].sourceSystem, params[0].journey);
   await checkoutDetailsMethod.validatePresenceOfEmailQuoteAndCancelButton(t, params[0].sourceSystem, params[0].journey);
   if (params[0].solarSetup !== undefined) {
-    await checkoutReviewMethod.validateSolarComponent(t, params[0].solarSetup);
+    await checkoutReviewMethod.validateSolarComponent(t, params[0].solarSetup, params[0].planName);
   }
   console.log("Checkout Details page validated successfully for " + params[0].sourceSystem + " " + params[0].journey + " journey.");
 });

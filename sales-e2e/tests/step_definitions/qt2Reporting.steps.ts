@@ -158,10 +158,11 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
         }
       }
       else if (data[0].campaign === undefined) {
-        if (isOfferType && isCustomerType && isStateEligibleFor$25Credit) {
+        if (isOfferType && isCustomerType  && isStateEligibleFor$25Credit && actualState == 'VIC' || 'NSW' ) {
           console.log("On 25Credit-undefined");
-          await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_25');
-        } else {
+          await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_50');
+        }
+        else {
           await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode);
         }
       } else {
@@ -232,10 +233,11 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
         //   else if (isOfferType && !isBusinessPlanCode && !isResiPlanCode && isStateEligibleFor$50Credit) {
         //   await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_50');
       // }
-      else if (isOfferType && isCustomerType && isStateEligibleFor$25Credit) {
-        console.log("On 25Credit--gas");
-        await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_25');
-      } else {
+      else if (isOfferType && isCustomerType && isStateEligibleFor$25Credit && actualState == 'VIC' || 'NSW') {
+        console.log("On 50Credit--gas");
+        await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_50');
+      }
+      else {
         console.log("On else--gas");
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode);
       }

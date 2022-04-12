@@ -16,7 +16,7 @@ Feature:E2E scenario for existing residential moving customer through move house
       | ELE      | Total Plan Plus |
     And user selects plans on checkout details page
       | fuelType | planName   |
-      | GAS      | Total Plan |
+      | GAS      | Total Plan Plus |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         |
       | RES          | RES     | Existing       | test      | test     | Driver License |
@@ -50,11 +50,11 @@ Feature:E2E scenario for existing residential moving customer through move house
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | SWSR1-EN | 4311150544 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | SWSR1-EN |   | N                              | N                              | Y                       | OTHER                    | EMAIL         |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-GN  | 5240924834 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | SWSR1-GN  | 5240924834 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
 
     Examples:
       | folderName                     | fuelType | state | optDisconnection | movingAddress                    | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
@@ -76,7 +76,7 @@ Feature:E2E scenario for existing residential moving customer through move house
       | ELE      | Total Plan Plus |
     And user selects plans on checkout details page
       | fuelType | planName   |
-      | GAS      | Total Plan |
+      | GAS      | Total Plan Plus |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         |
       | RES          | RES     | Existing       | test      | test     | Driver License |
@@ -111,11 +111,11 @@ Feature:E2E scenario for existing residential moving customer through move house
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | SWSR1-EN | 4311150544 | N                              | N                              | Y                       | OTHER                    | POSTMM        |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | SWSR1-EN |  | N                              | N                              | Y                       | OTHER                    | POSTMM        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-GN  | 5240924834 | N                              | N                              | Y                       | OTHER                    | POSTMM        |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | SWSR1-GN  | 5240924834 | N                              | N                              | Y                       | OTHER                    | POSTMM        |
 
     Examples:
       | folderName                     | fuelType | state | optDisconnection | movingAddress                    | sourceSystem | journey   | AAH | DD  | customerType | newOrExisting |
@@ -136,10 +136,10 @@ Feature:E2E scenario for existing residential moving customer through move house
     And user validates solar government scheme disclaimer under solar buy back rates section
     When user selects plans on checkout details page
       | fuelType | planName        |
-      | ELE      | Total Plan Plus |
+      | ELE      | Total Plan Plus|
     And user selects plans on checkout details page
       | fuelType | planName   |
-      | GAS      | Total Plan |
+      | GAS      | Total Plan Plus|
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         |
       | RES          | RES     | Existing       | test      | test     | Driver License |
@@ -168,7 +168,7 @@ Feature:E2E scenario for existing residential moving customer through move house
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-GV  | 5330733757 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | SWSR1-GV  | 5330733757 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
 
     Examples:
       | folderName                         | fuelType | state | optDisconnection | movingAddress                          | sourceSystem | journey   |

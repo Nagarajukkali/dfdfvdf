@@ -2,6 +2,7 @@ import {AustralianState, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 import {LSDevices, PlanType, scrollTo, SelectionType, testFunction} from '../../global_methods/helper';
 import {checkoutDetailsMethod} from './checkoutDetailsPage';
 import {plansMethod} from "./plansPage";
+import {SolarMaxRates} from "../../resources/fit-rate";
 
 const { config }=require('../../resources/resource');
 const eaCheckoutDetailsPage = require('../pages/checkOutDetails.page');
@@ -869,7 +870,7 @@ export class checkoutReviewMethod {
     console.log("General state disclaimer validated successfully on review page.");
   }
 
-  public static async validateSolarComponent(t, solarSetUp) {
+  public static async validateSolarComponent(t, solarSetUp,planName?:string) {
     let connectionAddress;
     let pageUrl = await testFunction.getPageURL();
     if (pageUrl.includes("mydetails")) {
@@ -905,22 +906,41 @@ export class checkoutReviewMethod {
       }
       await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.tooltipText, expectedSolarPowerTooltip);
       await testFunction.click(t, eaCheckoutReviewPage.elements.solarPower.tooltipText);
-      if (connectionAddress.includes("VIC") && pageUrl.includes("customerType=RES")) {
+      if (connectionAddress.includes("VIC") && pageUrl.includes("customerType=RES") && planName === 'Solar Max' ) {
         await testFunction.isElementExists(t, eaCheckoutReviewPage.elements.solarPower.singleRateTariff);
         await testFunction.isElementExists(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff);
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.singleRateTariff, "Single rate feed-in tariff (excl. GST)");
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.singleRateTariff, "10c/kWh");
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "Time of use feed-in tariffs (excl. GST)");
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "Peak:");
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "16.3c/kWh");
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "(3pm-9pm Weekdays)");
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "Shoulder:");
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "10c/kWh");
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "(7am-3pm, 9pm-10pm Weekdays)");
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "(7am-10pm Weekends)");
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "Off Peak:");
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "9.1c/kWh");
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, "(10pm-7am Everyday)");
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.singleRateTariff, SolarMaxRates.solarMaxPlan.singleRate.text);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.singleRateTariff, SolarMaxRates.solarMaxPlan.singleRate.rate);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.solarMaxPlan.timeOfUse.text);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.solarMaxPlan.timeOfUse.Peak.text);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.solarMaxPlan.timeOfUse.Peak.rate);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.solarMaxPlan.timeOfUse.Peak.timeDuration);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.solarMaxPlan.timeOfUse.Shoulder.text);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.solarMaxPlan.timeOfUse.Shoulder.rate);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.solarMaxPlan.timeOfUse.Shoulder.weekDayTime);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.solarMaxPlan.timeOfUse.Shoulder.weekendTime);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.solarMaxPlan.timeOfUse.OffPeak.text);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.solarMaxPlan.timeOfUse.OffPeak.rate);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.solarMaxPlan.timeOfUse.OffPeak.timeDuration);
+        await testFunction.click(t, eaCheckoutReviewPage.elements.agreeAndConfirm);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.errorMessage, "You must select tariff type");
+      }
+       else if (connectionAddress.includes("VIC") && pageUrl.includes("customerType=RES")) {
+        await testFunction.isElementExists(t, eaCheckoutReviewPage.elements.solarPower.singleRateTariff);
+        await testFunction.isElementExists(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.singleRateTariff, SolarMaxRates.nonSolarMaxPlan.singleRate.text);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.singleRateTariff, SolarMaxRates.nonSolarMaxPlan.singleRate.rate);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.nonSolarMaxPlan.timeOfUse.text);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.nonSolarMaxPlan.timeOfUse.Peak.text);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.nonSolarMaxPlan.timeOfUse.Peak.rate);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.nonSolarMaxPlan.timeOfUse.Peak.timeDuration);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.nonSolarMaxPlan.timeOfUse.Shoulder.text);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.nonSolarMaxPlan.timeOfUse.Shoulder.rate);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.nonSolarMaxPlan.timeOfUse.Shoulder.weekDayTime);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.nonSolarMaxPlan.timeOfUse.Shoulder.weekendTime);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.nonSolarMaxPlan.timeOfUse.OffPeak.text);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.nonSolarMaxPlan.timeOfUse.OffPeak.rate);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff, SolarMaxRates.nonSolarMaxPlan.timeOfUse.OffPeak.timeDuration);
         await testFunction.click(t, eaCheckoutReviewPage.elements.agreeAndConfirm);
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.errorMessage, "You must select tariff type");
       }
