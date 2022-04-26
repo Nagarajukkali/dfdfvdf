@@ -8,11 +8,11 @@
         "Credit50": {
           "VIC": {
             "heading": "Get up to $100 credit",
-            "description": "Credits applied to first bill. $100 to electricity."
+            "description": "Credits applied to first bill."
           },
           "NSW": {
-            "heading": "Get up to $200 credit",
-            "description": "Credits applied to first bill. $200 to electricity."
+            "heading": "Get $100 credit",
+            "description": "Credits applied to first bill."
           },
           "ACT": {
             "heading": "Get up to $200 credit",
@@ -41,7 +41,7 @@
           },
           "NSW": {
             "Ausgrid": {
-              "heading": "19% discount off total electricity bill"
+              "heading": "17% discount off total electricity bill"
             },
             "Essential": {
               "heading": "16% discount off total electricity bill"
@@ -54,7 +54,7 @@
             "heading": "10% discount off total electricity bill"
           },
           "QLD": {
-            "heading": "13% discount off total electricity bill"
+            "heading": "5% discount off total electricity bill"
           },
           "SA": {
             "heading": "3% discount off total electricity bill"
@@ -68,10 +68,10 @@
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "Get up to $100 credit. Credits applied to first bill. $100 to electricity.",
-          "NSW": "Get up to $200 credit. Credits applied to first bill. $200 to electricity.",
+          "VIC": "Get $100 credit. Credits applied to first bill.",
+          "NSW": "Get $100 credit. Credits applied to first bill.",
           "ACT": "Get up to $200 credit. Credits applied to first bill. $200 to electricity.",
-          "QLD": "Get up to $200 credit. Credits applied to first bill. $200 to electricity.",
+          "QLD": "Get $100 credit. Credits applied to first bill.",
           "SA" : "Get up to $200 credit. Credits applied to first bill. $200 to electricity."
         },
         "carbonNeutral": "Carbon Neutral. Carbon neutral electricity for your business premises.",
@@ -79,12 +79,12 @@
         "discountOffTotalEnergyBill": {
           "VIC": "3% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
           "NSW": {
-            "Ausgrid": "19% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+            "Ausgrid": "17% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
             "Essential": "16% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
             "Endeavour": "13% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
           },
           "ACT": "10% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
-          "QLD": "13% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+          "QLD": "5% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
           "SA": "3% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
         },
         "noStandardConnectionFee": ""
@@ -95,25 +95,25 @@
         "ENE": {
           "VIC": "Total_3%GD_100",
           "NSW": {
-            "Ausgrid": "Total_19%GD_200",
-            "Essential": "Total_16%GD_200",
-            "Endeavour": "Total_13%GD_200",
+            "Ausgrid": "Total_17%GD_100",
+            "Essential": "Total_14%GD_100",
+            "Endeavour": "Total_11%GD_100",
             "default": "Total_19%GD_200"
           },
           "ACT": "Total_10%GD",
-          "QLD": "Total_13%GD_200",
+          "QLD": "Total_5%GD",
           "SA": "Total_3%GD"
         },
         "COR": {
           "VIC": "Total_3%GD_100",
           "NSW": {
-            "Ausgrid": "Total_19%GD_200",
-            "Essential": "Total_16%GD_200",
-            "Endeavour": "Total_13%GD_200",
+            "Ausgrid": "Total_17%GD_100",
+            "Essential": "Total_14%GD_100",
+            "Endeavour": "Total_11%GD_100",
             "default": "Total_19%GD_200"
           },
           "ACT": "Total_10%GD",
-          "QLD": "Total_13%GD_200",
+          "QLD": "Total_5%GD",
           "SA": "Total_3%GD"
         }
       },
@@ -121,25 +121,25 @@
         "ENE":{
           "VIC": "Total_3%GD_100",
           "NSW": {
-            "Ausgrid": "Total_19%GD_200",
-            "Essential": "Total_16%GD_200",
-            "Endeavour": "Total_13%GD_200",
+            "Ausgrid": "Total_17%GD_100",
+            "Essential": "Total_14%GD_100",
+            "Endeavour": "Total_11%GD_100",
             "default": "Total_19%GD_200"
           },
           "ACT": "Total_10%GD",
-          "QLD": "Total_13%GD_200",
+          "QLD": "Total_5%GD",
           "SA": "Total_3%GD"
         },
         "PS": {
           "VIC": "Total_3%GD",
           "NSW": {
-            "Ausgrid": "Total_19%GD",
-            "Essential": "Total_16%GD",
-            "Endeavour": "Total_13%GD",
+            "Ausgrid": "Total_17%GD",
+            "Essential": "Total_14%GD",
+            "Endeavour": "Total_11%GD",
             "default": "Total_19%GD"
           },
           "ACT": "Total_10%GD",
-          "QLD": "Total_13%GD",
+          "QLD": "Total_5%GD",
           "SA": "Total_3%GD"
         }
       }
@@ -151,12 +151,12 @@
       "preSelect": {
         "Credit50": {
           "VIC": {
-            "heading": "",
-            "description": ""
+            "heading": "Get $100 credit",
+            "description": "Credits applied to first bill."
           },
           "NSW": {
-            "heading": "",
-            "description": ""
+            "heading": "Get $100 credit",
+            "description": "Credits applied to first bill."
           },
           "ACT": {
             "heading": "",
@@ -204,8 +204,8 @@
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "",
-          "NSW": "",
+          "VIC": "Get $100 credit. Credits applied to first bill. Bonus $100 credit when signing up both electricity & gas. Bonus credits applied to first gas bill.",
+          "NSW": "Get $100 credit. Credits applied to first bill. Bonus $100 credit when signing up both electricity & gas. Bonus credits applied to first gas bill.",
           "ACT": "",
           "QLD": "",
           "SA" : ""
@@ -297,7 +297,7 @@
       },
       "NSW": {
         "heading": "Account Credits",
-        "description": "+ Offer available to new NSW business accounts only who sign up to Total Plan Business electricity/gas offer. Credits applied to first bill, $200 to new electricity/gas account. Credits are not transferable or redeemable for cash. We may change or end this offer at any time."
+        "description": "+ Offer available to new NSW business accounts only who sign up to Total Plan Business electricity/gas offer. Credits applied to first bill, $100 to new electricity account, $100 to new gas account. Get an extra $100 on your gas (a total $200 gas credit) if you sign up both your electricity and gas as new accounts. Credits are not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "ACT": {
         "heading": "",

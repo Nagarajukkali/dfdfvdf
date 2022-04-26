@@ -2370,6 +2370,7 @@ export class verifyAccountMethod {
   public static async resetVerifiedAccount(t) {
     await testFunction.click(t, EaHomePage.elements.resetCTALink);
     await testFunction.click(t, EaHomePage.elements.resetConfirmButton);
+    await testFunction.click(t, eaQualifierPage.elements.selectNewPlan);
     await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.refineModalCloseButton);
     await testFunction.click(t, EaHomePage.elements.refineModalCloseButton);
     await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.totalPlan);
