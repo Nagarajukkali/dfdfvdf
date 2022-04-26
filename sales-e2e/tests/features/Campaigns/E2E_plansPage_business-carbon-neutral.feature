@@ -13,7 +13,7 @@
 
 Feature:E2E scenario for business-carbon-neutral campaign
 
-  @DR21.10.2.campaign
+  @DR22.4.4.campaign
   Scenario Outline: Validate complete data for business-carbon-neutral campaign for NSW-Ausgrid for new non-moving customer
     Given user has opened the 'business-home-page' link in a browser and creates '<folderName>' to save evidences
     And user enters '2000' in 'POSTCODE' field
@@ -33,7 +33,7 @@ Feature:E2E scenario for business-carbon-neutral campaign
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                   | movingType | propertyType |
-      | BUS          | 73-75 Enmore Road, NEWTOWN NSW 2042 | Non-Moving | Renter       |
+      | BUS          | Shop 1 73-75 Enmore Road, NEWTOWN NSW 2042 | Non-Moving | Renter       |
     And user provides all details on checkout details page
       | customerType | journey | firstName | lastName | businessType |
       | BUS          | BUS     | test      | test     | ABN          |
@@ -70,11 +70,11 @@ Feature:E2E scenario for business-carbon-neutral campaign
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | PS        | BCNP-EN  | 4102017007 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | COR        | BCNP-EN |            |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
 
     Examples:
       | customerStatus | fuelType | planName                | eleDiscount | gasDiscount | campaign                | folderName                                             | sourceSystem | journey | state | customerType | newOrExisting | AAH | DD |
-      | New            | ELE      | Business Carbon Neutral | 17          | 24          | business-carbon-neutral | E2E_Campaign_business-carbon-neutral_NSW_new_nonMoving | Quote Tool   | New     | NSW   | BUS          | New           | No  | No |
+      | New            | ELE      | Business Carbon Neutral | 15          | 24          | business-carbon-neutral | E2E_Campaign_business-carbon-neutral_NSW_new_nonMoving | Quote Tool   | New     | NSW   | BUS          | New           | No  | No |
 
   @DR21.10.2.campaign
   Scenario Outline: Validate complete data for business-carbon-neutral campaign for VIC for new non-moving customer
@@ -265,7 +265,7 @@ Feature:E2E scenario for business-carbon-neutral campaign
       | customerStatus | fuelType | planName                | eleDiscount | gasDiscount | campaign                | folderName                                          | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
       | New            | ELE      | Business Carbon Neutral | 8           | 1           | business-carbon-neutral | E2E_Campaign_business-carbon-neutral_ACT_new_moving | Quote Tool   | Move Home | ACT   | BUS          | New           | No  | No |
 
-  @DR21.10.2.campaign
+  @DR22.4.4.campaign
   Scenario Outline: Validate complete data for business-carbon-neutral campaign for QLD for new moving customer
     Given user has opened the 'business-home-page' link in a browser and creates '<folderName>' to save evidences
     And user enters '4020' in 'POSTCODE' field
@@ -326,4 +326,4 @@ Feature:E2E scenario for business-carbon-neutral campaign
 
     Examples:
       | customerStatus | fuelType | planName                | eleDiscount | gasDiscount | campaign                | folderName                                          | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | ELE      | Business Carbon Neutral | 11          | 1           | business-carbon-neutral | E2E_Campaign_business-carbon-neutral_QLD_new_moving | Quote Tool   | Move Home | QLD   | BUS          | New           | No  | No |
+      | New            | ELE      | Business Carbon Neutral | 3          | 1           | business-carbon-neutral | E2E_Campaign_business-carbon-neutral_QLD_new_moving | Quote Tool   | Move Home | QLD   | BUS          | New           | No  | No |
