@@ -183,7 +183,7 @@ Feature:E2E scenario for new connection
     Examples:
       | folderName                              | fuelType |
       | E2E_New_Resi_NC_Error_Energy_Not_Supply | ELE      |
-  @JMJ1
+
   Scenario Outline: Submit a quote for electricity new connection for <state> distributor <distributor> residential customer
     Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
     When user provides connection details
@@ -245,7 +245,7 @@ Feature:E2E scenario for new connection
       | E2E_New_Resi_NC_NSW_Endeavour_ELE | ELE      | New Connection | Plan Switch | NO  | No | RES          | New           |  Endeavour| NSW |Overhead_Underground|Three|Three   |Yes      |EndUser  |
       | E2E_New_Resi_NC_NSW_Unknown_ELE   | ELE      | New Connection | Plan Switch | NO  | No | RES          | New           |  Unknown  | NSW |Overhead   |One        |Two        |No      |Other  |
 
-  @JMJ1
+
   Scenario Outline: Submit a quote for electricity new connection for <state> distributor <distributor> business customer
     Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
     When user provides connection details
@@ -309,7 +309,7 @@ Feature:E2E scenario for new connection
       | E2E_New_Bus_NC_NSW_Endeavour_ELE | ELE      | New Connection | Plan Switch | NO  | No | BUS          | New           |  Endeavour| NSW |Overhead_Underground|Three|Three   |Yes      |EndUser  |
 
 
-  @JMJ1
+
   Scenario Outline: Submit a quote for electricity new connection for ACT residential customer
     Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
     When user provides connection details
@@ -361,7 +361,7 @@ Feature:E2E scenario for new connection
       | folderName                | fuelType | sourceSystem   | journey     | AAH | DD | customerType | newOrExisting |state|supplyType|supplyPhases|meterPhases|ctDetails|applicantType|
       | E2E_New_Resi_NC_ACT_ELE   | ELE      | New Connection | Plan Switch | NO  | No | RES          | New           | ACT |Overhead  |One         |One        |Yes      |Electrician  |
 
-  @JMJ1
+
   Scenario Outline: Submit a quote for electricity new connection for SA residential customer
     Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
     When user provides connection details
@@ -413,7 +413,7 @@ Feature:E2E scenario for new connection
       | folderName                | fuelType | sourceSystem   | journey     | AAH | DD | customerType | newOrExisting |state|supplyType|supplyPhases|meterPhases|ctDetails|applicantType|
       | E2E_New_Resi_NC_SA_ELE   | ELE      | New Connection | Plan Switch | NO  | No | RES          | New           | SA |Underground  |One         |One        |Yes      |Electrician  |
 
-  @JMJ
+
   Scenario Outline: Submit a quote for electricity new connection for QLD residential customer
     Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
     When user provides connection details
