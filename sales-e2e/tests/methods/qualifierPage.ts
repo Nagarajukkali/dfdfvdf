@@ -220,11 +220,11 @@ export class qualifierMethod {
   }
 
   public static async selectDateFromCalendar(t,) {
-    const dateValue = await testFunction.selectDateFromCalendar(t, eaQualifierPage.elements.calendarTable);
+    const dateValue = await testFunction.selectDateFromCalendar(t, eaQualifierPage.elements.calendarTable,eaQualifierPage.elements.btnNextMonth);
   }
 
   public static async selectDateFromCalendarAnalyticsEvent(t,movingType) {
-    const dateValue = await testFunction.selectDateFromCalendar(t, eaQualifierPage.elements.calendarTable);
+    const dateValue = await testFunction.selectDateFromCalendar(t, eaQualifierPage.elements.calendarTable,eaQualifierPage.elements.btnNextMonth);
     if(validateAnalyticsEvent==='Y'){
       const movingstatus = await t.eval(() => window.ead.productInfo.movingHouse);
       const movingDate = await t.eval(() => window.ead.productInfo.moveInDate);
