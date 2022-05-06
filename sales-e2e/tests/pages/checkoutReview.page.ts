@@ -176,6 +176,7 @@ const eaCheckoutReviewPage = {
       vicTooltipText: Selector("#victoria-tooltip"),
       nonVicTooltipText: Selector("#non-victoria-tooltip"),
       tariffSelectableText: Selector("#tariff-selectable-gov-rebate-disclaimer"),
+      tarriffSelectableTextNoRebate: Selector("#tariff-selectable-no-gov-rebate-disclaimer"),
       tariffUnSelectableText: Selector("#tariff-unselectable-gov-rebate-disclaimer"),
       tooltipClose: Selector("#solar-power .ea-tooltip__close"),
       tariffChoice: Selector("#solar-tariff-choice"),

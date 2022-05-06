@@ -848,7 +848,7 @@ export class checkoutDetailsMethod {
 
     let expectedModalText = "I agree that EnergyAustralia may contact me about this quote.";
     let actualModalText = await testFunction.getElementText(t, eaCheckoutDetailsPage.elements.contactPreference.lblModalText);
-    await testFunction.assertTextValue(t, actualModalText, expectedModalText);
+    await testFunction.assertTextValue(t, actualModalText.trim(), expectedModalText);
 
     await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.contactPreference.btnSubmit);
     await testFunction.isElementDisplayed(t, eaCheckoutDetailsPage.elements.contactPreference.btnClose);
