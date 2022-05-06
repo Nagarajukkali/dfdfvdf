@@ -782,8 +782,7 @@ export class checkoutReviewMethod {
   }
 
   public static async validateCarbonNeutralSection(t,carbonNeutralFlag) {
-    let isBusiness = (await testFunction.getElementText(t, eaCheckoutReviewPage.elements.txtPlanTitle)).includes("Business");
-    if ((!isBusiness)&&(carbonNeutralFlag === 'Y')){
+    if (carbonNeutralFlag === 'Y'){
       await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.carbonNeutral.main);
       await t.expect(await testFunction.getElementText(t, eaCheckoutReviewPage.elements.carbonNeutral.heading)).contains("Opt in for carbon neutral");
     }
