@@ -2,9 +2,9 @@ import {Selector} from 'testcafe';
 
 const moveHouse = {
   elements: {
-    linkExistingCustomer: Selector('#existing-customer'),
+    linkExistingCustomer: Selector('#tab-33702'),
     linkNewCustomer: Selector('#tab-16926'),
-    btnEnterYourNewAddress: Selector("#tab-16951"),
+    btnEnterYourNewAddress: Selector("#tab-33696"),
     txtAddress: Selector("#edit-field-property-address-to-assist-0-value"),
     listOfAddresses: Selector("#ui-id-3 li"),
     btnSelectMoveDate: Selector("#edit-submit"),

@@ -1397,7 +1397,7 @@ export class plansMethod {
 
   public static async validateSolarGovernmentSchemeDisclaimer(t) {
     let countOfElements = await testFunction.sizeOfElement(t, EaHomePage.elements.solarRateToolTip);
-    for (let i = 0; i < countOfElements; i++) {
+    for (let i = 0; i < countOfElements -1; i++) {
       await scrollTo(EaHomePage.elements.solarRateToolTip.nth(i));
       await testFunction.click(t, EaHomePage.elements.solarRateToolTip.nth(i));
       await testFunction.assertText(t, EaHomePage.elements.solarRateToolTipText.nth(i), "If you are eligible for a government solar rebate, the rebate will be reflected in your welcome pack and added to your account.");

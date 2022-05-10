@@ -17,6 +17,7 @@ Feature:E2E scenario for new residential moving and non moving customer
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
       | RES          | RES     | New            | test      | test     | Driver License |              |
+    And user selects carbon neutral option
     And user selects "time_of_use" solar tariff type for "VIC"
     And user selects mailing address option
       | addressType        | otherAddress |
@@ -36,7 +37,6 @@ Feature:E2E scenario for new residential moving and non moving customer
     And user provides life support details on review page
       | lifeSupportOption | fuelType | EleclifeSupportDevices                         | GaslifeSupportDevices |
       | Yes               | BOTH     | Crigler Najjar Syndrome Phototherapy Equipment | Gas Other             |
-    And user selects carbon neutral option
     And user verifies selected plan details for '<fuelType>'
     And user validates "time_of_use" solar tariff type for "<state>" under electricity rates section
     And user submits the quote
@@ -82,6 +82,7 @@ Feature:E2E scenario for new residential moving and non moving customer
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
       | RES          | RES     | New            | test      | test     | Driver License |              |
+    And user selects carbon neutral option
     And user selects "single_rate" solar tariff type for "VIC"
     And user selects mailing address option
       | addressType        | otherAddress |
@@ -100,7 +101,6 @@ Feature:E2E scenario for new residential moving and non moving customer
     And user provides life support details on review page
       | lifeSupportOption | fuelType | EleclifeSupportDevices                         | GaslifeSupportDevices |
       | Yes               | BOTH     | Crigler Najjar Syndrome Phototherapy Equipment | Gas Other             |
-    And user selects carbon neutral option
     And user verifies selected plan details for '<fuelType>'
     And user validates "single_rate" solar tariff type for "<state>" under electricity rates section
     And user submits the quote
@@ -146,6 +146,7 @@ Feature:E2E scenario for new residential moving and non moving customer
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
       | RES          | RES     | New            | test      | test     | Driver License |              |
+    And user selects carbon neutral option
     And user selects "time_of_use" solar tariff type for "VIC"
     And user selects mailing address option
       | addressType        | otherAddress |
@@ -165,7 +166,6 @@ Feature:E2E scenario for new residential moving and non moving customer
     And user provides life support details on review page
       | lifeSupportOption | fuelType | EleclifeSupportDevices                         | GaslifeSupportDevices |
       | Yes               | BOTH     | Crigler Najjar Syndrome Phototherapy Equipment | Gas Other             |
-    And user selects carbon neutral option
     And user verifies selected plan details for '<fuelType>'
     And user validates "time_of_use" solar tariff type for "<state>" under electricity rates section
     And user submits the quote
@@ -197,8 +197,6 @@ Feature:E2E scenario for new residential moving and non moving customer
   Scenario Outline: Submit a quote for new residential non moving customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
-#  And user enters '3030' in 'POSTCODE' field
-#  Then user validates reference price for '<planName>'
     Then user validates details on plans page for 'RES'
     When user selects '<planName>'
     And user moves on to fill the qualifier
@@ -212,6 +210,7 @@ Feature:E2E scenario for new residential moving and non moving customer
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType   |
       | RES          | RES     | New            | test      | test     | Passport |
+    And user selects carbon neutral option
     And user selects mailing address option
       | addressType   | otherAddress                           |
       | Other Address | 42 Brownlow Drive, POINT COOK VIC 3030 |
@@ -227,7 +226,6 @@ Feature:E2E scenario for new residential moving and non moving customer
     And user provides life support details on review page
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices                              |
       | Yes               | BOTH     | Ele Other              | Medically Required Heating and/or Air Conditioning |
-    And user selects carbon neutral option
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     Then user lands on checkout complete page

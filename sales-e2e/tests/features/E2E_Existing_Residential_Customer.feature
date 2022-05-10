@@ -18,11 +18,12 @@ Feature:E2E scenario for existing residential moving and non moving customer
       | customerType | journey | customerStatus | firstName | lastName | idType   |
       | RES          | RES     | Existing       | test      | test     | Medicare |
     And user validates details on checkout details page
-      | sourceSystem   | journey   | fuelType   |
-      | <sourceSystem> | <journey> | <fuelType> |
+      | sourceSystem   | journey   | fuelType   |carbonNeutral|
+      | <sourceSystem> | <journey> | <fuelType> |Y          |
     And user selects mailing address option
       | addressType   | otherAddress                      |
       | Other Address | 3 River Drive, ATHELSTONE SA 5076 |
+    And user selects carbon neutral option
     And user selects answer for property renovation question for '<state>'
     And user chooses "<optDisconnection>" for disconnection
     And user selects final bill option
@@ -38,7 +39,6 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user validates details on checkout review page
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
-    And user selects carbon neutral option
     And user provides life support details on review page
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | Yes               | BOTH     | Ele Other              | Gas Other             |

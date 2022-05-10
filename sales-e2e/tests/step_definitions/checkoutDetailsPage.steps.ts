@@ -8,6 +8,7 @@ import {qualifierMethod} from "../methods/qualifierPage";
 const { config }=require('../../resources/resource');
 const validateAnalyticsEvent=config.validateAnalytics;
 const eaCheckoutDetailsPage = require('../pages/checkOutDetails.page');
+const eaCheckoutReviewPage = require('../pages/checkoutReview.page');
 
 When(/^user provides all details for existing customer on checkout details page$/, async function (t, [], dataTable) {
   let data = dataTable.hashes();
@@ -37,6 +38,7 @@ When(/^user provides all details on checkout details page$/, async function (t, 
   await testFunction.waitForElementToBeDisappeared(t, eaCheckoutDetailsPage.elements.eaSpinner);
   await testFunction.takeScreenshot(t, 'checkout_details_page');//disabled UI Validation
   await checkoutDetailsMethod.provideDetailsInAboutMeSection(t, data[0].journey, data[0].firstName, data[0].lastName, data[0].customerStatus);
+  await checkoutReviewMethod.validateCarbonNeutralSection(t,data.carbonNeutral);
   let emailAddress = await checkoutDetailsMethod.provideContactDetails(t);
   await checkoutDetailsMethod.getEmailWithScenario(t, emailAddress);
   if (customerType === CustomerType.RESIDENTIAL) {
