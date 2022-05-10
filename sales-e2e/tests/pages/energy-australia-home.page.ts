@@ -77,7 +77,7 @@ const eaHomePage = {
     fuelSelectorOptionEle: Selector('#edit-fuel-selector-ele'),
     fuelSelectorOptionGas: Selector('#edit-fuel-selector-gas'),
     //linkMoveHouse:Selector(".icon-moving"),
-    linkMoveHouse: Selector(".svg-icon.truck-fill"),
+    linkMoveHouse: Selector("#navbar a[href$='/home/moving-house']"),
     rbPostcodeOnModal: Selector("#edit-campaign-modal-location-type-postcode__label"),
     rbOffercodeOnModal: Selector("#campaign-modal-unique-code-input"),
     rbPostcode: Selector("#edit-campaign-location-type-postcode__label"),
