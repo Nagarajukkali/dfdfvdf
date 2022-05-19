@@ -39,7 +39,7 @@ Feature:E2E scenario for total campaign
       | campaign | folderName             |
       | total    | E2E_Campaign_total_ACT |
 
-  @DR22.3.3.campaign
+  @DR22.5.4.campaign
   Scenario Outline: Validate complete data for total campaign for VIC - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
@@ -105,8 +105,8 @@ Feature:E2E scenario for total campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-GV  | 5310425534 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                             | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 12          | 22          | total    | E2E_Campaign_total_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
-  @DR22.3.3.campaign
+      | New            | BOTH     | 12          | 33          | total    | E2E_Campaign_total_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
+  @DR22.5.4.campaign
   Scenario Outline: Validate complete data for total campaign for VIC - new non-moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
@@ -171,9 +171,9 @@ Feature:E2E scenario for total campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-GV  | 5310425534 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                             | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 12          | 22          | total    | E2E_Campaign_total_VIC_new_non_moving | VIC   | Quote Tool   | COR  | No  | No | RES          | New           |
+      | New            | BOTH     | 12          | 33          | total    | E2E_Campaign_total_VIC_new_non_moving | VIC   | Quote Tool   | COR  | No  | No | RES          | New           |
 
-  @DR22.3.3.campaign
+  @DR22.5.4.campaign
   Scenario Outline: Validate complete data for total campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
@@ -242,9 +242,9 @@ Feature:E2E scenario for total campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-GV  | 5321264636 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                                 | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     | 12          | 22          | total    | E2E_Campaign_total_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     | 12          | 33          | total    | E2E_Campaign_total_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR22.3.3.campaign
+  @DR22.5.4.campaign
   Scenario Outline: Validate complete data for total campaign for VIC existing moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
@@ -315,7 +315,7 @@ Feature:E2E scenario for total campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE        | TOPH-GV  | 5321264636 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                                 | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     | 12          | 22          | total    | E2E_Campaign_total_VIC_existing_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     | 12          | 33          | total    | E2E_Campaign_total_VIC_existing_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | Existing  non-moving |
 
   @DR22.3.3.campaign
   Scenario Outline: Validate complete data for total campaign for NSW-Ausgrid - new moving customer

@@ -134,7 +134,7 @@
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
-            "heading": "11% discount off total gas bill"
+            "heading": "17% discount off total gas bill"
           },
           "NSW": {
             "heading": "8% discount off total gas bill"
@@ -153,7 +153,7 @@
         "moveHomeCredit": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
         "variableRates": "Variable rates. Your energy charges are variable for the benefit period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": {
-          "VIC": "11% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
+          "VIC": "17% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
           "NSW": "8% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
           "ACT": "8% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
           "SA" : "8% discount off total gas bill. Guaranteed discount that applies to your energy charges."
@@ -163,13 +163,13 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_11%GD_25",
+          "VIC": "Total_17%GD_25",
           "NSW": "Total_8%GD_25",
           "ACT": "Total_8%GD_25",
           "SA": "Total_8%GD_25"
         },
         "COR": {
-          "VIC": "Total_11%GD_25",
+          "VIC": "Total_17%GD_25",
           "NSW": "Total_8%GD_25",
           "ACT": "Total_8%GD_25",
           "SA": "Total_8%GD_25"
@@ -177,13 +177,13 @@
       },
       "existingCustomer": {
         "ENE":{
-          "VIC": "Total_11%GD_25",
+          "VIC": "Total_17%GD_25",
           "NSW": "Total_8%GD_25",
           "ACT": "Total_8%GD_25",
           "SA": "Total_8%GD_25"
         },
         "PS": {
-          "VIC": "Total_11%GD",
+          "VIC": "Total_17%GD",
           "NSW": "Total_8%GD",
           "ACT": "Total_8%GD",
           "SA": "Total_8%GD"

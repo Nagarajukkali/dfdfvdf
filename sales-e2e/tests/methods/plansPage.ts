@@ -2406,11 +2406,15 @@ export class campaignMethod {
       await testFunction.clearAndEnterText(t, EaHomePage.elements.rbOffercodeOnModal, offerCode);
       await testFunction.click(t, EaHomePage.elements.btnCampaignSearchOnModal);
     } else {
-      if (await this.isNswSeniors()) {
-        await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCodeSeniorsCard, offerCode);
-      }else if (await this.isVicSeniors()) {
-        await testFunction.clearAndEnterText(t, EaHomePage.elements.txtVicOfferCodeSeniorsCard, offerCode);
-      } else {
+      // if (await this.isNswSeniors()) {
+      //   await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCodeSeniorsCard, offerCode);
+      // }else if (await this.isVicSeniors()) {
+      //   await testFunction.clearAndEnterText(t, EaHomePage.elements.txtVicOfferCodeSeniorsCard, offerCode);
+      // }
+      if (await this.isSeniors()) {
+        await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCodeGenericSeniorsCard, offerCode);
+      }
+      else {
         await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCode, offerCode);
       }
       await t.wait(1000);
@@ -2453,7 +2457,10 @@ export class campaignMethod {
     let pageUrl = await testFunction.getPageURL();
     return pageUrl.includes("/nsw-seniors");
   }
-
+  public static async isSeniors() {
+    let pageUrl = await testFunction.getPageURL();
+    return pageUrl.includes("/seniors");
+  }
   public static async isVicSeniors() {
     let pageUrl = await testFunction.getPageURL();
     return pageUrl.includes("/vic-seniors");

@@ -75,7 +75,7 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
-      | Existing       | 2085501655    | Postcode            | 3146             | dob    | 01011980 |
+      | Existing       | 1662196144    | Postcode            | 3355             | dob    | 01011980 |
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | propertyType |
       | RES          | Non-Moving | Owner        |
@@ -91,13 +91,13 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user opts for AAH and DD
       | optAAHOption | optDDOption | directDebitType |
       | No           | Yes         | Bank            |
-    And user opts for concession card
+#    And user opts for concession card
     And user selects "Post" billing preference option
     And user clicks on 'Review your order' button and navigates to review page
     Then Life support section is displayed on Review page as per selected "<fuelType>" and verified "<accountType>"
     And user provides life support details on review page
       | lifeSupportOption | fuelType | EleclifeSupportDevices                   | GaslifeSupportDevices |
-      | Yes               | ELE      | Intermittent Peritoneal Dialysis Machine |                       |
+      | Yes               | GAS      | Intermittent Peritoneal Dialysis Machine | Medically Required Hot Water  |
     And user verifies selected plan details for '<fuelType>'
     And user validates details on checkout review page
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
@@ -114,15 +114,15 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | RCPP-EV  | 6407795565 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | RCPP-EV  | 6203225514 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | RCPP-GV  | 5310805740 | N                              | N                              | Y                       | GLSMRHW                  | POSTMM        |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | RCPP-GV  | 5330299405 | N                              | N                              | Y                       | GLSMRHW                  | POSTMM        |
 
     Examples:
       | customerStatus | planName  | folderName                  | fuelType | accountType | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
-      | Existing       | No Frills | E2E_Existing_Resi_NonMoving | BOTH     | GAS         | Quote Tool   | Plan Switch | No  | Yes | RES          | Existing      |
+      | Existing       | No Frills | E2E_Existing_Resi_NonMoving | BOTH     | ELE         | Quote Tool   | Plan Switch | No  | Yes | RES          | Existing      |
 
     #concession card number is required
   Scenario Outline: Submit a quote for QLD existing residential non moving customer

@@ -261,6 +261,7 @@ const eaHomePage = {
     modalEnterUsageOption: Selector("div#hs-enter-usage-cta button"),
     modalNext: Selector("#refineModal .ea-modal__primary-action"),
     modalBack: Selector("#refineModal .ea-modal__secondary-action"),
+    txtOfferCodeGenericSeniorsCard: Selector("#campaign-snr-id-input"),
     txtOfferCodeSeniorsCard: Selector("#campaign-nsw-snr-id-input"),
     txtVicOfferCodeSeniorsCard: Selector("#campaign-vic-snr-id-input"),
     resetCTALink: Selector("button#hs-refine-modal-cta .hs-refine-modal-cta__text"),

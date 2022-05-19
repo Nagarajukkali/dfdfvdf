@@ -12,7 +12,7 @@
 
 Feature:E2E scenario for mcdonalds
 
-  @DR22.1.2.campaign
+  @DR22.5.4.campaign
   Scenario Outline: Validate complete data for mcdonalds campaign for NSW-Ausgrid for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMAC01" and "2144" and clicks on show me plan link
@@ -20,21 +20,21 @@ Feature:E2E scenario for mcdonalds
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
+      | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> | Y                     |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
+      | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> | Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                  | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | moveHomeCredit|
+      | ELE      | N                | Y                     | Y                   | Y                                  | <state> | Y             |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-      | GAS      | N                | Y                     | Y                   | Y                                  | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | moveHomeCredit|
+      | GAS      | N                | Y                     | Y                   | Y                                  | <state> | Y             |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -63,14 +63,14 @@ Feature:E2E scenario for mcdonalds
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
+      | ELE      | N                | N                     | Y                   | Y                                  | N                               | <state> | Y                     |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
+      | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> | Y                     |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -92,7 +92,7 @@ Feature:E2E scenario for mcdonalds
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign  | folderName                 | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 22          | 18          | mcdonalds | E2E_Campaign_mcdonalds_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
-  @DR22.1.2.campaign
+  @DR22.5.4.campaign
   Scenario Outline: Validate complete data for mcdonalds campaign for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMAC01" and "3199" and clicks on show me plan link
@@ -100,21 +100,21 @@ Feature:E2E scenario for mcdonalds
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
+      | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> | Y                     |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
+      | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> | Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                  | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | moveHomeCredit|
+      | ELE      | N                | Y                     | Y                   | Y                                  | <state> | Y             |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-      | GAS      | N                | Y                     | Y                   | Y                                  | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | moveHomeCredit|
+      | GAS      | N                | Y                     | Y                   | Y                                  | <state> | Y             |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -135,14 +135,14 @@ Feature:E2E scenario for mcdonalds
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
+      | ELE      | N                | N                     | Y                   | Y                                  | N                               | <state> | Y                     |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
+      | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> | Y                     |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -163,9 +163,9 @@ Feature:E2E scenario for mcdonalds
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign  | folderName                 | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 14          | 26          | mcdonalds | E2E_Campaign_mcdonalds_VIC | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | BOTH     | 14          | 35          | mcdonalds | E2E_Campaign_mcdonalds_VIC | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.1.2.campaign
+  @DR22.5.4.campaign
   Scenario Outline: Validate complete data for mcdonalds campaign for SA for new non moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMAC01" and "5076" and clicks on show me plan link
@@ -233,7 +233,7 @@ Feature:E2E scenario for mcdonalds
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign  | folderName                          | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 8           | 17         | mcdonalds | E2E_Campaign_mcdonalds_nonmoving_SA | SA    | Quote Tool   | COR     | No  | No | RES          | New           |
-  @DR22.1.2.campaign
+  @DR22.5.4.campaign
   Scenario Outline: Validate complete data for mcdonalds campaign for ACT for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMAC01" and "2615" and clicks on show me plan link
@@ -301,21 +301,21 @@ Feature:E2E scenario for mcdonalds
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign  | folderName                 | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | 12          | 17          | mcdonalds | E2E_Campaign_mcdonalds_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.1.2.campaign
+  @DR22.5.4.campaign
   Scenario Outline: Validate complete data for mcdonalds campaign for QLD for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMAC01" and "4208" and clicks on show me plan link
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
+      | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> | Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |
     And user clicks on Select plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                  | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | moveHomeCredit|
+      | ELE      | N                | Y                     | Y                   | Y                                  | <state> | Y             |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -333,11 +333,11 @@ Feature:E2E scenario for mcdonalds
       | No                |          |                        |                       |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_discountOffTotalEnergyBill | Feature_peaceOfMind | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | N                     | Y                                  | Y                   | N                               | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_discountOffTotalEnergyBill | Feature_peaceOfMind | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
+      | ELE      | N                | N                     | Y                                  | Y                   | N                               | <state> | Y                     |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |
-      | Y                        | N         | Y            | Total Plan | QLD   | N            |
+      | Y                        | N         | Y            | Total Plan | QLD   | Y            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -354,8 +354,8 @@ Feature:E2E scenario for mcdonalds
 
     Examples:
       | customerStatus | fuelType | eleDiscount | campaign  | folderName                 | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | ELE      | 14          | mcdonalds | E2E_Campaign_mcdonalds_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
-  @DR22.1.2.campaign
+      | New            | ELE      | 16          | mcdonalds | E2E_Campaign_mcdonalds_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
+  @DR22.5.4.campaign
   Scenario Outline: Validate complete data for mcdonalds campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMAC01" and "3000" and clicks on show me plan link
@@ -363,26 +363,26 @@ Feature:E2E scenario for mcdonalds
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
+      | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> | Y                     |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
+      | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> | Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                  | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | moveHomeCredit|
+      | ELE      | N                | Y                     | Y                   | Y                                  | <state> | Y             |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |
-      | GAS      | N                | Y                     | Y                   | Y                                  | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | moveHomeCredit|
+      | GAS      | N                | Y                     | Y                   | Y                                  | <state> | Y             |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus   | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue   |
-#      | <customerStatus> | 5124968245    | Postcode            | 3029             | dl     | 390399008 |
+    #  | <customerStatus> | 5124968245    | Postcode            | 3029             | dl     | 390399008 |
       | <customerStatus> | 7300591603    | Postcode            | 3074             | dob     | 01011980 |
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | propertyType |
@@ -398,14 +398,14 @@ Feature:E2E scenario for mcdonalds
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
+      | ELE      | N                | N                     | Y                   | Y                                  | N                               | <state> | N                     |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
+      | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> | N                     |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | VIC   | N            |
+      | Y                        | Y         | Y            | Total Plan | VIC   | Y            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page

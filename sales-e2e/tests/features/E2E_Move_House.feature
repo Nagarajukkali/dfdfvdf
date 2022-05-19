@@ -29,7 +29,7 @@ Feature:E2E scenario for existing residential moving customer through move house
     And user selects answer for property renovation question for '<state>'
     And user selects "Email" billing preference option
     And user sends welcome pack through 'Email'
-    And user chooses "<optDisconnection>" for disconnection
+#    And user chooses "<optDisconnection>" for disconnection
     And user clicks on 'Review your order' button and navigates to review page
     And user validates details on checkout review page
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
