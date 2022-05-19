@@ -14,6 +14,10 @@
           "heading": "Carbon neutral option",
           "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
         },
+        "moveHomeCredit": {
+          "heading": "$50 online sign up credit",
+          "description": "Get a $50 credit on each new energy account when you sign up online.+"
+        },
         "peaceOfMind": {
           "heading": "Peace of mind",
           "description": "Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
@@ -29,11 +33,12 @@
       },
       "postSelect": {
         "Credit50": {
-          "NSW": ""
+        "NSW": ""
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to your energy charges.",
+        "moveHomeCredit": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
         "noStandardConnectionFee": ""
       }
     },
@@ -58,10 +63,20 @@
       },
       "existingCustomer": {
         "ENE": {
-          "NSW": ""
+          "NSW": {
+            "Ausgrid": "Alliance_22%GD_50",
+            "Essential": "Alliance_18%GD_50",
+            "Endeavour": "Alliance_18%GD_50",
+            "default": "Alliance_18%GD_50"
+          }
         },
         "PS": {
-          "NSW": ""
+          "NSW": {
+            "Ausgrid": "Alliance_22%GD",
+            "Essential": "Alliance_18%GD",
+            "Endeavour": "Alliance_18%GD",
+            "default": "Alliance_18%GD"
+          }
         }
       }
     }
@@ -83,6 +98,10 @@
           "heading": "Peace of mind",
           "description": "Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
         },
+        "moveHomeCredit": {
+          "heading": "$50 online sign up credit",
+          "description": "Get a $50 credit on each new energy account when you sign up online.+"
+        },
         "discountOffTotalEnergyBill": {
           "heading": "Discount off total energy bill",
           "description": "Guaranteed discount that applies to your energy charges."
@@ -99,6 +118,7 @@
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to your energy charges.",
+        "moveHomeCredit": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
         "noStandardConnectionFee": ""
       }
     },
@@ -113,10 +133,10 @@
       },
       "existingCustomer": {
         "ENE": {
-          "NSW": ""
+          "NSW": "Alliance_18%GD_50"
         },
         "PS": {
-          "NSW": ""
+          "NSW": "Alliance_18%GD"
         }
       }
     }
@@ -169,7 +189,7 @@
       },
       "NSW": {
         "heading": "$50 sign up credit",
-        "description": "+ Offer available to NSW residential customers who sign up to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        "description": "+ Offer available to eligible NSW residential customers who sign up to an electricity or gas offer. Limit of one $50 credit per new energy account, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       },
       "ACT": {
         "heading": "",

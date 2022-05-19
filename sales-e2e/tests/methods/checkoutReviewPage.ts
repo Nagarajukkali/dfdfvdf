@@ -782,8 +782,7 @@ export class checkoutReviewMethod {
   }
 
   public static async validateCarbonNeutralSection(t,carbonNeutralFlag) {
-    let isBusiness = (await testFunction.getElementText(t, eaCheckoutReviewPage.elements.txtPlanTitle)).includes("Business");
-    if ((!isBusiness)&&(carbonNeutralFlag === 'Y')){
+    if (carbonNeutralFlag === 'Y'){
       await testFunction.isElementVisible(t, eaCheckoutReviewPage.elements.carbonNeutral.main);
       await t.expect(await testFunction.getElementText(t, eaCheckoutReviewPage.elements.carbonNeutral.heading)).contains("Opt in for carbon neutral");
     }
@@ -885,28 +884,35 @@ export class checkoutReviewMethod {
       await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.subHeading, "We have detected solar at this address.");
       await testFunction.click(t, eaCheckoutReviewPage.elements.solarPower.tooltip);
       let expectedSolarPowerTooltip = "Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions . We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation.";
-      if (connectionAddress.includes("VIC")) {
-        let expectedVICSolarPowerTooltip = "For more information about the Victorian FiT scheme see www.energy.vic.gov.au/renewable-energy/victorian-feed-in-tariff .";
-        let expectedTariffSelectableText = "Please make a selection below, however if you are eligible for a government solar rebate (these rates will not be shown below), the rebate will be reflected in your welcome pack and added to your account.";
-        await testFunction.isElementExists(t, eaCheckoutReviewPage.elements.solarPower.vicTooltipText);
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.vicTooltipText, expectedVICSolarPowerTooltip);
-        if (pageUrl.includes("customerType=RES")) {
-          await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.tariffSelectableText, expectedTariffSelectableText);
+      if(planName !== 'Solar Max') {
+        if (connectionAddress.includes("VIC")) {
+          let expectedVICSolarPowerTooltip = "For more information about the Victorian FiT scheme see www.energy.vic.gov.au/renewable-energy/victorian-feed-in-tariff .";
+          let expectedTariffSelectableText = "Please make a selection below, however if you are eligible for a government solar rebate (these rates will not be shown below), the rebate will be reflected in your welcome pack and added to your account.";
+          await testFunction.isElementExists(t, eaCheckoutReviewPage.elements.solarPower.vicTooltipText);
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.vicTooltipText, expectedVICSolarPowerTooltip);
+          if (pageUrl.includes("customerType=RES")) {
+            await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.tariffSelectableText, expectedTariffSelectableText);
+          } else {
+            let expectedTariffUnSelectableText = "If you are eligible for a government solar rebate and it is not displayed below, the rebate will be reflected in your welcome pack and added to your account.";
+            await testFunction.isElementExists(t, eaCheckoutReviewPage.elements.solarPower.tariffUnSelectableText);
+            await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.tariffUnSelectableText, expectedTariffUnSelectableText);
+          }
         } else {
           let expectedTariffUnSelectableText = "If you are eligible for a government solar rebate and it is not displayed below, the rebate will be reflected in your welcome pack and added to your account.";
           await testFunction.isElementExists(t, eaCheckoutReviewPage.elements.solarPower.tariffUnSelectableText);
           await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.tariffUnSelectableText, expectedTariffUnSelectableText);
+          await testFunction.isElementAbsent(t, eaCheckoutReviewPage.elements.solarPower.vicTooltipText);
+          await testFunction.isElementAbsent(t, eaCheckoutReviewPage.elements.solarPower.tariffSelectableText);
         }
-      } else {
-        let expectedTariffUnSelectableText = "If you are eligible for a government solar rebate and it is not displayed below, the rebate will be reflected in your welcome pack and added to your account.";
-        await testFunction.isElementExists(t, eaCheckoutReviewPage.elements.solarPower.tariffUnSelectableText);
-        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.tariffUnSelectableText, expectedTariffUnSelectableText);
-        await testFunction.isElementAbsent(t, eaCheckoutReviewPage.elements.solarPower.vicTooltipText);
-        await testFunction.isElementAbsent(t, eaCheckoutReviewPage.elements.solarPower.tariffSelectableText);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.tooltipText, expectedSolarPowerTooltip);
+        await testFunction.click(t, eaCheckoutReviewPage.elements.solarPower.tooltipText);
       }
-      await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.tooltipText, expectedSolarPowerTooltip);
-      await testFunction.click(t, eaCheckoutReviewPage.elements.solarPower.tooltipText);
       if (connectionAddress.includes("VIC") && pageUrl.includes("customerType=RES") && planName === 'Solar Max' ) {
+        let expectedVICSolarPowerTooltip = "For more information about the Victorian FiT scheme see www.energy.vic.gov.au/renewable-energy/victorian-feed-in-tariff .";
+        let expectedTariffSelectableText = "Please make a selection below, however if you are eligible for a government solar rebate this won't apply to Solar Max. Please consider another plan if you want to keep this rebate.";
+        await testFunction.isElementExists(t, eaCheckoutReviewPage.elements.solarPower.vicTooltipText);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.vicTooltipText, expectedVICSolarPowerTooltip);
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.tarriffSelectableTextNoRebate, expectedTariffSelectableText);
         await testFunction.isElementExists(t, eaCheckoutReviewPage.elements.solarPower.singleRateTariff);
         await testFunction.isElementExists(t, eaCheckoutReviewPage.elements.solarPower.timeOfUseTariff);
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.singleRateTariff, SolarMaxRates.solarMaxPlan.singleRate.text);

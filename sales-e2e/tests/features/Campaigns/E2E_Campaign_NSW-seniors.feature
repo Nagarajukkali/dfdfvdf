@@ -11,7 +11,7 @@
   # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
 
 Feature:E2E scenario for nsw-seniors campaign
-  @DR22.3.5.campaign
+  @DR22.5.4.1.campaign
   Scenario Outline: Validate complete data for nsw-Endeavour on nsw-seniors campaign
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "2516" and clicks on show me plan link
@@ -19,14 +19,14 @@ Feature:E2E scenario for nsw-seniors campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  | Feature_moveHomeCredit|
+      |ELE      |N                 |Y                       |Y                    |Y                                    |N                                |<state>| Y                     |
     And user validates the data on plans page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  | Feature_moveHomeCredit|
+      |GAS      |N                 |Y                       |Y                    |Y                                    |N                                |<state>| Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |signUpCredit |planName   |state    |
-      |Y                        |Y          |Y              |N            |Total Plan |<state>  |
+      |Y                        |Y          |Y              |Y            |Total Plan |<state>  |
     And user clicks on Add plan button
     # And user validates plan details on cart page for "<campaign>"
     #   |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state    |
@@ -57,25 +57,25 @@ Feature:E2E scenario for nsw-seniors campaign
       |Yes              |BOTH    |Ele Other              |Medically Required Heating and/or Air Conditioning|
     #START - Validating features before opting in for carbon neutral
     And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  | Feature_moveHomeCredit|
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |<state>| Y                     |
     And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  | Feature_moveHomeCredit|
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |<state>|  Y                    |
     #END - Validating features before opting in for carbon neutral
-    And user selects carbon neutral option
-    And user verifies selected plan details for '<fuelType>'
+    #And user selects carbon neutral option
+    #And user verifies selected plan details for '<fuelType>'
     #START - Validating features after opting in for carbon neutral
-    And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
-    And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+    #And user validates plan details on review page for "<campaign>"
+    #  |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  | Feature_moveHomeCredit|
+    #  |ELE      |N                 |Y                       |Y                    |Y                                    |N                                |<state>| Y                     |
+    #And user validates plan details on review page for "<campaign>"
+      # |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  | Feature_moveHomeCredit|
+      # |GAS      |N                 |Y                       |Y                    |Y                                    |N                                |<state>| Y                     |
     #END - Validating features after opting in for carbon neutral
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |signUpCredit |planName   |state    |
-      |Y                        |Y          |Y              |N            |Total Plan |<state>  |
+      |Y                        |Y          |Y              |Y            |Total Plan |<state>  |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -98,7 +98,7 @@ Feature:E2E scenario for nsw-seniors campaign
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign     |folderName               |sourceSystem|journey   |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |BOTH    |18         |18         |nsw-seniors  |E2E_Campaign_NSW_seniors |Quote Tool  |Move Home |NSW    |RES          |New            |No  |No  |
 
-  @DR22.3.5.campaign
+  @DR22.5.4.1.campaign
   Scenario Outline: Validate complete data for NSW-Ausgrid on nsw-seniors campaign
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "2144" and clicks on show me plan link
@@ -106,14 +106,14 @@ Feature:E2E scenario for nsw-seniors campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  | Feature_moveHomeCredit|
+      |ELE      |N                 |Y                       |Y                    |Y                                    |N                                |<state>| Y                     |
     And user validates the data on plans page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  | Feature_moveHomeCredit|
+      |GAS      |N                 |Y                       |Y                    |Y                                    |N                                |<state>| Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |signUpCredit |planName   |state    |
-      |Y                        |Y          |Y              |N            |Total Plan |<state>  |
+      |Y                        |Y          |Y              | Y           |Total Plan |<state>  |
     And user clicks on Add plan button
     # And user validates plan details on cart page for "<campaign>"
     #   |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state    |
@@ -144,25 +144,25 @@ Feature:E2E scenario for nsw-seniors campaign
       |Yes              |BOTH    |Ele Other              |Medically Required Heating and/or Air Conditioning|
     #START - Validating features before opting in for carbon neutral
     And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  | Feature_moveHomeCredit|
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |<state>| Y                     |
     And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  | Feature_moveHomeCredit|
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |<state>| Y                     |
     #END - Validating features before opting in for carbon neutral
-    And user selects carbon neutral option
-    And user verifies selected plan details for '<fuelType>'
-    #START - Validating features after opting in for carbon neutral
-    And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
-    And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+    # And user selects carbon neutral option
+    # And user verifies selected plan details for '<fuelType>'
+    # #START - Validating features after opting in for carbon neutral
+    # And user validates plan details on review page for "<campaign>"
+    #   |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
+    #   |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+    # And user validates plan details on review page for "<campaign>"
+    #   |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
+    #   |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
     #END - Validating features after opting in for carbon neutral
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |signUpCredit |planName   |state    |
-      |Y                        |Y          |Y              |N            |Total Plan |<state>  |
+      |Y                        |Y          |Y              |Y            |Total Plan |<state>  |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -185,7 +185,7 @@ Feature:E2E scenario for nsw-seniors campaign
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign     |folderName                       |sourceSystem|journey   |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |BOTH    |22         |18         |nsw-seniors  |E2E_Campaign_NSW_seniors_Ausgrid |Quote Tool  |Move Home |NSW    |RES          |New            |No  |No  |
 
-  @DR22.3.5.campaign
+  @DR22.5.4.1.campaign
   Scenario Outline: Validate complete data for NSW-Essential on nsw-seniors campaign
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "2700" and clicks on show me plan link
@@ -193,14 +193,14 @@ Feature:E2E scenario for nsw-seniors campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  | Feature_moveHomeCredit|
+      |ELE      |N                 |Y                       |Y                    |Y                                    |N                                |<state>| Y                     |
     And user validates the data on plans page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  | Feature_moveHomeCredit|
+      |GAS      |N                 |Y                       |Y                    |Y                                    |N                                |<state>| Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |signUpCredit |planName   |state    |
-      |Y                        |Y          |Y              |N            |Total Plan |<state>  |
+      |Y                        |Y          |Y              |Y            |Total Plan |<state>  |
     And user clicks on Add plan button
     # And user validates plan details on cart page for "<campaign>"
     #   |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state    |
@@ -231,25 +231,25 @@ Feature:E2E scenario for nsw-seniors campaign
       |Yes              |BOTH    |Ele Other              |Medically Required Heating and/or Air Conditioning|
     #START - Validating features before opting in for carbon neutral
     And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  | Feature_moveHomeCredit|
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |<state>| Y                     |
     And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  | Feature_moveHomeCredit|
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |<state>| Y                     |
     #END - Validating features before opting in for carbon neutral
-    And user selects carbon neutral option
-    And user verifies selected plan details for '<fuelType>'
-    #START - Validating features after opting in for carbon neutral
-    And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
-    And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+    # And user selects carbon neutral option
+    # And user verifies selected plan details for '<fuelType>'
+    # #START - Validating features after opting in for carbon neutral
+    # And user validates plan details on review page for "<campaign>"
+    #   |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
+    #   |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+    # And user validates plan details on review page for "<campaign>"
+    #   |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
+    #   |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
     #END - Validating features after opting in for carbon neutral
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |signUpCredit |planName   |state    |
-      |Y                        |Y          |Y              |N            |Total Plan |<state>  |
+      |Y                        |Y          |Y              |Y            |Total Plan |<state>  |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -272,7 +272,7 @@ Feature:E2E scenario for nsw-seniors campaign
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign     |folderName                         |sourceSystem|journey   |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |BOTH    |18         |18         |nsw-seniors  |E2E_Campaign_NSW_seniors_Essential |Quote Tool  |Move Home |NSW    |RES          |New            |No  |No  |
 
-  @DR22.3.5.campaign
+  @DR22.5.4.1.campaign
   Scenario Outline: Validate complete data for NSW-Essential on nsw-seniors campaign for COR
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "2700" and clicks on show me plan link
@@ -280,14 +280,14 @@ Feature:E2E scenario for nsw-seniors campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  | Feature_moveHomeCredit|
+      |ELE      |N                 |Y                       |Y                    |Y                                    |N                                |<state>| Y                     |
     And user validates the data on plans page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  | Feature_moveHomeCredit|
+      |GAS      |N                 |Y                       |Y                    |Y                                    |N                                |<state>| Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |signUpCredit |planName   |state    |
-      |Y                        |Y          |Y              |N            |Total Plan |<state>  |
+      |Y                        |Y          |Y              |Y            |Total Plan |<state>  |
     And user clicks on Add plan button
     # And user validates plan details on cart page for "<campaign>"
     #   |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state    |
@@ -318,25 +318,25 @@ Feature:E2E scenario for nsw-seniors campaign
       |Yes              |BOTH    |Ele Other              |Medically Required Heating and/or Air Conditioning|
     #START - Validating features before opting in for carbon neutral
     And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |N                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  | Feature_moveHomeCredit|
+      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |<state>| Y                     |
     And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |GAS      |Y                 |N                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  | Feature_moveHomeCredit|
+      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |<state>| Y                     |
     #END - Validating features before opting in for carbon neutral
-    And user selects carbon neutral option
-    And user verifies selected plan details for '<fuelType>'
-    #START - Validating features after opting in for carbon neutral
-    And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
-    And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
-      |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
-    #END - Validating features after opting in for carbon neutral
+    # And user selects carbon neutral option
+    # And user verifies selected plan details for '<fuelType>'
+    # #START - Validating features after opting in for carbon neutral
+    # And user validates plan details on review page for "<campaign>"
+    #   |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
+    #   |ELE      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+    # And user validates plan details on review page for "<campaign>"
+    #   |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state  |
+    #   |GAS      |Y                 |Y                       |Y                    |Y                                    |N                                |<state>|
+    # #END - Validating features after opting in for carbon neutral
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |signUpCredit |planName   |state    |
-      |Y                        |Y          |Y              |N            |Total Plan |<state>  |
+      |Y                        |Y          |Y              |Y            |Total Plan |<state>  |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page

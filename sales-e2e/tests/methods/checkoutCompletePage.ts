@@ -38,7 +38,7 @@ export class checkoutCompleteMethod {
 
     if (await testFunction.isResidential(customerType)) {
       if (journey === "move home") {
-        await testFunction.assertText(t, eaCheckoutDetailsPage.elements.txtSubheading, ", we’re moving with you.");
+        await testFunction.assertText(t, eaCheckoutDetailsPage.elements.txtSubheading, "moving with you.");
       } else if (sourceSystem === "my account") {
         switch (journey) {
           case "plan switch" || "best offer":

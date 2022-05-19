@@ -143,7 +143,7 @@
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
-            "heading": "35% discount off total gas bill"
+            "heading": "37% discount off total gas bill"
           },
           "NSW": {
             "heading": "28% discount off total gas bill"
@@ -167,7 +167,7 @@
         "carbonNeutral": "Energy with a bit of good. 100% carbon neutral energy at home for no extra cost to you.",
         "peaceOfMind": "Priority customer service. Dedicated Family, Friends and You team.",
         "discountOffTotalEnergyBill": {
-          "VIC": "35% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to your energy charges.",
+          "VIC": "37% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to your energy charges.",
           "NSW": "28% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to your energy charges.",
           "SA": "20% discount off total gas bill. Guaranteed and exclusive employee-only discount that applies to your energy charges."
         },
@@ -177,24 +177,24 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Employee_35%GD",
+          "VIC": "Employee_37%GD",
           "NSW": "Employee_28%GD",
           "SA": "Total_20%GD_50"
         },
         "COR": {
-          "VIC": "Employee_35%GD",
+          "VIC": "Employee_37%GD",
           "NSW": "Employee_28%GD",
           "SA": "Total_20%GD_50"
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Employee_30%GD",
+          "VIC": "Employee_37%GD",
           "NSW": "Employee_28%GD",
           "SA": "Total_20%GD_50"
         },
         "PS": {
-          "VIC": "Employee_30%GD",
+          "VIC": "Employee_37%GD",
           "NSW": "Employee_28%GD",
           "SA": "Employee_20%GD"
         }
