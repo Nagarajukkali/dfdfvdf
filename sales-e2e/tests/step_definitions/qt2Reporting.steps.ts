@@ -68,8 +68,8 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
     let isOfferType = (actualOfferType === 'ENE' || actualOfferType === 'COR');
     //let isStateEligibleFor$50Credit = (actualState === 'VIC' || 'NSW');
     let isStateEligibleFor$50Credit = (actualState === 'SA' || 'VIC' || 'NSW');
-    let isStateEligibleFor$200Credit = (actualState === 'NSW');
-    let isStateEligibleFor$100Credit = (actualState === 'VIC');
+    let isStateEligibleFor$200Credit = (actualState === '');
+    let isStateEligibleFor$100Credit = (actualState === 'VIC' || 'NSW');
     let isStateEligibleFor$200CreditGas = (actualState === 'VIC' || 'NSW')
     let isStateEligibleForNoCredit = (actualState === 'SA');
     let isBusinessPlanCode = (expectedPlanCode.includes('BSOT') || expectedPlanCode.includes('TOPB') || expectedPlanCode.includes('SWSR'));
@@ -130,7 +130,7 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
       } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit && (!(data[0].campaign === "Balance Plan"))) {
         console.log("On 50Credit-Resi");
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_50');
-      }else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$100Credit && (expectedPlanCode === "TOPB-EV") && (!(data[0].campaign === "Balance Plan"))) {
+      }else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$100Credit && (expectedPlanCode === "TOPB-EV" || expectedPlanCode === "TOPB-EN") && (!(data[0].campaign === "Balance Plan"))) {
         console.log("On 100Credit-Bus");
         console.log("actualEleSourceCode:"+actualEleSourceCode);
         console.log("expectedEleSourceCode:"+expectedEleSourceCode);
@@ -141,9 +141,9 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
         console.log("expectedEleSourceCode:"+expectedEleSourceCode);
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_200');
       }
-      else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$100Credit && (expectedPlanCode === "TOPB-EV") && (!(data[0].campaign === "Balance Plan"))) {
-        await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_100');
-      }
+      // else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$100Credit && (expectedPlanCode === "TOPB-EV") && (!(data[0].campaign === "Balance Plan"))) {
+      //   await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_100');
+      // }
       else if (data[0].campaign === "Balance Plan") {
         if (data[0].state === "NSW") {
           await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "Total_9%GD");
@@ -246,12 +246,12 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode);
       }
 
-      if (expectedRenovationsSinceDeEnergisation.length !== 0) {
-        let actualRenovationsSinceDeEnergisation = jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsSinceDeenergisation;
-        let actualRenovationsInProgressOrPlanned = jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsInProgressOrPlanned;
-        await qt2Reporting.validateMandatoryField(t, actualRenovationsSinceDeEnergisation, expectedRenovationsSinceDeEnergisation);
-        await qt2Reporting.validateMandatoryField(t, actualRenovationsInProgressOrPlanned, expectedRenovationsInProgressOrPlanned);
-      }
+      // if (expectedRenovationsSinceDeEnergisation.length !== 0) {
+      //   let actualRenovationsSinceDeEnergisation = jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsSinceDeenergisation;
+      //   let actualRenovationsInProgressOrPlanned = jsonObj.saleDetail.offerDetail.energySafeVicQuestions.renovationsInProgressOrPlanned;
+      //   await qt2Reporting.validateMandatoryField(t, actualRenovationsSinceDeEnergisation, expectedRenovationsSinceDeEnergisation);
+      //   await qt2Reporting.validateMandatoryField(t, actualRenovationsInProgressOrPlanned, expectedRenovationsInProgressOrPlanned);
+      // }
       if (expectedCustomerWithLifeSupport === 'Y') {
         let actualCustomerWithLifeSupport = jsonObj.saleDetail.offerDetail.energySafeVicQuestions.customerWithLifeSupport;
         await qt2Reporting.validateMandatoryField(t, actualCustomerWithLifeSupport, expectedCustomerWithLifeSupport);
