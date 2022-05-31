@@ -62,7 +62,7 @@ export class checkoutCompleteMethod {
             await testFunction.assertText(t, eaCheckoutDetailsPage.elements.txtSubheading, "has a new plan!");
             break;
           case "move home":
-            await testFunction.assertText(t, eaCheckoutDetailsPage.elements.txtSubheading, ", we’re moving with ");
+            await testFunction.assertText(t, eaCheckoutDetailsPage.elements.txtSubheading, "moving with ");
         }
       }
     } else {

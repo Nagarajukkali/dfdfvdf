@@ -17,7 +17,7 @@ const cartsPage = {
     eleFeaturePeaceOfMindEE: Selector("#cart-plan-ELE .cart-plan__details-text").withText("Priority customer service"),
     eleFeatureDefaultOffer: Selector("#cart-plan-ELE .cart-plan__details-text").withText("Default offer"),
     eleFeatureVipPriorityService: Selector("#cart-plan-ELE .cart-plan__details-text").withText("VIP Priority Service"),
-    eleFeatureVariableRates: Selector("#cart-plan-ELE .cart-plan__details-text").withText("Variable Rates"),
+    eleFeatureVariableRates: Selector("#cart-plan-ELE .cart-plan__details-text").withText(/Variable [R|r]ates/),
 
     gasFeatures: Selector("#cart-plan-GAS .cart-plan__details-text"),
     gasFeature50Credit: Selector("#cart-plan-GAS .cart-plan__details-text").withText(/[C|c]redit/),
@@ -31,7 +31,7 @@ const cartsPage = {
     gasFeatureVipPriorityService: Selector("#cart-plan-GAS .cart-plan__details-text").withText("VIP Priority Service"),
     addDifferentGasPlan: Selector("#cart-plan-GAS+button"),
     addDifferentElePlan: Selector("#cart-plan-ELE+button"),
-    gasFeatureVariableRates: Selector("#cart-plan-GAS .cart-plan__details-text").withText("Variable Rates"),
+    gasFeatureVariableRates: Selector("#cart-plan-GAS .cart-plan__details-text").withText(/Variable [R|r]ates/),
     ResidentialBalanceTable: {
       residentialBalancePlanName: Selector("[id*='plan-heading-title-BASE_RSOT-']"),
       residentialBalanceFuel: Selector("[id*='plan-heading-fuel-BASE_RSOT-']"),

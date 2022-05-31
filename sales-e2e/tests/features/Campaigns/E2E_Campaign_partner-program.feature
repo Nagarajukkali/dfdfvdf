@@ -13,7 +13,7 @@
 
 Feature:E2E scenario for partner-program
 
-  @DR22.5.4.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for partner-program campaign for NSW-Ausgrid for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "bizoffer5" and "2144" and clicks on show me plan link
@@ -94,7 +94,7 @@ Feature:E2E scenario for partner-program
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                  | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 22          | 18          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.5.4.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for partner-program campaign for VIC for new non moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "bizoffer5" and "3199" and clicks on show me plan link
@@ -166,7 +166,7 @@ Feature:E2E scenario for partner-program
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                     | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 14          | 35          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           |
 
-  @DR22.5.4.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for partner-program campaign for SA for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "bizoffer5" and "5076" and clicks on show me plan link
@@ -235,7 +235,7 @@ Feature:E2E scenario for partner-program
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                      | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 8           | 17          | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.5.4.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for partner-program campaign for ACT for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "bizoffer5" and "2615" and clicks on show me plan link
@@ -303,7 +303,7 @@ Feature:E2E scenario for partner-program
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                       | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | 12          | 17          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.5.4.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for partner-program campaign for QLD for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "bizoffer5" and "4208" and clicks on show me plan link
@@ -356,9 +356,9 @@ Feature:E2E scenario for partner-program
 
     Examples:
       | customerStatus | fuelType | eleDiscount | campaign        | folderName                       | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | ELE      | 16          | partner-program | E2E_Campaign_partner-program_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | ELE      | 14          | partner-program | E2E_Campaign_partner-program_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.5.4.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for partner-program campaign for SA existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "bizoffer5" and "5000" and clicks on show me plan link
@@ -427,9 +427,9 @@ Feature:E2E scenario for partner-program
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-GS  | 5510368960 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                          | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     | 8           | 17          | partner-program | E2E_Campaign_partner-program_SA_existing_non-moving | SA    | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     | 8           | 17          | partner-program | E2E_Campaign_partner-program_SA_existing_non-moving | SA    | Quote Tool   | Plan Switch | No  | No | RES          | Existing non-moving |
 
-  @DR22.5.4.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for partner-program campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "bizoffer5" and "3214" and clicks on show me plan link
@@ -501,7 +501,7 @@ Feature:E2E scenario for partner-program
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                           | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     | 14          | 35          | partner-program | E2E_Campaign_partner-program_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR22.5.4.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for partner-program campaign for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "bizoffer5" and "3199" and clicks on show me plan link

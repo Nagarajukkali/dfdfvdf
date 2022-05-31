@@ -66,8 +66,8 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
     let actualBillRouteType = jsonObj.saleDetail.billDeliveryDetail.billRouteType;
     let isCampaignTest = (t.testRun.test.name.includes('campaign'));
     let isOfferType = (actualOfferType === 'ENE' || actualOfferType === 'COR');
-    //let isStateEligibleFor$50Credit = (actualState === 'VIC' || 'NSW');
-    let isStateEligibleFor$50Credit = (actualState === 'SA' || 'VIC' || 'NSW');
+    let isStateEligibleFor$75Credit = (actualState === 'NSW');
+    let isStateEligibleFor$50Credit = (actualState === 'SA' || 'VIC' || 'ACT');
     let isStateEligibleFor$200Credit = (actualState === '');
     let isStateEligibleFor$100Credit = (actualState === 'VIC' || 'NSW');
     let isStateEligibleFor$200CreditGas = (actualState === 'VIC' || 'NSW')
@@ -118,27 +118,23 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
 
       let actualEleSourceCode = jsonObj.saleDetail.saleDetailHeader.sourceCode;
       let expectedEleSourceCode = checkoutDetailsMethod.map.get('ele source code_' + checkoutDetailsMethod.getScenarioId(t));
-      if (isCampaignTest || data[0].campaign === "balance-canstarblue") {
+      if (isCampaignTest || data[0].campaign === "balance-canstarblue" || data[0].campaign === "flexi" || data[0].campaign === "resi-total" ) {
           await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualEleSourceCode, data[0].campaign, expectedOfferType, expectedFuelType);
       } else if (isOfferType && isSolar ) {
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "SolarMax" + '_25');
       } else if (!isOfferType && isSolar ) {
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "SolarMax");
-      } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit && (!(data[0].campaign === "Balance Plan"))) {
+      } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$75Credit && (!(data[0].campaign === "Balance Plan"))) {
         console.log("On 25Credit-Resi");
-        await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_25');
+        await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_75');
       } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit && (!(data[0].campaign === "Balance Plan"))) {
         console.log("On 50Credit-Resi");
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_50');
       }else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$100Credit && (expectedPlanCode === "TOPB-EV" || expectedPlanCode === "TOPB-EN") && (!(data[0].campaign === "Balance Plan"))) {
         console.log("On 100Credit-Bus");
-        console.log("actualEleSourceCode:"+actualEleSourceCode);
-        console.log("expectedEleSourceCode:"+expectedEleSourceCode);
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_100');
       } else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$200Credit && (expectedPlanCode === "TOPB-EN") && (!(data[0].campaign === "Balance Plan"))) {
         console.log("On 200Credit-Bus");
-        console.log("actualEleSourceCode:"+actualEleSourceCode);
-        console.log("expectedEleSourceCode:"+expectedEleSourceCode);
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_200');
       }
       // else if (isOfferType && isBusinessPlanCode && isStateEligibleFor$100Credit && (expectedPlanCode === "TOPB-EV") && (!(data[0].campaign === "Balance Plan"))) {
@@ -212,12 +208,12 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
       //updated conditions for $50 extensions
       let actualGasSourceCode = jsonObj.saleDetail.saleDetailHeader.sourceCode;
       let expectedGasSourceCode = checkoutDetailsMethod.map.get('gas source code_' + checkoutDetailsMethod.getScenarioId(t));
-      if (isCampaignTest || data[0].campaign === "balance-canstarblue") {
+      if (isCampaignTest || data[0].campaign === "balance-canstarblue" || data[0].campaign === "flexi" || data[0].campaign === "resi-total") {
         await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualGasSourceCode, data[0].campaign, expectedOfferType, expectedFuelType);
         // await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualGasSourceCode, data[0].campaign, expectedGasSourceCode, expectedFuelType);
-      } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit && (!(data[0].campaign === "Balance Plan"))) {
-        console.log("On 25Credit-Resi-gas");
-        await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_25');
+      } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$75Credit && (!(data[0].campaign === "Balance Plan"))) {
+        console.log("On 75Credit-Resi-gas");
+        await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_75');
       } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit && (!(data[0].campaign === "Balance Plan"))) {
         console.log("On 50Credit-Resi-gas");
         await qt2Reporting.validateMandatoryField(t, actualGasSourceCode, expectedGasSourceCode + '_50');
@@ -274,7 +270,7 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
         await qt2Reporting.validateMandatoryField(t, actualPersonAccountRelationship, expectedPersonAccountRelationship);
         await qt2Reporting.validateMandatoryField(t, actualBusinessNameType, expectedBusinessNameType);
       }
-      if ((expectedOfferType === 'COR' || expectedOfferType === 'ENE') && expectedCustomerType === 'RESIDENTIAL' && t.testRun.test.name.includes('new')) {
+      if ((expectedOfferType === 'COR' || expectedOfferType === 'ENE') && expectedCustomerType === 'RESIDENTIAL' && t.testRun.test.name.includes(' new ')) {
         let expectedConsentForIdValidation = 'Y';
         let actualConsentForIdValidation = jsonObj.saleDetail.personDetail.personIdDetail.idValidationInformation.consentForIdValidation;
         let expectedCreditAssessmentReasonCode = qt2Reporting.getCreditAssessmentValue(t.testRun.test.name.toString());

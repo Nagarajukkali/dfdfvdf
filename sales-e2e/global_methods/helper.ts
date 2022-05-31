@@ -45,6 +45,7 @@ export enum PlanType {
   BASIC_HOME_QLD = 'Basic Home QLD',
   NO_FRILLS = 'No Frills',
   TOTAL_PLAN = 'Total Plan',
+  FLEXI_PLAN='Flexi Plan',
   TOTAL_PLAN_PLUS = 'Total Plan Plus',
   SOLAR_MAX = 'Solar Max',
   BASIC_BUSINESS = 'Basic Business',

@@ -12,7 +12,7 @@
 
 Feature:E2E scenario for seniors campaign
 
-  @DR22.5.4.campaign-seniors
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for seniors campaign for VIC - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "3000" and clicks on show me plan link
@@ -27,7 +27,7 @@ Feature:E2E scenario for seniors campaign
       | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> |Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |Y             |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |N             |
     And user clicks on Add plan button
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -52,7 +52,7 @@ Feature:E2E scenario for seniors campaign
       | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> |Y                     |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |Y             |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |N             |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -74,7 +74,7 @@ Feature:E2E scenario for seniors campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign| folderName                             | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 14          | 26          | seniors | E2E_Campaign_vicseniors_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.5.4.campaign-seniors
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for seniors campaign for VIC - new non-moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "3000" and clicks on show me plan link
@@ -89,7 +89,7 @@ Feature:E2E scenario for seniors campaign
       | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> |Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |Y             |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |N             |
     And user clicks on Add plan button
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -113,7 +113,7 @@ Feature:E2E scenario for seniors campaign
       | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> |Y                     |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |Y             |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |N             |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -135,7 +135,7 @@ Feature:E2E scenario for seniors campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign| folderName                               | state | sourceSystem | journey  | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 14          | 26          | seniors | E2E_Campaign_vicseniors_VIC_new_nonmoving| VIC   | Quote Tool   | COR      | No  | No | RES        | New           |
 
-  @DR22.5.4.campaign-seniors
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for seniors campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "3000" and clicks on show me plan link
@@ -150,7 +150,7 @@ Feature:E2E scenario for seniors campaign
       | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> |Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |Y             |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |N             |
     And user clicks on Add plan button
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
@@ -199,7 +199,7 @@ Feature:E2E scenario for seniors campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                                   | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     | 14          | 26          | seniors  | E2E_Campaign_seniors_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR22.5.4.campaign-seniors
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for seniors campaign for VIC existing moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "3000" and clicks on show me plan link
@@ -214,7 +214,7 @@ Feature:E2E scenario for seniors campaign
       | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> |Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |Y             |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |N             |
     And user clicks on Add plan button
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
@@ -242,7 +242,7 @@ Feature:E2E scenario for seniors campaign
       | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> |    Y                 |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | VIC   | N            |    Y         |
+      | Y                        | Y         | Y            | Total Plan | VIC   | Y            |    N         |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -264,7 +264,7 @@ Feature:E2E scenario for seniors campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                               | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     | 14          | 26          | seniors  | E2E_Campaign_seniors_VIC_existing_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | Existing  moving |
 
-  @DR22.5.4.campaign-seniors
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for nsw-Endeavour on seniors campaign - Moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "2516" and clicks on show me plan link
@@ -279,7 +279,7 @@ Feature:E2E scenario for seniors campaign
       | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> |Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |Y             |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |N             |
     And user clicks on Add plan button
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -310,7 +310,7 @@ Feature:E2E scenario for seniors campaign
       |GAS      |N                 |N                       |Y                    |Y                                    |N                                |<state>|Y                     |
     And user validates disclaimer on review page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |signUpCredit |planName   |state    |moveHomeCredit|
-      |Y                        |Y          |Y              |N            |Total Plan |<state>  |Y             |
+      |Y                        |Y          |Y              |Y            |Total Plan |<state>  |N             |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -333,7 +333,7 @@ Feature:E2E scenario for seniors campaign
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign |folderName               |sourceSystem|journey   |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |BOTH    |18         |18         |seniors  |E2E_Campaign_NSW_seniors |Quote Tool  |Move Home |NSW    |RES          |New            |No  |No  |
 
-  @DR22.5.4.campaign-seniors
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for NSW-Ausgrid on seniors campaign - Moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "2144" and clicks on show me plan link
@@ -348,7 +348,7 @@ Feature:E2E scenario for seniors campaign
       | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> |Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |Y             |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |N             |
     And user clicks on Add plan button
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -376,7 +376,7 @@ Feature:E2E scenario for seniors campaign
       | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> |Y                     |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |Y             |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |N             |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -399,7 +399,7 @@ Feature:E2E scenario for seniors campaign
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign |folderName                       |sourceSystem|journey   |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |BOTH    |22         |18         |seniors  |E2E_Campaign_NSW_seniors_Ausgrid |Quote Tool  |Move Home |NSW    |RES          |New            |No  |No  |
 
-  @DR22.5.4.campaign-seniors
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for NSW-Essential on seniors campaign - Moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "2700" and clicks on show me plan link
@@ -414,7 +414,7 @@ Feature:E2E scenario for seniors campaign
       | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> |Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |Y             |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |N             |
     And user clicks on Add plan button
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -442,7 +442,7 @@ Feature:E2E scenario for seniors campaign
       | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> |Y                     |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |Y             |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |N             |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -465,7 +465,7 @@ Feature:E2E scenario for seniors campaign
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign  |folderName                         |sourceSystem|journey   |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |BOTH    |18         |18         |seniors   |E2E_Campaign_NSW_seniors_Essential |Quote Tool  |Move Home |NSW    |RES          |New            |No  |No  |
 
-  @DR22.5.4.campaign-seniors
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for NSW-Essential on seniors campaign for Non-Moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "2700" and clicks on show me plan link
@@ -480,7 +480,7 @@ Feature:E2E scenario for seniors campaign
       | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> |Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |Y             |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |N             |
     And user clicks on Add plan button
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -507,7 +507,7 @@ Feature:E2E scenario for seniors campaign
       | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> |Y                     |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |Y             |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |N             |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -530,7 +530,7 @@ Feature:E2E scenario for seniors campaign
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign |folderName                         |sourceSystem|journey   |state  |customerType |newOrExisting  |AAH |DD  |
       |New           |BOTH    |18         |18         |seniors  |E2E_Campaign_NSW_seniors_Essential |Quote Tool  | COR      |NSW    |RES          |New            |No  |No  |
 
-  @DR22.5.4.campaign-seniors
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for seniors campaign for NSW-Endeavour existing moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "2516" and clicks on show me plan link
@@ -545,7 +545,7 @@ Feature:E2E scenario for seniors campaign
       | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> |Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |Y             |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |N             |
     And user clicks on Add plan button
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
@@ -573,7 +573,7 @@ Feature:E2E scenario for seniors campaign
       | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> |    Y                 |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | NSW   | N            |    Y         |
+      | Y                        | Y         | Y            | Total Plan | NSW   | Y            |    N         |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -595,7 +595,7 @@ Feature:E2E scenario for seniors campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                                 | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     | 18          | 18          | seniors  | E2E_Campaign_seniors_NSW_ex_End_non-moving | NSW   | Quote Tool   | Move Home | No  | No | RES          | Existing  non-moving |
 
-  @DR22.5.4.campaign-seniors
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for seniors campaign for QLD - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "4558" and clicks on show me plan link
@@ -606,7 +606,7 @@ Feature:E2E scenario for seniors campaign
       | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> |Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |Y             |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |N             |
     And user clicks on Select plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
@@ -632,7 +632,7 @@ Feature:E2E scenario for seniors campaign
       | ELE      | N                | N                     | Y                   | Y                                  | N                               | <state> |Y                     |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |Y             |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |N             |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -648,9 +648,9 @@ Feature:E2E scenario for seniors campaign
       | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-EQ  | QB08556016 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType| eleDiscount | gasDiscount | campaign| folderName                          | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | ELE     | 16          | 0           | seniors | E2E_Campaign_seniors_QLD_new_moving | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | ELE     | 14          | 0           | seniors | E2E_Campaign_seniors_QLD_new_moving | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.5.4.campaign-seniors
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for seniors campaign for QLD - new non-moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "4558" and clicks on show me plan link
@@ -661,7 +661,7 @@ Feature:E2E scenario for seniors campaign
       | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> |Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |Y             |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |N             |
     And user clicks on Select plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
@@ -686,7 +686,7 @@ Feature:E2E scenario for seniors campaign
       | ELE      | N                | N                     | Y                   | Y                                  | N                               | <state> |Y                     |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |Y             |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |N             |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -702,9 +702,9 @@ Feature:E2E scenario for seniors campaign
       | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-EQ  | QB08556016 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType| eleDiscount | gasDiscount | campaign| folderName                          | state | sourceSystem | journey  | AAH | DD | customerType | newOrExisting |
-      | New            | ELE     | 16          | 0           | seniors | E2E_Campaign_seniors_QLD_new_nonmoving | QLD   | Quote Tool   | COR      | No  | No | RES          | New           |
+      | New            | ELE     | 14          | 0           | seniors | E2E_Campaign_seniors_QLD_new_nonmoving | QLD   | Quote Tool   | COR      | No  | No | RES          | New           |
 
-  @DR22.5.4.campaign-seniors
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for seniors campaign for QLD - existing non-moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "4558" and clicks on show me plan link
@@ -715,7 +715,7 @@ Feature:E2E scenario for seniors campaign
       | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> |Y                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |Y             |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |N             |
     And user clicks on Select plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
@@ -743,7 +743,7 @@ Feature:E2E scenario for seniors campaign
       | ELE      | N                | N                     | Y                   | Y                                  | N                               | <state> |    N                 |
      And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | <state> | N            |    Y         |
+      | Y                        | Y         | Y            | Total Plan | <state> | Y            |    N         |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -759,5 +759,5 @@ Feature:E2E scenario for seniors campaign
       | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS       | TOPH-EQ  | 3114744490 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                                  | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | ELE      | 16          | 0           | seniors  | E2E_Campaign_seniors_QLD_existing_non-moving | QLD   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | Existing       | ELE      | 14          | 0           | seniors  | E2E_Campaign_seniors_QLD_existing_non-moving | QLD   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 

@@ -12,7 +12,7 @@
 
 Feature:E2E scenario for mcc
 
-  @DR22.5.4.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for mcc campaign for NSW-Ausgrid for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMCC01" and "2144" and clicks on show me plan link
@@ -30,11 +30,11 @@ Feature:E2E scenario for mcc
       | Y                        | Y         | Y            | Total Plan | <state> | Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | ELE      | N                | Y                     | Y                   | Y                                  | <state> | Y             |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | Feature_moveHomeCredit|
+      | ELE      | N                | Y                     | Y                   | Y                                  | <state> | Y                     |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | GAS      | N                | Y                     | Y                   | Y                                  | <state> | Y             |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | Feature_moveHomeCredit|
+      | GAS      | N                | Y                     | Y                   | Y                                  | <state> | Y                     |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -92,7 +92,7 @@ Feature:E2E scenario for mcc
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                     | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH      | 22          | 18         | mcc      | E2E_Campaign_mcc_newmoving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
-  @DR22.5.4.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for mcc campaign for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMCC01" and "3199" and clicks on show me plan link
@@ -110,11 +110,11 @@ Feature:E2E scenario for mcc
       | Y                        | Y         | Y            | Total Plan | <state> | Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | ELE      | N                | Y                     | Y                   | Y                                  | <state> | Y             |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | Feature_moveHomeCredit|
+      | ELE      | N                | Y                     | Y                   | Y                                  | <state> | Y                     |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | GAS      | N                | Y                     | Y                   | Y                                  | <state> | Y             |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | Feature_moveHomeCredit|
+      | GAS      | N                | Y                     | Y                   | Y                                  | <state> | Y                     |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -165,7 +165,7 @@ Feature:E2E scenario for mcc
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                      | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 14          | 35          | mcc      | E2E_Campaign_mcc_new_moving_VIC | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.5.4.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for mcc campaign for SA for new non moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMCC01" and "5076" and clicks on show me plan link
@@ -233,7 +233,7 @@ Feature:E2E scenario for mcc
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                        | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 8           | 17          | mcc      | E2E_Campaign_mcc_new_nonmoving_SA | SA    | Quote Tool   | COR     | No  | No | RES          | New           |
-  @DR22.5.4.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for mcc campaign for ACT for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMCC01" and "2615" and clicks on show me plan link
@@ -301,7 +301,7 @@ Feature:E2E scenario for mcc
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName           | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 12          | 17          | mcc      | E2E_Campaign_mcc_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.5.4.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for mcc campaign for QLD for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMCC01" and "4208" and clicks on show me plan link
@@ -314,8 +314,8 @@ Feature:E2E scenario for mcc
       | Y                        | Y         | N            | Total Plan | <state> | Y            |
     And user clicks on Select plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | ELE      | N                | Y                     | Y                   | Y                                  | <state> | Y             |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | Feature_moveHomeCredit|
+      | ELE      | N                | Y                     | Y                   | Y                                  | <state> | Y                     |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -354,9 +354,9 @@ Feature:E2E scenario for mcc
 
     Examples:
       | customerStatus | fuelType | eleDiscount | campaign | folderName           | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | ELE      | 16          | mcc      | E2E_Campaign_mcc_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | ELE      | 14          | mcc      | E2E_Campaign_mcc_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.5.4.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for mcc campaign for NSW-Endeavour existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMCC01" and "2529" and clicks on show me plan link
@@ -374,11 +374,11 @@ Feature:E2E scenario for mcc
       | Y                        | Y         | Y            | Total Plan | <state> | Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | moveHomeCredit |
-      | ELE      | N                | Y                     | Y                   | Y                                  | <state> | Y              |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | Feature_moveHomeCredit|
+      | ELE      | N                | Y                     | Y                   | Y                                  | <state> | Y                     |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | moveHomeCredit |
-      | GAS      | N                | Y                     | Y                   | Y                                  | <state> | Y              |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | Feature_moveHomeCredit|
+      | GAS      | N                | Y                     | Y                   | Y                                  | <state> | Y                     |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier

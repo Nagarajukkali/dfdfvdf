@@ -81,6 +81,12 @@ export class plansMethod {
         }
         await testFunction.click(t, EaHomePage.elements.totalPlan);
         break;
+      case PlanType.FLEXI_PLAN:
+        if (testFunction.isMobile() || testFunction.isTablet()) {
+          await scrollTo(EaHomePage.elements.FlexiPlanTable.flexiPlan);
+        }
+        await testFunction.click(t, EaHomePage.elements.FlexiPlanTable.flexiPlan);
+        break;
       case PlanType.TOTAL_PLAN_PLUS:
         if (testFunction.isMobile() || testFunction.isTablet()) {
           await scrollTo(EaHomePage.elements.totalPlanPlus);
@@ -166,19 +172,74 @@ export class plansMethod {
 
   public static async validatePlanHeading(t, dataTable, data: any) {
     if (dataTable[0].fuelType === "ELE") {
-      await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingTitle, data.planName);
-      await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingFuel, "Electricity");
-      await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingDescription, data.planDescription);
+      switch (dataTable[0].state) {
+        case AustralianState.NSW:
+          await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingTitle, data.planDetails.NSW.planName);
+          await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingFuel, "Electricity");
+          await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingDescription, data.planDetails.NSW.planDescription);
+          break;
+        case AustralianState.VIC:
+          await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingTitle, data.planDetails.VIC.planName);
+          await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingFuel, "Electricity");
+          await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingDescription, data.planDetails.VIC.planDescription);
+          break;
+        case AustralianState.SA:
+          await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingTitle, data.planDetails.SA.planName);
+          await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingFuel, "Electricity");
+          await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingDescription, data.planDetails.SA.planDescription);
+          break;
+        case AustralianState.ACT:
+          await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingTitle, data.planDetails.ACT.planName);
+          await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingFuel, "Electricity");
+          await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingDescription, data.planDetails.ACT.planDescription);
+          break;
+        case AustralianState.QLD:
+          await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingTitle, data.planDetails.QLD.planName);
+          await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingFuel, "Electricity");
+          await testFunction.assertText(t, EaHomePage.campaignElements.elePlanHeadingDescription, data.planDetails.QLD.planDescription);
+          break;
+        default:
+          console.log("Invalid Electricity plan details for state");
+      }
+
     } else if (dataTable[0].fuelType === 'GAS') {
-      await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingTitle, data.planName);
-      await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingFuel, "Gas");
-      await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingDescription, data.planDescription);
+      switch (dataTable[0].state) {
+        case AustralianState.NSW:
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingTitle, data.planDetails.NSW.planName);
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingFuel, "Gas");
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingDescription, data.planDetails.NSW.planDescription);
+          break;
+        case AustralianState.VIC:
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingTitle, data.planDetails.VIC.planName);
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingFuel, "Gas");
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingDescription, data.planDetails.VIC.planDescription);
+          break;
+        case AustralianState.SA:
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingTitle, data.planDetails.SA.planName);
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingFuel, "Gas");
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingDescription, data.planDetails.SA.planDescription);
+          break;
+        case AustralianState.ACT:
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingTitle, data.planDetails.ACT.planName);
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingFuel, "Gas");
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingDescription, data.planDetails.ACT.planDescription);
+          break;
+        case AustralianState.QLD:
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingTitle, data.planDetails.QLD.planName);
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingFuel, "Gas");
+          await testFunction.assertText(t, EaHomePage.campaignElements.gasPlanHeadingDescription, data.planDetails.QLD.planDescription);
+          break;
+        default:
+          console.log("Invalid GAS plan details for state");
+      }
     }
   }
 
   public static async validatePlanHeadingPlanPage(t, dataTable, data: any, page) {
+    console.log("Validating Plan details.");
+    console.log("dataTable[0].fuelType-top:"+dataTable[0].fuelType);
     if (page === "Residential") {
-      switch(data.planName){
+      switch(dataTable[0].planName){
         case PlanType.BASIC_HOME :
           await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.basicHomeTitle, data.planName);
           await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.basicHomeFuel, "Electricity & gas");
@@ -198,13 +259,140 @@ export class plansMethod {
           break;
         case PlanType.TOTAL_PLAN :
           if(dataTable[0].fuelType==="BOTH") {
-            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanTitle, data.planName);
-            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanFuel, "Electricity & gas");
-            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanHeadingDescription, data.planDescription);
+            // await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanTitle, data.planName);
+            // await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanFuel, "Electricity & gas");
+            // await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanHeadingDescription, data.planDescription);
+
+            switch (dataTable[0].state) {
+              case AustralianState.NSW:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanTitle, data.planDetails.NSW.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanFuel, "Electricity & gas");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanHeadingDescription, data.planDetails.NSW.planDescription);
+                break;
+              case AustralianState.VIC:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanTitle, data.planDetails.VIC.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanFuel, "Electricity & gas");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanHeadingDescription, data.planDetails.VIC.planDescription);
+                break;
+              case AustralianState.SA:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanTitle, data.planDetails.SA.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanFuel, "Electricity & gas");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanHeadingDescription, data.planDetails.SA.planDescription);
+                break;
+              case AustralianState.ACT:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanTitle, data.planDetails.ACT.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanFuel, "Electricity & gas");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanHeadingDescription, data.planDetails.ACT.planDescription);
+                break;
+              case AustralianState.QLD:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanTitle, data.planDetails.QLD.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanFuel, "Electricity & gas");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanHeadingDescription, data.planDetails.QLD.planDescription);
+                break;
+              default:
+                console.log("Invalid combo plan details for state");
+            }
           }else if(dataTable[0].fuelType==="ELE") {
-            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanTitle, data.planName);
-            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanFuel, "Electricity");
-            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanHeadingDescription, data.planDescription);
+            // await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanTitle, data.planName);
+            // await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanFuel, "Electricity");
+            // await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanHeadingDescription, data.planDescription);
+
+            switch (dataTable[0].state) {
+              case AustralianState.NSW:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanTitle, data.planDetails.NSW.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanFuel, "Electricity");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanHeadingDescription, data.planDetails.NSW.planDescription);
+                break;
+              case AustralianState.VIC:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanTitle, data.planDetails.VIC.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanFuel, "Electricity");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanHeadingDescription, data.planDetails.VIC.planDescription);
+                break;
+              case AustralianState.SA:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanTitle, data.planDetails.SA.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanFuel, "Electricity");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanHeadingDescription, data.planDetails.SA.planDescription);
+                break;
+              case AustralianState.ACT:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanTitle, data.planDetails.ACT.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanFuel, "Electricity");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanHeadingDescription, data.planDetails.ACT.planDescription);
+                break;
+              case AustralianState.QLD:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanTitle, data.planDetails.QLD.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanFuel, "Electricity");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanHeadingDescription, data.planDetails.QLD.planDescription);
+                break;
+              default:
+                console.log("Invalid electricity plan details for state");
+            }
+
+          }else{
+            console.log("Invalid fueltype");
+          }
+          break;
+        case PlanType.FLEXI_PLAN :
+          console.log("dataTable[0].fuelType"+dataTable[0].fuelType);
+          if(dataTable[0].fuelType==="BOTH") {
+            switch (dataTable[0].state) {
+              case AustralianState.NSW:
+                await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanTitle, data.planDetails.NSW.planName);
+                await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanFuel, "Electricity & gas");
+                await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanHeadingDescription, data.planDetails.NSW.planDescription);
+                break;
+              case AustralianState.VIC:
+                await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanTitle, data.planDetails.VIC.planName);
+                await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanFuel, "Electricity & gas");
+                await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanHeadingDescription, data.planDetails.VIC.planDescription);
+                break;
+              case AustralianState.SA:
+                await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanTitle, data.planDetails.SA.planName);
+                await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanFuel, "Electricity & gas");
+                await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanHeadingDescription, data.planDetails.SA.planDescription);
+                break;
+              case AustralianState.ACT:
+                await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanTitle, data.planDetails.ACT.planName);
+                await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanFuel, "Electricity & gas");
+                await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanHeadingDescription, data.planDetails.ACT.planDescription);
+                break;
+              case AustralianState.QLD:
+                await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanTitle, data.planDetails.QLD.planName);
+                await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanFuel, "Electricity & gas");
+                await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanHeadingDescription, data.planDetails.QLD.planDescription);
+                break;
+              default:
+                console.log("Invalid combo plan details for state");
+            }
+          }else if(dataTable[0].fuelType==="ELE") {
+              switch (dataTable[0].state) {
+                case AustralianState.NSW:
+                  await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanTitle, data.planDetails.NSW.planName);
+                  await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanFuel, "Electricity");
+                  await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanHeadingDescription, data.planDetails.NSW.planDescription);
+                  break;
+                case AustralianState.VIC:
+                  await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanTitle, data.planDetails.VIC.planName);
+                  await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanFuel, "Electricity");
+                  await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanHeadingDescription, data.planDetails.VIC.planDescription);
+                  break;
+                case AustralianState.SA:
+                  await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanTitle, data.planDetails.SA.planName);
+                  await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanFuel, "Electricity");
+                  await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanHeadingDescription, data.planDetails.SA.planDescription);
+                  break;
+                case AustralianState.ACT:
+                  await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanTitle, data.planDetails.ACT.planName);
+                  await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanFuel, "Electricity");
+                  await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanHeadingDescription, data.planDetails.ACT.planDescription);
+                  break;
+                case AustralianState.QLD:
+                  await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanTitle, data.planDetails.QLD.planName);
+                  await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanFuel, "Electricity");
+                  await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanHeadingDescription, data.planDetails.QLD.planDescription);
+                  break;
+                default:
+                  console.log("Invalid electricity plan details for state");
+              }
           }else{
             console.log("Invalid fueltype");
           }
@@ -857,22 +1045,26 @@ export class plansMethod {
       await testFunction.assertText(t, disclaimer, data.disclaimers.variableRates.description);
       console.log("Variable rates disclaimer validated");
     }
-    if( planName===PlanType.TOTAL_PLAN || planName===PlanType.TOTAL_PLAN_PLUS || planName===PlanType.FAMILY_AND_FRIENDS || planName===PlanType.EMPLOYEE_PLAN || planName===PlanType.BUSINESS_BALANCE_PLAN || planName===PlanType.TOTAL_BUSINESS || planName===PlanType.FAMILY_AND_FRIENDS_BUSINESS || planName===PlanType.BUSINESS_CARBON_NEUTRAL){
-    await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.heading);
+    if( planName===PlanType.TOTAL_PLAN || planName===PlanType.FLEXI_PLAN || planName===PlanType.TOTAL_PLAN_PLUS || planName===PlanType.FAMILY_AND_FRIENDS || planName===PlanType.EMPLOYEE_PLAN || planName===PlanType.BUSINESS_BALANCE_PLAN || planName===PlanType.TOTAL_BUSINESS || planName===PlanType.FAMILY_AND_FRIENDS_BUSINESS || planName===PlanType.BUSINESS_CARBON_NEUTRAL){
       switch (state) {
         case AustralianState.NSW:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.NSW.heading);
           await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.NSW.description);
           break;
         case AustralianState.VIC:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.VIC.heading);
           await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.VIC.description);
           break;
         case AustralianState.SA:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.SA.heading);
           await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.SA.description);
           break;
         case AustralianState.ACT:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.ACT.heading);
           await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.ACT.description);
           break;
         case AustralianState.QLD:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.QLD.heading);
           await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.QLD.description);
           break;
         default:
@@ -920,22 +1112,27 @@ export class plansMethod {
     }
     let planName = dataTable[0].planName;
     let state = dataTable[0].state;
-    if(planName===PlanType.RESIDENTIAL_BALANCE_PLAN || planName===PlanType.TOTAL_PLAN || planName===PlanType.BUSINESS_CARBON_NEUTRAL || planName===PlanType.TOTAL_BUSINESS || planName===PlanType.BUSINESS_BALANCE_PLAN){
-      await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.heading);
+    if(planName===PlanType.RESIDENTIAL_BALANCE_PLAN || planName===PlanType.FLEXI_PLAN || planName===PlanType.TOTAL_PLAN || planName===PlanType.BUSINESS_CARBON_NEUTRAL || planName===PlanType.TOTAL_BUSINESS || planName===PlanType.BUSINESS_BALANCE_PLAN){
+      // await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.heading);
       switch (state) {
         case AustralianState.NSW:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.NSW.heading);
           await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.NSW.description);
           break;
         case AustralianState.VIC:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.VIC.heading);
           await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.VIC.description);
           break;
         case AustralianState.SA:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.SA.heading);
           await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.SA.description);
           break;
         case AustralianState.ACT:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.ACT.heading);
           await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.ACT.description);
           break;
         case AustralianState.QLD:
+          await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.QLD.heading);
           await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.QLD.description);
           break;
         default:
@@ -1074,6 +1271,32 @@ export class plansMethod {
             break;
           case AustralianState.QLD:
             await testFunction.assertText(t, disclaimer, data.disclaimers.noFrills.QLD.description);
+            break;
+          default:
+            throw Error("Invalid State");
+        }
+        break;
+      case PlanType.FLEXI_PLAN:
+        switch (state) {
+          case AustralianState.VIC:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.totalPlan.VIC.heading);
+            await testFunction.assertText(t, disclaimer, data.disclaimers.totalPlan.VIC.description);
+            break;
+          case AustralianState.NSW:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.totalPlan.NSW.heading);
+            await testFunction.assertText(t, disclaimer, data.disclaimers.totalPlan.NSW.description);
+            break;
+          case AustralianState.ACT:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.totalPlan.ACT.heading);
+            await testFunction.assertText(t, disclaimer, data.disclaimers.totalPlan.ACT.description);
+            break;
+          case AustralianState.SA:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.totalPlan.SA.heading);
+            await testFunction.assertText(t, disclaimer, data.disclaimers.totalPlan.SA.description);
+            break;
+          case AustralianState.QLD:
+            await testFunction.assertText(t, disclaimer, data.disclaimers.totalPlan.QLD.heading);
+            await testFunction.assertText(t, disclaimer, data.disclaimers.totalPlan.QLD.description);
             break;
           default:
             throw Error("Invalid State");
@@ -1298,12 +1521,21 @@ export class plansMethod {
   }
 
   public static async validateDiscountPlansPage(t, fuelType, discount,planName) {
+    console.log("planName",planName);
+    console.log("fuelType",fuelType);
     switch (planName) {
       case PlanType.RESIDENTIAL_BALANCE_PLAN:
         if (await testFunction.isElectricity(fuelType)) {
           await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceEleDiscount, discount);
         } else if (await testFunction.isGas(fuelType)) {
           await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceGasDiscount, discount);
+        }
+        break;
+      case PlanType.FLEXI_PLAN:
+        if (await testFunction.isElectricity(fuelType)) {
+          await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanEleDiscount, discount);
+        } else if (await testFunction.isGas(fuelType)) {
+          await testFunction.assertText(t, EaHomePage.elements.FlexiPlanTable.flexiPlanGasDiscount, discount);
         }
         break;
       case PlanType.TOTAL_PLAN:

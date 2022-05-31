@@ -10,10 +10,47 @@ export class cartsMethod {
 
   public static async validatePlanName(t: any, json: any, dataTable) {
     if (await testFunction.isElectricity(dataTable[0].fuelType)) {
-      await testFunction.assertText(t, cartsPage.elements.elePlanName, json.planName);
+      switch (dataTable[0].state) {
+        case AustralianState.NSW:
+          await testFunction.assertText(t, cartsPage.elements.elePlanName, json.planDetails.NSW.planName);
+          break;
+        case AustralianState.VIC:
+          await testFunction.assertText(t, cartsPage.elements.elePlanName, json.planDetails.VIC.planName);
+          break;
+        case AustralianState.SA:
+          await testFunction.assertText(t, cartsPage.elements.elePlanName, json.planDetails.SA.planName);
+          break;
+        case AustralianState.ACT:
+          await testFunction.assertText(t, cartsPage.elements.elePlanName, json.planDetails.ACT.planName);
+          break;
+        case AustralianState.QLD:
+          await testFunction.assertText(t, cartsPage.elements.elePlanName, json.planDetails.QLD.planName);
+          break;
+        default:
+          console.log("Invalid Electricity cart details for state");
+      }
+
     }
     if (await testFunction.isGas(dataTable[0].fuelType)) {
-      await testFunction.assertText(t, cartsPage.elements.gasPlanName, json.planName);
+      switch (dataTable[0].state) {
+        case AustralianState.NSW:
+          await testFunction.assertText(t, cartsPage.elements.gasPlanName, json.planDetails.NSW.planName);
+          break;
+        case AustralianState.VIC:
+          await testFunction.assertText(t, cartsPage.elements.gasPlanName, json.planDetails.VIC.planName);
+          break;
+        case AustralianState.SA:
+          await testFunction.assertText(t, cartsPage.elements.gasPlanName, json.planDetails.SA.planName);
+          break;
+        case AustralianState.ACT:
+          await testFunction.assertText(t, cartsPage.elements.gasPlanName, json.planDetails.ACT.planName);
+          break;
+        case AustralianState.QLD:
+          await testFunction.assertText(t, cartsPage.elements.gasPlanName, json.planDetails.QLD.planName);
+          break;
+        default:
+          console.log("Invalid Gas cart details for state");
+      }
     }
   }
 

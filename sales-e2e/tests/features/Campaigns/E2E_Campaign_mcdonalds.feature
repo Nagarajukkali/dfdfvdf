@@ -12,7 +12,7 @@
 
 Feature:E2E scenario for mcdonalds
 
-  @DR22.5.4.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for mcdonalds campaign for NSW-Ausgrid for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMAC01" and "2144" and clicks on show me plan link
@@ -92,7 +92,7 @@ Feature:E2E scenario for mcdonalds
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign  | folderName                 | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 22          | 18          | mcdonalds | E2E_Campaign_mcdonalds_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
-  @DR22.5.4.campaign
+  @DR22.5.5.campaign 
   Scenario Outline: Validate complete data for mcdonalds campaign for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMAC01" and "3199" and clicks on show me plan link
@@ -165,7 +165,7 @@ Feature:E2E scenario for mcdonalds
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign  | folderName                 | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 14          | 35          | mcdonalds | E2E_Campaign_mcdonalds_VIC | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.5.4.campaign
+  @DR22.5.5.campaign 
   Scenario Outline: Validate complete data for mcdonalds campaign for SA for new non moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMAC01" and "5076" and clicks on show me plan link
@@ -233,7 +233,7 @@ Feature:E2E scenario for mcdonalds
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign  | folderName                          | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 8           | 17         | mcdonalds | E2E_Campaign_mcdonalds_nonmoving_SA | SA    | Quote Tool   | COR     | No  | No | RES          | New           |
-  @DR22.5.4.campaign
+  @DR22.5.5.campaign 
   Scenario Outline: Validate complete data for mcdonalds campaign for ACT for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMAC01" and "2615" and clicks on show me plan link
@@ -301,7 +301,7 @@ Feature:E2E scenario for mcdonalds
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign  | folderName                 | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | 12          | 17          | mcdonalds | E2E_Campaign_mcdonalds_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.5.4.campaign
+  @DR22.5.5.campaign 
   Scenario Outline: Validate complete data for mcdonalds campaign for QLD for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMAC01" and "4208" and clicks on show me plan link
@@ -354,8 +354,8 @@ Feature:E2E scenario for mcdonalds
 
     Examples:
       | customerStatus | fuelType | eleDiscount | campaign  | folderName                 | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | ELE      | 16          | mcdonalds | E2E_Campaign_mcdonalds_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
-  @DR22.5.4.campaign
+      | New            | ELE      | 14          | mcdonalds | E2E_Campaign_mcdonalds_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
+  @DR22.5.5.campaign 
   Scenario Outline: Validate complete data for mcdonalds campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "PPMAC01" and "3000" and clicks on show me plan link
