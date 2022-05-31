@@ -325,6 +325,22 @@ const eaHomePage = {
       gasdiscountOffTotalDescription: Selector("[id*='plan-feature-TOPH'] [class*='hs-plan-feature__item-title']").withText("discount off total gas bill").sibling(),
 
     },
+    FlexiPlanTable: {
+      flexiPlan: Selector("[id*='plan-select-button-BP2H']"),
+      flexiPlanEleDiscount: Selector("#plan-rate-summary-BP2H-0 span.hs-plan-rate-summary__title-amount"),
+      flexiPlanGasDiscount: Selector("#plan-rate-summary-BP2H-1 span.hs-plan-rate-summary__title-amount"),
+      flexiPlanTitle: Selector("[id*='plan-heading-title-BASE_BP2H-']"),
+      flexiPlanFuel: Selector("[id*='plan-heading-fuel-BASE_BP2H-']"),
+      flexiPlanHeadingDescription : Selector("[id*='plan-heading-description-BASE_BP2H-']"),
+      cNFlexiTitle: Selector("[id*='plan-feature-BP2H'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral"),
+      cNFlexiDescription: Selector("[id*='plan-feature-BP2H'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral").sibling(),
+      peaceOfMindFlexiTitle: Selector("[id*='plan-feature-BP2H'] [class*='hs-plan-feature__item-title']").withText("Peace of mind"),
+      peaceOfMindFlexiDescription: Selector("[id*='plan-feature-BP2H'] [class*='hs-plan-feature__item-title']").withText("Peace of mind").sibling(),
+      elediscountOffFlexiTitle: Selector("[id*='plan-feature-BP2H'] [class*='hs-plan-feature__item-title']").withText("discount off total electricity bill"),
+      elediscountOffFlexiDescription: Selector("[id*='plan-feature-BP2H'] [class*='hs-plan-feature__item-title']").withText("discount off total electricity bill").sibling(),
+      gasdiscountOffFlexiTitle: Selector("[id*='plan-feature-BP2H'] [class*='hs-plan-feature__item-title']").withText("discount off total gas bill"),
+      gasdiscountOffFlexiDescription: Selector("[id*='plan-feature-BP2H'] [class*='hs-plan-feature__item-title']").withText("discount off total gas bill").sibling(),
+    },
     BusinessCarbonNeutralPlanTable: {
       businessCarbonNeutralPlanEleDiscount: Selector("[id*='plan-rate-summary-BCNP'][id*='-E'] [class*='title-amount']"),
       businessCarbonNeutralPlanTitle: Selector("[id*='plan-heading-title-BASE_BCNP-']"),

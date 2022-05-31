@@ -5,20 +5,20 @@
       "planDescription": "Great discount on your total energy bill guaranteed - every time."
     },
     "NSW": {
-      "planName": "Flexi Plan",
-      "planDescription": "Variable rates with a total energy bill discount."
+      "planName": "Total Plan",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
     },
     "ACT": {
-      "planName": "Flexi Plan",
-      "planDescription": "Variable rates with a total energy bill discount."
+      "planName": "Total Plan",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
     },
     "QLD": {
-      "planName": "Flexi Plan",
-      "planDescription": "Variable rates with a total energy bill discount."
+      "planName": "Total Plan",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
     },
     "SA": {
-      "planName": "Flexi Plan",
-      "planDescription": "Variable rates with a total energy bill discount."
+      "planName": "Total Plan",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
     }
   },
   "electricity": {
@@ -26,20 +26,20 @@
       "preSelect": {
         "Credit50": {
           "VIC": {
-            "heading": "$25 Sign Up Credit",
-            "description": "Get a $25 credit per new energy account on your first bill when you sign up.+"
+            "heading": "$50 online sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up online.+"
           },
           "NSW": {
-            "heading": "$75 online sign up credit",
-            "description": "Get a $75 credit on each new energy account when you sign up online.+"
+            "heading": "$50 online sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up online.+"
           },
           "ACT": {
             "heading": "$50 sign up credit",
             "description": "Get a $50 credit on each new energy account when you sign up.+"
           },
           "QLD": {
-            "heading": "",
-            "description": ""
+            "heading": "$50 online sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up online.+"
           },
           "SA": {
             "heading": "$50 sign up credit",
@@ -64,23 +64,23 @@
           },
           "NSW": {
             "Ausgrid": {
-              "heading": "20% discount off total electricity bill"
+              "heading": "6% discount off total electricity bill"
             },
             "Essential": {
-              "heading": "16% discount off total electricity bill"
+              "heading": "3% discount off total electricity bill"
             },
             "Endeavour": {
-              "heading": "16% discount off total electricity bill"
+              "heading": "3% discount off total electricity bill"
             }
           },
           "ACT": {
-            "heading": "10% discount off total electricity bill"
+            "heading": "3% discount off total electricity bill"
           },
           "QLD": {
-            "heading": "12% discount off total electricity bill"
+            "heading": "1% discount off total electricity bill"
           },
           "SA": {
-            "heading": "6% discount off total electricity bill"
+            "heading": "1% discount off total electricity bill"
           },
           "description": "Guaranteed discount that applies to your energy charges"
         },
@@ -95,10 +95,10 @@
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up.+",
-          "NSW": "$75 online sign up credit. Get a $75 credit on each new energy account when you sign up online.+",
+          "VIC": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+          "NSW": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
           "ACT": "$50 sign up credit. Get a $50 credit on each new energy account when you sign up.+",
-          "QLD": "",
+          "QLD": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
           "SA": "$50 sign up credit. Get a $50 credit on each new energy account when you sign up.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
@@ -108,13 +108,13 @@
         "discountOffTotalEnergyBill": {
           "VIC": "12% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
           "NSW": {
-            "Ausgrid": "20% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
-            "Essential": "16% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
-            "Endeavour": "16% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
+            "Ausgrid": "6% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+            "Essential": "3% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+            "Endeavour": "3% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
           },
-          "ACT": "10% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
-          "QLD": "12% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
-          "SA": "6% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
+          "ACT": "3% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+          "QLD": "1% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+          "SA": "1% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
         },
         "noStandardConnectionFee": "No standard connection fees. Move with us and we'll waive connection and special meter reads during business hours."
       }
@@ -124,52 +124,52 @@
         "ENE": {
           "VIC": "Total_12%GD_50",
           "NSW": {
-            "Ausgrid": "Total_20%GD_75",
-            "Essential": "Total_16%GD_75",
-            "Endeavour": "Total_16%GD_75",
+            "Ausgrid": "Total_6%GD_50",
+            "Essential": "Total_3%GD_50",
+            "Endeavour": "Total_3%GD_50",
             "default": "Total_18%GD_50"
           },
-          "ACT": "Total_10%GD_50",
-          "QLD": "Total_12%GD_50",
-          "SA": "Total_6%GD_50"
+          "ACT": "Total_3%GD_50",
+          "QLD": "Total_1%GD_50",
+          "SA": "Total_1%GD_50"
         },
         "COR": {
           "VIC": "Total_12%GD_50",
           "NSW": {
-            "Ausgrid": "Total_20%GD_75",
-            "Essential": "Total_16%GD_75",
-            "Endeavour": "Total_16%GD_75",
-            "default": "Total_18%GD_75"
+            "Ausgrid": "Total_6%GD_50",
+            "Essential": "Total_3%GD_50",
+            "Endeavour": "Total_3%GD_50",
+            "default": "Total_18%GD_50"
           },
-          "ACT": "Total_10%GD_50",
-          "QLD": "Total_12%GD_50",
-          "SA": "Total_6%GD_50"
+          "ACT": "Total_3%GD_50",
+          "QLD": "Total_1%GD_50",
+          "SA": "Total_1%GD_50"
         }
       },
       "existingCustomer": {
         "ENE": {
           "VIC": "Total_12%GD_50",
           "NSW": {
-            "Ausgrid": "Total_20%GD_75",
-            "Essential": "Total_16%GD_75",
-            "Endeavour": "Total_16%GD_75",
-            "default": "Total_18%GD_75"
+            "Ausgrid": "Total_6%GD_50",
+            "Essential": "Total_3%GD_50",
+            "Endeavour": "Total_3%GD_50",
+            "default": "Total_18%GD_50"
           },
-          "ACT": "Total_10%GD_50",
-          "QLD": "Total_14%GD_50",
-          "SA": "Total_6%GD_50"
+          "ACT": "Total_3%GD_50",
+          "QLD": "Total_1%GD_50",
+          "SA": "Total_1%GD_50"
         },
         "PS": {
           "VIC": "Total_12%GD",
           "NSW": {
-            "Ausgrid": "Total_20%GD",
-            "Essential": "Total_16%GD",
-            "Endeavour": "Total_16%GD",
+            "Ausgrid": "Total_6%GD",
+            "Essential": "Total_3%GD",
+            "Endeavour": "Total_3%GD",
             "default": "Total_18%GD"
           },
-          "ACT": "Total_10%GD",
-          "QLD": "Total_12%GD",
-          "SA": "Total_6%GD"
+          "ACT": "Total_3%GD",
+          "QLD": "Total_1%GD",
+          "SA": "Total_1%GD"
         }
       }
     }
@@ -179,20 +179,20 @@
       "preSelect": {
         "Credit50": {
           "VIC": {
-            "heading": "$25 Sign Up Credit",
-            "description": "Get a $25 credit per new energy account on your first bill when you sign up.+"
+            "heading": "$50 online sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up online.+"
           },
           "NSW": {
-            "heading": "$75 online sign up credit",
-            "description": "Get a $75 credit on each new energy account when you sign up online.+"
+            "heading": "$50 online sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up online.+"
           },
           "ACT": {
             "heading": "$50 sign up credit",
             "description": "Get a $50 credit on each new energy account when you sign up.+"
           },
           "QLD": {
-            "heading": "",
-            "description": ""
+            "heading": "$50 online sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up online.+"
           },
           "SA": {
             "heading": "$50 sign up credit",
@@ -216,13 +216,13 @@
             "heading": "33% discount off total gas bill"
           },
           "NSW": {
-            "heading": "16% discount off total gas bill"
+            "heading": "3% discount off total gas bill"
           },
           "ACT": {
-            "heading": "15% discount off total gas bill"
+            "heading": "3% discount off total gas bill"
           },
           "SA": {
-            "heading": "15% discount off total gas bill"
+            "heading": "1% discount off total gas bill"
           },
           "description": "Guaranteed discount that applies to your energy charges"
         },
@@ -233,8 +233,8 @@
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up.+",
-          "NSW": "$75 online sign up credit. Get a $75 credit on each new energy account when you sign up online.+",
+          "VIC": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+          "NSW": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
           "ACT": "$50 sign up credit. Get a $50 credit on each new energy account when you sign up.+",
           "SA": "$50 sign up credit. Get a $50 credit on each new energy account when you sign up.+"
         },
@@ -244,9 +244,9 @@
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": {
           "VIC": "33% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
-          "NSW": "16% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
-          "ACT": "15% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
-          "SA": "15% discount off total gas bill. Guaranteed discount that applies to your energy charges."
+          "NSW": "3% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
+          "ACT": "3% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
+          "SA": "1% discount off total gas bill. Guaranteed discount that applies to your energy charges."
         }
       }
     },
@@ -254,52 +254,52 @@
       "newCustomer": {
         "ENE": {
           "VIC": "Total_33%GD_50",
-          "NSW": "Total_16%GD_75",
-          "ACT": "Total_15%GD_50",
-          "SA": "Total_15%GD_50"
+          "NSW": "Total_3%GD_50",
+          "ACT": "Total_3%GD_50",
+          "SA": "Total_1%GD_50"
         },
         "COR": {
           "VIC": "Total_33%GD_50",
-          "NSW": "Total_16%GD_75",
-          "ACT": "Total_15%GD_50",
-          "SA": "Total_15%GD_50"
+          "NSW": "Total_3%GD_50",
+          "ACT": "Total_3%GD_50",
+          "SA": "Total_1%GD_50"
         }
       },
       "existingCustomer": {
         "ENE": {
           "VIC": "Total_33%GD_50",
-          "NSW": "Total_16%GD_75",
-          "ACT": "Total_15%GD_50",
-          "SA": "Total_15%GD_50"
+          "NSW": "Total_3%GD_50",
+          "ACT": "Total_3%GD_50",
+          "SA": "Total_1%GD_50"
         },
         "PS": {
           "VIC": "Total_33%GD",
-          "NSW": "Total_16%GD",
-          "ACT": "Total_15%GD",
-          "SA": "Total_15%GD"
+          "NSW": "Total_3%GD",
+          "ACT": "Total_3%GD",
+          "SA": "Total_1%GD"
         }
       }
     }
   },
   "disclaimers": {
     "referencePriceComparison": {
-  "heading": "Reference price comparison and estimated annual cost",
-  "VIC": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
-  },
-  "NSW": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
-  },
-  "ACT": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
-  },
-  "QLD": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
-  },
-  "SA": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
-  }
-},
+      "heading": "Reference price comparison and estimated annual cost",
+      "VIC": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      },
+      "NSW": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      },
+      "ACT": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      },
+      "QLD": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      },
+      "SA": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      }
+    },
     "goNeutral": {
       "heading": "Go Neutral",
       "QLD": {
@@ -325,7 +325,7 @@
     "Credit50": {
       "VIC": {
         "heading": "Sign up credits",
-        "description": "+ Offer available to VIC residential customers who sign up to an electricity or gas offer. Limit of one $25 credit per new energy account, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        "description": "+ Offer available to eligible VIC residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
       },
       "NSW": {
         "heading": "Sign up credits",
@@ -368,20 +368,20 @@
         "description": "* Offer only for eligible VIC residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "NSW": {
-        "heading": "Flexi Plan",
-        "description": "* Offer only for eligible NSW residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+        "heading": "Total Plan",
+        "description": "* Offer only for eligible NSW residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "ACT": {
-        "heading": "Flexi Plan",
-        "description": "* Offer only for eligible ACT residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+        "heading": "Total Plan",
+        "description": "* Offer only for eligible ACT residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "QLD": {
-        "heading": "Flexi Plan",
-        "description": "* Offer only for eligible QLD residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+        "heading": "Total Plan",
+        "description": "* Offer only for eligible QLD residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "SA": {
-        "heading": "Flexi Plan",
-        "description": "* Offer only for eligible SA residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+        "heading": "Total Plan",
+        "description": "* Offer only for eligible SA residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       }
     }
   }

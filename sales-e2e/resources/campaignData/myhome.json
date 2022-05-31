@@ -1,6 +1,26 @@
 {
-  "planName": "Total Plan",
-  "planDescription": "Great discount on your total energy bill guaranteed - every time.",
+  "planDetails": {
+    "VIC": {
+      "planName": "Total Plan",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+    },
+    "NSW": {
+      "planName": "Flexi Plan",
+      "planDescription": "Variable rates with a total energy bill discount."
+    },
+    "ACT": {
+      "planName": "Flexi Plan",
+      "planDescription": "Variable rates with a total energy bill discount."
+    },
+    "QLD": {
+      "planName": "Flexi Plan",
+      "planDescription": "Variable rates with a total energy bill discount."
+    },
+    "SA": {
+      "planName": "Flexi Plan",
+      "planDescription": "Variable rates with a total energy bill discount."
+    }
+  },
   "electricity": {
     "feature": {
       "preSelect": {
@@ -57,7 +77,7 @@
             "heading": "10% discount off total electricity bill"
           },
           "QLD": {
-            "heading": "14% discount off total electricity bill"
+            "heading": "12% discount off total electricity bill"
           },
           "SA": {
             "heading": "6% discount off total electricity bill"
@@ -67,6 +87,10 @@
         "noStandardConnectionFee": {
           "heading": "No standard connection fees",
           "description": "Move with us and we'll waive connection and special meter reads during business hours."
+        },
+        "variableRates": {
+          "heading": "Variable rates",
+          "description": "Your energy charges are variable for the benefit period. We'll let you know in advance before your rates change."
         }
       },
       "postSelect": {
@@ -79,6 +103,7 @@
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "moveHomeCredit": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+        "variableRates": "Variable rates. Your energy charges are variable for the benefit period. We'll let you know in advance before your rates change.",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": {
           "VIC": "12% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
@@ -88,7 +113,7 @@
             "Endeavour": "16% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
           },
           "ACT": "10% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
-          "QLD": "14% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+          "QLD": "12% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
           "SA": "6% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
         },
         "noStandardConnectionFee": "No standard connection fees. Move with us and we'll waive connection and special meter reads during business hours."
@@ -105,7 +130,7 @@
             "default": "Total_18%GD"
           },
           "ACT": "Total_10%GD",
-          "QLD": "Total_14%GD",
+          "QLD": "Total_12%GD",
           "SA": "Total_6%GD"
         },
         "COR": {
@@ -117,7 +142,7 @@
             "default": "Total_18%GD"
           },
           "ACT": "Total_10%GD",
-          "QLD": "Total_14%GD",
+          "QLD": "Total_12%GD",
           "SA": "Total_6%GD"
         }
       },
@@ -131,7 +156,7 @@
             "default": "Total_18%GD"
           },
           "ACT": "Total_10%GD",
-          "QLD": "Total_14%GD",
+          "QLD": "Total_12%GD",
           "SA": "Total_6%GD"
         },
         "PS": {
@@ -143,7 +168,7 @@
             "default": "Total_18%GD"
           },
           "ACT": "Total_10%GD",
-          "QLD": "Total_14%GD",
+          "QLD": "Total_12%GD",
           "SA": "Total_6%GD"
         }
       }
@@ -200,6 +225,10 @@
             "heading": "15% discount off total gas bill"
           },
           "description": "Guaranteed discount that applies to your energy charges"
+        },
+        "variableRates": {
+          "heading": "Variable rates",
+          "description": "Your energy charges are variable for the benefit period. We'll let you know in advance before your rates change."
         }
       },
       "postSelect": {
@@ -211,6 +240,7 @@
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "moveHomeCredit": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+        "variableRates": "Variable rates. Your energy charges are variable for the benefit period. We'll let you know in advance before your rates change.",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": {
           "VIC": "33% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
@@ -333,21 +363,25 @@
       }
     },
     "plandisclaimer": {
-      "heading": "Total Plan",
       "VIC": {
+        "heading": "Total Plan",
         "description": "* Offer only for eligible VIC residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "NSW": {
-        "description": "* Offer only for eligible NSW residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "heading": "Flexi Plan",
+        "description": "* Offer only for eligible NSW residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
       },
       "ACT": {
-        "description": "* Offer only for eligible ACT residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "heading": "Flexi Plan",
+        "description": "* Offer only for eligible ACT residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
       },
       "QLD": {
-        "description": "**Offer only for eligible QLD residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "heading": "Flexi Plan",
+        "description": "* Offer only for eligible QLD residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
       },
       "SA": {
-        "description": "* Offer only for eligible SA residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "heading": "Flexi Plan",
+        "description": "* Offer only for eligible SA residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges (after solar credits, if any) and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
       }
     }
   }

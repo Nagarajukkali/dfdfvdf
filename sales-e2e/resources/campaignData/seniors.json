@@ -1,6 +1,26 @@
 {
-  "planName": "Total Plan",
-  "planDescription": "Great discount on your total energy bill guaranteed - every time.",
+  "planDetails": {
+    "VIC": {
+      "planName": "Total Plan",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+    },
+    "NSW": {
+      "planName": "Total Plan",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+    },
+    "ACT": {
+      "planName": "Total Plan",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+    },
+    "QLD": {
+      "planName": "Total Plan",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+    },
+    "SA": {
+      "planName": "Total Plan",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+    }
+  },
   "electricity": {
     "feature": {
       "preSelect": {
@@ -52,7 +72,7 @@
             "Endeavour": "Alliance_18%GD_50",
             "default": "Alliance_18%GD_50"
           },
-          "QLD": "Alliance_16%GD_50"
+          "QLD": "Alliance_14%GD_50"
         },
         "COR": {
           "VIC": "Alliance_14%GD_50",
@@ -62,7 +82,7 @@
             "Endeavour": "Alliance_18%GD_50",
             "default": "Alliance_18%GD_50"
           },
-          "QLD": "Alliance_16%GD_50"
+          "QLD": "Alliance_14%GD_50"
         }
       },
       "existingCustomer": {
@@ -74,7 +94,7 @@
             "Endeavour": "Alliance_18%GD_50",
             "default": "Alliance_18%GD_50"
           },
-          "QLD": "Alliance_16%GD_50"
+          "QLD": "Alliance_14%GD_50"
         },
         "PS": {
           "VIC": "Alliance_14%GD",
@@ -84,7 +104,7 @@
             "Endeavour": "Alliance_18%GD",
             "default": "Alliance_18%GD"
           },
-          "QLD": "Alliance_16%GD"
+          "QLD": "Alliance_14%GD"
         }
       }
     }
@@ -195,25 +215,25 @@
       "description": ""
     },
     "Credit50": {
-      "NSW": {
-        "heading": "",
-        "description": ""
-      },
       "VIC": {
-        "heading": "$50 Sign Up Credit",
-        "description": "+ Offer available to VIC residential customers who sign up to an electricity or gas offer. Limit of one $50 credit per new energy account, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        "heading": "Sign up credits",
+        "description": "+ Offer available to eligible VIC residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
+      },
+      "NSW": {
+        "heading": "Sign up credits",
+        "description": "+ Offer available to eligible NSW residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
       },
       "ACT": {
-        "heading": "",
-        "description": ""
+        "heading": "Sign up credits",
+        "description": "+ Offer available to eligible ACT residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
       },
       "QLD": {
-        "heading": "",
-        "description": ""
+        "heading": "Sign up credits",
+        "description": "+ Offer available to eligible QLD residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
       },
       "SA": {
-        "heading": "",
-        "description": ""
+        "heading": "Sign up credits",
+        "description": "+ Offer available to eligible SA residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
       }
     },
     "moveHomeCredit": {
@@ -229,23 +249,26 @@
       }
     },
     "plandisclaimer": {
-      "heading": "Total Plan",
       "VIC": {
+        "heading": "Total Plan",
         "description": "* Offer only for eligible VIC residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "NSW": {
+        "heading": "Total Plan",
         "description": "* Offer only for eligible NSW residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "ACT": {
-        "description": "* Offer only for eligible ACT residential customers. Individuals must be a current member or employee of an EnergyAustralia Partner Program participant. Individuals must have received the unique promotional code directly from the EnergyAustralia Partner Program participant and not via other means. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charge and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "heading": "Total Plan",
+        "description": "* Offer only for eligible ACT residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "QLD": {
+        "heading": "Total Plan",
         "description": "* Offer only for eligible QLD residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "SA": {
-        "description": "* Offer only for eligible SA residential customers. Individuals must be a current member or employee of an EnergyAustralia Partner Program participant. Individuals must have received the unique promotional code directly from the EnergyAustralia Partner Program participant and not via other means. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "heading": "Total Plan",
+        "description": "* Offer only for eligible SA residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       }
     }
   }
 }
-

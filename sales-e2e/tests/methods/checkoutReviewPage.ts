@@ -479,10 +479,48 @@ export class checkoutReviewMethod {
 
   public static async validatePlanName(t: any, json: any, dataTable) {
     if (await testFunction.isElectricity(dataTable[0].fuelType)) {
-      await testFunction.assertText(t, eaCheckoutReviewPage.elements.elePlanName, json.planName);
+      // await testFunction.assertText(t, eaCheckoutReviewPage.elements.elePlanName, json.planName);
+      switch (dataTable[0].state) {
+        case AustralianState.NSW:
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.elePlanName, json.planDetails.NSW.planName);
+          break;
+        case AustralianState.VIC:
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.elePlanName, json.planDetails.VIC.planName);
+          break;
+        case AustralianState.SA:
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.elePlanName, json.planDetails.SA.planName);
+          break;
+        case AustralianState.ACT:
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.elePlanName, json.planDetails.ACT.planName);
+          break;
+        case AustralianState.QLD:
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.elePlanName, json.planDetails.QLD.planName);
+          break;
+        default:
+          console.log("Invalid Electricity plan details for state");
+      }
     }
     if (await testFunction.isGas(dataTable[0].fuelType)) {
-      await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasPlanName, json.planName);
+      // await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasPlanName, json.planName);
+      switch (dataTable[0].state) {
+        case AustralianState.NSW:
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasPlanName, json.planDetails.NSW.planName);
+          break;
+        case AustralianState.VIC:
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasPlanName, json.planDetails.VIC.planName);
+          break;
+        case AustralianState.SA:
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasPlanName, json.planDetails.SA.planName);
+          break;
+        case AustralianState.ACT:
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasPlanName, json.planDetails.ACT.planName);
+          break;
+        case AustralianState.QLD:
+          await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasPlanName, json.planDetails.QLD.planName);
+          break;
+        default:
+          console.log("Invalid Gas plan details for state");
+      }
     }
   }
 
