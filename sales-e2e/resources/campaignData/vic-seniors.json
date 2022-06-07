@@ -1,6 +1,26 @@
 {
-  "planName": "Total Plan",
-  "planDescription": "Great discount on your total energy bill guaranteed - every time.",
+  "planDetails": {
+    "VIC": {
+      "planName": "Total Plan",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+    },
+    "NSW": {
+      "planName": "Total Plan Plus",
+      "planDescription": "VIP discount on your total energy bill guaranteed - every time."
+    },
+    "ACT": {
+      "planName": "Total Plan Plus",
+      "planDescription": "VIP discount on your total energy bill guaranteed - every time."
+    },
+    "QLD": {
+      "planName": "Total Plan Plus",
+      "planDescription": "VIP discount on your total energy bill guaranteed - every time."
+    },
+    "SA": {
+      "planName": "Total Plan Plus",
+      "planDescription": "VIP discount on your total energy bill guaranteed - every time."
+    }
+  },
   "electricity": {
     "feature": {
       "preSelect": {
@@ -185,20 +205,24 @@
       }
     },
     "plandisclaimer": {
-      "heading": "Total Plan",
       "VIC": {
+        "heading": "Total Plan",
         "description": "* Offer only for eligible VIC residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "NSW": {
+        "heading": "Total Plan",
         "description": "* Offer only for eligible NSW residential customers. Individuals must be a current member or employee of an EnergyAustralia Partner Program participant. Individuals must have received the unique promotional code directly from the EnergyAustralia Partner Program participant and not via other means. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "ACT": {
+        "heading": "Total Plan",
         "description": "* Offer only for eligible ACT residential customers. Individuals must be a current member or employee of an EnergyAustralia Partner Program participant. Individuals must have received the unique promotional code directly from the EnergyAustralia Partner Program participant and not via other means. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charge and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "QLD": {
+        "heading": "Total Plan",
         "description": "* Offer only for eligible QLD residential customers. Individuals must be a current member or employee of an EnergyAustralia Partner Program participant. Individuals must have received the unique promotional code directly from the EnergyAustralia Partner Program participant and not via other means. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "SA": {
+        "heading": "Total Plan",
         "description": "* Offer only for eligible SA residential customers. Individuals must be a current member or employee of an EnergyAustralia Partner Program participant. Individuals must have received the unique promotional code directly from the EnergyAustralia Partner Program participant and not via other means. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       }
     }

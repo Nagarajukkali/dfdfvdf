@@ -1,308 +1,330 @@
 {
-    "planName": "No Frills",
-    "planDescription": "Simple low rates and built-in savings for 12 months.",
-
-    "electricity": {
-      "feature": {
-        "preSelect": {
-          "Credit50": {
-            "VIC": {
-              "heading": "$50 Sign Up Credit",
-              "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
-            },
-            "NSW": {
-              "heading": "$50 Sign Up Credit",
-              "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
-            },
-            "ACT": {
-              "heading": "$25 Sign Up Credit",
-              "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
-            },
-            "QLD": {
-              "heading": "$50 Sign Up Credit",
-              "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
-            },
-            "SA": {
-              "heading": "$25 Sign Up Credit",
-              "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
-            }
+  "planDetails": {
+    "VIC": {
+      "planName": "No Frills",
+      "planDescription": "Simple low rates and built-in savings for 12 months."
+    },
+    "NSW": {
+      "planName": "No Frills",
+      "planDescription": "Simple low rates and built-in savings for 12 months."
+    },
+    "ACT": {
+      "planName": "No Frills",
+      "planDescription": "Simple low rates and built-in savings for 12 months."
+    },
+    "QLD": {
+      "planName": "No Frills",
+      "planDescription": "Simple low rates and built-in savings for 12 months."
+    },
+    "SA": {
+      "planName": "No Frills",
+      "planDescription": "Simple low rates and built-in savings for 12 months."
+    }
+  },
+  "electricity": {
+    "feature": {
+      "preSelect": {
+        "Credit50": {
+          "VIC": {
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
           },
-          "carbonNeutral": {
-            "heading": "Carbon neutral option",
-            "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
-          },
-          "moveHomeCredit": {
-            "heading": "$25 online sign up credit",
-            "description": "Get a $25 credit on each new energy account when you sign up online.+"
-          },
-          "peaceOfMind": {
-            "heading": "Peace of mind",
-            "description": "Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
-          },
-          "discountOffTotalEnergyBill": {
-            "heading": "Discount off total energy bill",
-            "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
-          },
-          "noStandardConnectionFee": {
+          "NSW": {
             "heading": "",
             "description": ""
+          },
+          "ACT": {
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+          },
+          "QLD": {
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+          },
+          "SA": {
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
           }
         },
-        "postSelect": {
-          "Credit50": {
-            "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
-            "NSW": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
-            "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
-            "QLD": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
-            "SA" : "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+"
-          },
-          "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
-          "moveHomeCredit": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
-          "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
-          "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges."
+        "carbonNeutral": {
+          "heading": "Carbon neutral option",
+          "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
+        },
+        "moveHomeCredit": {
+          "heading": "$50 online sign up credit",
+          "description": "Get a $50 credit on each new energy account when you sign up online.+"
+        },
+        "peaceOfMind": {
+          "heading": "Peace of mind",
+          "description": "Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+        },
+        "discountOffTotalEnergyBill": {
+          "heading": "Discount off total energy bill",
+          "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
+        },
+        "noStandardConnectionFee": {
+          "heading": "",
+          "description": ""
         }
       },
-      "sourceCode": {
-        "newCustomer": {
-          "ENE": {
-            "VIC": "NOFRILLS_25",
-            "NSW": {
-              "Ausgrid": "NOFRILLS_25",
-              "Essential": "NOFRILLS_25",
-              "Endeavour": "NOFRILLS_25",
-              "default": "NOFRILLS_25"
-            },
-            "ACT": "NOFRILLS_25",
-            "QLD": "NOFRILLS_25",
-            "SA": "NOFRILLS_25"
-          },
-          "COR": {
-            "VIC": "NOFRILLS_25",
-            "NSW": {
-              "Ausgrid": "NOFRILLS_25",
-              "Essential": "NOFRILLS_25",
-              "Endeavour": "NOFRILLS_25",
-              "default": "NOFRILLS_25"
-            },
-            "ACT": "NOFRILLS_25",
-            "QLD": "NOFRILLS_25",
-            "SA": "NOFRILLS_25"
-          }
+      "postSelect": {
+        "Credit50": {
+          "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
+          "NSW": "",
+          "ACT": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
+          "QLD": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
+          "SA": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+"
         },
-        "existingCustomer": {
-          "ENE": {
-            "VIC": "NOFRILLS_25",
-            "NSW": {
-              "Ausgrid": "NOFRILLS_25",
-              "Essential": "NOFRILLS_25",
-              "Endeavour": "NOFRILLS_25",
-              "default": "NOFRILLS_25"
-            },
-            "ACT": "NOFRILLS_25",
-            "QLD": "NOFRILLS_25",
-            "SA": "NOFRILLS_25"
-          },
-          "PS": {
-            "VIC": "NOFRILLS",
-            "NSW": {
-              "Ausgrid": "NOFRILLS",
-              "Essential": "NOFRILLS",
-              "Endeavour": "NOFRILLS",
-              "default": "NOFRILLS"
-            },
-            "ACT": "NOFRILLS",
-            "QLD": "NOFRILLS",
-            "SA": "NOFRILLS"
-          }
-        }
+        "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
+        "moveHomeCredit": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+        "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
+        "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
+        "noStandardConnectionFee": ""
       }
     },
-
-    "gas": {
-      "feature": {
-        "preSelect": {
-          "Credit50": {
-            "VIC": {
-              "heading": "$50 Sign Up Credit",
-              "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
-            },
-            "NSW": {
-              "heading": "$50 Sign Up Credit",
-              "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
-            },
-            "ACT": {
-              "heading": "$25 Sign Up Credit",
-              "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
-            },
-            "QLD": {
-              "heading": "$50 Sign Up Credit",
-              "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
-            },
-            "SA": {
-              "heading": "$25 Sign Up Credit",
-              "description": "Get a $25 credit per new energy account on your first bill when you sign up online.+"
-            }
+    "sourceCode": {
+      "newCustomer": {
+        "ENE": {
+          "VIC": "NOFRILLS_50",
+          "NSW": {
+            "Ausgrid": "NOFRILLS_50",
+            "Essential": "NOFRILLS_50",
+            "Endeavour": "NOFRILLS_50",
+            "default": "NOFRILLS_50"
           },
-          "carbonNeutral": {
-            "heading": "Carbon neutral option",
-            "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
-          },
-          "moveHomeCredit": {
-            "heading": "$25 online sign up credit",
-            "description": "Get a $25 credit on each new energy account when you sign up online.+"
-          },
-          "peaceOfMind": {
-            "heading": "Peace of mind",
-            "description": "Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
-          },
-          "discountOffTotalEnergyBill": {
-            "heading": "Discount off total energy bill",
-            "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
-          }
+          "ACT": "NOFRILLS_50",
+          "QLD": "NOFRILLS_50",
+          "SA": "NOFRILLS_50"
         },
-        "postSelect": {
-          "Credit50": {
-            "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
-            "NSW": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
-            "ACT": "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+",
-            "SA" : "$25 Sign Up Credit. Get a $25 credit per new energy account on your first bill when you sign up online.+"
+        "COR": {
+          "VIC": "NOFRILLS_50",
+          "NSW": {
+            "Ausgrid": "NOFRILLS_50",
+            "Essential": "NOFRILLS_50",
+            "Endeavour": "NOFRILLS_50",
+            "default": "NOFRILLS_50"
           },
-          "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
-          "moveHomeCredit": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
-          "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
-          "discountOffTotalEnergyBill": ""
+          "ACT": "NOFRILLS_50",
+          "QLD": "NOFRILLS_50",
+          "SA": "NOFRILLS_50"
         }
       },
-      "sourceCode": {
-        "newCustomer": {
-          "ENE": {
-            "VIC": "NOFRILLS_25",
-            "NSW": "NOFRILLS_25",
-            "ACT": "NOFRILLS_25",
-            "SA": "NOFRILLS_25"
+      "existingCustomer": {
+        "ENE": {
+          "VIC": "NOFRILLS_50",
+          "NSW": {
+            "Ausgrid": "NOFRILLS_50",
+            "Essential": "NOFRILLS_50",
+            "Endeavour": "NOFRILLS_50",
+            "default": "NOFRILLS_50"
           },
-          "COR": {
-            "VIC": "NOFRILLS_25",
-            "NSW": "NOFRILLS_25",
-            "ACT": "NOFRILLS_25",
-            "SA": "NOFRILLS_25"
-          }
+          "ACT": "NOFRILLS_50",
+          "QLD": "NOFRILLS_50",
+          "SA": "NOFRILLS_50"
         },
-        "existingCustomer": {
-          "ENE": {
-            "VIC": "NOFRILLS_25",
-            "NSW": "NOFRILLS_25",
-            "ACT": "NOFRILLS_25",
-            "SA": "NOFRILLS_25"
+        "PS": {
+          "VIC": "NOFRILLS",
+          "NSW": {
+            "Ausgrid": "NOFRILLS",
+            "Essential": "NOFRILLS",
+            "Endeavour": "NOFRILLS",
+            "default": "NOFRILLS"
           },
-          "PS": {
-            "VIC": "NOFRILLS",
-            "NSW": "NOFRILLS",
-            "ACT": "NOFRILLS",
-            "SA": "NOFRILLS"
-          }
-        }
-      }
-    },
-
-    "disclaimers": {
-      "referencePriceComparison": {
-  "heading": "Reference price comparison and estimated annual cost",
-  "VIC": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
-  },
-  "NSW": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
-  },
-  "ACT": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
-  },
-  "QLD": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
-  },
-  "SA": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
-  }
-},
-      "goNeutral": {
-        "heading": "Go Neutral",
-        "QLD": {
-          "description": "^ Opt in and we will offset the carbon emissions from your electricity usage from the 6-month anniversary of the date your EnergyAustralia account is established. We will let you know in advance if we withdraw Go Neutral. For more info and full terms visit energyaustralia.com.au/carbon-neutral."
-        },
-        "NonQLD": {
-          "description": "^ Opt in and we will offset the carbon emissions from your electricity and/or gas usage from the 6-month anniversary of the date your EnergyAustralia account is established. We will let you know in advance if we withdraw Go Neutral. For more info and full terms visit energyaustralia.com.au/carbon-neutral."
-        }
-      },
-      "solarBuyBack": {
-        "heading": "Solar feed-in tariffs",
-        "VIC": {
-          "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. For more information about the Victorian FiT scheme see www.energy.vic.gov.au/renewable-energy/victorian-feed-in-tariff."
-        },
-        "NonVIC": {
-          "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
-        }
-      },
-      "noStandardConnectionFee": {
-        "heading": "",
-        "description": ""
-      },
-      "Credit50": {
-        "VIC": {
-          "heading": "$50 Sign Up Credit",
-          "description": "+ Offer available to VIC residential customers who sign up to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
-        },
-        "NSW": {
-          "heading": "$50 Sign Up Credit",
-          "description": "+ Offer available to NSW residential customers who sign up to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
-        },
-        "ACT": {
-          "heading": "$25 Sign Up Credit",
-          "description": "+ Offer available to ACT residential customers only who sign up via energyaustralia.com.au to an electricity or gas market offer. Limit of one $25 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
-        },
-        "QLD": {
-          "heading": "$50 Sign Up Credit",
-          "description": "+ Offer available to QLD residential customers who sign up to an electricity or gas market offer. Limit of one $50 credit per new energy account, per energy type, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
-        },
-        "SA": {
-          "heading": "$25 Sign Up Credit",
-          "description": "+ Offer available to SA residential customers only who sign up via energyaustralia.com.au to an electricity or gas market offer. Limit of one $25 credit per new energy account, per energy type, per customer address. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
-        }
-      },
-      "moveHomeCredit": {
-        "heading": "$25 online sign up credit",
-        "VIC": {
-          "description": "+ Offer available to eligible VIC residential customers who sign up to an electricity or gas offer online. Limit of one $25 credit per new energy account, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
-        },
-        "NSW": {
-          "description": "+ Offer available to eligible NSW residential customers who sign up to an electricity or gas offer online. Limit of one $25 credit per new energy account, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
-        },
-        "ACT": {
-          "description": "+ Offer available to eligible ACT residential customers who sign up to an electricity or gas offer online. Limit of one $25 credit per new energy account, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
-        },
-        "QLD": {
-          "description": "+ Offer available to eligible QLD residential customers who sign up to an electricity or gas offer online. Limit of one $25 credit per new energy account, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
-        },
-        "SA": {
-          "description": "+ Offer available to eligible SA residential customers who sign up to an electricity or gas offer online. Limit of one $25 credit per new energy account, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
-        }
-      },
-      "noFrills": {
-        "heading": "No Frills",
-        "VIC": {
-          "description": "* Offer only for eligible VIC residential customers. Not available in all areas or for all tariff types. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
-        },
-        "NSW": {
-          "description": "* Offer only for eligible NSW residential customers. Not available in all areas or for all tariff types. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
-        },
-        "ACT": {
-          "description": "* Offer only for eligible ACT residential customers. Not available in all areas or for all tariff types. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
-        },
-        "QLD": {
-          "description": "* Offer only for eligible QLD residential customers. Not available in all areas or for all tariff types. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
-        },
-        "SA": {
-          "description": "* Offer only for eligible SA residential customers. Not available in all areas or for all tariff types. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+          "ACT": "NOFRILLS",
+          "QLD": "NOFRILLS",
+          "SA": "NOFRILLS"
         }
       }
     }
+  },
+  "gas": {
+    "feature": {
+      "preSelect": {
+        "Credit50": {
+          "VIC": {
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+          },
+          "NSW": {
+            "heading": "",
+            "description": ""
+          },
+          "ACT": {
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+          },
+          "QLD": {
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+          },
+          "SA": {
+            "heading": "$50 Sign Up Credit",
+            "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+          }
+        },
+        "carbonNeutral": {
+          "heading": "Carbon neutral option",
+          "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
+        },
+        "moveHomeCredit": {
+          "heading": "$50 online sign up credit",
+          "description": "Get a $50 credit on each new energy account when you sign up online.+"
+        },
+        "peaceOfMind": {
+          "heading": "Peace of mind",
+          "description": "Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+        },
+        "discountOffTotalEnergyBill": {
+          "heading": "Discount off total energy bill",
+          "description": "Guaranteed discount that applies to both energy usage rates and daily supply charges."
+        }
+      },
+      "postSelect": {
+        "Credit50": {
+          "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
+          "NSW": "",
+          "ACT": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
+          "SA": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+"
+        },
+        "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
+        "moveHomeCredit": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+        "discountOffTotalEnergyBill": "Discount off total energy bill. Guaranteed discount that applies to both energy usage rates and daily supply charges.",
+        "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+      }
+    },
+    "sourceCode": {
+      "newCustomer": {
+        "ENE": {
+          "VIC": "NOFRILLS_50",
+          "NSW": "NOFRILLS_50",
+          "ACT": "NOFRILLS_50",
+          "SA": "NOFRILLS_50"
+        },
+        "COR": {
+          "VIC": "NOFRILLS_50",
+          "NSW": "NOFRILLS_50",
+          "ACT": "NOFRILLS_50",
+          "SA": "NOFRILLS_50"
+        }
+      },
+      "existingCustomer": {
+        "ENE": {
+          "VIC": "NOFRILLS_50",
+          "NSW": "NOFRILLS_50",
+          "ACT": "NOFRILLS_50",
+          "SA": "NOFRILLS_50"
+        },
+        "PS": {
+          "VIC": "NOFRILLS",
+          "NSW": "NOFRILLS",
+          "ACT": "NOFRILLS",
+          "SA": "NOFRILLS"
+        }
+      }
+    }
+  },
+  "disclaimers": {
+    "referencePriceComparison": {
+      "heading": "Reference price comparison and estimated annual cost",
+      "VIC": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      },
+      "NSW": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      },
+      "ACT": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      },
+      "QLD": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      },
+      "SA": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      }
+    },
+    "goNeutral": {
+      "heading": "Go Neutral",
+      "QLD": {
+        "description": "^ Opt in and we will offset the carbon emissions from your electricity usage from the 6-month anniversary of the date your EnergyAustralia account is established. We will let you know in advance if we withdraw Go Neutral. For more info and full terms visit energyaustralia.com.au/carbon-neutral."
+      },
+      "NonQLD": {
+        "description": "^ Opt in and we will offset the carbon emissions from your electricity and/or gas usage from the 6-month anniversary of the date your EnergyAustralia account is established. We will let you know in advance if we withdraw Go Neutral. For more info and full terms visit energyaustralia.com.au/carbon-neutral."
+      }
+    },
+    "solarBuyBack": {
+      "heading": "Solar feed-in tariffs",
+      "VIC": {
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. For more information about the Victorian FiT scheme see www.energy.vic.gov.au/renewable-energy/victorian-feed-in-tariff."
+      },
+      "NonVIC": {
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
+      }
+    },
+    "noStandardConnectionFee": {
+      "heading": "",
+      "description": ""
+    },
+    "Credit50": {
+      "VIC": {
+        "heading": "Sign up credits",
+        "description": "+ Offer available to eligible VIC residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
+      },
+      "NSW": {
+        "heading": "Sign up credits",
+        "description": "+ Offer available to eligible NSW residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
+      },
+      "ACT": {
+        "heading": "Sign up credits",
+        "description": "+ Offer available to eligible ACT residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
+      },
+      "QLD": {
+        "heading": "Sign up credits",
+        "description": "+ Offer available to eligible QLD residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
+      },
+      "SA": {
+        "heading": "Sign up credits",
+        "description": "+ Offer available to eligible SA residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
+      }
+    },
+    "moveHomeCredit": {
+      "heading": "Sign up credits",
+      "VIC": {
+        "description": "+ Offer available to eligible VIC residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
+      },
+      "NSW": {
+        "description": "+ Offer available to eligible NSW residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
+      },
+      "ACT": {
+        "description": "+ Offer available to eligible ACT residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
+      },
+      "QLD": {
+        "description": "+ Offer available to eligible QLD residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
+      },
+      "SA": {
+        "description": "+ Offer available to eligible SA residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
+      }
+    },
+    "noFrills": {
+      "VIC": {
+        "heading": "No Frills",
+        "description": "* Offer only for eligible VIC residential customers. Not available in all areas or for all tariff types. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+      },
+      "NSW": {
+        "heading": "No Frills",
+        "description": "* Offer only for eligible NSW residential customers. Not available in all areas or for all tariff types. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+      },
+      "ACT": {
+        "heading": "No Frills",
+        "description": "* Offer only for eligible ACT residential customers. Not available in all areas or for all tariff types. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+      },
+      "QLD": {
+        "heading": "No Frills",
+        "description": "* Offer only for eligible QLD residential customers. Not available in all areas or for all tariff types. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+      },
+      "SA": {
+        "heading": "No Frills",
+        "description": "* Offer only for eligible SA residential customers. Not available in all areas or for all tariff types. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+      }
+    }
+  }
 }

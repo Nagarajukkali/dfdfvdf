@@ -1,7 +1,26 @@
 {
-    "planName": "Business Carbon Neutral",
-    "planDescription": "Carbon Neutral electricity and a guaranteed total energy bill discount - everytime.",
-
+  "planDetails": {
+    "VIC": {
+      "planName": "Business Carbon Neutral",
+      "planDescription": "Carbon Neutral electricity and a guaranteed total energy bill discount - everytime."
+    },
+    "NSW": {
+      "planName": "Business Carbon Neutral",
+      "planDescription": "Carbon Neutral electricity and a guaranteed total energy bill discount - everytime."
+    },
+    "ACT": {
+      "planName": "Business Carbon Neutral",
+      "planDescription": "Carbon Neutral electricity and a guaranteed total energy bill discount - everytime."
+    },
+    "QLD": {
+      "planName": "Business Carbon Neutral",
+      "planDescription": "Carbon Neutral electricity and a guaranteed total energy bill discount - everytime."
+    },
+    "SA": {
+      "planName": "Business Carbon Neutral",
+      "planDescription": "Carbon Neutral electricity and a guaranteed total energy bill discount - everytime."
+    }
+  },
     "electricity": {
       "feature": {
         "preSelect": {
@@ -313,20 +332,24 @@
         }
       },
       "plandisclaimer": {
-        "heading": "Business Carbon Neutral",
         "VIC": {
+          "heading": "Business Carbon Neutral",
           "description": "* Offer only for eligible VIC business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time. We will offset the carbon emissions from your electricity consumption under your eligible account on and from the supply start date. For more information on Business Carbon Neutral and for full terms visit https://www.energyaustralia.com.au/business/electricity-and-gas/business-carbon-neutral."
         },
         "NSW": {
+          "heading": "Business Carbon Neutral",
           "description": "* Offer only for eligible NSW business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time. We will offset the carbon emissions from your electricity consumption under your eligible account on and from the supply start date. We may change or end this offer at any time. For more information on Business Carbon Neutral and for full terms visit https://www.energyaustralia.com.au/business/electricity-and-gas/business-carbon-neutral."
         },
         "ACT": {
+          "heading": "Business Carbon Neutral",
           "description": "* Offer only for eligible ACT business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time. We will offset the carbon emissions from your electricity consumption under your eligible account on and from the supply start date. We may change or end this offer at any time. For more information on Business Carbon Neutral and for full terms visit https://www.energyaustralia.com.au/business/electricity-and-gas/business-carbon-neutral."
         },
         "QLD": {
+          "heading": "Business Carbon Neutral",
           "description": "* Offer only for eligible QLD business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time. We will offset the carbon emissions from your electricity consumption under your eligible account on and from the supply start date. We may change or end this offer at any time. For more information on Business Carbon Neutral and for full terms visit https://www.energyaustralia.com.au/business/electricity-and-gas/business-carbon-neutral."
         },
         "SA": {
+          "heading": "Business Carbon Neutral",
           "description": "* Offer only for eligible SA business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time. We will offset the carbon emissions from your electricity consumption under your eligible account on and from the supply start date. We may change or end this offer at any time. For more information on Business Carbon Neutral and for full terms visit https://www.energyaustralia.com.au/business/electricity-and-gas/business-carbon-neutral."
         }
       }

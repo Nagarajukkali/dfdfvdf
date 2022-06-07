@@ -1,7 +1,26 @@
 {
-  "planName": "Balance Plan",
-  "planDescription": "Variable rates and no lock-in contracts",
-
+  "planDetails": {
+    "VIC": {
+      "planName": "Balance Plan",
+      "planDescription": "Variable rates and no lock-in contracts"
+    },
+    "NSW": {
+      "planName": "Balance Plan",
+      "planDescription": "Variable rates and no lock-in contracts"
+    },
+    "ACT": {
+      "planName": "Balance Plan",
+      "planDescription": "Variable rates and no lock-in contracts"
+    },
+    "QLD": {
+      "planName": "Balance Plan",
+      "planDescription": "Variable rates and no lock-in contracts"
+    },
+    "SA": {
+      "planName": "Balance Plan",
+      "planDescription": "Variable rates and no lock-in contracts"
+    }
+  },
   "electricity": {
     "feature": {
       "preSelect": {
@@ -268,20 +287,24 @@
       }
     },
     "plandisclaimer": {
-      "heading": "Balance Plan",
       "VIC": {
+        "heading": "Balance Plan",
         "description": "* Offer only for eligible VIC residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
       },
       "NSW": {
+        "heading": "Balance Plan",
         "description": "* Offer only for eligible NSW residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
       },
       "ACT": {
+        "heading": "Balance Plan",
         "description": "* Offer only for eligible ACT residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
       },
       "QLD": {
+        "heading": "Balance Plan",
         "description": "* Offer only for eligible QLD residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
       },
       "SA": {
+        "heading": "Balance Plan",
         "description": "* Offer only for eligible SA residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
       }
     }

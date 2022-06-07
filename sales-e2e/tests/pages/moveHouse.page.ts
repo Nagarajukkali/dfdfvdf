@@ -5,8 +5,8 @@ const moveHouse = {
     // linkExistingCustomer: Selector('#existing'),
     linkExistingCustomer: Selector('span').withText('Existing Customer'),
     linkNewCustomer: Selector('#tab-16926'),
-    // btnEnterYourNewAddress: Selector("tab-33696"),
-    btnEnterYourNewAddress: Selector('div').withText('Enter your new address'),
+    // btnEnterYourNewAddress: Selector("tab-33696"),#tab-16951
+    btnEnterYourNewAddress: Selector('button').withText('Enter your new address'),
     txtAddress: Selector("#edit-field-property-address-to-assist-0-value"),
     listOfAddresses: Selector("#ui-id-3 li"),
     btnSelectMoveDate: Selector("#edit-submit"),

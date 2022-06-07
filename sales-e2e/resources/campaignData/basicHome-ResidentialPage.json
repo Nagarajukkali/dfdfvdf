@@ -1,7 +1,26 @@
 {
-  "planName": "Basic Home",
-  "planDescription": "Standard rates with no discounts.",
-
+  "planDetails": {
+    "VIC": {
+      "planName": "Basic Home",
+      "planDescription": "Standard rates with no discounts."
+    },
+    "NSW": {
+      "planName": "Basic Home",
+      "planDescription": "Standard rates with no discounts."
+    },
+    "ACT": {
+      "planName": "Basic Home",
+      "planDescription": "Standard rates with no discounts."
+    },
+    "QLD": {
+      "planName": "Basic Home",
+      "planDescription": "Standard rates with no discounts."
+    },
+    "SA": {
+      "planName": "Basic Home",
+      "planDescription": "Standard rates with no discounts."
+    }
+  },
   "electricity": {
     "feature": {
       "preSelect": {
@@ -332,20 +351,24 @@
       }
     },
     "basicPlan": {
-      "heading": "Basic Home",
       "VIC": {
+        "heading": "Basic Home",
         "description": "* Basic Home is our standard offer. Also known as a 'standing offer', this is an ongoing plan with no discounts or other benefits. For eligible electricity customers charged on a flat tariff (with a controlled load, if applicable), Basic Home is our equivalent of the Victorian Default Offer and the rates are regulated by the Essential Services Commission. For other customers, including gas customers, the rates are set by us. The rates for Basic Home may vary, either when we are directed to change regulated rates, or when we review our rates each year. We'll notify you before any rate change occurs. Find out more about the Victorian Default Offer here."
       },
       "NSW": {
+        "heading": "Basic Home",
         "description": "* Basic Home is our standard offer. Also known as a 'standing offer', this is an ongoing plan with no discounts or other benefits. For eligible electricity customers charged on a flat tariff (with a controlled load, if applicable), Basic Home is our equivalent of the Default Market Offer and the reference price is regulated by the Australian Energy Regulator. For other customers, including gas customers, the rates are set by us. The rates for Basic Home may vary, either when the AER changes the reference price, or when we review our rates each year. We'll notify you before any rate change occurs. Find out more about the Default Market Offer here."
       },
       "ACT": {
+        "heading": "Basic Home",
         "description": "* Basic Home is our standard offer. Also known as a 'standing offer', this is an ongoing plan with no discounts or other benefits. For eligible electricity customers charged on a flat tariff (with a controlled load, if applicable), Basic Home is our equivalent of the Default Market Offer and the reference price is regulated by the Australian Energy Regulator. For other customers, including gas customers, the rates are set by us. The rates for Basic Home may vary, either when the AER changes the reference price, or when we review our rates each year. We'll notify you before any rate change occurs. Find out more about the Default Market Offer here."
       },
       "QLD": {
+        "heading": "Basic Home",
         "description": "* Basic Home is our standard offer. Also known as a 'standing offer', this is an ongoing plan with no discounts or other benefits. For eligible electricity customers charged on a flat tariff (with a controlled load, if applicable), Basic Home is our equivalent of the Default Market Offer and the reference price is regulated by the Australian Energy Regulator. For other customers, including gas customers, the rates are set by us. The rates for Basic Home may vary, either when the AER changes the reference price, or when we review our rates each year. We'll notify you before any rate change occurs. Find out more about the Default Market Offer here."
       },
       "SA": {
+        "heading": "Basic Home",
         "description": "* Basic Home is our standard offer. Also known as a 'standing offer', this is an ongoing plan with no discounts or other benefits. For eligible electricity customers charged on a flat tariff (with a controlled load, if applicable), Basic Home is our equivalent of the Default Market Offer and the reference price is regulated by the Australian Energy Regulator. For other customers, including gas customers, the rates are set by us. The rates for Basic Home may vary, either when the AER changes the reference price, or when we review our rates each year. We'll notify you before any rate change occurs. Find out more about the Default Market Offer here."
       }
     }

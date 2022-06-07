@@ -1,7 +1,26 @@
 {
-  "planName": "Total Plan - Business",
-  "planDescription": "Great discount on your total energy bill guaranteed - every time.",
-
+  "planDetails": {
+    "VIC": {
+      "planName": "Total Plan - Business",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+    },
+    "NSW": {
+      "planName": "Total Plan - Business",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+    },
+    "ACT": {
+      "planName": "Total Plan - Business",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+    },
+    "QLD": {
+      "planName": "Total Plan - Business",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+    },
+    "SA": {
+      "planName": "Total Plan - Business",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+    }
+  },
   "electricity": {
     "feature": {
       "preSelect": {
@@ -177,10 +196,26 @@
         "description": "** Offer only for eligible VIC business customers who receive the mailing and sign up to Total Plan Business electricity or gas offer before 11/11/20 11:59pm AEDT. Limit of one $100 credit per new energy account, per energy type, per business premises. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       }
     },
-    "totalPlanBusiness": {
-      "heading": "Total Plan - Business",
+    "plandisclaimer": {
       "VIC": {
-        "description": "* Offer only for eligible VIC business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 12-month benefit period. Your usage and supply charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "heading": "Total Plan - Business",
+        "description": "* Offer only for eligible VIC business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+      },
+      "NSW": {
+        "heading": "Total Plan - Business",
+        "description": "* Offer only for eligible NSW business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+      },
+      "ACT": {
+        "heading": "Total Plan - Business",
+        "description": "* Offer only for eligible ACT business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+      },
+      "QLD": {
+        "heading": "Total Plan - Business",
+        "description": "* Offer only for eligible QLD business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+      },
+      "SA": {
+        "heading": "Total Plan - Business",
+        "description": "* Offer only for eligible SA business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       }
     }
   }

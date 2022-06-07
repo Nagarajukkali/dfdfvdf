@@ -1,6 +1,26 @@
 {
-  "planName": "Total Plan Plus - Business",
-  "planDescription": "VIP discount on your total energy bill guaranteed - every time.",
+  "planDetails": {
+    "VIC": {
+      "planName": "Total Plan Plus - Business",
+      "planDescription": "VIP discount on your total energy bill guaranteed - every time."
+    },
+    "NSW": {
+      "planName": "Total Plan Plus - Business",
+      "planDescription": "VIP discount on your total energy bill guaranteed - every time."
+    },
+    "ACT": {
+      "planName": "Total Plan Plus - Business",
+      "planDescription": "VIP discount on your total energy bill guaranteed - every time."
+    },
+    "QLD": {
+      "planName": "Total Plan Plus - Business",
+      "planDescription": "VIP discount on your total energy bill guaranteed - every time."
+    },
+    "SA": {
+      "planName": "Total Plan Plus - Business",
+      "planDescription": "VIP discount on your total energy bill guaranteed - every time."
+    }
+  },
   "electricity": {
     "feature": {
       "preSelect": {
@@ -205,20 +225,24 @@
       }
     },
     "totalPlanPlusBusiness": {
-      "heading": "Total Plan Plus - Business",
       "VIC": {
+        "heading": "Total Plan Plus - Business",
         "description": "* Offer only for VIC business customers who sign up for an eligible energy service. Not available in all areas or for all tariff types. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 24-month benefit period. Your usage and supply charges won't increase during the 24-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "NSW": {
+        "heading": "Total Plan Plus - Business",
         "description": "* Offer only for NSW business customers who sign up for an eligible energy service. Not available in all areas or for all tariff types. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 24-month benefit period. Your usage and supply charges won't increase during the 24-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "ACT": {
+        "heading": "Total Plan Plus - Business",
         "description": "* Offer only for ACT business customers who sign up for an eligible energy service. Not available in all areas or for all tariff types.Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 24-month benefit period. Your usage and supply charges won't increase during the 24-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "QLD": {
+        "heading": "Total Plan Plus - Business",
         "description": "* Offer only for QLD business customers who sign up for an eligible energy service. Not available in all areas or for all tariff types. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 24-month benefit period. Your usage and supply charges won't increase during the 24-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       },
       "SA": {
+        "heading": "Total Plan Plus - Business",
         "description": "* Offer only for SA business customers who sign up for an eligible energy service. Not available in all areas or for all tariff types. Not available in all areas or for all tariff types. Guaranteed discount is off our market usage rates and daily supply charges (after solar credits, if any) and applies for the 24-month benefit period. Your usage and supply charges won't increase during the 24-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
       }
     }
