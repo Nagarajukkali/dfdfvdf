@@ -1,7 +1,26 @@
 {
-  "planName": "Total Plan Plus - Business",
-  "planDescription": "Great discount on your total energy bill guaranteed - every time.",
-
+  "planDetails": {
+    "VIC": {
+      "planName": "Total Plan Plus - Business",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+    },
+    "NSW": {
+      "planName": "Total Plan Plus - Business",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+    },
+    "ACT": {
+      "planName": "Total Plan Plus - Business",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+    },
+    "QLD": {
+      "planName": "Total Plan Plus - Business",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+    },
+    "SA": {
+      "planName": "Total Plan Plus - Business",
+      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+    }
+  },
   "electricity": {
     "feature": {
       "preSelect": {
@@ -337,20 +356,24 @@
       }
     },
     "totalPlanBusiness": {
-      "heading": "Total Plan - Business",
       "VIC": {
+        "heading": "Total Plan - Business",
         "description": "**Offer only for eligible VIC business customers who sign up to a new Total Plan Plus Business electricity or gas account. Limit of one $100 credit per new energy account, per energy type, per business premises. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "NSW": {
+        "heading": "Total Plan - Business",
         "description": "**Offer only for eligible NSW business customers who sign up to a new Total Plan Plus Business electricity or gas account. Limit of one $100 credit per new energy account, per energy type, per business premises. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "ACT": {
+        "heading": "Total Plan - Business",
         "description": "**Offer only for eligible ACT business customers who sign up to a new Total Plan Plus Business electricity or gas account. Limit of one $100 credit per new energy account, per energy type, per business premises. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "QLD": {
+        "heading": "Total Plan - Business",
         "description": "**Offer only for eligible QLD business customers who sign up to a new Total Plan Plus Business electricity or gas account. Limit of one $100 credit per new energy account, per energy type, per business premises. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
       },
       "SA": {
+        "heading": "Total Plan - Business",
         "description": "**Offer only for eligible SA business customers who sign up to a new Total Plan Plus Business electricity or gas account. Limit of one $100 credit per new energy account, per energy type, per business premises. Credit will be applied to your first bill and is not transferable or redeemable for cash. We may change or end this offer at any time."
       }
     }

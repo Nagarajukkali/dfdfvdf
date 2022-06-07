@@ -12,7 +12,7 @@
 
 Feature:E2E scenario for basichome-canstarblue campaign
 
-  @DR22.3.3.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for basichome-canstarblue campaign for NSW non-moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2144" and clicks on show me plan link
@@ -56,13 +56,13 @@ Feature:E2E scenario for basichome-canstarblue campaign
       | lifeSupportOption | fuelType | EleclifeSupportDevices                         | GaslifeSupportDevices |
       | Yes               | BOTH     | Crigler Najjar Syndrome Phototherapy Equipment | Gas Other             |
     And user verifies selected plan details for '<fuelType>'
-    And user selects carbon neutral option
+#    And user selects carbon neutral option
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                    | N                               | <state> |    Y                 |
+      | ELE      | N                | N                     | Y                    | N                               | <state> |    Y                 |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | N                    | N                                  | <state> |    Y                 |
+      | GAS      | N                | N                     | N                    | N                                  | <state> |    Y                 |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | Basic Home | NSW   | N            |    N         |
@@ -88,7 +88,7 @@ Feature:E2E scenario for basichome-canstarblue campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign              | folderName                             | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | No          | No          | basichome-canstarblue | E2E_Campaign_basichome-canstarblue_NSW | NSW   | Quote Tool   | COR     | No  | No | RES          | New           |
 
-  @DR22.3.3.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for basichome-canstarblue campaign for ACT
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2615" for postcode and proceed to view the plans
@@ -155,7 +155,7 @@ Feature:E2E scenario for basichome-canstarblue campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign              | folderName                             | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | No          | No          | basichome-canstarblue | E2E_Campaign_basichome-canstarblue_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.3.3.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for basichome-canstarblue campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "5076" for postcode and proceed to view the plans
@@ -192,13 +192,13 @@ Feature:E2E scenario for basichome-canstarblue campaign
       | lifeSupportOption | fuelType | EleclifeSupportDevices                         | GaslifeSupportDevices |
       | Yes               | ELE      | Crigler Najjar Syndrome Phototherapy Equipment |                       |
     And user verifies selected plan details for '<fuelType>'
-    And user opts in for Carbon Neutral
+#    And user opts in for Carbon Neutral
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                    | N                                  | N                               | <state> |    Y                 |
+      | ELE      | N                | N                     | Y                    | N                                  | N                               | <state> |    Y                 |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | N                    | N                                  | N                               | <state> |    Y                 |
+      | GAS      | N                | N                     | N                    | N                                  | N                               | <state> |    Y                 |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | Basic Home | SA    | N            |    Y         |
@@ -224,7 +224,7 @@ Feature:E2E scenario for basichome-canstarblue campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign              | folderName                            | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | No          | No          | basichome-canstarblue | E2E_Campaign_basichome-canstarblue_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.3.3.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for basichome-canstarblue campaign for QLD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "4208" for postcode and proceed to view the plans
@@ -283,7 +283,7 @@ Feature:E2E scenario for basichome-canstarblue campaign
       | customerStatus | fuelType | eleDiscount | campaign              | folderName                             | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | No          | basichome-canstarblue | E2E_Campaign_basichome-canstarblue_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.3.3.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for basichome-canstarblue campaign for VIC non-moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3188" for postcode and proceed to view the plans
@@ -353,7 +353,7 @@ Feature:E2E scenario for basichome-canstarblue campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign              | folderName                                       | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | No          | No          | basichome-canstarblue | E2E_Campaign_basichome-canstarblue_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           |
 
-  @DR22.3.3.campaign
+  @DR22.5.5.campaign
   Scenario Outline: Validate complete data for basichome-canstarblue campaign for NSW existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" and clicks on show me plan link

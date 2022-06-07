@@ -20,21 +20,21 @@ Feature:E2E scenario for bizreferral campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | GAS      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName                      | state |
       | Y                        | N         | Y            | Family and Friends - Business | NSW   |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | ELE      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state>|
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | GAS      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+      | GAS      | N                | N                     | Y                   | Y                                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                   | movingType | propertyType |
@@ -58,11 +58,11 @@ Feature:E2E scenario for bizreferral campaign
       | No                |          |                        |                       |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | GAS      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName                      | state |
       | Y                        | N         | Y            | Family and Friends - Business | NSW   |
@@ -99,21 +99,21 @@ Feature:E2E scenario for bizreferral campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | GAS      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName                      | state |
       | Y                        | N         | Y            | Family and Friends - Business | NSW   |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | ELE      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state>|
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | GAS      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+      | GAS      | N                | N                     | Y                   | Y                                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                   | movingType | propertyType |
@@ -137,11 +137,11 @@ Feature:E2E scenario for bizreferral campaign
       | No                |          |                        |                       |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | GAS      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName                      | state |
       | Y                        | N         | Y            | Family and Friends - Business | NSW   |
@@ -178,21 +178,21 @@ Feature:E2E scenario for bizreferral campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | GAS      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName                    | state |
       | Y                        | N         | Y            | Family and Friends Business | VIC   |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | ELE      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state>|
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | GAS      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+      | GAS      | N                | N                     | Y                   | Y                                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                          | movingType | propertyType |
@@ -216,11 +216,11 @@ Feature:E2E scenario for bizreferral campaign
       | Yes               | BOTH     | Ele Other              | Medically Required Heating and/or Air Conditioning |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | GAS      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName                    | state |
       | Y                        | N         | Y            | Family and Friends Business | VIC   |
@@ -256,21 +256,21 @@ Feature:E2E scenario for bizreferral campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | GAS      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName                    | state |
       | Y                        | N         | Y            | Family and Friends Business | SA    |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | ELE      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state>|
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | GAS      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+      | GAS      | N                | N                     | Y                   | Y                                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                  | movingType | propertyType |
@@ -294,11 +294,11 @@ Feature:E2E scenario for bizreferral campaign
       | Yes               | BOTH     | Ele Other              | Medically Required Heating and/or Air Conditioning |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | GAS      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName                    | state |
       | Y                        | N         | Y            | Family and Friends Business | SA    |
@@ -335,21 +335,21 @@ Feature:E2E scenario for bizreferral campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | GAS      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName                      | state |
       | Y                        | N         | Y            | Family and Friends - Business | ACT   |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | ELE      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state>|
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | GAS      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+      | GAS      | N                | N                     | Y                   | Y                                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                   | movingType | propertyType |
@@ -373,11 +373,11 @@ Feature:E2E scenario for bizreferral campaign
       | No                |          |                        |                       |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | GAS      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName                      | state |
       | N                        | N         | N            | Family and Friends - Business | ACT   |
@@ -413,15 +413,15 @@ Feature:E2E scenario for bizreferral campaign
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName                    | state |
       | Y                        | N         | Y            | Family and Friends Business | QLD   |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill |
-      | ELE      | N                | N                     | Y                   | Y                                  |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state>|
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -446,8 +446,8 @@ Feature:E2E scenario for bizreferral campaign
       | Yes               | ELE      | Ele Other              |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state | Feature_noStandardConnectionFee |
+      | ELE      | N                | N                     | Y                   | Y                                  |<state>| N                               |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName                    | state |
       | Y                        | N         | Y            | Family and Friends Business | QLD   |
