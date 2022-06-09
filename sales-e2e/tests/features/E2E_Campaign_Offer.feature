@@ -58,7 +58,7 @@ Feature:E2E scenario for offer campaign
 
   Scenario Outline: Submit a quote for offer campaign with AAH and DD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "2000" and clicks on show me plan link
+    When user provides "3000" and clicks on show me plan link
     And user clicks on Add plan button
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page

@@ -57,13 +57,12 @@ Feature:E2E scenario for new residential moving and non moving customer
       | ELE      | Y                   | FURTOU                 | Y              |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TAPR1-GV  | 5310746798 | N                              | N                              | Y                       | OTHER                    | POSTMM        |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |campaign|
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GV  | 5310746798 | N                              | N                              | Y                       | OTHER                    | POSTMM        |<campaign>|
 
     Examples:
-      | customerStatus | fuelType | planName   | folderName          | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | Solar Max  | E2E_New_Resi_SolarMax_Moving | VIC   | Quote Tool   | Move Home | Yes | No | RES          | New           |
-
+      | customerStatus | fuelType | planName   | folderName          | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |campaign|
+      | New            | BOTH     | Solar Max  | E2E_New_Resi_SolarMax_Moving | VIC   | Quote Tool   | Move Home | Yes | No | RES          | New  |flexi|
 
   Scenario Outline: Submit a solar max quote for new residential non moving customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -121,12 +120,12 @@ Feature:E2E scenario for new residential moving and non moving customer
       | ELE      | Y                   | NAST11S                 | N              |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TAPR1-GV  |  | N                              | N                              | Y                       | OTHER                    | POSTMM        |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |campaign|
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | BP2H-GV  |  | N                              | N                              | Y                       | OTHER                    | POSTMM        |<campaign>|
 
     Examples:
-      | customerStatus | fuelType | planName   | folderName          | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | Solar Max  | E2E_New_Resi_SolarMax_Non-Moving | VIC   | Quote Tool   | COR | Yes | No | RES          | New           |
+      | customerStatus | fuelType | planName   | folderName          | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |campaign|
+      | New            | BOTH     | Solar Max  | E2E_New_Resi_SolarMax_Non-Moving | VIC   | Quote Tool   | COR | Yes | No | RES          | New           |flexi|
 
   @deviceCheck @smoke @solar
   Scenario Outline: Submit a quote for new residential moving customer

@@ -49,15 +49,15 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | SWSR1-EV | 6203138450 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-EV | 6203138450 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | SWSR1-GV | 5330236561 | N                              | N                              | Y                       | OTHER                    | POSTMM        |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-GV | 5330236561 | N                              | N                              | Y                       | OTHER                    | POSTMM        |
 
     Examples:
       | folderName                              | customer_type | fuelType | planName        | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
-      | E2E_VerifyAccount_Residential_NonMoving | RES           | BOTH     | Total Plan Plus | Quote Tool   | Plan Switch | Yes | Yes | RES          | Existing      |
+      | E2E_VerifyAccount_Residential_NonMoving | RES           | BOTH     | Total Plan | Quote Tool   | Plan Switch | Yes | Yes | RES          | Existing      |
 
   @deviceCheck @smoke
   Scenario Outline: Submit a quote for existing moving residential customer through verify account
@@ -178,8 +178,8 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | SWSR1-EQ | QB08556016 | N                              | N                              | Y                       | LSCPAPR                  | EMAIL         |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-EQ | QB08556016 | N                              | N                              | Y                       | LSCPAPR                  | EMAIL         |
 
     Examples:
       | folderName                               | customer_type | fuelType | planName        | optDisconnection | state | sourceSystem | journey   | AAH | DD  | customerType | newOrExisting |
-      | E2E_VerifyAccount_QLD_Residential_Moving | RES           | ELE      | Total Plan Plus | Yes              | QLD   | Quote Tool   | Move Home | Yes | Yes | RES          | Existing      |
+      | E2E_VerifyAccount_QLD_Residential_Moving | RES           | ELE      | Total Plan | Yes              | QLD   | Quote Tool   | Move Home | Yes | Yes | RES          | Existing      |

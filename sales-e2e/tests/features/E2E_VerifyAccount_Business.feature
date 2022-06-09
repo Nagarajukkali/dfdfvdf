@@ -53,15 +53,15 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | PS        | SWSRB-EV | 6203787884 | N                              | N                              | Y                       | LSVFLS                   | POSTMM        |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | PS        | TOPB-EV | 6203787884 | N                              | N                              | Y                       | LSVFLS                   | POSTMM        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | COR       | SWSRB-GV |            | N                              | N                              | Y                       | OTHER                    | POSTMM        |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | COR       | TOPB-GV |            | N                              | N                              | Y                       | OTHER                    | POSTMM        |
 
     Examples:
       | folderName                           | customer_type | fuelType | planName                   | accountType | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
-      | E2E_VerifyAccount_Business_NonMoving | BUS           | BOTH     | Total Plan Plus - Business | ELE         | Quote Tool   | Plan Switch | Yes | Yes | BUS          | Existing      |
+      | E2E_VerifyAccount_Business_NonMoving | BUS           | BOTH     | Total Plan - Business | ELE         | Quote Tool   | Plan Switch | Yes | Yes | BUS          | Existing      |
 
   Scenario Outline: Submit a quote for existing moving business customer through verify account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
