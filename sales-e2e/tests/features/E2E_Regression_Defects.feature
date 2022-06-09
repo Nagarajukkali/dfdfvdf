@@ -16,7 +16,7 @@ Feature:This feature file is to add scenarios for regression defects
     Then Address field is 'auto_populated'
     When user refresh the qualifier
     And user reset the verified account
-    And user selects 'No Frills'
+    And user selects '<planName1>'
     And user moves on to fill the qualifier
     Then New/Existing customer qualifier question is displayed
     And user selects 'New' on qualifier
@@ -24,8 +24,8 @@ Feature:This feature file is to add scenarios for regression defects
     Then Address field is 'blank'
 
     Examples:
-      | folderName                     | customer_type | fuelType | planName   |
-      | E2E_Reg_Reset_Verified_Account | RES           | BOTH     | Total Plan Plus |
+      | folderName                     | customer_type | fuelType | planName   | planName1|
+      | E2E_Reg_Reset_Verified_Account | RES           | BOTH     | Total Plan | Flexi Plan|
 
   Scenario Outline: Verify Service address should be replaced by moving address when user provides moving address
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -50,8 +50,8 @@ Feature:This feature file is to add scenarios for regression defects
 
     Examples:
       | folderName                             | customer_type | fuelType | planName        | address                                  |
-      | E2E_Reg_MovingAddress_Verified_Account | RES           | BOTH     | Total Plan Plus | 271 Heatherhill Road, FRANKSTON VIC 3199 |
-
+      | E2E_Reg_MovingAddress_Verified_Account | RES           | BOTH     | Total Plan | 271 Heatherhill Road, FRANKSTON VIC 3199 |
+ 
   Scenario Outline: Verify quote submission for upsell fuel through move house page
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     When user has navigated to move house page
@@ -64,7 +64,7 @@ Feature:This feature file is to add scenarios for regression defects
       | RES          | NA         | 5 Wilkies Street, BULLI NSW 2516 | Renter       |
     And user selects plans on checkout details page
       | fuelType | planName        |
-      | GAS      | Total Plan Plus |
+      | GAS      | Total Plan  |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         |
       | RES          | RES     | Existing       | test      | test     | Driver License |
@@ -87,7 +87,7 @@ Feature:This feature file is to add scenarios for regression defects
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | SWSR1-GN | 5240924834 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-GN | 5240924834 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
 
     Examples:
       | folderName           | fuelType | state | optDisconnection | movingAddress                    |

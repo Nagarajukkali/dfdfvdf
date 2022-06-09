@@ -1,6 +1,5 @@
 @E2E @existingcustomerQT @smoke
 Feature:E2E scenario for existing residential moving and non moving customer
-
   Scenario Outline: Submit a quote for existing residential moving customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -54,16 +53,16 @@ Feature:E2E scenario for existing residential moving and non moving customer
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |state|
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TAPR1-EV  | 6407557087 | N                              | N                              | Y                       | OTHER                    | POSTMM       |<state>  |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |state| campaign |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-EV  | 6407557087 | N                              | N                              | Y                       | OTHER                    | POSTMM       |<state>  | <campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |state|
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TAPR1-GV  | 5321574765 | N                              | N                              | Y                       | OTHER                    | POSTMM       |<state>  |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |state| campaign |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GV  | 5321574765 | N                              | N                              | Y                       | OTHER                    | POSTMM       |<state>  |<campaign>|
 
     Examples:
-      | customerStatus | fuelType | planName   | folderName               | state | optDisconnection | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | Existing       | BOTH     | Balance Plan | E2E_Existing_Resi_Moving | VIC   | Yes              | Quote Tool   | Move Home | Yes | No | RES          | Existing      |
+      | customerStatus | fuelType | planName   | folderName               | campaign | state | optDisconnection | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
+      | Existing       | BOTH     | Flexi Plan | E2E_Existing_Resi_Moving | flexi    |  VIC   | Yes              | Quote Tool   | Move Home | Yes | No | RES          | Existing      |
 
   @deviceCheck
   Scenario Outline: Submit a quote for existing residential non moving customer with LS, select dual fuel and verify gas account
@@ -125,6 +124,7 @@ Feature:E2E scenario for existing residential moving and non moving customer
       | Existing       | No Frills | E2E_Existing_Resi_NonMoving | BOTH     | ELE         | Quote Tool   | Plan Switch | No  | Yes | RES          | Existing      |
 
     #concession card number is required
+    
   Scenario Outline: Submit a quote for QLD existing residential non moving customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -139,9 +139,9 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | propertyType |
       | RES          | Non-Moving | Owner        |
-    And user selects new plan from plan unavailable page
-     |customerType|planName| propertyType |
-     |RES   | Total Plan Plus | Owner |
+    # And user selects new plan from plan unavailable page
+    #  |customerType|planName| propertyType |
+    #  |RES   | Total Plan | Owner |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType   |
       | RES          | RES     | Existing       | test      | test     | Passport |
@@ -177,7 +177,7 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | SWSR1-EQ  | QB06882633 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-EQ  | QB06882633 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
 
 
     Examples:

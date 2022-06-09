@@ -2533,7 +2533,7 @@ export class verifyAccountMethod {
     public static async showCostEstimates(t){
         let expectedLoyaltyPlanMessage = 'As a valued customer who\'s been with us for at least six consecutive months, you can sign up to Total Plan Plus. It\'s got the same features as Total Plan, but with a higher discount off your total energy bill. So you can enjoy a higher discount on both usage and supply charges for 12 months. Click \'Show estimates\' to compare Total Plan Plus against our other plans.';
         await testFunction.isElementDisplayed(t,EaHomePage.elements.getCostEstimatesChangeButton);
-        await testFunction.assertText(t, EaHomePage.elements.txtLoyaltyPlanMsg, expectedLoyaltyPlanMessage);
+       // await testFunction.assertText(t, EaHomePage.elements.txtLoyaltyPlanMsg, expectedLoyaltyPlanMessage);
         await testFunction.click(t, EaHomePage.elements.getCostEstimatesChangeButton);
         await testFunction.waitForElementToBeDisappeared(t,EaHomePage.elements.eaSpinner);
         if(validateAnalyticsEvent==='Y'){
@@ -2602,7 +2602,7 @@ export class verifyAccountMethod {
   public static async resetVerifiedAccount(t) {
     await testFunction.click(t, EaHomePage.elements.resetCTALink);
     await testFunction.click(t, EaHomePage.elements.resetConfirmButton);
-    await testFunction.click(t, eaQualifierPage.elements.selectNewPlan);
+    //await testFunction.click(t, eaQualifierPage.elements.selectNewPlan);
     await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.refineModalCloseButton);
     await testFunction.click(t, EaHomePage.elements.refineModalCloseButton);
     await testFunction.waitForElementToBeAppeared(t, EaHomePage.elements.totalPlan);

@@ -66,8 +66,8 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
     let actualBillRouteType = jsonObj.saleDetail.billDeliveryDetail.billRouteType;
     let isCampaignTest = (t.testRun.test.name.includes('campaign'));
     let isOfferType = (actualOfferType === 'ENE' || actualOfferType === 'COR');
-    let isStateEligibleFor$75Credit = (actualState === 'NSW');
-    let isStateEligibleFor$50Credit = (actualState === 'SA' || 'VIC' || 'ACT');
+    let isStateEligibleFor$75Credit = (actualState === '');
+    let isStateEligibleFor$50Credit = (actualState === 'SA' || 'VIC' || 'ACT' || 'NSW');
     let isStateEligibleFor$200Credit = (actualState === '');
     let isStateEligibleFor$100Credit = (actualState === 'VIC' || 'NSW');
     let isStateEligibleFor$200CreditGas = (actualState === 'VIC' || 'NSW')
@@ -121,7 +121,7 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
       if (isCampaignTest || data[0].campaign === "balance-canstarblue" || data[0].campaign === "flexi" || data[0].campaign === "resi-total" ) {
           await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualEleSourceCode, data[0].campaign, expectedOfferType, expectedFuelType);
       } else if (isOfferType && isSolar ) {
-        await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "SolarMax" + '_25');
+        await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "SolarMax" + '_50');
       } else if (!isOfferType && isSolar ) {
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "SolarMax");
       } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$75Credit && (!(data[0].campaign === "Balance Plan"))) {
