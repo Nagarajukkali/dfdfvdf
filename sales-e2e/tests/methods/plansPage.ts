@@ -95,9 +95,9 @@ export class plansMethod {
         break;
       case PlanType.SOLAR_MAX:
         if (testFunction.isMobile() || testFunction.isTablet()) {
-          await scrollTo(EaHomePage.elements.solarmax);
+          await scrollTo(EaHomePage.elements.SolarMaxPlanTable.sMaxPlan);
         }
-        await testFunction.click(t, EaHomePage.elements.solarmax);
+        await testFunction.click(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlan);
         break;
       case PlanType.BASIC_BUSINESS:
         if (testFunction.isMobile() || testFunction.isTablet()) {
@@ -143,6 +143,12 @@ export class plansMethod {
           await scrollTo(EaHomePage.elements.residentialBalancePlan);
         }
         await testFunction.click(t, EaHomePage.elements.residentialBalancePlan);
+        break;
+      case PlanType.SOLAR_MAX_COMBO:
+        if (testFunction.isMobile() || testFunction.isTablet()) {
+          await scrollTo(EaHomePage.elements.SolarMaxPlanTable.sMaxPlan);
+        }
+        await testFunction.click(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlan);
         break;
       default:
         console.error("Invalid plan is selected");
@@ -397,6 +403,68 @@ export class plansMethod {
             console.log("Invalid fueltype");
           }
           break;
+          case PlanType.SOLAR_MAX_COMBO :
+            console.log("dataTable[0].fuelType"+dataTable[0].fuelType);
+            if(dataTable[0].fuelType==="BOTH") {
+              switch (dataTable[0].state) {
+                case AustralianState.NSW:
+                  await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanTitle, data.planDetails.NSW.planName);
+                  await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanFuel, "Electricity & gas");
+                  await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanHeadingDescription, data.planDetails.NSW.planDescription);
+                  break;
+                case AustralianState.VIC:
+                  await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanTitle, data.planDetails.VIC.planName);
+                  await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanFuel, "Electricity & gas");
+                  await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanHeadingDescription, data.planDetails.NSW.planDescription);
+                  break;
+                case AustralianState.SA:
+                  await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanTitle, data.planDetails.SA.planName);
+                  await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanFuel, "Electricity & gas");
+                  await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanHeadingDescription, data.planDetails.SA.planDescription);
+                  break;
+                case AustralianState.ACT:
+                  await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanTitle, data.planDetails.ACT.planName);
+                  await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanFuel, "Electricity & gas");
+                  await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanHeadingDescription, data.planDetails.ACT.planDescription);
+                  break;
+                default:
+                  console.log("Invalid combo plan details for state");
+              }
+            }else if(dataTable[0].fuelType==="ELE") {
+                switch (dataTable[0].state) {
+                  case AustralianState.NSW:
+                    await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanTitle, data.planDetails.NSW.planName);
+                    await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanFuel, "Electricity");
+                    await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanHeadingDescription, data.planDetails.NSW.planDescription);
+                    break;
+                  case AustralianState.VIC:
+                    await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanTitle, data.planDetails.VIC.planName);
+                    await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanFuel, "Electricity");
+                    await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanHeadingDescription, data.planDetails.VIC.planDescription);
+                    break;
+                  case AustralianState.SA:
+                    await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanTitle, data.planDetails.SA.planName);
+                    await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanFuel, "Electricity");
+                    await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanHeadingDescription, data.planDetails.SA.planDescription);
+                    break;
+                  case AustralianState.ACT:
+                    await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanTitle, data.planDetails.ACT.planName);
+                    await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanFuel, "Electricity");
+                    await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanHeadingDescription, data.planDetails.ACT.planDescription);
+                    break;
+                  case AustralianState.QLD:
+                    await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanTitle, data.planDetails.QLD.planName);
+                    await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanFuel, "Electricity");
+                    await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanHeadingDescription, data.planDetails.QLD.planDescription);
+                    break;
+                  default:
+                    console.log("Invalid electricity plan details for state");
+              }
+            }
+            else{
+              console.log("Invalid fueltype");
+            }
+            break;
         default:
           throw Error("Invalid Plan");
       }
@@ -700,7 +768,7 @@ export class plansMethod {
         }
       }
       if (dataTable[0].Feature_carbonNeutral === "Y") {
-        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('employee') || t.testRun.test.name.includes('partner-program')) {
+        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('employee')) {
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNEGTitle, data.electricity.feature.preSelect.carbonNeutral.heading);
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureCNEGDescription, data.electricity.feature.preSelect.carbonNeutral.description);
         } else if (t.testRun.test.name.includes('business-carbon-neutral')){
@@ -853,7 +921,7 @@ export class plansMethod {
          }
        } */
       if (dataTable[0].Feature_carbonNeutral === "Y") {
-        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('employee') || t.testRun.test.name.includes('partner-program')) {
+        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('employee')) {
           await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNEGTitle, data.gas.feature.preSelect.carbonNeutral.heading);
           await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNEGDescription, data.gas.feature.preSelect.carbonNeutral.description);
         } else {
@@ -1558,6 +1626,11 @@ export class plansMethod {
       case PlanType.TOTAL_BUSINESS:
         if (await testFunction.isElectricity(fuelType)) {
           await testFunction.assertText(t, EaHomePage.elements.BusinessTotalPlanTable.businessTotalPlanEleDiscount, discount);
+        }
+        break;
+      case PlanType.SOLAR_MAX_COMBO:
+        if (await testFunction.isGas(fuelType)) {
+          await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.gasdiscountOffsMaxTitle, discount);
         }
         break;
       default:

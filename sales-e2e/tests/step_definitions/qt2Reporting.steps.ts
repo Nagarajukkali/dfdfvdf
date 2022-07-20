@@ -118,13 +118,15 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
 
       let actualEleSourceCode = jsonObj.saleDetail.saleDetailHeader.sourceCode;
       let expectedEleSourceCode = checkoutDetailsMethod.map.get('ele source code_' + checkoutDetailsMethod.getScenarioId(t));
-      if (isCampaignTest || data[0].campaign === "balance-canstarblue" || data[0].campaign === "flexi" || data[0].campaign === "resi-total" ) {
+      if (isCampaignTest || data[0].campaign === "balance-canstarblue" || data[0].campaign === "flexi" || data[0].campaign === "resi-total" || data[0].campaign === "solarmax" ) {
           await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualEleSourceCode, data[0].campaign, expectedOfferType, expectedFuelType);
-      } else if (isOfferType && isSolar ) {
-        await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "SolarMax" + '_50');
-      } else if (!isOfferType && isSolar ) {
-        await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "SolarMax");
-      } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$75Credit && (!(data[0].campaign === "Balance Plan"))) {
+      } 
+      // else if (isOfferType && isSolar ) {
+      //   await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "SolarMax" + '_25');
+      // } else if (!isOfferType && isSolar ) {
+      //   await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "SolarMax");
+      // } 
+      else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$75Credit && (!(data[0].campaign === "Balance Plan"))) {
         console.log("On 25Credit-Resi");
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_75');
       } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$50Credit && (!(data[0].campaign === "Balance Plan"))) {
@@ -208,7 +210,7 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
       //updated conditions for $50 extensions
       let actualGasSourceCode = jsonObj.saleDetail.saleDetailHeader.sourceCode;
       let expectedGasSourceCode = checkoutDetailsMethod.map.get('gas source code_' + checkoutDetailsMethod.getScenarioId(t));
-      if (isCampaignTest || data[0].campaign === "balance-canstarblue" || data[0].campaign === "flexi" || data[0].campaign === "resi-total") {
+      if (isCampaignTest || data[0].campaign === "balance-canstarblue" || data[0].campaign === "flexi" || data[0].campaign === "resi-total" || data[0].campaign === "solarmax") {
         await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualGasSourceCode, data[0].campaign, expectedOfferType, expectedFuelType);
         // await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualGasSourceCode, data[0].campaign, expectedGasSourceCode, expectedFuelType);
       } else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$75Credit && (!(data[0].campaign === "Balance Plan"))) {

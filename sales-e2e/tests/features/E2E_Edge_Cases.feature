@@ -32,7 +32,7 @@ Feature:This feature file is to cover all the edge cases
     Then user lands on "plans" page
     Examples:
       | customerStatus | planName   | folderName        | state |
-      | New            | Total Plan | E2E_EXPIRED_QUOTE | VIC   |
+      | New            | Flexi Plan | E2E_EXPIRED_QUOTE | VIC   |
 
   Scenario Outline: Verify the behaviour of the application when the customer try to hit the quote which doesn't exist
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences

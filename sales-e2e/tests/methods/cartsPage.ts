@@ -80,7 +80,7 @@ export class cartsMethod {
         }
       }
       if(dataTable[0].Feature_carbonNeutral === "Y") {
-        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('employee') || t.testRun.test.name.includes('partner-program')) {
+        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('employee')) {
           await testFunction.assertText(t, cartsPage.elements.eleFeatureCNEG, json.electricity.feature.postSelect.carbonNeutral);
         }
         else {
@@ -178,7 +178,7 @@ export class cartsMethod {
             throw Error("Invalid State");
         }}
       if(dataTable[0].Feature_carbonNeutral === "Y") {
-        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('employee') || t.testRun.test.name.includes('partner-program')) {
+        if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('employee')) {
           await testFunction.assertText(t, cartsPage.elements.gasFeatureCNEG, json.gas.feature.postSelect.carbonNeutral);
         }
         else {

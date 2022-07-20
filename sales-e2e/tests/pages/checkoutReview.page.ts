@@ -53,6 +53,7 @@ const eaCheckoutReviewPage = {
     eleFeature50Credit: Selector("#reviewSectionEle [id*='benefit-text']").withText(/[C|c]redit/),
     eleFeatureChanceToWin: Selector("#reviewSectionEle [id*='benefit-text']").withText("$2,000"),
     eleFeatureCN: Selector("#reviewSectionEle [id*='benefit-text']").withText("neutral"),
+    eleHighSolarFIT: Selector("#reviewSectionEle [id*='benefit-text']").withText("solar feed-in"),
     eleFeatureMoveHome: Selector("#reviewSectionEle [id*='benefit-text']").withText("online sign up credit"),
     gasFeatureMoveHome: Selector("#reviewSectionGas [id*='benefit-text']").withText("online sign up credit"),
     eleFeatureDiscountOffTotal: Selector("#reviewSectionEle [id*='benefit-text']").withText(/[d|D]iscount off total/i),

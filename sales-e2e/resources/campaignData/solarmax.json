@@ -1,24 +1,24 @@
 {
   "planDetails": {
     "VIC": {
-      "planName": "Flexi Plan",
-      "planDescription": "Variable energy rates with no lock in contracts."
+      "planName": "Solar Max & Flexi Plan",
+      "planDescription": "Our highest feed-in tariff."
     },
     "NSW": {
-      "planName": "Flexi Plan",
-      "planDescription": "Variable energy rates with no lock in contracts."
+      "planName": "Solar Max & Flexi Plan",
+      "planDescription": "Our highest feed-in tariff."
     },
     "ACT": {
-      "planName": "Flexi Plan",
-      "planDescription": "Variable energy rates with no lock in contracts."
+      "planName": "Solar Max & Flexi Plan",
+      "planDescription": "Our highest feed-in tariff."
     },
     "QLD": {
-      "planName": "Flexi Plan",
-      "planDescription": "Variable energy rates with no lock in contracts."
+      "planName": "Solar Max",
+      "planDescription": "Our highest feed-in tariff."
     },
     "SA": {
-      "planName": "Flexi Plan",
-      "planDescription": "Variable energy rates with no lock in contracts."
+      "planName": "Solar Max & Flexi Plan",
+      "planDescription": "Our highest feed-in tariff."
     }
   },
   "electricity": {
@@ -90,7 +90,7 @@
         },
         "variableRates": {
           "heading": "Variable rates",
-          "description": "Your energy charges are variable for the benefit period. We'll let you know in advance before any rates change."
+          "description": "Your energy charges and solar feed-in tariff are variable. We'll let you know in advance before any rates change."
         }
       },
       "postSelect": {
@@ -103,7 +103,8 @@
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "moveHomeCredit": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
-        "variableRates": "Variable rates. Your energy charges are variable. We'll let you know in advance before any rates change.",
+        "variableRates": "Your energy charges and solar feed-in tariff are variable. We'll let you know in advance before any rates change.",
+        "highSolarFIT": "High solar feed-in tariff. Our highest Feed-in Tariff (FiT) when your average export for each bill is less than 15kWh per day.",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before any rates change.",
         "discountOffTotalEnergyBill": {
           "VIC": "5% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
@@ -122,54 +123,54 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_5%GD_25",
+          "VIC": "SolarMax_25",
           "NSW": {
-            "Ausgrid": "Total_5%GD_25",
-            "Essential": "Total_5%GD_25",
-            "Endeavour": "Total_5%GD_25",
-            "default": "Total_5%GD_25"
+            "Ausgrid": "SolarMax_25",
+            "Essential": "SolarMax_25",
+            "Endeavour": "SolarMax_25",
+            "default": "SolarMax_25"
           },
-          "ACT": "Basic_25",
-          "QLD": "Basic_25",
-          "SA": "Basic_25"
+          "ACT": "SolarMax_25",
+          "QLD": "SolarMax_25",
+          "SA": "SolarMax_25"
         },
         "COR": {
-          "VIC": "Total_5%GD_25",
+          "VIC": "SolarMax_25",
           "NSW": {
-            "Ausgrid": "Total_5%GD_25",
-            "Essential": "Total_5%GD_25",
-            "Endeavour": "Total_5%GD_25",
-            "default": "Total_5%GD_25"
+            "Ausgrid": "SolarMax_25",
+            "Essential": "SolarMax_25",
+            "Endeavour": "SolarMax_25",
+            "default": "SolarMax_25"
           },
-          "ACT": "Basic_25",
-          "QLD": "Basic_25",
-          "SA": "Basic_25"
+          "ACT": "SolarMax_25",
+          "QLD": "SolarMax_25",
+          "SA": "SolarMax_25"
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_5%GD_25",
+          "VIC": "SolarMax_25",
           "NSW": {
-            "Ausgrid": "Total_5%GD_25",
-            "Essential": "Total_5%GD_25",
-            "Endeavour": "Total_5%GD_25",
-            "default": "Total_5%GD_25"
+            "Ausgrid": "SolarMax_25",
+            "Essential": "SolarMax_25",
+            "Endeavour": "SolarMax_25",
+            "default": "SolarMax_25"
           },
-          "ACT": "Basic_25",
-          "QLD": "Basic_25",
-          "SA": "Basic_25"
+          "ACT": "SolarMax_25",
+          "QLD": "SolarMax_25",
+          "SA": "SolarMax_25"
         },
         "PS": {
-          "VIC": "Total_5%GD",
+          "VIC": "SolarMax",
           "NSW": {
-            "Ausgrid": "Total_5%GD",
-            "Essential": "Total_5%GD",
-            "Endeavour": "Total_5%GD",
-            "default": "Total_5%GD"
+            "Ausgrid": "SolarMax",
+            "Essential": "SolarMax",
+            "Endeavour": "SolarMax",
+            "default": "SolarMax"
           },
-          "ACT": "Total_Plan",
-          "QLD": "Total_Plan",
-          "SA": "Total_Plan"
+          "ACT": "SolarMax",
+          "QLD": "SolarMax",
+          "SA": "SolarMax"
         }
       }
     }
@@ -364,24 +365,24 @@
     },
     "plandisclaimer": {
       "VIC": {
-        "heading": "Flexi Plan",
-        "description": "* Offer only for eligible VIC residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+        "heading": "Solar Max",
+        "description": "* Offer only for eligible VIC solar residential customers. Not available in all areas or for all tariff types. Your energy charges and solar feed-in tariff will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such GreenPower) may also vary. If your solar export on average for your billing period is more than 15kWh per day, you may become ineligible for the Solar Max plan. When this happens, we'll let you know your options."
       },
       "NSW": {
-        "heading": "Flexi Plan",
-        "description": "* Offer only for eligible NSW residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+        "heading": "Solar Max",
+        "description": "* Offer only for eligible NSW solar residential customers. Not available in all areas or for all tariff types. Your energy charges and solar feed-in tariff will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such GreenPower) may also vary. If your solar export on average for your billing period is more than 15kWh per day, you may become ineligible for the Solar Max plan. When this happens, we'll let you know your options."
       },
       "ACT": {
-        "heading": "Flexi Plan",
-        "description": "* Offer only for eligible ACT residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+        "heading": "Solar Max",
+        "description": "* Offer only for eligible ACT solar residential customers. Not available in all areas or for all tariff types. Your energy charges and solar feed-in tariff will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such GreenPower) may also vary. If your solar export on average for your billing period is more than 15kWh per day, you may become ineligible for the Solar Max plan. When this happens, we'll let you know your options."
       },
       "QLD": {
-        "heading": "Flexi Plan",
-        "description": "* Offer only for eligible QLD residential customers. Not available in all areas or for all tariff types. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+        "heading": "Solar Max",
+        "description": "* Offer only for eligible QLD solar residential customers. Not available in all areas or for all tariff types. Your energy charges and solar feed-in tariff will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such GreenPower) may also vary. If your solar export on average for your billing period is more than 15kWh per day, you may become ineligible for the Solar Max plan. When this happens, we'll let you know your options."
       },
       "SA": {
-        "heading": "Flexi Plan",
-        "description": "* Offer only for eligible SA residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+        "heading": "Solar Max",
+        "description": "* Offer only for eligible SA solar residential customers. Not available in all areas or for all tariff types. Your energy charges and solar feed-in tariff will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such GreenPower) may also vary. If your solar export on average for your billing period is more than 15kWh per day, you may become ineligible for the Solar Max plan. When this happens, we'll let you know your options."
       }
     }
   }

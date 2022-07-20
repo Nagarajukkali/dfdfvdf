@@ -12,7 +12,7 @@
 
 Feature:E2E scenario for bizreferral campaign
 
-  @DR22.2.1.campaign
+  @DR22.6.4.campaign
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for NSW-Ausgrid
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "geom.george@energyaustralia.com.au" and "2042" and clicks on show me plan link
@@ -29,12 +29,12 @@ Feature:E2E scenario for bizreferral campaign
       | referencePriceComparison | goNeutral | solarBuyBack | planName                      | state |
       | Y                        | N         | Y            | Family and Friends - Business | NSW   |
     And user clicks on Add plan button
-    And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
-      | ELE      | N                | N                     | Y                   | Y                                  |<state>|
-    And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
-      | GAS      | N                | N                     | Y                   | Y                                  |<state>|
+    # And user validates plan details on cart page for "<campaign>"
+    #   | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+    #   | ELE      | N                | N                     | Y                   | Y                                  |<state>|
+    # And user validates plan details on cart page for "<campaign>"
+    #   | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+    #   | GAS      | N                | N                     | Y                   | Y                                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                   | movingType | propertyType |
@@ -68,7 +68,7 @@ Feature:E2E scenario for bizreferral campaign
       | Y                        | N         | Y            | Family and Friends - Business | NSW   |
     And user validates source code
       | fuelType | eleSourceCode | gasSourceCode |
-      | BOTH     | Total_21%GD   | Total_22%GD   |
+      | BOTH     | Total_3%GD   | Total_1%GD   |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -89,9 +89,9 @@ Feature:E2E scenario for bizreferral campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign    | folderName                   | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | BOTH     | 21          | 22          | bizreferral | E2E_Campaign_bizreferral_NSW | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
+      | New            | BOTH     | 3           | 1          | bizreferral | E2E_Campaign_bizreferral_NSW | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
 
-  @DR22.2.1.campaign
+  @DR22.6.4.campaign
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for NSW-Essential
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "geom.george@energyaustralia.com.au" and "2580" and clicks on show me plan link
@@ -108,12 +108,12 @@ Feature:E2E scenario for bizreferral campaign
       | referencePriceComparison | goNeutral | solarBuyBack | planName                      | state |
       | Y                        | N         | Y            | Family and Friends - Business | NSW   |
     And user clicks on Add plan button
-    And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
-      | ELE      | N                | N                     | Y                   | Y                                  |<state>|
-    And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
-      | GAS      | N                | N                     | Y                   | Y                                  |<state>|
+    # And user validates plan details on cart page for "<campaign>"
+    #   | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+    #   | ELE      | N                | N                     | Y                   | Y                                  |<state>|
+    # And user validates plan details on cart page for "<campaign>"
+    #   | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+    #   | GAS      | N                | N                     | Y                   | Y                                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                   | movingType | propertyType |
@@ -147,7 +147,7 @@ Feature:E2E scenario for bizreferral campaign
       | Y                        | N         | Y            | Family and Friends - Business | NSW   |
     And user validates source code
       | fuelType | eleSourceCode | gasSourceCode |
-      | BOTH     | Total_20%GD   | Total_22%GD   |
+      | BOTH     | Total_3%GD   | Total_1%GD   |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -168,9 +168,9 @@ Feature:E2E scenario for bizreferral campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign    | folderName                   | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | BOTH     | 20          | 22          | bizreferral | E2E_Campaign_bizreferral_NSW_Essential | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
+      | New            | BOTH     | 3          | 1          | bizreferral | E2E_Campaign_bizreferral_NSW_Essential | Quote Tool   | Move Home | NSW   | BUS          | New           | No  | No |
 
-  @DR22.2.1.campaign
+  @DR22.6.4.campaign
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for VIC
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "geom.george@energyaustralia.com.au" and "3355" and clicks on show me plan link
@@ -187,12 +187,12 @@ Feature:E2E scenario for bizreferral campaign
       | referencePriceComparison | goNeutral | solarBuyBack | planName                    | state |
       | Y                        | N         | Y            | Family and Friends Business | VIC   |
     And user clicks on Add plan button
-    And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
-      | ELE      | N                | N                     | Y                   | Y                                  |<state>|
-    And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
-      | GAS      | N                | N                     | Y                   | Y                                  |<state>|
+    # And user validates plan details on cart page for "<campaign>"
+    #   | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+    #   | ELE      | N                | N                     | Y                   | Y                                  |<state>|
+    # And user validates plan details on cart page for "<campaign>"
+    #   | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+    #   | GAS      | N                | N                     | Y                   | Y                                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                          | movingType | propertyType |
@@ -226,7 +226,7 @@ Feature:E2E scenario for bizreferral campaign
       | Y                        | N         | Y            | Family and Friends Business | VIC   |
     And user validates source code
       | fuelType | eleSourceCode | gasSourceCode |
-      | BOTH     | Total_5%GD    | Total_23%GD   |
+      | BOTH     | Total_1%GD    | Total_1%GD   |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -247,8 +247,9 @@ Feature:E2E scenario for bizreferral campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign    | folderName                   | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | BOTH     | 5           | 23          | bizreferral | E2E_Campaign_bizreferral_VIC | Quote Tool   | Move Home | VIC   | BUS          | New           | No  | No |
-  @DR21.10.4.campaign
+      | New            | BOTH     | 1           | 1          | bizreferral | E2E_Campaign_bizreferral_VIC | Quote Tool   | Move Home | VIC   | BUS          | New           | No  | No |
+  
+  @DR22.6.4.campaign
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for SA
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "geom.george@energyaustralia.com.au" and "5088" and clicks on show me plan link
@@ -265,12 +266,12 @@ Feature:E2E scenario for bizreferral campaign
       | referencePriceComparison | goNeutral | solarBuyBack | planName                    | state |
       | Y                        | N         | Y            | Family and Friends Business | SA    |
     And user clicks on Add plan button
-    And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
-      | ELE      | N                | N                     | Y                   | Y                                  |<state>|
-    And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
-      | GAS      | N                | N                     | Y                   | Y                                  |<state>|
+    # And user validates plan details on cart page for "<campaign>"
+    #   | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+    #   | ELE      | N                | N                     | Y                   | Y                                  |<state>|
+    # And user validates plan details on cart page for "<campaign>"
+    #   | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+    #   | GAS      | N                | N                     | Y                   | Y                                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                  | movingType | propertyType |
@@ -304,7 +305,7 @@ Feature:E2E scenario for bizreferral campaign
       | Y                        | N         | Y            | Family and Friends Business | SA    |
     And user validates source code
       | fuelType | eleSourceCode | gasSourceCode |
-      | BOTH     | Total_5%GD    | Total_5%GD    |
+      | BOTH     | Total_1%GD    | Total_1%GD    |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -325,9 +326,9 @@ Feature:E2E scenario for bizreferral campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign    | folderName                  | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | BOTH     | 5           | 5           | bizreferral | E2E_Campaign_bizreferral_SA | Quote Tool   | Move Home | SA    | BUS          | New           | No  | No |
+      | New            | BOTH     | 1           | 1           | bizreferral | E2E_Campaign_bizreferral_SA | Quote Tool   | Move Home | SA    | BUS          | New           | No  | No |
 
-  @DR22.2.1.campaign
+  @DR22.6.4.campaign
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for ACT
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "geom.george@energyaustralia.com.au" and "2602" and clicks on show me plan link
@@ -344,12 +345,12 @@ Feature:E2E scenario for bizreferral campaign
       | referencePriceComparison | goNeutral | solarBuyBack | planName                      | state |
       | Y                        | N         | Y            | Family and Friends - Business | ACT   |
     And user clicks on Add plan button
-    And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
-      | ELE      | N                | N                     | Y                   | Y                                  |<state>|
-    And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
-      | GAS      | N                | N                     | Y                   | Y                                  |<state>|
+    # And user validates plan details on cart page for "<campaign>"
+    #   | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+    #   | ELE      | N                | N                     | Y                   | Y                                  |<state>|
+    # And user validates plan details on cart page for "<campaign>"
+    #   | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
+    #   | GAS      | N                | N                     | Y                   | Y                                  |<state>|
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                   | movingType | propertyType |
@@ -383,7 +384,7 @@ Feature:E2E scenario for bizreferral campaign
       | N                        | N         | N            | Family and Friends - Business | ACT   |
     And user validates source code
       | fuelType | eleSourceCode | gasSourceCode |
-      | GAS      | Total_12%GD   | Total_22%GD   |
+      | GAS      | Total_1%GD   | Total_1%GD   |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -404,9 +405,9 @@ Feature:E2E scenario for bizreferral campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign    | folderName                   | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | BOTH     | 12          | 22          | bizreferral | E2E_Campaign_bizreferral_ACT | Quote Tool   | Move Home | ACT   | BUS          | New           | No  | No |
+      | New            | BOTH     | 1           | 1           | bizreferral | E2E_Campaign_bizreferral_ACT | Quote Tool   | Move Home | ACT   | BUS          | New           | No  | No |
 
-  @DR21.10.4.campaign
+  @DR22.6.4.campaign
   Scenario Outline: Validate complete data for bizreferral(familyandfriends-business) campaign for QLD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides email "geom.george@energyaustralia.com.au" and "4020" and clicks on show me plan link
@@ -418,7 +419,7 @@ Feature:E2E scenario for bizreferral campaign
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName                    | state |
       | Y                        | N         | Y            | Family and Friends Business | QLD   |
-    And user clicks on Add plan button
+    And user clicks on Select plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state |
       | ELE      | N                | N                     | Y                   | Y                                  |<state>|
@@ -453,7 +454,7 @@ Feature:E2E scenario for bizreferral campaign
       | Y                        | N         | Y            | Family and Friends Business | QLD   |
     And user validates source code
       | fuelType | eleSourceCode |
-      | ELE      | Total_15%GD   |
+      | ELE      | Total_1%GD   |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -470,9 +471,9 @@ Feature:E2E scenario for bizreferral campaign
 
     Examples:
       | customerStatus | fuelType | eleDiscount | campaign    | folderName                   | sourceSystem | journey   | state | customerType | newOrExisting | AAH | DD |
-      | New            | ELE      | 15          | bizreferral | E2E_Campaign_bizreferral_QLD | Quote Tool   | Move Home | QLD   | BUS          | New           | No  | No |
+      | New            | ELE      | 1          | bizreferral | E2E_Campaign_bizreferral_QLD | Quote Tool   | Move Home | QLD   | BUS          | New           | No  | No |
 
-  @DR21.10.4.campaign
+  @DR22.6.4.campaign
   Scenario: Validate family and friends business campaign referee email validation rules
     Given user has opened the 'bizreferral' link in a browser and creates 'E2E_bizreferral_EmailCodeValidation' to save evidences
     Then user validates the label for Referee email address as the offer code

@@ -34,16 +34,16 @@
             "description": ""
           },
           "ACT": {
-            "heading": "$50 sign up credit",
-            "description": "Get a $50 credit on each new energy account when you sign up.+"
+            "heading": "$25 online sign up credit",
+            "description": "Get a $25 credit on each new energy account when you sign up online.+"
           },
           "QLD": {
             "heading": "",
             "description": ""
           },
           "SA": {
-            "heading": "$50 sign up credit",
-            "description": "Get a $50 credit on each new energy account when you sign up.+"
+            "heading": "$25 online sign up credit",
+            "description": "Get a $25 credit on each new energy account when you sign up online.+"
           }
         },
         "carbonNeutral": {
@@ -51,8 +51,8 @@
           "description": "100% carbon neutral at no extra cost for your home energy."
         },
         "moveHomeCredit": {
-          "heading": "$50 online sign up credit",
-          "description": "Get a $50 credit on each new energy account when you sign up online.+"
+          "heading": "$25 online sign up credit",
+          "description": "Get a $25 credit on each new energy account when you sign up online.+"
         },
         "peaceOfMind": {
           "heading": "Peace of mind",
@@ -75,12 +75,12 @@
         "Credit50": {
           "VIC": "",
           "NSW": "",
-          "ACT": "$50 sign up credit. Get a $50 credit on each new energy account when you sign up.+",
+          "ACT": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
           "QLD": "",
-          "SA": "$50 sign up credit. Get a $50 credit on each new energy account when you sign up.+"
+          "SA": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+"
         },
         "carbonNeutral": "Energy with a bit of good. 100% carbon neutral at no extra cost for your home energy.",
-        "moveHomeCredit": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+        "moveHomeCredit": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "VIP discount off total energy bill. Exclusive VIP guaranteed discount that applies to your energy charges. Eligible customers only.",
         "noStandardConnectionFee": "",
@@ -90,55 +90,55 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_15%GD_50",
+          "VIC": "Total_8%GD_25",
           "NSW": {
-            "Ausgrid": "Total_23%GD_50",
-            "Essential": "Total_19%GD_50",
-            "Endeavour": "Total_19%GD_50",
-            "default": "Total_19%GD"
+            "Ausgrid": "Total_8%GD_25",
+            "Essential": "Total_8%GD_25",
+            "Endeavour": "Total_8%GD_25",
+            "default": "Total_8%GD_25"
           },
-          "ACT": "Total_13%GD_50",
-          "QLD": "Total_15%GD_50",
-          "SA": "Total_9%GD_50"
+          "ACT": "Total_3%GD_25",
+          "QLD": "Total_3%GD_25",
+          "SA": "Total_3%GD_25"
         },
         "COR": {
-          "VIC": "Total_15%GD_50",
+          "VIC": "Total_8%GD_25",
           "NSW": {
-            "Ausgrid": "Total_23%GD_50",
-            "Essential": "Total_19%GD_50",
-            "Endeavour": "Total_19%GD_50",
-            "default": "Total_19%GD"
+            "Ausgrid": "Total_8%GD_25",
+            "Essential": "Total_8%GD_25",
+            "Endeavour": "Total_8%GD_25",
+            "default": "Total_8%GD_25"
           },
-          "ACT": "Total_13%GD_50",
-          "QLD": "Total_15%GD_50",
-          "SA": "Total_9%GD_50"
+          "ACT": "Total_3%GD_25",
+          "QLD": "Total_3%GD_25",
+          "SA": "Total_3%GD_25"
         }
       },
 
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_15%GD_50",
+          "VIC": "Total_8%GD_25",
           "NSW": {
-            "Ausgrid": "Total_23%GD_50",
-            "Essential": "Total_19%GD_50",
-            "Endeavour": "Total_19%GD_50",
-            "default": "Total_19%GD"
+            "Ausgrid": "Total_8%GD_25",
+            "Essential": "Total_8%GD_25",
+            "Endeavour": "Total_8%GD_25",
+            "default": "Total_8%GD_25"
           },
-          "ACT": "Total_13%GD_50",
-          "QLD": "Total_15%GD_50",
-          "SA": "Total_9%GD_50"
+          "ACT": "Total_3%GD_25",
+          "QLD": "Total_3%GD_25",
+          "SA": "Total_3%GD_25"
         },
         "PS": {
-          "VIC": "Total_15%GD",
+          "VIC": "Total_8%GD",
           "NSW": {
-            "Ausgrid": "Total_23%GD",
-            "Essential": "Total_19%GD",
-            "Endeavour": "Total_19%GD",
-            "default": "Total_19%GD"
+            "Ausgrid": "Total_8%GD",
+            "Essential": "Total_8%GD",
+            "Endeavour": "Total_8%GD",
+            "default": "Total_8%GD"
           },
-          "ACT": "Total_13%GD",
-          "QLD": "Total_15%GD",
-          "SA": "Total_9%GD"
+          "ACT": "Total_3%GD",
+          "QLD": "Total_3%GD",
+          "SA": "Total_3%GD"
         }
       }
     }
@@ -156,16 +156,16 @@
             "description": ""
           },
           "ACT": {
-            "heading": "$50 sign up credit",
-            "description": "Get a $50 credit on each new energy account when you sign up.+"
+            "heading": "$25 online sign up credit",
+            "description": "Get a $25 credit on each new energy account when you sign up online.+"
           },
           "QLD": {
             "heading": "",
             "description": ""
           },
           "SA": {
-            "heading": "$50 sign up credit",
-            "description": "Get a $50 credit on each new energy account when you sign up.+"
+            "heading": "$25 online sign up credit",
+            "description": "Get a $25 credit on each new energy account when you sign up online.+"
           }
         },
         "carbonNeutral": {
@@ -173,8 +173,8 @@
           "description": "100% carbon neutral at no extra cost for your home energy."
         },
         "moveHomeCredit": {
-          "heading": "$50 online sign up credit",
-          "description": "Get a $50 credit on each new energy account when you sign up online.+"
+          "heading": "$25 online sign up credit",
+          "description": "Get a $25 credit on each new energy account when you sign up online.+"
         },
         "peaceOfMind": {
           "heading": "Peace of mind",
@@ -193,11 +193,11 @@
         "Credit50": {
           "VIC": "",
           "NSW": "",
-          "ACT": "$50 sign up credit. Get a $50 credit on each new energy account when you sign up.+",
-          "SA": "$50 sign up credit. Get a $50 credit on each new energy account when you sign up.+"
+          "ACT": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
+          "SA": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+"
         },
         "carbonNeutral": "Energy with a bit of good. 100% carbon neutral at no extra cost for your home energy.",
-        "moveHomeCredit": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+        "moveHomeCredit": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "VIP discount off total energy bill. Exclusive VIP guaranteed discount that applies to your energy charges. Eligible customers only.",
         "vipPriorityService": ""
@@ -206,30 +206,30 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_36%GD_50",
-          "NSW": "Total_19%GD_50",
-          "ACT": "Total_18%GD_50",
-          "SA": "Total_18%GD_50"
+          "VIC": "Total_11%GD_25",
+          "NSW": "Total_11%GD_25",
+          "ACT": "Total_8%GD_25",
+          "SA": "Total_7%GD_25"
         },
         "COR": {
-          "VIC": "Total_36%GD_50",
-          "NSW": "Total_19%GD_50",
-          "ACT": "Total_18%GD_50",
-          "SA": "Total_18%GD_50"
+          "VIC": "Total_11%GD_25",
+          "NSW": "Total_11%GD_25",
+          "ACT": "Total_8%GD_25",
+          "SA": "Total_7%GD_25"
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_36%GD_50",
-          "NSW": "Total_19%GD_50",
-          "ACT": "Total_18%GD_50",
-          "SA": "Total_18%GD_50"
+          "VIC": "Total_11%GD_25",
+          "NSW": "Total_11%GD_25",
+          "ACT": "Total_8%GD_25",
+          "SA": "Total_7%GD_25"
         },
         "PS": {
-          "VIC": "Total_36%GD",
-          "NSW": "Total_19%GD",
-          "ACT": "Total_18%GD",
-          "SA": "Total_18%GD"
+          "VIC": "Total_11%GD",
+          "NSW": "Total_11%GD",
+          "ACT": "Total_8%GD",
+          "SA": "Total_7%GD"
         }
       }
     }
@@ -298,9 +298,9 @@
       }
     },
     "moveHomeCredit": {
-      "heading": "$50 online sign up credit",
+      "heading": "$25 online sign up credit",
       "VIC": {
-        "description": "+ Offer available to eligible VIC residential customers who sign up to an electricity or gas offer online. Limit of one $50 credit per new energy account, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
+        "description": "+ Offer available to eligible VIC residential customers who sign up to an electricity or gas offer online. Limit of one $25 credit per new energy account, per customer address. We may change or end this offer at any time. Credit will be applied to your first bill and is not transferable or redeemable for cash."
       },
       "NSW": {
         "description": ""
