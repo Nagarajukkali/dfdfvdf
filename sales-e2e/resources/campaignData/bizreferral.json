@@ -56,54 +56,54 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_5%GD",
+          "VIC": "Total_1%GD",
           "NSW": {
-            "Ausgrid": "Total_21%GD",
-            "Essential": "Total_20%GD",
-            "Endeavour": "Total_15%GD",
-            "default": "Total_21%GD"
+            "Ausgrid": "Total_3%GD",
+            "Essential": "Total_3%GD",
+            "Endeavour": "Total_3%GD",
+            "default": "Total_3%GD"
           },
-          "ACT": "Total_12%GD",
-          "SA": "Total_5%GD",
-          "QLD": "Total_15%GD"
+          "ACT": "Total_1%GD",
+          "SA": "Total_1%GD",
+          "QLD": "Total_1%GD"
         },
         "COR": {
-          "VIC": "Total_5%GD",
+          "VIC": "Total_1%GD",
           "NSW": {
-            "Ausgrid": "Total_21%GD",
-            "Essential": "Total_20%GD",
-            "Endeavour": "Total_15%GD",
-            "default": "Total_21%GD"
+            "Ausgrid": "Total_3%GD",
+            "Essential": "Total_3%GD",
+            "Endeavour": "Total_3%GD",
+            "default": "Total_3%GD"
           },
-          "ACT": "Total_12%GD",
-          "SA": "Total_5%GD",
-          "QLD": "Total_15%GD"
+          "ACT": "Total_1%GD",
+          "SA": "Total_1%GD",
+          "QLD": "Total_1%GD"
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_5%GD",
+          "VIC": "Total_1%GD",
           "NSW": {
-            "Ausgrid": "Total_21%GD",
-            "Essential": "Total_20%GD",
-            "Endeavour": "Total_15%GD",
-            "default": "Total_21%GD"
+            "Ausgrid": "Total_3%GD",
+            "Essential": "Total_3%GD",
+            "Endeavour": "Total_3%GD",
+            "default": "Total_3%GD"
           },
-          "ACT": "Total_12%GD",
-          "SA": "Total_5%GD",
-          "QLD": "Total_15%GD"
+          "ACT": "Total_1%GD",
+          "SA": "Total_1%GD",
+          "QLD": "Total_1%GD"
         },
         "PS": {
-          "VIC": "Total_5%GD",
+          "VIC": "Total_1%GD",
           "NSW": {
-            "Ausgrid": "Total_21%GD",
-            "Essential": "Total_20%GD",
-            "Endeavour": "Total_15%GD",
-            "default": "Total_21%GD"
+            "Ausgrid": "Total_3%GD",
+            "Essential": "Total_3%GD",
+            "Endeavour": "Total_3%GD",
+            "default": "Total_3%GD"
           },
-          "ACT": "Total_12%GD",
-          "SA": "Total_5%GD",
-          "QLD": "Total_15%GD"
+          "ACT": "Total_1%GD",
+          "SA": "Total_1%GD",
+          "QLD": "Total_1%GD"
         }
       }
     }
@@ -138,36 +138,36 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_23%GD",
-          "NSW": "Total_22%GD",
-          "ACT": "Total_22%GD",
-          "SA": "Total_5%GD"
+          "VIC": "Total_1%GD",
+          "NSW": "Total_1%GD",
+          "ACT": "Total_1%GD",
+          "SA": "Total_1%GD"
         },
         "COR": {
-          "VIC": "Total_23%GD",
-          "NSW": "Total_22%GD",
-          "ACT": "Total_22%GD",
-          "SA": "Total_5%GD"
+          "VIC": "Total_1%GD",
+          "NSW": "Total_1%GD",
+          "ACT": "Total_1%GD",
+          "SA": "Total_1%GD"
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_23%GD",
-          "NSW": "Total_22%GD",
-          "ACT": "Total_22%GD",
-          "SA": "Total_5%GD"
+          "VIC": "Total_1%GD",
+          "NSW": "Total_1%GD",
+          "ACT": "Total_1%GD",
+          "SA": "Total_1%GD"
         },
         "PS": {
-          "VIC": "Total_23%GD",
-          "NSW": "Total_22%GD",
-          "ACT": "Total_22%GD",
-          "SA": "Total_5%GD"
+          "VIC": "Total_1%GD",
+          "NSW": "Total_1%GD",
+          "ACT": "Total_1%GD",
+          "SA": "Total_1%GD"
         }
       }
     }
   },
   "disclaimers": {
-    "referencePriceComparison": {
+  "referencePriceComparison": {
   "heading": "Reference price comparison and estimated annual cost",
   "VIC": {
     "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual business usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."

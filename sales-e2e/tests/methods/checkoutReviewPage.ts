@@ -552,6 +552,9 @@ export class checkoutReviewMethod {
       if (dataTable[0].Feature_carbonNeutral === "Y") {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureCN, json.electricity.feature.postSelect.carbonNeutral);
       }
+      if (dataTable[0].Feature_highSolarFIT === "Y") {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleHighSolarFIT, json.electricity.feature.postSelect.highSolarFIT);
+      }
       if (dataTable[0].Feature_moveHomeCredit === "Y") {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureMoveHome, json.electricity.feature.postSelect.moveHomeCredit);
       }
