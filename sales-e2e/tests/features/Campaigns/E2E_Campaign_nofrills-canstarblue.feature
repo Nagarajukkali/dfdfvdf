@@ -1,4 +1,4 @@
-@campaign @AM
+@campaign
 
 
   #For any campaign changes need to verify/update below steps:

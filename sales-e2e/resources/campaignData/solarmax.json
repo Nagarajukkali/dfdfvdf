@@ -130,9 +130,9 @@
             "Endeavour": "SolarMax_25",
             "default": "SolarMax_25"
           },
-          "ACT": "SolarMax_25",
+          "ACT": "SolarMax",
           "QLD": "SolarMax_25",
-          "SA": "SolarMax_25"
+          "SA": "SolarMax"
         },
         "COR": {
           "VIC": "SolarMax_25",
@@ -142,9 +142,9 @@
             "Endeavour": "SolarMax_25",
             "default": "SolarMax_25"
           },
-          "ACT": "SolarMax_25",
+          "ACT": "SolarMax",
           "QLD": "SolarMax_25",
-          "SA": "SolarMax_25"
+          "SA": "SolarMax"
         }
       },
       "existingCustomer": {
@@ -156,9 +156,9 @@
             "Endeavour": "SolarMax_25",
             "default": "SolarMax_25"
           },
-          "ACT": "SolarMax_25",
+          "ACT": "SolarMax",
           "QLD": "SolarMax_25",
-          "SA": "SolarMax_25"
+          "SA": "SolarMax"
         },
         "PS": {
           "VIC": "SolarMax",
@@ -244,9 +244,9 @@
         "variableRates": "Variable rates. Your energy charges are variable. We'll let you know in advance before any rates change.",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before any rates change.",
         "discountOffTotalEnergyBill": {
-          "VIC": "8% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
+          "VIC": "12% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
           "NSW": "8% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
-          "ACT": "5% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
+          "ACT": "18% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
           "SA": "4% discount off total gas bill. Guaranteed discount that applies to your energy charges."
         }
       }
@@ -254,29 +254,29 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_8%GD_25",
+          "VIC": "Total_12%GD_25",
           "NSW": "Total_8%GD_25",
-          "ACT": "Total_5%GD_25",
-          "SA": "Total_4%GD_25"
+          "ACT": "Total_18%GD",
+          "SA": "Total_4%GD"
         },
         "COR": {
-          "VIC": "Total_8%GD_25",
+          "VIC": "Total_12%GD_25",
           "NSW": "Total_8%GD_25",
-          "ACT": "Total_5%GD_25",
-          "SA": "Total_4%GD_25"
+          "ACT": "Total_18%GD",
+          "SA": "Total_4%GD"
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_8%GD_25",
+          "VIC": "Total_12%GD_25",
           "NSW": "Total_8%GD_25",
-          "ACT": "Total_5%GD_25",
-          "SA": "Total_4%GD_25"
+          "ACT": "Total_18%GD",
+          "SA": "Total_4%GD"
         },
         "PS": {
-          "VIC": "Total_8%GD",
+          "VIC": "Total_12%GD",
           "NSW": "Total_8%GD",
-          "ACT": "Total_5%GD",
+          "ACT": "Total_18%GD",
           "SA": "Total_4%GD"
         }
       }
@@ -338,7 +338,7 @@
       },
       "QLD": {
         "heading": "Sign up credits",
-        "description": "+ Offer available to eligible QLD residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
+        "description": "+ Offer available to eligible QLD residential customers who sign up to an electricity offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
       },
       "SA": {
         "heading": "Sign up credits",

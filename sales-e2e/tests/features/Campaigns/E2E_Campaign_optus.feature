@@ -13,7 +13,7 @@
 
 Feature:E2E scenario for optus
 
-  @DR22.7.3.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for optus campaign for NSW-Ausgrid for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "EALighttheway" and "2144" and clicks on show me plan link
@@ -28,14 +28,14 @@ Feature:E2E scenario for optus
       | GAS      | Y                | Y                     | Y                     | Y                                     | N                               | <state> |  N                    |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Total Plan | <state> | Y            |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | ELE      | N                | Y                     | Y                     | Y                                     | <state> | Y             |
+      | ELE      | Y                | Y                     | Y                     | Y                                     | <state> | N             |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | GAS      | N                | Y                     | Y                     | Y                                     | <state> | Y             |
+      | GAS      | Y                | Y                     | Y                     | Y                                     | <state> | N             |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -65,10 +65,10 @@ Feature:E2E scenario for optus
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               | <state> | Y                     |
+      | ELE      | Y                | N                     | Y                     | Y                                     | N                               | <state> | N                     |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> | Y                     |
+      | GAS      | Y                | N                     | Y                     | Y                                     | N                               | <state> | N                     |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
@@ -91,10 +91,10 @@ Feature:E2E scenario for optus
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GN  | 5240524910 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
 
     Examples:
-      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                  | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 10          | 10          | optus | E2E_Campaign_optus_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                        | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
+      | New            | BOTH     | 7           | 10          | optus    | E2E_Campaign_optus_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.7.3.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for optus campaign for VIC for new non moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "EALighttheway" and "3199" and clicks on show me plan link
@@ -103,20 +103,20 @@ Feature:E2E scenario for optus
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> | Y                     |
+      | ELE      | Y                | Y                     | Y                     | Y                                     | N                               | <state> | N                     |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> |  Y                    |
+      | GAS      | Y                | Y                     | Y                     | Y                                     | N                               | <state> |  N                    |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | ELE      | N                | Y                     | Y                   | Y                                  | <state> | Y             |
+      | ELE      | Y                | Y                     | Y                     | Y                                     | <state> | N             |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | GAS      | N                | Y                     | Y                   | Y                                  | <state> | Y             |
+      | GAS      | Y                | Y                     | Y                     | Y                                     | <state> | N             |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -137,10 +137,10 @@ Feature:E2E scenario for optus
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               | <state> | Y                     |
+      | ELE      | Y                | N                     | Y                     | Y                                     | N                               | <state> | N                     |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> |  Y                    |
+      | GAS      | Y                | N                     | Y                     | Y                                     | N                               | <state> |  N                    |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
@@ -163,10 +163,10 @@ Feature:E2E scenario for optus
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | BP2H-GV  | 5310425534 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
 
     Examples:
-      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                     | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 10          | 14          | optus | E2E_Campaign_optus_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           |
+      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                           | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
+      | New            | BOTH     | 7           | 14          | optus    | E2E_Campaign_optus_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           |
 
-  @DR22.7.3.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for optus campaign for SA for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "EALighttheway" and "5076" and clicks on show me plan link
@@ -175,20 +175,20 @@ Feature:E2E scenario for optus
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | Y                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | Y                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | ELE      | Y                | Y                     | Y                   | Y                                  | <state> |
+      | ELE      | N                | Y                     | Y                     | Y                                     | <state> |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | GAS      | Y                | Y                     | Y                   | Y                                  | <state> |
+      | GAS      | N                | Y                     | Y                     | Y                                  | <state> |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -206,13 +206,13 @@ Feature:E2E scenario for optus
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | Y                | N                     | Y                   | Y                                  | N                               | <state> |
+      | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | Y                | N                     | Y                   | Y                                  | N                               | <state> |
+      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -232,10 +232,10 @@ Feature:E2E scenario for optus
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GS  | 5510149276 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
 
     Examples:
-      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                      | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 2           | 6          | optus | E2E_Campaign_optus_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName            | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
+      | New            | BOTH     | 2           | 6           | optus    | E2E_Campaign_optus_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.7.3.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for optus campaign for ACT for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "EALighttheway" and "2615" and clicks on show me plan link
@@ -243,20 +243,20 @@ Feature:E2E scenario for optus
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | Y                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | Y                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | ELE      | Y                | Y                     | Y                   | Y                                  | <state> |
+      | ELE      | N                | Y                     | Y                     | Y                                     | <state> |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | GAS      | Y                | Y                     | Y                   | Y                                  | <state> |
+      | GAS      | N                | Y                     | Y                     | Y                                     | <state> |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -274,13 +274,13 @@ Feature:E2E scenario for optus
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | Y                | N                     | Y                   | Y                                  | N                               | <state> |
+      | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | Y                | N                     | Y                   | Y                                  | N                               | <state> |
+      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -300,24 +300,24 @@ Feature:E2E scenario for optus
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GA  | 5261512002 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
 
     Examples:
-      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                       | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | ELE      | 13          | 20          | optus | E2E_Campaign_optus_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName             | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
+      | New            | ELE      | 13          | 20          | optus    | E2E_Campaign_optus_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.7.3.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for optus campaign for QLD for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "EALighttheway" and "4208" and clicks on show me plan link
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> | Y                     |
+      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
     And user clicks on Select plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | ELE      | N                | Y                     | Y                   | Y                                  | <state> | Y             |
+      | ELE      | N                | Y                     | Y                     | Y                                     | <state> | N             |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -336,10 +336,10 @@ Feature:E2E scenario for optus
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_XX_discountOffTotalEnergyBill | Feature_variableRates | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | N                     | Y                                  | Y                   | N                               | <state> | Y                     |
+      | ELE      | N                | N                     | Y                                     | Y                     | N                               | <state> | N                     |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |
-      | Y                        | Y         | Y            | Flexi Plan | QLD   | Y            |
+      | Y                        | Y         | Y            | Flexi Plan | QLD   | N            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -355,10 +355,10 @@ Feature:E2E scenario for optus
       | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-EQ  | 3115863522 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
 
     Examples:
-      | customerStatus | fuelType | eleDiscount | campaign        | folderName                       | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | ELE      | 2          | optus | E2E_Campaign_optus_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | customerStatus | fuelType | eleDiscount | campaign | folderName             | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
+      | New            | ELE      | 2           | optus    | E2E_Campaign_optus_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.7.3.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for optus campaign for SA existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "EALighttheway" and "5000" and clicks on show me plan link
@@ -367,20 +367,20 @@ Feature:E2E scenario for optus
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | Y                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | Y                | Y                     | Y                   | Y                                  | N                               | <state> |
+      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | ELE      | Y                | Y                     | Y                   | Y                                  | <state> |
+      | ELE      | N                | Y                     | Y                     | Y                                     | <state> |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | GAS      | Y                | Y                     | Y                   | Y                                  | <state> |
+      | GAS      | N                | Y                     | Y                     | Y                                     | <state> |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
@@ -401,10 +401,10 @@ Feature:E2E scenario for optus
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               | <state> |
+      | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> |
+      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | SA    | N            |
@@ -426,10 +426,10 @@ Feature:E2E scenario for optus
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-GS  | 5510368960 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
-      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                          | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     | 2           | 6           | optus | E2E_Campaign_optus_SA_existing_non-moving | SA    | Quote Tool   | Plan Switch | No  | No | RES          | Existing non-moving |
+      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                                | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting       |
+      | Existing       | BOTH     | 2           | 6           | optus    | E2E_Campaign_optus_SA_existing_non-moving | SA    | Quote Tool   | Plan Switch | No  | No | RES          | Existing non-moving |
 
-  @DR22.7.3.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for optus campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "EALighttheway" and "3214" and clicks on show me plan link
@@ -438,20 +438,20 @@ Feature:E2E scenario for optus
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> | Y                     |
+      | ELE      | Y                | Y                     | Y                     | Y                                     | N                               | <state> | N                     |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> | Y                     |
+      | GAS      | Y                | Y                     | Y                     | Y                                     | N                               | <state> | N                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | ELE      | N                | Y                     | Y                   | Y                                  | <state> | Y             |
+      | ELE      | Y                | Y                     | Y                     | Y                                     | <state> | N             |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | GAS      | N                | Y                     | Y                   | Y                                  | <state> | Y             |
+      | GAS      | Y                | Y                     | Y                     | Y                                     | <state> | N             |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
@@ -473,13 +473,13 @@ Feature:E2E scenario for optus
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               | <state> |
+      | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> |
+      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |
-      | Y                        | Y         | Y            | Flexi Plan | VIC   | Y            |
+      | Y                        | Y         | Y            | Flexi Plan | VIC   | N            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -498,10 +498,10 @@ Feature:E2E scenario for optus
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-GV  | 5321264636 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
-      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                           | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     | 10          | 14          | optus | E2E_Campaign_optus_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                                 | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
+      | Existing       | BOTH     | 7           | 14          | optus    | E2E_Campaign_optus_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR22.7.3.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for optus campaign for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "EALighttheway" and "3199" and clicks on show me plan link
@@ -510,20 +510,20 @@ Feature:E2E scenario for optus
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                   | Y                                  | N                               | <state> | Y                     |
+      | ELE      | Y                | Y                     | Y                     | Y                                     | N                               | <state> | N                     |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | Y                   | Y                                  | N                               | <state> |  Y                    |
+      | GAS      | Y                | Y                     | Y                     | Y                                     | N                               | <state> | N                    |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | ELE      | N                | Y                     | Y                   | Y                                  | <state> | Y             |
+      | ELE      | Y                | Y                     | Y                     | Y                                     | <state> | N             |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | GAS      | N                | Y                     | Y                   | Y                                  | <state> | Y             |
+      | GAS      | Y                | Y                     | Y                     | Y                                     | <state> | N             |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -545,10 +545,10 @@ Feature:E2E scenario for optus
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | N                     | Y                   | Y                                  | N                               | <state> | Y                     |
+      | ELE      | Y                | N                     | Y                     | Y                                     | N                               | <state> | N                     |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | N                | N                     | Y                   | Y                                  | N                               | <state> |  Y                    |
+      | GAS      | Y                | N                     | Y                     | Y                                     | N                               | <state> |  N                    |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
@@ -571,5 +571,5 @@ Feature:E2E scenario for optus
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GV  | 5310425534 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
 
     Examples:
-      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                     | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 10          | 14          | optus | E2E_Campaign_optus_new_nonmoving_VIC | VIC   | Quote Tool   | Move Home     | No  | No | RES    | New           |
+      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                           | state | sourceSystem | journey       | AAH | DD | customerType | newOrExisting |
+      | New            | BOTH     | 7           | 14          | optus           | E2E_Campaign_optus_new_nonmoving_VIC | VIC   | Quote Tool   | Move Home     | No  | No | RES          | New           |

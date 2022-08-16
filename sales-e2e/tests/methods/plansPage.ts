@@ -2757,6 +2757,9 @@ export class campaignMethod {
   public static async selectPlanOnCampaign(t) {
     await testFunction.click(t, EaHomePage.elements.selectCampaignPlan);
   }
+  public static async selectPlansOnCampaign(t) {
+    await testFunction.click(t, EaHomePage.elements.selectCampaignPlans);
+  }
 
   public static async isNswSeniors() {
     let pageUrl = await testFunction.getPageURL();

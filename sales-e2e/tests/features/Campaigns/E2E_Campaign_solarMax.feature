@@ -1,26 +1,37 @@
+@campaign
 
-Feature:E2E scenario for residential-SolarMax-plan
+  #For any campaign changes need to verify/update below steps:
+  # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
+  # 2. Provide Y/N for features as per the change in this step "And user validates the data on plans page for "<campaign>""
+  # 3. Provide Y/N for disclaimers as per the change in this step "And user validates disclaimer on plans page for "<campaign>""
+  # 4. Provide Y/N for features as per the change in this step "And user validates plan details on cart page for "<campaign>""
+  # 5. Provide Y/N for features as per the change in this step "And user validates plan details on review page for "<campaign>""
+  # 6. Provide Y/N for disclaimers as per the change in this step "And user validates disclaimer on review page for "<campaign>""
+  # 7. Update Source Code if require in this step "And user validates source code"
+  # 8. Update the Journey Moving/Non-Moving if require in this step "And user provides all other details on qualifier page"
+  # 9. If journey change from Moving to Non-Moving then update offerType to COR/PS accordingly in this step "And user validates below mandatory fields"
+
+Feature:E2E scenario for solarmax campaign
+
   @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for NSW-Ausgrid for new moving customer
-    Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to 'RES' plans page
-    And user enters '2000' in 'POSTCODE' field
-    # And user validates "ELE" discount to be "<eleDiscount>" percent for "<planName>" plan
-    And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
-    And user validates the data on 'Residential' plans page for "<campaign>" plan
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "2000" for postcode and proceed to view the plans
+    # And user validates "ELE" discount to be "<eleDiscount>" percent
+    And user validates "GAS" discount to be "<gasDiscount>" percent
+    And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_highSolarFIT | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
       | BOTH     | Y                | Y                     | Y                    | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
-    And user validates disclaimer on plans page for "<campaign>" plan
+    And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | Y            |    N         |
-    When user selects '<planName>'
+    When user clicks on Select plans button
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_highSolarFIT  |state  |Feature_50Credit|
     #   |ELE      |Y                     |Y                      | Y                     |<state>|    Y           |
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |GAS      |Y                     |Y                      | Y                                      |<state>|    Y           |
-    And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                          | movingType | propertyType |
@@ -68,20 +79,20 @@ Feature:E2E scenario for residential-SolarMax-plan
 
     Examples:
       |customerStatus|fuelType|planName               |eleDiscount |gasDiscount|campaign  | state |folderName                           |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
-      |New           |BOTH    |Solar Max & Flexi Plan |0           |8          |solarmax    | NSW   |E2E_resi-solar-flexi_NSW_new_moving   |Quote Tool  |Move Home|NSW    |RES          |New            |No  |No  |
+      |New           |BOTH    |Solar Max & Flexi Plan |0           |8          |solarmax    | NSW   |E2E_Campaign_solarMax_NSW_new_moving   |Quote Tool  |Move Home|NSW    |RES          |New            |No  |No  |
 
   @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for QLD - new moving customer
-    Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to 'RES' plans page
-    And user enters '4216' in 'POSTCODE' field
-    And user validates the data on 'Residential' plans page for "<campaign>" plan
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "4216" for postcode and proceed to view the plans
+    # And user validates "ELE" discount to be "<eleDiscount>" percent
+    And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_highSolarFIT | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
       | ELE      | Y                | Y                     | N                   | Y                    | Y                    | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | Y            |    N         |
-    When user selects '<planName>'
+    When user clicks on Select plan button
     And user validates the data on carts page for "<campaign>" plan
       |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_highSolarFIT  |state  |Feature_50Credit|
       |ELE      |Y                     |Y                      | Y                     |<state>|    Y           |
@@ -122,29 +133,27 @@ Feature:E2E scenario for residential-SolarMax-plan
       | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | SMAX-EQ  | 3116459687 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |<state>|
     Examples:
       | customerStatus | fuelType |planName               | eleDiscount | campaign | folderName                    | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | ELE      |Solar Max & Flexi Plan | 0           | solarmax | E2E_solar-plan_QLD_new_moving | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | ELE      |Solar Max & Flexi Plan | 0           | solarmax | E2E_Campaign_solarMax_QLD_new_moving | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
   @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for SA - new moving
-    Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to 'RES' plans page
-    And user enters '5044' in 'POSTCODE' field
-    And user validates "ELE" discount to be "<eleDiscount>" percent for "<planName>" plan
-    And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
-    And user validates the data on 'Residential' plans page for "<campaign>" plan
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "5044" for postcode and proceed to view the plans
+    # And user validates "ELE" discount to be "<eleDiscount>" percent
+    And user validates "GAS" discount to be "<gasDiscount>" percent
+    And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_highSolarFIT | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
       | BOTH     | N                | Y                     | N                   | Y                    | Y                    | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
-    When user selects '<planName>'
+    When user clicks on Select plans button
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_highSolarFIT  |state  |Feature_50Credit|
     #   |ELE      |Y                     |Y                      | Y                     |<state>|    Y           |
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |GAS      |Y                     |Y                      |Y                                       |<state>|    Y           |
-    And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                         | movingType | propertyType |
@@ -187,29 +196,27 @@ Feature:E2E scenario for residential-SolarMax-plan
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | BP2H-GS  | 5510157932 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName               | eleDiscount | gasDiscount | campaign | folderName                          | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     |Solar Max & Flexi Plan | 0           | 4           | solarmax | E2E_solar-flexi-plan_SA_new_nonmoving | SA    | Quote Tool   | COR     | No  | No | RES          | New           |
+      | New            | BOTH     |Solar Max & Flexi Plan | 0           | 4           | solarmax | E2E_Campaign_solarMax_SA_new_nonmoving | SA    | Quote Tool   | COR     | No  | No | RES          | New           |
 
   @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for ACT - new moving
-    Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to 'RES' plans page
-    And user enters '2600' in 'POSTCODE' field
-    And user validates "ELE" discount to be "<eleDiscount>" percent for "<planName>" plan
-    And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
-    And user validates the data on 'Residential' plans page for "<campaign>" plan
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "2600" for postcode and proceed to view the plans
+    # And user validates "ELE" discount to be "<eleDiscount>" percent
+    And user validates "GAS" discount to be "<gasDiscount>" percent
+    And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
       | BOTH     | N                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
-    When user selects '<planName>'
+    When user clicks on Select plans button
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_highSolarFIT  |state  |Feature_50Credit|
     #   |ELE      |Y                     |Y                      |Y                      |<state>|    Y           |
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |GAS      |Y                     |Y                      |Y                                       |<state>|    Y           |
-    And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                    | movingType | propertyType |
@@ -254,29 +261,27 @@ Feature:E2E scenario for residential-SolarMax-plan
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GA  |            |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName              | eleDiscount | gasDiscount | campaign | folderName                        | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | ELE      |Solar Max & Flexi Plan| 0           | 18           | solarmax    | E2E_solar-flexi-plan_ACT_new_moving | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | ELE      |Solar Max & Flexi Plan| 0           | 18           | solarmax    | E2E_Campaign_solarMax_ACT_new_moving | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
   @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for ACT - new non-moving
-    Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to 'RES' plans page
-    And user enters '2600' in 'POSTCODE' field
-    And user validates "ELE" discount to be "<eleDiscount>" percent for "<planName>" plan
-    And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
-    And user validates the data on 'Residential' plans page for "<campaign>" plan
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "2600" for postcode and proceed to view the plans
+    # And user validates "ELE" discount to be "<eleDiscount>" percent
+    And user validates "GAS" discount to be "<gasDiscount>" percent
+    And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
       | BOTH     | N                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
-    When user selects '<planName>'
+    When user clicks on Select plans button
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |ELE      |Y                     |Y                      |N                                       |<state>|    Y           |
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |GAS      |Y                     |Y                      |Y                                       |<state>|    Y           |
-    And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                    | movingType | propertyType |
@@ -320,29 +325,27 @@ Feature:E2E scenario for residential-SolarMax-plan
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | BP2H-GA  |      |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName              | eleDiscount | gasDiscount | campaign | folderName                             | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
-      | New            | ELE      |Solar Max & Flexi Plan| 0           | 18           | solarmax    | E2E_solar-flexi-plan_ACT_new_nonmove | ACT   | Quote Tool   | COR     | No  | No | RES          | New           |
+      | New            | ELE      |Solar Max & Flexi Plan| 0           | 18           | solarmax    | E2E_Campaign_solarMax_ACT_new_nonmove | ACT   | Quote Tool   | COR     | No  | No | RES          | New           |
 
   @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for ACT - existing non-moving
-    Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to 'RES' plans page
-    And user enters '2600' in 'POSTCODE' field
-    And user validates "ELE" discount to be "<eleDiscount>" percent for "<planName>" plan
-    And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
-    And user validates the data on 'Residential' plans page for "<campaign>" plan
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "2600" for postcode and proceed to view the plans
+    # And user validates "ELE" discount to be "<eleDiscount>" percent
+    And user validates "GAS" discount to be "<gasDiscount>" percent
+    And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
       | BOTH     | N                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
-    When user selects '<planName>'
+    When user clicks on Select plans button
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |ELE      |Y                     |Y                      |N                                       |<state>|    Y           |
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |GAS      |Y                     |Y                      |Y                                       |<state>|    Y           |
-    And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus   | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue   |
@@ -388,29 +391,27 @@ Feature:E2E scenario for residential-SolarMax-plan
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-GA  | 5260060181 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName              | eleDiscount | gasDiscount | campaign | folderName                             | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting |
-      | Existing       | ELE      |Solar Max & Flexi Plan|  0          | 18           | solarmax    | E2E_solar-flexi-plan_ACT_Exs_nonmove | ACT   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | Existing       | ELE      |Solar Max & Flexi Plan|  0          | 18           | solarmax    | E2E_Campaign_solarMax_ACT_Exs_nonmove | ACT   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
   @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for VIC - new moving
-    Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to 'RES' plans page
-    And user enters '3000' in 'POSTCODE' field
-    And user validates "ELE" discount to be "<eleDiscount>" percent for "<planName>" plan
-    And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
-    And user validates the data on 'Residential' plans page for "<campaign>" plan
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "3000" for postcode and proceed to view the plans
+    # And user validates "ELE" discount to be "<eleDiscount>" percent
+    And user validates "GAS" discount to be "<gasDiscount>" percent
+    And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
       | BOTH     | Y                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | Y            |    N         |
-    When user selects '<planName>'
+    When user clicks on Select plans button
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |ELE      |Y                     |Y                      |Y                                       |<state>|    Y           |
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |GAS      |Y                     |Y                      |Y                                       |<state>|    Y           |
-    And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress               | movingType | propertyType |
@@ -455,29 +456,27 @@ Feature:E2E scenario for residential-SolarMax-plan
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GV  | 5320201310 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName              | eleDiscount | gasDiscount | campaign | folderName                            | state | tariffType | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     |Solar Max & Flexi Plan| 0           | 12           | solarmax | E2E_solar-flexi-plan_VIC_new_moving | VIC   | single_rate| Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | BOTH     |Solar Max & Flexi Plan| 0           | 5           | solarmax | E2E_Campaign_solarMax_VIC_new_moving | VIC   | single_rate| Quote Tool   | Move Home | No  | No | RES          | New           |
 
   @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for VIC - new non-moving
-    Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to 'RES' plans page
-    And user enters '3000' in 'POSTCODE' field
-    And user validates "ELE" discount to be "<eleDiscount>" percent for "<planName>" plan
-    And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
-    And user validates the data on 'Residential' plans page for "<campaign>" plan
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "3000" for postcode and proceed to view the plans
+    # And user validates "ELE" discount to be "<eleDiscount>" percent
+    And user validates "GAS" discount to be "<gasDiscount>" percent
+    And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
       | BOTH     | Y                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | Y            |    N         |
-    When user selects '<planName>'
+    When user clicks on Select plans button
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |ELE      |Y                     |Y                      |Y                                       |<state>|    Y           |
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |GAS      |Y                     |Y                      |Y                                       |<state>|    Y           |
-    And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                | movingType | propertyType |
@@ -522,29 +521,27 @@ Feature:E2E scenario for residential-SolarMax-plan
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | BP2H-GV  | 5320201310 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName              | eleDiscount | gasDiscount| campaign | folderName                        | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     |Solar Max & Flexi Plan| 0           | 12          | solarmax    | E2E_solar-flexi-plan_VIC_new_non_moving | VIC   | Quote Tool   | COR   | No  | No | RES          | New           |
+      | New            | BOTH     |Solar Max & Flexi Plan| 0           | 12          | solarmax    | E2E_Campaign_solarMax_VIC_new_non_moving | VIC   | Quote Tool   | COR   | No  | No | RES          | New           |
 
   @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for NSW-Endeavour - new non moving customer
-    Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to 'RES' plans page
-    And user enters '2516' in 'POSTCODE' field
-    And user validates "ELE" discount to be "<eleDiscount>" percent for "<planName>" plan
-    And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
-    And user validates the data on 'Residential' plans page for "<campaign>" plan
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "2516" for postcode and proceed to view the plans
+    # And user validates "ELE" discount to be "<eleDiscount>" percent
+    And user validates "GAS" discount to be "<gasDiscount>" percent
+    And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
       | BOTH     | Y                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | Y            |    N         |
-    When user selects '<planName>'
+    When user clicks on Select plans button
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |ELE      |Y                     |Y                      |Y                                       |<state>|    Y           |
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |GAS      |Y                     |Y                      |Y                                       |<state>|    Y           |
-    And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                             | movingType | propertyType |
@@ -593,29 +590,27 @@ Feature:E2E scenario for residential-SolarMax-plan
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | BP2H-GN  |            |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName              | eleDiscount | gasDiscount | campaign | folderName                           | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     |Solar Max & Flexi Plan| 0           | 8           | solarmax | E2E_solar-flexi-plan_NSW_new_nonmoving | NSW   | Quote Tool   | COR     | No  | No | RES          | New           |
+      | New            | BOTH     |Solar Max & Flexi Plan| 0           | 8           | solarmax | E2E_Campaign_solarMax_NSW_new_nonmoving | NSW   | Quote Tool   | COR     | No  | No | RES          | New           |
 
   @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for VIC existing non moving
-    Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to 'RES' plans page
-    And user enters '3000' in 'POSTCODE' field
-    And user validates "ELE" discount to be "<eleDiscount>" percent for "<planName>" plan
-    And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
-    And user validates the data on 'Residential' plans page for "<campaign>" plan
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "3000" for postcode and proceed to view the plans
+    # And user validates "ELE" discount to be "<eleDiscount>" percent
+    And user validates "GAS" discount to be "<gasDiscount>" percent
+    And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
       | BOTH     | Y                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | Y            |    N         |
-    When user selects '<planName>'
+    When user clicks on Select plans button
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |ELE      |Y                     |Y                      |Y                                       |<state>|    Y           |
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |GAS      |Y                     |Y                      |Y                                       |<state>|    Y           |
-    And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus   | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue   |
@@ -662,29 +657,27 @@ Feature:E2E scenario for residential-SolarMax-plan
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-GV  | 5330480434 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName              | eleDiscount | gasDiscount | campaign | folderName                                 | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     |Solar Max & Flexi Plan| 0           | 12           | solarmax | E2E_solar-flexi-plan_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     |Solar Max & Flexi Plan| 0           | 12           | solarmax | E2E_Campaign_solarMax_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
   @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for VIC existing moving
-    Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to 'RES' plans page
-    And user enters '3000' in 'POSTCODE' field
-    And user validates "ELE" discount to be "<eleDiscount>" percent for "<planName>" plan
-    And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
-    And user validates the data on 'Residential' plans page for "<campaign>" plan
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "3000" for postcode and proceed to view the plans
+    # And user validates "ELE" discount to be "<eleDiscount>" percent
+    And user validates "GAS" discount to be "<gasDiscount>" percent
+    And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
       | BOTH     | Y                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | Y            |    N         |
-    When user selects '<planName>'
+    When user clicks on Select plans button
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |ELE      |Y                     |Y                      |Y                                       |<state>|    Y           |
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |GAS      |Y                     |Y                      |Y                                       |<state>|    Y           |
-    And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus   | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue   |
@@ -732,29 +725,27 @@ Feature:E2E scenario for residential-SolarMax-plan
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GV  | 5320201310 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName              | eleDiscount | gasDiscount | campaign | folderName                             | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     |Solar Max & Flexi Plan| 0           | 12           | solarmax    | E2E_solar-flexi-plan_VIC_existing_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     |Solar Max & Flexi Plan| 0           | 12           | solarmax    | E2E_Campaign_solarMax_VIC_existing_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | Existing  non-moving |
 
   @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for NSW-Endeavour existing non moving
-    Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to 'RES' plans page
-    And user enters '2761' in 'POSTCODE' field
-    And user validates "ELE" discount to be "<eleDiscount>" percent for "<planName>" plan
-    And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
-    And user validates the data on 'Residential' plans page for "<campaign>" plan
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "2761" for postcode and proceed to view the plans
+    # And user validates "ELE" discount to be "<eleDiscount>" percent
+    And user validates "GAS" discount to be "<gasDiscount>" percent
+    And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
       | BOTH     | Y                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | Y            |    N         |
-    When user selects '<planName>'
+    When user clicks on Select plans button
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |ELE      |Y                     |Y                      |Y                                       |<state>|    Y           |
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |GAS      |Y                     |Y                      |Y                                       |<state>|    Y           |
-    And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus   | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
@@ -798,29 +789,27 @@ Feature:E2E scenario for residential-SolarMax-plan
 
     Examples:
       | customerStatus | fuelType |planName              | eleDiscount | gasDiscount | campaign | folderName                                 | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     |Solar Max & Flexi Plan| 5           | 8           | solarmax | E2E_solar-flexi-plan_NSW_existing_non-moving | NSW   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     |Solar Max & Flexi Plan| 5           | 8           | solarmax | E2E_Campaign_solarMax_NSW_existing_non-moving | NSW   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
   @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for SA existing non moving
-    Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to 'RES' plans page
-    And user enters '5000' in 'POSTCODE' field
-    And user validates "ELE" discount to be "<eleDiscount>" percent for "<planName>" plan
-    And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
-    And user validates the data on 'Residential' plans page for "<campaign>" plan
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "5000" for postcode and proceed to view the plans
+    # And user validates "ELE" discount to be "<eleDiscount>" percent
+    And user validates "GAS" discount to be "<gasDiscount>" percent
+    And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
       | BOTH     | N                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
-    When user selects '<planName>'
+    When user clicks on Select plans button
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |ELE      |Y                     |Y                      |N                                       |<state>|    Y           |
     # And user validates the data on carts page for "<campaign>" plan
     #   |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
     #   |GAS      |Y                     |Y                      |Y                                       |<state>|    Y           |
-    And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus   | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue   |
@@ -866,20 +855,20 @@ Feature:E2E scenario for residential-SolarMax-plan
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-GS  | 5510366597 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName              | eleDiscount | gasDiscount | campaign | folderName                                | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     |Solar Max & Flexi Plan| 0           | 4           | solarmax | E2E_solar-flexi-plan_SA_existing_non-moving | SA    | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     |Solar Max & Flexi Plan| 0           | 4           | solarmax | E2E_Campaign_solarMax_SA_existing_non-moving | SA    | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
   @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for QLD existing non moving
-    Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
-    And user has navigated to 'RES' plans page
-    And user enters '4053' in 'POSTCODE' field
-    And user validates the data on 'Residential' plans page for "<campaign>" plan
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides "4053" for postcode and proceed to view the plans
+    # And user validates "ELE" discount to be "<eleDiscount>" percent
+    And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_highSolarFIT | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
       | ELE      | Y                | Y                     | N                   | Y                    | Y                    | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | Y            |    N         |
-    When user selects '<planName>'
+    When user clicks on Select plan button
     And user validates the data on carts page for "<campaign>" plan
       |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_highSolarFIT  |state  |Feature_50Credit|
       |ELE      |Y                     |Y                      |Y                      |<state>|    Y           |
@@ -923,4 +912,4 @@ Feature:E2E scenario for residential-SolarMax-plan
       | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | SMAX-EQ  | QB06811396 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName              | eleDiscount | campaign | folderName                             | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | ELE      |Solar Max & Flexi Plan| 0           | solarmax | E2E_solar-plan_QLD_existing_non-moving | QLD   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | Existing       | ELE      |Solar Max & Flexi Plan| 0           | solarmax | E2E_Campaign_solarMax_QLD_existing_non-moving | QLD   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
