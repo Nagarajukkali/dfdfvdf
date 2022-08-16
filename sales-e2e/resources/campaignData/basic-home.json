@@ -26,24 +26,24 @@
         "preSelect": {
           "Credit50": {
             "VIC": {
-              "heading": "$50 Sign Up Credit",
-              "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+              "heading": "$25 online sign up credit",
+              "description": "Get a $25 credit on each new energy account when you sign up online.+"
             },
             "NSW": {
-              "heading": "$50 Sign Up Credit",
-              "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+              "heading": "$25 online sign up credit",
+              "description": "Get a $25 credit on each new energy account when you sign up online.+"
             },
             "ACT": {
-              "heading": "$50 Sign Up Credit",
-              "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+              "heading": "$25 sign up credit",
+              "description": "Get a $25 credit on each new energy account when you sign up.+"
             },
             "QLD": {
-              "heading": "$50 Sign Up Credit",
-              "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+              "heading": "$25 online sign up credit",
+              "description": "Get a $25 credit on each new energy account when you sign up online.+"
             },
             "SA": {
-              "heading": "$50 Sign Up Credit",
-              "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+              "heading": "$25 sign up credit",
+              "description": "Get a $25 credit on each new energy account when you sign up.+"
             }
           },
           "carbonNeutral": {
@@ -74,11 +74,11 @@
         },
         "postSelect": {
           "Credit50": {
-            "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
-            "NSW": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
-            "ACT": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
-            "QLD": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
-            "SA": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+"
+            "VIC": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
+            "NSW": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
+            "ACT": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
+            "QLD": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
+            "SA": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+"
           },
           "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
           "moveHomeCredit": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
@@ -91,42 +91,42 @@
       "sourceCode": {
         "newCustomer": {
           "ENE": {
-            "VIC": "Basic_50",
+            "VIC": "Basic_25",
             "NSW": {
-              "Ausgrid": "Basic_50",
-              "Essential": "Basic_50",
-              "Endeavour": "Basic_50",
-              "default": "Basic_50"
+              "Ausgrid": "Basic_25",
+              "Essential": "Basic_25",
+              "Endeavour": "Basic_25",
+              "default": "Basic_25"
             },
-            "ACT": "Basic_50",
-            "QLD": "Basic_50",
-            "SA": "Basic_50"
+            "ACT": "Basic",
+            "QLD": "Basic",
+            "SA": "Basic"
           },
           "COR": {
-            "VIC": "Basic_50",
+            "VIC": "Basic_25",
             "NSW": {
-              "Ausgrid": "Basic_50",
-              "Essential": "Basic_50",
-              "Endeavour": "Basic_50",
-              "default": "Basic_50"
+              "Ausgrid": "Basic_25",
+              "Essential": "Basic_25",
+              "Endeavour": "Basic_25",
+              "default": "Basic_25"
             },
-            "ACT": "Basic_50",
-            "QLD": "Basic_50",
-            "SA": "Basic_50"
+            "ACT": "Basic",
+            "QLD": "Basic",
+            "SA": "Basic"
           }
         },
         "existingCustomer": {
           "ENE": {
-            "VIC": "Basic_50",
+            "VIC": "Basic_25",
             "NSW": {
-              "Ausgrid": "Basic_50",
-              "Essential": "Basic_50",
-              "Endeavour": "Basic_50",
-              "default": "Basic_50"
+              "Ausgrid": "Basic_25",
+              "Essential": "Basic_25",
+              "Endeavour": "Basic_25",
+              "default": "Basic_25"
             },
-            "ACT": "Basic_50",
-            "QLD": "Basic_50",
-            "SA": "Basic_50"
+            "ACT": "Basic",
+            "QLD": "Basic",
+            "SA": "Basic"
           },
           "PS": {
             "VIC": "Basic",
@@ -148,24 +148,24 @@
         "preSelect": {
           "Credit50": {
             "VIC": {
-              "heading": "$50 Sign Up Credit",
-              "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+              "heading": "$25 online sign up credit",
+              "description": "Get a $25 credit on each new energy account when you sign up online.+"
             },
             "NSW": {
-              "heading": "$50 Sign Up Credit",
-              "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+              "heading": "$25 online sign up credit",
+              "description": "Get a $25 credit on each new energy account when you sign up online.+"
             },
             "ACT": {
-              "heading": "$50 Sign Up Credit",
-              "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+              "heading": "$25 sign up credit",
+              "description": "Get a $25 credit on each new energy account when you sign up.+"
             },
             "QLD": {
-              "heading": "$50 Sign Up Credit",
-              "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+              "heading": "$25 online sign up credit",
+              "description": "Get a $25 credit on each new energy account when you sign up online.+"
             },
             "SA": {
-              "heading": "$50 Sign Up Credit",
-              "description": "Get a $50 credit per new energy account on your first bill when you sign up online.+"
+              "heading": "$25 sign up credit",
+              "description": "Get a $25 credit on each new energy account when you sign up.+"
             }
           },
           "carbonNeutral": {
@@ -179,10 +179,11 @@
         },
         "postSelect": {
           "Credit50": {
-            "VIC": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
-            "NSW": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
-            "ACT": "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+",
-            "SA" : "$50 Sign Up Credit. Get a $50 credit per new energy account on your first bill when you sign up online.+"
+            "VIC": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
+            "NSW": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
+            "ACT": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
+            "QLD": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
+            "SA": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+"
           },
           "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
           "moveHomeCredit": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
@@ -193,24 +194,24 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Basic_50",
-          "NSW": "Basic_50",
-          "ACT": "Basic_50",
-          "SA": "Basic_50"
+          "VIC": "Basic_25",
+          "NSW": "Basic_25",
+          "ACT": "Basic",
+          "SA": "Basic"
         },
         "COR": {
-          "VIC": "Basic_50",
-          "NSW": "Basic_50",
-          "ACT": "Basic_50",
-          "SA": "Basic_50"
+          "VIC": "Basic_25",
+          "NSW": "Basic_25",
+          "ACT": "Basic",
+          "SA": "Basic"
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Basic_50",
-          "NSW": "Basic_50",
-          "ACT": "Basic_50",
-          "SA": "Basic_50"
+          "VIC": "Basic_25",
+          "NSW": "Basic_25",
+          "ACT": "Basic",
+          "SA": "Basic"
         },
         "PS": {
           "VIC": "Basic",

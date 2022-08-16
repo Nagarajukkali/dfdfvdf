@@ -60,17 +60,17 @@
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
-            "heading": "10% discount off total electricity bill"
+            "heading": "7% discount off total electricity bill"
           },
           "NSW": {
             "Ausgrid": {
-              "heading": "10% discount off total electricity bill"
+              "heading": "7% discount off total electricity bill"
             },
             "Essential": {
-              "heading": "10% discount off total electricity bill"
+              "heading": "7% discount off total electricity bill"
             },
             "Endeavour": {
-              "heading": "10% discount off total electricity bill"
+              "heading": "7% discount off total electricity bill"
             }
           },
           "ACT": {
@@ -106,11 +106,11 @@
         "variableRates": "Variable rates. Your energy charges are variable. We'll let you know in advance before any rates change.",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before any rates change.",
         "discountOffTotalEnergyBill": {
-          "VIC": "10% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+          "VIC": "7% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
           "NSW": {
-            "Ausgrid": "10% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
-            "Essential": "10% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
-            "Endeavour": "10% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
+            "Ausgrid": "7% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+            "Essential": "7% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+            "Endeavour": "7% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
           },
           "ACT": "13% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
           "QLD": "2% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
@@ -122,50 +122,50 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_10%GD_25",
+          "VIC": "Total_7%GD_25",
           "NSW": {
-            "Ausgrid": "Total_10%GD_25",
-            "Essential": "Total_10%GD_25",
-            "Endeavour": "Total_10%GD_25",
-            "default": "Total_10%GD_25"
+            "Ausgrid": "Total_7%GD_25",
+            "Essential": "Total_7%GD_25",
+            "Endeavour": "Total_7%GD_25",
+            "default": "Total_7%GD_25"
           },
-          "ACT": "Total_13%GD_25",
-          "QLD": "Total_2%GD_25",
-          "SA": "Total_2%GD_25"
+          "ACT": "Total_13%GD",
+          "QLD": "Total_2%GD",
+          "SA": "Total_2%GD"
         },
         "COR": {
-          "VIC": "Total_10%GD_25",
+          "VIC": "Total_7%GD_25",
           "NSW": {
-            "Ausgrid": "Total_10%GD_25",
-            "Essential": "Total_10%GD_25",
-            "Endeavour": "Total_10%GD_25",
-            "default": "Total_10%GD_25"
+            "Ausgrid": "Total_7%GD_25",
+            "Essential": "Total_7%GD_25",
+            "Endeavour": "Total_7%GD_25",
+            "default": "Total_7%GD_25"
           },
-          "ACT": "Total_13%GD_25",
-          "QLD": "Total_2%GD_25",
-          "SA": "Total_2%GD_25"
+          "ACT": "Total_13%GD",
+          "QLD": "Total_2%GD",
+          "SA": "Total_2%GD"
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_10%GD_25",
+          "VIC": "Total_7%GD_25",
           "NSW": {
-            "Ausgrid": "Total_10%GD_25",
-            "Essential": "Total_10%GD_25",
-            "Endeavour": "Total_10%GD_25",
-            "default": "Total_10%GD_25"
+            "Ausgrid": "Total_7%GD_25",
+            "Essential": "Total_7%GD_25",
+            "Endeavour": "Total_7%GD_25",
+            "default": "Total_7%GD_25"
           },
-          "ACT": "Total_13%GD_25",
-          "QLD": "Total_2%GD_25",
-          "SA": "Total_2%GD_25"
+          "ACT": "Total_13%GD",
+          "QLD": "Total_2%GD",
+          "SA": "Total_2%GD"
         },
         "PS": {
-          "VIC": "Total_10%GD",
+          "VIC": "Total_7%GD",
           "NSW": {
-            "Ausgrid": "Total_10%GD",
-            "Essential": "Total_10%GD",
-            "Endeavour": "Total_10%GD",
-            "default": "Total_10%GD"
+            "Ausgrid": "Total_7%GD",
+            "Essential": "Total_7%GD",
+            "Endeavour": "Total_7%GD",
+            "default": "Total_7%GD"
           },
           "ACT": "Total_13%GD",
           "QLD": "Total_2%GD",
@@ -255,22 +255,22 @@
         "ENE": {
           "VIC": "Total_14%GD_25",
           "NSW": "Total_10%GD_25",
-          "ACT": "Total_20%GD_25",
-          "SA": "Total_6%GD_25"
+          "ACT": "Total_20%GD",
+          "SA": "Total_6%GD"
         },
         "COR": {
           "VIC": "Total_14%GD_25",
           "NSW": "Total_10%GD_25",
-          "ACT": "Total_20%GD_25",
-          "SA": "Total_6%GD_25"
+          "ACT": "Total_20%GD",
+          "SA": "Total_6%GD"
         }
       },
       "existingCustomer": {
         "ENE": {
           "VIC": "Total_14%GD_25",
           "NSW": "Total_10%GD_25",
-          "ACT": "Total_20%GD_25",
-          "SA": "Total_6%GD_25"
+          "ACT": "Total_20%GD",
+          "SA": "Total_6%GD"
         },
         "PS": {
           "VIC": "Total_14%GD",

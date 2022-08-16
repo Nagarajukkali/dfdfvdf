@@ -122,6 +122,10 @@ When(/^user clicks on Select plan button$/, async function (t) {
   await campaignMethod.selectPlanOnCampaign(t);
   await testFunction.takeScreenshot(t, 'after clicking add plan button');//disabled UI Validation
 });
+When(/^user clicks on Select plans button$/, async function (t) {
+  await campaignMethod.selectPlansOnCampaign(t);
+  await testFunction.takeScreenshot(t, 'after clicking add plan button');//disabled UI Validation
+});
 
 Then(/^user verifies details of "([^"]*)" customer on plans page for "([^"]*)"$/, async function (t, [customerType, state]) {
   let JSONObj = await FileUtils.getJSONfile(customerType);

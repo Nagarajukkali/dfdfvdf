@@ -1,6 +1,6 @@
 
 Feature:E2E scenario for residential-flexi-plan
-  @DR22.6.4.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-Flexi-plan for NSW-Ausgrid for new moving customer
     Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -71,21 +71,21 @@ Feature:E2E scenario for residential-flexi-plan
       |New           |BOTH    |Flexi Plan |5           |8          |flexi    | NSW   |E2E_resi-flexi-plan_NSW_new_moving   |Quote Tool  |Move Home|NSW    |RES          |New            |No  |No  |
 
 
-  @DR22.6.4.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-Flexi-plan for QLD - new moving customer
     Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
     And user enters '4506' in 'POSTCODE' field
     And user validates the data on 'Residential' plans page for "<campaign>" plan
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
-      | ELE      | Y                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
+      | ELE      | N                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | <planName> | <state> | Y            |    N         |
+      | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
     When user selects '<planName>'
     And user validates the data on carts page for "<campaign>" plan
       |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |ELE      |Y                     |Y                      | N                                      |<state>|    Y           |
+      |ELE      |Y                     |Y                      | N                                      |<state>|    N           |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -104,10 +104,10 @@ Feature:E2E scenario for residential-flexi-plan
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | Y                | N                     | N                   | Y                     | N                                     | N                               | <state> |    N                 |
+      | ELE      | N                | N                     | N                   | Y                     | N                                     | N                               | <state> |    N                 |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | <planName> | <state> | Y            |    N         |
+      | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -125,7 +125,7 @@ Feature:E2E scenario for residential-flexi-plan
       | customerStatus | fuelType |planName  | eleDiscount | campaign | folderName                        | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      |Flexi Plan| 0           | flexi    | E2E_resi-flexi-plan_QLD_new_moving | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.6.4.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-Flexi-plan for SA - new non moving
     Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -134,17 +134,17 @@ Feature:E2E scenario for residential-flexi-plan
     And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
     And user validates the data on 'Residential' plans page for "<campaign>" plan
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
-      | BOTH     | Y                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
+      | BOTH     | N                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | <planName> | <state> | Y            |    N         |
+      | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
     When user selects '<planName>'
     And user validates the data on carts page for "<campaign>" plan
       |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |ELE      |Y                     |Y                      | N                                      |<state>|    Y           |
+      |ELE      |Y                     |Y                      | N                                      |<state>|    N           |
     And user validates the data on carts page for "<campaign>" plan
       |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |GAS      |Y                     |Y                      |Y                                       |<state>|    Y           |
+      |GAS      |Y                     |Y                      |Y                                       |<state>|    N           |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -162,13 +162,13 @@ Feature:E2E scenario for residential-flexi-plan
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | Y                | N                     | N                   | Y                     | N                                     | N                               | <state> |    N                 |
+      | ELE      | N                | N                     | N                   | Y                     | N                                     | N                               | <state> |    N                 |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | Y                | N                     | N                   | Y                   | Y                                     | N                               | <state> |    N                 |
+      | GAS      | N                | N                     | N                   | Y                   | Y                                     | N                               | <state> |    N                 |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | N            | Flexi Plan | <state> | Y            |    N         |
+      | Y                        | Y         | N            | Flexi Plan | <state> | N            |    N         |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -190,7 +190,7 @@ Feature:E2E scenario for residential-flexi-plan
       | customerStatus | fuelType |planName  | eleDiscount | gasDiscount | campaign | folderName                          | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     |Flexi Plan| 0           | 4           | flexi    | E2E_resi-flexi-plan_SA_new_nonmoving | SA    | Quote Tool   | COR     | No  | No | RES          | New           |
 
-  @DR22.6.4.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-Flexi-plan for ACT - new moving
     Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -199,17 +199,17 @@ Feature:E2E scenario for residential-flexi-plan
     And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
     And user validates the data on 'Residential' plans page for "<campaign>" plan
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
-      | BOTH     | Y                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
+      | BOTH     | N                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | <planName> | <state> | Y            |    N         |
+      | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
     When user selects '<planName>'
     And user validates the data on carts page for "<campaign>" plan
       |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |ELE      |Y                     |Y                      |N                                       |<state>|    Y           |
+      |ELE      |Y                     |Y                      |Y                                       |<state>|    N           |
     And user validates the data on carts page for "<campaign>" plan
       |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |GAS      |Y                     |Y                      |Y                                       |<state>|    Y           |
+      |GAS      |Y                     |Y                      |Y                                       |<state>|    N           |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -228,13 +228,13 @@ Feature:E2E scenario for residential-flexi-plan
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | Y                | N                     | N                   | Y                    | N                                     | N                               | <state> |    N                 |
+      | ELE      | N                | N                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | Y                | N                     | N                   | Y                   | Y                                     | N                               | <state> |    N                 |
+      | GAS      | N                | N                     | N                   | Y                   | Y                                     | N                               | <state> |    N                 |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   |moveHomeCredit|signUpCredit |
-      | Y                        | Y         | Y            | Flexi Plan | <state> |    N         |Y            |
+      | Y                        | Y         | Y            | Flexi Plan | <state> |    N         |N            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -254,9 +254,9 @@ Feature:E2E scenario for residential-flexi-plan
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GA  | 5260073228 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName  | eleDiscount | gasDiscount | campaign | folderName                        | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | ELE      |Flexi Plan| 0           | 5           | flexi    | E2E_resi-flexi-plan_ACT_new_moving | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
-  
-  @DR22.6.4.campaign
+      | New            | ELE      |Flexi Plan| 11           | 18           | flexi    | E2E_resi-flexi-plan_ACT_new_moving | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
+
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-Flexi-plan for ACT - new non-moving
     Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -265,17 +265,17 @@ Feature:E2E scenario for residential-flexi-plan
     And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
     And user validates the data on 'Residential' plans page for "<campaign>" plan
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
-      | BOTH     | Y                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
+      | BOTH     | N                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | <planName> | <state> | Y            |    N         |
+      | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
     When user selects '<planName>'
     And user validates the data on carts page for "<campaign>" plan
       |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |ELE      |Y                     |Y                      |N                                       |<state>|    Y           |
+      |ELE      |Y                     |Y                      |Y                                       |<state>|    N           |
     And user validates the data on carts page for "<campaign>" plan
       |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |GAS      |Y                     |Y                      |Y                                       |<state>|    Y           |
+      |GAS      |Y                     |Y                      |Y                                       |<state>|    N           |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -294,13 +294,13 @@ Feature:E2E scenario for residential-flexi-plan
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | Y                | N                     | N                   | Y                    | N                                     | N                               | <state> |    N                 |
+      | ELE      | N                | N                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | Y                | N                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |
+      | GAS      | N                | N                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   |moveHomeCredit|signUpCredit |
-      | Y                        | Y         | Y            | Flexi Plan | <state> |    N         |Y            |
+      | Y                        | Y         | Y            | Flexi Plan | <state> |    N         |N            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -320,9 +320,9 @@ Feature:E2E scenario for residential-flexi-plan
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | BP2H-GA  | 5260073228 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName  | eleDiscount | gasDiscount | campaign | folderName                             | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
-      | New            | ELE      |Flexi Plan| 0           | 5           | flexi    | E2E_resi-flexi-plan_ACT_new_nonmove | ACT   | Quote Tool   | COR     | No  | No | RES          | New           |
+      | New            | ELE      |Flexi Plan| 11           | 18           | flexi    | E2E_resi-flexi-plan_ACT_new_nonmove | ACT   | Quote Tool   | COR     | No  | No | RES          | New           |
 
-  @DR22.6.4.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-Flexi-plan for ACT - existing non-moving
     Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -331,17 +331,17 @@ Feature:E2E scenario for residential-flexi-plan
     And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
     And user validates the data on 'Residential' plans page for "<campaign>" plan
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
-      | BOTH     | Y                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
+      | BOTH     | N                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | <planName> | <state> | Y            |    N         |
+      | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
     When user selects '<planName>'
     And user validates the data on carts page for "<campaign>" plan
       |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |ELE      |Y                     |Y                      |N                                       |<state>|    Y           |
+      |ELE      |Y                     |Y                      |Y                                       |<state>|    N           |
     And user validates the data on carts page for "<campaign>" plan
       |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |GAS      |Y                     |Y                      |Y                                       |<state>|    Y           |
+      |GAS      |Y                     |Y                      |Y                                       |<state>|    N           |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
@@ -362,7 +362,7 @@ Feature:E2E scenario for residential-flexi-plan
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | N                   | Y                   | N                                     | N                               | <state> |    N                 |
+      | ELE      | N                | N                     | N                   | Y                   | Y                                     | N                               | <state> |    N                 |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
       | GAS      | N                | N                     | N                   | Y                   | Y                                     | N                               | <state> |    N                 |
@@ -388,9 +388,9 @@ Feature:E2E scenario for residential-flexi-plan
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-GA  | 5260060181 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName  | eleDiscount | gasDiscount | campaign | folderName                             | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
-      | Existing       | ELE      |Flexi Plan|  0          | 5           | flexi    | E2E_resi-flexi-plan_ACT_Exs_nonmove | ACT   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | Existing       | ELE      |Flexi Plan|  11          | 18           | flexi    | E2E_resi-flexi-plan_ACT_Exs_nonmove | ACT   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR22.6.4.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-Flexi-plan for VIC - new moving
     Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -454,9 +454,9 @@ Feature:E2E scenario for residential-flexi-plan
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GV  | 5310425534 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName  | eleDiscount | gasDiscount | campaign | folderName                        | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     |Flexi Plan| 5           | 8           | flexi    | E2E_resi-flexi-plan_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | BOTH     |Flexi Plan| 5           | 12           | flexi    | E2E_resi-flexi-plan_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.6.4.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-Flexi-plan for VIC - new non-moving
     Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -520,9 +520,9 @@ Feature:E2E scenario for residential-flexi-plan
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | BP2H-GV  | 5310425534 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName  | eleDiscount | gasDiscount | campaign | folderName                        | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     |Flexi Plan| 5           | 8          | flexi    | E2E_resi-flexi-plan_VIC_new_non_moving | VIC   | Quote Tool   | COR   | No  | No | RES          | New           |
+      | New            | BOTH     |Flexi Plan| 5           | 12          | flexi    | E2E_resi-flexi-plan_VIC_new_non_moving | VIC   | Quote Tool   | COR   | No  | No | RES          | New           |
 
-  @DR22.6.4.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-Flexi-plan for NSW-Endeavour - new non moving customer
     Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -593,7 +593,7 @@ Feature:E2E scenario for residential-flexi-plan
       | customerStatus | fuelType |planName  | eleDiscount | gasDiscount | campaign | folderName                           | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     |Flexi Plan| 5           | 8           | flexi    | E2E_resi-flexi-plan_NSW_new_nonmoving | NSW   | Quote Tool   | COR     | No  | No | RES          | New           |
 
-  @DR22.6.4.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-Flexi-plan for VIC existing non moving
     Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -659,9 +659,9 @@ Feature:E2E scenario for residential-flexi-plan
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-GV  | 5321873049 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName  | eleDiscount | gasDiscount | campaign | folderName                                 | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     |Flexi Plan| 5           | 8           | flexi    | E2E_resi-flexi-plan_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     |Flexi Plan| 5           | 12           | flexi    | E2E_resi-flexi-plan_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR22.6.4.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-Flexi-plan for VIC existing moving
     Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -702,13 +702,13 @@ Feature:E2E scenario for residential-flexi-plan
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | N                   | Y                    | Y                                     | N                               | <state> |    Y                 |
+      | ELE      | Y                | N                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | N                     | N                   | Y                    | Y                                     | N                               | <state> |    Y                 |
+      | GAS      | Y                | N                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Total Plan | VIC   | N            |    Y         |
+      | Y                        | Y         | Y            | Total Plan | VIC   | Y            |    N         |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -728,9 +728,9 @@ Feature:E2E scenario for residential-flexi-plan
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE        | BP2H-GV  | 5321264636 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName  | eleDiscount | gasDiscount | campaign | folderName                             | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     |Flexi Plan| 5           | 8           | flexi    | E2E_resi-flexi-plan_VIC_existing_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     |Flexi Plan| 5           | 12           | flexi    | E2E_resi-flexi-plan_VIC_existing_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | Existing  non-moving |
 
-  @DR22.6.4.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-Flexi-plan for NSW-Endeavour existing non moving
     Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -797,7 +797,7 @@ Feature:E2E scenario for residential-flexi-plan
       | customerStatus | fuelType |planName  | eleDiscount | gasDiscount | campaign | folderName                                 | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     |Flexi Plan| 5           | 8          | flexi    | E2E_resi-flexi-plan_NSW_existing_non-moving | NSW   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR22.6.4.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-Flexi-plan for SA existing non moving
     Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -806,17 +806,17 @@ Feature:E2E scenario for residential-flexi-plan
     And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
     And user validates the data on 'Residential' plans page for "<campaign>" plan
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
-      | BOTH     | Y                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
+      | BOTH     | N                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | <planName> | <state> | Y            |    N         |
+      | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
     When user selects '<planName>'
     And user validates the data on carts page for "<campaign>" plan
       |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |ELE      |Y                     |Y                      |N                                       |<state>|    Y           |
+      |ELE      |Y                     |Y                      |N                                       |<state>|    N           |
     And user validates the data on carts page for "<campaign>" plan
       |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |GAS      |Y                     |Y                      |Y                                       |<state>|    Y           |
+      |GAS      |Y                     |Y                      |Y                                       |<state>|    N           |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
@@ -865,21 +865,21 @@ Feature:E2E scenario for residential-flexi-plan
       | customerStatus | fuelType |planName  | eleDiscount | gasDiscount | campaign | folderName                                | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     |Flexi Plan| 0           | 4          | flexi    | E2E_resi-flexi-plan_SA_existing_non-moving | SA    | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR22.6.4.campaign
+  @DR22.8.3.campaign
   Scenario Outline: Validate complete data for residential-Flexi-plan for QLD existing non moving
     Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
     And user enters '4053' in 'POSTCODE' field
     And user validates the data on 'Residential' plans page for "<campaign>" plan
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
-      | ELE     | Y                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
+      | ELE     | N                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | <planName> | <state> | Y            |    N         |
+      | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
     When user selects '<planName>'
     And user validates the data on carts page for "<campaign>" plan
       |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |ELE      |Y                     |Y                      |N                                       |<state>|    Y           |
+      |ELE      |Y                     |Y                      |N                                       |<state>|    N           |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
