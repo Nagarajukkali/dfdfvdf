@@ -2,23 +2,23 @@
   "planDetails": {
     "VIC": {
       "planName": "Business Balance Plan",
-      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+      "planDescription": "Variable energy rates with no lock in contracts."
     },
     "NSW": {
       "planName": "Business Balance Plan",
-      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+      "planDescription": "Variable energy rates with no lock in contracts."
     },
     "ACT": {
       "planName": "Business Balance Plan",
-      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+      "planDescription": "Variable energy rates with no lock in contracts."
     },
     "QLD": {
       "planName": "Business Balance Plan",
-      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+      "planDescription": "Variable energy rates with no lock in contracts."
     },
     "SA": {
       "planName": "Business Balance Plan",
-      "planDescription": "Great discount on your total energy bill guaranteed - every time."
+      "planDescription": "Variable energy rates with no lock in contracts."
     }
   },
   "electricity": {
@@ -38,7 +38,7 @@
         },
         "variableRates": {
           "heading": "Variable rates",
-          "description": "Your market energy charges are variable for the benefit period. We'll let you know in advance before your market energy charges change."
+          "description": "Your market energy charges are variable. We'll let you know in advance before your market energy charges change."
         },
         "discountOffTotalEnergyBill": {
           "heading": "discount off total electricity bill",
@@ -55,60 +55,60 @@
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "discount off total electricity bill. Guaranteed discount that applies to your market energy charges.",
         "noStandardConnectionFee": "",
-        "variableRates": "Variable rates. Your market energy charges are variable for the benefit period. We'll let you know in advance before your market energy charges change."
+        "variableRates": "Variable rates. Your market energy charges are variable. We'll let you know in advance before your market energy charges change."
       }
     },
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Biz_Balance",
+          "VIC": "Total_2%GD",
           "NSW": {
-            "Ausgrid": "Total_2%GD",
-            "Essential": "Total_2%GD",
-            "Endeavour": "Total_2%GD",
-            "default": "Total_2%GD"
+            "Ausgrid": "Total_5%GD",
+            "Essential": "Total_5%GD",
+            "Endeavour": "Total_5%GD",
+            "default": "Total_5%GD"
           },
-          "ACT": "Biz_Balance",
-          "QLD": "Biz_Balance",
-          "SA": "Biz_Balance"
+          "ACT": "Total_5%GD",
+          "QLD": "Total_9%GD",
+          "SA": "Total_2%GD"
         },
         "COR": {
-          "VIC": "Biz_Balance",
+          "VIC": "Total_2%GD",
           "NSW": {
-            "Ausgrid": "Total_2%GD",
-            "Essential": "Total_2%GD",
-            "Endeavour": "Total_2%GD",
-            "default": "Total_2%GD"
+            "Ausgrid": "Total_5%GD",
+            "Essential": "Total_5%GD",
+            "Endeavour": "Total_5%GD",
+            "default": "Total_5%GD"
           },
-          "ACT": "Biz_Balance",
-          "QLD": "Biz_Balance",
-          "SA": "Biz_Balance"
+          "ACT": "Total_5%GD",
+          "QLD": "Total_9%GD",
+          "SA": "Total_2%GD"
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Biz_Balance",
+          "VIC": "Total_2%GD",
           "NSW": {
-            "Ausgrid": "Total_2%GD",
-            "Essential": "Total_2%GD",
-            "Endeavour": "Total_2%GD",
-            "default": "Total_2%GD"
+            "Ausgrid": "Total_5%GD",
+            "Essential": "Total_5%GD",
+            "Endeavour": "Total_5%GD",
+            "default": "Total_5%GD"
           },
-          "ACT": "Biz_Balance",
-          "QLD": "Biz_Balance",
-          "SA": "Biz_Balance"
+          "ACT": "Total_5%GD",
+          "QLD": "Total_9%GD",
+          "SA": "Total_2%GD"
         },
         "PS": {
-          "VIC": "Biz_Balance",
+          "VIC": "Total_2%GD",
           "NSW": {
-            "Ausgrid": "Total_2%GD",
-            "Essential": "Total_2%GD",
-            "Endeavour": "Total_2%GD",
-            "default": "Total_2%GD"
+            "Ausgrid": "Total_5%GD",
+            "Essential": "Total_5%GD",
+            "Endeavour": "Total_5%GD",
+            "default": "Total_5%GD"
           },
-          "ACT": "Biz_Balance",
-          "QLD": "Biz_Balance",
-          "SA": "Biz_Balance"
+          "ACT": "Total_5%GD",
+          "QLD": "Total_9%GD",
+          "SA": "Total_2%GD"
         }
       }
     }
@@ -130,7 +130,7 @@
         },
         "variableRates": {
           "heading": "Variable rates",
-          "description": "Your market energy charges are variable for the benefit period. We'll let you know in advance before your market energy charges change."
+          "description": "Your market energy charges are variable. We'll let you know in advance before your market energy charges change."
         },
         "discountOffTotalEnergyBill": {
           "heading": "discount off total gas bill",
@@ -142,59 +142,59 @@
         "carbonNeutral": "",
         "peaceOfMind": "Peace of mind. Your usage and supply charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
         "discountOffTotalEnergyBill": "discount off total gas bill. Guaranteed discount that applies to your market energy charges.",
-        "variableRates": "Variable rates. Your market energy charges are variable for the benefit period. We'll let you know in advance before your market energy charges change."
+        "variableRates": "Variable rates. Your market energy charges are variable. We'll let you know in advance before your market energy charges change."
       }
     },
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Biz_Balance",
-          "NSW": "Biz_Balance",
-          "ACT": "Biz_Balance",
-          "SA": "Biz_Balance"
+          "VIC": "Total_2%GD",
+          "NSW": "Total_5%GD",
+          "ACT": "Total_5%GD",
+          "SA": "Total_2%GD"
         },
         "COR": {
-          "VIC": "Biz_Balance",
-          "NSW": "Biz_Balance",
-          "ACT": "Biz_Balance",
-          "SA": "Biz_Balance"
+          "VIC": "Total_2%GD",
+          "NSW": "Total_5%GD",
+          "ACT": "Total_5%GD",
+          "SA": "Total_2%GD"
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Biz_Balance",
-          "NSW": "Biz_Balance",
-          "ACT": "Biz_Balance",
-          "SA": "Biz_Balance"
+          "VIC": "Total_2%GD",
+          "NSW": "Total_5%GD",
+          "ACT": "Total_5%GD",
+          "SA": "Total_2%GD"
         },
         "PS": {
-          "VIC": "Biz_Balance",
-          "NSW": "Biz_Balance",
-          "ACT": "Biz_Balance",
-          "SA": "Biz_Balance"
+          "VIC": "Total_2%GD",
+          "NSW": "Total_5%GD",
+          "ACT": "Total_5%GD",
+          "SA": "Total_2%GD"
         }
       }
     }
   },
   "disclaimers": {
     "referencePriceComparison": {
-  "heading": "Reference price comparison and estimated annual cost",
-  "VIC": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
-  },
-  "NSW": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
-  },
-  "ACT": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
-  },
-  "QLD": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
-  },
-  "SA": {
-    "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
-  }
-},
+      "heading": "Reference price comparison and estimated annual cost",
+      "VIC": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual business usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      },
+      "NSW": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual business usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      },
+      "ACT": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual business usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      },
+      "QLD": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual business usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      },
+      "SA": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual business usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      }
+    },
     "goNeutral": {
       "heading": "",
       "description": ""
@@ -202,10 +202,10 @@
     "solarBuyBack": {
       "heading": "Solar feed-in tariffs",
       "VIC": {
-        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. For more information about the Victorian FiT scheme see www.energy.vic.gov.au/renewable-energy/victorian-feed-in-tariff."
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
       },
       "NonVIC": {
-        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
       }
     },
     "noStandardConnectionFee": {
@@ -237,7 +237,7 @@
     "plandisclaimer": {
       "VIC": {
         "heading": "Business Balance Plan",
-        "description": "* Offer only for eligible VIC business customers. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
+        "description": "* Offer only for eligible VIC business customers. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
       },
       "NSW": {
         "heading": "Business Balance Plan",
@@ -245,15 +245,15 @@
       },
       "ACT": {
         "heading": "Business Balance Plan",
-        "description": "* Offer only for eligible ACT business customers. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
+        "description": "* Offer only for eligible ACT business customers. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
       },
       "QLD": {
         "heading": "Business Balance Plan",
-        "description": "* Offer only for eligible QLD business customers. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
+        "description": "* Offer only for eligible QLD business customers. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
       },
       "SA": {
         "heading": "Business Balance Plan",
-        "description": "* Offer only for eligible SA business customers. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
+        "description": "* Offer only for eligible SA business customers. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your market energy charges will be variable including your solar feed-in tariffs & GreenPower. We may change or end this offer at any time."
       }
     }
   }

@@ -6,6 +6,8 @@ const cartsPage = {
     btnCartClose: Selector("button.cart-header__close"),
     elePlanName: Selector("#cart-plan-ELE .cart-plan__title"),
     gasPlanName: Selector("#cart-plan-GAS .cart-plan__title"),
+    addElePlan: Selector("#cart-plan-ELE > div > button"),
+    addGasPlan: Selector("#cart-plan-GAS > div > button"),
     eleFeatures: Selector("#cart-plan-ELE .cart-plan__details-text"),
     eleFeature50Credit: Selector("#cart-plan-ELE .cart-plan__details-text").withText(/[C|c]redit/),
     eleFeatureChanceToWin: Selector("#cart-plan-ELE .cart-plan__details-text").withText("$2,000"),

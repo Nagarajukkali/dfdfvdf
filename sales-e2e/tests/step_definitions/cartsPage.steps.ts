@@ -42,3 +42,8 @@ When(/^user selects ele '(.*)'$/, async function (t, [planName]) {
   await testFunction.click(t, cartsPage.elements.addDifferentElePlan);
   await plansMethod.selectPlan(t, planName);
 });
+When(/^user add "([^"]*)" component on cart page for "([^"]*)"$/, async function (t: TestController, parameters:string[]) {
+  let additionalFuelComponent=parameters[0];
+  await cartsMethod.addAdditionalFuelOnCartsPage(t, parameters[0]);
+  console.log("Added additional fuel:"+additionalFuelComponent+" on cart page for campaign:"+parameters[1]);
+});

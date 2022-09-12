@@ -112,12 +112,12 @@
           }
         },
         "PS": {
-          "VIC": "Total_5%GD_25",
+          "VIC": "Total_5%GD",
           "NSW": {
-            "Ausgrid": "Total_5%GD_25",
-            "Essential": "Total_5%GD_25",
-            "Endeavour": "Total_5%GD_25",
-            "default": "Total_5%GD_25"
+            "Ausgrid": "Total_5%GD",
+            "Essential": "Total_5%GD",
+            "Endeavour": "Total_5%GD",
+            "default": "Total_5%GD"
           }
         }
       }

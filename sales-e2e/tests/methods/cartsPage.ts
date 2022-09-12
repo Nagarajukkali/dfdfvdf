@@ -7,7 +7,18 @@ export class cartsMethod {
   public static async clickContinueCartsPage(t) {
     await testFunction.click(t, cartsPage.elements.cartsPageContinueButton);
   }
-
+  public static async addAdditionalFuelOnCartsPage(t,additionalFuel: string) {
+    let fuelToBeAdded=additionalFuel.toUpperCase();
+    const isGasNotSelected = (await cartsPage.elements.addGasPlan.classNames).includes('cart-plan__add');
+    const isEleNotSelected = (await cartsPage.elements.addElePlan.classNames).includes('cart-plan__add');
+    if (fuelToBeAdded==='ELE' && isEleNotSelected){
+      console.log("Adding ELE component");
+      await t.click(cartsPage.elements.addElePlan);
+    }else if (fuelToBeAdded==='GAS' && isGasNotSelected){
+      console.log("Adding GAS component");
+      await t.click(cartsPage.elements.addGasPlan);
+    }
+  }
   public static async validatePlanName(t: any, json: any, dataTable) {
     if (await testFunction.isElectricity(dataTable[0].fuelType)) {
       switch (dataTable[0].state) {

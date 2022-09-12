@@ -64,6 +64,7 @@ const eaHomePage = {
     noFrillBusiness: Selector("[id*='plan-select-button-BCPP']"),
     totalPlanBusiness: Selector("[id*='plan-select-button-TOPB']"),
     businessCNPlan: Selector("[id*='plan-select-button-BCNP']"),
+    businessCNFPlan: Selector("[id*='plan-select-button-BCNF']"),
     businessBalancePlan: Selector("[id*='plan-select-button-BSPB2']"),
     balancePlan: Selector("[id*='plan-select-button-TAPR1']"),
     solarmax: Selector("#plan-select-button-SMAX"),
@@ -355,6 +356,12 @@ const eaHomePage = {
       gasdiscountOffsMaxTitle: Selector("[id*='plan-feature-SMAX'] [class*='hs-plan-feature__item-title']").withText("discount off total gas bill"),
       gasdiscountOffsMaxDescription: Selector("[id*='plan-feature-SMAX'] [class*='hs-plan-feature__item-title']").withText("discount off total gas bill").sibling(),
     },
+    BusinessCarbonNeutralFlexiPlanTable: {
+      businessCarbonNeutralFlexiPlanEleDiscount: Selector("[id*='plan-rate-summary-BCNF'][id*='-E'] [class*='title-amount']"),
+      businessCarbonNeutralFlexiPlanTitle: Selector("[id*='plan-heading-title-BASE_BCNF-']"),
+      businessCarbonNeutralFlexiPlanFuel: Selector("[id*='plan-heading-fuel-BASE_BCNF-']"),
+      businessCarbonNeutralFlexiPlanHeadingDescription : Selector("[id*='plan-heading-description-BASE_BCNF-']"),
+    },
     BusinessCarbonNeutralPlanTable: {
       businessCarbonNeutralPlanEleDiscount: Selector("[id*='plan-rate-summary-BCNP'][id*='-E'] [class*='title-amount']"),
       businessCarbonNeutralPlanTitle: Selector("[id*='plan-heading-title-BASE_BCNP-']"),
@@ -373,6 +380,7 @@ const eaHomePage = {
     BusinessBalancePlanTable: {
       repriceText: Selector("[id*='plan-rates-description-'][id*='SPB'] [class*='hs-plan-rates-heading__reprice']"),
       businessBalancePlanEleDiscount: Selector("[id*='plan-rate-summary-BSPB2'][id*='-E'] [class*='title-amount']"),
+      businessBalancePlanGasDiscount: Selector("[id*='plan-rate-summary-BSPB2'][id*='-G'] [class*='title-amount']"),
       businessBalancePlanTitle: Selector("[id*='plan-heading-title-BASE_BSPB2-']"),
       businessBalancePlanFuel: Selector("[id*='plan-heading-fuel-BASE_BSPB2-']"),
       businessBalancePlanHeadingDescription : Selector("[id*='plan-heading-description-BASE_BSPB2-']"),

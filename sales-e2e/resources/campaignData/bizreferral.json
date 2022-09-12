@@ -56,54 +56,54 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_1%GD",
+          "VIC": "Total_3%GD",
           "NSW": {
-            "Ausgrid": "Total_3%GD",
-            "Essential": "Total_3%GD",
-            "Endeavour": "Total_3%GD",
-            "default": "Total_3%GD"
+            "Ausgrid": "Total_6%GD",
+            "Essential": "Total_6%GD",
+            "Endeavour": "Total_6%GD",
+            "default": "Total_6%GD"
           },
-          "ACT": "Total_1%GD",
-          "SA": "Total_1%GD",
-          "QLD": "Total_1%GD"
+          "ACT": "Total_6%GD",
+          "SA": "Total_3%GD",
+          "QLD": "Total_6%GD"
         },
         "COR": {
-          "VIC": "Total_1%GD",
+          "VIC": "Total_3%GD",
           "NSW": {
-            "Ausgrid": "Total_3%GD",
-            "Essential": "Total_3%GD",
-            "Endeavour": "Total_3%GD",
-            "default": "Total_3%GD"
+            "Ausgrid": "Total_6%GD",
+            "Essential": "Total_6%GD",
+            "Endeavour": "Total_6%GD",
+            "default": "Total_6%GD"
           },
-          "ACT": "Total_1%GD",
-          "SA": "Total_1%GD",
-          "QLD": "Total_1%GD"
+          "ACT": "Total_6%GD",
+          "SA": "Total_3%GD",
+          "QLD": "Total_6%GD"
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_1%GD",
+          "VIC": "Total_3%GD",
           "NSW": {
-            "Ausgrid": "Total_3%GD",
-            "Essential": "Total_3%GD",
-            "Endeavour": "Total_3%GD",
-            "default": "Total_3%GD"
+            "Ausgrid": "Total_6%GD",
+            "Essential": "Total_6%GD",
+            "Endeavour": "Total_6%GD",
+            "default": "Total_6%GD"
           },
-          "ACT": "Total_1%GD",
-          "SA": "Total_1%GD",
-          "QLD": "Total_1%GD"
+          "ACT": "Total_6%GD",
+          "SA": "Total_3%GD",
+          "QLD": "Total_6%GD"
         },
         "PS": {
-          "VIC": "Total_1%GD",
+          "VIC": "Total_3%GD",
           "NSW": {
-            "Ausgrid": "Total_3%GD",
-            "Essential": "Total_3%GD",
-            "Endeavour": "Total_3%GD",
-            "default": "Total_3%GD"
+            "Ausgrid": "Total_6%GD",
+            "Essential": "Total_6%GD",
+            "Endeavour": "Total_6%GD",
+            "default": "Total_6%GD"
           },
-          "ACT": "Total_1%GD",
-          "SA": "Total_1%GD",
-          "QLD": "Total_1%GD"
+          "ACT": "Total_6%GD",
+          "SA": "Total_3%GD",
+          "QLD": "Total_6%GD"
         }
       }
     }
@@ -138,30 +138,30 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_1%GD",
-          "NSW": "Total_1%GD",
-          "ACT": "Total_1%GD",
-          "SA": "Total_1%GD"
+          "VIC": "Total_3%GD",
+          "NSW": "Total_6%GD",
+          "ACT": "Total_6%GD",
+          "SA": "Total_3%GD"
         },
         "COR": {
-          "VIC": "Total_1%GD",
-          "NSW": "Total_1%GD",
-          "ACT": "Total_1%GD",
-          "SA": "Total_1%GD"
+          "VIC": "Total_3%GD",
+          "NSW": "Total_6%GD",
+          "ACT": "Total_6%GD",
+          "SA": "Total_3%GD"
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_1%GD",
-          "NSW": "Total_1%GD",
-          "ACT": "Total_1%GD",
-          "SA": "Total_1%GD"
+          "VIC": "Total_3%GD",
+          "NSW": "Total_6%GD",
+          "ACT": "Total_6%GD",
+          "SA": "Total_3%GD"
         },
         "PS": {
-          "VIC": "Total_1%GD",
-          "NSW": "Total_1%GD",
-          "ACT": "Total_1%GD",
-          "SA": "Total_1%GD"
+          "VIC": "Total_3%GD",
+          "NSW": "Total_6%GD",
+          "ACT": "Total_6%GD",
+          "SA": "Total_3%GD"
         }
       }
     }
@@ -226,24 +226,24 @@
     },
     "plandisclaimer": {
       "VIC": {
-        "heading": "Total Plan Business",
-        "description": "* Offer only for eligible VIC business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "heading": "Family and Friends",
+        "description": "* Offer only for eligible VIC business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs & GreenPower) may vary."
       },
       "NSW": {
-        "heading": "Total Plan Business",
-        "description": "* Offer only for eligible NSW business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "heading": "Family and Friends",
+        "description": "* Offer only for eligible NSW business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs & GreenPower) may vary."
       },
       "ACT": {
-        "heading": "Total Plan Business",
-        "description": "* Offer only for eligible ACT business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "heading": "Family and Friends",
+        "description": "* Offer only for eligible ACT business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs & GreenPower) may vary."
       },
       "QLD": {
-        "heading": "Total Plan Business",
-        "description": "* Offer only for eligible QLD business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "heading": "Family and Friends",
+        "description": "* Offer only for eligible QLD business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs & GreenPower) may vary."
       },
       "SA": {
-        "heading": "Total Plan Business",
-        "description": "* Offer only for eligible SA business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges won't increase during the 12-month fixed rate period but other fees and charges (incl. solar feed-in tariffs & GreenPower) may vary. We may change or end this offer at any time."
+        "heading": "Family and Friends",
+        "description": "* Offer only for eligible SA business customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs & GreenPower) may vary."
       }
     }
   }
