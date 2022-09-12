@@ -57,6 +57,7 @@ export enum PlanType {
   FAMILY_AND_FRIENDS = 'Family and Friends',
   FAMILY_AND_FRIENDS_BUSINESS = 'Family and Friends Business',
   BUSINESS_CARBON_NEUTRAL = 'Business Carbon Neutral',
+  BUSINESS_CARBON_NEUTRAL_FLEXI = 'Business Carbon Neutral Flexi Plan',
   BUSINESS_BALANCE_PLAN = 'Business Balance Plan',
   EMPLOYEE_PLAN = 'Employee Plan',
 }

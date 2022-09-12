@@ -132,6 +132,12 @@ export class plansMethod {
         }
         await testFunction.click(t, EaHomePage.elements.businessCNPlan);
         break;
+      case PlanType.BUSINESS_CARBON_NEUTRAL_FLEXI:
+        if (testFunction.isMobile() || testFunction.isTablet()) {
+          await scrollTo(EaHomePage.elements.businessCNFPlan);
+        }
+        await testFunction.click(t, EaHomePage.elements.businessCNFPlan);
+        break;
       case PlanType.BUSINESS_BALANCE_PLAN:
         if (testFunction.isMobile() || testFunction.isTablet()) {
           await scrollTo(EaHomePage.elements.businessBalancePlan);
@@ -243,7 +249,6 @@ export class plansMethod {
 
   public static async validatePlanHeadingPlanPage(t, dataTable, data: any, page) {
     console.log("Validating Plan details.");
-    console.log("dataTable[0].fuelType-top:"+dataTable[0].fuelType);
     if (page === "Residential") {
       switch(dataTable[0].planName){
         case PlanType.BASIC_HOME :
@@ -338,7 +343,6 @@ export class plansMethod {
           }
           break;
         case PlanType.FLEXI_PLAN :
-          console.log("dataTable[0].fuelType"+dataTable[0].fuelType);
           if(dataTable[0].fuelType==="BOTH") {
             switch (dataTable[0].state) {
               case AustralianState.NSW:
@@ -404,7 +408,6 @@ export class plansMethod {
           }
           break;
           case PlanType.SOLAR_MAX_COMBO :
-            console.log("dataTable[0].fuelType"+dataTable[0].fuelType);
             if(dataTable[0].fuelType==="BOTH") {
               switch (dataTable[0].state) {
                 case AustralianState.NSW:
@@ -469,7 +472,41 @@ export class plansMethod {
           throw Error("Invalid Plan");
       }
     } else if (page === 'Business') {
-      if (data.planName === PlanType.BUSINESS_CARBON_NEUTRAL) {
+      if (dataTable[0].planName === PlanType.BUSINESS_CARBON_NEUTRAL_FLEXI) {
+        if (dataTable[0].fuelType === "ELE") {
+          switch (dataTable[0].state) {
+            case AustralianState.NSW:
+              await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralFlexiPlanTable.businessCarbonNeutralFlexiPlanTitle, data.planDetails.NSW.planName);
+              await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralFlexiPlanTable.businessCarbonNeutralFlexiPlanFuel, "Electricity");
+              await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralFlexiPlanTable.businessCarbonNeutralFlexiPlanHeadingDescription, data.planDetails.NSW.planDescription);
+              break;
+            case AustralianState.VIC:
+              await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralFlexiPlanTable.businessCarbonNeutralFlexiPlanTitle, data.planDetails.VIC.planName);
+              await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralFlexiPlanTable.businessCarbonNeutralFlexiPlanFuel, "Electricity");
+              await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralFlexiPlanTable.businessCarbonNeutralFlexiPlanHeadingDescription, data.planDetails.VIC.planDescription);
+              break;
+            case AustralianState.QLD:
+              await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralFlexiPlanTable.businessCarbonNeutralFlexiPlanTitle, data.planDetails.QLD.planName);
+              await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralFlexiPlanTable.businessCarbonNeutralFlexiPlanFuel, "Electricity");
+              await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralFlexiPlanTable.businessCarbonNeutralFlexiPlanHeadingDescription, data.planDetails.QLD.planDescription);
+              break;
+            case AustralianState.ACT:
+              await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralFlexiPlanTable.businessCarbonNeutralFlexiPlanTitle, data.planDetails.ACT.planName);
+              await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralFlexiPlanTable.businessCarbonNeutralFlexiPlanFuel, "Electricity");
+              await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralFlexiPlanTable.businessCarbonNeutralFlexiPlanHeadingDescription, data.planDetails.ACT.planDescription);
+              break;
+            case AustralianState.SA:
+              await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralFlexiPlanTable.businessCarbonNeutralFlexiPlanTitle, data.planDetails.SA.planName);
+              await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralFlexiPlanTable.businessCarbonNeutralFlexiPlanFuel, "Electricity");
+              await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralFlexiPlanTable.businessCarbonNeutralFlexiPlanHeadingDescription, data.planDetails.SA.planDescription);
+              break;
+            default:
+              console.log("Invalid electricity plan details for state");
+            }
+          }
+
+      }
+      else if (data.planName === PlanType.BUSINESS_CARBON_NEUTRAL) {
         if (dataTable[0].fuelType === "ELE") {
           await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralPlanTable.businessCarbonNeutralPlanTitle, data.planName);
           await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralPlanTable.businessCarbonNeutralPlanFuel, "Electricity");
@@ -479,15 +516,41 @@ export class plansMethod {
           await testFunction.assertText(t, EaHomePage.BusinessCarbonNeutralPlanTable.businessCarbonNeutralPlanFuel, "Gas");
           await testFunction.assertText(t, EaHomePage.BusinessCarbonNeutralPlanTable.businessCarbonNeutralPlanHeadingDescription, data.planDescription);
         }
-      } else if (data.planName === PlanType.BUSINESS_BALANCE_PLAN) {
+      } else if (dataTable[0].planName === PlanType.BUSINESS_BALANCE_PLAN) {
         if (dataTable[0].fuelType === "ELE") {
-          await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanTitle, data.planName);
-          await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanFuel, "Electricity");
-          await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanHeadingDescription, data.planDescription);
-        } else if (dataTable[0].fuelType === 'GAS') {
-          await testFunction.assertText(t, EaHomePage.BusinessBalancePlanTable.businessBalancePlanTitle, data.planName);
-          await testFunction.assertText(t, EaHomePage.BusinessBalancePlanTable.businessBalancePlanFuel, "Gas");
-          await testFunction.assertText(t, EaHomePage.BusinessBalancePlanTable.businessBalancePlanHeadingDescription, data.planDescription);
+          switch (dataTable[0].state) {
+            case AustralianState.NSW:
+              await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanTitle, data.planDetails.NSW.planName);
+              await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanFuel, "Electricity");
+              await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanHeadingDescription, data.planDetails.NSW.planDescription);
+              break;
+            case AustralianState.VIC:
+              await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanTitle, data.planDetails.VIC.planName);
+              await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanFuel, "Electricity");
+              await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanHeadingDescription, data.planDetails.VIC.planDescription);
+              break;
+            case AustralianState.QLD:
+              await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanTitle, data.planDetails.QLD.planName);
+              await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanFuel, "Electricity");
+              await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanHeadingDescription, data.planDetails.QLD.planDescription);
+              break;
+            case AustralianState.ACT:
+              await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanTitle, data.planDetails.ACT.planName);
+              await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanFuel, "Electricity");
+              await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanHeadingDescription, data.planDetails.ACT.planDescription);
+              break;
+            case AustralianState.SA:
+              await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanTitle, data.planDetails.SA.planName);
+              await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanFuel, "Electricity");
+              await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanHeadingDescription, data.planDetails.SA.planDescription);
+              break;
+            default:
+              console.log("Invalid electricity plan details for state");
+          }
+          } else if (dataTable[0].fuelType === 'GAS') {
+          await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanTitle, data.planDetails.NSW.planName);
+          await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanFuel, "Gas");
+          await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanHeadingDescription, data.planDetails.NSW.planDescription);
         }
       }
       else if (data.planName === PlanType.TOTAL_BUSINESS) {
@@ -1618,10 +1681,17 @@ export class plansMethod {
           await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralPlanTable.businessCarbonNeutralPlanEleDiscount, discount);
         }
         break;
+      case PlanType.BUSINESS_CARBON_NEUTRAL_FLEXI:
+        if (await testFunction.isElectricity(fuelType)) {
+          await testFunction.assertText(t, EaHomePage.elements.BusinessCarbonNeutralFlexiPlanTable.businessCarbonNeutralFlexiPlanEleDiscount, discount);
+        }
+        break;
       case PlanType.BUSINESS_BALANCE_PLAN:
         if (await testFunction.isElectricity(fuelType)) {
           await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanEleDiscount, discount);
-        }
+        }else if (await testFunction.isGas(fuelType)) {
+        await testFunction.assertText(t, EaHomePage.elements.BusinessBalancePlanTable.businessBalancePlanGasDiscount, discount);
+      }
         break;
       case PlanType.TOTAL_BUSINESS:
         if (await testFunction.isElectricity(fuelType)) {
