@@ -90,24 +90,24 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_8%GD_25",
+          "VIC": "Total_8%GD",
           "NSW": {
-            "Ausgrid": "Total_8%GD_25",
-            "Essential": "Total_8%GD_25",
-            "Endeavour": "Total_8%GD_25",
-            "default": "Total_8%GD_25"
+            "Ausgrid": "Total_8%GD",
+            "Essential": "Total_8%GD",
+            "Endeavour": "Total_8%GD",
+            "default": "Total_8%GD"
           },
           "ACT": "Total_14%GD",
           "QLD": "Total_3%GD",
           "SA": "Total_3%GD"
         },
         "COR": {
-          "VIC": "Total_8%GD_25",
+          "VIC": "Total_8%GD",
           "NSW": {
-            "Ausgrid": "Total_8%GD_25",
-            "Essential": "Total_8%GD_25",
-            "Endeavour": "Total_8%GD_25",
-            "default": "Total_8%GD_25"
+            "Ausgrid": "Total_8%GD",
+            "Essential": "Total_8%GD",
+            "Endeavour": "Total_8%GD",
+            "default": "Total_8%GD"
           },
           "ACT": "Total_14%GD",
           "QLD": "Total_3%GD",
@@ -117,12 +117,12 @@
 
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_8%GD_25",
+          "VIC": "Total_8%GD",
           "NSW": {
-            "Ausgrid": "Total_8%GD_25",
-            "Essential": "Total_8%GD_25",
-            "Endeavour": "Total_8%GD_25",
-            "default": "Total_8%GD_25"
+            "Ausgrid": "Total_8%GD",
+            "Essential": "Total_8%GD",
+            "Endeavour": "Total_8%GD",
+            "default": "Total_8%GD"
           },
           "ACT": "Total_14%GD",
           "QLD": "Total_3%GD",
@@ -207,22 +207,22 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_15%GD_25",
-          "NSW": "Total_11%GD_25",
+          "VIC": "Total_15%GD",
+          "NSW": "Total_11%GD",
           "ACT": "Total_21%GD",
           "SA": "Total_7%GD"
         },
         "COR": {
-          "VIC": "Total_15%GD_25",
-          "NSW": "Total_11%GD_25",
+          "VIC": "Total_15%GD",
+          "NSW": "Total_11%GD",
           "ACT": "Total_21%GD",
           "SA": "Total_7%GD"
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_15%GD_25",
-          "NSW": "Total_11%GD_25",
+          "VIC": "Total_15%GD",
+          "NSW": "Total_11%GD",
           "ACT": "Total_21%GD",
           "SA": "Total_7%GD"
         },

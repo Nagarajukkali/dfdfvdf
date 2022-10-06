@@ -12,19 +12,19 @@
 
 Feature:E2E scenario for basichome-finder campaign
 
-  @DR22.8.3.campaign
+  @DR22.10.2.campaign
   Scenario Outline: Validate complete data for basichome-finder campaign for NSW-Ausgrid - new Non-Moving customer
      Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
      When user provides "2144" and clicks on show me plan link
      And user validates the data on plans page for "<campaign>"
        | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |Feature_moveHomeCredit|
-       | ELE      | Y                | Y                     | Y                    | NSW   | N                               |    N                 |
+       | ELE      | N                | Y                     | Y                    | NSW   | N                               |    N                 |
      And user validates the data on plans page for "<campaign>"
        | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |Feature_moveHomeCredit|
-       | GAS      | Y                | Y                     |                     | NSW   | N                               |    N                 |
+       | GAS      | N                | Y                     |                     | NSW   | N                               |    N                 |
      And user validates disclaimer on plans page for "<campaign>"
        | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |moveHomeCredit|
-       | Y                        | Y         | Y            | Basic Home | NSW   | Y            |    N         |
+       | Y                        | Y         | Y            | Basic Home | NSW   | N            |    N         |
      And user clicks on Add plan button
 #    And user validates plan details on cart page for "<campaign>"
 #      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
@@ -59,13 +59,13 @@ Feature:E2E scenario for basichome-finder campaign
 #    And user selects carbon neutral option
      And user validates plan details on review page for "<campaign>"
        | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-       | ELE      | Y                | N                     | Y                    | N                               | <state> |    N                 |
+       | ELE      | N                | N                     | Y                    | N                               | <state> |    N                 |
      And user validates plan details on review page for "<campaign>"
        | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | Feature_discountOffTotalEnergyBill | state   |Feature_moveHomeCredit|
-       | GAS      | Y                | N                     | N                    | N                                  | <state> |    N                 |
+       | GAS      | N                | N                     | N                    | N                                  | <state> |    N                 |
      And user validates disclaimer on review page for "<campaign>"
        | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |moveHomeCredit|
-       | Y                        | Y         | Y            | Basic Home | NSW   | Y            |    N         |
+       | Y                        | Y         | Y            | Basic Home | NSW   | N            |    N         |
      And user submits the quote
      Then user lands on checkout complete page
      And user validates details on checkout complete page
@@ -88,7 +88,7 @@ Feature:E2E scenario for basichome-finder campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign         | folderName                        | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | No          | No          | basichome-finder | E2E_Campaign_basichome-finder_NSW | NSW   | Quote Tool   | COR     | No  | No | RES          | New           |
 
-  @DR22.8.3.campaign
+  @DR22.10.2.campaign
   Scenario Outline: Validate complete data for basichome-finder campaign for ACT new moving
      Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
      When user provides "2615" for postcode and proceed to view the plans
@@ -155,7 +155,7 @@ Feature:E2E scenario for basichome-finder campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign         | folderName                                   | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | No          | No          | basichome-finder | E2E_Campaign_basichome-finder_ACT_new_moving | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.8.3.campaign
+  @DR22.10.2.campaign
   Scenario Outline: Validate complete data for basichome-finder campaign for SA new moving
      Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
      When user provides "5076" for postcode and proceed to view the plans
@@ -224,7 +224,7 @@ Feature:E2E scenario for basichome-finder campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign         | folderName                                  | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | No          | No          | basichome-finder | E2E_Campaign_basichome-finder_SA_new_moving | SA    | Quote Tool   | Move Home     | No  | No | RES          | New           |
 
-  @DR22.8.3.campaign
+  @DR22.10.2.campaign
   Scenario Outline: Validate complete data for basichome-finder campaign for QLD
      Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
      When user provides "4208" for postcode and proceed to view the plans
@@ -280,20 +280,20 @@ Feature:E2E scenario for basichome-finder campaign
       | customerStatus | fuelType | eleDiscount | campaign         | folderName                        | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | No          | basichome-finder | E2E_Campaign_basichome-finder_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.8.3.campaign
+  @DR22.10.2.campaign
   Scenario Outline: Validate complete data for basichome-finder campaign for VIC
      Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
      When user provides "3188" for postcode and proceed to view the plans
      Then user is presented with the plans
      And user validates the data on plans page for "<campaign>"
        | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |Feature_moveHomeCredit|
-       | ELE      | Y                | Y                     | Y                    | VIC   | N                               |    N                 |
+       | ELE      | N                | Y                     | Y                    | VIC   | N                               |    N                 |
      And user validates the data on plans page for "<campaign>"
        | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |Feature_moveHomeCredit|
-       | GAS      | Y                | Y                     | N                    | VIC   | N                               |    N                 |
+       | GAS      | N                | Y                     | N                    | VIC   | N                               |    N                 |
      And user validates disclaimer on plans page for "<campaign>"
        | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |moveHomeCredit|
-       | Y                        | Y         | Y            | Basic Home | VIC   | Y            |    N         |
+       | Y                        | Y         | Y            | Basic Home | VIC   | N            |    N         |
      And user clicks on Add plan button
 #    And user validates plan details on cart page for "<campaign>"
 #      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_defaultOffer | state   |Feature_moveHomeCredit|
@@ -319,13 +319,13 @@ Feature:E2E scenario for basichome-finder campaign
      And user verifies selected plan details for '<fuelType>'
      And user validates plan details on review page for "<campaign>"
        | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_defaultOffer | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-       | ELE      | Y                | N                     | N                   | Y                    | N                               | <state> |    N                 |
+       | ELE      | N                | N                     | N                   | Y                    | N                               | <state> |    N                 |
      And user validates plan details on review page for "<campaign>"
        | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_defaultOffer | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-       | GAS      | Y                | N                     | N                   | N                    | N                               | <state> |    N                 |
+       | GAS      | N                | N                     | N                   | N                    | N                               | <state> |    N                 |
      And user validates disclaimer on review page for "<campaign>"
        | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |moveHomeCredit|
-       | Y                        | Y         | Y            | Basic Home | VIC   | Y            |    N         |
+       | Y                        | Y         | Y            | Basic Home | VIC   | N            |    N         |
      And user submits the quote
      Then user lands on checkout complete page
      And user validates details on checkout complete page
@@ -348,19 +348,19 @@ Feature:E2E scenario for basichome-finder campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign         | folderName                        | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | No          | No          | basichome-finder | E2E_Campaign_basichome-finder_VIC | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.8.3.campaign
+  @DR22.10.2.campaign
   Scenario Outline: Validate complete data for basichome-finder campaign for VIC existing non moving
      Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
      When user provides "3000" and clicks on show me plan link
      And user validates the data on plans page for "<campaign>"
        | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |Feature_moveHomeCredit|
-       | ELE      | Y                | Y                     | Y                    | VIC   | N                               |    N                 |
+       | ELE      | N                | Y                     | Y                    | VIC   | N                               |    N                 |
      And user validates the data on plans page for "<campaign>"
        | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_defaultOffer | state | Feature_noStandardConnectionFee |Feature_moveHomeCredit|
-       | GAS      | Y                | Y                     | N                    | VIC   | N                               |    N                 |
+       | GAS      | N                | Y                     | N                    | VIC   | N                               |    N                 |
      And user validates disclaimer on plans page for "<campaign>"
        | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-       | Y                        | Y         | Y            | Basic Home | <state> | Y            |    N         |
+       | Y                        | Y         | Y            | Basic Home | <state> | N            |    N         |
      And user clicks on Add plan button
 #    And user validates plan details on cart page for "<campaign>"
 #      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_defaultOffer | state   |Feature_moveHomeCredit|

@@ -326,7 +326,7 @@ export class checkoutDetailsMethod {
   public static async addAAHDetails(t) {
     let fName = "FNAME" + testFunction.generateRandomText(5);
     let lName = "LNAME" + testFunction.generateRandomText(5);
-    let email = testFunction.generateRandomText(5) + "@test.com";
+    let email = testFunction.generateRandomText(5) + "@test.com.au";
     await testFunction.click(t, eaCheckoutDetailsPage.elements.addAAH);
     if(validateAnalyticsEvent==='Y') {
       await plansMethod.validateComponentLibraryEvent(t, "checkout_details_page", "additional_account_holder_button");

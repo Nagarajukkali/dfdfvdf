@@ -123,41 +123,41 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "SolarMax_25",
+          "VIC": "SolarMax",
           "NSW": {
-            "Ausgrid": "SolarMax_25",
-            "Essential": "SolarMax_25",
-            "Endeavour": "SolarMax_25",
-            "default": "SolarMax_25"
+            "Ausgrid": "SolarMax",
+            "Essential": "SolarMax",
+            "Endeavour": "SolarMax",
+            "default": "SolarMax"
           },
           "ACT": "SolarMax",
-          "QLD": "SolarMax_25",
+          "QLD": "SolarMax",
           "SA": "SolarMax"
         },
         "COR": {
-          "VIC": "SolarMax_25",
+          "VIC": "SolarMax",
           "NSW": {
-            "Ausgrid": "SolarMax_25",
-            "Essential": "SolarMax_25",
-            "Endeavour": "SolarMax_25",
-            "default": "SolarMax_25"
+            "Ausgrid": "SolarMax",
+            "Essential": "SolarMax",
+            "Endeavour": "SolarMax",
+            "default": "SolarMax"
           },
           "ACT": "SolarMax",
-          "QLD": "SolarMax_25",
+          "QLD": "SolarMax",
           "SA": "SolarMax"
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "SolarMax_25",
+          "VIC": "SolarMax",
           "NSW": {
-            "Ausgrid": "SolarMax_25",
-            "Essential": "SolarMax_25",
-            "Endeavour": "SolarMax_25",
-            "default": "SolarMax_25"
+            "Ausgrid": "SolarMax",
+            "Essential": "SolarMax",
+            "Endeavour": "SolarMax",
+            "default": "SolarMax"
           },
           "ACT": "SolarMax",
-          "QLD": "SolarMax_25",
+          "QLD": "SolarMax",
           "SA": "SolarMax"
         },
         "PS": {
@@ -254,22 +254,22 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_12%GD_25",
-          "NSW": "Total_8%GD_25",
+          "VIC": "Total_12%GD",
+          "NSW": "Total_8%GD",
           "ACT": "Total_18%GD",
           "SA": "Total_4%GD"
         },
         "COR": {
-          "VIC": "Total_12%GD_25",
-          "NSW": "Total_8%GD_25",
+          "VIC": "Total_12%GD",
+          "NSW": "Total_8%GD",
           "ACT": "Total_18%GD",
           "SA": "Total_4%GD"
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_12%GD_25",
-          "NSW": "Total_8%GD_25",
+          "VIC": "Total_12%GD",
+          "NSW": "Total_8%GD",
           "ACT": "Total_18%GD",
           "SA": "Total_4%GD"
         },

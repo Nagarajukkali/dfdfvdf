@@ -248,7 +248,7 @@ export class plansMethod {
   }
 
   public static async validatePlanHeadingPlanPage(t, dataTable, data: any, page) {
-    console.log("Validating Plan details.");
+    console.log("Validating Plan details for "+dataTable[0].planName);
     if (page === "Residential") {
       switch(dataTable[0].planName){
         case PlanType.BASIC_HOME :
@@ -257,13 +257,65 @@ export class plansMethod {
           await testFunction.assertText(t, EaHomePage.elements.BasicPlanTable.basicHomePlanHeadingDescription, data.planDescription);
         case PlanType.RESIDENTIAL_BALANCE_PLAN :
           if(dataTable[0].fuelType==="BOTH") {
-            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceTitle, data.planName);
-            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceFuel, "Electricity & gas");
-            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceHeadingDescription, data.planDescription);
+            switch (dataTable[0].state) {
+              case AustralianState.NSW:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceTitle, data.planDetails.NSW.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceFuel, "Electricity & gas");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceHeadingDescription, data.planDetails.NSW.planDescription);
+                break;
+              case AustralianState.VIC:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceTitle, data.planDetails.VIC.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceFuel, "Electricity & gas");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceHeadingDescription, data.planDetails.VIC.planDescription);
+                break;
+              case AustralianState.SA:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceTitle, data.planDetails.SA.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceFuel, "Electricity & gas");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceHeadingDescription, data.planDetails.SA.planDescription);
+                break;
+              case AustralianState.ACT:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceTitle, data.planDetails.ACT.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceFuel, "Electricity & gas");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceHeadingDescription, data.planDetails.ACT.planDescription);
+                break;
+              case AustralianState.QLD:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceTitle, data.planDetails.QLD.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceFuel, "Electricity & gas");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceHeadingDescription, data.planDetails.QLD.planDescription);
+                break;
+              default:
+                console.log("Invalid combo plan details for state");
+            }
           }else if(dataTable[0].fuelType==="ELE") {
-            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceTitle, data.planName);
-            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceFuel, "Electricity");
-            await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceHeadingDescription, data.planDescription);
+            switch (dataTable[0].state) {
+              case AustralianState.NSW:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceTitle, data.planDetails.NSW.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceFuel, "Electricity");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceHeadingDescription, data.planDetails.NSW.planDescription);
+                break;
+              case AustralianState.VIC:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceTitle, data.planDetails.VIC.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceFuel, "Electricity");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceHeadingDescription, data.planDetails.VIC.planDescription);
+                break;
+              case AustralianState.SA:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceTitle, data.planDetails.SA.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceFuel, "Electricity");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceHeadingDescription, data.planDetails.SA.planDescription);
+                break;
+              case AustralianState.ACT:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceTitle, data.planDetails.ACT.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceFuel, "Electricity");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceHeadingDescription, data.planDetails.ACT.planDescription);
+                break;
+              case AustralianState.QLD:
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceTitle, data.planDetails.QLD.planName);
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceFuel, "Electricity");
+                await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.residentialBalanceHeadingDescription, data.planDetails.QLD.planDescription);
+                break;
+              default:
+                console.log("Invalid electricity plan details for state");
+            }
           }else{
             console.log("Invalid fueltype");
           }
