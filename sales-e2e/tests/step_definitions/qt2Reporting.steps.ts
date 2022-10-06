@@ -64,7 +64,8 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
     let actualPlanCode = jsonObj.saleDetail.offerDetail.plan;
     let actualState = jsonObj.saleDetail.premiseDetail.state;
     let actualBillRouteType = jsonObj.saleDetail.billDeliveryDetail.billRouteType;
-    let isCampaignTest = (t.testRun.test.name.includes('campaign'));
+    // let isCampaignTest = (t.testRun.test.name.includes('campaign') || data[0].campaign === "business-balance-plan");
+    let isCampaignTest = (t.testRun.test.name.includes('campaign') || data[0].campaign !== undefined);
     let isOfferType = (actualOfferType === 'ENE' || actualOfferType === 'COR');
     let isStateEligibleFor$75Credit = (actualState === '');
     let isStateEligibleFor$50Credit = (actualState === 'SA' || 'VIC' || 'ACT' || 'NSW');
@@ -72,7 +73,7 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
     let isStateEligibleFor$100Credit = (actualState === 'VIC' || 'NSW');
     let isStateEligibleFor$200CreditGas = (actualState === 'VIC' || 'NSW')
     let isStateEligibleForNoCredit = (actualState === 'SA');
-    let isBusinessPlanCode = (expectedPlanCode.includes('BSOT') || expectedPlanCode.includes('TOPB') || expectedPlanCode.includes('SWSR'));
+    let isBusinessPlanCode = (expectedPlanCode.includes('BSOT') || expectedPlanCode.includes('TOPB') || expectedPlanCode.includes('BSPB') || expectedPlanCode.includes('SWSR'));
     let isResiPlanCode = (expectedPlanCode.includes('RSOT'));
     let isCustomerType = actualCustomerType.includes('RESIDENTIAL');
     let isSolar = expectedPlanCode.includes('SMAX');
@@ -120,12 +121,17 @@ Then(/^user validates below mandatory fields$/, async function (t, [], dataTable
       let expectedEleSourceCode = checkoutDetailsMethod.map.get('ele source code_' + checkoutDetailsMethod.getScenarioId(t));
       if (isCampaignTest || data[0].campaign === "balance-canstarblue" || data[0].campaign === "flexi" || data[0].campaign === "resi-total" || data[0].campaign === "solarmax" ) {
           await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualEleSourceCode, data[0].campaign, expectedOfferType, expectedFuelType);
-      } 
+      }
       // else if (isOfferType && isSolar ) {
       //   await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "SolarMax" + '_25');
       // } else if (!isOfferType && isSolar ) {
       //   await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, "SolarMax");
-      // } 
+      // }
+
+    //  else if (isOfferType && isBusinessPlanCode  && ((data[0].campaign === "business-balance-plan"))) {
+    //   console.log("On business-balance-plan");
+    //   await qt2Reporting.validateSourceCode(t, actualState, data[0].customerStatus, actualEleSourceCode, data[0].campaign, expectedOfferType, expectedFuelType);
+    // }
       else if (isOfferType && !isBusinessPlanCode && isStateEligibleFor$75Credit && (!(data[0].campaign === "Balance Plan"))) {
         console.log("On 25Credit-Resi");
         await qt2Reporting.validateMandatoryField(t, actualEleSourceCode, expectedEleSourceCode + '_75');
