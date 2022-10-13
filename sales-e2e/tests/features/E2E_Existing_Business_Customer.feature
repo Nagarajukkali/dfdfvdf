@@ -50,16 +50,16 @@ Feature:E2E scenario for existing business moving and non moving customer
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EN  | 4102017007 | N                              | N                              | Y                       | LSVFLS                   | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus   |campaign  |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | BSPB2-EN  | 4102017007 | N                              | N                              | Y                       | LSVFLS                   | EMAIL        |<customerStatus> |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GN  | 5247073457 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus   |campaign  |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | BSPB2-GN  | 5247073457 | N                              | N                              | Y                       | OTHER                    | EMAIL        |<customerStatus> |<campaign>|
 
     Examples:
-      | customerStatus | fuelType | planName       | folderName              | state | sourceSystem | journey   | AAH | DD  | customerType | newOrExisting |
-      | Existing       | BOTH     | Total Plan - Business | E2E_Existing_Bus_Moving | NSW   | Quote Tool   | Move Home | Yes | Yes | BUS          | Existing      |
+      | customerStatus | fuelType | planName              | folderName              | state | sourceSystem | journey   | AAH | DD  | customerType | newOrExisting |campaign              |
+      | Existing       | BOTH     | Business Balance Plan | E2E_Existing_Bus_Moving | NSW   | Quote Tool   | Move Home | Yes | Yes | BUS          | Existing      |business-balance-plan |
 
   Scenario Outline: Submit a quote for existing business non moving customer with LS, select dual fuel and verify electricity account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -106,15 +106,15 @@ Feature:E2E scenario for existing business moving and non moving customer
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | PS        | TOPB-EV  | 6203787884 | N                              | N                              | Y                       | LSOC                     | POSTMM        |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus   |campaign  |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | PS        | BSPB2-EV | 6203787884 | N                              | N                              | Y                       | LSOC                     | POSTMM       |<customerStatus> |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | COR       | TOPB-GV  |            | N                              | N                              | N                       |                          | POSTMM        |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus   |campaign  |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | COR       | BSPB2-GV |            | N                              | N                              | N                       |                          | POSTMM       |<customerStatus> |<campaign>|
 
     Examples:
-      | customerStatus | planName              | folderName                 | fuelType | accountType | sourceSystem | journey     | AAH | DD | customerType | newOrExisting |
-      | Existing       | Total Plan - Business | E2E_Existing_Bus_NonMoving | BOTH     | ELE         | Quote Tool   | Plan Switch | No  | No | BUS          | Existing      |
+      | customerStatus | planName              | folderName                 | fuelType | accountType | sourceSystem | journey     | AAH | DD | customerType | newOrExisting |campaign              |
+      | Existing       | Business Balance Plan | E2E_Existing_Bus_NonMoving | BOTH     | ELE         | Quote Tool   | Plan Switch | No  | No | BUS          | Existing      |business-balance-plan |
 
 

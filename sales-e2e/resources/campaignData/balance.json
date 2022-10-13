@@ -56,7 +56,7 @@
         },
         "variableRates": {
           "heading": "Variable rates",
-          "description": "Your energy charges are variable for the benefit period. We'll let you know in advance before your rates change."
+          "description": "Your energy charges are variable. We'll let you know in advance before any rates change."
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
@@ -95,7 +95,7 @@
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "moveHomeCredit": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
-        "variableRates": "Variable rates. Your energy charges are variable for the benefit period. We'll let you know in advance before your rates change.",
+        "variableRates": "Variable rates. Your energy charges are variable. We'll let you know in advance before any rates change.",
         "discountOffTotalEnergyBill": {
           "VIC": "3% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
           "NSW": {
@@ -112,24 +112,24 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_3%GD_25",
+          "VIC": "Total_Plan",
           "NSW": {
-            "Ausgrid": "Total_3%GD_25",
-            "Essential": "Total_3%GD_25",
-            "Endeavour": "Total_3%GD_25",
-            "default": "Total_3%GD_25"
+            "Ausgrid": "Total_Plan",
+            "Essential": "Total_Plan",
+            "Endeavour": "Total_Plan",
+            "default": "Total_Plan"
           },
           "ACT": "Total_6%GD",
           "QLD": "Total_Plan",
           "SA": "Total_Plan"
         },
         "COR": {
-          "VIC": "Total_3%GD_25",
+          "VIC": "Total_Plan",
           "NSW": {
-            "Ausgrid": "Total_3%GD_25",
-            "Essential": "Total_3%GD_25",
-            "Endeavour": "Total_3%GD_25",
-            "default": "Total_3%GD_25"
+            "Ausgrid": "Total_Plan",
+            "Essential": "Total_Plan",
+            "Endeavour": "Total_Plan",
+            "default": "Total_Plan"
           },
           "ACT": "Total_6%GD",
           "QLD": "Total_Plan",
@@ -138,24 +138,24 @@
       },
       "existingCustomer": {
         "ENE":{
-          "VIC": "Total_3%GD_25",
+          "VIC": "Total_Plan",
           "NSW": {
-            "Ausgrid": "Total_3%GD_25",
-            "Essential": "Total_3%GD_25",
-            "Endeavour": "Total_3%GD_25",
-            "default": "Total_3%GD_25"
+            "Ausgrid": "Total_Plan",
+            "Essential": "Total_Plan",
+            "Endeavour": "Total_Plan",
+            "default": "Total_Plan"
           },
           "ACT": "Total_6%GD",
           "QLD": "Total_Plan",
           "SA": "Total_Plan"
         },
         "PS": {
-          "VIC": "Total_3%GD",
+          "VIC": "Total_Plan",
           "NSW": {
-            "Ausgrid": "Total_3%GD",
-            "Essential": "Total_3%GD",
-            "Endeavour": "Total_3%GD",
-            "default": "Total_3%GD"
+            "Ausgrid": "Total_Plan",
+            "Essential": "Total_Plan",
+            "Endeavour": "Total_Plan",
+            "default": "Total_Plan"
           },
           "ACT": "Total_6%GD",
           "QLD": "Total_Plan",
@@ -200,7 +200,7 @@
         },
         "variableRates": {
           "heading": "Variable rates",
-          "description": "Your energy charges are variable for the benefit period. We'll let you know in advance before your rates change."
+          "description": "Your energy charges are variable. We'll let you know in advance before any rates change."
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
@@ -228,7 +228,7 @@
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "moveHomeCredit": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
-        "variableRates": "Variable rates. Your energy charges are variable for the benefit period. We'll let you know in advance before your rates change.",
+        "variableRates": "Variable rates. Your energy charges are variable. We'll let you know in advance before any rates change.",
         "discountOffTotalEnergyBill": {
           "VIC": "6% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
           "NSW": "4% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
@@ -240,30 +240,30 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_6%GD_25",
-          "NSW": "Total_4%GD_25",
+          "VIC": "Total_Plan",
+          "NSW": "Total_Plan",
           "ACT": "Total_9%GD",
-          "SA": "Total_2%GD"
+          "SA": "Total_Plan"
         },
         "COR": {
-          "VIC": "Total_6%GD_25",
-          "NSW": "Total_4%GD_25",
+          "VIC": "Total_Plan",
+          "NSW": "Total_Plan",
           "ACT": "Total_9%GD",
-          "SA": "Total_2%GD"
+          "SA": "Total_Plan"
         }
       },
       "existingCustomer": {
         "ENE":{
-          "VIC": "Total_6%GD_25",
-          "NSW": "Total_4%GD_25",
+          "VIC": "Total_Plan",
+          "NSW": "Total_Plan",
           "ACT": "Total_9%GD",
-          "SA": "Total_2%GD"
+          "SA": "Total_Plan"
         },
         "PS": {
-          "VIC": "Total_6%GD",
-          "NSW": "Total_4%GD",
+          "VIC": "Total_Plan",
+          "NSW": "Total_Plan",
           "ACT": "Total_9%GD",
-          "SA": "Total_2%GD"
+          "SA": "Total_Plan"
         }
       }
     }
@@ -300,7 +300,7 @@
         },
         "variableRates": {
           "heading": "Variable rates",
-          "description": "Your energy charges are variable for the benefit period. We'll let you know in advance before your rates change."
+          "description": "Your energy charges are variable. We'll let you know in advance before any rates change."
         }
       },
       "postSelect": {
@@ -313,7 +313,7 @@
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "moveHomeCredit": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
-        "variableRates": "Variable rates. Your energy charges are variable for the benefit period. We'll let you know in advance before your rates change."
+        "variableRates": "Variable rates. Your energy charges are variable. We'll let you know in advance before any rates change."
       }
     }
   },
@@ -398,11 +398,11 @@
     "plandisclaimer": {
       "VIC": {
         "heading": "Balance Plan",
-        "description": "* Offer only for eligible VIC residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+        "description": "* Offer only for eligible VIC residential customers. Not available in all areas or for all tariff types. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
       },
       "NSW": {
         "heading": "Balance Plan",
-        "description": "* Offer only for eligible NSW residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+        "description": "* Offer only for eligible NSW residential customers. Not available in all areas or for all tariff types. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
       },
       "ACT": {
         "heading": "Balance Plan",
@@ -410,11 +410,11 @@
       },
       "QLD": {
         "heading": "Balance Plan",
-        "description": "* Offer only for eligible QLD residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+        "description": "* Offer only for eligible QLD residential customers. Not available in all areas or for all tariff types. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
       },
       "SA": {
         "heading": "Balance Plan",
-        "description": "* Offer only for eligible SA residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+        "description": "* Offer only for eligible SA residential customers. Not available in all areas or for all tariff types. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
       }
     }
   }

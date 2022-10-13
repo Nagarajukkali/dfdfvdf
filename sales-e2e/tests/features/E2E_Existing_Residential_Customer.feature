@@ -113,18 +113,18 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | RCPP-EV  | 6203225514 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-EV  | 6203225514 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | RCPP-GV  | 5330299405 | N                              | N                              | Y                       | GLSMRHW                  | POSTMM        |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-GV  | 5330299405 | N                              | N                              | Y                       | GLSMRHW                  | POSTMM        |
 
     Examples:
-      | customerStatus | planName  | folderName                  | fuelType | accountType | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
-      | Existing       | No Frills | E2E_Existing_Resi_NonMoving | BOTH     | ELE         | Quote Tool   | Plan Switch | No  | Yes | RES          | Existing      |
+      | customerStatus | planName   | folderName                  | fuelType | accountType | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
+      | Existing       | Flexi Plan | E2E_Existing_Resi_NonMoving | BOTH     | ELE         | Quote Tool   | Plan Switch | No  | Yes | RES          | Existing      |
 
     #concession card number is required
-    
+
   Scenario Outline: Submit a quote for QLD existing residential non moving customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page

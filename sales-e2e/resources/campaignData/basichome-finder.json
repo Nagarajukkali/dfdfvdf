@@ -91,24 +91,24 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Basic_25",
+          "VIC": "Basic",
           "NSW": {
-            "Ausgrid": "Basic_25",
-            "Essential": "Basic_25",
-            "Endeavour": "Basic_25",
-            "default": "Basic_25"
+            "Ausgrid": "Basic",
+            "Essential": "Basic",
+            "Endeavour": "Basic",
+            "default": "Basic"
           },
           "ACT": "Basic",
           "QLD": "Basic",
           "SA": "Basic"
         },
         "COR": {
-          "VIC": "Basic_25",
+          "VIC": "Basic",
           "NSW": {
-            "Ausgrid": "Basic_25",
-            "Essential": "Basic_25",
-            "Endeavour": "Basic_25",
-            "default": "Basic_25"
+            "Ausgrid": "Basic",
+            "Essential": "Basic",
+            "Endeavour": "Basic",
+            "default": "Basic"
           },
           "ACT": "Basic",
           "QLD": "Basic",
@@ -117,12 +117,12 @@
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Basic_25",
+          "VIC": "Basic",
           "NSW": {
-            "Ausgrid": "Basic_25",
-            "Essential": "Basic_25",
-            "Endeavour": "Basic_25",
-            "default": "Basic_25"
+            "Ausgrid": "Basic",
+            "Essential": "Basic",
+            "Endeavour": "Basic",
+            "default": "Basic"
           },
           "ACT": "Basic",
           "QLD": "Basic",
@@ -194,22 +194,22 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Basic_25",
-          "NSW": "Basic_25",
+          "VIC": "Basic",
+          "NSW": "Basic",
           "ACT": "Basic",
           "SA": "Basic"
         },
         "COR": {
-          "VIC": "Basic_25",
-          "NSW": "Basic_25",
+          "VIC": "Basic",
+          "NSW": "Basic",
           "ACT": "Basic",
           "SA": "Basic"
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Basic_25",
-          "NSW": "Basic_25",
+          "VIC": "Basic",
+          "NSW": "Basic",
           "ACT": "Basic",
           "SA": "Basic"
         },

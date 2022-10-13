@@ -13,7 +13,7 @@
 
 Feature:E2E scenario for partner-program
 
- @DR22.8.3.campaign
+ @DR22.10.2.campaign
   Scenario Outline: Validate complete data for partner-program campaign for NSW-Ausgrid for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "bizoffer5" and "2144" and clicks on show me plan link
@@ -22,20 +22,20 @@ Feature:E2E scenario for partner-program
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | Y                | Y                     | Y                     | Y                                     | N                               | <state> |  N                    |
+      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> |  N                    |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | Y                | Y                     | Y                     | Y                                     | N                               | <state> |  N                    |
+      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> |  N                    |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | ELE      | Y                | Y                     | Y                     | Y                                     | <state> | N             |
+      | ELE      | N                | Y                     | Y                     | Y                                     | <state> | N             |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | GAS      | Y                | Y                     | Y                     | Y                                     | <state> | N             |
+      | GAS      | N                | Y                     | Y                     | Y                                     | <state> | N             |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -65,13 +65,13 @@ Feature:E2E scenario for partner-program
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | Y                | N                     | Y                     | Y                                     | N                               | <state> | N                     |
+      | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> | N                     |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | Y                | N                     | Y                     | Y                                     | N                               | <state> | N                     |
+      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> | N                     |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -94,7 +94,7 @@ Feature:E2E scenario for partner-program
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                  | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
- @DR22.8.3.campaign
+ @DR22.10.2.campaign
   Scenario Outline: Validate complete data for partner-program campaign for VIC for new non moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "bizoffer5" and "3199" and clicks on show me plan link
@@ -103,20 +103,20 @@ Feature:E2E scenario for partner-program
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | Y                | Y                     | Y                     | Y                                     | N                               | <state> | N                     |
+      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                     |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | Y                | Y                     | Y                     | Y                                     | N                               | <state> |  N                    |
+      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> |  N                    |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | ELE      | Y                | Y                     | Y                     | Y                                     | <state> | N             |
+      | ELE      | N                | Y                     | Y                     | Y                                     | <state> | N             |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | GAS      | Y                | Y                     | Y                     | Y                                     | <state> | N             |
+      | GAS      | N                | Y                     | Y                     | Y                                     | <state> | N             |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -137,13 +137,13 @@ Feature:E2E scenario for partner-program
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | Y                | N                     | Y                     | Y                                     | N                               | <state> | N                     |
+      | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> | N                     |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | Y                | N                     | Y                     | Y                                     | N                               | <state> |  N                    |
+      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> |  N                    |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -166,7 +166,7 @@ Feature:E2E scenario for partner-program
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                     | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           |
 
-  @DR22.8.3.campaign
+  @DR22.10.2.campaign
   Scenario Outline: Validate complete data for partner-program campaign for SA for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "bizoffer5" and "5076" and clicks on show me plan link
@@ -235,7 +235,7 @@ Feature:E2E scenario for partner-program
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                      | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.8.3.campaign
+  @DR22.10.2.campaign
   Scenario Outline: Validate complete data for partner-program campaign for ACT for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "bizoffer5" and "2615" and clicks on show me plan link
@@ -303,7 +303,7 @@ Feature:E2E scenario for partner-program
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                       | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.8.3.campaign
+  @DR22.10.2.campaign
   Scenario Outline: Validate complete data for partner-program campaign for QLD for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "bizoffer5" and "4208" and clicks on show me plan link
@@ -358,7 +358,7 @@ Feature:E2E scenario for partner-program
       | customerStatus | fuelType | eleDiscount | campaign        | folderName                       | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | ELE      | 2          | partner-program | E2E_Campaign_partner-program_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.8.3.campaign
+  @DR22.10.2.campaign
   Scenario Outline: Validate complete data for partner-program campaign for SA existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "bizoffer5" and "5000" and clicks on show me plan link
@@ -429,7 +429,7 @@ Feature:E2E scenario for partner-program
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                          | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA_existing_non-moving | SA    | Quote Tool   | Plan Switch | No  | No | RES          | Existing non-moving |
 
-  @DR22.8.3.campaign
+  @DR22.10.2.campaign
   Scenario Outline: Validate complete data for partner-program campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "bizoffer5" and "3214" and clicks on show me plan link
@@ -438,20 +438,20 @@ Feature:E2E scenario for partner-program
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | Y                | Y                     | Y                     | Y                                     | N                               | <state> | N                     |
+      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                     |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | Y                | Y                     | Y                     | Y                                     | N                               | <state> | N                     |
+      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | ELE      | Y                | Y                     | Y                     | Y                                     | <state> | N             |
+      | ELE      | N                | Y                     | Y                     | Y                                     | <state> | N             |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | GAS      | Y                | Y                     | Y                     | Y                                     | <state> | N             |
+      | GAS      | N                | Y                     | Y                     | Y                                     | <state> | N             |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
@@ -501,7 +501,7 @@ Feature:E2E scenario for partner-program
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                           | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR22.8.3.campaign
+  @DR22.10.2.campaign
   Scenario Outline: Validate complete data for partner-program campaign for VIC for new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "bizoffer5" and "3199" and clicks on show me plan link
@@ -510,20 +510,20 @@ Feature:E2E scenario for partner-program
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | Y                | Y                     | Y                     | Y                                     | N                               | <state> | N                     |
+      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                     |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | Y                | Y                     | Y                     | Y                                     | N                               | <state> | N                    |
+      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                    |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | ELE      | Y                | Y                     | Y                     | Y                                     | <state> | N             |
+      | ELE      | N                | Y                     | Y                     | Y                                     | <state> | N             |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | GAS      | Y                | Y                     | Y                     | Y                                     | <state> | N             |
+      | GAS      | N                | Y                     | Y                     | Y                                     | <state> | N             |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -545,13 +545,13 @@ Feature:E2E scenario for partner-program
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | Y                | N                     | Y                     | Y                                     | N                               | <state> | N                     |
+      | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> | N                     |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | Y                | N                     | Y                     | Y                                     | N                               | <state> |  N                    |
+      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> |  N                    |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
