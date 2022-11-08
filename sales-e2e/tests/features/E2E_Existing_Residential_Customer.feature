@@ -1,5 +1,6 @@
-@E2E @existingcustomerQT @smoke
+@E2E @existingcustomerQT @smoke @E2E-Resi
 Feature:E2E scenario for existing residential moving and non moving customer
+
   Scenario Outline: Submit a quote for existing residential moving customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -9,7 +10,7 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
       | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
-      | Existing       | 2390260226    | Postcode            | 3195         | dob    | 14121974 |
+      | Existing       | 9880032884    | Postcode            | 3030             | dl    | 841866770 |
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | connectionAddress                        | propertyType |
       | RES          | Moving     | 271 Heatherhill Road, FRANKSTON VIC 3199 | Renter       |
@@ -17,8 +18,8 @@ Feature:E2E scenario for existing residential moving and non moving customer
       | customerType | journey | customerStatus | firstName | lastName | idType   |
       | RES          | RES     | Existing       | test      | test     | Medicare |
     And user validates details on checkout details page
-      | sourceSystem   | journey   | fuelType   |carbonNeutral|
-      | <sourceSystem> | <journey> | <fuelType> |Y          |
+      | sourceSystem   | journey   | fuelType   | carbonNeutral |
+      | <sourceSystem> | <journey> | <fuelType> | Y             |
     And user selects mailing address option
       | addressType   | otherAddress                      |
       | Other Address | 3 River Drive, ATHELSTONE SA 5076 |
@@ -53,16 +54,16 @@ Feature:E2E scenario for existing residential moving and non moving customer
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |state| campaign |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-EV  | 6407557087 | N                              | N                              | Y                       | OTHER                    | POSTMM       |<state>  | <campaign>|
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | state   | campaign   |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-EV  | 6407557087 | N                              | N                              | Y                       | OTHER                    | POSTMM        | <state> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |state| campaign |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GV  | 5321574765 | N                              | N                              | Y                       | OTHER                    | POSTMM       |<state>  |<campaign>|
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | state   | campaign   |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GV  | 5321574765 | N                              | N                              | Y                       | OTHER                    | POSTMM        | <state> | <campaign> |
 
     Examples:
       | customerStatus | fuelType | planName   | folderName               | campaign | state | optDisconnection | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | Existing       | BOTH     | Flexi Plan | E2E_Existing_Resi_Moving | flexi    |  VIC   | Yes              | Quote Tool   | Move Home | Yes | No | RES          | Existing      |
+      | Existing       | BOTH     | Flexi Plan | E2E_Existing_Resi_Moving | flexi    | VIC   | Yes              | Quote Tool   | Move Home | Yes | No | RES          | Existing      |
 
   @deviceCheck
   Scenario Outline: Submit a quote for existing residential non moving customer with LS, select dual fuel and verify gas account
@@ -95,8 +96,8 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user clicks on 'Review your order' button and navigates to review page
     Then Life support section is displayed on Review page as per selected "<fuelType>" and verified "<accountType>"
     And user provides life support details on review page
-      | lifeSupportOption | fuelType | EleclifeSupportDevices                   | GaslifeSupportDevices |
-      | Yes               | GAS      | Intermittent Peritoneal Dialysis Machine | Medically Required Hot Water  |
+      | lifeSupportOption | fuelType | EleclifeSupportDevices                   | GaslifeSupportDevices        |
+      | Yes               | GAS      | Intermittent Peritoneal Dialysis Machine | Medically Required Hot Water |
     And user verifies selected plan details for '<fuelType>'
     And user validates details on checkout review page
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
@@ -112,16 +113,16 @@ Feature:E2E scenario for existing residential moving and non moving customer
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-EV  | 6203225514 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | campaign   |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-EV  | 6203225514 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-GV  | 5330299405 | N                              | N                              | Y                       | GLSMRHW                  | POSTMM        |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | campaign   |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-GV  | 5330299405 | N                              | N                              | Y                       | GLSMRHW                  | POSTMM        | <campaign> |
 
     Examples:
-      | customerStatus | planName   | folderName                  | fuelType | accountType | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
-      | Existing       | Flexi Plan | E2E_Existing_Resi_NonMoving | BOTH     | ELE         | Quote Tool   | Plan Switch | No  | Yes | RES          | Existing      |
+      | customerStatus | planName   | folderName                  | fuelType | accountType | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting | campaign |
+      | Existing       | Flexi Plan | E2E_Existing_Resi_NonMoving | BOTH     | ELE         | Quote Tool   | Plan Switch | No  | Yes | RES          | Existing      | flexi    |
 
     #concession card number is required
 
@@ -149,7 +150,7 @@ Feature:E2E scenario for existing residential moving and non moving customer
       | sourceSystem   | journey   | fuelType   |
       | <sourceSystem> | <journey> | <fuelType> |
     And user selects mailing address option
-      | addressType   | otherAddress                          |
+      | addressType   | otherAddress                    |
       | Other Address | 1 Ford Close, MCDOWALL QLD 4053 |
     And user opts for AAH and DD
       | optAAHOption | optDDOption | directDebitType |
@@ -176,12 +177,12 @@ Feature:E2E scenario for existing residential moving and non moving customer
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-EQ  | QB06882633 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | campaign   |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-EQ  | QB06882633 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        | <campaign> |
 
 
     Examples:
-      | customerStatus | planName   | folderName                      | fuelType | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
-      | Existing       | Total Plan | E2E_Existing_Resi_QLD_NonMoving | ELE      | Quote Tool   | Plan Switch | No  | Yes | RES          | Existing      |
+      | customerStatus | planName   | folderName                      | fuelType | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting | campaign |
+      | Existing       | Flexi Plan | E2E_Existing_Resi_QLD_NonMoving | ELE      | Quote Tool   | Plan Switch | No  | Yes | RES          | Existing      | flexi    |
 
 

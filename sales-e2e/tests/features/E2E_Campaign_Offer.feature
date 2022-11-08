@@ -1,15 +1,15 @@
-@E2E
+@E2E @E2E-Resi
 Feature:E2E scenario for offer campaign
-  #regression defect raised
-  @deviceCheck @smoke @failed
+
+  @deviceCheck @smoke
   Scenario Outline: Submit a quote for offer campaign without AAH and DD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "2000" and clicks on show me plan link
+    When user provides "3000" and clicks on show me plan link
     And user clicks on Add plan button
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       | customerType | connectionAddress                   | movingType | propertyType |
-      | RES          | 74 Yillowra Street, AUBURN NSW 2144 | Non-Moving | Renter       |
+      | RES          | 31 Balwyn Road, CANTERBURY VIC 3126 | Non-Moving | Renter       |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         |
       | RES          | RES     | New            | test      | test     | Driver License |
@@ -46,11 +46,11 @@ Feature:E2E scenario for offer campaign
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-EN  | 4102681649 | N                              | N                              | Y                       | LSCNSPE                  | POSTMM        | <customerStatus> | <campaign> |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | BP2H-EV  | 6102221416 | N                              | N                              | Y                       | LSCNSPE                  | POSTMM        | <customerStatus> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-GN  | 5240524910 | N                              | N                              | Y                       | OTHER                    | POSTMM        | <customerStatus> | <campaign> |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | BP2H-GV  | 5310425534 | N                              | N                              | Y                       | OTHER                    | POSTMM        | <customerStatus> | <campaign> |
 
     Examples:
       | customerStatus | fuelType | campaign | folderName                                   | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
@@ -58,12 +58,12 @@ Feature:E2E scenario for offer campaign
 
   Scenario Outline: Submit a quote for offer campaign with AAH and DD
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "3000" and clicks on show me plan link
+    When user provides "2000" and clicks on show me plan link
     And user clicks on Add plan button
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
-      | customerType | connectionAddress                        | movingType | propertyType |
-      | RES          | 271 Heatherhill Road, FRANKSTON VIC 3199 | Moving     | Renter       |
+      | customerType | connectionAddress                   | movingType | propertyType |
+      | RES          | 74 Yillowra Street, AUBURN NSW 2144 | Moving     | Renter       |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType   |
       | RES          | RES     | New            | test      | test     | Passport |
@@ -72,7 +72,7 @@ Feature:E2E scenario for offer campaign
       | <sourceSystem> | <journey> | <fuelType> |
     And user selects mailing address option
       | addressType   | otherAddress                        |
-      | Other Address | 74 Yillowra Street, AUBURN NSW 2144 |
+      | Other Address | 31 Balwyn Road, CANTERBURY VIC 3126 |
     And user opts for AAH and DD
       | optAAHOption | optDDOption | directDebitType |
       | <AAH>        | <DD>        | Bank            |
@@ -101,14 +101,14 @@ Feature:E2E scenario for offer campaign
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-EV  | 6407557087 | N                              | N                              | Y                       | LSCNSPE                  | EMAIL         | <customerStatus> | <campaign> |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-EN  | 4102681649 | N                              | N                              | Y                       | LSCNSPE                  | EMAIL         | <customerStatus> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-GV  | 5321574765 | N                              | N                              | Y                       | OTHER                    | EMAIL         | <customerStatus> | <campaign> |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GN  | 5240524910 | N                              | N                              | Y                       | OTHER                    | EMAIL         | <customerStatus> | <campaign> |
 
     Examples:
       | customerStatus | fuelType | campaign | folderName                             | state | sourceSystem | journey   | AAH | DD  | customerType | newOrExisting |
-      | New            | BOTH     | offer    | E2E_New_Resi_Camp_OFFER_WithAAH_WithDD | VIC   | Quote Tool   | Move Home | Yes | Yes | RES          | New           |
+      | New            | BOTH     | offer    | E2E_New_Resi_Camp_OFFER_WithAAH_WithDD | NSW   | Quote Tool   | Move Home | Yes | Yes | RES          | New           |
 
 

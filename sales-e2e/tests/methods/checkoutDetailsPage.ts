@@ -448,6 +448,9 @@ export class checkoutDetailsMethod {
   public static async selectElePlan(t, elePlan: String) {
     let element = null;
     switch (elePlan) {
+      case PlanType.FLEXI_PLAN:
+        element = eaCheckoutDetailsPage.elements.flexiElePlan;
+        break;
       case PlanType.BASIC_HOME:
         element = eaCheckoutDetailsPage.elements.basicElePlan;
         break;
@@ -499,6 +502,9 @@ export class checkoutDetailsMethod {
         break;
       case PlanType.BASIC_BUSINESS:
         element = eaCheckoutDetailsPage.elements.basicEleBusiness;
+        break;
+      case PlanType.BUSINESS_BALANCE_PLAN:
+        element = eaCheckoutDetailsPage.elements.balanceEleBusiness;
         break;
       case PlanType.BASIC_BUSINESS_QLD:
         element = eaCheckoutDetailsPage.elements.basicQLDEleBusiness;
@@ -557,6 +563,9 @@ export class checkoutDetailsMethod {
     switch (gasPlan) {
       case PlanType.BASIC_HOME:
         element = eaCheckoutDetailsPage.elements.basicGasPlan;
+        break;
+      case PlanType.FLEXI_PLAN:
+        element = eaCheckoutDetailsPage.elements.flexiGasPlan;
         break;
       case PlanType.NO_FRILLS:
         if (testFunction.isMobile()) {
