@@ -1,7 +1,7 @@
-@E2E @newconnection
+@newconnection-All
 Feature:E2E scenario for new connection
 
-  @deviceCheck @smoke
+  @deviceCheck @smoke @newconnection @E2E @E2E-Resi
   Scenario Outline: Submit a quote for electricity new connection for residential customer
     Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
     When user provides connection details
@@ -20,7 +20,7 @@ Feature:E2E scenario for new connection
       | <sourceSystem> | <journey> | <fuelType> |
     And user selects plans on checkout details page
       | fuelType   | planName   |
-      | <fuelType> | Total Plan |
+      | <fuelType> | Flexi Plan |
     And user provides dob and id details
       | customerStatus | idType   | medicareType |
       | New            | Medicare | green        |
@@ -47,6 +47,7 @@ Feature:E2E scenario for new connection
       | folderName          | fuelType | sourceSystem   | journey     | AAH | DD | customerType | newOrExisting |
       | E2E_New_Resi_NC_ELE | ELE      | New Connection | Plan Switch | NO  | No | RES          | New           |
 
+  @newconnection @E2E @E2E-Resi
   Scenario Outline: Submit a quote for gas new connection for residential customer
     Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
     When user provides connection details
@@ -66,7 +67,7 @@ Feature:E2E scenario for new connection
       | <sourceSystem> | <journey> | <fuelType> |
     And user selects plans on checkout details page
       | fuelType   | planName   |
-      | <fuelType> | Total Plan |
+      | <fuelType> | Flexi Plan |
     And user provides dob and id details
       | customerStatus | idType   | medicareType |
       | New            | Medicare | yellow       |
@@ -92,6 +93,7 @@ Feature:E2E scenario for new connection
       | folderName          | fuelType | sourceSystem   | journey     | AAH | DD | customerType | newOrExisting |
       | E2E_New_Resi_NC_GAS | GAS      | New Connection | Plan Switch | No  | No | RES          | New           |
 
+  @newconnection @E2E @E2E-Resi
   Scenario Outline: Submit a quote for electricity new connection for business customer
     Given user has opened the new connection website link in a browser and creates '<folderName>' to save evidences
     When user provides connection details
@@ -110,7 +112,7 @@ Feature:E2E scenario for new connection
       | <sourceSystem> | <journey> | <fuelType> |
     And user selects plans on checkout details page
       | fuelType   | planName              |
-      | <fuelType> | Total Plan - Business |
+      | <fuelType> | Business Balance Plan |
     And user provides dob and id details
       | customerStatus | idType   |
       | New            | Passport |
@@ -214,7 +216,7 @@ Feature:E2E scenario for new connection
       | <sourceSystem> | <journey> | <fuelType> |
     And user selects plans on checkout details page
       | fuelType   | planName   |
-      | <fuelType> | Total Plan |
+      | <fuelType> | Flexi Plan |
     And user provides dob and id details
       | customerStatus | idType   | medicareType |
       | New            | Medicare | green        |
@@ -240,10 +242,10 @@ Feature:E2E scenario for new connection
     Examples:
       | folderName                        | fuelType | sourceSystem   | journey     | AAH | DD | customerType | newOrExisting |distributor|state|supplyType|supplyPhases|meterPhases|ctDetails|applicantType|
       | E2E_New_Resi_NC_NSW_Ausgrid_ELE   | ELE      | New Connection | Plan Switch | NO  | No | RES          | New           |  Ausgrid  | NSW |Overhead  |One         |One        |Yes      |Electrician  |
-      | E2E_New_Resi_NC_NSW_Essential_ELE | ELE      | New Connection | Plan Switch | NO  | No | RES          | New           |  Essential| NSW |Underground|Two        |Two        |No      |Builder  |
+#      | E2E_New_Resi_NC_NSW_Essential_ELE | ELE      | New Connection | Plan Switch | NO  | No | RES          | New           |  Essential| NSW |Underground|Two        |Two        |No      |Builder  |
 #      can Commented below to reduce the regression test execution time
-      | E2E_New_Resi_NC_NSW_Endeavour_ELE | ELE      | New Connection | Plan Switch | NO  | No | RES          | New           |  Endeavour| NSW |Overhead_Underground|Three|Three   |Yes      |EndUser  |
-      | E2E_New_Resi_NC_NSW_Unknown_ELE   | ELE      | New Connection | Plan Switch | NO  | No | RES          | New           |  Unknown  | NSW |Overhead   |One        |Two        |No      |Other  |
+#      | E2E_New_Resi_NC_NSW_Endeavour_ELE | ELE      | New Connection | Plan Switch | NO  | No | RES          | New           |  Endeavour| NSW |Overhead_Underground|Three|Three   |Yes      |EndUser  |
+#      | E2E_New_Resi_NC_NSW_Unknown_ELE   | ELE      | New Connection | Plan Switch | NO  | No | RES          | New           |  Unknown  | NSW |Overhead   |One        |Two        |No      |Other  |
 
 
   Scenario Outline: Submit a quote for electricity new connection for <state> distributor <distributor> business customer
@@ -276,7 +278,7 @@ Feature:E2E scenario for new connection
       | <sourceSystem> | <journey> | <fuelType> |
     And user selects plans on checkout details page
       | fuelType   | planName              |
-      | <fuelType> | Total Plan - Business |
+      | <fuelType> | Business Balance Plan |
     And user provides dob and id details
       | customerStatus | idType   |
       | New            | Passport |
@@ -303,10 +305,10 @@ Feature:E2E scenario for new connection
     Examples:
       | folderName                        | fuelType | sourceSystem   | journey     | AAH | DD | customerType | newOrExisting |distributor|state|supplyType|supplyPhases|meterPhases|ctDetails|applicantType|
       | E2E_New_Bus_NC_NSW_Ausgrid_ELE   | ELE      | New Connection | Plan Switch | NO  | No | BUS          | New           |  Ausgrid  | NSW |Overhead  |One         |One        |Yes      |Electrician  |
-      | E2E_New_Bus_NC_NSW_Unknown_ELE   | ELE      | New Connection | Plan Switch | NO  | No | BUS          | New           |  Unknown  | NSW |Overhead   |One        |Two        |No      |Other  |
+#      | E2E_New_Bus_NC_NSW_Unknown_ELE   | ELE      | New Connection | Plan Switch | NO  | No | BUS          | New           |  Unknown  | NSW |Overhead   |One        |Two        |No      |Other  |
 #      Can Commented below to reduce the regression test execution time
-      | E2E_New_Bus_NC_NSW_Essential_ELE | ELE      | New Connection | Plan Switch | NO  | No | BUS          | New           |  Essential| NSW |Underground|Two        |Two        |No      |Builder  |
-      | E2E_New_Bus_NC_NSW_Endeavour_ELE | ELE      | New Connection | Plan Switch | NO  | No | BUS          | New           |  Endeavour| NSW |Overhead_Underground|Three|Three   |Yes      |EndUser  |
+#      | E2E_New_Bus_NC_NSW_Essential_ELE | ELE      | New Connection | Plan Switch | NO  | No | BUS          | New           |  Essential| NSW |Underground|Two        |Two        |No      |Builder  |
+#      | E2E_New_Bus_NC_NSW_Endeavour_ELE | ELE      | New Connection | Plan Switch | NO  | No | BUS          | New           |  Endeavour| NSW |Overhead_Underground|Three|Three   |Yes      |EndUser  |
 
 
 
@@ -334,7 +336,7 @@ Feature:E2E scenario for new connection
       | <sourceSystem> | <journey> | <fuelType> |
     And user selects plans on checkout details page
       | fuelType   | planName   |
-      | <fuelType> | Total Plan |
+      | <fuelType> | Flexi Plan |
     And user provides dob and id details
       | customerStatus | idType   | medicareType |
       | New            | Medicare | green        |
@@ -386,7 +388,7 @@ Feature:E2E scenario for new connection
       | <sourceSystem> | <journey> | <fuelType> |
     And user selects plans on checkout details page
       | fuelType   | planName   |
-      | <fuelType> | Total Plan |
+      | <fuelType> | Flexi Plan |
     And user provides dob and id details
       | customerStatus | idType   | medicareType |
       | New            | Medicare | green        |
@@ -438,7 +440,7 @@ Feature:E2E scenario for new connection
       | <sourceSystem> | <journey> | <fuelType> |
     And user selects plans on checkout details page
       | fuelType   | planName   |
-      | <fuelType> | Total Plan |
+      | <fuelType> | Flexi Plan |
     And user provides dob and id details
       | customerStatus | idType   | medicareType |
       | New            | Medicare | green        |

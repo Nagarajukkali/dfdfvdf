@@ -1,4 +1,4 @@
-@E2E @existingcustomerQT
+@E2E @existingcustomerQT @E2E-Resi
 Feature: This feature is to test the verify account scenarios for existing residential customers
 
   Scenario Outline: Submit a quote for existing non moving residential customer through verify account
@@ -48,16 +48,16 @@ Feature: This feature is to test the verify account scenarios for existing resid
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-EV | 6203138450 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | state   | campaign   |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-EV  | 6203138450 | N                              | N                              | Y                       | LSIPDM                   | POSTMM        | <state> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TOPH-GV | 5330236561 | N                              | N                              | Y                       | OTHER                    | POSTMM        |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | state   | campaign   |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-GV  | 5330236561 | N                              | N                              | Y                       | OTHER                    | POSTMM        | <state> | <campaign> |
 
     Examples:
-      | folderName                              | customer_type | fuelType | planName        | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
-      | E2E_VerifyAccount_Residential_NonMoving | RES           | BOTH     | Total Plan | Quote Tool   | Plan Switch | Yes | Yes | RES          | Existing      |
+      | folderName                              | customer_type | fuelType | planName   | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting | state | campaign |
+      | E2E_VerifyAccount_Residential_NonMoving | RES           | BOTH     | Flexi Plan | Quote Tool   | Plan Switch | Yes | Yes | RES          | Existing      | VIC   | flexi    |
 
   @deviceCheck @smoke
   Scenario Outline: Submit a quote for existing moving residential customer through verify account
@@ -101,7 +101,6 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user provides life support details on review page
       | lifeSupportOption | fuelType | EleclifeSupportDevices                       | GaslifeSupportDevices        |
       | Yes               | BOTH     | Chronic Positive Airways Pressure Respirator | Medically Required Hot Water |
-    And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -113,16 +112,16 @@ Feature: This feature is to test the verify account scenarios for existing resid
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | RCPP-EV  | 6407557087 | N                              | N                              | Y                       | LSCPAPR                  | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | state   | campaign   |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TAPR1-EV | 6407557087 | N                              | N                              | Y                       | LSCPAPR                  | EMAIL         | <state> | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | RCPP-GV  | 5321574765 | N                              | N                              | Y                       | GLSMRHW                  | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | state   | campaign   |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TAPR1-GV | 5321574765 | N                              | N                              | Y                       | GLSMRHW                  | EMAIL         | <state> | <campaign> |
 
     Examples:
-      | folderName                           | customer_type | fuelType | planName  | optDisconnection | state | sourceSystem | journey   | AAH | DD  | customerType | newOrExisting |
-      | E2E_VerifyAccount_Residential_Moving | RES           | BOTH     | No Frills | Yes              | VIC   | Quote Tool   | Move Home | No  | Yes | RES          | Existing      |
+      | folderName                           | customer_type | fuelType | planName     | optDisconnection | state | sourceSystem | journey   | AAH | DD  | customerType | newOrExisting | campaign |
+      | E2E_VerifyAccount_Residential_Moving | RES           | BOTH     | Balance Plan | Yes              | VIC   | Quote Tool   | Move Home | No  | Yes | RES          | Existing      | balance  |
 
   Scenario Outline: Submit a quote for QLD existing moving residential customer through verify account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -131,8 +130,8 @@ Feature: This feature is to test the verify account scenarios for existing resid
     And user have selected fuel as "<fuelType>"
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for residential customer
-      | customer_type | modal_option   | elecAccountNumber | postcode | idType | idNumber  |
-      | RES           | verify account | 2397370000        | 4123     | dob     | 30051972 |
+      | customer_type | modal_option   | elecAccountNumber | postcode | idType | idNumber |
+      | RES           | verify account | 2397370000        | 4123     | dob    | 30051972 |
     And user selects '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
@@ -177,9 +176,9 @@ Feature: This feature is to test the verify account scenarios for existing resid
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-EQ | QB08556016 | N                              | N                              | Y                       | LSCPAPR                  | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | state   | campaign   |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-EQ  | QB08556016 | N                              | N                              | Y                       | LSCPAPR                  | EMAIL         | <state> | <campaign> |
 
     Examples:
-      | folderName                               | customer_type | fuelType | planName        | optDisconnection | state | sourceSystem | journey   | AAH | DD  | customerType | newOrExisting |
-      | E2E_VerifyAccount_QLD_Residential_Moving | RES           | ELE      | Total Plan | Yes              | QLD   | Quote Tool   | Move Home | Yes | Yes | RES          | Existing      |
+      | folderName                               | customer_type | fuelType | planName   | optDisconnection | state | sourceSystem | journey   | AAH | DD  | customerType | newOrExisting | campaign |
+      | E2E_VerifyAccount_QLD_Residential_Moving | RES           | ELE      | Flexi Plan | Yes              | QLD   | Quote Tool   | Move Home | Yes | Yes | RES          | Existing      | flexi    |
