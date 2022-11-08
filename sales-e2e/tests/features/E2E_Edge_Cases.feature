@@ -1,4 +1,4 @@
-@E2E @edgecases
+@E2E @edgecases @E2E-Resi
 Feature:This feature file is to cover all the edge cases
 
   Scenario Outline: Verify the behaviour of the application when the customer try to resume the expired quote

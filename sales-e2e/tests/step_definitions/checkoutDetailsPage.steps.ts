@@ -67,6 +67,7 @@ When(/^user selects answer for property renovation question for '(.*)'$/, async 
 });
 When(/^user chooses "([^"]*)" for disconnection$/, async function (t, [disconnectionOption]) {
   await checkoutDetailsMethod.disconnectionDetails(t, disconnectionOption);
+  console.log("Disconnection option selected");
 });
 
 When(/^user opts for AAH and DD$/, async function (t, [], dataTable) {
@@ -75,9 +76,11 @@ When(/^user opts for AAH and DD$/, async function (t, [], dataTable) {
   let optDDOption = data[0].optDDOption;
   if (optAAHOption === 'Yes') {
     await checkoutDetailsMethod.addAAHDetails(t);
+    console.log("AAH option selected");
   }
   if (optDDOption === 'Yes') {
     await checkoutDetailsMethod.addDirectDebit(t, data[0].directDebitType);
+    console.log("Direct Debit option selected");
   }
 });
 When(/^user selects plans on checkout details page$/, async function (t, [], dataTable) {
@@ -108,9 +111,11 @@ When(/^user provides business details$/, async function (t, [], dataTable) {
 });
 When(/^user selects carbon neutral option$/, async function (t) {
   await checkoutDetailsMethod.selectCarbonNeutralOption(t);
+  console.log("Carbon neutral option selected");
 });
 When(/^user selects "([^"]*)" billing preference option$/, async function (t, [option]) {
   await checkoutDetailsMethod.selectBillingPreference(t, option, "");
+  console.log("Billing preference option selected");
 });
 When(/^user selects final bill option$/, async function (t, [], dataTable) {
   /*
@@ -122,9 +127,11 @@ When(/^user selects final bill option$/, async function (t, [], dataTable) {
   let data = dataTable.hashes();
   const billingOption = data[0].option;
   await checkoutDetailsMethod.selectBillingPreference(t, billingOption, data[0].otherAddress, true);
+  console.log("Final bill delivery option selected");
 });
 When(/^user opts for concession card$/, async function (t) {
   await checkoutDetailsMethod.addConcessionCardDetails(t);
+  console.log("Concession Card Details selected");
 });
 When(/^user opts in for Carbon Neutral$/, async function (t) {
   await testFunction.click(t, eaCheckoutDetailsPage.elements.cbOptInCarbonNeutral);
@@ -180,6 +187,7 @@ Then(/^user validates '([^"]*)' page UI$/, async function (t, [checkoutPage]) {
 });
 When(/^user opts for special offer$/, async function (t, []) {
   await testFunction.click(t, eaCheckoutDetailsPage.elements.chkboxSpecialOffer);
+  console.log("user opts for special offer");
 });
 When(/^user sends welcome pack through '(.*)'$/, async function (t, [option]) {
   if (option === 'Email') {

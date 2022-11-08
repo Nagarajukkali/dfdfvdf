@@ -1,4 +1,4 @@
-@E2E @regressiondefects
+@E2E @regressiondefects @E2E-Resi
 Feature:This feature file is to add scenarios for regression defects
 
   Scenario Outline: Verify New/Existing customer qualifier question should be displayed when verified customer's details get reset
@@ -24,8 +24,8 @@ Feature:This feature file is to add scenarios for regression defects
     Then Address field is 'blank'
 
     Examples:
-      | folderName                     | customer_type | fuelType | planName   | planName1|
-      | E2E_Reg_Reset_Verified_Account | RES           | BOTH     | Total Plan | Flexi Plan|
+      | folderName                     | customer_type | fuelType | planName     | planName1  |
+      | E2E_Reg_Reset_Verified_Account | RES           | BOTH     | Balance Plan | Flexi Plan |
 
   Scenario Outline: Verify Service address should be replaced by moving address when user provides moving address
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -35,36 +35,37 @@ Feature:This feature file is to add scenarios for regression defects
     When user clicks on the verify modal window on '<customer_type>' page
     And user verifies the account through verify account journey for residential customer
       | customer_type | modal_option   | elecAccountNumber | gasAccountNumber | postcode | idType | idNumber |
-      | RES           | verify account |  8146713614        | 4931329359       | 3218     | dob    | 01011980 |
+      | RES           | verify account | 8777791000        |                  | 2761     | dob    | 01011980 |
     Then user verifies retrieved account details on plans page
-      | address                  | NMI         | MIRN       |
-      | 172 Aberdeen St, GEELONG WEST VIC 3218 | 62031384500 | 5330236561 |
+      | address                         | NMI         | MIRN       |
+      | 1 Chesham Pl, PLUMPTON NSW 2761 | 43102057838 | 5240151444 |
     When user selects '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page
-    | customerType | movingType  | connectionAddress                | propertyType |
-    | RES          | Moving         |  271 Heatherhill Road, FRANKSTON VIC 3199 | Renter       |
+      | customerType | movingType | connectionAddress                        | propertyType |
+      | RES          | Moving     | 271 Heatherhill Road, FRANKSTON VIC 3199 | Renter       |
     Then user validates the connection address on checkout page
-      | address                               |
+      | address                                |
       | 271 Heatherhill Rd, FRANKSTON VIC 3199 |
 
     Examples:
-      | folderName                             | customer_type | fuelType | planName        | address                                  |
-      | E2E_Reg_MovingAddress_Verified_Account | RES           | BOTH     | Total Plan | 271 Heatherhill Road, FRANKSTON VIC 3199 |
- 
+      | folderName                             | customer_type | fuelType | planName   | address                                  |
+      | E2E_Reg_MovingAddress_Verified_Account | RES           | BOTH     | Flexi Plan | 271 Heatherhill Road, FRANKSTON VIC 3199 |
+  #No data
+  @data-required @failed
   Scenario Outline: Verify quote submission for upsell fuel through move house page
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     When user has navigated to move house page
     And user enters '<movingAddress>' in address field and selects any available moving date
     And user verifies account on qualifier
-      | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue   |
-      | Existing       | 2383080000    | Postcode            | 2229             | dob     | 10091943 |
+      | customerStatus | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
+      | Existing       | 2383080000    | Postcode            | 2229             | dob    | 10091943 |
     And user provides all other details on qualifier page
       | customerType | movingType | connectionAddress                | propertyType |
       | RES          | NA         | 5 Wilkies Street, BULLI NSW 2516 | Renter       |
     And user selects plans on checkout details page
-      | fuelType | planName        |
-      | GAS      | Total Plan  |
+      | fuelType | planName   |
+      | GAS      | Flexi Plan |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | idType         |
       | RES          | RES     | Existing       | test      | test     | Driver License |
@@ -87,7 +88,7 @@ Feature:This feature file is to add scenarios for regression defects
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-GN | 5240924834 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | TOPH-GN  | 5240924834 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
 
     Examples:
       | folderName           | fuelType | state | optDisconnection | movingAddress                    |
