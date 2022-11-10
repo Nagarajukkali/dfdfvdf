@@ -1,4 +1,4 @@
-@E2E @existingcustomerQT
+@E2E @existingcustomerQT @E2E-Bus
 Feature: This feature is to test the verify account scenarios for existing business customers
 
   @deviceCheck @smoke
@@ -16,8 +16,8 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user selects gas '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
-      | customerType | movingType | propertyType |
-      | BUS          | Non-Moving | Owner        |
+      | customerType | movingType |
+      | BUS          | Non-Moving |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | businessType |
       | BUS          | BUS     | Existing       | test      | test     | ABN          |
@@ -52,16 +52,16 @@ Feature: This feature is to test the verify account scenarios for existing busin
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | PS        | TOPB-EV | 6203787884 | N                              | N                              | Y                       | LSVFLS                   | POSTMM        |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | campaign   |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | PS        | BSPB2-EV | 6203787884 | N                              | N                              | Y                       | LSVFLS                   | POSTMM        | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | COR       | TOPB-GV |            | N                              | N                              | Y                       | OTHER                    | POSTMM        |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | campaign   |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | COR       | BSPB2-GV |      | N                              | N                              | Y                       | OTHER                    | POSTMM        | <campaign> |
 
     Examples:
-      | folderName                           | customer_type | fuelType | planName                   | accountType | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
-      | E2E_VerifyAccount_Business_NonMoving | BUS           | BOTH     | Total Plan - Business | ELE         | Quote Tool   | Plan Switch | Yes | Yes | BUS          | Existing      |
+      | folderName                           | customer_type | fuelType | planName              | accountType | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting | campaign              |
+      | E2E_VerifyAccount_Business_NonMoving | BUS           | BOTH     | Business Balance Plan | ELE         | Quote Tool   | Plan Switch | Yes | Yes | BUS          | Existing      | business-balance-plan |
 
   Scenario Outline: Submit a quote for existing moving business customer through verify account
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
@@ -76,7 +76,7 @@ Feature: This feature is to test the verify account scenarios for existing busin
     And user selects ele '<planName>'
     And user moves on to fill the qualifier
     And user provides all other details on qualifier page for Existing customer
-      | customerType | movingType | connectionAddress                          | propertyType |
+      | customerType | movingType | connectionAddress                     | propertyType |
       | BUS          | Moving     | 42 Beauchamp Street, KYNETON VIC 3444 | Renter       |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | businessType |
@@ -108,13 +108,13 @@ Feature: This feature is to test the verify account scenarios for existing busin
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-EV  | 6203004526 | N                              | N                              | Y                       | LSCPAPR                  | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | campaign   |
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | BSPB2-EV | 6203004526 | N                              | N                              | Y                       | LSCPAPR                  | EMAIL         | <campaign> |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | TOPB-GV  | 5330293713 | N                              | N                              | Y                       | GLSMRHW                  | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | campaign   |
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | BSPB2-GV | 5330293713 | N                              | N                              | Y                       | GLSMRHW                  | EMAIL         | <campaign> |
 
     Examples:
-      | folderName                        | customer_type | fuelType | planName              | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | E2E_VerifyAccount_Business_Moving | BUS           | BOTH     | Total Plan - Business | VIC   | Quote Tool   | Move Home | No  | No | BUS          | Existing      |
+      | folderName                        | customer_type | fuelType | planName              | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting | campaign              |
+      | E2E_VerifyAccount_Business_Moving | BUS           | BOTH     | Business Balance Plan | VIC   | Quote Tool   | Move Home | No  | No | BUS          | Existing      | business-balance-plan |
