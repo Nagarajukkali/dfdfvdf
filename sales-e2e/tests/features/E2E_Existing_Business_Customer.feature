@@ -1,4 +1,4 @@
-@E2E @existingcustomerQT
+@E2E @existingcustomerQT @E2E-Bus
 Feature:E2E scenario for existing business moving and non moving customer
 
   @deviceCheck @smoke @checking
