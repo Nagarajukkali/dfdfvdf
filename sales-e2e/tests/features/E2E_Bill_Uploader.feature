@@ -8,7 +8,6 @@ Feature: This feature is to test the Bill Uploader scenarios
     And user uploads the '<billName>' bill
     And user selects the recommended plan
     And user moves on to fill the qualifier
-    And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | propertyType |
       | RES          | Non-Moving | Owner        |
@@ -35,7 +34,6 @@ Feature: This feature is to test the Bill Uploader scenarios
     And user provides life support details on review page
       | lifeSupportOption | fuelType | EleclifeSupportDevices |
       | Yes               | ELE      | Ele Other              |
-    And user selects carbon neutral option
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     Then user lands on checkout complete page
@@ -48,12 +46,12 @@ Feature: This feature is to test the Bill Uploader scenarios
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-EV  | 6305515608 | N                              | N                              | Y                       | OTHER                    | POSTMM        |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | state   | campaign   |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | BP2H-EV  | 6407788727 | N                              | N                              | Y                       | OTHER                    | POSTMM        | <state> | <campaign> |
 
     Examples:
-      | billName | customerStatus | fuelType | folderName                  | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting |
-      | Bill.pdf | New            | ELE      | E2E_New_Resi_Bill_Upload_01 | Quote Tool   | Plan Switch | No  | Yes | RES          | New           |
+      | billName | customerStatus | fuelType | folderName                  | sourceSystem | journey     | AAH | DD  | customerType | newOrExisting | state | campaign |
+      | Bill.pdf | New            | ELE      | E2E_New_Resi_Bill_Upload_01 | Quote Tool   | Plan Switch | No  | Yes | RES          | New           | VIC   | flexi    |
 
   Scenario Outline: Submit a quote for a bill uploader journey with AAH
     Given user has opened the bill uploader website link in a browser and creates '<folderName>' to save evidences
@@ -61,7 +59,6 @@ Feature: This feature is to test the Bill Uploader scenarios
     And user uploads the '<billName>' bill
     And user selects the recommended plan
     And user moves on to fill the qualifier
-    And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | propertyType |
       | RES          | Non-Moving | Owner        |
@@ -87,7 +84,6 @@ Feature: This feature is to test the Bill Uploader scenarios
     And user provides life support details on review page
       | lifeSupportOption | fuelType | EleclifeSupportDevices |
       | Yes               | ELE      | Ele Other              |
-    And user selects carbon neutral option
     And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     Then user lands on checkout complete page
@@ -100,9 +96,9 @@ Feature: This feature is to test the Bill Uploader scenarios
     Then submitted quote is displayed
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | TOPH-EV  | 6305515608 | N                              | N                              | Y                       | OTHER                    | EMAIL         |
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | state   | campaign   |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | BP2H-EV  | 6407788727 | N                              | N                              | Y                       | OTHER                    | EMAIL         | <state> | <campaign> |
 
     Examples:
-      | billName | customerStatus | fuelType | folderName                  | sourceSystem | journey     | AAH | DD | customerType | newOrExisting |
-      | Bill.pdf | New            | ELE      | E2E_New_Resi_Bill_Upload_02 | Quote Tool   | Plan Switch | Yes | No | RES          | New           |
+      | billName | customerStatus | fuelType | folderName                  | sourceSystem | journey     | AAH | DD | customerType | newOrExisting | state | campaign |
+      | Bill.pdf | New            | ELE      | E2E_New_Resi_Bill_Upload_02 | Quote Tool   | Plan Switch | Yes | No | RES          | New           | VIC   | flexi    |

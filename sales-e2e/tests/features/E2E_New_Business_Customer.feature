@@ -1,4 +1,4 @@
-@E2E @newcustomer
+@E2E @newcustomer @E2E-Bus
 
 Feature:E2E scenario for new business moving and non moving customer
 @checking
