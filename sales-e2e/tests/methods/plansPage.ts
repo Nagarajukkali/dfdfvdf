@@ -1920,6 +1920,29 @@ export class plansMethod {
   }
 
   public static async validateEstimatedCost(t, planName, estimatedCost, actualCustomerType, state) {
+    if (planName.includes('Flexi')) {
+      const estimatedCostFlexi = Math.round(estimatedCost);
+      const estimatedCostDollarFlexi = '$' + estimatedCostFlexi.toString();
+      if (actualCustomerType === 'RES') {
+        await testFunction.assertText(t, EaHomePage.elements.flexiPlanEstimate, estimatedCostDollarFlexi);
+      } else {
+        await testFunction.assertText(t, EaHomePage.elements.businessCNFPlanEstimate, estimatedCostDollarFlexi);
+      }
+    }
+    if (planName.includes('Balance')) {
+      const estimatedCostBalance = Math.round(estimatedCost);
+      const estimatedCostDollarBalance = '$' + estimatedCostBalance.toString();
+      if (actualCustomerType === 'RES') {
+        await testFunction.assertText(t, EaHomePage.elements.balanceHomePlanEstimate, estimatedCostDollarBalance);
+      } else {
+        await testFunction.assertText(t, EaHomePage.elements.balanceBusinessPlanEstimate, estimatedCostDollarBalance);
+      }
+    }
+    if (planName.includes('SolarMax')) {
+      const estimatedCostSolarMax = Math.round(estimatedCost);
+      const estimatedCostDollarSolarMax = '$' + estimatedCostSolarMax.toString();
+      await testFunction.assertText(t, EaHomePage.elements.solarMaxPlanEstimate, estimatedCostDollarSolarMax);
+    }
     if (planName.includes('Basic - Home') || planName.includes('Basic - Business ')) {
       const estimatedCostBasic = Math.round(estimatedCost);
       if (state !== 'QLD' && state !== 'ACT') {
@@ -1951,6 +1974,20 @@ export class plansMethod {
       let estimatedTotalPlanBusinessCost = Math.round(Number(estimatedCost * (1 - discount / 100)));
       await testFunction.assertText(t, EaHomePage.elements.totalPlanBusinessEstimate, estimatedTotalPlanBusinessCost.toString());
     }
+    console.log('Verified Electricity cost estimate for ' + planName + ' with estimatedCost:$' + estimatedCost + ' for customerType:' + actualCustomerType + ' and state:' + state);
+  }
+
+  public static async validateEstimatedGasCost(t, planName, estimatedCost, actualCustomerType, state) {
+    if (planName.includes('Balance')) {
+      const estimatedCostBalance = Math.round(estimatedCost);
+      const estimatedCostDollarBalance = '$' + estimatedCostBalance.toString();
+      if (actualCustomerType === 'RES') {
+        await testFunction.assertText(t, EaHomePage.elements.balanceHomePlanGasEstimate, estimatedCostDollarBalance);
+      } else {
+        await testFunction.assertText(t, EaHomePage.elements.balanceBusinessPlanGasEstimate, estimatedCostDollarBalance);
+      }
+    }
+    console.log('Verified Gas cost estimate for ' + planName + ' with estimatedCost:$' + estimatedCost + ' for customerType:' + actualCustomerType + ' and state:' + state);
   }
 
   public static async validateBestOfferEstimatedCost(t, planName, estimatedCost, percentageDiff, benchmarkUsage) {

@@ -15,7 +15,7 @@ Feature:E2E scenario for existing business moving and non moving customer
       | Existing       | 7185109615    | ABN                 | 33499936800      | dob    | 01011980 |
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | connectionAddress                      |
-      | BUS          | Moving     | 73-75 Enmore Road, NEWTOWN NSW 2042 |
+      | BUS          | Moving     | 490 King Street, NEWTOWN NSW 2042 |
     And user provides all details on checkout details page
       | customerType | journey | customerStatus | firstName | lastName | businessType |
       | BUS          | BUS     | Existing       | test      | test     | ABN          |
@@ -51,11 +51,11 @@ Feature:E2E scenario for existing business moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus   |campaign  |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | BSPB2-EN  | 4102017007 | N                              | N                              | Y                       | LSVFLS                   | EMAIL        |<customerStatus> |<campaign>|
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | ENE       | BSPB2-EN  | 4103078477 | N                              | N                              | Y                       | LSVFLS                   | EMAIL        |<customerStatus> |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus   |campaign  |
-      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | BSPB2-GN  | 5247073457 | N                              | N                              | Y                       | OTHER                    | EMAIL        |<customerStatus> |<campaign>|
+      | GAS      | VERBALLYACCEPTED | BUSINESS     | ENE       | BSPB2-GN  | 5240177461 | N                              | N                              | Y                       | OTHER                    | EMAIL        |<customerStatus> |<campaign>|
 
     Examples:
       | customerStatus | fuelType | planName              | folderName              | state | sourceSystem | journey   | AAH | DD  | customerType | newOrExisting |campaign              |

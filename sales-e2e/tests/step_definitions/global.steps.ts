@@ -36,7 +36,12 @@ Given(/^user navigates to my account login page$/, async function (t, []) {
 
 Given(/^user has opened the qt2 Reporting website link in a browser$/, async function (t, [folderName]) {
   if (!getTestCafeRC.browsers[0].includes('emulation') && !envToExclude.includes(getPackage.config.env)) {
-    await t.navigateTo(eaQt2Reporting.qt2ReportingPageURL);
+    if (t.testRun.test.name.includes('PVT'))
+    {
+      await t.navigateTo(eaQt2Reporting.qt2ReportingPageProdURL);
+    }else{
+      await t.navigateTo(eaQt2Reporting.qt2ReportingPageURL);
+    }
   }
 });
 
