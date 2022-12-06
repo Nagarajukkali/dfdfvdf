@@ -32,7 +32,7 @@ Feature:E2E scenario for existing residential moving and non moving customer
     And user opts for AAH and DD
       | optAAHOption | optDDOption | directDebitType |
       | Yes          | No          |                 |
-    And user opts for concession card
+#    And user opts for concession card
     And user selects "Post" billing preference option
     And user opts for special offer
     And user clicks on 'Review your order' button and navigates to review page

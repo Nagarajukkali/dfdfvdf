@@ -31,7 +31,13 @@ Given(/^user has opened the website link in a browser and creates '(.*)' to save
   await FileUtils.deleteFiles(screenshotFolderPath);
   await testFunction.cleanBaselineImageDir();
   await testFunction.cleanDiffImageDir();
-  await t.navigateTo(eaHomePage.pageUrl);
+  if (t.testRun.test.name.includes('PVT'))
+  {
+    await t.navigateTo(eaHomePage.prodUrl);
+    console.log('URL:'+eaHomePage.prodUrl);
+  }else{
+    await t.navigateTo(eaHomePage.pageUrl);
+  }
   height = await ClientFunction(() => window.innerHeight)();
   width = await ClientFunction(() => window.innerWidth)();
 });
@@ -99,7 +105,14 @@ Given(/^user has opened the '(.*)' link in a browser and creates '(.*)' to save 
   await testFunction.cleanBaselineImageDir();
   await testFunction.cleanDiffImageDir();
   const campaignPageURL = await testFunction.getCampaignURL(campaign);
-  await t.navigateTo(campaignPageURL);
+  if (t.testRun.test.name.includes('PVT'))
+  {
+    await t.navigateTo(eaHomePage.prodUrl);
+    console.log('URL:'+eaHomePage.prodUrl);
+  }else{
+    await t.navigateTo(campaignPageURL);
+  }
+
 });
 
 After(async t => {
