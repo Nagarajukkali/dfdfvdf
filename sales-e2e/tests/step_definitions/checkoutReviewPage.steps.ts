@@ -37,6 +37,7 @@ When(/^user provides life support details on review page$/, async function (t, [
       await checkoutReviewMethod.selectGasLSEquipment(t, data[0].GaslifeSupportDevices, fuelType);
     }
   }
+  console.log('life support entered');
 });
 Then(/^Life support section is displayed on Review page as per selected "([^"]*)" and verified "([^"]*)"$/, async function (t, [fuelType, accountType]) {
   await checkoutReviewMethod.verifyLifeSupportSection(t);
@@ -57,7 +58,7 @@ Then(/^user validates plan details on review page for "([^"]*)" plan$/, async fu
   dataTable = dataTable.hashes();
   let json = await FileUtils.getJSONfile(campaignName);
   if (campaignName !== 'solarmax') {
-    await checkoutReviewMethod.validatePlanName(t, json, dataTable);  
+    await checkoutReviewMethod.validatePlanName(t, json, dataTable);
   }
   await checkoutReviewMethod.validateFeatures(t, dataTable, json, numOfExpectedFeatures);
 });

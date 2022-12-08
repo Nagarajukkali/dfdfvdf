@@ -462,6 +462,105 @@ Then(/^user enters NMI and validate estimated cost in best offer tool output fil
     }
   }
 });
+
+Then(/^user enters address and validate estimated cost for '(.*)' and '(.*)'$/, async function (t, parameters) {
+  let expectedCustomerType = parameters[0];
+  let expectedFuelType = parameters[1];
+  const workbook = new Workbook();
+  await workbook.xlsx.readFile(`${process.cwd()}/resources/Reprice_Data/EstimatedCost_PVT_TestData.xlsx`);
+  let worksheet;
+  if (expectedCustomerType === 'BUS' && expectedFuelType === 'ELE') {
+    worksheet = workbook.getWorksheet(2);
+  } else if (expectedCustomerType === 'BUS' && expectedFuelType === 'GAS') {
+    worksheet = workbook.getWorksheet(4);
+  } else if (expectedCustomerType === 'RES' && expectedFuelType === 'ELE') {
+    worksheet = workbook.getWorksheet(1);
+  } else if (expectedCustomerType === 'RES' && expectedFuelType === 'GAS') {
+    worksheet = workbook.getWorksheet(3);
+  }
+  const rowCount = worksheet.actualRowCount;
+  for (let i = 2; i < rowCount + 1; i++) {
+    let row = worksheet.getRow(i);
+    let actualCustomerType = row.getCell(2).value.toString();
+    let actualFuelType = row.getCell(3).value.toString();
+    let fuelUsage = row.getCell(7).value.toString();
+    let customUsage, prizingZone, tariffType;
+    let state = row.getCell(1).value.toString();
+    let address = row.getCell(6).value.toString();
+    let PlanName1, PlanName1_EstimatedCost, PlanName2, PlanName2_EstimatedCost, PlanName3, PlanName3_EstimatedCost;
+    if (row.getCell(9).value) {
+      PlanName1 = row.getCell(9).value.toString();
+      PlanName1_EstimatedCost = Number(row.getCell(10).value);
+    }
+    if (row.getCell(11).value) {
+      PlanName2 = row.getCell(11).value.toString();
+      PlanName2_EstimatedCost = Number(row.getCell(12).value);
+    }
+    if (row.getCell(13).value) {
+      PlanName3 = row.getCell(13).value.toString();
+      PlanName3_EstimatedCost = Number(row.getCell(14).value);
+    }
+    if (actualCustomerType === expectedCustomerType && actualFuelType === expectedFuelType) {
+      await plansMethod.provideAddressOnPlansPage(t, address);
+      await testFunction.waitForElementToBeDisappeared(t, EaHomePage.elements.eaSpinner);
+      if (expectedFuelType === 'ELE') {
+        tariffType = row.getCell(4).value.toString();
+        prizingZone = row.getCell(5).value.toString();
+        if (fuelUsage === 'Custom') {
+          customUsage = row.getCell(8).value.toString();
+          await testFunction.click(t, EaHomePage.elements.refineEleUsage);
+          await testFunction.click(t, EaHomePage.elements.refineEleUsageDropdown.withText('Custom'));
+          await testFunction.clearTextField(t, EaHomePage.elements.refineElectrcityCustomInput);
+          await testFunction.enterText(t, EaHomePage.elements.refineElectrcityCustomInput, customUsage);
+        } else {
+          await testFunction.click(t, EaHomePage.elements.refineEleUsage);
+          await testFunction.click(t, EaHomePage.elements.refineEleUsageDropdown.withText(fuelUsage));
+        }
+        await testFunction.click(t, EaHomePage.elements.refinePeriod);
+        await testFunction.click(t, EaHomePage.elements.refinePeriodDropdown.withText("Yearly"));
+        await testFunction.waitForElementToBeDisappeared(t, EaHomePage.elements.eaSpinner);
+        await t.wait(2000);
+        console.log('Verifying estimated Electricity cost for tariff type:' + tariffType + ' and pricing zone:' + prizingZone + ' with address:' + address);
+        if (PlanName1) {
+          await plansMethod.validateEstimatedCost(t, PlanName1, PlanName1_EstimatedCost, actualCustomerType, state);
+        }
+        if (PlanName2) {
+          await plansMethod.validateEstimatedCost(t, PlanName2, PlanName2_EstimatedCost, actualCustomerType, state);
+        }
+        if (PlanName3) {
+          await plansMethod.validateEstimatedCost(t, PlanName3, PlanName3_EstimatedCost, actualCustomerType, state);
+        }
+        await testFunction.takeScreenshot(t, "Reprice_Address" + i);
+      } else if (expectedFuelType === 'GAS') {
+        if (fuelUsage === 'Custom') {
+          customUsage = row.getCell(8).value.toString();
+          await testFunction.click(t, EaHomePage.elements.refineGasUsage);
+          await testFunction.click(t, EaHomePage.elements.refineGasUsageDropdown.withText('Custom'));
+          await testFunction.clearTextField(t, EaHomePage.elements.refineGasCustomInput);
+          await testFunction.enterText(t, EaHomePage.elements.refineGasCustomInput, customUsage);
+        } else {
+          await testFunction.click(t, EaHomePage.elements.refineGasUsage);
+          await testFunction.click(t, EaHomePage.elements.refineGasUsageDropdown.withText(fuelUsage));
+        }
+        await testFunction.click(t, EaHomePage.elements.refinePeriod);
+        await testFunction.click(t, EaHomePage.elements.refinePeriodDropdown.withText("Yearly"));
+        await testFunction.waitForElementToBeDisappeared(t, EaHomePage.elements.eaSpinner);
+        await t.wait(2000);
+        console.log('Verifying estimated GAS cost for address:' + address);
+        if (PlanName1) {
+          await plansMethod.validateEstimatedGasCost(t, PlanName1, PlanName1_EstimatedCost, actualCustomerType, state);
+        }
+        if (PlanName2) {
+          await plansMethod.validateEstimatedGasCost(t, PlanName2, PlanName2_EstimatedCost, actualCustomerType, state);
+        }
+        if (PlanName3) {
+          await plansMethod.validateEstimatedGasCost(t, PlanName3, PlanName3_EstimatedCost, actualCustomerType, state);
+        }
+        await testFunction.takeScreenshot(t, "Reprice_Address" + i);
+      }
+    }
+  }
+});
 When(/^user reset the verified account$/, async function (t) {
   await verifyAccountMethod.resetVerifiedAccount(t);
 });

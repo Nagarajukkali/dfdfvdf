@@ -3,6 +3,7 @@ import {Selector} from 'testcafe';
 
 const eaQt2Reporting = {
   qt2ReportingPageURL: config.qt2ReportingURL,
+  qt2ReportingPageProdURL: config.qt2ReportingProdURL,
   qt2ReportingHomePageURL: config.qt2ReportingHomePageURL,
   elements: {
     txtUsername: Selector('#username'),

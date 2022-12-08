@@ -3,6 +3,7 @@ import {Selector} from 'testcafe';
 
 const eaHomePage = {
   pageUrl: config.eaHomePageUrl,
+  prodUrl: config.eaHomePageProdUrl,
   newConnectionPageUrl: config.eaNewConnectionPageUrl,
   campaignPageUrl: config.eaCampaignUrl,
   billUploaderUrl: config.eaBillUploaderUrl,
@@ -159,6 +160,14 @@ const eaHomePage = {
     refineGasUsageDropdown: Selector("#refine-gas-usage li"),
     refineGasUsageActiveOption: Selector("#estimate-usage-gas-active-option"),
     refineGasCustomInput: Selector('#estimate-usage-gas-custom'),
+    flexiPlanEstimate: Selector("[id*='plan-estimate-BASE_BP2H-E'][class='hs-plan-estimate__value']"),
+    flexiPlanGasEstimate: Selector("[id*='plan-estimate-BASE_BP2H-G'][class='hs-plan-estimate__value']"),
+    businessCNFPlanEstimate: Selector("[id*='plan-estimate-BASE_BCNF-E'][class='hs-plan-estimate__value']"),
+    balanceHomePlanEstimate: Selector("[id*='plan-estimate-BASE_BALANCE_TAPR1-E'][class='hs-plan-estimate__value']"),
+    balanceHomePlanGasEstimate: Selector("[id*='plan-estimate-BASE_BALANCE_TAPR1-G'][class='hs-plan-estimate__value']"),
+    balanceBusinessPlanEstimate: Selector("[id*='plan-estimate-BASE_BSPB2-E'][class='hs-plan-estimate__value']"),
+    balanceBusinessPlanGasEstimate: Selector("[id*='plan-estimate-BASE_BSPB2-G'][class='hs-plan-estimate__value']"),
+    solarMaxPlanEstimate: Selector("[id*='plan-estimate-BASE_SMAX-E'][class='hs-plan-estimate__value']"),
     basicHomePlanEstimate: Selector("[id*='plan-estimate-BASE_RSOT-E'][class='hs-plan-estimate__value']"),
     basicHomePlanEstimatePeriod: Selector("[id*='plan-estimate-BASE_RSOT-E'][class='hs-plan-estimate__period']"),
     basicHomePlanEstimate_QLD: Selector("[id*='plan-estimate-BASE_GRT-E'][class='hs-plan-estimate__value']"),
