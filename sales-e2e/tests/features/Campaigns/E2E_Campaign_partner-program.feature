@@ -13,29 +13,29 @@
 
 Feature:E2E scenario for partner-program
 
- @DR22.10.2.campaign
-  Scenario Outline: Validate complete data for partner-program campaign for NSW-Ausgrid for new moving customer
+  @DR23.3.3.campaign
+  Scenario Outline: Validate complete data for partner-program campaign for NSW-Ausgrid for new moving customer - offer code: (<offerCode>)
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "bizoffer5" and "2144" and clicks on show me plan link
+    When user provides "<offerCode>" and "2144" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> |  N                    |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                      |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> |  N                    |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                      |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | ELE      | N                | Y                     | Y                     | Y                                     | <state> | N             |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit |
+      | ELE      | N                | Y                     | Y                     | Y                                     | <state> | N              |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | GAS      | N                | Y                     | Y                     | Y                                     | <state> | N             |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit |
+      | GAS      | N                | Y                     | Y                     | Y                                     | <state> | N              |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -64,11 +64,11 @@ Feature:E2E scenario for partner-program
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> | N                     |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> | N                      |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> | N                     |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> | N                      |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
@@ -89,34 +89,58 @@ Feature:E2E scenario for partner-program
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GN  | 5240524910 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
-
+#New offer codes 25
     Examples:
-      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                  | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                  | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting | offerCode |
+      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | bizoffer5 |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | GoGreen            |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | CarbonNeutral      |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | GoCarbonNeutral    |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | ChooseEA           |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | PowerOn            |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | EAOptions          |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | EAExperience       |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | EASustainability   |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | PoweredByEA        |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | EAPower            |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | PartnerWithUs      |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | EA2023             |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | EAFreshStart       |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | EAResidentialOffer |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | EAHereToday        |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | EACommunity        |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | EAGreenEnergyDeal  |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | EAHomeBundle       |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | EAInclusion        |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | EACulture          |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | EAPride            |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | EATallawarraB      |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | EAGannawarra       |
+#      | New            | BOTH     | 7           | 10          | partner-program | E2E_Campaign_partner-program_new_moving_NSW | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           | EADelivering       |
 
- @DR22.10.2.campaign
-  Scenario Outline: Validate complete data for partner-program campaign for VIC for new non moving customer
+  @DR23.3.3.campaign
+  Scenario Outline: Validate complete data for partner-program campaign for VIC for new non moving customer - offer code: (<offerCode>)
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "bizoffer5" and "3199" and clicks on show me plan link
+    When user provides "<offerCode>" and "3199" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                     |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                      |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> |  N                    |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                      |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | ELE      | N                | Y                     | Y                     | Y                                     | <state> | N             |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit |
+      | ELE      | N                | Y                     | Y                     | Y                                     | <state> | N              |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | GAS      | N                | Y                     | Y                     | Y                                     | <state> | N             |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit |
+      | GAS      | N                | Y                     | Y                     | Y                                     | <state> | N              |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -136,11 +160,11 @@ Feature:E2E scenario for partner-program
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> | N                     |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> | N                      |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> |  N                    |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> | N                      |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
@@ -163,13 +187,38 @@ Feature:E2E scenario for partner-program
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | BP2H-GV  | 5310425534 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
 
     Examples:
-      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                     | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           |
+      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                     | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting | offerCode |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | bizoffer5          |
+      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | GoGreen   |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | CarbonNeutral      |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | GoCarbonNeutral    |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | ChooseEA           |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | PowerOn            |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | EAOptions          |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | EAExperience       |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | EASustainability   |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | PoweredByEA        |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | EAPower            |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | PartnerWithUs      |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | EA2023             |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | EAFreshStart       |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | EAResidentialOffer |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | EAHereToday        |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | EACommunity        |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | EAGreenEnergyDeal  |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | EAHomeBundle       |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | EAInclusion        |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | EACulture          |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | EAPride            |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | EATallawarraB      |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | EAGannawarra       |
+#      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | COR     | No  | No | RES          | New           | EADelivering       |
 
-  @DR22.10.2.campaign
-  Scenario Outline: Validate complete data for partner-program campaign for SA for new moving customer
+
+  @DR23.3.3.campaign
+  Scenario Outline: Validate complete data for partner-program campaign for SA for new moving customer - offer code: (<offerCode>)
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "bizoffer5" and "5076" and clicks on show me plan link
+    When user provides "<offerCode>" and "5076" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -185,7 +234,7 @@ Feature:E2E scenario for partner-program
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
-      | ELE      | N                | Y                     | Y                   | Y                                       | <state> |
+      | ELE      | N                | Y                     | Y                     | Y                                     | <state> |
     And user validates plan details on cart page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   |
       | GAS      | N                | Y                     | Y                     | Y                                     | <state> |
@@ -209,7 +258,7 @@ Feature:E2E scenario for partner-program
       | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | N                     | Y                   | Y                                       | N                               | <state> |
+      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
@@ -232,13 +281,38 @@ Feature:E2E scenario for partner-program
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GS  | 5510149276 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
 
     Examples:
-      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                      | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                      | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting | offerCode     |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | bizoffer5          |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | GoGreen            |
+      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | CarbonNeutral |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | GoCarbonNeutral    |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | ChooseEA           |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | PowerOn            |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | EAOptions          |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | EAExperience       |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | EASustainability   |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | PoweredByEA        |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | EAPower            |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | PartnerWithUs      |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | EA2023             |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | EAFreshStart       |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | EAResidentialOffer |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | EAHereToday        |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | EACommunity        |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | EAGreenEnergyDeal  |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | EAHomeBundle       |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | EAInclusion        |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | EACulture          |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | EAPride            |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | EATallawarraB      |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | EAGannawarra       |
+#      | New            | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA | SA    | Quote Tool   | Move Home | No  | No | RES          | New           | EADelivering       |
 
-  @DR22.10.2.campaign
-  Scenario Outline: Validate complete data for partner-program campaign for ACT for new moving customer
+
+  @DR23.3.3.campaign
+  Scenario Outline: Validate complete data for partner-program campaign for ACT for new moving customer - offer code: (<offerCode>)
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "bizoffer5" and "2615" and clicks on show me plan link
+    When user provides "<offerCode>" and "2615" and clicks on show me plan link
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
@@ -300,24 +374,49 @@ Feature:E2E scenario for partner-program
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GA  | 5261512002 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
 
     Examples:
-      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                       | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | ELE      | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                       | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting | offerCode       |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | bizoffer5          |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | GoGreen            |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | CarbonNeutral      |
+      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | GoCarbonNeutral |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | ChooseEA           |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | PowerOn            |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | EAOptions          |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | EAExperience       |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | EASustainability   |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | PoweredByEA        |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | EAPower            |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | PartnerWithUs      |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | EA2023           |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | EAFreshStart       |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | EAResidentialOffer |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | EAHereToday        |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | EACommunity        |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | EAGreenEnergyDeal  |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | EAHomeBundle       |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | EAInclusion        |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | EACulture          |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | EAPride            |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | EATallawarraB      |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | EAGannawarra       |
+#      | New            | BOTH     | 13          | 20          | partner-program | E2E_Campaign_partner-program_ACT | ACT   | Quote Tool   | Move Home | No  | No | RES          | New           | EADelivering       |
 
-  @DR22.10.2.campaign
-  Scenario Outline: Validate complete data for partner-program campaign for QLD for new moving customer
+
+  @DR23.3.3.campaign
+  Scenario Outline: Validate complete data for partner-program campaign for QLD for new moving customer - offer code: (<offerCode>)
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "bizoffer5" and "4208" and clicks on show me plan link
+    When user provides "<offerCode>" and "4208" and clicks on show me plan link
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                     |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                      |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
     And user clicks on Select plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | ELE      | N                | Y                     | Y                     | Y                                     | <state> | N             |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit |
+      | ELE      | N                | Y                     | Y                     | Y                                     | <state> | N              |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -335,8 +434,8 @@ Feature:E2E scenario for partner-program
       | No                |          |                        |                       |
     And user verifies selected plan details for '<fuelType>'
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_XX_discountOffTotalEnergyBill | Feature_variableRates | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | N                     | Y                                     | Y                     | N                               | <state> | N                     |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_XX_discountOffTotalEnergyBill | Feature_variableRates | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | ELE      | N                | N                     | Y                                     | Y                     | N                               | <state> | N                      |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | QLD   | N            |
@@ -355,13 +454,13 @@ Feature:E2E scenario for partner-program
       | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-EQ  | 3115863522 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
 
     Examples:
-      | customerStatus | fuelType | eleDiscount | campaign        | folderName                       | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | ELE      | 2          | partner-program | E2E_Campaign_partner-program_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | customerStatus | fuelType | eleDiscount | campaign        | folderName                       | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting | offerCode |
+      | New            | ELE      | 2           | partner-program | E2E_Campaign_partner-program_QLD | QLD   | Quote Tool   | Move Home | No  | No | RES          | New           | ChooseEA  |
 
-  @DR22.10.2.campaign
-  Scenario Outline: Validate complete data for partner-program campaign for SA existing non moving
+  @DR23.3.3.campaign
+  Scenario Outline: Validate complete data for partner-program campaign for SA existing non moving - offer code: (<offerCode>)
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "bizoffer5" and "5000" and clicks on show me plan link
+    When user provides "<offerCode>" and "5000" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
@@ -370,7 +469,7 @@ Feature:E2E scenario for partner-program
       | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |
-      | GAS      | N                | Y                     | Y                      | Y                                    | N                               | <state> |
+      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
@@ -426,38 +525,38 @@ Feature:E2E scenario for partner-program
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-GS  | 5510368960 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
-      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                          | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA_existing_non-moving | SA    | Quote Tool   | Plan Switch | No  | No | RES          | Existing non-moving |
+      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                          | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting       | offerCode |
+      | Existing       | BOTH     | 2           | 6           | partner-program | E2E_Campaign_partner-program_SA_existing_non-moving | SA    | Quote Tool   | Plan Switch | No  | No | RES          | Existing non-moving | PowerOn   |
 
-  @DR22.10.2.campaign
-  Scenario Outline: Validate complete data for partner-program campaign for VIC existing non moving
+  @DR23.3.3.campaign
+  Scenario Outline: Validate complete data for partner-program campaign for VIC existing non moving - offer code: (<offerCode>)
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "bizoffer5" and "3214" and clicks on show me plan link
+    When user provides "<offerCode>" and "3214" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                     |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                      |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                     |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                      |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | ELE      | N                | Y                     | Y                     | Y                                     | <state> | N             |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit |
+      | ELE      | N                | Y                     | Y                     | Y                                     | <state> | N              |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | GAS      | N                | Y                     | Y                     | Y                                     | <state> | N             |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit |
+      | GAS      | N                | Y                     | Y                     | Y                                     | <state> | N              |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
-      | customerStatus   | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue   |
+      | customerStatus   | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
     #   | <customerStatus> | 5124968245    | Postcode            | 3029             | dl     | 390399008 |
-      | <customerStatus> | 7300591603    | Postcode            | 3074             | dob     | 01011980 |
+      | <customerStatus> | 7300591603    | Postcode            | 3074             | dob    | 01011980 |
     And user provides all other details on qualifier page for Existing customer
       | customerType | movingType | propertyType |
       | RES          | Non-Moving | Renter       |
@@ -498,32 +597,32 @@ Feature:E2E scenario for partner-program
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-GV  | 5321264636 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
-      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                           | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                           | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        | offerCode     |
+      | Existing       | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving | PartnerWithUs |
 
-  @DR22.10.2.campaign
-  Scenario Outline: Validate complete data for partner-program campaign for VIC for new moving customer
+  @DR23.3.3.campaign
+  Scenario Outline: Validate complete data for partner-program campaign for VIC for new moving customer - offer code: (<offerCode>)
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides "bizoffer5" and "3199" and clicks on show me plan link
+    When user provides "<offerCode>" and "3199" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                     |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                      |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                    |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> | N                      |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
     And user clicks on Add plan button
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | ELE      | N                | Y                     | Y                     | Y                                     | <state> | N             |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit |
+      | ELE      | N                | Y                     | Y                     | Y                                     | <state> | N              |
     And user validates plan details on cart page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit|
-      | GAS      | N                | Y                     | Y                     | Y                                     | <state> | N             |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | state   | moveHomeCredit |
+      | GAS      | N                | Y                     | Y                     | Y                                     | <state> | N              |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -544,11 +643,11 @@ Feature:E2E scenario for partner-program
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> | N                     |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> | N                      |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> |  N                    |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> | N                      |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
@@ -571,5 +670,5 @@ Feature:E2E scenario for partner-program
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GV  | 5310425534 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
 
     Examples:
-      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                     | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 7          | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | Move Home     | No  | No | RES    | New           |
+      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign        | folderName                                     | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting | offerCode    |
+      | New            | BOTH     | 7           | 14          | partner-program | E2E_Campaign_partner-program_new_nonmoving_VIC | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           | EADelivering |
