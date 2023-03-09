@@ -119,7 +119,7 @@
             "Endeavour": "Total_Plan",
             "default": "Total_Plan"
           },
-          "ACT": "Total_6%GD",
+          "ACT": "Total_Plan",
           "QLD": "Total_Plan",
           "SA": "Total_Plan"
         },
@@ -131,7 +131,7 @@
             "Endeavour": "Total_Plan",
             "default": "Total_Plan"
           },
-          "ACT": "Total_6%GD",
+          "ACT": "Total_Plan",
           "QLD": "Total_Plan",
           "SA": "Total_Plan"
         }
@@ -145,7 +145,7 @@
             "Endeavour": "Total_Plan",
             "default": "Total_Plan"
           },
-          "ACT": "Total_6%GD",
+          "ACT": "Total_Plan",
           "QLD": "Total_Plan",
           "SA": "Total_Plan"
         },
@@ -157,7 +157,7 @@
             "Endeavour": "Total_Plan",
             "default": "Total_Plan"
           },
-          "ACT": "Total_6%GD",
+          "ACT": "Total_Plan",
           "QLD": "Total_Plan",
           "SA": "Total_Plan"
         }
@@ -242,13 +242,13 @@
         "ENE": {
           "VIC": "Total_Plan",
           "NSW": "Total_Plan",
-          "ACT": "Total_9%GD",
+          "ACT": "Total_Plan",
           "SA": "Total_Plan"
         },
         "COR": {
           "VIC": "Total_Plan",
           "NSW": "Total_Plan",
-          "ACT": "Total_9%GD",
+          "ACT": "Total_Plan",
           "SA": "Total_Plan"
         }
       },
@@ -256,13 +256,13 @@
         "ENE":{
           "VIC": "Total_Plan",
           "NSW": "Total_Plan",
-          "ACT": "Total_9%GD",
+          "ACT": "Total_Plan",
           "SA": "Total_Plan"
         },
         "PS": {
           "VIC": "Total_Plan",
           "NSW": "Total_Plan",
-          "ACT": "Total_9%GD",
+          "ACT": "Total_Plan",
           "SA": "Total_Plan"
         }
       }

@@ -1,0 +1,292 @@
+{
+  "planDetails": {
+    "VIC": {
+      "planName": "Flexi Plan",
+      "planDescription": "Variable energy rates with no lock in contracts."
+    },
+    "NSW": {
+      "planName": "Flexi Plan",
+      "planDescription": "Variable energy rates with no lock in contracts."
+    },
+    "ACT": {
+      "planName": "Flexi Plan",
+      "planDescription": "Variable energy rates with no lock in contracts."
+    },
+    "QLD": {
+      "planName": "Flexi Plan",
+      "planDescription": "Variable energy rates with no lock in contracts."
+    },
+    "SA": {
+      "planName": "Flexi Plan",
+      "planDescription": "Variable energy rates with no lock in contracts."
+    }
+  },
+  "electricity": {
+    "feature": {
+      "preSelect": {
+        "Credit50": {
+          "VIC": {
+            "heading": "$50 online sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up online.+"
+          },
+          "NSW": {
+            "heading": "$50 online sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up online.+"
+          }
+        },
+        "carbonNeutral": {
+          "heading": "Carbon neutral option",
+          "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
+        },
+        "peaceOfMind": {
+          "heading": "Peace of mind",
+          "description": "Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+        },
+        "discountOffTotalEnergyBill": {
+          "VIC": {
+            "heading": "5% discount off total electricity bill"
+          },
+          "NSW": {
+            "Ausgrid": {
+              "heading": "5% discount off total electricity bill"
+            },
+            "Essential": {
+              "heading": "5% discount off total electricity bill"
+            },
+            "Endeavour": {
+              "heading": "5% discount off total electricity bill"
+            }
+          },
+          "ACT": {
+            "heading": "11% discount off total electricity bill"
+          },
+          "QLD": {
+            "heading": "0% discount off total electricity bill"
+          },
+          "SA": {
+            "heading": "0% discount off total electricity bill"
+          },
+          "description": "Guaranteed discount that applies to your energy charges"
+        },
+        "noStandardConnectionFee": {
+          "heading": "No standard connection fees",
+          "description": "Move with us and we'll waive connection and special meter reads during business hours."
+        },
+        "variableRates": {
+          "heading": "Variable rates",
+          "description": "Your energy charges are variable. We'll let you know in advance before any rates change."
+        }
+      },
+      "postSelect": {
+        "Credit50": {
+          "VIC": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+          "NSW": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+"
+        },
+        "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
+        "variableRates": "Variable rates. Your energy charges are variable. We'll let you know in advance before any rates change.",
+        "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
+        "discountOffTotalEnergyBill": {
+          "VIC": "5% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+          "NSW": {
+            "Ausgrid": "5% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+            "Essential": "5% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+            "Endeavour": "5% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
+          }
+        },
+        "noStandardConnectionFee": "No standard connection fees. Move with us and we'll waive connection and special meter reads during business hours."
+      }
+    },
+    "sourceCode": {
+      "newCustomer": {
+        "ENE": {
+          "VIC": "Total_5%GD_50",
+          "NSW": {
+            "Ausgrid": "Total_5%GD_50",
+            "Essential": "Total_5%GD_50",
+            "Endeavour": "Total_5%GD_50",
+            "default": "Total_5%GD_50"
+          }
+        },
+        "COR": {
+          "VIC": "Total_5%GD_50",
+          "NSW": {
+            "Ausgrid": "Total_5%GD_50",
+            "Essential": "Total_5%GD_50",
+            "Endeavour": "Total_5%GD_50",
+            "default": "Total_5%GD_50"
+          }
+        }
+      },
+      "existingCustomer": {
+        "ENE": {
+          "VIC": "Total_5%GD_50",
+          "NSW": {
+            "Ausgrid": "Total_5%GD_50",
+            "Essential": "Total_5%GD_50",
+            "Endeavour": "Total_5%GD_50",
+            "default": "Total_5%GD_50"
+          }
+        },
+        "PS": {
+          "VIC": "Total_5%GD",
+          "NSW": {
+            "Ausgrid": "Total_5%GD",
+            "Essential": "Total_5%GD",
+            "Endeavour": "Total_5%GD",
+            "default": "Total_5%GD"
+          }
+        }
+      }
+    }
+  },
+  "gas": {
+    "feature": {
+      "preSelect": {
+        "Credit50": {
+          "VIC": {
+            "heading": "$50 online sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up online.+"
+          },
+          "NSW": {
+            "heading": "$50 online sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up online.+"
+          }
+        },
+        "carbonNeutral": {
+          "heading": "Carbon neutral option",
+          "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
+        },
+        "peaceOfMind": {
+          "heading": "Peace of mind",
+          "description": "Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change."
+        },
+        "discountOffTotalEnergyBill": {
+          "VIC": {
+            "heading": "12% discount off total gas bill"
+          },
+          "NSW": {
+            "heading": "8% discount off total gas bill"
+          },
+          "ACT": {
+            "heading": "18% discount off total gas bill"
+          },
+          "SA": {
+            "heading": "4% discount off total gas bill"
+          },
+          "description": "Guaranteed discount that applies to your energy charges"
+        },
+        "variableRates": {
+          "heading": "Variable rates",
+          "description": "Your energy charges are variable. We'll let you know in advance before any rates change."
+        }
+      },
+      "postSelect": {
+        "Credit50": {
+          "VIC": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+          "NSW": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+"
+        },
+        "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
+        "moveHomeCredit": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+        "variableRates": "Variable rates. Your energy charges are variable. We'll let you know in advance before any rates change.",
+        "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before your rates change.",
+        "discountOffTotalEnergyBill": {
+          "VIC": "12% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
+          "NSW": "8% discount off total gas bill. Guaranteed discount that applies to your energy charges."
+        }
+      }
+    },
+    "sourceCode": {
+      "newCustomer": {
+        "ENE": {
+          "VIC": "Total_12%GD_50",
+          "NSW": "Total_8%GD_50"
+        },
+        "COR": {
+          "VIC": "Total_12%GD_50",
+          "NSW": "Total_8%GD_50"
+        }
+      },
+      "existingCustomer": {
+        "ENE": {
+          "VIC": "Total_12%GD_50",
+          "NSW": "Total_8%GD_50"
+        },
+        "PS": {
+          "VIC": "Total_12%GD",
+          "NSW": "Total_8%GD"
+        }
+      }
+    }
+  },
+  "disclaimers": {
+    "referencePriceComparison": {
+      "heading": "Reference price comparison and estimated annual cost",
+      "VIC": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      },
+      "NSW": {
+        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+      }
+    },
+    "goNeutral": {
+      "heading": "Go Neutral",
+      "QLD": {
+        "description": "^ Opt in and we will offset the carbon emissions from your electricity usage from the 6-month anniversary of the date your EnergyAustralia account is established. We will let you know in advance if we withdraw Go Neutral. For more info and full terms visit energyaustralia.com.au/carbon-neutral."
+      },
+      "NonQLD": {
+        "description": "^ Opt in and we will offset the carbon emissions from your electricity and/or gas usage from the 6-month anniversary of the date your EnergyAustralia account is established. We will let you know in advance if we withdraw Go Neutral. For more info and full terms visit energyaustralia.com.au/carbon-neutral."
+      }
+    },
+    "solarBuyBack": {
+      "heading": "Solar feed-in tariffs",
+      "VIC": {
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll notify you before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation. For more information about the Victorian FiT scheme see www.energy.vic.gov.au/renewable-energy/victorian-feed-in-tariff."
+      },
+      "NonVIC": {
+        "description": "^^ Feed-in tariffs (FiT) are paid to eligible customers in accordance with our solar FiT Terms & Conditions, available here. We may vary our Retailer FiT rates and we'll let you know before this happens. Rates are GST-exclusive but we'll also pay you GST if you meet the requirements for GST registration for your solar generation."
+      }
+    },
+    "noStandardConnectionFee": {
+      "heading": "",
+      "description": ""
+    },
+    "Credit50": {
+      "VIC": {
+        "heading": "Sign up credits",
+        "description": "+ Offer available to eligible VIC residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
+      },
+      "NSW": {
+        "heading": "Sign up credits",
+        "description": "+ Offer available to eligible NSW residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
+      }
+    },
+    "moveHomeCredit": {
+      "heading": "Sign up credits",
+      "VIC": {
+        "description": "+ Offer available to eligible VIC residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
+      },
+      "NSW": {
+        "description": "+ Offer available to eligible NSW residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
+      },
+      "ACT": {
+        "description": "+ Offer available to eligible ACT residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
+      },
+      "QLD": {
+        "description": "+ Offer available to eligible QLD residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
+      },
+      "SA": {
+        "description": "+ Offer available to eligible SA residential customers who sign up to an electricity or gas offer. Limit of one credit per new energy account, per customer address. We may change or end this offer at any time. Credits will be applied to your first bill and are not transferable or redeemable for cash."
+      }
+    },
+    "plandisclaimer": {
+      "VIC": {
+        "heading": "Flexi Plan",
+        "description": "* Offer only for eligible VIC residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+      },
+      "NSW": {
+        "heading": "Flexi Plan",
+        "description": "* Offer only for eligible NSW residential customers. Not available in all areas or for all tariff types. Guaranteed discount is off our market energy charges and applies for the 12-month benefit period. Your energy charges will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as solar feed-in tariffs and GreenPower) may also vary."
+      }
+    }
+  }
+}
