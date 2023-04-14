@@ -1,6 +1,6 @@
 import {checkoutCompleteMethod} from '../methods/checkoutCompletePage';
 import {testFunction} from '../../global_methods/helper';
-import {Given, Then, When} from 'cucumber';
+import {Given, Then, When} from '@cucumber/cucumber';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 import {checkoutReviewMethod} from '../methods/checkoutReviewPage';
 import {getPackage} from './hooks';

@@ -1,5 +1,5 @@
 import {cartsMethod} from '../methods/cartsPage';
-import {Then, When} from 'cucumber';
+import {Then, When} from '@cucumber/cucumber';
 import {testFunction} from '../../global_methods/helper';
 import {FileUtils} from '../../libs/FileUtils';
 import {plansMethod} from '../methods/plansPage';
@@ -17,7 +17,7 @@ Then(/^user validates plan details on cart page for "([^"]*)"$/, async function 
   let json = await FileUtils.getJSONfile(campaignName);
   await cartsMethod.validatePlanName(t, json, dataTable);
   await cartsMethod.validateFeatures(t, dataTable, json, numOfExpectedFeatures);
-  //await testFunction.takeScreenshot(t, 'validated plan details on carts page');//disabled UI Validation
+
 });
 Then(/^user validates the data on carts page for "([^"]*)" plan$/, async function (t, [campaignName], dataTable) {
   let numOfExpectedFeatures = await testFunction.getExpectedFeatureCount(dataTable.rows());

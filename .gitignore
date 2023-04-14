@@ -43,6 +43,7 @@ Thumbs.db
 
 #Report files
 /sales-e2e/results
+/sales-e2e/cucumber-json-reports
 
 #Screenshots
 /sales-e2e/screenshots/Current/*

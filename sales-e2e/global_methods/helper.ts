@@ -8,7 +8,7 @@ const fs = require("mz/fs");
 const requestLoggerUtils = new requestLoggerUtilities();
 const replace = {replace: true};
 const {config} = require('../resources/resource');
-const resemble = require("resemblejs");
+
 const screenshot = config.screenshot;
 const eaHomePage = config.eaCampaignUrl;
 let logger = null;
@@ -116,7 +116,7 @@ export const scrollTo = ClientFunction((selector: Selector, offset?: { x: number
       _window.scrollBy(offset.x, offset.y);
     }
 
-    resolve();
+    resolve(null);
   });
 });
 
@@ -273,7 +273,7 @@ export class testFunction {
             return;
           }
           clearInterval(interval);
-          resolve();
+          resolve(null);
         }, 100);
       });
     });
@@ -315,7 +315,7 @@ export class testFunction {
             return;
           }
           clearInterval(interval);
-          resolve();
+          resolve(null);
         }, 100);
       });
     });
@@ -548,16 +548,6 @@ export class testFunction {
       if (config.visualValidation.rebaseline === 'Y') {
         fs.copyFileSync(currentImage, baseImage);
         console.log(`${browserName}/${screenshotFolder}/${imageName}.png re-baselined.`);
-      } else {
-        //-----Comparing the current image (generated in current execution) with it's baselined image-----//
-        resemble(currentImage).compareTo(baseImage).onComplete(function (data) {
-          //----Diff file will only be generated if there is a mismatch in image comparison----//
-          if (data.misMatchPercentage > 0) {
-            console.log(`Diff Image: ${diffImage}`);
-            console.log(data);
-            fs.writeFileSync(diffImage, data.getBuffer());
-          }
-        });
       }
     }
   }
@@ -639,13 +629,10 @@ export class testFunction {
 
   public static async validateNetworkCall(t: any) {
     await requestLoggerUtils.unzipLoggerResponses(t, {requestLogger: logger, toJson: true});
-    //console.log('\nUnzipped Response taken by the logger:\n', logger.requests[0].response.body);
     return logger.requests[0].response.body;
   }
 
   public static async validateAnalyticsNetworkCall(t: any) {
-    //await requestLoggerUtils.unzipLoggerRequest(t, {requestLogger: logger, toJson: true});
-    //console.log('\nUnzipped Response taken by the logger:\n', logger.requests[0].response.body);
     return logger.requests[0].request.body;
   }
 

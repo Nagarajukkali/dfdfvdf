@@ -22,5 +22,8 @@
     "when",
     "with"
   ],
+  "args": {
+    "reportFolder": "results/report/"
+  },
   "verbose": false
 }

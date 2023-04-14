@@ -14,7 +14,6 @@ const eaHomePage = {
     nswRemoterMeterMsgOnPlanPage: Selector("#plan-error-REMOTE_METERING_RISK"),
     residentialBalancePlan: Selector("[id*='plan-select-button-TAPR1']"),
     selectedState: Selector("#navbar div[class*='state-value']"),
-    //residentialComparePlansButton: Selector('.icon-GasElectricity'),
     residentialComparePlansButton: Selector('.svg-icon.elec-and-gas'),
     plansCardFee: Selector("div.hs-plan-fees__card"),
     businessLink: Selector("[class*='menu-item--collapsed'] a[href^='/business']"),
@@ -78,9 +77,7 @@ const eaHomePage = {
     fuelSelectorOptionDual: Selector('#edit-fuel-selector-both'),
     fuelSelectorOptionEle: Selector('#edit-fuel-selector-ele'),
     fuelSelectorOptionGas: Selector('#edit-fuel-selector-gas'),
-    //linkMoveHouse:Selector(".icon-moving"),
     linkMoveHouse: Selector('.quick-link-item-title').withText('Moving house'),
-    // linkMoveHouse: Selector("#navbar a[href$='/home/moving-house']"),
     rbPostcodeOnModal: Selector("#edit-campaign-modal-location-type-postcode__label"),
     rbOffercodeOnModal: Selector("#campaign-modal-unique-code-input"),
     rbPostcode: Selector("#edit-campaign-location-type-postcode__label"),
@@ -130,9 +127,7 @@ const eaHomePage = {
     txtElectricityBasedOn: Selector("div.hs-plan-rates-heading__description p").nth(0),
     txtGasBasedOn: Selector("div.hs-plan-rates-heading__description p").nth(1),
     headingOnChangePlanSelectionModal: Selector("#modal-heading-CHANGE_PLAN_SELECTION_MODAL"),
-    //basicResiPlanHeadingFuel:Selector("[id*='plan-heading-fuel-BASE_RSOT-']").nth(1),
     basicResiPlanHeadingFuel: Selector("[id*='plan-heading-fuel-BASE_RSOT-']"),
-    //basicBsmePlanHeadingFuel:Selector("[id*='plan-heading-fuel-BASE_BSOT-']").nth(1),
     basicBsmePlanHeadingFuel: Selector("[id*='plan-heading-fuel-BASE_BSOT-']"),
     sliderRight: Selector("div.hs-plan-slider__button__bg-right"),
     basicResiPlanRatesTitle: Selector("#plan-rates-title-RSOT"),
@@ -577,8 +572,6 @@ const eaHomePage = {
     gasFeatureMoveHomeTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("online sign up credit"),
     gasFeatureMoveHomeDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("online sign up credit").sibling()
 
-    // electricityRateRepriceText: Selector("#plan-rates-description-RCPP-EN .hs-plan-rates-heading__reprice"),
-    // gasRateRepriceText: Selector("#plan-rates-description-RCPP-GN .hs-plan-rates-heading__reprice")
   }
 };
 

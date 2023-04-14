@@ -1,5 +1,5 @@
 import {moveHouseMethod} from '../methods/moveHouse';
-import {Then, When} from 'cucumber';
+import {Then, When} from '@cucumber/cucumber';
 import {testFunction} from '../../global_methods/helper';
 
 When(/^user enters '(.*)' in address field and selects any available moving date$/, async function (t, [movingAddress]) {
@@ -27,7 +27,4 @@ When(/^user selects moving date$/, async function (t) {
 Then(/^error message is displayed for undetected NMI in MSATS$/, async function (t) {
   await moveHouseMethod.validateSolarSetupUnknownErrorForUndetectedNMI(t);
 });
-//When(/^user enters '(.*)' in address field$/, async function (t, [movingAddress]) {
- // await moveHouseMethod.enterYourAddress(t, movingAddress);
-  //await testFunction.takeScreenshot(t, "move_house");
-//});
+

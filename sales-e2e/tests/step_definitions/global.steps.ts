@@ -1,4 +1,4 @@
-import {Given} from 'cucumber';
+import {Given} from '@cucumber/cucumber';
 import {testFunction} from '../../global_methods/helper';
 import {CustomerType} from '@ea/ea-commons-models';
 import {getPackage, getTestCafeRC} from './hooks';

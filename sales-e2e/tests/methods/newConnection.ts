@@ -42,7 +42,6 @@ export class newConnectionMethod {
 
   public static async enterDistributorDetails(t, state, distributor) {
     if (state=== 'NSW') {
-      // await testFunction.click(t, eaNewConnectionPage.elements.inputDistributorAusgrid);
       await testFunction.click(t, eaNewConnectionPage.elements.btnNext);
       switch (distributor) {
         case "Ausgrid":
@@ -438,8 +437,6 @@ export class newConnectionMethod {
 
   public static async isPlansPageDisplayed(t, expectedPage) {
     if (expectedPage === "plans") {
-      // await testFunction.waitForElementToBeAppeared(t, eaNewConnectionPage.elements.feedbackForm);
-      // await testFunction.isElementDisplayed(t, eaNewConnectionPage.elements.feedbackForm);
       await testFunction.isElementVisible(t, eaNewConnectionPage.elements.plansTable);
       await testFunction.takeScreenshot(t, "plans_page");
     } else if (expectedPage === "my account") {

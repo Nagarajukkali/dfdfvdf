@@ -1,4 +1,4 @@
-import {Given, Then} from 'cucumber';
+import {Given, Then} from '@cucumber/cucumber';
 import {spyOff, spyOn} from '../../global_methods/analyticsFunction';
 import {plansMethod} from '../methods/plansPage';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';

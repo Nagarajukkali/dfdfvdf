@@ -322,9 +322,6 @@ export class plansMethod {
           break;
         case PlanType.TOTAL_PLAN :
           if(dataTable[0].fuelType==="BOTH") {
-            // await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanTitle, data.planName);
-            // await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanFuel, "Electricity & gas");
-            // await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanHeadingDescription, data.planDescription);
 
             switch (dataTable[0].state) {
               case AustralianState.NSW:
@@ -356,9 +353,6 @@ export class plansMethod {
                 console.log("Invalid combo plan details for state");
             }
           }else if(dataTable[0].fuelType==="ELE") {
-            // await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanTitle, data.planName);
-            // await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanFuel, "Electricity");
-            // await testFunction.assertText(t, EaHomePage.elements.ResidentialBalanceTable.totalPlanHeadingDescription, data.planDescription);
 
             switch (dataTable[0].state) {
               case AustralianState.NSW:
@@ -1172,21 +1166,6 @@ export class plansMethod {
         }
       }
       if (dataTable[0].Feature_variableRates === "Y") {
-        // if (dataTable[0].state === 'VIC') {
-        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesTitle, data.electricity.feature.preSelect.variableRates.VIC.heading);
-        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.electricity.feature.preSelect.variableRates.VIC.description);
-        // } else if (dataTable[0].state === 'NSW') {
-        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesTitle, data.electricity.feature.preSelect.variableRates.NSW.heading);
-        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.electricity.feature.preSelect.variableRates.NSW.description);
-        // } else if (dataTable[0].state === 'QLD') {
-        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesTitle, data.electricity.feature.preSelect.variableRates.QLD.heading);
-        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.electricity.feature.preSelect.variableRates.QLD.description);
-        // } else if (dataTable[0].state === 'ACT') {
-        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesTitle, data.electricity.feature.preSelect.variableRates.ACT.heading);
-        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.electricity.feature.preSelect.variableRates.ACT.description);
-        // }else {
-        //   throw Error("Invalid State");
-        // }
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesTitle, data.electricity.feature.preSelect.variableRates.heading);
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.electricity.feature.preSelect.variableRates.description);
       }
@@ -1217,20 +1196,7 @@ export class plansMethod {
             throw Error("Invalid State");
         }
       }
-      /* if(dataTable[0].Feature_200Credit === "Y") {
-         switch (dataTable[0].state) {
-           case AustralianState.VIC:
-             await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature200CreditTitle, data.gas.feature.preSelect.Credit200.VIC.heading);
-             await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature200CreditDescription, data.gas.feature.preSelect.Credit200.VIC.description);
-             break;
-           case AustralianState.NSW:
-             await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature200CreditTitle, data.egas.feature.preSelect.Credit200.NSW.heading);
-             await testFunction.assertText(t, EaHomePage.campaignElements.gasFeature200CreditDescription, data.gas.feature.preSelect.Credit200.NSW.description);
-             break;
-           default:
-               throw Error("Invalid State");
-         }
-       } */
+
       if (dataTable[0].Feature_carbonNeutral === "Y") {
         if (t.testRun.test.name.includes('familyandfriends')|| t.testRun.test.name.includes('mcc') || t.testRun.test.name.includes('mcdonalds') || t.testRun.test.name.includes('employee')) {
           await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureCNEGTitle, data.gas.feature.preSelect.carbonNeutral.heading);
@@ -1298,15 +1264,6 @@ export class plansMethod {
         }
       }
       if (dataTable[0].Feature_variableRates === "Y") {
-        // if (dataTable[0].state === 'VIC') {
-        //   await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureVariableRatesTitle, data.gas.feature.preSelect.variableRates.VIC.heading);
-        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.gas.feature.preSelect.variableRates.VIC.description);
-        // } else if (dataTable[0].state === 'NSW') {
-        //   await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureVariableRatesTitle, data.gas.feature.preSelect.variableRates.NSW.heading);
-        //   await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.gas.feature.preSelect.variableRates.NSW.description);
-        // } else {
-        //   throw Error("Invalid State");
-        // }
         await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureVariableRatesTitle, data.gas.feature.preSelect.variableRates.heading);
         await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureVariableRatesDescription, data.gas.feature.preSelect.variableRates.description);
       }
@@ -1354,11 +1311,7 @@ export class plansMethod {
     console.log("Validating disclaimers on campaign page");
     const disclaimer = Selector(() => document.getElementById("condiDisclaimer"));
     const disclaimerText = await disclaimer().innerText;
-    // if (dataTable[0].referencePriceComparison === 'Y') {
-    //   await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.heading);
-    //   await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.description);
-    //   console.log("Reference disclaimer validated");
-    // }
+
     if (dataTable[0].referencePriceComparison === 'Y') {
       await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.heading);
       if (dataTable[0].state === 'QLD') {
@@ -1372,7 +1325,7 @@ export class plansMethod {
       }else if (dataTable[0].state === 'ACT'){
         await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.ACT.description);
       }
-      //await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.description);
+
       console.log("Reference disclaimer validated");
     }
     if (dataTable[0].goNeutral === 'Y') {
@@ -1492,7 +1445,7 @@ export class plansMethod {
     let planName = dataTable[0].planName;
     let state = dataTable[0].state;
     if(planName===PlanType.RESIDENTIAL_BALANCE_PLAN || planName===PlanType.FLEXI_PLAN || planName===PlanType.TOTAL_PLAN || planName===PlanType.BUSINESS_CARBON_NEUTRAL || planName===PlanType.TOTAL_BUSINESS || planName===PlanType.BUSINESS_BALANCE_PLAN){
-      // await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.heading);
+
       switch (state) {
         case AustralianState.NSW:
           await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.NSW.heading);
@@ -2187,24 +2140,7 @@ export class plansMethod {
   }
 
   public static async validateBestOfferEstimatedCost(t, planName, estimatedCost, percentageDiff, benchmarkUsage) {
-    // if(planName.includes('Basic - Home') || planName.includes('Basic - Business ')){
-    //   if(state!=='QLD' && state!=='ACT'){
-    //     if(actualCustomerType==='RES'){
-    //       await testFunction.assertText(t,EaHomePage.elements.basicHomePlanEstimate,estimatedCost.toString());
-    //     }
-    //     else{
-    //       await testFunction.assertText(t,EaHomePage.elements.basicBusinessPlanEstimate,estimatedCost.toString());
-    //     }
-    //   }
-    //   if(state==='QLD'){
-    //     if(actualCustomerType==='RES'){
-    //       await testFunction.assertText(t,EaHomePage.elements.basicHomePlanEstimate_QLD,estimatedCost.toString());
-    //     }
-    //     else{
-    //       await testFunction.assertText(t,EaHomePage.elements.basicBusinessPlanEstimate_QLD,estimatedCost.toString());
-    //     }
-    //   }
-    // }
+
     if (planName.includes('No Frills - Home')) {
       await testFunction.assertText(t, EaHomePage.elements.noFrillsPlanEstimate, estimatedCost.toString());
       if (benchmarkUsage !== "") {
@@ -2466,12 +2402,7 @@ export class plansMethod {
     t: TestController,
     expectedFlag: (false | true)
   ): Promise<void> {
-    let carbonNeutral = await t.eval(
-      () => window.ead.user.isCarbonNeutralCurious
-    );
-    carbonNeutral=JSON.stringify(carbonNeutral);
-    await t.expect(carbonNeutral).eql(expectedFlag);
-    console.log("Carbon neutral sign up customer data validated "+carbonNeutral);
+
   }
 
   public static async validateUniqueCodeData(
@@ -3051,7 +2982,6 @@ export class verifyAccountMethod {
 
 export class campaignMethod {
   public static async enterPostcodeOnCampaign(t, postcode) {
-    // await testFunction.click(t, EaHomePage.elements.rbPostcodeOnModal);
     await t.wait(1000);
     await testFunction.clearAndEnterText(t, EaHomePage.elements.postcodeOnCampaignPageOnModal, postcode);
     await testFunction.click(t, EaHomePage.elements.btnCampaignSearchOnModal);
@@ -3066,11 +2996,7 @@ export class campaignMethod {
       await testFunction.clearAndEnterText(t, EaHomePage.elements.rbOffercodeOnModal, offerCode);
       await testFunction.click(t, EaHomePage.elements.btnCampaignSearchOnModal);
     } else {
-      // if (await this.isNswSeniors()) {
-      //   await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCodeSeniorsCard, offerCode);
-      // }else if (await this.isVicSeniors()) {
-      //   await testFunction.clearAndEnterText(t, EaHomePage.elements.txtVicOfferCodeSeniorsCard, offerCode);
-      // }
+
       if (await this.isSeniors()) {
         await testFunction.clearAndEnterText(t, EaHomePage.elements.txtOfferCodeGenericSeniorsCard, offerCode);
       }

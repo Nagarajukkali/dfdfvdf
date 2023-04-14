@@ -3,6 +3,7 @@
 To run E2E tests locally use the following commands
 
 ```
+nvm use
 npm ci
 npm run e2e:all
 ```

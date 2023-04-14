@@ -1,5 +1,5 @@
 import {newConnectionMethod} from '../methods/newConnection';
-import {Then, When} from 'cucumber';
+import {Then, When} from '@cucumber/cucumber';
 import {CustomerType, FUEL_TYPE_OPTIONS} from '@ea/ea-commons-models';
 import {testFunction} from '../../global_methods/helper';
 

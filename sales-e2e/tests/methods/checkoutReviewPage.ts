@@ -318,16 +318,10 @@ export class checkoutReviewMethod {
     let randomText = await testFunction.generateRandomText(expectedMaxLength + 1);
     if (await testFunction.isElectricity(fuelType)) {
       await t.typeText(eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsElec, randomText);
-      /*for(let i=0 ; i < randomText.length ; i++) {
-        sendkeys(Review_LifeSupportPage.tfOtherEquipmentDetailsElec, String.valueOf(randomText.charAt(i)));
-      }*/
       await t.expect(eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsElec.length).eql(expectedMaxLength);
     }
     if (await testFunction.isGas(fuelType)) {
       await t.typeText(eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsGas, randomText);
-      /*for(let i=0 ; i < randomText.length ; i++) {
-        sendkeys(Review_LifeSupportPage.tfOtherEquipmentDetailsGas, String.valueOf(randomText.charAt(i)));
-      }*/
       await t.expect(eaCheckoutReviewPage.elements.tfOtherEquipmentDetailsGas.length).eql(expectedMaxLength);
     }
   }
@@ -479,7 +473,6 @@ export class checkoutReviewMethod {
 
   public static async validatePlanName(t: any, json: any, dataTable) {
     if (await testFunction.isElectricity(dataTable[0].fuelType)) {
-      // await testFunction.assertText(t, eaCheckoutReviewPage.elements.elePlanName, json.planName);
       switch (dataTable[0].state) {
         case AustralianState.NSW:
           await testFunction.assertText(t, eaCheckoutReviewPage.elements.elePlanName, json.planDetails.NSW.planName);
@@ -501,7 +494,6 @@ export class checkoutReviewMethod {
       }
     }
     if (await testFunction.isGas(dataTable[0].fuelType)) {
-      // await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasPlanName, json.planName);
       switch (dataTable[0].state) {
         case AustralianState.NSW:
           await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasPlanName, json.planDetails.NSW.planName);

@@ -1,4 +1,4 @@
-import {Then, When} from 'cucumber';
+import {Then, When} from '@cucumber/cucumber';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
 import {testFunction} from '../../global_methods/helper';
 import {CustomerType} from '@ea/ea-commons-models';
@@ -86,14 +86,12 @@ When(/^user opts for AAH and DD$/, async function (t, [], dataTable) {
 When(/^user selects plans on checkout details page$/, async function (t, [], dataTable) {
   let data = dataTable.hashes();
   await testFunction.waitForElementToBeDisappeared(t, eaCheckoutDetailsPage.elements.eaSpinner);
-  //await testFunction.click(t,eaCheckoutDetailsPage.elements.connectionAddress);
   await t.wait(2000);
   await checkoutDetailsMethod.selectPlan(t, data[0].fuelType, data[0].planName);
   console.log("Plan Selected successfully.");
 });
 When(/^user validates the nsw remote meter risk on checkout$/, async function (t, []) {
   await testFunction.waitForElementToBeDisappeared(t, eaCheckoutDetailsPage.elements.eaSpinner);
-  //await testFunction.click(t,eaCheckoutDetailsPage.elements.connectionAddress);
   await t.wait(2000);
   await qualifierMethod.validateErrorMessageForNSWRemoteMeterRiskAccountsCheckouit(t);
 });

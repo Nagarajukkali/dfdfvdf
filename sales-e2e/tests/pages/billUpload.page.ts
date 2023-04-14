@@ -2,7 +2,6 @@ import {Selector} from 'testcafe';
 
 const billUpload = {
   elements: {
-    // btnUploadBill: Selector("#hs-bill-upload-cta a"),
     btnUploadBill: Selector("#bill-upload-button"),
     billUploadInput: Selector(".upload-input"),
     eaSpinner: Selector(".ea-spinner.ng-star-inserted"),

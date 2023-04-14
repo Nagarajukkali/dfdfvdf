@@ -1,5 +1,5 @@
 import {verifyAccountMethod} from '../methods/plansPage';
-import {Then, When} from 'cucumber';
+import {Then, When} from '@cucumber/cucumber';
 
 When(/^user provides '(.*)' account number '(.*)'$/, async function (t, [fuel, accountNumber]) {
   await verifyAccountMethod.provideAccountDetails(t, fuel, accountNumber);

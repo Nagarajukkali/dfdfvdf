@@ -1,4 +1,4 @@
-import {Then, When} from 'cucumber';
+import {Then, When} from '@cucumber/cucumber';
 import {testFunction} from '../../global_methods/helper';
 import {billUploadMethod} from '../methods/billUploadPage';
 
