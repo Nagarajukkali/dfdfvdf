@@ -163,7 +163,6 @@ const eaCheckoutDetailsPage = {
       planEstimate: Selector("[id*='plan-table-current-plan']>div[id*='plan-estimate']"),
       planGSTDisclaimer: Selector("[id*='plan-table-current-plan']>div[id*='plan-gst-disclaimer']"),
       discounts: Selector("[id*='plan-table-current-plan']>div[id*='plan-details-discounts']"),
-      //benefitPeriod:Selector("[id*='plan-table-current-plan']>div[id*='plan-details-benefit-period']"),
       exitFees: Selector("[id*='plan-table-current-plan']>div[id*='plan-details-exit-fees']"),
       customerType: Selector("[id*='plan-table-current-plan']>div[id*='plan-details-customer-tariff-type']"),
       planEleRateAccordion: Selector("[id*='plan-table-current-plan']>div[id*='plan-ELE-rate-accordion-heading']"),

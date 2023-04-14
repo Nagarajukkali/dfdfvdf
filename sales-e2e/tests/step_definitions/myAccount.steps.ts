@@ -1,4 +1,4 @@
-import {When} from "cucumber";
+import {When} from "@cucumber/cucumber";
 import {testFunction} from '../../global_methods/helper';
 import {CustomerType} from '@ea/ea-commons-models';
 import {myAccountMethod} from '../methods/myAccountPage';
@@ -82,7 +82,7 @@ When(/^user validates details on checkout details page$/, async function (t, [],
   if (params[0].solarSetup !== undefined) {
     await checkoutReviewMethod.validateSolarComponent(t, params[0].solarSetup, params[0].planName);
   }
- //  await checkoutReviewMethod.validateCarbonNeutralSection(t,carbonNeutral);
+
   console.log("Checkout Details page validated successfully for " + params[0].sourceSystem + " " + params[0].journey + " journey.");
 });
 

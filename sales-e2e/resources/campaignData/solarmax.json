@@ -26,24 +26,24 @@
       "preSelect": {
         "Credit50": {
           "VIC": {
-            "heading": "$25 online sign up credit",
-            "description": "Get a $25 credit on each new energy account when you sign up online.+"
+            "heading": "$50 online sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up online.+"
           },
           "NSW": {
-            "heading": "$25 online sign up credit",
-            "description": "Get a $25 credit on each new energy account when you sign up online.+"
+            "heading": "$50 online sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up online.+"
           },
           "ACT": {
-            "heading": "$25 sign up credit",
-            "description": "Get a $25 credit on each new energy account when you sign up.+"
+            "heading": "$50 sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up.+"
           },
           "QLD": {
-            "heading": "$25 online sign up credit",
-            "description": "Get a $25 credit on each new energy account when you sign up online.+"
+            "heading": "$50 online sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up online.+"
           },
           "SA": {
-            "heading": "$25 sign up credit",
-            "description": "Get a $25 credit on each new energy account when you sign up.+"
+            "heading": "$50 sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up.+"
           }
         },
         "carbonNeutral": {
@@ -51,8 +51,8 @@
           "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
         },
         "moveHomeCredit": {
-          "heading": "$25 online sign up credit",
-          "description": "Get a $25 credit on each new energy account when you sign up online.+"
+          "heading": "$50 online sign up credit",
+          "description": "Get a $50 credit on each new energy account when you sign up online.+"
         },
         "peaceOfMind": {
           "heading": "Peace of mind",
@@ -95,14 +95,14 @@
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
-          "NSW": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
-          "ACT": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
-          "QLD": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
-          "SA": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+"
+          "VIC": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+          "NSW": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+          "ACT": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+          "QLD": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+          "SA": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
-        "moveHomeCredit": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
+        "moveHomeCredit": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
         "variableRates": "Your energy charges and solar feed-in tariff are variable. We'll let you know in advance before any rates change.",
         "highSolarFIT": "High solar feed-in tariff. Our highest Feed-in Tariff (FiT) when your average export for each bill is less than 15kWh per day.",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before any rates change.",
@@ -123,24 +123,24 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "SolarMax",
+          "VIC": "SolarMax_50",
           "NSW": {
-            "Ausgrid": "SolarMax",
-            "Essential": "SolarMax",
-            "Endeavour": "SolarMax",
-            "default": "SolarMax"
+            "Ausgrid": "SolarMax_50",
+            "Essential": "SolarMax_50",
+            "Endeavour": "SolarMax_50",
+            "default": "SolarMax_50"
           },
           "ACT": "SolarMax",
           "QLD": "SolarMax",
           "SA": "SolarMax"
         },
         "COR": {
-          "VIC": "SolarMax",
+          "VIC": "SolarMax_50",
           "NSW": {
-            "Ausgrid": "SolarMax",
-            "Essential": "SolarMax",
-            "Endeavour": "SolarMax",
-            "default": "SolarMax"
+            "Ausgrid": "SolarMax_50",
+            "Essential": "SolarMax_50",
+            "Endeavour": "SolarMax_50",
+            "default": "SolarMax_50"
           },
           "ACT": "SolarMax",
           "QLD": "SolarMax",
@@ -149,12 +149,12 @@
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "SolarMax",
+          "VIC": "SolarMax_50",
           "NSW": {
-            "Ausgrid": "SolarMax",
-            "Essential": "SolarMax",
-            "Endeavour": "SolarMax",
-            "default": "SolarMax"
+            "Ausgrid": "SolarMax_50",
+            "Essential": "SolarMax_50",
+            "Endeavour": "SolarMax_50",
+            "default": "SolarMax_50"
           },
           "ACT": "SolarMax",
           "QLD": "SolarMax",
@@ -180,24 +180,24 @@
       "preSelect": {
         "Credit50": {
           "VIC": {
-            "heading": "$25 online sign up credit",
-            "description": "Get a $25 credit on each new energy account when you sign up online.+"
+            "heading": "$50 online sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up online.+"
           },
           "NSW": {
-            "heading": "$25 online sign up credit",
-            "description": "Get a $25 credit on each new energy account when you sign up online.+"
+            "heading": "$50 online sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up online.+"
           },
           "ACT": {
-            "heading": "$25 sign up credit",
-            "description": "Get a $25 credit on each new energy account when you sign up.+"
+            "heading": "$50 sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up.+"
           },
           "QLD": {
-            "heading": "$25 online sign up credit",
-            "description": "Get a $25 credit on each new energy account when you sign up online.+"
+            "heading": "$50 online sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up online.+"
           },
           "SA": {
-            "heading": "$25 sign up credit",
-            "description": "Get a $25 credit on each new energy account when you sign up.+"
+            "heading": "$50 sign up credit",
+            "description": "Get a $50 credit on each new energy account when you sign up.+"
           }
         },
         "carbonNeutral": {
@@ -205,8 +205,8 @@
           "description": "100% carbon neutral at no extra cost for your home energy when you opt in.^"
         },
         "moveHomeCredit": {
-          "heading": "$25 online sign up credit",
-          "description": "Get a $25 credit on each new energy account when you sign up online.+"
+          "heading": "$50 online sign up credit",
+          "description": "Get a $50 credit on each new energy account when you sign up online.+"
         },
         "peaceOfMind": {
           "heading": "Peace of mind",
@@ -234,13 +234,13 @@
       },
       "postSelect": {
         "Credit50": {
-          "VIC": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
-          "NSW": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
-          "ACT": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
-          "SA": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+"
+          "VIC": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+          "NSW": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+          "ACT": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+          "SA": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+"
         },
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
-        "moveHomeCredit": "$25 online sign up credit. Get a $25 credit on each new energy account when you sign up online.+",
+        "moveHomeCredit": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
         "variableRates": "Variable rates. Your energy charges are variable. We'll let you know in advance before any rates change.",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before any rates change.",
         "discountOffTotalEnergyBill": {
@@ -254,22 +254,22 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_12%GD",
-          "NSW": "Total_8%GD",
+          "VIC": "Total_12%GD_50",
+          "NSW": "Total_8%GD_50",
           "ACT": "Total_18%GD",
           "SA": "Total_4%GD"
         },
         "COR": {
-          "VIC": "Total_12%GD",
-          "NSW": "Total_8%GD",
+          "VIC": "Total_12%GD_50",
+          "NSW": "Total_8%GD_50",
           "ACT": "Total_18%GD",
           "SA": "Total_4%GD"
         }
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_12%GD",
-          "NSW": "Total_8%GD",
+          "VIC": "Total_12%GD_50",
+          "NSW": "Total_8%GD_50",
           "ACT": "Total_18%GD",
           "SA": "Total_4%GD"
         },

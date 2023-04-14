@@ -1,9 +1,11 @@
-import {After, Before, Given} from 'cucumber';
+import {After, Before, Given} from '@cucumber/cucumber';
 import {testFunction} from '../../global_methods/helper';
 import {ClientFunction} from 'testcafe';
 import {FileUtils} from '../../libs/FileUtils';
 import * as fs from 'fs';
 import {checkoutDetailsMethod} from '../methods/checkoutDetailsPage';
+
+
 
 let log4js = require('log4js');
 const USERAGENT = ClientFunction(() => navigator.userAgent);
@@ -16,13 +18,13 @@ export let getPackage = null;
 export let height = null;
 export let width = null;
 
+
 Before(async t => {
   await testFunction.maximizeWindow(t);
   const doc = fs.readFileSync('.testcaferc.json', 'utf8');
   const packageDoc = fs.readFileSync('../package.json', 'utf8');
   getPackage = JSON.parse(packageDoc);
   getTestCafeRC = JSON.parse(doc);
-  logger.info(`  Test: ${t.testRun.test.name}`);
 });
 
 Given(/^user has opened the website link in a browser and creates '(.*)' to save evidences$/, async function (t, [folderName]) {
@@ -105,24 +107,20 @@ Given(/^user has opened the '(.*)' link in a browser and creates '(.*)' to save 
   await testFunction.cleanBaselineImageDir();
   await testFunction.cleanDiffImageDir();
   const campaignPageURL = await testFunction.getCampaignURL(campaign);
-  if (t.testRun.test.name.includes('PVT'))
-  {
-    await t.navigateTo(eaHomePage.prodUrl);
-    console.log('URL:'+eaHomePage.prodUrl);
-  }else{
+  // if (t.testRun.test.name.includes('PVT'))
+  // {
+  //   await t.navigateTo(eaHomePage.prodUrl);
+  //   console.log('URL:'+eaHomePage.prodUrl);
+  // }else{
     await t.navigateTo(campaignPageURL);
-  }
+  // }
 
 });
 
 After(async t => {
   await testFunction.reportUIFailures(t);
   let format;
-  await t.takeScreenshot({
-    path: `../Current/${await fetchBrowser()}/${await screenshotFolder}/${await getDateTime()}.png`,
-    fullPage: true
-  });
-  logger.info(`  Execution Completed: ${t.testRun.test.name}`);
+
 });
 
 export async function fetchBrowser() {
@@ -142,21 +140,7 @@ export async function fetchBrowser() {
   return browser;
 }
 
-/*async function getDateTime(unixTimestampMilliseconds: number, format = ISO_DATE_FORMAT) {
-    let formattedDate: string;
-    if (!unixTimestampMilliseconds || unixTimestampMilliseconds < FIRST_JAN_1900_UNIX_TIMESTAMP) {
-      const error = `Invalid unix timestamp: ${unixTimestampMilliseconds}`;
-      this.log.debug(error);
-      throw Error(error);
-    }
-    try {
-      formattedDate = dayjs(unixTimestampMilliseconds).format(format);
-    } catch (error) {
-      this.log.debug(error);
-      throw Error(error);
-    }
-    return formattedDate;
-}*/
+
 export async function getDateTime() {
   let now = new Date();
   let year = now.getFullYear();

@@ -11,8 +11,7 @@ import {
 } from '../../global_methods/helper';
 import {AustralianState, CustomerType} from '@ea/ea-commons-models';
 import {myAccountMethod} from '../methods/myAccountPage';
-import {ClientFunction} from 'testcafe';
-import {assertNotNull} from '@angular/compiler/src/output/output_ast';
+import {ClientFunction} from 'testcafe';;
 import {plansMethod} from "./plansPage";
 
 const eaCheckoutDetailsPage = require('../pages/checkOutDetails.page');
@@ -434,15 +433,12 @@ export class checkoutDetailsMethod {
   public static async validateAnalyticsForMovingStateAndPersonState(t,movingType,personType) {
 
     const personStatus = await t.eval(() => window.ead.user.tenancyType);
-   // const movingDate = await t.eval(() => window.ead.productInfo.moveInDate);
-    //const movingDate = await t.eval(() => window.ead.productInfo.moveInDate);
-    //const movingDate = await t.eval(() => window.ead.productInfo.moveInDate);
+
     if(personType==='New'){
 
     }else if(personType==='Existing'){
 
     }
-    //await t.expect(updatedPostcodeData).eql(postcode);
   }
 
   public static async selectElePlan(t, elePlan: String) {
@@ -551,7 +547,6 @@ export class checkoutDetailsMethod {
         await testFunction.assertText(t, element, "Select plan");
       }
       await testFunction.click(t, element);
-      //await testFunction.assertText(t, element, "Selected");
     } else {
       await testFunction.isElementVisible(t, eaCheckoutDetailsPage.elements.elePlansExpand);
       await testFunction.click(t, element);
@@ -655,7 +650,6 @@ export class checkoutDetailsMethod {
         await testFunction.assertText(t, element, "Select plan");
       }
       await testFunction.click(t, element);
-      //await testFunction.assertText(t, element, "Selected");
     } else {
       await testFunction.isElementVisible(t, eaCheckoutDetailsPage.elements.gasPlansExpand);
       await testFunction.click(t, element);
@@ -1004,11 +998,6 @@ export class checkoutDetailsMethod {
     const expectedDisclaimer = "To ensure you don’t lose your government rebate, you’ll need to sign up with the same name used to apply for the Solar Bonus Scheme.";
     await testFunction.isElementDisplayed(t, eaCheckoutReviewPage.elements.solarPower.solarQLDCORPFITDisclaimer);
     await testFunction.assertText(t, eaCheckoutReviewPage.elements.solarPower.solarQLDCORPFITDisclaimer, expectedDisclaimer);
-    // await testFunction.click(t,eaCheckoutReviewPage.elements.solarPower.solarQLDCORPFITDisclaimer.find("a"));
-    // const url=await testFunction.getPageURL();
-    // await t.expect(url).contains("solar/feed-in-tariffs/solar-bonus-scheme-44c");
-    // await testFunction.takeScreenshot(t,"solar/feed-in-tariffs/solar-bonus-scheme-44c");
-    // await t.closeWindow();
     console.log("Validated solar disclaimer for QLD COR customer on PFIT tariff");
   }
 

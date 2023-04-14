@@ -1,6 +1,6 @@
 import {campaignMethod, plansMethod, selectionOptionModalWindowMethod, verifyAccountMethod} from '../methods/plansPage';
 import {FileUtils} from '../../libs/FileUtils';
-import {Given, Then, When} from 'cucumber';
+import {Given, Then, When} from '@cucumber/cucumber';
 import {PlanType, testFunction} from '../../global_methods/helper';
 import {AustralianState, CustomerType} from '@ea/ea-commons-models';
 import {Workbook} from 'exceljs';

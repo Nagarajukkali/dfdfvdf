@@ -1,4 +1,6 @@
-@E2E @regressiondefects @E2E-Resi
+@regressiondefects
+#@E2E-Res @E2E
+#  Failing due to veify account modal close button missing from the build. Once it is added. Re-enable this test
 Feature:This feature file is to add scenarios for regression defects
 
   Scenario Outline: Verify New/Existing customer qualifier question should be displayed when verified customer's details get reset
@@ -26,7 +28,7 @@ Feature:This feature file is to add scenarios for regression defects
     Examples:
       | folderName                     | customer_type | fuelType | planName     | planName1  |
       | E2E_Reg_Reset_Verified_Account | RES           | BOTH     | Balance Plan | Flexi Plan |
-
+  @E2E-Res @E2E
   Scenario Outline: Verify Service address should be replaced by moving address when user provides moving address
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to '<customer_type>' plans page

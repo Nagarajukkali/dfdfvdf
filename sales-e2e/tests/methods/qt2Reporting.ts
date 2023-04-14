@@ -109,7 +109,6 @@ export class qt2Reporting {
       quoteDatas.forEach(function (quoteData) {
         let value = jsonObj[quoteDetail][quoteData];
         if (!quoteData.toString().includes('nmiMirnInformation')) {
-          //console.log(quoteDetail+': '+quoteData+' = '+value);
           assert.ok(value.toString().length !== 0);
         }
       });

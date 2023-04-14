@@ -216,7 +216,7 @@ export class qualifierMethod {
   }
 
   public static async clickOnContinueAddress(t) {
-    //await testFunction.click(t, eaQualifierPage.elements.addressContinue);
+
   }
 
   public static async selectDateFromCalendar(t,) {

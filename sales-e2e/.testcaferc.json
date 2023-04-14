@@ -9,14 +9,18 @@
   "concurrency": 5,
   "reporter": [
     {
-      "name": "cucumber-json",
-      "output": "results/report/report.json"
+      "name": "cucumber-json"
     }
   ],
-  "screenshotPath": "results/screenshots",
+  "screenshots": {
+    "path": "screenshots",
+    "pathPattern": "${FIXTURE}/${TEST}/${BROWSER}/screenshot_${FILE_INDEX}.png",
+    "takeOnFails": true,
+    "fullPage": true
+  },
   "fullPage": true,
   "debugMode": false,
-  "debugOnFail": true,
+  "debugOnFail": false,
   "skip-uncaught-errors": false,
   "pageLoadTimeout": 5000,
   "selectorTimeout": 5000,

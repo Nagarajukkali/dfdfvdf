@@ -1,6 +1,6 @@
 import {qualifierMethod} from '../methods/qualifierPage';
 import {BusinessType, Moving, Property, testFunction} from '../../global_methods/helper';
-import {Then, When} from 'cucumber';
+import {Then, When} from '@cucumber/cucumber';
 import {CustomerType} from '@ea/ea-commons-models';
 import {plansMethod} from '../methods/plansPage';
 import {Selector} from "testcafe";
