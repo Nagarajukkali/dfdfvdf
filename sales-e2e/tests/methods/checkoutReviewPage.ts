@@ -544,6 +544,9 @@ export class checkoutReviewMethod {
       if (dataTable[0].Feature_carbonNeutral === "Y") {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureCN, json.electricity.feature.postSelect.carbonNeutral);
       }
+      if (dataTable[0].Feature_regularPayOption === "Y") {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleFeatureRPO, json.electricity.feature.postSelect.regularPayOption);
+      }
       if (dataTable[0].Feature_highSolarFIT === "Y") {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.eleHighSolarFIT, json.electricity.feature.postSelect.highSolarFIT);
       }
@@ -641,6 +644,9 @@ export class checkoutReviewMethod {
       }
       if (dataTable[0].Feature_carbonNeutral === "Y") {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasFeatureCN, json.gas.feature.postSelect.carbonNeutral);
+      }
+      if (dataTable[0].Feature_regularPayOption === "Y") {
+        await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasFeatureRPO, json.gas.feature.postSelect.regularPayOption);
       }
       if (dataTable[0].Feature_moveHomeCredit === "Y") {
         await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasFeatureMoveHome, json.gas.feature.postSelect.moveHomeCredit);

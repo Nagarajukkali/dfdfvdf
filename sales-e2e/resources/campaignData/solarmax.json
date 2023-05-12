@@ -2,23 +2,23 @@
   "planDetails": {
     "VIC": {
       "planName": "Solar Max & Flexi Plan",
-      "planDescription": "Our highest feed-in tariff."
+      "planDescription": "Our higher than standard feed-in tariff."
     },
     "NSW": {
       "planName": "Solar Max & Flexi Plan",
-      "planDescription": "Our highest feed-in tariff."
+      "planDescription": "Our higher than standard feed-in tariff."
     },
     "ACT": {
       "planName": "Solar Max & Flexi Plan",
-      "planDescription": "Our highest feed-in tariff."
+      "planDescription": "Our higher than standard feed-in tariff."
     },
     "QLD": {
       "planName": "Solar Max",
-      "planDescription": "Our highest feed-in tariff."
+      "planDescription": "Our higher than standard feed-in tariff."
     },
     "SA": {
       "planName": "Solar Max & Flexi Plan",
-      "planDescription": "Our highest feed-in tariff."
+      "planDescription": "Our higher than standard feed-in tariff."
     }
   },
   "electricity": {
@@ -91,6 +91,14 @@
         "variableRates": {
           "heading": "Variable rates",
           "description": "Your energy charges and solar feed-in tariff are variable. We'll let you know in advance before any rates change."
+        },
+        "regularPayOption": {
+          "heading": "Regular pay option",
+          "description": "Make smaller, more regular instalments to pay for your energy, so you'll know how much you need to pay and when."
+        },
+        "highSolarFIT": {
+          "heading": "High solar feed-in tariff",
+          "description": "This is our higher than standard solar feed-in tariff (FiT) which applies for the first 15 kWh average solar export per day across your billing period.*"
         }
       },
       "postSelect": {
@@ -104,10 +112,11 @@
         "carbonNeutral": "Carbon neutral option. 100% carbon neutral at no extra cost for your home energy when you opt in.^",
         "moveHomeCredit": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
         "variableRates": "Your energy charges and solar feed-in tariff are variable. We'll let you know in advance before any rates change.",
-        "highSolarFIT": "High solar feed-in tariff. Our highest Feed-in Tariff (FiT) when your average export for each bill is less than 15kWh per day.",
+        "highSolarFIT": "High solar feed-in tariff. This is our higher than standard solar feed-in tariff (FiT) which applies for the first 15 kWh average solar export per day across your billing period.",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before any rates change.",
+        "regularPayOption": "Regular pay option. Make smaller, more regular instalments to pay for your energy, so you'll know how much you need to pay and when.",
         "discountOffTotalEnergyBill": {
-          "VIC": "5% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+          "VIC": "0% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
           "NSW": {
             "Ausgrid": "5% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
             "Essential": "5% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
@@ -123,7 +132,7 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "SolarMax_50",
+          "VIC": "SolarMax",
           "NSW": {
             "Ausgrid": "SolarMax_50",
             "Essential": "SolarMax_50",
@@ -135,7 +144,7 @@
           "SA": "SolarMax"
         },
         "COR": {
-          "VIC": "SolarMax_50",
+          "VIC": "SolarMax",
           "NSW": {
             "Ausgrid": "SolarMax_50",
             "Essential": "SolarMax_50",
@@ -149,7 +158,7 @@
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "SolarMax_50",
+          "VIC": "SolarMax",
           "NSW": {
             "Ausgrid": "SolarMax_50",
             "Essential": "SolarMax_50",
@@ -214,7 +223,7 @@
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
-            "heading": "8% discount off total gas bill"
+            "heading": "25% discount off total gas bill"
           },
           "NSW": {
             "heading": "8% discount off total gas bill"
@@ -230,6 +239,10 @@
         "variableRates": {
           "heading": "Variable rates",
           "description": "Your energy charges are variable for the benefit period. We'll let you know in advance before any rates change."
+        },
+        "regularPayOption": {
+          "heading": "Regular pay option",
+          "description": "Make smaller, more regular instalments to pay for your energy, so you'll know how much you need to pay and when."
         }
       },
       "postSelect": {
@@ -243,8 +256,9 @@
         "moveHomeCredit": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
         "variableRates": "Variable rates. Your energy charges are variable. We'll let you know in advance before any rates change.",
         "peaceOfMind": "Peace of mind. Your energy charges won't increase for the fixed rate period. We'll let you know in advance before any rates change.",
+        "regularPayOption": "Regular pay option. Make smaller, more regular instalments to pay for your energy, so you'll know how much you need to pay and when.",
         "discountOffTotalEnergyBill": {
-          "VIC": "12% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
+          "VIC": "25% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
           "NSW": "8% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
           "ACT": "18% discount off total gas bill. Guaranteed discount that applies to your energy charges.",
           "SA": "4% discount off total gas bill. Guaranteed discount that applies to your energy charges."
@@ -254,13 +268,13 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_12%GD_50",
+          "VIC": "Total_25%GD",
           "NSW": "Total_8%GD_50",
           "ACT": "Total_18%GD",
           "SA": "Total_4%GD"
         },
         "COR": {
-          "VIC": "Total_12%GD_50",
+          "VIC": "Total_25%GD",
           "NSW": "Total_8%GD_50",
           "ACT": "Total_18%GD",
           "SA": "Total_4%GD"
@@ -268,13 +282,13 @@
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_12%GD_50",
+          "VIC": "Total_25%GD",
           "NSW": "Total_8%GD_50",
           "ACT": "Total_18%GD",
           "SA": "Total_4%GD"
         },
         "PS": {
-          "VIC": "Total_12%GD",
+          "VIC": "Total_25%GD",
           "NSW": "Total_8%GD",
           "ACT": "Total_18%GD",
           "SA": "Total_4%GD"
@@ -284,20 +298,24 @@
   },
   "disclaimers": {
     "referencePriceComparison": {
-      "heading": "Reference price comparison and estimated annual cost",
       "VIC": {
-        "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
+        "heading": "Victorian Default Offer comparison and estimated annual cost",
+        "description": "# Comparison to the electricity Victorian Default Offer is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the Victorian Default Offer here."
       },
       "NSW": {
+        "heading": "Reference price comparison and estimated annual cost",
         "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
       },
       "ACT": {
+        "heading": "Reference price comparison and estimated annual cost",
         "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
       },
       "QLD": {
+        "heading": "Reference price comparison and estimated annual cost",
         "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
       },
       "SA": {
+        "heading": "Reference price comparison and estimated annual cost",
         "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual household usage (which may vary depending on the distribution area and tariff type). Our Basic Home plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
       }
     },
@@ -366,23 +384,23 @@
     "plandisclaimer": {
       "VIC": {
         "heading": "Solar Max",
-        "description": "* Offer only for eligible VIC solar residential customers. Not available in all areas or for all tariff types. Your energy charges and solar feed-in tariff will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such GreenPower) may also vary. If your solar export on average for your billing period is more than 15kWh per day, you may become ineligible for the Solar Max plan. When this happens, we'll let you know your options."
+        "description": "* Offer only for eligible VIC solar residential customers. Not available in all areas or for all tariff types. Government Scheme feed-in tariff (FiT) recipients are ineligible for this plan. Your energy charges and solar FiT will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as GreenPower) may also vary. The higher FiT applies for the first 15 kWh average solar export per day across your billing period, after which our standard FiT rate will apply to the balance of solar export. The daily export is averaged by dividing the total solar export by the number of days in each billing period."
       },
       "NSW": {
         "heading": "Solar Max",
-        "description": "* Offer only for eligible NSW solar residential customers. Not available in all areas or for all tariff types. Your energy charges and solar feed-in tariff will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such GreenPower) may also vary. If your solar export on average for your billing period is more than 15kWh per day, you may become ineligible for the Solar Max plan. When this happens, we'll let you know your options."
+        "description": "* Offer only for eligible NSW solar residential customers. Not available in all areas or for all tariff types. Government Scheme feed-in tariff (FiT) recipients are ineligible for this plan. Your energy charges and solar FiT will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as GreenPower) may also vary. The higher FiT applies for the first 15 kWh average solar export per day across your billing period, after which our standard FiT rate will apply to the balance of solar export. The daily export is averaged by dividing the total solar export by the number of days in each billing period."
       },
       "ACT": {
         "heading": "Solar Max",
-        "description": "* Offer only for eligible ACT solar residential customers. Not available in all areas or for all tariff types. Your energy charges and solar feed-in tariff will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such GreenPower) may also vary. If your solar export on average for your billing period is more than 15kWh per day, you may become ineligible for the Solar Max plan. When this happens, we'll let you know your options."
+        "description": "* Offer only for eligible ACT solar residential customers. Not available in all areas or for all tariff types. Government Scheme feed-in tariff (FiT) recipients are ineligible for this plan. Your energy charges and solar FiT will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as GreenPower) may also vary. The higher FiT applies for the first 15 kWh average solar export per day across your billing period, after which our standard FiT rate will apply to the balance of solar export. The daily export is averaged by dividing the total solar export by the number of days in each billing period."
       },
       "QLD": {
         "heading": "Solar Max",
-        "description": "* Offer only for eligible QLD solar residential customers. Not available in all areas or for all tariff types. Your energy charges and solar feed-in tariff will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such GreenPower) may also vary. If your solar export on average for your billing period is more than 15kWh per day, you may become ineligible for the Solar Max plan. When this happens, we'll let you know your options."
+        "description": "* Offer only for eligible QLD solar residential customers. Not available in all areas or for all tariff types. Government Scheme feed-in tariff (FiT) recipients are ineligible for this plan. Your energy charges and solar FiT will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as GreenPower) may also vary. The higher FiT applies for the first 15 kWh average solar export per day across your billing period, after which our standard FiT rate will apply to the balance of solar export. The daily export is averaged by dividing the total solar export by the number of days in each billing period."
       },
       "SA": {
         "heading": "Solar Max",
-        "description": "* Offer only for eligible SA solar residential customers. Not available in all areas or for all tariff types. Your energy charges and solar feed-in tariff will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such GreenPower) may also vary. If your solar export on average for your billing period is more than 15kWh per day, you may become ineligible for the Solar Max plan. When this happens, we'll let you know your options."
+        "description": "* Offer only for eligible SA solar residential customers. Not available in all areas or for all tariff types. Government Scheme feed-in tariff (FiT) recipients are ineligible for this plan. Your energy charges and solar FiT will be variable, but we'll let you know before a rate change occurs. Other fees and charges (such as GreenPower) may also vary. The higher FiT applies for the first 15 kWh average solar export per day across your billing period, after which our standard FiT rate will apply to the balance of solar export. The daily export is averaged by dividing the total solar export by the number of days in each billing period."
       }
     }
   }

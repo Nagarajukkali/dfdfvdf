@@ -1,5 +1,4 @@
 @campaign
-
   #For any campaign changes need to verify/update below steps:
   # 1. Update respective json file if require in this path sales-e2e/resources/campaignData/
   # 2. Provide Y/N for features as per the change in this step "And user validates the data on plans page for "<campaign>""
@@ -393,15 +392,15 @@ Feature:E2E scenario for solarmax campaign
       | customerStatus | fuelType |planName              | eleDiscount | gasDiscount | campaign | folderName                             | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting |
       | Existing       | ELE      |Solar Max & Flexi Plan|  0          | 18           | solarmax    | E2E_Campaign_solarMax_ACT_Exs_nonmove | ACT   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR22.10.2.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for VIC - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
     # And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
-      | BOTH     | N                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |Feature_regularPayOption|Feature_highSolarFIT|
+      | BOTH     | N                | Y                     | N                   | N                    | Y                                     | N                               | <state> |    N                 |<planName>|Y                      |Y              |
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
@@ -423,17 +422,17 @@ Feature:E2E scenario for solarmax campaign
       | addressType        | otherAddress |
       | Connection Address |              |
     And user selects answer for property renovation question for '<state>'
-    And user selects "single_rate" solar tariff type for "<state>"
+#    And user selects "single_rate" solar tariff type for "<state>"
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>" plan
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_highSolarFIT | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | N                   | Y                    | Y                    | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_highSolarFIT | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | ELE      | N                | N                     | N                   | N                    | Y                    | N                               | <state> |    N                 |Y                       |
     And user validates plan details on review page for "<campaign>" plan
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | N                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | GAS      | N                | N                     | N                   | N                    | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates disclaimer on review page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            |            | <state> | N            |    N         |
@@ -456,17 +455,17 @@ Feature:E2E scenario for solarmax campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GV  | 5320201310 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName              | eleDiscount | gasDiscount | campaign | folderName                            | state | tariffType | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     |Solar Max & Flexi Plan| 0           | 5           | solarmax | E2E_Campaign_solarMax_VIC_new_moving | VIC   | single_rate| Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | BOTH     |Solar Max & Flexi Plan| 0           | 25           | solarmax | E2E_Campaign_solarMax_VIC_new_moving | VIC   | single_rate| Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.10.2.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for VIC - new non-moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
     # And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
-      | BOTH     | N                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |Feature_regularPayOption|Feature_highSolarFIT|
+      | BOTH     | N                | Y                     | N                   | N                    | Y                                     | N                               | <state> |    N                 |<planName>|Y                      |Y              |
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
@@ -488,17 +487,17 @@ Feature:E2E scenario for solarmax campaign
     And user selects mailing address option
       | addressType        | otherAddress |
       | Connection Address |              |
-    And user selects "single_rate" solar tariff type for "<state>"
+#    And user selects "single_rate" solar tariff type for "<state>"
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>" plan
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_highSolarFIT | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | N                   | Y                    | Y                    | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_highSolarFIT | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | ELE      | N                | N                     | N                   | N                    | Y                    | N                               | <state> |    N                 |Y                       |
     And user validates plan details on review page for "<campaign>" plan
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | N                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | GAS      | N                | N                     | N                   | N                    | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates disclaimer on review page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            |            | <state> | N            |    N         |
@@ -521,7 +520,7 @@ Feature:E2E scenario for solarmax campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | BP2H-GV  | 5320201310 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName              | eleDiscount | gasDiscount| campaign | folderName                        | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     |Solar Max & Flexi Plan| 0           | 12          | solarmax    | E2E_Campaign_solarMax_VIC_new_non_moving | VIC   | Quote Tool   | COR   | No  | No | RES          | New           |
+      | New            | BOTH     |Solar Max & Flexi Plan| 0           | 25          | solarmax    | E2E_Campaign_solarMax_VIC_new_non_moving | VIC   | Quote Tool   | COR   | No  | No | RES          | New           |
 
   @DR22.10.2.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for NSW-Endeavour - new non moving customer
@@ -592,15 +591,15 @@ Feature:E2E scenario for solarmax campaign
       | customerStatus | fuelType |planName              | eleDiscount | gasDiscount | campaign | folderName                           | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     |Solar Max & Flexi Plan| 0           | 8           | solarmax | E2E_Campaign_solarMax_NSW_new_nonmoving | NSW   | Quote Tool   | COR     | No  | No | RES          | New           |
 
-  @DR22.10.2.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
     # And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
-      | BOTH     | N                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |Feature_regularPayOption|Feature_highSolarFIT|
+      | BOTH     | N                | Y                     | N                   | N                    | Y                                     | N                               | <state> |    N                 |<planName>|Y                      |Y              |
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
@@ -624,17 +623,17 @@ Feature:E2E scenario for solarmax campaign
     And user selects mailing address option
       | addressType        | otherAddress |
       | Connection Address |              |
-    And user selects "single_rate" solar tariff type for "<state>"
+#    And user selects "single_rate" solar tariff type for "<state>"
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>" plan
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_highSolarFIT | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | N                   | Y                    | Y                    | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_highSolarFIT | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | ELE      | N                | N                     | N                   | N                    | Y                    | N                               | <state> |    N                 |Y                       |
     And user validates plan details on review page for "<campaign>" plan
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | N                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | GAS      | N                | N                     | N                   | N                    | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates disclaimer on review page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            |            | VIC   | N            |    N         |
@@ -657,17 +656,17 @@ Feature:E2E scenario for solarmax campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-GV  | 5330480434 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName              | eleDiscount | gasDiscount | campaign | folderName                                 | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     |Solar Max & Flexi Plan| 0           | 12           | solarmax | E2E_Campaign_solarMax_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     |Solar Max & Flexi Plan| 0           | 25           | solarmax | E2E_Campaign_solarMax_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR22.10.2.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for VIC existing moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
     # And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
-      | BOTH     | N                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |Feature_regularPayOption|Feature_highSolarFIT|
+      | BOTH     | N                | Y                     | N                   | N                    | Y                                     | N                               | <state> |    N                 |<planName>|Y                      |Y              |
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
@@ -692,17 +691,17 @@ Feature:E2E scenario for solarmax campaign
       | addressType        | otherAddress |
       | Connection Address |              |
     And user selects answer for property renovation question for '<state>'
-    And user selects "single_rate" solar tariff type for "<state>"
+#    And user selects "single_rate" solar tariff type for "<state>"
     And user clicks on 'Review your order' button and navigates to review page
     And user provides life support details on review page
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>" plan
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_highSolarFIT | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | N                   | Y                    | Y                    | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_highSolarFIT | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | ELE      | N                | N                     | N                   | N                    | Y                    | N                               | <state> |    N                 |Y                       |
     And user validates plan details on review page for "<campaign>" plan
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | N                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | GAS      | N                | N                     | N                   | N                    | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates disclaimer on review page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            |            | VIC   | N            |    N         |
@@ -725,7 +724,7 @@ Feature:E2E scenario for solarmax campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GV  | 5320201310 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName              | eleDiscount | gasDiscount | campaign | folderName                             | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     |Solar Max & Flexi Plan| 0           | 12           | solarmax    | E2E_Campaign_solarMax_VIC_existing_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     |Solar Max & Flexi Plan| 0           | 25           | solarmax    | E2E_Campaign_solarMax_VIC_existing_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | Existing  non-moving |
 
   @DR22.10.2.campaign
   Scenario Outline: Validate complete data for residential-SolarFlexi-plan for NSW-Endeavour existing non moving
