@@ -525,6 +525,10 @@ const eaHomePage = {
     eleFeature50CreditDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText(/[C|c]redit/).sibling(),
     eleFeatureMoveHomeTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("online sign up credit"),
     eleFeatureMoveHomeDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("online sign up credit").sibling(),
+    eleFeatureRPOTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Regular pay option"),
+    eleFeatureRPODescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Regular pay option").sibling(),
+    eleFeaturehighSolarFITTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("High solar feed-in tariff"),
+    eleFeaturehighSolarFITDescription: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("High solar feed-in tariff").sibling(),
     eleFeatureCNTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Carbon neutral"),
     eleFeatureCNEGTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Energy with a bit of good"),
     eleFeatureCNCampaignTitle: Selector("[id*='plan-feature'][id*='-E'] [class*='hs-plan-feature__item-title']").withText("Carbon Neutral"),
@@ -570,8 +574,9 @@ const eaHomePage = {
     gasFeatureVariableRatesTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText(/Variable [R|r]ates/),
     gasFeatureVariableRatesDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText(/Variable [R|r]ates/).sibling(),
     gasFeatureMoveHomeTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("online sign up credit"),
-    gasFeatureMoveHomeDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("online sign up credit").sibling()
-
+    gasFeatureMoveHomeDescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("online sign up credit").sibling(),
+    gasFeatureRPOTitle: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Regular pay option"),
+    gasFeatureRPODescription: Selector("[id*='plan-feature'][id*='-G'] [class*='hs-plan-feature__item-title']").withText("Regular pay option").sibling()
   }
 };
 
