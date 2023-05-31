@@ -237,21 +237,21 @@ Feature:E2E scenario for get-gas campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                                  | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting |
       | Existing       | BOTH     | 5           | 8           | get-gas  | E2E_Campaign_get-gas_NSW_existing_nonmoving | NSW   | Quote Tool   | Plan Switch | No  | No | RES          | Existing      |
 
-  @DR22.9.2.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for get-gas campaign for VIC - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_variableRates | state   |
-      | ELE      | Y                | Y                     | N                   | Y                                     | Y                     | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_XX_discountOffTotalEnergyBill | Feature_variableRates | state   |
+      | ELE      | Y                | Y                     | N                   |Y                       | Y                                     | N                     | <state> |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_variableRates | state   |
-      | GAS      | Y                | Y                     | N                   | Y                                     | Y                     | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_XX_discountOffTotalEnergyBill | Feature_variableRates | state   |
+      | GAS      | Y                | Y                     | N                   |Y                       | Y                                     | N                     | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
     And user clicks on Add plan button
 #    And user validates plan details on cart page for "<campaign>"
 #      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill |  state   |
@@ -284,11 +284,11 @@ Feature:E2E scenario for get-gas campaign
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_variableRates | state   |
-      | ELE      | Y                | N                     | N                   | Y                                     | N                               | Y                     | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill |Feature_regularPayOption| Feature_noStandardConnectionFee | Feature_variableRates | state   |
+      | ELE      | Y                | N                     | N                   | Y                                     |Y                       | N                               | N                     | <state> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_variableRates | state   |
-      | GAS      | Y                | N                     | N                   | Y                                     | N                               | Y                     | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill |Feature_regularPayOption| Feature_noStandardConnectionFee | Feature_variableRates | state   |
+      | GAS      | Y                | N                     | N                   | Y                                     |Y                       | N                               | N                     | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
@@ -311,20 +311,20 @@ Feature:E2E scenario for get-gas campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GV  | 5310425534 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                          | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 5           | 12          | get-gas  | E2E_Campaign_get-gas_NSW_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | BOTH     | 11           | 25          | get-gas  | E2E_Campaign_get-gas_NSW_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.9.2.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for get-gas campaign for VIC existing non moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
+    And user validates the data on plans page for "<campaign>" 
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_XX_discountOffTotalEnergyBill | Feature_variableRates | state   |
+      | ELE      | Y                  | Y                     | N                   |Y                       | Y                                     | N                     | <state> |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_variableRates | state   |
-      | ELE      | Y                | Y                     | N                   | Y                                     | Y                     | <state> |
-    And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_variableRates | state   |
-      | GAS      | Y                | Y                     | N                   | Y                                     | Y                     | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_XX_discountOffTotalEnergyBill | Feature_variableRates | state   |
+      | GAS      | Y                | Y                     | N                   |Y                       | Y                                     | N                     | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
@@ -356,11 +356,11 @@ Feature:E2E scenario for get-gas campaign
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_variableRates | state   |
-      | ELE      | N                | N                     | N                   | Y                                     | N                               | Y                     | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_variableRates | state   |
+      | ELE      | N                | N                     | N                   |Y                       | Y                                     | N                               | N                     | <state> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_variableRates | state   |
-      | GAS      | Y                | N                     | N                   | Y                                     | N                               | Y                     | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_variableRates | state   |
+      | GAS      | Y                | N                     | N                   |Y                       | Y                                     | N                               | N                     | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
@@ -380,26 +380,26 @@ Feature:E2E scenario for get-gas campaign
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-GV  | 5321873049 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR        | BP2H-GV  | 5321873049 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                                  | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting |
-      | Existing       | BOTH     | 5           | 12          | get-gas  | E2E_Campaign_get-gas_VIC_existing_nonmoving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing      |
+      | Existing       | BOTH     | 11           | 25          | get-gas  | E2E_Campaign_get-gas_VIC_existing_nonmoving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing      |
 
-  @DR22.9.2.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for get-gas campaign for VIC existing moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_variableRates | state   |
-      | ELE      | Y                | Y                     | N                   | Y                                     | Y                     | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption | Feature_XX_discountOffTotalEnergyBill | Feature_variableRates | state   |
+      | ELE      | Y                | Y                     | N                   |Y                        | Y                                     | N                     | <state> |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_variableRates | state   |
-      | GAS      | Y                | Y                     | N                   | Y                                     | Y                     | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption | Feature_XX_discountOffTotalEnergyBill | Feature_variableRates | state   |
+      | GAS      | Y                | Y                     | N                   |Y                        | Y                                     | N                     | <state> |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
-      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
     And user clicks on Add plan button
 #    And user validates plan details on cart page for "<campaign>"
 #      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill |  state   |
@@ -430,11 +430,11 @@ Feature:E2E scenario for get-gas campaign
       | sourceSystem   | journey   | fuelType   | AAH   | DD   | customerType   | newOrExisting   |
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_variableRates | state   |
-      | ELE      | Y                | N                     | N                   | Y                                     | N                               | Y                     | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_variableRates | state   |
+      | ELE      | Y                | N                     | N                   |Y                        | Y                                     | N                               | N                     | <state> |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_variableRates | state   |
-      | GAS      | Y                | N                     | N                   | Y                                     | N                               | Y                     | <state> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | Feature_variableRates | state   |
+      | GAS      | Y                | N                     | N                   |Y                        | Y                                     | N                               | N                     | <state> |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |
       | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |
@@ -457,7 +457,7 @@ Feature:E2E scenario for get-gas campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GV  | 5321264636 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                               | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | Existing       | BOTH     | 5           | 12          | get-gas  | E2E_Campaign_get-gas_VIC_existing_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | Existing      |
+      | Existing       | BOTH     | 11           | 25          | get-gas  | E2E_Campaign_get-gas_VIC_existing_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | Existing      |
 
   @DR22.9.2.campaign
   Scenario Outline: Validate complete data for get-gas campaign for QLD

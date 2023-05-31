@@ -390,7 +390,7 @@ Scenario Outline: Validate complete data for residential-balance-plan for NSW-Au
       | customerStatus | fuelType |planName  | eleDiscount | gasDiscount | campaign | folderName                             | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | Existing       | ELE      |Balance Plan|  6          | 9           | balance    | E2E_resi-balance-plan_ACT_Exs_nonmove | ACT   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR22.10.2.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for residential-balance-plan for VIC - new moving
     Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -398,18 +398,18 @@ Scenario Outline: Validate complete data for residential-balance-plan for NSW-Au
 #    And user validates "ELE" discount to be "<eleDiscount>" percent for "<planName>" plan
 #    And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
     And user validates the data on 'Residential' plans page for "<campaign>" plan
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
-      | BOTH     | N                | Y                     | N                   | Y                    | N                                     | N                               | <state> |    N                 |<planName>|
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
+      | BOTH     | N                | Y                     | N                   |Y                       | N                    | N                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
     When user selects '<planName>'
     And user validates the data on carts page for "<campaign>" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |ELE      |Y                     |Y                      |N                                       |<state>|    N           |
+      |fuelType |Feature_carbonNeutral | Feature_variableRates |Feature_regularPayOption| Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
+      |ELE      |Y                     |N                      |Y                       |N                                       |<state>|    N           |
     And user validates the data on carts page for "<campaign>" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |GAS      |Y                     |Y                      |N                                       |<state>|    N           |
+      |fuelType |Feature_carbonNeutral | Feature_variableRates |Feature_regularPayOption| Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
+      |GAS      |Y                     |N                      |Y                       |N                                       |<state>|    N           |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -427,11 +427,11 @@ Scenario Outline: Validate complete data for residential-balance-plan for NSW-Au
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | N                   | Y                    | N                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
+      | ELE      | N                | N                     | N                   |Y                       | N                    | N                                     | N                               | <state> |    N                 |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | N                     | N                   | Y                    | N                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
+      | GAS      | N                | N                     | N                   |Y                       | N                    | N                                     | N                               | <state> |    N                 |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | Total Plan | <state> | N            |    N         |
@@ -456,7 +456,7 @@ Scenario Outline: Validate complete data for residential-balance-plan for NSW-Au
       | customerStatus | fuelType |planName  | eleDiscount | gasDiscount | campaign | folderName                        | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     |Balance Plan| 5           | 12           | balance    | E2E_resi-balance-plan_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.10.2.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for residential-balance-plan for VIC - new non-moving
     Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -464,18 +464,18 @@ Scenario Outline: Validate complete data for residential-balance-plan for NSW-Au
 #    And user validates "ELE" discount to be "<eleDiscount>" percent for "<planName>" plan
 #    And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
     And user validates the data on 'Residential' plans page for "<campaign>" plan
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
-      | BOTH     | N                | Y                     | N                   | Y                    | N                                     | N                               | <state> |    N                 |<planName>|
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
+      | BOTH     | N                | Y                     | N                   |Y                       | N                    | N                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
     When user selects '<planName>'
     And user validates the data on carts page for "<campaign>" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |ELE      |Y                     |Y                      |N                                       |<state>|    N           |
+      |fuelType |Feature_carbonNeutral | Feature_variableRates |Feature_regularPayOption| Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
+      |ELE      |Y                     |N                      |Y                       |N                                       |<state>|    N           |
     And user validates the data on carts page for "<campaign>" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |GAS      |Y                     |Y                      |N                                       |<state>|    N           |
+      |fuelType |Feature_carbonNeutral | Feature_variableRates |Feature_regularPayOption| Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
+      |GAS      |Y                     |N                      |Y                       |N                                       |<state>|    N           |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -493,11 +493,11 @@ Scenario Outline: Validate complete data for residential-balance-plan for NSW-Au
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | N                   | Y                    | N                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
+      | ELE      | N                | N                     | N                   |Y                       | N                    | N                                     | N                               | <state> |    N                 |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | N                     | N                   | Y                    | N                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
+      | GAS      | N                | N                     | N                   |Y                       | N                    | N                                     | N                               | <state> |    N                 |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | Total Plan | <state> | N            |    N         |
@@ -593,7 +593,7 @@ Scenario Outline: Validate complete data for residential-balance-plan for NSW-Au
       | customerStatus | fuelType |planName  | eleDiscount | gasDiscount | campaign | folderName                           | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     |Balance Plan| 5           | 8           | balance    | E2E_resi-balance-plan_NSW_new_nonmoving | NSW   | Quote Tool   | COR     | No  | No | RES          | New           |
 
-  @DR22.10.2.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for residential-balance-plan for VIC existing non moving
     Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -601,18 +601,18 @@ Scenario Outline: Validate complete data for residential-balance-plan for NSW-Au
 #    And user validates "ELE" discount to be "<eleDiscount>" percent for "<planName>" plan
 #    And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
     And user validates the data on 'Residential' plans page for "<campaign>" plan
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
-      | BOTH     | N                | Y                     | N                   | Y                    | N                                     | N                               | <state> |    N                 |<planName>|
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
+      | BOTH     | N                | Y                     | N                   |Y                       | N                    | N                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
     When user selects '<planName>'
     And user validates the data on carts page for "<campaign>" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |ELE      |Y                     |Y                      |N                                       |<state>|    N           |
+      |fuelType |Feature_carbonNeutral | Feature_variableRates |Feature_regularPayOption| Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
+      |ELE      |Y                     |N                      |Y                       |N                                       |<state>|    N           |
     And user validates the data on carts page for "<campaign>" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |GAS      |Y                     |Y                      |N                                       |<state>|    N           |
+      |fuelType |Feature_carbonNeutral | Feature_variableRates |Feature_regularPayOption| Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
+      |GAS      |Y                     |N                      |Y                       |N                                       |<state>|    N           |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
@@ -632,11 +632,11 @@ Scenario Outline: Validate complete data for residential-balance-plan for NSW-Au
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | N                   | Y                    | N                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
+      | ELE      | N                | N                     | N                   |Y                       | N                    | N                                     | N                               | <state> |    N                 |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | N                     | N                   | Y                    | N                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
+      | GAS      | N                | N                     | N                   |Y                       | N                    | N                                     | N                               | <state> |    N                 |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | Total Plan | VIC   | N            |    N         |
@@ -656,12 +656,12 @@ Scenario Outline: Validate complete data for residential-balance-plan for NSW-Au
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TAPR1-GV  | 5321873049 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR        | TAPR1-GV  | 5321873049 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName  | eleDiscount | gasDiscount | campaign | folderName                                 | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     |Balance Plan| 5           | 12           | balance    | E2E_resi-balance-plan_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR22.10.2.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for residential-balance-plan for VIC existing moving
     Given user has opened the 'residential-home-page' link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'RES' plans page
@@ -669,18 +669,18 @@ Scenario Outline: Validate complete data for residential-balance-plan for NSW-Au
 #    And user validates "ELE" discount to be "<eleDiscount>" percent for "<planName>" plan
 #    And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
     And user validates the data on 'Residential' plans page for "<campaign>" plan
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
-      | BOTH     | N                | Y                     | N                   | Y                    | N                                     | N                               | <state> |    N                 |<planName>|
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
+      | BOTH     | N                | Y                     | N                   |Y                       | N                    | N                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
     When user selects '<planName>'
     And user validates the data on carts page for "<campaign>" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |ELE      |Y                     |Y                      |N                                       |<state>|    N           |
+      |fuelType |Feature_carbonNeutral | Feature_variableRates |Feature_regularPayOption| Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
+      |ELE      |Y                     |N                      |Y                       |N                                       |<state>|    N           |
     And user validates the data on carts page for "<campaign>" plan
-      |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |GAS      |Y                     |Y                      |N                                       |<state>|    N           |
+      |fuelType |Feature_carbonNeutral | Feature_variableRates |Feature_regularPayOption| Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
+      |GAS      |Y                     |N                      |Y                       |N                                       |<state>|    N           |
     And user moves on to fill the qualifier
     And user selects '<customerStatus>' on qualifier
     And user verifies account on qualifier
@@ -701,11 +701,11 @@ Scenario Outline: Validate complete data for residential-balance-plan for NSW-Au
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | N                   | Y                    | N                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
+      | ELE      | N                | N                     | N                   |Y                       | N                    | N                                     | N                               | <state> |    N                 |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | N                     | N                   | Y                    | N                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
+      | GAS      | N                | N                     | N                   |Y                       | N                    | N                                     | N                               | <state> |    N                 |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | Total Plan | VIC   | N            |    N         |

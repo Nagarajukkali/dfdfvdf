@@ -341,13 +341,13 @@ Feature:E2E scenario for canstar-balance-plan
       | customerStatus | fuelType | planName     | eleDiscount | gasDiscount | campaign | folderName                           | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | ELE      | Balance Plan | 0           | 0           | balance  | E2E_can-balance-plan_ACT_Exs_nonmove | ACT   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR23.3.3.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for canstar-balance-plan for VIC - new moving
     Given user has opened the 'canstar' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
     And user validates the data on 'Canstar' plans page for "<campaign>" plan
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit | planName   |
-      | BOTH     | N                | Y                     | N                   | Y                     | N                                     | N                               | <state> | N                      | <planName> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit | planName   |
+      | BOTH     | N                | Y                     | N                   |Y                       | N                     | N                                     | N                               | <state> | N                      | <planName> |
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit | moveHomeCredit |
       | Y                        | Y         | Y            | <planName> | <state> | N            | N              |
@@ -368,11 +368,11 @@ Feature:E2E scenario for canstar-balance-plan
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
-      | ELE      | N                | N                     | N                   | Y                     | N                                     | N                               | <state> | N                      |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | ELE      | N                | N                     | N                   |Y                       | N                     | N                                     | N                               | <state> | N                      |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
-      | GAS      | N                | N                     | N                   | Y                     | N                                     | N                               | <state> | N                      |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | GAS      | N                | N                     | N                   |Y                       | N                     | N                                     | N                               | <state> | N                      |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit | moveHomeCredit |
       | Y                        | Y         | Y            | Total Plan | <state> | N            | N              |
@@ -397,13 +397,13 @@ Feature:E2E scenario for canstar-balance-plan
       | customerStatus | fuelType | planName     | eleDiscount | gasDiscount | campaign | folderName                          | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | Balance Plan | 0           | 0           | balance  | E2E_can-balance-plan_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR23.3.3.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for canstar-balance-plan for VIC - new non-moving
     Given user has opened the 'canstar' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
     And user validates the data on 'Canstar' plans page for "<campaign>" plan
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit | planName   |
-      | BOTH     | N                | Y                     | N                   | Y                     | N                                     | N                               | <state> | N                      | <planName> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit | planName   |
+      | BOTH     | N                | Y                     | N                   |Y                       | N                     | N                                     | N                               | <state> | N                      | <planName> |
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit | moveHomeCredit |
       | Y                        | Y         | Y            | <planName> | <state> | N            | N              |
@@ -424,11 +424,11 @@ Feature:E2E scenario for canstar-balance-plan
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
-      | ELE      | N                | N                     | N                   | Y                     | N                                     | N                               | <state> | N                      |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | ELE      | N                | N                     | N                   |Y                       | N                     | N                                     | N                               | <state> | N                      |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
-      | GAS      | N                | N                     | N                   | Y                     | N                                     | N                               | <state> | N                      |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | GAS      | N                | N                     | N                   |Y                       | N                     | N                                     | N                               | <state> | N                      |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit | moveHomeCredit |
       | Y                        | Y         | Y            | Total Plan | <state> | N            | N              |
@@ -514,13 +514,13 @@ Feature:E2E scenario for canstar-balance-plan
       | customerStatus | fuelType | planName     | eleDiscount | gasDiscount | campaign | folderName                             | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | Balance Plan | 0           | 0           | balance  | E2E_can-balance-plan_NSW_new_nonmoving | NSW   | Quote Tool   | COR     | No  | No | RES          | New           |
 
-  @DR23.3.3.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for canstar-balance-plan for VIC existing non moving
     Given user has opened the 'canstar' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
     And user validates the data on 'Canstar' plans page for "<campaign>" plan
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit | planName   |
-      | BOTH     | N                | Y                     | N                   | Y                     | N                                     | N                               | <state> | N                      | <planName> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit | planName   |
+      | BOTH     | N                | Y                     | N                   |Y                       | N                     | N                                     | N                               | <state> | N                      | <planName> |
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit | moveHomeCredit |
       | Y                        | Y         | Y            | <planName> | <state> | N            | N              |
@@ -543,11 +543,11 @@ Feature:E2E scenario for canstar-balance-plan
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
-      | ELE      | N                | N                     | N                   | Y                     | N                                     | N                               | <state> | N                      |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | ELE      | N                | N                     | N                   |Y                       | N                     | N                                     | N                               | <state> | N                      |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
-      | GAS      | N                | N                     | N                   | Y                     | N                                     | N                               | <state> | N                      |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | GAS      | N                | N                     | N                   |Y                       | N                     | N                                     | N                               | <state> | N                      |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit | moveHomeCredit |
       | Y                        | Y         | Y            | Total Plan | VIC   | N            | N              |
@@ -567,18 +567,18 @@ Feature:E2E scenario for canstar-balance-plan
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | TAPR1-GV | 5321873049 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR        | TAPR1-GV | 5321873049 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | planName     | eleDiscount | gasDiscount | campaign | folderName                                   | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     | Balance Plan | 0           | 0           | balance  | E2E_can-balance-plan_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR23.3.3.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for canstar-balance-plan for VIC existing moving
     Given user has opened the 'canstar' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" and clicks on show me plan link
     And user validates the data on 'Canstar' plans page for "<campaign>" plan
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit | planName   |
-      | BOTH     | N                | Y                     | N                   | Y                     | N                                     | N                               | <state> | N                      | <planName> |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit | planName   |
+      | BOTH     | N                | Y                     | N                   |Y                       | Y                     | N                                     | N                               | <state> | N                      | <planName> |
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit | moveHomeCredit |
       | Y                        | Y         | Y            | <planName> | <state> | N            | N              |
@@ -602,11 +602,11 @@ Feature:E2E scenario for canstar-balance-plan
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
-      | ELE      | N                | N                     | N                   | Y                     | N                                     | N                               | <state> | N                      |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | ELE      | N                | N                     | N                   |Y                       | N                     | N                                     | N                               | <state> | N                      |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
-      | GAS      | N                | N                     | N                   | Y                     | N                                     | N                               | <state> | N                      |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind |Feature_regularPayOption| Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit |
+      | GAS      | N                | N                     | N                   |Y                       | N                     | N                                     | N                               | <state> | N                      |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit | moveHomeCredit |
       | Y                        | Y         | Y            | Total Plan | VIC   | N            | N              |

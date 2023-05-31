@@ -3,6 +3,7 @@ import {LSDevices, PlanType, scrollTo, SelectionType, testFunction} from '../../
 import {checkoutDetailsMethod} from './checkoutDetailsPage';
 import {plansMethod} from "./plansPage";
 import {SolarMaxRates} from "../../resources/fit-rate";
+import { Console } from 'console';
 
 const { config }=require('../../resources/resource');
 const eaCheckoutDetailsPage = require('../pages/checkOutDetails.page');
@@ -661,7 +662,9 @@ export class checkoutReviewMethod {
       if (dataTable[0].Feature_XX_discountOffTotalEnergyBill === "Y") {
         switch (dataTable[0].state) {
           case AustralianState.VIC:
+            console.log("Validating Feature_XX_discountOffTotalEnergyBill")
             await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasFeatureDiscountOffTotal, json.gas.feature.postSelect.discountOffTotalEnergyBill.VIC);
+            console.log("Validated Feature_XX_discountOffTotalEnergyBill")
             break;
           case AustralianState.NSW:
             await testFunction.assertText(t, eaCheckoutReviewPage.elements.gasFeatureDiscountOffTotal, json.gas.feature.postSelect.discountOffTotalEnergyBill.NSW);

@@ -22,7 +22,7 @@
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/@angular/compiler/-/compiler-9.0.0.tgz"
   "version" "9.0.0"
 
-"@angular/core@^14.2.12":
+"@angular/core@^14.2.12", "@angular/core@14.2.12":
   "integrity" "sha512-sGQxU5u4uawwvJa6jOTmGoisJiQ5HIN/RoBw99CmoqZIVyUSg9IRJJC1KVdH8gbpWBNLkElZv21lwJTL/msWyg=="
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/@angular/core/-/core-14.2.12.tgz"
   "version" "14.2.12"
@@ -46,7 +46,7 @@
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/@babel/compat-data/-/compat-data-7.20.10.tgz"
   "version" "7.20.10"
 
-"@babel/core@^7.12.1":
+"@babel/core@^7.0.0", "@babel/core@^7.0.0-0", "@babel/core@^7.12.0", "@babel/core@^7.12.1", "@babel/core@^7.13.0", "@babel/core@^7.4.0-0":
   "integrity" "sha512-XsMfHovsUYHFMdrIHkZphTN/2Hzzi78R08NuHfDBehym2VsPDL6Zn/JAD/JQdnRvbSsbQc4mVaU1m6JgtTEElg=="
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/@babel/core/-/core-7.20.12.tgz"
   "version" "7.20.12"
@@ -1065,7 +1065,7 @@
   dependencies:
     "regexp-match-indices" "1.0.2"
 
-"@cucumber/cucumber@^8.10.0", "@cucumber/cucumber@^8.2.2":
+"@cucumber/cucumber@^8.10.0", "@cucumber/cucumber@^8.2.2", "@cucumber/cucumber@>=7.3.2":
   "integrity" "sha512-UeXxdxjtv2HaXMaFkYS8ku1ddPXlyPtHJ0K9jTCcUiXyhiaYRzZlWTq6Kfi557Ni41odKaF1He6pn2EQh2n4GA=="
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/@cucumber/cucumber/-/cucumber-8.10.0.tgz"
   "version" "8.10.0"
@@ -1137,7 +1137,7 @@
   dependencies:
     "@cucumber/messages" "^19.1.4"
 
-"@cucumber/gherkin@^25.0.0", "@cucumber/gherkin@25.0.2":
+"@cucumber/gherkin@^25.0.0", "@cucumber/gherkin@>=22.0.0", "@cucumber/gherkin@25.0.2":
   "integrity" "sha512-EdsrR33Y5GjuOoe2Kq5Y9DYwgNRtUD32H4y2hCrT6+AWo7ibUQu7H+oiWTgfVhwbkHsZmksxHSxXz/AwqqyCRQ=="
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/@cucumber/gherkin/-/gherkin-25.0.2.tgz"
   "version" "25.0.2"
@@ -1149,7 +1149,7 @@
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/@cucumber/html-formatter/-/html-formatter-20.2.0.tgz"
   "version" "20.2.0"
 
-"@cucumber/message-streams@^4.0.1", "@cucumber/message-streams@4.0.1":
+"@cucumber/message-streams@^4.0.1", "@cucumber/message-streams@>=4.0.0", "@cucumber/message-streams@4.0.1":
   "integrity" "sha512-Kxap9uP5jD8tHUZVjTWgzxemi/0uOsbGjd4LBOSxcJoOCRbESFwemUzilJuzNTB8pcTQUh8D5oudUyxfkJOKmA=="
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/@cucumber/message-streams/-/message-streams-4.0.1.tgz"
   "version" "4.0.1"
@@ -1164,7 +1164,7 @@
     "reflect-metadata" "0.1.13"
     "uuid" "9.0.0"
 
-"@cucumber/messages@20.0.0":
+"@cucumber/messages@>=17.1.1", "@cucumber/messages@>=18", "@cucumber/messages@20.0.0":
   "integrity" "sha512-JFrFwuhxsbig0afaViNhuzoQyC+GQzlI7m+rX+lSiDGV13K3sJzMmHjkbCiNOgoRlKAMwIGR9TRMH0xj9/My0w=="
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/@cucumber/messages/-/messages-20.0.0.tgz"
   "version" "20.0.0"
@@ -1733,7 +1733,7 @@
   dependencies:
     "fill-range" "^7.0.1"
 
-"browserslist@^4.21.3", "browserslist@^4.21.4":
+"browserslist@^4.21.3", "browserslist@^4.21.4", "browserslist@>= 4.21.0":
   "integrity" "sha512-CBHJJdDmgjl3daYjN5Cp5kbTf1mUhZoS+beLklHIvkOWscs83YAhLlF3Wsh/lciQYAcbBJgTOD44VtG31ZM4Hw=="
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/browserslist/-/browserslist-4.21.4.tgz"
   "version" "4.21.4"
@@ -2505,7 +2505,7 @@
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/flatted/-/flatted-3.2.7.tgz"
   "version" "3.2.7"
 
-"fp-ts@^2.9.5":
+"fp-ts@^2.0.0", "fp-ts@^2.5.0", "fp-ts@^2.9.5":
   "integrity" "sha512-0eu5ULPS2c/jsa1lGFneEFFEdTbembJv8e4QKXeVJ3lm/5hyve06dlKZrpxmMwJt6rYen7sxmHHK2CLaXvWuWQ=="
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/fp-ts/-/fp-ts-2.13.1.tgz"
   "version" "2.13.1"
@@ -2819,7 +2819,7 @@
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/io-ts-types/-/io-ts-types-0.5.19.tgz"
   "version" "0.5.19"
 
-"io-ts@^2.2.14":
+"io-ts@^2.0.0", "io-ts@^2.2.14":
   "integrity" "sha512-Rq2BsYmtwS5vVttie4rqrOCIfHCS9TgpRLFpKQCM1wZBBRY9nWVGmEvm2FnDbSE2un1UE39DvFpTR5UL47YDcA=="
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/io-ts/-/io-ts-2.2.20.tgz"
   "version" "2.2.20"
@@ -3429,7 +3429,7 @@
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/moment/-/moment-2.29.4.tgz"
   "version" "2.29.4"
 
-"monocle-ts@^2.3.5":
+"monocle-ts@^2.0.0", "monocle-ts@^2.3.5":
   "integrity" "sha512-D5Ygd3oulEoAm3KuGO0eeJIrhFf1jlQIoEVV2DYsZUMz42j4tGxgct97Aq68+F8w4w4geEnwFa8HayTS/7lpKQ=="
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/monocle-ts/-/monocle-ts-2.3.13.tgz"
   "version" "2.3.13"
@@ -3477,7 +3477,7 @@
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/nanoid/-/nanoid-3.3.4.tgz"
   "version" "3.3.4"
 
-"newtype-ts@^0.3.4":
+"newtype-ts@^0.3.2", "newtype-ts@^0.3.4":
   "integrity" "sha512-v83UEQMlVR75yf1OUdoSFssjitxzjZlqBAjiGQ4WJaML8Jdc68LJ+BaSAXUmKY4bNzp7hygkKLYTsDi14PxI2g=="
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/newtype-ts/-/newtype-ts-0.3.5.tgz"
   "version" "0.3.5"
@@ -4057,7 +4057,7 @@
   dependencies:
     "queue-microtask" "^1.2.2"
 
-"rxjs@^6.5.3":
+"rxjs@^6.5.3", "rxjs@^6.5.3 || ^7.4.0":
   "integrity" "sha512-hTdwr+7yYNIT5n4AMYp85KA6yw2Va0FLa3Rguvbpa4W3I5xynaBZo41cM3XM+4Q6fRMj3sBYIR1VAmZMXYJvRQ=="
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/rxjs/-/rxjs-6.6.7.tgz"
   "version" "6.6.7"
@@ -4514,7 +4514,7 @@
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/testcafe-reporter-xunit/-/testcafe-reporter-xunit-2.2.2.tgz"
   "version" "2.2.2"
 
-"testcafe@~1.18.0":
+"testcafe@>=1.18.4", "testcafe@~1.18.0", "testcafe@1.x":
   "integrity" "sha512-5X/Chn5zbHy8TftyB/iXfKOizrYM8vrNLSjjyRQCW2IpYh//7EUJ0MZmBKRcXye9//eLaOoUBs/FDvAW55j4Lw=="
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/testcafe/-/testcafe-1.18.6.tgz"
   "version" "1.18.6"
@@ -4745,7 +4745,7 @@
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/tslint-config-prettier/-/tslint-config-prettier-1.18.0.tgz"
   "version" "1.18.0"
 
-"tslint@^6.1.3":
+"tslint@^5.0.0 || ^6.0.0", "tslint@^6.1.3":
   "integrity" "sha512-IbR4nkT96EQOvKE2PW/djGz8iGNeJ4rF2mBfiYaR/nvUWYKJhLwimoJKgjIFEIDibBtOevj7BqCRL4oHeWWUCg=="
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/tslint/-/tslint-6.1.3.tgz"
   "version" "6.1.3"
@@ -4793,7 +4793,7 @@
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/typescript/-/typescript-3.9.10.tgz"
   "version" "3.9.10"
 
-"typescript@4.9.4":
+"typescript@>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >= 3.0.0-dev || >= 3.1.0-dev", "typescript@>=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >=3.0.0-dev || >= 3.1.0-dev || >= 3.2.0-dev || >= 4.0.0-dev", "typescript@4.9.4":
   "integrity" "sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg=="
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/typescript/-/typescript-4.9.4.tgz"
   "version" "4.9.4"
@@ -5058,7 +5058,7 @@
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/zlib/-/zlib-1.0.5.tgz"
   "version" "1.0.5"
 
-"zone.js@~0.10.3":
+"zone.js@~0.10.2", "zone.js@~0.10.3":
   "integrity" "sha512-LXVLVEq0NNOqK/fLJo3d0kfzd4sxwn2/h67/02pjCjfKDxgx1i9QqpvtHD8CrBnSSwMw5+dy11O7FRX5mkO7Cg=="
   "resolved" "http://nexus3.ealan.shinesolutions.com:8081/repository/npm-all/zone.js/-/zone.js-0.10.3.tgz"
   "version" "0.10.3"

@@ -148,13 +148,13 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_2%GD",
+          "VIC": "Total_25%GD",
           "NSW": "Total_5%GD",
           "ACT": "Total_5%GD",
           "SA": "Total_2%GD"
         },
         "COR": {
-          "VIC": "Total_2%GD",
+          "VIC": "Total_25%GD",
           "NSW": "Total_5%GD",
           "ACT": "Total_5%GD",
           "SA": "Total_2%GD"
@@ -162,13 +162,13 @@
       },
       "existingCustomer": {
         "ENE": {
-          "VIC": "Total_2%GD",
+          "VIC": "Total_25%GD",
           "NSW": "Total_5%GD",
           "ACT": "Total_5%GD",
           "SA": "Total_2%GD"
         },
         "PS": {
-          "VIC": "Total_2%GD",
+          "VIC": "Total_25%GD",
           "NSW": "Total_5%GD",
           "ACT": "Total_5%GD",
           "SA": "Total_2%GD"
@@ -178,20 +178,25 @@
   },
   "disclaimers": {
     "referencePriceComparison": {
-      "heading": "Reference price comparison and estimated annual cost",
+      
       "VIC": {
+        "heading": "Reference price comparison and estimated annual cost",
         "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual business usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
       },
       "NSW": {
+        "heading": "Reference price comparison and estimated annual cost",
         "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual business usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
       },
       "ACT": {
+        "heading": "Reference price comparison and estimated annual cost",
         "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual business usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
       },
       "QLD": {
+        "heading": "Reference price comparison and estimated annual cost",
         "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual business usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
       },
       "SA": {
+        "heading": "Reference price comparison and estimated annual cost",
         "description": "# Comparison to the electricity reference price is indicative only and required by regulation. The reference price is an estimate of the annual amount that an average electricity customer in your distribution area would pay assuming average annual business usage (which may vary depending on the distribution area and tariff type). Our Basic Business plan is the reference price for most tariff types. Estimated annual cost is based on average annual usage and may not reflect how you will be charged. Your actual electricity costs will depend on your tariff type and the amount of electricity you use. Find out more about the reference price here."
       }
     },
