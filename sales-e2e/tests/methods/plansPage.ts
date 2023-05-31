@@ -1424,6 +1424,8 @@ export class plansMethod {
   public static async validateDisclaimerPlansPage(t: any, dataTable, data: any) {
     const disclaimer = Selector(() => document.getElementById("condiDisclaimer"));
     const disclaimerText = await disclaimer().innerText;
+
+    console.log(dataTable[0].state);
     if (dataTable[0].referencePriceComparison === 'Y') {
       if (dataTable[0].state === 'QLD') {
         await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.QLD.heading);
@@ -1465,7 +1467,6 @@ export class plansMethod {
     let planName = dataTable[0].planName;
     let state = dataTable[0].state;
     if(planName===PlanType.RESIDENTIAL_BALANCE_PLAN || planName===PlanType.FLEXI_PLAN || planName===PlanType.TOTAL_PLAN || planName===PlanType.BUSINESS_CARBON_NEUTRAL || planName===PlanType.TOTAL_BUSINESS || planName===PlanType.BUSINESS_BALANCE_PLAN){
-
       switch (state) {
         case AustralianState.NSW:
           await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.NSW.heading);
