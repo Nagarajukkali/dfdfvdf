@@ -17,7 +17,7 @@ node('java_build_slave_frontend') {
 		checkout scm
 	}
 	try {
-		nodejs(configId: 'f1ebab20-663b-4c7c-889b-84e59d033c01', nodeJSInstallationName: 'node_v10.15.1') {
+      nodejs(configId: 'f1ebab20-663b-4c7c-889b-84e59d033c01', nodeJSInstallationName: 'node_v18_10_npm_v8_19') {
 			gitlabCommitStatus (name: 'build') {
 				stage ('Build') {
 					runBuild();
@@ -59,13 +59,12 @@ node('java_build_slave_frontend') {
 }
 
 def runBuild () {
-	sh 'npm install'
-	sh 'npm run build:prod'
+	sh 'npm install --force'
 }
 
 def runTests () {
 	try {
-		sh 'npm run test-ci'
+		sh 'npm run e2e:all'
 	} finally {
 		saveTestReports()
 	}

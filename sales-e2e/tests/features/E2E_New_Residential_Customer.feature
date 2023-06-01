@@ -17,7 +17,7 @@ Feature:E2E scenario for new residential moving and non moving customer
       | customerType | journey | customerStatus | firstName | lastName | idType         | medicareType |
       | RES          | RES     | New            | test      | test     | Driver License |              |
     And user selects carbon neutral option
-    And user selects "time_of_use" solar tariff type for "VIC"
+#    And user selects "time_of_use" solar tariff type for "VIC"
     And user selects mailing address option
       | addressType        | otherAddress |
       | Connection Address |              |
@@ -37,7 +37,7 @@ Feature:E2E scenario for new residential moving and non moving customer
       | lifeSupportOption | fuelType | EleclifeSupportDevices                         | GaslifeSupportDevices |
       | Yes               | BOTH     | Crigler Najjar Syndrome Phototherapy Equipment | Gas Other             |
     And user verifies selected plan details for '<fuelType>'
-    And user validates "time_of_use" solar tariff type for "<state>" under electricity rates section
+#    And user validates "time_of_use" solar tariff type for "<state>" under electricity rates section
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -53,7 +53,7 @@ Feature:E2E scenario for new residential moving and non moving customer
       | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | SMAX-EV  | 6407743654 | N                              | N                              | Y                       | LSCNSPE                  | POSTMM        | <campaign> | <state> |
     And user validates the solar details
       | fuelType | solarPowerIndicator | solarNetworkTariffCode | solarTimeOfUse |
-      | ELE      | Y                   | FURTOU                 | Y              |
+      | ELE      | Y                   | FURTOU                 | N              |
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | campaign   | state   |

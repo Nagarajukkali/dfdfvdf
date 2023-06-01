@@ -11,7 +11,7 @@ RUN apk add -U curl bash ca-certificates openssl; \
 # Make localhost point to the docker bridge network so that it can communicate with self-service backend
 echo "cat /etc/hosts | sed -E \"s/[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\s+localhost/\$(route -n | awk '/UG[ \t]/{print \$2}') localhost/\" > /etc/hosts" > ~/.profile; \
 ## Need to run this in bash for npm to install shine dependency correctly because of postinstall script
-/bin/bash -c "npm install"
+/bin/bash -c "npm install --force"
 
 # click-to-pay
 EXPOSE 4302
