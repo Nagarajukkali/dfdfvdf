@@ -4,33 +4,40 @@
     "tests/**/*.feature"
   ],
   "browsers": [
-    "chrome:headless --allow-insecure-localhost"
+    "chrome --headless --no-sandbox --disable-dev-shm-usage --disable-setuid-sandbox"
   ],
   "concurrency": 5,
   "reporter": [
     {
-      "name": "cucumber-json"
+      "name": "cucumber-json",
+      "output": "sales-e2e/results/report_old.json"
     }
   ],
   "screenshots": {
-    "path": "screenshots",
-    "pathPattern": "${FIXTURE}/${TEST}/${BROWSER}/screenshot_${FILE_INDEX}.png",
     "takeOnFails": true,
-    "fullPage": true
+    "fullPage": true,
+    "path": "sales-e2e/screenshots"
   },
   "fullPage": true,
   "debugMode": false,
   "debugOnFail": false,
   "skip-uncaught-errors": false,
-  "pageLoadTimeout": 5000,
+  "stopOnFirstFail": false,
+  "pageLoadTimeout": 60000,
+  "pageRequestTimeout": 30000,
+  "browserInitTimeout": 180000,
   "selectorTimeout": 5000,
   "skipJsErrors": true,
-  "quarantineMode": false,
+  "quarantineMode": {
+    "attemptLimit": 3,
+    "successThreshold": 1
+  },
   "color": true,
   "proxy": "proxy.ealan.shinesolutions.com:3128",
   "proxyBypass": [
     "localhost:4302"
   ],
   "speed": 1,
-  "hostname": "localhost"
+  "hostname": "localhost",
+  "tsConfigPath": "tsconfig.e2e.json"
 }

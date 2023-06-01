@@ -23,6 +23,7 @@
     "with"
   ],
   "args": {
+    "reporter-app-name": "Digital Sales-App ",
     "reportFolder": "results/report/"
   },
   "verbose": false
