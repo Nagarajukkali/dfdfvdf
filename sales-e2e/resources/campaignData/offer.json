@@ -129,10 +129,10 @@
         "ENE": {
           "VIC": "Total_20%GD",
           "NSW": {
-            "Ausgrid": "Total_10%GD_50",
-            "Essential": "Total_10%GD_50",
-            "Endeavour": "Total_10%GD_50",
-            "default": "Total_10%GD_50"
+            "Ausgrid": "Total_10%GD_75",
+            "Essential": "Total_10%GD_75",
+            "Endeavour": "Total_10%GD_75",
+            "default": "Total_10%GD_75"
           },
           "ACT": "Total_11%GD",
           "QLD": "Total_Plan",
@@ -141,10 +141,10 @@
         "COR": {
           "VIC": "Total_20%GD",
           "NSW": {
-            "Ausgrid": "Total_10%GD_50",
-            "Essential": "Total_10%GD_50",
-            "Endeavour": "Total_10%GD_50",
-            "default": "Total_10%GD_50"
+            "Ausgrid": "Total_10%GD_75",
+            "Essential": "Total_10%GD_75",
+            "Endeavour": "Total_10%GD_75",
+            "default": "Total_10%GD_75"
           },
           "ACT": "Total_11%GD",
           "QLD": "Total_Plan",
@@ -155,10 +155,10 @@
         "ENE": {
           "VIC": "Total_20%GD",
           "NSW": {
-            "Ausgrid": "Total_10%GD_50",
-            "Essential": "Total_10%GD_50",
-            "Endeavour": "Total_10%GD_50",
-            "default": "Total_10%GD_50"
+            "Ausgrid": "Total_10%GD_75",
+            "Essential": "Total_10%GD_75",
+            "Endeavour": "Total_10%GD_75",
+            "default": "Total_10%GD_75"
           },
           "ACT": "Total_11%GD",
           "QLD": "Total_Plan",
@@ -264,13 +264,13 @@
       "newCustomer": {
         "ENE": {
           "VIC": "Total_25%GD",
-          "NSW": "Total_8%GD_50",
+          "NSW": "Total_8%GD_75",
           "ACT": "Total_18%GD",
           "SA": "Total_4%GD"
         },
         "COR": {
           "VIC": "Total_25%GD",
-          "NSW": "Total_8%GD_50",
+          "NSW": "Total_8%GD_75",
           "ACT": "Total_18%GD",
           "SA": "Total_4%GD"
         }
@@ -278,7 +278,7 @@
       "existingCustomer": {
         "ENE": {
           "VIC": "Total_25%GD",
-          "NSW": "Total_8%GD_50",
+          "NSW": "Total_8%GD_75",
           "ACT": "Total_18%GD",
           "SA": "Total_4%GD"
         },
