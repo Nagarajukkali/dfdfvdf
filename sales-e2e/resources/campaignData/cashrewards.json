@@ -60,7 +60,7 @@
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
-            "heading": "5% discount off total electricity bill"
+            "heading": "20% discount off total electricity bill"
           },
           "NSW": {
             "Ausgrid": {
@@ -122,7 +122,7 @@
     "sourceCode": {
       "newCustomer": {
         "ENE": {
-          "VIC": "Total_5%GD",
+          "VIC": "Total_20%GD",
           "NSW": {
             "Ausgrid": "Total_5%GD",
             "Essential": "Total_5%GD",
@@ -213,7 +213,7 @@
         },
         "discountOffTotalEnergyBill": {
           "VIC": {
-            "heading": "12% discount off total gas bill"
+            "heading": "25% discount off total gas bill"
           },
           "NSW": {
             "heading": "8% discount off total gas bill"
