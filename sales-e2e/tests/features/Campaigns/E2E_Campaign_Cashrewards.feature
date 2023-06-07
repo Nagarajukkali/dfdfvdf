@@ -417,7 +417,7 @@ Feature:E2E scenario for cashrewards campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                             | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | Existing       | ELE      | 11          | 18          | cashrewards    | E2E_Campaign_cashrewards_ACT_Exs_nonmove | ACT   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR22.10.2.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for cashrewards campaign for VIC - new moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
@@ -425,11 +425,11 @@ Feature:E2E scenario for cashrewards campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      |  N               | Y                     | Y                     | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | ELE      |  N               | Y                     | N                     | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | GAS      | N                | Y                     | N                     | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |    N         |
@@ -456,11 +456,11 @@ Feature:E2E scenario for cashrewards campaign
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | ELE      | N                | N                     | N                     | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | GAS      | N                | N                     | N                     | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |    N         |
@@ -483,9 +483,9 @@ Feature:E2E scenario for cashrewards campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | BP2H-GV  | 5310425534 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                        | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 5           | 12          | cashrewards    | E2E_Campaign_cashrewards_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | BOTH     | 11           | 25          | cashrewards    | E2E_Campaign_cashrewards_VIC_new_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | New           |
 
-  @DR22.10.2.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for cashrewards campaign for VIC - new non-moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
@@ -493,11 +493,11 @@ Feature:E2E scenario for cashrewards campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      |  N               | Y                     | Y                   | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | ELE      |  N               | Y                     | N                     | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | Y                   | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | GAS      | N                | Y                     | N                     | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |    N         |
@@ -524,11 +524,11 @@ Feature:E2E scenario for cashrewards campaign
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | Y                   | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | ELE      | N                | N                     | N                     | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | N                     | Y                   | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | GAS      | N                | N                     | N                     | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |    N         |
@@ -551,7 +551,7 @@ Feature:E2E scenario for cashrewards campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | BP2H-GV  | 5310425534 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                        | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     | 5           | 12          | cashrewards    | E2E_Campaign_cashrewards_VIC_new_non_moving | VIC   | Quote Tool   | COR   | No  | No | RES          | New           |
+      | New            | BOTH     | 11           | 25          | cashrewards    | E2E_Campaign_cashrewards_VIC_new_non_moving | VIC   | Quote Tool   | COR   | No  | No | RES          | New           |
 
   @DR22.10.2.campaign
   Scenario Outline: Validate complete data for cashrewards campaign for NSW-Endeavour - new non moving customer
@@ -625,7 +625,7 @@ Feature:E2E scenario for cashrewards campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                           | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     | 5           | 8          | cashrewards    | E2E_Campaign_cashrewards_NSW_new_nonmoving | NSW   | Quote Tool   | COR     | No  | No | RES          | New           |
 
-  @DR22.10.2.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for cashrewards campaign for VIC existing non moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
@@ -633,11 +633,11 @@ Feature:E2E scenario for cashrewards campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | ELE      |  N               | Y                     | N                     | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | GAS      | N                | Y                     | N                     | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |    N         |
@@ -666,14 +666,14 @@ Feature:E2E scenario for cashrewards campaign
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | Y                   | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | ELE      | N                | N                     | N                     | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | N                     | Y                   | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | GAS      | N                | N                     | N                     | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates disclaimer on review page for "<campaign>"
-      | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Flexi Plan | VIC   | N            |    N         |
+      | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
+      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |    N         |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -690,12 +690,12 @@ Feature:E2E scenario for cashrewards campaign
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | BP2H-GV  | 5321873049 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR        | BP2H-GV  | 5321873049 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                                 | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     | 5          | 12          | cashrewards    | E2E_Campaign_cashrewards_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     | 11          | 25          | cashrewards    | E2E_Campaign_cashrewards_VIC_existing_non-moving | VIC   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
-  @DR22.10.2.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for cashrewards campaign for VIC existing moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "3000" for postcode and proceed to view the plans
@@ -703,11 +703,11 @@ Feature:E2E scenario for cashrewards campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | ELE      |  N               | Y                     | N                     | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | GAS      | N                | Y                     | N                     | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |    N         |
@@ -737,14 +737,14 @@ Feature:E2E scenario for cashrewards campaign
       | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | ELE      | N                | N                     | N                     | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> |    N                 |
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|Feature_regularPayOption|
+      | GAS      | N                | N                     | N                     | Y                                     | N                               | <state> |    N                 |Y                       |
     And user validates disclaimer on review page for "<campaign>"
-      | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Flexi Plan | VIC   | N            |    N         |
+      | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
+      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |    N         |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -764,7 +764,7 @@ Feature:E2E scenario for cashrewards campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE        | BP2H-GV  | 5321264636 | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                             | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     | 5          | 12          | cashrewards    | E2E_Campaign_cashrewards_VIC_existing_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     | 11          | 25          | cashrewards    | E2E_Campaign_cashrewards_VIC_existing_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | Existing  non-moving |
 
   @DR22.10.2.campaign
   Scenario Outline: Validate complete data for cashrewards campaign for NSW-Endeavour existing non moving

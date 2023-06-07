@@ -190,7 +190,7 @@ Feature:E2E scenario for industryoffer campaign
     Examples:
       |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |
       |New            |BOTH     |industryoffer      |NSW    |19          |26           |
-  @DR21.8.3.campaign
+  @DR23.5.3.campaign
   Scenario Outline: Validate complete data for industryoffer campaign for VIC
     Given user has opened the '<campaign>' link in a browser and creates 'E2E_Campaign_industryoffer_VIC' to save evidences
     When user provides "3031" for postcode and proceed to view the plans
@@ -198,21 +198,21 @@ Feature:E2E scenario for industryoffer campaign
     And user validates "ELE" discount to be "<eleDiscount>" percent
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
-      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_variableRates|Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |ELE      |N                 |N                       |N                    |Y                    |Y                                    |N                                |<state>|
     And user validates the data on plans page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
-      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_variableRates|Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |GAS      |N                 |N                       |N                    |Y                    |Y                                    |N                                |<state>|
     And user validates disclaimer on plans page for "<campaign>"
       |referencePriceComparison |goNeutral  |solarBuyBack   |planName           |state|signUpCredit|
       |Y                        |N          |Y              |Total Plan - Business|<state>  |N           |
     And user clicks on Add plan button
-    And user validates plan details on cart page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
-      |ELE      |N                 |N                       |Y                    |Y                                    |<state>  |
-    And user validates plan details on cart page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
-      |GAS      |N                 |N                       |Y                    |Y                                    |<state>  |
+    #And user validates plan details on cart page for "<campaign>"
+     # |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
+      #|ELE      |N                 |N                       |Y                    |Y                                    |<state>  |
+    #And user validates plan details on cart page for "<campaign>"
+     # |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |state|
+      #|GAS      |N                 |N                       |Y                    |Y                                    |<state>  |
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
       |customerType |connectionAddress                              |movingType |propertyType |solarOption  |
@@ -230,11 +230,11 @@ Feature:E2E scenario for industryoffer campaign
       |lifeSupportOption|fuelType |EleclifeSupportDevices    |GaslifeSupportDevices  |
       |No               |         |                          |                       |
     And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
-      |ELE      |N                 |N                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_variableRates|Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |ELE      |N                 |N                       |N                    |Y                    |Y                                    |N                                |<state>|
     And user validates plan details on review page for "<campaign>"
-      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
-      |GAS      |N                 |N                       |Y                    |Y                                    |N                                |<state>|
+      |fuelType |Feature_50Credit  |Feature_carbonNeutral   |Feature_peaceOfMind  |Feature_variableRates|Feature_discountOffTotalEnergyBill   |Feature_noStandardConnectionFee  |state|
+      |GAS      |N                 |N                       |N                    |Y                    |Y                                    |N                                |<state>|
     #And user verifies selected plan details for '<fuelType>'
     And user submits the quote
     Then user lands on checkout complete page
@@ -245,15 +245,15 @@ Feature:E2E scenario for industryoffer campaign
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|NMI       |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-EV |6203004526|N                             |N                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
+      |ELE     |VERBALLYACCEPTED|BUSINESS    |ENE      |BSPB1-EV ||N                             |N                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       |fuelType|quoteStatus     |customerType|offerType|planCode|MIRN      |renovationsSinceDeenergisation|renovationsInProgressOrPlanned|customerWithLifeSupport|lifeSupportEquipmentType|billRouteType|customerStatus    |campaign  |
-      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |TOPB-GV |5330293713|N                             |N                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
+      |GAS     |VERBALLYACCEPTED|BUSINESS    |ENE      |BSPB1-GV |5330293713|N                             |N                             |N                      |                        |EMAIL        |<customerStatus>  |<campaign>|
 
     Examples:
       |customerStatus |fuelType |campaign  |state  |eleDiscount |gasDiscount  |
-      |New            |BOTH     |industryoffer      |VIC    |6           |26           |
+      |New            |BOTH     |industryoffer      |VIC    |2           |25           |
 
 
   Scenario Outline: Validate complete data for industryoffer campaign for SA

@@ -464,7 +464,7 @@ export class plansMethod {
                 case AustralianState.VIC:
                   await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanTitle, data.planDetails.VIC.planName);
                   await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanFuel, "Electricity & gas");
-                  await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanHeadingDescription, data.planDetails.NSW.planDescription);
+                  await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanHeadingDescription, data.planDetails.VIC.planDescription);
                   break;
                 case AustralianState.SA:
                   await testFunction.assertText(t, EaHomePage.elements.SolarMaxPlanTable.sMaxPlanTitle, data.planDetails.SA.planName);
@@ -758,7 +758,7 @@ export class plansMethod {
               case AustralianState.VIC:
                 await testFunction.assertText(t, EaHomePage.elements.CanstarSolarMaxPlanTable.sMaxPlanTitle, data.planDetails.VIC.planName);
                 await testFunction.assertText(t, EaHomePage.elements.CanstarSolarMaxPlanTable.sMaxPlanFuel, "Electricity & gas");
-                await testFunction.assertText(t, EaHomePage.elements.CanstarSolarMaxPlanTable.sMaxPlanHeadingDescription, data.planDetails.NSW.planDescription);
+                await testFunction.assertText(t, EaHomePage.elements.CanstarSolarMaxPlanTable.sMaxPlanHeadingDescription, data.planDetails.VIC.planDescription);
                 break;
               case AustralianState.SA:
                 await testFunction.assertText(t, EaHomePage.elements.CanstarSolarMaxPlanTable.sMaxPlanTitle, data.planDetails.SA.planName);
@@ -1089,6 +1089,14 @@ export class plansMethod {
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureMoveHomeTitle, data.electricity.feature.preSelect.moveHomeCredit.heading);
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureMoveHomeDescription, data.electricity.feature.preSelect.moveHomeCredit.description);
       }
+      if (dataTable[0].Feature_regularPayOption === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureRPOTitle, data.electricity.feature.preSelect.regularPayOption.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeatureRPODescription, data.electricity.feature.preSelect.regularPayOption.description);
+      }
+      if (dataTable[0].Feature_highSolarFIT === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeaturehighSolarFITTitle, data.electricity.feature.preSelect.highSolarFIT.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.eleFeaturehighSolarFITDescription, data.electricity.feature.preSelect.highSolarFIT.description);
+      }
       if (dataTable[0].Feature_peaceOfMind === "Y") {
         if (t.testRun.test.name.includes('employee')){
           await testFunction.assertText(t, EaHomePage.campaignElements.eleFeaturePeaceOfMindEETitle, data.electricity.feature.preSelect.peaceOfMind.heading);
@@ -1210,6 +1218,10 @@ export class plansMethod {
         await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureMoveHomeTitle, data.gas.feature.preSelect.moveHomeCredit.heading);
         await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureMoveHomeDescription, data.gas.feature.preSelect.moveHomeCredit.description);
       }
+      if (dataTable[0].Feature_regularPayOption === "Y") {
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureRPOTitle, data.gas.feature.preSelect.regularPayOption.heading);
+        await testFunction.assertText(t, EaHomePage.campaignElements.gasFeatureRPODescription, data.gas.feature.preSelect.regularPayOption.description);
+      }
       if (dataTable[0].Feature_peaceOfMind === "Y") {
         if (t.testRun.test.name.includes('employee')) {
           await testFunction.assertText(t, EaHomePage.campaignElements.gasFeaturePeaceOfMindEETitle, data.gas.feature.preSelect.peaceOfMind.heading);
@@ -1313,16 +1325,20 @@ export class plansMethod {
     const disclaimerText = await disclaimer().innerText;
 
     if (dataTable[0].referencePriceComparison === 'Y') {
-      await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.heading);
       if (dataTable[0].state === 'QLD') {
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.QLD.heading);
         await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.QLD.description);
       } else if (dataTable[0].state === 'VIC'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.VIC.heading);
         await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.VIC.description);
       }else if (dataTable[0].state === 'NSW'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.NSW.heading);
         await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.NSW.description);
       }else if (dataTable[0].state === 'SA'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.SA.heading);
         await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.SA.description);
       }else if (dataTable[0].state === 'ACT'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.ACT.heading);
         await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.ACT.description);
       }
 
@@ -1408,17 +1424,23 @@ export class plansMethod {
   public static async validateDisclaimerPlansPage(t: any, dataTable, data: any) {
     const disclaimer = Selector(() => document.getElementById("condiDisclaimer"));
     const disclaimerText = await disclaimer().innerText;
+
+    console.log(dataTable[0].state);
     if (dataTable[0].referencePriceComparison === 'Y') {
-      await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.heading);
       if (dataTable[0].state === 'QLD') {
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.QLD.heading);
         await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.QLD.description);
       } else if (dataTable[0].state === 'VIC'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.VIC.heading);
         await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.VIC.description);
       }else if (dataTable[0].state === 'NSW'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.NSW.heading);
         await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.NSW.description);
       }else if (dataTable[0].state === 'SA'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.SA.heading);
         await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.SA.description);
       }else if (dataTable[0].state === 'ACT'){
+        await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.ACT.heading);
         await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.ACT.description);
       }
       //await testFunction.assertText(t, disclaimer, data.disclaimers.referencePriceComparison.description);
@@ -1445,7 +1467,6 @@ export class plansMethod {
     let planName = dataTable[0].planName;
     let state = dataTable[0].state;
     if(planName===PlanType.RESIDENTIAL_BALANCE_PLAN || planName===PlanType.FLEXI_PLAN || planName===PlanType.TOTAL_PLAN || planName===PlanType.BUSINESS_CARBON_NEUTRAL || planName===PlanType.TOTAL_BUSINESS || planName===PlanType.BUSINESS_BALANCE_PLAN){
-
       switch (state) {
         case AustralianState.NSW:
           await testFunction.assertText(t, disclaimer, data.disclaimers.plandisclaimer.NSW.heading);

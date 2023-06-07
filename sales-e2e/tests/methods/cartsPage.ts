@@ -27,6 +27,9 @@ export class cartsMethod {
           break;
         case AustralianState.VIC:
           await testFunction.assertText(t, cartsPage.elements.elePlanName, json.planDetails.VIC.planName);
+          console.log("Plan name");
+          console.log(cartsPage.elements.elePlanName.innerText);
+          console.log(json.planDetails.VIC.planName)
           break;
         case AustralianState.SA:
           await testFunction.assertText(t, cartsPage.elements.elePlanName, json.planDetails.SA.planName);
