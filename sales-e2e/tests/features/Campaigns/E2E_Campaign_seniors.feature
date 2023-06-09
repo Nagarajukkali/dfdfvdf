@@ -342,10 +342,10 @@ Feature:E2E scenario for seniors campaign
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> |N                     |
+      | ELE      | Y                | Y                     | N                     | Y                                     | N                               | <state> |N                     |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> |N                     |
+      | GAS      | Y                | Y                     | N                     | Y                                     | N                               | <state> |N                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |N             |
@@ -370,13 +370,13 @@ Feature:E2E scenario for seniors campaign
       |Yes              |BOTH    |Ele Other              |Medically Required Heating and/or Air Conditioning|
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> |N                     |
+      | ELE      | Y                | N                     | N                     | Y                                     | N                               | <state> |N                     |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> |N                     |
+      | GAS      | Y                | N                     | N                     | Y                                     | N                               | <state> |N                     |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |N             |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |N             |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -397,9 +397,9 @@ Feature:E2E scenario for seniors campaign
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign |folderName                       |sourceSystem|journey   |state  |customerType |newOrExisting  |AAH |DD  |
-      |New           |BOTH    |7           |10         |seniors  |E2E_Campaign_NSW_seniors_Ausgrid |Quote Tool  |Move Home |NSW    |RES          |New            |No  |No  |
+      |New           |BOTH    |12           |10         |seniors  |E2E_Campaign_NSW_seniors_Ausgrid |Quote Tool  |Move Home |NSW    |RES          |New            |No  |No  |
 
-  @DR22.10.2.campaign
+  @DR23.6.14.campaign
   Scenario Outline: Validate complete data for NSW-Essential on seniors campaign - Moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "2700" and clicks on show me plan link
@@ -408,13 +408,13 @@ Feature:E2E scenario for seniors campaign
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> |N                     |
+      | ELE      | Y                | Y                     | N                     | Y                                     | N                               | <state> |N                     |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> |N                     |
+      | GAS      | Y                | Y                     | N                     | Y                                     | N                               | <state> |N                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |N             |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |N             |
     And user clicks on Add plan button
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -436,13 +436,13 @@ Feature:E2E scenario for seniors campaign
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> |N                     |
+      | ELE      | Y                | N                     | N                     | Y                                     | N                               | <state> |N                     |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> |N                     |
+      | GAS      | Y                | N                     | N                     | Y                                     | N                               | <state> |N                     |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |N             |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |N             |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -463,9 +463,9 @@ Feature:E2E scenario for seniors campaign
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign  |folderName                         |sourceSystem|journey   |state  |customerType |newOrExisting  |AAH |DD  |
-      |New           |BOTH    |7          |10         |seniors   |E2E_Campaign_NSW_seniors_Essential |Quote Tool  |Move Home |NSW    |RES          |New            |No  |No  |
+      |New           |BOTH    |8          |10         |seniors   |E2E_Campaign_NSW_seniors_Essential |Quote Tool  |Move Home |NSW    |RES          |New            |No  |No  |
 
-  @DR22.10.2.campaign
+  @DR23.6.14.campaign
   Scenario Outline: Validate complete data for NSW-Essential on seniors campaign for new Non-Moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "2700" and clicks on show me plan link
@@ -474,13 +474,13 @@ Feature:E2E scenario for seniors campaign
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> |N                     |
+      | ELE      | Y                | Y                     | N                     | Y                                     | N                               | <state> |N                     |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> |N                     |
+      | GAS      | Y                | Y                     | N                     | Y                                     | N                               | <state> |N                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |N             |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |N             |
     And user clicks on Add plan button
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -501,13 +501,13 @@ Feature:E2E scenario for seniors campaign
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> |N                     |
+      | ELE      | Y                | N                     | N                     | Y                                     | N                               | <state> |N                     |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> |N                     |
+      | GAS      | Y                | N                     | N                     | Y                                     | N                               | <state> |N                     |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |N             |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |N             |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -528,9 +528,9 @@ Feature:E2E scenario for seniors campaign
 
     Examples:
       |customerStatus|fuelType|eleDiscount|gasDiscount|campaign |folderName                         |sourceSystem|journey   |state  |customerType |newOrExisting  |AAH |DD  |
-      |New           |BOTH    |7           |10         |seniors  |E2E_Campaign_NSW_seniors_Essential |Quote Tool  | COR      |NSW    |RES          |New            |No  |No  |
+      |New           |BOTH    |8           |10         |seniors  |E2E_Campaign_NSW_seniors_Essential |Quote Tool  | COR      |NSW    |RES          |New            |No  |No  |
 
-  @DR22.10.2.campaign
+  @@DR23.6.14.campaign
   Scenario Outline: Validate complete data for seniors campaign for NSW-Endeavour existing moving
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
     When user provides "1234" and "2516" and clicks on show me plan link
@@ -539,10 +539,10 @@ Feature:E2E scenario for seniors campaign
     And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | Y                     | Y                                     | N                               | <state> |N                     |
+      | ELE      | Y                | Y                     | N                     | Y                                     | N                               | <state> |N                     |
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | Y                     | Y                                     | N                               | <state> |N                     |
+      | GAS      | Y                | Y                     | N                     | Y                                     | N                               | <state> |N                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | Flexi Plan | <state> | N            |N             |
@@ -567,13 +567,13 @@ Feature:E2E scenario for seniors campaign
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | Y                     | Y                                     | N                               | <state> |    N                 |
+      | ELE      | Y                | N                     | N                     | Y                                     | N                               | <state> |    N                 |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | N                     | Y                     | Y                                     | N                               | <state> |    N                 |
+      | GAS      | Y                | N                     | N                     | Y                                     | N                               | <state> |    N                 |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Flexi Plan | NSW   | N            |    N         |
+      | Y                        | Y         | Y            | Flexi Plan | NSW   | Y            |    N         |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -593,7 +593,7 @@ Feature:E2E scenario for seniors campaign
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE        | BP2H-GN  |           | N                              | N                              | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign | folderName                                 | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     | 7           | 10          | seniors  | E2E_Campaign_seniors_NSW_ex_End_non-moving | NSW   | Quote Tool   | Move Home | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     | 8           | 10          | seniors  | E2E_Campaign_seniors_NSW_ex_End_non-moving | NSW   | Quote Tool   | Move Home | No  | No | RES          | Existing  non-moving |
 
   @DR22.10.2.campaign
   Scenario Outline: Validate complete data for seniors campaign for QLD - new moving customer
