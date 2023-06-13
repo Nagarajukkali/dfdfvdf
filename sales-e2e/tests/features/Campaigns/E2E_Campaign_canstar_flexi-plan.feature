@@ -1,6 +1,6 @@
 
 Feature:E2E scenario for canstar-flexi-plan
-  @DR23.3.3.campaign
+  @DR23.6.14.campaign
   Scenario Outline: Validate complete data for canstar-Flexi-plan for NSW-Ausgrid for new moving customer
     Given user has opened the 'canstar' link in a browser and creates '<folderName>' to save evidences
     When user provides "2000" and clicks on show me plan link
@@ -36,7 +36,7 @@ Feature:E2E scenario for canstar-flexi-plan
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>" plan
       |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
-      |ELE      |N                       |Y                    |Y                                       |<state>|    N           |
+      |ELE      |N                       |N                    |Y                                       |<state>|    Y           |
     And user validates plan details on review page for "<campaign>" plan
       |fuelType |Feature_carbonNeutral | Feature_variableRates | Feature_XX_discountOffTotalEnergyBill  |state  |Feature_50Credit|
       |GAS      |N                       |Y                    |Y                                       |<state>|    N           |
@@ -60,7 +60,7 @@ Feature:E2E scenario for canstar-flexi-plan
 
     Examples:
       |customerStatus|fuelType|planName   |eleDiscount |gasDiscount|campaign  | state |folderName                           |sourceSystem|journey  |state  |customerType |newOrExisting  |AAH |DD  |
-      |New           |BOTH    |Flexi Plan |5           |8          |flexi    | NSW   |E2E_can-flexi-plan_NSW_new_moving   |Quote Tool  |Move Home|NSW    |RES          |New            |No  |No  |
+      |New           |BOTH    |Flexi Plan |10           |8          |flexi    | NSW   |E2E_can-flexi-plan_NSW_new_moving   |Quote Tool  |Move Home|NSW    |RES          |New            |No  |No  |
 
 
   @DR23.3.3.campaign
@@ -466,7 +466,7 @@ Feature:E2E scenario for canstar-flexi-plan
       | customerStatus | fuelType |planName  | eleDiscount | gasDiscount | campaign | folderName                        | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
       | New            | BOTH     |Flexi Plan| 11           | 25          | flexi    | E2E_can-flexi-plan_VIC_new_non_moving | VIC   | Quote Tool   | COR   | No  | No | RES          | New           |
 
-  @DR23.3.3.campaign
+  @DR23.6.14.campaign
   Scenario Outline: Validate complete data for canstar-Flexi-plan for NSW-Endeavour - new non moving customer
     Given user has opened the 'canstar' link in a browser and creates '<folderName>' to save evidences
     When user provides "2516" and clicks on show me plan link
@@ -474,10 +474,10 @@ Feature:E2E scenario for canstar-flexi-plan
     And user validates "GAS" discount to be "<gasDiscount>" percent for "<planName>" plan
     And user validates the data on 'Canstar' plans page for "<campaign>" plan
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|planName |
-      | BOTH     | N                | Y                     | N                   | Y                    | Y                                     | N                               | <state> |    N                 |<planName>|
+      | BOTH     | Y                | Y                     | N                   | N                    | Y                                     | N                               | <state> |    N                 |<planName>|
     And user validates disclaimer on plans page for "<campaign>" plan
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | <planName> | <state> | N            |    N         |
+      | Y                        | Y         | Y            | <planName> | <state> | Y            |    N         |
     When user selects '<planName>'
     And user selects '<customerStatus>' on qualifier
     And user provides all other details on qualifier page
@@ -501,13 +501,13 @@ Feature:E2E scenario for canstar-flexi-plan
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | N                   | Y                   | Y                                     | N                               | <state> |    N                 |
+      | ELE      | Y                | N                     | N                   | N                   | Y                                     | N                               | <state> |    N                 |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | GAS      | N                | N                     | N                   | Y                   | Y                                     | N                               | <state> |    N                 |
+      | GAS      | Y                | N                     | N                   | N                   | Y                                     | N                               | <state> |    N                 |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state   | signUpCredit |moveHomeCredit|
-      | Y                        | Y         | Y            | Flexi Plan | <state> | N            |    N         |
+      | Y                        | Y         | Y            | Flexi Plan | <state> | Y            |    N         |
     And user submits the quote
     Then user lands on checkout complete page
     And user validates details on checkout complete page
@@ -527,7 +527,7 @@ Feature:E2E scenario for canstar-flexi-plan
       | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | COR       | BP2H-GN  |            |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType |planName  | eleDiscount | gasDiscount | campaign | folderName                           | state | sourceSystem | journey | AAH | DD | customerType | newOrExisting |
-      | New            | BOTH     |Flexi Plan| 5           | 8           | flexi    | E2E_can-flexi-plan_NSW_new_nonmoving | NSW   | Quote Tool   | COR     | No  | No | RES          | New           |
+      | New            | BOTH     |Flexi Plan| 6           | 8           | flexi    | E2E_can-flexi-plan_NSW_new_nonmoving | NSW   | Quote Tool   | COR     | No  | No | RES          | New           |
 
   @DR23.5.3.campaign
   Scenario Outline: Validate complete data for canstar-Flexi-plan for VIC existing non moving
@@ -650,7 +650,7 @@ Feature:E2E scenario for canstar-flexi-plan
       | customerStatus | fuelType |planName  | eleDiscount | gasDiscount | campaign | folderName                             | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting        |
       | Existing       | BOTH     |Flexi Plan| 11           | 25           | flexi    | E2E_can-flexi-plan_VIC_existing_moving | VIC   | Quote Tool   | Move Home | No  | No | RES          | Existing  non-moving |
 
-  @DR23.3.3.campaign
+  @DR23.6.14.campaign
   Scenario Outline: Validate complete data for canstar-Flexi-plan for NSW-Endeavour existing non moving
     Given user has opened the 'canstar' link in a browser and creates '<folderName>' to save evidences
     When user provides "2761" and clicks on show me plan link
@@ -683,7 +683,7 @@ Feature:E2E scenario for canstar-flexi-plan
       | No                |          |                        |                       |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_variableRates| Feature_XX_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   |Feature_moveHomeCredit|
-      | ELE      | N                | N                     | N                   | Y                   | Y                                     | N                               | <state> |    N                 |
+      | ELE      | N                | N                     | N                   | N                   | Y                                     | N                               | <state> |    N                 |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName   | state | signUpCredit |moveHomeCredit|
       | Y                        | Y         | Y            | Flexi Plan | NSW   | N            |    N         |
@@ -707,7 +707,7 @@ Feature:E2E scenario for canstar-flexi-plan
 
     Examples:
       | customerStatus | fuelType |planName  | eleDiscount | gasDiscount | campaign | folderName                                 | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | BOTH     |Flexi Plan| 5           | 8          | flexi    | E2E_can-flexi-plan_NSW_existing_non-moving | NSW   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+      | Existing       | BOTH     |Flexi Plan| 6           | 8          | flexi    | E2E_can-flexi-plan_NSW_existing_non-moving | NSW   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
   @DR23.3.3.campaign
   Scenario Outline: Validate complete data for canstar-Flexi-plan for SA existing non moving

@@ -13,22 +13,22 @@
 
 Feature:E2E scenario for familyandfriends campaign
 
-  @DR22.10.2.campaign
+  @DR23.6.14.campaign
   Scenario Outline: Validate complete data for familyandfriends campaign for NSW-Ausgrid - new moving customer
     Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides email "geom.george@energyaustralia.com.au" and "2144" and clicks on show me plan link
+    When user provides email "nagaraj.ukkali@energyaustralia.com.au" and "2144" and clicks on show me plan link
     Then user is presented with the plans
     And user validates "ELE" discount to be "<eleDiscount>" percent
      And user validates "GAS" discount to be "<gasDiscount>" percent
     And user validates the data on plans page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | N                   | Y                                  | N                               | <state> | N                     |
+      | ELE      | Y                | Y                     | N                   | Y                                  | N                               | <state> | N                     |
      And user validates the data on plans page for "<campaign>"
        | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-       | GAS      | N                | Y                     | N                   | Y                                  | N                               | <state> | N                     |
+       | GAS      | Y                | Y                     | N                   | Y                                  | N                               | <state> | N                     |
     And user validates disclaimer on plans page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName           | state   | signUpCredit |
-      | Y                        | N         | Y            | Family and Friends | <state> | N            |
+      | Y                        | Y         | Y            | Family and Friends | <state> | Y            |
     And user clicks on Add plan button
     # And user validates plan details on cart page for "<campaign>"
     #   | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | Feature_moveHomeCredit|
@@ -61,10 +61,10 @@ Feature:E2E scenario for familyandfriends campaign
       | <sourceSystem> | <journey> | <fuelType> | <AAH> | <DD> | <customerType> | <newOrExisting> |
     And user validates plan details on review page for "<campaign>"
       | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | N                   | Y                                  | N                               | <state> | N                     |
+      | ELE      | Y                | Y                     | N                   | Y                                  | N                               | <state> | N                     |
      And user validates plan details on review page for "<campaign>"
        | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-       | GAS      | N                | Y                     | N                   | Y                                  | N                               | <state> | N                     |
+       | GAS      | Y                | Y                     | N                   | Y                                  | N                               | <state> | N                     |
     And user validates disclaimer on review page for "<campaign>"
       | referencePriceComparison | goNeutral | solarBuyBack | planName           | state   | signUpCredit |
       | Y                        | N         | Y            | Family and Friends | <state> | N            |
@@ -87,7 +87,79 @@ Feature:E2E scenario for familyandfriends campaign
        | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | ENE       | FFPH-GN  | 5240524910 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
     Examples:
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign         | folderName                                   | state | sourceSystem | journey   | AAH | DD | customerType | newOrExisting |
-      | New            | ELE      | 8          | 11          | familyandfriends | E2E_Campaign_familyandfriends_NSW_new_moving | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
+      | New            | ELE      | 13          | 11          | familyandfriends | E2E_Campaign_familyandfriends_NSW_new_moving | NSW   | Quote Tool   | Move Home | No  | No | RES          | New           |
+
+
+  @DR23.6.14.campaign
+  Scenario Outline: Validate complete data for familyandfriends campaign for NSW-Endeavour existing non moving
+    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
+    When user provides email "nagaraj.ukkali@energyaustralia.com.au" and "2529" and clicks on show me plan link
+    Then user is presented with the plans
+    And user validates "ELE" discount to be "<eleDiscount>" percent
+    And user validates "GAS" discount to be "<gasDiscount>" percent
+    And user validates the data on plans page for "<campaign>"
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
+      | ELE      | Y                | Y                     | N                   | Y                                  | N                               | <state> | N                     |
+    And user validates the data on plans page for "<campaign>"
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
+      | GAS      | Y                | Y                     | N                   | Y                                  | N                               | <state> | N                     |
+    And user validates disclaimer on plans page for "<campaign>"
+      | referencePriceComparison | goNeutral | solarBuyBack | planName           | state   | signUpCredit |
+      | Y                        | N         | Y            | Family and Friends | <state> | Y            |
+    And user clicks on Add plan button
+    # And user validates plan details on cart page for "<campaign>"
+    #   | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | Feature_moveHomeCredit|
+    #   | ELE      | N                | Y                     | Y                   | Y                                  | <state> | Y                     |
+    # And user validates plan details on cart page for "<campaign>"
+    #   | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | Feature_moveHomeCredit|
+    #   | GAS      | N                | Y                     | Y                   | Y                                  | <state> | Y                     |
+    #And user moves on to fill the qualifier
+    And user selects '<customerStatus>' on qualifier
+    And user verifies account on qualifier
+      | customerStatus   | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
+      #| <customerStatus> | 6942134043    | Postcode            | 2529             | dob    | 01011980 |
+      | <customerStatus> | 2407416072    | Postcode            | 2529             | dob    | 01011980 |
+    And user provides all other details on qualifier page for Existing customer
+      | customerType | movingType | propertyType |
+      | RES          | Non-Moving | Renter       |
+    And user provides all details on checkout details page
+      | customerType | journey | customerStatus   | firstName | lastName | idType         |
+      | RES          | RES     | <customerStatus> | test      | test     | Driver License |
+    And user selects mailing address option
+      | addressType        | otherAddress |
+      | Connection Address |              |
+    And user clicks on 'Review your order' button and navigates to review page
+    And user provides life support details on review page
+      | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
+      | No                |          |                        |                       |
+    And user validates plan details on review page for "<campaign>"
+      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
+      | ELE      | N                | Y                     | N                   | Y                                  | N                               | <state> | N                     |
+    And user validates disclaimer on review page for "<campaign>"
+      | referencePriceComparison | goNeutral | solarBuyBack | planName           | state   | signUpCredit |
+      | Y                        | N         | Y            | Family and Friends | <state> | Y            |
+    And user submits the quote
+    Then user lands on checkout complete page
+    And user validates details on checkout complete page
+      | sourceSystem   | journey   | fuelType | AAH   | DD   | customerType   | newOrExisting   |
+      | <sourceSystem> | <journey> | ELE      | <AAH> | <DD> | <customerType> | <newOrExisting> |
+    When user has opened the qt2 Reporting website link in a browser
+    And user logs in to qt2 reporting
+    And user search quote on the basis of 'Email'
+    Then submitted quote is displayed
+    And user validates all the details for 'ELE' submitted quote
+    And user validates below mandatory fields
+      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
+      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | FFPH-EN  | 4311259340 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
+    And user validates all the details for 'GAS' submitted quote
+    And user validates below mandatory fields
+      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
+      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS       | FFPH-GN   | 5248190368 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
+
+    Examples:
+      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign         | folderName                                            | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
+      | Existing       | ELE      | 9          | 11          | familyandfriends | E2E_Campaign_familyandfriends_NSW_existing_non-moving | NSW   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
+
 
   @DR22.10.2.campaign
   Scenario Outline: Validate complete data for familyandfriends campaign for QLD - new moving customer
@@ -553,75 +625,6 @@ Feature:E2E scenario for familyandfriends campaign
       | customerStatus | fuelType | eleDiscount | gasDiscount | campaign         | folderName                                            | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting    |
       | Existing       | BOTH     | 14           | 28          | familyandfriends | E2E_Campaign_familyandfriends_VIC_existing_non-moving | VIC   | Quote Tool   | Move Home   | No  | No | RES          | Existing  moving |
 
-  @DR22.10.2.campaign
-  Scenario Outline: Validate complete data for familyandfriends campaign for NSW-Endeavour existing non moving
-    Given user has opened the '<campaign>' link in a browser and creates '<folderName>' to save evidences
-    When user provides email "geom.george@energyaustralia.com.au" and "2529" and clicks on show me plan link
-    Then user is presented with the plans
-    And user validates "ELE" discount to be "<eleDiscount>" percent
-    And user validates "GAS" discount to be "<gasDiscount>" percent
-    And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | N                   | Y                                  | N                               | <state> | N                     |
-    And user validates the data on plans page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | GAS      | N                | Y                     | N                   | Y                                  | N                               | <state> | N                     |
-    And user validates disclaimer on plans page for "<campaign>"
-      | referencePriceComparison | goNeutral | solarBuyBack | planName           | state   | signUpCredit |
-      | Y                        | N         | Y            | Family and Friends | <state> | N            |
-    And user clicks on Add plan button
-    # And user validates plan details on cart page for "<campaign>"
-    #   | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | Feature_moveHomeCredit|
-    #   | ELE      | N                | Y                     | Y                   | Y                                  | <state> | Y                     |
-    # And user validates plan details on cart page for "<campaign>"
-    #   | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | state   | Feature_moveHomeCredit|
-    #   | GAS      | N                | Y                     | Y                   | Y                                  | <state> | Y                     |
-    #And user moves on to fill the qualifier
-    And user selects '<customerStatus>' on qualifier
-    And user verifies account on qualifier
-      | customerStatus   | accountNumber | accountIdentityType | postcodeOrABNACN | idType | idValue  |
-      #| <customerStatus> | 6942134043    | Postcode            | 2529             | dob    | 01011980 |
-      | <customerStatus> | 2407416072    | Postcode            | 2529             | dob    | 01011980 |
-    And user provides all other details on qualifier page for Existing customer
-      | customerType | movingType | propertyType |
-      | RES          | Non-Moving | Renter       |
-    And user provides all details on checkout details page
-      | customerType | journey | customerStatus   | firstName | lastName | idType         |
-      | RES          | RES     | <customerStatus> | test      | test     | Driver License |
-    And user selects mailing address option
-      | addressType        | otherAddress |
-      | Connection Address |              |
-    And user clicks on 'Review your order' button and navigates to review page
-    And user provides life support details on review page
-      | lifeSupportOption | fuelType | EleclifeSupportDevices | GaslifeSupportDevices |
-      | No                |          |                        |                       |
-    And user validates plan details on review page for "<campaign>"
-      | fuelType | Feature_50Credit | Feature_carbonNeutral | Feature_peaceOfMind | Feature_discountOffTotalEnergyBill | Feature_noStandardConnectionFee | state   | Feature_moveHomeCredit|
-      | ELE      | N                | Y                     | N                   | Y                                  | N                               | <state> | N                     |
-    And user validates disclaimer on review page for "<campaign>"
-      | referencePriceComparison | goNeutral | solarBuyBack | planName           | state   | signUpCredit |
-      | Y                        | N         | Y            | Family and Friends | <state> | N            |
-    And user submits the quote
-    Then user lands on checkout complete page
-    And user validates details on checkout complete page
-      | sourceSystem   | journey   | fuelType | AAH   | DD   | customerType   | newOrExisting   |
-      | <sourceSystem> | <journey> | ELE      | <AAH> | <DD> | <customerType> | <newOrExisting> |
-    When user has opened the qt2 Reporting website link in a browser
-    And user logs in to qt2 reporting
-    And user search quote on the basis of 'Email'
-    Then submitted quote is displayed
-    And user validates all the details for 'ELE' submitted quote
-    And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
-      | ELE      | VERBALLYACCEPTED | RESIDENTIAL  | PS        | FFPH-EN  | 4311259340 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
-    And user validates all the details for 'GAS' submitted quote
-    And user validates below mandatory fields
-      | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType | customerStatus   | campaign   |
-      | GAS      | VERBALLYACCEPTED | RESIDENTIAL  | PS       | FFPH-GN   | 5248190368 |                                |                                | N                       |                          | EMAIL         | <customerStatus> | <campaign> |
-
-    Examples:
-      | customerStatus | fuelType | eleDiscount | gasDiscount | campaign         | folderName                                            | state | sourceSystem | journey     | AAH | DD | customerType | newOrExisting        |
-      | Existing       | ELE      | 8          | 11          | familyandfriends | E2E_Campaign_familyandfriends_NSW_existing_non-moving | NSW   | Quote Tool   | Plan Switch | No  | No | RES          | Existing  non-moving |
 
   @DR22.10.2.campaign
   Scenario Outline: Validate complete data for familyandfriends campaign for SA existing non moving

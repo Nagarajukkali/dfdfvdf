@@ -30,7 +30,7 @@
             "description": "Get a $50 credit on each new energy account when you sign up online.+"
           },
           "NSW": {
-            "heading": "$50 online sign up credit",
+            "heading": "$75 online sign up credit",
             "description": "Get a $50 credit on each new energy account when you sign up online.+"
           },
           "ACT": {
@@ -68,13 +68,13 @@
           },
           "NSW": {
             "Ausgrid": {
-              "heading": "5% discount off total electricity bill"
+              "heading": "10% discount off total electricity bill"
             },
             "Essential": {
-              "heading": "5% discount off total electricity bill"
+              "heading": "6% discount off total electricity bill"
             },
             "Endeavour": {
-              "heading": "5% discount off total electricity bill"
+              "heading": "6% discount off total electricity bill"
             }
           },
           "ACT": {
@@ -100,7 +100,7 @@
       "postSelect": {
         "Credit50": {
           "VIC": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
-          "NSW": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+          "NSW": "$75 online sign up credit. Get a $75 credit on each new energy account when you sign up online.+",
           "ACT": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
           "QLD": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
           "SA": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+"
@@ -113,9 +113,9 @@
         "discountOffTotalEnergyBill": {
           "VIC": "11% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
           "NSW": {
-            "Ausgrid": "5% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
-            "Essential": "5% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
-            "Endeavour": "5% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
+            "Ausgrid": "10% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+            "Essential": "6% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
+            "Endeavour": "6% discount off total electricity bill. Guaranteed discount that applies to your energy charges."
           },
           "ACT": "11% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
           "QLD": "0% discount off total electricity bill. Guaranteed discount that applies to your energy charges.",
@@ -129,9 +129,9 @@
         "ENE": {
           "VIC": "Total_11%GD",
           "NSW": {
-            "Ausgrid": "Total_5%GD_50",
-            "Essential": "Total_5%GD_50",
-            "Endeavour": "Total_5%GD_50",
+            "Ausgrid": "Total_10%GD_75",
+            "Essential": "Total_6%GD_75",
+            "Endeavour": "Total_6%GD_75",
             "default": "Total_5%GD_50"
           },
           "ACT": "Total_11%GD",
@@ -141,9 +141,9 @@
         "COR": {
           "VIC": "Total_11%GD",
           "NSW": {
-            "Ausgrid": "Total_5%GD_50",
-            "Essential": "Total_5%GD_50",
-            "Endeavour": "Total_5%GD_50",
+            "Ausgrid": "Total_10%GD_75",
+            "Essential": "Total_6%GD_75",
+            "Endeavour": "Total_6%GD_75",
             "default": "Total_5%GD_50"
           },
           "ACT": "Total_11%GD",
@@ -155,9 +155,9 @@
         "ENE": {
           "VIC": "Total_11%GD",
           "NSW": {
-            "Ausgrid": "Total_5%GD_50",
-            "Essential": "Total_5%GD_50",
-            "Endeavour": "Total_5%GD_50",
+            "Ausgrid": "Total_10%GD_75",
+            "Essential": "Total_6%GD_75",
+            "Endeavour": "Total_6%GD_75",
             "default": "Total_5%GD_50"
           },
           "ACT": "Total_11%GD",
@@ -167,9 +167,9 @@
         "PS": {
           "VIC": "Total_11%GD",
           "NSW": {
-            "Ausgrid": "Total_5%GD",
-            "Essential": "Total_5%GD",
-            "Endeavour": "Total_5%GD",
+            "Ausgrid": "Total_10%GD",
+            "Essential": "Total_6%GD",
+            "Endeavour": "Total_6%GD",
             "default": "Total_5%GD"
           },
           "ACT": "Total_11%GD",
@@ -188,8 +188,8 @@
             "description": "Get a $50 credit on each new energy account when you sign up online.+"
           },
           "NSW": {
-            "heading": "$50 online sign up credit",
-            "description": "Get a $50 credit on each new energy account when you sign up online.+"
+            "heading": "$75 online sign up credit",
+            "description": "Get a $75 credit on each new energy account when you sign up online.+"
           },
           "ACT": {
             "heading": "$50 sign up credit",
@@ -243,7 +243,7 @@
       "postSelect": {
         "Credit50": {
           "VIC": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
-          "NSW": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
+          "NSW": "$75 online sign up credit. Get a $75 credit on each new energy account when you sign up online.+",
           "ACT": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+",
           "SA": "$50 online sign up credit. Get a $50 credit on each new energy account when you sign up online.+"
         },
@@ -264,13 +264,13 @@
       "newCustomer": {
         "ENE": {
           "VIC": "Total_25%GD",
-          "NSW": "Total_8%GD_50",
+          "NSW": "Total_8%GD_75",
           "ACT": "Total_18%GD",
           "SA": "Total_4%GD"
         },
         "COR": {
           "VIC": "Total_25%GD",
-          "NSW": "Total_8%GD_50",
+          "NSW": "Total_8%GD_75",
           "ACT": "Total_18%GD",
           "SA": "Total_4%GD"
         }
@@ -278,7 +278,7 @@
       "existingCustomer": {
         "ENE": {
           "VIC": "Total_25%GD",
-          "NSW": "Total_8%GD_50",
+          "NSW": "Total_8%GD_75",
           "ACT": "Total_18%GD",
           "SA": "Total_4%GD"
         },
