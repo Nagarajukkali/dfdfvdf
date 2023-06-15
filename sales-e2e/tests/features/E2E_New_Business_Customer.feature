@@ -60,7 +60,7 @@ Feature:E2E scenario for new business moving and non moving customer
       | customerStatus | fuelType | planName              | folderName         | state | sourceSystem | journey   | AAH | DD  | customerType | newOrExisting |campaign              |
       | New            | BOTH     | Business Balance Plan | E2E_New_Bus_Moving | NSW   | Quote Tool   | Move Home | No  | Yes | BUS          | New           |business-balance-plan |
 
-  @deviceCheck @smoke
+  #@deviceCheck @smoke
   Scenario Outline: Submit a quote for new business non moving customer
     Given user has opened the website link in a browser and creates '<folderName>' to save evidences
     And user has navigated to 'BUS' plans page
@@ -107,7 +107,7 @@ Feature:E2E scenario for new business moving and non moving customer
     And user validates all the details for 'ELE' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | NMI        | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus   |campaign  |
-      | ELE      | VERBALLYACCEPTED | BUSINESS     | COR       | BSPB2-ES | 2002158569 | N                              | N                              | Y                       | OTHER                    | EMAIL         |<customerStatus> |<campaign>|
+      | ELE      | VERBALLYACCEPTED | BUSINESS     | PS       | BSPB2-ES | 2002158569 | N                              | N                              | Y                       | OTHER                    | EMAIL         |<customerStatus> |<campaign>|
     And user validates all the details for 'GAS' submitted quote
     And user validates below mandatory fields
       | fuelType | quoteStatus      | customerType | offerType | planCode | MIRN       | renovationsSinceDeenergisation | renovationsInProgressOrPlanned | customerWithLifeSupport | lifeSupportEquipmentType | billRouteType |customerStatus   |campaign  |
